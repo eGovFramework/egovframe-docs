@@ -70,4 +70,4 @@ ApplicationContext는 BeanFacatory의 완전한 superset이므로, BeanFactory�
   * [The Spring Framework - Reference Documentation / 1. The IoC Container](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans)
   * [Inversion of Control](http://martinfowler.com/bliki/InversionOfControl.html)
   * [Inversion of Control Containers and the Dependency Injection pattern](http://martinfowler.com/articles/injection.html)
-  * [|Inversion of Control Containers and the Dependency Injection pattern 한글 번역]http://javacan.tistory.com/entry/120 by [최범균(Blog 자바캔(Java Can Do It))](http://javacan.tistory.com)
+  * [|Inversion of Control Containers and the Dependency Injection pattern 한글 번역](http://javacan.tistory.com/entry/120) by [최범균(Blog 자바캔(Java Can Do It))](http://javacan.tistory.com)
