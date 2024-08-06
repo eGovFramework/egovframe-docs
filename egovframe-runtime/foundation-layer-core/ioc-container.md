@@ -41,7 +41,7 @@ ApplicationContext는 BeanFacatory의 완전한 superset이므로, BeanFactory�
 
 본 문서는 크게 두 부분으로 나뉘어지는데, 첫번째 부분은 BeanFactory와 ApplicationContext 모두에 적용되는 기본적인 원리를 설명하고, 두번째 부분은 ApplicationContext에만 적용되는 특징들을 설명한다.
 
-  * [Basics]()   
+  * [Basics](https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/foundation-layer-core/ioc-container-basics.md)   
     IoC Container를 설명하기 위해 필요한 기본적인 개념 및 사용 방법을 설명한다.
   * [Dependencies]()   
     IoC Container의 핵심 기능인 Dependency Injection의 사용 방식 및 설정 방법을 설명한다.
