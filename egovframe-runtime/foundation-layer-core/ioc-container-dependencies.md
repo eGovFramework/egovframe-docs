@@ -624,4 +624,4 @@ public abstract class CommandManager {
 
 ## 참고자료
 
-*   [Spring Framework - Reference Document / 1.4 Dependencies](https://www.egovframe.go.kr/https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-dependencies)
+*   [Spring Framework - Reference Document / 1.4 Dependencies](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-dependencies)
