@@ -2,7 +2,7 @@
 
 ## 개요
 
- 본 장의 앞선 대부분의 예제들은 Spring Container 안에서 BeanDefinition을 생성하기 위한 설정 메타데이터를 명기하기 위해서 XML을 사용해왔다. 이전 section [Annotaion-based configuration](#annotaion-based-configuration)은 source-level annotation을 사용하여 많은 양의 설정 메타데이터를 제공할 수 있음을 보였다. 이들 예제에서도 어쨌든, “base” bean 정의가 XML 파일 안에 명시적으로 정의되었다. 이번 section은 classpath를 검색하고, ***filter*** 를 통해 검사함으로써,
+본 장의 앞선 대부분의 예제들은 Spring Container 안에서 BeanDefinition을 생성하기 위한 설정 메타데이터를 명기하기 위해서 XML을 사용해왔다. 이전 section [Annotaion-based configuration](#annotaion-based-configuration)은 source-level annotation을 사용하여 많은 양의 설정 메타데이터를 제공할 수 있음을 보였다. 이들 예제에서도 어쨌든, “base” bean 정의가 XML 파일 안에 명시적으로 정의되었다. 이번 section은 classpath를 검색하고, ***filter*** 를 통해 검사함으로써,
 ***대상 컴퍼넌트(candidate component)*** 를 검출하는 방법을 소개한다.
 
 ## 설명
