@@ -263,7 +263,7 @@ CREATE TABLE ids (
   PRIMARY KEY (table_name)
 );
 INSERT INTO ids VALUES('id','0');
--- ID Generation 서비스를 쓰고자 하는 시스템에서 미리 생성해야 할 DB Schema 정보임
+-- ID Generation 서비스를 쓰고자 하는 시스템에서 미리 생성해야 할 DB Schema 정보이다.
 ```
 
 ##### Configuration
@@ -323,7 +323,7 @@ CREATE TABLE idttest(
   PRIMARY KEY (table_name)
 );
 INSERT INTO idttest VALUES('test','0');
--- ID Generation 서비스를 쓰고자 하는 시스템에서 미리 생성해야 할 DB Schema 정보임
+-- ID Generation 서비스를 쓰고자 하는 시스템에서 미리 생성해야 할 DB Schema 정보이다.
 ```
 
 ##### Configuration
