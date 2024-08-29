@@ -17,9 +17,9 @@
 - 횡단 관심사(Cross-cutting concern)는 핵심 관심에 영향을 주는 프로그램의 영역으로, 로깅과 트랜잭션, 인증처리와 같은 시스템 공통 처리 영역이 해당된다.
 
  다음 그림은 객체지향 프로그래밍 개발에서 핵심 관심사와 횡단 관심사가 하나의 코드로 통합되어 개발된 사례를 보여준다.  
-![image](./images/egovframework:rte:fdl:aop_001.jpg)  
+![image](./images/egovframework-rte-fdl-aop_001.jpg)  
 객체지향 프로그래밍 코드에 AOP를 적용하면 다음 그림처럼 각 코드에 분산되어 있던 횡단 관심사는 관점으로 분리되어 정의된다. AOP는 엮기(Weaving)라는 방식을 이용하여 분리된 관점을 핵심 관심사와 엮는다.  
-![image](./images/egovframework:rte:fdl:aop_002.jpg)
+![image](./images/egovframework-rte-fdl-aop_002.jpg)
 
 ### AOP 주요 개념
 
@@ -36,7 +36,7 @@
 #### 포인트컷(Pointcut)
 
  포인트컷은 결합점 집합을 의미한다. 포인트컷은 어떤 결합점을 사용할 것이지를 결정하기 위해 패턴 매칭을 이용하여 룰을 정의한다. 다음 그림은 Spring 2.5에 포함된 bean() 포인트컷을 이용하여 종적 및 횡적으로 빈을 선택하는 예제를 보여준다.  
-![image](./images/egovframework:rte:fdl:aop_003.jpg)  
+![image](./images/egovframework-rte-fdl-aop_003.jpg)  
 
 #### 충고(Advice)
 
