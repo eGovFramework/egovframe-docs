@@ -13,13 +13,13 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
  org.springframework.beans.factory.BeanFactory 인터페이스는 Spring IoC Container의 핵심 인터페이스로 Spring IoC Container는 객체를 생성하고, 객체간의 종속성을 이어주는 역할을 한다.
 
- ![ Spring IoC Container](./images/egovframework-rte-fdl-ioc_container-container-magic.png)
+ ![ Spring IoC Container](./images/egovframework:rte:fdl:ioc_container:container-magic.png)
 
 #### 설정 정보(Configuration Metadata)
 
  위 그림에서 보듯이, Spring IoC Container는 설정 정보(configuration metadata)를 필요로 한다. 이 설정 정보는 Spring IoC Container가 “객체를 생성하고, 객체간의 종속성을 이어줄 수 있도록” 필요한 정보를 제공한다.  
 설정 정보는 일반적으로 XML 형태로 작성된다. 설정 정보는 XML 형태가 아닌 Java Annotation을 이용하여 설정이 가능하다.  
-Annotation을 사용한 설정 방법은 [Annotation-based configuration](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:ioc_container:annotation-based_configuration)에서 설명하고 있다.  
+Annotation을 사용한 설정 방법은 [Annotation-based configuration](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:annotation-based_configuration)에서 설명하고 있다.  
 
  아래 예제는 XML 형태의 설정 정보의 기본적인 모습이다.
 
