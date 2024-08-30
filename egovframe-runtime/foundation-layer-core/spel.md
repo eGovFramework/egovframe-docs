@@ -103,7 +103,7 @@ private Integer money;
 <spring:eval expression='new java.text.DecimalFormat("###,##0").format(price)'/>
 ```
 
- ![image](./images/egovframework:rte2:ptl:spel1.jpg)![image](./images/egovframework:rte2:ptl:spel3.jpg)
+ ![image](./images/egovframework-rte2-ptl-spel1.jpg)![image](./images/egovframework-rte2-ptl-spel3.jpg)
 
 ## 참고자료
 
