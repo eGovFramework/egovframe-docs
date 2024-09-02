@@ -6,33 +6,33 @@
 Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.  
 다음은 SLF4J 샘플 예제이다.
 
-```bash
+```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
- 
+ 
 public class Slf4JLoggerTest {
- 
+ 
    // SLF4J를 이용한 Logger 오브젝트 생성
    private static final Logger LOGGER = LoggerFactory.getLogger(Slf4JLoggerTest.class);
- 
+ 
    // Parameterized logging - String 타입
    String message = "Hello, eGovFrame 3.0";
    String message2 = "Welcome to eGovFrame 3.0";
- 
+ 
    LOGGER.debug("SLF4J Logger - {}", message); // 출력결과 - SLF4J Logger - Hello, eGovFrame 3.0
    LOGGER.debug("SLF4J Logger - {} and {}", message, message2); // 출력결과 - SLF4J Logger - Hello, eGovFrame 3.0 and Welcome to eGovFrame 3.0
- 
+ 
    // Parameterized logging - Object 타입
-   [Object](http://www.google.com/search?hl=en&q=allinurl%3Aobject+java.sun.com&btnI=I%27m%20Feeling%20Lucky)[] args = new [Object](http://www.google.com/search?hl=en&q=allinurl%3Aobject+java.sun.com&btnI=I%27m%20Feeling%20Lucky)[3];
+   Object[] args = new Object[3];
    args[0] = "1";
-   args[1] = [Integer](http://www.google.com/search?hl=en&q=allinurl%3Ainteger+java.sun.com&btnI=I%27m%20Feeling%20Lucky).valueOf("2");
-   args[2] = new [Date](http://www.google.com/search?hl=en&q=allinurl%3Adate+java.sun.com&btnI=I%27m%20Feeling%20Lucky)().toString();
- 
+   args[1] = Integer.valueOf("2");
+   args[2] = new Date().toString();
+ 
    LOGGER.debug("SLF4J Logger - {}, {}, {}", args); // 출력결과 - SLF4J Logger - 1, 2, Fri Mar 23 11:08:28 KST 2014
 }
 ```
 
-#### 1\. SLF4J 기본 설정
+#### 1. SLF4J 기본 설정
 
  1) SLF4J API를 사용하기 위해 **slf4j-api.jar를 추가**한다.
 
@@ -70,7 +70,7 @@ public class Slf4JLoggerTest {
 </dependency>
 ```
 
-#### 2\. Logging 구현체 설정
+#### 2. Logging 구현체 설정
 
  1) SLF4J가 컴파일 시에 Logging 구현체를 사용할 수 있도록 구현체별 **SLF4J Binding jar와 Implementation jar를 추가**한다.
 
@@ -119,17 +119,17 @@ public class Slf4JLoggerTest {
 </dependency>
 ```
 
-#### 3\. SLF4J Logger 객체 생성과 메서드 사용
+#### 3. SLF4J Logger 객체 생성과 메서드 사용
 
  1) Logger 객체 생성
 
-```bash
+```java
   private static final Logger LOGGER = LoggerFactory.getLogger(Slf4JLoggerTest.class);
 ```
 
  2) 로깅 메서드 호출  
 
-```bash
+```java
   // {}-placeholder를 이용한 Parameterized Logging
   String message = "Hello, eGovFrame 3.0";
  
@@ -141,7 +141,7 @@ public class Slf4JLoggerTest {
  기존 Legacy API을 유지한 채 SLF4J를 함께 사용하려면, SLF4J와 레거시 API를 연결할 수 있는 Bridge jar가 필요하다.  
 아래에서는 Log4j 1.x와 JCL 레거시를 기준으로 설명한다.
 
-#### 1\. Logging 구현체 jar를 SLF4J Bridge jar로 대체
+#### 1. Logging 구현체 jar를 SLF4J Bridge jar로 대체
 
  이는 각 구현체의 Logging 제어권을 SLF4J로 넘긴다는 것을 의미하며, 레거시 API를 유지하기 위해서 필요한 작업이다.
 
@@ -187,7 +187,7 @@ public class Slf4JLoggerTest {
 </dependency>
 ```
 
-#### 2\. 환경설정 파일을 logback으로 변경
+#### 2. 환경설정 파일을 logback으로 변경
 
  log4j 환경설정 파일은 SLF4J가 인식할 수 없기 때문에, 기존 환경설정을 logback으로 변경해야한다.  
 [log4j properties file translator ](http://logback.qos.ch/translator/) 를 이용하거나 [logback manual ](http://logback.qos.ch/manual/index.html) 을 참조하여 변경할 수 있다.
