@@ -23,7 +23,7 @@ MVC 패턴이 Web Framework에만 사용되는 단어는 아니지만, 전자정
 
 ### Spring MVC
 
-Spring MVC 에 대한 설명은 아래 상세 페이지를 참고하라.
+Spring MVC 에 대한 설명은 아래 상세 페이지를 참고
 
 - [Spring MVC Architecture](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spring_mvc_architecture)
 - [DispatcherServlet](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:dispatcherservlet)
