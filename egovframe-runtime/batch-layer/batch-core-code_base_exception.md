@@ -35,4 +35,5 @@ try{
         //Sql 설정시 EgovBatchException 생성자 파리미터 추가
         //throw new EgovBatchException(dataSource,"EGOVBATCH000001","SELECT EX_MESSAGE FROM BATCH_EXCEPTION_MESSAGE WHERE EX_KEY = ?");
 }
+
 ```
