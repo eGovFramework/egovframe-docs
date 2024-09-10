@@ -28,6 +28,7 @@ I NSERT INTO BATCH_EXCEPTION_MESSAGE VALUES(2,'EGOVBATCH000002','배치실행 �
 에러처리 생성자 생성자 파리미터 데이터베이스소스, 에러코드를 사용하여 에러처리를 할 수 있습니다.
 
 ```bash
+
 try{
 	...
 }catch(Exception e){
