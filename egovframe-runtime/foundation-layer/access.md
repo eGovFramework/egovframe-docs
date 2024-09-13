@@ -101,7 +101,7 @@
 
  예:
 
-```bash
+```java
 import org.egovframe.rte.fdl.access.bean.AuthorityResourceMetadata;
  
 @Resource(name="authorityResource")
