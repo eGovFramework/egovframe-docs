@@ -68,7 +68,7 @@
 
 | iBatis | MyBatis |
 | --- | --- |
-| <sqlMap namespace=“User”> | <mapper namespace=“myBatis.mapper.UserMapper”> |
+| &lt;sqlMap namespace=“User”&gt; | &lt;mapper namespace=“myBatis.mapper.UserMapper”&gt; |
 
  실제 자바쪽에서 호출할때도 길게 호출하여야 한다.
 
