@@ -278,11 +278,11 @@ assertEquals(2, cache.getDiskStoreSize());   //Disk에는 DiskMaxSize 대로 2�
 
 ## Distributed Cache
 
-Ehcache는 Distributed Cache를 지원하는 방법으로 RMI, JGROUP, JMS등을 지원한다. 그 중에서 JGROUP와 ActiveMQ를 이용한 JMS 지원 설정 및 사용 방법을 설명한다. 자세한 설명은 EhcacheUserGuide 참고.
+Ehcache는 Distributed Cache를 지원하는 방법으로 RMI, JGROUP, JMS등을 지원한다. 그 중에서 JGROUP와 ActiveMQ를 이용한 JMS 지원 설정 및 사용 방법을 설명한다. 자세한 설명은 [Ehcache Documentation](https://www.ehcache.org/documentation/) 참고.
 
 ### Using JGroups
 
-JGroups는 multicast 기반의 커뮤니케이션 툴킷으로 그룹을 생성하고 그룹멤버간에 메세지를 주고 받을 수 있도록 지원한다. 관련한 자세한 정보는 사이트참조
+JGroups는 multicast 기반의 커뮤니케이션 툴킷으로 그룹을 생성하고 그룹멤버간에 메세지를 주고 받을 수 있도록 지원한다. 관련한 자세한 정보는 [사이트](http://www.jgroups.org/) 참고
 
 #### Configuration
 
