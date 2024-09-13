@@ -3,7 +3,7 @@
 ## 개요
 
  표준프레임워크 3.9부터 Session 방식으로 접근제어 권한관리를 설정 할 수 있는 방법을 제공한다.  
-내부적으로 필요한 설정을 가지고 있고, XML Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.  
+내부적으로 필요한 설정을 가지고 있고, <acronym title="Extensible Markup Language">XML</acronym> Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.  
 이 기능을 사용하기 위해서는 globals.properties 파일에서 Globals.Auth = session 로 설정한다.
 
 ## 환경설정
@@ -66,14 +66,14 @@
 | --- | --- | --- | --- |
 | globalAuthen | globals.properties 설정과 동일하게 적용 (Globals.Auth = session 설정 사용시 globalAuthen = “session”으로 값을 동일하게 일치하여 설정 필요) | 필수 |  |
 | dataSource | DBMS 설정 dataSource | 필수 |  |
-| loginUrl | 로그인 페이지 URL | 필수 |  |
-| accessDeniedUrl | 권한이 없는 경우 호출되는 페이지 URL | 필수 |  |
+| loginUrl | 로그인 페이지 <Acronym title="Uniform Resource Locator">URL</Acronym> | 필수 |  |
+| accessDeniedUrl | 권한이 없는 경우 호출되는 페이지 <Acronym title="Uniform Resource Locator">URL</Acronym> | 필수 |  |
 | sqlAuthorityUser | 인증된 사용자의 권한(authority) 조회 query | 필수 |  |
-| sqlRoleAndUrl | Role 및 URL 패턴 | 필수 |  |
+| sqlRoleAndUrl | Role 및 <Acronym title="Uniform Resource Locator">URL</Acronym> 패턴 | 필수 |  |
 | requestMatcherType | 패턴 매칭 방식(regex, ant, ciRegex: case-insensitive regex) | 필수 | default : regex |
-| excludeList | 접근제한 예외처리 URL(구분자: ,) | 필수 |  |
+| excludeList | 접근제한 예외처리 <Acronym title="Uniform Resource Locator">URL</Acronym>(구분자: ,) | 필수 |  |
 
- \* excludeList(접근제한 예외 목록 URL) 예시 값  
+ \* excludeList(접근제한 예외 목록 <Acronym title="Uniform Resource Locator">URL</Acronym>) 예시 값  
 회원관리 : /uat/uia/\*\*  
 실명확인 : /sec/rnc/\*\*  
 우편번호 : /sym/ccm/zip/\*\*  
