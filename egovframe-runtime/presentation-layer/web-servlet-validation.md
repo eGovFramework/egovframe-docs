@@ -76,7 +76,7 @@ public class DepartmentValidator implements Validator {
 }
 ```
 
-위 코드에서 처럼 유효성 검증이 실패한 경우 Errors 인터페이스의 rejectValue 메소드를 실행하는데, Errors 인터페이스에 대한 자세한 설명은 여기를 참고하라.
+위 코드에서 처럼 유효성 검증이 실패한 경우 Errors 인터페이스의 rejectValue 메소드를 실행하는데, Errors 인터페이스에 대한 자세한 설명은 [여기](https://docs.spring.io/spring-framework/docs/2.5.x/javadoc-api/org/springframework/validation/Errors.html)를 참고하라.
 
 **errors.rejectValue(“deptname”, “required”);**
 - deptname 프로퍼티에 대해서 유효성 검증시 에러가 발생했고, 관련 메시지 key는 “required”란 의미이다.
