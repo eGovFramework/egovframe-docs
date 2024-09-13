@@ -93,7 +93,7 @@
 댓글 선택 : /cop/cmt/updateArticleCommentView.do  
 
  \* 동적 include 방식 - JSP 에서 &lt;c:import&gt; 혹은 &lt;jsp:include&gt; 사용시 호출대상 URL이 .do 인 경우 :  
-호출대상.do 뿐만 아니라 .do URL이 호출하는 JSP파일도 권한관리에 등록해야 함
+호출대상.<hi>do 뿐만 아니라 .do URL이 호출하는 JSP파일도 권한관리에 등록해야 함
 
 ## Session 접근제어 재설정
 
