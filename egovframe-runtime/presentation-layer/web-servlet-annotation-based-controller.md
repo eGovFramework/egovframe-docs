@@ -5,11 +5,11 @@
 스프링 프레임워크는 2.5 버젼 부터 Java 5+ 이상이면 @Controller(Annotation-based Controller)를 개발할 수 있는 환경을 제공한다.
 인터페이스 Controller를 구현한 SimpleFormController, MultiActionController 같은 기존의 계층형(Hierarchy) Controller와의 주요 차이점 및 개선점은 아래와 같다.
 
-- 어노테이션을 이용한 설정
+- [어노테이션을 이용한 설정](#어노테이션을-이용한-설정)
   - XML 기반으로 설정하던 정보들을 어노테이션을 사용해서 정의한다.
-- 유연해진 메소드 시그니쳐
+- [유연해진 메소드 시그니쳐](#유연해진-메소드-시그니쳐)
   - Controller 메소드의 파라미터와 리턴 타입을 좀 더 다양하게 필요에 따라 선택할 수 있다.
-- POJO-Style의 Controller
+- [POJO-Style의 Controller](#pojo-style의-controller)
   - Controller 개발시에 특정 인터페이스를 구현 하거나 특정 클래스를 상속해야할 필요가 없다.
   - 하지만 폼 처리, 다중 액션등 기존의 계층형 Controller가 제공하던 기능들을 여전히 쉽게 구현할 수 있다.
 
@@ -83,8 +83,8 @@ public class LoginController {
 @RequestMapping은 클래스 단위(type level)나 메소드 단위(method level)로 설정할 수 있다.
 
 
-**type level
-**
+**type level**
+
 /hello.do 요청이 오면 HelloController의 hello 메소드가 수행된다.
 
 ```java
@@ -128,6 +128,7 @@ public class HelloController {
 
 **type + method level**
 둘 다 설정할 수도 있는데, 이 경우엔 type level에 설정한 @RequestMapping의 value(URL)를 method level에서 재정의 할수 없다.
+
 /hello.do 요청시에 GET 방식이면 helloGet 메소드, POST 방식이면 helloPost 메소드가 수행된다.
 
 ```java
@@ -148,7 +149,10 @@ public class HelloController {
 ```
 
 AbstractController 상속받아 구현한 예제 코드 LoginController를 어노테이션 기반의 Controller로 구현해 보겠다.
-기존의 LoginController는 URL /loginProcess.do로 오는 요청의 HTTP 메소드가 POST일때 handleRequestInternal 메소드가 실행되는 Controller였는데, 다음과 같이 구현할 수 있겠다.
+
+기존의 LoginController는 URL /loginProcess.do로 오는 요청의 HTTP 메소드가 POST일때 handleRequestInternal 메소드가 실행되는 Controller였는데,
+
+다음과 같이 구현할 수 있겠다.
 
 ```java
 package com.easycompany.controller.annotation;
@@ -177,9 +181,10 @@ public class LoginController {
 }
 ```
 
-위 예제 코드에서 서비스 클래스를 호출하기 위해서 @Autowired가 사용되었는데 자세한 내용은 여기를 참고하라.
+위 예제 코드에서 서비스 클래스를 호출하기 위해서 @Autowired가 사용되었는데 자세한 내용은 [여기](https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html)를 참고하라.
 
 **type + method level + request**
+
 앞의 내용에서 추가되어 request의 header설정 일치 여부에 따라 URL호출이 가능하다.
 
 다음 예제에서 URL이 /pets로 요청된 경우, POST타입의 request의 content-type이 application/json인 경우에만 다음 메소드가 호출된다.
@@ -208,6 +213,7 @@ public Pet getPet(@PathVariable String petId, Model model)
 **URI Template Variale Enhancements**
 
 @RequestMapping의 value에 URL뒤에 중괄호로 Controller메소드의 파라미터로 받을 값의 변수명을 입력해주면 변수를 받을 수 있다.
+
 다음 예제에서 Controller메소드의 URL을 ”/user/view/{id}“로 설정하였을 때, 만약 /user/view/12345 로 URL요청이 들어오면 view함수의 파라미터인 id가 12345로 설정된다.
 
 ```java
@@ -229,6 +235,7 @@ public String view(@PathVariable("id") int id) {
 
 아래 코드와 같은 방법으로 사용되는데,
 해당 파라미터가 Request 객체 안에 없을때 그냥 null값을 바인드 하고 싶다면, pageNo 파라미터 처럼 required=false로 명시해야 한다.
+
 name 파라미터는 required가 true이므로, 만일 name 파라미터가 null이면 org.springframework.web.bind.MissingServletRequestParameterException이 발생한다.
 
 ```java
@@ -236,7 +243,7 @@ name 파라미터는 required가 true이므로, 만일 name 파라미터가 null
 public class HelloController {
  
     @RequestMapping("/hello.do")
-    public String hello(@RequestParam("name") String name, //required 조건이 없으면 기본값은 true, 즉 필수 파라미터 이다. 파라미터 pageNo가 존재하지 않으면 Exception 발생.
+    public String hello(@RequestParam("name") String name, //required 조건이 없으면 기본값은 true, 즉 필수 파라미터 이다. 파라미터 name이 존재하지 않으면 Exception 발생.
 			@RequestParam(value="pageNo", required=false) String pageNo){ //파라미터 pageNo가 존재하지 않으면 String pageNo는 null.
 	...		
     }
@@ -244,6 +251,7 @@ public class HelloController {
 ```
 
 위에서 작성한 LoginController의 login 메소드를 보면 파라미터 아이디와 패스워드를 Http Request 객체에서 getParameter 메소드를 이용해 구하는데,
+
 @RequestParam을 사용하면 아래와 같이 변경할수 있다.
 
 ```java
@@ -415,7 +423,9 @@ public String onSubmit(@RequestPart("meta-data") MetaData metadata,
 
 **@ExceptionHandler with @ControllerAdvice**
 
-기존에는 예외발생시, AnnotationMethodHandlerExceptionResolver가 Controller내부에서 @ExceptionHandler가 붙은 메소드를 찾아 예외처리를 해준다. Controller 내부에서만 @ExceptionHandler가 동작하기 때문에 각 Controller별로 @ExceptionHandler 메소드를 만들어야했다.
+기존에는 예외발생시, AnnotationMethodHandlerExceptionResolver가 Controller내부에서 @ExceptionHandler가 붙은 메소드를 찾아 예외처리를 해준다.
+
+Controller 내부에서만 @ExceptionHandler가 동작하기 때문에 각 Controller별로 @ExceptionHandler 메소드를 만들어야했다.
 
 ```java
 @Controller
@@ -434,7 +444,10 @@ public class HelloController {
 }
 ```
 Spring 3.2부터는 @ControllerAdvice를 이용하여 @ExceptionHandler를 전역으로 쓸 수 있다.
-@ControllerAdvice + @ExceptionHandler를 통해 각각의 Exception에 대하여 전역적인 후처리 관리가 가능해진다. 즉, Controller마다 @ExceptionHandler를 만들지 않더라도 @ControllerAdvice가 붙은 Class안에서 여러 Exception에 대한 처리가 가능한 @ExceptionHandler 메소드를 만들면 로지컬한 Exception별 후처리가 가능해지는 것이다.
+
+@ControllerAdvice + @ExceptionHandler를 통해 각각의 Exception에 대하여 전역적인 후처리 관리가 가능해진다.
+
+즉, Controller마다 @ExceptionHandler를 만들지 않더라도 @ControllerAdvice가 붙은 Class안에서 여러 Exception에 대한 처리가 가능한 @ExceptionHandler 메소드를 만들면 로지컬한 Exception별 후처리가 가능해지는 것이다.
 
 @ControllerAdvice와 함께 @ExceptionHandler를 쓰는 방법은 다음과 같다.
 다음과 같이 쓰는 경우, Controller에서 발생하는 해당 Exception들이 예외처리가 된다.
@@ -512,6 +525,7 @@ public class GlobalControllerAdvice {
 ### 유연해진 메소드 시그니쳐
 
 @RequestMapping을 적용한 Controller의 메소드는 아래와 같은 메소드 파라미터와 리턴 타입을 사용할수 있다.
+
 특정 클래스를 확장하거나 인터페이스를 구현해야 하는 제약이 없기 때문에 계층형 Controller 비해 유연한 메소드 시그니쳐를 갖는다.
 
 #### @Controller의 메소드 파라미터
@@ -549,6 +563,7 @@ public String updateEmployee(...,BindingResult bindingResult,
 **이 외의 타입을 메소드 파라미터로 사용하려면?**
 
 스프링 프레임워크는 위에서 언급한 타입이 아닌 custom arguments도 메소드 파라미터로 사용할 수 있도록 org.springframework.web.bind.support.WebArgumentResolver라는 인터페이스를 제공한다.
+
 WebArgumentResolver를 사용한 예제는 [이곳](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ptl:controller:commandmapargumentresolver)을 참고
 
 
@@ -556,8 +571,8 @@ WebArgumentResolver를 사용한 예제는 [이곳](https://www.egovframe.go.kr/
 
 사용가능한 메소드 리턴 타입은 아래와 같다.
 
-**ModelAndView**
-- 커맨드 객체와 @ModelAttribute이 적용된 메소드의 리턴 데이터가 담긴 Model 객체와 View 정보가 담겨 있다.
+- ModelAndView
+  - 커맨드 객체와 @ModelAttribute이 적용된 메소드의 리턴 데이터가 담긴 Model 객체와 View 정보가 담겨 있다.
 
 ```java
         @RequestMapping(value = "/updateDepartment.do", method = RequestMethod.GET)
@@ -579,10 +594,10 @@ WebArgumentResolver를 사용한 예제는 [이곳](https://www.egovframe.go.kr/
 	}
 ```
 
-**Model(또는 ModelMap)**
-- 커맨드 객체와 @ModelAttribute이 적용된 메소드의 리턴 데이터가 Model 객체에 담겨 있다.
-- View 이름은 RequestToViewNameTranslator가 URL을 이용하여 결정한다.
-- 인터페이스 RequestToViewNameTranslator의 구현클래스인 DefaultRequestToViewNameTranslator가 View 이름을 결정하는 방식은 아래와 같다.
+- Model (또는 ModelMap)
+  - 커맨드 객체와 @ModelAttribute이 적용된 메소드의 리턴 데이터가 Model 객체에 담겨 있다.
+  - View 이름은 RequestToViewNameTranslator가 URL을 이용하여 결정한다.
+  - 인터페이스 RequestToViewNameTranslator의 구현클래스인 DefaultRequestToViewNameTranslator가 View 이름을 결정하는 방식은 아래와 같다.
 
 ```
 http://localhost:8080/gamecast/display.html -> display
@@ -663,12 +678,15 @@ public String formBackingObject(@RequestParam("deptid") String deptid) {
 ### POJO-Style의 Controller
 
 @MVC는 Controller 개발시에 특정 인터페이스를 구현 하거나 특정 클래스를 상속해야할 필요가 없다.
+
 Controller의 메소드에서 Servlet API를 반드시 참조하지 않아도 되며, 훨씬 유연해진 메소드 시그니쳐로 개발이 가능하다.
+
 여기서는 SimpleFormController의 폼 처리 액션을 @Controller로 구현함으로써, POJO-Style에 가까워졌지만 기존의 계층형 Controller에서 제공하던 기능들을 여전히 구현할 수 있음을 보이고자 한다.
 
 #### FormController by SimpleFormController -> @Controller
 
 앞서 SimpleFormController을 설명하면서 예제로 작성된 com.easycompany.controller.hierarchy.UpdateDepartmentController를 @ModelAttribute와 @RequestMapping을 이용해서 같은 기능을 @Controller로 작성해 보겠다.
+
 JSP 소스는 동일한 것을 사용한다. [이곳](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ptl:controller#simpleformcontroller)의 예제 화면 이미지 및 JSP 코드를 참고.
 기존의 UpdateDepartmentController를 보면 3가지 메소드로 이루어졌다.
 
@@ -730,7 +748,9 @@ public class UpdateDepartmentController extends SimpleFormController{
 ```
 
 @Controller로 작성된 com.easycompany.controller.annotation.UpdateDepartmentController은 3개의 메소드로 이루어져 있다.
+
 계층형 Controller인 기존의 UpdateDepartmentController와는 달리 각 메소드는 Override 할 필요없기 때문에 메소드 이름은 자유롭게 지을 수 있다.
+
 쉬운 비교를 위해 SimpleFormController과 동일한 메소드 이름을 선택했다.
 
 - referenceData
@@ -790,6 +810,6 @@ public class UpdateDepartmentController {
 
 ## 참고자료
 
-- The Spring Framework - Reference Documentation 2.5.6
-- Spring Framework API Documentation 2.5.6
+- [The Spring Framework - Reference Documentation 2.5.6](https://docs.spring.io/spring-framework/docs/2.5.x/reference/index.html)
+- [Spring Framework API Documentation 2.5.6](https://docs.spring.io/spring-framework/docs/2.5.6/javadoc-api/)
 - [SpringSource Team Blog,Annotated Web MVC Controllers in Spring 2.5, Juergen Hoeller](http://blog.springsource.com/2007/11/14/annotated-web-mvc-controllers-in-spring-25/)
