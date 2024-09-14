@@ -57,12 +57,12 @@
 
  Spring 프레임워크 기반 어플리케이션에서 iBATIS 를 연동하여 사용하고자 하는 경우 Spring의 SqlMapClientFactoryBean 에 대한 설정이 필요하며 여기서는 실제 대상 sql-map-config 설정 파일과 iBATIS 에 제공될 dataSource 에 대한 설정을 지시한다.
 
-```bash
-	<!-- SqlMap setup for iBATIS Database Layer -->
-	<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
-		<property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
+```xml
+<!-- SqlMap setup for iBATIS Database Layer -->
+<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
+    <property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
+    <property name="dataSource" ref="dataSource"/>
+</bean>
 ```
 
 - Spring 연동 기능을 사용하면 iBATIS 의 SqlMapClient(a thread safe client for SQL Maps) 를 별도의 iBATIS API 없이도 얻을 수 있게 된다.
