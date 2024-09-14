@@ -3,10 +3,10 @@
 ## 개요
 
 Excel 파일 포맷을 다룰 수 있는 자바 라이브러리를 제공하여, 사용자들이 데이터를 Excel 파일 포맷으로 다운받거나, 대량의 Excel 데이터를 시스템에 올릴 수 있도록 지원하기 위한 서비스이다.
-Excel 서비스는 **Apache POI** 오픈소스를 사용하여 구현하였으며 **주요 Excel접근** 기능 외에 **Excel 다운로드**, **Excel 파일 업로드** 등의 기능이 있다.
-Excel 서비스 3.0버전에서는 기존 버전을 refactoring 하였다.
-기존의 메소드(xls, xlsx)을 지원하는 메소드들의 이름을 하나로 하여 Parameter 방식으로 구분자를 추가하였다.
-또한, 기존에 iBatis 뿐만 아니라 MyBatis도 지원하는 클래스를 추가하였다.
+Excel 서비스는 **Apache POI** 오픈소스를 사용하여 구현하였으며 **주요 Excel 접근** 기능 외에 **Excel 다운로드**, **Excel 파일 업로드** 등의 기능이 있다.
+Excel 서비스 3.0 버전에서는 기존 버전을 refactoring 하였다.
+기존의 메소드(xls, xlsx)를 지원하는 메소드들의 이름을 하나로 하여 Parameter 방식으로 구분자를 추가하였다.
+또한, 기존의 iBatis 뿐만 아니라 MyBatis도 지원하는 클래스를 추가하였다.
 
 ## 설명
 
@@ -15,6 +15,7 @@ Excel 서비스 3.0버전에서는 기존 버전을 refactoring 하였다.
 #### Excel 파일 생성
 
 엑셀 파일을 생성하여 지정된 위치에 저장하는 기능을 제공한다.
+
 Workbook 인스턴스를 생성하여 Excel sheet를 추가 생성할 수 있다.
 
 엑셀 버전에 따라 엑셀 97~2003버전(xls)인 HSSFWorkbook, 엑셀 2007이상(xlsx)의 XSSFWorkbook 클래스를 사용할 수 있으며, 각 클래스별 사용 법(method)는 동일하다.
@@ -41,6 +42,7 @@ wb.createSheet();
 #### Excel 파일 수정
 
 엑셀 파일 내 셀의 내용을 변경하고 저장한다.
+
 저장된 엑셀파일을 로드할 수 있으며 지정한 sheet에 row와 cell 객체를 생성하여 텍스트를 저장하고 수정할 수 있다.
 
 ##### Sample Source
@@ -88,6 +90,7 @@ out.close();
 #### Excel 문서 속성 수정
 
 엑셀 파일 문서의 속성(Header, Footer)을 수정한다.
+
 Header 및 Footer 클래스로 엑셀문서의 Header와 Footer의 값과 속성을 설정할 수 있다.
 
 ##### Sample Source
@@ -135,6 +138,7 @@ out.close();
 #### 셀 내용 추출
 
 엑셀 파일을 읽어 특정 셀의 값을 얻어온다.
+
 HSSFCell 클래스의 getRichStringCellValue, getNumericCellValue, getStringCellValue 등 다양한 type의 Cell 내용을 추출할 수 있다.
 
 ##### Sample Source
@@ -158,6 +162,7 @@ for (int i = 0; i < 100; i++) {
 #### 셀 속성 추출
 
 특정 셀의 속성(폰트, 사이즈 등)을 수정한다.
+
 HSSFFont, HSSFCellStyle 등의 클래스를 이용하여 셀의 폰트, 사이즈 등의 셀 속성을 수정할 수 있다.
 
 ##### Sample Source
