@@ -3,7 +3,7 @@
 ## 개요
 
 표준프레임워크 3.8 부터 ARIA 블록암호 알고리즘 기반 암/복호화 설정을 간소화 할 수 있는 방법을 제공한다.
-내부적으로 필요한 설정을 가지고 있고, XML Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.
+내부적으로 필요한 설정을 가지고 있고, <acronym title="Extensible Markup Language">XML</acronym> Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.
 또한 globals.properties 설정 파일의 중요 정보 Url, UserName, Password 항목을 암/복호화 처리 할 수 있도록 제공한다.
 그외에 정보는 properties 파일에 암호화 데이터 설정후 #{egovEnvCryptoService.decrypt('…')} 복호화 기능을 제공한다.
 
