@@ -76,8 +76,8 @@ Jasypt는 외부로 부터 공격받을 수 있는 데이타베이스 암호나 
 
 ##### Jasypt's Standard[Byte|String]Digester를 사용한 Digest 생성 절차
 
-1. 명시된 salt size는 생성된다.(see org.jasypt.salt.SaltGenerator). size가 0일 경우는 salt는 사용되지 않는다.
-   보다 높은 보안을 위해서는 salt는 기본으로 random으로 생성(like org.jasypt.salt.RandomSaltGenerator)한다.
+1. 명시된 salt size는 생성된다([org.jasypt.salt.SaltGenerator](http://www.jasypt.org/api/jasypt/1.8/org/jasypt/salt/SaltGenerator.html) 참고). size가 0일 경우는 salt는 사용되지 않는다.
+   보다 높은 보안을 위해서는 salt는 기본으로 random으로 생성(like [org.jasypt.salt.RandomSaltGenerator](http://www.jasypt.org/api/jasypt/1.8/org/jasypt/salt/RandomSaltGenerator.html))한다.
 2. salt bytes는 메시지 시작부분에 덧붙여진다.
 3. Hash function은 salt와 메시지 전체에 적용되고, function 결과들은 명시한 iterations 만큼 반복된다.
 4. 랜덤으로 salt를 생성하면 undigested salt는 hash 결과 시작부분에 덧붙여진다.
