@@ -1,12 +1,12 @@
-# Mail Service
+# Mail 서비스
 
 ## 개요
 
-**전자정부 프레임워크**에서는 이메일 발송을 쉽게 처리하기 위해 Jakarta Commons Email API를 사용하고 있는데 Commons Email은 내부적으로 Java Mail API와 JavaBeans Activation API 를 제공하여 오픈 소스로 채택하였다
+**전자정부 프레임워크**에서는 이메일 발송을 쉽게 처리하기 위해 Jakarta Commons Email <acronym title="Application Programming Interface">API</acronym>를 사용하고 있는데 Commons Email은 내부적으로 Java Mail API와 JavaBeans Activation API 를 제공하여 오픈 소스로 채택하였다
 
 Apache Commons-Email은 Java Mail API를 근간으로 좀더 심플하게 메일을 보내는 방안을 제시한다.
 
-Commons Email API는 메일 발송을 처리해주는 SimpleEmail, HtmlEmail과 같은 클래스를 제공하고 있으며, 이들 클래스를 사용하여 일반 텍스트메일, HTML 메일, 첨부 메일 등을 매우 간단(simple)하게 발송할 수 있다.
+Commons Email API는 메일 발송을 처리해주는 SimpleEmail, HtmlEmail과 같은 클래스를 제공하고 있으며, 이들 클래스를 사용하여 일반 텍스트메일, <acronym title="HyperText Markup Language">HTML</acronym> 메일, 첨부 메일 등을 매우 간단(simple)하게 발송할 수 있다.
 
 Email Sample Code는 다음과 같다.
 
@@ -138,7 +138,7 @@ public class EgovEmailAttachmentUrl {
 	}
 }
 ```
-파일 경로 정보를 setURL(java.net.URL) 으로 설정할 뿐 위의 첨부파일과 동일하다.
+파일 경로 정보를 setURL(java.net.<acronym title="Uniform Resource Locator">URL</acronym>) 으로 설정할 뿐 위의 첨부파일과 동일하다.
 
 ### 4. HTML 이메일 보내기
 
@@ -176,7 +176,7 @@ email.setHtmlMsg()를 사용하여 메일 내용을 입력할 때 캐릭터셋�
 
 ### 5.인증처리
 
-만약 SMTP 서버가 인증을 요구한다면 org.apache.commons.mail.Email 의 setAuthentication(java.lang.String username, java.lang.String password)를 통해 해결할 수 있다
+만약 <acronym title="Simple Mail Transfer Protocol">SMTP</acronym> 서버가 인증을 요구한다면 org.apache.commons.mail.Email 의 setAuthentication(java.lang.String username, java.lang.String password)를 통해 해결할 수 있다
 
 이 함수는 JavaMail API의 DefaultAuthenticator 클래스를 생성하여 사용한다.
 
