@@ -19,7 +19,7 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
  위 그림에서 보듯이, Spring IoC Container는 설정 정보(configuration metadata)를 필요로 한다. 이 설정 정보는 Spring IoC Container가 “객체를 생성하고, 객체간의 종속성을 이어줄 수 있도록” 필요한 정보를 제공한다.  
 설정 정보는 일반적으로 XML 형태로 작성된다. 설정 정보는 XML 형태가 아닌 Java Annotation을 이용하여 설정이 가능하다.  
-Annotation을 사용한 설정 방법은 [Annotation-based configuration](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:annotation-based_configuration)에서 설명하고 있다.  
+Annotation을 사용한 설정 방법은 [Annotation-based configuration](./ioc-container-annotation-based_configuration.md)에서 설명하고 있다.  
 
  아래 예제는 XML 형태의 설정 정보의 기본적인 모습이다.
 
@@ -94,14 +94,14 @@ BeanFactory factory = context;
 | --- | --- |
 | class | [Bean 객체화(Instantiation beans)](#bean-객체화instantiation-beans) |
 | name | [Bean 이름(Naming beans)](#bean-이름naming-beans) |
-| scope | [Bean scope](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:bean_scope) |
-| constructor arguments | [종속성 삽입(Injecting dependencies)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:dependencies#종속성_삽입_injecting_dependencies) |
-| properties | [종속성 삽입(Injecting dependencies)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:dependencies#종속성_삽입_injecting_dependencies) |
-| autowiring mode | [자동엮기(Autowiring collaborators)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:dependencies#자동엮기_autowiring_collaborators) |
-| dependency checking mode | [종속성 검사(Checking for dependencies)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:dependencies#종속성_검사_checking_for_dependencies) |
-| lazy-initialization mode | [늦은 객체화(Lazily-instantiated beans)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:dependencies#늦은_객체화_lazily-instantiated_beans) |
-| initialization method | [객체화 callbacks(Initialization callbacks)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:customizing_the_nature_of_a_bean#객체화_callbacks_initialization_callbacks) |
-| destruction method | [파괴 callbacks(Destruction callbacks)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:customizing_the_nature_of_a_bean#파괴_callbacks_destruction_callbacks) |
+| scope | [Bean scope](./ioc-container-bean_scope.md) |
+| constructor arguments | [종속성 삽입(Injecting dependencies)](./ioc-container-dependencies.md#종속성-삽입injecting-dependencies) |
+| properties | [종속성 삽입(Injecting dependencies)](./ioc-container-dependencies.md#종속성-삽입injecting-dependencies) |
+| autowiring mode | [자동엮기(Autowiring collaborators)](./ioc-container-dependencies.md#자동엮기autowiring-collaborators) |
+| dependency checking mode | [종속성 검사(Checking for dependencies)](./ioc-container-dependencies.md#종속성-검사checking-for-dependencies) |
+| lazy-initialization mode | [늦은 객체화(Lazily-instantiated beans)](./ioc-container-dependencies.md#늦은-객체화lazily-instantiated-beans) |
+| initialization method | [객체화 callbacks(Initialization callbacks)](./ioc-container-customizing_the_nature_of_a_bean.md#객체화-callbacksinitialization-callbacks) |
+| destruction method | [파괴 callbacks(Destruction callbacks)](./ioc-container-customizing_the_nature_of_a_bean.md#파괴-callbacksdestruction-callbacks) |
 
 #### Bean 이름(Naming beans)
 
