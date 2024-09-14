@@ -11,7 +11,7 @@
 
 ### JASYPT(Java simplified encryption)
 
-Jasypt는 오픈소스 Java library로 개발자는 암호화관련 깊은 지식이 없어도 암복화 프로그램을 개발할 수 있도록 지원한다. 여기서 설명하는 부분은 암복화 모듈로 사용한 API 중심으로 설명하겠다.
+Jasypt는 오픈소스 Java library로 개발자는 암호화관련 깊은 지식이 없어도 암복화 프로그램을 개발할 수 있도록 지원한다. 여기서 설명하는 부분은 암복화 모듈로 사용한 <acronym title="Application Programming Interface">API</acronym> 중심으로 설명하겠다.
 
 #### Encryption binaries
 
