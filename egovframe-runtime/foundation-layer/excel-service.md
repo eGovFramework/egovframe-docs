@@ -621,8 +621,8 @@ public class EgovExcelTestMapping extends EgovExcelMapping {
 ```
 
 - 엑셀과 VO의 mapping을 위한 mapping클래스
-- EgovExcelMapping 클래스를 상속받아서 mappingColumn 메소드를 오버라이드하여 구현
-- HSSFCell 클래스에서 엑셀 값을 추출하여 Query를 실행시키기 위한 VO와 mapping
+- **EgovExcelMapping** 클래스를 상속받아서 **mappingColumn** 메소드를 오버라이드하여 구현
+- **HSSFCell** 클래스에서 엑셀 값을 추출하여 Query를 실행시키기 위한 VO와 mapping
 
 ##### Query
 
