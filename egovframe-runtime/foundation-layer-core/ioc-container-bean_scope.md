@@ -51,7 +51,7 @@ Spring은 prototype bean의 전체 생명주기를 관리하지 않는데 Contai
 
 ### Prototype bean에 종속적인 singleton bean(Singleton beans with prototype-bean dependencies)
 
- 이 문제는 [메소드 삽입(Method Injection)](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:ioc_container:dependencies#메소드_삽입_method_injection)에서 다루고 있다.
+ 이 문제는 [메소드 삽입(Method Injection)](./ioc-container-dependencies.md#메소드-삽입method-injection)에서 다루고 있다.
 
 ### 기타 scopes(The other scopes)
 
@@ -73,7 +73,7 @@ Spring은 prototype bean의 전체 생명주기를 관리하지 않는데 Contai
 </web-app>
 ```
 
- 만약 다른 오래된 web Container(Servlet 2.3)를 사용한다면, 제공되는 javax.servlet.Filter 구현체를 사용해야 한다.(filter mapping은 web 어플리케이션 설정에 따라 달라질 수 있으므로, 적절히 수정해야 한다.
+ 만약 다른 오래된 web Container(Servlet 2.3)를 사용한다면, 제공되는 javax.servlet.Filter 구현체를 사용해야 한다.(filter mapping은 web 어플리케이션 설정에 따라 달라질 수 있으므로, 적절히 수정해야 한다.)
 
  ```xml
 <web-app>
