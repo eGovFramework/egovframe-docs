@@ -23,7 +23,7 @@
 ## Crypto Config 설정
 
 Security에 대한 기본 설정 정보를 제공한다.
-**algorithmKey**, **algorithmKeyHash** 값을 하단 **[Crypto algorithmKey, algorithmKeyHash 생성]**에 의해 생성된 값을 입력한다.
+**algorithmKey**, **algorithmKeyHash** 값을 하단 <b>[Crypto algorithmKey, algorithmKeyHash 생성]에 의해 생성된 값을 입력</b>한다.
 algorithmKey, algorithmKeyHash 키의 노출을 피하고 싶다면 설정 파일에서 해당 항목 삭제 후
 하단 [WAS VM arguments 환경 변수 등록(옵션)]을 참고하여 진행한다.
 
