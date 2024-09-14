@@ -42,8 +42,8 @@ Spring에서 multipart를 사용한 파일 업로드에 대해서는 [Spring's m
 
 File Upload / Download 에 대한 설명은 아래 상세 페이지를 참고하라.
 
-- [File Upload](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:file_upload)
-- [File Download](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:file_download)
+- [File Upload](./file-upload-service.md)
+- [File Download](./file-down-service.md)
 - [multipart multi file upload 지원 문제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:file_upload_%EB%AC%B8%EC%A0%9C)
 
 ### 예제 Sample 실행
