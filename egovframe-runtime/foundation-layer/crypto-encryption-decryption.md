@@ -439,4 +439,4 @@ pom.xml에 아래 내용을 추가한다.
 
 ## 참고자료
 
-[ARIA 블록암호 알고리즘](http://www.kecs.go.kr/pw_certified/aria_open.jsp)
+[ARIA 블록암호 알고리즘](https://seed.kisa.or.kr/kisa/algorithm/EgovAriaInfo.do)
