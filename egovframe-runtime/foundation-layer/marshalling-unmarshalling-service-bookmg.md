@@ -4,7 +4,7 @@
 
 Marshalling/Unmarshallig 서비스 예제입니다. 
 
-**Writer.java**
+**BookMg.java**
 
 ```java
 public class BookMg 
