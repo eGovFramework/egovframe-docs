@@ -72,13 +72,13 @@
 
  스프링은 프록시 기반의 런타임 Weaving 방식을 지원한다. 스프링은 AOP 구현을 위해 다음 세가지 방식을 제공한다. 이 중 @AspectJ 어노테이션과 XML 스키마를 이용한 AOP 방식을 상세히 살펴본다.
 
-- [@AspectJ 어노테이션을 이용한 AOP 구현](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:aop:aspectj)
-- [XML Schema를 이용한 AOP 구현](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:aop:xmlschema)
+- [@AspectJ 어노테이션을 이용한 AOP 구현](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop-aspectj.md)
+- [XML Schema를 이용한 AOP 구현](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop-xmlschema.md)
 - 스프링 API를 이용한 AOP 구현
 
 ### 실행환경 AOP 가이드라인
 
- \* [실행환경 AOP 가이드라인](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:aop:egovrteaopguide)
+ \* [실행환경 AOP 가이드라인](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop-egovrteaopguide.md)
 
 ## 참고자료
 
