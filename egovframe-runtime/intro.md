@@ -32,12 +32,12 @@
   * [주요 개념 - Inversion of Control]()  
     Spring 4.0부터 추가된 Generic에 대하여 설명한다.
   * [Generic]()
-* [AOP]()
-  * [@AspectJ 어노테이션을 이용한 AOP 구현]()
-  * [XML Schema를 이용한 AOP 구현]()
-  * [실행환경 AOP 가이드라인]()
-* [Resource]()
-* [Spring Expression Language(SpEL)]()
+* [AOP](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop.md)
+  * [@AspectJ 어노테이션을 이용한 AOP 구현](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop-aspectj.md)
+  * [XML Schema를 이용한 AOP 구현](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop-xmlschema.md)
+  * [실행환경 AOP 가이드라인](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/aop-egovrteaopguide.md)
+* [Resource](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/resource.md)
+* [Spring Expression Language(SpEL)](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/foundation-layer-core/spel.md)
 
 ### 공통기반
 * [Server Security]()
