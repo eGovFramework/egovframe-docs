@@ -19,7 +19,7 @@ Cache를 설정하여 CacheManager를 통해 Cache에 접근하는 방법에 대
 
 #### EhCache
 
-- [EhCache](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:ehcache) 참조
+- [EhCache](./cache-ehcache.md) 참조
 
 Spring에서는 EhCache를 지원하는 CacheManager로써 EhCacheCacheManager를 제공한다. <EhCache 설정>
 
