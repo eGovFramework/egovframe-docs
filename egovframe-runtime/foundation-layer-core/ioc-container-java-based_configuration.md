@@ -6,7 +6,7 @@
 
 ## 설명
 
-### 기본 개념 : @Bean, @Configuration
+### 기본 개념 : @Bean, @Configurationl
 
  스프링의 자바 기반 설정에서는 @Configuration 어노테이션 클래스와 @Bean 어노테이션 메소드를 지원한다.  
 @Bean 어노테이션은 Spring IoC 컨테이너가 관리할 새로운 객체를 인스턴스화하고, 초기화하는데 사용되며, Spring의 XML 설정에서의 &lt;bean/&gt;과 같은 역할을 한다.  
@@ -196,7 +196,7 @@ public class AppConfig {
 
 #### @Scope 어노테이션 사용
 
- @Bean 어노테이션으로 정의된 Bean이 특정 범위를 갖도록 지정할 수 있으며, 선언된 Bean의 범위는 [Bean scope](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:ioc_container:bean_scope)에 지정된 표준 범위를 사용할 수 있다.  
+ @Bean 어노테이션으로 정의된 Bean이 특정 범위를 갖도록 지정할 수 있으며, 선언된 Bean의 범위는 [Bean scope](./ioc-container-bean_scope.md)에 지정된 표준 범위를 사용할 수 있다.
 기본 범위는 싱글톤이지만 다음 예제와 같이 @Scope 어노테이션으로 이를 재정의할 수 있다.
 
  ```java
