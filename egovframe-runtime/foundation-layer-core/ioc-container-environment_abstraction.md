@@ -3,7 +3,7 @@
 ## 개요
 
  Environment Abstraction은 환경에 대한 추상화로 Spring에서 제공하는 Environment 인터페이스를 이용한다.  
-Environment 인터페이스는 애플리케이션 환경의 두 가지 주요 측면을 모델링하는 컨테이너에 통합된 추상화로, profiles 나 properties처럼 프로그램의 환경 변수나 Applcation의 프로필을 관리할 때 사용하게 된다.
+Environment 인터페이스는 애플리케이션 환경의 두 가지 주요 측면을 모델링하는 컨테이너에 통합된 추상화로, profiles 나 properties처럼 프로그램의 환경 변수나 Application의 프로필을 관리할 때 사용하게 된다.
 
  Profile은 지정된 프로파일이 활성화된 경우에만 컨테이너에 등록되는 명명된 빈 정의의 논리적 그룹이다.  
 Bean은 XML 또는 주석으로 정의된 프로필에 할당될 수 있다. 프로필과 관련된 환경 개체의 역할은 현재 활성화된 Profile(있는 경우)과 기본적으로 활성화되어야 하는 Profile(있는 경우)을 결정하는 것이다.
