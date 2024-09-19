@@ -1,6 +1,6 @@
 # Inline Parameters
 
- 이전에 살펴본 prepared statement 에 대한 바인드 변수 매핑 처리를 위한 parameterMap 요소(SQL 문 외부에 정의한 입력 객체 property name 및 javaType, jdbcType 을 비롯한 옵션을 설정매핑 요소) 와 동일한 기능을 처리하는 간편한 방법을 Inline Parameters 방법으로 제공한다. 보통 parameterClass 로 명시된 입력 객체에 대해 바인드 변수 영역을 간단한 #property# 노테이션으로 나타내는 Inline Parameter 방법은 기존 parameterMap 에서의 ? 와 이의 순서를 맞춘 외부 parameterMap 선언으로 처리하는 방법에 비해 많이 사용되고 일반적으로 추천하는 방법이다. 이는 Dynamic 요소와 함께 사용될 수 있고 별도의 외부 매핑 정의없이 바인드 변수 처리가 필요한 위치에 해당 property 를 직접 사용 가능하며, 필요한 경우 jdbcType 이나 nullValue 를 간단한 추가 노테이션(ex. #empName:VARCHAR:blank# ) 와 같이 지정할 수 있고, 상세한 옵션이 필요한 경우에는 (ex. #comm,javaType=decimal,jdbcType=NUMERIC,nullValue=-99999# ) 와 같이 ,(comma) 로 구분된 필요한 속성=값 을 상세하게 기술할 수도 있다.
+ 이전에 살펴본 prepared statement 에 대한 바인드 변수 매핑 처리를 위한 parameterMap 요소(SQL 문 외부에 정의한 입력 객체 property name 및 javaType, jdbcType 을 비롯한 옵션을 설정 매핑 요소) 와 동일한 기능을 처리하는 간편한 방법을 Inline Parameters 방법으로 제공한다. 보통 parameterClass 로 명시된 입력 객체에 대해 바인드 변수 영역을 간단한 #property# 노테이션으로 나타내는 Inline Parameter 방법은 기존 parameterMap 에서의 ? 와 이의 순서를 맞춘 외부 parameterMap 선언으로 처리하는 방법에 비해 많이 사용되고 일반적으로 추천하는 방법이다. 이는 Dynamic 요소와 함께 사용될 수 있고 별도의 외부 매핑 정의 없이 바인드 변수 처리가 필요한 위치에 해당 property 를 직접 사용 가능하며, 필요한 경우 jdbcType 이나 nullValue 를 간단한 추가 노테이션(ex. #empName:VARCHAR:blank# ) 와 같이 지정할 수 있고, 상세한 옵션이 필요한 경우에는 (ex. #comm,javaType=decimal,jdbcType=NUMERIC,nullValue=-99999# ) 와 같이 ,(comma) 로 구분된 필요한 속성=값 을 상세하게 기술할 수도 있다.
 
 ## 기본 Inline Parameters 사용 방법
 
@@ -35,11 +35,11 @@
 	</insert>
 ```
 
- 위 sql 매핑 파일에서 별도의 parameterMap 외부 정의없이 #property:jdbcType# 형태로 직접 바인드 변수 영역에 나타내고 있다. #property# 만 나타내어도 iBATIS 에서 자동으로 타입처리는 잘된다. 위에서는 해당 쿼리에 parameterClass=“empVO” 에 대한 입력 객체 설정이 나타나 있지 않음에도 iBATIS 에서 런타임에 인자로 주어지는 입력 객체를 자동으로 파악하여 파라메터 처리를 하고 있음을 확인할 수 있다. 그러나 parameterClass 의 명시는 성능 상 반드시 추천하는 바이다.
+ 위 sql 매핑 파일에서 별도의 parameterMap 외부 정의없이 #property:jdbcType# 형태로 직접 바인드 변수 영역에 나타내고 있다. #property# 만 나타내도 iBATIS 에서 자동으로 타입처리는 잘된다. 위에서는 해당 쿼리에 parameterClass=“empVO” 에 대한 입력 객체 설정이 나타나 있지 않음에도 iBATIS 에서 런타임에 인자로 주어지는 입력 객체를 자동으로 파악하여 파라메터 처리를 하고 있음을 확인할 수 있다. 그러나 parameterClass 의 명시는 성능 상 반드시 추천하는 바이다.
 
 - #property#
 - #property:jdbcType#
-- #property:jdbcType:nullValue# 형태까지 : 를 구분자로 함께 나타낼 수 있으며 nullValue 대체값은 jdbcType 명시가 반드시 필요하다.
+- #property:jdbcType:nullValue# 형태까지 : 를 구분자로 함께 나타낼 수 있으며 nullValue 대체 값은 jdbcType 명시가 반드시 필요하다.
 
  이 외에도 속성=값 형태의 옵션 설정을 , 를 구분자로 아래와 같이 나타낼 수 있다.
 
@@ -142,4 +142,4 @@
 ..
 ```
 
- 위에서 Inline Parameters 을 이용한 파라메터 객체 바인딩을 처리하는 insertEmptUsingInLineParam 쿼리문에 대해 입력객체를 세팅 후 입력/조회 처리하고 있는 테스트 케이스이다. 실제로 위 어플리케이션 영역은 parameterMap 사용 시와 차이가 없음을 알 수 있다. 위의 testInLineParameterInsertWithNullValue 테스트 메서드에서는 Inline Parameters 에 nullValue 속성으로 지정한 특정한 값을 세팅 하므로써 DB 에 null 로 입력이 된 결과를 조회하여 assertNull 로 확인하고 있다. 위에서 empty String 의 nullValue 설정은 inline parameter 노테이션의 한계로 제대로 처리되지 않음을 확인하였으므로 참고하기 바란다.
+ 위에서 Inline Parameters 을 이용한 파라메터 객체 바인딩을 처리하는 insertEmptUsingInLineParam 쿼리문에 대해 입력객체를 세팅 후 입력/조회 처리하고 있는 테스트 케이스이다. 실제로 위 어플리케이션 영역은 parameterMap 사용 시와 차이가 없음을 알 수 있다. 위의 testInLineParameterInsertWithNullValue 테스트 메서드에서는 Inline Parameters 에 nullValue 속성으로 지정한 특정한 값을 세팅 함으로써 DB 에 null 로 입력이 된 결과를 조회하여 assertNull 로 확인하고 있다. 위에서 empty String 의 nullValue 설정은 inline parameter 노테이션의 한계로 제대로 처리되지 않음을 확인하였으므로 참고하기 바란다.
