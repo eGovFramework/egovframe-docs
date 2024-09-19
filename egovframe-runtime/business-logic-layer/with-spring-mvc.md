@@ -102,7 +102,7 @@ FlowHandler를 구현시, AbstractFlowHandler를 상속하면 된다. 모든 연
 구현하지 않으면 기본 구현 내용(AbstractFlowHandler 내에 구현된)이 적용된다.
 특히 다음과 같은 경우에는 구현을 생각해 볼 수 있다.
 
-- getFlowId(HttpServletRequest) 재정의: HTTP 요처에서 직접적으로 Flow id를 받을 수 없을 때. 일반적으로는 요청의 URI에서 경로 정보를 얻게 됨. 예를 들어, [http://localhost/app/hotels/booking?hotelId=1](http://localhost/app/hotels/booking?hotelId=1)는 hotels/booking이란 Flow id로 매핑 됨
+- getFlowId(HttpServletRequest) 재정의: HTTP 요처에서 직접적으로 Flow id를 받을 수 없을 때. 일반적으로는 요청의 URI에서 경로 정보를 얻게 됨. 예를 들어, http://localhost/app/hotels/booking?hotelId=1 는 hotels/booking이란 Flow id로 매핑 됨
 - createExecutionInputMap(HttpServletRequest) 재정의: HttpServletRequest에서 Flow 입력 파라미터를 세부적으로 직접 추출해야 하는 경우. 기본적으로는 모든 요청 파라미터가 Flow 입력 파라미터로 넘겨짐.
 - handleExecutionOutcome 재정의: 직접 Flow 실행 결과를 제어할 필요가 있을 경우. 기본 행동은 Flow의 새로운 실행을 재시작하려고 마지막 Flow의 URL로 redirect 보냄
 - handleExeception 재정의: 제어되지 못한 Flow 실행을 세심하게 조정할 필요가 있는 경우. 기본적으로는 제어하지 않은 Exception 은 Spring MVC ExceptionResolver 로 다시 보내진다.
@@ -167,7 +167,7 @@ Web Flow 2는 따로 지정하지 않는다면 Flow 파일이 있는 디렉터�
 ```
 
 MvcViewFactoryCreator는 당신이 Spring MVC view 시스템(여기선 “myExistingViewResolverToUseForFlows”)을 Spring Web Flow 내에서 사용할 수 있도록 해준다.
-Booking Hotels 샘플에서는 아래와 같이 설정되어 있다.(tilesViewResolver 를 이용할 수 있도록 되어 있다.
+Booking Hotels 샘플에서는 아래와 같이 설정되어 있다(tilesViewResolver 를 이용할 수 있도록 되어 있다).
 
 ```xml
 <bean id="mvcViewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator"> 
@@ -185,7 +185,7 @@ flow가 view-state에 들어가서 잠시 멈추게 되면, 사용자를 해당 
 
 다음은 proceed와 cancle 이벤트를 발생시키는 같은 폼 내의 두 개 버튼을 보여준다.
 
-```
+```xml
 <input type="submit" name="_eventId_proceed" value="Proceed" />
 <input type="submit" name="_eventId_cancel" value="Cancel" />
 ```
@@ -197,7 +197,7 @@ _eventId_proceed는 proceed가 된다. 그러기 때문에 동일한 폼에서 �
 
 form이 submit될 때 proceed 이벤트가 발생하려면 다음처럼 하자.
 
-```
+```xml
 <input type="submit" value="Proceed" />
 <input type="hidden" name="_eventId" value="proceed" />
 ```
@@ -207,7 +207,7 @@ form이 submit될 때 proceed 이벤트가 발생하려면 다음처럼 하자.
 
 #### HTML link 사용해서 이벤트 보내기
 
-```
+```html
 <a href="${flowExecutionUrl}&_eventId=cancel">Cancel</a>
 ```
 
