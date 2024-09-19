@@ -10,7 +10,11 @@
 
  Spring 어플리케이션 컨텍스트에서 빈으로 정의된 일반 Java 개체는 관점(Aspect)으로 정의될 수 있다. 관점(Aspect)은 &lt;aop:aspect&gt; 요소를 사용하여 정의한다.
 
+
 ```xml
+
+
+
 <bean id="adviceUsingXML" class="org.egovframe.rte.fdl.aop.sample.AdviceUsingXML" />
 <aop:config>
     <aop:aspect ref="adviceUsingXML">
@@ -25,7 +29,11 @@
 
  포인트컷은 결합점(Join points)을 지정하여 충고(Advice)가 언제 실행될지를 지정하는데 사용된다. Spring AOP는 Spring 빈에 대한 메소드 실행 결합점만을 지원하므로, Spring에서 포인트컷은 빈의 메소드 실행점을 지정하는 것으로 생각할 수 있다. 다음 예제는 egovframework.rte.fdl.aop.sample 패키지 하위의 Sample 명으로 끝나는 클래스의 모든 메소드 수행과 일치할 'targetMethod' 라는 이름의 pointcut을 정의한다. 포인트컷은 &lt;aop:config&gt; 요소 내에 정의한다. 포인트컷 표현식은 AspectJ 포인트컷 표현 언어와 동일하게 사용할 수 있다.
 
+
 ```xml
+
+ ```xml
+
 <aop:config>
     <aop:pointcut id="targetMethod" expression="execution(* org.egovframe.rte.fdl.aop.sample.*Sample.*(..))" />
 </aop:config>
@@ -39,13 +47,18 @@
 
  Before advice는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:before&gt; 요소를 사용하여 정의한다. 다음은 before 충고를 정의하는 XML의 예제이다. before 충고인 beforeTargetMethod() 메소드는 targetMethod()로 정의된 포인트컷 전에 수행된다.
 
+
 ```xml
+
+ ```xml
+
 <aop:aspect ref="adviceUsingXML">
     <aop:before pointcut-ref="targetMethod" method="beforeTargetMethod" />
 </aop:aspect>
 ```
 
  다음은 before 충고를 구현하고 있는 클래스이다. before 충고를 수행하는 beforeTargetXML()메소드는 해당 포인트컷을 가진 클래스명과 메소드명을 출력한다.
+
 
 ```java
 public class AdviceUsingXML {
@@ -58,6 +71,19 @@ public class AdviceUsingXML {
         [String](http://www.google.com/search?hl=en&q=allinurl%3Astring+java.sun.com&btnI=I%27m%20Feeling%20Lucky) methodName = thisJoinPoint.getSignature().getName();
  
         [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).out.println(className + "." + methodName + " executed.");
+
+ ```java
+ public class AdviceUsingXML {
+    ...
+    public void beforeTargetMethod(JoinPoint thisJoinPoint) {
+        System.out.println("AdviceUsingXML.beforeTargetMethod executed.");
+ 
+        Class clazz = thisJoinPoint.getTarget().getClass();
+        String className = thisJoinPoint.getTarget().getClass().getSimpleName();
+        String methodName = thisJoinPoint.getSignature().getName();
+ 
+        System.out.println(className + "." + methodName + " executed.");
+
     }
     ...
 }
@@ -67,7 +93,11 @@ public class AdviceUsingXML {
 
  After returing 충고는 정상적으로 메소드가 실행될 때 수행된다. After 충고는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:after-returning&gt; 요소를 사용하여 정의한다. 다음은 After returning 충고를 사용하는 예제이다. afterReturningTargetMethod() 충고는 targetMethod()로 정의된 포인트컷 후에 수행된다. targetMethod() 포인트컷의 실행 결과는 retVal 변수에 저장되어 전달된다.
 
+
 ```xml
+
+ ```xml
+
 <aop:aspect ref="adviceUsingXML">
     <aop:after-returning pointcut-ref="targetMethod" method="afterReturningTargetMethod" returning="retVal" />
 </aop:aspect>
@@ -75,11 +105,19 @@ public class AdviceUsingXML {
 
  다음은 After returning 충고를 구현하고 있는 클래스이다. After returning 충고를 수행하는 afterReturningTargetMethod()메소드는 해당 포인트컷의 반환값을 출력한다.
 
+
 ```java
 public class AdviceUsingXML {
     ...
     public void afterReturningTargetMethod(JoinPoint thisJoinPoint, [Object](http://www.google.com/search?hl=en&q=allinurl%3Aobject+java.sun.com&btnI=I%27m%20Feeling%20Lucky) retVal) {
         [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).out.println("AdviceUsingXML.afterReturningTargetMethod executed." + return value is [" + retVal + "]");
+
+ ```java
+ public class AdviceUsingXML {
+    ...
+    public void afterReturningTargetMethod(JoinPoint thisJoinPoint, Object retVal) {
+        System.out.println("AdviceUsingXML.afterReturningTargetMethod executed." + return value is [" + retVal + "]");
+
     }
     ...
 }
@@ -89,7 +127,11 @@ public class AdviceUsingXML {
 
  After throwing 충고는 메소드가 수행 중 예외사항을 반환하고 종료하는 경우 수행된다. After 충고는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:after-returning&gt; 요소를 사용하여 정의한다. 다음은 After throwing 충고를 사용하는 예제이다. afterThrowingTargetMethod() 충고는 targetMethod()로 정의된 포인트컷에서 예외가 발생한 후에 수행된다. targetMethod() 포인트컷에서 발생된 예외는 exception 변수에 저장되어 전달된다.
 
+
 ```xml
+
+ ```xml
+
 <aop:aspect ref="adviceUsingXML">
     <aop:after-throwing pointcut-ref="targetMethod" method="afterThrowingTargetMethod" throwing="exception" />
 </aop:aspect>
@@ -97,12 +139,21 @@ public class AdviceUsingXML {
 
  다음은 After throwing 충고를 구현하고 있는 클래스이다. After throwing 충고를 수행하는 afterReturningTargetMethod()메소드는 전달 받은 예외를 한번 더 감싸서 사용자가 쉽게 알아 볼 수 있도록 메시지를 설정하여 반환한다.
 
+
 ```java
 public class AdviceUsingXML {
     ...
     public void afterThrowingTargetMethod(JoinPoint thisJoinPoint, [Exception](http://www.google.com/search?hl=en&q=allinurl%3Aexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) exception) throws [Exception](http://www.google.com/search?hl=en&q=allinurl%3Aexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) {
         [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).out.println("AdviceUsingXML.afterThrowingTargetMethod executed.");
         [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).err.println("에러가 발생했습니다.", exception);
+
+ ```java
+ public class AdviceUsingXML {
+    ...
+    public void afterThrowingTargetMethod(JoinPoint thisJoinPoint, Exception exception) throws Exception {
+        System.out.println("AdviceUsingXML.afterThrowingTargetMethod executed.");
+        System.err.println("에러가 발생했습니다.", exception);
+
         throw new BizException("에러가 발생했습니다.", exception);
     }
     ...
@@ -113,7 +164,11 @@ public class AdviceUsingXML {
 
  After (finally) 충고는 메소드 수행 후 무조건 수행된다. After 충고는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:after&gt; 요소를 사용하여 정의한다. After 충고는 다음은 After (finally) 충고를 사용하는 예제이다. afterTargetMethod() 충고는 targetMethod()로 정의된 포인트컷의 정상 종료 및 예외 발생의 경우 모두에 대해 수행된다. 보통은 리소스 해제와 같은 작업을 수행한다.
 
+
 ```xml
+
+ ```xml
+
 <aop:aspect ref="adviceUsingXML">
     <aop:after pointcut-ref="targetMethod" method="afterTargetMethod" />
 </aop:aspect>
@@ -121,11 +176,19 @@ public class AdviceUsingXML {
 
  다음은 After (finally) 충고를 구현하고 있는 클래스이다. After (finally) 충고를 수행하는 afterTargetMethod()메소드는 after 충고가 수행됨을 표시하는 메시지를 출력한다.
 
+
 ```java
 public class AdviceUsingXML {
     ...
     public void afterTargetMethod(JoinPoint thisJoinPoint) {
         [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).out.println("AdviceUsingXML.afterTargetMethod executed.");
+=======
+ ```java
+ public class AdviceUsingXML {
+    ...
+    public void afterTargetMethod(JoinPoint thisJoinPoint) {
+        System.out.println("AdviceUsingXML.afterTargetMethod executed.");
+
     }
     ...
 }
@@ -135,13 +198,18 @@ public class AdviceUsingXML {
 
  Around 충고는 메소드 수행 전후에 수행된다. After 충고는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:around&gt; 요소를 사용하여 정의한다. Around 충고는 정상 종료와 예외 발생 경우를 모두 처리해야 하는 경우에 사용된다. 리소스 해제와 같은 작업이 해당된다.
 
+
 ```xml
+
+ ```xml
+
 <aop:aspect ref="adviceUsingXML">
     <aop:around pointcut-ref="targetMethod" method="aroundTargetMethod" />
 </aop:aspect>
 ```
 
  다음은 Around 충고를 구현하고 있는 클래스이다. aroundTargetMethod() 충고는 파라미터로 ProceedingJoinPoint을 전달하며 proceed() 메소드 호출을 통해 대상 포인트컷을 실행한다. 포인트컷 수행 결과값인 retVal을 Around 충고 내에서 변환하여 반환할 수 있음을 보여준다.
+
 
 ```java
 public class AdviceUsingXML {
@@ -158,6 +226,23 @@ public class AdviceUsingXML {
  
         long time2 = [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).currentTimeMillis();
         [System](http://www.google.com/search?hl=en&q=allinurl%3Asystem+java.sun.com&btnI=I%27m%20Feeling%20Lucky).out.println("AdviceUsingXML.aroundTargetMethod end. Time(" + (time2 - time1) + ")");
+
+ ```java
+ public class AdviceUsingXML {
+    ...
+    public Object aroundTargetMethod(ProceedingJoinPoint thisJoinPoint) throws Throwable {
+        System.out.println("AdviceUsingXML.aroundTargetMethod start.");
+        long time1 = System.currentTimeMillis();
+        Object retVal = thisJoinPoint.proceed();
+ 
+        System.out.println("ProceedingJoinPoint executed. return value is [" + retVal + "]");
+ 
+        retVal = retVal + "(modified)";
+        System.out.println("return value modified to [" + retVal + "]");
+ 
+        long time2 = System.currentTimeMillis();
+        System.out.println("AdviceUsingXML.aroundTargetMethod end. Time(" + (time2 - time1) + ")");
+
         return retVal;
     }
     ...
@@ -172,6 +257,7 @@ public class AdviceUsingXML {
 
  testAdvice() 함수는 대상 메소드가 정상 수행되는 사례를 보여준다. egovframework.rte.fdl.aop.sample 패키지에 속하는 AdviceSample 클래스의 someMethod() 메소드는 before, after returning, after finally, around 충고(Advice)가 적용된다.
 
+
 ```java
 public class AdviceTest{
     @Resource(name = "adviceSample")
@@ -183,6 +269,19 @@ public class AdviceTest{
         ..
         [String](http://www.google.com/search?hl=en&q=allinurl%3Astring+java.sun.com&btnI=I%27m%20Feeling%20Lucky) resultStr = adviceSample.someMethod(vo);
  
+
+ ```java
+ public class AdviceTest{
+    @Resource(name = "adviceSample")
+    AdviceSample adviceSample;
+ 
+    @Test
+    public void testAdvice() throws Exception {
+        SampleVO vo = new SampleVO();
+        ..
+        String resultStr = adviceSample.someMethod(vo);
+ 
+
         assertEquals("someMethod executed.(modified)", resultStr);
     }
 }
@@ -190,7 +289,11 @@ public class AdviceTest{
 
  테스트 코드를 수행한 결과 로그는 다음과 같다.
 
+
 ```bash
+
+ ```bash
+
 AdviceUsingXML.beforeTargetMethod executed.
 AdviceSample.someMethod executed.
 AdviceUsingXML.aroundTargetMethod start.
@@ -217,6 +320,7 @@ AdviceUsingXML.aroundTargetMethod end. Time(12)
 
  testAnnotationAspectWithException() 함수는 대상 메소드에 오류가 발생한 사례를 보여준다. egovframework.rte.fdl.aop.sample 패키지에 속하는 AnnotationAdviceSample 클래스의 someMethod() 메소드는 before, after throwing, after finally, around 충고(Advice)가 적용된다.
 
+
 ```java
 public class AdviceTest{
     @Resource(name = "adviceSample")
@@ -224,6 +328,15 @@ public class AdviceTest{
  
     @Test
     public void testAdviceWithException() throws [Exception](http://www.google.com/search?hl=en&q=allinurl%3Aexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) {
+
+ ```java
+ public class AdviceTest{
+    @Resource(name = "adviceSample")
+    AdviceSample adviceSample;
+ 
+    @Test
+    public void testAdviceWithException() throws Exception {
+
         SampleVO vo = new SampleVO();
         // exception 을 발생시키도록 플래그 설정
         vo.setForceException(true);
@@ -232,6 +345,7 @@ public class AdviceTest{
             // vo 의 forceException 플래그가 true 이면 - / by zero 상황을 강제로 처리함
             resultStr = adviceSample.someMethod(vo);
             fail("exception 을 강제로 발생시켜 이 라인이 수행될 수 없습니다.");
+
         } catch ([Exception](http://www.google.com/search?hl=en&q=allinurl%3Aexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) e) {
             ...
         }
@@ -242,6 +356,19 @@ public class AdviceTest{
  테스트 코드를 수행한 결과 로그는 다음과 같다.
 
 ```bash
+=======
+        } catch (Exception e) {
+            ...
+        }
+    }
+}
+```
+
+ 테스트 코드를 수행한 결과 로그는 다음과 같다.
+
+ ```bash
+
+
 AdviceUsingXML.beforeTargetMethod executed.
 AdviceSample.someMethod executed.
 AdviceUsingXML.aroundTargetMethod start.
