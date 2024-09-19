@@ -22,5 +22,5 @@ Integration 서비스는 연계 서비스 요청 Interface, 연계 서비스 제
 
 Integration 서비스는 연계에 필요한 정보를 정의한 Metadata와 연계 서비스를 사용 및 제공하기 위한 API로 구성된다.
 
-* [Metadata]()
-* [연계 서비스 API]()
+* [Metadata](./integration-service-metadata.md)
+* [연계 서비스 API](./integration-service-api.md)
