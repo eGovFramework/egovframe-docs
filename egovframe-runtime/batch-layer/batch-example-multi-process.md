@@ -38,8 +38,8 @@
 ##### JunitTest 구성
 
 병행처리멀티스레드 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.
-✔ JunitTest 클래스의 구조는 배치실행환경 예제 Junit Test 설명을 참고한다.
-✔ assertEquals(BatchStatus.COMPLETED, execution.getStatus()) : 배치수행결과가 COMPLETED 인지 확인한다.
+✔ JunitTest 클래스의 구조는 배치실행환경 예제 Junit Test 설명을 참고한다.  
+✔ assertEquals(BatchStatus.COMPLETED, execution.getStatus()) : 배치수행결과가 COMPLETED 인지 확인한다.  
 ✔ assertEquals(after - before, execution.getStepExecutions().iterator().next().getReadCount()) : BATCH_STAGING의 data와 stepexcution의 결과를 비교하여 staging의 step의 결과를 확인한다.
 
 ```java
@@ -77,13 +77,13 @@ public class EgovParallelJobFunctionalTests {
 
 **멀티쓰레드로 병행처리한 setp은 쓰레드마다의 처리 속도차이에 의해 순차적인 처리가 되지 않는다. loading의 step 결과인 TRADE의 data를 보면 확인할 수 있다.**
 
-![multithread_data](./images/multithread_data.png)
+![multithread-data](./images/multithread-data.png)
 
 ### Parallel 예제
 
 parallelStep이란 분리된 flow을 각 thread에서 병행으로 처리하는 방식이다. 두 개의 flow1, flow2 는 각각 thread에서 병행으로 처리된다.
 
-####Job설정
+#### Job설정
 
 **ParallelStep 예제의 Job 설정파일인 parallelStep.xml을 확인한다.**
 
@@ -173,11 +173,11 @@ public class EgovParallelStepFunctionalTests{
 
 split된 두 개의 flow가 멀티쓰레드(SimpleAsyncTaskExecutor-1,SimpleAsyncTaskExecutor-2)로 실행한 결과는 콘솔창의 로그내용으로 확인할 수 있다. step1과 step3은 서로 다른 쓰레드에서 실행한 사실을 확인할 수 있다.
 
-![parallelstep_step1](./images/parallelstep_step1.png)
+![parallelstep-step1](./images/parallelstep-step1.png)
 
 ...
 
-![parallelstep_step3](./images/parallelstep_step3.png)
+![parallelstep-step3](./images/parallelstep-step3.png)
 
 ### 파티셔닝(Partitioning) 예제
 
