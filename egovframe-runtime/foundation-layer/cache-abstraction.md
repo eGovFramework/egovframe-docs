@@ -238,7 +238,7 @@ Java메소드에 Annotation을 붙이는 대신 XML로 caching할 메소드를 �
 
 ## 참고자료
 
-- [Spring Framework - Reference Document / cache](http://docs.spring.io/spring/docs/3.2.6.RELEASE/spring-framework-reference/htmlsingle/#cache#beans-dependencies)
+- [Spring Framework - Reference Document / cache](http://docs.spring.io/spring/docs/3.2.6.RELEASE/spring-framework-reference/htmlsingle/)
 - [Spring Team Blog - Caching](http://spring.io/blog/2011/02/23/spring-3-1-m1-caching/)
 
 
