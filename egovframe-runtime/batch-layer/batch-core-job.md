@@ -14,7 +14,7 @@ Job은 배치작업 전체의 중심 개념으로 배치작업 자체를 의미�
 
 ![job-structure](./images/job-structure.png)
 
-Job 인터페이스의 기본적인 구현은 SimpleJob 클래스로 스프링 배치에서 제공된다. SimpleJob 클래스는 모든 Job에서 유용하게 사용할 수 있는 표준 기능을 갖고있다. Job은 아래와 같이 <job> 태그를 사용하여 설정할 수 있다.
+Job 인터페이스의 기본적인 구현은 SimpleJob 클래스로 스프링 배치에서 제공된다. SimpleJob 클래스는 모든 Job에서 유용하게 사용할 수 있는 표준 기능을 갖고있다. Job은 아래와 같이 \<job> 태그를 사용하여 설정할 수 있다.
 
 ```xml
 <job id="footballJob">
@@ -180,7 +180,7 @@ JobExecution은 한번의 Job 시도를 의미하는 기술적인 개념이다. 
 
 Java의 Abstract 클래스와 동일한 개념으로 때로는 완전한 Job을 구성하지 않는 부모 Job의 정의가 필요할 때가 있다. 'abstract' 속성은 Job 설정이 추상레벨인지 여부를 지정한다.
 
-아래 예제에서 “baseJob”은 abstract 선언되었으며 자식 Job인 “job1”에서는 Job 설정의 필수요소인 '<step>'을 정의해야 하며 'Job1'은 “baseJob”의 “listenerOne”도 상속받아 설정된다.
+아래 예제에서 “baseJob”은 abstract 선언되었으며 자식 Job인 “job1”에서는 Job 설정의 필수요소인 '\<step>'을 정의해야 하며 'Job1'은 “baseJob”의 “listenerOne”도 상속받아 설정된다.
 
 ```xml
 <job id="baseJob" abstract="true">
@@ -215,5 +215,5 @@ Job은 완료되지 않은 JobInstance를 재시작할 수 있다. Job 설정 �
 [job Variable 설정 자세히 보기](./batch-core-job-variable.md) 
   
 ## 참고자료
-* [http://static.springsource.org/spring-batch/reference/html/domain.html#domainJob](http://static.springsource.org/spring-batch/reference/html/domain.html#domainJob)
-* [http://static.springsource.org/spring-batch/reference/html/configureJob.html#configuringAJob](http://static.springsource.org/spring-batch/reference/html/configureJob.html#configuringAJob) 
+* http://static.springsource.org/spring-batch/reference/html/domain.html#domainJob
+* http://static.springsource.org/spring-batch/reference/html/configureJob.html#configuringAJob
