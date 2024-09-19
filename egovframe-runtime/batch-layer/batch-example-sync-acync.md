@@ -14,7 +14,7 @@
 
 - sync : 동기처리시 사용할 클래스 설정
 - async : 비동기처리시 사용할 클래스 설정
-- 
+
 ```xml
 <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
 	<property name="jobRepository" ref="jobRepository" />
@@ -68,8 +68,8 @@
 
 **sync-job-launcher-context설정과 delegatingJob설정으로 구성된 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.**
 
-✔ JunitTest 클래스의 구조는 배치실행환경 예제 Junit Test 설명을 참고한다.
-✔ assertEquals(“COMPLETED”, jobExecution.getExitStatus().getExitCode()) : 배치수행결과가 COMPLETED 인지 확인한다.
+✔ JunitTest 클래스의 구조는 배치실행환경 예제 Junit Test 설명을 참고한다.  
+✔ assertEquals(“COMPLETED”, jobExecution.getExitStatus().getExitCode()) : 배치수행결과가 COMPLETED 인지 확인한다.  
 ✔ Thread.sleep(4000) : 비동기로 배치를 수행 시, DB에 배치상태(UNKNOWN)를 셋팅하고 DB연결이 종료되어 Job이 정상적으로 수행되더라도 종료상태(COMPLETED,FAILED)를 확인할 수 없다. 예제에서는 Job결과를 확인하기 위해 Thread를 적정시간동안 정지시켜 인위적으로 종료상태를 확인하도록 설정하였다.
 
 ```java
