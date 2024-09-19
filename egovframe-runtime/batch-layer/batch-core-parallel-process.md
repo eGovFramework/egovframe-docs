@@ -9,7 +9,7 @@
 
 ### 멀티쓰레드(Multi-threaded Step)
 
-병렬처리를 시작하는 간단한 방법은 Step 구성요소중 <tasklet> 속성에 TaskExecutor를 추가하는 것이다.
+병렬처리를 시작하는 간단한 방법은 Step 구성요소중 \<tasklet> 속성에 TaskExecutor를 추가하는 것이다.
 
 ```xml
 <step id="loading">
@@ -72,13 +72,13 @@ task-executor 속성은 각각의 흐름을 실행하는데 필요한 TaskExecut
 
 스프링배치는 Step의 파티셔닝 수행을 원격으로 파티셔닝하기 위하여 SPI를 제공한다. 다음 수행 패턴을 그림으로 표현했다.
 
-![partition_overview](./images/partition_overview.png)
+![partition-overview](./images/partition-overview.png)
 
 Job은 왼쪽부터 Step의 흐름대로 진행된다. Step들 중에서 하나는 마스터 라벨로 지정되어 있다. 이 그림에서 슬레이브 라벨들은 Step의 인스턴스로 식별되고, 그 결과가 마스터의 결과로 귀속된다. 슬레이브는 전형적으로 원격서비스로 이루어지며 로칼쓰레드로 전달된다. JobRepository 의 스프링배치 meta-data에서 각각의 슬레이브가 Job에서 각각 한번 수행되는 것을 보장한다.
 
 스프링배치의 SPI는 Step의 특별한 구현(PartitionStep)으로 구성되어있다. PartitionHandler와 StepExecutionSplitter 라는 두개의 인터페이스가 있고 이 역할은 아래 그림을 참고한다.
 
-![partition_flow](./images/partition_flow.png)
+![partition-flow](./images/partition-flow.png)
 
 오른쪽의 Step은 잠재적으로 여러 객체를 갖고 있고 각 역할을 수행하는 remote 슬레이브이다. Partition Step은 다음과 같이 구성되어 있다.
 
