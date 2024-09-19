@@ -3,7 +3,7 @@
 ## 개요
 
 Integration 서비스 Metadata는 연계에 필요한 정보를 정의하고 있다.
-본 장은 실제 Integration 서비스로 구현된 연계 Adaptor를 사용하는 방식에 직접적인 도움을 주지는 않는다. 실제 사용법은 [연계 서비스 API]()에서 설명하고 있다. 단, 연계 서비스 API의 핵심 Interface인 EgovIntegrationService의 단위에 해당하는 연계등록정보와, 이와 관련된 기관, 시스템, 서비스 등의 Metadata를 이해하는 것은 API 사용에 도움이 될 수 있다.
+본 장은 실제 Integration 서비스로 구현된 연계 Adaptor를 사용하는 방식에 직접적인 도움을 주지는 않는다. 실제 사용법은 [연계 서비스 API](./integration-service-api.md)에서 설명하고 있다. 단, 연계 서비스 API의 핵심 Interface인 EgovIntegrationService의 단위에 해당하는 연계등록정보와, 이와 관련된 기관, 시스템, 서비스 등의 Metadata를 이해하는 것은 API 사용에 도움이 될 수 있다.
 
 ## 설명
 
