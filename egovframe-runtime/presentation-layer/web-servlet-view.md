@@ -6,10 +6,17 @@ Controller가 요청에 대한 처리를 하고, View 이름과 데이터(Model)
 DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 객체를 얻고, 이 View는 Controller가 저장한 Model 객체의 정보를 출력한다.
 여기서는 View와 ViewResolver, 그리고 JSP에서 편리한 데이터 출력을 위해 스프링이 제공하는 Spring form tag library에 대해서 설명한다.
 
-- [ViewResolver](#viewresolver)
 - [View](#view)
-- [Spring Tag Library](#spring-tag-library)
-- [전자정부프레임워크 Tag Library](#전자정부프레임워크-tag-library)
+	- [개요](#개요)
+	- [설명](#설명)
+		- [ViewResolver](#viewresolver)
+			- [InternalResourceViewResolver/UrlBasedViewResolver](#internalresourceviewresolverurlbasedviewresolver)
+		- [View](#view-1)
+		- [Spring Tag Library](#spring-tag-library)
+			- [meassage tag(`<spring:message>`)](#meassage-tagspringmessage)
+			- [form tag(`<form:form>,<form:input>,...`)](#form-tagformformforminput)
+		- [전자정부프레임워크 Tag Library](#전자정부프레임워크-tag-library)
+	- [참고자료](#참고자료)
 
 ## 설명
 
@@ -146,7 +153,7 @@ public class AjaxXmlView extends AbstractView {
 
 ### Spring Tag Library
 
-**meassage tag(`<spring:message>`)**
+#### meassage tag(`<spring:message>`)
 
 스프링은 메시지 리소스 파일로 부터 메시지를 가져와 간편하게 출력할수 있도록, `<spring:message>` 태그를 제공한다.
 JSP 페이지의 타이틀을 `<spring:message>`를 이용해서 출력하는 예제를 만들어 보자.
@@ -160,7 +167,8 @@ JSP 페이지의 타이틀을 `<spring:message>`를 이용해서 출력하는 �
 
 먼저 메시지 관련 리소스 파일에 코드값을 설정해준다. PropertiedEditor 같은 유틸의 도움을 받으면 편리하게 한글 입력-편집이 가능하다.
 
-`/easycompany/webapp/WEB-INF/classes/messages_ko.properties`
+/easycompany/webapp/WEB-INF/classes/messages_ko.properties
+
 ```properties
 ...
 # -- spring:message --
@@ -187,7 +195,7 @@ JSP 페이지에 커스텀 태그를 사용하기 위해 라이브러리 선언�
 
 해당 화면의 타이틀이 “부서 정보 리스트 페이지”로 표기 될 것이다.
 
-`form tag(<form:form>,<form:input>,...)`
+#### form tag(`<form:form>,<form:input>,...`)
 
 폼 관련 어플리케이션을 개발할 때는 스프링이 제공하는 폼 태그와 같이 사용하면 편리하다.
 스프링 폼 태그는 Model 데이터의 커맨드 객체(command object)나 참조 데이터(reference data)들을 화면상에서 쉽게 출력하도록 도와 준다.
@@ -199,7 +207,7 @@ JSP 페이지에 커스텀 태그를 사용하기 위해 라이브러리 선언�
 
 스프링 폼 태그에는 아래와 같은 태그들이 있다.
 
-**`<form:form>`**
+***<form:form>***
 
 `<form:form>`는 속성 commandName에 정의된 model attribute를 PageContext에 저장해서, `<form:input>`이나 `<form:hidden>`같은 tag들이 접근할 수 있도록 한다.
 관련 속성은 아래와 같다.
@@ -222,7 +230,8 @@ JSP 페이지에 커스텀 태그를 사용하기 위해 라이브러리 선언�
 ```
 
 
-**`<form:input>`**
+***<form:input>***
+
 HTML text타입의 input 태그에 commandName에 지정된 객체 프로퍼티를 바인딩하기 위해 사용한다.
 path에 프로퍼티 이름을 적으면, text타입의 input 태그의 id, name 값이 프로퍼티 이름이 되고, value는 해당 프로퍼티의 값이 된다.
 
@@ -246,16 +255,16 @@ path에 프로퍼티 이름을 적으면, text타입의 input 태그의 id, name
 </form>
 ```
 
-**`<form:password>`**
+***<form:password>***
 
 HTML password타입의 input 태그에 commandName에 지정된 객체 프로퍼티를 바인딩하기 위해 사용한다.
 바인딩값을 표기하기 위해서는 showPassword 속성을 showPassword=“true”로 지정해 주어야 한다.
 
-**`<form:hidden>`**
+***<form:hidden>***
 
 HTML hidden타입의 input 태그에 commandName에 지정된 객체 프로퍼티를 바인딩하기 위해 사용한다.
 
-**`<form:select>`, `<form:options>`, `<form:option>`**
+***<form:select>, <form:options>, <form:option>***
 
 HTML select, option 태그에 commandName에 지정된 객체 프로퍼티를 바인딩하기 위해 사용한다.
 아래와 같이 `<form:select>`의 path 속성에 commandName 객체의 프로퍼티를 지정하고,
@@ -295,11 +304,11 @@ HTML select, option 태그에 commandName에 지정된 객체 프로퍼티를 �
 </form>
 ```
 
-`<form:checkboxes>`
+***<form:checkboxes>***
 
-`<form:checkbox>`
+***<form:checkbox>***
 
-`error tag(<form:errors>)`
+***<form:errors>***
 
 ### 전자정부프레임워크 Tag Library
 
