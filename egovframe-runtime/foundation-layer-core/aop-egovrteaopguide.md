@@ -41,6 +41,7 @@
 ```java
 public class ExceptionTransfer {
 	...
+
 	public void transfer(JoinPoint thisJoinPoint, [Exception](http://www.google.com/search?hl=en&q=allinurl%3Aexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) exception) throws [Exception](http://www.google.com/search?hl=en&q=allinurl%3Aexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) {
 		log.debug("execute ExceptionTransfer.transfer ");
  
@@ -51,11 +52,24 @@ public class ExceptionTransfer {
 		if (exception instanceof EgovBizException) {
 			log.debug("Exception case :: EgovBizException ");
  
+=======
+	public void transfer(JoinPoint thisJoinPoint, Exception exception) throws Exception {
+		log.debug("execute ExceptionTransfer.transfer ");
+ 
+		Class clazz = thisJoinPoint.getTarget().getClass();
+		Locale locale = LocaleContextHolder.getLocale();
+ 
+		// BizException 인 경우는 이미 메시지 처리 되었음. 로그만 기록
+		if (exception instanceof EgovBizException) {
+			log.debug("Exception case :: EgovBizException ");
+ 
+
 			EgovBizException be = (EgovBizException) exception;
 			getLog(clazz).error(be.getMessage(), be.getCause());
 			// Exception Handler 에 발생된 Package 와 Exception 설정.
 			processHandling(clazz, exception, pm, exceptionHandlerServices, false);
 			throw be;
+
 		} else if (exception instanceof [RuntimeException](http://www.google.com/search?hl=en&q=allinurl%3Aruntimeexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky)) {
 			log.debug("RuntimeException case :: RuntimeException ");
  
@@ -64,6 +78,16 @@ public class ExceptionTransfer {
 			// Exception Handler 에 발생된 Package 와 Exception 설정.
 			processHandling(clazz, exception, pm, exceptionHandlerServices, true);
  
+
+		} else if (exception instanceof RuntimeException) {
+			log.debug("RuntimeException case :: RuntimeException ");
+ 
+			RuntimeException be = (RuntimeException) exception;
+			getLog(clazz).error(be.getMessage(), be.getCause());
+			// Exception Handler 에 발생된 Package 와 Exception 설정.
+			processHandling(clazz, exception, pm, exceptionHandlerServices, true);
+ 
+
 			if (be instanceof DataAccessException) {
 				log.debug("RuntimeException case :: DataAccessException ");
 				DataAccessException sqlEx = (DataAccessException) be;
@@ -84,7 +108,11 @@ public class ExceptionTransfer {
 		} else {
 			og.debug("case :: Exception ");
 			getLog(clazz).error(exception.getMessage(), exception.getCause());
+
 			throw processException(clazz, "fail.common.msg", new [String](http://www.google.com/search?hl=en&q=allinurl%3Astring+java.sun.com&btnI=I%27m%20Feeling%20Lucky)[] {}, exception, locale);
+
+			throw processException(clazz, "fail.common.msg", new String[] {}, exception, locale);
+
 		}
 	}
 }
