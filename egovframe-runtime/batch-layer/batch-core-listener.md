@@ -243,7 +243,7 @@ public class EventNoticeListener {
 
 ✔ 그림의 EgovSampleXXXProcessor는 예시 클래스이며, 전자정부 표준프레임워크에서 제공하는 Processor를 상속받아 구현된 클래스이다.
 
-![processor_gmgt_structure](./images/processor_gmgt_structure.png)
+![processor-gmgt-structure](./images/processor-gmgt-structure.png)
 
 #### Job Processor
 
@@ -331,7 +331,7 @@ public class EgovStepPostProcessor<T, S> extends StepListenerSupport<T, S> {
 
 ##### 설정
 
-위 클래스를 상속받아 사용자가 정의한 Step Processor는 설정파일에서 <listeners> 를 이용해 다음과 같은 위치에 설정한다.
+위 클래스를 상속받아 사용자가 정의한 Step Processor는 설정파일에서 \<listeners> 를 이용해 다음과 같은 위치에 설정한다.
 
 ```xml
 <job id="ProcessorJob" xmlns="http://www.springframework.org/schema/batch">
@@ -381,7 +381,7 @@ public class EgovChunkPostProcessor extends ChunkListenerSupport {
 
 ##### 설정
 
-위 클래스를 상속받아 사용자가 정의한 Chunk Processor는 설정파일에서 <listeners> 를 이용해 다음과 같은 위치에 설정한다.
+위 클래스를 상속받아 사용자가 정의한 Chunk Processor는 설정파일에서 \<listeners> 를 이용해 다음과 같은 위치에 설정한다.
 
 ```xml
 <job id="ProcessorJob" xmlns="http://www.springframework.org/schema/batch">
