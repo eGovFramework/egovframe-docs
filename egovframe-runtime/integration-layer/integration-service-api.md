@@ -15,8 +15,8 @@
 | <center>구성요소</center> | <center>설명</center> |
 | --- | --- |
 | [EgovIntegrationContext](#egovintegrationcontext) | 연계 서비스에 대한 설정 및 EgovIntegrationService 객체를 관리한다. |
-| [EgovIntegrationMessage](#egovintegrationmessage) | 연계 서비스를 통해 주고 받는 표준 메시지를 정의한다. |
-| [EgovIntegrationMessageHeader](#egovintegrationmessageheader) | 연계 서비스를 통해 주고 받는 표준 메시지 헤더를 정의한다. |
+| [EgovIntegrationMessage](#egovintegrationmessage) | 연계 서비스를 통해 주고받는 표준 메시지를 정의한다. |
+| [EgovIntegrationMessageHeader](#egovintegrationmessageheader) | 연계 서비스를 통해 주고받는 표준 메시지 헤더를 정의한다. |
 | [EgovIntegrationMessageHeader::ResultCode](#egovintegrationmessageheaderresultcode) | 연계 서비스 결과 코드를 담고 있는 enumeration이다. |
 | [EgovIntegrationService](#egovintegrationservice) | 연계 서비스를 호출하기 위해 사용한다. |
 | [EgovIntegrationResponse](#using-sendasync-with-response) | 연계 서비스를 비동기 방식으로 호출한 경우, 응답 메시지를 받기 위해 사용한다. |
@@ -259,7 +259,7 @@ EgovIntegrationMessage의 바디부는 다음 값들로만 구성될 수 있다.
 
 #### 첨부파일
 
-EgovIntegrationMessage의 첨부파일을 access 하기 위한 메소드를 아래와 같다.
+EgovIntegrationMessage의 첨부파일을 access 하기 위한 메소드는 아래와 같다.
 
 <table border="1">
   <tr>
@@ -495,7 +495,7 @@ public class VefiryNameServiceCallback
 
 ### EgovIntegrationServiceProvider
 
-EgovIntegrationServiceProvider interface는 연계 서비스를 제공하기 위한 interface로 연계 서비스를 제공하는 모듈은 본 interface를 implements 해야한다.<br/>
+EgovIntegrationServiceProvider interface는 연계 서비스를 제공하기 위한 interface로 연계 서비스를 제공하는 모듈은 본 interface를 implements 해야 한다.<br/>
 아래 예제는 이름과 주민등록번호는 이용하여 실명확인을 수행하는 서비스를 제공하는 업무 모듈과 Spring Framework Configuration XML 파일이다. (Metadata는 [EgovIntegrationContext](#egovintegrationcontext) 예제의 설정과 같다.)
 
 ```java
