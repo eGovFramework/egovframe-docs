@@ -23,11 +23,19 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 </bean>
 ```
 
+
 - 다음은 **<util:properties> 를 사용하여 프로퍼티에 접근**하는 예제 이다.
 
  globals.properties
 
 ```bash
+
+- 다음은 **&lt;util:properties&gt; 를 사용하여 프로퍼티에 접근**하는 예제 이다.
+
+ globals.properties
+
+ ```properties
+
 driverClassName=com.mysql.jdbc.Driver
 url=jdbc:mysql://localhost:1623/EASYCOMPANY
 username=tex
@@ -47,6 +55,7 @@ password=texAdmin
 </bean>
 ```
 
+
 - 다음은 **<util:properties> 를 사용하여 변수로 직접 주입**하는 예제 이다.
 
 ```bash
@@ -57,6 +66,18 @@ private [String](http://www.google.com/search?hl=en&q=allinurl%3Astring+java.sun
  또는
 
 ```bash
+=======
+- 다음은 **&lt;util:properties&gt; 를 사용하여 변수로 직접 주입**하는 예제 이다.
+
+ ```java
+@Value("#{dbprops.driverClassName}")
+private String driverClassName;
+```
+
+ 또는
+
+ ```java
+
 @Value("#{dbprops}")
 private Dbproperies dbprops;
 ```
@@ -83,10 +104,17 @@ private Dbproperies dbprops;
 
  또한, @NumberFormat, @DateTimeFormat과 같은 컨버전 서비스에 등록되는 포맷터를 자동으로 적용할 수 있다. 다음은 sampleVO의 일부이다.
 
+
 ```bash
 /** 잔액 */
 @[NumberFormat](http://www.google.com/search?hl=en&q=allinurl%3Anumberformat+java.sun.com&btnI=I%27m%20Feeling%20Lucky)(pattern = "###,##0")
 private [Integer](http://www.google.com/search?hl=en&q=allinurl%3Ainteger+java.sun.com&btnI=I%27m%20Feeling%20Lucky) money;
+=======
+ ```bash
+ /** 잔액 */
+@NumberFormat(pattern = "###,##0")
+private Integer money;
+
 ```
 
 ```xml
