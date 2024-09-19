@@ -45,7 +45,7 @@ Application Tier에서 이뤄지는 동작의 순서는 아래와 같다.
 2. eGovStepReader / eGovStepWriter는 Spring Batch의 ItemReader / ItemWriter를 참조한 것으로, 일반적인 Step 동작에 반드시 필요하다.
 3. Step에서는 ItemReader를 이용하여 File / DB로 부터 데이터를 읽어들이고 ItemProcessor로 데이터를 가공하고 ItemWriter로 가공한 데이터를 다시 File / DB로 쓴다.
 
-## 배치 실행환경 수행 과정
+## 배치 실행환경 기술요소 구성
 
 전자정부 표준프레임워크 실행환경에 포함되는 대용량 데이터 처리 Layer는 Job의 구조를 정의하는 Batch Core, Job의 실행을 지원하는 Batch Support, 여러 실행환경을 지원하는 Batch Execution 부분으로 구성되어 있다. 배치 실행환경 기술요소 및 기능은 아래 그림과 같다.
 
