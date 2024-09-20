@@ -10,7 +10,7 @@
 
 #### EgovBatchRunner 설정
 
-EgovBatchRunner의 설정 방법은 [배치 Runner](./batch-core-batch-runner.md#egovbatchrunner)를 참고한다.
+EgovBatchRunner의 설정 방법은 [배치 Runner](./batch-core-batch_runner.md#egovbatchrunner)를 참고한다.
 
 #### Launcher 설정
 
@@ -164,4 +164,4 @@ Console 창에서 Job Summary내용 중, BatchStatus가 Stopped 임을 확인한
 ![centercut-explain1](images/centercut-explain1.png)
 
 ## 참고자료
-* [Batch Runner](./batch-core-batch-runner.md)
+* [Batch Runner](./batch-core-batch_runner.md)
