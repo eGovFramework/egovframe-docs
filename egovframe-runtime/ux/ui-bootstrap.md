@@ -151,7 +151,7 @@ bootstrap/
 </html>  
 ```
 결과 보기 : https://jsfiddle.net/y1hL9vqd/1/?utm_source=website&utm_medium=embed&utm_campaign=y1hL9vqd
-![fixed](./images/container_exam2.png) ![wide](./images/container_exam3.png)
+![container_exam2](./images/container_exam2.png) ![container_exam3](./images/container_exam3.png)
 
 위의 그림처럼 두 예제의 결과보기의 화면의 폭을 좌우로 늘려보면, 두 예제의 차이점을 알 수 있다.
 첫번째 예제는 고정폭 콘테이너(<div class=“container”>)를 사용하였고, 두번째 예제는 최대폭 콘테이너(<div class=“container-fluid”>)를 사용한 예제이다.
