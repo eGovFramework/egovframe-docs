@@ -336,10 +336,19 @@ Appenders 설정과 마찬가지로 Log4j 2에서는 Layout을 class 속성이 �
 
 출력 형식에 따라 Layout의 종류가 달라지며, 아래와 같은 Layouts을 제공한다.
 
-
-|**Layouts**|
-|---|
-|HTMLLayout|**PatternLayout**|RFC5424Layout|SerializedLayout|SyslogLayout|XMLLayout|
+<table>
+    <tr>
+        <td colspan="6">Layouts </td>
+    </tr>
+    <tr>
+        <td>HTMLLayout</td>
+        <td>| <b>PatternLayout<b></td>
+        <td>| RFC5424Layout</td>
+        <td>| SerializedLayout</td> 
+        <td>| SyslogLayout</td>
+        <td>| XMLLayout</td>
+    </tr>
+</table>
 
 본페이지는 위의 Layouts 중 일반적으로 디버깅에 가장 적합한 PatternLayout만 설명한다.
 
