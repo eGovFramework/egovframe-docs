@@ -1,24 +1,23 @@
-# Logging 서비스
+# Log4j 2 환경설정 [설정 파일 사용 시]
 
-## Log4j 2 환경설정 [설정 파일 사용 시]
-
-### 개요
+## 개요
 Log4j 2는 기존 Properties 파일 형식의 환경 설정을 지원하지 않으며,
 XML (log4j2.xml) 혹은 JSON (log4j2.json or log4j2.jsn) 파일 형식의 환경 설정만 가능하다.
 
 아래는 XML 파일을 이용한 환경 설정에 대해서만 다루며, JOSN 방식은 Log4j 2 매뉴얼을 참고하도록 한다.
 
-### 설명
-#### Log4j 2 XML Configuration
+## 설명
+### Log4j 2 XML Configuration
 
-**XML 파일 위치**
+#### XML 파일 위치
 
 XML 파일 (log4j2.xml)을 작성하고, WEB-INF/classes 하위에 포함될 수 있도록 위치시킨다.
 Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.
 
-**XML 파일 정의**
+#### XML 파일 정의
 Log4j 2에서는 XML 파일의 최상위 요소가 <**Configuration**>으로 변경되었다.
 <Configuration>요소 아래에 Logger, Appender, Layout 설정 등과 관련한 하위 요소를 정의한다.
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,17 +47,17 @@ Log4j 2에서는 XML 파일의 최상위 요소가 <**Configuration**>으로 변
 </Configuration>
 ```
 
-**참고자료**
+#### 참고자료
 
 * [Log4j 2 Configuration](https://logging.apache.org/log4j/2.x/manual/configuration.html)
 * [XML Syntax](https://logging.apache.org/log4j/2.x/manual/configuration.html#XML)
 * [JSON Syntax](https://logging.apache.org/log4j/2.x/manual/configuration.html#JSON)
 
-#### Logger 설정 
+## Logger 설정 
 Logger는 로깅 작업을 수행하는 Log4j 주체로, Logger 설정을 제외한 모든 로깅 기능이 이 Logger를 통해 처리된다.
 사용자는 어플리케이션 내에서 사용할 Logger를 정의해야하며, Log Level과 Appender 설정에 따라 출력 대상과 위치가 결정된다.
 
-**Logger 선언과 정의**
+#### Logger 선언과 정의
 Root Logger를 포함한 모든 Logger는 상위 요소인 <**Loggers**> 아래에 선언한다.
 Root Logger는 <**Root**> 요소로, 일반 Logger는 <**Logger**> 요소로 정의한다.
 Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의해야한다.
@@ -87,7 +86,8 @@ Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의
 ```
 위에서 AppenderRef 요소에 지정한 “console” Appender가 없는 경우, 정상적인 로깅이 수행될 수 없다.
 
-**Logger 호출**
+#### Logger 호출
+
 Logger는 코드 내에서 다음과 같은 방법으로 호출할 수 있다.
 
 ```java
@@ -110,7 +110,7 @@ package egovframe.sample;
 (1), (2)과 같이 Logger Name에 해당하는 Logger가 설정 파일에 없는 경우, 다음 Logger Hierarchy 규칙에 따라 결정된다.
 결과적으로 (1), (2)에서 생성된 Logger 객체는 Root Logger 설정을 따른다.
 
-**Logger Hierarchy**
+#### Logger Hierarchy
 
 사용자가 호출한 Logger 객체가 어떤 설정을 따르는지 이해하기 위해서는 Logger Hierarchy를 알고 있어야 한다.
 내부적으로 설정 파일에 정의된 각 Logger 설정에 따라 LoggerConfig 오브젝트가 생성되며,
@@ -123,6 +123,7 @@ Logger Name에 따라 오브젝트 간 부모-자식 관계가 성립한다. 즉
 2) 동일한 Logger는 없지만, Parent Logger가 존재하는 경우, Parent Logger 설정을 따른다.
 3) Parent Logger도 존재하지 않는 경우, Root Logger 설정을 따른다.
 
+
 |**Logger Name**| **Assigned LoggerConfig**| **Level**| **Java Code**| **Description**|
 |------|-----|------|-------|-------|
 | root | root | ERROR | LogManager.getLogger("root");|설정 파일의 Root 설정을 따름 |
@@ -132,7 +133,7 @@ Logger Name에 따라 오브젝트 간 부모-자식 관계가 성립한다. 즉
 | X.YZ | X | DEBUG | LogManager.getLogger(“X.YZ”); | X.YZ Logger 설정이 없으므로, 부모인 X 설정을 따름 | 
 | Y | root | ERROR | LogManager.getLogger(“Y”); | Y Logger 설정이 없으므로, 부모인 Root 설정을 따름 |  
 
-**Log Level**
+#### Log Level
 
 Log4j 2는 FATAL, ERROR, WARN, INFO, DEBUG, TRACE의 Log Level을 제공한다.
 각각 trace(), debug(), info(), warn(), error(), fatal()라는 로깅 메서드를 이용해 로그를 출력할 수 있다.
@@ -173,17 +174,17 @@ package egovframe.sample;
 
 자바에서는 C와 같이 전처리기의 기능이 없기 때문에 #ifdef DEBUG와 같은 형태와 같이 디버깅 때와 릴리즈 때의 디버깅코드를 각각 별도로 생성할 수가 없다. 따라서 Log4j의 이러한 기능은 로그관리에 있어서 상당히 편리하다.
 
-**참고자료**
+#### 참고자료
 자세한 설정은 [Log4j 2 Logger 매뉴](https://logging.apache.org/log4j/2.x/manual/configuration.html#Loggers) 을 참고하도록 한다.
 
-### Appender 설정
+## Appender 설정
 Appender는 로그가 출력되는 위치를 나타낸다.
 XXXAppender로 끝나는 클래스들의 이름을 보면, 출력 위치를 어느 정도 짐작할 수 있다.
 
 Log4j 2는 Console, File, RollingFile, Socket, DB 등 다양한 로그 출력 위치과 방법을 지원한다.
 기존 Log4j 1.x와 크게 달라진 점은 Appender 종류를 class 속성값으로 구분한 것과 달리, Log4j 2에서는 태그로 구분한다.
 
-**Appender 선언과 정의**
+### Appender 선언과 정의
 본 페이지에서는 자주 사용되는 Console, File, RollingFile, JDBC Appender에 대해서만 설명한다.
 출력 위치에 따라 Appender 종류와 설정 태그가 달라지며, 아래 표는 각 Appender 정의 태그와 출력 위치이다.
 
@@ -224,10 +225,10 @@ Appender 요소는 name 속성값을 가지며, name 속성에 Appender 이름�
  </Loggers>
 ```
 
-**Appender 종류**
+### Appender 종류
 다음은 각 Appender 정의 시 필요한 기본 설정에 대한 설명이다.
 
-  **ConsoleAppender**
+  #### ConsoleAppender
   로그를 콘솔에 출력하기 위한 Appender
 
   ```xml
@@ -238,7 +239,7 @@ Appender 요소는 name 속성값을 가지며, name 속성에 Appender 이름�
  </Console>
   ```
 
-**FileAppender**
+#### FileAppender
 로그를 파일에 출력하기 위한 Appender
 
 ```xml
@@ -255,7 +256,7 @@ Appender 요소는 name 속성값을 가지며, name 속성에 Appender 이름�
  </File>
 ```
 
-**RollingFileAppender**
+#### RollingFileAppender
 TriggeringPolicy와 RolloverStrategy에 따라 로그를 파일에 출력하기 위한 Appender로,
 FileAppender는 지정한 파일에 로그가 계속 남으므로 한 파일의 크기가 지나치게 커질 수 있고, 계획적인 로그관리가 불가능해진다.
 그러나 RollingFileAppender는 파일의 크기 또는 파일 백업 인덱스 등의 지정을 통해서 특정 크기 이상으로 파일 크기가 커지게 되면,
@@ -279,6 +280,7 @@ FileAppender는 지정한 파일에 로그가 계속 남으므로 한 파일의 
  </RollingFile>
 ```
 * DailyRollingFileAppender
+  
   기존 DailyRollingFileAppender가 삭제되고, RollingFileAppender에서 <TimeBasedTriggeringPolicy> 엘리먼트로 설정 가능하도록 변경되었다. 설정한 날짜 또는 조건에 맞춰 로깅을 수행하며, interval 속성을 이용해 rolling 간격을 지정할 수 있다.
 
 
@@ -291,7 +293,7 @@ FileAppender는 지정한 파일에 로그가 계속 남으므로 한 파일의 
   </Policies>
  </RollingFile>
 ```
-**JDBCAppender**
+#### JDBCAppender
 로그를 RDB에 출력하기 위한 Appender로,
 Connection 객체를 제공하기 위한 JNDI DataSource 혹은 Connection Factory Method를 함께 정의해야한다.
 
@@ -320,7 +322,7 @@ Connection 객체를 제공하기 위한 JNDI DataSource 혹은 Connection Facto
 ```
 WAS에서 제공하는 DataSource를 사용하려면, 위 <ConnectionFactory> 부분을 <DataSource jndiName=”…” />으로 변경한다.
 
-**참고자료**
+#### 참고자료
 각 Appender 요소에서 정의할 수 있는 하위 요소와 속성이 다르므로, 자세한 설정은 각 매뉴얼을 참조하도록 한다.
 
 * [Log4j 2 Appneders](https://logging.apache.org/log4j/2.x/manual/appenders.html)
@@ -329,7 +331,7 @@ WAS에서 제공하는 DataSource를 사용하려면, 위 <ConnectionFactory> �
 * [RollingFileAppender](https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingFileAppender)
 * [JDBCAppender](https://logging.apache.org/log4j/2.x/manual/appenders.html#JDBCAppender) 
 
-### Layout 설정
+## Layout 설정
 
 Layout은 발생한 로그 이벤트의 포맷을 지정하고, 원하는 형식으로 로그를 출력할 수 있다.
 Appenders 설정과 마찬가지로 Log4j 2에서는 Layout을 class 속성이 아닌 태그로 구분한다.
@@ -352,7 +354,7 @@ Appenders 설정과 마찬가지로 Log4j 2에서는 Layout을 class 속성이 �
 
 본페이지는 위의 Layouts 중 일반적으로 디버깅에 가장 적합한 PatternLayout만 설명한다.
 
-**PatternLayout 선언과 정의**
+### PatternLayout 선언과 정의
 PatternLayout은 Appender 요소의 하위 요소로 정의한다.
 
 ```xml
@@ -383,10 +385,8 @@ PatternLayout은 Appender 요소의 하위 요소로 정의한다.
 |t, thread|로깅 이벤트가 발생한 스레드명을 출력|
 |%%|%를 출력하기 위해 사용하는 패턴|
 
-**참고자료**
-* [Log4j 2 Layouts](https://logging.apache.org/log4j/2.x/manual/layouts.html)
-* [PatternLayout](https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout) 
-
 
 ## 참고자료
 * [Apache Logging Services](https://logging.apache.org/index.html)
+* [Log4j 2 Layouts](https://logging.apache.org/log4j/2.x/manual/layouts.html)
+* [PatternLayout](https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout) 

@@ -20,7 +20,6 @@ System.out.println() 호출은 디스크 I/O동안 동기화(synchronized)처리
 운영시의 코드가 테스트시의 코드와 다르게 동작할 수 있음
 본 페이지에서는 SLF4j와 Log4j 2에 대한 기본 사용법과 Migration에 대해 설명한다.
 
-## SLF4J와 Log4j 2
 본 페이지에서는 **SLF4J**와 **Log4j 2**에 대한 기본 사용법과 Migration에 대해 설명한다.
 
 ## 설명

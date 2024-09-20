@@ -1,8 +1,4 @@
-# Logging 서비스
-
-## 설명
-
-### Log4j 2 변경사항
+## Log4j 2 변경사항
 * Java 6 이상 필요
 * XML 환경설정 단순화 (Log4j 1.x 와 호환되지 않음)
 * Property 파일을 통한 환경설정을 지원하지 않음
@@ -12,9 +8,9 @@
 * 필터링 기능 향상
 * NoSQLAppender 등의 다양한 Appender 제공
 
-### Log4j 2 추가기능
+## Log4j 2 추가기능
 
-#### 1. Substituting Parameters
+### 1. Substituting Parameters
 로그 메시지를 구성하는 방법으로, 기존 문자열 결합 방식과 달리 {} 안에 파라미터를 대입하여 로그 메시지를 생성하는 방법이다.
 아래 코드는 출력할 로그 메시지를 완성하기 전에 Log Level을 체크하고, isDebugEnabled인 경우에만 메서드를 수행한다.
 
@@ -80,7 +76,7 @@ public String saveDept(String deptNo) {
    }
 ``
 
-#### 4. Markers
+### 4. Markers
 한꺼번에 다량의 로그가 출력되면 어느 위치에서 문제가 발생했는지 정확하게 예측할 수 없다.
 또한 Log4j와 같은 Logging Framework를 사용하는 이유는 어플리케이션에서 발생하는 문제를 확인하고 디버깅 하기 위한 것이다.
 이는 원하는 시점에서 로그 정보의 필터링이 가능해야함을 뜻한다.
@@ -145,9 +141,9 @@ public String doUpdate(String table, Map<String, String> params) {
 * [Flow Tracing](https://logging.apache.org/log4j/2.x/manual/flowtracing.html)
 * [Markers](https://logging.apache.org/log4j/2.x/manual/markers.html)
 
-### Migration to Log4j 2 from Log4j 1.x
+## Migration to Log4j 2 from Log4j 1.x
 
-#### 1. Log4j 2 jar 추가 (log4j-api.jar, log4j-core.jar) + Log4j 1.x jar 제거
+### 1. Log4j 2 jar 추가 (log4j-api.jar, log4j-core.jar) + Log4j 1.x jar 제거
 ```xml
 <!-- Log4j 1.2 -->
 <!--
@@ -171,7 +167,7 @@ public String doUpdate(String table, Map<String, String> params) {
 </dependency>
 ```
 
-#### 2. Log4j 1.x -> Log4j 2 변환 Bridge jar 추가 (log4j-1.2-api.jar)
+### 2. Log4j 1.x -> Log4j 2 변환 Bridge jar 추가 (log4j-1.2-api.jar)
 
 기존 Log4j 1.x API가 Log4j 2 API로 변환 처리될 수 있도록 Log4j 2 Bridge를 추가한다.
 
@@ -182,7 +178,7 @@ public String doUpdate(String table, Map<String, String> params) {
   <version>x.x.x</version>
 </dependency>
 ```
-#### 3. Log4j 1.x의 Logger API 변경
+### 3. Log4j 1.x의 Logger API 변경
 Log4j 2의 Logger 객체를 생성할 수 있도록, Logger 생성 메서드를 다음과 같이 변경한다.
 
 ||**Log4j 1.x**|**Log4J 2**|
@@ -190,7 +186,7 @@ Log4j 2의 Logger 객체를 생성할 수 있도록, Logger 생성 메서드를 
 |**Package**|org.apache.log4j|org.apache.logging.log4j|
 |**Logger 생성**|org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger();|org.apache.logging.log4j.Logger logger = org.apache.logging.log4j.LogManager.getLogger();|
 
-#### 4. Log4j 2 설정 추가 (log4j2.xml)
+### 4. Log4j 2 설정 추가 (log4j2.xml)
 Log4j 2에서는 설정 태그들이 직관적이고 간단하게 변경되었다. 더 자세한 설명은 [Log4j 2 상세 설정](./log4j2-config.md) 을 참조하도록 한다.
 * Log4j 1.x
 
@@ -232,7 +228,7 @@ Log4j 2에서는 설정 태그들이 직관적이고 간단하게 변경되었�
 
 ```
 
-**참고자료**
+## 참고자료
 * [Migration to Log4j 2](https://logging.apache.org/log4j/2.x/migrate-from-log4j1.html)
 * [Log4j 2 API Documentation](https://logging.apache.org/log4j/2.x/javadoc/log4j-api/index.html)
 *[Log4j 2 Implementation Documentation](https://logging.apache.org/log4j/2.x/javadoc/log4j-core/index.html)

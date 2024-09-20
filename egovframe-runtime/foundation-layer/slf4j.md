@@ -35,7 +35,8 @@ import org.slf4j.LoggerFactory;
 ```
  
  ### 1. SLF4J 기본 설정
-1) SLF4J API를 사용하기 위해 slf4j-api.jar를 추가한다.
+ 
+ 1) SLF4J API를 사용하기 위해 **slf4j-api.jar를 추가**한다.
 ```xml  
 <dependency>
   <groupId>org.slf4j</groupId>
@@ -180,7 +181,7 @@ import org.slf4j.LoggerFactory;
 ```
 ### 2. 환경설정 파일을 logback으로 변경
 log4j 환경설정 파일은 SLF4J가 인식할 수 없기 때문에, 기존 환경설정을 logback으로 변경해야한다.
-log4j properties file translator(https://logback.qos.ch/translator/) 를 이용하거나 logback manual(https://logback.qos.ch/manual/index.html)을 참조하여 변경할 수 있다.
+[log4j properties file translato](https://logback.qos.ch/translator/) 를 이용하거나 [logback manual](https://logback.qos.ch/manual/index.html)을 참조하여 변경할 수 있다.
 
 다음은 logback.xml 샘플이다.
 
@@ -199,6 +200,7 @@ log4j properties file translator(https://logback.qos.ch/translator/) 를 이용�
   </root>
 </configuration>
 ```
+
 
 ## 참고자료 
 * [SLF4J](https://www.slf4j.org/)

@@ -1,12 +1,10 @@
-# Logging 서비스
+# Log4j 2 환경설정 [코드 내에서 직접 설정 시]
 
-## Log4j 2 환경설정 [코드 내에서 직접 설정 시]
-
-### 개요
+## 개요
 Log4j 2 환경 설정(Appender, Layout, Log Level 등)을 코드 내에서 직접 제어할 수 있다.
 아래는 별도의 외부 설정파일 없이도 로깅할 수 있는 방법을 설명한다.
 
-### 설명
+## 설명
 **사용 방법**
 
 별도의 Log4j 2 설정파일 없이도 코드 내에서 Logger 객체를 획득하여 로깅이 가능하다.
@@ -96,5 +94,5 @@ public void log4j2ConfigTest() {
 }
 ```
 
-**참고자료**
+## 참고자료
 * [Apache Log4j Core 2.24.1-SNAPSHOT API](https://logging.apache.org/log4j/2.x/javadoc/log4j-core/index.html)
