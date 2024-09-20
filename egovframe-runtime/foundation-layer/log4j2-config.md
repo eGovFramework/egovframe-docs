@@ -389,4 +389,4 @@ PatternLayout은 Appender 요소의 하위 요소로 정의한다.
 
 
 ## 참고자료
-* [Apache Logging Services](https://logging.apache.org/index.html_)
+* [Apache Logging Services](https://logging.apache.org/index.html)
