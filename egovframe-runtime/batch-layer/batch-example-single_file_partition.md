@@ -53,7 +53,7 @@
 ##### MultiResourcePartitioner
 
 스프링에서 제공하는 MultiResourcePartitioner 를 사용하며 입력리소스의 수(입력파일 수)만큼 Context를 생성하고 출력위치를 셋팅하는 역할을 한다.(Context 생성으로 여러 Slave Step들을 사용할 수 있게 됨)
-✔ 이 예제에서 는 File 파티셔닝 예제에서 사용하는 [MultiResourcePartitioner](./batch-example-file-partition.md#multiresourcepartitioner)와 동일하므로 해당부분을 참고한다.
+✔ 이 예제에서 는 File 파티셔닝 예제에서 사용하는 [MultiResourcePartitioner](./batch-example-file_partition.md#multiresourcepartitioner)와 동일하므로 해당부분을 참고한다.
 
 #### EgovOutputFileListener
 
@@ -66,7 +66,7 @@ Step 수행 이전에 호출이 되며, 입력리소스의 정보를 이용하�
 
 **partitionFileToOneFileJob 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.**
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.   
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.   
 ✔ assertEquals(“COMPLETED”, jobExecution.getExitStatus().getExitCode()) : 배치수행결과가 COMPLETED 인지 확인한다.  
 ✔ 데이터처리 결과를 확인하기 위해, 배치수행과 개별적으로 여러 입력파일의 데이터 합과 단일 출력파일의 데이터 합을 비교하여 정상수행여부를 판단한다.  
 
