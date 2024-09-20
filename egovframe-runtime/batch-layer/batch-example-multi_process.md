@@ -191,4 +191,4 @@ split된 두 개의 flow가 멀티쓰레드(SimpleAsyncTaskExecutor-1,SimpleAsyn
 
 ## 참고자료
 
-* [병행처리](./batch-core-parallel-process.md)
+* [병행처리](./batch-core-parallel_process.md)
