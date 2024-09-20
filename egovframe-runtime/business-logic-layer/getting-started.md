@@ -277,7 +277,7 @@ hello-flow.xml
 </flow>
 ```
 
-자세한 설명은 flow 정의 에서 다루고 있다.
+자세한 설명은 [flow 정의](./flow_definition.md) 에서 다루고 있다.
 간단하게 보면 .
 view-state , end-state 로 나눠져 있는 것을 볼 수 있다. 처음으로 존재하는 view-state 는 시작점이라고 생각해도 무방하다. 또한 문자 그대로 end-state 는 마지막점이다. hello 라는 화면이 맨처음 나오고 거기서 helloworld 화면이 보이고 다음은 return 이라는 마지막실행을 하는 것이다.
 view-state 안쪽의 transition 는 화면에서 클릭하여 이동하게 하는 버튼의 실행이라고 할 수 있다. 여기선 say 를 눌러서 실행하면 helloworld 라는 view-state 로 이동하는 것이다. 마찬가지로. return 을 누르면 externalRedirect:servletRelative:/start 으로 이동하는 것이다.
@@ -410,7 +410,7 @@ hello2.jsp 를 화면에 보여주는데 앞단의 예제와 같다. Spring MVC 
 ...
 ```
 
-*** hello.jsp ***
+***hello.jsp***
 
 ```xml
 ...
