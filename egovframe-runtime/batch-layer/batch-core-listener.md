@@ -401,7 +401,7 @@ public class EgovChunkPostProcessor extends ChunkListenerSupport {
 
 #### 사용예시
 
-[작업 전후처리 예제](./batch-example-pre-post-process-mgmt.md)
+[작업 전후처리 예제](./batch-example-pre_post_process_mgmt.md)
 
 ## 참고자료
 
