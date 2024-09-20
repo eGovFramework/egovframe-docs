@@ -33,7 +33,7 @@ TaskExecutor 예제에서 TaskExecutor 인터페이스를 구현하기 위해 �
 
 #### 관련 예제
 
-[멀티쓰레드 예제](./batch-example-multi-process.md)
+[멀티쓰레드 예제](./batch-example-multi_process.md)
 
 ### Parallel Steps
 
@@ -66,7 +66,7 @@ task-executor 속성은 각각의 흐름을 실행하는데 필요한 TaskExecut
 
 #### 관련 예제
 
-[Parallel 예제](./batch-example-multi-process.md)
+[Parallel 예제](./batch-example-multi_process.md)
 
 ### 파티셔닝(Partitioning)
 
@@ -140,7 +140,7 @@ Step이 동일한 구성을 갖는 것은 PartitionHandler에 의해 실행하�
 
 #### 관련 예제
 
-[파티셔닝 예제](./batch-example-multi-process.md)
+[파티셔닝 예제](./batch-example-multi_process.md)
 
 ## 참고자료
 
