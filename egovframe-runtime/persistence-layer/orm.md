@@ -53,7 +53,7 @@ junit-4.4.jar|테스트 지원 라이브러리|
 #### Step2. Entity 클래스 생성
 간단한 형태의 Entity 클래스를 생성한다. 네개의 Attribute로 구성되어 있고 각각의 getter,setter 메소드로 구성되어 있다.
 ##### Entity 클래스
-```
+```java
 @Entity
 public class Department implements Serializable {
  
@@ -83,7 +83,7 @@ public class Department implements Serializable {
 
 #### Step3. persistence.xml 생성
 위에서 정의한 Entity 클래스를 가지고 JPA 수행하기 위한 프로퍼티 파일로 구현체제공 클래스정보,엔티티클래스정보,DB접속 정보,로깅정보,테이블자동생성정보를 포함하고 있다.
-```
+```java
 <persistence-unit name="PersistUnit" transaction-type="RESOURCE_LOCAL">
  
    <provider>org.hibernate.ejb.HibernatePersistence</provider>
@@ -117,7 +117,7 @@ public class Department implements Serializable {
 
 #### Step4. 테스트 클래스 생성
 위에서 정의한 Department를 이용하여 입력,수정,조회,삭제 처리를 하는 것을 JUNIT형태로 구성하였다.
-```
+```java
 @Test
 public void testDepartment() throws Exception {
  
@@ -173,7 +173,7 @@ public void testDepartment() throws Exception {
 - assertNull : NULL 인지 확인하는 것 (JUnit 메소드)
 
 #### Step5. 실행
-1. <a href="./images/ormsimpleguide.zip" download>ormsimpleguide.zip</a> 파일을 다운로드 받아서 압축을 푼다.
+1. [ormsimpleguide.zip](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:rte:ormsimpleguide.zip) 파일을 다운로드 받아서 압축을 푼다.
 2. 이클립스에서 압축 푼 폴더를 선택하여 프로젝트를 Import 한다.
 3. 프로젝트내 src 폴더에 Department.java, DepartmentTest.java, resources 폴더에 META-INF/persistence.xml, log4j.xml 가 정상적으로 있는지 확인한다.
 4. lib에 라이브러리 파일이 있는지 확인한다.
