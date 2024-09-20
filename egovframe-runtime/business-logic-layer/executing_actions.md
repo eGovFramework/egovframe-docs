@@ -2,14 +2,14 @@
 
 ## 개요
 
-action-state 은 flow 내에서 action 실행을 제어하기 위한 요소이다.
+action-state 은 flow 내에서 action 실행을 제어하기 위한 요소이다.  
 decision-state 를 이용하여 if-else 와 같은 흐름제어를 할 수 있다. 좀 더 자세히 알아보도록 하자.
 
 ## 설명
 
 ### 액션 상태 정의하기
 
-특정 액션을 호출한 다음에, 그 결과에 따라서 다른 상태로 전이하고 싶은 경우에는 action-state 구성요소를 사용하자.
+특정 액션을 호출한 다음에, 그 결과에 따라서 다른 상태로 전이하고 싶은 경우에는 action-state 구성요소를 사용하자.  
 직관적으로 봤을 때 아래 코드는 interview.moreAnswersNeeded() 의 결과값에 의해 transition 이 실행될 것을 예상할 수 있다.
 
 ```xml
@@ -55,7 +55,7 @@ decision-state 를 이용하여 if-else 와 같은 흐름제어를 할 수 있�
 
 ### 의사결정 상태(decision states) 정의
 
-action-state를 대신해서 편리하게 if/else 문법을 사용해서 이동하고자 하는 의사결정을 해주는 decision-state를 사용한다.
+action-state를 대신해서 편리하게 if/else 문법을 사용해서 이동하고자 하는 의사결정을 해주는 decision-state를 사용한다.  
 이전 예제를 의사결정 상태로 구현한 예를 보자.
 
 ```xml
@@ -64,18 +64,12 @@ action-state를 대신해서 편리하게 if/else 문법을 사용해서 이동�
 </decision-state>  
 ```
 
-액션은 대부분 POJO의 메소드를 호출한다. action-state와 decision-state을 호출했을 때,
-이들 메소드가 반환하는 값은 상태를 전이하게 해주는데 사용할 수 있다. 전이가 이벤트에 의해서 발생되기 때문에,
-우선 메소드가 반환하는 값은 반드시 Event 객체에 매핑되야 한다.
-다음 테이블은 공통적으로 반환하는 값 타입에 따라 Event 객체가 어떻게 매핑되는지를 설명해준다.
-메소드 반환 타입 매핑된 Event 식별자 표현
-
 ### 액션 출력 이벤트 매핑
 
 액션은 대부분 POJO의 메소드를 호출한다. action-state와 decision-state을 호출했을 때,
-이들 메소드가 반환하는 값은 상태를 전이하게 해주는데 사용할 수 있다. 전이가 이벤트에 의해서 발생되기 때문에,
-우선 메소드가 반환하는 값은 반드시 Event 객체에 매핑되야 한다.
+이들 메소드가 반환하는 값은 상태를 전이하게 해주는데 사용할 수 있다. 전이가 이벤트에 의해서 발생되기 때문에, 우선 메소드가 반환하는 값은 반드시 Event 객체에 매핑되야 한다.  
 다음 테이블은 공통적으로 반환하는 값 타입에 따라 Event 객체가 어떻게 매핑되는지를 설명해준다.
+
 메소드 반환 타입 매핑된 Event 식별자 표현
 
 | 결과로 리턴되는 타입 | 메핑되는 이벤트 값 |
@@ -87,20 +81,20 @@ action-state를 대신해서 편리하게 if/else 문법을 사용해서 이동�
 
 예제.moreAnswersNeeded() 메소드의 리턴 타입은 boolean 인 것을 예상할 수 있으면 그에 따라 yes, no 에 매핑됨을 알 수 있다.
 
-'''xml
+```xml
 <action-state id="moreAnswersNeeded">
 	<evaluate expression="interview.moreAnswersNeeded()" />
 	<transition on="yes" to="answerQuestions" />
 	<transition on="no" to="finish" />
 </action-state>
-'''
+```
 
 ### 액션 구현
 
-POJO 로직처럼 action 코드를 작성하는 것이 가장 일반적이다.
-때로는 flow context에 접근할 필요가 있는 액션 코드를 작성할 필요가 있다.
-이럴 때는 POJO를 호출하면서, EL 변수로 flowRequestContext를 건낼 수 있다.
-그 대신 Action 인터페이스를 구현하거나, MultiAction 기본 클래스를 상속할 수도 있
+POJO 로직처럼 action 코드를 작성하는 것이 가장 일반적이다.  
+때로는 flow context에 접근할 필요가 있는 액션 코드를 작성할 필요가 있다.  
+이럴 때는 POJO를 호출하면서, EL 변수로 flowRequestContext를 건낼 수 있다.  
+그 대신 Action 인터페이스를 구현하거나, MultiAction 기본 클래스를 상속할 수도 있다.  
 
 #### POJO 메소드 호출
 
@@ -151,8 +145,10 @@ public class CustomMultiAction extends MultiAction {
 
 ### 액션 예외
 
-action은 복잡한 비즈니스 로직을 캡슐화하고 있는 서비스를 호출할 수도 있다.
+action은 복잡한 비즈니스 로직을 캡슐화하고 있는 서비스를 호출할 수도 있다.  
 이 서비스들은 비즈니스 예외를 던질 수도 있으니 이를 처리해야 할 수도 있다.
+
+#### POJO 액션 사용 시 비즈니스 예외 제어하기
 
 ```xml
 <evaluate expression="bookingAction.makeBooking(booking, flowRequestContext)" />
@@ -175,9 +171,9 @@ public class BookingAction {
 }
 ```
 
-### MultiAction 사용 시 비즈니스 예외 제어하기뷰 범위
+### MultiAction 사용 시 비즈니스 예외 제어하기
 
-아래 예제는 이전 예제와 기능적으로는 동일하지만, POJO 액션 대신 MultiAction으로 구현했다.
+아래 예제는 이전 예제와 기능적으로는 동일하지만, POJO 액션 대신 MultiAction으로 구현했다.  
 Event ${methodName}(RequestContext) 규약에 따라 메소드를 구성하면 되고, POJO의 자유스러움에 비해, 보다 더 강력한 타입 안정성을 제공한다.
 
 ```xml
@@ -202,21 +198,6 @@ public class BookingAction extends MultiAction {
 ```
 
 ### 다른 Action 실행 예제
-
-#### on-start
-
-```xml
-<flow xmlns="http://www.springframework.org/schema/webflow"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/webflow
-http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
-	<input name="hotelId" />
-	<on-start>
-		<evaluate expression="bookingService.createBooking(hotelId, currentUser.name)"
-			result="flowScope.booking" />
-	</on-start>
-</flow>
-```
 
 #### on-start
 
@@ -319,7 +300,7 @@ http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 #### Streaming actions
 
-아래 예는 flow 에서 printBoardingPassAction 를 호출하는 것으로 PDF 로 프린트 하고자할 때 구현하는 예를 보여주고 있다.
+아래 예는 flow 에서 printBoardingPassAction 를 호출하는 것으로 PDF 로 프린트 하고자할 때 구현하는 예를 보여주고 있다.  
 AbstractAction 을 상속한 PrintBoardingPassAction 의 doExecute() 메소드안에 실제 pdf 관련 소스를 구현하고 success() 를 리턴한다.
 
 ```xml
