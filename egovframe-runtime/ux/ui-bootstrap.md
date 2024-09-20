@@ -20,7 +20,7 @@
 
 다운로드
 부트스트랩 사이트(http://getbootstrap.com/getting-started/#download)의 메뉴 중 시작하기 > 다운로드 항목에서 원하는 종류의 다운로드를 진행한다.
-부트스트랩 사이트에서는 여러가지 다운로드를 제공하는데, 본 가이드에서는 프리컴파일 된 부트스트랩1)을 다운로드하여 진행하였다.
+부트스트랩 사이트에서는 여러가지 다운로드를 제공하는데, 본 가이드에서는 프리컴파일 된 부트스트랩 을 다운로드하여 진행하였다.
 부트스트랩 CDN
 MaxCDN에서 부트스트랩의 CSS 와 자바스크립트를 CDN으로 지원한다. 이를 사용하려면, 아래의 부트스트랩 CDN 링크들을 추가하면 사용할 수 있다. 자세한 내용은 다음 링크(download-cdn)를 확인 한다.
 
@@ -70,7 +70,7 @@ bootstrap/
 
 ## 부트스트랩의 특징
 ### HTML5
-부트스트랩은 HTML5의 HTML요소와 CSS속성을 요구하기 때문에 HTML5 doctype을 사용해야 한다. 항상 페이지의 시작부분에 HTML5 doctype과 <head>내에 lang 속성과 character set을 추가해 주어야한다.
+부트스트랩은 HTML5의 HTML요소와 CSS속성을 요구하기 때문에 HTML5 doctype을 사용해야 한다. 항상 페이지의 시작부분에 HTML5 doctype과 \<head>내에 lang 속성과 character set을 추가해 주어야한다.
 
 ```html
 <!DOCTYPE html>
@@ -83,7 +83,7 @@ bootstrap/
 
 ### 모바일 친화적
 부트스트랩2 에서는 모바일 친화적인 스타일을 프레임워크의 core로 추가했었는데. 부트스트랩3 부터는 시작부터 모바일 친화적으로 설계 되었다.
-다음은 페이지의 렌더링과 확대/축소를 사용하기 위한 것으로, <head> 내에 viewport 메타 태그를 추가한다.
+다음은 페이지의 렌더링과 확대/축소를 사용하기 위한 것으로, \<head> 내에 **viewport** 메타 태그를 추가한다.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -582,9 +582,9 @@ bootstrap/
 
 “Modal content” 부분
 
-* “modal-content” 클래스의 <div>는 모달의 스타일(border, background-color 등…)을 지정한다. 여기에 모달의 header, body, footer를 추가한다.
+* “modal-content” 클래스의 \<div>는 모달의 스타일(border, background-color 등…)을 지정한다. 여기에 모달의 header, body, footer를 추가한다.
 * .modal-header 클래스는 모달의 header 스타일을 정의하는데 사용한다.
-* header 안의 <button>에는 data-dismiss=“modal” 속성이 정의되어 있는데 이는 클릭하면 모달을 닫는 기능을 수행한다.
+* header 안의 \<button>에는 data-dismiss=“modal” 속성이 정의되어 있는데 이는 클릭하면 모달을 닫는 기능을 수행한다.
 * .close 클래스는 닫기버튼의 스타일이다.
 * .modal-title 클래스는 header의 적절한 라인 높이의 스타일이다.
 * .modal-body 클래스는 모달의 body 스타일을 정의하는데 사용한다. 여기에 다른 HTML markup(paragraphs, images, videos, 등…)들을 추가한다.
