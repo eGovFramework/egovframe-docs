@@ -128,7 +128,7 @@ bootstrap/
 #### 예제 2 : container-fluid
 
 ```html
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <title>Bootstrap Example</title>
@@ -457,7 +457,7 @@ bootstrap/
 페이지네이션 컴퍼넌트로 사이트나 앱을 위한 페이지네이션 링크를 제공한다.
 
 **사용법**
-페이지네이션의 경우 순서가 없는 목록(unordered list, <ul> )에 .pagination class 클래스를 추가한다.
+페이지네이션의 경우 순서가 없는 목록(unordered list, \<ul> )에 .pagination class 클래스를 추가한다.
 
 다음은 페이지네이션을 사용한 예제이다.
 ```html
@@ -495,7 +495,7 @@ bootstrap/
 
 ![pagination_exam1](./images/pagination_exam1.png)
 
-위의 예제에서 리스트 아이템(list item, <li>)에 .active class를 추가하면, 해당 링크는 활성 상태가 된다. 클릭할 수 없는 링크일 경우 .disable을 사용하면 비활성 상태로 된다.
+위의 예제에서 리스트 아이템(list item, \<li>)에 .active class를 추가하면, 해당 링크는 활성 상태가 된다. 클릭할 수 없는 링크일 경우 .disable을 사용하면 비활성 상태로 된다.
 
 ### 자바스크립트
 부트스트랩 내에 존재하는 UI 컴포넌트에 동적인 인터랙션이 필요한 컴포넌트는 12개가 넘는 jQuery plugin을 통하여 컨트롤 할 수 있도록 되어있다.
