@@ -71,7 +71,7 @@
 
  스프링배치는 Step의 파티셔닝 수행을 원격으로 파티셔닝하기 위하여 SPI를 제공한다. 다음 수행 패턴을 그림으로 표현했다.
 
- ![partition_overview]](./images/batch_core-partition_overview.png)
+ ![partition_overview](./images/batch_core-partition_overview.png)
 
  Job은 왼쪽부터 Step의 흐름대로 진행된다. Step들 중에서 하나는 마스터 라벨로 지정되어 있다. 이 그림에서 슬레이브 라벨들은 Step의 인스턴스로 식별되고, 그 결과가 마스터의 결과로 귀속된다. 슬레이브는 전형적으로 원격서비스로 이루어지며 로칼쓰레드로 전달된다. JobRepository 의 스프링배치 meta-data에서 각각의 슬레이브가 Job에서 각각 한번 수행되는 것을 보장한다.
 
