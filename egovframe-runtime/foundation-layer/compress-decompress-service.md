@@ -2,7 +2,7 @@
 
 ## 개요
 
-**전자정부 프레임워크**에서는 다양한 압축방식을 개발자들에게 편리한 API를 제공하는 Jakarta Commons의 Compress를 오픝소스로 채택하였다.
+**전자정부 프레임워크**에서는 다양한 압축방식을 개발자들에게 편리한 API를 제공하는 Jakarta Commons의 Compress를 오픈소스로 채택하였다.
 
 Jakarta Commons의 Compress에서 지원하는 tar, zip and bzip2 파일등을 지원한다.
 
