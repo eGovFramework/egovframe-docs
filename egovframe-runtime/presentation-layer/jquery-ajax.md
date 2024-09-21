@@ -287,7 +287,7 @@ jQuery에서는 input창에서 예상되는 텍스트값을 보여주는 자동�
 #### autoComplete 기본 예제
 기본 autoComplete기능 구현은 다음과 같다.
 
-```javascript
+```html
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -368,7 +368,7 @@ data로 전송하는 request.term은 input값으로 사용자가 입력한 값�
 
 다음은 MappingJacksonJsonView의 빈을 jsonView로 등록했을 때 Controller에서 data를 꺼내고 결과값을 client로 넘겨주는 예제이다.(Ajax통신 시 java코드는 <Ajax support java code 위키>를 참고한다.)
 
-```javascript
+```java
 @RequestMapping(value="/autoList.do")
 public String autoList(HttpServletRequest request, ModelMap model) {
  
@@ -383,7 +383,7 @@ public String autoList(HttpServletRequest request, ModelMap model) {
 ```
 이 때, 호출되는 Query문의 예이다. (mybatis예제)
 
-```javascript
+```xml
 <select id="selectLocationList" parameterType="string" resultType="string">
 SELECT
 	LOCATION_NM
@@ -408,7 +408,7 @@ ajax의 성공시 콜백함수인 success에서는 data.locations로 값을 꺼�
 Controller에서 List\<Object>의 값을 ModelMap에 “locations”라는 이름으로 클라이언트로 넘겨주고 서버에서 다음과 같이 json data가 넘어왔을 때
 
 ```javascript
- {"locations":[{"locationId":"0006","locationNm":"Daejeon","localNb":"042"},{"locationId":"0010","locationNm":"Jeju-do","localNb":"064"},{"locationId":"0011","locationNm":"Jeolabuk-do","localNb":"063"},{"locationId":"0012","locationNm":"Jeolanam-do","localNb":"061"}]}
+{"locations":[{"locationId":"0006","locationNm":"Daejeon","localNb":"042"},{"locationId":"0010","locationNm":"Jeju-do","localNb":"064"},{"locationId":"0011","locationNm":"Jeolabuk-do","localNb":"063"},{"locationId":"0012","locationNm":"Jeolanam-do","localNb":"061"}]}
 ```
 
 autocomplete의 source에 넘어온 값이 나타나도록 하는 Object는 label, id, value값을 가질 수 있다. 그렇기 때문에 넘어온 request의 값을 success콜백함수에서 source에 나타나도록하는 Object형태로 변환해야 한다.
@@ -620,6 +620,7 @@ Tab을 구현하는 경우 기본 예제는 다음과 같다.
 </html>
 ```
 위의 결과는 다음과 같다.
+
 ![](./images/panel.png)
 
 - referenced [jquery ui site](https://jqueryui.com/tabs/#default)
