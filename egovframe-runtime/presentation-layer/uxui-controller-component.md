@@ -48,12 +48,12 @@ jQuery Mobile 의 Page 구조는 div를 사용하여 표현하며 html5의 ‘da
 
 #### 모바일 Page Link
 
-jQuery Mobile 은 하나의 페이지를 <div data-role=“page”> 단위로 관리 하며 한 HTML 내에 여러 <div data-role=“page”> 가 있을 경우 제일 상단의 div page를 첫 화면으로 인식한다. 이들 내부 페이지 간 이동은 링크 속성에 #pageName을 사용해서 가능 하다. jQuery Mobile 은 외부 페이지 이동시 anchor 태그의 링크를 가로채서 Ajax 로 해당 URL 호출 후 호출 된 Page 의 <div data-role=“page”> 영역만 가져와서 호출 한 HTML 페이지의 DOM 에 해당 내용을 추가 한다.
+jQuery Mobile 은 하나의 페이지를 \<div data-role=“page”> 단위로 관리 하며 한 HTML 내에 여러 \<div data-role=“page”> 가 있을 경우 제일 상단의 div page를 첫 화면으로 인식한다. 이들 내부 페이지 간 이동은 링크 속성에 #pageName을 사용해서 가능 하다. jQuery Mobile 은 외부 페이지 이동시 anchor 태그의 링크를 가로채서 Ajax 로 해당 URL 호출 후 호출 된 Page 의 \<div data-role=“page”> 영역만 가져와서 호출 한 HTML 페이지의 DOM 에 해당 내용을 추가 한다.
 
 * Ajax 로 호출된 page 의 CSS, JS 는 가져 오지 않기 때문에 호출한 Page는 호출된 Page 의 JS, CSS를 포함하고 있어야 한다.
 * 외부페이지 이동 시 ajax 통신을 하고 싶지 않은 경우에는 data-ajax=“false”를 사용한다.
 
-** UX Component
+### UX Component
 | **컴포넌트**                    | **제공기능**                                                                                                                                                               |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Button**                       | **설명**: 명령 수행, 옵션 선택, 다른 대화 상자 열기 등에 사용하는 컴포넌트 제공                                                                                             |
@@ -131,7 +131,9 @@ jQuery Mobile 은 하나의 페이지를 <div data-role=“page”> 단위로 �
 ### UX 컴포넌트 별 지원 브라우저 (호환성)
 
 **테스트 디바이스**
+
 ![img_test_device](./images/img_test_device%20(1).png)
+
 **테스트 브라우저**
 
 ![test_browser](./images/test_browser.png)
