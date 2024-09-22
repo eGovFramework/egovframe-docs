@@ -21,7 +21,7 @@ Scheduler 기반의 배치 템플릿 프로젝트를 이용하여 EgovSchedulerR
 
 ✔ Scheduler 배치 템플릿 실행에 필요한 xml 정보와 Scheduler의 Trigger 정보가 기술되어 있다.  
 ✔ Trigger에 jobDetail(JobDetailBean)과 cronExpression를 설정한다. 기본적으로 매 10초 주기로 jobDetail을 실행하도록 설정되어 있다.  
-✔ 다른 Trigger의 사용방법을 알기 위해서는 [Scheduling 서비스](../foundation-layer/scheduling.md) 를 참고한다. 
+✔ 다른 Trigger의 사용방법을 알기 위해서는 [Scheduling 서비스](../foundation-layer/scheduling-service.md) 를 참고한다. 
 
 ```xml
     <import resource="context-batch-datasource.xml" />
