@@ -27,4 +27,4 @@ Logging 구현체는 **Log4j 2**를 이용하여 Logging을 수행한다.
 - [Log4J 2](./logging-log4j2.md)
 
     - [프로그래밍내에서 직접 설정하는 방법](./logging-log4j2_configuration_code.md)
-    - [설정 파일을 사용하는 방법](./logging-log4j2_configuration_code.md)
+    - [설정 파일을 사용하는 방법](./logging-log4j2_configuration_file.md)
