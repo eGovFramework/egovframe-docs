@@ -28,7 +28,7 @@
 
 ### MessageSources를 사용한 국제화(Internationalization using MessageSources)
 
- 본 장의 내용은 [Resource](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:resource)를 참조한다.
+ 본 장의 내용은 [Resource](./resource.md)를 참조한다.
 
 ### Event
 
