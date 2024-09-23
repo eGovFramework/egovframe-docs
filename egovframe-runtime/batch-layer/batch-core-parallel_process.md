@@ -2,6 +2,7 @@
 
 ## 개요
 
+
 대용량 데이터를 처리하는 배치수행에서 병렬처리를 이용하면, Job의 구성요소들이 여러 쓰레드 분산수행되어 빠른 시간 내에 효율적으로 작업을 완료할 수 있다.
 스프링 배치에서 병렬처리 방식은 실행 유형별로 멀티쓰레드 방식, Parallel 방식, 파티셔닝 방식 등이 있다.
 
@@ -16,6 +17,7 @@
     <tasklet task-executor="taskExecutor">...</tasklet>
 </step>
 ```
+
 
 TaskExecutor 예제에서 TaskExecutor 인터페이스를 구현하기 위해 빈을 정의한다. TaskExecutor 는 스프링 인터페이스 표준이므로 상세한 내용은 스프링 가이드를 참고한다. 가장 간단한 멀티쓰레드 TaskExecutor 는 SimpleAsyncTaskExecutor 이다. 위 Step 구성으로 수행한 결과 각 청크단위의 reading, processing, writing 과정이 분리된 쓰레드에서 수행된다. 즉, 처리시 순서를 보장하지 않으며 Chunk는 단일 쓰레드 수행과 비교해 item 들이 연속적이지 않다.(commit-Interval의 영향으로 Chunk 내의 순서는 같을 수 있다.)
 
