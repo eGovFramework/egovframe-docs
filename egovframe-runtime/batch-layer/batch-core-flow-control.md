@@ -271,18 +271,7 @@ Job의 flow중 일부는 별도의 bean 설정으로 분리 될 수 있으며, �
 위 예제를 보자. job parameters extractor 설정에서 Job이 실행 될때 Step의 ExecutionContext에서 JobParameters를 얻는 방법에 대해 정의한다. JobStep은 Job과 Step의 모니터링을 할때 좀더 세밀한 옵션을 주고 싶을 때 유용하다. JobStep은 “Job 사이의 dependencies를 어떻게 생성하느냐?”의 질문에 대한 좋은 답이 될 수 있다. 위와 같은 설정은 큰 시스템을 작은 모듈로 분리하고 Job의 flow를 컨트롤하는데 유용하게 사용될 수 있다.
 
 #### 관련예제
-[Flow Control 활용한 건너뛰기(Skip) 기능 예제]()
+[Flow Control 활용한 건너뛰기(Skip) 기능 예제](./batch-example-skip_mgmt.md)
 
 ## 참고자료
-[http://static.springsource.org/spring- batch/reference/html/configureStep.html#controllingStepFlow](https://docs.spring.io/spring-batch/reference/#controllingStepFlow)
-
-
-
-
-
-
-
-
-
-
-https://docs.spring.io/spring-batch/reference/#controllingStepFlow
+- [http://static.springsource.org/spring- batch/reference/html/configureStep.html#controllingStepFlow](https://docs.spring.io/spring-batch/reference/#controllingStepFlow)

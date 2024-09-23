@@ -233,7 +233,7 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 #### Step 흐름제어
 
-[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow-control.md) 
+[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow-control) 
 
 #### Step 흐름제어
 
@@ -243,5 +243,5 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 
 ## 참고자료
-* http://static.springsource.org/spring-batch/reference/html/domain.html#domainStep
-* http://static.springsource.org/spring-batch/reference/html/configureStep.html
+- [http://static.springsource.org/spring-batch/reference/html/domain.html#domainStep](https://docs.spring.io/spring-batch/reference/#domainStep)
+- [http://static.springsource.org/spring-batch/reference/html/configureStep.html](https://docs.spring.io/spring-batch/reference/)
