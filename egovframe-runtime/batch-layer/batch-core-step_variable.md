@@ -52,8 +52,6 @@ setter 방식으로 공유변수 사용시 아래와 같이 응용하여 설정�
 
 ### Setp 처리시 Step Variable 사용
 
-setter 방식으로 공유변수 사용시 아래와 같이 응용하여 설정한다.
-
 ```java
 public class TaskletStep implements Tasklet, InitializingBean {
  
