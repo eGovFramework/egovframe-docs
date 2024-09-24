@@ -331,7 +331,9 @@ transition 에 대한 내용은 flow 정의에서 자세히 살펴보길 바란�
 ### Hello, Web Flow with input value
 
 먼저 flow 정의 파일인 hello2-flow.xml 을 보도록 하자.
-실행 시나리오는 on-start ⇒ view-state ⇒ action-state ⇒ decision-stat ⇒ end-state 이다. ***hello2-flow.xml***
+실행 시나리오는 on-start ⇒ view-state ⇒ action-state ⇒ decision-stat ⇒ end-state 이다. 
+
+**hello2-flow.xml**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -376,7 +378,7 @@ transition 에 대한 내용은 flow 정의에서 자세히 살펴보길 바란�
 보여 주고자 하는 것은 hello2 화면(view-state) 에서 입력 데이터를 객체에 바인딩하고, helloService 서비스 객체를 통해 addHello 메소드 실행, 그후 결과에 따라 분기문(decision-state) 를 통과하여 helloworld2 화면으로 가는 것이다.<br/>
 간략하게 설명하면, on-start 는 flow 를 처음 실행할 때 선행하여 실행된다. 여기서는 helloService의 sayMessage 를 실행하여 flowScope 내의 message 객체로 저장한다.
 
-***HelloService .java***
+**HelloService .java**
   
 ```java
 ...
@@ -394,7 +396,7 @@ public class HelloService implements Iservice {
 flow가 시작할 때 첫번째로 만나는 view-state 는 시작점으로 인식한다. 따라서 view-state “hello2” 는 시작점에 해당한다.<br/>
 hello2.jsp 를 화면에 보여주는데 앞단의 예제와 같다. Spring MVC 의 tiles 를 이용하여 보여주게 된다.
 
-***views.xml***
+**views.xml**
 
 ```xml
 ...
@@ -408,7 +410,7 @@ hello2.jsp 를 화면에 보여주는데 앞단의 예제와 같다. Spring MVC 
 ...
 ```
 
-***hello.jsp***
+**hello.jsp**
 
 ```xml
 ...
