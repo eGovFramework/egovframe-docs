@@ -17,7 +17,7 @@ public interface JobLauncher {
 
 JobLauncher 인터페이스의 기본 구현 클래스로는 SimpleJobLauncher이 제공된다. SimpleJobLauncher클래스는 JobName과 JobParameter를 이용하여 JobRepository에서 Job의 실행시도를 나타내는 JobExecution을 획득하고 작업을 수행한다.
 
-이를 이용한 jobLauncher 설정은 아래와 같다. JobExecution을 획득하기 위한 jobRepository의 설정이 필수이다.
+이를 이용한 jobLauncher 설정은 아래와 같다. JobExecution을 획득하기 위한 [jobRepository](./batch-execution-job-repository.md)의 설정이 필수이다.
 
 ```xml
 <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
