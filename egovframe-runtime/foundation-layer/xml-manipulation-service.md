@@ -2,20 +2,20 @@
 
 ## 개요
 
-XML Manipulation 서비스는 XML을 생성하고,읽고,쓰는 등과 같은 기능과 조작 기능을 제공하는 서비스이다.
-XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다.XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.XML은 주로 다른 시스템,특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고 받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다. XML은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다. XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.
+XML Manipulation 서비스는 XML을 생성하고, 읽고, 쓰는 등과 같은 기능과 조작 기능을 제공하는 서비스이다.
+XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다.XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.XML은 주로 다른 시스템, 특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다. XML은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다. XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.
 
 ## 설명
 
 ### XML Parser
 
-XML 문서를 읽어 들이는 역활을 수행하는 파서는 두 가지 종류가 있다. XML 파일의 내용을 트리 구조로 한번에 읽어 들여 객체를 생성하여 처리하는 [DOM(Document Object Model)](http://www.w3.org/DOM/) 과 각각의 태그와 내용 등이 인식될 때마다 XML 문서를 읽어 들이는 [SAX(Simple API for XML)](http://www.saxproject.org/)라는 기술이다.
+XML 문서를 읽어 들이는 역할을 수행하는 파서는 두 가지 종류가 있다. XML 파일의 내용을 트리 구조로 한번에 읽어 들여 객체를 생성하여 처리하는 [DOM(Document Object Model)](http://www.w3.org/DOM/) 과 각각의 태그와 내용 등이 인식될 때마다 XML 문서를 읽어 들이는 [SAX(Simple API for XML)](http://www.saxproject.org/)라는 기술이다.
 
 #### DOM(Document Object Model)
 
 ##### 요약
 
-XML 문서는 **요소(element)**,**속성(attribute)**,**Text** 등으로 구성된 트리 구조의 계층적인 정보이다. ⇒DOM을 이용하면 XML 문서의 각 요소들에 대하여 트리 구조의 객체롤 읽어 들인다. DOM은 XML 문서를 나타내는 각각의 객체들에 대한 표준 인터페이스이다. DOM 파서는 XML 문서로부터 DOM 구조를 생성하는 역활을 한다.
+XML 문서는 **요소(element)**,**속성(attribute)**,**Text** 등으로 구성된 트리 구조의 계층적인 정보이다. ⇒DOM을 이용하면 XML 문서의 각 요소들에 대하여 트리 구조의 객체를 읽어 들인다. DOM은 XML 문서를 나타내는 각각의 객체들에 대한 표준 인터페이스이다. DOM 파서는 XML 문서로부터 DOM 구조를 생성하는 역할을 한다.
 
 ![xml-manipulation-service-dom](./images/xml-manipulation-service-dom.png)
 
@@ -81,7 +81,7 @@ public static void getNode(Node n) {
 - 노드의 자식(child)노드를 찾아간다
 - getNode()메서드를 호출하여 자식의 자식 노드들도 추출
 
-###### 5) 공백 이외의 텍스트만 추출 : 공백을 나타내는 텍스트 노드를 제외하고 요소의 내용에 대한 텍스트노드를 추출하려면 다음과 같은 조건식으로 제어문을 사용한다.
+###### 5) 공백 이외의 텍스트만 추출 : 공백을 나타내는 텍스트 노드를 제외하고 요소의 내용에 대한 텍스트 노드를 추출하려면 다음과 같은 조건식으로 제어문을 사용한다.
 
 ```java
 public static void getNode(Node n) {
@@ -181,7 +181,7 @@ org.xml.sax.EntityResolver
 org.xml.sax.ErrorHandler
 ```
 
-* org.xml.sax.ContentHandler : 이 핸드러는 SAX의 핵심으로,일반적인 문서 이벤트를 처리한다.
+* org.xml.sax.ContentHandler : 이 핸들러는 SAX의 핵심으로,일반적인 문서 이벤트를 처리한다.
 
 ```java
 void characters(char[] ch,int start,int length)
@@ -209,13 +209,13 @@ void unparsedEntityDecl(String name,String publicId,String systemId,String notat
                   // 파싱되지 않는 엔티티 선언 이벤트가 인식되면 호출된다.
 ```
 
-* org.xml.sax.EntityResolver : 외부 엔티티를 참조하기 위하여 호출된다. 만일 문서에 외부 엔티티 참조가 없다면, 이 인터페이스는 필요없다.
+* org.xml.sax.EntityResolver : 외부 엔티티를 참조하기 위하여 호출된다. 만일 문서에 외부 엔티티 참조가 없다면, 이 인터페이스는 필요 없다.
 
 ```java
 InputSource resolveEntity(String publicId,String systemId) // 확장 엔티티 처리와 관련된 기능을 처리한다.
 ```
 
-* org.xml.sax.ErrorHandler : 에러를 처리하기 위해 사용된다.파서는 모든 경고와 에러를 처리하기 위해 이핸틀러가 호출된다.
+* org.xml.sax.ErrorHandler : 에러를 처리하기 위해 사용된다. 파서는 모든 경고와 에러를 처리하기 위해 이 핸들러가 호출된다.
 
 ```java
 void error(SAXParseException exception) // 복구 가능한 오류 발생시 호출된다.
@@ -246,7 +246,7 @@ SAXParserFactory spf = SAXParserFactory.newInstance();
 SAXParser sp = spf.newSAXParser();
 ```
 
-* 핸들러 등록과 XML 문서 읽기 : 핸들러 클래스의 객체와 SAXParser의 객체를 생성한 후에 다음과 같이 여러 개로 오버로딩된 메서드를 중에서 하나를 선택하여 XML을 SAX 객체로 읽어 들인다.
+* 핸들러 등록과 XML 문서 읽기 : 핸들러 클래스의 객체와 SAXParser의 객체를 생성한 후에 다음과 같이 여러 개로 오버로딩 된 메서드를 중에서 하나를 선택하여 XML을 SAX 객체로 읽어 들인다.
 
 ```java
 void parse(File f,DefaultHandler dh)
