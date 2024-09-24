@@ -2,7 +2,7 @@
 
 ## 개요
 
-File Handling Service를 적용해서 Excel 다운로드 하기 위한 Excel 정보를 설정한다.
+[File Handling Service](./file-handling.md) 를 적용해서 Excel 다운로드 하기 위한 Excel 정보를 설정한다.
 
 [Excel](./excel-service.md) Service에 적용되어 있다.
 
