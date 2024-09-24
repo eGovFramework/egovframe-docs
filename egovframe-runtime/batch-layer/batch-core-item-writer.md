@@ -19,7 +19,9 @@ write() 메소드는 ItemWriter의 필수적인 메소드이며 인자로 건넨
 
 ### FlatFile ItemWriter
 FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 갖으며, LineAggregator에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 쓸 수 있다.
+
 ![image](./images/flatfileitemwriter_process.png)
+
 | 구분             | 데이터 형태        | 설명                                                                                                                                                                                                                                                                                          |
 | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LineAggregator | Item → String | ItemReader, ItemProcessor 과정을 거친 Item을 1 라인의 String으로 변환하는 총 과정(FieldExtractor 과정을 포함한다.)<br>\- **DelimitedLineAggregator (구분자)** : Item의 Field와 Field 사이에 구분자를 삽입하여 1라인의 String으로 변환하는 과정<br>\- **FormatterLineAggregator(고정길이 포맷)** : Item의 Field를 사용자가 설정한 포맷 기준으로 1라인의 String으로 변환하는 과정 |
@@ -371,6 +373,7 @@ Index Reader을 통해 읽어드린 파일을 NDX파일 설정에 따라 동적�
 ### 전자정부에서 제공하는 EgovMyBatisBatchItemWriter
 배치 처리시 mybatis에서 데이터를 쓰기 위해 EgovMyBatisBatchItemWriter 서비스를 제공합니다.(mybatis MyBatisBatchItemWriter 클래스를 확장한 서비스)
 실행환경 제공 Resource Variable, Step Variable, Job Variable 서비스와 함께 사용 가능하다.
+
 ![image](./images/egovmybatisbatchitemwriter_architecture.png)
 
 #### EgovMyBatisBatchItemWriter 설정항목
