@@ -4,6 +4,8 @@
 
 ### 설정
 
+#### Job 설정
+
 **DB 파티셔닝 예제의 Job 설정 파일인 partitionJdbcJob.xml을 확인한다.**
 
 - partitioner : gridSize 수 만큼 Master Step을 파티셔닝하는 EgovColumnRangePartitioner
@@ -43,11 +45,12 @@
 </bean>
 ```
 
-#### Partitioner
+#### 클래스 설정
 
 ##### Partitioner
 
-EgovColumnRangePartitioner는 gridSize 만큼 테이블 영역을 나누고 영역 수 만큼 Context를 생성하여, 각 영역의 시작열(min)과 마지막열 (max)을 구해 각 Context에 셋팅하는 역할을 한다. (결론적으로, gridSize 만큼 Context가 생성되어 여러 Slave Step 들을 사용할 수 있게 됨)
+EgovColumnRangePartitioner는 gridSize 만큼 테이블 영역을 나누고 영역 수 만큼 Context를 생성하여, 각 영역의 시작열(min)과 마지막열 (max)을 구해 각 Context에 셋팅하는 역할을 한다.   
+(결론적으로, gridSize 만큼 Context가 생성되어 여러 Slave Step 들을 사용할 수 있게 됨)
 
 - gridSize : Job 설정파일에서 프로퍼티로 받아온다.
 
@@ -90,6 +93,10 @@ public class EgovColumnRangePartitioner implements Partitioner {
 	}
 }
 ```
+
+##### EgovOutputFileListener
+
+EgovOutputFileListener 는 [File Partitioner 의 관련 클래스]()에서 상세히 설명되어 있으므로 참조한다.
 
 ### JunitTest 구성 및 수행
 
