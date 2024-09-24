@@ -319,7 +319,7 @@ default는 flow.xml 과 같은 디렉토리에 있는 화면소스(JSP, xhtml, �
 
 ![hello1-1page.jpg](./images/hello1-1page.jpg)
 
-보는 봐와 같이 form으로 둘러싸인 곳에 해답은 있다. <input type=“submit” name=“_eventId_say” …. /> 에서 name 을 보면 _eventId_say 로 답을 찾을 수 있다.<br/>
+보는 봐와 같이 form으로 둘러싸인 곳에 해답은 있다. <input type=“submit” name=“_eventId_say” …. /> 에서 name 을 보면 **_eventId_say** 로 답을 찾을 수 있다.<br/>
 _eventId 가 답이다. say는 transition 의 on 과 같음을 확인 할 수 있다. eventId 에 정의된 특정위치의 문자열을 가지고 transition 를 분석하다.
 transition 에 대한 내용은 flow 정의에서 자세히 살펴보길 바란다. eventId 가 “say”를 가지고 form 이 전달되면 [flow 정의](./flow_definition.md) flow 정의에 따라 transition 을 찾고 그에 맞는 state 로 넘어가게 된다.<br/>
 결과는 별로의 값을 가지고 보여주는 화면은 아니고 단지 아래와 같은 화면을 보여주도록 되어 있다.
