@@ -99,18 +99,6 @@ EgovBatchRunner의 설정 방법은 [배치 Runner](./batch-core-batch_runner.md
 	}
 ```
 
-* qf.endSender를 통하여 end message 전송
-
-```java
-public void endSender(MessageProducer sender) throws Exception {
-	TextMessage message = session.createTextMessage();
-	setRemove(true);
-	message.setText("End Of QUEUE"); //end message
-	sender.send(message);
- 
-}
-```
-
 stopAndCheckStatus() 메소드는 Job 실행 정보를 확인하고 실행 중인 Job을 정지하는 역할을 한다.
 
 1. 비동기 실행 중인 Job이 시작 상태로 들어갔는지 보장하기 위해, Thread.sleep()을 이용하여 1초간 대기한다.
