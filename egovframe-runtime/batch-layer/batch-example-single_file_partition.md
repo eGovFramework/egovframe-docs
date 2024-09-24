@@ -53,11 +53,13 @@
 ##### MultiResourcePartitioner
 
 스프링에서 제공하는 MultiResourcePartitioner 를 사용하며 입력리소스의 수(입력파일 수)만큼 Context를 생성하고 출력위치를 셋팅하는 역할을 한다.(Context 생성으로 여러 Slave Step들을 사용할 수 있게 됨)
+
 ✔ 이 예제에서 는 File 파티셔닝 예제에서 사용하는 [MultiResourcePartitioner](./batch-example-file_partition.md#multiresourcepartitioner)와 동일하므로 해당부분을 참고한다.
 
-#### EgovOutputFileListener
+##### EgovOutputFileListener
 
 Step 수행 이전에 호출이 되며, 입력리소스의 정보를 이용하여 출력파일에 대한 정보를 생성 및 저장한다.  
+
 ✔ 출력은 path의 기본값인 “file:./target/output/” 이하에 생성이 되며, 이 경로는 Job 설정파일(path 프로퍼티)에서 변경할 수 있다.
 
 ### JunitTest 구성 및 수행
