@@ -16,7 +16,7 @@
 
 ### 센터 컷의 가이드 기본 구성
 
-1. Queue를 사용한 센터 컷 배치 처리를 위한여 Apache ActiveMQ를 활용한다.
+1. Queue를 사용한 센터 컷 배치 처리를 위하여 Apache ActiveMQ를 활용한다.
 현재 가이드의 ActiveMQ의 버전은 apache-activemq-5.15.1이며, 관련 프로그램 및 활용 방법은 아래의 ActiveMQ에서 확인할 수 있다. [Apache ActiveMQ](http://activemq.apache.org/)
 ActiveMQ를 설치 및 실행 후, http:localhost:8161에서 실행 확인을 할 수 있으며, 관리자 계정(admin/admin) 로그인 후 Queue 메뉴에서 현재 큐의 사황을 확인 할 수 있다.
 ![activemq](images/activemq_queue_monitor1.png)
