@@ -92,7 +92,7 @@ Job Parameter 생성 예제는 아래와 같다.
 	jobParameters = egovBatchRunner.addJobParameter(jobParameters, "inputFile", "/egovframework/batch/data/inputs/csvData.csv");
 ```
 
-이렇게 생성된 JobParameters는 XML에서 사용할 수 있다. 자세한 내용은 Job Parameters 항목을 참조한다.
+이렇게 생성된 JobParameters는 XML에서 사용할 수 있다. 자세한 내용은 [Job Parameters](./batch-core-job#jobparameters) 항목을 참조한다.
 
 #### 사용방법
 EgovBatchRunner 예제
