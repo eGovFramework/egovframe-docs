@@ -35,8 +35,8 @@ class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
 p:config-location="classpath:springframework/cache/ehcache/ehcache.xml" />
 ```
 
-Ehcache.xml에서 defaultCache저장소와 추가 Cache저장소의 설정을 한다. EhCAche는 비록 ConcurrentMap보다 속도는 느리지만 Cache관리기능 측면에서 유용하여 EhCache를 추천한다.
-- 프로젝트에서는 Cache의 사용에 대하여 개발자의 가이드가 필요하다. 업무별/서비스별 Cache저장소를 분리하여 Cache데이터를 관리하도록 하며, 적용케이스에 대하여 가이드하여야 한다.
+Ehcache.xml에서 defaultCache저장소와 추가 Cache저장소의 설정을 한다. EhCache는 비록 ConcurrentMap보다 속도는 느리지만 Cache관리기능 측면에서 유용하여 EhCache를 추천한다.
+- 프로젝트에서는 Cache의 사용에 대하여 개발자의 가이드가 필요하다. 업무별/서비스별 Cache저장소를 분리하여 Cache데이터를 관리하도록 하며, 적용케이스에 대하여 가이드 하여야 한다.
 
 `<ehcache.xml>`
 
@@ -89,7 +89,7 @@ Cache Annotation으로 Cache를 적용하기 위해서는 반드시 `<cache:anno
 |  proxy-target-class  |  false                      |  false인 경우, JDK의 인터페이스 기반 프록시를 사용한다. true를 사용하면 클래스 기반 프록시를 사용한다.           |
 |  order               |  Ordered.LOWEST_PRECEDENCE  |  @Cacheable/@CacheEvict메소드의 Cache advice가 적용되는 순서                           |
 
-- `<cache:annotation-driven/>`은 오로지 이것이 정의된 동일 ApplicationContext안의 bean에서 @Cacheable과 @CacheEvict을 찾는다. 즉, `<cache:annotation-driven>`을 DispatcherServlet을 위한 WebApplicationContext에 선언했을때 @Cacheable/@CacheEvict는 controller내부에서만 식별된다.
+- `<cache:annotation-driven/>`은 오로지 이것이 정의된 동일 ApplicationContext안의 bean에서 @Cacheable과 @CacheEvict을 찾는다. 즉, `<cache:annotation-driven>`을 DispatcherServlet을 위한 WebApplicationContext에 선언했을 때 @Cacheable/@CacheEvict는 controller내부에서만 식별된다.
 
 ### CacheManager를 통한 Cache접근
 
@@ -106,7 +106,7 @@ Cache cache = cacheManager.getCache("cache명");
 
 ### @Cacheable
 
-자바메소드에 `@Cacheable`을 설정함으로써 Caching할 수 있다. 타겟메소드가 호출되었을 때, 캐시에 해당 메서드가 이미 동일한 인자로 있는지 확인하고, 만약 있다면 메소드를 호출하지 않고 캐시해둔 결과를 Proxy에서 반환하게 된다.
+자바 메소드에 `@Cacheable`을 설정함으로써 Caching할 수 있다. 타겟 메소드가 호출되었을 때, 캐시에 해당 메서드가 이미 동일한 인자로 있는지 확인하고, 만약 있다면 메소드를 호출하지 않고 캐시해둔 결과를 Proxy에서 반환하게 된다.
 
 Java Method에 적용가능한 Cache Annotation은 다음과 같다.
 
@@ -117,7 +117,7 @@ Java Method에 적용가능한 Cache Annotation은 다음과 같다.
 
 #### @Cacheable 사용방법
 
-별다른 조건없이 호출되는 모든 인자를 caching하고자 할 때는 아래와 같이 cache명만 쓰면 된다. 이 코드는 Cache이름이 “books”인 cache저장소를 사용하였다. 메소드가 호출될 때 매번 “books”에 Cache데이터를 확인하고 이미 실행된 적이 있는지를 확인한다. 만약 “books”에 데이터가 있으면 그 값을 반환하게 된다.
+별다른 조건 없이 호출되는 모든 인자를 caching하고자 할 때는 아래와 같이 cache명만 쓰면 된다. 이 코드는 Cache이름이 “books”인 cache저장소를 사용하였다. 메소드가 호출될 때 매번 “books”에 Cache데이터를 확인하고 이미 실행된 적이 있는지를 확인한다. 만약 “books”에 데이터가 있으면 그 값을 반환하게 된다.
 
 ##### 기본
 
@@ -126,7 +126,7 @@ Java Method에 적용가능한 Cache Annotation은 다음과 같다.
 public Book findBook(ISBN isbn, boolean checkWarehouse, boolean includeUsed)
 ```
 
-Cache되는 저장소를 여러개 정의할 수도 있다. 아래의 코드에서는 findBook메소드 호출 시 “books”와 “isbns” 두 군데에 캐시데이터가 저장된다.
+Cache되는 저장소를 여러 개 정의할 수도 있다. 아래의 코드에서는 findBook메소드 호출 시 “books”와 “isbns” 두 군데에 캐시데이터가 저장된다.
 
 `<여러 cache 저장소에 caching>`
 
@@ -137,7 +137,7 @@ public Book findBook(ISBN isbn) {...}
 
 ##### Cache Abstraction Key생성
 
-Cache는 키-값으로 저장되며, 캐시된 메소드를 호출시마다 키를 통해 값을 가져오므로 캐시를 찾을 수 있는 키가 생성되어야한다. 별도의 커스텀키가 정의되지 않으면 default로 다음과 같은 알고리즘 기반의 KeyGenerator를 사용하여 Key를 생성한다.
+Cache는 키-값으로 저장되며, 캐시된 메소드를 호출시마다 키를 통해 값을 가져오므로 캐시를 찾을 수 있는 키가 생성되어야 한다. 별도의 커스텀 키가 정의되지 않으면 default로 다음과 같은 알고리즘 기반의 KeyGenerator를 사용하여 Key를 생성한다.
 
 - 매개변수가 아무것도 없으면 0을 반환한다.
 - 매개변수가 하나면, 그 인스턴스를 반환한다.
@@ -164,7 +164,7 @@ public Book findBook(ISBN isbn, boolean checkWarehouse, boolean includeUsed)
 
 ##### Conditional 추가
 
-Conditional을 주어서 그 값이 true이면 caching을 하고, false이면 caching을 하지 않기 때문에 호출시 매번 메소드내부가 실행된다. Conditional에서는 SpEL사용이 가능하며 Condition과 Unless를 쓸 수 있다. condition과는 달리 unless는 메소드의 결과값 반환 시점에 결과값을 확인하여 caching여부를 결정하게 된다.
+Conditional을 주어서 그 값이 true이면 caching을 하고, false이면 caching을 하지 않기 때문에 호출 시 매번 메소드 내부가 실행된다. Conditional에서는 SpEL사용이 가능하며 Condition과 Unless를 쓸 수 있다. condition과는 달리 unless는 메소드의 결과값 반환 시점에 결과값을 확인하여 caching여부를 결정하게 된다.
 
 ```java
 @Cacheable(value="book", condition="#name.length < 32")
@@ -177,20 +177,20 @@ public Book findBook(String name)
 
 Conditional에 쓰는 SpEL의 설명은 다음과 같다.
 
-|  명칭             |  위치          |  설명                                                                                  |  예제                                  |
-|-----------------|--------------|--------------------------------------------------------------------------------------|--------------------------------------|
-|  methodName     |  root객체      |  호출되는 메소드명                                                                           |  #root.methodName                    |
-|  method         |  root객체      |  호출되는 메소드                                                                            |  #root.method.name                   |
-|  target         |  root객체      |  호출되는 타겟오브젝트                                                                         |  #root.target                        |
-|  targetClass    |  root객체      |  호출되는 타겟 클래스                                                                         |  #root.targetClass                   |
-|  args           |  root객체      |  타겟을 호출 시 사용되는 인자들(배열)                                                               |  #root.args[0]                       |
-|  caches         |  root객체      |  현재 메소드가 실행되는 캐시들의 집합                                                                |  #root.caches[0].name                |
-|  argument name  |  평가 context  |  메소드 인자명을 사용할 수 없을 때 대신 a&lt;#arg&gt;로 대체하여 사용할 수 있다. #arg는 0부터 시작하는 인자의 인덱스를 나타난다.  |  iban 또는 a0  (p&lt;#arg&gt;로도 사용가능)  |
-|  result         |  평가 context  |  메소드호출 결과. unless와 cache evict표현에서만 사용가능하다.                                          |  #result                             |
+|  명칭             |  위치          | 설명                                                                                 |  예제                                  |
+|-----------------|--------------|------------------------------------------------------------------------------------|--------------------------------------|
+|  methodName     |  root객체      | 호출되는 메소드명                                                                          |  #root.methodName                    |
+|  method         |  root객체      | 호출되는 메소드                                                                           |  #root.method.name                   |
+|  target         |  root객체      | 호출되는 타겟 오브젝트                                                                       |  #root.target                        |
+|  targetClass    |  root객체      | 호출되는 타겟 클래스                                                                        |  #root.targetClass                   |
+|  args           |  root객체      | 타겟을 호출 시 사용되는 인자들(배열)                                                              |  #root.args[0]                       |
+|  caches         |  root객체      | 현재 메소드가 실행되는 캐시들의 집합                                                               |  #root.caches[0].name                |
+|  argument name  |  평가 context  | 메소드 인자명을 사용할 수 없을 때 대신 a&lt;#arg&gt;로 대체하여 사용할 수 있다. #arg는 0부터 시작하는 인자의 인덱스를 나타난다. |  iban 또는 a0  (p&lt;#arg&gt;로도 사용가능)  |
+|  result         |  평가 context  | 메소드 호출 결과. unless와 cache evict표현에서만 사용가능하다.                                        |  #result                             |
 
 ### @CacheEvict
 
-`@CacheEvict`는 `@Cacheable`과 반대로 cache저장소의 데이터를 제거함으로써 사용하지 않는 데이터를 정리하는데 유용하다. `@CacheEvict`는 캐시삭제를 수행할 메서드에 선언한다. `@CacheEvict`도 여러개의 캐시를 명시할 수 있으며, key와 condition을 사용할 수 있다. 또한 allEntries속성은 키값으로 Cache Entrie하나만 비우는 것이 아니라 캐시영역의 모든 Entrie를 비우도록 한다. 이 경우에는 키를 명시하더라도 이를 무시하고 모든 Entrie를 비우게 된다.
+`@CacheEvict`는 `@Cacheable`과 반대로 cache저장소의 데이터를 제거함으로써 사용하지 않는 데이터를 정리하는데 유용하다. `@CacheEvict`는 캐시 삭제를 수행할 메서드에 선언한다. `@CacheEvict`도 여러 개의 캐시를 명시할 수 있으며, key와 condition을 사용할 수 있다. 또한 allEntries 속성은 키 값으로 Cache Entry 하나만 비우는 것이 아니라 캐시영역의 모든 Entries를 비우도록 한다. 이 경우에는 키를 명시하더라도 이를 무시하고 모든 Entries를 비우게 된다.
 
 ```java
 @CacheEvict(value = "books", allEntries=true)
@@ -199,9 +199,9 @@ public void loadBooks(InputStream batch)
 
 ### @CachePut
 
-메소드의 흐름을 방해하지 않고 Cache에 저장하거나 업데이트를 해야하는 경우, `@CachePut`을 사용한다. 즉, 메소드는 항상 실행되고 그 결과가 캐시에 저장된다. `@CachePut`은 `@Cacheable`과 동일한 옵션을 제공하며, Cache에 저장하는것보다는 메소드의 흐름을 최적화하는데 사용되어야 한다.
+메소드의 흐름을 방해하지 않고 Cache에 저장하거나 업데이트를 해야 하는 경우, `@CachePut`을 사용한다. 즉, 메소드는 항상 실행되고 그 결과가 캐시에 저장된다. `@CachePut`은 `@Cacheable`과 동일한 옵션을 제공하며, Cache에 저장하는 것보다는 메소드의 흐름을 최적화하는데 사용되어야 한다.
 
-`@Cacheable`과 함께 사용하는것은 일반적으로 권장하지 않는다.
+`@Cacheable`과 함께 사용하는 것은 일반적으로 권장하지 않는다.
 
 ### @Caching
 
@@ -214,7 +214,7 @@ public Book importBooks(String deposit, Date date)
 
 ### XML기반 Caching설정
 
-Java메소드에 Annotation을 붙이는 대신 XML로 caching할 메소드를 정의할 수 있다. 아래에서는 CacheManager bean설정을 생략하였다. BookService패키지의 하위메소드 중 findBook 메소드에 cacheable이 적용되며 loadBooks 메소드에 cacheEvict가 적용되었다.
+Java메소드에 Annotation을 붙이는 대신 XML로 caching할 메소드를 정의할 수 있다. 아래에서는 CacheManager bean설정을 생략하였다. BookService 패키지의 하위 메소드 중 findBook 메소드에 cacheable이 적용되며 loadBooks 메소드에 cacheEvict가 적용되었다.
 
 ```xml
 <!-- the service we want to make cacheable -->
