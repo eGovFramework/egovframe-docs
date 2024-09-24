@@ -26,7 +26,9 @@ item은 플랫 파일에서의 한 라인, 데이터베이스에서의 한 행, 
 
 #### FlatFileItemReader
 FlatFileItemReader는 Resource, LineMapper, FieldSetMapper, LineTokenizer에 기본적으로 의존성을 갖으며, LineTokenizer에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 FlatFileItemReader를 사용할 수 있다.
+
 ![image](./images/flatfileitemreader_process.png)
+
 | 구분             | 데이터 형태                     | 설명                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LineMapper     | 플랫파일 1 라인(String) → Object | 플랫파일 데이터에서 읽은 1 라인(String)을 Object로 변환하는 총 과정(LineTokenizer, FieldSetMapper 과정을 포함한다.)                                                                                                                                                                                                                                                                                          |
@@ -126,8 +128,11 @@ LineTokenizer와 FieldSetMapper에 아래와 같은 항목을 설정해야한다
 ### XML ItemReader
 스프링 배치는 XML 레코드를 읽고 자바 객체로 매핑하는 작업에 대해 트랜잭션 인프라스트럭쳐를 제공한다.
 스프링 배치에서 XML 입력과 출력이 어떻게 작동되는지 더 살펴보면 첫째로 파일 읽기 및 쓰기에 따라 차이가 있지만 스프링 배치 XML 처리 과정은 공통화 돼있다. XML 처리 과정에서 토크나이징이 필요한 레코드(FieldSets) 라인 대신 개별 레코드와 대응되는 'fragments'의 콜렉션으로 가정하고 있다.
+
 ![image](./images/xml_input.png)
+
 위의 시나리오에서 'trade' 태그는 '루트 엘리먼트'로 정의 되었다. '\<trade>'와 '\</trade>' 사이의 모든 내용은 하나의 fragment로 여겨진다. 스프링 배치는 fragment를 객체로 바인드 하는데 Object/XML Mapping (OXM)을 사용한다. 하지만 스프링 배치는 특정 XML 바인딩 기술에 묶여있지 않다. 대표적인 사용방법은 가장 대중적인 OXM 기술에 대한 일관된 추상화를 제공하는 스프링 OXM에 위임하는 방법이다. 스프링 OXM에 대한 의존성은 선택적이며 만일 필요하다면 스프링 배치에서 특정 인터페이스를 구현하도록 선택할 수 있다. XML 지원 관련 기술 관계는 아래 그림과 같다.
+
 ![image](./images/xml_oxm.png)
 
 #### StaxEventItemReader
@@ -226,6 +231,7 @@ Java의 ResultSet 클래스는 커서를 다루는 객체 지향 메커니즘의
 
 아래 그림의 예제는 커서 기반의 ItemReader의 작동을 보여준다.
 'FOO' 테이블은 ID, NAME, BAR 세 개의 컬럼을 갖는다. SQL문을 통해 ID가 1보다 크고 7보다 작은 행의 결과를 조회한다. 커서는 ID 2에서 시작하며 read()가 호출될 떄마다 FOO 객체로 맵핑되고 커서는 다음 행으로 이동한다.
+
 ![image](./images/db_cursoritemreader.png)
 
 ##### JdbcCursorItemReader
@@ -530,6 +536,7 @@ Property(indexResource)의 파일을 NDX파일 설정에 따라 읽어드린다.
 ### 전자정부에서 제공하는 EgovMyBatisPagingItemReader
 배치 처리시 Paging방식으로 mybatis에서 데이터를 읽기 위해 EgovMyBatisPagingItemReader 서비스를 제공합니다.(mybatis MyBatisPagingItemReader 클래스를 확장한 서비스)
 실행환경 제공 Resource Variable, Step Variable, Job Variable 서비스와 함께 사용 가능하지만 parameterValues 서비스와 함께 사용은 불가능하다.
+
 ![image](./images/egovmybatispagingitemreader_architecture.png)
 
 #### EgovMyBatisPagingItemReader 설정항목
