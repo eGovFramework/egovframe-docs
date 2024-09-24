@@ -182,7 +182,7 @@ public class TypeTestVO implements Serializable {
 
 ### Sample TYPETEST Table Hsqldb DDL script
 
-```bash
+```sql
 create table TYPETEST (
     id numeric(10,0) not null,
     bigdecimal_type numeric(19,2),
@@ -466,7 +466,7 @@ public class DataTypeTest extends TestBase {
 
 ### Sample TYPETEST Table Oracle (10gR2 기준 테스트) DDL script
 
-```bash
+```sql
 create table TYPETEST (
     id number(10,0) not null,
     bigdecimal_type number(19,2),
@@ -490,7 +490,7 @@ create table TYPETEST (
 
 ### Sample TYPETEST Table Mysql (5.X) DDL script
 
-```bash
+```sql
 create table TYPETEST (
     id numeric(10,0) not null,
     bigdecimal_type numeric(19,2),
@@ -514,7 +514,7 @@ create table TYPETEST (
 
 ### Sample TYPETEST Table Tibero(3.x) DDL script
 
-```bash
+```sql
 create table TYPETEST (
     id numeric(10,0) not null,
     bigdecimal_type number(19,2),

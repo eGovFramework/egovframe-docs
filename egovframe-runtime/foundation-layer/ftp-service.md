@@ -2,7 +2,7 @@
 
 ## 개요
 
-**전자정부 표준프레임워크**는 FTP 서비스제공을 위해 Apache Commons Net™ [단순 클라이언트측의 기본적인 Internet Protocol의 구현의 FTP기능을 편리하게 제공]을 오픈 소스로 채택하였다.
+**전자정부 표준프레임워크**는 <acronym title="File Transfer Protocol">FTP</acronym> 서비스제공을 위해 Apache Commons Net™ [단순 클라이언트측의 기본적인 Internet Protocol의 구현의 FTP기능을 편리하게 제공]을 오픈 소스로 채택하였다.
 
 Apache Commons Net™은 Network utility collection 이다.
 Apache Commons Net™은 단순 클라이언트측의 기본적인 Internet Protocol을 구현함으로서 기본적인 프로토콜 access가 목적이기 때문에 부분적으로 object-orient 규칙에 위배가 되는 사항이 있다는 것을 참고적으로 알고 있어야 한다.
@@ -27,12 +27,12 @@ FTP는 보통 TCP/IP에 함께 제공되는 일련의 프로그램 속에 포함
 
 Apache Commons Net™ 프로젝트([http://commons.apache.org/net/](http://commons.apache.org/net/))에서 지원하는 프로토콜은 다음과 같다.
 
-- FTP/FTPS
-- FTP over HTTP (experimental)
+- <acronym title="File Transfer Protocol">FTP</acronym>/FTPS
+- <acronym title="File Transfer Protocol">FTP</acronym> over <acronym title="Hyper Text Transfer Protocol">HTTP</acronym> (experimental)
 - NNTP
-- SMTP(S)
-- POP3(S)
-- IMAP(S)
+- <acronym title="Simple Mail Transfer Protocol">SMTP</acronym>(S)
+- <acronym title="Post Office Protocol 3">POP3</acronym>(S)
+- <acronym title="Internet Message Access Protocol">IMAP</acronym>(S)
 - Telnet
 - TFTP
 - Finger
@@ -44,6 +44,7 @@ Apache Commons Net™ 프로젝트([http://commons.apache.org/net/](http://commo
 - NTP/SNTP
 
 Apache Commons Net - org.apache.commons.net.ftp 의 동작흐름에 대하여 간략히 설명한다.
+
 논리적 흐름도는 아래와 같다.
 
 ```
@@ -191,7 +192,7 @@ client.sendCommand(FTPCommand.MAKE_DIRECTORY,"/public/test");
 
 #### 파일 및 전송상태 설정
 
-- 파일 타입 : FTP.BINARY_FILE_TYPE,, FTP.ASCII_FILE_TYPE, 등 설정 - 파일 전송 형태 : FTP.STREAM_TRANSFER_MODE, COMPRESSED_TRANSFER_MODE 등 설정
+- 파일 타입 : <acronym title="File Transfer Protocol">FTP</acronym>.BINARY_FILE_TYPE, <acronym title="File Transfer Protocol">FTP</acronym>.ASCII_FILE_TYPE, 등 설정 - 파일 전송 형태 : <acronym title="File Transfer Protocol">FTP</acronym>.STREAM_TRANSFER_MODE, COMPRESSED_TRANSFER_MODE 등 설정
 
 ```java
 /* 파일 타입*/
@@ -259,6 +260,7 @@ public final class IMAPMail {
 ## Commons Net 2.x to Commons Net 3.0
 
 Version 3.0의 binary는 호환이 보장 되지만 소스코드는 아래와 같은 내용이 변경되었다.
+
 사용되지 않는 여러 상수들이 제거되었으며, binary 호환성에 영향을 주지않는 exception, public methods 들은 더이상 IOException 을 throw 하지 않도록 보완/수정되었다.
 
 - TelnetClient#addOptionHandler(TelnetOptionHandler)

@@ -119,7 +119,7 @@ public class DefaultBlogService implements BlogService {
 
 #### 생명주기 메커니즘 병합
 
- Spring Framework에서는 3가지 방식의 생명주기 메커니즘이 존재한다: InitialzingBean과 DisposableBean interface; 맞춤 init()과 destroy() 메소드; 그리고 [@PostConstruct and @PreDestroy annotations](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte:fdl:ioc_container:annotation-based_configuration#postconstruct_and_predestroy_annotations)
+ Spring Framework에서는 3가지 방식의 생명주기 메커니즘이 존재한다: InitialzingBean과 DisposableBean interface; 맞춤 init()과 destroy() 메소드; 그리고 [@PostConstruct and @PreDestroy annotations](./ioc-container-annotation-based_configuration.md#postconstrutor와-predestroy)
 
  만약 서로 다른 생명주기 메커니즘을 같이 사용할 경우, 개발자는 적용되는 순서를 알고 있어야 한다. 객체화 메소드의 순서는 다음과 같다.
 

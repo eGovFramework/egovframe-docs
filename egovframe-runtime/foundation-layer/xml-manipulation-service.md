@@ -41,9 +41,8 @@ logger.debug(root);
 
 ```java
 Element root = doc.getDocumentElement();
-for(Node ch = root.getFirstChild(); ch != null; ch = ch.getNextSibling()
-{
-  logger.debug(ch.getNodeName());
+for (Node ch = root.getFirstChild(); ch != null; ch = ch.getNextSibling() {
+    logger.debug(ch.getNodeName());
 }
 ```
 
@@ -54,10 +53,9 @@ for(Node ch = root.getFirstChild(); ch != null; ch = ch.getNextSibling()
 
 ```java
 Element root = doc.getDocumentElement();
-for(Node ch = root.getFirstChild(); ch != null; ch = ch.getNextSibiling())
-{
-   if(ch.getNodeType() == Node.ELEMENT_NODE)
-          logger.debug(ch.getNodeName());
+for (Node ch = root.getFirstChild(); ch != null; ch = ch.getNextSibiling()) {
+  if (ch.getNodeType() == Node.ELEMENT_NODE)
+    logger.debug(ch.getNodeName());
 }
 ```
 
@@ -69,17 +67,14 @@ for(Node ch = root.getFirstChild(); ch != null; ch = ch.getNextSibiling())
 ```java
 Element root = xmldoc.getDocumentElement();
 getNode(root)
- 
-public static void getNode(Node n)
-{
-   for(Node ch = n.getFirstChild(); ch != null; ch = ch.getNextSibling())
-   {
-      if(ch.getNodeType() == Node.ELEMENT_NODE)
-      {
-         logger.debug(ch.getNodeName());
-	 getNode(ch);
-      }
-   }
+
+public static void getNode(Node n) {
+  for (Node ch = n.getFirstChild(); ch != null; ch = ch.getNextSibling()) {
+    if (ch.getNodeType() == Node.ELEMENT_NODE) {
+      logger.debug(ch.getNodeName());
+      getNode(ch);
+    }
+  }
 }
 ```
 
@@ -89,21 +84,17 @@ public static void getNode(Node n)
 ###### 5) 공백 이외의 텍스트만 추출 : 공백을 나타내는 텍스트 노드를 제외하고 요소의 내용에 대한 텍스트노드를 추출하려면 다음과 같은 조건식으로 제어문을 사용한다.
 
 ```java
-public static void getNode(Node n)
-{
-   for(Node ch = n.getFirstChild(); ch != null; ch = ch.getNextSibling())
-   {
-      if(ch.getNodeType() == Node.ELEMENT_NODE)
-      {
-         logger.debug(ch.getNodeName());
-	 getNode(ch);
-      }
-      // 텍스트를 처리한다.
-      else if(ch.getNodeType() == Node.TEXT_NODE && ch.getNodeValue().trim().length() !=0)
-      {
-         logger.debug(ch.getNodeValue());
-      }
-   }
+public static void getNode(Node n) {
+  for (Node ch = n.getFirstChild(); ch != null; ch = ch.getNextSibling()) {
+    if (ch.getNodeType() == Node.ELEMENT_NODE) {
+      logger.debug(ch.getNodeName());
+      getNode(ch);
+    }
+    // 텍스트를 처리한다.
+    else if (ch.getNodeType() == Node.TEXT_NODE && ch.getNodeValue().trim().length() != 0) {
+      logger.debug(ch.getNodeValue());
+    }
+  }
 }
 ```
 
@@ -113,65 +104,61 @@ public static void getNode(Node n)
 
 ```java
 private String xmlString = "";
-public String printString(Node node)
-{
-   int type = node.getNodeType();
-   switch(type)
-   {
-     case Node.DOCUMENT_NODE:
-        printString(((Document)node).getDocumentElement());
-        break;
-     case Node.ELEMENT_NODE:
-        xmlString += "<"+node.getNodeName();
-	NamedNodeMap attrs = node.getAttributes();
-	for(int i = 0; i < attrs.getLength(); i++)
-	{
-	   Node attr = attrs.item(i);
-	   xmlString += " "+attr.getNodeName()+"="+attr.getNodeValue()+"'";
-	   xmlString += ">";
-	   NodeList children = node.getChildNodes();
-	   if(children != null)
-	   {
-	     for(int i=0; i < children.getLength(); i++)
-	     {
-	        logger.debug(children.item(i));
-	     }
-	   }
-	   break;
-	}
-      case Node.CDATA_SECTION_NODE:
-         xmlString += "<![CDATA["+node.getNodeValue()+"]]>";
-	 break;
-      case Node.TEXT_NODE:
-         xmlString += node.getNodeValue().trim();
-	 break;
-      case Node.PROCESSING_INSTRUCTION_NODE:
-         xmlString += "<?"+node.getNodeName()+" "+ node.getNodeValue()+"?>";
-	 break;
-   }
-   if(type == Node.ELEMENT_NODE)
-   {
-     xmlString += "</"+node.getNodeName()+">";
-   }
-   return xmlString;
+public String printString(Node node) {
+  int type = node.getNodeType();
+  switch (type) {
+  case Node.DOCUMENT_NODE:
+    printString(((Document) node).getDocumentElement());
+    break;
+  case Node.ELEMENT_NODE:
+    xmlString += "<" + node.getNodeName();
+    NamedNodeMap attrs = node.getAttributes();
+    for (int i = 0; i < attrs.getLength(); i++) {
+      Node attr = attrs.item(i);
+      xmlString += " " + attr.getNodeName() + "=" + attr.getNodeValue() + "'";
+      xmlString += ">";
+      NodeList children = node.getChildNodes();
+      if (children != null) {
+        for (int i = 0; i < children.getLength(); i++) {
+          logger.debug(children.item(i));
+        }
+      }
+      break;
+    }
+  case Node.CDATA_SECTION_NODE:
+    xmlString += "<![CDATA[" + node.getNodeValue() + "]]>";
+    break;
+  case Node.TEXT_NODE:
+    xmlString += node.getNodeValue().trim();
+    break;
+  case Node.PROCESSING_INSTRUCTION_NODE:
+    xmlString += "<?" + node.getNodeName() + " " + node.getNodeValue() + "?>";
+    break;
+  }
+  if (type == Node.ELEMENT_NODE) {
+    xmlString += "</" + node.getNodeName() + ">";
+  }
+  return xmlString;
 }
 ```
 
 ###### 6-2) 노드들의 타입에 따른 Parsing : Node 인터페이스에서 지원되는 getNodeType()이라는 메서드를 사용하여 인식된 자식 노드가 어떠한 타입 노드인지에 따라 처리한다.
 
-|  NODE TYPE                        |  설 명                                                                        |
-|-----------------------------------|-----------------------------------------------------------------------------|
-| Node.DOCUMENT_NODE                | DocumentElement 객체 정보를 가지고 printString()을 호출                                |
-| Node.ELEMENT_NODE                 |  요소명,속성정보(NAME,VALUE)을 추출하여 xmlString에 저장하고 자손 요소 정보를 가지고 pringString()을 호출 |
-| Node.CDATA_SECTION_NODE           | 추출된 VALUE에 &lt;!CDATA[와]]&gt;을 추가                                           |
-| Node.TEXT_NODE                    |  VALUE만 추출                                                                  |
-| Node.PROCESSING_INSTRUCTION_NODE  | 추출된 값에 &lt;? 와 ?&gt;을 추가                                                    |
+| NODE TYPE                        | 설 명                                                                                                    |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Node.DOCUMENT_NODE               | DocumentElement 객체 정보를 가지고 printString()을 호출                                                  |
+| Node.ELEMENT_NODE                | 요소명,속성정보(NAME,VALUE)을 추출하여 xmlString에 저장하고 자손 요소 정보를 가지고 pringString()을 호출 |
+| Node.CDATA_SECTION_NODE          | 추출된 VALUE에 &lt;!CDATA[와]]&gt;을 추가                                                                |
+| Node.TEXT_NODE                   | VALUE만 추출                                                                                             |
+| Node.PROCESSING_INSTRUCTION_NODE | 추출된 값에 &lt;? 와 ?&gt;을 추가                                                                        |
 
 #### SAX(Simple API for XML)
 
 ##### 요약
 
-XML 문서를 읽어 들이는 응용 프로그램 API 로서 XML 문서를 하나의 긴 문자열로 간주한다. SAX는 문자열을 앞에서 부터 차례로 읽어 가면서 요소,속성이 인식될 때 마다 **EVENT**를 발생시킨다. 각각의 EVENT가 발생 될 떄 마다 수행하고자 하는 기능을 **이벤트 핸들러 기술**을 이용하여 구현한다.
+XML 문서를 읽어 들이는 응용 프로그램 API 로서 XML 문서를 하나의 긴 문자열로 간주한다. SAX는 문자열을 앞에서 부터 차례로 읽어 가면서 요소,속성이 인식될 때 마다 **EVENT**를 발생시킨다.
+
+각각의 EVENT가 발생 될 떄 마다 수행하고자 하는 기능을 **이벤트 핸들러 기술**을 이용하여 구현한다.
 
 ##### SAX 프로그램구현 과정
 
@@ -197,7 +184,7 @@ org.xml.sax.ErrorHandler
 * org.xml.sax.ContentHandler : 이 핸드러는 SAX의 핵심으로,일반적인 문서 이벤트를 처리한다.
 
 ```java
-void characters(char[] ch,int start,int length) // 문자데이터가 인식되면 호출된다.
+void characters(char[] ch,int start,int length)
 void endDocument() // 문서의 끝이 인식되면 호출된다.
 void endElement(String namespaceURI,String localName,String qName)
                    // 요소의 종료가 인식되면 호출된다.
@@ -242,16 +229,13 @@ void warning(SAXParseException exception) // 경고 오류 발생시 오출된�
 
 ```java
 //DefaultHandler를 상속하여 구현한 핸들러 클래스
-class SampleHandler extends DefaultHandler
-{
-   public void startDocument()
-   {
-     logger.debug("XML이 시작되었습니다.");
-   }
-   public void endDocument()
-   {
-     logger.debug("XML이 종료되었습니다.");
-   }
+class SampleHandler extends DefaultHandler {
+  public void startDocument() {
+    logger.debug("XML이 시작되었습니다.");
+  }
+  public void endDocument() {
+    logger.debug("XML이 종료되었습니다.");
+  }
 }
 ```
 
@@ -290,10 +274,10 @@ sp.parse(new FileInputStream("text.xml"),sh);
 <bean id="saxconcreteCont" class="egovframework.rte.fdl.xml.EgovConcreteSAXFactory"/>
 ```
 
-|  PROPERTIES  |  설 명                                         |
-|--------------|----------------------------------------------|
-| domconcrete  |  EgovDOMValidatorService 생성하는 Concrete Class |
-| saxconcrete  |  EgovSAXValidatorService 생성하는 Concrete Class |
+| PROPERTIES  | 설 명                                           |
+| ----------- | ----------------------------------------------- |
+| domconcrete | EgovDOMValidatorService 생성하는 Concrete Class |
+| saxconcrete | EgovSAXValidatorService 생성하는 Concrete Class |
 
 ```xml
 <context:property-placeholder location="classpath*:spring/egovxml.properties" />
@@ -302,9 +286,9 @@ sp.parse(new FileInputStream("text.xml"),sh);
 </bean>
 ```
 
-|  PROPERTIES  |  설 명                      |
-|--------------|---------------------------|
-| xmlpath      |  XML문서 생성 Directory 위치 지정 |
+| PROPERTIES | 설 명                            |
+| ---------- | -------------------------------- |
+| xmlpath    | XML문서 생성 Directory 위치 지정 |
 
 ```properties
 // XML 기본저장 디렉토리
@@ -334,11 +318,10 @@ EgovSAXValidatorService saxValidator = null;
 
 ```java
 @Test
-public void ModuleTest() throws UnsupportedException 
-{
-   	domValidator = domconcrete.CreateDOMValidator();
-	logger.debug("fileName :"+fileName);
-    	domValidator.setXMLFile(fileName);
+public void ModuleTest() throws UnsupportedException {
+  domValidator = domconcrete.CreateDOMValidator();
+  logger.debug("fileName :" + fileName);
+  domValidator.setXMLFile(fileName);
 }
 ```
 
@@ -346,11 +329,10 @@ public void ModuleTest() throws UnsupportedException
 
 ```java
 @Test
-public void ModuleTest() throws UnsupportedException 
-{
-   	saxValidator = saxconcrete.CreateSAXValidator();
-	logger.debug("fileName :"+fileName);
-    	saxValidator.setXMLFile(fileName);
+public void ModuleTest() throws UnsupportedException {
+  saxValidator = saxconcrete.CreateSAXValidator();
+  logger.debug("fileName :" + fileName);
+  saxValidator.setXMLFile(fileName);
 }
 ```
 
@@ -359,24 +341,21 @@ public void ModuleTest() throws UnsupportedException
 XML문서의 well-formed 검사를 하면서 Validation검사도 동시에 실행(선택)
 
 ```java
-public void WellformedValidate(boolean used,boolean isvalid,AbstractXMLUtility service) throws ValidatorException
-{
-    	if(used)
-    	{
-    		 if( service.parse(isvalid))
-    		 {
-    			 if(isvalid)
-    			   logger.debug("Validation 문서입니다.");
-    			 else
-    			   logger.debug("well-formed 문서입니다."); 
-    		 }
-    	}
+public void WellformedValidate(boolean used, boolean isvalid, AbstractXMLUtility service) throws ValidatorException {
+  if (used) {
+    if (service.parse(isvalid)) {
+      if (isvalid)
+        logger.debug("Validation 문서입니다.");
+      else
+        logger.debug("well-formed 문서입니다.");
+    }
+  }
 }
 ```
 
-|  PARAMETER  |  설 명             |
-|-------------|------------------|
-| isvalid     |  Validation 검사여부 |
+| PARAMETER | 설 명               |
+| --------- | ------------------- |
+| isvalid   | Validation 검사여부 |
 
 
 ##### XPATH 조회
@@ -384,138 +363,130 @@ public void WellformedValidate(boolean used,boolean isvalid,AbstractXMLUtility s
 검색하고자하는 Element나 Attribute등을 검색식(표현식)을 통해 조회
 
 ```java
-public  void XPathResult(boolean used,AbstractXMLUtility service,Document doc) throws JDOMException
-{
-   if(used)
-   {
-     List list = service.getResult(doc,"//*[@*]");
-     viewEelement(list);
-   }
+public void XPathResult(boolean used, AbstractXMLUtility service, Document doc) throws JDOMException {
+  if (used) {
+    List list = service.getResult(doc, "//*[@*]");
+    viewEelement(list);
+  }
 }
 ```
 
-|  PARAMETER  |  설 명            |
-|-------------|-----------------|
-| expr        |  Validation 검색식 |
-| doc         |  Document 객체    |
+| PARAMETER | 설 명             |
+| --------- | ----------------- |
+| expr      | Validation 검색식 |
+| doc       | Document 객체     |
 
 ##### XML 생성
 
 입력받은 Element를 사용하여 XML문서를 생성
 
 ```java
-public void createNewXML(boolean used,AbstractXMLUtility service,Document doc,String EleName,List list,String path)
-throws JDOMException,TransformerException,FileNotFoundException
-{
-   if(used)  
-     service.createNewXML(doc,EleName, list,path);
+public void createNewXML(boolean used, AbstractXMLUtility service, Document doc, String EleName, List list, String path)
+throws JDOMException, TransformerException, FileNotFoundException {
+  if (used)
+    service.createNewXML(doc, EleName, list, path);
 }
 ```
 
-|  PARAMETER  |  설 명             |
-|-------------|------------------|
-| doc         |  Document 객체     |
-| EleName     |  Root 명          |
-| list        |  생성 Element List |
-| path        |  생성될 XML문서 경로    |
+| PARAMETER | 설 명               |
+| --------- | ------------------- |
+| doc       | Document 객체       |
+| EleName   | Root 명             |
+| list      | 생성 Element List   |
+| path      | 생성될 XML문서 경로 |
 
 ##### Element 추가
 
 입력받은 Element를 XML문서에 추가
 
 ```java
-public  void addElement(boolean used,AbstractXMLUtility service,Document doc,String EleName,List list,String path) 
-throws JDOMException,TransformerException,FileNotFoundException
-{
-  if(used)
-    service.addElement(doc,EleName,list,path);
+public void addElement(boolean used, AbstractXMLUtility service, Document doc, String EleName, List list, String path)
+throws JDOMException, TransformerException, FileNotFoundException {
+  if (used)
+    service.addElement(doc, EleName, list, path);
 }
 ```
 
-|  PARAMETER  |  설 명             |
-|-------------|------------------|
-| doc         |  Document 객체     |
-| EleName     |  Root 명          |
-| list        |  생성 Element List |
-| path        |  생성될 XML문서 경로    |
+| PARAMETER | 설 명               |
+| --------- | ------------------- |
+| doc       | Document 객체       |
+| EleName   | Root 명             |
+| list      | 생성 Element List   |
+| path      | 생성될 XML문서 경로 |
 
 ##### TextNode Element 추가
 
 입력받은 Text Element를 XML문서에 추가
 
 ```java
-public void addTextElement(boolean used,AbstractXMLUtility service,Document doc,
-                           String elemName,List list,String path)
-throws JDOMException,TransformerException,FileNotFoundException
-{
-   if(used) 
-    service.addTextElement(doc,elemName,list,path);
+public void addTextElement(boolean used, AbstractXMLUtility service, Document doc,
+  String elemName, List list, String path)
+throws JDOMException, TransformerException, FileNotFoundException {
+  if (used)
+    service.addTextElement(doc, elemName, list, path);
 }
 ```
 
-|  PARAMETER  |  설 명             |
-|-------------|------------------|
-| doc         |  Document 객체     |
-| EleName     |  Root 명          |
-| list        |  생성 Element List |
-| path        |  생성될 XML문서 경로    |
+| PARAMETER | 설 명               |
+| --------- | ------------------- |
+| doc       | Document 객체       |
+| EleName   | Root 명             |
+| list      | 생성 Element List   |
+| path      | 생성될 XML문서 경로 |
 
 ##### TextNode Element 수정
 
 입력받은 Text Element로 수정
 
 ```java
-public void updTextElement(boolean used,AbstractXMLUtility service,Document doc,List list,String path)
-throws JDOMException,TransformerException,FileNotFoundException
-{
-	if(used) 
-	 service.updTextElement(doc,list,path);
+public void updTextElement(boolean used, AbstractXMLUtility service, Document doc, List list, String path)
+throws JDOMException, TransformerException, FileNotFoundException {
+  if (used)
+    service.updTextElement(doc, list, path);
 }
 ```
 
-|  PARAMETER  |  설 명             |
-|-------------|------------------|
-| doc         |  Document 객체     |
-| list        |  생성 Element List |
-| path        |  생성될 XML문서 경로    |
+| PARAMETER | 설 명               |
+| --------- | ------------------- |
+| doc       | Document 객체       |
+| list      | 생성 Element List   |
+| path      | 생성될 XML문서 경로 |
 
 ##### Element 삭제
 
 입력받은 Element을 삭제
 
 ```java
-public void delElement(boolean used,AbstractXMLUtility service,Document doc,String EleName,String path)
- throws JDOMException,TransformerException,FileNotFoundException
- { 
-     if(used)
-    	service.delElement(doc, EleName,path);
- }
+public void delElement(boolean used, AbstractXMLUtility service, Document doc, String EleName, String path)
+throws JDOMException, TransformerException, FileNotFoundException {
+  if (used)
+    service.delElement(doc, EleName, path);
+}
 ```
 
-|  PARAMETER  |  설 명          |
-|-------------|---------------|
-| doc         |  Document 객체  |
-| EleName     |  Element 명    |
-| path        |  생성될 XML문서 경로 |
+| PARAMETER | 설 명               |
+| --------- | ------------------- |
+| doc       | Document 객체       |
+| EleName   | Element 명          |
+| path      | 생성될 XML문서 경로 |
 
 ##### Element 수정
 
 ```java
-public void updElement(boolean used,AbstractXMLUtility service,Document doc,
-                                                 String oldElement, String newElement,String path)
-throws JDOMException,TransformerException,FileNotFoundException
-{
-    if(used)
-     service.updElement(doc, oldElement, newElement,path);
+public void updElement(boolean used, AbstractXMLUtility service, Document doc,
+  String oldElement, String newElement, String path)
+throws JDOMException, TransformerException, FileNotFoundException {
+  if (used)
+    service.updElement(doc, oldElement, newElement, path);
 }
 ```
 
-|  PARAMETER   |  설 명           |
-|--------------|----------------|
-| doc          |  Document 객체   |
-| oldElement   |  수정할 Element 명 |
-| newElement   |  수정 Element 명  |
-| path         |  생성될 XML문서 경로  |
+| PARAMETER  | 설 명               |
+| ---------- | ------------------- |
+| doc        | Document 객체       |
+| oldElement | 수정할 Element 명   |
+| newElement | 수정 Element 명     |
+| path       | 생성될 XML문서 경로 |
 
 #### 가이드프로그램 실행순서
 
