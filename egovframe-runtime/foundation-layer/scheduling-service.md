@@ -72,7 +72,7 @@ Quartz 스케쥴러와의 통합을 위해 Spring은 Spring 컨텍스트 내에�
 
 JobDetail는 작업 실행에 필요한 정보를 담고 있는 객체이다. Spring은 JobDetail 빈 생성을 위해 JobDetailBean을 제공한다. 예를 들면 다음과 같다.
 
-##### JobDetailBean 소스 코드#####
+##### JobDetailBean 소스 코드
 
 ```java
 package egovframework.rte.fdl.scheduling.sample;
