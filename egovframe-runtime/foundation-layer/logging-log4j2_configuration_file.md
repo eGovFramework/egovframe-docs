@@ -13,7 +13,7 @@ XML (log4j2.xml) 혹은 JSON (log4j2.json or log4j2.jsn) 파일 형식의 환경
 
 #### XML 파일 위치
 
- XML 파일(log4j2.xml)을 작성하고, WEB-INF/classes 하위에 포함될 수 있도록 위치시킨다.  
+XML 파일(log4j2.xml)을 작성하고, WEB-INF/classes 하위에 포함될 수 있도록 위치시킨다.  
 Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.
 
 #### XML 파일 정의
@@ -62,7 +62,7 @@ Logger는 로깅 작업을 수행하는 Log4j 주체로, Logger 설정을 제외
 
 #### Logger 선언과 정의
 
- Root Logger를 포함한 모든 Logger는 상위 요소인 **&lt;Loggers&gt;** 아래에 선언한다.  
+Root Logger를 포함한 모든 Logger는 상위 요소인 **&lt;Loggers&gt;** 아래에 선언한다.  
 Root Logger는 **&lt;Root&gt;** 요소로, 일반 Logger는 **&lt;Logger&gt;** 요소로 정의한다.  
 Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의해야한다.
 
@@ -93,7 +93,7 @@ Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의
 
 #### Logger 호출
 
- Logger는 코드 내에서 다음과 같은 방법으로 호출할 수 있다.
+Logger는 코드 내에서 다음과 같은 방법으로 호출할 수 있다.
 
 ```java
   package egovframe.sample;
@@ -354,11 +354,21 @@ Appenders 설정과 마찬가지로 Log4j 2에서는 Layout을 class 속성이 �
 
 출력 형식에 따라 Layout의 종류가 달라지며, 아래와 같은 Layouts을 제공한다.
 
-| Layouts |
-| --- |
-| HTMLLayout | **PatternLayout** | RFC5424Layout | SerializedLayout | SyslogLayout | XMLLayout |
+<table>
+  <tr>
+    <td colspan="6">내용</td>
+  </tr>
+  <tr>
+    <td>HTMLLayout</td>
+    <td><b>PatternLayout</b></td>
+    <td>RFC5424Layout</td>
+    <td>SerializedLayout</td>
+    <td>SyslogLayout</td>
+    <td>XMLLayout</td>
+  </tr>
+</table>
 
- 본페이지는 위의 Layouts 중 일반적으로 디버깅에 가장 적합한 PatternLayout만 설명한다.  
+본페이지는 위의 Layouts 중 일반적으로 디버깅에 가장 적합한 PatternLayout만 설명한다.  
 
 #### PatternLayout 선언과 정의
 
