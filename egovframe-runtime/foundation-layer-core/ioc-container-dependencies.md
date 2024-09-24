@@ -488,7 +488,7 @@ support=support@example.co.uk
 
  ApplicationContext는 시작시에 모든 singleton bean을 선객체화(pre-instantiate)한다. 선객체화(pre-instantiate)는 초기화 과정에서 모든 singleton baen을 생성하고 설정한다는 것을 의미한다. 일반적으로 선객체화가 좋은 방식인데, 왜냐하면 잘못된 설정이 있는 경우, 즉시 발견할 수 있기 때문이다.
 
- 어쨌거나, 이런 방식을 원하지 않을 경우도 있다. 만약 ApplicationContext에 의해 선객체화되는 singleton bean을 원하지 않을 경우, 선택적으로 bean 정의에 늦은 객체화(lazy-initailized)를 설정할 수 있다. 늦은 객체화(lazy-initailized)로 설정된 bean은 시작 시에 생성되는 것이 아니라, 처음으로 필요로 했을때 생성된다.
+ 어쨌거나, 이런 방식을 원하지 않을 경우도 있다. 만약 ApplicationContext에 의해 선 객체화 되는 singleton bean을 원하지 않을 경우, 선택적으로 bean 정의에 늦은 객체화(lazy-initailized)를 설정할 수 있다. 늦은 객체화(lazy-initailized)로 설정된 bean은 시작 시에 생성되는 것이 아니라, 처음으로 필요로 했을 때 생성된다.
 
  XML 설정에서는 ''&lt;bean/&gt;'' element의 'lazy-init' attribute를 사용한다.
 
@@ -498,7 +498,7 @@ support=support@example.co.uk
 <bean name="not.lazy" class="com.foo.AnotherBean"/>
 ```
 
- 늦은 객체화에 대해서 이해하고 있어야 하는 것은, 만약 늦은 객체화로 설정된 bean에 대해서 그렇지 않은 singleton bean이 종속성을 가지고 있다면, ApplicationContext는 시작 시에 singeton bean이 종속하고 있는 모든 bean을 생성한다는 것이다. 즉, 명시적으로 늦은 객체화로 선언한 bean이라도 시작 시에 생성될 수 있다.
+ 늦은 객체화에 대해서 이해하고 있어야 하는 것은, 만약 늦은 객체화로 설정된 bean에 대해서 그렇지 않은 singleton bean이 종속성을 가지고 있다면, ApplicationContext는 시작 시에 singleton bean이 종속하고 있는 모든 bean을 생성한다는 것이다. 즉, 명시적으로 늦은 객체화로 선언한 bean이라도 시작 시에 생성될 수 있다.
 
  그리고, &lt;beans/&gt; element의 'default-lazy-init' attribute를 사용하여 Container 레벨에서의 늦은 객체화를 설정할 수 있다.
 
@@ -524,7 +524,7 @@ support=support@example.co.uk
 
 #### Bean을 자동엮기 대상에서 제외하는 방법(Excluding a bean from being available from autowiring
 
- &lt;bean/&gt; element의 'autowire-candidate' attribute 값을 'false'로 설정함을써, 대상 bean이 다른 bean에 의해 자동엮임을 당하는 것을 방지할 수 있다.
+ &lt;bean/&gt; element의 'autowire-candidate' attribute 값을 'false'로 설정함으로써, 대상 bean이 다른 bean에 의해 자동엮임을 당하는 것을 방지할 수 있다.
 
 ### 종속성 검사(Checking for dependencies)
 
@@ -578,7 +578,7 @@ public class CommandManager implements BeanFactoryAware {
 
 #### Lookup 메소드 삽입(Lookup method injection)
 
- Lookup 메소드 삽입은 Container가 관리하고 있는 bean의 메소드를 덮어써서(override) Container 안에 있는 다른 bean을 찾을 수 있게 하는 기능이다. Spring Framework는 메소스 삽입을 구현하기 위해서 CGLIB 라이브러리를 사용하여 동적으로 상속클래스를 생성한다.
+ Lookup 메소드 삽입은 Container가 관리하고 있는 bean의 메소드를 덮어써서(override) Container 안에 있는 다른 bean을 찾을 수 있게 하는 기능이다. Spring Framework는 메소드 삽입을 구현하기 위해서 CGLIB 라이브러리를 사용하여 동적으로 상속클래스를 생성한다.
 
  ```java
  package fiona.apple;
