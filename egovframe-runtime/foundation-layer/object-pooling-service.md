@@ -2,7 +2,7 @@
 
 ## 개요
 
-객체에 대한 Pooling기능을 제공하는 서비스이다.객체의 생성 비용이 크고,생성 횟수가 많으면, 평균적으로 사용되는 객체의 수가 적은 경우,성능을 향상시키기 위해서 사용한다.
+객체에 대한 Pooling 기능을 제공하는 서비스이다. 객체의 생성 비용이 크고,생성 횟수가 많으면, 평균적으로 사용되는 객체의 수가 적은 경우,성능을 향상시키기 위해서 사용한다.
 **Object Pool**은 소프트웨어 디자인 패턴으로서, 객체를 필요에 따라 생성하고 파괴하는 방식이 아닌,적절한 개수의 객체를 미리 사용 가능한 상태로 생성하여 이를 이용하는 방식이다.Client는 Pool에 객체를 요청하여 객체를 얻은 후, 업무를 수행한다. 얻어온 객체를 이용하여 업무 수행을 끝마친 후, 객체를 파괴하는 것이 아니라 Pool에게 돌려주어 다른 Client가 사용할 수 있도록 한다. **Object Pooling**은 객체 생성 비용이 크고,객체 생성 횟수가 많으며,평균적으로 사용되는 객체의 수가 적은 경우,높은 성능의 향상을 가져다 준다.
 
 ## 설명
@@ -70,9 +70,9 @@ public abstract class BaseObjectPool<T> implements ObjectPool<T> {
 |-------------------|-------------------|
 | borrowObject      |  객체 할당            |
 | returnObject      |  객체 반환            |
-| invalidateObject  |  객체 할당시 유효성검사     |
-| getNumIdle        |  Idle 상태 객체수 리턴   |
-| getNumActive      |  Active 상태 객체수 리턴 |
+| invalidateObject  |  객체 할당 시 유효성검사     |
+| getNumIdle        |  Idle 상태 객체 수 리턴   |
+| getNumActive      |  Active 상태 객체 수 리턴 |
 | clear             |  객체 삭제            |
 | addObject         |  Pool에 객체 추가      |
 | isClosed          |  객체 close여부 판단    |
@@ -110,16 +110,16 @@ public interface PooledObjectFactory<T> {
 |  METHOD          |  설 명                                    |
 |------------------|-----------------------------------------|
 | makeObject       |  객체 생성                                  |
-| activateObject   |  Pool로 부터 객체를 할당 받을때 호출된다(재초기화 할때 이용).  |
-| passivateObject  |  Pool로 객체를 반환할 때 호출된다(초기화 할때 이용).       |
-| validateObject   |  객체가 유호한지 측정하기 위해 호출된다.                 |
-| destroyObject    |  객체를 삭제할떄 호출된다.                         |
+| activateObject   |  Pool로 부터 객체를 할당 받을 때 호출된다(재초기화 할 때 이용).  |
+| passivateObject  |  Pool로 객체를 반환할 때 호출된다(초기화 할 때 이용).       |
+| validateObject   |  객체가 유효한지 측정하기 위해 호출된다.                 |
+| destroyObject    |  객체를 삭제할 때 호출된다.                         |
 
-ObjectPool 구현한 프로그램은 PoolableObjectFactory를 구현한 프로그램을 받아드리도록 구현한다면, 다양하고 독특한 ObjectPool을 구현 할 수 있다.
+ObjectPool 구현한 프로그램은 PoolableObjectFactory를 구현한 프로그램을 받아들이도록 구현한다면, 다양하고 독특한 ObjectPool을 구현 할 수 있다.
 
 #### BasePooledObjectFactory
 
-**PooledObjectFactory**를 구현한 추상클래스이다.
+**PooledObjectFactory**를 구현한 추상 클래스이다.
 
 ```java
 public abstract class BasePooledObjectFactory<T> implements PooledObjectFactory<T> {
@@ -171,14 +171,14 @@ public interface KeyedPooledObjectFactory<K,V> {
 |  METHOD          |  설 명                                    |
 |------------------|-----------------------------------------|
 | makeObject       |  객체 생성                                  |
-| activateObject   |  Pool로 부터 객체를 할당 받을때 호출된다(재초기화 할때 이용).  |
-| passivateObject  |  Pool로 객체를 반환할 때 호출된다(초기화 할때 이용).       |
-| validateObject   |  객체가 유호한지 측정하기 위해 호출된다.                 |
-| destroyObject    |  객체를 삭제할떄 호출된다.                         |
+| activateObject   |  Pool로 부터 객체를 할당 받을 때 호출된다(재초기화 할 때 이용).  |
+| passivateObject  |  Pool로 객체를 반환할 때 호출된다(초기화 할 때 이용).       |
+| validateObject   |  객체가 유효한지 측정하기 위해 호출된다.                 |
+| destroyObject    |  객체를 삭제할 때 호출된다.                         |
 
 #### BaseKeyedPoolableObjectFactory
 
-**KeyedPoolableObjectFactory**를 구현한 추상클래스이다.
+**KeyedPoolableObjectFactory**를 구현한 추상 클래스이다.
 
 ```java
 public abstract class BaseKeyedPooledObjectFactory<K,V>

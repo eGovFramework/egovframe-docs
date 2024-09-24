@@ -16,13 +16,13 @@
 
 #### 세부 사항 설명
 
-- [iBATIS Configuration](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:ibatis_configuration)
-- [Spring iBATIS Integration](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:spring_ibatis_integration)
-- [Data Type](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:data_type)
-- [parameterMap](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:parametermap)
-- [Inline parameters](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:inline_parameters)
-- [resultMap](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:resultmap)
-- [Dynamic SQL](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.5:psl:dataaccess:dynamic_sql)
+- [iBATIS Configuration](./dataaccess-ibatis_configuration.md)
+- [Spring iBATIS Integration](./dataaccess-spring_ibatis_integration.md)
+- [Data Type](./dataaccess-data_type.md)
+- [parameterMap](./dataaccess-parametermap.md)
+- [Inline parameters](./dataaccess-inline_parameters.md)
+- [resultMap](./dataaccess-resultmap.md)
+- [Dynamic SQL](./dataaccess-dynamic_sql.md)
 
  iBATIS Data Mapper API 는 XML을 사용하여 SQL 문에 대한 객체 맵핑을 간편하게 기술할 수 있도록 지원하며, 자바빈즈 객체와 Map 구현체, 다양한 원시 래퍼 타입(String, Integer..) 등을 PreparedStatement 의 파라메터나 ResultSet에 대한 결과 객체로 쉽게 맵핑해준다.
 
@@ -57,12 +57,12 @@
 
  Spring 프레임워크 기반 어플리케이션에서 iBATIS 를 연동하여 사용하고자 하는 경우 Spring의 SqlMapClientFactoryBean 에 대한 설정이 필요하며 여기서는 실제 대상 sql-map-config 설정 파일과 iBATIS 에 제공될 dataSource 에 대한 설정을 지시한다.
 
-```bash
-	<!-- SqlMap setup for iBATIS Database Layer -->
-	<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
-		<property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
+```xml
+<!-- SqlMap setup for iBATIS Database Layer -->
+<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
+    <property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
+    <property name="dataSource" ref="dataSource"/>
+</bean>
 ```
 
 - Spring 연동 기능을 사용하면 iBATIS 의 SqlMapClient(a thread safe client for SQL Maps) 를 별도의 iBATIS API 없이도 얻을 수 있게 된다.
@@ -395,6 +395,6 @@ public class BasicDataAccessTest {
 ## 참고 자료
 
 - [http://ibatis.apache.org](http://ibatis.apache.org)
-- [iBATIS-SqlMaps-2 Developer Guide](http://svn.apache.org/repos/asf/ibatis/trunk/java/ibatis-2/ibatis-2-docs/en/iBATIS-SqlMaps-2_en.pdf)
-- [iBATIS-SqlMaps-2 개발자 가이드 (이동국님 번역)](http://kldp.net/frs/download.php/5035/iBATIS-SqlMaps-2_ko.pdf)
+- [iBATIS-SqlMaps-2 Developer Guide](https://ibatis.apache.org/docs/java/pdf/iBATIS-SqlMaps-2_en.pdf)
+- [iBATIS-SqlMaps-2 개발자 가이드 (이동국님 번역)](https://ibatis.apache.org/docs/java/pdf/iBATIS-SqlMaps-2_ko.pdf)
 - [Spring Framework - Reference Documentation](http://static.springframework.org/spring/docs/2.5.6/reference/orm.html#orm-ibatis)

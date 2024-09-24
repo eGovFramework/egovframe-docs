@@ -47,7 +47,7 @@
 </configuration>
 ```
 
-- properties : 표준 java properties (key=value 형태)파일에 대한 연결을 지원하며 설정 파일내에서 ${key} 와 같은 형태로 properties 형태로 외부화 해놓은 실제의 값(여기서는 DB 접속 관련 driver, url, id/pw)을 참조할 수 있다. resource 속성으로 classpath, url 속성으로 유효한 URL 상에 있는 자원을 지정 가능하다.
+- properties : 표준 java properties (key=value 형태)파일에 대한 연결을 지원하며 설정 파일내에서 ${key} 와 같은 형태로 properties 형태로 외부화해놓은 실제 값(여기서는 DB 접속 관련 driver, url, id/pw)을 참조할 수 있다. resource 속성으로 classpath, url 속성으로 유효한 URL 상에 있는 자원을 지정 가능하다.
 
 - settings : 런타임시 MyBatis의 행위를 조정하기 위한 옵션 설정을 통해 최적화할 수 있도록 지원한다. 다음표는 셋팅과 그 의미 그리고 디폴트 값을 설명한다.
 
@@ -81,4 +81,4 @@
 
 - mappers: 매핑된 SQL 구문을 정의한다. 해당 매퍼 파일의 지정은 클래스패스에 상대적으로 리소스를 지정할 수도 있고, url 을 통해서 지정할 수 도 있다
 
- 이 외에도 plugins (매핑 구문을 실행하는 어떤 시점에 호출을 가로챈다. 기본적으로 MyBatis 는 메서드 호출을 가로채기 위한 플러그인을 허용한다), environments (여러개의 환경으로 설정), databaseIdProvider(데이터베이스 제품마다 다른 구문을 실행) 등의 설정을 통해 다양한 환경 및 시점에서의 추가적인 설정이 가능한다.
+ 이외에도 plugins (매핑 구문을 실행하는 어떤 시점에 호출을 가로챈다. 기본적으로 MyBatis 는 메서드 호출을 가로채기 위한 플러그인을 허용한다), environments (여러개의 환경으로 설정), databaseIdProvider(데이터베이스 제품마다 다른 구문을 실행) 등의 설정을 통해 다양한 환경 및 시점에서 추가적인 설정이 가능하다.

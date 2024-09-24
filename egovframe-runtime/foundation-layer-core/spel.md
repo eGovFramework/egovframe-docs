@@ -83,7 +83,7 @@ private Dbproperies dbprops;
 
  또한, @NumberFormat, @DateTimeFormat과 같은 컨버전 서비스에 등록되는 포맷터를 자동으로 적용할 수 있다. 다음은 sampleVO의 일부이다.
 
- ```bash
+ ```java
  /** 잔액 */
 @NumberFormat(pattern = "###,##0")
 private Integer money;
