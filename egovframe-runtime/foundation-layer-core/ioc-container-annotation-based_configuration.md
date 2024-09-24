@@ -55,7 +55,7 @@ public class SimpleMovieLister {
     public void setMovieFinder(MovieFinder movieFinder) {
         this.movieFinder = movieFinder;
     }
- 
+ 
     // ...
 }
 ```
@@ -123,22 +123,22 @@ public class MovieRecommender {
 }
 ```
 
- 심지어 typed Map 역시 key 타입이 String인 한 자동엮임이 가능하다. Map은 기대한 타입의 모든 bean을 value로 갖게되고, key는 해당하는 bean의 이름이 된다.
+ 심지어 typed Map 역시 key 타입이 String인 한 자동 엮임이 가능하다. Map은 기대한 타입의 모든 bean을 value로 갖게 되고, key는 해당하는 bean의 이름이 된다.
 
  ```java
 public class MovieRecommender {
     private Map<String, MovieCatalog> movieCatalogs;
- 
+ 
     @Autowired
     public void setMovieCatalogs(Map<String, MovieCatalog> movieCatalogs) {
         this.movieCatalogs = movieCatalogs;
     }
- 
+ 
     // ...
 }
 ```
 
- 기본적으로, 자동엮임은 대상이 되는 bean이 없을 경우 실패한다. 기본적으로 annotation이 적용된 메소드, 생성자, field는 필수로 간주한다. 아래와 같이 설정하여 기본 행동 방식을 변경할 수 있다.
+기본적으로, 자동 엮임은 대상이 되는 bean이 없을 경우 실패한다. 기본적으로 annotation이 적용된 메소드, 생성자, field는 필수로 간주한다. 아래와 같이 설정하여 기본 행동 방식을 변경할 수 있다.
 
  ```java
 public class SimpleMovieLister {
@@ -153,11 +153,11 @@ public class SimpleMovieLister {
 }
 ```
 
- @Autowired annotatio은 잘 알려진 “분석가능한 종속성(resolvable dependencies)“에도 사용될 수 있다 : BeanFactory interface, ApplicationContext interface, ResourceLoader interface, ApplicationEventPublisher interface, MessageSource interface(그리고 이들을 상속한 ConfigurableApplicationContext 또는 ResourcePatternResolver interface)는 특별한 설정 없이 자동적으로 해결(resolve)된다.
+ @Autowired annotation은 잘 알려진 “분석가능한 종속성(resolvable dependencies)“에도 사용될 수 있다 : BeanFactory interface, ApplicationContext interface, ResourceLoader interface, ApplicationEventPublisher interface, MessageSource interface(그리고 이들을 상속한 ConfigurableApplicationContext 또는 ResourcePatternResolver interface)는 특별한 설정 없이 자동적으로 해결(resolve)된다.
 
 ### Qualifier를 사용한 annotation 기반의 자동 엮음(Fine-tuning annotation-based autowiring with qualifiers)
 
- Type을 이용한 자동엮기는 대상이 다수가 발생할 수 있기 때문에, 선택 시 추가적인 제어가 필요하다. 한 방법으로 Spring의 @Qualifier annotation을 사용할 수 있다. 특정 argument를 qualifier와 관련시킴으로써, 타입을 찾을 대상을 좁히고, 각 argument에 해당하는 대상 bean을 선택할 수 있다.
+ Type을 이용한 자동 엮기는 대상이 다수가 발생할 수 있기 때문에, 선택 시 추가적인 제어가 필요하다. 한 방법으로 Spring의 @Qualifier annotation을 사용할 수 있다. 특정 argument를 qualifier와 관련시킴으로써, 타입을 찾을 대상을 좁히고, 각 argument에 해당하는 대상 bean을 선택할 수 있다.
 
  ```java
 public class MovieRecommender {
@@ -235,7 +235,7 @@ public class SimpleMovieLister {
 }
 ```
 
- 만약 name이 명식적으로 설정되어 있지 않으면, field나 setter 메소드의 이름으로 부터 name 값을 유추해낸다. Field의 경우, field 명과 같다. Setter 메소드의 경우, bean property 이름과 같다. 아래 예제에서는 “movieFinder” bean이 삽입된다.
+ 만약 name이 명식적으로 설정되어 있지 않으면, field나 setter 메소드의 이름으로부터 name 값을 유추해낸다. Field의 경우, field 명과 같다. Setter 메소드의 경우, bean property 이름과 같다. 아래 예제에서는 “movieFinder” bean이 삽입된다.
 
  ```java
 public class SimpleMovieLister {
@@ -248,7 +248,7 @@ public class SimpleMovieLister {
 }
 ```
 
- @Autowired와 비슷하게, @Resource도 대안으로 bean type으로 대상을 찾는다. 뿐만 아니라 잘 알려진 “resolvable dependencies”로 해결한다. 둘 다 명시적으로 name을 설정하지 않은 경우 적용된다. 다음 예에서 customerPreferenceDao field를 위해서 “customerPreferenceDao” 이름을 가진 bean을 먼저 찾는다. 그 다음으로 CustomerPreferenceDao Type의 bean을 찾는다. “context” field는 얄려진 해결가능한 종속성 type인 ApplicationContext이 기반하여 삽입된다.
+ @Autowired와 비슷하게, @Resource도 대안으로 bean type으로 대상을 찾는다. 뿐만 아니라 잘 알려진 “resolvable dependencies”로 해결한다. 둘 다 명시적으로 name을 설정하지 않은 경우 적용된다. 다음 예에서 customerPreferenceDao field를 위해서 “customerPreferenceDao” 이름을 가진 bean을 먼저 찾는다. 그 다음으로 CustomerPreferenceDao Type의 bean을 찾는다. “context” field는 알려진 해결가능한 종속성 type인 ApplicationContext에 기반하여 삽입된다.
 
  ```java
 public class MovieRecommender {
@@ -267,7 +267,7 @@ public class MovieRecommender {
 
 ### @PostConstrutor와 @PreDestroy
 
- CommonAnnotationBeanPostProcessor는 @Resource annotation 뿐 아니라 JST-250 ***lifecycle*** annotation 역시 인식한다.
+ CommonAnnotationBeanPostProcessor는 @Resource annotation 뿐 아니라 JSR-250 ***lifecycle*** annotation 역시 인식한다.
 
  ```java
 public class CachingMovieLister {
