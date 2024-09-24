@@ -278,7 +278,7 @@
 Ex:
 
 - org.springframework.security.intercept.web.EgovReloadableDefaultFilterInvocationDefinitionSource : 패키지 변경으로 인하여 불필요 (egovframework.rte.fdl.security.intercept.EgovReloadableFilterInvocationSecurityMetadataSource)
-- …security.intercept.*, …security.securedobject.securedobject.*, …security.securedobject.userdetails.* 등 : 업그레이된 실행환경쪽 패키지(egovframework.rte.fdl.security.*)를 참조하기 때문에 불필요
+- …security.intercept.\*, …security.securedobject.securedobject.\*, …security.securedobject.userdetails.\* 등 : 업그레이된 실행환경쪽 패키지(egovframework.rte.fdl.security.\*)를 참조하기 때문에 불필요
 
 ### 5. Mapping 클래스 mapRow 메소드 변경
 
