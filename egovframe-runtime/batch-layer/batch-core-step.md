@@ -47,11 +47,11 @@ Chunk 단위로 Item 읽기 → 처리/변환 → 쓰기의 단계를 거치는 
 ```java
 List items = new Arraylist();
 for(int i = 0; i < commitInterval; i++){
-    Object item = itemReader.read()
+	Object item = itemReader.read()
 
-    Object processedItem = itemProcessor.process(item);
+	Object processedItem = itemProcessor.process(item);
 
-    items.add(processedItem);
+	items.add(processedItem);
 }
 
 itemWriter.write(items);
@@ -80,12 +80,12 @@ Tasklet 인터페이스를 구현한 SystemCommandTasklet 클래스를 이용해
 
 ```xml
 <bean id="myTasklet">
-    <property name="tasklet">
-        <bean class="org.springframework.batch.sample.tasklet.SystemCommandTasklet">
-              <property name="command" value="echo hello" />
-              <property name="timeout" value="5000" />
-        </bean>
-    </property>
+	<property name="tasklet">
+		<bean class="org.springframework.batch.sample.tasklet.SystemCommandTasklet">
+			  <property name="command" value="echo hello" />
+			  <property name="timeout" value="5000" />
+		</bean>
+	</property>
 </bean>
 ```
 
@@ -225,17 +225,17 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 ##### Skip
 
-[Skip 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Skip 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
 ##### Retry
 
-[Retry 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Retry 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
 #### Step 흐름제어
 
-[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow-control.md) 
+[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow-control) 
 
-#### Step 흐름제어
+#### Step Variable
 
 변수 선언 후 Listeners를 통해서 모든 Setp에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
 
@@ -243,5 +243,5 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 
 ## 참고자료
-* http://static.springsource.org/spring-batch/reference/html/domain.html#domainStep
-* http://static.springsource.org/spring-batch/reference/html/configureStep.html
+- [http://static.springsource.org/spring-batch/reference/html/domain.html#domainStep](https://docs.spring.io/spring-batch/reference/#domainStep)
+- [http://static.springsource.org/spring-batch/reference/html/configureStep.html](https://docs.spring.io/spring-batch/reference/)
