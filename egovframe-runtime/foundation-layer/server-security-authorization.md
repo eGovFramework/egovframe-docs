@@ -150,6 +150,13 @@ methodSecurityMetadataSources
 </beans:bean>
 ```
 
+##### methodSecurityMetadataSources
+```xml
+<beans:bean id="methodSecurityMetadataSources" class="org.springframework.security.access.method.MapBasedMethodSecurityMetadataSource">
+	<beans:constructor-arg ref="methodMap" />
+</beans:bean>
+```
+
 ##### methodMap
 DB 기반의 보호자원 맵핑 정보를 얻어 이를 참조하는 빈의 초기화 데이터로 제공한다.
 resourceType을 method로 설정하여 securedObjectService의 getRolesAndMethod()를 호출하여 DB에서 역할과 메소드의 매핑정보를 얻어온다.
