@@ -47,16 +47,10 @@ Log4j 2는 trace(), debug(), info() 등과 같은 로깅 메서드 뿐 아니라
 
 | 메서드 | 기능 | 위치 | 사용 |
 | --- | --- | --- | --- |
-| entry() | 로그의 시작을 표시,  
-전달된 메서드 파라미터 출력 | 로깅 메서드 시작부분 | logger.entry() or  
-logger.entry(Object… params) |
-| exit() | 로그의 끝을 표시,  
-리턴값 출력 | return문 or 로깅 메서드 끝부분 | logger.exit() or  
-logger.exit(Object… result) |
-| throwing() | 예외나 에러가 발생했을 때,  
-해당 예외/에러정보를 출력 | 예외발생 시 | throw logger.throwing(new MyException); |
-| catching() | 예외을 catch했을 때,  
-해당 예외정보를 출력 | catch문 | logger.catching(e); |
+| entry() | 로그의 시작을 표시, 전달된 메서드 파라미터 출력 | 로깅 메서드 시작부분 | logger.entry() or logger.entry(Object… params) |
+| exit() | 로그의 끝을 표시, 리턴값 출력 | return문 or 로깅 메서드 끝부분 | logger.exit() or logger.exit(Object… result) |
+| throwing() | 예외나 에러가 발생했을 때, 해당 예외/에러정보를 출력 | 예외발생 시 | throw logger.throwing(new MyException); |
+| catching() | 예외을 catch했을 때, 해당 예외정보를 출력 | catch문 | logger.catching(e); |  
 
 이러한 메서드들이 만드는 로깅 이벤트가 기본적인 로깅 이벤트와 분리될 수 있도록 디폴트 Log Level와 Marker가 설정되어 있다.  
 이에 따라 entry와 exit 메서드는 TRACE 레벨에서만 출력되며 FLOW Marker를 통해 다른 로그 메세지로부터 분리(필터링)할 수 있고,  
