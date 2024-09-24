@@ -324,9 +324,11 @@ ex) MySQL
 
 아래의 XML 설정은 스프링에서 제공하는 DefaultLineMapper를 적용한 FlatFileItemReader와 전자정부에서 제공하는 EgovDefaultLineMapper를 적용한 FlatFileItemReader 설정 비교이다.
 
-✔ 주의! EgovDefaultLineMapper 사용 시, 반드시 EgovTokenizer(EgovFixedLengthTokenizer, EgovByteLengthTokenizer, EgovDelimitedTokenizer)와 EgovObjectMapper를 사용해야 한다.
-✔ 주의! EgovObjectMapper 사용 시, VO 필드 타입은 String, int, double, float, long, char, boolean, short, BigDecimal로 제한된다.
-✔ 주의! 스프링의 DefaultLineMapper 사용 시, Tokenizer에서 'names' 속성을 설정하지만 전자정부의 EgovDefaultLineMapper 사용 시, EgovObjectMapper에서 'names' 속성을 설정한다.
+**✔ 주의!** EgovDefaultLineMapper 사용 시, 반드시 EgovTokenizer(EgovFixedLengthTokenizer, EgovByteLengthTokenizer, EgovDelimitedTokenizer)와 EgovObjectMapper를 사용해야 한다.
+
+**✔ 주의!** EgovObjectMapper 사용 시, VO 필드 타입은 String, int, double, float, long, char, boolean, short, BigDecimal로 제한된다.
+
+**✔ 주의!** 스프링의 DefaultLineMapper 사용 시, Tokenizer에서 'names' 속성을 설정하지만 전자정부의 EgovDefaultLineMapper 사용 시, **EgovObjectMapper**에서 **'names' 속성을 설정한다.**
 
 #### EgovObjectMapper 설정항목
 ##### Delimited(구분자) 방식 설정
