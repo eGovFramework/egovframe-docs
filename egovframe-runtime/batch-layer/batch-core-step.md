@@ -225,11 +225,11 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 ##### Skip
 
-[Skip 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Skip 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
 ##### Retry
 
-[Retry 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Retry 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
 #### Step 흐름제어
 
