@@ -27,7 +27,7 @@ Remote JobLauncher의 예제 작성 방법을 다음과 같다.
 **Web 서비스 (Server)**
 - (Step 1) 표준프레임워크 개발환경에서 배치 템플릿을 생성한다.
 템플릿의 대상은 SAM파일 형식의 Web 프로젝트이다.
-관련 템플릿 생성 방법은 배치 템플릿 위저드를 참조한다.
+관련 템플릿 생성 방법은 [배치 템플릿 위저드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2.5:imp:editor:batch_template_wizard)를 참조한다.
 - (Step 2) 생성된 배치 템플릿에 Hessain Web Service의 라이브러리를 등록한다.
 - (Step 3) 서버의 RemoteJobLauncher를 작성한다. (interface 및 Implement 클래스 작성)
 RemoteJobLauncher의 구현체는 Template의 BatchRunController의 batchRun을 참조한다.
