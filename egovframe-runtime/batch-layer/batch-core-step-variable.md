@@ -1,13 +1,13 @@
-## Step Variable
+# Step 흐름제어
 
-### 개요
+## 개요
 변수 선언 후 Listeners를 통해서 모든 Step에서 사용자 정의 변수를 사용할 수 있도록 `EgovStepVariableListener`를 통해서 지원한다.    
 
 사용자가 변수를 정의하여 여러 step에서 해당 변수를 공유하여 사용 가능한 기능으로 이루어져 있다.
 
 ![step_variable_architecture6.png](images/step_variable_architecture6.png)
-### 설명
-#### Step Variable 설정
+## 설명
+### Step Variable 설정
 배치 실행 환경에서 제공하는 `EgovJobVariableListener`를 사용하여 사용자 정의 변수를 설정한다.
 
 ```
@@ -21,7 +21,7 @@
     </property>
 </bean>
 ```
-### job, step 설정
+## job, step 설정
 step 설정 시 listener를 사용하여 공유 변수 서비스를 설정한다.
 
 
@@ -36,7 +36,7 @@ step 설정 시 listener를 사용하여 공유 변수 서비스를 설정한다
 </job>
 ```
 
-#### step에서 tasklet 선언 시 Step Variable 사용
+### step에서 tasklet 선언 시 Step Variable 사용
 setter 방식으로 공유 변수를 사용 시 아래와 같이 응용하여 설정한다.
 
 ```
@@ -44,7 +44,7 @@ setter 방식으로 공유 변수를 사용 시 아래와 같이 응용하여 �
     <property name="stepVariable" value="#{stepExecutionContext[StepVariableKey1]}" />
 </bean>
 ```
-#### Step 처리 시 Step Variable 사용
+### Step 처리 시 Step Variable 사용
 
 ```
 public class TaskletStep implements Tasklet, InitializingBean {
@@ -76,4 +76,4 @@ public class TaskletStep implements Tasklet, InitializingBean {
     }
 }
 ```
-참고자료
+## 참고자료
