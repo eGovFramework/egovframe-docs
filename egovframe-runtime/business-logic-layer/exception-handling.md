@@ -4,7 +4,7 @@
 
 전자정부 표준프레임워크 기반의 시스템 개발시 Exception 처리, 정확히는 Exception별 특정 로직(후처리 로직이라고 부르기도 함)을 흐를 수 있도록 하여 Exception에 따른 적절한 대응이 가능도록 하고자 하는데 목적이 있다.<br/>
 AOP의 도움을 받아 비즈니스 POJO와 분리되어 After throwing advice로 정의하였다.<br/>
-AOP 관련한 내용은 [AOP 모듈](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:aop)을 참조하길 바란다.
+AOP 관련한 내용은 [AOP 모듈](../foundation-layer-core/aop.md)을 참조하길 바란다.
 
 Exception에 대해 이야기 하겠다.<br/>
 Exception이 발생시 Exception 발생 클래스 정보와 Exception 종류가 중요하다.<br/>
