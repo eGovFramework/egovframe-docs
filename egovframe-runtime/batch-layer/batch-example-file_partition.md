@@ -76,7 +76,7 @@ public class MultiResourcePartitioner implements Partitioner {
 }
 ```
 
-#### EgovOutputFileListener
+##### EgovOutputFileListener
 
 Step 수행 이전에 호출이 되며, 입력리소스의 정보를 이용하여 출력파일에 대한 정보를 생성 및 저장한다.
 ✔ 출력은 path의 기본값인 “file:./target/output/” 이하에 생성이 되며, 이 경로는 Job 설정파일(path 프로퍼티)에서 변경할 수 있다.
