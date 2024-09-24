@@ -2,7 +2,7 @@
 
 ## 개요
 
- Java 5 버전을 사용할 수 없거나, XML 기반 설정을 선호한다면, Spring 2.0 이상에서 제공하는 XML 스키마 기반의 AOP를 사용할 수 있다. Spring은 관점(Aspect) 정의를 지원하기 위해 “aop” 네임스패이스를 제공한다. @AspectJ 를 이용한 AOP 지원에서 사용된 포인트컷 표현식과 충고(Advice) 유형은 XML 스키마 기반 AOP 지원에도 동일하게 제공된다.
+ Java 5 버전을 사용할 수 없거나, XML 기반 설정을 선호한다면, Spring 2.0 이상에서 제공하는 XML 스키마 기반의 AOP를 사용할 수 있다. Spring은 관점(Aspect) 정의를 지원하기 위해 “aop” 네임스페이스를 제공한다. @AspectJ를 이용한 AOP 지원에서 사용된 포인트컷 표현식과 충고(Advice) 유형은 XML 스키마 기반 AOP 지원에도 동일하게 제공된다.
 
 ## 설명
 
@@ -45,7 +45,7 @@
 </aop:aspect>
 ```
 
- 다음은 before 충고를 구현하고 있는 클래스이다. before 충고를 수행하는 beforeTargetXML()메소드는 해당 포인트컷을 가진 클래스명과 메소드명을 출력한다.
+ 다음은 before 충고를 구현하고 있는 클래스이다. before 충고를 수행하는 beforeTargetXML()메소드는 해당 포인트컷을 가진 클래스명과 메소드 명을 출력한다.
 
  ```java
  public class AdviceUsingXML {
@@ -65,7 +65,7 @@
 
 #### After returning advice
 
- After returing 충고는 정상적으로 메소드가 실행될 때 수행된다. After 충고는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:after-returning&gt; 요소를 사용하여 정의한다. 다음은 After returning 충고를 사용하는 예제이다. afterReturningTargetMethod() 충고는 targetMethod()로 정의된 포인트컷 후에 수행된다. targetMethod() 포인트컷의 실행 결과는 retVal 변수에 저장되어 전달된다.
+ After returning 충고는 정상적으로 메소드가 실행될 때 수행된다. After 충고는 &lt;aop:aspect&gt; 요소 내에서 &lt;aop:after-returning&gt; 요소를 사용하여 정의한다. 다음은 After returning 충고를 사용하는 예제이다. afterReturningTargetMethod() 충고는 targetMethod()로 정의된 포인트컷 후에 수행된다. targetMethod() 포인트컷의 실행 결과는 retVal 변수에 저장되어 전달된다.
 
  ```xml
 <aop:aspect ref="adviceUsingXML">
@@ -166,7 +166,7 @@
 
 ### 관점(Aspect) 실행하기
 
- 앞서 정의한 관점(Aspect)가 정상적으로 동작하는지 확인하기 위해 테스트 코드를 이용해 확인해 본다. AdviceTest 클래스는 대상 메소드 수행시 예외없이 정상 실행하는 경우와 예외 발생의 경우를 구분해서 테스트 한다.
+ 앞서 정의한 관점(Aspect)가 정상적으로 동작하는지 확인하기 위해 테스트 코드를 이용해 확인해 본다. AdviceTest 클래스는 대상 메소드 수행 시 예외 없이 정상 실행하는 경우와 예외 발생의 경우를 구분해서 테스트한다.
 
 #### 정상 실행의 경우
 
