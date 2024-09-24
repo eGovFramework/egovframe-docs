@@ -12,7 +12,7 @@
 
 **단순처리(Tasklet) 예제의 Job 설정 파일인 taskletJob.xml 을 확인한다.**
 
-Job 의 구성을 보면 다른 Job과 달리 Chunk 설정이 없고, <tasklet>에서 참조하는 adapter 빈에서 jobParameters로 설정된 값을 targetObject 프로퍼티 값으로 넘겨주는 것을 확인할 수 있다.
+Job 의 구성을 보면 다른 Job과 달리 Chunk 설정이 없고, \<tasklet>에서 참조하는 adapter 빈에서 jobParameters로 설정된 값을 targetObject 프로퍼티 값으로 넘겨주는 것을 확인할 수 있다.
 
 ```xml
 <job id="loopJob" xmlns="http://www.springframework.org/schema/batch">
