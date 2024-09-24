@@ -74,7 +74,7 @@ public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor 
 
 ### BeanFactoryPostProcesors를 사용한 확장(Customizing configuration metadata with BeanFactoryPostProcessors)
 
- org.springframework.beans.factory.config.BeanFactoryPostProcessor는 BeanPostProcessor와 의미적으로 비슷하지만, 큰 차이점 중 하나는 BeanFactoryPostProcessors는 bean 설정 메타정보를 처리한다는 것이다. Spring IoC Container는 BeanFactoryPostProcessors가 설정 메타정보를 읽고, Container가 실제로 bean를 객체화하기 전에 그 정보를 변경할 수 있도록 허용한다.
+ org.springframework.beans.factory.config.BeanFactoryPostProcessor는 BeanPostProcessor와 의미적으로 비슷하지만, 큰 차이점 중 하나는 BeanFactoryPostProcessors는 bean 설정 메타정보를 처리한다는 것이다. Spring IoC Container는 BeanFactoryPostProcessors가 설정 메타정보를 읽고, Container가 실제로 bean을 객체화 하기 전에 그 정보를 변경할 수 있도록 허용한다.
 
  Bean factory post-processor는 BeanFactory의 경우 수동으로 실행되고, ApplicationContext의 경우 자동으로 실행된다.
 
@@ -93,7 +93,7 @@ cfg.postProcessBeanFactory(factory);
 
 #### Example: the PropertyPlaceholderConfigurer
 
- PropertyPlaceholderConfigurer는 BeanFactory 정의로부터 property 값을 분리하기 위해 사용한다. 분리된 값은 Java Properties 형식으로 작성된 다른 파일로 분리된다. 이 방식은 주 XML 설정 파일을 변경하지 않고, 환경 변수 등을 변경될 때 유용하다.(예를 들어 database URLs, 사용자명, 패스워드 등)
+ PropertyPlaceholderConfigurer는 BeanFactory 정의로부터 property 값을 분리하기 위해 사용한다. 분리된 값은 Java Properties 형식으로 작성된 다른 파일로 분리된다. 이 방식은 주 XML 설정 파일을 변경하지 않고, 환경 변수 등을 변경할 때 유용하다.(예를 들어 database URLs, 사용자명, 패스워드 등)
 
  ```xml
 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -126,7 +126,7 @@ jdbc.password=root
 <context:property-placeholder location="classpath:com/foo/jdbc.properties"/>
 ```
 
- PropertyPlaceholderConfigurer는 사용자가 지정한 Properties 파일뿐 아니라 만약 지정한 property가 없을 경우, Java System properties도 검사할 수 있다. 이 기능은 systemPropertiesMode 설정을 통해 조절할 수 있다.
+ PropertyPlaceholderConfigurer는 사용자가 지정한 Properties 파일 뿐 아니라 만약 지정한 property가 없을 경우, Java System properties도 검사할 수 있다. 이 기능은 systemPropertiesMode 설정을 통해 조절할 수 있다.
 
 #### Example: the PropertyOverrideConfigurer
 
@@ -151,7 +151,7 @@ beanName.property=value
 
 - Object getObject(): 생성한 객체를 return한다. 생성된 객체는 공유될 수도 있다.
     
-- boolean isSingleton(): 만약 FactoryBean이 singleton을 리턴하면 true, 아니며 false 이다.
+- boolean isSingleton(): 만약 FactoryBean이 singleton을 리턴하면 true, 아니면 false 이다.
     
 - Class getObjectType(): getObject() 메소드에 의해 객체의 타입을 리턴하는데 미리 알 수 없는 경우에는 null을 리턴한다.
     
