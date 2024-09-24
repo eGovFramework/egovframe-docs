@@ -50,7 +50,7 @@ Profile의 설정방법에는 XML설정과 Annotation설정으로 나뉜다.
 
 \<transfer-service-config.xml>
 
-아래는 “dataSource” bean을 사용하는 “accountRepository” bean 설정한 XML이다. 어떤 Profile의 bean인지 여부와 상관없이 Spring container기동시점에는 dataSource라는 bean id를 가진 유일한 bean을 가져오기 때문에 이전 설정과 똑같이 bean id값만 쓰면 된다.
+아래는 "dataSource" bean을 사용하는 "accountRepository" bean 설정한 XML이다. 어떤 Profile의 bean인지 여부와 상관없이 Spring container기동시점에는 dataSource라는 bean id를 가진 유일한 bean을 가져오기 때문에 이전 설정과 똑같이 bean id값만 쓰면 된다.
 
 ```xml
 <beans ...>
@@ -66,7 +66,7 @@ Profile의 설정방법에는 XML설정과 Annotation설정으로 나뉜다.
 
 \<standalone-datasource-config.xml>
 
-개발시점에 사용하는 “dataSource” bean을 정의하는 XML. Profile명은 “dev”로 정의하고 있으며 Embedded DB를 DataSource로 설정하고 있다. “dev” Profile을 활성화시키면 해당Bean이 동작한다.
+개발시점에 사용하는 "dataSource" bean을 정의하는 XML. Profile명은 "dev"로 정의하고 있으며 Embedded DB를 DataSource로 설정하고 있다. "dev" Profile을 활성화시키면 해당Bean이 동작한다.
 
 ```xml
 <beans profile="dev">
@@ -79,7 +79,7 @@ Profile의 설정방법에는 XML설정과 Annotation설정으로 나뉜다.
 
 \<jndi-datasource-config.xml>
 
-운영시점에 사용하는 “dataSource” bean을 정의하는 XML. Profile명은 “production”으로 정의하고 있으며 JDNI를 DataSource로 설정하고 있다. “production” Profile을 활성화시키면 해당 Bean이 동작한다.
+운영시점에 사용하는 "dataSource" bean을 정의하는 XML. Profile명은 "production"으로 정의하고 있으며 JDNI를 DataSource로 설정하고 있다. "production" Profile을 활성화시키면 해당 Bean이 동작한다.
 
 ```xml
 <beans profile="production">
@@ -120,39 +120,7 @@ Profile의 설정방법에는 XML설정과 Annotation설정으로 나뉜다.
 ```
 #### Annotation Profile설정
 
-\<beans> element를 하나의 XML파일에서 profile값과 함께 여러 번 정의할 수도 있다.
-
-```xml
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-    xmlns:jee="http://www.springframework.org/schema/jee"
-    xsi:schemaLocation="...">
- 
-    <bean id="transferService" class="com.bank.service.internal.DefaultTransferService">
-        <constructor-arg ref="accountRepository"/>
-        <constructor-arg ref="feePolicy"/>
-    </bean>
- 
-    <bean id="accountRepository" class="com.bank.repository.internal.JdbcAccountRepository">
-        <constructor-arg ref="dataSource"/>
-    </bean>
-    <bean id="feePolicy" class="com.bank.service.internal.ZeroFeePolicy"/>
-    <beans profile="dev">
-        <jdbc:embedded-database id="dataSource">
-            <jdbc:script location="classpath:com/bank/config/sql/schema.sql"/>
-            <jdbc:script location="classpath:com/bank/config/sql/test-data.sql"/>
-        </jdbc:embedded-database>
-    </beans>
-    <beans profile="production">
-        <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/datasource"/>
-    </beans>
-</beans>
-```
-
-#### Annotation Profile설정
-
-Profile의 Annotation설정은 @Profile을 통해서 설정 가능하다. @Configuration과 함께 @Profile(“Profile명”)을 클래스에 쓰게 되면 내부 메소드에 붙은 @Bean을 통해 Bean들이 등록된다.
+Profile의 Annotation설정은 @Profile을 통해서 설정 가능하다. @Configuration과 함께 @Profile("Profile명")을 클래스에 쓰게 되면 내부 메소드에 붙은 @Bean을 통해 Bean들이 등록된다.
 
 기존 @Configuration class에 대하여 살펴보고 @Profile을 통해 Bean을 설정하는 방법에 대하여 살펴본다.
 
@@ -190,13 +158,11 @@ public class TransferServiceConfig {
 }
 ```
 
-아래는 “dataSource” bean을 사용하는 “accountRepository” bean 설정한 XML이다. 어떤 Profile의 bean인지 여부와 상관없이 Spring container기동시점에는 dataSource라는 bean id를 가진 유일한 bean을 가져오기 때문에 이전 설정과 똑같이 bean id값만 쓰면 된다.
-
 ##### @Profile 설정
 
 위에서 살펴봤던 Bean Profile XML 설정을 Annotation(@Profile)으로 설정하면 다음과 같다. @Profile은 XML의 beans profile의 설정과 똑같이 동작하며 @Bean은 XML의 bean설정과 매칭된다.
 
-다음은 “dev” Profile을 정의했을 때의 Java코드이다. Profile명이 dev인 “dataSource” Bean을 정의하고 있다.
+다음은 "dev" Profile을 정의했을 때의 Java코드이다. Profile명이 dev인 "dataSource" Bean을 정의하고 있다.
 
 ```java
 @Configuration
@@ -213,7 +179,7 @@ public class StandaloneDataConfig {
 }
 ```
 
-다음은 “production” Profile을 정의했을 때의 Java코드이다. Profile명이 production인 “dataSource” Bean을 정의하고 있다.
+다음은 "production" Profile을 정의했을 때의 Java코드이다. Profile명이 production인 "dataSource" Bean을 정의하고 있다.
 
 ```java
 @Configuration
@@ -270,7 +236,7 @@ ctx.load("classpath:/com/bank/config/xml/*-config.xml");
 ctx.refresh();
 ```
 
-\<@Profile로 Profile을 설정한 경우, Java코드로 Profile활성화 > 활성화하고자하는 Profile명을 setActiveProfiles메소드로 활성화시키고“com.bank.config.code”패키지 내의 모든 @Configuration class를 스캔한다. Profile이 dev로 설정되어있는 bean이 활성화되며 Profile이 Production으로 설정되어있는 bean은 Skip된다.
+\<@Profile로 Profile을 설정한 경우, Java코드로 Profile활성화 > 활성화하고자하는 Profile명을 setActiveProfiles메소드로 활성화시키고 "com.bank.config.code"패키지 내의 모든 @Configuration class를 스캔한다. Profile이 dev로 설정되어있는 bean이 활성화되며 Profile이 Production으로 설정되어있는 bean은 Skip된다.
 
 ```java
 AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
