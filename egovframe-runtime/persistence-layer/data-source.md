@@ -29,9 +29,9 @@
 | PROPERTIES | 설 명 |
 | --- | --- |
 | driverClassName | JDBC driver class name설정 |
-| url | DataBase에 접근하기 위한 JDBC URL |
-| username | DataBase 접근하기 위한 사용자명 |
-| password | DataBase 접근하기 위한 암호 |
+| url | Database에 접근하기 위한 JDBC URL |
+| username | Database 접근하기 위한 사용자명 |
+| password | Database 접근하기 위한 암호 |
 
 ##### Sample Source
 
