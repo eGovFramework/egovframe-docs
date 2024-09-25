@@ -87,9 +87,9 @@ public void testJdbcDataSource() throws Exception {
 | PROPERTIES | 설 명 |
 | --- | --- |
 | driverClassName | jdbc driver의 class name 설정 |
-| url | DataBase url을 설정 |
-| username | DataBase 접근하기 위한 사용자명 |
-| password | DataBase 접근하기 위한 암호 |
+| url | Database url을 설정 |
+| username | Database 접근하기 위한 사용자명 |
+| password | Database 접근하기 위한 암호 |
 | defaultAutoCommit | datasource로부터 리턴된 connection에 대한 auto-commit 여부를 설정 |
 | poolPreparedStatements | PreparedStatement 사용여부 |
 | initialSize | Connection pool에 생성될 초기 connection size 설정 |
@@ -147,7 +147,7 @@ public void testDbcpDataSource() throws Exception
 
 #### C3P0DataSource
 
- JDBC driver를 이용한 DataBase Connection를 생성하는 구현체. C3P0 Library에 관련 사항은 [C3P0 Configuration](http://www.mchange.com/projects/c3p0/index.html#c3p0-config.xml)에서 확인할 수 있다.
+ JDBC driver를 이용한 Database Connection를 생성하는 구현체. C3P0 Library에 관련 사항은 [C3P0 Configuration](http://www.mchange.com/projects/c3p0/index.html#c3p0-config.xml)에서 확인할 수 있다.
 
 ##### Configuration
 
