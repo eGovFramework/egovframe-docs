@@ -132,7 +132,7 @@ jQuery Mobile 은 하나의 페이지를 \<div data-role=“page”> 단위로 �
 
 **테스트 디바이스**
 
-![img_test_device](./images/img_test_device%20(1).png)
+![img_test_device](./images/img_test_device.png)
 
 **테스트 브라우저**
 
