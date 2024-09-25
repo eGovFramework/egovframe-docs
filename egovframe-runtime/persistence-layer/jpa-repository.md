@@ -1,7 +1,7 @@
 # Repository
 
 ## 설명
-일반적으로 Data Access Layer를 구현하기 위해서는 상당량의 코드를 작성해야 한다. Spring Data에서는 Repository를 추상화하여 다양한 저장소에 접근하기 위한 Data Access Layer 구현 코드를 최소화함으로써 개발생산성을 높일 수 있도록 한다. 이는 Query Method를 통해 가능한데 Query Method란 메소드명만 가지고 쿼리를 만들 수 있다는 것이다. 특정 규칙에 맞게 메소드를 작성하면 개발자가 따로 Data Access 클래스를 만들지 않아도 Spring Data가 대신하여 해당 Database와 자동으로 매핑허여 결과를 가져다준다.
+일반적으로 Data Access Layer를 구현하기 위해서는 상당량의 코드를 작성해야 한다. Spring Data에서는 Repository를 추상화하여 다양한 저장소에 접근하기 위한 Data Access Layer 구현 코드를 최소화함으로써 개발생산성을 높일 수 있도록 한다. 이는 Query Method를 통해 가능한데 Query Method란 메소드명만 가지고 쿼리를 만들 수 있다는 것이다. 특정 규칙에 맞게 메소드를 작성하면 개발자가 따로 Data Access 클래스를 만들지 않아도 Spring Data가 대신하여 해당 Database와 자동으로 매핑하여 결과를 가져다준다.
 
 Repository 인터페이스를 상속받아 CRUD 관련 메소드들을 제공하는 CrudRepository 인터페이스와 Paging 처리 기능이 제공되는 PagingAndSortingRepository 인터페이스를 살펴보도록 하겠다.
 

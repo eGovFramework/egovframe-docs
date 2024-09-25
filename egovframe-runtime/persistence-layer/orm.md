@@ -31,7 +31,7 @@ ORM 서비스에 대한 자세한 설명에 앞서 간단하게 ORM 서비스를
 ---|---|---
 antlr-2.7.7.jar|파서 라이브러리||
 commons-collections-3.2.jar|collection 처리를 위한 라이브러리|
-commons-dbcp-1.2.2.jar|DataSource 라이브러리|
+commons-dbcp-1.2.2.jar|DataSource 커넥션 풀 라이브러리|
 commons-logging-1.1.1.jar|Logging 처리를 위한 라이브러리|	hibernate-annotations-3.4.0.GA.jar에서 참조
 log4j-1.3alpha-8.jar|Logging 처리를 위한 라이브러리|
 slf4j-api-1.5.3.jar|Logging 처리를 위한 라이브러리|
