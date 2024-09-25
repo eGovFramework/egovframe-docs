@@ -24,7 +24,7 @@ Spring처럼, Spring Web Flow는 그들이 필요한 부분을 사용하는 것�
 SWF의 중요한 이득은 어떤 환경에서도 수행될 수 있는 자족적인 컨트롤러의 모듈을 재사용하여 정의할 수 있도록 하는 것이다.
 
 우리는 구체적으로 알아보기 전에 Hello World를 찍어 보자.
-- [Hello world](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:getting_started)
+- [Hello world](./getting-started.md)
 
 Spring Web Flow의 기본 샘플로 Hotel Booking 을 Spring Source에서는 제공하고 있다.<br>
 우리는 Spring Web Flow 레퍼런스 문서를 기준으로 하고 샘플인 Hotel Booking 을 참고하는 형태로 설명하도록 하겠다.
@@ -33,19 +33,19 @@ Hotel Booking 샘플 데모 : 🌏 [http://richweb.springframework.org/swf-booki
 
 ### SWF Configuration
 
-- [SWF 시스템 설정](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:setting_system)
-- [Spring Web Flow 와 MVC 연동](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:with_spring_mvc)
-- [Securing Flows](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:securing_flows)
-- [Flow Managed Persistence](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:flow_managed_persistence)
+- [SWF 시스템 설정](./setting-system.md)
+- [Spring Web Flow 와 MVC 연동](./with-spring-mvc.md)
+- [Securing Flows](./securing-flows.md)
+- [Flow Managed Persistence](./flow-managed-persistence.md)
 
 ### SWF
 
-- [Getting Started -Hello world](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:getting_started)
-- [Flow Definition](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:flow_definition)
-- [Expression Language](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:expression_language)
-- [Rendering Views](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:rendering_views)
-- [Executing actions](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:executing_actions)
-- [Flow Inheritance](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:bsl:flow_inheritance)
+- [Getting Started -Hello world](./setting-system.md)
+- [Flow Definition](./flow-definiton.md)
+- [Expression Language](./expression-language.md)
+- [Rendering Views](./rendering-views.md)
+- [Executing actions](./executing_actions.md)
+- [Flow Inheritance](./flow-inheritance.md)
 
 
 ## 참고 자료
