@@ -4,7 +4,7 @@
 
 전자정부 표준프레임워크 기반의 시스템 개발시 Exception 처리, 정확히는 Exception별 특정 로직(후처리 로직이라고 부르기도 함)을 흐를 수 있도록 하여 Exception에 따른 적절한 대응이 가능도록 하고자 하는데 목적이 있다.<br/>
 AOP의 도움을 받아 비즈니스 POJO와 분리되어 After throwing advice로 정의하였다.<br/>
-AOP 관련한 내용은 [AOP 모듈](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:aop)을 참조하길 바란다.
+AOP 관련한 내용은 [AOP 모듈](../foundation-layer-core/aop.md)을 참조하길 바란다.
 
 Exception에 대해 이야기 하겠다.<br/>
 Exception이 발생시 Exception 발생 클래스 정보와 Exception 종류가 중요하다.<br/>
@@ -27,8 +27,7 @@ Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직
 ## 설명
 
 우리는 앞에서 언급했던 Exception 후처리 방식과 Exception이 아니지만 후처리 로직(leavaTrace)을 실행할 하는 방식에 대해 설명하도록 하겠다.<br/>
-간략하게 보면<br/>
-Exception 후처리 방식은 **AOP(pointCut ⇒ after-throw) ⇒ ExceptionTransfer.transfer() ⇒ ExceptionHandlerService ⇒ Handler** 순으로 실행된다.
+간략하게 보면 Exception 후처리 방식은 **AOP(pointCut ⇒ after-throw) ⇒ ExceptionTransfer.transfer() ⇒ ExceptionHandlerService ⇒ Handler** 순으로 실행된다.
 
 LeavaTrace는 AOP를 이용하는 구조는 아니고 Exception을 발생하지도 않는다. 단지 후처리 로직을 실행하도록 하고자 함에 목적이 있다.<br/>
 실행 순서는 **LeavaTrace ⇒ TraceHandlerService ⇒ Handler** 순으로 실행한다.
@@ -87,17 +86,17 @@ ExceptionTransfer의 property로 존재하는 exceptionHandlerService는 다수�
 		class="egovframework.rte.fdl.cmmn.exception.handler.EgovServiceExceptionHandler" />
 ...
 ```
-defaultExceptionHandleManager는 setPatters(), setHandlers() 메소드를 가지고 있어 상단과 같이<br/>
-등록된 pattern 정보를 이용하여 Exception 발생 클래스와의 비교하여 ture인 경우 handlers에 등록된 handler를 실행한다.<br/>
+defaultExceptionHandleManager는 setPatterns(), setHandlers() 메소드를 가지고 있다. 상단과 같이 등록된 pattern 정보를 이용하여 Exception 발생 클래스와의 비교하여 ture인 경우 handlers에 등록된 handler를 실행한다.<br/>
 패턴 검사시 사용되는 pathMatcher는 AntPathMatcher를 이용하고 있다.
 
 특정 pattern 그룹군을 만든후 patterns에 등록하고 그에 해당하는 후처리 로직을 정의하여 등록할 수 있는 구조이다.
 
 #### Handler 구현체
 
-먼저 클래스에 대한 이해가 필요하다. 앞단에서 간단하게 설명을 했지만 다시 정리 하자면<br/>
-Exception 발생시 AOP pointcut “After-throwing” 걸려 ExceptionTransfer 클래스의 transfer가 실행된다.<br/>
-transfer 메소드는 ExceptionHandlerManager의 run 메소드를 실행한다. 아래는 구현예로 DefaultExceptionHandleManager 코드이다.<br/>
+먼저 클래스에 대한 이해가 필요하다.<br/>
+앞단에서 간단하게 설명을 했지만 다시 정리 하자면 Exception 발생시 AOP pointcut “After-throwing” 걸려 ExceptionTransfer 클래스의 transfer가 실행된다.<br/>
+transfer 메소드는 ExceptionHandlerManager의 run 메소드를 실행한다. <br/>
+아래는 구현예로 DefaultExceptionHandleManager 코드이다.<br/>
 **(구현시 필수사항) 상위클래스는 AbsExceptionHandleManager 이고 인터페이스는 ExceptionHandlerService 이다.**<br/>
 구현되는 메소드는 run(Exception exception)인 것을 확인할 수 있다.
 
@@ -134,8 +133,7 @@ public class DefaultExceptionHandleManager extends AbsExceptionHandleManager imp
 
 #### Customizable Handler 등록
 
-시나리오 : CustomizableHandler 클래스를 만들어 보고 sample 패키지에 있는 Helloworld 클래스 Exception 시에 CustomizableHandler를 실행한다.<br/
->
+시나리오 : CustomizableHandler 클래스를 만들어 보고 sample 패키지에 있는 Helloworld 클래스 Exception 시에 CustomizableHandler를 실행한다.<br/>
 먼저 CustomHandler 클래스를 아래와 같이 만든다.<br/>
 ExceptionHandleManager 에서는 occur 메소드를 실행한다.<br/>
 **Handler 구현체는 반드시 (필수사항) ExceptionHandler Interface를 갖는다.**
