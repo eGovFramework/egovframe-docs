@@ -42,7 +42,9 @@ Web Container에 따라 URLEncoding을 안하고 넘겨도 작동하는 경우�
 
 그러므로 무조건 표준을 따라서 java.net.URLEncoder.encode()메 소드를 사용해 인코딩해서 넘기도록 한다. 디코드 작업은 request.setCharacterEncoding()에 의해서 자동으로 이뤄지므로 해줄것이 없다. (Tomcat 3.x대- JSP Spec 1.1 -에서는 request.setCharacterEncoding()이 없으므로 String.getBytes()를 이용해 직접 디코딩을 해줘야만 했다)
 
-\<%@ include file=“test.jspf”%> 에서의 한글 위와 같이 test.jspf를 static include 할 경우에 test.jspf에 있는 한글이 모두 깨질 수 있다. test.jspf에도 한글 설정이 필요한데, 이 경우에는 test.jspf의 최 상단에 다음을 추가하면 된다.
+#### <%@ include file="test.jspf"%> 에서의 한글 
+
+위와 같이 test.jspf를 static include 할 경우에 test.jspf에 있는 한글이 모두 깨질 수 있다. test.jspf에도 한글 설정이 필요한데, 이 경우에는 test.jspf의 최 상단에 다음을 추가하면 된다.
 
 ```jsp
 <%@page pageEncoding="euc-kr"%>
