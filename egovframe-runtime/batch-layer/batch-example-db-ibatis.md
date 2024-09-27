@@ -6,9 +6,9 @@ iBatis를 사용하여 Database의 데이터를 읽고 쓰는 기능에 대한 �
 ## 설명
 ### 설정
 #### Job 설정
-<b>Ibatis 예제의 Job 설정파일인 ibatisIoJob.xml을 확인한다.</b>
+**Ibatis 예제의 Job 설정파일인 ibatisIoJob.xml을 확인한다.**
 
-Ibatis 를 연동을 위해 Spring의 SqlMapClientFactoryBean을 통해 sql-map-config 설정 파일과 Ibatis 에 제공될 dataSource 설정한다. IbatisPagingItemReader와 IbatisBatchItemWriter는 sqlMapClient의 value값으로 정의된 설정파일을 통해 각각 queryId와 statementId의 value값으로 정의된 ID와 동일한 쿼리를 수행한다.
+Ibatis 를 연동을 위해 Spring의 SqlMapClientFactoryBean을 통해 sql-map-config 설정 파일과 Ibatis 에 제공될 dataSource 설정한다.  IbatisPagingItemReader와 IbatisBatchItemWriter는 sqlMapClient의 value값으로 정의된 설정파일을 통해 각각 queryId와 statementId의 value값으로 정의된 ID와 동일한 쿼리를 수행한다.
 
 ```xml
 <bean id="itemReader"class="org.springframework.batch.item.database.IbatisPagingItemReader">
@@ -28,9 +28,9 @@ Ibatis 를 연동을 위해 Spring의 SqlMapClientFactoryBean을 통해 sql-map-
 ```
 
 #### Ibatis 설정
-<b>Ibatis사용을 위한 기본 설정을 확인한다.</b>
+**Ibatis사용을 위한 기본 설정을 확인한다.**
 
-<b>sql-map-config</b>
+**sql-map-config**
 
 ibatis-config.xml
 
@@ -42,7 +42,7 @@ ibatis-config.xml
 </sqlMapConfig>
 ```
 
-<b>sql-map</b>
+**sql-map**
 
 ibatis-customer-credit.xml
 
@@ -60,7 +60,7 @@ ibatis-customer-credit.xml
 
 ### JunitTest 구성 및 수행
 #### JunitTest 구성
-<b>ibatisIo예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
+**ibatisIo예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.**
 
 ✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
 
@@ -148,9 +148,9 @@ public abstract class EgovAbstractIoSampleTests {
 ### 결과 확인
 DB의 Customer 테이블의 credit의 값을 살펴보면 Job이 실행되면서 수정된 것을 확인 할 수 있다.
 
-![jdbccursor_data](../jdbccursor_data.png)
+![jdbccursor_data](./images/jdbccursor_data.png)
 
 ## 참고자료
-- [iBATIS Configuration](../../persistence-layer/dataaccess-ibatis_configuration.md)
-- [Data Access](../../persistence-layer/data-access.md)
+- [iBATIS Configuration](../persistence-layer/dataaccess-ibatis_configuration.md)
+- [Data Access](../persistence-layer/data-access.md)
 - [http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#IbatisPagingItemReader](http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#IbatisPagingItemReader)

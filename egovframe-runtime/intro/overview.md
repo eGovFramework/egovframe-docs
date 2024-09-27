@@ -147,4 +147,4 @@ UX 처리 서비스는 모바일 웹의 사용성과 편의성 증대를 위하�
 | 공통기반    | Scheduling | [Quartz](http://www.quartz-scheduler.org/) | 2.3.2 | |
 | 공통기반    | Server Security | [Spring Security](https://spring.io/) | 5.8.3 | 인증, 권한 관리 기능 확장 |
 | 공통기반    | String Util | [Jakarta Regexp](http://jakarta.apache.org/regexp/) | 1.4 | 문자열 처리 기능 확장 |
-| 공통기반    | XML Manipulation | [Apache Xerces 2](http://xerces.apache.org/xerces2-j/), [JDOM](http://www.jdom.org/) | 2.12.2, 2.0.6.1 | XML 처리 기능 확장 |
+| 공통기반    | XML Manipulation | [Apache Xerces 2](http://xerces.apache.org/xerces2-j/), [JDOM](https://github.com/hunterhacker/jdom) | 2.12.2, 2.0.6.1 | XML 처리 기능 확장 |
