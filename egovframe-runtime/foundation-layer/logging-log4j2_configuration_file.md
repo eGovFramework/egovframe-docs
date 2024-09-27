@@ -203,6 +203,7 @@ Log4j 2는 Console, File, RollingFile, Socket, DB 등 다양한 로그 출력 �
 | **FileAppender**       | `<File>`       | 파일에 출력           |
 | **RollingFileAppender**| `<RollingFile>`| 조건에 따라 파일에 출력 |
 | **JDBCAppender**       | `<JDBC>`       | RDB Table에 출력      |
+
 모든 Appender 요소는 상위 요소인 **&lt;Appenders&gt;** 아래에 선언한다.
 
 ```xml
