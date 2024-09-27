@@ -132,14 +132,14 @@ jQuery Mobile 은 하나의 페이지를 \<div data-role=“page”> 단위로 �
 
 **테스트 디바이스**
 
-![img_test_device](./images/img_test_device.png)
+![img_test_device](./images/img_test_device_wbg.png)
 
 **테스트 브라우저**
 
 ![test_browser](./images/test_browser.png)
 
-모바일 표준프레임워크 사용자경험(UX)지원 브라우저 내용
-> 지원플랫폼 
+**모바일 표준프레임워크 사용자경험(UX)지원 브라우저 내용**
+
 ![table_support](./images/table_support.png)
 
 ## 참고자료
