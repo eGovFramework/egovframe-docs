@@ -9,20 +9,20 @@ Spring 에서는 [Commons FileUpload](http://commons.apache.org/fileupload/)를 
 
 오류 사항에 대해서는 [multipart multi file upload](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:file_upload_%EB%AC%B8%EC%A0%9C) 지원 문제를 참고.
 
-본 메뉴얼에서는 싱글 파일 업로드 보다 **멀티플 파일 업로드**를 가능하도록 그 대안에 대하여 설명하고자 한다.
+본 매뉴얼에서는 싱글 파일 업로드 보다 **멀티플 파일 업로드**를 가능하도록 그 대안에 대하여 설명하고자 한다.
 
 ## 설명
 
 #### 데이터 전송방식
 
-데이터를 전송하는 방식에는 GET 방식과 POST 방식이 있고 또하나 ENCTYPE 속성의 "multipart/form-data" 있다.
+데이터를 전송하는 방식에는 GET 방식과 POST 방식, 그리고 ENCTYPE 속성의 "multipart/form-data"이 있다.
 
 - GET
-  - URL에 폼데이터가 노출되기 때문에 입력 내용의 길이 제한이있고 256byte~4096byte 까지의 데이터를 전송할 수 있다.
+  - URL에 폼데이터가 노출되기 때문에 입력 내용의 길이 제한이 있고 256byte~4096byte 까지의 데이터를 전송할 수 있다.
 - POST
   - URL에 노출되지 않고 데이터를 전송하기 때문에 입력 내용의 길이에 제한을 받지 않는다. 
 
-이렇게 데이터를 전송하는데 아무 문제 없을 것 처럼 보이지만, 이 둘은 보낼 수 있는 데이터양에 한계가 있다.
+이렇게 데이터를 전송하는데 아무 문제 없을 것 처럼 보이지만, 이 둘은 보낼 수 있는 데이터 양에 한계가 있다.
 
 파일이나 용량이 큰 데이터를 전송할 때 문제가 생기는 것이다.
 
@@ -55,9 +55,9 @@ File Upload / Download 에 대한 설명은 아래 상세 페이지를 참고하
 5. Console 창에서 정상적으로 Tomcat이 실행된 것을 확인한다.
 6. 본 샘플에서는 CommonsMultipartResolver를 보완한 MultiCommonsMultipartResolver를 사용하고 있으나 **CommonsMultipartResolver** 사용을 권장함.
 
-multiple files with a single file(한단 샘플)에서 사용한 JavaScript를 사용하여 추가시 다른 form name을 추가하여 처리하는 방식을 가이드 하였으니 참고하기 바란다.
+multiple files with a single file(한단 샘플)에서 사용한 JavaScript를 사용하여 추가 시 다른 form name을 추가하여 처리하는 방식을 가이드 하였으니 참고하기 바란다.
 
-**샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우져에서 실행되는 화면**
+**샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우저에서 실행되는 화면**
 
 ![file-updown-service-sample-screenshot](./images/file-updown-service-sample-screenshot.png)
 
