@@ -14,7 +14,7 @@ MVC 패턴이 Web Framework에만 사용되는 단어는 아니지만, 전자정
 ## 설명
 
 오픈소스 Web MVC Framework에는 Spring MVC, Struts, Webwork, JSF등이 있으며, 각각의 장점을 가지고 사용되고 있다.
-기능상에서 큰차이는 없으나, 아래와 같은 장점을 고려 전자정부프레임워크에서는 Spring Web MVC를 MVC 서비스의 기반 오픈 소스로 채택하였다.
+기능상에서 큰차이는 없으나, 아래와 같은 장점을 고려 전자정부프레임워크에서는 Spring Web MVC를 MVC 서비스의 기반 오픈 소스로 체택하였다.
 
 - Framework내의 특정 클래스를 상속하거나, 참조, 구현해야 하는 등의 제약사항이 비교적 적다. Controller(Spring 2.5 @MVC)나 Form 클래스등이 좀 더 POJO-style에 가까워 비지니스 로직에 집중된 코드를 작성할 수 있다.
 - IOC Contatiner가 Spring 이라면 (간단한 설정으로 Struts나 Webwork같은 Web Framework을 사용할 수 있겠지만) 연계를 위한 추가 설정없이 Spring MVC를 사용할 수 있다. 전자정부프레임워크의 IOC Container는 Spring이다.
