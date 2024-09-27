@@ -197,12 +197,12 @@ Log4j 2는 Console, File, RollingFile, Socket, DB 등 다양한 로그 출력 �
 본 페이지에서는 자주 사용되는 Console, File, RollingFile, JDBC Appender에 대해서만 설명한다.  
 출력 위치에 따라 Appender 종류와 설정 태그가 달라지며, 아래 표는 각 Appender 정의 태그와 출력 위치이다.
 
-| Appenders | 태그명 | 출력 위치 |
-| --- | --- | --- |
-| ConsoleAppneder | <Console> | 콘솔에 출력 |
-| FileAppneder | <File> | 파일에 출력 |
-| RollingFileAppneder | <RollingFile> | 조건에 따라 파일에 출력 |
-| JDBCAppender | <JDBC> | RDB Table에 출력 |
+| Appenders           | 태그명          | 출력 위치             |
+|---------------------|----------------|-----------------------|
+| **ConsoleAppender**    | `<Console>`    | 콘솔에 출력           |
+| **FileAppender**       | `<File>`       | 파일에 출력           |
+| **RollingFileAppender**| `<RollingFile>`| 조건에 따라 파일에 출력 |
+| **JDBCAppender**       | `<JDBC>`       | RDB Table에 출력      |
 
 모든 Appender 요소는 상위 요소인 **&lt;Appenders&gt;** 아래에 선언한다.
 
