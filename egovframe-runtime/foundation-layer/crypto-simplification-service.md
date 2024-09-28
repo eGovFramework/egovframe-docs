@@ -3,7 +3,7 @@
 ## 개요
 
 표준프레임워크 3.8 부터 ARIA 블록암호 알고리즘 기반 암/복호화 설정을 간소화 할 수 있는 방법을 제공한다.
-내부적으로 필요한 설정을 가지고 있고, XML Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.
+내부적으로 필요한 설정을 가지고 있고, <acronym title="Extensible Markup Language">XML</acronym> Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.
 또한 globals.properties 설정 파일의 중요 정보 Url, UserName, Password 항목을 암/복호화 처리 할 수 있도록 제공한다.
 그외에 정보는 properties 파일에 암호화 데이터 설정후 #{egovEnvCryptoService.decrypt('…')} 복호화 기능을 제공한다.
 
@@ -23,7 +23,7 @@
 ## Crypto Config 설정
 
 Security에 대한 기본 설정 정보를 제공한다.
-**algorithmKey**, **algorithmKeyHash** 값을 하단 **[Crypto algorithmKey, algorithmKeyHash 생성]**에 의해 생성된 값을 입력한다.
+**algorithmKey**, **algorithmKeyHash** 값을 하단 <b>[Crypto algorithmKey, algorithmKeyHash 생성]에 의해 생성된 값을 입력</b>한다.
 algorithmKey, algorithmKeyHash 키의 노출을 피하고 싶다면 설정 파일에서 해당 항목 삭제 후
 하단 [WAS VM arguments 환경 변수 등록(옵션)]을 참고하여 진행한다.
 

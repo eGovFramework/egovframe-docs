@@ -10,7 +10,7 @@ WebService는 전자정부 개발프레임워크 Integration 서비스 표준에
 
 W3C는 Web Service를 “네트워크 상에서 발생하는 컴퓨터 간의 상호작용을 지원하기 위한 소프트웨어 시스템”으로 정의하고 있다. 일반적으로 Web Service는 인터넷과 같은 네트워크 상에서 접근되고, 요청된 서비스를 제공하는 원격 시스템에서 수행되는 Web APIs이다.
 
-![WebService](./images/web_service.png)
+![WebService](./images/web_service_wbg.png)
 
 - 참조 : https://en.wikipedia.org/wiki/Web_service
 
@@ -22,7 +22,7 @@ WebService는 Web Service 구현하기 위해서 [Apache CXF](https://cxf.apache
 
 ## 설명
 
-WebService는 [Integration Service](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/integration-layer/integration-service.md) 표준에 따라 구현한 Library이므로, 본 장에서는 API 등의 사용 방식은 설명하지 않는다. 본 장은 WebService 만을 위한 추가적인 설정 정보를 설명하고, 설정 방법을 가이드한다.
+WebService는 [Integration Service](./integration-service.md) 표준에 따라 구현한 Library이므로, 본 장에서는 API 등의 사용 방식은 설명하지 않는다. 본 장은 WebService 만을 위한 추가적인 설정 정보를 설명하고, 설정 방법을 가이드한다.
 
 ### Metadata
 
@@ -399,7 +399,7 @@ WebService를 위한 기본적인 설정이 포함된 “context-webservice.xml�
 
 ### Client 모듈 개발
 
-WebService Client 모듈은 Web Service로 공개된 Integration 서비스 표준에 따라 호출하는 모듈로서, 본 장은 설정 방식을 설명한다. (호출 방식은 [연계 서비스 API](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/integration-layer/integration-service-api.md)를 참조한다.)<br/>
+WebService Client 모듈은 Web Service로 공개된 Integration 서비스 표준에 따라 호출하는 모듈로서, 본 장은 설정 방식을 설명한다. (호출 방식은 [연계 서비스 API](./integration-service-api.md)를 참조한다.)<br/>
 Client 모듈을 설정하기 위해서는 다음 과정이 필요하다.
 
 1. [Metadata WEB_SERVICE_CLIENT 설정 추가](#metadata-web_service_client-설정-추가)
@@ -645,6 +645,6 @@ WebLogic 9.2 버전은 J2EE 1.4까지만 지원하므로, JAX-WS 2.0을 지원�
 
 ## 참고자료
 
-- [Integration Service](https://github.com/eGovFramework/egovframe-docs/blob/contribution/egovframe-runtime/integration-layer/integration-service.md)
+- [Integration Service](./integration-service.md)
 - https://cxf.apache.org
 

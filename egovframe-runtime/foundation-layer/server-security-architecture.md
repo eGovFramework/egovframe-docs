@@ -11,7 +11,7 @@
 
 #### 웹어플리케이션 인증절차
 
- ![image](./images/server_security_웹어플리케이션_인증절차.png)
+ ![image](./images/server_security_웹어플리케이션_인증절차_wbg.png)
 
 - 리소스 요청
 - 요청에 대해 보호되고 있는 자원인지 판단
@@ -26,7 +26,7 @@
 
 #### Spring Security Filter Chain
 
- ![image](./images/server_security_filterchain흐름.png) ![image](./images/server_security_filterchain흐름_http요청_.png) ![image](./images/server_security_authenticationprocessingfilter.png)
+<img src="./images/server_security_filterchain흐름_wbg.png" alt="server security Filter Chain 흐름" width="400"> <img src="./images/server_security_filterchain흐름_http요청_wbg.png" alt="server security Filter Chain 흐름 (HTTP요청)" width="150"> <img src="./images/server_security_authenticationprocessingfilter_wbg.png" alt="server security Authentication Processing Filter" width="200">
 
 - Spring Security에서 생성한 정보 - SecurityContextHoler를 이용하여 SecurityContext 얻음
 - 응용프로그램이 분산되어 있는 경우 등 다양한 환경에서 사용 가능토록 SecurityContext를 SecurityContextHolder 내부에 생성한 ThreadLocal 객체를 이용하여 저장하고 있음.
@@ -69,7 +69,7 @@
 
 ##### 사용자 테이블
 
-```bash
+```sql
 CREATE TABLE USERS (
 	USERNAME VARCHAR(50) NOT NULL,
 	PASSWORD VARCHAR(50) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE USERS (
 
 ##### 사용자 권한 테이블
 
-```bash
+```sql
 CREATE TABLE AUTHORITIES (
 	USERNAME VARCHAR(50) NOT NULL,
 	AUTHORITY VARCHAR(50) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE AUTHORITIES (
 
 ##### 역할 테이블
 
-```bash
+```sql
 CREATE TABLE ROLES (
 	AUTHORITY VARCHAR(50) NOT NULL,
 	ROLE_NAME VARCHAR(50),
@@ -126,7 +126,7 @@ CREATE TABLE ROLES (
 
  역할의 계층구조를 저장하는 테이블
 
-```bash
+```sql
 CREATE TABLE ROLES_HIERARCHY (
 	PARENT_ROLE VARCHAR(50) NOT NULL,
 	CHILD_ROLE VARCHAR(50) NOT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE ROLES_HIERARCHY (
 
 ##### 보호된 자원 테이블
 
-```bash
+```sql
 CREATE TABLE SECURED_RESOURCES (
 	RESOURCE_ID VARCHAR(10) NOT NULL,
 	RESOURCE_NAME VARCHAR(50),
@@ -181,7 +181,7 @@ CREATE TABLE SECURED_RESOURCES (
 
  보호된 자원과 역할과의 매핑 테이블
 
-```bash
+```sql
 CREATE TABLE SECURED_RESOURCES_ROLE (
 	RESOURCE_ID VARCHAR(10) NOT NULL,
 	AUTHORITY VARCHAR(50) NOT NULL,
