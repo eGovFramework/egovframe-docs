@@ -3,8 +3,8 @@
 ## 개요
 객체 모델링(Object Oriented Modeling)과 관계형 데이터 모델링(Relational Data Modeling) 사이의 불일치를 해결해 주는 OR Mapping 서비스로 자바 표준인 JPA를 표준 서비스로 제시하고 구현체로는 JPA 구현체중에 가장 성능이 우수한 것으로 알려진 Hibernate를 이용하였다. 서비스의 특징을 살펴보면 다음과 같다.
 - 특정 DBMS에 영향을 받지 않으므로 DBMS가 변경되더라도 데이터 액세스 처리 코드에 대한 변경없이 설정 정보의 변경만으로도 동작 가능하다.
-- SQL을 작성하고 <acronym title="Structured Query Language">SQL</acronym> 실행 결과로부터 전달하고자 하는 객체로 변경하는 코드를 작성하는 시간이 줄어든다. 하지만 필요시 [SQL 작업](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:orm:native_sql)도 가능하다.
-- 기본적으로 필요 시점에만 DBMS에 접근하는 Lazy Loading 전략 채택하고 [Cache활용](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:orm:cache_handling)을 통해 DBMS에 대한 접근 횟수를 줄여나가 어플리케이션의 성능 향상을 도모한다.
+- SQL을 작성하고 <acronym title="Structured Query Language">SQL</acronym> 실행 결과로부터 전달하고자 하는 객체로 변경하는 코드를 작성하는 시간이 줄어든다. 하지만 필요시 [SQL 작업](orm-native_sql.md)도 가능하다.
+- 기본적으로 필요 시점에만 DBMS에 접근하는 Lazy Loading 전략 채택하고 [Cache활용](orm-cache_handling.md)을 통해 DBMS에 대한 접근 횟수를 줄여나가 어플리케이션의 성능 향상을 도모한다.
 - 별도의 <acronym title="Extensible Markup Language">XML</acronym> 파일로 매핑을 관리하지 않고 [Entity Class](./orm-entities.md)에 최소한의 Annotation으로 정의하므로써 작업이 용이하다.
 - Entity Class가 일반 클래스로 정의됨으로써 상속이나 다양성, 캡슐화 같은 것들을 그대로 적용하면서 퍼시스턴스 오브젝트로 사용할 수 있다.
 - 자바 표준이므로 많은 벤더들에서 구현체를 지원하고 개발을 편리하게 할 수 있는 [JPA툴(Dali)](https://projects.eclipse.org/projects/webtools.dali)을 지원한다.
@@ -15,8 +15,8 @@
 <img src="./images/conceptua_architecture.jpg" align="left"/>
 
 옆의 그림에서 보는것과 같이 DBMS 기반의 어플리케이션 수행을 하기 위해 필요한 주요 구성 요소는 Entity, Persistence.xml 이며, 각각은 다음과 같은 역할을 수행한다.
-- [Entity](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:orm:entities): 어플리케이션 실행 여부와 상관없이 물리적으로 존재하는 데이터들을 다룬다. 일반적으로 DBMS 데이터를 이용하는 어플리케이션을 개발할 경우 어플리케이션의 비즈니스 레이어에서 특정 DBMS에 맞는 SQL을 통해 어플리케이션의 데이터를 처리하게 된다. 그러나 JPA 기반의 어플리케이션에서는 Entity를 중심으로 하여 어플리케이션의 데이터와 DBMS 연동이 가능해진다. annotation 기반으로 매핑관련 사항도 Entity 클래스에서 정의할 수 있어서 별도의 파일없이 테이블과의 관계를 표현할 수 있다.
-- [Persistence.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:orm:entities): 구현체에 대한 선언 및 대상 엔티티 클래스 지정 구현체별 프로퍼티 지정등을 할 수 있는 설정 파일로 JPA를 이용해서 어플리케이션을 구동할 경우 필수적으로 작성을 해야하는 파일이다.
+- [Entity](orm-entities.md): 어플리케이션 실행 여부와 상관없이 물리적으로 존재하는 데이터들을 다룬다. 일반적으로 DBMS 데이터를 이용하는 어플리케이션을 개발할 경우 어플리케이션의 비즈니스 레이어에서 특정 DBMS에 맞는 SQL을 통해 어플리케이션의 데이터를 처리하게 된다. 그러나 JPA 기반의 어플리케이션에서는 Entity를 중심으로 하여 어플리케이션의 데이터와 DBMS 연동이 가능해진다. annotation 기반으로 매핑관련 사항도 Entity 클래스에서 정의할 수 있어서 별도의 파일없이 테이블과의 관계를 표현할 수 있다.
+- [Persistence.xml](orm-jpa_configuration.md): 구현체에 대한 선언 및 대상 엔티티 클래스 지정 구현체별 프로퍼티 지정등을 할 수 있는 설정 파일로 JPA를 이용해서 어플리케이션을 구동할 경우 필수적으로 작성을 해야하는 파일이다.
 - [JPA(Hibernate)](https://hibernate.org/) : JPA 구현체로의 Hibernate의 요소는 Hibernate Core , Hibernate Annotations , Hibernate EntityManager 로 되어 있으며 JPA 구성에 필요한 Entity Manager등 구현 클래스를 포함하고 있다.
 - JPA Tool : JPA 지원툴이 Eclipse Web Tools Platform내에 서브프로젝트로 Dali JPA Tools 가 있다. 이 툴을 활용함으로써 DB에 생성된 테이블로부터 Entity 클래스 생성등 손이 많이 가는 작업을 자동으로 처리할 수 있다. 자세한 정보는 [Dali Homepage](https://projects.eclipse.org/projects/webtools.dali)를 참조한다.
 

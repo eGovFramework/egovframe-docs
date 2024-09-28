@@ -110,4 +110,4 @@ Tomcat에서는 일반적으로 웹 어플리케이션이 GET과 POST 방식으�
 
 Tomcat에서는 한글이 깨지는 문제가 발생하는데 아래의 링크를 참조
 
-- [Tomcat 한글 설정하기](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:tomcat_%ED%95%9C%EA%B8%80_%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
+- [Tomcat 한글 설정하기](file-download-service-tomcat-encoding.md)

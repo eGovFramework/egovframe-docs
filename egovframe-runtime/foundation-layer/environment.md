@@ -18,7 +18,7 @@ Environment env = ctx.getEnvironment();
 
 ### Profile 접근
 
-- [Profile에 대한 자세한 설명](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:ioc_container:bean_definition_profiles)
+- [Profile에 대한 자세한 설명](../foundation-layer-core/ioc-container-bean-definition-profiles.md)
 
 Profile은 등록할 bean들이 정의되어있는 논리적인 그룹을 말한다. Bean은 XML또는 Annotation을 통해 정의된 Profile값 중 활성화된 Profile로 할당된다.
 이 때 현재 사용하는 Profile을 활성화하는 것이 바로 Environment의 역할이다. 또한 Profile은 default값으로 설정이 되어있어야 한다.
