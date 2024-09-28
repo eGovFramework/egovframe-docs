@@ -338,12 +338,6 @@ client-validation을 위해서는 해당 JSP에 아래와 같은 작업이 추�
 form submit시에 validateVO클래스명() 함수를 호출한다.
 
 ```jsp
-<validator:javascript formName="employee" staticJavascript="false" xhtml="true" cdata="false"/>
-```
-
-form submit시에 validateVO클래스명() 함수를 호출한다.
-
-```jsp
    ... onsubmit="return validateEmployee(this)" ">
 ```
 
