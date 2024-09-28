@@ -14,8 +14,10 @@ Jakarta Commons Validator는 필수값, 각종 primitive type(int,long,float…)
 Configuration과 에러메시지를 client-side, server-side 별로 따로 하지 않고 한곳에 같이 쓰는 관리상의 장점이 있다.
 자세한 설명은 아래의 문서를 참조하라.
 
-- [Spring Framework에서 Commons Validator 사용](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.9:ptl:security:jakarta_commons_validator) : 입력값을 Jakarta Commons Validator를 이용하여 client-side, server-side 검증(validation)함.
-- [Commons Validator에 validation rule 추가](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.9:ptl:validation:add_rules_in_commons_validator) : Commons Validator에 주민등록번호 validation rule을 추가해본다.
+- [Spring Framework에서 Commons Validator 사용](./security-jakarta-commons-validator.md
+) : 입력값을 Jakarta Commons Validator를 이용하여 client-side, server-side 검증(validation)함.
+- [Commons Validator에 validation rule 추가](./security-validation-add-rules-in-common-validator.md
+) : Commons Validator에 주민등록번호 validation rule을 추가해본다.
 
 ## 참고자료
 
