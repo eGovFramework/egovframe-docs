@@ -5,7 +5,7 @@
 ### Flow
 
 Flow란 상이한 상황(context)에서 실행될 수 있는 재사용이 가능한 여러 단계들의 흐름을 캡슐화한 것을 의미한다.
-모든 Flow는 아래와 같은 Root 로 시작한다
+모든 Flow는 아래와 같은 Root로 시작한다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -17,19 +17,19 @@ Flow란 상이한 상황(context)에서 실행될 수 있는 재사용이 가능
 </flow>
 ```
 
-### Flow 의 구성
+### Flow의 구성
 
 SWF에서 Flow는 “Sate(state)“로 부르는 일련의 단계들로 구성된다. Flow로 진입하게 되는 Sate는 일반적으로 사용자에게 보여지는 뷰가 된다.
 이 뷰에서는 Sate를 제어하게 되는 이벤트가 발생한다. 이들 이벤트는 결과적으로 다른 뷰로 이동하게 되는 Transition(transition)을 일으키게 된다.
-모든 state 는 <flow/> 안에 정의하게 된다. 맨처음 정의되는 state가 Flow의 시작점이게 된다.
+모든 state는 <flow/> 안에 정의하게 된다. 맨 처음 정의되는 state가 Flow의 시작점이 된다.
 
-#### Flow 의 작성법
+#### Flow의 작성법
 
-Flow 는 웹 애플리케이션 개발자가 XML 기반 Flow 정의 언어를 사용해서 작성된다.
+Flow는 웹 애플리케이션 개발자가 XML 기반 Flow 정의 언어를 사용해서 작성된다.
 
 ## 설명
 
-### Flow 의 필수적인 언어 구성요소
+### Flow의 필수적인 언어 구성요소
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -49,8 +49,8 @@ Flow 는 웹 애플리케이션 개발자가 XML 기반 Flow 정의 언어를 �
 </flow>
 ```
 
-- view-state: Flow 중 화면을 보여주는 Sate를 정의하는 구성요소
-- 편의상 Flow 정의 파일이 있는 디렉터리 내에서 view-state id와 일치하는 화면 템플릿을 마춰 보게 됨
+- view-state: Flow 중 화면을 보여주는 Sate를 정의하는 구성 요소
+- 편의상 Flow 정의 파일이 있는 디렉터리 내에서 view-state id와 일치하는 화면 템플릿을 맞춰 보게 됨
 - transition: Sate 내에서 발생한 이벤트를 제어하는 구성 요소. 화면 이동을 일으킴.
 - end-state: Flow의 결과를 정의
 
@@ -66,12 +66,12 @@ Flow 내에서 Action을 취할 수 있는 여러 지점이 존재한다.
 - Sate가 종료될 때
 - Flow가 종료될 때
   
-SWF 에서 Action은 기본적으로 Unified EL이라는 간결한 표현 언어를 사용해서 정의하게 된다.
+SWF에서 Action은 기본적으로 Unified EL이라는 간결한 표현 언어를 사용해서 정의하게 된다.
 
 ##### evaluate
 
-대부분 evaluate 구성요소를 사용하게 된다. 이를 통해 Spring Bean 에 있는 메소드나 다른 Flow 변수를 호출할 수 있다.
-예를 들자면 아래와 같다.
+대부분 evaluate 구성 요소를 사용하게 된다. 이를 통해 Spring Bean에 있는 메소드나 다른 Flow 변수를 호출할 수 있다.
+예를 들면 아래와 같다.
 
 ```xml
 <!-- [1] entityManager Bean 의 persist 메소드에 booking 객체를 넣어 호출한다.  -->
@@ -116,7 +116,7 @@ SWF 에서 Action은 기본적으로 Unified EL이라는 간결한 표현 언어
 #### 입력/출력 매핑
 
 각각의 Flow는 잘 정의된 입력/출력 계약(input/output contract)를 갖고 있다.
-Flow는 시작할 때 입력 속성을 건네 받게되고, 종료될 때 출력 속성을 반환하게 된다. 이처럼 Flow호출은 개념적으로 다음과 같은 메소드 호출과 비슷하다.
+Flow는 시작할 때 입력 속성을 건네받게 되고, 종료될 때 출력 속성을 반환하게 된다. 이처럼 Flow 호출은 개념적으로 다음과 같은 메소드 호출과 비슷하다.
 
 ```java
 FlowOutcome flowId(Map<String, Object> inputAttributes);
@@ -149,7 +149,7 @@ public interface FlowOutcome {
 
 ##### 출력
 
-Flow 출력 속성은 output 구성요소를 사용한다. output 속성은 end-state 내에 선언한다. 출력 값은 속성의 이름으로 Flow 범위 내에서 얻어오게 된다.
+Flow 출력 속성은 output 구성 요소를 사용한다. output 속성은 end-state 내에 선언한다. 출력 값은 속성의 이름으로 Flow 범위 내에서 얻어오게 된다.
 
 ```xml
 <end-state id="bookingConfirmed">
@@ -196,8 +196,8 @@ Flow 출력 속성은 output 구성요소를 사용한다. output 속성은 end-
 
 #### 변수들
 
-Flow에는 하나이상의 인스턴스 변수 선언이 가능하다. 이 변수들은 flow가 시작할 때 할당되며,
-변수를 유지하게 되는 모든 @Autowired transient 참조는 Flow가 재시작될 때 다시 값이 할당(rewired)되게 된다.
+Flow에는 하나 이상의 인스턴스 변수 선언이 가능하다. 이 변수들은 flow가 시작할 때 할당되며,
+변수를 유지하게 되는 모든 @Autowired transient 참조는 Flow가 재시작될 때 다시 값이 할당(rewired) 되게 된다.
 var 구성 요소를 사용해서 Flow 변수를 선언하자.
 
 ```xml
@@ -208,7 +208,7 @@ var 구성 요소를 사용해서 Flow 변수를 선언하자.
 
 #### Sub Flow 호출
 
-Flow 내에서 하위 Flow로써 또 다른 Flow 호출이 가능하다. 이 때 하위 Flow가 결과를 반활할 때까지 기존 Flow는 대기하게 된다.
+Flow 내에서 하위 Flow로써 또 다른 Flow 호출이 가능하다. 이때 하위 Flow가 결과를 반환할 때까지 기존 Flow는 대기하게 된다.
 
 ##### subflow-state
 
@@ -223,7 +223,7 @@ subflow-state 구성요소를 사용해서 하위 Flow 호출을 하게 된다.
 </subfow-state>
 ```
 
-이 예제에서는 createGuest Flow를 호출하게 된다. guestCreated 출력이 반환되게 되면, 새로운 손님이 예약 손님 리스트에 추가되게 된다.
+이 예제에서는 createGuest Flow를 호출한다. guestCreated 출력이 반환되면, 새로운 손님이 예약 손님 리스트에 추가된다.
 
 ##### subflow input 전달
 
@@ -238,7 +238,7 @@ input 구성요소를 사용하면 하위 Flow에 입력값을 건낼 수 있다
 
 ##### subflow output 매핑
 
-출력 값의 이름으로 하위 Flow에서 출력하는 속성을 참조해서 Transition를 하게 된다.
+출력 값의 이름으로 하위 Flow에서 출력하는 속성을 참조해서 Transition을 하게 된다.
 
 ```xml
 <subflow-state  ..>
@@ -248,7 +248,7 @@ input 구성요소를 사용하면 하위 Flow에 입력값을 건낼 수 있다
   ..
 ```
 
-이 예에서는 guestCreated 을 반환하게 될 때 gest 이름으로 넘어온 값을 booking 내의 guests (currentEvent.attributes.guest) 의 일부로 추가 해주고 있다.
+이 예에서는 guestCreated을 반환하게 될 때 gest 이름으로 넘어온 값을 booking 내의 guests (currentEvent.attributes.guest)의 일부로 추가해주고 있다.
 
 #### 샘플:Sub Flow 호출하기
 

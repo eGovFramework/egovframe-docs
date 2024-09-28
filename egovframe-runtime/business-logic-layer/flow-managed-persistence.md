@@ -2,9 +2,9 @@
 
 ## 개요
 
-대부분의 애플리케이션은 여러 방법으로 데이터에 접근한다. 여러 사용자가 공유하는 데이터를 여럿이 수정한다.
-따라서 트랜잭션 데이터 접근 속성이 필요하다. 관계형 데이터 집합을 도메인 객체로 변형하여 애플리케이션 처리를 도와준다.
-Web Flow는 “Flow가 관리하는 영속성”(flow managed persistence)을 제공하여 Flow가 객체 영속성 문맥을 만들고, commit하고, 닫을 수 있도록 한다.
+대부분의 애플리케이션은 여러 방법으로 데이터에 접근한다. 여러 사용자가 공유하는 데이터를 동시에 수정한다.
+따라서 트랜잭션 데이터 접근 속성이 필요하다. 관계형 데이터 집합을 도메인 객체로 변환하여 애플리케이션 처리를 도와준다.
+Web Flow는 “Flow가 관리하는 영속성”(flow managed persistence)을 제공하여 Flow가 객체 영속성 문맥을 만들고, commit 하고, 닫을 수 있도록 한다.
 Web Flow는 하이버네이트와 JPA 객체 영속화 기술과 연동한다.
 
 Flow-관리 영속성과 별도로 PesistenceContext 관리를 애플리케이션의 서비스 계층에서 완전히 캡슐화하는 패턴이 있다.
@@ -15,13 +15,13 @@ Flow-관리 영속성과 별도로 PesistenceContext 관리를 애플리케이�
 
 ### Flow 범위(FlowScoped) PersistenceContext
 
-이 패턴은 Flow 시작 시에 flowScope으로 PersistenceContext를 생성해준다.
+이 패턴은 Flow 시작 시에 flowScope으로 PersistenceContext를 생성해 준다.
 이 persistence context는 Flow 실행 과정 동안에 데이터 접근을 하는데 사용하며,
-Flow가 종료될 때 persistent entity에서 변경된 내용을 반영(commit)한다.
+Flow가 종료될 때 persistent entity에서 변경된 내용을 반영(commit) 한다.
 이 패턴은 대부분 다중 사용자에 의해서 동시에 수정되는 데이터의 정합성을 보호하고자 optimistic locking 전략과 함께 사용된다.
 
-저장이나 재시작 능력이 필요없다면, Flow 상태를 표준 HTTP 세션 기반 저장 방법이 충분하다.
-이 때 커밋 전의 세션 만료나 종료(termination)는 잠재적으로 변경 사항을 손실하게 할 수 있다.
+저장이나 재시작 능력이 필요 없다면, Flow 상태를 표준 HTTP 세션 기반 저장 방법이 충분하다.
+이 때 커밋 전 세션 만료나 종료(termination)는 잠재적으로 변경 사항을 손실할 수 있다.
 FlowScoped PersistenceContext 패턴을 사용하려면 먼저 persistence-context로 Flow를 식별하게 해야 한다.
 
 ```xml
@@ -61,7 +61,7 @@ Flow가 종료되는 시점에 커밋이 일어나게 하려면, end-state의 co
 
 이제 Flow가 시작할 때 리스너가 flowScope에 새로운 EntityManager를 할당해서 제어하게 된다.
 Flow 내에서 스프링 기반 데이터 접근 객체를 사용해서 발생하는 데이터 접근 시에는 항상 이 EntityManager를 자동으로 사용하게 된다.
-이러한 데이터 접근 연산은 중간 수정 내용의 고립성 유지를 위해 항상 트랜잭션 처리 대상이 되지 않고, 읽기 전용 트랜잭션에서만 실행되야 한다.
+이러한 데이터 접근 연산은 중간 수정 내용의 고립성 유지를 위해 항상 트랜잭션 처리 대상이 되지 않고, 읽기 전용 트랜잭션에서만 실행되어야 한다.
 
 ## 참고자료
 

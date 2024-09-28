@@ -2,15 +2,15 @@
 
 ## 개요
 
-view-state 는 flow 내에서 화면을 생성하는 요소이다.
+view-state는 flow 내에서 화면을 생성하는 요소이다.
 여기서는 view-state 에 대해서 알아보도록 하자.
 
 ## 설명
 
 ### 뷰 상태(view state) 정의하기
 
-view-state 는 기본적으로 해당 뷰를 생성하여 보여준 후, 사용자가 화면을 통해 응답을 하는 것을 기다린다.
-아래는 view-state는 enterBookingDetails 라는 ID 를 가지고 있으며 또한 별도의 view 설정이 없기 때문에 ID 가 곧 view 를 뜻한다
+view-state는 기본적으로 해당 뷰를 생성하여 보여준 후, 사용자가 화면을 통해 응답을 하는 것을 기다린다.
+아래는 view-state는 enterBookingDetails라는 ID 를 가지고 있으며 또한 별도의 view 설정이 없기 때문에 ID 가 곧 view를 뜻한다
 
 ```xml
 <view-state id="enterBookingDetails">
@@ -22,8 +22,8 @@ view-state 는 기본적으로 해당 뷰를 생성하여 보여준 후, 사용�
 
 ![dir](./images/dir.jpg)
 
-booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBookingDetails.jsp 이 자동으로 view 로 동작한다.
-또는 절대경로를 이용하여 명시적으로 view=”/WEB-INF/hotels/booking/enterBookingDetails.jsp” 설정할 수도 있다.
+booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBookingDetails.jsp 이 자동으로 view로 동작한다.
+또는 절대 경로를 이용하여 명시적으로 view=”/WEB-INF/hotels/booking/enterBookingDetails.jsp” 설정할 수도 있다.
 아래에서 다시 설명하겠다.
 
 ### 뷰 식별자 지정하기
@@ -50,7 +50,7 @@ booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBo
 
 ### 뷰 범위
 
-view-state 내부에서 유지되는 변수. Ajax 요청처럼 동일한 뷰가 여러번 보여줘야 하는 경우 유용.
+view-state 내부에서 유지되는 변수. Ajax 요청처럼 동일한 뷰를 여러 번 보여줘야 하는 경우 유용.
 
 - var 태그를 사용해서 view 변수 선언.
 
@@ -68,8 +68,8 @@ view-state 내부에서 유지되는 변수. Ajax 요청처럼 동일한 뷰가 
 
 #### 뷰 범위내에서 Object 다루기
 
-아래코드는 화면 ID 가 searchResults 인 view-state 화면을 그리되
-그리기전 bookingService.findHotels(searchCriteria) 메소드를 호출한 후 그 결과를 viewScope내의 hotels 로 저장한 후 화면을 보여주고 있다.
+아래 코드는 화면 ID가 searchResults인 view-state 화면을 그리되
+그리기 전 bookingService.findHotels(searchCriteria) 메소드를 호출한 후 그 결과를 viewScope내의 hotels로 저장한 후 화면을 보여주고 있다.
 그리고 화면상에 next 또는 previous 이벤트 발생시 eval(searchCriteria.nextPage()/previousPage()) 이 발생
 그 결과를 fragments으로 지정된 영역에 뿌려주고 있다.
 
@@ -94,7 +94,7 @@ view-state 내부에서 유지되는 변수. Ajax 요청처럼 동일한 뷰가 
 
 ### 화면을 보여줄 때 액션 실행
 
-뷰를 보여주기 전에 특정 액션을 실행하려면 on-render 사용한다.
+뷰를 보여주기 전에 특정 액션을 실행하려면 on-render를 사용한다.
 
 ```xml
 <on-render>
@@ -117,7 +117,7 @@ view-state 내부에서 유지되는 변수. Ajax 요청처럼 동일한 뷰가 
 
 #### 변환기(Converter) 구현
 
-org.springframework.binding.convert.converters.TwoWayConverter을 구현하면 됨. StringToObject를 구현하는게 더 좋다.
+org.springframework.binding.convert.converters.TwoWayConverter을 구현하면 된다. StringToObject를 구현하는게 더 좋다.
 
 ```java
 protected abstract Object toObject(String string, Class targetClass) throws Exception;
@@ -148,7 +148,7 @@ org.springframework.binding.convert.converters에 이미 구현된 변환기가 
 #### 변환기 등록하기
 
 org.springframework.binding.convert.service.DefaultConversionService을 상속해서 addDefaultConverters() 메소드를 재정의 하면 된다.
-자세한 것은 시스템 설정 에서 ConversionService 확장을 이용하여 설정하는 곳에서 다루고 있다.
+자세한 것은 시스템 설정에서 ConversionService 확장을 이용하여 설정하는 곳에서 다루고 있다.
 
 ### 바인딩 금지하기
 
@@ -178,7 +178,7 @@ bind 속성으로 특정 뷰 이벤트에서 모델 바인딩과 유효성 검�
 </view-state>
 ```
 
-binder로 지정하지 않으면 모든 프로퍼티를 바인딩된다. converter를 이용하여 변환기 지정 가능하다
+binder로 지정하지 않으면 모든 프로퍼티를 바인딩된다. converter를 이용하여 변환기 지정이 가능하다.
 
 ```xml
 <view-state id="enterBookingDetails" model="booking">
@@ -197,12 +197,12 @@ binder로 지정하지 않으면 모든 프로퍼티를 바인딩된다. convert
 
 ### Model 유효성 검증
 
-Model 유효성 검사에 대한 부분은 Web flow 에서는 프로그래밍적으로 제약사항을 강제화 하는 형태로 지원하고 있다.
+Model 유효성 검사에 대한 부분은 Web flow에서는 프로그래밍적으로 제약사항을 강제화하는 형태로 지원하고 있다.
 
 #### 프로그램 내에서 유효성 검증
 
 첫 번째 방법으로 유효성 검증 로직을 모델 객체 내에 정의하는 방법이다.
-Web Flow 는 view-stat 에서 모델로 넘어간 시점(view-state postback lifecycle)에서 자동적으로 validate 메소드를 자동으로 호출한다
+Web Flow 는 view-stat에서 모델로 넘어간 시점(view-state postback lifecycle)에서 자동적으로 validate 메소드를 자동으로 호출한다.
 
 ```xml
 <view-state id="enterBookingDetails" model="booking">
@@ -210,7 +210,7 @@ Web Flow 는 view-stat 에서 모델로 넘어간 시점(view-state postback lif
 </view-state>
 ```
 
-Booking class내의 validate(view-state 명) 코드는 아래와 같이 볼 수 있다.(메소드명 : validate + EnterBookingDetails)
+Booking class 내의 validate(view-state 명) 코드는 아래와 같이 볼 수 있다.(메소드명 : validate + EnterBookingDetails)
 
 ```java
 public class Booking {
@@ -270,7 +270,7 @@ spring mvc의 Error 객체도 받을 수 있다.
 
 ### 유효성 검증 하지 않기
 
-validate=“false” 설정함으로 유효성 검사를 하지 않을 수 있다
+validate=“false”로 설정하면 유효성 검사를 하지 않을 수 있다.
 
 ```xml
 <view-state id="chooseAmenities" model="booking">
@@ -338,7 +338,7 @@ public class BookingAction {
 
 ### 메세지 사용하기
 
-MessageContext는 플로우 실행 동안에 메세지를 저장하는데 사용되는 API다.
+MessageContext는 플로우 실행 동안에 메세지를 저장하는 데 사용되는 API다.
 일반 메세지나 국제화가 지원된 메세지 모두 사용 가능하다.
 메세지 수준도 지정 가능하며, 지원되는 수준은 info, warning, error이 있다. 메세지를 추가할 때는 MessageBuilder를 사용하자.
 
@@ -363,7 +363,7 @@ context.addMessage(builder.warn().source("smoking").code("notHealthy").resolvabl
 
 #### 메세지 번들 사용하기
 
-스프링의 MessageSource를 사용해서 메세지 번들을 정의가 가능하다. 간단히 프로퍼티 파일로 관리하면 된다.
+스프링의 MessageSource를 사용해서 메세지 번들 정의가 가능하다. 간단히 프로퍼티 파일로 관리하면 된다.
 
 ```
 #messages.properties
@@ -380,7 +380,7 @@ reservationConfirmation=We have processed your reservation - thank you and enjoy
 
 #### 시스템 생성 메세지 이해하기
 
-시스템에서 발생한 예외에 대해 메세지 지정 가능하다. 예를 들어 타입 변환 시 예외가 발생하면 typeMismatch를 통해서 메세지 지정 가능하다.
+시스템에서 발생한 예외에 대해 메세지 지정할 수 있다. 예를 들어 타입 변환 시 예외가 발생하면 typeMismatch를 통해서 메세지 지정할 수 있다.
 
 ```
 booking.checkinDate.typeMismatch=The check in date must be in the format yyyy-mm-dd.
@@ -388,7 +388,7 @@ booking.checkinDate.typeMismatch=The check in date must be in the format yyyy-mm
 
 ### 팝업 띄우기
 
-모달 팝업 다이얼로그를 뷰로 렌더링하고 싶다면, view-state 내에 popup=“true” 설정하면 된다.
+모달 팝업 다이얼로그를 뷰로 렌더링하고 싶다면, view-state 내에 popup=“true”로 설정하면 된다.
 
 ```xml
 <view-state id="changeSearchCriteria" view="enterSearchCriteria.xhtml" popup="true">
@@ -401,13 +401,13 @@ SWF가 클라이언트 요청을 팝업으로 재전송(redirect)해준다.
 
 기본적으로 브라우저의 백 버튼으로 이전 view-state로 돌아갈 수 있다. history를 사용해서 이에 대한 설정이 가능하다.
 
-- 'discard'로 설정하면 백트랙킹(backtracking) 예방 가능하다.
+- 'discard'로 설정하면 백트랙킹(backtracking)을 방지할 수 있다.
 
 ```xml
 <transition on="cancel" to="bookingCancelled" history="discard">
 ```
 
-- 'invalidate'로 설정하면 이전에 보여줬던 모든 뷰 뿐만 아니라 현재 뷰까지도 백트랙킹 예방된다.
+- 'invalidate'로 설정하면 이전에 보여줬던 모든 뷰뿐만 아니라 현재 뷰까지도 백트랙킹을 방지한다.
 
 ```xml
 <transition on="confirm" to="bookingConfirmed" history="invalidate">

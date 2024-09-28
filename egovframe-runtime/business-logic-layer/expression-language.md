@@ -2,7 +2,7 @@
 
 ## 개요
 
-Web Flow 는 데이타 모델 및 action 실행을 위해 EL 을 이용한다. 우리는 EL에 대해 알아보면서 flow 정의를 해보도록 하겠다.
+Web Flow는 데이터 모델 및 action 실행을 위해 EL을 이용한다. 우리는 EL에 대해 알아보면서 flow 정의를 해보도록 하겠다.
 
 ## 설명
 
@@ -10,19 +10,19 @@ Web Flow 는 데이타 모델 및 action 실행을 위해 EL 을 이용한다. �
 
 #### Unified EL
 
-기본으로는 Unified EL을 사용하도록 되어 있음. jboss-el이 기본 구현체로 되 있다.
+기본으로는 Unified EL을 사용한다. jboss-el이 기본 구현체로 되어 있다.
 
 ```
-참고 : web 컨테이너에서는 대게 el-api 를 지원해준다. 톰캣 6 의 경우처럼 말이다.
+참고 : web 컨테이너에서는 대게 el-api 를 지원해준다. 톰캣 6의 경우처럼 말이다.
 ```
 
 #### OGNL
 
-ONGL은 SWF2에서 제공하는 또 다른 el. 클래스패스에만 추가하면 자동으로 찾아서 사용한다.
+ONGL은 SWF2에서 제공하는 또 다른 EL이다. 클래스패스에만 추가하면 자동으로 찾아서 사용한다.
 
 #### EL 호환성
 
-Unified EL과 ONGL은 비슷한 문법을 가지고 있다. 가능하면 Unified EL만 사용하자.
+Unified EL과 OGNL은 비슷한 문법을 가지고 있다. 가능하면 Unified EL만 사용하자.
 
 ### EL 사용법
 
@@ -39,7 +39,7 @@ Flow에 의해서 보여지는 뷰는 EL을 사용해서 Flow 데이터 구조�
 
 ##### 표준 eval 표현
 
-가장 일반적인 방법은 eval 표현으로 이 경우 ${}나 #{}을 사용하면 안 됨. 이 예는 searchCriteria에 있는 nextPage() 호출.
+가장 일반적인 방법은 eval 표현으로, 이 경우 ${}나 #{}을 사용하면 안 된다. 이 예는 searchCriteria에 있는 nextPage() 호출.
 
 ```xml
 <evaluate expression="searchCriteria.nextPage()" />
@@ -59,13 +59,13 @@ externalContext 에 세팅되어 있는 locale 결과를 대체하여 error-결�
 
 ##### Scope
 
-- flowScope: flow 변수에 할당되며, Flow 범위를 가진 객체. 기본적으로 Flow범위에 저장되는 모든 객체는 Serializable이 되야 함.
+- flowScope: flow 변수에 할당되며, Flow 범위를 가진 객체. 기본적으로 Flow 범위에 저장되는 모든 객체는 Serializable 이어야 함.
 
 ```xml
 <evaluate expression="searchService.findHotel(hotelId)" result="flowScope.hotel" />
 ```
 
- - viewScope: view 변수에 할당되며, view-state 내 범위를 갖음. 그러므로 view-state 내에서만 참조 가능. 역시 모든 객체는 Serializable 되야 함.
+ - viewScope: view 변수에 할당되며, view-state 내 범위를 갖음. 그러므로 view-state 내에서만 참조 가능. 역시 모든 객체는 Serializable 이어야 함.
 
 ```xml
 <on-render>
@@ -79,7 +79,7 @@ externalContext 에 세팅되어 있는 locale 결과를 대체하여 error-결�
 <set name="requestScope.hotelId" value="requestParameters.id" type="long" />
 ```
 
-- flashScope: falsh 변수에 할당. Flow가 시작될 때 할당되고, 뷰가 보여지고 난 후 clear 됐다가, Flow가 종료되면 정리되는 범위. 객체는 Serializable 해야 함.
+- flashScope: flash 변수에 할당. Flow가 시작될 때 할당되고, 뷰가 보여지고 난 후 clear 됐다가, Flow가 종료되면 정리되는 범위. 객체는 Serializable 해야 함.
 
 ```xml
 <set name="flashScope.statusMessage" value="'Booking confirmed'" />
@@ -87,7 +87,7 @@ externalContext 에 세팅되어 있는 locale 결과를 대체하여 error-결�
 
 - conversationScope
 
-converation 변수에 할당. 최상위 Flow가 시작할 때 할당되며, 최상위 Flow가 종료될 때 정리. 최상위 Flow의 자식 Flow에서 공유. HTTP session에 저장되며, 세션 복제를 할 경우를 대비해 Serizalizable를 구현해야 함.
+convesation 변수에 할당. 최상위 Flow가 시작할 때 할당되며, 최상위 Flow가 종료될 때 정리. 최상위 Flow의 자식 Flow에서 공유. HTTP session에 저장되며, 세션 복제를 할 경우를 대비해 Serizalizable를 구현해야 함.
 
 ```xml
 <evaluate expression="searchService.findHotel(hotelId)" result="conversationScope.hotel"/>
