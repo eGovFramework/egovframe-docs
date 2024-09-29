@@ -53,7 +53,7 @@ Application Tier에서 이뤄지는 동작의 순서는 아래와 같다.
 
 ### 배치 실행환경 지원
 
-- [SQLite ↑](./brte-batch-core-sqllite.md)   
+- [SQLite ↑](./batch-core-sqllite.md)   
 SQLite를 이용한 경량화된 Repository를 사용하기 위한 사용법에 대해 설명한다.
-- [Logback logging ↑](./brte-batch-core-logback-logging.md)   
+- [Logback logging ↑](./batch-support-logback_logging.md)   
 SQLite를 이용한 경량화된 로깅 처리에 대한 기본사용법에 대해 설명한다.
