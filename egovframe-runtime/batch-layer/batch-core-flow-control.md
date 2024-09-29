@@ -288,7 +288,7 @@ Job의 flow중 일부는 별도의 bean 설정으로 분리 될 수 있으며, �
 
 #### 관련예제
 
-[Flow Control 활용한 건너뛰기(Skip) 기능 예제](./batch-example-skip-mgmt.md)
+[Flow Control 활용한 건너뛰기(Skip) 기능 예제](./batch-example-skip_mgmt.md)
 
 ## 참고자료
 * [Apache ActiveMQ](http://activemq.apache.org/)
