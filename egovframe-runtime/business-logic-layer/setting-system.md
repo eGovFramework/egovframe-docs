@@ -157,5 +157,5 @@ Flow 실행 당 받을 수 있는 이력 snapshot 개수 지정. snapshot을 사
 
 ## 참고자료
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow Reference Guide 2.5.1](https://docs.spring.io/spring-webflow/docs/2.5.1.RELEASE/reference/html/)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
