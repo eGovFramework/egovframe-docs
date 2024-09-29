@@ -38,7 +38,7 @@ Spring MVC를 통해 구현한 RESTful은 리소스에 대한 접근을 URI를 �
 
 - 설정
 
-    REST 스타일의 URL은 '/cgr’, '/cgr/CATEGORY-00000000001' 처럼 계층 구조로 사용가능하도록 설계되었다. 따라서 web.xml에 DispatcherServlet을 정의하고 매핑할 URL 패턴을 '/'로 지정해야한다. DispatcherServlet URL 매핑 샘플은 다음과 같다.
+    REST 스타일의 URL은 '/cgr’, '/cgr/CATEGORY-00000000001' 처럼 계층 구조로 사용가능하도록 설계되었다. 따라서 web.xml에 DispatcherServlet을 정의하고 매핑할 URL 패턴을 '/'로 지정해야한다. **DispatcherServlet URL 매핑** 샘플은 다음과 같다.
 
     ```xml
         <servlet-mapping>    
@@ -72,7 +72,7 @@ Spring MVC를 통해 구현한 RESTful은 리소스에 대한 접근을 URI를 �
 
     Spring에서 제공하는 REST 지원 기능들은 모두 Spring MVC 기반으로 되어 있다. REST 방식으로 노출되는 서비스는 곧 Controller의 메소드이기 때문에 기존에 웹 어플리케이션을 개발하던 방식과 크게 다르지 않다.
 
-    Resource의 ID인 URI를 Controller 클래스나 메소드에 매핑하기 위해서는 @RequestMapping을 사용한다. @RequestMapping이 URI Template을 지원하기 때문에 아래 샘플코드와 같이 사용할 수 있다.
+    Resource의 ID인 URI를 Controller 클래스나 메소드에 매핑하기 위해서는 **@RequestMapping**을 사용한다. @RequestMapping이 URI Template을 지원하기 때문에 아래 샘플코드와 같이 사용할 수 있다.
 
     ```java
     @Controller
@@ -103,7 +103,7 @@ Spring MVC를 통해 구현한 RESTful은 리소스에 대한 접근을 URI를 �
 
 - 설정
 
-    브라우저 기반의 HTML에서는 GET, POST만 지원한다. 일반적으로 HTTP에서는 POST를 사용하고, hidden 타입의 입력값으로 HTTP METHOD를 지정하는 경우가 많다. 다음은 web.xml에 HiddenHttpMethodFilter를 정의한 모습이다.
+    브라우저 기반의 HTML에서는 GET, POST만 지원한다. 일반적으로 HTTP에서는 POST를 사용하고, hidden 타입의 입력값으로 HTTP METHOD를 지정하는 경우가 많다. 다음은 web.xml에 **HiddenHttpMethodFilter를** 정의한 모습이다.
 
     ```xml
         <filter>
@@ -118,7 +118,7 @@ Spring MVC를 통해 구현한 RESTful은 리소스에 대한 접근을 URI를 �
 
 - 사용
 
-    web.xml에 HiddenHttpMethodFilter 설정을 추가하면, HTTP Method가 POST이고 _method라는 파라미터가 존재하는 경우 HTTP의 Method를 _method 값으로 바꾼다.
+    web.xml에 HiddenHttpMethodFilter 설정을 추가하면, **HTTP Method가 POST이고 _method라는 파라미터가 존재하는 경우 HTTP의 Method를 _method 값으로 바꾼다.**
 
     또한 Spring에서는 &lt;form:form&gt;에서 실제 HTTP Method를 지정하는 hidden 타입의 입력 필드를 자동으로 추가해주기 때문에 훨씬 더 편리하게 사용할 수 있다.
 
@@ -147,7 +147,7 @@ Spring MVC를 통해 구현한 RESTful은 리소스에 대한 접근을 URI를 �
 
 ### HTTP Method Conversion
 
-Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 ContentNegotiatingViewResolver를 제공한다. ContentNegotiatingViewResolver는 다른 View Resolver들과 반드시 함께 사용되어야 하므로 View Resolver 설정 시 반드시 order를 정의해야 한다. 당연히 ContentNegotiatingViewResolver가 가장 높은 우선순위(가장 작은숫자)를 가져야 한다. defaultView는 View를 찾지 못한 경우 디폴트 View로 사용된다.
+Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentNegotiatingViewResolver를** 제공한다. ContentNegotiatingViewResolver는 다른 View Resolver들과 반드시 함께 사용되어야 하므로 View Resolver 설정 시 반드시 order를 정의해야 한다. 당연히 ContentNegotiatingViewResolver가 가장 높은 우선순위(가장 작은숫자)를 가져야 한다. defaultView는 View를 찾지 못한 경우 디폴트 View로 사용된다.
 
 ```xml
 <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
