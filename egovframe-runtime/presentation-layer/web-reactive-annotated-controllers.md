@@ -24,15 +24,15 @@ public class WebConfig {
 // ...
 }
 ```
-@RestController는 자체에 @Controller, @ResponseBody를 선언하고 있어, 컨트롤러 내의 모든 메소드에 @ResponseBody를 상속한다. 따라서 리턴값으로 View를 만들지 않고 response body에 바로 쓸수 있다.
+@RestController는 자체에 @Controller, @ResponseBody를 선언하고 있어, 컨트롤러 내의 모든 메소드에 @ResponseBody를 상속한다. 따라서 리턴값으로 View를 만들지 않고 response body에 바로 쓸 수 있다.
 
 ### Request Mapping
 컨트롤러 메소드 요청을 매핑할 때는 @RequestMapping을 사용한다. 이 어노테이션에 있는 속성으로 URL, HTTP 메소드, 요청 파라미터, 헤더, 미디어 타입을 매칭할 수 있다. 메소드에 선언하거나 모든 메소드에서 공유하고 싶을 때 클래스 레벨에 선언한다.
-@GetMapping, @PostMapping, @PutMapping., @DeleteMapping, @PatchMapping은 HTTP 메소드를 바로 지정할 수 있다. 이 어노테이션은 컨트롤러 메소드에서 거의 대부분이 HTTP 메소드 하나만 담당하는 일종의 커스텀 어노테이션이다. 이 어노테이션을 선언하더라도 다른 매핑 조건을 공통으로 사용하려면 클래스 레벨의 @RequestMapping을 선언해야 한다.
+@GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping은 HTTP 메소드를 바로 지정할 수 있다. 이 어노테이션은 컨트롤러 메소드에서 거의 대부분이 HTTP 메소드 하나만 담당하는 일종의 커스텀 어노테이션이다. 이 어노테이션을 선언하더라도 다른 매핑 조건을 공통으로 사용하려면 클래스 레벨의 @RequestMapping을 선언해야 한다.
 
 ### Handler Methods
 @RequestMapping 핸들러는 다양한 컨트롤러 메소드 인자와 리턴값을 지원하므로 원하는 것을 선택하면 된다.
-블로킹 I/O로 받는 인자(예를 들어 response body를 읽는 경우)는 리액티브 유형(Reactor, RxJava 또는 기타)을 사용할 수 있다. 이런 타입은 Description 컬럼에 명시되어 있다. 블로킹 없는 인자는 리액티브 타입을 사용ㅎ라지 않는다.
+블로킹 I/O로 받는 인자(예를 들어 response body를 읽는 경우)는 리액티브 유형(Reactor, RxJava 또는 기타)을 사용할 수 있다. 이런 타입은 Description 컬럼에 명시되어 있다. 블로킹 없는 인자는 리액티브 타입을 사용하지 않는다.
 일부 어노테이션은(예를 들어 @RequestParam, @RequestHeader 등) required attribute로 필수 여부를 지정할 수 있으며 JDK 8의 java.util.Optional을 사용해도 된다. 효과는 required=false와 동일하다.
 
 ### Model
