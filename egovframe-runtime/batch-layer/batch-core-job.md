@@ -212,7 +212,7 @@ Job은 완료되지 않은 JobInstance를 재시작할 수 있다. Job 설정 �
 
 변수 선언 후 Listeners를 통해서 모든 Job에서 사용자 정의 변수를 사용할 수 있도록 EgovJobVariableListener를 통해서 지원한다.
 
-[job Variable 설정 자세히 보기](./batch-core-job-variable.md) 
+[job Variable 설정 자세히 보기](./batch-core-job_variable.md) 
   
 ## 참고자료
 * http://static.springsource.org/spring-batch/reference/html/domain.html#domainJob
