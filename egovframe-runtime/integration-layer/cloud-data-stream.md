@@ -9,9 +9,8 @@ Spring Cloud Stream의 핵심 구성 요소는 다음과 같다.<br/>
 대상 바인딩 : 외부 메시징 시스템과 최종 사용자가 제공하는 애플리케이션 코드(생산자/소비자) 사이를 연결한다.<br/>
 메시지 : 생산자와 소비자가 대상 바인더(및 외부 메시징 시스템을 통한 다른 응용 프로그램)와 통신하는 데 사용하는 표준 데이터 구조이다.
 
-Spring Integration의 메시지 처리 핵심 기능을 기반으로 사용하며<br/>
-Spring Cloud Stream은 Spring Boot를 기반으로 Binder 구현체를 제공하여 메시지 처리를 추상화 하여<br/>
-동일 환경 뿐만 아니라 이기종의 시스템 또는 다른 환경 간에도 연계 메시지처리를 지원 합니다.
+Spring Cloud Stream은 Spring Integration의 메시지 처리 핵심 기능을 기반으로 사용한다.<br/>
+ 또한 Spring Boot를 기반으로 Binder 구현체를 제공하여 메시지 처리를 추상화 하여 동일 환경 뿐만 아니라 이기종의 시스템 또는 다른 환경 간에도 연계 메시지 처리를 지원한다.
 
 ## 특징
 
@@ -33,8 +32,7 @@ Spring Cloud Stream은 Spring Boot를 기반으로 Binder 구현체를 제공하
 
 ### 예제 코드
 
-java.util.function 패키지의 Functional Interface를 기반으로 람다식 사용시<br/>
-Supplier, Function, Consumer를 활용하여 클래스를 생성하지 않고 구현이 가능하다.<br/>
+java.util.function 패키지의 Functional Interface를 기반으로 람다식 사용 시 Supplier, Function, Consumer를 활용하여 클래스를 생성하지 않고 구현이 가능하다.<br/>
 이 경우 Supplier는 Sink Binding으로 1초마다 주기적으로 발행된다.
 
 ```java
