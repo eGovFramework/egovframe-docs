@@ -225,7 +225,7 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 ##### Skip
 
-[Skip 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Skip 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
 ##### Retry
 
@@ -239,7 +239,7 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 변수 선언 후 Listeners를 통해서 모든 Setp에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
 
-[Step Variable 설정 자세히 보기](./batch-core-step-variable.md) 
+[Step Variable 설정 자세히 보기](./batch-core-step_variable.md) 
 
 
 ## 참고자료
