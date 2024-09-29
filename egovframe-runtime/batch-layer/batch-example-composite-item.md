@@ -158,7 +158,7 @@ public class EgovCompositeItemWriterSampleFunctionalTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](./batch-example-junit.md)을 참고한다.
 
 ### 결과 확인
 위의 테스트의 결과인 DB의 Trade테이블과 파일들이 생성되었는지를 확인한다.
