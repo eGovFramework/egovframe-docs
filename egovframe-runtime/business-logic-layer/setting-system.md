@@ -58,8 +58,7 @@ flow-registry는 아래 보는 것과 같이 설정을 할 수 있다.
 <!-- [4]ANT 패턴을 지정할 수도 있다. -->
 <webflow:flow-location-pattern value="/WEB-INF/flows/**/*-flow.xml" />
  
-<!--
-	[5]기본 앞 첨자 경로를 지정해서 위치를 조합해서 사용할 수도 있다. 
+<!-- [5]기본 앞 첨자 경로를 지정해서 위치를 조합해서 사용할 수도 있다. 
 	    Flow 정의 파일은 모듈화를 높이기 위해서 관련 있는 폴더에 각각 위치해 있는게 가장 좋다.	-->
 <webflow:flow-registry id="flowRegistry" base-path="/WEB-INF">
 	<webflow:flow-location path="/hotels/booking/booking.xml" />
@@ -81,11 +80,11 @@ flow-registry는 아래 보는 것과 같이 설정을 할 수 있다.
 
 flow-registry는 아래 보는 것과 같이 설정을 할 수 있다.
 
-flow-registry에서 flow-builder-services 는 flow를 구축하는데 사용되는 서비스나 설정 등을 커스터마이징 할 수 있다.
+flow-registry에서 flow-builder-services 는 flow를 구축하는데 사용되는 서비스나 설정 등을 커스터마이징 할 수 있다.<br/>
 지정하지 않는 경우에는 기본 서비스가 사용 된다.
 
 ```xml
-<webflow:flow-registry id="flowRegistry" 	flow-builder-services="flowBuilderServices">
+<webflow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices">
 	<webflow:flow-location path="/WEB-INF/flows/booking/booking.xml" />
 </webflow:flow-registry>
  
