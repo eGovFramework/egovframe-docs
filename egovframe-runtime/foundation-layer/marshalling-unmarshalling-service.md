@@ -12,13 +12,13 @@ Object/XML Mapping, 줄여서 O/X mapping은 Object를 XML문서로 변환하는
 Client <------ XML ------> Server
 ```
 
-WS는 Server와 Client 두 대상간의 데이터를 주고 받는 기술중에 하나이다. 정보를 요청하는쪽이 Client이다.(Client는 Server가 될수도 있고 일반 사용자가 될수도있다.) 요청한 정보를 받아서 알맞게 처리후 결과값을 리턴하는 쪽이 Server이다.
+WS는 Server와 Client 두 대상 간의 데이터를 주고받는 기술 중 하나이다. 정보를 요청하는쪽이 Client이다.(Client는 Server가 될 수도 있고 일반 사용자가 될 수도 있다.) 요청한 정보를 받아서 알맞게 처리 후 결과값을 리턴하는 쪽이 Server이다.
 
 ```
 Client(OXM) <------ XML(WSDL) ------> (OXM)Server
 ```
 
-WS는 XML(WSDL)형식으로 데이터를 주고 받는다.따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.
+WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.
 
 ### Marshalling
 
@@ -81,7 +81,7 @@ public interface Unmarshaller {
 
 #### Castor
 
-Castor XML mapping은 XML Binding 오픈소스 프레임워크이다. Castor는 java object에서 XML문서, XML문서에서 java object로 변환을 지원한다. mapping file을 사용하여 좀더 수월하게 Castor를 사용할 수 있지만 그외 추가적인 구성은 할 필요가 없다. 좀 더 많은 OpenSource Castor 정보를 원한다면 [Castor web site](http://www.castor.org/)와 [org.springframework.oxm.castor](http://static.springframework.org/spring-ws/sites/1.5/apidocs/org/springframework/oxm/castor/package-summary.html) **package**를 참조하면 된다.
+Castor XML mapping은 XML Binding 오픈소스 프레임워크이다. Castor는 java object에서 XML문서, XML문서에서 java object로 변환을 지원한다. mapping file을 사용하여 좀더 수월하게 Castor를 사용할 수 있지만 그 외 추가적인 구성은 할 필요가 없다. 좀 더 많은 OpenSource Castor 정보를 원한다면 [Castor web site](http://www.castor.org/)와 [org.springframework.oxm.castor](http://static.springframework.org/spring-ws/sites/1.5/apidocs/org/springframework/oxm/castor/package-summary.html) **package**를 참조하면 된다.
 
 ##### Create binding classes
 
@@ -143,7 +143,7 @@ public void testMarshalling()
 3. FileOutputSream을 Caster_Book.xml를 매개변수로 하여 Stream를 생성한다.
 4. Result을 생성한 FileOutputStream을 매개변수로 하여 StreamResult를 생성한다.
 5. marshaller.marshal를 사용하여 marshalling을 하는데 매개변수로는 bookMg와 StreamResult로 한다.
-6. 실행후 JavaObject bookMg에 저장한 값이 [CasterBook.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:casterbook.xml)로 Binding 된것을 확인한다.
+6. 실행 후 JavaObject bookMg에 저장한 값이 [CasterBook.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:casterbook.xml)로 Binding 된 것을 확인한다.
 
 **##### **XML문서를 JavaObject로 DataBinding Sample Source**
 
@@ -195,7 +195,7 @@ public void testUnmarshalling()
 
 #### XMLBeans
 
-XMLBeans는 스키마 기반으로 XML 인포셋 전체에 커서 기반으로 접근할 수 있도록 하는 XML-Java binding tool이다. BEA Systems에 의해 개발 되었으며 2003년에 아파치 프로젝트에 기증 되었다. 좀 더 많은 정보는 [XMLBeans web site](http://xmlbeans.apache.org/) 와 [org.springframework.oxm.xmlbeans](http://static.springframework.org/spring-ws/sites/1.5/apidocs/org/springframework/oxm/xmlbeans/package-summary.html) package를 참조 하면 된다.
+XMLBeans는 스키마 기반으로 XML 인포셋 전체에 커서 기반으로 접근할 수 있도록 하는 XML-Java binding tool이다. BEA Systems에 의해 개발되었으며 2003년에 아파치 프로젝트에 기증 되었다. 좀 더 많은 정보는 [XMLBeans web site](http://xmlbeans.apache.org/) 와 [org.springframework.oxm.xmlbeans](http://static.springframework.org/spring-ws/sites/1.5/apidocs/org/springframework/oxm/xmlbeans/package-summary.html) package를 참조 하면 된다.
 
 ##### Create binding jar
 
@@ -226,7 +226,7 @@ XMLBeans는 스키마 기반으로 XML 인포셋 전체에 커서 기반으로 �
 
 ##### Sample Source
 
-**Java Object의 데이타를 XML문서로 DataBinding Sample Source**
+**Java Object의 데이터를 XML문서로 DataBinding Sample Source**
 
 ```java
 @Resource(name = "xmlBeansMarshaller")
@@ -280,7 +280,7 @@ public void testMarshalling()
 4. setAge를 사용하여 나이를 저장한다.
 5. setPhone를 사용하여 전화번호를 저장한다.
 6. FileOutputSream을 [XMLBeanGen.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:xmlbeangen.xml) 매개변수로 하여 생성한다.
-7. marshaller.marshal를 Document객체와 StreamResult를 매개변수로 하여한다.
+7. marshaller.marshal를 Document객체와 StreamResult를 매개변수로 하여야 한다.
 
 
 **XML문서를 JavaObject로 DataBinding Sample Source**
