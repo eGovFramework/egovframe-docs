@@ -91,7 +91,7 @@ Tasklet 인터페이스를 구현한 SystemCommandTasklet 클래스를 이용해
 
 ##### 관련 예제
 
-[단순처리(Tasklet) 예제](./batch-example-tasklet-mgmt.md)
+[단순처리(Tasklet) 예제](./batch-example-batch-exec-mgmt.md)
 
 ### StepExecution
 
