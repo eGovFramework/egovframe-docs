@@ -266,4 +266,4 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
 
 ## 참고자료
 
-- [RESTful 예제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:rex:restful_%EC%98%88%EC%A0%9C)
+- [RESTful 예제](./rex-restful-example.md)
