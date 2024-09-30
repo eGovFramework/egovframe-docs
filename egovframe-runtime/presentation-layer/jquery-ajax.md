@@ -9,7 +9,6 @@ jQuery ajax의 다양한 기능들 중 기본Ajax기능과 응용을 통한 콤�
 - jQuery ajax 기본기능
   - [jQuery.ajax()](#jqueryajax)
   - [jQuery.get()](#jqueryget)
-  - [jQuery.getJSON()](#jquerygetjson)
   - [jQuery.post()](#jquerypost)
 
 - jQuery ajax 응용
