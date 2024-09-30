@@ -135,7 +135,7 @@ resource에 JobParameter에 'inputFile'이라는 Parameter 이름(Key 값)을 �
 ### JobExecution
 
 JobExecution은 한번의 Job 시도를 의미하는 기술적인 개념이다. JobExecution은 'FAILED' 또는 'COMPLETED'로 Job의 시도 결과를 나타낸다.
-이외에, JobExecution은 주로 Job이 실행 중에 어떤 일이 일어났는지에 대한 속성들을 저장하는 저장 메커니즘 역할을 한다. ([JobExecution 속성 자세히 보기](./batch-core-history-management.md))   
+이외에, JobExecution은 주로 Job이 실행 중에 어떤 일이 일어났는지에 대한 속성들을 저장하는 저장 메커니즘 역할을 한다. ([JobExecution 속성 자세히 보기](./batch-core-history_management.md))   
 아래의 그림을 예로들면, 'EndOfDay' Job은 2개의 JobInstance를 갖고 3개의 JobExecution이 존재하는 것을 볼 수 있다. JobInstance가 매일 한번 실행되는 Job을 구분하는 논리적인 개념이라면, JobExecution은 3번의 Job 시도 자체를 의미한다.
 '2012/10/02'라는 JobParameter로 실행된 'EndOfDay' Job은 ID가 2인 JobInstance를 생성하게 된다. 첫번째 Job의 시도는 FAILED로 끝나게 됐고 두번째 시도는 COMPLETED로 완료하게 된다.
 즉, '2012/10/02'에 'EndOfDay' Job은 총 2번의 Job 시도로 2개의 JobExecution이 생성됐다.
