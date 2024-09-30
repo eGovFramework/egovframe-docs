@@ -215,5 +215,5 @@ form이 submit될 때 proceed 이벤트가 발생하려면 다음처럼 하자.
 
 ## 참고 자료
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)(완료된 링크)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
