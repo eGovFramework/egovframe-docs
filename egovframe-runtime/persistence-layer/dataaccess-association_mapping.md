@@ -43,7 +43,7 @@ public class User{
 Collection은 위의 예에서 사용된 Set 이외에도 List,Map를 사용할 수 있는데 각각의 사용법은 다음과 같다
 
 #### Set
-java.util.Set 타입으로 <set>을 이용하여 정의한다. 객체의 저장 순서를 알 수 없으며, 동일 객체의 중복 저장을 허용하지 않는다. (HashSet 이용) 다음은 set 태그를 이용하여 Collection 객체를 정의한 소스 코드의 예이다
+java.util.Set 타입으로 \<set>을 이용하여 정의한다. 객체의 저장 순서를 알 수 없으며, 동일 객체의 중복 저장을 허용하지 않는다. (HashSet 이용) 다음은 set 태그를 이용하여 Collection 객체를 정의한 소스 코드의 예이다
 
 ##### Sample Source
 ```java
@@ -55,7 +55,7 @@ public class Department{
 ```
 
 #### List
-java.util.List 타입으로 <list>를 이용하여 정의한다. List 타입의 경우 저장된 객체의 순서를 알 수 있으며, 저장 순서를 테이블에 보관하기 위해서 별도 인덱스 컬럼 정의가 필요하다. (ArrayList 이용) 다음은 list 태그를 이용하여 Collection 객체를 정의한 소스 코드의 예이다
+java.util.List 타입으로 \<list>를 이용하여 정의한다. List 타입의 경우 저장된 객체의 순서를 알 수 있으며, 저장 순서를 테이블에 보관하기 위해서 별도 인덱스 컬럼 정의가 필요하다. (ArrayList 이용) 다음은 list 태그를 이용하여 Collection 객체를 정의한 소스 코드의 예이다
 
 ##### Sample Source
 ```java
@@ -67,7 +67,7 @@ public class Department{
 ```
 
 #### Map
-java.util.map 타입으로 <map>을 이용하여 (키,값)을 쌍으로 정의한다. (HashMap 이용) 다음은 map 태그를 이용하여 Collection 객체를 정의한 소스 코드의 예이다. Key 설정을 위해 MapKey라는 Annotation을 추가적으로 정의해야 한다.
+java.util.map 타입으로 \<map>을 이용하여 (키,값)을 쌍으로 정의한다. (HashMap 이용) 다음은 map 태그를 이용하여 Collection 객체를 정의한 소스 코드의 예이다. Key 설정을 위해 MapKey라는 Annotation을 추가적으로 정의해야 한다.
 
 ##### Sample Source
 ```java

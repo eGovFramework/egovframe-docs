@@ -107,6 +107,6 @@ Flow와 State 식별자는 #로 구분한다.
 
 ## 참고자료
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
-- [Whiteship's Note](http://whiteship.me/2146)
+- [Whiteship's Note](http://whiteship.me/2146) (링크 만료)
