@@ -74,7 +74,7 @@ Cache는 메모리를 이용하는 것을 기본으로 하기에 꼭 필요한 �
 
 최근에 이용한 것을 남기는 알고리즘으로 설정은 아래와 같이 한다.
 
-#### Cofiguration
+#### Configuration
 
 ```xml
 <cache name="sampleMem"
@@ -107,7 +107,7 @@ assertNull("Can't get key2",cache.get("key2"));
 
 먼저 입력된것을 제거하는 알고리즘으로 설정은 아래와 같이 한다.
 
-#### Cofiguration
+#### Configuration
 
 ```xml
 <cache name="sampleMemFIFO"
@@ -143,7 +143,7 @@ assertNull("Can't get key2",cache.get("key2"));
 
 가장 적게 이용된 것을 제거하는 알고리즘으로 설정은 아래와 같이 한다.
 
-#### Cofiguration
+#### Configuration
 
 ```xml
    <cache name="sampleMemLFU"
