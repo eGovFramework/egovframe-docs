@@ -72,7 +72,7 @@ public class EgovParallelJobFunctionalTests {
 
 ##### JunitTest 수행
 
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
 
 #### 결과확인
 

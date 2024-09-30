@@ -78,7 +78,7 @@ public class EgovJobGroupDelegatingJobFunctionalTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
 
 ### 결과 확인
 콘솔창의 로그를 확인하면 Launcher 설정파일에서 지정한 groupName(testJobGroup)이 Job 이름 앞에서 식별되는 카테고리명으로 쓰이는 것을 확인할 수 있다.
