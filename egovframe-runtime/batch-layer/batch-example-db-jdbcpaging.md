@@ -135,7 +135,7 @@ public abstract class EgovAbstractIoSampleTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
 
 ### 결과 확인
 1.DB의 페이징 처리는 콘솔로그의 쿼리를 통해 확인할 수 있다. 위의 설정에서 pagesize가 2이므로, reader가 DB로 부터 데이터를 읽을 때 하나의 데이터가 아닌 2개의 데이터를 읽어온다.

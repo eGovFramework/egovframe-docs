@@ -135,7 +135,7 @@ public abstract class EgovAbstractIoSampleTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
 
 ### 결과 확인
 fixedlengthJob의 결과로 아래의 파일이 생성되었는지를 확인한다. Job이 실행되면서 데이터가 수정된 것을 확인 할 수 있다.

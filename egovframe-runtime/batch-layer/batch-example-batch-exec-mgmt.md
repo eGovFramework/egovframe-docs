@@ -66,7 +66,7 @@ public class EgovLogManagementFunctionalTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](./batch-example-junit.md)을 참고한다. 
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다. 
 ### 결과 확인
 DB의 ERROR_LOG 테이블을 보면 데이터를 실제로 확인할 수 있다.
 

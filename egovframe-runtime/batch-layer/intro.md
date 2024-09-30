@@ -22,7 +22,7 @@ Run Tier에서의 동작 순서는 다음과 같다:
 
 1. **Job Configuration**은 XML 형태로, Job을 수행하는 데 필요한 설정 정보를 담고 있다.
 2. **Scheduler**, **Http/Web service**, **CommandLine** 등의 외부 모듈이 **JobRunner**를 호출한다.
-3. **JobRunner**는 **JobLocator(JobExplorer)**를 통해 Job Configuration에 등록된 **Application Context** 정의를 참조하여, **Job Tier**의 **JobLauncher**가 Job을 실행할 수 있도록 정보를 전달한다.
+3. **JobRunner**는 **JobLocator**(JobExplorer)를 통해 Job Configuration에 등록된 **Application Context** 정의를 참조하여, **Job Tier**의 **JobLauncher**가 Job을 실행할 수 있도록 정보를 전달한다.
 
 ---
 
