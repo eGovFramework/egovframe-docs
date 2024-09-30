@@ -294,5 +294,5 @@ input 구성요소를 사용하면 하위 Flow에 입력값을 건낼 수 있다
 
 ## 참고자료
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료됨)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
