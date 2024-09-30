@@ -23,7 +23,7 @@
     Annotation을 기반으로 Container를 구성하는 방법을 설명한다.
   * [Classpath scanning for managed components](./foundation-layer-core/ioc-container-classpath_scanning_for_managed_components.md)  
     Dependency Injection에 의해 삽입되는 base Bean에 대한 Java Annotation 기반 설정 방법을 설명한다.
-  * [JSR 330 Standard Annotations](./foundation-layer-core/ioc-container-jsr_330_standard_annotations)  
+  * [JSR 330 Standard Annotations](./foundation-layer-core/ioc-container-jsr_330_standard_annotations.md)  
     JSR-330 표준 Annotation에 대해서 설명한다.
   * [Java-based configuration](./foundation-layer-core/ioc-container-java-based_configuration.md)  
     Java Annotation을 기반으로 Container를 구성하는 방법을 설명한다.
