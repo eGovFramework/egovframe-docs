@@ -93,4 +93,4 @@ public class EgovEmailEventNoticeTrigger extends EgovEventNoticeTrigger {
 위 기능을 활용하여 실제 Email을 전송하는 예제를 제공하므로 아래를 참고한다.
 
 #### 사용예시
-- [이벤트알림 템플릿(Template) 예제](./batch-example-event-notice-template-mgmt.md)
+- [이벤트알림 템플릿(Template) 예제](./batch-example-event_notice_template_mgmt.md)
