@@ -165,7 +165,7 @@ public abstract class EgovAbstractIoSampleTests {
 ### 결과확인
 MultiReourceWriter의 결과로 여러 파일이 생성되었는지를 확인한다.
 
-![mutiresource_output](./mutiresource_output.png)
+![mutiresource_output](images/mutiresource_output.png)
 
 ## 참고자료
 - [multidata_process](./batch-core-multidata_process.md)
