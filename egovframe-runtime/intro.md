@@ -233,7 +233,7 @@
     다수 건의 리소스를 처리하는 MultiData Processing의 기본 개념 및 사용법에 대해 설명한다.
   * [History Management](./batch-layer/batch-core-history_management.md)   
     배치수행 이력정보를 관리하는 History Management의 기본 개념 및 사용법에 대해 설명한다.
-  * [Sync / Async Processing](./batch-layer/batch-example-sync-async.md)   
+  * [Sync / Async Processing](./batch-layer/batch-example-sync_async_v3.7.md)   
     동기,비동기 실행을 지원하는 Sync / Async Processing의 기본 개념 및 사용법에 대해 설명한다.
   * [Pre / Post Processing](./batch-layer/batch-core-listener.md)   
     전처리,후처리 실행을 지원하는 Pre / Post Processing의 기본 개념 및 사용법에 대해 설명한다.
