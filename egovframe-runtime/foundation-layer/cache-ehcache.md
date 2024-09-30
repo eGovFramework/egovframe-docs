@@ -388,7 +388,7 @@ Thread.currentThread().sleep(1000);
 assertTrue(manager1.getEhcache("CacheAsync").getKeys().size() == manager2.getEhcache("CacheAsync").getKeys().size() );
 ```
 
-## 6. Spring Integration
+## Spring Integration
 
 Spring 3.1 이전 버전에서 Ehcache를 이용하는 방법에 대해서 설정 및 설정을 이용한 기본 Cache 서비스에 대해서 설명한다.
 
