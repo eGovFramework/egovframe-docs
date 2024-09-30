@@ -146,7 +146,7 @@ public class EgovPreProcessorFunctionalTests extends EgovAbstractIoSampleTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
 
 ### 결과 확인
 이 예제의 테스트 결과는 배치수행 결과만 반영하므로, 전처리/후처리 성공여부는 콘솔창에서 로그내용을 검색하여 해당 로그의 출력여부로 확인할 수 있다.

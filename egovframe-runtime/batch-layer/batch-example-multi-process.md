@@ -68,7 +68,7 @@ public class EgovParallelJobFunctionalTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
 
 ### 결과 확인
 멀티쓰레드로 병행처리한 setp은 쓰레드마다의 처리 속도차이에 의해 순차적인 처리가 되지 않는다. loading의 step 결과인 TRADE의 data를 보면 확인할 수 있다.
@@ -162,7 +162,7 @@ public class EgovParallelStepFunctionalTests{
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](./batch-example-junit.md#Junit-Test-실행)을 참고한다.
 
 ### 결과 확인
 split된 두 개의 flow가 멀티쓰레드(SimpleAsyncTaskExecutor-1,SimpleAsyncTaskExecutor-2)로 실행한 결과는 콘솔창의 로그내용으로 확인할 수 있다. step1과 step3은 서로 다른 쓰레드에서 실행한 사실을 확인할 수 있다.
