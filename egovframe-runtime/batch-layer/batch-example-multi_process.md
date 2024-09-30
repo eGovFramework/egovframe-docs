@@ -184,11 +184,11 @@ split된 두 개의 flow가 멀티쓰레드(SimpleAsyncTaskExecutor-1,SimpleAsyn
 
 파티션 정의 File, DB의 데이터를 처리하는 병행처리 방법의 하나로 File 데이터, DB 데이터를 Partition 하여 멀티쓰레드 방식으로 처리한다. 입력리소스에 따라 DB 파티셔닝예제와 과 File 파티셔닝예제를 보여주고, 여러리소스를 읽어 하나의 타켓파일에 쓰는 SingleFile 파티셔닝 예제를 보여준다.
 
-| 입력 리소스 타입 | 관계 | 예제               |   
-|------------------|------|--------------------|
-| DB               |      | DB Partition 예제  |
-| File             | N:N  | N:N Partition 예제 |
-| File             | N:1  | N:1 Partition 예제 |
+| 입력 리소스 타입 | 관계  | 예제                                                           |   
+|-----------|-----|--------------------------------------------------------------|
+| DB        |     | [DB Partition 예제](./batch-example-db_partition.md)           |
+| File      | N:N | [N:N Partition 예제](./batch-example-file_partition.md)        |
+| File      | N:1 | [N:1 Partition 예제](./batch-example-single_file_partition.md) |
 
 ## 참고자료
 

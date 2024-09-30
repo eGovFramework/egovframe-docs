@@ -62,7 +62,7 @@ ibatis-customer-credit.xml
 #### JunitTest 구성
 <b>ibatisIo예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
 
 ✔ EgovAbstractIoSampleTests에서 배치작업을 수행하고 배치작업 전후의 데이터를 비교확인한다.
 
@@ -148,9 +148,9 @@ public abstract class EgovAbstractIoSampleTests {
 ### 결과 확인
 DB의 Customer 테이블의 credit의 값을 살펴보면 Job이 실행되면서 수정된 것을 확인 할 수 있다.
 
-![jdbccursor_data](../jdbccursor_data.png)
+![jdbccursor_data](jdbccursor_data.png)
 
 ## 참고자료
-- [iBATIS Configuration](../../persistence-layer/dataaccess-ibatis_configuration.md)
-- [Data Access](../../persistence-layer/data-access.md)
+- [iBATIS Configuration](../persistence-layer/dataaccess-ibatis_configuration.md)
+- [Data Access](../persistence-layer/data-access.md)
 - [http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#IbatisPagingItemReader](http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#IbatisPagingItemReader)

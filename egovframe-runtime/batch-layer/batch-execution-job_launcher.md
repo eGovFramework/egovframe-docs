@@ -49,5 +49,5 @@ JobLauncher 설정에서 SimpleAsyncTaskExecutor클래스를 통해 비동기로
 Spring의 TaskExecutor 인터페이스의 모든 구현은 비동기로 실행하는 배치작업에 대한 제어의 목적으로 사용된다.
 
 ## 참고자료
-- [동기/비동기 처리 예제](./batch-example-sync-async.md)
+- [동기/비동기 처리 예제](./batch-example-sync_async.md)
 - http://static.springsource.org/spring-batch/reference/html/configureJob.html#configuringJobLauncher

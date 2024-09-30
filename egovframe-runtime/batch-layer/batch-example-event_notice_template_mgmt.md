@@ -36,7 +36,7 @@ Job 의 구성을 보면 기본적인 <tasklet> 설정 외에 <listener> 를 통
 ####  클래스 설정
 <b>Email 전송을 위한 EgovEmailEventNoticeTrigger 클래스의 설정을 확인한다.</b>
 
-Job 수행시 관련정보를 알리기 위한 설정은 [EgovEventNoticeTrigger](./batch-core-event-notice-template-mgmt.md)를 상속받은 EgovEmailEventNoticeTrigger에 구현되어 있고, 크게 세 부분으로 구성되어 있다.
+Job 수행시 관련정보를 알리기 위한 설정은 [EgovEventNoticeTrigger](./batch-core-event_notice_template_mgmt.md)를 상속받은 EgovEmailEventNoticeTrigger에 구현되어 있고, 크게 세 부분으로 구성되어 있다.
 
 1. EgovEmailEventNoticeTrigger 클래스 Email 송수신을 위한 정보를 입력한다
 
@@ -119,7 +119,7 @@ public class EgovEventNoticeCallProcessor<T,S> extends EgovStepPostProcessor<T,S
 }
 ```
 
-✔ 예제에서는 Job 설정파일에서 Step 내부에 Listener 를 설정하고, 여기에 해당하는 프로세서를 상속받아 사용하였으므로 Step과 관련된 작업만 수행되지만, 프로세서 상속 없이 사용자가 별도로 스프링에서 제공하는 [리스너 관련 어노테이션](./batch-core-listener.md)과 전자정부에서 제공하는 [이벤트알림 트리거 메소드](./batch-core-event-notice-template-mgmt#egoveventnoticetrigger)를 조합해 확장하여 사용하는 방법도 있다. 이는 아래 EventNoticeListener 클래스 예시를 참고한다. (마찬가지로 Job 설정에서 EventNoticeListener 가 빈으로 등록되어야 함)
+✔ 예제에서는 Job 설정파일에서 Step 내부에 Listener 를 설정하고, 여기에 해당하는 프로세서를 상속받아 사용하였으므로 Step과 관련된 작업만 수행되지만, 프로세서 상속 없이 사용자가 별도로 스프링에서 제공하는 [리스너 관련 어노테이션](./batch-core-listener.md)과 전자정부에서 제공하는 [이벤트알림 트리거 메소드](./batch-core-event_notice_template_mgmt#egoveventnoticetrigger)를 조합해 확장하여 사용하는 방법도 있다. 이는 아래 EventNoticeListener 클래스 예시를 참고한다. (마찬가지로 Job 설정에서 EventNoticeListener 가 빈으로 등록되어야 함)
 
 ```java
 public class EventNoticeListener {
@@ -159,7 +159,7 @@ public class EventNoticeListener {
 #### JunitTest 구성
 <b>이벤트알림 템플릿(Template) 예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
 
 ✔ assertEquals(“COMPLETED”, jobExecution.getExitStatus().getExitCode()) : 배치수행결과가 COMPLETED 인지 확인한다.
 
@@ -186,7 +186,7 @@ public class EgovEventNoticeTriggerFunctionalTests extends EgovAbstractIoSampleT
 ![eventnoticetrigger1](./images/eventnoticetrigger1.png)
 
 ## 참고자료
-- [이벤트알림 템플릿 관리](./batch-core-event-notice-template-mgmt.md)
+- [이벤트알림 템플릿 관리](./batch-core-event_notice_template_mgmt.md)
 - SMTP 서버
   - naver SMTP 서버 : smtp.naver.com
   - daum SMTP 서버 : smtp.hanmail.net

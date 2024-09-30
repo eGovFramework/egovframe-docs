@@ -47,7 +47,7 @@ JdbcPagingItemReader는 아래와 같은 설정들을 포함한다.
 #### JunitTest 구성
 <b>Delimited 예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
 
 ✔ getUniqueJobParameters에서 JobParameter에 쿼리에 필요한 파라미터 정보를 넘긴다.
 
@@ -147,4 +147,4 @@ public abstract class EgovAbstractIoSampleTests {
 ![jdbcpaging_data](./images/jdbcpaging_data.png)
 
 ## 참고자료
-- [JdbcPagingItemReader](./batch-core-item-reader.md)
+- [JdbcPagingItemReader](./batch-core-item_reader.md)
