@@ -812,4 +812,4 @@ public class UpdateDepartmentController {
 
 - [The Spring Framework - Reference Documentation 2.5.6](https://docs.spring.io/spring-framework/docs/2.5.x/reference/index.html)
 - [Spring Framework API Documentation 2.5.6](https://docs.spring.io/spring-framework/docs/2.5.6/javadoc-api/)
-- [SpringSource Team Blog,Annotated Web MVC Controllers in Spring 2.5, Juergen Hoeller](http://blog.springsource.com/2007/11/14/annotated-web-mvc-controllers-in-spring-25/)
+- [SpringSource Team Blog,Annotated Web MVC Controllers in Spring 2.5, Juergen Hoeller](https://spring.io/blog/2007/11/14/annotated-web-mvc-controllers-in-spring-2-5)
