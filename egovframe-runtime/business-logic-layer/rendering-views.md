@@ -415,5 +415,5 @@ SWF가 클라이언트 요청을 팝업으로 재전송(redirect)해준다.
 
 ## 참고자료
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)

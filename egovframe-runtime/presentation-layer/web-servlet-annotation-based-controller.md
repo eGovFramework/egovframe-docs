@@ -407,7 +407,7 @@ public String onSubmit(@RequestPart("meta-data") MetaData metadata,
    }
 ```
 
-자세한 사용방법은 [AnnotationCommandMapArgumentResolver](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:annotationcommandmapargumentresolver)을 참고한다.
+자세한 사용방법은 [AnnotationCommandMapArgumentResolver](web-servlet-AnnotationCommandMapArgumentResolver.md)을 참고한다.
 
 #### @ControllerAdvice
 
@@ -687,7 +687,7 @@ Controller의 메소드에서 Servlet API를 반드시 참조하지 않아도 �
 
 앞서 SimpleFormController을 설명하면서 예제로 작성된 com.easycompany.controller.hierarchy.UpdateDepartmentController를 @ModelAttribute와 @RequestMapping을 이용해서 같은 기능을 @Controller로 작성해 보겠다.
 
-JSP 소스는 동일한 것을 사용한다. [이곳](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ptl:controller#simpleformcontroller)의 예제 화면 이미지 및 JSP 코드를 참고.
+JSP 소스는 동일한 것을 사용한다. [이곳](web-servlet-controller.md#simpleformcontroller)의 예제 화면 이미지 및 JSP 코드를 참고.
 기존의 UpdateDepartmentController를 보면 3가지 메소드로 이루어졌다.
 
 - referenceData

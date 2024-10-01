@@ -100,5 +100,5 @@ Spring Batch에서 지원되는 데이터베이스 목록이외의 데이터베�
 
 ## 참고자료
 - JobRepository :http://static.springsource.org/spring-batch/reference/html/configureJob.html#configuringJobRepository
-- [declarative_transaction_management](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:psl:transaction:declarative_transaction_management)
+- [declarative_transaction_management](../persistence-layer/transaction-declarative-transaction-management.md)
 - Meta-Data Schema :http://static.springsource.org/spring-batch/reference/html/metaDataSchema.html

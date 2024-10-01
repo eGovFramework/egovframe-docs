@@ -323,5 +323,5 @@ public class PrintBoardingPassAction extends AbstractAction {
 ```
 
 ## 참고자료
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)

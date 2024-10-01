@@ -116,6 +116,6 @@ http와 authentication-provider로 정의하면 된다.
 
 ## 참고자료
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference](https://docs.spring.io/spring-webflow/docs/2.3.3.RELEASE/reference/html/)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
-- [Whiteship's Note](http://whiteship.me/2146)
+- ~~[Whiteship's Note](http://whiteship.me/2146)~~ (만료됨)

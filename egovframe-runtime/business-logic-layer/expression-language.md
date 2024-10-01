@@ -157,8 +157,8 @@ booking처럼 범위를 명시하지 않은 경우, 범위 검색 알고리즘(s
 
  ![scopsofswf](./images/scopsofswf.jpg)
 
-## 참고자료
+## 참고자료 
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료됨)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
 - Pro Spring 2.5(Apress) - Chapter 18 Spring Web Flow

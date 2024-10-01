@@ -35,19 +35,7 @@ DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.
 
 DispatcherServlet은 애플리케이션 자원에 대한 요청과 핸들러를 매핑시켜 준다. Flow도 핸들러의 하나의 유형으로 처리된다.
 
-#### FlowHandlerAdapter 등록
-
-먼저 FlowHandlerAdapter Bean 정의한 후 property(flowExecutor) 로 flowExecutor 빈을 설정하여
-Spring MVC 내에서 Flow를 제어할 수 있도록 한다.
-
-```xml
-<!-- Enables FlowHandler URL mapping -->
-<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
-	<property name="flowExecutor" ref="flowExecutor" />
-</bean>
-```
-
-#### flow 매핑 정의
+#### FlowHandlerAdapter 등록 및 Flow 매핑 정의
 
 먼저 FlowHandlerAdapter Bean을 정의하고 나서 property(flowExecutor)로 flowExecutor 빈을 설정함으로써
 Spring MVC 내에서 Flow를 제어할 수 있도록 한다.
