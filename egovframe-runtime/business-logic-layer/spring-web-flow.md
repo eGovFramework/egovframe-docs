@@ -26,7 +26,7 @@ SWF의 중요한 이득은 어떤 환경에서도 수행될 수 있는 자족적
 구체적인 내용을 살펴보기 전에 Hello World를 실행해 보자.
 - [Hello world](./getting-started.md)
 
-Spring Web Flow의 기본 샘플로 pring Source에서는 Hotel Booking 을 제공하고 있다.<br>
+Spring Web Flow의 기본 샘플로 Spring Source에서는 Hotel Booking 을 제공하고 있다.<br>
 우리는 Spring Web Flow 레퍼런스 문서를 기준으로 하고 샘플인 Hotel Booking 을 참고하는 형태로 설명하도록 하겠다.
 
 Hotel Booking 샘플 데모 : 🌏 [http://richweb.springframework.org/swf-booking-faces/spring/intro](https://web.archive.org/web/20110615224534/http://richweb.springframework.org/swf-booking-faces/spring/intro)

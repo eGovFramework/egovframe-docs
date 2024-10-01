@@ -21,7 +21,7 @@ Flow란 상이한 상황(context)에서 실행될 수 있는 재사용이 가능
 
 SWF에서 Flow는 “Sate(state)“로 부르는 일련의 단계들로 구성된다. Flow로 진입하게 되는 Sate는 일반적으로 사용자에게 보여지는 뷰가 된다.
 이 뷰에서는 Sate를 제어하게 되는 이벤트가 발생한다. 이들 이벤트는 결과적으로 다른 뷰로 이동하게 되는 Transition(transition)을 일으키게 된다.
-모든 state는 <flow/> 안에 정의하게 된다. 맨 처음 정의되는 state가 Flow의 시작점이 된다.
+모든 state는 \<flow/> 안에 정의하게 된다. 맨 처음 정의되는 state가 Flow의 시작점이 된다.
 
 #### Flow의 작성법
 

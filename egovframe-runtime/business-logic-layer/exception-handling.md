@@ -223,7 +223,7 @@ DefaultTraceHandleManager에 TraceHandler를 등록하는 형태로 설정된다
 		</property>
 	</bean>
  
-	<bean id="AntPathMatcher" class="org.springframework.util.AntPathMatcher" />
+	<bean id="antPathMatcher" class="org.springframework.util.AntPathMatcher" />
  
 	<bean id="defaultTraceHandler"
 		class="egovframework.rte.fdl.cmmn.trace.handler.DefaultTraceHandler" />
