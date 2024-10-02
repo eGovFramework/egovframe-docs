@@ -3,22 +3,22 @@
 ## 개요
 
 보안은 어플리케이션 에서 매우 중요한 이슈이다.
-Spring Security 는 어플리케이션과 결합하여 여러 수준에서 보안을 책임지는 플랫폼의 기능을 수행한다.
-여기서는 Web Flow 에 적용되는 Spring Security 에 대해 알아보도록 하겠다.
+Spring Security는 어플리케이션과 결합하여 여러 수준에서 보안을 책임지는 플랫폼의 기능을 수행한다.
+여기서는 Web Flow에 적용되는 Spring Security에 대해 알아보겠다.
 
 ### 어떻게 Flow를 안전하게 할 수 있을까?
 
 Flow 실행에 보안을 적용시키고 싶다면 다음 단계에 따르자.
 
-1. Spring Security에서 인증(authentication)과 권한(authorization) 규칙을 설정한
+1. Spring Security에서 인증(authentication)과 권한(authorization) 규칙을 설정한다.
 2. secured 구성요소로 Flow 정의에 보안 규칙을 추가한다.
 3. 보안 규칙을 처리해주는 SecurityFlowExecutionListener 추가한다.
    
 ### secured 구성요소
 
-secured 구성요소는 접근 하기 전에 권한 확인을 적용해주며, Flow 실행 단계마다 한 번 이상은 나올 수 없다.
-Flow 실행에서 세단계로 보안을 적용할 수 있다. Flow, state, transition 에 보안 적용이 가능하다.
-사용되는 문법은 동일하다. secured 구성요소는 보안이 적용되야 하는 구성요소 내에 위치하면 된다.
+secured 구성 요소는 접근하기 전에 권한 확인을 적용해 주며, Flow 실행 단계마다 한 번 이상은 나올 수 없다.
+Flow 실행에서 세 단계로 보안을 적용할 수 있다. Flow, state, transition에 보안 적용이 가능하다.
+사용되는 문법은 동일하다. secured 구성요소는 보안이 적용되어야 하는 구성 요소 내에 위치하면 된다.
 예를 들어 view state에 보안을 적용하고자 하면,
 
 ```xml
@@ -52,7 +52,7 @@ attributes 속성은 ','(콤마)로 구분해서 SS의 권한 속성을 리스�
 ### SecurityFlowExecutionListener
 
 Web Flow 설정에 추가한다.
-SecurityFlowExecutionListener가 Web Flow 설정에 정의되어 있어야 플로우 실행기(executor)에 적
+SecurityFlowExecutionListener가 Web Flow 설정에 정의되어 있어야 플로우 실행기(executor)에 적용된다.
 
 ```xml
 <webflow:flow-executor id="flowExecutor"
@@ -65,8 +65,8 @@ SecurityFlowExecutionListener가 Web Flow 설정에 정의되어 있어야 플�
 	class="org.springframework.webflow.security.SecurityFlowExecutionListener" />
 ```
 
-보안 설정에 의해서 접근이 거절되면, AccessDeniedException 발생한다.
-기본으로 롤 기반 의사결정이 이루어 지지만, 커스텀 의사결정 관리자 지정 가능하다.
+보안 설정에 의해서 접근이 거절되면, AccessDeniedException이 발생한다.
+기본으로 롤 기반 의사결정이 이루어 지지만, 커스텀 의사결정 관리자를 지정할 수 있다.
 
 ```xml
 <bean id="securityFlowExecutionListener" 	class="org.springframework.webflow.security.SecurityFlowExecutionListener">
