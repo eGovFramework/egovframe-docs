@@ -39,7 +39,7 @@ web.xml의 servlet버전을 변경해야한다.
 </web-app>
 ```
 
-web.xml내의 servlet설정에 async-supported태그값을 true로 설정한다.
+web.xml내의 servlet설정에 async-supported 태그 값을 true로 설정한다.
 
 ```xml
 <servlet>
@@ -56,22 +56,22 @@ web.xml내의 servlet설정에 async-supported태그값을 true로 설정한다.
 
 ## 설명
 
-Spring의 비동기 요청처리에서는 Servlet쓰레드는 요청을 처리하고 Spring의 Async 제공 클래스를 통해 비동기모드로 전환되며 Servlet쓰레드는 반환된다. 그 후 내부 Application의 쓰레드에서 서비스 처리가 일어나게 된다. 처리완료 후 Servlet쓰레드가 다시 응답을 받아 이를 클라이언트로 전송한다.
+Spring의 비동기 요청처리에서는 Servlet 쓰레드는 요청을 처리하고 Spring의 Async 제공 클래스를 통해 비동기모드로 전환되며 Servlet 쓰레드는 반환된다. 그 후 내부 Application의 쓰레드에서 서비스 처리가 일어나게 된다. 처리완료 후 Servlet 쓰레드가 다시 응답을 받아 이를 클라이언트로 전송한다.
 
-Spring의 비동기 요청처리에서 제공하는 Class는 Servlet쓰레드가 반환된 이후 내부 서비스를 처리하는 쓰레드의 종류에 따라 나뉜다.
+Spring의 비동기 요청처리에서 제공하는 Class는 Servlet 쓰레드가 반환된 이후 내부 서비스를 처리하는 쓰레드의 종류에 따라 나뉜다.
 
 ### Callable
 
-요청을 처리하는 Servlet쓰레드가 반환되면 Spring MVC에서 제어하는 쓰레드에 의해 비동기처리된다.
+요청을 처리하는 Servlet 쓰레드가 반환되면 Spring MVC에서 제어하는 쓰레드에 의해 비동기처리된다.
 
 Callable의 처리과정은 다음과 같다.
 
 1. Controller의 RequestMapping method에서 일반적인 뷰 객체나 String값을 리턴하는 것이 아니라 Callable객체를 리턴한다.
-2. Callable이 리턴될 때 Servlet쓰레드가 반환되며 비동기처리를 Callable에게 위임한다.
-3. Spring MVC내의 TaskExcutor에서 관리되는 쓰레드에서 Async처리가된다.
-4. Callable내부의 call()함수에서 리턴되는 값이 다시 Servlet쓰레드로 전달된다.
+2. Callable이 리턴될 때 Servlet 쓰레드가 반환되며 비동기처리를 Callable에게 위임한다.
+3. Spring MVC내의 TaskExcutor에서 관리되는 쓰레드에서 Async처리가 된다.
+4. Callable내부의 call()함수에서 리턴되는 값이 다시 Servlet 쓰레드로 전달된다.
 
-Callable은 주로 요청처리가 오래걸리는 DB작업, REST API요청처리를 하는 데 적합하다.
+Callable은 주로 요청처리가 오래걸리는 DB작업, REST API 요청처리를 하는 데 적합하다.
 
 ```java
 @RequestMapping(“/view”)
@@ -94,7 +94,7 @@ Servlet 스레드는 반환하고 Spring MVC가 제어하지 않는 쓰레드를
 DefferedResult의 처리과정은 다음과 같다.
 
 1. Controller에서 DefferedResult를 반환하고 In-Memory Queue또는 List에 DefferedResult를 저장한다.
-2. Servlet쓰레드는 반환되고 이벤트 발생 시 Queue에서 DefferedResult객체를 꺼내 사용한다.
+2. Servlet 쓰레드는 반환되고 이벤트 발생 시 Queue에서 DefferedResult객체를 꺼내 사용한다.
 
 ```java
 @RequestMapping("/quotes")
