@@ -1,11 +1,11 @@
 # Functional Endpoints
-스프링 WebFlux는 경량화된 함수형 프로그래밍 모델을 지원한다. WebFlux.fn이라고 하는 이 모델은 함수로 요청을 라우팅하고 핸들링하기 때문에 불변성(immutability)을 보장한다.
+스프링 WebFlux는 경량화 된 함수형 프로그래밍 모델을 지원한다. WebFlux.fn이라고 하는 이 모델은 함수로 요청을 라우팅하고 핸들링하기 때문에 불변성(immutability)을 보장한다.
 함수형 모델과 어노테이션 모델 중 하나를 선택하면 되는데 둘 다 리액티브 코어를 기반으로 한다.
 
 ## 설명
 WebFlux.fn에선 HandlerFunction이 HTTP 요청을 처리한다. HandlerFunction은 ServerRequest를 받아 비동기 ServerResponse(예를 들어 Mono<ServerResponse>)를 리턴하는 함수다. 요청, 응답 객체 모두 불변하기 때문에 JDK 8 방식으로 HTTP 요청, 응답에 접근할 수 있다. HandlerFunction 역할은 어노테이션 프로그래밍 모델로 치면 @RequestMapping 메소드와 동일하다.
 
-요청은 RouterFunction이 핸들러 펑션에 라우팅한다. RouterFunction은 ServerRequest를 받아 비동기 HandlerFunction(예를 들어 Mono<HandlerFunction>)을 리턴하는 함수다. 매칭되는 라이터 펑션이 있으면 핸들러 펑션을 리턴하고 그 외는 비어있는 Mono를 리턴한다. RouterFunction이 하는 일은 @RequestMapping 어노테이션과 동일하지만 라우터 펑션은 테이터뿐 아니라 행동까지 제공한다는 점이 다르다.
+요청은 RouterFunction이 핸들러 펑션에 라우팅한다. RouterFunction은 ServerRequest를 받아 비동기 HandlerFunction(예를 들어 Mono<HandlerFunction>)을 리턴하는 함수다. 매칭되는 라이터 펑션이 있으면 핸들러 펑션을 리턴하고 그 외는 비어 있는 Mono를 리턴한다. RouterFunction이 하는 일은 @RequestMapping 어노테이션과 동일하지만 라우터 펑션은 테이터뿐 아니라 행동까지 제공한다는 점이 다르다.
 
 라이터를 만들 때는 아래 예제처럼 RouterFunctions.route()가 제공하는 빌더를 사용할 수 있다.
 ```java
@@ -74,7 +74,7 @@ Mono<MultiValueMap<String, Part>> map = request.multipartData();
 Flux<Part> parts = request.body(BodyExtractors.toParts());
 ```
 #### ServerResponse
-HTTP 응답은 ServerResponse로 접근할 수 있으며 이 인터페이션은 불변이기 때문에 build 메소드로 생성한다. 빌더로 헤더를 추가하거나 상태코드, body를 설정할 수 있다. 다음은 JSON 컨텐츠로 200(OK) 응답을 만드는 예재다.
+HTTP 응답은 ServerResponse로 접근할 수 있으며 이 인터페이션은 불변이기 때문에 build 메소드로 생성한다. 빌더로 헤더를 추가하거나 상태코드, body를 설정할 수 있다. 다음은 JSON 컨텐츠로 200(OK) 응답을 만드는 예제이다.
 ```java
 Mono<Person> person = ...
 ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(person, Person.class);
@@ -84,7 +84,7 @@ ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(person, Person.
 URI location = ...
 ServerResponse.created(location).build();
 ```
-hint 파라미터를 넘기면 사용하는 코덱에 따라 body 직렬화/역직렬화 방식을 커스텀할 수 있다. 아래 예제처럼 Jackson JSON View를 지정할 수 있다.
+hint 파라미터를 넘기면 사용하는 코덱에 따라 body 직렬화/역직렬화 방식을 커스텀 할 수 있다. 아래 예제처럼 Jackson JSON View를 지정할 수 있다.
 ```java
 ServerResponse.ok().hint(Jackson2CodecSupport.JSON_VIEW_HINT, MyJacksonView.class).body(...);
 ```
@@ -170,7 +170,7 @@ RequestPredicates가 제공하는 구현체도 이 조합으로 만든 것이 �
 #### Routes
 라우터 평션은 정해진 순서대로 실행한다. 첫번째 조건과 일치하지 않으면 두번째를 실행하는 식이다.
 따라서 구체적인 조건을 앞에 선언해야 한다. 어노테이션 프로그래밍 모델에선 자동으로 가장 구체적인 컨트롤러 메소드를 실행하지만 함수형 모델에서는 그렇지 않다는 점을 유의해야 한다.
-build()를 호출하면 빌더에 정의한 모든 라우터 펑션을 RouterFunction 한개로 합친다. 다음 방법으로도 여러 라우터 펑션을 조합할 수 있다.
+build()를 호출하면 빌더에 정의한 모든 라우터 펑션을 RouterFunction 한 개로 합친다. 다음 방법으로도 여러 라우터 펑션을 조합할 수 있다.
 
 - RouterFunctions.route() 빌더의 add(RouterFunction)
 - RouterFunction.and(RouterFunction)
