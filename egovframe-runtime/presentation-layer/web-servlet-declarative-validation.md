@@ -2,7 +2,7 @@
 
 ## 개요
 
-[화면처리: validation](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.10:ptl:validation)을 통해 검증방법을 알아보았다. 이전과는 다르게 JSR-303(Bean Validation) 스펙은 자동 검증 방식을 제공한다. @javax.validation.Valid애노테이션을 사용하여 내부적으로(자동으로) 검증이 수행된다.
+[화면처리: validation](web-servlet-validation.md)을 통해 검증방법을 알아보았다. 이전과는 다르게 JSR-303(Bean Validation) 스펙은 자동 검증 방식을 제공한다. @javax.validation.Valid애노테이션을 사용하여 내부적으로(자동으로) 검증이 수행된다.
 
 또한, 최근에 표준 스펙으로 인증받은 JSR-303 빈 검증방식을 이용하여 모델 오브젝트 필드에서 애노테이션을 이용해 검증을 진행할 수 있다.
 

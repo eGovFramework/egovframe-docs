@@ -21,7 +21,7 @@ Spring MVC 는 다국어를 지원하기 위하여 아래와 같은 종류의 Lo
 
 #### CookieLocaleResolver
 
-CookieLocaleResolver 를 설정하는 경우 사용자의 쿠키에 설정된 Locale 을 읽어들인다.
+CookieLocaleResolver 를 설정하는 경우 사용자의 쿠키에 설정된 Locale 을 읽어 들인다.
 samlple-servlet.xml
 
 ```xml
@@ -39,7 +39,7 @@ samlple-servlet.xml
 
 |    속성                   |          기본값             |               설명                                 |
 |-------------------------|--------------------------|--------------------------------------------------|
-|  cookieName             |  classname + locale      |  쿠키명                                             |
+|  cookieName             |  classname + locale      |  쿠키 명                                             |
 |  cookieMaxAge           |  integer.MAX_INT         |  -1 로 해두면 브라우저를 닫을 때 없어짐                         |
 |  cookiepath             |  /                       |  Path 를 지정하면 해당하는 Path와 그 하위 Path 에서만 참조         |
 
@@ -56,7 +56,7 @@ samlple-servlet.xml
 
 #### AcceptHeaderLocaleResolver
 
-사용자의 보라우저에서 보내진 request 의 헤더에 accept-language 부분에서 Locale 을 읽어들인다. 사용자의 브라우져의 Locale 을 나타낸다.
+사용자의 브라우저에서 보내진 request 의 헤더에 accept-language 부분에서 Locale 을 읽어 들인다. 사용자의 브라우저의 Locale 을 나타낸다.
 samlple-servlet.xml
 
 ```xml
@@ -95,8 +95,7 @@ CharacterEncodingFilter 을 이용하여 encoding 할 수 이도록 아래와 �
 
 #### Spring Configuration
 
-사용자의 브라우져의 Locale 정보를 이용하지 않고 사용자가 선택하여 언어를 직접 선택할 수 있도록 구현하려 한다면 CookieLocaleResolver 나 SessionLocaleResolver 를 이용한다. 먼저 다국어를 지원해야 하므로 메세지를 MessageSource 로 추출하여 구현해야 한다.
-자세한 MessageSource 내용은 를 참고하길 바란다.
+사용자의 브라우저의 Locale 정보를 이용하지 않고 사용자가 선택하여 언어를 직접 선택할 수 있도록 구현하려 한다면 CookieLocaleResolver 나 SessionLocaleResolver 를 이용한다. 먼저 다국어를 지원해야 하므로 메세지를 MessageSource 로 추출하여 구현해야 한다.
 messageSource는 아래와 같이 설정하였다.
 
 **samlple-servlet.xml**
@@ -201,7 +200,7 @@ ResourceBundleMessageSource 는 beannames 명으로 messages 을 받아오는데
 
 SessionLocaleResolver 를 이용하여 위와 같이 하였을 경우 Locale 결정은 **language** 로 Request Parameter 로 넘기게 된다. 카테고리 용어가 영어와 한글로 바뀌는 것을 아래와 같이 볼 수 있다.
 
-리스트를 보여주는 화면에 예를 보자면 Spring 메세지 태크를 이용하여
+리스트를 보여주는 화면에 예를 보자면 Spring 메시지 태그를 이용하여
 
 ```xml
 <spring:message code="view.category" />
@@ -249,7 +248,7 @@ http://localhost:8080/sample-web/sale/listCategory.do?language=en
 ![internationalization-en](./images/internationalization-en-sample.png)
 
 
-**Java 소스내에서 locale 적용 메세지 가져오기**
+**Java 소스내에서 locale 적용 메시지 가져오기**
 
 참고로 MessageSource 는 아래와 같은 메소드로 이루어져 있다.(실제로 여기서의 구현체는 ResourceBundleMessageSource 임.)
 
