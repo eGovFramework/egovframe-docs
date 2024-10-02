@@ -202,4 +202,4 @@ src 폴더 아래에 Index.jsp를 선택하여 마우스 오른쪽 클릭하여 
 
 ## 참고 자료
 
-[Apache Commons-Email UserGuide](http://commons.apache.org/email/userguide.html)
+[Apache Commons-Email UserGuide](https://commons.apache.org/proper/commons-email/userguide.html)
