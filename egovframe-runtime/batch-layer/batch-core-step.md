@@ -233,7 +233,7 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 #### Step 흐름제어
 
-[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow-control.md) 
+[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow_control.md) 
 
 #### Step 흐름제어
 

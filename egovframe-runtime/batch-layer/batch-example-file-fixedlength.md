@@ -62,7 +62,7 @@ FlatFileItemReader는 아래와 같은 설정들을 포함한다.
 #### JunitTest 구성
 <b>FixedLength 예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
 
 ✔ getUniqueJobParameters에서 JobParameter에 쿼리에 필요한 파라미터 정보를 넘긴다.
 
@@ -143,5 +143,5 @@ fixedlengthJob의 결과로 아래의 파일이 생성되었는지를 확인한�
 ![fixedlength_data](./images/fixedlength_data.png)
 
 ## 참고자료
-- [FlatFileItemReader](./batch-core-item-reader.md)
-- [FlatFileItemWriter](./batch-core-item-writer.md)
+- [FlatFileItemReader](./batch-core-item_reader.md)
+- [FlatFileItemWriter](./batch-core-item_writer.md)

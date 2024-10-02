@@ -40,7 +40,7 @@ job을 재실행할 수 있는지 여부를 Job 설정시 지정할 수 있다. 
 #### JunitTest 구성
 <b>Restart 예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
 
 ✔ CustomerCreditFlatFileItemWriter 클래스 : 배치수행시 failed를 발생시킨다.
 

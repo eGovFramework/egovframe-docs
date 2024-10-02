@@ -57,7 +57,7 @@ Job 의 구성은 일반적인 Chunk 설정이 있다.
 #### JunitTest 구성
 <b>group-job-launcher-context 설정과 수행할 배치 Job인 delegatingJob 설정들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
 
 ✔ assertEquals(”[testJobGroup.delegateJob\]”,jobRegistry.getJobNames().toString()) : Job 이름이 [그룹명.Job 이름] 형식으로 저장됨을 확인한다.
 
@@ -86,4 +86,4 @@ public class EgovJobGroupDelegatingJobFunctionalTests {
 ![jobgroup1](./images/jobgroup1.png)
 
 ## 참고자료
-- [JobRegistry](./batch-core-job-registry.md)
+- [JobRegistry](./batch-core-job_registry.md)
