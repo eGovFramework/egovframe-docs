@@ -73,7 +73,7 @@
 | logImpl | Specifies which logging implementation MyBatis should use. If this setting is not present logging implementation will be autodiscovered. | SLF4J / LOG4J / LOG4J2 / JDK\_LOGGING / COMMONS\_LOGGING / STDOUT\_LOGGING / NO\_LOGGING | Not set |
 | proxyFactory | Specifies the proxy tool that MyBatis will use for creating lazy loading capable objects. | CGLIB / JAVASSIST | CGLIB |
 
-- typeAliases : 타입 별칭을 통해 자바타입에 대한 좀더 짧은 이름을 사용할 수 있다. 오직 XML 설정에서만 사용되며, 타이핑을 줄이기 위해 사용된다.
+- typeAliases : 타입 별칭을 통해 자바 타입에 대한 좀더 짧은 이름을 사용할 수 있다. 오직 XML 설정에서만 사용되며, 타이핑을 줄이기 위해 사용된다.
 
 - typeHandler : MyBatis 가 PreparedStatement 에 파라미터를 셋팅하고 ResultSet 에서 값을 가져올때마다, TypeHandler 는 적절한 자바 타입의 값을 가져오기 위해 사용된다. typeHandler 구현체를 등록하여 사용할 수 있다.
 

@@ -7,7 +7,7 @@
 Spring 에서는 [Commons FileUpload](http://commons.apache.org/fileupload/)를 사용하여 싱글 파일 업로드에 대하여 가이드 하고 있다.
 현재 Spring에서 싱글 파일 업로드에 대해서 매우 좋은 api를 제공해주고 있으나 **멀티플 파일 업로드**시에 동일한 이름의 여러 개의 파일을 올리려고 할 때 오류가 발생한다.
 
-오류 사항에 대해서는 [multipart multi file upload](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:file_upload_%EB%AC%B8%EC%A0%9C) 지원 문제를 참고.
+오류 사항에 대해서는 [multipart multi file upload](file-upload-service-multi-file-support.md) 지원 문제를 참고.
 
 본 매뉴얼에서는 싱글 파일 업로드 보다 **멀티플 파일 업로드**를 가능하도록 그 대안에 대하여 설명하고자 한다.
 
@@ -32,7 +32,7 @@ Spring 에서는 [Commons FileUpload](http://commons.apache.org/fileupload/)를 
 
 Apache Commens FileUpload 에서 싱글 파일 업로드에 대해서 매우 좋은 api를 제공해주고 있다. 하지만 멀티플 파일 업로드시 동일한 이름의 여러 개의 파일을 올리려고 할 때 오류가 발생한다.
 
-여러 개의 파일을 올리려고 할 때 오류가 발생하는 문제에 대해서는 [multipart multi file upload 지원 문제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:file_upload_%EB%AC%B8%EC%A0%9C)를 참고.
+여러 개의 파일을 올리려고 할 때 오류가 발생하는 문제에 대해서는 [multipart multi file upload 지원 문제](file-upload-service-multi-file-support.md)를 참고.
 
 Spring에서 multipart를 사용한 파일 업로드에 대해서는 [Spring's multipart (fileupload) support](http://static.springframework.org/spring/docs/2.5.x/reference/mvc.html#mvc-multipart) 에서 자세하게 가이드 하였으므로 본 메뉴얼에서는 다루지 않는다.
 
@@ -44,7 +44,7 @@ File Upload / Download 에 대한 설명은 아래 상세 페이지를 참고하
 
 - [File Upload](./file-upload-service.md)
 - [File Download](./file-download-service.md)
-- [multipart multi file upload 지원 문제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:file_upload_%EB%AC%B8%EC%A0%9C)
+- [multipart multi file upload 지원 문제](file-upload-service-multi-file-support.md)
 
 ### 예제 Sample 실행
 
