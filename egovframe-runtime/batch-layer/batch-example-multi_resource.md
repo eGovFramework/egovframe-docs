@@ -87,7 +87,7 @@ Job 설정의 xml를 살펴보면 MultiResourceWriter의 resource는 output.file
 #### JunitTest 구성
 <b>MutiResource 예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch_example-run_junit_test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run-junit-test.md)을 참고한다.
 
 ✔ getUniqueJobParameters에서 JobParameter에 배치에 필요한 입력 리소스, 출력 리소스 위치정보를 넘긴다.
 
@@ -160,12 +160,12 @@ public abstract class EgovAbstractIoSampleTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case )을 참고한다.
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
 
 ### 결과확인
 MultiReourceWriter의 결과로 여러 파일이 생성되었는지를 확인한다.
 
-![mutiresource_output](images/mutiresource_output.png)
+![mutiresource_output](./images/mutiresource_output.png)
 
 ## 참고자료
 - [multidata_process](./batch-core-multidata_process.md)
