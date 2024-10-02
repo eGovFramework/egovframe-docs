@@ -143,7 +143,7 @@ public abstract class EgovAbstractIoSampleTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
 
 ### 결과 확인
 DB의 Customer 테이블의 credit의 값을 살펴보면 Job이 실행되면서 수정된 것을 확인 할 수 있다.

@@ -97,7 +97,7 @@ Tasklet 인터페이스를 구현한 SystemCommandTasklet 클래스를 이용해
 
 Job의 JobExecution과 대응되는 단위로 Step 또한 StepExecution을 갖고 있다.
 JobExecution과 마찬가지로 StepExecution은 Step을 수행하기 위한 단 한번의 Step 시도를 의미하며 매번 시도될 떄마다 생성된다.
-또한, StepExecution은 주로 Step이 실행 중에 어떤 일이 일어났는지에 대한 속성들을 저장하는 저장 메커니즘 역할을 하며 commit count, rollback count, start time, end time 등의 Step 상태정보를 저장한다. ([StepExecution 속성 자세히 보기](./batch-core-history-management.md))
+또한, StepExecution은 주로 Step이 실행 중에 어떤 일이 일어났는지에 대한 속성들을 저장하는 저장 메커니즘 역할을 하며 commit count, rollback count, start time, end time 등의 Step 상태정보를 저장한다. ([StepExecution 속성 자세히 보기](./batch-core-history_management.md))
 
 아래의 그림에서 'Step1', 'Step2' 2개의 Step을 갖는 'EndOfDay' Job이 두번 실행되었다고 가정하자.(두번 시도 결과 JobExecution은 2개 생성) 'EndOfDay' Job을 시도할 때마다 'Step1', 'Step2'도 시도 되기때문에 StepExecution은 2개 씩 생성된다. 그래서 총 4개의 StepExecution이 생성된 것을 볼 수 있다.
 
@@ -225,7 +225,7 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 ##### Skip
 
-[Skip 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Skip 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
 ##### Retry
 
@@ -239,7 +239,7 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 변수 선언 후 Listeners를 통해서 모든 Setp에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
 
-[Step Variable 설정 자세히 보기](./batch-core-step-variable.md) 
+[Step Variable 설정 자세히 보기](./batch-core-step_variable.md) 
 
 
 ## 참고자료

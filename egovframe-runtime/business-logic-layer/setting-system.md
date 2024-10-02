@@ -1,10 +1,10 @@
 # Spring Web Flow 환경 구성하기
 
-Spring Web Flow 를 사용하기 위한 Web 개발환경에 대한 세팅을 설명하겠다.
+Spring Web Flow를 사용하기 위한 Web 개발 환경에 대한 세팅을 설명한다.
 
 ## 설정
 
-Spring Web Flow 의 Flow 정의를 위한 XML 문서는 아래와 같은 Schema를 갖는다.
+Spring Web Flow의 Flow 정의를 위한 XML 문서는 아래와 같은 Schema를 갖는다.
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -21,10 +21,10 @@ http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.x
 
 ### 기본적인 설정
 
-Spring Web Flow 를 사용하기 해서는 FlowRegistry 와 FlowExecutor 를 설정해야 한다.
+Spring Web Flow를 사용하려면 FlowRegistry  FlowExecutor를 설정해야 한다.
 
 FlowRegistry는 등록될 시나리오에 따라 작성된 flow xml 을 가져오는 역할[1]을 수행한다.
-FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템을 실행되는 부분에 대해 다루겠다.
+FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템이 실행되는 부분에 대해 다루겠다.
 
 
 ```xml
@@ -39,7 +39,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 ### flow-registry 옵션
 
-flow-registry는 아래 보는 것과 같이 설정을 할 수 있다.
+flow-registry는 아래 보는 것과 같이 설정할 수 있다.
 
 ```xml
 <!-- [1]기본은 이름-flow.xml이지만, 직접 지정할 수도 있다. -->
@@ -79,10 +79,10 @@ flow-registry는 아래 보는 것과 같이 설정을 할 수 있다.
 
 ### 커스텀 FlowBuilder 서비스 설정
 
-flow-registry는 아래 보는 것과 같이 설정을 할 수 있다.
+flow-registry는 아래 보는 것과 같이 설정할 수 있다.
 
-flow-registry에서 flow-builder-services 는 flow를 구축하는데 사용되는 서비스나 설정 등을 커스터마이징 할 수 있다.
-지정하지 않는 경우에는 기본 서비스가 사용 된다.
+flow-registry에서 flow-builder-services는 flow를 구축하는 데 사용되는 서비스나 설정 등을 커스터마이징할 수 있다.
+지정하지 않는 경우에는 기본 서비스가 사용된다.
 
 ```xml
 <webflow:flow-registry id="flowRegistry" 	flow-builder-services="flowBuilderServices">
@@ -104,7 +104,7 @@ ExpressionParser 커스터마이징하는데 사용. 기본은 Unified EL이 사
 
 ##### view-factory-creator
 
-ViewFactoryCreator 를 커스터마이징. 디폴트 ViewFactoryCreator 는 JSP, Velocity, Freemaker 등을 화면에 보여주게 해주는 Spring MVC ViewFactories로 되어 있음.
+ViewFactoryCreator를 커스터마이징. 디폴트 ViewFactoryCreator는 JSP, Velocity, Freemaker 등을 화면에 보여주게 해주는 Spring MVC ViewFactories로 되어 있음.
 
 ##### development
 
@@ -127,7 +127,7 @@ Flow 개발 모드 설정. true인 경우, Flow 정의가 변경되면 hot-reloa
 
 #### Flow 실행 리스너 붙이기
 
-Flow 실행의 Lifecycle 에 관련된 리스너(listener) 는 flow-execution-listeners 를 이용하여 등록한다.
+Flow 실행의 Lifecycle에 관련된 리스너(listener)는 flow-execution-listeners를 이용하여 등록한다.
 
 ```xml
 <flow-execution-listeners>

@@ -46,16 +46,16 @@
 	</bean>
 ```
 
- 단 위와 같이 일괄 sql 매핑 파일 지정을 Spring 설정 파일에 지시하였더라도 iBATIS 의 sql-map-config.xml 의 DTD([http://www.ibatis.com/dtd/sql-map-config-2.dtd](http://www.ibatis.com/dtd/sql-map-config-2.dtd)) 에 sqlMap 태그가 최소 1개 이상이 나타나야 하도록 지정되어 있으므로 아래와 같이 dummy sql 매핑 파일 하나를 지정하는 sql-map-config.xml 로 작성하면 편할 것이다.
+ 단 위와 같이 일괄 sql 매핑 파일 지정을 Spring 설정 파일에 지시하였더라도 iBATIS 의 sql-map-config.xml 의 DTD([http://ibatis.apache.org/dtd/sql-map-config-2.dtd](http://ibatis.apache.org/dtd/sql-map-config-2.dtd)) 에 sqlMap 태그가 최소 1개 이상이 나타나야 하도록 지정되어 있으므로 아래와 같이 dummy sql 매핑 파일 하나를 지정하는 sql-map-config.xml 로 작성하면 편할 것이다.
 
 ## iBATIS 의 설정 변경
 
 - sqlMap 설정을 제거한(dummy 하나는 설정 필요) sql-map-config.xml
 
 ```xml
-<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
-    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
  
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
 <sqlMapConfig>
 	<settings useStatementNamespaces="false" 
 				defaultStatementTimeout="10"

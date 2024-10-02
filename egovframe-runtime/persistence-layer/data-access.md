@@ -72,8 +72,9 @@
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
-    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+    <!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
  
 <sqlMapConfig>
 	<settings useStatementNamespaces="false" 
@@ -111,8 +112,8 @@
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
-    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
  
 <sqlMapConfig>
 	<sqlMap resource="sqlmap/sql/common/dummy.xml"/>
