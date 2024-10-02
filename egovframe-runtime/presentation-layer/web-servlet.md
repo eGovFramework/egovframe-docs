@@ -26,17 +26,17 @@ MVC 패턴이 Web Framework에만 사용되는 단어는 아니지만, 표준프
 ### Spring MVC
 Spring MVC에 대한 설명은 아래 상세 페이지를 참고하라.
 
-- [Spring MVC Architecture](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spring_mvc_architecture)
-- [DispatcherServlet](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:dispatcherservlet)
-- [HandlerMapping](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:handlermapping)
-- [Controller](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:controller)
-- [Annotation-based Controller](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:annotation-based_controller)
-- [Validation](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.10:ptl:validation)
-- [Declarative Validation](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.10:ptl:jsr303)
-- [View](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:view)
+- [Spring MVC Architecture](web-servlet-spring-mvc-architecture.md)
+- [DispatcherServlet](web-servlet-dispatcherservlet.md)
+- [HandlerMapping](web-servlet-handlermapping.md)
+- [Controller](web-servlet-controller.md)
+- [Annotation-based Controller](web-servlet-annotation-based-controller.md)
+- [Validation](web-servlet-validation.md)
+- [Declarative Validation](web-servlet-declarative-validation.md)
+- [View](web-servlet-view.md)
 
 ### 예제 실행
-- [easycompany 설치 가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.10:ptl:easycompany) : MVC와 Ajax Support, Security의 예제 코드인 easycompany 설치와 실행 방법을 가이드 한다.
+- [easycompany 설치 가이드](easycompany.md) : MVC와 Ajax Support, Security의 예제 코드인 easycompany 설치와 실행 방법을 가이드 한다.
 
 ## 참고 자료
 - 🌏 [SUN Java BluePrints, Model-View-Controller](https://web.archive.org/web/20090227080302/http://java.sun.com/blueprints/patterns/MVC-detailed.html)

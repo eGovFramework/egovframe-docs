@@ -160,12 +160,12 @@ public abstract class EgovAbstractIoSampleTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_%EC%8B%A4%ED%96%89)을 참고한다.
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case )을 참고한다.
 
 ### 결과확인
 MultiReourceWriter의 결과로 여러 파일이 생성되었는지를 확인한다.
 
-![mutiresource_output](./mutiresource_output.png)
+![mutiresource_output](images/mutiresource_output.png)
 
 ## 참고자료
 - [multidata_process](./batch-core-multidata_process.md)

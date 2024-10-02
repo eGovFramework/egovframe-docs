@@ -125,14 +125,14 @@ EgovCommandLineRunner에서는 start 메소드를 이용하여 Job을 시작한�
 | \-abandon | 정지된 Job의 상태를 “ABANDONED”으로 변경한다.          | Job의 Execution ID |
 
 #### 사용방법
-[배치 템플릿을 이용한 EgovCommandLineRunner 예제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte:batch_core:egov_commandline_runner_template)
+[배치 템플릿을 이용한 EgovCommandLineRunner 예제](batch-core-egov_commandline_runner_template.md)
 
 ### EgovSchedulerRunner
 
 #### 구조
-기존의 Batch Runner와는 다르게, EgovSchedulerRunner는 Job을 직접 실행하는 것이 아니라 Scheduler를 실행한다. 이 Scheduler가 설정되어 있는 시간 및 주기 간격으로 Job을 실행하게 된다. Scheduler는 Quartz를 사용하고 있으며, Quartz의 자세한 사용법 및 설정 방법은 [Scheduling](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:scheduling) 서비스를 참고한다.
+기존의 Batch Runner와는 다르게, EgovSchedulerRunner는 Job을 직접 실행하는 것이 아니라 Scheduler를 실행한다. 이 Scheduler가 설정되어 있는 시간 및 주기 간격으로 Job을 실행하게 된다. Scheduler는 Quartz를 사용하고 있으며, Quartz의 자세한 사용법 및 설정 방법은 [Scheduling](../foundation-layer/scheduling-service.md) 서비스를 참고한다.
 
 ![image](./images/egov_scheduler_runner.png)
 
 #### 설정 및 사용방법
-[배치 템플릿을 이용한 EgovSchedulerRunner 예제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte:batch_core:egov_scheduler_runner_template)
+[배치 템플릿을 이용한 EgovSchedulerRunner 예제](batch-core-egov_scheduler_runner_template.md)

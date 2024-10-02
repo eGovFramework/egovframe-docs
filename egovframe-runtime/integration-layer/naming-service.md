@@ -105,6 +105,16 @@ jndi-lookup tag의 element인 environment tag는 JNDI Environment 변수값을 �
 
 - With single JNDI environment settings
 
+  아래는 단일 JNDI 환경 설정을 사용하여 JNDI 객체를 찾아오는 예제이다.
+
+  ```xml
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/MyDataSource">
+        <jee:environment>foo=bar</jee:environment>
+    </jee:jndi-lookup>
+  ```
+
+- With multiple JNDI environment settings
+
   아래는 복수 JNDI 환경 설정을 사용하여 JNDI 객체를 찾아오는 예제이다.
 
   ```xml

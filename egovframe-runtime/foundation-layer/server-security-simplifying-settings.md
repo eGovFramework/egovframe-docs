@@ -6,7 +6,7 @@
 
 ## XML namespace 및 schema 설정
 설정 간소화 기능을 사용하기 위해서는 다음과 같은 xml 선언이 필요하다.
-**4.1 > 4.2 업그래이드 시 xsd 변경(egov-security-4.1.0.xsd > egov-security-4.2.0.xsd)**
+**4.1 > 4.2 업그레이드 시 xsd 변경(egov-security-4.1.0.xsd > egov-security-4.2.0.xsd)**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -61,7 +61,7 @@ Security에 대한 기본 설정 정보를 제공한다.
 
 ### 속성 설명
 | 속성                             | 설명                                                    | 필수여부 | 비고                                                                                   |
-| ------------------------------ | ----------------------------------------------------- | ---- | ------------------------------------------------------------------------------------ |
+| ------------------------------ |-------------------------------------------------------| ---- | ------------------------------------------------------------------------------------ |
 | loginUrl                       | 로그인 페이지 URL                                           | 필수   |                                                                                      |
 | logoutSuccessUrl               | 로그아웃 처리 시 호출되는 페이지 URL                                | 필수   |                                                                                      |
 | loginFailureUrl                | 로그인 실패 시 호출되는 페이지 URL                                 | 필수   |                                                                                      |
@@ -73,11 +73,11 @@ Security에 대한 기본 설정 정보를 제공한다.
 | requestMatcherType             | 패턴 매칭 방식(regex, ant, ciRegex: case-insensitive regex) | 선택   | default : regex                                                                      |
 | hash                           | 패스워드 저장 방식 (sha-256, plaintext, sha, md5, bcrypt)     | 선택   | default : sha-256                                                                    |
 | hashBase64                     | hash값 base64 인코딩 사용 여부                                | 선택   | default : true                                                                       |
-| concurrentMaxSessons           | 동시 접속가능 연결수                                           | 선택   | default : 999                                                                        |
+| concurrentMaxSessons           | 동시 접속가능 연결 수                                          | 선택   | default : 999                                                                        |
 | concurrentExpiredUrl           | expired된 경우 redirect되는 페이지 URL                        | 선택   |                                                                                      |
 | errorIfMaximumExceeded         | 중복 로그인 방지 옵션                                          | 필수   | default : false                                                                      |
 | defaultTargetUrl               | 로그인 성공시 redirect되는 페이지 URL                            | 선택   | 미지정시 처음 접속하고자 했던 페이지 URL로 redirect됨                                                  |
-| alwaysUseDefaultTargetUrl      | 로그인 이후 설정한 페이지로 이동하게 하는 옶션                            | 필수   | default : true                                                                       |
+| alwaysUseDefaultTargetUrl      | 로그인 이후 설정한 페이지로 이동하게 하는 옵션                            | 필수   | default : true                                                                       |
 | sniff                          | 선언된 콘텐츠 유형으로부터 벗어난 응답에 대한 브라우저의 MIME 가로채기를 방지 여부      | 필수   | default : true                                                                       |
 | xframeOptions                  | sniff 옵션 이 ture 일때 X-Frame-Options 범위설정               | 선택   | DENY, SAMEORIGIN                                                                     |
 | xssProtection                  | XSS Protection 기능의 사용 여부                              | 필수   | default : true                                                                       |

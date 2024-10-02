@@ -2,7 +2,7 @@
 
 ## 개요
 
- 스프링 3.0부터 JSR-330 표준 어노테이션(의존성 주입)의 지원한다. 이 어노테이션들은 스프링 어노테이션들과 같은 방법으로 스캔된다. 이 어노테이션들을 사용하기 위해서는 클래스패스에 관련 jar 파일들을 가지고 있어야 한다.  
+ 스프링 3.0부터 JSR-330 표준 어노테이션(의존성 주입)을 지원한다. 이 어노테이션들은 스프링 어노테이션들과 같은 방법으로 스캔된다. 이 어노테이션들을 사용하기 위해서는 클래스패스에 관련 jar 파일들을 가지고 있어야 한다.  
 Maven을 사용한다면 Maven Repository([https://mvnrepository.com/artifact/javax.inject/javax.inject/1](https://mvnrepository.com/artifact/javax.inject/javax.inject/1))에서 javax.inject라는 아티펙트가 제공된다. pom.xml 파일에 아래의 의존성을 추가하여 사용할 수 있다.
 
  ```xml
@@ -128,7 +128,7 @@ public class AppConfig  {
 
 ### 3\. JSR-330 표준 어노테이션의 제한점
 
- 표준 어노테이션으로 작업할 때 아래 표와 같이 일부 중요한 기능이 사용불가능하다.
+ 표준 어노테이션으로 작업할 때 아래 표와 같이 일부 중요한 기능이 사용 불가능하다.
 
 | Spring | javax.inject.\* | javax.inject 제한 및 비고 |
 | --- | --- | --- |
