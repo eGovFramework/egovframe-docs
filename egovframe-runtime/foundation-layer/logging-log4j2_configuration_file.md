@@ -58,13 +58,13 @@ Log4j 2에서는 XML 파일의 최상위 요소가 **&lt;Configuration&gt;** 으
 ### Logger 설정
 
 Logger는 로깅 작업을 수행하는 Log4j 주체로, Logger 설정을 제외한 모든 로깅 기능이 이 Logger를 통해 처리된다.  
-사용자는 어플리케이션 내에서 사용할 Logger를 정의해야하며, Log Level과 Appender 설정에 따라 출력 대상과 위치가 결정된다.  
+사용자는 어플리케이션 내에서 사용할 Logger를 정의해야 하며, Log Level과 Appender 설정에 따라 출력 대상과 위치가 결정된다.
 
 #### Logger 선언과 정의
 
 Root Logger를 포함한 모든 Logger는 상위 요소인 **&lt;Loggers&gt;** 아래에 선언한다.  
 Root Logger는 **&lt;Root&gt;** 요소로, 일반 Logger는 **&lt;Logger&gt;** 요소로 정의한다.  
-Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의해야한다.
+Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의해야 한다.
 
 ```xml
  <Loggers>
@@ -150,7 +150,7 @@ Log4j 2는 FATAL, ERROR, WARN, INFO, DEBUG, TRACE의 Log Level을 제공한다.
 | ERROR | 요청을 처리하는중 문제가 발생한 상태를 나타냄. |
 | WARN | 처리 가능한 문제이지만, 향후 시스템 에러의 원인이 될 수 있는 경고성 메시지를 나타냄. |
 | INFO | 로그인, 상태변경과 같은 정보성 메시지를 나타냄. |
-| DEBUG | 개발시 디버그 용도로 사용한 메시지를 나타냄. |
+| DEBUG | 개발 시 디버그 용도로 사용한 메시지를 나타냄. |
 | TRACE | 디버그 레벨이 너무 광범위한 것을 해결하기 위해서 좀더 상세한 상태를 나타냄. |
 
 어플리케이션 수행 중 Log Level을 변경할 수도 있다. 이 때 Logger Configuration을 변경하는 것이므로, Logger 설정 정보를 참조하는 메서드를 호출할 수 있도록 org.apache.logging.log4j.Logger를 org.apache.logging.log4j.core.Logger로 캐스팅해야 한다.
@@ -189,8 +189,8 @@ setLevel() 호출 이후부터 Log Level이 변경되며, 지정된 로그레벨
 Appender는 로그가 출력되는 위치를 나타낸다.  
 XXXAppender로 끝나는 클래스들의 이름을 보면, 출력 위치를 어느 정도 짐작할 수 있다.
 
-Log4j 2는 Console, File, RollingFile, Socket, DB 등 다양한 로그 출력 위치과 방법을 지원한다.  
-기존 Log4j 1.x와 크게 달라진 점은 Appender 종류를 class 속성값으로 구분한 것과 달리, Log4j 2에서는 태그로 구분한다.  
+Log4j 2는 Console, File, RollingFile, Socket, DB 등 다양한 로그 출력 위치와 방법을 지원한다.  
+기존 Log4j 1.x와 크게 달라진 점은 Appender 종류를 class 속성값으로 구분한 것과 달리, Log4j 2에서는 태그로 구분한다.
 
 #### Appender 선언과 정의
 

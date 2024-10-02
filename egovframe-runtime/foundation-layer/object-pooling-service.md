@@ -18,7 +18,7 @@ public interface ObjectPool {
 }
 ```
 
-[ObjectPool](http://commons.apache.org/pool/api-1.4/org/apache/commons/pool/ObjectPool.html) interface를 구현하여 코드를 작성하여 사용한다.
+[ObjectPool](https://commons.apache.org/proper/commons-pool/apidocs/org/apache/commons/pool2/ObjectPool.html) interface를 구현하여 코드를 작성하여 사용한다.
 
 
 #### BaseObjectPool
@@ -80,7 +80,7 @@ public abstract class BaseObjectPool<T> implements ObjectPool<T> {
 
 #### KeyedObjectPool
 
-[KeyedObjectPool](http://commons.apache.org/pool/api-1.4/org/apache/commons/pool/KeyedObjectPool.html)은 이기종(異機種) 객체들로 구성된 pool 구현을 위한 interface
+[KeyedObjectPool](https://commons.apache.org/proper/commons-pool/apidocs/org/apache/commons/pool2/KeyedObjectPool.html)은 이기종(異機種) 객체들로 구성된 pool 구현을 위한 interface
 
 ```java
 public interface KeyedObjectPool {

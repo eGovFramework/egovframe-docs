@@ -133,4 +133,4 @@ XML 설정에서는 'class' attribute를 통해 Java Class를 설정한다. 대�
 
 ## 참고자료
 
-*   [Spring Framework - Reference Document / 1.1 Introduction to the Spring IoC Container and Beans](https://www.egovframe.go.kr/https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-introduction)
+*   [Spring Framework - Reference Document / 1.1 Introduction to the Spring IoC Container and Beans](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-introduction)
