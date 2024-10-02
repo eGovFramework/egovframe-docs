@@ -4,11 +4,11 @@
 
 전자정부 표준프레임워크와 UI 솔루션(Rich Internet Application) 연동에 대해 살펴 본다.
 UI Adaptor를 적용하는 방식은 특정한 하나의 방법을 표준화하기 어렵다.
-보통 Web Framework 과 UI 솔루션과의 연동을 하는 방법중 가장 많이 사용하는 방식은
-Controller 역할을 수행하는 Servlet 객체에서 업무 로직을 호출전 데이타를 DTO 형태로 변화하여 업무로직으로 넘기는 방식이다.
+보통 Web Framework 과 UI 솔루션과의 연동을 하는 방법 중 가장 많이 사용하는 방식은
+Controller 역할을 수행하는 Servlet 객체에서 업무 로직을 호출 전 데이터를 DTO 형태로 변화하여 업무 로직으로 넘기는 방식이다.
 
-전자정부 표준프레임워크에서는 Spring MVC Annotation 기반으로 개발시 요청되는 URI 와 Controller 클래스내의 메소드를 매핑하고 있다.
-따라서 메소드의 파라미터로 넘어오는 객체가 request 객체가 아닌 업무용 DTO 클래스로 넘어올수 있도록 가이드 하는 방식을 선택했다.
+전자정부 표준프레임워크에서는 Spring MVC Annotation 기반으로 개발 시 요청되는 URI 와 Controller 클래스내의 메소드를 매핑하고 있다.
+따라서 메소드의 파라미터로 넘어오는 객체가 request 객체가 아닌 업무용 DTO 클래스로 넘어올 수 있도록 가이드 하는 방식을 선택했다.
 (사실 @ModelAttribute 를 이용하는 것과 같다.)
 하지만 프로젝트 별로 비기능 요구사항의 특성을 고려하여 적합한 구조를 정의하여 적용하는 것이 필요하다.
 
@@ -24,17 +24,17 @@ UI 솔루션 업체별 상세 가이드
 
 ## 설명
 
-중점적으로 우리가 살펴볼 내용은 Controller 앞단에서 UI 솔루션으로부터 넘어온 데이타를 DTO 로 변화하는 과정이다.
-데이타 변화을 위해 우리는 ArgumentResolver 를 이용한 방법을 살펴보도록 하겠다.
-UI 솔루션으로 넘어오는 데이타 객체는 request 객체에 포함되어 넘어온다. 우리가 필요한 것은 업무용 DTO 클래스이다.
-업무용 DTO 클래스는 URI(@RequestMapping)와 매핑된 Controller 메소드의 파라미터로 존재하게 된다.
+중점적으로 우리가 살펴볼 내용은 Controller 앞단에서 UI 솔루션으로부터 넘어온 데이터를 DTO 로 변환하는 과정이다.
+데이타 변환을 위해 우리는 ArgumentResolver 를 이용한 방법을 살펴보도록 하겠다.
+UI 솔루션으로 넘어오는 데이터 객체는 request 객체에 포함되어 넘어온다. 우리가 필요한 것은 업무용 DTO 클래스이다.
+업무용 DTO 클래스는 URI(@RequestMapping)와 매핑 된 Controller 메소드의 파라미터로 존재하게 된다.
 Controller 메소드의 파라미터에 설정된 클래스(여기서는 DTO)를 AnnotationMethodHandlerAdapter 에서
 그에 해당하는 ArgumentResolvers(customArgumentResolvers포함) 를 호출해준다.
 따라서 우리는 ArgumentResolver를 확장하여 CustomRiaArgumentResolver 개발하여 AnnotationMethodHandlerAdapter에 등록한다.
 CustomRiaArgumentResolver 에서 리턴되는 객체는 Contorller 단의 메소드의 파라미터로 이용된다.
-* 참고 : AnnotationMethodHandlerAdapter 는 URI 와 매핑되는 Contorller 의 메소드를 실행시 파라미터로 존재하는 객체타입에대한 ArgumentResolver를 실행하여 가져온다.
+* 참고 : AnnotationMethodHandlerAdapter 는 URI 와 매핑되는 Contorller 의 메소드를 실행 시 파라미터로 존재하는 객체타입에대한 ArgumentResolver를 실행하여 가져온다.
 
-그리고 Controller단의 실행 결과는 ViewResovler를 통해 RiaView 로 전송되며 RiaVeiw는 결과물인 DTO 를 UI 솔루션 데이타 타입으로 변환하여 response로 보내어 진다.
+그리고 Controller단의 실행 결과는 ViewResovler를 통해 RiaView 로 전송되며 RiaVeiw는 결과물인 DTO 를 UI 솔루션 데이터 타입으로 변환하여 response로 보내어 진다.
 다시 핵심적인 내용을 정리하자면 다음과 같다.
 
 1. AnnotationMethodHandlerAdapter 의 CustomRiaArgumentResolver 등록 ⇒ CustomRiaArgumentResolver
@@ -82,7 +82,7 @@ public class UdDTO implements Serializable {
 
 ### UI솔루션데이타에서 DTO로 변환
 
-다음은 UTO 를 가져와 UI 솔루션에 의해 들어오는 객체로부터 UTO 로 변환하는 부분을 설명하겠습니다.
+다음은 UTO 를 가져와 UI 솔루션에 의해 들어오는 객체로부터 UTO 로 변환하는 부분을 설명한다.
 변환을 담당하는 UIAdaptorImpl 객체는 AnnotationMethodHandlerAdapter 의 **CustomRiaArgumentResolver** 에 설정된다.
 
 **설정정보(CustomRiaArgumentResolver)**
@@ -139,8 +139,8 @@ public class CustomRiaArgumentResolver implements WebArgumentResolver {
 ...
 ```
 
-UiAdaptor 의 구현체는 아래와 같다. 여기서는 Miplatform 의 예를 들어 코드 작성하였다.
-UI 솔루션의 객체에서 DTO 로 데이타를 옮기는 역할은 converte4In 메소드에서 수행된다.
+UiAdaptor 의 구현체는 아래와 같다. 여기서는 Miplatform 의 예를 들어 코드를 작성하였다.
+UI 솔루션의 객체에서 DTO 로 데이터를 옮기는 역할은 converte4In 메소드에서 수행된다.
 
 **RiaAdaptorImpl.java(MiPlatform ⇒ UdDTO)**
 
@@ -162,7 +162,7 @@ public class RiaAdaptorImpl implements UiAdaptor {
 			ex.getStackTrace();
 			// throw new IOException("PlatformRequest error");
 		}
-    //UI 솔루션 데이타 에서 DTO 객체로 변환
+    //UI 솔루션 데이터에서 DTO 객체로 변환
 		UdDTO dto = converte4In(platformRequest);
 		return dto;
 	}
@@ -213,7 +213,7 @@ UdDTO 클래스는 CustomRiaArgumentResolver 에서 만들어져 Controller 의 
 
 ### BeanNameViewResolver 설정
 
-모델 객체의 이름이 riaView 이다. 이것은 Bean Name을 직접 명시 한것으로 아래와 같은 설정(BeanNameViewResolver)이 필요하다.
+모델 객체의 이름이 riaView 이다. 이것은 Bean Name을 직접 명시한 것으로 아래와 같은 설정(BeanNameViewResolver)이 필요하다.
 
 ```xml
 <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0" />
@@ -227,7 +227,7 @@ UdDTO 클래스는 CustomRiaArgumentResolver 에서 만들어져 Controller 의 
 
 ### RiaView 구현
 
-RiaView 의 코드는 아래와 같다. DTO 를 업체에 맞쳐 다시 가져 나가기 위해 convert 하는 모듈이다.
+RiaView 의 코드는 아래와 같다. DTO 를 업체에 맞춰 다시 가져 나가기 위해 convert 하는 모듈이다.
 여기서는 Miplatform 객체로 변환한다. egovDs 라는 DataSet 으로 객체화 한후 stream 형태로 보내는 로직이다.
 따라서 업체별 데이타 형태로 변환하여 보내도록 수정하면 된다.
 

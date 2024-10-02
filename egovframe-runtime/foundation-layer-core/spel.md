@@ -108,4 +108,4 @@ private Integer money;
 ## 참고자료
 
 - [Spring Framework - Reference Document / 4. Spring Expression Language (SpEL)](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#expressions)
-- [SpEL예제](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte3.9:rex:spel_%EC%98%88%EC%A0%9C)
+- [SpEL예제](./rex-spel-example.md)

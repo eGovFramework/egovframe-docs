@@ -138,12 +138,12 @@ public void testMarshalling()
 }
 ```
 
-1. [writer](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:writer)를 작가명을 매개변수로 하여 생성한다.
-2. [bookMg](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:bookmg)를 ISDN,책명,writer를 매개변수로 하여 생성한다.
+1. [writer](marshalling-unmarshalling-service-writer.md)를 작가명을 매개변수로 하여 생성한다.
+2. [bookMg](marshalling-unmarshalling-service-bookmg.md)를 ISDN,책명,writer를 매개변수로 하여 생성한다.
 3. FileOutputSream을 Caster_Book.xml를 매개변수로 하여 Stream를 생성한다.
 4. Result을 생성한 FileOutputStream을 매개변수로 하여 StreamResult를 생성한다.
 5. marshaller.marshal를 사용하여 marshalling을 하는데 매개변수로는 bookMg와 StreamResult로 한다.
-6. 실행 후 JavaObject bookMg에 저장한 값이 [CasterBook.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:casterbook.xml)로 Binding 된 것을 확인한다.
+6. 실행후 JavaObject bookMg에 저장한 값이 [CasterBook.xml](marshalling-unmarshalling-service-casterbook-xml.md)로 Binding 된것을 확인한다.
 
 **##### **XML문서를 JavaObject로 DataBinding Sample Source**
 
@@ -188,7 +188,7 @@ public void testUnmarshalling()
 }
 ```
 
-1. FileInputSream을 [CasterBook.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:casterbook.xml)를 매개변수로 하여 Stream를 생성한다.
+1. FileInputSream을 [CasterBook.xml](marshalling-unmarshalling-service-casterbook-xml.md)를 매개변수로 하여 Stream를 생성한다.
 2. 생성한 FileInputSream을 매개변수로 하여 StreamSource를 생성한다.
 3. marshaller.marshal를 사용하여 unmarshalling을 하는데 매개변수로는 StreamSource로 한다.
 4. unmarshalling한 결과 bookMg를 얻어 작가 리스트를 얻는다.
@@ -279,8 +279,8 @@ public void testMarshalling()
 3. setName을 사용하여 사용자명을 저장한다.
 4. setAge를 사용하여 나이를 저장한다.
 5. setPhone를 사용하여 전화번호를 저장한다.
-6. FileOutputSream을 [XMLBeanGen.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:xmlbeangen.xml) 매개변수로 하여 생성한다.
-7. marshaller.marshal를 Document객체와 StreamResult를 매개변수로 하여야 한다.
+6. FileOutputSream을 [XMLBeanGen.xml](marshalling-unmarshalling-service-xmlbeangen-xml.md) 매개변수로 하여 생성한다.
+7. marshaller.marshal를 Document객체와 StreamResult를 매개변수로 하여한다.
 
 
 **XML문서를 JavaObject로 DataBinding Sample Source**
@@ -324,7 +324,7 @@ public void testUnmarshalling()
 }
 ```
 
-1. FileInputStream를 [XMLBeanGen.xml](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:xmlbeangen.xml)를 매개변수로 하여 생성한다.
+1. FileInputStream를 [XMLBeanGen.xml](marshalling-unmarshalling-service-xmlbeangen-xml.md)를 매개변수로 하여 생성한다.
 2. 생성한 FileInputStream를 매개변수로 하여 StreamSource생성한다.
 3. unmarshaller.unmarshal를 생성한 StreamSource를 매개변수로 unmashalling을 하여 document객체를 얻는다.
 4. document객체에서 사용자정보를 얻는다.

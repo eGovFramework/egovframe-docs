@@ -204,7 +204,7 @@ create table TYPETEST (
 );
 ```
 
- 위 create sql 문의 hsqldb 의 예이며, 실제로 Ansi SQL 의 Data Type 에 대한 표준을 잘 따르는 예이다. boolean 타입을 직접 지원하고 있으며 tinyint, double, date, time 등 다양한 jdbcType 에 대하여 사용에 특별한 무리가 없음을 아래의 테스트케이스로 알 수 있을 것이다.
+ 위 create sql 문의 hsqldb 의 예이며, 실제로 Ansi SQL 의 Data Type 에 대한 표준을 잘 따르는 예이다. boolean 타입을 직접 지원하고 있으며 tinyint, double, date, time 등 다양한 jdbcType 에 대하여 사용에 특별한 무리가 없음을 아래의 테스트 케이스로 알 수 있을 것이다.
 
 ### Sample SQL Mapping XML
 

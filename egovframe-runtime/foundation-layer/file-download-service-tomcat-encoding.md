@@ -55,4 +55,4 @@ Web Container에 따라 URLEncoding을 안하고 넘겨도 작동하는 경우�
 
 ## 참고자료
 
-- http://www.okjsp.pe.kr/seq/57865
+- [Tomcat/JSP와 한글](https://okky.kr/articles/57865)
