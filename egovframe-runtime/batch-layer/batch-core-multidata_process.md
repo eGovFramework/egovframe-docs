@@ -11,7 +11,8 @@
 - MultiResourceItem처리: N개의 대상을 읽은 후, 읽은 개수만큼의 결과물을 만들어낸다.
 - CompositeItem처리: N개의 대상을 읽은 후, 하나의 결과물을 만들어낸다.
 
- 두 방식을 개념적으로 비교하면 아래와 같다.  
+두 방식을 개념적으로 비교하면 아래와 같다.
+
 ![image](./images/batch_core-multiresource_vs_composite2.png)
 
 ### MultiResourceItem 처리
@@ -100,8 +101,10 @@ file-1.txt  file-2.txt  ignored.txt
 
 #### 처리 프로세스
 
- CompositeReader의 일반적인 처리 프로세스는 아래와 같다.  
+CompositeReader의 일반적인 처리 프로세스는 아래와 같다.  
+
 ![image](./images/batch_core-batch_composite_reader.png)  
+
 ✔ **주의!** CompositeReader는 등록된 모든 Reader로부터 데이터를 한 라인씩 순서대로 읽어와서 배열에 넣어주는 역할까지 수행한다.따라서,Writer를 바로 사용하면 안되고 Processor에서 배열을 읽어서 처리하는 과정이 반드시 필요하다.  
 
 #### 처리 유형

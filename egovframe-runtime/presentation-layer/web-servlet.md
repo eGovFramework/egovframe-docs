@@ -1,6 +1,7 @@
 # Web Servlet
 
 ## 개요
+
 ![MVC(Model-View-Controller) 패턴](images/web-servlet.jpg)
 
 **MVC(Model-View-Controller) 패턴**은 코드를 기능(역할)에 따라 **Model, View, Controller** 3가지 요소로 분리한다.
@@ -42,4 +43,5 @@ Spring MVC에 대한 설명은 아래 상세 페이지를 참고하라.
 - 🌏 [SUN Java BluePrints, Model-View-Controller](https://web.archive.org/web/20090227080302/http://java.sun.com/blueprints/patterns/MVC-detailed.html)
 
 ## 서블릿 개발과 동작과정.png
+
 <img width="302" alt="서블릿 개발과 동작과정" src="https://github.com/user-attachments/assets/c503f93b-9837-4203-aada-4bb3f7a669ee">
