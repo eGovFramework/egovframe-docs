@@ -12,6 +12,7 @@
 
 ## 설명
 ### 주요 개념
+
 <img src="./images/conceptua_architecture.jpg" align="left"/>
 
 옆의 그림에서 보는것과 같이 DBMS 기반의 어플리케이션 수행을 하기 위해 필요한 주요 구성 요소는 Entity, Persistence.xml 이며, 각각은 다음과 같은 역할을 수행한다.

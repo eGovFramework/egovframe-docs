@@ -8,9 +8,12 @@
 
 * Unordered List Item기본적으로 센터컷의 구조는 큐(Queue)를 이용하는 부분을 제외하고는 배치 프로그램과 유사하다.
 * Unordered List Item처음 ItemReader를 사용하여 데이터를 읽고 큐에 넣은 Center-Cut Reading Step과, 읽어온 데이터를 가공 후 QueueSender를 통해 Queue에 넣는 구조이다.
-![centercut-explain1](images/centercut-explain1.png)
+
+    ![centercut-explain1](images/centercut-explain1.png)
+
 * Center-Cut Process Step은 큐에서 들어온 데이터를 읽고 처리 모듈(Busineess Proc)를 활용하여 데이터를 처리하는 구조이다.
-![centercut-queueproc1](images/centercut-queueproc1.png)
+
+    ![centercut-queueproc1](images/centercut-queueproc1.png)
 
 [참고] QueueSender, QueueReciever만 센터컷을 위해 추가되는 모듈을 가이드하며, 나머지는 배치와 동일하다.
 
@@ -19,7 +22,8 @@
 1. Queue를 사용한 센터 컷 배치 처리를 위하여 Apache ActiveMQ를 활용한다.
 현재 가이드의 ActiveMQ의 버전은 apache-activemq-5.15.1이며, 관련 프로그램 및 활용 방법은 아래의 ActiveMQ에서 확인할 수 있다. [Apache ActiveMQ](http://activemq.apache.org/)
 ActiveMQ를 설치 및 실행 후, http:localhost:8161에서 실행 확인을 할 수 있으며, 관리자 계정(admin/admin) 로그인 후 Queue 메뉴에서 현재 큐의 사황을 확인 할 수 있다.
-![activemq](images/activemq_queue_monitor1.png)
+
+    ![activemq](images/activemq_queue_monitor1.png)
 
 2. 구성 된 ActiveMQ를 활용하여 1개의 배치 Job과 2개의 Step(QueueSender, QueueProc)를 처리하는 가이드 예제를 활용한다.
 
@@ -99,7 +103,7 @@ public void endSender(MessageProducer sender) throws Exception {
 
 * 전송 결과 (console출력)
 
-```java
+```console
 xxxx-xx-xx 11:20:16,566 DEBUG [egovframework.rte.bat.centercut.TaskletQueueSender] Send Value : 9989
 xxxx-xx-xx 11:20:16,566 DEBUG [egovframework.rte.bat.centercut.TaskletQueueSender] Send Value : 9990
 xxxx-xx-xx 11:20:16,566 DEBUG [egovframework.rte.bat.centercut.TaskletQueueSender] Send Value : 9991
@@ -166,7 +170,7 @@ public RepeatStatus execute(StepContribution contribution,
 
 * 전송 결과 (console출력)
 
-```java
+```console
 xxxx-xx-xx 11:45:27,042 DEBUG [egovframework.rte.bat.centercut.TaskletQueueProc] Receive Message: 9997
 xxxx-xx-xx 11:45:27,042 DEBUG [org.apache.activemq.ActiveMQSession] ID:DESKTOP-NV1780L-60402-1518144303940-3:1:1 Transaction Commit :TX:ID:DESKTOP-NV1780L-60402-1518144303940-3:1:9998
 xxxx-xx-xx 11:45:27,042 DEBUG [org.apache.activemq.TransactionContext] Commit: TX:ID:DESKTOP-NV1780L-60402-1518144303940-3:1:9998 syncCount: 1
