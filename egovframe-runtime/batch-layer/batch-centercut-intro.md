@@ -8,7 +8,8 @@
 
 * Unordered List Item기본적으로 센터컷의 구조는 큐(Queue)를 이용하는 부분을 제외하고는 배치 프로그램과 유사하다.
 * Unordered List Item처음 ItemReader를 사용하여 데이터를 읽고 큐에 넣은 Center-Cut Reading Step과, 읽어온 데이터를 가공 후 QueueSender를 통해 Queue에 넣는 구조이다.
-![centercut-explain1](images/centercut-explain1.png)
+
+  ![centercut-explain1](images/centercut-explain1.png)
 * Center-Cut Process Step은 큐에서 들어온 데이터를 읽고 처리 모듈(Busineess Proc)를 활용하여 데이터를 처리하는 구조이다.
 ![centercut-queueproc1](images/centercut-queueproc1.png)
 
