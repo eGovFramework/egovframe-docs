@@ -62,7 +62,8 @@
 
 #### 주요테이블
 
- 사용자 인증과 관련된 테이블은 사용자테이블과 사용자권한테이블이며 사용자권한관련 테이블은 역할, 자원, 역할계층 등의 테이블이 있다.  
+사용자 인증과 관련된 테이블은 사용자테이블과 사용자권한테이블이며 사용자권한관련 테이블은 역할, 자원, 역할계층 등의 테이블이 있다.  
+
 ![image](./images/server_security_custom_security_db_schema.png)
 
  DaoAuthenticationProvidor

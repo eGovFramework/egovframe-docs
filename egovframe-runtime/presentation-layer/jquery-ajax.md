@@ -392,7 +392,8 @@ FROM LOCATION
 ```
 
 ajax의 성공시 콜백함수인 success에서는 data.locations로 값을 꺼내 autocomplete의 source를 설정할 수 있다.</br>
-위와 같은 경우 결과 화면은 다음과 같다.</br>
+위와 같은 경우 결과 화면은 다음과 같다.
+
 ![autocomplete02](./images/jquery-ajax-autocomplete02.png)
 
 
@@ -610,7 +611,8 @@ Tab을 구현하는 경우 기본 예제는 다음과 같다.
 </html>
 ```
 
-위의 결과는 다음과 같다.</br>
+위의 결과는 다음과 같다.
+
 ![panel](./images/jquery-ajax-panel.png)
 
 - referenced [jquery ui site](https://jqueryui.com/tabs/#default)
