@@ -118,7 +118,7 @@
 
 ### UX처리
 * [UX/UI Controller Component](./presentation-layer/uxui-controller-component.md)
-* [HTML5+CSS3.0+JavaScript Module App Framework 기본 활용]()
+* [HTML5+CSS3.0+JavaScript Module App Framework 기본 활용](./presentation-layer/html5-css3.0-javascript-module-app-framework-basic.md)
 * [UI - bootstrap](./presentation-layer/bootstrap.md)
 
 ### 업무처리
@@ -162,9 +162,9 @@
   * [주요 변경 사항](./persistence-layer/dataaccess-ibatis_vs_mybatis.md)
   * [Getting Started](./persistence-layer/dataaccess-getting_started.md)
   * [Configuration XML](./persistence-layer/dataaccess-configuration_xml.md)
-  * [Mapper XML Files]()
-  * [Dynamic SQL]()
-  * [표준프레임워크 기반 적용 가이드]()
+  * [Mapper XML Files](./persistence-layer/dataaccess-mapper_xml_files.md)
+  * [Dynamic SQL](./persistence-layer/dataaccess-mybatis-dynamic-sql.md)
+  * [표준프레임워크 기반 적용 가이드](./persistence-layer/dataaccess-mybatis-guide.md)
 * [Spring Data - JPA](./persistence-layer/jpa-spring-data.md)
   * [Repository](./persistence-layer/jpa-repository.md)
   * [Query Method](./persistence-layer/jpa-querymethod.md)
