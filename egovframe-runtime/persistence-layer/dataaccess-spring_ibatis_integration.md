@@ -1,3 +1,9 @@
+---
+linkTitle: "- Spring-iBATIS Integration"
+weight: 4
+title: Spring-iBATIS Integration
+description: Spring은 iBATIS와의 통합을 통해 IoC 및 예외 계층 구조를 활용한 템플릿 스타일 프로그래밍을 지원하며, Spring의 유연한 트랜잭션 처리와 DataSource 설정을 그대로 사용할 수 있다. SqlMapClientFactoryBean은 iBATIS의 SqlMapClient를 생성하고 Spring 컨텍스트에 설정하는 데 사용된다.
+---
 # Spring-iBATIS Integration
 
  Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.

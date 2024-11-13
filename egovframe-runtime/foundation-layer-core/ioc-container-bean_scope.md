@@ -1,3 +1,9 @@
+---
+linkTitle: "- Bean Scopes"
+weight: 4
+title: Bean Scopes
+description: Bean 정의는 실제 Bean 객체를 생성하는 방식을 규정하며, 하나의 Bean 정의에서 여러 객체를 생성할 수 있다. 이를 통해 객체에 다양한 종속성 및 설정값을 주입할 수 있으며, 객체의 범위(Scope)도 정의할 수 있다.
+---
 # Bean scope
 
 ## 개요
@@ -23,7 +29,7 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 
  Bean이 singleton인 경우, 단지 하나의 공유 객체만 관리된다.
 
- ![The singleton scope](./images/egovframework-rte-fdl-ioc_container-singleton.png)
+ ![The singleton scope](../images/egovframework-rte-fdl-ioc_container-singleton.png)
 
  Singleton scope은 Spring의 기본(default) scope이다.
 
@@ -38,7 +44,7 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 
  Singleton이 아닌 prototype scope의 형태로 정의된 bean은 필요한 매 순간 새로운 bean 객체가 생성된다.
 
- ![The prototype scope](./images/egovframework-rte-fdl-ioc_container-prototype.png)
+ ![The prototype scope](../images/egovframework-rte-fdl-ioc_container-prototype.png)
 
  ```xml
 <bean id="accountService" class="com.something.DefaultAccountService" scope="prototype"/>

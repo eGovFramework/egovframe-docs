@@ -1,3 +1,9 @@
+---
+linkTitle: "- iBATIS Configuration"
+weight: 3
+title: iBATIS Configuration
+description: iBATIS 의 메인 설정 파일인 SQL Map XML Configuration 파일(이하 sql-map-config.xml 설정 파일) 작성과 상세한 옵션 설정에 대해 알아본다.
+---
 # iBATIS Configuration
 
  iBATIS 의 메인 설정 파일인 SQL Map XML Configuration 파일(이하 sql-map-config.xml 설정 파일) 작성과 상세한 옵션 설정에 대해 알아본다.

@@ -1,3 +1,9 @@
+---
+linkTitle: "- Configuration XML"
+weight: 13
+title: MyBatis Configuration XML File
+description: MyBatis XML 설정 파일은 `properties`, `settings`, `typeAliases`, `mappers` 등 다양한 설정 항목으로 구성되며, 데이터베이스와의 상호작용을 정의하는 중요한 설정들을 포함한다. 이 파일은 MyBatis의 동작 방식과 데이터베이스 연결 환경을 관리하는 역할을 한다.
+---
 # MyBatis Configuration XML File
 
  MyBatis XML 설정파일은 다양한 셋팅과 프로퍼티를 가진다 해당 파일의 작성과 상세한 옵션 설정에 대해 알아본다.

@@ -1,3 +1,9 @@
+---
+linkTitle: "- JPA Configuration"
+weight: 35
+title: JPA Configuration
+description: JPA는 persistence.xml 파일을 기반으로 동작하며, 이 파일은 실행 속성을 포함하고 여러 개의 persistence-unit을 정의할 수 있다. persistence.xml은 JPA 설정의 핵심 요소로, 상위에 <persistence> 태그를 포함하고 있다.
+---
 # JPA Configuration
 
  JPA는 실행 속성을 포함하고 있는 persistence.xml을 기반으로 하여 동작하도록 구성되어 있다. persistence.xml 파일의 주요 구성 요소와 속성 정의 방법에 대해 살펴보기로 한다. 먼저, persistence.xml 파일은 가장 상위에 &lt;persistence&gt; 태그를 포함하고 있으며 &lt;persistence&gt; 태그 내에 여러개의 &lt;persistence-unit&gt;를 포함할 수 있다.

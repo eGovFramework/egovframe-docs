@@ -1,3 +1,9 @@
+---
+linkTitle: "- MongoDB support"
+weight: 23
+title: MongoDB support
+description: Spring Data MongoDB는 MongoDB를 위한 Data Access 기능을 제공하는 하위 프로젝트로, MongoTemplate을 통한 효율적인 데이터 처리와 Annotation 기반 매핑, Java 기반의 Query 및 Criteria DSL을 지원한다. 또한, Spring의 데이터 액세스 예외 계층 구조 변환 기능과 Spring Data Repository 인터페이스 통합을 제공한다. 이를 통해 MongoDB와의 데이터 접근을 보다 쉽게 구현할 수 있다.
+---
 # MongoDB support 3.5.1
 
 ## 설명

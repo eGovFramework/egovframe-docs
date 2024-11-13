@@ -244,7 +244,7 @@ public class EventNoticeListener {
    
 ✔ 그림의 EgovSampleXXXProcessor는 예시 클래스이며, 전자정부 표준프레임워크에서 제공하는 Processor를 상속받아 구현된 클래스이다.
 
- ![image](./images/batch_core-processor_gmgt_structure.png)
+ ![image](../images/batch_core-processor_gmgt_structure.png)
 
 #### Job Processor
 

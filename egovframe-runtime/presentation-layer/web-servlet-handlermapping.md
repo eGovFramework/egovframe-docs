@@ -1,3 +1,9 @@
+---
+linkTitle: "- HandlerMapping"
+weight: 4
+title: HandlerMapping
+description: DispatcherServlet은 요청을 처리할 Controller를 HandlerMapping을 통해 매핑하며, Spring MVC는 여러 종류의 HandlerMapping 구현 클래스를 제공한다. Spring 3.1 이후 버전부터 기본 HandlerMapping은 RequestMappingHandlerMapping이며, 그 이전 버전에서는 DefaultAnnotationHandlerMapping이 기본으로 사용되었다.
+---
 # HandlerMapping
 
 ## 개요

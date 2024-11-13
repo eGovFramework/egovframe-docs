@@ -25,7 +25,7 @@ JobRunner는 외부 실행 모듈과 JobLauncher를 연결해주는 모듈로, �
 #### 구조
 EgovBatchRunner를 이용하여 Job Operator 및 Job Explorer를 이용하여 Job Config에 등록된 Job을 실행하고, 실행 상태를 변경할 수 있다. 또한 Job Repository에 접근할 수 있는 기능을 제공한다.
 
-![image](./images/egov_batch_runner.png)
+![image](../images/egov_batch_runner.png)
 
 #### 설정방법
 EgovBatchRunner를 사용하기 위해서는 XML 파일에 JobOperator, JobExplorer 그리고 JobRepository가 정의되어야 한다. 그리고 JobOperator를 생성하기 위해서는 JobLauncher와 JobRegistry의 정의가 필요하다.
@@ -102,7 +102,7 @@ EgovBatchRunner 예제
 #### 구조
 EgovCommandLineRunner는 Job Launcher 및 Job Explorer를 이용하여 Job Config에 등록된 Job을 실행할 수 있으며, 실행할 수 있도록 하는 기능을 제공한다.
 
-![image](./images/egov_commandline_runner.png)
+![image](../images/egov_commandline_runner.png)
 
 #### 제공기능
 EgovCommandLineRunner에서는 start 메소드를 이용하여 Job을 시작한다. start 메소드에 필요한 파라미터는 아래와 같으며, 배치실행을 위해서는 Job Path와 Job Identifier는 반드시 필요하다.
@@ -132,7 +132,7 @@ EgovCommandLineRunner에서는 start 메소드를 이용하여 Job을 시작한�
 #### 구조
 기존의 Batch Runner와는 다르게, EgovSchedulerRunner는 Job을 직접 실행하는 것이 아니라 Scheduler를 실행한다. 이 Scheduler가 설정되어 있는 시간 및 주기 간격으로 Job을 실행하게 된다. Scheduler는 Quartz를 사용하고 있으며, Quartz의 자세한 사용법 및 설정 방법은 [Scheduling](../foundation-layer/scheduling-service.md) 서비스를 참고한다.
 
-![image](./images/egov_scheduler_runner.png)
+![image](../images/egov_scheduler_runner.png)
 
 #### 설정 및 사용방법
 [배치 템플릿을 이용한 EgovSchedulerRunner 예제](batch-core-egov_scheduler_runner_template.md)

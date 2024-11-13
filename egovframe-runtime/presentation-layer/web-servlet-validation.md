@@ -1,3 +1,9 @@
+---
+linkTitle: "- Validation"
+weight: 8
+title: Spring의 Validator 인터페이스와 유효성 검증
+description: 스프링 프레임워크는 Validator 인터페이스를 제공해 웹, 데이터 접근 등 다양한 계층의 객체에 유효성 검증을 지원한다. 또한 Jakarta Commons Validator와 같은 외부 Validator도 스프링에서 통합하여 사용할 수 있다.
+---
 # Validation
 
 ## 개요
@@ -190,7 +196,7 @@ public class UpdateDepartmentController {
 
 부서 이름값을 비우고, 부서설명 부분에 10자 이하로 입력한 후에 저장 버튼을 누르면, 다시 부서정보수정 페이지로 돌아와서 아래와 같이 에러 메시지가 출력될 것이다.
 
-![web-servlet-validation](./images/web-servlet-validation.png)
+![web-servlet-validation](../images/web-servlet-validation.png)
 
 ## 참고자료
 - Spring Framework API Documentation 2.5.6

@@ -1,3 +1,9 @@
+---
+linkTitle: "- Inline Parameters"
+weight: 7
+title: Inline Parameters
+description: "Inline Parameters는 #property# 노테이션을 사용해 간편하게 바인드 변수 매핑을 처리하며, 별도의 parameterMap 선언 없이 입력 객체의 속성을 SQL에 직접 매핑할 수 있다. Dynamic 요소와 함께 사용 가능하며, 필요한 경우 JDBC 타입과 null 값을 추가 노테이션으로 지정할 수 있다."
+---
 # Inline Parameters
 
  이전에 살펴본 prepared statement 에 대한 바인드 변수 매핑 처리를 위한 parameterMap 요소(SQL 문 외부에 정의한 입력 객체 property name 및 javaType, jdbcType 을 비롯한 옵션을 설정 매핑 요소) 와 동일한 기능을 처리하는 간편한 방법을 Inline Parameters 방법으로 제공한다. 보통 parameterClass 로 명시된 입력 객체에 대해 바인드 변수 영역을 간단한 #property# 노테이션으로 나타내는 Inline Parameter 방법은 기존 parameterMap 에서의 ? 와 이의 순서를 맞춘 외부 parameterMap 선언으로 처리하는 방법에 비해 많이 사용되고 일반적으로 추천하는 방법이다. 이는 Dynamic 요소와 함께 사용될 수 있고 별도의 외부 매핑 정의 없이 바인드 변수 처리가 필요한 위치에 해당 property 를 직접 사용 가능하며, 필요한 경우 jdbcType 이나 nullValue 를 간단한 추가 노테이션(ex. #empName:VARCHAR:blank# ) 와 같이 지정할 수 있고, 상세한 옵션이 필요한 경우에는 (ex. #comm,javaType=decimal,jdbcType=NUMERIC,nullValue=-99999# ) 와 같이 ,(comma) 로 구분된 필요한 속성=값 을 상세하게 기술할 수도 있다.

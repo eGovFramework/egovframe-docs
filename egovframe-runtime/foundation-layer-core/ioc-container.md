@@ -1,3 +1,9 @@
+---
+linkTitle: IoC Container
+weight: 1
+title: "IoC Container"
+description: IoC 컨테이너는 객체 간의 종속성을 소스 코드 외부에서 설정하여 유연성과 확장성을 높이는 Spring 프레임워크의 핵심 기능이다.
+---
 # IoC Container
 
 ## 개요

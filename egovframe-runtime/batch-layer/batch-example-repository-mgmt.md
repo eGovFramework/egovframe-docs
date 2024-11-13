@@ -84,11 +84,11 @@ public class EgovRepositoryFunctionalTests {
 ### 결과 확인
 - DB의 CUSTOMER 테이블을 보면 Repository 타입이 DB인 데이터 처리 결과를 확인할 수 있다.
 
-![repository_exam_result_db](./images/repository_exam_result_db.png)
+![repository_exam_result_db](../images/repository_exam_result_db.png)
 
 - delimitedOutput.csv 파일을 보면 Repository 타입이 File인 데이터 처리 결과를 확인할 수 있다.
 
-![repository_exam_result_file](./images/repository_exam_result_file.png)
+![repository_exam_result_file](../images/repository_exam_result_file.png)
 
 ## 참고자료
 - [JobRepository](./batch-execution-job-repository.md)

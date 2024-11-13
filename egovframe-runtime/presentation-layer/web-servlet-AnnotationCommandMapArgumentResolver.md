@@ -1,3 +1,9 @@
+---
+linkTitle: "- AnnotationCommandmapArgumentResolver"
+weight: 11
+title: Map 객체를 통한 입력값 처리 방법
+description: 전자정부프레임워크 3.0 이전에는 CommandMapArgumentResolver를 통해 Map 객체를 사용했으나, 3.0부터는 @CommandMap과 AnnotationCommandMapArgumentResolver로 이를 처리한다. 이 클래스는 HTTP 요청의 파라미터 이름과 값을 Map에 담아 Controller에서 사용할 수 있도록 지원한다.
+---
 # AnnotationCommandmapArgumentResolver
 
 ## 개요
@@ -139,7 +145,7 @@ AnnotationCommandMapArgumentResolver를 사용하려면 EgovRequestMappingHandle
 
 테스트를 위한 Form에 데이터를 아래와 같이 등록하고 폼을 제출했을때,
 
-![web-servlet-AnnotationCommandMapArgumentResolver](./images/web-servlet-AnnotationCommandMapArgumentResolver.png)
+![web-servlet-AnnotationCommandMapArgumentResolver](../images/web-servlet-AnnotationCommandMapArgumentResolver.png)
 
 `@CommandMap` Map 객체의 데이터는 key, value 형태로 아래와 같이 들어 있다. 같은 파라미터 이름으로 여러값이 들어 있는 값은 배열로 들어 있다.
 

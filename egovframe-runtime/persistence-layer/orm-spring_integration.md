@@ -1,3 +1,9 @@
+---
+linkTitle: "- Spring Integration"
+weight: 34
+title: Spring과 JPA 통합
+description: Spring은 JPA 기반 DAO 클래스를 쉽게 구현하기 위해 JpaTemplate을 제공하지만, 직접 EntityManager 메서드를 사용하는 방식(plain JPA)도 지원한다. JPA를 사용하기 위해서는 persistence.xml과 Spring ApplicationContext 설정이 필요하다.
+---
 # Spring Integration
 
  Spring에서는 JPA 기반에서 DAO 클래스를 쉽게 구현할 수 있도록 하기 위해 JdbcTemplate,HibernateTemplate등처럼 **JpaTemplate**을 제공한다. 하지만 JPA에 있어서는 Entity Manager의 Method를 직접 이용하는 것(**plain JPA**)에 대한 것도 가이드한다. 이에 두가지 방법에 대한 설정 및 사용방법에 대해서 설명하고자 한다. [Spring JPA](http://static.springframework.org/spring/docs/2.5.x/reference/orm.html#orm-jpa)

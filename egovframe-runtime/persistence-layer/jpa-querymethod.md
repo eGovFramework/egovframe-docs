@@ -1,3 +1,9 @@
+---
+linkTitle: "- Query Method"
+weight: 19
+title: Query Method
+description: JPA 모듈은 문자열로 쿼리를 정의하거나 메서드에서 파생되어진 쿼리를 사용하는 방법을 지원한다.
+---
 # Query Method
 
 ## 설명

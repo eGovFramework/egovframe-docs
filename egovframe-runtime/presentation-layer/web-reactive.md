@@ -1,3 +1,9 @@
+---
+linkTitle: "Web Reactive"
+weight: 12
+title: 스프링 WebFlux와 기존 스프링 웹 프레임워크 비교
+description: 스프링 WebFlux는 5.0 버전부터 추가된 리액티브 스택 웹 프레임워크로, 서블릿 API와는 달리 완전한 논블로킹 동작과 Reactive Streams back pressure를 지원한다. 기존의 스프링 웹 MVC와 함께 스프링 프레임워크에 포함되어 있으며, Netty, Undertow 등 다양한 서버에서 실행될 수 있다.
+---
 # Web Reactive
 
 ## 개요
@@ -46,7 +52,7 @@ WebFlux는 핵심 종속성으로 Reactor를 필요로 하지만, 리액티브 �
 
 다음과 같은 구체적인 사항을 고려하는 것이 좋다.
 
-![image](./images/spring-mvc-and-webflux-venn.png)
+![image](../images/spring-mvc-and-webflux-venn.png)
 
 - 정상적으로 작동하는 스프링 MVC 애플리케이션이 있다면 변경할 필요가 없다. 명령형 프로그래밍은 코드를 작성하고, 이해하고, 디버깅하는 가장 쉬운 방법이다. 역사적으로 대부분의 라이브러리가 차단되어 있기 때문에 라이브러리 선택의 폭이 넓습니다.
 - 이미 논블로킹 웹 스택을 찾고 있다면, 스프링 WebFlux는 이 분야의 다른 제품과 동일한 실행 모델 이점을 제공하며 서버(Netty, Tomcat, Jetty, Undertow 및 Servlet 3.1+ 컨테이너), 프로그래밍 모델(Annotated Controllers and Functional Endpoints), 반응형 라이브러리(Reactor, RxJava 또는 기타) 선택도 제공한다.

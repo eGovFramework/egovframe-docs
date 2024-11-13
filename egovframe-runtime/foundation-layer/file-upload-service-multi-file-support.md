@@ -1,3 +1,9 @@
+---
+linkTitle: "\_\_- Multipart"
+weight: 34
+title: Spring mvc Multipart Multi file upload 지원 문제
+description: Spring MVC 2.5.5에서 동일한 이름의 여러 파일을 업로드할 때 발생하는 MultipartResolver 오류 문제를 설명한다.
+---
 # Spring mvc Multipart Multi file upload 지원 문제
 
 ## 개요

@@ -1,3 +1,9 @@
+---
+linkTitle: "MyBatis 적용 가이드"
+weight: 16
+title: MyBatis 적용 가이드
+description: 전자정부 표준프레임워크 기반 MyBatis 적용 가이드이다.
+---
 # MyBatis 적용 가이드
 
 ## 개요

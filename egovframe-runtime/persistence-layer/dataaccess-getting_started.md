@@ -1,3 +1,9 @@
+---
+linkTitle: "- 시작하기"
+weight: 12
+title: MyBatis 시작하기
+description: MyBatis 애플리케이션은 SqlSessionFactory 인스턴스를 사용하며, 이를 SqlSessionFactoryBuilder를 통해 XML 설정 파일에서 빌드할 수 있다. Resources 유틸 클래스를 사용하여 클래스패스 또는 다른 위치에서 자원을 쉽게 로드할 수 있다.
+---
 ## 시작하기
 
  모든 MyBatis 애플리케이션은 SqlSessionFactory 인스턴스를 사용한다. SqlSessionFactory 인스턴스는 SqlSessionFactoryBuilder 를 사용하여 만들 수 있다. SqlSessionFactoryBuilder 는 XML 설정파일에서 SqlSessionFactory 인스턴스를 빌드할 수 있다;

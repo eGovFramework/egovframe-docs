@@ -1,3 +1,9 @@
+---
+linkTitle: ORM
+weight: 25
+title: ORM 서비스
+description: ORM 서비스는 객체 모델링과 관계형 데이터 모델링의 불일치를 해결하기 위해 JPA와 Hibernate를 사용하며, DBMS 변경 시에도 설정 정보만 수정하면 코드 변경 없이 동작이 가능하다. Lazy Loading과 Cache 활용으로 성능을 향상시키며, Entity Class에 최소한의 Annotation을 사용해 매핑을 정의한다. SQL 처리 방식에 익숙한 개발자는 추가 학습이 필요할 수 있다.
+---
 # ORM 서비스
 
 ## 개요
@@ -13,7 +19,7 @@
 ## 설명
 ### 주요 개념
 
-<img src="./images/conceptua_architecture.jpg" align="left"/>
+<img src="../images/conceptua_architecture.jpg" align="left"/>
 
 옆의 그림에서 보는것과 같이 DBMS 기반의 어플리케이션 수행을 하기 위해 필요한 주요 구성 요소는 Entity, Persistence.xml 이며, 각각은 다음과 같은 역할을 수행한다.
 - [Entity](orm-entities.md): 어플리케이션 실행 여부와 상관없이 물리적으로 존재하는 데이터들을 다룬다. 일반적으로 DBMS 데이터를 이용하는 어플리케이션을 개발할 경우 어플리케이션의 비즈니스 레이어에서 특정 DBMS에 맞는 SQL을 통해 어플리케이션의 데이터를 처리하게 된다. 그러나 JPA 기반의 어플리케이션에서는 Entity를 중심으로 하여 어플리케이션의 데이터와 DBMS 연동이 가능해진다. annotation 기반으로 매핑관련 사항도 Entity 클래스에서 정의할 수 있어서 별도의 파일없이 테이블과의 관계를 표현할 수 있다.
@@ -193,3 +199,6 @@ public void testDepartment() throws Exception {
 1. [Fetch Strategy](./orm-fetch_strategy./md)
 1. [Spring Integration](./orm-spring_integration.md)
 1. [JPA Configuration](./orm-jpa_configuration.md)
+
+## 예제
+[ORM 예제](../../runtime-example/individual-example/persistence-layer/orm-example.md)

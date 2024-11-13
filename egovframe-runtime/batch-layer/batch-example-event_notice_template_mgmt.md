@@ -183,7 +183,7 @@ public class EgovEventNoticeTriggerFunctionalTests extends EgovAbstractIoSampleT
 ### 결과 확인
 이 예제의 테스트 결과는 배치수행 결과만 반영하므로, 이벤트알림의 성공여부는 실제 메일계정에 접속하여 Email 수신여부로 판단한다.
 
-![eventnoticetrigger1](./images/eventnoticetrigger1.png)
+![eventnoticetrigger1](../images/eventnoticetrigger1.png)
 
 ## 참고자료
 - [이벤트알림 템플릿 관리](./batch-core-event_notice_template_mgmt.md)

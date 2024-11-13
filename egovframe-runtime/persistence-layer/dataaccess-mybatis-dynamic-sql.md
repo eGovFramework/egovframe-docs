@@ -1,3 +1,9 @@
+---
+linkTitle: "- Dynamic SQL"
+weight: 15
+title: Mapper Dynamic SQL
+description: MyBatis는 다양한 조건에 따라 동적으로 SQL을 생성할 수 있는 강력한 동적 SQL 기능을 제공하며, OGNL 기반의 표현식을 통해 유연하고 편리하게 사용할 수 있다. 이는 iBatis보다 간단하고 직관적인 방식으로 동적 SQL 처리를 가능하게 한다.
+---
 # Dynamic SQL
 
 일반적으로 JDBC API를 사용한 코딩에서 다양한 조건에 따라 다양한 형태의 쿼리의 실행이 필요한 경우가 존재하며 이에 MyBatis는 강력한 동적 SQL 언어를 제공한다.

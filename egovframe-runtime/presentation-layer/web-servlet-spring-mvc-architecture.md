@@ -1,3 +1,9 @@
+---
+linkTitle: "- MVC"
+weight: 2
+title: Spring MVC Architecture
+description: Spring MVC는 DispatcherServlet, HandlerMapping, Controller, ViewResolver 등 각 컴포넌트의 역할이 명확히 분리되어 있으며, 다양한 인터페이스와 구현 클래스를 제공해 유연한 선택이 가능하다. POJO 스타일의 클래스 작성으로 비즈니스 로직에 집중할 수 있으며, 웹 요청 파라미터와 커맨드 클래스 간 데이터 매핑, 데이터 검증, 오류 처리 기능을 지원한다. 또한 JSP 폼 구성을 위한 태그 라이브러리도 제공한다.
+---
 # Spring MVC Architecture
 
 ## 개요
@@ -27,7 +33,7 @@ Spring MVC(Model-View-Controller)의 핵심 Component는 아래와 같다.
 
 이들 컴포넌트간의 관계와 흐름을 그림으로 나타내면 아래와 같다.
 
-![web-servlet--spring-mvc-architecture](./images/web-servlet--spring-mvc-architecture.png)
+![web-servlet--spring-mvc-architecture](../images/web-servlet--spring-mvc-architecture.png)
 
 1. Client의 요청이 들어오면 DispatchServlet이 가장 먼저 요청을 받는다.
 2. HandlerMapping이 요청에 해당하는 Controller를 return한다.

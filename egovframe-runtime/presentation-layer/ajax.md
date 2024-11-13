@@ -1,3 +1,9 @@
+---
+linkTitle: "Ajax 지원"
+weight: 18
+title: Ajax 지원 서비스
+description: Ajax 지원 서비스는 J2EE 개발자가 쉽게 Ajax 기능을 구현할 수 있도록 AjaxTags 라이브러리를 기반으로 제공하며, 자주 사용하는 기능을 커스텀 태그 형태로 제공한다. 주요 기능으로는 자동완성, 연동된 셀렉트박스, 탭 패널 등이 있으며, 이를 위해 JSP 설정과 Controller에서 AjaxXmlBuilder로 데이터를 가공하여 처리한다.
+---
 # Ajax 지원 서비스
 
 ## 개요
@@ -207,7 +213,7 @@ public class AjaxXmlView extends AbstractView {
 사원 정보 조회 페이지에서, 조회 조건중에 하나인 이름 필드에 자동완성기능(autocomplete)을 적용해 보자.
 검색하려는 이름을 입력하기 시작하면, 입력값에 해당하는 prefix를 가진 이름들이 추천 리스트로 나온다.
 
-![ajax-autocomplete-sample](./images/ajax-autocomplete-sample.png)
+![ajax-autocomplete-sample](../images/ajax-autocomplete-sample.png)
 
 **JSP**
 
@@ -305,7 +311,7 @@ UTF-8 인코딩을 한다면, `<Connector/>` 태그에 URIEncoding=“utf-8”�
 상위 부서 정보 select box에서 한 부서를 선택하면, 하위 부서 정보 select box는 해당 상위 부서에 속한 하위 부서 정보들로 옵션을 구성한다.
 
 
-![ajax-select-sample](./images/ajax-select-sample.png)
+![ajax-select-sample](../images/ajax-select-sample.png)
 
 **JSP**
 
@@ -354,7 +360,7 @@ UTF-8 인코딩을 한다면, `<Connector/>` 태그에 URIEncoding=“utf-8”�
 
 부서정보 페이지에서 각 상위부서에 속한 하위부서리스트를 보여줄때, tab으로 처리해서 보여준다.
 
-![ajax-tabpanel-sample](./images/ajax-tabpanel-sample.png)
+![ajax-tabpanel-sample](../images/ajax-tabpanel-sample.png)
 
 
 **JSP**

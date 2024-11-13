@@ -1,3 +1,9 @@
+---
+linkTitle: "모바일 UX/UI"
+weight: 30
+title: UX/UI Controller Component
+description: 전자정부는 스마트 전자정부 기반 시스템 구축을 위해 UI/UX Controller Component, HTML5, CSS3, JavaScript Module App Framework를 활용하며, jQuery Mobile을 오픈소스로 채택하여 이를 커스터마이징한다. UI 레이어에서는 터치 최적화된 UI 컨트롤러 컴포넌트와 모바일 특화 HTML5 태그, CSS3를 통해 유연한 사용자 환경을 제공하며, JavaScript와 JSON 구조로 효율적인 UX/UI 컨트롤을 지원한다.
+---
 # UX/UI Controller Component
 
 ## 개요
@@ -132,15 +138,15 @@ jQuery Mobile 은 하나의 페이지를 \<div data-role=“page”> 단위로 �
 
 **테스트 디바이스**
 
-![img_test_device](./images/img_test_device_wbg.png)
+![img_test_device](../images/img_test_device_wbg.png)
 
 **테스트 브라우저**
 
-![test_browser](./images/test_browser.png)
+![test_browser](../images/test_browser.png)
 
 **모바일 표준프레임워크 사용자경험(UX)지원 브라우저 내용**
 
-![table_support](./images/table_support.png)
+![table_support](../images/table_support.png)
 
 ## 참고자료
 [모바일 실행환경 사용자경험(UX)지원기능 가이드](http://m.egovframe.go.kr/mguide3.5/)

@@ -118,7 +118,7 @@ public class EgovDelegatingJobFunctionalTests {
 ### 결과 확인
 콘솔창의 로그를 통해 배치 작업시 기존업무를 재사용한 결과를 확인할 수 있다.
 
-![delegate_output](./images/delegate_output.png)
+![delegate_output](../images/delegate_output.png)
 
 ## 참고자료
 - [http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#reusingExistingServices](http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#reusingExistingServices)

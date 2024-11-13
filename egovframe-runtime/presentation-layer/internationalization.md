@@ -1,3 +1,9 @@
+---
+linkTitle: "Internationalization"
+weight: 19
+title: Internationalization(국제화)
+description: Spring MVC는 Cookie, Session, AcceptHeader를 이용한 LocaleResolver를 제공하며, 다국어 메시지는 ResourceBundleMessageSource를 통해 관리된다. 사용자는 LocaleChangeInterceptor를 통해 언어를 변경하고, JSP에서 `<spring:message>` 태그로 해당 언어에 맞는 메시지를 표시할 수 있다.
+---
 # Internationalization(국제화)
  
 ## 개요
@@ -237,7 +243,7 @@ SessionLocaleResolver 를 이용하여 위와 같이 하였을 경우 Locale 결
 http://localhost:8080/sample-web/sale/listCategory.do?language=ko
 ```
 
-![internationalization-ko](./images/internationalization-ko-sample.png)
+![internationalization-ko](../images/internationalization-ko-sample.png)
 
 영어인 경우 :
 
@@ -245,14 +251,14 @@ http://localhost:8080/sample-web/sale/listCategory.do?language=ko
 http://localhost:8080/sample-web/sale/listCategory.do?language=en
 ```
 
-![internationalization-en](./images/internationalization-en-sample.png)
+![internationalization-en](../images/internationalization-en-sample.png)
 
 
 **Java 소스내에서 locale 적용 메시지 가져오기**
 
 참고로 MessageSource 는 아래와 같은 메소드로 이루어져 있다.(실제로 여기서의 구현체는 ResourceBundleMessageSource 임.)
 
-![internationalization-locale](./images/internationalization-locale.png)
+![internationalization-locale](../images/internationalization-locale.png)
 
 ```java
 String msg = messageSource.getMessage(messageKey, messageParameters,	defaultMessage, locale);

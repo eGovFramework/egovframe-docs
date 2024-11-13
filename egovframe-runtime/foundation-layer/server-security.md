@@ -1,3 +1,9 @@
+---
+linkTitle: Server Security
+weight: 1
+title: Server Security Service
+description: Server Security Service는 Spring Security를 확장하여 사용자 인증과 권한 관리를 DB 기반으로 처리하며, 세션 관리도 지원한다. Spring Security는 인증, 권한 처리, 웹 및 서비스 레이어 보안을 제공하는 강력한 솔루션이지만 사용자 관리와 역할 관리에서 일부 취약점을 가진다. 표준프레임워크 3.0에서는 설정 간소화 기능과 Map 기반 UserDetails로 손쉬운 사용자 정보 관리가 가능해졌으며, 업그레이드 가이드를 통해 최신 보안 기능을 적용할 수 있다.
+---
 # Server Security Service
 
 ## 개요

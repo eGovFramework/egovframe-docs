@@ -1,3 +1,9 @@
+---
+linkTitle: "- Entity Operation"
+weight: 27
+title: Entity Operation
+description: ORM서비스를 이용하여 특정 DB에 데이터를 입력, 수정, 조회, 삭제, 배치입력하는 방법에 대해 알아보도록 한다.
+---
 # Entity Operation
 ORM서비스를 이용하여 특정 DB에 데이터를 입력, 수정, 조회, 삭제, 배치입력하는 방법에 대해 알아보도록 한다.
 

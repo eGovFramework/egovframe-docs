@@ -116,7 +116,7 @@ public class EgovRestartFileSampleFunctionalTests {
 ### 결과 확인
 JobExecution을 살펴보면, failed된 Job을 restart하여 Complited된 결과를 확인할 수 있다.
 
-![restart_jobdata](./images/restart_jobdata.png)
+![restart_jobdata](../images/restart_jobdata.png)
 
 ## 참고자료
 - [restart를 위한 Step 설정](./brte-batch-core-step.md)

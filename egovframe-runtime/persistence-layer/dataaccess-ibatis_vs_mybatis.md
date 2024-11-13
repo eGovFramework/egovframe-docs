@@ -1,3 +1,9 @@
+---
+linkTitle: "- 주요 변경사항"
+weight: 11
+title: MyBatis 주요 변경점
+description: MyBatis는 iBatis에서 패키지 구조와 용어가 변경되었으며, com.ibatis.*에서 org.apache.ibatis.*로 패키지 구조가 바뀌고, 여러 구문 및 속성들이 통합 또는 대체되었다. 예를 들어, sqlMap은 mapper로, parameterClass는 parameterType으로 변경되었다.
+---
 # MyBatis 주요 변경점
 
  본 가이드는 MyBatis와 iBatis의 차이점을 설명한다.

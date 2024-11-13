@@ -1,3 +1,9 @@
+---
+linkTitle: "\_\_- Tomcat 한글"
+weight: 36
+title: Tomcat 한글 설정하기
+description: Tomcat에서 문자셋 인코딩을 하여 한글이 깨지는 문제를 해결할 수 있다.
+---
 # Tomcat 한글 설정하기
 
 ## 개요

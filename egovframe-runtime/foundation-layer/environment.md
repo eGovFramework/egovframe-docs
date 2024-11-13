@@ -1,3 +1,9 @@
+---
+linkTitle: "Environment"
+weight: 18
+title: Environment
+description: 표준프레임워크 3.0부터 Spring 3.1의 Environment 인터페이스를 통해 Profile과 Property에 접근할 수 있다.
+---
 # Environment
 
 ## 개요

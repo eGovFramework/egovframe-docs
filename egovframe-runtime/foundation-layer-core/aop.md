@@ -1,3 +1,9 @@
+---
+linkTitle: AOP
+weight: 17
+title: "AOP 서비스"
+description: "AOP 서비스는 관점지향 프로그래밍(AOP)을 구현하며, 실행환경에서는 Spring AOP를 사용한다. 이 장에서는 AOP의 개요와 Spring의 AOP 지원에 대해 설명한다."
+---
 # AOP 서비스
 
 ## 개요
@@ -18,11 +24,11 @@
 
 다음 그림은 객체지향 프로그래밍 개발에서 핵심 관심사와 횡단 관심사가 하나의 코드로 통합되어 개발된 사례를 보여준다.  
 
-![image](./images/egovframework-rte-fdl-aop_001.jpg)  
+![image](../images/egovframework-rte-fdl-aop_001.jpg)  
 
 객체지향 프로그래밍 코드에 AOP를 적용하면 다음 그림처럼 각 코드에 분산되어 있던 횡단 관심사는 관점으로 분리되어 정의된다. AOP는 엮기(Weaving)라는 방식을 이용하여 분리된 관점을 핵심 관심사와 엮는다.  
 
-![image](./images/egovframework-rte-fdl-aop_002.jpg)
+![image](../images/egovframework-rte-fdl-aop_002.jpg)
 
 ### AOP 주요 개념
 
@@ -40,7 +46,7 @@
 
 포인트컷은 결합점 집합을 의미한다. 포인트컷은 어떤 결합점을 사용할 것이지를 결정하기 위해 패턴 매칭을 이용하여 룰을 정의한다. 다음 그림은 Spring 2.5에 포함된 bean() 포인트컷을 이용하여 종적 및 횡적으로 빈을 선택하는 예제를 보여준다.
 
-![image](./images/egovframework-rte-fdl-aop_003.jpg)  
+![image](../images/egovframework-rte-fdl-aop_003.jpg)  
 
 #### 충고(Advice)
 
@@ -76,13 +82,13 @@
 
  스프링은 프록시 기반의 런타임 Weaving 방식을 지원한다. 스프링은 AOP 구현을 위해 다음 세가지 방식을 제공한다. 이 중 @AspectJ 어노테이션과 XML 스키마를 이용한 AOP 방식을 상세히 살펴본다.
 
-- [@AspectJ 어노테이션을 이용한 AOP 구현](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:aop:aspectj)
-- [XML Schema를 이용한 AOP 구현](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:aop:xmlschema)
+- [@AspectJ 어노테이션을 이용한 AOP 구현](./aop-aspectj.md)
+- [XML Schema를 이용한 AOP 구현](./aop-xmlschema.md)
 - 스프링 API를 이용한 AOP 구현
 
 ### 실행환경 AOP 가이드라인
 
- \* [실행환경 AOP 가이드라인](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:aop:egovrteaopguide)
+ \* [실행환경 AOP 가이드라인](./aop-guide.md)
 
 ## 참고자료
 

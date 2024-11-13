@@ -136,11 +136,11 @@ public abstract class EgovAbstractIoSampleTests {
 ### 결과 확인
 1.DB의 cursor 처리는 콘솔로그의 쿼리를 통해 확인할 수 있다. reader가 DB로 부터 데이터를 읽을 때 하나의 데이터를 읽어온다.
 
-![jdbccursor](./images/jdbccursor.png)
+![jdbccursor](../images/jdbccursor.png)
 
 2.DB의 Customer 테이블의 credit의 값을 살펴보면 Job이 실행되면서 수정된 것을 확인 할 수 있다.
 
-![jdbccursor_data](./images/jdbccursor_data.png)
+![jdbccursor_data](../images/jdbccursor_data.png)
 
 ## 참고자료
 - [JDBCCursorItemReader](./batch-core-item_reader.md)

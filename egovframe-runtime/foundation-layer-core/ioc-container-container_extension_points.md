@@ -1,3 +1,9 @@
+---
+linkTitle: "- Extension"
+weight: 8
+title: "Container Extension Points"
+description: Spring Framework의 IoC 컴포넌트는 확장을 염두에 두고 설계되었다. 일반적으로 개발자가 BeanFactory나 ApplicationContext 구현 클래스를 상속받을 필요는 없으며, Spring IoC Container는 통합 인터페이스의 구현체를 통해 확장할 수 있다.
+---
 # Container extension points
 
 ## 개요

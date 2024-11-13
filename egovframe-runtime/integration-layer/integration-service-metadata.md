@@ -1,3 +1,9 @@
+---
+linkTitle: "- Metadata"
+weight: 3
+title: Integration 서비스 Metadata
+description: Integration 서비스 Metadata는 연계에 필요한 정보를 정의하며, API 사용에 앞서 연계등록정보와 기관, 시스템, 서비스 등의 메타데이터를 이해하는 것이 중요하다. 실제 연계 Adaptor 사용법은 연계 서비스 API에서 설명된다.
+---
 # Metadata
 
 ## 개요
@@ -17,7 +23,7 @@ Integration 서비스 Metadata의 논리ERD 및 Entity 설명은 다음과 같�
 
 - ERD의 Entity attribute의 Notation은 `"<name> : <data type> <domain>"` 이다.
 
-![Metadata Logical ERD](./images/metadata_logical_erd.png)
+![Metadata Logical ERD](../images/metadata_logical_erd.png)
 
 | <center>Entity</center> | <center>설명</center> |
 | --- | --- |
@@ -440,7 +446,7 @@ Integration 서비스 Metadata의 물리ERD 및 Table 설명은 다음과 같다
 
 - 물리ERD의 경우, 각 연계 Adaptor 또는 연계 솔루션, 또는 시스템에 따라 사용하는 DB가 달라지므로 Data Type 등이 변경될 수 있다.
 
-![Metadata Physical ERD](./images/metadata_physical_erd.png)
+![Metadata Physical ERD](../images/metadata_physical_erd.png)
 
 | <center>Table</center> | <center>Entity</center> | <center>설명</center> |
 | --- | --- | --- |
@@ -995,7 +1001,7 @@ Integration 서비스의 Metadata를 읽어오기 위한 Java Class를 정의하
 
 #### ClassDiagram
 
-![ClassDiagram](./images/integration_service_metadata_vo_classdiagram_2.png)
+![ClassDiagram](../images/integration_service_metadata_vo_classdiagram_2.png)
 
 ### ID 체계
 

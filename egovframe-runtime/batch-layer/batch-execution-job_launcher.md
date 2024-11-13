@@ -29,12 +29,12 @@ JobLauncher는 taskExecutor 설정을 통해 Job을 동기적, 혹은 비동기�
 
 - 동기
   
-![image](./images/joblauncher_sync.png)
+![image](../images/joblauncher_sync.png)
 
 위의 흐름은 간단하며 스케줄러에서 실행하면 잘 동작하지만, HTTP 요청에서 시작하려고 할 때 문제가 발생한다. 배치 작업의 특성상 처리시간이 오래 걸리는 작업이 많을 것이고,그 작업시간동안 <Acronym title="Hyper Text Transfer Protocol">HTTP</Acronym> 응답을 계속 기다리는 것은 좋지 않다. 이 경우에는 아래와 같이 SimpleJobLauncher가 Client에게 즉시 JobExecution을 반환하는 비동기식 동작 방법이 필요하다.
 - 비동기
 
-![image](./images/joblauncher_async.png)
+![image](../images/joblauncher_async.png)
 
 JobLauncher 설정에서 SimpleAsyncTaskExecutor클래스를 통해 비동기로도 쉽게 설정할 수 있다.
 

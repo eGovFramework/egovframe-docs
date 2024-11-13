@@ -1,3 +1,9 @@
+---
+linkTitle: "- resultMap"
+weight: 8
+title: resultMap
+description: resultMap은 SQL 결과를 Java 객체의 속성에 어떻게 매핑할지 상세하게 제어할 수 있는 매핑 요소로, 칼럼 타입 지정, null 값 대체, 타입 핸들러 처리, 복합 객체 매핑 등을 지원한다. 이는 자동 매핑 방식보다 더 복잡한 매핑을 처리할 수 있어 많이 사용된다.
+---
 # resultMap
 
  resultMap 은 SQL 문 외부에 정의한 매핑 요소로, result set 으로부터 어떻게 데이터를 뽑아낼지, 어떤 칼럼을 어떤 property로 매핑할지에 대한 상세한 제어를 가능케 해준다. resultMap 은 일반적으로 가장 많이 사용되는 중요한 매핑 요소로 resultClass 속성을 이용한 자동 매핑 접근법에 비교하여 칼럼 타입의 지시, null value 대체값, typeHandler 처리, complex property 매핑(다른 JavaBean, Collections 등을 포함하는 복합 객체) 등을 허용한다.

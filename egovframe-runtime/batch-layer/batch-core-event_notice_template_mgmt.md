@@ -21,7 +21,7 @@ EgovEventNoticeTrigger 클래스는 EventNoticeTrigger 인터페이스를 상속
 
 사용자는 EgovEventNoticeTrigger 를 상속받아 각각의 파라메터 타입별로 재정의하여 사용한다.
 
-![eventnotice_interface](./images/eventnotice_interface.png)
+![eventnotice_interface](../images/eventnotice_interface.png)
 
 #### 설정
 '프로세서(리스너) 설정' 부분과 '트리거 설정' 부분으로 나뉜다.

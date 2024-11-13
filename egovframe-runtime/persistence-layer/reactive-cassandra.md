@@ -1,3 +1,9 @@
+---
+linkTitle: "- Cassandra"
+weight: 42
+title: Cassandra
+description: Spring Data Cassandra는 Cassandra 데이터베이스와의 연동을 위한 고수준 추상화 템플릿을 제공하며, Spring의 JDBC 지원 방식과 유사하다. 비동기적인 상호 작용을 위해 DefaultBridgedReactiveSession 클래스를 사용하여 Cassandra 클러스터에 연결하고, 비동기 쿼리를 실행 및 관리할 수 있다.
+---
 # Cassandra
 
 ## 개요

@@ -1,3 +1,9 @@
+---
+linkTitle: "- Generic"
+weight: 16
+title: Generic
+description: Spring 4 이상에서는 Autowired 및 Qualifier를 보완하여 제네릭(Generic) 타입의 의존성 주입을 지원한다.
+---
 # Generic
 
 ## 개요

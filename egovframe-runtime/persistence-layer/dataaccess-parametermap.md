@@ -1,3 +1,9 @@
+---
+linkTitle: "- parameterMap"
+weight: 6
+title: iBATIS parameterMap
+description: parameterMap은 Java 객체의 속성에 대한 매핑을 설정하여 SQL 바인드 변수를 처리하는 요소로, 기술적인 매핑이 필요한 경우에 사용되지만, Dynamic 요소와 함께 사용할 수 없고 바인드 변수의 순서를 맞춰야 하는 제한이 있어 일반적으로 추천되지 않는다. 대신 parameterClass나 Inline Parameter 방식이 더 자주 사용된다.
+---
 # parameterMap
 
  parameterMap 은 해당 요소로 SQL 문 외부에 정의한 입력 객체의 속성에 대한 name 및 javaType, jdbcType 을 비롯한 옵션을 설정할 수 있는 매핑 요소이다. 이를 통해 JavaBeans 객체(또는 Map 등)에 대한 prepared statement 에 대한 바인드 변수 매핑을 처리할 수 있다. 유사한 기능을 처리하는 parameterClass 나 Inline Parameter 에 비해 많이 사용되지 않지만 더 기술적인(descriptive) parameterMap(예를 들어 stored procedure 를 위한) 이 필요하거나, XML 의 일관된 사용과 순수성을 지키고자 할때 좋은 접근법이 될 수도 있다. 그러나 Dynamic 요소와 함께 사용될 수 없고 바인드 변수의 갯수와 순서를 정확히 맞춰야 하는 불편이 있는 등 일반적으로 사용을 추천하지 않는다.

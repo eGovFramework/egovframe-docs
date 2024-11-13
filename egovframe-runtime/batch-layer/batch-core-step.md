@@ -9,7 +9,7 @@ Step은 Job 내부에 구성되어 실제 배치작업 수행을 위해 작업�
 Step은 Job의 독립적이고 순차적 단계를 캡슐화하는 도메인 객체다. 그러므로 모든 Job은 적어도 하나 이상의 Step으로 구성되며 Step에 실제 배치작업을 처리하고 제어하기 위해 필요한 모든 정보가 포함된다.
 여러개의 Step 중 하나의 Step은 순차적으로 실행되는 과정 중 하나의 흐름으로 생각할 수 있다. Step에는 JobExecution에 대응되는 StepExecution이 있다.
 
-![step-structure](./images/step-structure.png)
+![step-structure](../images/step-structure.png)
 
 ### Step 유형
 
@@ -40,7 +40,7 @@ Chunk 기반 처리는 스프링 배치에서 가장 일반적으로 사용하�
 
 Chunk 단위로 Item 읽기 → 처리/변환 → 쓰기의 단계를 거치는 Chunk 기반 처리 매커니즘은 다음과 같다
 
-![chunk-oriendted-step](./images/chunk-oriendted-step.png)
+![chunk-oriendted-step](../images/chunk-oriendted-step.png)
 
 아래 코드는 위의 그림과 같은 개념의 코드이다.
 
@@ -103,7 +103,7 @@ JobExecution과 마찬가지로 StepExecution은 Step을 수행하기 위한 단
 
 ✔ StepExecution 4번이 FAILED로 종료 됐으므로 StepExecution 3번, 4번을 포함한 JobExecution 2번은 FAILED로 종료한다.(Step이 모두 정상적으로 완료해야 Step으로 구성된 Job이 정상적으로 완료된다.)
 
-![stepexecution-description](./images/stepexecution-description.png)
+![stepexecution-description](../images/stepexecution-description.png)
 
 위의 그림을 정리해보면 아래와 같다.
 

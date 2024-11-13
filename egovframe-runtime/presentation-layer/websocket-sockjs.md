@@ -1,3 +1,9 @@
+---
+linkTitle: "- SockJS"
+weight: 28
+title: SockJS Fallback Options
+description: Spring은 WebSocket이 지원되지 않는 환경에서 SockJS 프로토콜을 사용해 WebSocket API를 에뮬레이션하는 fallback 옵션을 제공한다.
+---
 # SockJS Fallback Options
 
 [http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html#websocket-fallback](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html#websocket-fallback)

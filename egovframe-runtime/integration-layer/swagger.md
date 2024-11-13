@@ -1,3 +1,9 @@
+---
+linkTitle: "Swagger"
+weight: 8
+title: Swagger
+description: Swagger는 Restful 서비스의 문서화를 자동으로 지원하는 도구로, API 서버의 스펙과 주고받는 데이터를 명확하게 문서화할 수 있다. 수동으로 문서를 작성하고 유지보수하는 데 드는 시간과 비용을 줄여주며, API 스펙 변경 시 문서도 자동으로 업데이트된다. 이를 통해 Restful 서비스의 문서 작성과 유지보수를 효율적으로 관리할 수 있다.
+---
 # Swagger
 
 ## 개요
@@ -17,26 +23,26 @@ Swagger는 이러한 Restful서비스의 문서작성과 유지보수에 대한 
 
 #### 간단한 설정으로 Swagger UI를 구동시킬수 있다.
 
-![Swagger Intro01](./images/swagger_intro_01.png)
+![Swagger Intro01](../images/swagger_intro_01.png)
 
 #### 그룹별로 정리할수 있으며 간단한 정보를 안내할수 있다.
 
 그룹별로 정리되기 위해서는 URL경로가 업무별로 구분가능하고 정리되어 있어야 한다.<br/>
 해당 서비스에 대해 기본적인 정보를 안내할수 있다.
 
-![Swagger Intro02](./images/swagger_intro_02.png)
+![Swagger Intro02](../images/swagger_intro_02.png)
 
 #### UI에서 전문의 각항목의 정의명을 표시해 줄수 있다.
 
-![Swagger Definition](./images/swagger_def_01.png)
+![Swagger Definition](../images/swagger_def_01.png)
 
 #### UI에서 테스트를 수행할수 있다. 각 항목의 입력은 물론 파일 업로드까지 테스트가 가능하다.
 
-![Swagger Test01](./images/swagger_test_01.png)
+![Swagger Test01](../images/swagger_test_01.png)
 
 #### 테스트 결과가 UI에서 즉시 표시된다.
 
-![Swagger Test02](./images/swagger_test_02.png)
+![Swagger Test02](../images/swagger_test_02.png)
 
 ## 설정방법
 

@@ -1,3 +1,9 @@
+---
+linkTitle: "- Data Type"
+weight: 5
+title: iBATIS에서의 Data Type 매핑
+description: Java 애플리케이션에서 데이터베이스와 상호작용할 때, Java 타입과 DBMS의 JDBC 타입 간의 정확한 매핑이 중요하다. iBATIS는 JavaBeans 객체의 속성과 DB 테이블의 컬럼 타입을 매핑하여 데이터 바인딩 및 매핑을 처리하며, 이를 통해 다양한 데이터 타입에 대한 적절한 사용 방법을 제공한다.
+---
 # Data Type
 
  어플리케이션을 작성할 때 Data Type 에 대한 올바른 사용과 관련 처리는 매우 중요하다. 특히 데이터베이스를 이용하여 데이터를 저장하고 조회할 때 Java 어플리케이션에서의 Type 과 DBMS 에서 지원하는 관련 매핑 jdbc Type 의 정확한 사용이 필요하며, 여기에서는 iBATIS 환경에서 javaType 과 특정 DBMS 의 jdbcType 의 적절한 매핑 사용예를 중심으로 일반적인 Data Type 의 사용 가이드를 참고할 수 있도록 한다.

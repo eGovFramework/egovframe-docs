@@ -1,3 +1,9 @@
+---
+linkTitle: "- API"
+weight: 4
+title: 연계 서비스 API
+description: 연계 서비스 API는 연계 서비스를 사용 및 제공하기 위한 interface를 제공한다.
+---
 # 연계 서비스 API
 
 ## 개요
@@ -10,7 +16,7 @@
 
 연계 서비스 API는 다음과 같이 구성된다.
 
-![Integration Service Api ClassDiagram](./images/integration_service_api_classdiagram_2.png)
+![Integration Service Api ClassDiagram](../images/integration_service_api_classdiagram_2.png)
 
 | <center>구성요소</center> | <center>설명</center> |
 | --- | --- |
@@ -346,7 +352,7 @@ EgovIntegrationService를 동기화 방식의 호출과 비동시화 방식의 �
 
 EgovIntegrationService의 sendSync 메소드는 동기화 방식으로 연계 서비스를 호출한다.
 
-![Integration Service API SequenceDiagram SendSync](./images/integration_service_api_sequencediagram_sendsync.png)
+![Integration Service API SequenceDiagram SendSync](../images/integration_service_api_sequencediagram_sendsync.png)
 
 ```java
 ...
@@ -392,7 +398,7 @@ EgovIntegrationService의 sendAsync 메소드는 비동기화 방식으로 연�
 
 EgovIntegrationServiceResponse를 이용한 비동기 호출 방식이다. Response 방식의 비동기 호출은 연계 서비스를 요청하는 업무 모듈에 응답에 대한 ownership를 가지고 있으며, 응답 결과를 스스로 처리해야 하는 경우 사용한다.
 
-![Integration Service API SequenceDiagram SendAsync With Response](./images/integration_service_api_sequencediagram_sendasync_with_response.png)
+![Integration Service API SequenceDiagram SendAsync With Response](../images/integration_service_api_sequencediagram_sendasync_with_response.png)
 
 ```java
 ...
@@ -438,7 +444,7 @@ EgovIntegrationContext 또는 Metadata의 연계등록정보에 등록된 defaul
 
 EgovIntegrationServiceCallback를 이용한 비동기 호출 방식이다. Callback 방식의 비동기 호출은 연계 서비스를 요청하는 업무 모듈은 단지 요청만을 수행하고, 응답에 대한 처리는 Callback 객체에게 위임해도 상관없은 경우 사용한다.
 
-![Integration Service API SequenceDiagram SendAsync With Callback](./images/integration_service_api_sequencediagram_sendasync_with_callback.png)
+![Integration Service API SequenceDiagram SendAsync With Callback](../images/integration_service_api_sequencediagram_sendasync_with_callback.png)
 
 ```java
 ...

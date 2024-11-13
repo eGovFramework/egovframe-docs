@@ -1,3 +1,9 @@
+---
+linkTitle: "- AOP XML"
+weight: 19
+title: XML 스키마 기반 AOP 지원
+description: "Java 5 버전을 사용할 수 없거나 XML 기반 설정을 선호하는 경우, Spring 2.0 이상에서는 XML 스키마 기반 AOP를 사용할 수 있으며, `aop` 네임스페이스를 제공한다. 이 방식에서도 @AspectJ AOP에서 사용된 포인트컷 표현식과 충고(Advice) 유형을 동일하게 사용할 수 있다."
+---
 # XML 스키마 기반 AOP 지원
 
 ## 개요

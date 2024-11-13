@@ -1,3 +1,9 @@
+---
+linkTitle: "- 암복호화 서비스"
+weight: 26
+title: Encryption/Decryption Service
+description: 암호화는 평문을 암호문으로 변환해 메시지를 보호하며, 복호화는 이를 다시 평문으로 복원하는 과정으로, 암호계는 관용암호와 공개키 시스템으로 구분된다.
+---
 # Encryption/Decryption Service
 
 ## 개요
@@ -82,7 +88,7 @@ Jasypt는 외부로 부터 공격받을 수 있는 데이타베이스 암호나 
 3. Hash function은 salt와 메시지 전체에 적용되고, function 결과들은 명시한 iterations 만큼 반복된다.
 4. 랜덤으로 salt를 생성하면 undigested salt는 hash 결과 시작부분에 덧붙여진다.
 
-![alt text](./images/crypto-encryption-decryption-jasypts-Standard.png)
+![alt text](../images/crypto-encryption-decryption-jasypts-Standard.png)
 
 #### Encrypting numbers
 

@@ -1,3 +1,9 @@
+---
+linkTitle: Web Servlet
+weight: 1
+title: MVC 패턴의 구조와 장점
+description: MVC 패턴은 애플리케이션의 기능을 Model, View, Controller로 분리하여 UI 코드와 비즈니스 로직의 종속성을 줄이고, 재사용성과 변경 용이성을 높인다. 표준프레임워크에서 "MVC 서비스"는 이 패턴을 활용한 Web MVC Framework를 의미한다.
+---
 # Web Servlet
 
 ## 개요
@@ -27,17 +33,17 @@ MVC 패턴이 Web Framework에만 사용되는 단어는 아니지만, 표준프
 ### Spring MVC
 Spring MVC에 대한 설명은 아래 상세 페이지를 참고하라.
 
-- [Spring MVC Architecture](web-servlet-spring-mvc-architecture.md)
-- [DispatcherServlet](web-servlet-dispatcherservlet.md)
-- [HandlerMapping](web-servlet-handlermapping.md)
-- [Controller](web-servlet-controller.md)
-- [Annotation-based Controller](web-servlet-annotation-based-controller.md)
-- [Validation](web-servlet-validation.md)
-- [Declarative Validation](web-servlet-declarative-validation.md)
-- [View](web-servlet-view.md)
+- [Spring MVC Architecture](./web-servlet-spring-mvc-architecture.md)
+- [DispatcherServlet](./web-servlet-dispatcherservlet.md)
+- [HandlerMapping](./web-servlet-handlermapping.md)
+- [Controller](./web-servlet-controller.md)
+- [Annotation-based Controller](./web-servlet-annotation-based-controller.md)
+- [Validation](./web-servlet-validation.md)
+- [Declarative Validation](./web-servlet-declarative-validation.md)
+- [View](./web-servlet-view.md)
 
 ### 예제 실행
-- [easycompany 설치 가이드](easycompany.md) : MVC와 Ajax Support, Security의 예제 코드인 easycompany 설치와 실행 방법을 가이드 한다.
+- [easycompany 설치 가이드](../../runtime-example/individual-example/presentation-layer/easycompany-example.md) : MVC와 Ajax Support, Security의 예제 코드인 easycompany 설치와 실행 방법을 가이드 한다.
 
 ## 참고 자료
 - 🌏 [SUN Java BluePrints, Model-View-Controller](https://web.archive.org/web/20090227080302/http://java.sun.com/blueprints/patterns/MVC-detailed.html)

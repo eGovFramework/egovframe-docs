@@ -8,32 +8,32 @@
 
 1. Package Explorer에서 오른쪽 마우스를 클릭하여 소스를 임포트한다.
 
-![](./images/사용자_지정_3.jpg)
+![](../images/사용자_지정_3.jpg)
 
 2. General>Existing Projects into Workspace를 선택하여 압축을 풀어놓은 폴더를 선택한다.
 
-![](./images/사용자_지정_4.jpg)
+![](../images/사용자_지정_4.jpg)
 
 3. 배치실행예제에서는 HSQL DB를 제공하고 있으며 runHsqlDB.cmd 파일을 실행시켜 DB를 기동시킨다.
 
 - egovframework.brte.example\database\db 폴더에서 오른쪽 마우스를 클릭하여 Path Tools>Commands Line Shell을 선택한다.
 
-![](./images/setup_cmd.png)
+![](../images/setup_cmd.png)
 
 - 명령프롬프트 창에 runHsqlDB를 입력하여 runHsqlDB.cmd 파일을 실행시킨다.
 
-![](./images/setup_cmd2.png)
+![](../images/setup_cmd2.png)
 
 ✔ Path Tools>Commands Line Shell을 선택할 수 없을 경우, 해당 프로젝트의 폴더에서 \database\db아래에 있는 runHsqlDB 파일을 클릭한다.
 
 ### HSQL외 DB 연결순서
 1. 임포트 된 소스에서 DB정보를 알맞게 바꿔준다. 위치:src/test/resources/egovframework/batch/properties/globals.properties
 
-![](./images/setup_dbproperty.png)
+![](../images/setup_dbproperty.png)
 
 2. src/script 폴더의 해당 DB의 script 파일을 참고하여 테이블을 생성하고 데이터를 추가한다.
 
-![](./images/setup_dbscript.png)
+![](../images/setup_dbscript.png)
 
 ### DB 연결시 주의사항
 altibase나 tibero 연결시에는 아래의 설정이 추가로 필요하다.

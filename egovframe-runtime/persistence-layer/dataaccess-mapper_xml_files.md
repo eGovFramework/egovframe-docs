@@ -1,3 +1,9 @@
+---
+linkTitle: "- Mapper XML Files"
+weight: 14
+title: Mapper XML Files
+description: MyBatis Mapper XML 파일은 SQL문을 정의하고, Parameter Object를 받아 SQL문을 실행하며, 그 결과를 Result Object에 자동으로 바인딩하는 기능을 제공한다. 이를 통해 SQL 실행과 데이터 매핑을 쉽게 처리할 수 있다.
+---
 # Mapper XML File
 
 MyBatis Mapper XML (SQL Mapping XML) File은 실행할 SQL문을 정의해놓은 파일로서,  

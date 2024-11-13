@@ -1,3 +1,9 @@
+---
+linkTitle: "- STOMP"
+weight: 27
+title: STOMP over WebSocket 개요 및 메시지 처리 흐름
+description: STOMP는 간단한 메시징 프로토콜로, Spring Framework에서 WebSocket과 결합해 메시지 전송 및 구독 기능을 제공한다. Spring WebSocket 설정을 통해 클라이언트와 서버 간의 메시지 흐름을 관리하며, 메시지를 처리하고 broadcasting하는 기능을 지원한다.
+---
 # STOMP Over WebSocket Messaging Architecture
 
 [http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html#websocket-stomp](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html#websocket-stomp)

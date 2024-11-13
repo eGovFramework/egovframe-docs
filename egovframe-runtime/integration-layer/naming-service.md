@@ -1,10 +1,16 @@
+---
+linkTitle: "Naming Service"
+weight: 1
+title: Naming 서비스
+description: Naming 서비스는 JNDI API를 통해 자원을 찾고, 다른 애플리케이션에서 사용할 수 있도록 Naming 서버에 자원을 등록 및 검색할 수 있도록 지원하는 서비스이다. 이를 통해 애플리케이션 간 자원 공유와 접근이 가능해진다.
+---
 # Naming Service
 
 ## 개요
 
  Naming 서비스는 Java Naming and Directory Interface(JNDI) API를 이용하여 자원(Resource)를 찾을 수 있도록 도와주는 서비스이다. Naming 서비스를 지원하는 Naming 서버에 자원을 등록하여 다른 어플리케이션에서 사용할 수 있도록 공개하고, Naming 서버에 등록되어 있는 자원을 찾아와서 이용할 수 있게 한다.
 
- ![Naming Service](./images/naming_service.png)
+ ![Naming Service](../images/naming_service.png)
 
 ## 주요 개념
 

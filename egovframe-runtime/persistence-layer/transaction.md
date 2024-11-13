@@ -1,3 +1,9 @@
+---
+linkTitle: "Transaction"
+weight: 36
+title: Transaction 서비스
+description: Spring 트랜잭션 서비스는 DataSource, JTA, JPA 트랜잭션 서비스를 지원하며, 트랜잭션 관리는 선언적 방식(Declarative)과 프로그래밍 방식(Programmatic)으로 수행할 수 있다. DataSource 트랜잭션 서비스는 로컬 트랜잭션 관리를 위한 설정 및 사용법을 제공한다.
+---
 # Transaction 서비스
 
 ## 개요

@@ -1,3 +1,9 @@
+---
+linkTitle: "- Validation Rule"
+weight: 22
+title: Commons Validator에 validation rule 추가하기
+description: Commons Validator는 기본적인 유형 외에도 프로젝트 특성에 맞는 공통 validation rule을 추가할 수 있다. 예제로 주민등록번호 검증기를 추가하여 validation rule을 확장하는 방법을 설명하며, 이를 easycompany 프로젝트에 적용했다.
+---
 # Commons Validator에 validation rule 추가하기
 
 ## 개요 
@@ -361,7 +367,7 @@ JSP(/easycompany/webapp/jsp/modifyemployee.jsp)에 주민등록번호 입력 필
 ```
 주민등록번호를 입력하지 않거나, 틀린번호를 입력시엔 아래와 같은 경고창이 뜬다.
 
-![ihidnum-validation](./images/ihidnum-validation.jpg)
+![ihidnum-validation](../images/ihidnum-validation.jpg)
 
 틀린 입력값으로 client를 통과하더라도 Controller에서 validation이 추가로 동작하므로, server-side에서 validation error가 일어날것이다.
 

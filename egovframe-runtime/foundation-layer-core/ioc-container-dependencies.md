@@ -1,3 +1,9 @@
+---
+linkTitle: "- Dependencies"
+weight: 3
+title: Dependencies
+description: 일반적인 엔터프라이즈 애플리케이션은 여러 객체가 협력하여 작동하며, Spring에서는 이러한 객체들을 각각 독립적인 빈으로 정의한다. Spring 프레임워크를 통해 독립적으로 정의된 빈들이 협업하여 애플리케이션의 목표를 달성하는 방법을 설명한다.
+---
 # Dependencies
 
 ## 개요

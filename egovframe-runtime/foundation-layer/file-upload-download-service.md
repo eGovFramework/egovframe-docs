@@ -1,3 +1,9 @@
+---
+linkTitle: "File Upload/Download"
+weight: 32
+title: File Upload/Download 서비스
+description: Commons FileUpload를 사용해 파일 업로드 API를 제공하며, 멀티 파일 업로드 문제와 해결 방법을 설명한다.
+---
 # File Upload/Download 서비스
 
 ## 개요
@@ -43,8 +49,9 @@ Spring에서 multipart를 사용한 파일 업로드에 대해서는 [Spring's m
 File Upload / Download 에 대한 설명은 아래 상세 페이지를 참고하라.
 
 - [File Upload](./file-upload-service.md)
+- [multipart multi file upload 지원 문제](./file-upload-service-multi-file-support.md)
 - [File Download](./file-download-service.md)
-- [multipart multi file upload 지원 문제](file-upload-service-multi-file-support.md)
+- [Tomcat에서 한글이 깨지는 문제 해결](./file-download-service-tomcat-encoding.md)
 
 ### 예제 Sample 실행
 
@@ -59,7 +66,7 @@ multiple files with a single file(한단 샘플)에서 사용한 JavaScript를 �
 
 **샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우저에서 실행되는 화면**
 
-![file-updown-service-sample-screenshot](./images/file-updown-service-sample-screenshot.png)
+![file-updown-service-sample-screenshot](../images/file-updown-service-sample-screenshot.png)
 
 ## 참고자료
 
@@ -72,3 +79,6 @@ multiple files with a single file(한단 샘플)에서 사용한 JavaScript를 �
 - [Spring's multipart (fileupload) support {parseFileItems}](http://static.springframework.org/spring/docs/2.5.x/api/org/springframework/web/multipart/commons/CommonsFileUploadSupport.html#parseFileItems(java.util.List,%20java.lang.String))
 - [commons.apache.org {fileupload}](http://commons.apache.org/fileupload/)
 - [commons.apache.org{empty-parse}](http://commons.apache.org/fileupload/faq.html#empty-parse)
+
+## 예제
+- [파일업로드 예제](../../runtime-example/individual-example/foundation-layer/file-upload-example.md)

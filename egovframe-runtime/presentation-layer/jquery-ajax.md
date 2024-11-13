@@ -1,3 +1,9 @@
+---
+linkTitle: "jQuery Ajax"
+weight: 25
+title: jQuery 가이드
+description: jQuery는 다양한 UI 기능과 AJAX 요청을 지원하는 JavaScript 라이브러리로, 이를 통해 이벤트 처리, 자동 완성, 탭 등의 기능을 쉽게 구현할 수 있다. AJAX 요청은 `$.ajax()`, `$.get()`, `$.post()`와 같은 메서드를 사용하여 서버와 데이터를 비동기적으로 통신하며, JSON과 같은 형식으로 데이터를 주고받을 수 있다.
+---
 # jQuery 가이드
 ## 개요
 jQuery는 브라우저 호환성이 있는 다양한 기능을 제공하는 자바스크립트 라이브러리이다. jQuery에서 제공하는 오픈 라이브러리들을 통해 java script로 ajax, event, 다양한 ui 기능 등을 구현할 수 있으며 위키가이드에서는 jQuery의 기본적인 몇가지 기능(ajax, callback함수, post호출 등)에 대하여 살펴본다.
@@ -314,7 +320,7 @@ jQuery에서는 input창에서 예상되는 텍스트값을 보여주는 자동�
 
 위와 같이 했을 때 결과는 다음과 같다.
 
-![simpleautocomplete](./images/jquery-ajax-simpleautocomplete.png)
+![simpleautocomplete](../images/jquery-ajax-simpleautocomplete.png)
 
 minLength는 default값이 1이기 때문에 input에 1개이상의 문자를 입력했을 때 source의 String배열들이 자동문자리스트로 뜨게 된다.
 
@@ -394,7 +400,7 @@ FROM LOCATION
 ajax의 성공시 콜백함수인 success에서는 data.locations로 값을 꺼내 autocomplete의 source를 설정할 수 있다.</br>
 위와 같은 경우 결과 화면은 다음과 같다.
 
-![autocomplete02](./images/jquery-ajax-autocomplete02.png)
+![autocomplete02](../images/jquery-ajax-autocomplete02.png)
 
 
 2. Object array로 가져오는 경우
@@ -556,7 +562,7 @@ $("#combobox).change(function() {
 ajax함수가 실행되면서 simpleCombo.do를 통해 data를 가져오고 json값이 위와 같을 때 combobox를 구성하는 함수를 구현하여 combobox에 나오는 목록을 나타낼 수 있다.
 위의 결과는 다음과 같다.
 
-![selectbox](./images/jquery-ajax-selectbox.png)
+![selectbox](../images/jquery-ajax-selectbox.png)
 
 ## Tabs
 Tab 기본 구현하기
@@ -613,7 +619,7 @@ Tab을 구현하는 경우 기본 예제는 다음과 같다.
 
 위의 결과는 다음과 같다.
 
-![panel](./images/jquery-ajax-panel.png)
+![panel](../images/jquery-ajax-panel.png)
 
 - referenced [jquery ui site](https://jqueryui.com/tabs/#default)
 

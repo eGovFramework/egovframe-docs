@@ -1,3 +1,9 @@
+---
+linkTitle: "Spring Data - JPA"
+weight: 17
+title: Spring Data
+description: Spring Data는 관계형 및 비관계형 데이터베이스, map-reduce 프레임워크, 클라우드 기반 데이터 서비스 등 다양한 데이터 액세스 기술을 쉽게 사용할 수 있도록 지원하는 오픈 소스 프로젝트이다. 이를 통해 새로운 데이터 기술뿐만 아니라 관계형 데이터베이스에 대한 향상된 지원도 제공한다.
+---
 # Spring Data
 
 Spring Data는 데이터베이스 관련 많은 하위 프로젝트를 포함하는 오픈 소스 프로젝트로, non-relational databases, map-reduce frameworks, and cloud based data services 등의 새로운 데이터 액세스 기술을 보다 쉽게 사용 할 수 있는 기능을 제공한다. 또한 관계형 데이터베이스 기술에 대한 향상된 지원도 제공한다.
