@@ -60,6 +60,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.auth_20241024 }} # 깃허브 actions secret
+        github_token: ${{ secrets.DOCS_ACTIONS_SECRET }} # 깃허브 actions secret
         publish_dir: ./public
         publish_branch: gh-pages
