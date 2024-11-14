@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>데이터처리 예제 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/</link><description>Recent content in 데이터처리 예제 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>데이터 엑세스 예제(Data Access Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</guid><description>&lt;h1 id="데이터-엑세스-예제data-access-example">데이터 엑세스 예제(Data Access Example)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>iBatis를 사용하여 Database에 데이터를 조회, 생성, 수정, 삭제하는 기능에 대한 예제를 제공한다. SQL Mapping을 통하여 쿼리 및 데이터 매핑을 정의하고, 스프링의 Data Source를 사용하여 Connection을 획득한 뒤, DAO 클래스에서 주어진 메소드를 사용하여 CRUD 작업을 수행한다. 조회 결과를 화면에 출력하거나 화면에서 작성된 입력 내용을 데이터베이스에 반영하는 기능의 예제를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;ol>
+&lt;li>해당 예제를 설치하고 실행하면 iBatis로 구현한 공시게시판이 나타난다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img alt="dataacess-1" src="../images/dataacess-1.png">&lt;/p>
+&lt;ol start="2">
+&lt;li>[등록] 버튼을 눌러 공시 등록페이지를 호출하고, 내용을 작성한다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img alt="dataacess-2" src="../images/dataacess-2.png">&lt;/p></description></item><item><title>ORM 예제(ORM Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/orm-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/orm-example/</guid><description>&lt;h1 id="orm-예제orm-example">ORM 예제(ORM Example)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Hibernate를 사용한 ORM 기능의 예제를 제공한다. 별도의 쿼리문을 정의하지 않고, 객체와 테이블간의 Mapping을 정의하여 순수 자바 코드를 사용하여 자료의 조회, 생성, 수정, 삭제를 수행하는 기능을 제공한다. 일반적인 게시판 형식의 예제이지만 Hibernate를 활용하여 데이터의 입출력이 어떻게 이루어지는지 확인할 수 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;ol>
+&lt;li>해당 예제를 설치하고 실행하면 Hibernate를 사용한 카테고리관리 페이지가 나타난다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img alt="orm1" src="../images/orm1.png">&lt;/p>
+&lt;ol start="2">
+&lt;li>[등록] 버튼을 눌러 카테고리 등록 페이지를 호출하여 카테고리를 등록 할 수 있다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img alt="orm2" src="../images/orm2.png">&lt;/p>
+&lt;ol start="3">
+&lt;li>등록된 카테고리코드를 클릭하여 카테고리를 수정하거나 삭제할 수 있다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img alt="orm3" src="../images/orm3.png">&lt;/p></description></item></channel></rss>
