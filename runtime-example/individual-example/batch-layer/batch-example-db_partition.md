@@ -1,5 +1,5 @@
 ---
-linkTitle: "- Ex-DbPartition"
+linkTitle: "- DbPartition"
 weight: 14
 title: DB 파티셔닝 예제
 description: DB 파티셔닝 예제에서 EgovColumnRangePartitioner를 사용해 지정된 gridSize만큼 Master Step을 파티셔닝하며, fileNameListener는 입력 리소스명을 기반으로 출력 리소스명을 설정한다. 입력 리소스가 없을 경우 기본값으로 출력 위치와 파일명을 지정한다.

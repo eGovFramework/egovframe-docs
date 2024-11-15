@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Skip
+linkTitle: Skip
 weight: 17
 title: 건너뛰기(Skip) 기능 예제
 description: 배치 수행 중, 데이터를 처리하는 과정에서 에러가 발생한 데이터를 건너뛰고 다음 데이터를 처리하는 기능을 보여주는 예제이다. EgovSkipSampleFunctionalTests 예제는 ItemReading,ItemProcessing, ItemWriting 에서 발생한 예외상황에 대해 정해진 설정대로 Skip을 수행되는 과정을 보여준다.

@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Runner
+linkTitle: Runner
 weight: 2
 title: 배치 Runner 예제
 description: 배치 수행에 사용되는 EgovBatchRunner의 사용법을 보여주는 예제이다. 비동기 방식으로 실행하는 Job의 시작, 정지, 재시작 방법을 보여준다.

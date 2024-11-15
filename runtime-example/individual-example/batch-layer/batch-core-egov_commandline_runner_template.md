@@ -1,5 +1,5 @@
 ---
-linkTitle: "Ex-EgovCommandLineRunner"
+linkTitle: "EgovCommandLineRunner"
 weight: 4
 title: 배치 템플릿을 이용한 EgovCommandLineRunner 예제
 description: CommandLine 배치 템플릿 프로젝트를 이용하여 EgovCommandLineRunner의 사용법을 보여주는 예제이다.

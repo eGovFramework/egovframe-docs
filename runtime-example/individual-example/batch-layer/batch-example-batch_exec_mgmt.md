@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Log
+linkTitle: Log
 weight: 12
 title: 배치 실행로그 예제
 description: 배치 수행 시, 처리되는 배치관련 정보들에 대한 기록(Log)을 Registry 와 DB에 저장되고 이를 확인하는 과정을 보여주는 예제이다.

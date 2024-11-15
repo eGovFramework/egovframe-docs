@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-JdbcCursor
+linkTitle: JdbcCursor
 weight: 22
 title: JdbcCursor 예제
 description: DB를 한 행씩 읽어서 데이터처리를 수행하는 기능을 예제로 제공한다. 스프링 배치에서는 JdbcCursorItemReader, HibernateCursorItemReader를 제공한다.

@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-JobGroup
+linkTitle: JobGroup
 weight: 10
 title: 작업그룹 예제
 description: 배치 수행 시, 업무에 따라 필요한 일련의 Job들을 구분하기 위해서 이를 카테고리화 하여 관리 하는 기능을 보여주는 예제이다.

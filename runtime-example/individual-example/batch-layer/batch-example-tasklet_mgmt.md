@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Tasklet
+linkTitle: Tasklet
 weight: 11
 title: 단순처리(Tasklet) 예제
 description: 배치 수행 시, Job의 실행중 itemReader와 ItemWriter 등의 인터페이스 사용이 필요없는 단순처리되는 작업(파일이동 등)을 보여주는 예제이다.

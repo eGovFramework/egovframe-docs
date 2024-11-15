@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Repository
+linkTitle: Repository
 weight: 9
 title: 저장소(Repository) 예제
 description: 배치 수행 시, 데이터 처리 대상(DB,File등)에 대한 설정을 보여주는 예제이다. EgovRepositoryFunctionalTests 예제는 리소스가 DB 인 jdbcCursorIoJob 과 리소스가 File인 delimitedIoJob의 수행과정을 보여주면서, 데이터가 DB에서 DB로 File 에서 File로 처리 된다.

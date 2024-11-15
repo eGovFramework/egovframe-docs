@@ -1,7 +1,7 @@
 ---
 linkTitle: 배치처리
 weight: 8
-title: 배치 실행환경
+title: 배치처리
 description: 배치처리 서비스는 일괄처리 업무 구현에 필요한 기능을 제공한다.
 ---
 # 배치 실행환경

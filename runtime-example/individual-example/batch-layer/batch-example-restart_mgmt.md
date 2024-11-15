@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Restart
+linkTitle: Restart
 weight: 27
 title: 재시도(Restart) 예제
 description: Job이 restart 되는 기능을 예제로 제공한다.

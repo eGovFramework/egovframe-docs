@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-CompositeItem
+linkTitle: CompositeItem
 weight: 26
 title: CompositeItem 예제
 description: 서로 다른 유형으로 업무 처리하는 예제로 스프링 배치에서는 CompositeItemProcessor와 CompositeItemWriter를 제공한다. CompositeItemWriter를 사용하여 서로 다른 타입의 writer로 업무를 처리하는 기능을 예제로 제공한다.

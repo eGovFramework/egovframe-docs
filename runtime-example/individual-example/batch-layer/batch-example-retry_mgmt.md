@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Retry
+linkTitle: Retry
 weight: 8
 title: 재시도(Retry) 예제
 description: 배치 수행 시, 데이터를 처리하는 과정에서 실패한 데이터처리를 재시도하는 과정을 보여주는 예제이다. EgovRetrySampleFunctionalTests 예제는 ItemProcessing, ItemWriting 에서 발생한 예외상황에 대해 정해진 설정대로 Retry를 수행하는 과정을 보여준다. 설정된 retry-limit 만큼 재시도를 허용함으로써 Job 전체의 실패를 줄일 수 있다.

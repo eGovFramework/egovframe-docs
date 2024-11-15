@@ -1,5 +1,5 @@
 ---
-linkTitle: Ex-Ibatis
+linkTitle: Ibatis
 weight: 23
 title: Ibatis 예제
 description: iBatis를 사용하여 Database의 데이터를 읽고 쓰는 기능에 대한 예제를 제공한다. 스프링 배치에서는 IbatisPagingItemReader와 IbatisBatchItemWriter를 제공한다.
