@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-MultiResource
+weight: 20
+title: MultiResource 예제
+description: 한 step에서 여러개의 파일을 처리하는 기능을 예제로 제공한다. 스프링 배치에서는 MultiResourceItemReader와 MultiResourceItemWriter를 제공한다.
+---
 # MultiResource 예제
 
 ## 개요
@@ -168,5 +174,5 @@ MultiReourceWriter의 결과로 여러 파일이 생성되었는지를 확인한
 ![mutiresource_output](../images/mutiresource_output.png)
 
 ## 참고자료
-- [multidata_process](./batch-core-multidata_process.md)
+- [multidata_process](../../../egovframe-runtime/batch-layer/batch-core-multidata_process.md)
 - [http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#multiFileInput](./http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#multiFileInput)

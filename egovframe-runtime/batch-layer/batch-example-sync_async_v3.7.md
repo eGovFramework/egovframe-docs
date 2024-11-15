@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-SyncAsync
+weight: 20
+title: 동기/비동기 처리 예제
+description: 일괄(배치)처리 작업 수행 시, 작업처리가 종료될 때까지 대기하는 동기방식 처리와 작업처리의 종료를 Callback매커니즘을 이용하여 전달받는 비동기처리에 대한 예제를 보여준다.
+---
 # 동기/비동기 처리 예제
 
 ## 개요
@@ -34,7 +40,7 @@ Job 수행시, 동기와 비동기 방식으로 데이터를 처리할 수 있�
 
 ##### 동기/비동기 처리 예제의 Job 설정 파일인 delegatingJob.xml을 확인한다.
 
-동기/비동기 처리 예제를 위해 특별히 Job을 설정하는 내용은 없다. 이 예제에서 제공하는 Job의 상세 내용은 [기존 업무 재사용 예제](batch-example-job-reuse.md)의 Job 설정과 같으므로 이를 참고한다.
+동기/비동기 처리 예제를 위해 특별히 Job을 설정하는 내용은 없다. 이 예제에서 제공하는 Job의 상세 내용은 [기존 업무 재사용 예제](./batch-example-job-reuse.md)의 Job 설정과 같으므로 이를 참고한다.
 
 ```xml
 <job id="delegateJob" xmlns="http://www.springframework.org/schema/batch">
@@ -85,7 +91,7 @@ AsyncItemProcessor 서비스를 이용한 설정은 아래와 같다.
 
 #### sync-job-launcher-context설정과 delegatingJob설정으로 구성된 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](batch-example-run-junit-test.md)을 참고한다.  
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](../../runtime-example/individual-example/batch-layer/batch-example-run-junit_test.md)을 참고한다.  
 ✔ assertEquals(“COMPLETED”, jobExecution.getExitStatus().getExitCode()) : 배치수행결과가 COMPLETED 인지 확인한다.  
 ✔ Thread.sleep(4000) : 비동기로 배치를 수행 시, DB에 배치상태(UNKNOWN)를 셋팅하고 DB연결이 종료되어 Job이 정상적으로 수행되더라도 종료상태(COMPLETED,FAILED)를 확인할 수 없다. 예제에서는 Job결과를 확인하기 위해 Thread를 적정시간동안 정지시켜 인위적으로 종료상태를 확인하도록 설정하였다.
 
@@ -122,5 +128,5 @@ public class EgovSyncDelegatingJobFunctionalTests {
 
 ## 참고자료
 
-- [동기/비동기 예제](batch-example-sync-async.md)
-- [JobLauncher](batch-execution-job-launcher.md)
+- [동기/비동기 예제](../../runtime-example/individual-example/batch-layer/batch-example-sync-async.md)
+- [JobLauncher](./batch-execution-job-launcher.md)

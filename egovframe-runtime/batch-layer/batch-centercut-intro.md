@@ -1,3 +1,9 @@
+---
+linkTitle: CenterCut
+weight: 24
+title: 센터 컷(CenterCut)
+description: 전자정부 표준프레임워크에서의 큐(Queue)를 사용하여 대용량 데이터 처리를 위해 센터 컷 방식의 배치 작업수행을 위한 가이드를 제공한다.
+---
 # 센터 컷(CenterCut) 소개
 
 ## 개요

@@ -1,3 +1,9 @@
+---
+linkTitle: Resource Variable
+weight: 10
+title: Resource Variable
+description: 사용자 정의 리소스 변수 선언 후 Setp에서 ItemReader, ItemWriter에서 사용자  정의 리소스를 사용할 수 있도록 EgovResourceVariable를 통해서 지원한다.
+---
 # Resource Variable
 
 ## 개요

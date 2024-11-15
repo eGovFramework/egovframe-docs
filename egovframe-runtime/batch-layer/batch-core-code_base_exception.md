@@ -1,3 +1,9 @@
+---
+linkTitle: CodeBaseException
+weight: 23
+title: Code Base Exception
+description: 배치 처리 시 EgovBatchException을 통해 Code 기반으로 에러를 처리할 수 있으며, 이를 사용하려면 먼저 데이터베이스 에러 코드 관리 테이블과 에러 코드 데이터를 등록해야 한다. 이 서비스를 통해 에러 처리의 효율성을 높일 수 있다.
+---
 # Code Base Exception
 
 ## 개요

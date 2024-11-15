@@ -1,3 +1,9 @@
+---
+linkTitle: 병행처리
+weight: 22
+title: 병행처리
+description: 배치 작업에서 병렬처리를 통해 Job의 구성요소들을 여러 쓰레드로 분산 실행하여 빠르고 효율적으로 작업을 완료할 수 있다. 스프링 배치에서는 멀티쓰레드, Parallel 방식, 파티셔닝 방식 등 다양한 병렬처리 방식을 지원하며, 멀티쓰레드는 Step의 <tasklet>에 TaskExecutor를 추가해 간단히 구현할 수 있다.
+---
 # 병행처리
 
 ## 개요
@@ -142,7 +148,7 @@ Step이 동일한 구성을 갖는 것은 PartitionHandler에 의해 실행하�
 
 #### 관련 예제
 
-[파티셔닝 예제](./batch-example-multi_process.md)
+[파티셔닝 예제](../../runtime-example/individual-example/batch-layer/batch-example-multi_process.md)
 
 ## 참고자료
 

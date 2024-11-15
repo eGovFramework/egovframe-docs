@@ -1,3 +1,9 @@
+---
+linkTitle: HistoryManagement
+weight: 19
+title: History Management
+description: 배치작업 처리 중의 정보는 JobRepository의 JobInstance, JobParams, JobExecution, StepExecution, key-value 쌍으로 값을 보관할 수 있는 공간인 ExecutionContext에 저장 및 갱신되어 history를 관리한다.
+---
 # History Management
 
 ## 개요

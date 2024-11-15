@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-PrePostProcess
+weight: 6
+title: 작업 전후처리 예제
+description: 전자정부 표준프레임워크에서 배치 수행시, Core에서 제공하는 Processor 클래스를 이용하여 Job과 그 하위 구성요소인 Step, Chunk 전후에 적절한 선행/후행 처리 과정을 보여주는 예제이다.
+---
 # 작업 전후처리 예제
 
 ## 개요
@@ -10,7 +16,7 @@
 #### Job 설정
 <b>작업 전처리 예제의 Job 설정 파일인 preProcessorJob.xml을 확인한다.</b>
 
-작업 전처리 예제, 작업 후처리 예제에서는 \<listener>를 적절히 이용하여 Pre/PostProcessor를 사용한다. 여기서 빈으로 등록된 각 SampleXXXProcessor 클래스들은 전자정부 표준프레임워크의 Processor를 상속받아 구현하였으며, 관련된 상세 내용은 [작업 전후처리 관리](./batch-core-listener.md)에서 확인할 수 있다.
+작업 전처리 예제, 작업 후처리 예제에서는 \<listener>를 적절히 이용하여 Pre/PostProcessor를 사용한다. 여기서 빈으로 등록된 각 SampleXXXProcessor 클래스들은 전자정부 표준프레임워크의 Processor를 상속받아 구현하였으며, 관련된 상세 내용은 [작업 전후처리 관리](../../../egovframe-runtime/batch-layer/batch-core-listener.md)에서 확인할 수 있다.
 
 ✔ \<listeners> 설정위치는 관련된 태그 안에 설정하는 것을 권장한다. (ex. Job과 관련된 Listener는 Job 태그 내부에서 사용하고, Step과 관련된 Listener는 Step 태그 내부에서 사용한다.)
 
@@ -154,4 +160,4 @@ public class EgovPreProcessorFunctionalTests extends EgovAbstractIoSampleTests {
 ![preprocessor1](../images/preprocessor1.png)
 
 ## 참고자료
-- [Listener](./batch-core-listener.md)
+- [Listener](../../../egovframe-runtime/batch-layer/batch-core-listener.md)

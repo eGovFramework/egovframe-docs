@@ -1,3 +1,9 @@
+---
+linkTitle: Step Flow
+weight: 26
+title: Flow Control
+description: Job 내부에는 여러 Step 들이 존재할 수 있고, 각 Step 사이의 흐름을 관리할 필요가 있다. Step 내의 next 설정과 Desision 설정으로 Job을 수행하다 한 Step의 처리결과에 따라 다른 Step을 선택하여 수행할 수 있고, 특정 Step의 실패가 Job 전체의 실패로 이어지지 않도록 구성할 수 있다.
+---
 # Flow Control
 
 ## 개요
@@ -288,7 +294,7 @@ Job의 flow중 일부는 별도의 bean 설정으로 분리 될 수 있으며, �
 
 #### 관련예제
 
-[Flow Control 활용한 건너뛰기(Skip) 기능 예제](./batch-example-skip_mgmt.md)
+[Flow Control 활용한 건너뛰기(Skip) 기능 예제](../../runtime-example/individual-example/batch-layer/batch-example-skip_mgmt.md)
 
 ## 참고자료
 * [Apache ActiveMQ](http://activemq.apache.org/)

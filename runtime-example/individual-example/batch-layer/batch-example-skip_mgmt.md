@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-Skip
+weight: 17
+title: 건너뛰기(Skip) 기능 예제
+description: 배치 수행 중, 데이터를 처리하는 과정에서 에러가 발생한 데이터를 건너뛰고 다음 데이터를 처리하는 기능을 보여주는 예제이다. EgovSkipSampleFunctionalTests 예제는 ItemReading,ItemProcessing, ItemWriting 에서 발생한 예외상황에 대해 정해진 설정대로 Skip을 수행되는 과정을 보여준다.
+---
 # 건너뛰기(Skip) 기능 예제
 
 ## 개요
@@ -124,4 +130,4 @@ EgovErrorLogTasklet 에서 처리된 Skip에 대한 간단한 정보를 ERROR_LO
 ![ERROR_LOG TABLE](../images/skip2.png)
 
 ## 참고자료
-- [Retry](./batch-core-skip_repeat_retry.md)
+- [Retry](../../../egovframe-runtime/batch-layer/batch-core-skip_repeat_retry.md)

@@ -1,3 +1,9 @@
+---
+linkTitle: "Ex-EventNotice"
+weight: 3
+title: 이벤트알림 템플릿(Template) 예제
+description: 전자정부 표준프레임워크의 배치 수행중 특정시점에 이벤트가 발생하는 경우 EventNoticeTrigger를 활용하여 SMS, Email 등을 통해 사용자가 설정한 관련정보를 발신하는 과정을 보여주는 예제이다. EgovEventNoticeTriggerFunctionalTests 예제는 일반 파일을 처리하는 과정에서 특정시점(Step 수행 시)에 배치수행과 관련한 내용을 Email로 보내주는 과정을 보여주는 과정을 보여준다.
+---
 # 이벤트알림 템플릿(Template) 예제
 
 ## 개요
@@ -36,7 +42,7 @@ Job 의 구성을 보면 기본적인 <tasklet> 설정 외에 <listener> 를 통
 ####  클래스 설정
 <b>Email 전송을 위한 EgovEmailEventNoticeTrigger 클래스의 설정을 확인한다.</b>
 
-Job 수행시 관련정보를 알리기 위한 설정은 [EgovEventNoticeTrigger](./batch-core-event_notice_template_mgmt.md)를 상속받은 EgovEmailEventNoticeTrigger에 구현되어 있고, 크게 세 부분으로 구성되어 있다.
+Job 수행시 관련정보를 알리기 위한 설정은 [EgovEventNoticeTrigger](../../../egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt.md)를 상속받은 EgovEmailEventNoticeTrigger에 구현되어 있고, 크게 세 부분으로 구성되어 있다.
 
 1. EgovEmailEventNoticeTrigger 클래스 Email 송수신을 위한 정보를 입력한다
 
@@ -102,7 +108,7 @@ public class EgovEmailEventNoticeTrigger extends EgovEventNoticeTrigger {
 
 <b>EgovEventNoticeCallProcessor 클래스를 확인한다.</b>
 
-이 클래스는 전자정부 표준프레임워크에서 제공하는 [프로세서](batch-core-listener.md#작업-전후처리-관리-egovprepostprocessor) 중 EgovStepPostProcessor 클래스를 상속받아 구현되었으며, afterStep 메소드를 통해 리스너가 Step수행 후에 Job과 관련된 정보(StepExecution)를 파라미터로 넘겨주며 EgovEmailEventNoticeTrigger.invoke 메소드를 호출한다.
+이 클래스는 전자정부 표준프레임워크에서 제공하는 [프로세서](../../../egovframe-runtime/batch-layer/batch-core-listener.md#작업-전후처리-관리-egovprepostprocessor) 중 EgovStepPostProcessor 클래스를 상속받아 구현되었으며, afterStep 메소드를 통해 리스너가 Step수행 후에 Job과 관련된 정보(StepExecution)를 파라미터로 넘겨주며 EgovEmailEventNoticeTrigger.invoke 메소드를 호출한다.
 
 EgovEventNoticeCallProcessor 내에서 호출되는 EgovEmailEventNoticeTrigger 클래스는 Job 설정에서 Bean으로 등록되어 있다. (Job 설정 참고)
 
@@ -119,7 +125,7 @@ public class EgovEventNoticeCallProcessor<T,S> extends EgovStepPostProcessor<T,S
 }
 ```
 
-✔ 예제에서는 Job 설정파일에서 Step 내부에 Listener 를 설정하고, 여기에 해당하는 프로세서를 상속받아 사용하였으므로 Step과 관련된 작업만 수행되지만, 프로세서 상속 없이 사용자가 별도로 스프링에서 제공하는 [리스너 관련 어노테이션](./batch-core-listener.md)과 전자정부에서 제공하는 [이벤트알림 트리거 메소드](./batch-core-event_notice_template_mgmt#egoveventnoticetrigger)를 조합해 확장하여 사용하는 방법도 있다. 이는 아래 EventNoticeListener 클래스 예시를 참고한다. (마찬가지로 Job 설정에서 EventNoticeListener 가 빈으로 등록되어야 함)
+✔ 예제에서는 Job 설정파일에서 Step 내부에 Listener 를 설정하고, 여기에 해당하는 프로세서를 상속받아 사용하였으므로 Step과 관련된 작업만 수행되지만, 프로세서 상속 없이 사용자가 별도로 스프링에서 제공하는 [리스너 관련 어노테이션](../../../egovframe-runtime/batch-layer/batch-core-listener.md)과 전자정부에서 제공하는 [이벤트알림 트리거 메소드](../../../egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt#egoveventnoticetrigger)를 조합해 확장하여 사용하는 방법도 있다. 이는 아래 EventNoticeListener 클래스 예시를 참고한다. (마찬가지로 Job 설정에서 EventNoticeListener 가 빈으로 등록되어야 함)
 
 ```java
 public class EventNoticeListener {
@@ -186,7 +192,7 @@ public class EgovEventNoticeTriggerFunctionalTests extends EgovAbstractIoSampleT
 ![eventnoticetrigger1](../images/eventnoticetrigger1.png)
 
 ## 참고자료
-- [이벤트알림 템플릿 관리](./batch-core-event_notice_template_mgmt.md)
+- [이벤트알림 템플릿 관리](../../../egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt.md)
 - SMTP 서버
   - naver SMTP 서버 : smtp.naver.com
   - daum SMTP 서버 : smtp.hanmail.net

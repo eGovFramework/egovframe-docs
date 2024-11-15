@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-JobGroup
+weight: 10
+title: 작업그룹 예제
+description: 배치 수행 시, 업무에 따라 필요한 일련의 Job들을 구분하기 위해서 이를 카테고리화 하여 관리 하는 기능을 보여주는 예제이다.
+---
 # 작업그룹 예제
 
 ## 개요
@@ -78,7 +84,7 @@ public class EgovJobGroupDelegatingJobFunctionalTests {
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case을 참고한다.
+수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
 
 ### 결과 확인
 콘솔창의 로그를 확인하면 Launcher 설정파일에서 지정한 groupName(testJobGroup)이 Job 이름 앞에서 식별되는 카테고리명으로 쓰이는 것을 확인할 수 있다.
@@ -86,4 +92,4 @@ public class EgovJobGroupDelegatingJobFunctionalTests {
 ![jobgroup1](../images/jobgroup1.png)
 
 ## 참고자료
-- [JobRegistry](./batch-core-job_registry.md)
+- [JobRegistry](../../egovframe-runtime/batch-layer/batch-core-job_registry.md)

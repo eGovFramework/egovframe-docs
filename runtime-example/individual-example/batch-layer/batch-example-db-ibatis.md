@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-Ibatis
+weight: 23
+title: Ibatis 예제
+description: iBatis를 사용하여 Database의 데이터를 읽고 쓰는 기능에 대한 예제를 제공한다. 스프링 배치에서는 IbatisPagingItemReader와 IbatisBatchItemWriter를 제공한다.
+---
 # Ibatis 예제
 
 ## 개요
@@ -62,7 +68,7 @@ ibatis-customer-credit.xml
 #### JunitTest 구성
 **ibatisIo예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.**
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](../../runtime-example/individual-example/batch-layer/batch-example-run_junit_test.md)을 참고한다.
 
 ✔ EgovAbstractIoSampleTests에서 배치작업을 수행하고 배치작업 전후의 데이터를 비교확인한다.
 
@@ -151,6 +157,6 @@ DB의 Customer 테이블의 credit의 값을 살펴보면 Job이 실행되면서
 ![jdbccursor_data](../images/jdbccursor_data.png)
 
 ## 참고자료
-- [iBATIS Configuration](../persistence-layer/dataaccess-ibatis_configuration.md)
-- [Data Access](../persistence-layer/data-access.md)
+- [iBATIS Configuration](../../../egovframe-runtime/persistence-layer/dataaccess-configuration_xml.md)
+- [Data Access](../persistence-layer/dataaccess-ibatis.md)
 - [http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#IbatisPagingItemReader](http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#IbatisPagingItemReader)

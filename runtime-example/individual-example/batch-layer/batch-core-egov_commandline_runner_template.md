@@ -1,3 +1,9 @@
+---
+linkTitle: "Ex-EgovCommandLineRunner"
+weight: 4
+title: 배치 템플릿을 이용한 EgovCommandLineRunner 예제
+description: CommandLine 배치 템플릿 프로젝트를 이용하여 EgovCommandLineRunner의 사용법을 보여주는 예제이다.
+---
 # 배치 템플릿을 이용한 EgovCommandLineRunner 예제
 
 ## 개요
@@ -136,17 +142,17 @@ CommandLine상에서 실행하기 위해서는 jobPath와 jobIdentifier을 인�
 
 1. CommandLine 배치 템플릿 프로젝트를 선택한다.
 
-![commandling1](images/commandling1.png)
+![commandling1](../images/commandling1.png)
 
 2. 메뉴 표시줄에서 Run > Run Configuration 을 선택한다.
 
-![commandling2](images/commandling2.png)
+![commandling2](../images/commandling2.png)
 
 3. Argument 탭을 선택하여 아래와 같이 **jobPath**와 **jobIdentifier**를 입력한다. **jobIdentifier** 뒤에 붙은 Argument는 **Job Parameter**로 사용되며, 여러 개의 Argument를 넣을 수 있다.
 
 /egovframework/batch/context-commandline.xml delimitedToDelimitedJob inputFile=egovframework/batch/data/inputs/csvData.csv
 
-![commandling3](images/commandling3.png)
+![commandling3](../images/commandling3.png)
 
 
 ✔ 위 화면처럼 Argument와 Argument 사이는 반드시 스페이스로 구분해야 한다.  
@@ -154,9 +160,9 @@ CommandLine상에서 실행하기 위해서는 jobPath와 jobIdentifier을 인�
 
 4. 메뉴 표시줄에서 **Run** > **Run** 을 선택한다.
 
-![commandling4](images/commandling4.png)
+![commandling4](../images/commandling4.png)
 
 ### 결과 확인
 Console 창에서 Job이 실행되어 **Completed**로 종료되었음을 확인한다.
 
-![commandling5_red](images/commandling5_red.png)
+![commandling5_red](../images/commandling5_red.png)

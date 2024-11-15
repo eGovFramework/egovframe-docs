@@ -1,3 +1,9 @@
+---
+linkTitle: "- Step Variable"
+weight: 7
+title: Step Variable
+description: EgovStepVariableListener를 통해 변수를 선언하고 여러 Step에서 사용자 정의 변수를 공유하여 사용할 수 있는 기능을 지원한다. 이를 통해 배치 실행 중 여러 Step에서 변수를 공유하며 사용할 수 있다.
+---
 # Step Variable
 
 ## 개요

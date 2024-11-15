@@ -1,3 +1,9 @@
+---
+linkTitle: "Skip/Retry/Repeat"
+weight: 17
+title: Skip/Retry/Repeat
+description: Skip, Retry, Repeat은 효율적인 배치수행을 위해 필요한 기능들이다. Repeat 정책에 따라 Step과 Chunk가 반복적으로 수행되면서 데이터 Read, Process, Write 과정이 일어나는데, 여기서 Skip과 Retry 이용해 배치작업을 효율적으로 수행할 수 있다. 각 기능이 쓰이는 위치는 다음 그림을 참고한다.
+---
 # Skip/Retry/Repeat
 
 ## 개요
@@ -60,7 +66,7 @@ Skip, Retry, Repeat은 효율적인 배치수행을 위해 필요한 기능들�
 
 #### 관련예제
 
- [건너뛰기(Skip) 기능 예제](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte2:brte:batch_example:skip_mgmt)
+ [건너뛰기(Skip) 기능 예제](../../runtime-example/individual-example/batch-layer/batch-example-skip_mgmt.md)
 
 ### Retry
 
@@ -307,7 +313,7 @@ public interface RetryListener {
 
 #### 관련예제
 
- [재시도(Retry) 예제](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte2:brte:batch_example:retry_mgmt)
+ [재시도(Retry) 예제](../../runtime-example/individual-example/batch-layer/batch-example-retry_mgmt.md)
 
 ### Repeat
 

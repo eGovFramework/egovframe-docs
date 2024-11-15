@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-Runner
+weight: 2
+title: 배치 Runner 예제
+description: 배치 수행에 사용되는 EgovBatchRunner의 사용법을 보여주는 예제이다. 비동기 방식으로 실행하는 Job의 시작, 정지, 재시작 방법을 보여준다.
+---
 # 배치 Runner 예제
 
 ## 개요
@@ -10,7 +16,7 @@
 
 #### EgovBatchRunner 설정
 
-EgovBatchRunner의 설정 방법은 [배치 Runner](./batch-core-batch_runner.md#egovbatchrunner)를 참고한다.
+EgovBatchRunner의 설정 방법은 [배치 Runner](../../../egovframe-runtime/batch-layer/batch-execution-job_runner.md#egovbatchrunner)를 참고한다.
 
 #### Launcher 설정
 
@@ -149,7 +155,7 @@ stopAndCheckStatus() 메소드는 Job 실행 정보를 확인하고 실행 중�
 
 Console 창에서 Job Summary내용 중, BatchStatus가 Stopped 임을 확인한다.
 
-![centercut-explain1](images/centercut-explain1.png)
+![centercut-explain1](../images/centercut-explain1.png)
 
 ## 참고자료
-* [Batch Runner](./batch-core-batch_runner.md)
+* [Batch Runner](../../../egovframe-runtime/batch-layer/batch-execution-job_runner.md#egovbatchrunner)

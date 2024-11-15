@@ -1,3 +1,9 @@
+---
+linkTitle: "- Ex-FilePartition"
+weight: 15
+title: N:N 파일 Partition 예제
+description: 파일 파티셔닝 예제에서는 MultiResourcePartitioner를 사용해 입력 리소스 수만큼 Master Step을 파티셔닝하며, grid-size는 생성할 Context 수를 지정한다. fileNameListener는 입력 리소스명과 동일한 출력 리소스명을 설정하고, 입력 리소스가 없을 경우 기본값으로 출력 파일명을 지정한다.
+---
 # N:N 파일 Partition 예제
 
 ## 설명

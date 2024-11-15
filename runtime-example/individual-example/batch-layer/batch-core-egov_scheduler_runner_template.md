@@ -1,3 +1,9 @@
+---
+linkTitle: "Ex-EgovSchedulerRunner"
+weight: 5
+title: 배치 템플릿을 이용한 EgovSchedulerRunner 예제
+description: Scheduler 기반의 배치 템플릿 프로젝트를 이용하여 EgovSchedulerRunner의 사용법을 보여주는 예제이다.
+---
 # 배치 템플릿을 이용한 EgovSchedulerRunner 예제
 
 ## 개요
@@ -217,24 +223,24 @@ EgovSchedulerJobRunner의 main() 메소드에서 Scheduler의 jobDetail 클래�
 
 메뉴 표시줄에서 **Run** > **Run** 을 선택한다.
 
-![commandling4](images/commandling4.png)
+![commandling4](../images/commandling4.png)
 
 ### 결과 확인
 
 Console 창에서 Scheduler가 생성되었고, Scheduler의 실행 시간이 30초 임을 확인한다.
 
-![scheduler2-red](images/scheduler2-red.png)
+![scheduler2-red](../images/scheduler2-red.png)
 
 Scheduler가 매 10초 간격으로 jobDetail을 실행하여, Spring 배치 Job이 실행되었음을 확인한다.
 
 **11시 6분 50초**
 
-![scheduler5-red](images/scheduler5-red.png)
+![scheduler5-red](../images/scheduler5-red.png)
 
 **11시 7분 00초초**
 
-![scheduler6-red](images/scheduler6-red.png)
+![scheduler6-red](../images/scheduler6-red.png)
 
 **11시 7분 10초**
 
-![scheduler4-red](images/scheduler4-red.png)
+![scheduler4-red](../images/scheduler4-red.png)

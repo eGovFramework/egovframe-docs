@@ -1,3 +1,9 @@
+---
+linkTitle: "- SQLite"
+weight: 2
+title: SQLite
+description: SQLite를 이용한 경량화된 Repository를 사용하기 위한 사용법에 대해 설명한다.
+---
 # SQLite
 
 ## 개요

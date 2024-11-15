@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-JdbcPaging
+weight: 21
+title: JdbcPaging 예제
+description: DB를 페이지단위로 읽어서 데이터처리를 수행하는 기능을 예제로 제공한다. 스프링 배치에서는 JdbcPagingItemReader,JpaPagingItemReader등을 제공한다.또한 paging쿼리를 제공하는 인터페이스 PagingQueryProvider를 제공하며 각 DB종류별로 OraclePagingQueryProvider, HsqlPagingQueryProvider, MySqlPagingQueryProvider, SqlServerPagingQueryProvider, SybasePagingQueryProvider 등의 구현클래스를 제공한다.
+---
 # JdbcPaging 예제
 
 ## 개요
@@ -47,7 +53,7 @@ JdbcPagingItemReader는 아래와 같은 설정들을 포함한다.
 #### JunitTest 구성
 <b>Delimited 예제를 수행하고 배치작업 결과에 대한 검증을 위해 다음과 같이 @Test를 구성하였다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](../../runtime-example/individual-example/batch-layer/batch-example-run_junit_test.md)을 참고한다.
 
 ✔ getUniqueJobParameters에서 JobParameter에 쿼리에 필요한 파라미터 정보를 넘긴다.
 

@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-MultiProcess
+weight: 13
+title: 대용량 처리를 위한 멀티스레드 기반의 병행처리 예제
+description: 배치 수행 시, 대용량 처리를 위해 Job을 멀티스레드 기반으로 병행처리하는 과정을 보여준다. 실행 유형별로 멀티쓰레드 방식, Parallel 방식, 파티셔닝 방식 등이 있다.
+---
 # 대용량 처리를 위한 멀티스레드 기반의 병행처리 예제
 
 ## 개요
@@ -192,4 +198,4 @@ split된 두 개의 flow가 멀티쓰레드(SimpleAsyncTaskExecutor-1,SimpleAsyn
 
 ## 참고자료
 
-* [병행처리](./batch-core-parallel_process.md)
+* [병행처리](../../../egovframe-runtime/batch-layer/batch-core-parallel_process.md)

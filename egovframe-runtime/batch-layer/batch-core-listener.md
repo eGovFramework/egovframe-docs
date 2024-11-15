@@ -1,4 +1,10 @@
-# Listener
+---
+linkTitle: Listener
+weight: 21
+title: Listener (Pre/Post Processing)
+description: Listener는 배치 작업의 각 단계(Job, Step, Chunk 등)에서 이벤트 설정을 통해 추가 구성을 할 수 있으며, 설정된 이벤트를 실행 중에 처리한다. JobListener는 Job의 라이프사이클 동안 다양한 이벤트를 감지하고, 사용자 정의 코드를 실행할 수 있도록 지원한다.
+---
+# Listener (Pre/Post Processing)
 
 ## 개요
 

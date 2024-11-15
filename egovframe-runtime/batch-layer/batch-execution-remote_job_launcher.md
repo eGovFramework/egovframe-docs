@@ -1,3 +1,9 @@
+---
+linkTitle: "- Remote JobLauncher"
+weight: 13
+title: Remote JobLauncher
+description: Remote JobLauncher는 온라인에서 배치 서버의 Batch Job 작업을 실행하며, 클라이언트와 서버 간 요청된 배치 작업을 수행한다. 이를 위해 Hessian Binary Web Service를 사용해 간편하게 웹서비스를 구현하며, Spring의 HessianProxyFactoryBean과 HessianServiceExporter를 통해 편리한 통합을 지원한다.
+---
 # Remote JobLauncher
 
 ## 개요

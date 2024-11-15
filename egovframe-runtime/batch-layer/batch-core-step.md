@@ -1,3 +1,9 @@
+---
+linkTitle: "Step"
+weight: 6
+title: Step
+description: Step은 Job 내에서 배치 작업을 정의하고 제어하는 독립적이고 순차적인 단계를 캡슐화하는 도메인 객체이다. 모든 Job은 최소 하나 이상의 Step으로 구성되며, 각 Step은 입력, 처리, 출력 자원 설정을 포함하여 작업을 처리한다. StepExecution은 JobExecution과 대응되며, 각 Step은 순차적으로 실행된다.
+---
 # Step
 
 ## 개요

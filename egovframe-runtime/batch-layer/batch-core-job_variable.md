@@ -1,3 +1,9 @@
+---
+linkTitle: "- Job Variable"
+weight: 5
+title: Job Variable
+description: EgovJobVariableListener는 사용자 정의 변수를 선언하고 여러 Job에서 이를 공유하여 사용할 수 있도록 지원하는 기능을 제공한다. 이를 통해 모든 Job에서 공통 변수를 활용할 수 있다.
+---
 # Job Variable
 
 ## 개요
@@ -5,7 +11,7 @@
 변수 선언 후 Job Listeners를 통해서 모든 Job에서 사용자 정의 변수를 사용할 수 있도록 EgovJobVariableListener를 통해서 지원한다.  
 사용자가 변수를 정의하여 여러 job에서 해당 변수를 공유하여 사용 가능한 기능으로 이루어져있다.
 
-![job_variable_architecture6](images/job_variable_architecture6.png)
+![job_variable_architecture6](../images/job_variable_architecture6.png)
 
 ## 설명
 

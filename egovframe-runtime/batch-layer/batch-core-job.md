@@ -1,3 +1,9 @@
+---
+linkTitle: "Job"
+weight: 4
+title: Job
+description: Job은 배치 작업 전체를 캡슐화하는 개념으로, 여러 Step을 포함하며 배치 작업 실행을 의미한다. Job은 각 JobParameters에 따라 JobInstance를 생성하고, Job 시도마다 JobExecution을 생성하여 작업을 처리한다.
+---
 # Job
 
 ## 개요

@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-Log
+weight: 12
+title: 배치 실행로그 예제
+description: 배치 수행 시, 처리되는 배치관련 정보들에 대한 기록(Log)을 Registry 와 DB에 저장되고 이를 확인하는 과정을 보여주는 예제이다.
+---
 # 배치 실행로그 예제
 
 ## 개요
@@ -73,5 +79,5 @@ DB의 ERROR_LOG 테이블을 보면 데이터를 실제로 확인할 수 있다.
 ![logmanagement1](../images/logmanagement1.png)
 
 ## 참고자료
-- [JobRegsitry](./batch-core-job_registry.md)
-- [JobRepository](./batch-execution-job-repository.md)
+- [JobRegsitry](../../../egovframe-runtime/batch-layer/batch-core-job_registry.md)
+- [JobRepository](../../../egovframe-runtime/batch-layer/batch-execution-job-repository.md)

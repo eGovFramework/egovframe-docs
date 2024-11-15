@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-Restart
+weight: 27
+title: 재시도(Restart) 예제
+description: Job이 restart 되는 기능을 예제로 제공한다.
+---
 # Restart 예제
 
 ## 개요
@@ -119,4 +125,4 @@ JobExecution을 살펴보면, failed된 Job을 restart하여 Complited된 결과
 ![restart_jobdata](../images/restart_jobdata.png)
 
 ## 참고자료
-- [restart를 위한 Step 설정](./brte-batch-core-step.md)
+- [restart를 위한 Step 설정](../../../egovframe-runtime/batch-layer/batch-core-step.md)

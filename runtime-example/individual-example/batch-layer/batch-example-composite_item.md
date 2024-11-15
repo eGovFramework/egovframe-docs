@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-CompositeItem
+weight: 26
+title: CompositeItem 예제
+description: 서로 다른 유형으로 업무 처리하는 예제로 스프링 배치에서는 CompositeItemProcessor와 CompositeItemWriter를 제공한다. CompositeItemWriter를 사용하여 서로 다른 타입의 writer로 업무를 처리하는 기능을 예제로 제공한다.
+---
 # CompositItem 예제
 
 ## 개요
@@ -67,7 +73,7 @@ CompositeItemWriter는 Item을 delegetes으로 정의된 writer에게 각각 전
 #### JunitTest 구성
 <b>CompositeItem 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.</b>
 
-✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](./batch-example-run_junit_test.md)을 참고한다.
+✔ JunitTest 클래스의 구조는 [배치실행환경 예제 Junit Test 설명](../../runtime-example/individual-example/batch-layer/batch-example-run_junit_test.md)을 참고한다.
 
 ✔ assertEquals(“COMPLETED”, jobExecution.getExitStatus().getExitCode()) : 배치수행결과가 COMPLETED 인지 확인한다.
 
@@ -166,5 +172,5 @@ public class EgovCompositeItemWriterSampleFunctionalTests {
 ![compositewriter_datadb](../images/compositewriter_datadb.png)
 
 ## 참고자료
-- [multidata_process](./batch-core-multidata_process.md)
+- [multidata_process](../../egovframe-runtime/batch-layer/batch-core-multidata_process.md)
 - http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html#delegatePatternAndRegistering

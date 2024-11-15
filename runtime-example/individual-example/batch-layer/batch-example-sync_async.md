@@ -1,3 +1,9 @@
+---
+linkTitle: Ex-SyncAsync
+weight: 18
+title: 동기/비동기 처리 예제
+description: 일괄(배치)처리 작업 수행 시, 작업처리가 종료될 때까지 대기하는 동기방식 처리와 작업처리의 종료를 Callback매커니즘을 이용하여 전달받는 비동기처리에 대한 예제를 보여준다.
+---
 # 동기/비동기 처리 예제
 
 ## 개요
@@ -102,4 +108,4 @@ public class EgovSyncDelegatingJobFunctionalTests {
 수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
 
 ## 참고자료
-* [JobLauncher](./batch-execution-job_launcher.md)
+* [JobLauncher](../../../egovframe-runtime/batch-layer/batch-execution-job_launcher.md)
