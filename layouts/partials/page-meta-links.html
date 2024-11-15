@@ -27,11 +27,11 @@
 
   {{ $gh_repo_path := printf "%s/%s/%s" $gh_branch $gh_subdir $path -}}
   {{ $gh_repo_path = replaceRE "//+" "/" $gh_repo_path -}}
+  <!-- url에서 "content/ko/"를 지우기 위해 아래 한 줄 추가 -->
+  {{ $gh_repo_path = replace $gh_repo_path "content/ko/" "" -}}
 
   {{ $viewURL := printf "%s/tree/%s" $gh_repo $gh_repo_path -}}
   {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
-  <!-- url에서 "content/ko/"를 지우기 위해 아래 한 줄 추가 -->
-  {{ $gh_repo_path = replace $gh_repo_path "content/ko/" "" -}}
   
   {{ $issuesURL := printf "%s/issues/new?title=%s" $gh_repo (safeURL $.Title ) -}}
   {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
