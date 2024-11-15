@@ -30,12 +30,16 @@
 
   {{ $viewURL := printf "%s/tree/%s" $gh_repo $gh_repo_path -}}
   {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
+  <!-- url에서 "content/ko/"를 지우기 위해 아래 한 줄 추가 -->
+  {{ $gh_repo_path = replace $gh_repo_path "content/ko/" "" -}}
+  
   {{ $issuesURL := printf "%s/issues/new?title=%s" $gh_repo (safeURL $.Title ) -}}
   {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
   {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL -}}
   {{ $newPageURL := printf "%s/new/%s?%s" $gh_repo (path.Dir $gh_repo_path) $newPageQS -}}
 
-  <a href="{{ $viewURL }}" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> {{ T "post_view_this" }}</a>
+  <!-- "Post View This"가 한글 번역이 안 돼서, 직접 한글로 하드코딩 수정 -->
+  <a href="{{ $viewURL }}" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> {{ T "페이지 보기" }}</a>
   <a href="{{ $editURL }}" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> {{ T "post_edit_this" }}</a>
   <a href="{{ $newPageURL }}" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> {{ T "post_create_child_page" }}</a>
   <a href="{{ $issuesURL }}" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> {{ T "post_create_issue" }}</a>
