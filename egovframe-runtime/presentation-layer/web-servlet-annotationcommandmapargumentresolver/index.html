@@ -103,7 +103,7 @@ Controller 메소드의 argument중에 @CommandMap이 붙은 Map 객체가 있�
 </span></span><span style=display:flex><span><span style=color:#204a87;font-weight:700>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
 </span></span><span style=display:flex><span><span style=color:#204a87;font-weight:700>&lt;bean</span> <span style=color:#c4a000>class=</span><span style=color:#4e9a06>&#34;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping&#34;</span><span style=color:#204a87;font-weight:700>/&gt;</span>
-</span></span></code></pre></div><p>테스트를 위한 Form에 데이터를 아래와 같이 등록하고 폼을 제출했을때,</p><p><img alt=web-servlet-AnnotationCommandMapArgumentResolver src=../images/web-servlet-AnnotationCommandMapArgumentResolver.png></p><p><code>@CommandMap</code> Map 객체의 데이터는 key, value 형태로 아래와 같이 들어 있다. 같은 파라미터 이름으로 여러값이 들어 있는 값은 배열로 들어 있다.</p><pre tabindex=0><code>key:text1   value:{aaa,bbb}
+</span></span></code></pre></div><p>테스트를 위한 Form에 데이터를 아래와 같이 등록하고 폼을 제출했을때,</p><p><img src=../images/web-servlet-AnnotationCommandMapArgumentResolver.png alt=web-servlet-AnnotationCommandMapArgumentResolver></p><p><code>@CommandMap</code> Map 객체의 데이터는 key, value 형태로 아래와 같이 들어 있다. 같은 파라미터 이름으로 여러값이 들어 있는 값은 배열로 들어 있다.</p><pre tabindex=0><code>key:text1   value:{aaa,bbb}
 key:text2   value:ccc
 key:text3   value:ddd
 key:cb   value:{on,on}

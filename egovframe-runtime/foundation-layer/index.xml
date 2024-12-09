@@ -12,7 +12,9 @@ Server Security의 주요기능은 다음과 같다.&lt;/p></description></item>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="spring-security-아키텍처">Spring Security 아키텍처&lt;/h3>
 &lt;h4 id="웹어플리케이션-인증절차">웹어플리케이션 인증절차&lt;/h4>
-&lt;p>&lt;img alt="image" src="../images/server_security_%EC%9B%B9%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98_%EC%9D%B8%EC%A6%9D%EC%A0%88%EC%B0%A8_wbg.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/server_security_%ec%9b%b9%ec%96%b4%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98_%ec%9d%b8%ec%a6%9d%ec%a0%88%ec%b0%a8_wbg.png" alt="image" >
+&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>리소스 요청&lt;/p>

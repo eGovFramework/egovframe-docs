@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>화면처리 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/</link><description>Recent content in 화면처리 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>MVC 패턴의 구조와 장점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/</guid><description>&lt;h1 id="web-servlet">Web Servlet&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>&lt;img alt="MVC(Model-View-Controller) 패턴" src="images/web-servlet.jpg">&lt;/p>
+&lt;p>
+&lt;img src="images/web-servlet.jpg" alt="MVC(Model-View-Controller) 패턴" >
+&lt;/p>
 &lt;p>&lt;strong>MVC(Model-View-Controller) 패턴&lt;/strong>은 코드를 기능(역할)에 따라 &lt;strong>Model, View, Controller&lt;/strong> 3가지 요소로 분리한다.&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Model&lt;/strong> : 애플리케이션의 데이터와 비즈니스 로직을 담는 객체이다.&lt;/li>
@@ -29,7 +31,9 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 &lt;h3 id="dispatcherservlet에서의-웹요청-흐름">DispatcherServlet에서의 웹요청 흐름&lt;/h3>
 &lt;p>Client의 웹요청시에 DispatcherServlet에서 이루어지는 처리 흐름은 아래와 같다.
 좀더 자세한 처리 흐름을 알고 싶다면 디버깅모드로 과정을 추적해 보는 것을 권장한다.&lt;/p>
-&lt;p>&lt;img alt="DispatcherServlet flow" src="../images/web-servlet-dispatcherservlet-flow.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/web-servlet-dispatcherservlet-flow.png" alt="DispatcherServlet flow" >
+&lt;/p>
 &lt;ol>
 &lt;li>doService 메소드에서부터 웹요청의 처리가 시작된다. DispatcherServlet에서 사용되는 몇몇 정보를 request 객체에 담는 작업을 한 후 doDispatch 메소드를 호출한다.&lt;/li>
 &lt;li>아래 3번~13번 작업이 doDispatch 메소드안에 있다. Controller, View 등의 컴포넌트들을 이용한 실제적인 웹요청처리가 이루어 진다.&lt;/li>
@@ -85,7 +89,9 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 Spring MVC는 다양한 종류의 Controller를 제공하는데, 데이터 바인딩이나 폼 처리 또는 멀티 액션등의 편의 기능을 제공한다.
 이 Controller들은 org.springframework.web.servlet.mvc.Controller 인터페이스를 구현한 클래스들이다.(@Controller는 예외다. 여기서는 @Controller에 대한 설명은 제외한다.)
 eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 아래와 같은 구조를 보여준다.&lt;/p>
-&lt;p>&lt;img alt="Controller preview" src="../images/web-servlet-controller-preview.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/web-servlet-controller-preview.png" alt="Controller preview" >
+&lt;/p>
 &lt;p>이 중 주요 Controller의 용도 및 특징을 표로 나타내면 아래와 같다.&lt;/p></description></item><item><title>Annotation 기반 Controller</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/</guid><description>&lt;h1 id="annotation-based-controller">Annotation-based Controller&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>스프링 프레임워크는 2.5 버젼 부터 Java 5+ 이상이면 @Controller(Annotation-based Controller)를 개발할 수 있는 환경을 제공한다.

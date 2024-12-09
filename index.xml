@@ -90,7 +90,9 @@ Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직
 이처럼 IoC에서 이야기하는 제어권의 역전이란 객체의 생성에서부터 생명주기의 관리까지 모든 객체에 대한 제어권이 바뀌었다는 것을 의미한다.&lt;/p></description></item><item><title>Naming 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/naming-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/naming-service/</guid><description>&lt;h1 id="naming-service">Naming Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Naming 서비스는 Java Naming and Directory Interface(JNDI) API를 이용하여 자원(Resource)를 찾을 수 있도록 도와주는 서비스이다. Naming 서비스를 지원하는 Naming 서버에 자원을 등록하여 다른 어플리케이션에서 사용할 수 있도록 공개하고, Naming 서버에 등록되어 있는 자원을 찾아와서 이용할 수 있게 한다.&lt;/p>
-&lt;p>&lt;img alt="Naming Service" src="../images/naming_service.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/naming_service.png" alt="Naming Service" >
+&lt;/p>
 &lt;h2 id="주요-개념">주요 개념&lt;/h2>
 &lt;h3 id="java-naming-and-directory-interfacejndi">Java Naming and Directory Interface(JNDI)&lt;/h3>
 &lt;p>Java Naming and Directory Interface(JNDI)는 Java 소프트웨어 클라이언트가 이름(name)을 이용하여 데이터 및 객체를 찾을 수 있도록 도와주는 디렉토리 서비스에 대한 Java API이다.&lt;/p></description></item><item><title>배치 실행환경 소개</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/intro/</guid><description>&lt;h1 id="배치-실행환경-소개">배치 실행환경 소개&lt;/h1>
@@ -100,13 +102,17 @@ Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직
 &lt;p>배치 실행환경은 대용량 데이터 처리를 위한 기반 환경을 제공함으로써 배치 실행에 필요한 핵심 기능을 제공한다.&lt;/p>
 &lt;h2 id="배치-실행환경-수행-과정">배치 실행환경 수행 과정&lt;/h2>
 &lt;p>전자정부 표준프레임워크 실행환경에 추가된 배치 실행환경은 3-Tier(Run, Job, Application Tier)로 구성되며, 대용량 데이터 처리를 위한 기반 환경을 제공한다.&lt;/p>
-&lt;p>&lt;img alt="배치 실행환경 수행 과정" src="images/batch_process.png">&lt;/p>
+&lt;p>
+&lt;img src="images/batch_process.png" alt="배치 실행환경 수행 과정" >
+&lt;/p>
 &lt;h2 id="run-tier">Run Tier&lt;/h2>
 &lt;p>Run Tier는 배치 응용 프로그램의 실행을 담당한다. 실행 방식에 따라 &lt;strong>Scheduler&lt;/strong>, &lt;strong>Http/Web service&lt;/strong>, &lt;strong>CommandLine&lt;/strong>으로 나눌 수 있다.&lt;/p></description></item><item><title>Overview</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/intro/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/intro/overview/</guid><description>&lt;h1 id="표준프레임워크-실행환경-소개">표준프레임워크 실행환경 소개&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>표준프레임워크 실행환경은 응용SW의 구성기반이 되며 응용SW실행 시 필요한 기본 기능을 제공하는 환경을 의미한다.&lt;br>
 즉, 전자정부 업무 구현을 목적으로 개발된 프로그램이 사용자가 의도하는 대로 정상적으로 실행될 수 있도록 지원하는 재사용 가능한 서버 실행 모듈, SW구조의 집합을 의미 한다.&lt;/p>
-&lt;p>&lt;img alt="응용SW와 실행환경, 공통기반으로 구성된 소프트웨어 아키텍처 다이어그램. 실행환경은 회면처리(Presentation Layer), UX처리(UX Layer), 업무처리(Business Logic Layer), DATA 처리(Persistent Layer), 연계통합(Integration Layer), 배치처리(Batch Layer)로 구분되며, 하단에는 공통기반(Foundation Layer)이 위치해 있습니다." src="../images/overview.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/overview.jpg" alt="응용SW와 실행환경, 공통기반으로 구성된 소프트웨어 아키텍처 다이어그램. 실행환경은 회면처리(Presentation Layer), UX처리(UX Layer), 업무처리(Business Logic Layer), DATA 처리(Persistent Layer), 연계통합(Integration Layer), 배치처리(Batch Layer)로 구분되며, 하단에는 공통기반(Foundation Layer)이 위치해 있습니다." >
+&lt;/p>
 &lt;h2 id="목표">목표&lt;/h2>
 &lt;p>전자정부 표준프레임워크 실행환경은 ‘전자정부 서비스의 품질향상 및 정보화 투자 효율성 향상’을 위해 개발프레임워크 실행환경 표준을 정립하고, 개발프레임워크 표준 적용을 통한 응용 SW의 표준화 및 품질과 재사용성 향상을 목표로 한다.&lt;br>
 또한, 모바일 웹의 사용성과 편의성 증대를 위하여 기존 실행환경 기반 개발이 가능한 모바일 웹 기반의 표준패턴 및 가이드 코드를 제공한다.&lt;/p></description></item><item><title>Restful 웹서비스 예제(Restful Web Service Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/restful-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/restful-example/</guid><description>&lt;h1 id="restful-웹서비스-예제restful-web-service-example">Restful 웹서비스 예제(Restful Web Service Example)&lt;/h1>
@@ -114,11 +120,17 @@ Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직
 &lt;p>Spring 3.0에서 새롭게 추가된 Restful 웹서비스 지원기능을 이용하여 주어진 데이터를 Restful 요청/응답을 통하여 화면 또는 각 파일 양식으로 출력시켜주는 기능의 예제이다. URL을 통하여 각 카테고리의 목록 또는 상세정보를 요청할 수 있으며, HTML, JSON, XML 형태의 출력을 지원한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;pre tabindex="0">&lt;code>1. 해당 예제를 실행하면 Restful 웹서비스기능을 이용한 카테고리 관리페이지를 볼 수 있다. 
-&lt;/code>&lt;/pre>&lt;p>&lt;img alt="restful-1" src="../images/restful-1.png">&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/restful-1.png" alt="restful-1" >
+&lt;/p>
 &lt;pre tabindex="0">&lt;code>2. [등록] 버튼을 누르면 카테고리 등록페이지를 호출하고 카테고리 등록이 가능하다.
-&lt;/code>&lt;/pre>&lt;p>&lt;img alt="restful-2" src="../images/restful-2.png">&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/restful-2.png" alt="restful-2" >
+&lt;/p>
 &lt;pre tabindex="0">&lt;code>3. 카테고리 관리페이지에서 [json으로 내보내기]버튼을 누르면 JSON형태로 카테고리목록을 출력한다.
-&lt;/code>&lt;/pre>&lt;p>&lt;img alt="restful-4" src="../images/restful-4.png">&lt;/p></description></item><item><title>Server Security Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/</guid><description>&lt;h1 id="server-security-service">Server Security Service&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/restful-4.png" alt="restful-4" >
+&lt;/p></description></item><item><title>Server Security Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/</guid><description>&lt;h1 id="server-security-service">Server Security Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>웹을 통해 데이터를 주고받는 업무를 진행할 경우, 보안상의 문제가 발생하기 쉽다.&lt;br>
 Security Service는 웹을 통한 서비스 이용 시 발생할 수 있는 다양한 보안상의 취약점들을 사전에 인지하고 대응함으로써, 서비스의 안정성을 확보한다.&lt;br>
@@ -133,31 +145,46 @@ Server Security의 주요기능은 다음과 같다.&lt;/p></description></item>
 &lt;ol>
 &lt;li>Package Explorer에서 오른쪽 마우스를 클릭하여 소스를 임포트한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="../images/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A7%80%EC%A0%95_3.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/%ec%82%ac%ec%9a%a9%ec%9e%90_%ec%a7%80%ec%a0%95_3.jpg" alt="" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>General&amp;gt;Existing Projects into Workspace를 선택하여 압축을 풀어놓은 폴더를 선택한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="../images/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A7%80%EC%A0%95_4.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/%ec%82%ac%ec%9a%a9%ec%9e%90_%ec%a7%80%ec%a0%95_4.jpg" alt="" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>배치실행예제에서는 HSQL DB를 제공하고 있으며 runHsqlDB.cmd 파일을 실행시켜 DB를 기동시킨다.&lt;/li>
 &lt;/ol>
 &lt;ul>
 &lt;li>egovframework.brte.example\database\db 폴더에서 오른쪽 마우스를 클릭하여 Path Tools&amp;gt;Commands Line Shell을 선택한다.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="../images/setup_cmd.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/setup_cmd.png" alt="" >
+&lt;/p>
 &lt;ul>
 &lt;li>명령프롬프트 창에 runHsqlDB를 입력하여 runHsqlDB.cmd 파일을 실행시킨다.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="../images/setup_cmd2.png">&lt;/p></description></item><item><title>SpEL 예제(Spring Expression Language Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer-core/spel-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer-core/spel-example/</guid><description>&lt;h1 id="spel-예제spring-expression-language-example">SpEL 예제(Spring Expression Language Example)&lt;/h1>
+&lt;p>
+&lt;img src="../images/setup_cmd2.png" alt="" >
+&lt;/p>
+&lt;p>✔ Path Tools&amp;gt;Commands Line Shell을 선택할 수 없을 경우, 해당 프로젝트의 폴더에서 \database\db아래에 있는 runHsqlDB 파일을 클릭한다.&lt;/p></description></item><item><title>SpEL 예제(Spring Expression Language Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer-core/spel-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer-core/spel-example/</guid><description>&lt;h1 id="spel-예제spring-expression-language-example">SpEL 예제(Spring Expression Language Example)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring 3.0에 새롭게 추가된 SPeL 지원기능을 이용하여, JSP 파일상에서 Spring Expression Language를 사용하는 기능에 대한 예제를 제공한다. 이 예제에서는 입력된 데이터 값에 대하여 SPeL의 출력값 포맷팅 기능을 활용하여 출력값을 형식에 맞게 화면에 표시해주는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;pre tabindex="0">&lt;code>1. 해당 예제를 실행하면 아래와 같은 예제페이지가 호출된다.
-&lt;/code>&lt;/pre>&lt;p>&lt;img alt="spel-1" src="../images/spel-1.png">&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/spel-1.png" alt="spel-1" >
+&lt;/p>
 &lt;pre tabindex="0">&lt;code>2. 이름란과 통장 잔액란에 각각 이름과 잔액을 입력하고 [확인]을 누른다.
-&lt;/code>&lt;/pre>&lt;p>&lt;img alt="spel-2" src="../images/spel-2.png">&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/spel-2.png" alt="spel-2" >
+&lt;/p>
 &lt;pre tabindex="0">&lt;code>3. SpEL을 적용하여 포맷팅을 적용한 값이 출력된다.
-&lt;/code>&lt;/pre>&lt;p>&lt;img alt="spel-3" src="../images/spel-3.png">&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/spel-3.png" alt="spel-3" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/">SpEL 가이드&lt;/a>&lt;/li>
@@ -168,22 +195,34 @@ Server Security의 주요기능은 다음과 같다.&lt;/p></description></item>
 &lt;ol>
 &lt;li>해당 예제를 실행하면 로그인이 가능한 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-1" src="../images/security-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/security-1.png" alt="security-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[로그인] 버튼을 누르고 메인에 표시된 관리자 아이디와 패스워드를 이용하여 로그인한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-2" src="../images/security-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/security-2.png" alt="security-2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>환영메세지가 출력되고 게시판과 카테고리 관리에 접근이 가능하다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-3" src="../images/security-3.png">&lt;/p>
-&lt;p>&lt;img alt="security-5" src="../images/security-5.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/security-3.png" alt="security-3" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/security-5.png" alt="security-5" >
+&lt;/p>
 &lt;ol start="4">
 &lt;li>로그인 하지않았거나 일반사용자 아이디로 로그인한 후 카테고리 관리에 접근하게 되면 미리 정의한 에러 페이지가 출력된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-4" src="../images/security-4.png">&lt;/p></description></item><item><title>MVC 패턴의 구조와 장점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/</guid><description>&lt;h1 id="web-servlet">Web Servlet&lt;/h1>
+&lt;p>
+&lt;img src="../images/security-4.png" alt="security-4" >
+&lt;/p></description></item><item><title>MVC 패턴의 구조와 장점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/</guid><description>&lt;h1 id="web-servlet">Web Servlet&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>&lt;img alt="MVC(Model-View-Controller) 패턴" src="images/web-servlet.jpg">&lt;/p>
+&lt;p>
+&lt;img src="images/web-servlet.jpg" alt="MVC(Model-View-Controller) 패턴" >
+&lt;/p>
 &lt;p>&lt;strong>MVC(Model-View-Controller) 패턴&lt;/strong>은 코드를 기능(역할)에 따라 &lt;strong>Model, View, Controller&lt;/strong> 3가지 요소로 분리한다.&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Model&lt;/strong> : 애플리케이션의 데이터와 비즈니스 로직을 담는 객체이다.&lt;/li>
@@ -197,18 +236,24 @@ Server Security의 주요기능은 다음과 같다.&lt;/p></description></item>
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 iBatis로 구현한 공시게시판이 나타난다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="dataacess-1" src="../images/dataacess-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/dataacess-1.png" alt="dataacess-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[등록] 버튼을 눌러 공시 등록페이지를 호출하고, 내용을 작성한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="dataacess-2" src="../images/dataacess-2.png">&lt;/p></description></item><item><title>Architecture</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security-architecture/</guid><description>&lt;h1 id="architecture">Architecture&lt;/h1>
+&lt;p>
+&lt;img src="../images/dataacess-2.png" alt="dataacess-2" >
+&lt;/p></description></item><item><title>Architecture</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security-architecture/</guid><description>&lt;h1 id="architecture">Architecture&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 개발프레임워크의 Spring Security 기본구조와 기본 환경 설정을 설명한다.&lt;br>
 전자정부 개발프레임워크의 Server Security는 컨테이너 기동시 적용되는 XML기반 인증이 아닌 실시간 적용되는 DB기반의 JDBC 인증을 사용한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="spring-security-아키텍처">Spring Security 아키텍처&lt;/h3>
 &lt;h4 id="웹어플리케이션-인증절차">웹어플리케이션 인증절차&lt;/h4>
-&lt;p>&lt;img alt="image" src="../images/server_security_%EC%9B%B9%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98_%EC%9D%B8%EC%A6%9D%EC%A0%88%EC%B0%A8_wbg.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/server_security_%ec%9b%b9%ec%96%b4%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98_%ec%9d%b8%ec%a6%9d%ec%a0%88%ec%b0%a8_wbg.png" alt="image" >
+&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>리소스 요청&lt;/p>
@@ -283,26 +328,36 @@ Spring MVC는 기본요소인 Model, View, Controller 외에도, 아래와 같�
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 Hibernate를 사용한 카테고리관리 페이지가 나타난다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="orm1" src="../images/orm1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/orm1.png" alt="orm1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[등록] 버튼을 눌러 카테고리 등록 페이지를 호출하여 카테고리를 등록 할 수 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="orm2" src="../images/orm2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/orm2.png" alt="orm2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>등록된 카테고리코드를 클릭하여 카테고리를 수정하거나 삭제할 수 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="orm3" src="../images/orm3.png">&lt;/p></description></item><item><title>OXM 예제(OXM Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</guid><description>&lt;h1 id="oxm-예제oxm-example">OXM 예제(OXM Example)&lt;/h1>
+&lt;p>
+&lt;img src="../images/orm3.png" alt="orm3" >
+&lt;/p></description></item><item><title>OXM 예제(OXM Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</guid><description>&lt;h1 id="oxm-예제oxm-example">OXM 예제(OXM Example)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>객체와 XML간의 Mapping을 이용하는 Object-XML Mapping (OXM) 기능에 대한 예제를 제공한다. 이 예제는 주어진 데이터를 XML으로 변화하여 사용자에게 제공하며, 사용자는 브라우저를 통하여 해당하는 XML 파일을 확인할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 상품목록 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="oxm-1" src="../images/oxm-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/oxm-1.png" alt="oxm-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[xml] 버튼을 누르면 상품목록을 XML파일로 다운받을 수 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="oxm-2" src="../images/oxm-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/oxm-2.png" alt="oxm-2" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/marshalling-unmarshalling/">Marshalling/Unmarshalling 가이드&lt;/a>&lt;/li>
@@ -361,7 +416,9 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 &lt;h3 id="dispatcherservlet에서의-웹요청-흐름">DispatcherServlet에서의 웹요청 흐름&lt;/h3>
 &lt;p>Client의 웹요청시에 DispatcherServlet에서 이루어지는 처리 흐름은 아래와 같다.
 좀더 자세한 처리 흐름을 알고 싶다면 디버깅모드로 과정을 추적해 보는 것을 권장한다.&lt;/p>
-&lt;p>&lt;img alt="DispatcherServlet flow" src="../images/web-servlet-dispatcherservlet-flow.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/web-servlet-dispatcherservlet-flow.png" alt="DispatcherServlet flow" >
+&lt;/p>
 &lt;ol>
 &lt;li>doService 메소드에서부터 웹요청의 처리가 시작된다. DispatcherServlet에서 사용되는 몇몇 정보를 request 객체에 담는 작업을 한 후 doDispatch 메소드를 호출한다.&lt;/li>
 &lt;li>아래 3번~13번 작업이 doDispatch 메소드안에 있다. Controller, View 등의 컴포넌트들을 이용한 실제적인 웹요청처리가 이루어 진다.&lt;/li>
@@ -570,15 +627,21 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 다음과 같은 메일보내기가 가능한 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="mail-1" src="../images/mail-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/mail-1.png" alt="mail-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>이름과 이메일란을 작성하고 [메일보내기]를 클릭한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="mail-2" src="../images/mail-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/mail-2.png" alt="mail-2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>성공적으로 메일이 발송되면 성공 메세지를 출력한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="mail-3" src="../images/mail-3.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/mail-3.png" alt="mail-3" >
+&lt;/p>
 &lt;h2 id="참고-자료">참고 자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/mail/">Mail 서비스&lt;/a>&lt;/li>
@@ -587,7 +650,9 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>처음으로 접하므로 여기서는 Hello World를 찍어 보면서 실행하는 것을 살펴보도록 하겠다.&lt;br/>
 Hello World는 두 가지 버전으로 입력되는 값이 없이 단지 Hello, Web Flow 화면을 호출하는 것과 입력값을 가지고 분기 처리 등 서비스 메소드를 실행 후 결과를 화면으로 보여주는 버젼으로 나누어 설명하겠다. 실행하여 보고자 하는 화면 결과는 아래와 같다.&lt;/p>
-&lt;p>&lt;img alt="helloflow" src="../images/helloflow.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/helloflow.jpg" alt="helloflow" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>Spring Web Flow는 사용자와 Service를 제공하는 서버 간의 대화하듯한 화면의 이동을 정의하는 것이다.&lt;br/>
 SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화형 시나리오를 중심으로 접근한다.&lt;/p></description></item><item><title>연계 서비스 API</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/integration-service-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/integration-service-api/</guid><description>&lt;h1 id="연계-서비스-api">연계 서비스 API&lt;/h1>
@@ -596,7 +661,9 @@ SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화�
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="구성">구성&lt;/h3>
 &lt;p>연계 서비스 API는 다음과 같이 구성된다.&lt;/p>
-&lt;p>&lt;img alt="Integration Service Api ClassDiagram" src="../images/integration_service_api_classdiagram_2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/integration_service_api_classdiagram_2.png" alt="Integration Service Api ClassDiagram" >
+&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -789,19 +856,27 @@ Spring 3.1이전 버전이면(egov 3.0이전 버전) DefaultAnnotationHandlerMap
 &lt;ol>
 &lt;li>해당 예제를 실행하고 성공메세지를 확인한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-1.png" src="../images/compress-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-1.png" alt="compress-1.png" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>실행에 성공하면 테스트파일을 압축해 C:\egovCompressSample.zip 형태로 압축된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-2.png" src="../images/compress-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-2.png" alt="compress-2.png" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>[압축해제]를 누르고 성공메세지를 확인한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-3.png" src="../images/compress-3.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-3.png" alt="compress-3.png" >
+&lt;/p>
 &lt;ol start="4">
 &lt;li>압축해제가 성공하면 C:\egovCompressSample폴더에 압축해제된 파일이 생성되어 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-4.png" src="../images/compress-4.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-4.png" alt="compress-4.png" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/compress-decompress/">Compress/Decompress 서비스&lt;/a>&lt;/li>
@@ -819,7 +894,9 @@ Spring 3.1이전 버전이면(egov 3.0이전 버전) DefaultAnnotationHandlerMap
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>변수 선언 후 Job Listeners를 통해서 모든 Job에서 사용자 정의 변수를 사용할 수 있도록 EgovJobVariableListener를 통해서 지원한다.&lt;br>
 사용자가 변수를 정의하여 여러 job에서 해당 변수를 공유하여 사용 가능한 기능으로 이루어져있다.&lt;/p>
-&lt;p>&lt;img alt="job_variable_architecture6" src="../images/job_variable_architecture6.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/job_variable_architecture6.png" alt="job_variable_architecture6" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="job-variable-설정">Job Variable 설정&lt;/h3>
 &lt;p>배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.&lt;/p>
@@ -900,20 +977,36 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>외부 UI 도구를 표준프레임워크에 활용하기 위하여 데이터를 주고 받기 위한 UI 어댑터에 대한 예제이다. 이 예제는 MiPlatform을 이용하여 화면을 구성하고 전자정부 표준프레임워크를 활용하여 해당 화면을 연결하여 기초적인 CRUD 작업을 수행하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>&lt;img alt="ui-adaptor-1" src="../images/ui-adaptor-1.png">&lt;/p>
-&lt;p>&lt;img alt="ui-adaptor-2" src="../images/ui-adaptor-2.png">&lt;/p>
-&lt;p>&lt;img alt="ui-adaptor-3" src="../images/ui-adaptor-3.png">&lt;/p>
-&lt;p>&lt;img alt="ui-adaptor-4" src="../images/ui-adaptor-4.png">&lt;/p>
-&lt;p>&lt;img alt="ui-adaptor-5" src="../images/ui-adaptor-5.png">&lt;/p>
-&lt;p>&lt;img alt="ui-adaptor-6" src="../images/ui-adaptor-6.png">&lt;/p>
-&lt;p>&lt;img alt="ui-adaptor-7" src="../images/ui-adaptor-7.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-1.png" alt="ui-adaptor-1" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-2.png" alt="ui-adaptor-2" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-3.png" alt="ui-adaptor-3" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-4.png" alt="ui-adaptor-4" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-5.png" alt="ui-adaptor-5" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-6.png" alt="ui-adaptor-6" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/ui-adaptor-7.png" alt="ui-adaptor-7" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2></description></item><item><title>WebService</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/webservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/webservice/</guid><description>&lt;h1 id="webservice">WebService&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>WebService는 전자정부 개발프레임워크 Integration 서비스 표준에 따라 WebService를 요청하고 제공하기 위한 Library이다.&lt;/p>
 &lt;h3 id="주요-개념">주요 개념&lt;/h3>
 &lt;h4 id="web-services">Web Services&lt;/h4>
 &lt;p>W3C는 Web Service를 “네트워크 상에서 발생하는 컴퓨터 간의 상호작용을 지원하기 위한 소프트웨어 시스템”으로 정의하고 있다. 일반적으로 Web Service는 인터넷과 같은 네트워크 상에서 접근되고, 요청된 서비스를 제공하는 원격 시스템에서 수행되는 Web APIs이다.&lt;/p>
-&lt;p>&lt;img alt="WebService" src="../images/web_service_wbg.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/web_service_wbg.png" alt="WebService" >
+&lt;/p>
 &lt;ul>
 &lt;li>참조 : &lt;a href="https://en.wikipedia.org/wiki/Web_service">https://en.wikipedia.org/wiki/Web_service&lt;/a>&lt;/li>
 &lt;/ul>
@@ -928,15 +1021,21 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;ol>
 &lt;li>해당 예제를 실행하면 간단한 파일업로드 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="fileupload-1" src="../images/fileupload-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/fileupload-1.png" alt="fileupload-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>선택버튼을 눌러 업로드할 이미지파일을 선택한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="fileupload-2" src="../images/fileupload-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/fileupload-2.png" alt="fileupload-2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>업로드버튼을 누르면 예제의 루트디렉토리에 있는 image폴더에 파일이 업로드되고 화면에 표시된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="fileupload-3" src="../images/fileupload-3.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/fileupload-3.png" alt="fileupload-3" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/">File Upload/Downlowd 서비스&lt;/a>&lt;/li>
@@ -965,7 +1064,9 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 Spring MVC는 다양한 종류의 Controller를 제공하는데, 데이터 바인딩이나 폼 처리 또는 멀티 액션등의 편의 기능을 제공한다.
 이 Controller들은 org.springframework.web.servlet.mvc.Controller 인터페이스를 구현한 클래스들이다.(@Controller는 예외다. 여기서는 @Controller에 대한 설명은 제외한다.)
 eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 아래와 같은 구조를 보여준다.&lt;/p>
-&lt;p>&lt;img alt="Controller preview" src="../images/web-servlet-controller-preview.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/web-servlet-controller-preview.png" alt="Controller preview" >
+&lt;/p>
 &lt;p>이 중 주요 Controller의 용도 및 특징을 표로 나타내면 아래와 같다.&lt;/p></description></item><item><title>iBATIS parameterMap</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-parametermap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-parametermap/</guid><description>&lt;h1 id="parametermap">parameterMap&lt;/h1>
 &lt;p>parameterMap 은 해당 요소로 SQL 문 외부에 정의한 입력 객체의 속성에 대한 name 및 javaType, jdbcType 을 비롯한 옵션을 설정할 수 있는 매핑 요소이다. 이를 통해 JavaBeans 객체(또는 Map 등)에 대한 prepared statement 에 대한 바인드 변수 매핑을 처리할 수 있다. 유사한 기능을 처리하는 parameterClass 나 Inline Parameter 에 비해 많이 사용되지 않지만 더 기술적인(descriptive) parameterMap(예를 들어 stored procedure 를 위한) 이 필요하거나, XML 의 일관된 사용과 순수성을 지키고자 할때 좋은 접근법이 될 수도 있다. 그러나 Dynamic 요소와 함께 사용될 수 없고 바인드 변수의 갯수와 순서를 정확히 맞춰야 하는 불편이 있는 등 일반적으로 사용을 추천하지 않는다.&lt;/p></description></item><item><title>Bean Definition Profiles</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container-bean-definition-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container-bean-definition-profiles/</guid><description>&lt;h1 id="bean-definition-profiles">Bean Definition Profiles&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
@@ -1024,7 +1125,9 @@ eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 �
 &lt;li>SVN에서 예제 코드 easycompany 프로젝트를 다운 받습니다.&lt;br>
 이클립스에서 해당 프로젝트를 보면 아래와 같은 구조를 가지고 있습니다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="projectexplore" src="../images/projectexplore.jpg">&lt;/p></description></item><item><title>작업 전후처리 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-pre_post_process_mgmt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-pre_post_process_mgmt/</guid><description>&lt;h1 id="작업-전후처리-예제">작업 전후처리 예제&lt;/h1>
+&lt;p>
+&lt;img src="../images/projectexplore.jpg" alt="projectexplore" >
+&lt;/p></description></item><item><title>작업 전후처리 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-pre_post_process_mgmt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-pre_post_process_mgmt/</guid><description>&lt;h1 id="작업-전후처리-예제">작업 전후처리 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 표준프레임워크에서 배치 수행시, Core에서 제공하는 Processor 클래스를 이용하여 Job과 그 하위 구성요소인 Step, Chunk 전후에 적절한 선행/후행 처리 과정을 보여주는 예제이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -1075,11 +1178,15 @@ eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 �
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 상품목록 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="excel-1" src="../images/excel-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/excel-1.png" alt="excel-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[excel] 버튼을 누르면 상품목록을 excel파일로 다운받을 수 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="excel-2" src="../images/excel-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/excel-2.png" alt="excel-2" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/excel/">Excel 서비스&lt;/a>&lt;/li>
@@ -1136,7 +1243,9 @@ DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.&lt;/p>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>변수 선언 후 Listeners를 통해서 모든 Setp에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
 사용자가 변수를 정의하여 여러 step에서 해당 변수를 공유하여 사용 가능한 기능으로 이루어져있다.&lt;/p>
-&lt;p>&lt;img alt="step-variable-architecture6" src="images/step-variable-architecture6.png">&lt;/p>
+&lt;p>
+&lt;img src="images/step-variable-architecture6.png" alt="step-variable-architecture6" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="step-variable-설정">Step Variable 설정&lt;/h3>
 &lt;p>배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.&lt;/p>
@@ -1631,7 +1740,9 @@ DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 
 &lt;/ul></description></item><item><title>Resource Variable</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-resource_variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-resource_variable/</guid><description>&lt;h1 id="resource-variable">Resource Variable&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 정의 리소스 변수 선언 후 Setp에서 ItemReader, ItemWriter에서 사용자 정의 리소스를 사용할 수 있도록 EgovResourceVariable를 통해서 지원한다.&lt;/p>
-&lt;p>&lt;img alt="image" src="../images/resource_variable_architecture7.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/resource_variable_architecture7.png" alt="image" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="egovresourcevariable-설정">EgovResourceVariable 설정&lt;/h3>
 &lt;p>배치실행환경에서 제공하는 EgovResourceVariable 사용하여 사용자 정의 리소스를 설정한다.&lt;/p>
@@ -1952,7 +2063,9 @@ Maven을 사용한다면 Maven Repository(&lt;a href="https://mvnrepository.com/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;reviewBooking&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/view-state&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>따라서. 디렉토리 상의&lt;/p>
-&lt;p>&lt;img alt="dir" src="../images/dir.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/dir.jpg" alt="dir" >
+&lt;/p>
 &lt;p>booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBookingDetails.jsp 이 자동으로 view로 동작한다.
 또는 절대 경로를 이용하여 명시적으로 view=”/WEB-INF/hotels/booking/enterBookingDetails.jsp” 설정할 수도 있다.
 아래에서 다시 설명하겠다.&lt;/p></description></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
@@ -2494,7 +2607,9 @@ PropertySource는 Environment를 통해 접근 가능하다. 즉, 사용자가 �
 &lt;h4 id="job-설정">Job 설정&lt;/h4>
 &lt;p>&lt;b>건너뛰기(Skip) 기능 예제의 Job 설정 파일인 skipSample.xml을 확인한다.&lt;/b>&lt;/p>
 &lt;p>✔ skipSample의 Step 흐름 참고&lt;/p>
-&lt;p>&lt;img alt="skipSample의 Step 흐름" src="../images/skip1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/skip1.png" alt="skipSample의 Step 흐름" >
+&lt;/p>
 &lt;p>Job 의 구성을 보면 Chunk 설정에 아래와 같은 설정이 있다.&lt;/p>
 &lt;ul>
 &lt;li>skip-limit : Skip 할 수 있는 최대 횟수를 지정한다.&lt;/li>
@@ -2548,7 +2663,9 @@ PropertySource는 Environment를 통해 접근 가능하다. 즉, 사용자가 �
 &lt;p>&lt;b>simple-job-launcher-context.xml 설정과 skipSample.xml 설정으로 이루어진 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/b>&lt;/p></description></item><item><title>Skip/Retry/Repeat</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-skip_repeat_retry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-skip_repeat_retry/</guid><description>&lt;h1 id="skipretryrepeat">Skip/Retry/Repeat&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Skip, Retry, Repeat은 효율적인 배치수행을 위해 필요한 기능들이다. Repeat 정책에 따라 Step과 Chunk가 반복적으로 수행되면서 데이터 Read, Process, Write 과정이 일어나는데, 여기서 Skip과 Retry 이용해 배치작업을 효율적으로 수행할 수 있다. 각 기능이 쓰이는 위치는 다음 그림을 참고한다.&lt;/p>
-&lt;p>&lt;img alt="image" src="../images/batch_core-skip_retry_repeat_all.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/batch_core-skip_retry_repeat_all.png" alt="image" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="skip">Skip&lt;/h3>
 &lt;p>Skip은 데이터를 처리하는 동안 설정된 Exception이 발생했을 경우, 해당 데이터 처리를 건너뛰는 기능이다. 데이터의 사소한 오류에 대해 Step의 실패처리 대신 Skip을 함으로써, 배치수행의 빈번한 실패를 줄일 수 있게 한다.&lt;/p></description></item><item><title>Spring Data</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/jpa-spring-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/jpa-spring-data/</guid><description>&lt;h1 id="spring-data">Spring Data&lt;/h1>
@@ -2698,7 +2815,9 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 &lt;li>CompositeItem처리: N개의 대상을 읽은 후, 하나의 결과물을 만들어낸다.&lt;/li>
 &lt;/ul>
 &lt;p>두 방식을 개념적으로 비교하면 아래와 같다.&lt;/p>
-&lt;p>&lt;img alt="image" src="../images/batch_core-multiresource_vs_composite2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/batch_core-multiresource_vs_composite2.png" alt="image" >
+&lt;/p>
 &lt;h3 id="multiresourceitem-처리">MultiResourceItem 처리&lt;/h3>
 &lt;p>다수의 파일을 대상으로 동일한 유형의 Batch처리를 하고자 할 경우 MultiResourceItemReader를 사용하면 편리하다.&lt;br>
 예를 들어, 아래와 같이 &amp;lsquo;file~&amp;lsquo;로 시작하는 파일명을 가진 파일들에 대해 일괄 변경을 수행하고자 할 경우에도 적용 가능하다.&lt;/p></description></item><item><title>동기/비동기 처리 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-sync_async/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-sync_async/</guid><description>&lt;h1 id="동기비동기-처리-예제">동기/비동기 처리 예제&lt;/h1>
@@ -3501,7 +3620,9 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;/li>
 &lt;li>
 &lt;p>Unordered List Item처음 ItemReader를 사용하여 데이터를 읽고 큐에 넣은 Center-Cut Reading Step과, 읽어온 데이터를 가공 후 QueueSender를 통해 Queue에 넣는 구조이다.&lt;/p>
-&lt;p>&lt;img alt="centercut-explain1" src="images/centercut-explain1.png">&lt;/p>
+&lt;p>
+&lt;img src="images/centercut-explain1.png" alt="centercut-explain1" >
+&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Center-Cut Process Step은 큐에서 들어온 데이터를 읽고 처리 모듈(Busineess Proc)를 활용하여 데이터를 처리하는 구조이다.&lt;/p></description></item><item><title>FixedLength 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-file-fixedlength/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-file-fixedlength/</guid><description>&lt;h1 id="fixedlength-예제">FixedLength 예제&lt;/h1>
@@ -3759,7 +3880,9 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;h3 id="흐름-처리controlling-step-flow">흐름 처리(Controlling Step Flow)&lt;/h3>
 &lt;h4 id="sequential-flow">Sequential Flow&lt;/h4>
 &lt;p>가장 간단한 시나리오의 Job은 모든 Step을 순서대로 실행 하는 것이다.&lt;/p>
-&lt;p>&lt;img alt="sequential-flow" src="images/sequential-flow.png">&lt;/p>
+&lt;p>
+&lt;img src="images/sequential-flow.png" alt="sequential-flow" >
+&lt;/p>
 &lt;p>위와 같은 Job의 실행은 Step 엘리먼트의 &amp;rsquo;next&amp;rsquo; 어트리뷰트를 이용해서 설정할 수 있다.&lt;/p></description></item><item><title>WebSocket</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/websocket/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/websocket/</guid><description>&lt;h1 id="websocket">WebSocket&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>WebSocket 은 HTTP 환경에서 소켓 통신을 지원하기 위한 Spring 기술이다. Spring 은 기본적으로 WebSocket sub-protocol 로 STOMP 를 사용한다.&lt;/p>

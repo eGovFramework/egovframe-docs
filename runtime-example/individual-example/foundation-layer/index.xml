@@ -5,31 +5,45 @@
 &lt;ol>
 &lt;li>해당 예제를 실행하면 로그인이 가능한 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-1" src="../images/security-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/security-1.png" alt="security-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[로그인] 버튼을 누르고 메인에 표시된 관리자 아이디와 패스워드를 이용하여 로그인한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-2" src="../images/security-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/security-2.png" alt="security-2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>환영메세지가 출력되고 게시판과 카테고리 관리에 접근이 가능하다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-3" src="../images/security-3.png">&lt;/p>
-&lt;p>&lt;img alt="security-5" src="../images/security-5.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/security-3.png" alt="security-3" >
+&lt;/p>
+&lt;p>
+&lt;img src="../images/security-5.png" alt="security-5" >
+&lt;/p>
 &lt;ol start="4">
 &lt;li>로그인 하지않았거나 일반사용자 아이디로 로그인한 후 카테고리 관리에 접근하게 되면 미리 정의한 에러 페이지가 출력된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="security-4" src="../images/security-4.png">&lt;/p></description></item><item><title>OXM 예제(OXM Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</guid><description>&lt;h1 id="oxm-예제oxm-example">OXM 예제(OXM Example)&lt;/h1>
+&lt;p>
+&lt;img src="../images/security-4.png" alt="security-4" >
+&lt;/p></description></item><item><title>OXM 예제(OXM Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/</guid><description>&lt;h1 id="oxm-예제oxm-example">OXM 예제(OXM Example)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>객체와 XML간의 Mapping을 이용하는 Object-XML Mapping (OXM) 기능에 대한 예제를 제공한다. 이 예제는 주어진 데이터를 XML으로 변화하여 사용자에게 제공하며, 사용자는 브라우저를 통하여 해당하는 XML 파일을 확인할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 상품목록 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="oxm-1" src="../images/oxm-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/oxm-1.png" alt="oxm-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[xml] 버튼을 누르면 상품목록을 XML파일로 다운받을 수 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="oxm-2" src="../images/oxm-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/oxm-2.png" alt="oxm-2" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/marshalling-unmarshalling/">Marshalling/Unmarshalling 가이드&lt;/a>&lt;/li>
@@ -40,15 +54,21 @@
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 다음과 같은 메일보내기가 가능한 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="mail-1" src="../images/mail-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/mail-1.png" alt="mail-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>이름과 이메일란을 작성하고 [메일보내기]를 클릭한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="mail-2" src="../images/mail-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/mail-2.png" alt="mail-2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>성공적으로 메일이 발송되면 성공 메세지를 출력한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="mail-3" src="../images/mail-3.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/mail-3.png" alt="mail-3" >
+&lt;/p>
 &lt;h2 id="참고-자료">참고 자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/mail/">Mail 서비스&lt;/a>&lt;/li>
@@ -60,19 +80,27 @@
 &lt;ol>
 &lt;li>해당 예제를 실행하고 성공메세지를 확인한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-1.png" src="../images/compress-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-1.png" alt="compress-1.png" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>실행에 성공하면 테스트파일을 압축해 C:\egovCompressSample.zip 형태로 압축된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-2.png" src="../images/compress-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-2.png" alt="compress-2.png" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>[압축해제]를 누르고 성공메세지를 확인한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-3.png" src="../images/compress-3.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-3.png" alt="compress-3.png" >
+&lt;/p>
 &lt;ol start="4">
 &lt;li>압축해제가 성공하면 C:\egovCompressSample폴더에 압축해제된 파일이 생성되어 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="compress-4.png" src="../images/compress-4.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/compress-4.png" alt="compress-4.png" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/compress-decompress/">Compress/Decompress 서비스&lt;/a>&lt;/li>
@@ -83,15 +111,21 @@
 &lt;ol>
 &lt;li>해당 예제를 실행하면 간단한 파일업로드 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="fileupload-1" src="../images/fileupload-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/fileupload-1.png" alt="fileupload-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>선택버튼을 눌러 업로드할 이미지파일을 선택한다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="fileupload-2" src="../images/fileupload-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/fileupload-2.png" alt="fileupload-2" >
+&lt;/p>
 &lt;ol start="3">
 &lt;li>업로드버튼을 누르면 예제의 루트디렉토리에 있는 image폴더에 파일이 업로드되고 화면에 표시된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="fileupload-3" src="../images/fileupload-3.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/fileupload-3.png" alt="fileupload-3" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/">File Upload/Downlowd 서비스&lt;/a>&lt;/li>
@@ -103,11 +137,15 @@
 &lt;ol>
 &lt;li>해당 예제를 설치하고 실행하면 상품목록 페이지가 호출된다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="excel-1" src="../images/excel-1.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/excel-1.png" alt="excel-1" >
+&lt;/p>
 &lt;ol start="2">
 &lt;li>[excel] 버튼을 누르면 상품목록을 excel파일로 다운받을 수 있다.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="excel-2" src="../images/excel-2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/excel-2.png" alt="excel-2" >
+&lt;/p>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/excel/">Excel 서비스&lt;/a>&lt;/li>

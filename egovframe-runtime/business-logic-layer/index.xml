@@ -16,7 +16,9 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>처음으로 접하므로 여기서는 Hello World를 찍어 보면서 실행하는 것을 살펴보도록 하겠다.&lt;br/>
 Hello World는 두 가지 버전으로 입력되는 값이 없이 단지 Hello, Web Flow 화면을 호출하는 것과 입력값을 가지고 분기 처리 등 서비스 메소드를 실행 후 결과를 화면으로 보여주는 버젼으로 나누어 설명하겠다. 실행하여 보고자 하는 화면 결과는 아래와 같다.&lt;/p>
-&lt;p>&lt;img alt="helloflow" src="../images/helloflow.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/helloflow.jpg" alt="helloflow" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>Spring Web Flow는 사용자와 Service를 제공하는 서버 간의 대화하듯한 화면의 이동을 정의하는 것이다.&lt;br/>
 SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화형 시나리오를 중심으로 접근한다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration/</guid><description/></item><item><title>Spring Web Flow 환경 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-setting-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-setting-system/</guid><description>&lt;h1 id="spring-web-flow-환경-구성하기">Spring Web Flow 환경 구성하기&lt;/h1>
@@ -106,7 +108,9 @@ Web Flow는 하이버네이트와 JPA 객체 영속화 기술과 연동한다.&l
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;reviewBooking&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/view-state&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>따라서. 디렉토리 상의&lt;/p>
-&lt;p>&lt;img alt="dir" src="../images/dir.jpg">&lt;/p>
+&lt;p>
+&lt;img src="../images/dir.jpg" alt="dir" >
+&lt;/p>
 &lt;p>booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBookingDetails.jsp 이 자동으로 view로 동작한다.
 또는 절대 경로를 이용하여 명시적으로 view=”/WEB-INF/hotels/booking/enterBookingDetails.jsp” 설정할 수도 있다.
 아래에서 다시 설명하겠다.&lt;/p></description></item><item><title>Action 실행</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-executing-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-executing-actions/</guid><description>&lt;h1 id="action-실행">Action 실행&lt;/h1>

@@ -5,7 +5,9 @@
 &lt;p>배치 실행환경은 대용량 데이터 처리를 위한 기반 환경을 제공함으로써 배치 실행에 필요한 핵심 기능을 제공한다.&lt;/p>
 &lt;h2 id="배치-실행환경-수행-과정">배치 실행환경 수행 과정&lt;/h2>
 &lt;p>전자정부 표준프레임워크 실행환경에 추가된 배치 실행환경은 3-Tier(Run, Job, Application Tier)로 구성되며, 대용량 데이터 처리를 위한 기반 환경을 제공한다.&lt;/p>
-&lt;p>&lt;img alt="배치 실행환경 수행 과정" src="images/batch_process.png">&lt;/p>
+&lt;p>
+&lt;img src="images/batch_process.png" alt="배치 실행환경 수행 과정" >
+&lt;/p>
 &lt;h2 id="run-tier">Run Tier&lt;/h2>
 &lt;p>Run Tier는 배치 응용 프로그램의 실행을 담당한다. 실행 방식에 따라 &lt;strong>Scheduler&lt;/strong>, &lt;strong>Http/Web service&lt;/strong>, &lt;strong>CommandLine&lt;/strong>으로 나눌 수 있다.&lt;/p></description></item><item><title>SQLite</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-sqllite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-sqllite/</guid><description>&lt;h1 id="sqlite">SQLite&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
@@ -101,7 +103,9 @@
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>변수 선언 후 Job Listeners를 통해서 모든 Job에서 사용자 정의 변수를 사용할 수 있도록 EgovJobVariableListener를 통해서 지원한다.&lt;br>
 사용자가 변수를 정의하여 여러 job에서 해당 변수를 공유하여 사용 가능한 기능으로 이루어져있다.&lt;/p>
-&lt;p>&lt;img alt="job_variable_architecture6" src="../images/job_variable_architecture6.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/job_variable_architecture6.png" alt="job_variable_architecture6" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="job-variable-설정">Job Variable 설정&lt;/h3>
 &lt;p>배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.&lt;/p>
@@ -134,7 +138,9 @@
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>변수 선언 후 Listeners를 통해서 모든 Setp에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
 사용자가 변수를 정의하여 여러 step에서 해당 변수를 공유하여 사용 가능한 기능으로 이루어져있다.&lt;/p>
-&lt;p>&lt;img alt="step-variable-architecture6" src="images/step-variable-architecture6.png">&lt;/p>
+&lt;p>
+&lt;img src="images/step-variable-architecture6.png" alt="step-variable-architecture6" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="step-variable-설정">Step Variable 설정&lt;/h3>
 &lt;p>배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.&lt;/p>
@@ -184,7 +190,9 @@
 &lt;p>FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 갖으며, LineAggregator에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 쓸 수 있다.&lt;/p></description></item><item><title>Resource Variable</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-resource_variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-resource_variable/</guid><description>&lt;h1 id="resource-variable">Resource Variable&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 정의 리소스 변수 선언 후 Setp에서 ItemReader, ItemWriter에서 사용자 정의 리소스를 사용할 수 있도록 EgovResourceVariable를 통해서 지원한다.&lt;/p>
-&lt;p>&lt;img alt="image" src="../images/resource_variable_architecture7.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/resource_variable_architecture7.png" alt="image" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="egovresourcevariable-설정">EgovResourceVariable 설정&lt;/h3>
 &lt;p>배치실행환경에서 제공하는 EgovResourceVariable 사용하여 사용자 정의 리소스를 설정한다.&lt;/p>
@@ -281,7 +289,9 @@ Hessian 웹서비스는 별도의 대형 프레임워크를 설치하지 않고�
 &lt;p>이것은 Bean post-processor으로 Application Context가 올라가면서 bean 등록 시, 자동으로 JobRegistry에 Job을 등록 시켜준다.&lt;/p></description></item><item><title>JobExplorer</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job_explorer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job_explorer/</guid><description/></item><item><title>JobOperator</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/barch-core-job_operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/barch-core-job_operator/</guid><description/></item><item><title>Skip/Retry/Repeat</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-skip_repeat_retry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-skip_repeat_retry/</guid><description>&lt;h1 id="skipretryrepeat">Skip/Retry/Repeat&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Skip, Retry, Repeat은 효율적인 배치수행을 위해 필요한 기능들이다. Repeat 정책에 따라 Step과 Chunk가 반복적으로 수행되면서 데이터 Read, Process, Write 과정이 일어나는데, 여기서 Skip과 Retry 이용해 배치작업을 효율적으로 수행할 수 있다. 각 기능이 쓰이는 위치는 다음 그림을 참고한다.&lt;/p>
-&lt;p>&lt;img alt="image" src="../images/batch_core-skip_retry_repeat_all.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/batch_core-skip_retry_repeat_all.png" alt="image" >
+&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="skip">Skip&lt;/h3>
 &lt;p>Skip은 데이터를 처리하는 동안 설정된 Exception이 발생했을 경우, 해당 데이터 처리를 건너뛰는 기능이다. 데이터의 사소한 오류에 대해 Step의 실패처리 대신 Skip을 함으로써, 배치수행의 빈번한 실패를 줄일 수 있게 한다.&lt;/p></description></item><item><title>MultiDataProcessing</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-multidata_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-multidata_process/</guid><description>&lt;h1 id="multidataprocessing">MultiDataProcessing&lt;/h1>
@@ -294,7 +304,9 @@ Hessian 웹서비스는 별도의 대형 프레임워크를 설치하지 않고�
 &lt;li>CompositeItem처리: N개의 대상을 읽은 후, 하나의 결과물을 만들어낸다.&lt;/li>
 &lt;/ul>
 &lt;p>두 방식을 개념적으로 비교하면 아래와 같다.&lt;/p>
-&lt;p>&lt;img alt="image" src="../images/batch_core-multiresource_vs_composite2.png">&lt;/p>
+&lt;p>
+&lt;img src="../images/batch_core-multiresource_vs_composite2.png" alt="image" >
+&lt;/p>
 &lt;h3 id="multiresourceitem-처리">MultiResourceItem 처리&lt;/h3>
 &lt;p>다수의 파일을 대상으로 동일한 유형의 Batch처리를 하고자 할 경우 MultiResourceItemReader를 사용하면 편리하다.&lt;br>
 예를 들어, 아래와 같이 &amp;lsquo;file~&amp;lsquo;로 시작하는 파일명을 가진 파일들에 대해 일괄 변경을 수행하고자 할 경우에도 적용 가능하다.&lt;/p></description></item><item><title>History Management</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-history_management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-history_management/</guid><description>&lt;h1 id="history-management">History Management&lt;/h1>
@@ -596,7 +608,9 @@ Hessian 웹서비스는 별도의 대형 프레임워크를 설치하지 않고�
 &lt;/li>
 &lt;li>
 &lt;p>Unordered List Item처음 ItemReader를 사용하여 데이터를 읽고 큐에 넣은 Center-Cut Reading Step과, 읽어온 데이터를 가공 후 QueueSender를 통해 Queue에 넣는 구조이다.&lt;/p>
-&lt;p>&lt;img alt="centercut-explain1" src="images/centercut-explain1.png">&lt;/p>
+&lt;p>
+&lt;img src="images/centercut-explain1.png" alt="centercut-explain1" >
+&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Center-Cut Process Step은 큐에서 들어온 데이터를 읽고 처리 모듈(Busineess Proc)를 활용하여 데이터를 처리하는 구조이다.&lt;/p></description></item><item><title>이벤트알림 템플릿 관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt/</guid><description>&lt;h1 id="이벤트알림-템플릿-관리">이벤트알림 템플릿 관리&lt;/h1>
@@ -645,5 +659,7 @@ Hessian 웹서비스는 별도의 대형 프레임워크를 설치하지 않고�
 &lt;h3 id="흐름-처리controlling-step-flow">흐름 처리(Controlling Step Flow)&lt;/h3>
 &lt;h4 id="sequential-flow">Sequential Flow&lt;/h4>
 &lt;p>가장 간단한 시나리오의 Job은 모든 Step을 순서대로 실행 하는 것이다.&lt;/p>
-&lt;p>&lt;img alt="sequential-flow" src="images/sequential-flow.png">&lt;/p>
+&lt;p>
+&lt;img src="images/sequential-flow.png" alt="sequential-flow" >
+&lt;/p>
 &lt;p>위와 같은 Job의 실행은 Step 엘리먼트의 &amp;rsquo;next&amp;rsquo; 어트리뷰트를 이용해서 설정할 수 있다.&lt;/p></description></item></channel></rss>
