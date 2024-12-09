@@ -1,0 +1,5 @@
+{{- $src := .Destination -}}
+{{- if strings.HasPrefix $src "./images/" -}}
+  {{- $src = strings.Replace $src "./images/" "../images/" 1 -}}
+{{ end }}
+<img src="{{ $src }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} >
