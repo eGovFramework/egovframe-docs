@@ -9,7 +9,7 @@ description: 사용자 정의 리소스 변수 선언 후 Setp에서 ItemReader,
 ## 개요
 사용자 정의 리소스 변수 선언 후 Setp에서 ItemReader, ItemWriter에서 사용자  정의 리소스를 사용할 수 있도록 EgovResourceVariable를 통해서 지원한다.
 
-![image](../images/resource_variable_architecture7.png)
+![image](./images/resource_variable_architecture7.png)
 
 ## 설명
 

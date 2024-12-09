@@ -157,7 +157,7 @@ public class EgovPreProcessorFunctionalTests extends EgovAbstractIoSampleTests {
 ### 결과 확인
 이 예제의 테스트 결과는 배치수행 결과만 반영하므로, 전처리/후처리 성공여부는 콘솔창에서 로그내용을 검색하여 해당 로그의 출력여부로 확인할 수 있다.
 
-![preprocessor1](../images/preprocessor1.png)
+![preprocessor1](./images/preprocessor1.png)
 
 ## 참고자료
 - [Listener](../../../egovframe-runtime/batch-layer/batch-core-listener.md)

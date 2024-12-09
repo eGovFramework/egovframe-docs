@@ -257,11 +257,11 @@ ${persons.name}	${persons.id}	${persons.mon}	${persons.tue}	${persons.wed}	${per
 		Total Hrs:	$[SUM(C4)]	$[SUM(D4)]	$[SUM(E4)]	$[SUM(F4)]	$[SUM(G4)]	$[SUM(H4)]	$[SUM(I4)]	$[SUM(J4)]
 ```
 
-![excel-service-template](../images/excel-service-template.png)
+![excel-service-template](./images/excel-service-template.png)
 
 ##### Template 적용결과
 
-![excel-service-template-result](../images/excel-service-template-result.png)
+![excel-service-template-result](./images/excel-service-template-result.png)
 
 ### Excel 다운로드
 

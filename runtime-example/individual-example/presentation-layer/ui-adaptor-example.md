@@ -12,18 +12,18 @@ description: 외부 UI 도구를 표준프레임워크에 활용하기 위하여
 
 ## 설명
 
-![ui-adaptor-1](../images/ui-adaptor-1.png)
+![ui-adaptor-1](./images/ui-adaptor-1.png)
 
-![ui-adaptor-2](../images/ui-adaptor-2.png)
+![ui-adaptor-2](./images/ui-adaptor-2.png)
 
-![ui-adaptor-3](../images/ui-adaptor-3.png)
+![ui-adaptor-3](./images/ui-adaptor-3.png)
 
-![ui-adaptor-4](../images/ui-adaptor-4.png)
+![ui-adaptor-4](./images/ui-adaptor-4.png)
 
-![ui-adaptor-5](../images/ui-adaptor-5.png)
+![ui-adaptor-5](./images/ui-adaptor-5.png)
 
-![ui-adaptor-6](../images/ui-adaptor-6.png)
+![ui-adaptor-6](./images/ui-adaptor-6.png)
 
-![ui-adaptor-7](../images/ui-adaptor-7.png)
+![ui-adaptor-7](./images/ui-adaptor-7.png)
 
 ## 참고자료

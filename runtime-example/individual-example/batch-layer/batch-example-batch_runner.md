@@ -155,7 +155,7 @@ stopAndCheckStatus() 메소드는 Job 실행 정보를 확인하고 실행 중�
 
 Console 창에서 Job Summary내용 중, BatchStatus가 Stopped 임을 확인한다.
 
-![centercut-explain1](../images/centercut-explain1.png)
+![centercut-explain1](./images/centercut-explain1.png)
 
 ## 참고자료
 * [Batch Runner](../../../egovframe-runtime/batch-layer/batch-execution-job_runner.md#egovbatchrunner)

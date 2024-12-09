@@ -169,7 +169,7 @@ public class EgovCompositeItemWriterSampleFunctionalTests {
 ### 결과 확인
 위의 테스트의 결과인 DB의 Trade테이블과 파일들이 생성되었는지를 확인한다.
 
-![compositewriter_datadb](../images/compositewriter_datadb.png)
+![compositewriter_datadb](./images/compositewriter_datadb.png)
 
 ## 참고자료
 - [multidata_process](../../egovframe-runtime/batch-layer/batch-core-multidata_process.md)

@@ -296,7 +296,7 @@ errors.email=유효하지 않은 이메일 주소입니다.
 이름 필드에 값을 비우고 submit하면, name에 필수값(required) validation rule이 설정되어 있으므로
 아래와 같이 이름 필드 옆에 에러 메시지가 출력 될 것이다.
 
-![server-validate](../images/server-validate.jpg)
+![server-validate](./images/server-validate.jpg)
 
 ### Client-Side Validation
 
@@ -405,7 +405,7 @@ form submit시에 validateVO클래스명() 함수를 호출한다.
 
 이번에도 이름 필드의 값을 지우고 저장 버튼을 누르면 아래와 같은 alert 메시지가 보일 것이다.
 
-![client-validate](../images/client-validate.jpg)
+![client-validate](./images/client-validate.jpg)
 
 ## 참고문헌
 

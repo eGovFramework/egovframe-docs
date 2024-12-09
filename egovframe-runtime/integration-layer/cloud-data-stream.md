@@ -26,7 +26,7 @@ Spring Cloud Stream은 Spring Integration의 메시지 처리 핵심 기능을 �
 
 ### Data Stream , Batch 비교
 
-![Data Stream vs Batch](../images/datastream_vs_batch.png)
+![Data Stream vs Batch](./images/datastream_vs_batch.png)
 
 | 배치 처리 | 비동기 데이터 처리 |
 | --- | --- |

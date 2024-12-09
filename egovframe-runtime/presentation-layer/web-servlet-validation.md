@@ -196,7 +196,7 @@ public class UpdateDepartmentController {
 
 부서 이름값을 비우고, 부서설명 부분에 10자 이하로 입력한 후에 저장 버튼을 누르면, 다시 부서정보수정 페이지로 돌아와서 아래와 같이 에러 메시지가 출력될 것이다.
 
-![web-servlet-validation](../images/web-servlet-validation.png)
+![web-servlet-validation](./images/web-servlet-validation.png)
 
 ## 참고자료
 - Spring Framework API Documentation 2.5.6

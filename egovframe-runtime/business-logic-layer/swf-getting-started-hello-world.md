@@ -11,14 +11,14 @@ description: Spring Web Flow는 사용자와 서버 간의 대화 형식으로 �
 처음으로 접하므로 여기서는 Hello World를 찍어 보면서 실행하는 것을 살펴보도록 하겠다.<br/>
 Hello World는 두 가지 버전으로 입력되는 값이 없이 단지 Hello, Web Flow 화면을 호출하는 것과 입력값을 가지고 분기 처리 등 서비스 메소드를 실행 후 결과를 화면으로 보여주는 버젼으로 나누어 설명하겠다. 실행하여 보고자 하는 화면 결과는 아래와 같다.
 
-![helloflow](../images/helloflow.jpg)
+![helloflow](./images/helloflow.jpg)
 
 ## 설명
 
 Spring Web Flow는 사용자와 Service를 제공하는 서버 간의 대화하듯한 화면의 이동을 정의하는 것이다.<br/>
 SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화형 시나리오를 중심으로 접근한다.
 
-![swfhelloworldcreate](../images/swfhelloworldcreate.jpg)
+![swfhelloworldcreate](./images/swfhelloworldcreate.jpg)
 
 ## web.xml
 
@@ -73,7 +73,7 @@ servlet으로 org.springframework.web.servlet.DispatcherServlet를 등록하고 
 
 Spring MVC와 Spring Web Flow를 위한 설정 파일은 아래와 같다.
 
-![hellowebconfig](../images/hellowebconfig.jpg)
+![hellowebconfig](./images/hellowebconfig.jpg)
 
 먼저 web-application-config.xml를 살펴보겠다.
   
@@ -323,14 +323,14 @@ default는 flow.xml과 같은 디렉토리에 있는 화면소스(JSP, xhtml, �
 </html>
 ```
 
-![hello1-1page.jpg](../images/hello1-1page.jpg)
+![hello1-1page.jpg](./images/hello1-1page.jpg)
 
 보는 바와 같이 form으로 둘러싸인 곳에 해답은 있다. <input type=“submit” name=“_eventId_say” …. /> 에서 name 을 보면 **_eventId_say**로 답을 찾을 수 있다.<br/>
 _eventId가 답이다. say는 transition의 on과 같음을 확인할 수 있다. eventId 에 정의된 특정 위치의 문자열을 가지고 transition을 분석하다.
 transition에 대한 내용은 flow 정의에서 자세히 살펴보길 바란다. eventId 가 “say”를 가지고 form 이 전달되면 [flow 정의](./flow_definition.md) flow 정의에 따라 transition을 찾고 그에 맞는 state로 넘어가게 된다.<br/>
 결과는 별로의 값을 가지고 보여주는 화면은 아니고 단지 아래와 같은 화면을 보여주도록 되어 있다.
 
-![jhello1-2page.jpg](../images/hello1-2page.jpg)
+![jhello1-2page.jpg](./images/hello1-2page.jpg)
 
 다음은 입력값이 있는 예를 살펴 보도록 하겠다.
 
@@ -532,11 +532,11 @@ helloworld2 화면으로 이동하게 되면 아래와 같은 jsp 소스를 확�
 
 화면을 다시 보면
 
-![hello1-1page.jpg](../images/hello1-1page.jpg)
+![hello1-1page.jpg](./images/hello1-1page.jpg)
 
 say 버튼을 누르면,
 
-![hello1-1page.jpg](../images/hello1-1page.jpg)
+![hello1-1page.jpg](./images/hello1-1page.jpg)
 
 Hello , 뒤에 넣었던 문장이 붙어서 나오게 된다.
 

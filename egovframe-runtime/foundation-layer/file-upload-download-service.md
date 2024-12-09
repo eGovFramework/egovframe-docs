@@ -66,7 +66,7 @@ multiple files with a single file(한단 샘플)에서 사용한 JavaScript를 �
 
 **샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우저에서 실행되는 화면**
 
-![file-updown-service-sample-screenshot](../images/file-updown-service-sample-screenshot.png)
+![file-updown-service-sample-screenshot](./images/file-updown-service-sample-screenshot.png)
 
 ## 참고자료
 

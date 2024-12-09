@@ -88,7 +88,7 @@ Jasypt는 외부로 부터 공격받을 수 있는 데이타베이스 암호나 
 3. Hash function은 salt와 메시지 전체에 적용되고, function 결과들은 명시한 iterations 만큼 반복된다.
 4. 랜덤으로 salt를 생성하면 undigested salt는 hash 결과 시작부분에 덧붙여진다.
 
-![alt text](../images/crypto-encryption-decryption-jasypts-Standard.png)
+![alt text](./images/crypto-encryption-decryption-jasypts-Standard.png)
 
 #### Encrypting numbers
 

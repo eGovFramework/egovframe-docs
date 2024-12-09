@@ -19,7 +19,7 @@ description: 배치 수행 시 여러 리소스를 처리해야 할 경우, 전�
 
 두 방식을 개념적으로 비교하면 아래와 같다.
 
-![image](../images/batch_core-multiresource_vs_composite2.png)
+![image](./images/batch_core-multiresource_vs_composite2.png)
 
 ### MultiResourceItem 처리
 
@@ -109,7 +109,7 @@ file-1.txt  file-2.txt  ignored.txt
 
 CompositeReader의 일반적인 처리 프로세스는 아래와 같다.  
 
-![image](../images/batch_core-batch_composite_reader.png)  
+![image](./images/batch_core-batch_composite_reader.png)  
 
 ✔ **주의!** CompositeReader는 등록된 모든 Reader로부터 데이터를 한 라인씩 순서대로 읽어와서 배열에 넣어주는 역할까지 수행한다.따라서,Writer를 바로 사용하면 안되고 Processor에서 배열을 읽어서 처리하는 과정이 반드시 필요하다.  
 
@@ -120,7 +120,7 @@ Processor에서는 전달된 데이터 타입에 맞게 비즈니스 로직을 �
 
 | 유형 I - VO(ValueObject)를 Processor에 전달하는 유형 | 유형 II - Reader를 Processor에 전달하는 유형 |
 | --- | --- |
-| ![image](../images/batch_core-batch_composite_vo.png) | ![image](../images/batch_core-batch_composite_read.png) |
+| ![image](./images/batch_core-batch_composite_vo.png) | ![image](./images/batch_core-batch_composite_read.png) |
 | 
 ```xml
 <bean id="compositeItemReader"

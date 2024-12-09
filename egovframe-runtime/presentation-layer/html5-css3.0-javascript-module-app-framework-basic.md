@@ -21,15 +21,15 @@ description: 전자정부는 효율적인 스마트 전자정부 시스템 구�
 
 - 프로젝트의 하위 폴더인 ‘src’에 실행환경을 지원하는 라이브러리 및 JSP 파일이 존재한다. 라이브러리는 CSS, JavaScript 및 이미지 파일로 구성되어 있다.
 
-    ![전자정부 모바일 표준프레임워크 실행환경 라이브러리 경로 이미지](../images/html5etc-mrtelib.jpg)
+    ![전자정부 모바일 표준프레임워크 실행환경 라이브러리 경로 이미지](./images/html5etc-mrtelib.jpg)
 
 - 전자정부 모바일 표준 프레임워크는 CSS 및 JavaScript를 이용하여 실행환경을 제공하며 CSS, javascript, image는 각각 유기적으로 연결되어 있다.
 
-    ![전자정부 모바일 표준프레임워크 실행환경의 CSS, JavaScript, Images 설명](../images/html5etc-mrtelib2.jpg)
+    ![전자정부 모바일 표준프레임워크 실행환경의 CSS, JavaScript, Images 설명](./images/html5etc-mrtelib2.jpg)
 
 - HTML5 <Tag> 패턴인 ‘data-role’ 속성에 적용된 값에 따라 Page, Header, Content, Footer 영역으로 구분된다.
 
-    ![전자정부 모바일 표준프레임워크 실행환경의 영역 설명](../images/html5etc-mrtelib3.jpg)
+    ![전자정부 모바일 표준프레임워크 실행환경의 영역 설명](./images/html5etc-mrtelib3.jpg)
 
 ### javascript 구조와 Ajax 처리
 모바일 페이지 이동은 기본적으로 Ajax를 이용하여 처리된다. 이는 모바일에 최적화된 화면 전환 효과를 주기 위함으로 옵션 설정을 통해 변경 가능하다.
@@ -39,14 +39,14 @@ description: 전자정부는 효율적인 스마트 전자정부 시스템 구�
   - 페이지 내부 이동은 Ajax 통신을 사용하며 page로 선언된 div 태그의 id 값을 링크의 href 속성 값(#pageId)으로 적용하여 사용 가능하다. (한 HTML 내에 여러 page가 선언되어 있을 경우 제일 상단의 page를 첫 화면으로 인식한다.)
   - 페이지 내부 이동은 Ajax 방식을 기본으로 하기 때문에 연속적으로 여러 번 사용하면 DOM 객체를 제대로 못 불러 올 경우가 있으므로 외부 페이지 이동을 권장한다.
     
-    ![전자정부 모바일 표준프레임워크 실행환경 페이지 내부 이동](../images/html5etc-mrtelib4.jpg)
+    ![전자정부 모바일 표준프레임워크 실행환경 페이지 내부 이동](./images/html5etc-mrtelib4.jpg)
 
 - 페이지 외부 이동
   - 페이지 외부 이동은 Ajax 통신을 이용하며 Ajax로 호출한 html의 data-role=“page” 영역만 읽어 들여서 호출한 html 페이지의 DOM 요소에 추가해 준다. (페이지 내부 이동과 유사 한 구조로 DOM 관리)
     - Ajax로 호출된 HTML의 page 영역만 가져오기 때문에 호출된 페이지에서 사용하는 JavaScript, CSS 등은 호출을 한 HTML 내에 존재해야 한다.
     - Ajax 통신을 사용하고 싶지 않은 경우 Internal / External UX Component를 참조하여 변경 가능하다.
     
-        ![전자정부 모바일 표준프레임워크 실행환경 페이지 외부 이동](../images/html5etc-mrtelib5.jpg)
+        ![전자정부 모바일 표준프레임워크 실행환경 페이지 외부 이동](./images/html5etc-mrtelib5.jpg)
 
 - mobileinit 이벤트와 기본 환경 설정
   - 전자정부 모바일 표준프레임워크는 모바일 애플리케이션이 시작될 때 각종 초기화 작업이 수행될 수 있도록 mobileinit 이벤트를 통하여 기본 환경 설정을 변경할 수 있도록 한다.

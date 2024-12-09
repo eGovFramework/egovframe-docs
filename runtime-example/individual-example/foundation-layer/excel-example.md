@@ -12,11 +12,11 @@ description: 데이터베이스 내용을 화면에 출력하고, 엑셀 파일�
 ## 설명
 1. 해당 예제를 설치하고 실행하면 상품목록 페이지가 호출된다.
 
-![excel-1](../images/excel-1.png)
+![excel-1](./images/excel-1.png)
 
 2. [excel] 버튼을 누르면 상품목록을 excel파일로 다운받을 수 있다.
 
-![excel-2](../images/excel-2.png)
+![excel-2](./images/excel-2.png)
 
 ## 참고자료
 -  [Excel 서비스](../../../egovframe-runtime/foundation-layer/excel.md)

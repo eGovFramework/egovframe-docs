@@ -12,11 +12,11 @@ description: 객체와 XML 간의 매핑을 통해 데이터를 XML로 변환하
 ## 설명
 1. 해당 예제를 설치하고 실행하면 상품목록 페이지가 호출된다.
 
-![oxm-1](../images/oxm-1.png)
+![oxm-1](./images/oxm-1.png)
 
 2. [xml] 버튼을 누르면 상품목록을 XML파일로 다운받을 수 있다.
 
-![oxm-2](../images/oxm-2.png)
+![oxm-2](./images/oxm-2.png)
 
 ## 참고자료
 - [Marshalling/Unmarshalling 가이드](../../../egovframe-runtime/foundation-layer/marshalling-unmarshalling.md)

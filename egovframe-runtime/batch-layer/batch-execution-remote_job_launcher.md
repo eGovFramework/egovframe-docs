@@ -43,7 +43,7 @@ RemoteJobLauncher의 구현체는 Template의 BatchRunController의 batchRun을 
 - (Step 1) Client에서는 HessianProxyFactoryBean을 사용하여 서버의 웹서비스 Url을 등록한다.
 - (Step 2) 등록된 웹서비스를 통하여 RemoteJobLauncher를 실행한다.
 
-![image](../images/remotejoblauncher_explorer1.png)
+![image](./images/remotejoblauncher_explorer1.png)
 
 ## 설명
 

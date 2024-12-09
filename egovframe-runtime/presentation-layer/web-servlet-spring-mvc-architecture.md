@@ -33,7 +33,7 @@ Spring MVC(Model-View-Controller)의 핵심 Component는 아래와 같다.
 
 이들 컴포넌트간의 관계와 흐름을 그림으로 나타내면 아래와 같다.
 
-![web-servlet--spring-mvc-architecture](../images/web-servlet--spring-mvc-architecture.png)
+![web-servlet--spring-mvc-architecture](./images/web-servlet--spring-mvc-architecture.png)
 
 1. Client의 요청이 들어오면 DispatchServlet이 가장 먼저 요청을 받는다.
 2. HandlerMapping이 요청에 해당하는 Controller를 return한다.

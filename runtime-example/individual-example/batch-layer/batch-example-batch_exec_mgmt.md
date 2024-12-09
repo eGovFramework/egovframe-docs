@@ -76,7 +76,7 @@ public class EgovLogManagementFunctionalTests {
 ### 결과 확인
 DB의 ERROR_LOG 테이블을 보면 데이터를 실제로 확인할 수 있다.
 
-![logmanagement1](../images/logmanagement1.png)
+![logmanagement1](./images/logmanagement1.png)
 
 ## 참고자료
 - [JobRegsitry](../../../egovframe-runtime/batch-layer/batch-core-job_registry.md)

@@ -23,26 +23,26 @@ Swagger는 이러한 Restful서비스의 문서작성과 유지보수에 대한 
 
 #### 간단한 설정으로 Swagger UI를 구동시킬수 있다.
 
-![Swagger Intro01](../images/swagger_intro_01.png)
+![Swagger Intro01](./images/swagger_intro_01.png)
 
 #### 그룹별로 정리할수 있으며 간단한 정보를 안내할수 있다.
 
 그룹별로 정리되기 위해서는 URL경로가 업무별로 구분가능하고 정리되어 있어야 한다.<br/>
 해당 서비스에 대해 기본적인 정보를 안내할수 있다.
 
-![Swagger Intro02](../images/swagger_intro_02.png)
+![Swagger Intro02](./images/swagger_intro_02.png)
 
 #### UI에서 전문의 각항목의 정의명을 표시해 줄수 있다.
 
-![Swagger Definition](../images/swagger_def_01.png)
+![Swagger Definition](./images/swagger_def_01.png)
 
 #### UI에서 테스트를 수행할수 있다. 각 항목의 입력은 물론 파일 업로드까지 테스트가 가능하다.
 
-![Swagger Test01](../images/swagger_test_01.png)
+![Swagger Test01](./images/swagger_test_01.png)
 
 #### 테스트 결과가 UI에서 즉시 표시된다.
 
-![Swagger Test02](../images/swagger_test_02.png)
+![Swagger Test02](./images/swagger_test_02.png)
 
 ## 설정방법
 

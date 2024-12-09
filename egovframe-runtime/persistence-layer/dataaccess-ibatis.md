@@ -32,7 +32,7 @@ description: Data Access 서비스는 다양한 데이터베이스 솔루션과 
 
  iBATIS Data Mapper API 는 XML을 사용하여 SQL 문에 대한 객체 맵핑을 간편하게 기술할 수 있도록 지원하며, 자바빈즈 객체와 Map 구현체, 다양한 원시 래퍼 타입(String, Integer..) 등을 PreparedStatement 의 파라메터나 ResultSet에 대한 결과 객체로 쉽게 맵핑해준다.
 
- ![image](../images/psl-ibatis_architecure.png)
+ ![image](./images/psl-ibatis_architecure.png)
 
 - 파라메터 객체를 제공한다. (마찬가지로 자바빈즈, Map 또는 원시 래퍼 일 수 있다.) 파라메터 객체는 update 문, 쿼리의 where 절의 input 변수로 세팅될 것이다.
 - mapped statement 를 실행한다. Data Mapper 프레임워크는 PreparedStatement 의 인스턴스를 생성하여 위에서 제공된 파라메터 객체를 이용해 파라메터를 세팅하고(바인드 변수처리),쿼리문을 실행하고 결과를 ResultSet 으로 부터 결과 객체로 작성한다.

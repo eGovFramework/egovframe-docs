@@ -153,6 +153,6 @@ public void testUpdateCredit() throws Exception {
 생성된 파일의 결과를 확인한다.
 배치 수행 결과, DB 데이터를 gridSize로 나뉘어 처리된 결과를 확인할 수 있다.
 
- ![dbpartition1](../images/dbpartition1.png)
+ ![dbpartition1](./images/dbpartition1.png)
 
 

@@ -19,7 +19,7 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 Client의 웹요청시에 DispatcherServlet에서 이루어지는 처리 흐름은 아래와 같다.
 좀더 자세한 처리 흐름을 알고 싶다면 디버깅모드로 과정을 추적해 보는 것을 권장한다.
 
-![DispatcherServlet flow](../images/web-servlet-dispatcherservlet-flow.png)
+![DispatcherServlet flow](./images/web-servlet-dispatcherservlet-flow.png)
 
 1. doService 메소드에서부터 웹요청의 처리가 시작된다. DispatcherServlet에서 사용되는 몇몇 정보를 request 객체에 담는 작업을 한 후 doDispatch 메소드를 호출한다.
 2. 아래 3번~13번 작업이 doDispatch 메소드안에 있다. Controller, View 등의 컴포넌트들을 이용한 실제적인 웹요청처리가 이루어 진다.
@@ -125,7 +125,7 @@ easycompany-servlet.xml에 정의된 빈정보는 easycompany-webservice.xml가 
 easycompany-service.xml, easycompany-dao.xml에 설정된 빈 정보는 easycompany-servlet.xml, easycompany-webservice.xml 둘 다 참조한다.
 ApplicationContext과 WebApplicationContext과의 관계를 그림으로 나타내면 아래와 같다.
 
-![web-servlet-dispatcherservlet-relation](../images/web-servlet-dispatcherservlet-relation.png)
+![web-servlet-dispatcherservlet-relation](./images/web-servlet-dispatcherservlet-relation.png)
 
 ## 참고자료
 

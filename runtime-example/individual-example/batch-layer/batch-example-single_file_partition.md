@@ -126,6 +126,6 @@ public void testUpdateCredit() throws Exception {
 생성된 파일의 결과를 확인한다.
 배치 수행 결과, 세개의 입력파일을 읽고 처리하여 하나의 파일에 쓰여진 것을 확인할 수 있다.
 
-![filepartition2](../images/filepartition2.png)
+![filepartition2](./images/filepartition2.png)
 
 

@@ -16,7 +16,7 @@ description: 배치 수행 중, 데이터를 처리하는 과정에서 에러가
 
 ✔ skipSample의 Step 흐름 참고
 
-![skipSample의 Step 흐름](../images/skip1.png)
+![skipSample의 Step 흐름](./images/skip1.png)
 
 Job 의 구성을 보면 Chunk 설정에 아래와 같은 설정이 있다.
 - skip-limit : Skip 할 수 있는 최대 횟수를 지정한다.
@@ -127,7 +127,7 @@ public class EgovSkipSampleFunctionalTests {    ...
 ### 결과확인
 EgovErrorLogTasklet 에서 처리된 Skip에 대한 간단한 정보를 ERROR_LOG 테이블에서 확인할 수 있다.
 
-![ERROR_LOG TABLE](../images/skip2.png)
+![ERROR_LOG TABLE](./images/skip2.png)
 
 ## 참고자료
 - [Retry](../../../egovframe-runtime/batch-layer/batch-core-skip_repeat_retry.md)

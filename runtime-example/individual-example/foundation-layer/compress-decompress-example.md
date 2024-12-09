@@ -12,19 +12,19 @@ description: 전자정부 표준프레임워크에서 서버에 있는 파일을
 ## 설명
 1. 해당 예제를 실행하고 성공메세지를 확인한다.
 
-![compress-1.png](../images/compress-1.png)
+![compress-1.png](./images/compress-1.png)
 
 2. 실행에 성공하면 테스트파일을 압축해 C:\egovCompressSample.zip 형태로 압축된다.
 
-![compress-2.png](../images/compress-2.png)
+![compress-2.png](./images/compress-2.png)
 
 3. [압축해제]를 누르고 성공메세지를 확인한다.
 
-![compress-3.png](../images/compress-3.png)
+![compress-3.png](./images/compress-3.png)
 
 4. 압축해제가 성공하면 C:\egovCompressSample폴더에 압축해제된 파일이 생성되어 있다.
 
-![compress-4.png](../images/compress-4.png)
+![compress-4.png](./images/compress-4.png)
 
 ## 참고자료
 - [Compress/Decompress 서비스](../../../egovframe-runtime/foundation-layer/compress-decompress.md)

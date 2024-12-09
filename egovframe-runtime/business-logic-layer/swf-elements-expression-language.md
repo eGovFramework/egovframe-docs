@@ -161,7 +161,7 @@ booking처럼 범위를 명시하지 않은 경우, 범위 검색 알고리즘(s
 이 알고리즘은 request→flash→view→flow→conversation 범위의 순서로 찾게 된다. 없을 경우 EvaluationException 발생.
 아래그림은 검색되는 Scope 순서를 잘 보여주고 있다.
 
- ![scopsofswf](../images/scopsofswf.jpg)
+ ![scopsofswf](./images/scopsofswf.jpg)
 
 ## 참고자료 
 

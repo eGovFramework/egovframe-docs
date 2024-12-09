@@ -84,7 +84,7 @@ public class EgovParallelJobFunctionalTests {
 
 **멀티쓰레드로 병행처리한 setp은 쓰레드마다의 처리 속도차이에 의해 순차적인 처리가 되지 않는다. loading의 step 결과인 TRADE의 data를 보면 확인할 수 있다.**
 
-![multithread-data](../images/multithread-data.png)
+![multithread-data](./images/multithread-data.png)
 
 ### Parallel 예제
 
@@ -180,11 +180,11 @@ public class EgovParallelStepFunctionalTests{
 
 split된 두 개의 flow가 멀티쓰레드(SimpleAsyncTaskExecutor-1,SimpleAsyncTaskExecutor-2)로 실행한 결과는 콘솔창의 로그내용으로 확인할 수 있다. step1과 step3은 서로 다른 쓰레드에서 실행한 사실을 확인할 수 있다.
 
-![parallelstep-step1](../images/parallelstep-step1.png)
+![parallelstep-step1](./images/parallelstep-step1.png)
 
 ...
 
-![parallelstep-step3](../images/parallelstep-step3.png)
+![parallelstep-step3](./images/parallelstep-step3.png)
 
 ### 파티셔닝(Partitioning) 예제
 

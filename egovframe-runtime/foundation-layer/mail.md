@@ -204,7 +204,7 @@ src 폴더 아래에 Index.jsp를 선택하여 마우스 오른쪽 클릭하여 
 
 ##### 샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우져에서 실행되는 화면
 
-![mail-sample-browser-sceenshot](../images/mail-service-browser-screenshot.png)
+![mail-sample-browser-sceenshot](./images/mail-service-browser-screenshot.png)
 
 ## 참고 자료
 

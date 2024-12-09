@@ -367,7 +367,7 @@ JSP(/easycompany/webapp/jsp/modifyemployee.jsp)에 주민등록번호 입력 필
 ```
 주민등록번호를 입력하지 않거나, 틀린번호를 입력시엔 아래와 같은 경고창이 뜬다.
 
-![ihidnum-validation](../images/ihidnum-validation.jpg)
+![ihidnum-validation](./images/ihidnum-validation.jpg)
 
 틀린 입력값으로 client를 통과하더라도 Controller에서 validation이 추가로 동작하므로, server-side에서 validation error가 일어날것이다.
 

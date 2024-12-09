@@ -22,7 +22,7 @@ EasyCompany 예제는 MVC와 Ajax Support, Security의 예제 코드로서, JDK 
 1. SVN에서 예제 코드 easycompany 프로젝트를 다운 받습니다.  
 이클립스에서 해당 프로젝트를 보면 아래와 같은 구조를 가지고 있습니다.  
 
-![projectexplore](../images/projectexplore.jpg)
+![projectexplore](./images/projectexplore.jpg)
 
 **src/ : 자바 클래스**  
 - com.easycompany.controller.annotation: @Controller
@@ -52,15 +52,15 @@ EasyCompany 예제는 MVC와 Ajax Support, Security의 예제 코드로서, JDK 
 easycompany\db에 있는 runHsqlDB.cmd을 실행합니다.  
 샘플 실행에 필요한 데이터들도 이때 같이 생성됩니다.
 
-![hsqldb](../images/hsqldb.jpg)
+![hsqldb](./images/hsqldb.jpg)
 
 3. Tomcat 실행  
 이클립스에서 easycompany 프로젝트를 clean 한 번 실행해 주신 다음,
 Server 탭에서 새로운 서버를 추가하시고 아래와 같이 easycompany 프로젝트를 추가해 주세요.
 
-![newserver](../images/newserver.jpg)
+![newserver](./images/newserver.jpg)
 
-![serverstart](../images/serverstart.jpg)
+![serverstart](./images/serverstart.jpg)
 
 4. 브라우져에서 확인  
 브라우져 주소창에 http://localhost:8080/easycompany 입력한 후 로그인 페이지에서 id/pwd : 1/1 을 입력한다.  

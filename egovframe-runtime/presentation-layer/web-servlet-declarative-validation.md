@@ -101,7 +101,7 @@ public class ExampleController {
 }
 ```
 
-![web-servlet-declarative-validation](../images/web-servlet-declarative-validation.png)
+![web-servlet-declarative-validation](./images/web-servlet-declarative-validation.png)
 
 ## 참고자료
 

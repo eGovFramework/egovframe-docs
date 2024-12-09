@@ -14,7 +14,7 @@ Spring MVC는 다양한 종류의 Controller를 제공하는데, 데이터 바�
 이 Controller들은 org.springframework.web.servlet.mvc.Controller 인터페이스를 구현한 클래스들이다.(@Controller는 예외다. 여기서는 @Controller에 대한 설명은 제외한다.)
 eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 아래와 같은 구조를 보여준다.
 
-![Controller preview](../images/web-servlet-controller-preview.png)
+![Controller preview](./images/web-servlet-controller-preview.png)
 
 이 중 주요 Controller의 용도 및 특징을 표로 나타내면 아래와 같다.
 
@@ -60,7 +60,7 @@ AbstractController의 작업 흐름은 아래와 같다.
 
 사용자 인증처리를 위해 아이디와 패스워드를 입력받는 페이지 예제
 
-![web-servlet-controller-ex-login-form](../images/web-servlet-controller-ex-login-form.png)
+![web-servlet-controller-ex-login-form](./images/web-servlet-controller-ex-login-form.png)
 
 ```jsp
 <%@ page contentType="text/html; charset=UTF-8"%>
@@ -143,7 +143,7 @@ protected abstract ModelAndView handle(
 
 사원번호,부서번호,사원이름등의 검색 조건에 따라 사원리스트를 보여주는 페이지 예제
 
-![web-servlet-controller-ex-employee-list](../images/web-servlet-controller-ex-employee-list.png)
+![web-servlet-controller-ex-employee-list](./images/web-servlet-controller-ex-employee-list.png)
 
 검색 조건을 담는 빈은 아래와 같다.
 
@@ -326,7 +326,7 @@ sessionForm이 true이면 세션에서 커맨드 객체를 꺼내서 반환한�
   - 저장에 실패하거나 입력값 검증에 문제가 있으면 다시 초기 입력 폼페이지로 이동한다.
   - 저장에 성공하면 부서 정보 리스트페이지로 이동한다.
 
-![web-servlet-controller-ex-employee-reg](../images/web-servlet-controller-ex-employee-reg.png)
+![web-servlet-controller-ex-employee-reg](./images/web-servlet-controller-ex-employee-reg.png)
 
 ```jsp
 <form:form commandName="department">

@@ -145,7 +145,7 @@ public abstract class EgovAbstractIoSampleTests {
 ### 결과 확인
 위의 테스트 결과로 아래의 파일이 생성되었는지를 확인한다. Job이 실행되면서 데이터가 수정된 것을 확인 할 수 있다.
 
-![delimited_data](../images/delimited_data.png)
+![delimited_data](./images/delimited_data.png)
 
 ## 참고자료
 - [FlatFileItemReader](../../egovframe-runtime/batch-layer/batch-core-item_reader.md)

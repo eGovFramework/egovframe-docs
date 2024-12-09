@@ -89,7 +89,7 @@ public class EgovJobGroupDelegatingJobFunctionalTests {
 ### 결과 확인
 콘솔창의 로그를 확인하면 Launcher 설정파일에서 지정한 groupName(testJobGroup)이 Job 이름 앞에서 식별되는 카테고리명으로 쓰이는 것을 확인할 수 있다.
 
-![jobgroup1](../images/jobgroup1.png)
+![jobgroup1](./images/jobgroup1.png)
 
 ## 참고자료
 - [JobRegistry](../../egovframe-runtime/batch-layer/batch-core-job_registry.md)

@@ -18,7 +18,7 @@ Job은 배치작업 전체의 중심 개념으로 배치작업 자체를 의미�
 
 아래 그림을 보면, 'EndOfDay'라는 Job이 있고 '2012/10/01'이라는 JobParameter를 통해 JobInstance가 생성되었다. 그리고 'EndOfDay' Job의 첫번째 시도를 의미하는 JobExecution이 생성되는 것을 볼 수 있다.
 
-![job-structure](../images/job-structure.png)
+![job-structure](./images/job-structure.png)
 
 Job 인터페이스의 기본적인 구현은 SimpleJob 클래스로 스프링 배치에서 제공된다. SimpleJob 클래스는 모든 Job에서 유용하게 사용할 수 있는 표준 기능을 갖고있다. Job은 아래와 같이 \<job> 태그를 사용하여 설정할 수 있다.
 
@@ -34,7 +34,7 @@ Job 인터페이스의 기본적인 구현은 SimpleJob 클래스로 스프링 �
 JobInstance는 논리적 Job 실행의 개념으로 JobInstance = Job + JobParameters로 표현할 수 있다.
 다시 말해, JobInstance는 동일한 Job이 각기 다른 JobParameter를 통해 실행 된 Job의 실행 단위이다. (Job과 JobParameters가 같으면 동일한 JobInstance이다
 
-![jobinstance-jobparameter-description](../images/jobinstance-jobparameter-description.png)
+![jobinstance-jobparameter-description](./images/jobinstance-jobparameter-description.png)
 
 위의 그림을 예로 설명하면 매일 한번씩 실행되는 'EndOfDay'라는 Job이 있다고 가정한다.
 'EndOfDay'라는 Job은 하나지만 매일 실행되는 각각의 'EndOfDay' Job은 구별되어야 한다.
@@ -147,7 +147,7 @@ JobExecution은 한번의 Job 시도를 의미하는 기술적인 개념이다. 
 즉, '2012/10/02'에 'EndOfDay' Job은 총 2번의 Job 시도로 2개의 JobExecution이 생성됐다.
 ✔ Status가 COMPLETED 인 JobExecution을 가진 JobInstance는 restart를 할 수 없다.(해당 JobInstance는 정상적으로 배치작업을 완료)
 
-![jobexecution-description](../images/jobexecution-description.png)
+![jobexecution-description](./images/jobexecution-description.png)
 
 아래의 표를 보면 'EndOfDay' Job이 각각 다른 '2012/10/01', '2012/10/02' JobParameter로 두 번 실행결과 JobInstance는 2개가 생성 됐고, Job의 3번 시도에 따라 3개의 JobExecution이 생성된 것을 볼 수 있다.
 여기서 중요한 점은 JobExecution은 매 시도마다 새로 생성되지만 JobInstance가 같은 JobExecution은 동일한 JobParameter로 시도 됐다는 점이다.

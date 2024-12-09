@@ -154,7 +154,7 @@ public abstract class EgovAbstractIoSampleTests {
 ### 결과 확인
 DB의 Customer 테이블의 credit의 값을 살펴보면 Job이 실행되면서 수정된 것을 확인 할 수 있다.
 
-![jdbccursor_data](../images/jdbccursor_data.png)
+![jdbccursor_data](./images/jdbccursor_data.png)
 
 ## 참고자료
 - [iBATIS Configuration](../../../egovframe-runtime/persistence-layer/dataaccess-configuration_xml.md)

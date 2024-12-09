@@ -17,7 +17,7 @@ description: 전자정부 개발프레임워크의 Spring Security는 DB 기반�
 
 #### 웹어플리케이션 인증절차
 
- ![image](../images/server_security_웹어플리케이션_인증절차_wbg.png)
+ ![image](./images/server_security_웹어플리케이션_인증절차_wbg.png)
 
 - 리소스 요청
 - 요청에 대해 보호되고 있는 자원인지 판단
@@ -32,7 +32,11 @@ description: 전자정부 개발프레임워크의 Spring Security는 DB 기반�
 
 #### Spring Security Filter Chain
 
-<img src="../images/server_security_filterchain흐름_wbg.png" alt="server security Filter Chain 흐름" width="400"> <img src="../images/server_security_filterchain흐름_http요청_wbg.png" alt="server security Filter Chain 흐름 (HTTP요청)" width="150"> <img src="../images/server_security_authenticationprocessingfilter_wbg.png" alt="server security Authentication Processing Filter" width="200">
+![server security Filter Chain 흐름](./images/server_security_filterchain흐름_wbg.png)
+
+![server security Filter Chain 흐름 (HTTP요청)](./images/server_security_filterchain흐름_http요청_wbg.png)
+
+![server security Authentication Processing Filter](./images/server_security_authenticationprocessingfilter_wbg.png)
 
 - Spring Security에서 생성한 정보 - SecurityContextHoler를 이용하여 SecurityContext 얻음
 - 응용프로그램이 분산되어 있는 경우 등 다양한 환경에서 사용 가능토록 SecurityContext를 SecurityContextHolder 내부에 생성한 ThreadLocal 객체를 이용하여 저장하고 있음.
@@ -70,7 +74,7 @@ description: 전자정부 개발프레임워크의 Spring Security는 DB 기반�
 
 사용자 인증과 관련된 테이블은 사용자테이블과 사용자권한테이블이며 사용자권한관련 테이블은 역할, 자원, 역할계층 등의 테이블이 있다.  
 
-![image](../images/server_security_custom_security_db_schema.png)
+![image](./images/server_security_custom_security_db_schema.png)
 
  DaoAuthenticationProvidor
 

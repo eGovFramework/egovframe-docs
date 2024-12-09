@@ -175,9 +175,9 @@ bootstrap/
 
 결과 보기 : [https://jsfiddle.net/y1hL9vqd/1/?utm_source=website&utm_medium=embed&utm_campaign=y1hL9vqd](https://jsfiddle.net/y1hL9vqd/1/?utm_source=website&utm_medium=embed&utm_campaign=y1hL9vqd)
 
-![bootstrap-myfirstbootstrap-sample1](../images/bootstrap-myfirstbootstrap-sample1.png)
+![bootstrap-myfirstbootstrap-sample1](./images/bootstrap-myfirstbootstrap-sample1.png)
 
-![bootstrap-myfirstbootstrap-sample2](../images/bootstrap-myfirstbootstrap-sample2.png)
+![bootstrap-myfirstbootstrap-sample2](./images/bootstrap-myfirstbootstrap-sample2.png)
 
 위의 그림처럼 두 예제의 결과보기의 화면의 폭을 좌우로 늘려보면, 두 예제의 차이점을 알 수 있다.
 
@@ -263,7 +263,7 @@ bootstrap/
 </html>
 ```
 
-![bootstrap-grid-sample](../images/bootstrap-grid-sample.png)
+![bootstrap-grid-sample](./images/bootstrap-grid-sample.png)
 
 
 결과 보기 : [https://jsfiddle.net/eh5kmtt9/1/?utm_source=website&utm_medium=embed&utm_campaign=eh5kmtt9](https://jsfiddle.net/eh5kmtt9/1/?utm_source=website&utm_medium=embed&utm_campaign=eh5kmtt9)
@@ -330,7 +330,7 @@ bootstrap/
 
 결과보기 : [https://jsfiddle.net/r60oymr2/3/?utm_source=website&utm_medium=embed&utm_campaign=r60oymr2](https://jsfiddle.net/r60oymr2/3/?utm_source=website&utm_medium=embed&utm_campaign=r60oymr2)
 
-![bootstrap-table-sample](../images/bootstrap-table-sample.png)
+![bootstrap-table-sample](./images/bootstrap-table-sample.png)
 
 
 부트스트랩에서 기본적으로 제공하는 테이블 디자인 중 하나이다.
@@ -377,7 +377,7 @@ bootstrap/
 
 결과보기 : [https://jsfiddle.net/4006oqs0/1/?utm_source=website&utm_medium=embed&utm_campaign=4006oqs0](https://jsfiddle.net/4006oqs0/1/?utm_source=website&utm_medium=embed&utm_campaign=4006oqs0)
 
-![bootstrap-form-sample](../images/bootstrap-form-sample.png)
+![bootstrap-form-sample](./images/bootstrap-form-sample.png)
 
 위의 예제는 인라인 폼(inline form)이 적용 된 예제로, 화면의 폭에 따라 입력창의 위치가 변화한다.
 
@@ -423,7 +423,7 @@ bootstrap/
 결과보기 : [https://jsfiddle.net/ysohpdqh/5/?utm_source=website&utm_medium=embed&utm_campaign=ysohpdqh](https://jsfiddle.net/ysohpdqh/5/?utm_source=website&utm_medium=embed&utm_campaign=ysohpdqh)
 
 
-![bootstrap-button-sample](../images/bootstrap-button-sample.png)
+![bootstrap-button-sample](./images/bootstrap-button-sample.png)
 
 ### 컴포넌트
 
@@ -435,7 +435,7 @@ bootstrap/
 
 250개 이상의 기호가 Glyphicon Halflings 세트로 폰트 포맷에 포함되어 있다.
 
-![bootstrap-glyphicons](../images/bootstrap-glyphicons.png)
+![bootstrap-glyphicons](./images/bootstrap-glyphicons.png)
 
 ##### 사용방법
 
@@ -493,7 +493,7 @@ bootstrap/
 
 결과보기 : [https://jsfiddle.net/t1tresaj/1/?utm_source=website&utm_medium=embed&utm_campaign=t1tresaj](https://jsfiddle.net/t1tresaj/1/?utm_source=website&utm_medium=embed&utm_campaign=t1tresaj)
 
-![bootstrap-glyphicons-sample](../images/bootstrap-glyphicons-sample.png)
+![bootstrap-glyphicons-sample](./images/bootstrap-glyphicons-sample.png)
 
 #### 페이지네이션(Pagination)
 
@@ -536,7 +536,7 @@ bootstrap/
 
 결과보기 : [https://jsfiddle.net/L860z1cy/1/?utm_source=website&utm_medium=embed&utm_campaign=L860z1cy](https://jsfiddle.net/L860z1cy/1/?utm_source=website&utm_medium=embed&utm_campaign=L860z1cy)
 
-![bootstrap-pagination-sample](../images/bootstrap-pagination-sample.png)
+![bootstrap-pagination-sample](./images/bootstrap-pagination-sample.png)
 
 위의 예제에서 **리스트 아이템**(`list item`, `<li>`)에 **.active** class를 추가하면, 해당 링크는 활성 상태가 된다.
 
@@ -606,7 +606,7 @@ bootstrap/
 
 결과보기 : [https://jsfiddle.net/eqfmxd3e/1/?utm_source=website&utm_medium=embed&utm_campaign=eqfmxd3e](https://jsfiddle.net/eqfmxd3e/1/?utm_source=website&utm_medium=embed&utm_campaign=eqfmxd3e)
 
-![bootstrap-modal-sample](../images/bootstrap-modal-sample.png)
+![bootstrap-modal-sample](./images/bootstrap-modal-sample.png)
 
 위의 예제의 구조를 보면 크게 **Triger**, **Modal**, **Modal content**로 구성된 것을 확인할 수 있다.
 

@@ -12,19 +12,19 @@ iBatis를 사용하여 Database에 데이터를 조회, 생성, 수정, 삭제�
 ## 설명
 1. 해당 예제를 설치하고 실행하면 iBatis로 구현한 공시게시판이 나타난다.
 
-![dataacess-1](../images/dataacess-1.png)
+![dataacess-1](./images/dataacess-1.png)
 
 2. [등록] 버튼을 눌러 공시 등록페이지를 호출하고, 내용을 작성한다.
 
-![dataacess-2](../images/dataacess-2.png)
+![dataacess-2](./images/dataacess-2.png)
 
 3. 공시 등록페이지의 [등록] 버튼을 누르면 글이 등록되고, 공시게시판으로 돌아간다.
 
-![dataacess-3](../images/dataacess-3.png)
+![dataacess-3](./images/dataacess-3.png)
 
 4. 해당글을 눌러 수정과 삭제를 할 수 있다.
 
-![dataacess-4](../images/dataacess-4.png)
+![dataacess-4](./images/dataacess-4.png)
 
 ## 참고 자료
 - [Data Access - iBatis](../../../egovframe-runtime/persistence-layer/dataaccess-ibatis.md)
