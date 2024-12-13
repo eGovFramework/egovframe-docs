@@ -2,5 +2,21 @@
 
 Add styles or override variables from the theme here.
 
+
 */
 
+.mainLayout{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.mainLayout h1{
+    margin-bottom: 2rem;
+    font-size: 4rem;
+}
+
+.mainLayout h1 ul li{
+    list-style:none;
+    margin-bottom:1rem;
+}
