@@ -6,9 +6,7 @@ title: 표준프레임워크 개발가이드
 <br>
 <br>
 
-# 표준프레임워크 개발가이드
-
-{{< blocks/cover title="표준프레임워크 개발가이드" image_anchor="top" height="full" style='background-color:white;'>}}
+{{< blocks/cover title="표준프레임워크 개발가이드" image_anchor="top" height="full" >}}
 <ul>
     <li style='text-decoration:none; color:black; list-style:none;'>
         <a href="/egovframe-docs/egovframe-development/">
