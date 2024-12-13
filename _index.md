@@ -31,3 +31,4 @@ title: 표준프레임워크 개발가이드
         </a>
     </li>
 </ul>
+{{< /blocks/cover >}}
