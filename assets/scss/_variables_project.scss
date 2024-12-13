@@ -6,6 +6,7 @@ Add styles or override variables from the theme here.
 */
 
 .mainLayout{
+    margin-top: 25%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -16,7 +17,7 @@ Add styles or override variables from the theme here.
     font-size: 4rem;
 }
 
-.mainLayout h1 ul li{
+.mainLayout ul li{
     list-style:none;
     margin-bottom:1rem;
 }
