@@ -2,7 +2,7 @@
 &lt;h2 id="설치-순서">설치 순서&lt;/h2>
 &lt;h3 id="기본순서">기본순서&lt;/h3>
 &lt;p>전자정부 표준프레임워크 홈페이지에서 배치실행환경 소스파일을 다운 받아 압축을 풀고, m2 이클립스가 설치되어 있다는 가정하에 설명한다.&lt;/p>
-&lt;p>&lt;a href="http://www.egovframe.go.kr/EgovRunEnvReleaseEdu.jsp?menu=3&amp;submenu=1&amp;leftsub=5">실행환경 예제 다운로드&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://www.egovframe.go.kr/EgovRunEnvReleaseEdu.jsp?menu=3&amp;amp;submenu=1&amp;amp;leftsub=5">실행환경 예제 다운로드&lt;/a>&lt;/p>
 &lt;ol>
 &lt;li>Package Explorer에서 오른쪽 마우스를 클릭하여 소스를 임포트한다.&lt;/li>
 &lt;/ol>

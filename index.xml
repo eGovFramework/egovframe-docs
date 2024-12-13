@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in 전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title>DataSource 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/data-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/data-source/</guid><description>&lt;h1 id="datasource-서비스">DataSource 서비스&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title>DataSource 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/data-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/data-source/</guid><description>&lt;h1 id="datasource-서비스">DataSource 서비스&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>데이터베이스에 대한 연결을 제공하는 서비스이다. 다양한 방식의 데이터베이스 연결을 제공하고,이에 대한 추상화계층을 제공함으로써, 업무 로직과 데이터베이스 연결 방식 간의 종속성을 배제한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -141,7 +141,7 @@ Server Security의 주요기능은 다음과 같다.&lt;/p></description></item>
 &lt;h2 id="설치-순서">설치 순서&lt;/h2>
 &lt;h3 id="기본순서">기본순서&lt;/h3>
 &lt;p>전자정부 표준프레임워크 홈페이지에서 배치실행환경 소스파일을 다운 받아 압축을 풀고, m2 이클립스가 설치되어 있다는 가정하에 설명한다.&lt;/p>
-&lt;p>&lt;a href="http://www.egovframe.go.kr/EgovRunEnvReleaseEdu.jsp?menu=3&amp;submenu=1&amp;leftsub=5">실행환경 예제 다운로드&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://www.egovframe.go.kr/EgovRunEnvReleaseEdu.jsp?menu=3&amp;amp;submenu=1&amp;amp;leftsub=5">실행환경 예제 다운로드&lt;/a>&lt;/p>
 &lt;ol>
 &lt;li>Package Explorer에서 오른쪽 마우스를 클릭하여 소스를 임포트한다.&lt;/li>
 &lt;/ol>
@@ -924,9 +924,9 @@ Spring 3.1이전 버전이면(egov 3.0이전 버전) DefaultAnnotationHandlerMap
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring 3부터 mvc태그를 통하여 Controller처리를 위한 설정을 쉽게 하도록 Spring mvc 네임스페이스를 제공한다.&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-spring-mvc-tag-configuration/#mvcannotation-driven">&lt;a href="mvc:annotation-driven">mvc:annotation-driven&lt;/a>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-spring-mvc-tag-configuration/#mvcinterceptors">&lt;a href="mvc:interceptors">mvc:interceptors&lt;/a>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-spring-mvc-tag-configuration/#mvcview-controller">&lt;a href="mvc:view-controller">mvc:view-controller&lt;/a>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-spring-mvc-tag-configuration/#mvcannotation-driven">&lt;a href="#ZgotmplZ">mvc:annotation-driven&lt;/a>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-spring-mvc-tag-configuration/#mvcinterceptors">&lt;a href="#ZgotmplZ">mvc:interceptors&lt;/a>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-spring-mvc-tag-configuration/#mvcview-controller">&lt;a href="#ZgotmplZ">mvc:view-controller&lt;/a>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="mvcannotation-driven">mvc:annotation-driven&lt;/h3>
@@ -1203,17 +1203,17 @@ DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.&lt;/p>
 &lt;p>스프링 프레임워크는 2.5 버젼 부터 Java 5+ 이상이면 @Controller(Annotation-based Controller)를 개발할 수 있는 환경을 제공한다.
 인터페이스 Controller를 구현한 SimpleFormController, MultiActionController 같은 기존의 계층형(Hierarchy) Controller와의 주요 차이점 및 개선점은 아래와 같다.&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/#어노테이션을-이용한-설정">어노테이션을 이용한 설정&lt;/a>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/#%ec%96%b4%eb%85%b8%ed%85%8c%ec%9d%b4%ec%85%98%ec%9d%84-%ec%9d%b4%ec%9a%a9%ed%95%9c-%ec%84%a4%ec%a0%95">어노테이션을 이용한 설정&lt;/a>
 &lt;ul>
 &lt;li>XML 기반으로 설정하던 정보들을 어노테이션을 사용해서 정의한다.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/#유연해진-메소드-시그니쳐">유연해진 메소드 시그니쳐&lt;/a>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/#%ec%9c%a0%ec%97%b0%ed%95%b4%ec%a7%84-%eb%a9%94%ec%86%8c%eb%93%9c-%ec%8b%9c%ea%b7%b8%eb%8b%88%ec%b3%90">유연해진 메소드 시그니쳐&lt;/a>
 &lt;ul>
 &lt;li>Controller 메소드의 파라미터와 리턴 타입을 좀 더 다양하게 필요에 따라 선택할 수 있다.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/#pojo-style의-controller">POJO-Style의 Controller&lt;/a>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-annotation-based-controller/#pojo-style%ec%9d%98-controller">POJO-Style의 Controller&lt;/a>
 &lt;ul>
 &lt;li>Controller 개발시에 특정 인터페이스를 구현 하거나 특정 클래스를 상속해야할 필요가 없다.&lt;/li>
 &lt;li>하지만 폼 처리, 다중 액션등 기존의 계층형 Controller가 제공하던 기능들을 여전히 쉽게 구현할 수 있다.&lt;/li>
@@ -1688,8 +1688,8 @@ DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#view">View&lt;/a>
 &lt;ul>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#개요">개요&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#설명">설명&lt;/a>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#%ea%b0%9c%ec%9a%94">개요&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#%ec%84%a4%eb%aa%85">설명&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#viewresolver">ViewResolver&lt;/a>
 &lt;ul>
@@ -1703,10 +1703,10 @@ DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 
 &lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#form-tagformformforminput">form tag(&lt;code>&amp;lt;form:form&amp;gt;,&amp;lt;form:input&amp;gt;,...&lt;/code>)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#전자정부프레임워크-tag-library">전자정부프레임워크 Tag Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#%ec%a0%84%ec%9e%90%ec%a0%95%eb%b6%80%ed%94%84%eb%a0%88%ec%9e%84%ec%9b%8c%ed%81%ac-tag-library">전자정부프레임워크 Tag Library&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#참고자료">참고자료&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-view/#%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c">참고자료&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -3429,7 +3429,7 @@ Spring에서는 Spring Modules 프로젝트에서 연계 모듈을 제공한다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/list&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/property&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/bean&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위의 설정에서”egovframework-message” 로 지정한 파일은 실제로는 egovframework-message.properties 로 정의되어 있다. 파일의 위치를 지정하는 방법이 여러가지가 가능한데 그 설정에 대한 것은 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/resource/#참고자료">4.참고자료&lt;/a> 참조.&lt;/p></description></item><item><title>Commons Validator에 validation rule 추가하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security-validationa-add-rules-in-common-validator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security-validationa-add-rules-in-common-validator/</guid><description>&lt;h1 id="commons-validator에-validation-rule-추가하기">Commons Validator에 validation rule 추가하기&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위의 설정에서”egovframework-message” 로 지정한 파일은 실제로는 egovframework-message.properties 로 정의되어 있다. 파일의 위치를 지정하는 방법이 여러가지가 가능한데 그 설정에 대한 것은 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/resource/#%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c">4.참고자료&lt;/a> 참조.&lt;/p></description></item><item><title>Commons Validator에 validation rule 추가하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security-validationa-add-rules-in-common-validator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security-validationa-add-rules-in-common-validator/</guid><description>&lt;h1 id="commons-validator에-validation-rule-추가하기">Commons Validator에 validation rule 추가하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Commons Validator는 primitive type, 필수값, 이메일등 흔히 사용되는 유형에 대한 validation rule을 template으로 제공하지만,
 프로젝트의 특성에 따라 공통으로 사용되는 validation rule이 발생되고 이를 추가해야할 필요가 생길 수 있다.
