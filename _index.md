@@ -6,7 +6,7 @@ title: 표준프레임워크 개발가이드
 <br>
 <br>
 
-{{< blocks/cover title="표준프레임워크 개발가이드" image_anchor="top" height="full" >}}
+{{< blocks title="표준프레임워크 개발가이드" image_anchor="top" height="full" >}}
 <ul>
     <li style='list-style:none;'>
         <a href="/egovframe-docs/egovframe-development/" style="text-decoration:none;color:#000;">
@@ -29,4 +29,4 @@ title: 표준프레임워크 개발가이드
         </a>
     </li>
 </ul>
-{{< /blocks/cover >}}
+{{< /blocks >}}
