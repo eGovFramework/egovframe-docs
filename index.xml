@@ -4586,6 +4586,10 @@ ConnectionFactory의 인스턴스는 하나만 필요하며, 데이터베이스 
 &lt;li>이 프로젝트의 목적은 보다 쉽게 접근할 수 있는 문서 형식을 통해 사용자와 개발자들이 표준프레임워크를 더욱 효과적으로 활용할 수 있도록 돕는 것입니다.&lt;/li>
 &lt;li>표준프레임워크 가이드 컨트리뷰션 범위는 실행환경 문서로 한정하여 시작하려 합니다.&lt;/li>
 &lt;/ul>
+&lt;h2 id="가이드-문서-보기">가이드 문서 보기&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://egovframework.github.io/egovframe-docs/">https://egovframework.github.io/egovframe-docs/&lt;/a>&lt;/li>
+&lt;/ul>
 &lt;h2 id="문서-구조">문서 구조&lt;/h2>
 &lt;h3 id="파일-구조">파일 구조&lt;/h3>
 &lt;ul>
