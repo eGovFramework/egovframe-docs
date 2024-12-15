@@ -47,7 +47,7 @@ jobs:
       
     # Step 6. Hugo 설치
     - name: Install Hugo
-      uses: peaceiris/actions-hugo@v2 # @v2에서 version: latest 일 때 오류 발생
+      uses: peaceiris/actions-hugo@v3 # @v2에서 version: latest 일 때 오류 발생
       with:
         hugo-version: 'latest'
         extended: true  # Hugo Extended 버전 설치
