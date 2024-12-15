@@ -88,7 +88,7 @@ ApplicationContext 인터페이스와 관련된 내용을 설명합니다.
 - 파일명은 설명하는 내용을 간결하게 나타내도록 하며, 소문자와 하이픈(-)을 사용합니다.
 	- 예) `ioc-container.md`
 - 이미지 파일은 작성하는 폴더의 하위에 위치한 'images' 폴더에 저장하고, 문서에서 `![이미지 설명](이미지 파일 경로)` 형식을 사용합니다.
-	- 예) `![IoC Container 구조](images/ioc-container-structure.png)`
+	- 예) `![IoC Container 구조](./images/ioc-container-structure.png)`
 - 코드 예시는 삼중 백틱 ` (```언어명```) ` 으로 감싸서 표시합니다.
 ```java
 public class Example {

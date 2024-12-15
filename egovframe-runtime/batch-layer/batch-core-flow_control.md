@@ -18,7 +18,7 @@ Job 내부에는 여러 Step 들이 존재할 수 있고, 각 Step 사이의 흐
 
 가장 간단한 시나리오의 Job은 모든 Step을 순서대로 실행 하는 것이다.
 
-![sequential-flow](images/sequential-flow.png)
+![sequential-flow](./images/sequential-flow.png)
 
 위와 같은 Job의 실행은 Step 엘리먼트의 'next' 어트리뷰트를 이용해서 설정할 수 있다.
 
@@ -43,7 +43,7 @@ Job 내부에는 여러 Step 들이 존재할 수 있고, 각 Step 사이의 흐
 
 많은 케이스가 위의 내용에 해당하게 된다. 하지만 Step의 실패가 Job의 실패를 유발하는 것이 아니고 다른 Step을 실행하는 경우를 생각해 보자.
 
-![conditional-flow](images/conditional-flow.png)
+![conditional-flow](./images/conditional-flow.png)
 
 스프링 배치에서는 다양한 경우의 시나라오를 설정 할 수 있도록 Step 엘리먼트내에 사용할 수 있는 transition 엘리먼트를 제공 해준다. 그중의 한 엘리먼트로 'next' 엘리먼트가 있다. 'next' 엘리먼트는 'next' 어트리뷰트와 마찬가지로 Job 실행에서 다음에 실행될 Step에 대해 알려준다. 하지만 'next' 어트리뷰트와 다르게 'next' 엘리먼트는 사용 횟수에 제한이 없으며, Step의 실패에 대한 default 설정이 없다. 그러므로 transition 엘리먼트를 사용할 때에는 모든 Step의 Behavior 설정을 충분히 해줘야 한다.
 

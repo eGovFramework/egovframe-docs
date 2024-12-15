@@ -8,7 +8,7 @@ description: MVC 패턴은 애플리케이션의 기능을 Model, View, Controll
 
 ## 개요
 
-![MVC(Model-View-Controller) 패턴](images/web-servlet.jpg)
+![MVC(Model-View-Controller) 패턴](./images/web-servlet.jpg)
 
 **MVC(Model-View-Controller) 패턴**은 코드를 기능(역할)에 따라 **Model, View, Controller** 3가지 요소로 분리한다.
 - **Model** : 애플리케이션의 데이터와 비즈니스 로직을 담는 객체이다.

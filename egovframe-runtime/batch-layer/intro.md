@@ -16,7 +16,7 @@ description: 전자정부 표준프레임워크는 대용량 데이터 처리 �
 
 전자정부 표준프레임워크 실행환경에 추가된 배치 실행환경은 3-Tier(Run, Job, Application Tier)로 구성되며, 대용량 데이터 처리를 위한 기반 환경을 제공한다.  
 
-![배치 실행환경 수행 과정](images/batch_process.png)
+![배치 실행환경 수행 과정](./images/batch_process.png)
 
 
 ## Run Tier
@@ -57,7 +57,7 @@ Application Tier에서의 동작 순서는 다음과 같다:
 ## 배치 실행환경 기술 요소 구성
 전자정부 표준프레임워크 실행환경에 포함된 대용량 데이터 처리 계층은 Job 구조를 정의하는 **Batch Core**, Job 실행을 지원하는 **Batch Support**, 다양한 실행환경을 지원하는 **Batch Execution**으로 구성되어 있다. 배치 실행환경의 기술 요소와 기능은 다음 그림과 같다.
 
-![배치 실행환경 기술요소 구성](images/batch_layer_new2.png)
+![배치 실행환경 기술요소 구성](./images/batch_layer_new2.png)
 
 ---
 
