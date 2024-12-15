@@ -1,5 +1,5 @@
 ---
-linkTitle: "- AnnotationCommandmapArgumentResolver"
+linkTitle: "- @CommandMap"
 weight: 11
 title: Map 객체를 통한 입력값 처리 방법
 description: 전자정부프레임워크 3.0 이전에는 CommandMapArgumentResolver를 통해 Map 객체를 사용했으나, 3.0부터는 @CommandMap과 AnnotationCommandMapArgumentResolver로 이를 처리한다. 이 클래스는 HTTP 요청의 파라미터 이름과 값을 Map에 담아 Controller에서 사용할 수 있도록 지원한다.
