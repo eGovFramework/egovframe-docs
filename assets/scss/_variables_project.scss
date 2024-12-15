@@ -6,7 +6,7 @@ Add styles or override variables from the theme here.
 */
 
 .mainLayout{
-    margin-top: 25%;
+    margin-top: 20%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -20,4 +20,9 @@ Add styles or override variables from the theme here.
 .mainLayout ul li{
     list-style:none;
     margin-bottom:1rem;
+}
+
+/* 네비게이션바 egovframe 로고 이미지 상단정렬 */
+.navbar-brand__logo > #Layer_1{
+    vertical-align: top;
 }
