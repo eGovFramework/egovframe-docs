@@ -1,43 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>화면처리 예제 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/</link><description>Recent content in 화면처리 예제 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>UI 어댑터 예제(UI Adapter Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/ui-adaptor-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/ui-adaptor-example/</guid><description>&lt;h1 id="ui-어댑터-예제ui-adapter-example">UI 어댑터 예제(UI Adapter Example)&lt;/h1>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>외부 UI 도구를 표준프레임워크에 활용하기 위하여 데이터를 주고 받기 위한 UI 어댑터에 대한 예제이다. 이 예제는 MiPlatform을 이용하여 화면을 구성하고 전자정부 표준프레임워크를 활용하여 해당 화면을 연결하여 기초적인 CRUD 작업을 수행하는 기능을 제공한다.&lt;/p>
-&lt;h2 id="설명">설명&lt;/h2>
-&lt;p>
-&lt;img src="../images/ui-adaptor-1.png" alt="ui-adaptor-1" >
-&lt;/p>
-&lt;p>
-&lt;img src="../images/ui-adaptor-2.png" alt="ui-adaptor-2" >
-&lt;/p>
-&lt;p>
-&lt;img src="../images/ui-adaptor-3.png" alt="ui-adaptor-3" >
-&lt;/p>
-&lt;p>
-&lt;img src="../images/ui-adaptor-4.png" alt="ui-adaptor-4" >
-&lt;/p>
-&lt;p>
-&lt;img src="../images/ui-adaptor-5.png" alt="ui-adaptor-5" >
-&lt;/p>
-&lt;p>
-&lt;img src="../images/ui-adaptor-6.png" alt="ui-adaptor-6" >
-&lt;/p>
-&lt;p>
-&lt;img src="../images/ui-adaptor-7.png" alt="ui-adaptor-7" >
-&lt;/p>
-&lt;h2 id="참고자료">참고자료&lt;/h2></description></item><item><title>easycompany 예제 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</guid><description>&lt;h1 id="easycompany-예제-실행하기">easycompany 예제 실행하기&lt;/h1>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>EasyCompany 예제는 MVC와 Ajax Support, Security의 예제 코드로서, JDK 1.8, Eclipse 4.8.0, Tomcat 8.0, HSQLDB 2.3.2 환경에서 실행된다. 사원 리스트 페이지 확인은 SVN에서 프로젝트를 다운받아 DBMS(runHsqlDB.cmd)와 Tomcat을 실행 후 http://localhost:8080/easycompany 에 접속해 id/pwd: 1/1로 로그인하면 가능하다.&lt;/p>
-&lt;h2 id="개발환경">개발환경&lt;/h2>
-&lt;ul>
-&lt;li>JDK : JDK 1.8&lt;/li>
-&lt;li>Eclipse : 4.8.0&lt;/li>
-&lt;li>Web Container : Tomcat 8.0&lt;/li>
-&lt;li>DBMS : HSQLDB 2.3.2&lt;/li>
-&lt;/ul>
-&lt;h2 id="설치">설치&lt;/h2>
-&lt;ol>
-&lt;li>SVN에서 예제 코드 easycompany 프로젝트를 다운 받습니다.&lt;br>
-이클립스에서 해당 프로젝트를 보면 아래와 같은 구조를 가지고 있습니다.&lt;/li>
-&lt;/ol>
-&lt;p>
-&lt;img src="../images/projectexplore.jpg" alt="projectexplore" >
-&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>화면처리 예제 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/</link><description>Recent content in 화면처리 예제 on 표준프레임워크 개발가이드</description><generator>Hugo -- gohugo.io</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>UI 어댑터 예제(UI Adapter Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/ui-adaptor-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/ui-adaptor-example/</guid><description>UI 어댑터 예제(UI Adapter Example) 개요 외부 UI 도구를 표준프레임워크에 활용하기 위하여 데이터를 주고 받기 위한 UI 어댑터에 대한 예제이다. 이 예제는 MiPlatform을 이용하여 화면을 구성하고 전자정부 표준프레임워크를 활용하여 해당 화면을 연결하여 기초적인 CRUD 작업을 수행하는 기능을 제공한다.
+설명 참고자료</description></item><item><title>easycompany 예제 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</guid><description>easycompany 예제 실행하기 개요 EasyCompany 예제는 MVC와 Ajax Support, Security의 예제 코드로서, JDK 1.8, Eclipse 4.8.0, Tomcat 8.0, HSQLDB 2.3.2 환경에서 실행된다. 사원 리스트 페이지 확인은 SVN에서 프로젝트를 다운받아 DBMS(runHsqlDB.cmd)와 Tomcat을 실행 후 http://localhost:8080/easycompany 에 접속해 id/pwd: 1/1로 로그인하면 가능하다.
+개발환경 JDK : JDK 1.8 Eclipse : 4.8.0 Web Container : Tomcat 8.0 DBMS : HSQLDB 2.3.2 설치 SVN에서 예제 코드 easycompany 프로젝트를 다운 받습니다.
+이클립스에서 해당 프로젝트를 보면 아래와 같은 구조를 가지고 있습니다.</description></item></channel></rss>
