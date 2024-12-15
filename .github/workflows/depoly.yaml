@@ -49,7 +49,7 @@ jobs:
     - name: Install Hugo
       uses: peaceiris/actions-hugo@v3 # @v2에서 version: latest 일 때 오류 발생
       with:
-        hugo-version: 'latest'
+        hugo-version: '0.119.0'
         extended: true  # Hugo Extended 버전 설치
 
     # Step 7. Hugo 빌드
