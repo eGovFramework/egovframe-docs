@@ -5,8 +5,13 @@ Add styles or override variables from the theme here.
 
 */
 
+/* 시작화면 높낮이 중앙 정렬 */
+main.td-main{
+    display:flex;
+}
+
 .mainLayout{
-    margin-top: 20%;
+    margin: 0 atuo;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -16,7 +21,6 @@ Add styles or override variables from the theme here.
     margin-bottom: 2rem;
     font-size: 4rem;
 }
-
 .mainLayout ul li{
     list-style:none;
     margin-bottom:1rem;
