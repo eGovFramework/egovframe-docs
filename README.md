@@ -10,7 +10,7 @@
 ### 파일 구조
 - 문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.
 - 현재 개발가이드와 유사하게 구성되어 있습니다.
-	- https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.2  참조
+	- https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.2 참조
 ```
 /egovframe-runtime
   /batch-layer #배치처리
