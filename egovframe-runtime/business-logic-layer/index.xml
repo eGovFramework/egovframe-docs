@@ -1,28 +1,168 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>업무처리 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/</link><description>Recent content in 업무처리 on 표준프레임워크 개발가이드</description><generator>Hugo -- gohugo.io</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>Exception Handling 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/exception-handling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/exception-handling/</guid><description>Exception Handling 서비스 개요 전자정부 표준프레임워크 기반의 시스템 개발 시 Exception 처리, 정확히는 Exception별 특정 로직(후처리 로직이라고 부르기도 함)이 흐를 수 있도록 하여 Exception에 따른 적절한 대응이 가능하도록 하고자 하는데 목적이 있다. AOP의 도움을 받아 비즈니스 POJO와 분리되어 After throwing advice로 정의하였다. AOP 관련 내용은 AOP 모듈을 참조하길 바란다.
-Exception에 대해 이야기 하겠다. Exception 발생 시 Exception 발생 클래스 정보와 Exception 종류가 중요하다. Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직의 대상일지 아닐지를 결정하는 데 사용된다.</description></item><item><title>Spring Web Flow(SWF) 개요</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/</guid><description>Spring Web Flow 개요 Spring Web Flow(SWF)는 웹 애플리케이션 내 페이지 흐름(flow)의 정의와 수행에 집중하는 Spring 프레임워크 웹 스택의 컴포넌트이다.
-시스템은 다른 위치에서 재사용될 수 있는 자족적 모듈처럼 웹 애플리케이션의 논리적 흐름(flow)을 획득하는 것을 허용한다.
-이러한 흐름(flow)은 비즈니스 프로세스의 구현을 통해 단일 사용자를 안내하고 단일 사용자 대화를 표현한다.
-흐름(flow)은 종종 HTTP 요청을 처리하고 상태를 가지며, 트랜잭션 특성을 보이고 동적이고/이거나 장시간 구동될 수 있다.
-Spring Web Flow는 추상화의 좀 더 높은 레벨에 존재하고 Struts, Spring MVC, Portlet MVC, 그리고 JSF와 같은 기본 프레임워크 내에서 자족적인 페이지 흐름(flow) 엔진(page flow engine)처럼 통합된다.</description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started/</guid><description/></item><item><title>Spring Web Flow의 Hello World 예제</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started-hello-world/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started-hello-world/</guid><description>Hello, World 개요 처음으로 접하므로 여기서는 Hello World를 찍어 보면서 실행하는 것을 살펴보도록 하겠다. Hello World는 두 가지 버전으로 입력되는 값이 없이 단지 Hello, Web Flow 화면을 호출하는 것과 입력값을 가지고 분기 처리 등 서비스 메소드를 실행 후 결과를 화면으로 보여주는 버젼으로 나누어 설명하겠다. 실행하여 보고자 하는 화면 결과는 아래와 같다.
-설명 Spring Web Flow는 사용자와 Service를 제공하는 서버 간의 대화하듯한 화면의 이동을 정의하는 것이다. SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화형 시나리오를 중심으로 접근한다.</description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration/</guid><description/></item><item><title>Spring Web Flow 환경 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-setting-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-setting-system/</guid><description>Spring Web Flow 환경 구성하기 Spring Web Flow를 사용하기 위한 Web 개발 환경에 대한 세팅을 설명한다.
-설정 Spring Web Flow의 Flow 정의를 위한 XML 문서는 아래와 같은 Schema를 갖는다.
-&amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:webflow=&amp;#34;http://www.springframework.org/schema/webflow-config&amp;#34; xsi:schemaLocation=&amp;#34; http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd&amp;#34;&amp;gt; &amp;lt;!-- Setup Web Flow here --&amp;gt; &amp;lt;/beans&amp;gt; 기본적인 설정 Spring Web Flow를 사용하려면 FlowRegistry FlowExecutor를 설정해야 한다.
-FlowRegistry는 등록될 시나리오에 따라 작성된 flow xml 을 가져오는 역할[1]을 수행한다. FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다.</description></item><item><title>Spring Web Flow와 Spring MVC 연동</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-with-spring-mvc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-with-spring-mvc/</guid><description>Spring Web Flow 와 MVC 연동 Spring Web Flow를 사용하여 웹을 개발할 때 Spring MVC와 연동하여 개발할 수 있다. 이를 위해 Spring MVC 연동 모듈 등을 설정해야 한다. 여기서는 booking-mvc sample( 실행데모(faces이지만 시나리오는 같음) )을 기준으로 설정하겠다.
-설명 Spring MVC 와의 연동을 위해 우리는 web.xml 안에 있는 DispatcherServlet 설정을 보도록 하겠다.
-web.xml 환경 구성 Spring MVC를 구성하는 첫 단계는 web.xml에 DispatcherServlet을 구성하는 것이다. DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.
-이 예제에서는 /spring/으로 시작하는 모든 요청을 받도록 설정하고 있다.</description></item><item><title>Spring Web Flow에서 보안 적용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-securing-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-securing-flows/</guid><description>Flow에 보안 적용하기(Securing Flows) 개요 보안은 어플리케이션 에서 매우 중요한 이슈이다. Spring Security는 어플리케이션과 결합하여 여러 수준에서 보안을 책임지는 플랫폼의 기능을 수행한다. 여기서는 Web Flow에 적용되는 Spring Security에 대해 알아보겠다.
-어떻게 Flow를 안전하게 할 수 있을까? Flow 실행에 보안을 적용시키고 싶다면 다음 단계에 따르자.
-Spring Security에서 인증(authentication)과 권한(authorization) 규칙을 설정한다. secured 구성요소로 Flow 정의에 보안 규칙을 추가한다. 보안 규칙을 처리해주는 SecurityFlowExecutionListener 추가한다. secured 구성요소 secured 구성 요소는 접근하기 전에 권한 확인을 적용해 주며, Flow 실행 단계마다 한 번 이상은 나올 수 없다.</description></item><item><title>Flow가 관리하는 영속성(Flow Managed Persistence)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-flow-managed-persistence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-flow-managed-persistence/</guid><description>Flow가 관리하는 영속성(Flow Managed Persistence) 개요 대부분의 애플리케이션은 여러 방법으로 데이터에 접근한다. 여러 사용자가 공유하는 데이터를 동시에 수정한다. 따라서 트랜잭션 데이터 접근 속성이 필요하다. 관계형 데이터 집합을 도메인 객체로 변환하여 애플리케이션 처리를 도와준다. Web Flow는 “Flow가 관리하는 영속성”(flow managed persistence)을 제공하여 Flow가 객체 영속성 문맥을 만들고, commit 하고, 닫을 수 있도록 한다. Web Flow는 하이버네이트와 JPA 객체 영속화 기술과 연동한다.
-Flow-관리 영속성과 별도로 PesistenceContext 관리를 애플리케이션의 서비스 계층에서 완전히 캡슐화하는 패턴이 있다.</description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements/</guid><description/></item><item><title>Flow 정의</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-definiton/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-definiton/</guid><description>Flow 정의 개요 Flow Flow란 상이한 상황(context)에서 실행될 수 있는 재사용이 가능한 여러 단계들의 흐름을 캡슐화한 것을 의미한다. 모든 Flow는 아래와 같은 Root로 시작한다.
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;flow xmlns=&amp;#34;http://www.springframework.org/schema/webflow&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd&amp;#34;&amp;gt; &amp;lt;/flow&amp;gt; Flow의 구성 SWF에서 Flow는 “Sate(state)“로 부르는 일련의 단계들로 구성된다. Flow로 진입하게 되는 Sate는 일반적으로 사용자에게 보여지는 뷰가 된다. 이 뷰에서는 Sate를 제어하게 되는 이벤트가 발생한다. 이들 이벤트는 결과적으로 다른 뷰로 이동하게 되는 Transition(transition)을 일으키게 된다. 모든 state는 &amp;lt;flow/&amp;gt; 안에 정의하게 된다.</description></item><item><title>Web Flow에서 Expression Language (EL) 사용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-expression-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-expression-language/</guid><description>Expression Language 개요 Web Flow는 데이터 모델 및 action 실행을 위해 EL을 이용한다. 우리는 EL에 대해 알아보면서 flow 정의를 해보도록 하겠다.
-설명 지원하는 EL 구현체 Unified EL 기본으로는 Unified EL을 사용한다. jboss-el이 기본 구현체로 되어 있다.
-참고 : web 컨테이너에서는 대게 el-api 를 지원해준다. 톰캣 6의 경우처럼 말이다. OGNL OGNL은 SWF2에서 제공하는 또 다른 EL이다. 클래스패스에만 추가하면 자동으로 찾아서 사용한다.
-EL 호환성 Unified EL과 OGNL은 비슷한 문법을 가지고 있다. 가능하면 Unified EL만 사용하자.</description></item><item><title>Spring Web Flow의 뷰(View) 보여주기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-rendering-views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-rendering-views/</guid><description>뷰(View) 보여주기 개요 view-state는 flow 내에서 화면을 생성하는 요소이다. 여기서는 view-state 에 대해서 알아보도록 하자.
-설명 뷰 상태(view state) 정의하기 view-state는 기본적으로 해당 뷰를 생성하여 보여준 후, 사용자가 화면을 통해 응답을 하는 것을 기다린다. 아래는 view-state는 enterBookingDetails라는 ID 를 가지고 있으며 또한 별도의 view 설정이 없기 때문에 ID 가 곧 view를 뜻한다
-&amp;lt;view-state id=&amp;#34;enterBookingDetails&amp;#34;&amp;gt; &amp;lt;transition on=&amp;#34;submit&amp;#34; to=&amp;#34;reviewBooking&amp;#34; /&amp;gt; &amp;lt;/view-state&amp;gt; 따라서. 디렉토리 상의
-booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBookingDetails.jsp 이 자동으로 view로 동작한다.</description></item><item><title>Action 실행</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-executing-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-executing-actions/</guid><description>Action 실행 개요 action-state는 flow 내에서 action 실행을 제어하기 위한 요소이다.
-decision-state를 이용하여 if-else와 같은 흐름 제어를 할 수 있다. 좀 더 자세히 알아보도록 하자.
-설명 액션 상태 정의하기 특정 액션을 호출한 다음에, 그 결과에 따라서 다른 상태로 전이하고 싶은 경우에는 action-state 구성 요소를 사용하자.
-직관적으로 봤을 때 아래 코드는 interview.moreAnswersNeeded()의 결과값에 의해 transition이 실행될 것을 예상할 수 있다.
-&amp;lt;action-state id=&amp;#34;moreAnswersNeeded&amp;#34;&amp;gt; &amp;lt;evaluate expression=&amp;#34;interview.moreAnswersNeeded()&amp;#34; /&amp;gt; &amp;lt;transition on=&amp;#34;yes&amp;#34; to=&amp;#34;answerQuestions&amp;#34; /&amp;gt; &amp;lt;transition on=&amp;#34;no&amp;#34; to=&amp;#34;finish&amp;#34; /&amp;gt; &amp;lt;/action-state&amp;gt; 좀더 완전한 예를 살펴보자.</description></item><item><title>Flow 상속</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-inheritance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-inheritance/</guid><description>Flow 상속 개요 Flow 상속은 한 Flow가 다른 Flow 설정을 상속할 수 있게 되어 있다. 상속은 Flow와 State 레벨에서 모두 발생할 수 있다. 가장 흔한 유즈케이스는 상위 Flow로 global transition과 예외 핸들러를 정의하고 하위 Flow로 그 설정을 상속받는 것이다. 상위 Flow를 찾으려면 다른 Flow들처럼 flow-registry에 추가해야 된다.
-설명 Flow 상속은 자바 상속과 비슷한가? 상위에 정의한 요소를 하위에서 접근할 수 있다는 측면에서는 자바 상속과 Flow 상속이 비슷하다. 하지만 몇 가지 차이점을 가지고 있다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>업무처리 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/</link><description>Recent content in 업무처리 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>Exception Handling 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/exception-handling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/exception-handling/</guid><description>&lt;h1 id="exception-handling-서비스">Exception Handling 서비스&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전자정부 표준프레임워크 기반의 시스템 개발 시 Exception 처리, 정확히는 Exception별 특정 로직(후처리 로직이라고 부르기도 함)이 흐를 수 있도록 하여 Exception에 따른 적절한 대응이 가능하도록 하고자 하는데 목적이 있다.&lt;br/>
+AOP의 도움을 받아 비즈니스 POJO와 분리되어 After throwing advice로 정의하였다.&lt;br/>
+AOP 관련 내용은 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/aop/">AOP 모듈&lt;/a>을 참조하길 바란다.&lt;/p>
+&lt;p>Exception에 대해 이야기 하겠다.&lt;br/>
+Exception 발생 시 Exception 발생 클래스 정보와 Exception 종류가 중요하다.&lt;br/>
+Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직의 대상일지 아닐지를 결정하는 데 사용된다.&lt;/p></description></item><item><title>Spring Web Flow(SWF) 개요</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/</guid><description>&lt;h1 id="spring-web-flow">Spring Web Flow&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Spring Web Flow(SWF)는 웹 애플리케이션 내 페이지 흐름(flow)의 정의와 수행에 집중하는 Spring 프레임워크 웹 스택의 컴포넌트이다.&lt;/p>
+&lt;p>시스템은 다른 위치에서 재사용될 수 있는 자족적 모듈처럼 웹 애플리케이션의 논리적 흐름(flow)을 획득하는 것을 허용한다.&lt;br>
+이러한 흐름(flow)은 비즈니스 프로세스의 구현을 통해 단일 사용자를 안내하고 단일 사용자 대화를 표현한다.&lt;br>
+흐름(flow)은 종종 HTTP 요청을 처리하고 상태를 가지며, 트랜잭션 특성을 보이고 동적이고/이거나 장시간 구동될 수 있다.&lt;/p>
+&lt;p>Spring Web Flow는 추상화의 좀 더 높은 레벨에 존재하고 Struts, Spring MVC, Portlet MVC, 그리고 JSF와 같은 기본 프레임워크 내에서 자족적인 페이지 흐름(flow) 엔진(page flow engine)처럼 통합된다.&lt;br>
+SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 가지는 형태로 명시적으로 애플리케이션의 페이지 흐름(flow)을 획득하는 기능을 제공한다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started/</guid><description/></item><item><title>Spring Web Flow의 Hello World 예제</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started-hello-world/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-getting-started-hello-world/</guid><description>&lt;h1 id="hello-world">Hello, World&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>처음으로 접하므로 여기서는 Hello World를 찍어 보면서 실행하는 것을 살펴보도록 하겠다.&lt;br/>
+Hello World는 두 가지 버전으로 입력되는 값이 없이 단지 Hello, Web Flow 화면을 호출하는 것과 입력값을 가지고 분기 처리 등 서비스 메소드를 실행 후 결과를 화면으로 보여주는 버젼으로 나누어 설명하겠다. 실행하여 보고자 하는 화면 결과는 아래와 같다.&lt;/p>
+&lt;p>
+&lt;img src="../images/helloflow.jpg" alt="helloflow" >
+&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Spring Web Flow는 사용자와 Service를 제공하는 서버 간의 대화하듯한 화면의 이동을 정의하는 것이다.&lt;br/>
+SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화형 시나리오를 중심으로 접근한다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration/</guid><description/></item><item><title>Spring Web Flow 환경 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-setting-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-setting-system/</guid><description>&lt;h1 id="spring-web-flow-환경-구성하기">Spring Web Flow 환경 구성하기&lt;/h1>
+&lt;p>Spring Web Flow를 사용하기 위한 Web 개발 환경에 대한 세팅을 설명한다.&lt;/p>
+&lt;h2 id="설정">설정&lt;/h2>
+&lt;p>Spring Web Flow의 Flow 정의를 위한 XML 문서는 아래와 같은 Schema를 갖는다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;beans&lt;/span> &lt;span style="color:#c4a000">xmlns=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#c4a000">xmlns:xsi=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span> &lt;span style="color:#c4a000">xmlns:webflow=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.springframework.org/schema/webflow-config&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#c4a000">xsi:schemaLocation=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">http://www.springframework.org/schema/beans
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">http://www.springframework.org/schema/webflow-config
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- Setup Web Flow here --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/beans&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="기본적인-설정">기본적인 설정&lt;/h3>
+&lt;p>Spring Web Flow를 사용하려면 FlowRegistry FlowExecutor를 설정해야 한다.&lt;/p>
+&lt;p>FlowRegistry는 등록될 시나리오에 따라 작성된 flow xml 을 가져오는 역할[1]을 수행한다.
+FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템이 실행되는 부분에 대해 다루겠다.&lt;/p></description></item><item><title>Spring Web Flow와 Spring MVC 연동</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-with-spring-mvc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-with-spring-mvc/</guid><description>&lt;h2 id="spring-web-flow-와-mvc-연동">Spring Web Flow 와 MVC 연동&lt;/h2>
+&lt;p>Spring Web Flow를 사용하여 웹을 개발할 때 Spring MVC와 연동하여 개발할 수 있다. 이를 위해 Spring MVC 연동 모듈 등을 설정해야 한다.
+여기서는 booking-mvc sample( 실행데모(faces이지만 시나리오는 같음) )을 기준으로 설정하겠다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Spring MVC 와의 연동을 위해 우리는 web.xml 안에 있는 DispatcherServlet 설정을 보도록 하겠다.&lt;/p>
+&lt;h3 id="webxml-환경-구성">web.xml 환경 구성&lt;/h3>
+&lt;p>Spring MVC를 구성하는 첫 단계는 web.xml에 DispatcherServlet을 구성하는 것이다.
+DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.&lt;/p>
+&lt;p>이 예제에서는 /spring/으로 시작하는 모든 요청을 받도록 설정하고 있다. init-param을 사용해 contextConfigLocation을 설정하고 있다.&lt;/p></description></item><item><title>Spring Web Flow에서 보안 적용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-securing-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-securing-flows/</guid><description>&lt;h1 id="flow에-보안-적용하기securing-flows">Flow에 보안 적용하기(Securing Flows)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>보안은 어플리케이션 에서 매우 중요한 이슈이다.
+Spring Security는 어플리케이션과 결합하여 여러 수준에서 보안을 책임지는 플랫폼의 기능을 수행한다.
+여기서는 Web Flow에 적용되는 Spring Security에 대해 알아보겠다.&lt;/p>
+&lt;h3 id="어떻게-flow를-안전하게-할-수-있을까">어떻게 Flow를 안전하게 할 수 있을까?&lt;/h3>
+&lt;p>Flow 실행에 보안을 적용시키고 싶다면 다음 단계에 따르자.&lt;/p>
+&lt;ol>
+&lt;li>Spring Security에서 인증(authentication)과 권한(authorization) 규칙을 설정한다.&lt;/li>
+&lt;li>secured 구성요소로 Flow 정의에 보안 규칙을 추가한다.&lt;/li>
+&lt;li>보안 규칙을 처리해주는 SecurityFlowExecutionListener 추가한다.&lt;/li>
+&lt;/ol>
+&lt;h3 id="secured-구성요소">secured 구성요소&lt;/h3>
+&lt;p>secured 구성 요소는 접근하기 전에 권한 확인을 적용해 주며, Flow 실행 단계마다 한 번 이상은 나올 수 없다.
+Flow 실행에서 세 단계로 보안을 적용할 수 있다. Flow, state, transition에 보안 적용이 가능하다.
+사용되는 문법은 동일하다. secured 구성요소는 보안이 적용되어야 하는 구성 요소 내에 위치하면 된다.
+예를 들어 view state에 보안을 적용하고자 하면,&lt;/p></description></item><item><title>Flow가 관리하는 영속성(Flow Managed Persistence)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-flow-managed-persistence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-configuration-flow-managed-persistence/</guid><description>&lt;h1 id="flow가-관리하는-영속성flow-managed-persistence">Flow가 관리하는 영속성(Flow Managed Persistence)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>대부분의 애플리케이션은 여러 방법으로 데이터에 접근한다. 여러 사용자가 공유하는 데이터를 동시에 수정한다.
+따라서 트랜잭션 데이터 접근 속성이 필요하다. 관계형 데이터 집합을 도메인 객체로 변환하여 애플리케이션 처리를 도와준다.
+Web Flow는 “Flow가 관리하는 영속성”(flow managed persistence)을 제공하여 Flow가 객체 영속성 문맥을 만들고, commit 하고, 닫을 수 있도록 한다.
+Web Flow는 하이버네이트와 JPA 객체 영속화 기술과 연동한다.&lt;/p>
+&lt;p>Flow-관리 영속성과 별도로 PesistenceContext 관리를 애플리케이션의 서비스 계층에서 완전히 캡슐화하는 패턴이 있다.
+이런 경우 Web 계층은 영속화에 관여하지 않는다. 그 대신 서비스 계층으로 념주겨거나 반환받은 detached object를 가지고 동작한다.
+이번 장은 Flow-관리 영속성에 초점을 맞추고 이 기능을 언제 어떻게 사용하는지 살펴보겠다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements/</guid><description/></item><item><title>Flow 정의</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-definiton/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-definiton/</guid><description>&lt;h1 id="flow-정의">Flow 정의&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;h3 id="flow">Flow&lt;/h3>
+&lt;p>Flow란 상이한 상황(context)에서 실행될 수 있는 재사용이 가능한 여러 단계들의 흐름을 캡슐화한 것을 의미한다.
+모든 Flow는 아래와 같은 Root로 시작한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;flow&lt;/span> &lt;span style="color:#c4a000">xmlns=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.springframework.org/schema/webflow&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#c4a000">xmlns:xsi=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#c4a000">xsi:schemaLocation=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.springframework.org/schema/webflow
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/flow&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="flow의-구성">Flow의 구성&lt;/h3>
+&lt;p>SWF에서 Flow는 “Sate(state)“로 부르는 일련의 단계들로 구성된다. Flow로 진입하게 되는 Sate는 일반적으로 사용자에게 보여지는 뷰가 된다.
+이 뷰에서는 Sate를 제어하게 되는 이벤트가 발생한다. 이들 이벤트는 결과적으로 다른 뷰로 이동하게 되는 Transition(transition)을 일으키게 된다.
+모든 state는 &amp;lt;flow/&amp;gt; 안에 정의하게 된다. 맨 처음 정의되는 state가 Flow의 시작점이 된다.&lt;/p></description></item><item><title>Web Flow에서 Expression Language (EL) 사용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-expression-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-expression-language/</guid><description>&lt;h1 id="expression-language">Expression Language&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Web Flow는 데이터 모델 및 action 실행을 위해 EL을 이용한다. 우리는 EL에 대해 알아보면서 flow 정의를 해보도록 하겠다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="지원하는-el-구현체">지원하는 EL 구현체&lt;/h3>
+&lt;h4 id="unified-el">Unified EL&lt;/h4>
+&lt;p>기본으로는 Unified EL을 사용한다. jboss-el이 기본 구현체로 되어 있다.&lt;/p>
+&lt;pre tabindex="0">&lt;code>참고 : web 컨테이너에서는 대게 el-api 를 지원해준다. 톰캣 6의 경우처럼 말이다.
+&lt;/code>&lt;/pre>&lt;h4 id="ognl">OGNL&lt;/h4>
+&lt;p>OGNL은 SWF2에서 제공하는 또 다른 EL이다. 클래스패스에만 추가하면 자동으로 찾아서 사용한다.&lt;/p>
+&lt;h4 id="el-호환성">EL 호환성&lt;/h4>
+&lt;p>Unified EL과 OGNL은 비슷한 문법을 가지고 있다. 가능하면 Unified EL만 사용하자.&lt;/p></description></item><item><title>Spring Web Flow의 뷰(View) 보여주기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-rendering-views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-rendering-views/</guid><description>&lt;h1 id="뷰view-보여주기">뷰(View) 보여주기&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>view-state는 flow 내에서 화면을 생성하는 요소이다.
+여기서는 view-state 에 대해서 알아보도록 하자.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="뷰-상태view-state-정의하기">뷰 상태(view state) 정의하기&lt;/h3>
+&lt;p>view-state는 기본적으로 해당 뷰를 생성하여 보여준 후, 사용자가 화면을 통해 응답을 하는 것을 기다린다.
+아래는 view-state는 enterBookingDetails라는 ID 를 가지고 있으며 또한 별도의 view 설정이 없기 때문에 ID 가 곧 view를 뜻한다&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;view-state&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;enterBookingDetails&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;reviewBooking&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/view-state&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>따라서. 디렉토리 상의&lt;/p>
+&lt;p>
+&lt;img src="../images/dir.jpg" alt="dir" >
+&lt;/p>
+&lt;p>booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBookingDetails.jsp 이 자동으로 view로 동작한다.
+또는 절대 경로를 이용하여 명시적으로 view=”/WEB-INF/hotels/booking/enterBookingDetails.jsp” 설정할 수도 있다.
+아래에서 다시 설명하겠다.&lt;/p></description></item><item><title>Action 실행</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-executing-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-executing-actions/</guid><description>&lt;h1 id="action-실행">Action 실행&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>action-state는 flow 내에서 action 실행을 제어하기 위한 요소이다.&lt;br>
+decision-state를 이용하여 if-else와 같은 흐름 제어를 할 수 있다. 좀 더 자세히 알아보도록 하자.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="액션-상태-정의하기">액션 상태 정의하기&lt;/h3>
+&lt;p>특정 액션을 호출한 다음에, 그 결과에 따라서 다른 상태로 전이하고 싶은 경우에는 action-state 구성 요소를 사용하자.&lt;br>
+직관적으로 봤을 때 아래 코드는 interview.moreAnswersNeeded()의 결과값에 의해 transition이 실행될 것을 예상할 수 있다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;action-state&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;moreAnswersNeeded&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;evaluate&lt;/span> &lt;span style="color:#c4a000">expression=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;interview.moreAnswersNeeded()&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;yes&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;answerQuestions&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;no&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;finish&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/action-state&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>좀더 완전한 예를 살펴보자.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;flow&lt;/span> &lt;span style="color:#c4a000">xmlns=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.springframework.org/schema/webflow&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#c4a000">xmlns:xsi=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#c4a000">xsi:schemaLocation=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://www.springframework.org/schema/webflow
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;on-start&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;evaluate&lt;/span> &lt;span style="color:#c4a000">expression=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;interviewFactory.createInterview()&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#c4a000">result=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;flowScope.interview&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/on-start&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;view-state&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;answerQuestions&amp;#34;&lt;/span> &lt;span style="color:#c4a000">model=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;questionSet&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;on-entry&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#204a87;font-weight:bold">&amp;lt;evaluate&lt;/span> &lt;span style="color:#c4a000">expression=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;interview.getNextQuestionSet()&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>				&lt;span style="color:#c4a000">result=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;viewScope.questionSet&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/on-entry&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;submitAnswers&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;moreAnswersNeeded&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#204a87;font-weight:bold">&amp;lt;evaluate&lt;/span> &lt;span style="color:#c4a000">expression=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;interview.recordAnswers(questionSet)&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/transition&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/view-state&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;action-state&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;moreAnswersNeeded&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;evaluate&lt;/span> &lt;span style="color:#c4a000">expression=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;interview.moreAnswersNeeded()&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;yes&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;answerQuestions&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#204a87;font-weight:bold">&amp;lt;transition&lt;/span> &lt;span style="color:#c4a000">on=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;no&amp;#34;&lt;/span> &lt;span style="color:#c4a000">to=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;finish&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/action-state&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#204a87;font-weight:bold">&amp;lt;end-state&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;finish&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/flow&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="의사결정-상태decision-states-정의">의사결정 상태(decision states) 정의&lt;/h3>
+&lt;p>action-state를 대신해서 편리하게 if/else 문법을 사용해서 이동하고자 하는 의사결정을 해주는 decision-state를 사용한다.&lt;br>
+이전 예제를 의사결정 상태로 구현한 예를 보자.&lt;/p></description></item><item><title>Flow 상속</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-inheritance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/swf-elements-flow-inheritance/</guid><description>&lt;h1 id="flow-상속">Flow 상속&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Flow 상속은 한 Flow가 다른 Flow 설정을 상속할 수 있게 되어 있다. 상속은 Flow와 State 레벨에서 모두 발생할 수 있다.
+가장 흔한 유즈케이스는 상위 Flow로 global transition과 예외 핸들러를 정의하고 하위 Flow로 그 설정을 상속받는 것이다.
+상위 Flow를 찾으려면 다른 Flow들처럼 flow-registry에 추가해야 된다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="flow-상속은-자바-상속과-비슷한가">Flow 상속은 자바 상속과 비슷한가?&lt;/h3>
+&lt;p>상위에 정의한 요소를 하위에서 접근할 수 있다는 측면에서는 자바 상속과 Flow 상속이 비슷하다.
+하지만 몇 가지 차이점을 가지고 있다.&lt;/p></description></item></channel></rss>

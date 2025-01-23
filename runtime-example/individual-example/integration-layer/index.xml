@@ -1,2 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>연계통합 예제 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/</link><description>Recent content in 연계통합 예제 on 표준프레임워크 개발가이드</description><generator>Hugo -- gohugo.io</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>Restful 웹서비스 예제(Restful Web Service Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/restful-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/restful-example/</guid><description>Restful 웹서비스 예제(Restful Web Service Example) 개요 Spring 3.0에서 새롭게 추가된 Restful 웹서비스 지원기능을 이용하여 주어진 데이터를 Restful 요청/응답을 통하여 화면 또는 각 파일 양식으로 출력시켜주는 기능의 예제이다. URL을 통하여 각 카테고리의 목록 또는 상세정보를 요청할 수 있으며, HTML, JSON, XML 형태의 출력을 지원한다.
-설명 1. 해당 예제를 실행하면 Restful 웹서비스기능을 이용한 카테고리 관리페이지를 볼 수 있다. 2. [등록] 버튼을 누르면 카테고리 등록페이지를 호출하고 카테고리 등록이 가능하다. 3. 카테고리 관리페이지에서 [json으로 내보내기]버튼을 누르면 JSON형태로 카테고리목록을 출력한다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>연계통합 예제 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/</link><description>Recent content in 연계통합 예제 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>ko</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/index.xml" rel="self" type="application/rss+xml"/><item><title>Restful 웹서비스 예제(Restful Web Service Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/restful-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/restful-example/</guid><description>&lt;h1 id="restful-웹서비스-예제restful-web-service-example">Restful 웹서비스 예제(Restful Web Service Example)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Spring 3.0에서 새롭게 추가된 Restful 웹서비스 지원기능을 이용하여 주어진 데이터를 Restful 요청/응답을 통하여 화면 또는 각 파일 양식으로 출력시켜주는 기능의 예제이다. URL을 통하여 각 카테고리의 목록 또는 상세정보를 요청할 수 있으며, HTML, JSON, XML 형태의 출력을 지원한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;pre tabindex="0">&lt;code>1. 해당 예제를 실행하면 Restful 웹서비스기능을 이용한 카테고리 관리페이지를 볼 수 있다. 
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/restful-1.png" alt="restful-1" >
+&lt;/p>
+&lt;pre tabindex="0">&lt;code>2. [등록] 버튼을 누르면 카테고리 등록페이지를 호출하고 카테고리 등록이 가능하다.
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/restful-2.png" alt="restful-2" >
+&lt;/p>
+&lt;pre tabindex="0">&lt;code>3. 카테고리 관리페이지에서 [json으로 내보내기]버튼을 누르면 JSON형태로 카테고리목록을 출력한다.
+&lt;/code>&lt;/pre>&lt;p>
+&lt;img src="../images/restful-4.png" alt="restful-4" >
+&lt;/p></description></item></channel></rss>
