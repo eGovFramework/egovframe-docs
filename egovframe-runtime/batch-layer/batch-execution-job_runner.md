@@ -136,7 +136,7 @@ EgovCommandLineRunner에서는 start 메소드를 이용하여 Job을 시작한�
 | \-abandon | 정지된 Job의 상태를 “ABANDONED”으로 변경한다.          | Job의 Execution ID |
 
 #### 사용방법
-[배치 템플릿을 이용한 EgovCommandLineRunner 예제](batch-core-egov_commandline_runner_template.md)
+[배치 템플릿을 이용한 EgovCommandLineRunner 예제](../../runtime-example/individual-example/batch-layer/batch-core-egov_commandline_runner_template.md)
 
 ### EgovSchedulerRunner
 
@@ -146,4 +146,4 @@ EgovCommandLineRunner에서는 start 메소드를 이용하여 Job을 시작한�
 ![image](./images/egov_scheduler_runner.png)
 
 #### 설정 및 사용방법
-[배치 템플릿을 이용한 EgovSchedulerRunner 예제](batch-core-egov_scheduler_runner_template.md)
+[배치 템플릿을 이용한 EgovSchedulerRunner 예제](../../runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template.md)
