@@ -1,8 +1,13 @@
 ---
-linkTitle: "- iBATIS Configuration"
-weight: 3
 title: iBATIS Configuration
+linkTitle: "iBATIS Configuration"
 description: iBATIS 의 메인 설정 파일인 SQL Map XML Configuration 파일(이하 sql-map-config.xml 설정 파일) 작성과 상세한 옵션 설정에 대해 알아본다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-ibatis_configuration/
+menu:
+    depth:
+        name: iBATIS Configuration
+        weight: 1
+        parent: dataaccess-ibatis
 ---
 # iBATIS Configuration
 

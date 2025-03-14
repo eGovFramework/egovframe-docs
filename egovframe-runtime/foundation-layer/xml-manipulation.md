@@ -1,8 +1,13 @@
 ---
-linkTitle: "XML Manipulation"
-weight: 23
 title: XML Manipulation Service
+linkTitle: "XML Manipulation"
 description: XML Manipulation 서비스는 XML 문서의 생성, 읽기, 쓰기, 수정 등을 위한 기능을 제공하며, DOM과 SAX 두 가지 파서 방식을 지원한다. DOM은 트리 구조로 XML 문서를 다루고, SAX는 이벤트 기반으로 처리한다. 이 서비스를 통해 XML 문서의 요소 추가, 삭제, 수정, XPath 검색 및 Validation 검사 등의 작업을 수행할 수 있다.
+url: /egovframe-runtime/foundation-layer/xml-manipulation/
+menu:
+    depth:
+        name: XML Manipulation
+        weight: 10
+        parent: "foundation-layer"
 ---
 # XML Manipulation Service
 

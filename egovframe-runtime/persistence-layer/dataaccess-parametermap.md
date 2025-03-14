@@ -1,8 +1,13 @@
 ---
-linkTitle: "- parameterMap"
-weight: 6
 title: iBATIS parameterMap
+linkTitle: "parameterMap"
 description: parameterMap은 Java 객체의 속성에 대한 매핑을 설정하여 SQL 바인드 변수를 처리하는 요소로, 기술적인 매핑이 필요한 경우에 사용되지만, Dynamic 요소와 함께 사용할 수 없고 바인드 변수의 순서를 맞춰야 하는 제한이 있어 일반적으로 추천되지 않는다. 대신 parameterClass나 Inline Parameter 방식이 더 자주 사용된다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-parameterMap/
+menu:
+    depth:
+        name: parameterMap
+        weight: 4
+        parent: dataaccess-ibatis
 ---
 # parameterMap
 

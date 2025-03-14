@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Declarative"
-weight: 37
 title: 선언적 Transaction 관리
+linkTitle: "Declarative"
 description: Spring에서는 트랜잭션을 코드에서 직접 처리하지 않고, 애노테이션이나 XML 정의를 통해 선언적으로 관리할 수 있다. 애노테이션 기반 트랜잭션 관리는 설정과 사용법을 통해 간편하게 트랜잭션을 처리할 수 있다.
+url: /egovframe-runtime/persistence-layer/transaction/declarative/
+menu:
+    depth:
+        name: Declarative
+        weight: 1
+        parent: "transaction"
 ---
 # Declarative Transaction Management
 

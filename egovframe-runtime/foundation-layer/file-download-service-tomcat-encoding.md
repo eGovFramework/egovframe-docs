@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_- Tomcat 한글"
-weight: 36
+linkTitle: "Tomcat 한글"
 title: Tomcat 한글 설정하기
 description: Tomcat에서 문자셋 인코딩을 하여 한글이 깨지는 문제를 해결할 수 있다.
+url: /egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/
+menu:
+    depth:
+        name: Tomcat 한글
+        weight: 1
+        parent: "fileDownload"
 ---
 # Tomcat 한글 설정하기
 

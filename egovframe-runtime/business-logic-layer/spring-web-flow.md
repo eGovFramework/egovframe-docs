@@ -1,8 +1,14 @@
 ---
-linkTitle: Spring Web Flow
-weight: 2
 title: Spring Web Flow(SWF) 개요
+linkTitle: Spring Web Flow
 description: Spring Web Flow는 웹 애플리케이션 내에서 논리적 페이지 흐름을 정의하고 수행하는 컴포넌트로, 단일 사용자의 대화를 비즈니스 프로세스와 함께 구현하여 안내한다. SWF는 Struts, Spring MVC 등과 통합되어 자족적인 페이지 흐름 엔진으로 작동하며, 선언적이고 관리하기 쉬운 방식으로 애플리케이션 흐름을 정의할 수 있다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/
+menu:
+    depth:
+        name: Spring Web Flow
+        weight: 2
+        parent: "business-logic-layer"
+        identifier: "spring-web-flow"
 ---
 # Spring Web Flow
 

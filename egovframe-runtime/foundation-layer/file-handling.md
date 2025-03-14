@@ -1,8 +1,13 @@
 ---
-linkTitle: "File Handling"
-weight: 37
 title: File Handling
+linkTitle: "File Handling"
 description: Excel 다운로드를 위한 파일 처리 서비스를 적용한 예제 코드와 설정을 제공한다.
+url: /egovframe-runtime/foundation-layer/file-handling/
+menu:
+    depth:
+        name: File Handling
+        weight: 17
+        parent: "foundation-layer"
 ---
 # File Handling
 

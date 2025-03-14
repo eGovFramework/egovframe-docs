@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Spring Integration"
-weight: 34
 title: Spring과 JPA 통합
+linkTitle: "Spring Integration"
 description: Spring은 JPA 기반 DAO 클래스를 쉽게 구현하기 위해 JpaTemplate을 제공하지만, 직접 EntityManager 메서드를 사용하는 방식(plain JPA)도 지원한다. JPA를 사용하기 위해서는 persistence.xml과 Spring ApplicationContext 설정이 필요하다.
+url: /egovframe-runtime/persistence-layer/orm/orm-spring_integration/
+menu:
+    depth:
+        name: Spring Integration
+        weight: 9
+        parent: "orm"
 ---
 # Spring Integration
 

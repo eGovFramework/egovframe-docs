@@ -1,8 +1,13 @@
 ---
-linkTitle: "- R2DBC"
-weight: 40
 title: R2DBC
+linkTitle: "R2DBC"
 description: R2DBC는 비동기적 방식으로 관계형 데이터베이스와 상호작용하기 위한 자바 라이브러리로, Spring WebFlux와 함께 리액티브 애플리케이션을 구성할 수 있다. 데이터베이스에 액세스하려면 ConnectionFactory 객체를 생성하여 공통으로 사용하며, 데이터베이스 종류에 따라 다른 구현체를 사용한다.
+url: /egovframe-runtime/persistence-layer/reactive/reactive-r2dbc/
+menu:
+    depth:
+        name: R2DBC
+        weight: 1
+        parent: "reactive"
 ---
 # R2DBC
 

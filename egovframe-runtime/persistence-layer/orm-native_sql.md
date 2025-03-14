@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Native SQL"
-weight: 30
 title: Native SQL
+linkTitle: "Native SQL"
 description: JPA는 기본 API나 QL 외에도 특정 DBMS 기능을 활용하기 위해 createNativeQuery() 메소드를 통해 Native SQL 실행을 지원한다. 이를 통해 표준 SQL을 직접 사용하여 CRUD 작업을 수행할 수 있다.
+url: /egovframe-runtime/persistence-layer/orm/orm-native_sql/
+menu:
+    depth:
+        name: Native SQL
+        weight: 5
+        parent: "orm"
 ---
 # Native SQL
 기본적으로 CRUD 작업을 할 때 JPA 기본 API를 사용하거나 QL을 이용하여 수행한다. 그러나 특정 DBMS에서 제공하는 기능을 사용할 수 있도록 하기 위해 Native <Acronym title="Structured Query Language">SQL</Acronym> 사용을 지원한다.

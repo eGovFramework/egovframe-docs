@@ -1,8 +1,13 @@
 ---
-linkTitle: "- JPA Repository"
-weight: 18
 title: Spring Data Repository
+linkTitle: "JPA Repository"
 description: Spring Data는 Repository를 추상화하여 Data Access Layer 구현을 최소화하고, 메소드명만으로 쿼리를 자동 생성하는 Query Method를 지원해 개발 생산성을 높인다. CrudRepository는 기본적인 CRUD 메소드를, PagingAndSortingRepository는 페이징 및 정렬 기능을 제공한다.
+url: /egovframe-runtime/persistence-layer/jpa-spring-data/jpa-repository/
+menu:
+    depth:
+        name: JPA Repository
+        weight: 1
+        parent: "jpa-spring-data"
 ---
 # Repository
 

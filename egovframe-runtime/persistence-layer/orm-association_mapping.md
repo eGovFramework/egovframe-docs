@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Association Mapping"
-weight: 28
 title: Association Mapping
+linkTitle: "Association Mapping"
 description: "두 클래스 간의 연관 관계를 매핑하는 방법으로, 1:1 관계는 @OneToOne 애노테이션을 사용해 처리하고, 1:N 관계는 @OneToMany와 @ManyToOne 애노테이션을 사용해 매핑한다. 다양한 컬렉션 매핑과 inverse, cascade 같은 주요 속성도 함께 설정할 수 있다."
+url: /egovframe-runtime/persistence-layer/orm/orm-associaion_mapping/
+menu:
+    depth:
+        name: Association Mapping
+        weight: 3
+        parent: "orm"
 ---
 # Association Mapping
 두 클래스 사이의 Association 유형별 매핑 방법에 대해서 살펴보고자 한다. 그리고 다양한 Collection의 매핑 방법 및 Collection의 주요속성인 inverse,cascade에 대해서 샘플코드를 중심으로 살펴본다.

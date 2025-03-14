@@ -1,7 +1,13 @@
 ---
-title: "Overview"
-weight: 1
+title: "표준프레임워크 실행환경 소개"
+linkTitle: OverView
 description: 표준프레임워크 실행환경은 응용SW의 구성기반으로서, 응용SW 실행 시 필요한 기본 기능을 제공하는 환경을 의미한다.
+url: /egovframe-runtime/intro/overview/
+menu:
+    depth:
+        name: OverView
+        weight: 1
+        parent: "runtime_intro"
 ---
 # 표준프레임워크 실행환경 소개
 

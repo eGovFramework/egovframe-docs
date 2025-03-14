@@ -1,8 +1,14 @@
 ---
-linkTitle: "- Basics"
-weight: 2
 title: "IoC Container Basics"
+linkTitle: "Basics"
 description: Spring Framework에서 제어의 역전(Inversion of Control, IoC)은 객체가 생성자 인수, 팩토리 메서드 인수, 또는 객체 인스턴스에 설정된 속성을 통해서만 다른 객체에 대한 종속성을 정의하는 프로세스를 말한다. 의존성 주입(Dependency Injection, DI)은 IoC의 한 종류로, 모듈 간의 의존성을 외부 컨테이너에서 주입해 주는 기능이다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-basics/"
+alias: "/egovframe-runtime/foundation-layer-core/ioc-container-basics/"
+menu:
+    depth:
+        name: "Basics"
+        weight: 1
+        parent: "ioc-container"
 ---
 # Basics
 
@@ -99,7 +105,7 @@ BeanFactory factory = context;
 | Feature | Explained in… |
 | --- | --- |
 | class | [Bean 객체화(Instantiation beans)](#bean-객체화instantiation-beans) |
-| name | [Bean 이름(Naming beans)](#bean-이름naming-beans) |
+| name | [Bean 이름(Naming beans)](#bean-이름naming-beans) |e
 | scope | [Bean scope](./ioc-container-bean_scope.md) |
 | constructor arguments | [종속성 삽입(Injecting dependencies)](./ioc-container-dependencies.md#종속성-삽입injecting-dependencies) |
 | properties | [종속성 삽입(Injecting dependencies)](./ioc-container-dependencies.md#종속성-삽입injecting-dependencies) |

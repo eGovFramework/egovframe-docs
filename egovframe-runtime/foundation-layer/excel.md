@@ -1,8 +1,13 @@
 ---
-linkTitle: "Excel"
-weight: 38
 title: Excel Service
+linkTitle: "Excel"
 description: Excel 서비스는 Apache POI를 사용해 Excel 파일 다운로드 및 업로드를 지원하며, 3.0 버전에서는 메소드 리팩토링과 MyBatis 지원을 추가했다.
+url: /egovframe-runtime/foundation-layer/excel/
+menu:
+    depth:
+        name: Excel
+        weight: 18
+        parent: "foundation-layer"
 ---
 # Excel Service
 

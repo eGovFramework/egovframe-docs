@@ -1,8 +1,14 @@
 ---
-linkTitle: "WebSocket"
-weight: 26
 title: WebSocket
+linkTitle: "WebSocket"
 description: WebSocket은 HTTP 환경에서 양방향 통신을 지원하는 Spring 기술로, Spring은 기본적으로 STOMP sub-protocol을 사용한다. Spring Framework 4.0부터 spring-websocket 모듈이 추가되어 복잡한 WebSocket 통신을 지원하며, JSR356(Java WebSocket API)과 호환된다.
+url : /egovframe-runtime/presentation-layer/webSocket/
+menu:
+    depth:
+        name: WebSocket
+        weight: 10
+        parent: "presentation-layer"
+        identifier: "WebSocket"
 ---
 # WebSocket
 

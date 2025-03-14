@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Flow Managed Persistence"
-weight: 9
 title: Flow가 관리하는 영속성(Flow Managed Persistence)
+linkTitle: "Flow Managed Persistence"
 description: Web Flow는 Flow 실행 중에 PersistenceContext를 생성하고, Flow가 종료될 때 데이터를 commit하여 영속성 관리를 지원하며, 주로 하이버네이트와 JPA와 연동된다. 이 패턴은 동시에 수정되는 데이터를 보호하기 위해 optimistic locking과 함께 사용되며, HTTP 세션 기반 저장 방법과는 달리 Flow 범위 내에서 영속성을 관리한다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-flow-managed-persistence/
+menu:
+    depth:
+        name: Flow Managed Persistence
+        weight: 4
+        parent: "swf-configuration"
 ---
 # Flow가 관리하는 영속성(Flow Managed Persistence)
 

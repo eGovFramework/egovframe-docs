@@ -1,8 +1,8 @@
 ---
-linkTitle: JdbcPaging
-weight: 21
 title: JdbcPaging 예제
+linkTitle: JdbcPaging
 description: DB를 페이지단위로 읽어서 데이터처리를 수행하는 기능을 예제로 제공한다. 스프링 배치에서는 JdbcPagingItemReader,JpaPagingItemReader등을 제공한다.또한 paging쿼리를 제공하는 인터페이스 PagingQueryProvider를 제공하며 각 DB종류별로 OraclePagingQueryProvider, HsqlPagingQueryProvider, MySqlPagingQueryProvider, SqlServerPagingQueryProvider, SybasePagingQueryProvider 등의 구현클래스를 제공한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-multi-db_jdbcpaging/
 ---
 # JdbcPaging 예제
 

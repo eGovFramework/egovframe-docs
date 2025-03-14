@@ -1,8 +1,13 @@
 ---
-linkTitle: "SpEL 예제"
-weight: 1
 title: "SpEL 예제(Spring Expression Language Example)"
+linkTitle: "SpEL 예제"
 description: Spring 3.0에서 추가된 SPeL을 사용하여 JSP 파일에서 입력값을 포맷팅해 화면에 출력하는 예제를 제공한다.
+url: /runtime-example/individual-example/foundation-layer-core/spel-example/
+menu:
+    depth:
+        name: SpEL 예제
+        weight: 1
+        parent: "foundationLayerCore"
 ---
 # SpEL 예제(Spring Expression Language Example)
 

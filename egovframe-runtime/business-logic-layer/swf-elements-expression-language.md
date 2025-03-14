@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Expression Language"
-weight: 12
 title: Web Flow에서 Expression Language (EL) 사용
+linkTitle: "Expression Language"
 description: Web Flow는 데이터 모델 및 action 실행을 위해 Unified EL 또는 OGNL을 사용하며, 주로 클라이언트 데이터 접근, 내부 데이터 구조 접근, 스프링 빈 메소드 호출 등에서 EL을 활용한다. Flow에서 EL 표현식은 eval 표현과 템플릿 표현을 통해 데이터 구조에 접근하거나 동적 뷰를 생성할 수 있다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-elements/swf-elements-expression-language/
+menu:
+  depth:
+    name: Expression Language
+    weight: 2
+    parent: "swf-elements"
 ---
 # Expression Language
 

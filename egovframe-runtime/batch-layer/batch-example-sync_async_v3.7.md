@@ -1,8 +1,13 @@
 ---
-linkTitle: Ex-SyncAsync
-weight: 20
 title: 동기/비동기 처리 예제
+linkTitle: Ex-SyncAsync
 description: 일괄(배치)처리 작업 수행 시, 작업처리가 종료될 때까지 대기하는 동기방식 처리와 작업처리의 종료를 Callback매커니즘을 이용하여 전달받는 비동기처리에 대한 예제를 보여준다.
+url: /egovframe-runtime/batch-layer/batch-example-sync_async_v3.7/
+menu:
+    depth:
+        name: 동기/비동기 처리 예제
+        weight: 16
+        parent: "batch-layer"
 ---
 # 동기/비동기 처리 예제
 

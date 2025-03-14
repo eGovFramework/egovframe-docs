@@ -1,8 +1,14 @@
 ---
+title: Server Security
 linkTitle: Server Security
-weight: 1
-title: Server Security Service
 description: Server Security Service는 Spring Security를 확장하여 사용자 인증과 권한 관리를 DB 기반으로 처리하며, 세션 관리도 지원한다. Spring Security는 인증, 권한 처리, 웹 및 서비스 레이어 보안을 제공하는 강력한 솔루션이지만 사용자 관리와 역할 관리에서 일부 취약점을 가진다. 표준프레임워크 3.0에서는 설정 간소화 기능과 Map 기반 UserDetails로 손쉬운 사용자 정보 관리가 가능해졌으며, 업그레이드 가이드를 통해 최신 보안 기능을 적용할 수 있다.
+url: /egovframe-runtime/foundation-layer/server-security/
+menu:
+    depth:
+        name: Server Security
+        weight: 1
+        parent: "foundation-layer"
+        identifier: "serverSecurity"
 ---
 # Server Security Service
 
@@ -56,14 +62,14 @@ Server Security의 주요기능은 다음과 같다.
 
 ### Server Security
 
-- [architecture](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:server_security:architecture)
-- [Authentication](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:server_security:authentication)
-- [Authorization](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:server_security:authorization)
-- [설정 간소화](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:server_security:xmlschema)
+- [architecture](./server-security-architecture.md/)
+- [Authentication](./server-security-authentication.md/)
+- [Authorization](./server-security-authorization.md/)
+- [설정 간소화](./server-security-simplifying-settings.md/)
 
 ### Server Security 업그레이드 가이드
 
-- [업그레이드](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:rte4.2:fdl:server_security:upgrade)
+- [업그레이드](./server-security-upgrade.md/)
 
 ## 참고자료
 

@@ -1,8 +1,14 @@
 ---
-linkTitle: IoC Container
-weight: 1
 title: "IoC Container"
+linkTitle: IoC Container
 description: IoC 컨테이너는 객체 간의 종속성을 소스 코드 외부에서 설정하여 유연성과 확장성을 높이는 Spring 프레임워크의 핵심 기능이다.
+url: /egovframe-runtime/foundation-layer-core/ioc-container/
+menu:
+  depth:
+    name: IoC Container
+    weight: 1
+    parent: "foundation-layer-core"
+    identifier: "ioc-container"
 ---
 # IoC Container
 
@@ -47,29 +53,29 @@ ApplicationContext는 BeanFacatory의 완전한 superset이므로, BeanFactory�
 
 본 문서는 크게 두 부분으로 나뉘어지는데, 첫번째 부분은 BeanFactory와 ApplicationContext 모두에 적용되는 기본적인 원리를 설명하고, 두번째 부분은 ApplicationContext에만 적용되는 특징들을 설명한다.
 
-  * [Basics](./ioc-container-basics.md)   
+  * [Basics](./ioc-container-basics.md/)
     IoC Container를 설명하기 위해 필요한 기본적인 개념 및 사용 방법을 설명한다.
-  * [Dependencies](./ioc-container-dependencies.md)   
+  * [Dependencies](./ioc-container-dependencies.md/)
     IoC Container의 핵심 기능인 Dependency Injection의 사용 방식 및 설정 방법을 설명한다.
-  * [Bean scope](./ioc-container-bean_scope.md)   
+  * [Bean scope](./ioc-container-bean_scope.md/)
     IoC Container에 의해 관리되는 Bean의 생성 방식 및 적용 범위를 설명한다.
-  * [Customizing the nature of a bean](./ioc-container-customizing_the_nature_of_a_bean.md)   
+  * [Customizing the nature of a bean](./ioc-container-customizing_the_nature_of_a_bean.md/)
     Bean의 생명주기 관리, Bean이 속한 Container 참조 등 Bean의 성질을 변화시키는 방법을 설명한다.
-  * [Bean definition inheritance](./ioc-container-bean_definition_inheritance.md)   
+  * [Bean definition inheritance](./ioc-container-bean_definition_inheritance.md/)
     Bean 정의 상속에 대해서 설명한다.
-  * [IoC Container:Container extension points](./ioc-container-container_extension_points.md)   
+  * [IoC Container:Container extension points](./ioc-container-container_extension_points.md/)
      IoC Container의 기능을 확장하는 방법을 설명한다.
-  * [IoC Container:The ApplicationContext](./ioc-container-the_applicationcontext.md)   
+  * [IoC Container:The ApplicationContext](./ioc-container-the_applicationcontext.md/)
      ApplicationContext만이 제공하는 기능을 설명한다.
-  * [IoC Container:Annotation-based configuration](./ioc-container-annotation-based_configuration.md)   
+  * [IoC Container:Annotation-based configuration](./ioc-container-annotation-based_configuration.md/)
     Java Annotation을 기반으로 Bean을 정의하는 방법을 설명한다.
-  * [IoC Container:Classpath scanning for managed components](./ioc-container-classpath_scanning_for_managed_components.md)   
+  * [IoC Container:Classpath scanning for managed components](./ioc-container-classpath_scanning_for_managed_components.md/)
     Dependency Injection에 의해 삽입되는 base Bean에 대한 Java Annotation 기반 설정 방법을 설명한다.
-  * [IoC Container:JSR 330 Standard Annotations](./ioc-container-jsr_330_standard_annotations.md)   
+  * [IoC Container:JSR 330 Standard Annotations](./ioc-container-jsr_330_standard_annotations.md/)
     JSR-330 표준 Annotation에 대해서 설명한다.
-  * [IoC Container:Java-based configuration](./ioc-container-java-based_configuration.md)   
+  * [IoC Container:Java-based configuration](./ioc-container-java-based_configuration.md/)
     Java Annotation을 기반으로 Container를 구성하는 방법을 설명한다.
-  * [Ioc Container:Environment Abstraction](./ioc-container-environment_abstraction.md)   
+  * [Ioc Container:Environment Abstraction](./ioc-container-environment_abstraction.md/)
     환경 설정을 추상화하는 방법을 설명한다.
 
 ## 참고자료

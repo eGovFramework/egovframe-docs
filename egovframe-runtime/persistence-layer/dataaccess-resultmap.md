@@ -1,8 +1,13 @@
 ---
-linkTitle: "- resultMap"
-weight: 8
 title: resultMap
+linkTitle: "resultMap"
 description: resultMap은 SQL 결과를 Java 객체의 속성에 어떻게 매핑할지 상세하게 제어할 수 있는 매핑 요소로, 칼럼 타입 지정, null 값 대체, 타입 핸들러 처리, 복합 객체 매핑 등을 지원한다. 이는 자동 매핑 방식보다 더 복잡한 매핑을 처리할 수 있어 많이 사용된다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-resultMap/
+menu:
+    depth:
+        name: resultMap
+        weight: 6
+        parent: dataaccess-ibatis
 ---
 # resultMap
 

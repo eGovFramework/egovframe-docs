@@ -1,8 +1,13 @@
 ---
 linkTitle: "EgovSchedulerRunner"
-weight: 5
 title: 배치 템플릿을 이용한 EgovSchedulerRunner 예제
 description: Scheduler 기반의 배치 템플릿 프로젝트를 이용하여 EgovSchedulerRunner의 사용법을 보여주는 예제이다.
+url: /runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/
+menu:
+    depth:
+        name: EgovSchedulerRunner
+        weight: 5
+        parent: "batchLayer"
 ---
 # 배치 템플릿을 이용한 EgovSchedulerRunner 예제
 

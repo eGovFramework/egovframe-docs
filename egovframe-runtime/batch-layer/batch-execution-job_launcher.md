@@ -1,8 +1,14 @@
 ---
-linkTitle: JobLauncher
-weight: 12
 title: JobLauncher
+linkTitle: JobLauncher
 description: JobLauncher는 배치작업을 실행시키는 역할을 한다. Job과 Job Parameters를 이용하여 요청된 배치 작업을 수행한 후 JobExecution을 반환한다.
+url: /egovframe-runtime/batch-layer/batch-execution-job_launcher/
+menu:
+    depth:
+        name: JobLauncher
+        weight: 8
+        parent: "batch-layer"
+        identifier: "jobLauncher"
 ---
 # JobLauncher
 

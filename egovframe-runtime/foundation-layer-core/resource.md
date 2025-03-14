@@ -1,8 +1,13 @@
 ---
-linkTitle: Resource
-weight: 21
 title: "Resource 서비스"
+linkTitle: Resource
 description: 리소스를 활용하여 가장 많이 사용하는 메시지 제공 서비스는 미리 정의된 파일에서 키값에 해당하는 메시지를 읽어 오류나 안내 메시지를 제공하는 기능을 한다.
+url: /egovframe-runtime/foundation-layer-core/resource/
+menu:
+   depth:
+      name: Resource
+      weight: 3
+      parent: "foundation-layer-core"
 ---
 # Resource 서비스
 

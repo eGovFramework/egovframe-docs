@@ -1,7 +1,12 @@
 ---
-linkTitle: "- AOP 가이드라인"
-weight: 20
+linkTitle: "AOP 가이드라인"
 title: 실행환경 AOP 가이드라인
+url: "/egovframe-runtime/foundation-layer-core/aop/aop-guide/"
+menu:
+  depth:
+    weight: 3
+    parent: "AOP"
+    name: "AOP 가이드라인"
 description: "표준프레임워크 실행환경은 XML Schema 기반의 AOP 방법을 사용하여 예외처리와 트랜잭션을 처리하며, 이는 @AspectJ Annotation 기반보다 횡단 관심사의 설정관계를 파악하는 데 유리하다."
 ---
 # 실행환경 AOP 가이드라인

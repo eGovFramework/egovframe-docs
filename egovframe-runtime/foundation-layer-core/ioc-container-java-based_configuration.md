@@ -1,8 +1,13 @@
 ---
-linkTitle: "- JavaConfig"
-weight: 13
 title: "Java-based Configuration"
+linkTitle: "JavaConfig"
 description: Java-based Configuration은 XML 대신 Java 코드를 사용하여 Spring 빈과 애플리케이션 설정을 구성하는 방법이다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-java-based_configuration/"
+menu:
+    depth:
+        name: JavaConfig
+        weight: 12
+        parent: "ioc-container"
 ---
 # Java-based configuration
 

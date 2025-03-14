@@ -1,8 +1,13 @@
 ---
-linkTitle: "WebService"
-weight: 5
 title: WebService
+linkTitle: "WebService"
 description: WebService는 전자정부 개발프레임워크 Integration 서비스 표준에 따라 WebService를 요청하고 제공하기 위한 Library이다.
+url: /egovframe-runtime/integration-layer/webservice/
+menu:
+    depth:
+        name: WebService
+        weight: 3
+        parent: "integration-layer"
 ---
 # WebService
 

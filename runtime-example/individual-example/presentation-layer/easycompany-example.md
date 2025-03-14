@@ -1,8 +1,13 @@
 ---
-linkTitle: "easycompany 예제"
-weight: 6
 title: easycompany 예제 실행하기
+linkTitle: "easycompany 예제"
 description: "EasyCompany 예제는 JDK 1.8, Eclipse 4.8.0, Tomcat 8.0, HSQLDB 2.3.2 환경에서 실행되며, SVN에서 프로젝트를 다운받아 DBMS(runHsqlDB.cmd)와 Tomcat을 실행 후 http://localhost:8080/easycompany 에 접속해 id/pwd: 1/1로 로그인하면 사원 리스트 페이지를 확인할 수 있다."
+url: /runtime-example/individual-example/presentation-layer/easycompany-example/
+menu:
+    depth:
+        name: easycompany 예제
+        weight: 2
+        parent: "presentaionLayer"
 ---
 # easycompany 예제 실행하기
 

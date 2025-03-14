@@ -1,8 +1,13 @@
 ---
-linkTitle: "Setup"
-weight: 1
 title: 배치실행환경 예제 설치법
+linkTitle: "Setup"
 description: 전자정부 표준프레임워크 홈페이지에서 배치실행환경 소스파일을 다운 받아 압축을 풀고, m2 이클립스가 설치되어 있다는 가정하에 설명한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-setup/
+menu:
+    depth:
+        name: Setup
+        weight: 1
+        parent: "batchLayer"
 ---
 # 배치실행환경 예제 설치법
 

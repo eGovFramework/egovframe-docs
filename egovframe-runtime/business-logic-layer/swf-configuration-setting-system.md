@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_-시스템 설정"
-weight: 6
 title: Spring Web Flow 환경 설정
+linkTitle: "시스템 설정"
 description: Spring Web Flow를 사용하기 위해서는 Flow 정의를 위한 XML 문서를 작성하고, FlowRegistry와 FlowExecutor를 설정해야 한다. FlowRegistry는 flow XML을 가져오는 역할을, FlowExecutor는 이를 실행하는 역할을 담당한다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-setting-system/
+menu:
+  depth:
+    name: 시스템 설정
+    weight: 1
+    parent: "swf-configuration"
 ---
 # Spring Web Flow 환경 구성하기
 

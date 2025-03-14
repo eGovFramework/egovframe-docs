@@ -1,8 +1,13 @@
 ---
-linkTitle: JobRegistry
-weight: 15
 title: JobRegistry
+linkTitle: JobRegistry
 description: JobRegistry는 생성된 Job을 자동으로 Map형태로 저장하여 관리한다. JobRegistry는 context에서 Job을 추적하거나 다른 곳에서 생성된 Job을 application context의 중앙에 모을 때 유용하게 사용할 수 있다. 등록된 Job의 이름과 속성들을 조작할 수 있으며, job name과 job instance의 Map의 형태로 이루워져 있다.
+url: /egovframe-runtime/batch-layer/batch-core-job_registry/
+menu:
+    depth:
+        name: JobRegistry
+        weight: 10
+        parent: "batch-layer"
 ---
 # JobRegistry
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: JobGroup
-weight: 10
 title: 작업그룹 예제
+linkTitle: JobGroup
 description: 배치 수행 시, 업무에 따라 필요한 일련의 Job들을 구분하기 위해서 이를 카테고리화 하여 관리 하는 기능을 보여주는 예제이다.
+url: /runtime-example/individual-example/batch-layer/batch-example-job_group_mgmt/
+menu:
+    depth:
+        name: JobGroup
+        weight: 9
+        parent: "batchLayer"
 ---
 # 작업그룹 예제
 

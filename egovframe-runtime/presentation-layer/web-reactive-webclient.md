@@ -1,8 +1,13 @@
 ---
-linkTitle: "- WebClient"
-weight: 17
 title: 스프링 WebFlux의 WebClient와 논블로킹 처리
+linkTitle: "WebClient"
 description: 스프링 WebFlux는 리액티브, 논블로킹 HTTP 요청을 위한 WebClient를 제공하며, 이를 통해 선언적인 프로그래밍이 가능하다. WebClient와 서버는 동일한 논블로킹 코덱을 사용해 요청과 응답을 인코딩 및 디코딩한다.
+url : /egovframe-runtime/presentation-layer/web-reactive/web-reactive-webclient/
+menu:
+    depth:
+        name: WebClient
+        weight: 5
+        parent: "web_reactive"
 ---
 # WebClient
 스프링 WebFlux는 리액티브, 논블로킹 HTTP 요청을 위한 WebClient를 제공한다. 웹 클라이언트는 리액티브 타입을 사용하는 함수형 API이기 때문에 선언적인(declarative) 프로그래밍이 가능하다. 웹플럭스 클라이언트와 서버는 동일한 논블로킹 코덱으로 요청, 응답을 인코딩, 디코딩한다.

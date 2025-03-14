@@ -1,8 +1,13 @@
 ---
-linkTitle: JUnitTest
-weight: 28
 title: 배치실행환경 예제 JUnit Test 설명
+linkTitle: JUnitTest
 description: 배치실행환경 예제에서는 JUnit을 이용하여 배치를 수행하고 성공여부 판단 및 테스트 내용 확인을 한다. 초보 사용자의 이해를 돕기위해 예제에서 공통으로 사용하는 JUnitTest의 기본설정과 테스트 수행방법을 설명한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-run_junit_test/
+menu:
+    depth:
+        name: JUnitTest
+        weight: 24
+        parent: "batchLayer"
 ---
 # 배치실행환경 예제 JUnit Test 설명
 

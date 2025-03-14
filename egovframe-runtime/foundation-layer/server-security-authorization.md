@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Authorization"
-weight: 4
 title: Authorization
+linkTitle: "- Authorization"
 description: 전자정부 표준프레임워크의 권한 부여(Authorization)는 XML 또는 DB에서 권한을 관리하며 계층적 권한을 지원한다. Spring Security의 FilterSecurityInterceptor를 통해 보호 자원에 대한 접근 권한을 관리하고, DB 기반의 보호 자원 맵핑 정보를 동적으로 반영할 수 있다. 또한, 역할 계층은 XML 또는 DB에서 관리하며, 사용자는 세션을 통해 권한 정보를 가져와 처리할 수 있다.
+url: /egovframe-runtime/foundation-layer/server-security/server-security-authorization/
+menu:
+    depth:
+        name: Authorization
+        weight: 3
+        parent: "serverSecurity"
 ---
 # Authorization
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Logback logging"
-weight: 3
 title: Logback logging
+linkTitle: "Logback logging"
 description: SQLite를 이용하여 경량화된 로깅 처리를 하는 기본 사용법에 대해 설명한다.
+url: "/egovframe-runtime/batch-layer/intro/batch-support-logback_logging/"
+menu:
+    depth:
+        name: Logback logging
+        weight: 2
+        parent: "intro"
 ---
 # Logback logging
 

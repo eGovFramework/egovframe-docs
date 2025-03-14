@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Executing Actions"
-weight: 14
 title: Action 실행
+linkTitle: "Executing Actions"
 description: Action-state는 flow 내에서 특정 액션 실행 후 그 결과에 따라 다른 상태로 전이하는 기능을 제공하며, decision-state는 if-else와 같은 흐름 제어를 수행한다. 예를 들어, 특정 조건에 따라 transition이 결정되는 구조를 정의할 수 있다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-elements/swf-elements-executing-actions/
+menu:
+  depth:
+    name: Executing Actions
+    weight: 4
+    parent: "swf-elements"
 ---
 # Action 실행
 

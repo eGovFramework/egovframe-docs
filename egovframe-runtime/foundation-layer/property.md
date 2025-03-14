@@ -1,10 +1,17 @@
 ---
-linkTitle: "Property"
-weight: 15
 title: Property
+linkTitle: "Property"
 description: Property는 시스템 설정 정보를 외부에서 관리하여 유연성과 확장성을 높이는 기능으로, 동적 갱신이 가능한 Property Service와 정적 설정인 Property Source를 제공한다.
+url: /egovframe-runtime/foundation-layer/property/
+menu:
+    depth:
+        name: Property
+        weight: 6
+        parent: "foundation-layer"
+        identifier: "Property"
 ---
 # Property
+        
 Property는 시스템의 설치 환경에 관련된 정보나, 잦은 정보의 변경이 요구되는 경우 외부에서 그 정보를 관리하게 함으로써 시스템의 유연성을 높이기 위해서 제공하는 것으로 Property Service와 Property Source를 제공하고 있다.
 Property Service와 Property Source는 각각의 특성과 용도에 따라 시스템의 설정 정보를 관리한다.
 이와 같은 기능을 통해 전자정부프레임워크는 시스템의 유연성과 확장성을 높여준다. 

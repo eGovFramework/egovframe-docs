@@ -1,8 +1,13 @@
 ---
-linkTitle: "- 암복호화 서비스"
-weight: 26
 title: Encryption/Decryption Service
+linkTitle: "암복호화 서비스"
 description: 암호화는 평문을 암호문으로 변환해 메시지를 보호하며, 복호화는 이를 다시 평문으로 복원하는 과정으로, 암호계는 관용암호와 공개키 시스템으로 구분된다.
+url: /egovframe-runtime/foundation-layer/crypto/crypto-encryption-decryption/
+menu:
+    depth:
+        name: 암복호화 서비스
+        weight: 1
+        parent: "crypto"
 ---
 # Encryption/Decryption Service
 

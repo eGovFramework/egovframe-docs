@@ -1,8 +1,14 @@
 ---
-linkTitle: "Compress/Decompress"
-weight: 30
 title: Compress/Decompress Service
+linkTitle: "Compress/Decompress"
 description: 전자정부 표준프레임워크는 Jakarta Commons Compress를 통해 다양한 압축 방식(tar, zip, bzip2 등)을 지원하는 편리한 API를 제공한다.
+url: /egovframe-runtime/foundation-layer/compress-decompress/
+menu:
+    depth:
+        name: Compress/Decompress
+        weight: 15
+        parent: "foundation-layer"
+        identifier: "compress-decompress"
 ---
 # Compress/Decompress Service
 

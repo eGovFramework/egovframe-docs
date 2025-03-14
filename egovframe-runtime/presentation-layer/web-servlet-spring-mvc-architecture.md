@@ -1,8 +1,13 @@
 ---
-linkTitle: "- MVC"
-weight: 2
 title: Spring MVC Architecture
+linkTitle: "MVC"
 description: Spring MVC는 DispatcherServlet, HandlerMapping, Controller, ViewResolver 등 각 컴포넌트의 역할이 명확히 분리되어 있으며, 다양한 인터페이스와 구현 클래스를 제공해 유연한 선택이 가능하다. POJO 스타일의 클래스 작성으로 비즈니스 로직에 집중할 수 있으며, 웹 요청 파라미터와 커맨드 클래스 간 데이터 매핑, 데이터 검증, 오류 처리 기능을 지원한다. 또한 JSP 폼 구성을 위한 태그 라이브러리도 제공한다.
+url : /egovframe-runtime/presentation-layer/web-servlet/web-servlet-spring-mvc-architecture/
+menu:
+    depth:
+        name: MVC
+        weight: 1
+        parent: "web-servlet"
 ---
 # Spring MVC Architecture
 

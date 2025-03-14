@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Profiles"
-weight: 6
 title: "Bean Definition Profiles"
+linkTitle: "Profiles"
 description: Spring Framework 3.1부터 추가된 Bean의 Profile은 동일한 id의 bean을 여러 개 정의하고, 활성화된 Profile에 따라 해당 bean이 Runtime 시에 동작하도록 하는 기능이다. 주로 개발 환경과 운영 환경에서 Profile 설정을 변경해 Spring Container에서 서로 다른 Bean을 적용하는 데 사용된다. Profile을 설정할 때는 반드시 활성화해야 하며, 활성화하지 않으면 `NoSuchBeanDefinitionException`이 발생한다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean-definition-profiles/"
+menu:
+    depth:
+        name: Profiles
+        weight: 5
+        parent: "ioc-container"
 ---
 # Bean Definition Profiles
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Crypto 간소화"
-weight: 27
 title: Crypto 간소화 서비스
+linkTitle: "Crypto 간소화"
 description: 표준프레임워크 3.8부터 ARIA 알고리즘을 기반으로 XML Schema와 properties 파일을 통해 간편하게 암/복호화 설정과 중요한 정보 보호를 지원한다.
+url: /egovframe-runtime/foundation-layer/crypto/crypto-simplification/
+menu:
+    depth:
+        name: Crypto 간소화 서비스
+        weight: 2
+        parent: "crypto"
 ---
 # Crypto 간소화 서비스
 

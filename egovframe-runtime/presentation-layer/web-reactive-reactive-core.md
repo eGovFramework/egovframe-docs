@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Reactive Core"
-weight: 13
+linkTitle: "Reactive Core"
 title: Reactive Core
 description: 스프링-웹 모듈은 서버 요청 처리를 위한 HttpHandler와 WebHandler API를 제공하며, 클라이언트 사이드에서는 논블로킹 I/O와 리액티브 스트림 기반의 WebClient가 지원된다. 또한, 서버와 클라이언트 모두 HTTP 요청 및 응답 콘텐츠의 직렬화와 역직렬화를 위한 코덱 기능을 포함하고 있다.
+url : /egovframe-runtime/presentation-layer/web-reactive/web-reactive-reactive-core/
+menu:
+    depth:
+        name: Reactive Core
+        weight: 1
+        parent: "web_reactive"
 ---
 # Reactive Core
 

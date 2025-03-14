@@ -1,8 +1,13 @@
 ---
-linkTitle: "Scheduling 서비스"
-weight: 8
 title: Scheduling 서비스
+linkTitle: "Scheduling 서비스"
 description: Scheduling 서비스는 주기적 작업을 관리하는 기능으로, Quartz 스케줄러와 Spring을 통합하여 사용된다. Quartz는 작업(Job), 스케줄(Trigger)을 분리해 유연성을 제공하며, Spring에서 JobDetailBean과 MethodInvokingJobDetailFactoryBean을 통해 작업을 생성하고, SimpleTriggerBean과 CronTriggerBean으로 작업을 스케줄링한다.
+url: /egovframe-runtime/foundation-layer/scheduling/
+menu:
+    depth:
+        name: Scheduling 서비스
+        weight: 3
+        parent: "foundation-layer"
 ---
 # Scheduling 서비스
 

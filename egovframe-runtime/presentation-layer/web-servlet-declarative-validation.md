@@ -1,8 +1,14 @@
 ---
-linkTitle: "Bean Validation"
-weight: 9
 title: Bean Validation (JSR-303)
+linkTitle: "Bean Validation"
 description: JSR-303(Bean Validation) 스펙은 @Valid 애노테이션을 사용해 모델 객체 필드의 자동 검증을 지원한다. 이를 통해 표준화된 방식으로 애노테이션을 활용한 필드 검증이 가능하다.
+url : /egovframe-runtime/presentation-layer/web-servlet-declarative-validation/
+menu:
+    depth:
+        name: Bean Validation
+        weight: 2
+        parent: "presentation-layer"
+        identifier: "bean_vaildation"
 ---
 # Bean Validation (JSR-303)
 

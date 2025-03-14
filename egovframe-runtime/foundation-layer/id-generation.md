@@ -1,9 +1,15 @@
 ---
 title: Id Generation 서비스
 linkTitle: "Id Generation"
-weight: 14
 description: ID Generation 서비스는 UUID, Sequence, Table 기반의 고유 ID 생성을 지원하며, UUID는 MAC/IP 주소 또는 랜덤 방식으로, Sequence는 DB 시퀀스를 사용해 ID를 생성한다. Table ID Generation은 별도의 테이블을 사용해 ID를 관리하며, Strategy 설정을 통해 ID 생성 규칙을 지정할 수 있다. 다양한 설정을 통해 ID를 쉽게 생성하고 관리할 수 있도록 지원한다.
+url: /egovframe-runtime/foundation-layer/id-generated/
+menu:
+    depth:
+        name: Id Generation 서비스
+        weight: 5
+        parent: "foundation-layer"
 ---
+
 # Id Generation 서비스
 
 ## 개요

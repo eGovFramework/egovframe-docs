@@ -1,8 +1,13 @@
 ---
-linkTitle: "Ajax 지원"
-weight: 18
 title: Ajax 지원 서비스
+linkTitle: "Ajax 지원"
 description: Ajax 지원 서비스는 J2EE 개발자가 쉽게 Ajax 기능을 구현할 수 있도록 AjaxTags 라이브러리를 기반으로 제공하며, 자주 사용하는 기능을 커스텀 태그 형태로 제공한다. 주요 기능으로는 자동완성, 연동된 셀렉트박스, 탭 패널 등이 있으며, 이를 위해 JSP 설정과 Controller에서 AjaxXmlBuilder로 데이터를 가공하여 처리한다.
+url : /egovframe-runtime/presentation-layer/ajax/
+menu:
+    depth:
+        name: Ajax 지원
+        weight: 4
+        parent: "presentation-layer"
 ---
 # Ajax 지원 서비스
 
@@ -219,7 +224,7 @@ public class AjaxXmlView extends AbstractView {
 
 /easycompany/webapp/WEB-INF/jsp/employeelist.jsp
 
-```jsp
+```html
 ...
 <%@ taglib prefix="ajax" uri="http://ajaxtags.sourceforge.net/tags/ajaxtags" %>
 ...
@@ -317,7 +322,7 @@ UTF-8 인코딩을 한다면, `<Connector/>` 태그에 URIEncoding=“utf-8”�
 
 /easycompany/webapp/WEB-INF/jsp/addemployee.jsp, /easycompany/webapp/WEB-INF/jsp/modifyemployee.jsp
 
-```jsp
+```html
 ...
 <%@ taglib prefix="ajax" uri="http://ajaxtags.sourceforge.net/tags/ajaxtags" %>
 ...
@@ -367,7 +372,7 @@ UTF-8 인코딩을 한다면, `<Connector/>` 태그에 URIEncoding=“utf-8”�
 
 /easycompany/webapp/WEB-INF/jsp/departmentlist.jsp
 
-```jsp
+```html
 ...
 <%@ taglib prefix="ajax" uri="http://ajaxtags.sourceforge.net/tags/ajaxtags" %>
 ...

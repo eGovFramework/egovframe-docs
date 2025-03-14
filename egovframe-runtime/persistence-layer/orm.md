@@ -1,8 +1,14 @@
 ---
-linkTitle: ORM
-weight: 25
 title: ORM 서비스
+linkTitle: ORM
 description: ORM 서비스는 객체 모델링과 관계형 데이터 모델링의 불일치를 해결하기 위해 JPA와 Hibernate를 사용하며, DBMS 변경 시에도 설정 정보만 수정하면 코드 변경 없이 동작이 가능하다. Lazy Loading과 Cache 활용으로 성능을 향상시키며, Entity Class에 최소한의 Annotation을 사용해 매핑을 정의한다. SQL 처리 방식에 익숙한 개발자는 추가 학습이 필요할 수 있다.
+url: /egovframe-runtime/persistence-layer/orm/
+menu:
+    depth:
+        name: "ORM"
+        weight: 7
+        parent: "persistence-layer"
+        identifier: "orm"
 ---
 # ORM 서비스
 

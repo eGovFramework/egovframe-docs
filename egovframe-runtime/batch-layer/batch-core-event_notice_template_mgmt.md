@@ -1,8 +1,13 @@
 ---
-linkTitle: EventNoticeTemplate
-weight: 25
 title: 이벤트알림 템플릿 관리
+linkTitle: EventNoticeTemplate
 description: 전자정부 표준프레임워크의 배치 수행중 특정시점에 이벤트가 발생하는 경우 EventNoticeTrigger 인터페이스를 활용하여 SMS, Email 등을 통해 정보를 전달할 수 있는 추상화된 외부알림 access 관리기능이다.
+url: /egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt/
+menu:
+    depth:
+        name: 이벤트알림 템플릿 관리
+        weight: 21
+        parent: "batch-layer"
 ---
 # 이벤트알림 템플릿 관리
 

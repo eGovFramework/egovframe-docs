@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Spring-iBATIS Integration"
-weight: 4
 title: Spring-iBATIS Integration
+linkTitle: "Spring-iBATIS Integration"
 description: Spring은 iBATIS와의 통합을 통해 IoC 및 예외 계층 구조를 활용한 템플릿 스타일 프로그래밍을 지원하며, Spring의 유연한 트랜잭션 처리와 DataSource 설정을 그대로 사용할 수 있다. SqlMapClientFactoryBean은 iBATIS의 SqlMapClient를 생성하고 Spring 컨텍스트에 설정하는 데 사용된다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/
+menu:
+    depth:
+        name: Spring-iBATIS Integration
+        weight: 2
+        parent: dataaccess-ibatis
 ---
 # Spring-iBATIS Integration
 

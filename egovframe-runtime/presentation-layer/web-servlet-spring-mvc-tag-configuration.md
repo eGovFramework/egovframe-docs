@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Tag Configuration"
-weight: 5
 title: Spring MVC Tag Configuration
+linkTitle: "Tag Configuration"
 description: Spring 3부터 mvc태그를 통하여 Controller처리를 위한 설정을 쉽게 하도록 Spring mvc 네임스페이스를 제공한다.
+url : /egovframe-runtime/presentation-layer/web-servlet/web-servlet-spring-mvc-tag-configuration/
+menu:
+    depth:
+        name: Tag Configuration
+        weight: 4
+        parent: "web-servlet"
 ---
 # Spring MVC Tag Configuration
 

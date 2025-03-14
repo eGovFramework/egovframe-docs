@@ -1,8 +1,14 @@
 ---
-linkTitle: "Swagger"
-weight: 8
 title: Swagger
+linkTitle: "Swagger"
 description: Swagger는 Restful 서비스의 문서화를 자동으로 지원하는 도구로, API 서버의 스펙과 주고받는 데이터를 명확하게 문서화할 수 있다. 수동으로 문서를 작성하고 유지보수하는 데 드는 시간과 비용을 줄여주며, API 스펙 변경 시 문서도 자동으로 업데이트된다. 이를 통해 Restful 서비스의 문서 작성과 유지보수를 효율적으로 관리할 수 있다.
+url: /egovframe-runtime/integration-layer/swagger/
+menu:
+    depth:
+        name: Swagger
+        weight: 6
+        parent: "integration-layer"
+        
 ---
 # Swagger
 

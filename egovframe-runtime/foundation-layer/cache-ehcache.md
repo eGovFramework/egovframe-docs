@@ -1,8 +1,13 @@
 ---
-linkTitle: "- EhCache"
-weight: 20
 title: EhCache
+linkTitle: "EhCache"
 description: 전자정부 프레임워크에서 EhCache를 사용한 캐시 서비스를 제공하며, Spring 3.1 이전에는 EhCache의 CacheManager를 직접 사용하고 이후 버전에서는 CacheManager Abstraction으로 캐시 사용을 유연하게 지원한다.
+url: /egovframe-runtime/foundation-layer/cache/ehCache/
+menu:
+    depth:
+        name: EhCache
+        weight: 1
+        parent: "cache"
 ---
 # EhCache
 

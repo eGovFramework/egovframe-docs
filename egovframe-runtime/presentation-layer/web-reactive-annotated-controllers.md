@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Annotated Controllers"
-weight: 15
 title: 스프링 WebFlux에서 어노테이션 기반 컨트롤러 활용 방법
+linkTitle: "Annotated Controllers"
 description: 스프링 WebFlux는 @Controller, @RestController 어노테이션을 통해 요청을 매핑하고 입력 처리 및 예외 처리를 지원한다. 컨트롤러는 메소드 기반으로 동작하며, 상속이나 인터페이스 구현 없이도 다양한 방식으로 활용할 수 있다.
+url : /egovframe-runtime/presentation-layer/web-reactive/web-reactive-annotated-controllers/
+menu:
+    depth:
+        name: Annotated Controllers
+        weight: 3
+        parent: "web_reactive"
 ---
 # Annotated Controllers
 

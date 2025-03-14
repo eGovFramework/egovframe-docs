@@ -1,8 +1,13 @@
 ---
-linkTitle: "- 설정 간소화"
-weight: 5
 title: 설정 간소화
+linkTitle: "설정 간소화"
 description: 전자정부 표준프레임워크 3.0부터 Server Security 설정을 간소화할 수 있는 기능을 제공하며, XML Schema를 통해 필요한 설정만 추가하면 된다. **Security Config**는 로그인, 로그아웃, 권한 관리, 동시 세션, 패스워드 해시 방식 등 다양한 보안 설정을 간단히 설정할 수 있게 해준다. 또한, **Security Object Config**를 통해 URL, Method, Pointcut 방식의 권한 설정과 계층적 역할 관리도 쉽게 구성할 수 있다.
+url: /egovframe-runtime/foundation-layer/server-security/server-security-simplifying-settings/
+menu:
+    depth:
+        name: 설정 간소화
+        weight: 4
+        parent: "serverSecurity"
 ---
 # 설정 간소화
 

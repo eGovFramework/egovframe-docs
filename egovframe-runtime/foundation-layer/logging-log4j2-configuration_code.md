@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_- 코드로 설정"
-weight: 12
 title: Log4j 2 환경설정 (코드 내에서 직접 설정 시)
+linkTitle: "코드로 설정"
 description: Log4j 2 환경설정을 코드 내에서 직접 제어하여 Logger 객체를 생성하고, 기본 설정을 수정할 수 있다. 예시에서는 ConsoleAppender를 FileAppender로 변경하고 로그 레벨을 DEBUG로 설정하는 방법을 설명한다. Logger 설정 관련 메서드들을 사용하여 Appender와 Layout, Log Level을 동적으로 변경할 수 있다.
+url: /egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/
+menu:
+    depth:
+        name: Log4j2 코드로 설정
+        weight: 1
+        parent: "log4j2"
 ---
 # Log4j 2 환경설정 (코드 내에서 직접 설정 시)
 

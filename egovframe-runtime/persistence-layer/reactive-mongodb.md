@@ -1,8 +1,13 @@
 ---
-linkTitle: "- MongoDB"
-weight: 41
 title: MongoDB
+linkTitle: "MongoDB"
 description: Spring Data MongoDB는 MongoDB 문서형 데이터 저장소와의 연동을 위한 고수준 추상화 템플릿을 제공하며, Spring JDBC 지원 방식과 유사하다. SimpleReactiveMongoDatabaseFactory 클래스를 사용해 MongoDB 연결을 관리하고, 데이터 액세스 작업에 집중할 수 있도록 지원한다.
+url: /egovframe-runtime/persistence-layer/reactive/reactive-mongodb/
+menu:
+    depth:
+        name: MongoDB
+        weight: 2
+        parent: "reactive"
 ---
 # MongoDB
 

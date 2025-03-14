@@ -1,8 +1,13 @@
 ---
-linkTitle: "OXM 예제"
-weight: 2
 title: OXM 예제(OXM Example)
+linkTitle: "OXM 예제"
 description: 객체와 XML 간의 매핑을 통해 데이터를 XML로 변환하고, 사용자에게 XML 파일로 제공하는 OXM(Object-XML Mapping) 기능 예제이다.
+url: /runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example/
+menu:
+    depth:
+        name: OXM 예제
+        weight: 2
+        parent: "foundationLayer"
 ---
 # OXM 예제(OXM Example)
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Programmatic"
-weight: 38
 title: 프로그래밍 방식의 Transaction 관리
+linkTitle: "Programmatic"
 description: 프로그래밍 방식으로 트랜잭션을 관리할 때는 TransactionTemplate을 사용하거나 Transaction Manager를 사용하는 방법이 있다. TransactionTemplate은 콜백 메소드를 정의해 트랜잭션을 처리하는 방법을 제공한다.
+url: /egovframe-runtime/persistence-layer/transaction/programmatic/
+menu:
+    depth:
+        name: Programmatic
+        weight: 2
+        parent: "transaction"
 ---
 # Programmatic Transaction Management
 

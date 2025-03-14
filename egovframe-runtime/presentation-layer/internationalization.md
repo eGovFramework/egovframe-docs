@@ -1,8 +1,13 @@
 ---
-linkTitle: "Internationalization"
-weight: 19
 title: Internationalization(국제화)
+linkTitle: "Internationalization"
 description: Spring MVC는 Cookie, Session, AcceptHeader를 이용한 LocaleResolver를 제공하며, 다국어 메시지는 ResourceBundleMessageSource를 통해 관리된다. 사용자는 LocaleChangeInterceptor를 통해 언어를 변경하고, JSP에서 `<spring:message>` 태그로 해당 언어에 맞는 메시지를 표시할 수 있다.
+url : /egovframe-runtime/presentation-layer/internationalization/
+menu:
+    depth:
+        name: Internationalization
+        weight: 5
+        parent: "presentation-layer"
 ---
 # Internationalization(국제화)
  
@@ -213,7 +218,7 @@ SessionLocaleResolver 를 이용하여 위와 같이 하였을 경우 Locale 결
 ```
 으로 표현한다.
 
-```jsp
+```html
 <%@ taglib prefix="spring" uri=http://www.springframework.org/tags %>
  
 <form:form commandName="message" >

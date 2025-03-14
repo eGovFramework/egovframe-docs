@@ -1,8 +1,15 @@
 ---
-linkTitle: "- File Download"
-weight: 35
 title: File Download Service
+linkTitle: "File Download"
 description: 파일 다운로드 기능을 구현한 DownloadController 예제와 JSP 페이지 설정을 설명한다.
+url: /egovframe-runtime/foundation-layer/file-upload-download-service/file-download-service/
+menu:
+    depth:
+        name: "File Download"
+        weight: 2
+        parent: "fileUpload-download"
+        identifier: "fileDownload"
+
 ---
 # File Download Service
 

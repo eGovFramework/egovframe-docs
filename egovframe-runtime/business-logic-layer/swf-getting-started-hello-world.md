@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Hello world"
-weight: 4
 title: Spring Web Flow의 Hello World 예제
+linkTitle: Hello world"
 description: Spring Web Flow는 사용자와 서버 간의 대화 형식으로 화면 이동을 정의하며, "Hello, Web Flow" 화면을 호출하는 간단한 예제와 입력값을 받아 처리하는 예제로 나뉜다. 이 예제를 통해 SWF가 웹 대화형 시나리오에 어떻게 적용되는지 살펴본다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-getting-started-hello-world/
+menu:
+  depth:
+    name: Hello world 예제
+    weight: 1
+    parent: "swf-getting-started"
 ---
 # Hello, World
 

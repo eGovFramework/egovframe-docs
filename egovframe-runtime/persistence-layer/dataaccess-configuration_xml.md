@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Configuration XML"
-weight: 13
 title: MyBatis Configuration XML File
+linkTitle: "Configuration XML"
 description: MyBatis XML 설정 파일은 `properties`, `settings`, `typeAliases`, `mappers` 등 다양한 설정 항목으로 구성되며, 데이터베이스와의 상호작용을 정의하는 중요한 설정들을 포함한다. 이 파일은 MyBatis의 동작 방식과 데이터베이스 연결 환경을 관리하는 역할을 한다.
+url: /egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-configuration_xml/
+menu:
+    depth:
+        name: Configuration XML
+        weight: 3
+        parent: mybatis
 ---
 # MyBatis Configuration XML File
 

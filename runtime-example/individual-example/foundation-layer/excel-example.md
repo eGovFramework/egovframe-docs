@@ -1,8 +1,13 @@
 ---
-linkTitle: "엑셀 예제"
-weight: 6
 title: 엑셀 예제(Excel Example)
+linkTitle: "엑셀 예제"
 description: 데이터베이스 내용을 화면에 출력하고, 엑셀 파일로 내보내어 사용자가 목록을 다운로드할 수 있는 기능을 제공하는 예제이다.
+url: /runtime-example/individual-example/foundation-layer/excel-example/
+menu:
+    depth:
+        name: 엑셀 예제
+        weight: 6
+        parent: "foundationLayer"
 ---
 # 엑셀 예제(Excel Example)
 

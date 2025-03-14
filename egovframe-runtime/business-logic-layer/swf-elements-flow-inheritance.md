@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Flow 상속"
-weight: 15
 title: Flow 상속
+linkTitle: "Flow 상속"
 description: Flow 상속은 상위 Flow의 설정을 하위 Flow에서 사용할 수 있도록 하며, 주로 global transition과 예외 핸들러를 상속받는 데 사용된다. 자바 상속과 유사하지만, 하위 Flow는 상위 Flow의 요소를 재정의할 수 없으며, 여러 상위 Flow를 상속받을 수 있다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-elements/swf-elements-flow-inheritance/
+menu:
+  depth:
+    name: Flow 상속
+    weight: 5
+    parent: "swf-elements"
 ---
 # Flow 상속
 

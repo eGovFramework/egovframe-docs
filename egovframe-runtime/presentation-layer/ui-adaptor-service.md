@@ -1,8 +1,13 @@
 ---
-linkTitle: "UI Adaptor"
-weight: 23
 title: UI Adaptor Service
+linkTitle: "UI Adaptor"
 description: 전자정부 표준프레임워크에서는 Spring MVC Annotation을 기반으로 요청 URI와 Controller 메소드를 매핑하며, 메소드 파라미터로 업무용 DTO 객체를 사용할 수 있도록 가이드한다. UI 솔루션과의 연동 방식은 프로젝트 특성에 맞게 설계해야 하며, 보통 Controller에서 데이터를 DTO 형태로 변환하여 업무 로직으로 넘기는 방식이 많이 사용된다.
+url : /egovframe-runtime/presentation-layer/ui-adaptor-service/
+menu:
+    depth:
+        name: UI Adaptor
+        weight: 7
+        parent: "presentation-layer"
 ---
 # UI Adaptor Service
 

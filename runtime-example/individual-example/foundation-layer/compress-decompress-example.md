@@ -1,8 +1,13 @@
 ---
-linkTitle: "압축/압축해제 예제"
-weight: 4
 title: 압축/압축해제 예제(Compress/Decompress Example)
+linkTitle: "압축/압축해제 예제"
 description: 전자정부 표준프레임워크에서 서버에 있는 파일을 압축 및 해제하는 기능을 제공하는 컨트롤러 예제를 다룬다.
+url: /runtime-example/individual-example/foundation-layer/compress-decompress-example/
+menu:
+    depth:
+        name: 압축/압축해제 예제
+        weight: 4
+        parent: "foundationLayer"
 ---
 # 압축/압축해제 예제(Compress/Decompress Example)
 

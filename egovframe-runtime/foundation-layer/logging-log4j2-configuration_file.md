@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_- 파일로 설정"
-weight: 13
 title: Log4j 2 환경설정 (설정 파일 사용 시)
+linkTitle: "파일로 설정"
 description: Log4j 2는 XML 형식의 설정 파일을 사용하여 Logger와 Appender, Layout 등을 정의할 수 있으며, 이를 통해 로그의 출력 위치와 형식을 설정할 수 있다. Logger는 로그 레벨과 Appender를 통해 로그의 출력 위치와 레벨을 제어하며, RollingFileAppender와 같은 다양한 Appender를 지원한다. Layout을 통해 로그 출력 형식을 지정하며, 특히 PatternLayout을 사용해 로그 메시지의 포맷을 세밀하게 설정할 수 있다.
+url: /egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/
+menu:
+    depth:
+        name: Log4j2 파일로 설정
+        weight: 2
+        parent: "log4j2"
 ---
 # Log4j 2 환경설정 (설정 파일 사용 시)
 

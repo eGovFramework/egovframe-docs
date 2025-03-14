@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Query Language"
-weight: 29
 title: JPA Query Language
+linkTitle: "Query Language"
 description: JPA는 객체 지향적인 관점에서 DB 유형에 독립적인 쿼리를 정의할 수 있도록 별도의 Query Language(QL)를 제공하며, 주요 유형으로 SELECT 문과 UPDATE/DELETE 문이 있다. SELECT 문은 다양한 절(WHERE, ORDER BY, GROUP BY)과 함께 사용되며, UPDATE/DELETE 문은 WHERE 절과 함께 사용된다.
+url: /egovframe-runtime/persistence-layer/orm/orm-query-language/
+menu:
+    depth:
+        name: Query Language
+        weight: 4
+        parent: "orm"
 ---
 # Query Language
 JPA에는 별도의 Query Language를 제공함으로써 객체 지향 관점에서 특정 객체에 대한 조회와 DB 유형에 독립적인 Query 정의를 가능하도록 한다. 구성요소 및 작성 방법은 아래와 같다.

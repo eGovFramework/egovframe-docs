@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Controller"
-weight: 6
 title: Controller
+linkTitle: Controller"
 description: DispatcherServlet은 HandlerMapping을 통해 요청을 처리할 Controller를 결정하고, 해당 Controller는 요청을 처리하여 데이터를 Model 객체에 반영한다. Spring MVC는 다양한 Controller들을 제공하며, 이들은 대부분 org.springframework.web.servlet.mvc.Controller 인터페이스를 구현한 클래스들이다.
+url : /egovframe-runtime/presentation-layer/web-servlet/web-servlet-controller/
+menu:
+    depth:
+        name: Controller
+        weight: 5
+        parent: "web-servlet"
 ---
 # Controller
 

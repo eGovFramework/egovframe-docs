@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Dynamic SQL"
-weight: 9
 title: iBATIS Dynamic SQL 사용
+linkTitle: "Dynamic SQL"
 description: iBATIS의 Dynamic 요소를 사용하면 다양한 조건에 따라 쿼리를 동적으로 변경할 수 있으며, 조건에 따라 SQL 문의 일부가 추가 또는 제거된다. 예를 들어, 특정 파라미터 값이 있을 때만 조건절이 추가되는 방식으로, SQL의 재사용성을 높이고 복잡한 조건 분기 문제를 해결한다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-dynamic-sql/
+menu:
+    depth:
+        name: Dynamic SQL
+        weight: 7
+        parent: dataaccess-ibatis
 ---
 # Dynamic SQL
 

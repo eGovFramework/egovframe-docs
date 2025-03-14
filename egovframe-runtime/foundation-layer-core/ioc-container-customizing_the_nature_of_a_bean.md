@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Customizing"
-weight: 5
 title: "Customizing the nature of a Bean"
+linkTitle: "Customizing"
 description: Spring에서 Bean의 라이프사이클 관리를 위해 `InitializingBean`과 `DisposableBean` 인터페이스를 구현할 수 있다. 컨테이너는 빈이 초기화될 때 `afterPropertiesSet()` 메서드를, 소멸될 때 `destroy()` 메서드를 호출하여 특정 작업을 수행하도록 한다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-customizing_the_nature_of_a_bean/"
+menu:
+    depth:
+        name: Customizing
+        weight: 4
+        parent: "ioc-container"
 ---
 # Customizing the nature of a bean
 

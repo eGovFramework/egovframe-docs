@@ -1,8 +1,14 @@
 ---
-linkTitle: "Data Access - iBatis"
-weight: 2
 title: Data Access 서비스
+linkTitle: "Data Access - iBatis"
 description: Data Access 서비스는 다양한 데이터베이스 솔루션과 접근 기술에 일관된 방식으로 대응하며, 데이터 조회, 입력, 수정, 삭제 기능을 단순화한다. 또한 데이터베이스와의 접점을 추상화하여 변경 시 시스템 수정 최소화를 지원하고, 템플릿 방식으로 개발 효율을 높인다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/
+menu:
+    depth:
+        name: IBatis
+        weight: 2
+        parent: "persistence-layer"
+        identifier: dataaccess-ibatis
 ---
 # Data Access 서비스
 

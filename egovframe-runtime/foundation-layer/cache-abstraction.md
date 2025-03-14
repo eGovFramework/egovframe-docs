@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Abstraction"
-weight: 21
 title: Cache Abstraction
+linkTitle: "Abstraction"
 description: Cache를 설정하여 CacheManager를 통해 Cache에 접근하는 방법에 대하여 알아보고, 자바메소드를 Caching하는 @Cacheable에 대하여 알아본다.
+url: /egovframe-runtime/foundation-layer/cache/abstraction/
+menu:
+    depth:
+        name: Abstraction
+        weight: 2
+        parent: "cache"
 ---
 # Cache Abstraction
 

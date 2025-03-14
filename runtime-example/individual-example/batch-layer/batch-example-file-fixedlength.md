@@ -1,8 +1,13 @@
 ---
-linkTitle: FixedLength
-weight: 24
 title: FixedLength 예제
+linkTitle: FixedLength
 description: 플랫 파일의 데이터를 고정된 길이만큼 처리하는 기능을 예제로 제공한다. 스프링 배치에서는 플랫 파일을 처리하기 위해 FlatFileItemReader와 FlatFileItemWriter를 제공한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-multi-file_fixedlength/
+menu:
+    depth:
+        name: FixedLength
+        weight: 20
+        parent: "batchLayer"
 ---
 # FixedLength 예제
 

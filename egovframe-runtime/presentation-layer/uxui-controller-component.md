@@ -1,8 +1,13 @@
 ---
-linkTitle: "모바일 UX/UI"
-weight: 30
 title: UX/UI Controller Component
+linkTitle: "모바일 UX/UI"
 description: 전자정부는 스마트 전자정부 기반 시스템 구축을 위해 UI/UX Controller Component, HTML5, CSS3, JavaScript Module App Framework를 활용하며, jQuery Mobile을 오픈소스로 채택하여 이를 커스터마이징한다. UI 레이어에서는 터치 최적화된 UI 컨트롤러 컴포넌트와 모바일 특화 HTML5 태그, CSS3를 통해 유연한 사용자 환경을 제공하며, JavaScript와 JSON 구조로 효율적인 UX/UI 컨트롤을 지원한다.
+url : /egovframe-runtime/presentation-layer/uxui-controller-component/
+menu:
+    depth:
+        name: 모바일 UX/UI
+        weight: 12
+        parent: "presentation-layer"
 ---
 # UX/UI Controller Component
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- SockJS"
-weight: 28
 title: SockJS Fallback Options
+linkTitle: "SockJS"
 description: Spring은 WebSocket이 지원되지 않는 환경에서 SockJS 프로토콜을 사용해 WebSocket API를 에뮬레이션하는 fallback 옵션을 제공한다.
+url : /egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/
+menu:
+    depth:
+        name: SockJS
+        weight: 2
+        parent: "WebSocket"
 ---
 # SockJS Fallback Options
 

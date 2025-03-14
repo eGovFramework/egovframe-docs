@@ -1,8 +1,13 @@
 ---
-linkTitle: "Object Pooling"
-weight: 24
 title: Object Pooling Service
+linkTitle: "Object Pooling"
 description: Object Pooling 서비스는 객체를 미리 생성해 Pool에서 재사용하여 성능을 향상시키는 방식이다. **ObjectPool** 인터페이스는 객체 할당과 반환을 처리하며, **PooledObjectFactory**는 객체의 생성, 유효성 검사, 재초기화 등의 생애주기 관리를 담당한다. **BaseObjectPool**과 **BasePooledObjectFactory**는 이들을 추상적으로 구현한 클래스들로, 다양한 객체 풀링을 지원한다.
+url: /egovframe-runtime/foundation-layer/object-pooling/
+menu:
+    depth:
+        name: Object Pooling
+        weight: 11
+        parent: "foundation-layer"
 ---
 # Object Pooling Service
 

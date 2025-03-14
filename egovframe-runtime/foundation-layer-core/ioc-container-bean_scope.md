@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Bean Scopes"
-weight: 4
+linkTitle: "Bean Scopes"
 title: Bean Scopes
 description: Bean 정의는 실제 Bean 객체를 생성하는 방식을 규정하며, 하나의 Bean 정의에서 여러 객체를 생성할 수 있다. 이를 통해 객체에 다양한 종속성 및 설정값을 주입할 수 있으며, 객체의 범위(Scope)도 정의할 수 있다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_scope/"
+menu:
+    depth:
+        name: Bean Scopes
+        weight: 3
+        parent: "ioc-container"
 ---
 # Bean scope
 

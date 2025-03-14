@@ -1,8 +1,14 @@
 ---
-linkTitle: "MyBatis"
-weight: 10
 title: MyBatis
+linkTitle: "MyBatis"
 description: 
+url: /egovframe-runtime/persistence-layer/dataaccess-mybatis/
+menu:
+    depth:
+        name: MyBatis
+        weight: 3
+        parent: "persistence-layer"
+        identifier: mybatis
 ---
  MyBatis
 

@@ -1,8 +1,14 @@
 ---
-linkTitle: "Web Reactive"
-weight: 12
 title: 스프링 WebFlux와 기존 스프링 웹 프레임워크 비교
+linkTitle: "Web Reactive"
 description: 스프링 WebFlux는 5.0 버전부터 추가된 리액티브 스택 웹 프레임워크로, 서블릿 API와는 달리 완전한 논블로킹 동작과 Reactive Streams back pressure를 지원한다. 기존의 스프링 웹 MVC와 함께 스프링 프레임워크에 포함되어 있으며, Netty, Undertow 등 다양한 서버에서 실행될 수 있다.
+url : /egovframe-runtime/presentation-layer/web-reactive/
+menu:
+    depth:
+        name: Web Reactive
+        weight: 3
+        parent: "presentation-layer"
+        identifier: "web_reactive"
 ---
 # Web Reactive
 

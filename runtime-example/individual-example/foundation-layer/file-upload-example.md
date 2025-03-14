@@ -1,8 +1,13 @@
 ---
-linkTitle: "파일업로드 예제"
-weight: 5
 title: 파일업로드 예제(File upload example)
+linkTitle: "파일업로드 예제"
 description: Apache Commons FileUpload의 CommonsMultipartResolver를 사용한 파일 업로드 예제로, 이미지 파일을 업로드하고 화면에 표시하는 기능을 설명한다.
+url: /runtime-example/individual-example/foundation-layer/file-upload-example/
+menu:
+    depth:
+        name: 파일업로드 예제
+        weight: 5
+        parent: "foundationLayer"
 ---
 # 파일업로드 예제(File upload example)
 

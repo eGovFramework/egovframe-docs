@@ -1,8 +1,13 @@
 ---
-linkTitle: "- 업그레이드"
-weight: 6
 title: Server Security 업그레이드
-description: 표준프레임워크 2.7에서 3.0으로 Server Security 업그레이드 시, Spring Security 패키지와 API 변경, dependencies 수정, web.xml 수정 등이 필요하다. 주요 API 변경 사항에는 SpringSecurityException 삭제, ConfigAttributeDefinition 변경, SavedRequest 인터페이스화 등이 있으며, 패키지 경로 변경과 GrantedAuthority 방식의 변경도 적용해야 한다. 인증 및 GET 방식 호출 방지 처리, Mapping 클래스 변경, 불필요한 클래스 삭제 등 여러 단계에서 소스 코드와 설정의 수정을 요구한다.
+linkTitle: "업그레이드"
+description: 표준프레임워크 2.7에서 3.0으로 Server Security 업그레이드 시, Spring Security 패키지와 API 변경, dependencies 수정, web.xml 수정 등이 필요하다. 주요 API 변경 사항에는 SpringSecurityException 삭제, ConfigAttributeDefinition 변경, SavedRequest 인터페이스화 등이 있으며, 패키지 경로 변경과 GrantedAuthority 방식의 변경도 적용해야 한다. 인증 및 GET 방식 호출 방지 처리, Mapping 클래스 변경,불필요한 클래스 삭제 등 여러 단계에서 소스 코드와 설정의 수정을 요구한다.
+url: /egovframe-runtime/foundation-layer/server-security/server-security-upgrade/
+menu:
+    depth:
+        name: Server Security 업그레이드
+        weight: 5
+        parent: "serverSecurity"
 ---
 # Server Security 업그레이드
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Annotation"
-weight: 10
 title: "Annotation-based Configuration"
+linkTitle: "Annotation"
 description: "Spring Framework는 의존성 주입을 위해 어노테이션을 사용할 수 있다. Spring 2.0에서는 @Required 어노테이션으로 필수 속성을 강제하는 기능이 도입되었고, Spring 2.5에서는 일반적인 어노테이션 기반 의존성 주입이 가능해졌다. Spring 3.0부터는 JSR-330(Java용 의존성 주입)의 @Inject 및 @Named와 같은 어노테이션도 지원된다."
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-annotation-based_configuration/"
+menu:
+    depth:
+        name: Annotation
+        weight: 9
+        parent: "ioc-container"
 ---
 # Annotation-based configuration
 

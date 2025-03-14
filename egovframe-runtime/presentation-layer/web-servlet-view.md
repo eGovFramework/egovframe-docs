@@ -1,8 +1,13 @@
 ---
-linkTitle: "- View"
-weight: 10
 title: View
+linkTitle: "View"
 description: Controller는 요청을 처리한 후 View 이름과 데이터를 ModelAndView에 저장해 DispatcherServlet에 반환하고, DispatcherServlet은 ViewResolver를 통해 실제 View 객체를 얻는다. 이 View는 Model 객체의 정보를 출력하며, 스프링은 JSP에서 편리한 데이터 출력을 위해 Spring form tag library를 제공한다.
+url : /egovframe-runtime/presentation-layer/web-servlet-declarative-validation/web-servlet-view/
+menu:
+    depth:
+        name: View
+        weight: 1
+        parent: "bean_vaildation"
 ---
 # View
 

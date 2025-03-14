@@ -1,8 +1,13 @@
 ---
-linkTitle: "Naming Service"
-weight: 1
 title: Naming 서비스
+linkTitle: "Naming Service"
 description: Naming 서비스는 JNDI API를 통해 자원을 찾고, 다른 애플리케이션에서 사용할 수 있도록 Naming 서버에 자원을 등록 및 검색할 수 있도록 지원하는 서비스이다. 이를 통해 애플리케이션 간 자원 공유와 접근이 가능해진다.
+url: /egovframe-runtime/integration-layer/naming-service/
+menu:
+    depth:
+        name: Naming Service
+        weight: 1
+        parent: "integration-layer"
 ---
 # Naming Service
 

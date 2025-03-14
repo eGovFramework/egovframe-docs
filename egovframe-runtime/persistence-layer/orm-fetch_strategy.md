@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Fetch Strategy"
-weight: 33
 title: Fetch Strategy
+linkTitle: "Fetch Strategy"
 description: ORM에서 기본적으로 Lazy Loading을 사용하여 필요한 시점에 SQL을 실행하지만, 성능 이슈를 해결하기 위해 Batch 조회, Sub-Query 조회, Join Fetch와 같은 다양한 Fetch 전략이 있다. 이 전략들은 JPA 표준이 아닌 Hibernate 구현체에서 제공되는 기능이다.
+url: /egovframe-runtime/persistence-layer/orm/orm-fetch_strategy/
+menu:
+    depth:
+        name: Fetch Strategy
+        weight: 8
+        parent: "orm"
 ---
 # Fetch Strategy
 ORM 서비스는 기본적으로 Entity간의 연관관계를 정의하고 정의된 연관관계를 가지고 관련 Entity를 추출하여 사용한다. 관련 Entity를 추출하는데 기본적으로 Lazy Loading이란 기법을 통해서 객체가 실제로 필요하기 전까지 SQL을 실행하지 않고 Proxy 객체로 리턴하도록 하고 한다. 그러나 이러한 Lazy Loading으로 처리하게 되면 Lazy Loading을 하지 않는 것에 대비하여 필요시점에 쿼리를 여러번 수행해야 하는 문제가 발생한다. 이런 문제를 해결하기 위한 여러가지 Fetch 전략이 존재하는데 **Batch를 이용하여 데이터 조회, Sub-Query를 이용하여 데이터 조회, Join Fetch를 이용하여 데이터 한꺼번에 조회하는 방법**이 있다. 하지만 이 서비스는 JPA표준이 아닌 구현체인 Hibernate에 정의된 사항이다.

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- ApplicationContext"
-weight: 9
 title: The ApplicationContext
+linkTitle: "ApplicationContext"
 description: "`org.springframework.context` 패키지는 `ApplicationContext`를 통해 `BeanFactory`를 확장하여 애플리케이션 프레임워크에 맞는 추가 기능을 제공하며, 대부분의 경우 ContextLoader 등으로 자동 인스턴스화된다."
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-the-applicationcontext/"
+menu:
+    depth:
+        name: The ApplicationContext
+        weight: 8
+        parent: "ioc-container"
 ---
 # The ApplicationContext
 

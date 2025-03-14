@@ -1,8 +1,14 @@
 ---
-linkTitle: "Security"
-weight: 20
 title: Security Service
+linkTitle: "Security"
 description: 입력값 유효성 검증을 위한 기능으로 Jakarta Commons Validator를 선택하여 Spring MVC와 연계해 활용하는 방법을 설명한다. 이를 통해 화면 처리 레이어에서 입력값 검증 기능을 제공하고, Spring Security를 활용한 공통 기반 레이어에서 인증 및 권한과 같은 보안 서비스를 지원한다.
+url : /egovframe-runtime/presentation-layer/security/
+menu:
+    depth:
+        name: Security
+        weight: 6
+        parent: "presentation-layer"
+        identifier: "security"
 ---
 # Security Service
 

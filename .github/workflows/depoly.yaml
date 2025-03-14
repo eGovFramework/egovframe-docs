@@ -26,40 +26,33 @@ jobs:
         ref: contribution  # contribution 브랜치에서 파일 가져오기
         path: contribution-md  # 임시로 contribution 브랜치의 markdown 파일을 저장할 위치
 
-    # Step 3. contribution 브랜치의 markdown 파일들을 content/ko 디렉토리로 복사
-    - name: Copy markdown files to content/ko
+    # Step 3. contribution 브랜치의 markdown 파일들을 content 디렉토리로 복사
+    - name: Copy markdown files to content
       run: |
-        mkdir -p content/ko  # 필요한 디렉토리 생성
-        cp -r contribution-md/. content/ko/  # contribution-md 폴더 이하의 모든 파일과 하위 디렉토리까지 포함하여 복사
+        mkdir -p content  # 필요한 디렉토리 생성
+        cp -r contribution-md/. content/  # contribution-md 폴더 이하의 모든 파일과 하위 디렉토리까지 포함하여 복사
     
     # Step 4. Node.js 설치
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'  # 안정적인 최신 버전의 Node.js 설치
-
-    # Step 5. PostCSS와 autoprefixer 함께 설치
-    - name: Install PostCSS and autoprefixer
-      run: |
-        npm install -D autoprefixer
-        npm install -D postcss-cli
-        npm install -D postcss
       
-    # Step 6. Hugo 설치
+    # Step 5. Hugo 설치
     - name: Install Hugo
-      uses: peaceiris/actions-hugo@v3
+      uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.137.0' # 수정 전 : '0.119.0'
+        hugo-version: "0.139.0"
         extended: true  # Hugo Extended 버전 설치
 
-    # Step 7. Hugo 빌드
+    # Step 6. Hugo 빌드
     - name: Build the site
       run: hugo --minify
 
-    # Step 8. 빌드 결과물을 gh-pages 브랜치로 배포
+    # Step 7. 빌드 결과물을 gh-pages 브랜치로 배포
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.DOCS_ACTIONS_SECRET }} # 깃허브 actions secret
+        github_token: ${{ secrets.PERSONAL_GITHUBAPI_ACCESS_TOKEN }} # 깃허브 actions secret
         publish_dir: ./public
         publish_branch: gh-pages

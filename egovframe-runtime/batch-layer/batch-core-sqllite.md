@@ -1,8 +1,13 @@
 ---
-linkTitle: "- SQLite"
-weight: 2
 title: SQLite
+linkTitle: "SQLite"
 description: SQLite를 이용한 경량화된 Repository를 사용하기 위한 사용법에 대해 설명한다.
+url: /egovframe-runtime/batch-layer/intro/batch-core-sqllite/
+menu:
+    depth:
+        name: SQLite
+        weight: 1
+        parent: "intro"
 ---
 # SQLite
 

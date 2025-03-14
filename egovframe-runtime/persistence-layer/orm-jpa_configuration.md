@@ -1,8 +1,13 @@
 ---
-linkTitle: "- JPA Configuration"
-weight: 35
 title: JPA Configuration
+linkTitle: "JPA Configuration"
 description: JPA는 persistence.xml 파일을 기반으로 동작하며, 이 파일은 실행 속성을 포함하고 여러 개의 persistence-unit을 정의할 수 있다. persistence.xml은 JPA 설정의 핵심 요소로, 상위에 <persistence> 태그를 포함하고 있다.
+url: /egovframe-runtime/persistence-layer/orm/orm-jpa_configuration/
+menu:
+    depth:
+        name: JPA Configuration
+        weight: 10
+        parent: "orm"
 ---
 # JPA Configuration
 

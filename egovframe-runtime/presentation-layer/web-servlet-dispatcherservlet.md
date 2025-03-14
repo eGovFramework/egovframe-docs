@@ -1,8 +1,13 @@
 ---
-linkTitle: "- DispatcherServlet"
-weight: 3
 title: DispatcherServlet
+linkTitle: "DispatcherServlet"
 description: DispatcherServlet은 Spring MVC의 유일한 Front Controller로, 모든 웹 요청을 처리하고 결과 데이터를 클라이언트에 응답하는 핵심 요소이다. 웹 요청의 전체 라이프사이클을 주관하며 Controller로의 진입점 역할을 한다.
+url : /egovframe-runtime/presentation-layer/web-servlet/web-servlet-dispatcherservlet/
+menu:
+    depth:
+        name: DispatcherServlet
+        weight: 2
+        parent: "web-servlet"
 ---
 # DispatcherServlet
 

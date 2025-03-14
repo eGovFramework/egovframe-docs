@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Authentication"
-weight: 3
 title: Authentication
+linkTitle: "Authentication"
 description: 전자정부 표준프레임워크의 인증은 DB 기반의 JDBC 인증을 사용하며, Spring Security의 `AuthenticationManager`와 `AuthenticationProvider`를 설정하여 사용한다. 최소한의 환경설정으로 XML 또는 DB에서 사용자 정보를 관리할 수 있으며, JDBC 인증을 통해 사용자 정보와 권한을 쿼리로 관리한다. 또한, 세션 관리를 통해 사용자 세션을 확장하고, 동시 세션 제어를 통해 동일한 ID로의 동시 접속을 제한할 수 있다.
+url: /egovframe-runtime/foundation-layer/server-security/server-security-authentication/
+menu:
+    depth:
+        name: Authentication
+        weight: 2
+        parent: "serverSecurity"
 ---
 # Authentication
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- DispatcherHandler"
-weight: 14
 title: 스프링 WebFlux의 DispatcherHandler와 요청 처리 흐름
+linkTitle: "DispatcherHandler"
 description: 스프링 WebFlux는 프론트 컨트롤러 패턴을 사용하며, DispatcherHandler가 중앙 WebHandler로서 요청을 다른 컴포넌트에 위임한다. DispatcherHandler는 스프링 설정에 따라 다양한 워크플로우를 지원하고, ApplicationContextAware 인터페이스를 구현해 실행 중인 컨텍스트에 접근할 수 있다.
+url : /egovframe-runtime/presentation-layer/web-reactive/web-reactive-dispatcherhandler/
+menu:
+    depth:
+        name: DispatcherHandler
+        weight: 2
+        parent: "web_reactive"
 ---
 # DispatcherHandler
 

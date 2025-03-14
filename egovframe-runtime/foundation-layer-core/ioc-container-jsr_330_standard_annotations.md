@@ -1,8 +1,13 @@
 ---
-linkTitle: "- JSR 330"
-weight: 12
 title: JSR 330 표준 어노테이션 사용하기
+linkTitle: "JSR 330"
 description: Spring 3.0부터 JSR-330 표준 의존성 주입 어노테이션을 지원하며, 이를 사용하려면 클래스패스에 javax.inject 라이브러리를 추가해야 한다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-jsr_330_standard_annotations/"
+menu:
+    depth:
+        name: JSR 330
+        weight: 11
+        parent: "ioc-container"
 ---
 # JSR 330 표준 어노테이션 사용하기
 

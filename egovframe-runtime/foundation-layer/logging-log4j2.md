@@ -1,8 +1,14 @@
 ---
-linkTitle: "- Log4j2"
-weight: 11
 title: Log4j2
+linkTitle: "Log4j2"
 description: Log4j 2는 Log4j의 차세대 버전으로서 비동기 로깅을 지원하여 애플리케이션의 성능에 미치는 영향을 최소화하고, 플러그인 아키텍처로 커스터마이징이 용이하며 다양한 출력 포맷과 로깅 레벨을 세밀하게 제어할 수 있다. XML, JSON, YAML 등 다양한 구성 파일 형식을 지원하여 설정이 유연하고, 구성 변경 시 서버를 재시작할 필요 없이 동적으로 적용할 수 있어 대규모 엔터프라이즈 애플리케이션에서도 널리 사용된다.
+url: /egovframe-runtime/foundation-layer/logging/logging-log4j2/
+menu:
+    depth:
+        name: Log4j2
+        weight: 1
+        parent: "logging"
+        identifier: "log4j2"
 ---
 ## 설명
 

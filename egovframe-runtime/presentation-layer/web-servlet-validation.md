@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Validation"
-weight: 8
 title: Spring의 Validator 인터페이스와 유효성 검증
+linkTitle: "Validation"
 description: 스프링 프레임워크는 Validator 인터페이스를 제공해 웹, 데이터 접근 등 다양한 계층의 객체에 유효성 검증을 지원한다. 또한 Jakarta Commons Validator와 같은 외부 Validator도 스프링에서 통합하여 사용할 수 있다.
+url : /egovframe-runtime/presentation-layer/web-servlet/web-servlet-validation/
+menu:
+    depth:
+        name: Validation
+        weight: 7
+        parent: "web-servlet"
 ---
 # Validation
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Environment Abstraction"
-weight: 14
 title: Environment Abstraction
+linkTitle: "Environment Abstraction"
 description: Environment Abstraction은 Spring에서 프로파일과 속성을 관리하기 위한 `Environment` 인터페이스를 통해 애플리케이션 환경을 추상화하고 제어하는 기능이다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-enviroment_abstraction"
+menu:
+    depth:
+        name: Environment Abstraction
+        weight: 13
+        parent: "ioc-container"
 ---
 # Environment Abstraction
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Data Type"
-weight: 5
 title: iBATIS에서의 Data Type 매핑
+linkTitle: "Data Type"
 description: Java 애플리케이션에서 데이터베이스와 상호작용할 때, Java 타입과 DBMS의 JDBC 타입 간의 정확한 매핑이 중요하다. iBATIS는 JavaBeans 객체의 속성과 DB 테이블의 컬럼 타입을 매핑하여 데이터 바인딩 및 매핑을 처리하며, 이를 통해 다양한 데이터 타입에 대한 적절한 사용 방법을 제공한다.
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-data_type/
+menu:
+    depth:
+        name: Data Type
+        weight: 3
+        parent: dataaccess-ibatis
 ---
 # Data Type
 

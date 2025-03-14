@@ -1,8 +1,14 @@
 ---
-linkTitle: "Spring Data - JPA"
-weight: 17
 title: Spring Data
+linkTitle: "Spring Data - JPA"
 description: Spring Data는 관계형 및 비관계형 데이터베이스, map-reduce 프레임워크, 클라우드 기반 데이터 서비스 등 다양한 데이터 액세스 기술을 쉽게 사용할 수 있도록 지원하는 오픈 소스 프로젝트이다. 이를 통해 새로운 데이터 기술뿐만 아니라 관계형 데이터베이스에 대한 향상된 지원도 제공한다.
+url: /egovframe-runtime/persistence-layer/jpa-spring-data/
+menu:
+    depth:
+        name: JPA
+        weight: 5
+        parent: "persistence-layer"
+        identifier: "jpa-spring-data"
 ---
 # Spring Data
 

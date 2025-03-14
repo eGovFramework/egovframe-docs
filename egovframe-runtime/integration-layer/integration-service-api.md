@@ -1,8 +1,13 @@
 ---
-linkTitle: "- API"
-weight: 4
 title: 연계 서비스 API
+linkTitle: "API"
 description: 연계 서비스 API는 연계 서비스를 사용 및 제공하기 위한 interface를 제공한다.
+url: /egovframe-runtime/integration-layer/integration-service/integration-service-api/
+menu:
+    depth:
+        name: API
+        weight: 2
+        parent: "integration-service"
 ---
 # 연계 서비스 API
 

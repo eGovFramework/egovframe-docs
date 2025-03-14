@@ -1,8 +1,13 @@
 ---
-linkTitle: "- SLF4J"
-weight: 10
 title: SLF4J
+linkTitle: "SLF4J"
 description: SLF4J는 다양한 로깅 프레임워크와 연계할 수 있는 추상화 계층을 제공하며, Log4j 2 또는 Logback과 함께 사용 가능하다. 기존의 Log4j 1.x나 Commons Logging을 SLF4J로 마이그레이션하려면, Bridge jar를 추가하고 logback.xml로 설정 파일을 변경해야 한다.
+url: /egovframe-runtime/foundation-layer/logging/logging-slf4j/
+menu:
+    depth:
+        name: SLF4J
+        parent: "logging"
+        weight: 1
 ---
 ## SLF4J
 

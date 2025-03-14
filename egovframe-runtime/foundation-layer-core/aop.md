@@ -1,8 +1,14 @@
 ---
-linkTitle: AOP
-weight: 17
 title: "AOP 서비스"
+linkTitle: AOP
 description: "AOP 서비스는 관점지향 프로그래밍(AOP)을 구현하며, 실행환경에서는 Spring AOP를 사용한다. 이 장에서는 AOP의 개요와 Spring의 AOP 지원에 대해 설명한다."
+url: /egovframe-runtime/foundation-layer-core/aop/
+menu:
+  depth:
+    name: AOP
+    weight: 2
+    parent: "foundation-layer-core"
+    identifier: "AOP"
 ---
 # AOP 서비스
 

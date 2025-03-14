@@ -1,8 +1,13 @@
 ---
-linkTitle: Step Flow
-weight: 26
 title: Flow Control
+linkTitle: Step Flow
 description: Job 내부에는 여러 Step 들이 존재할 수 있고, 각 Step 사이의 흐름을 관리할 필요가 있다. Step 내의 next 설정과 Desision 설정으로 Job을 수행하다 한 Step의 처리결과에 따라 다른 Step을 선택하여 수행할 수 있고, 특정 Step의 실패가 Job 전체의 실패로 이어지지 않도록 구성할 수 있다.
+url: /egovframe-runtime/batch-layer/batch-core-flow_control/
+menu:
+    depth:
+        name: Flow Control
+        weight: 22
+        parent: "batch-layer"
 ---
 # Flow Control
 

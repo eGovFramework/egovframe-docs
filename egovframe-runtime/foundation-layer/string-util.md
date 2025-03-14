@@ -1,8 +1,13 @@
 ---
-linkTitle: "String Util"
-weight: 39
 title: String Util Service
+linkTitle: "String Util"
 description: EgovStringUtil, EgovNumericUtil, EgovDateUtil, EgovObjectUtil 등의 서비스는 문자열, 숫자, 날짜, 객체 생성 등을 쉽게 다룰 수 있도록 다양한 기능을 제공한다. 이를 통해 패턴 매칭, 데이터 형식 변환, 숫자 계산, 날짜 계산, 객체 인스턴스화 등의 작업을 효율적으로 수행할 수 있다.
+url: /egovframe-runtime/foundation-layer/string-util/
+menu:
+    depth:
+        name: String Util
+        weight: 19
+        parent: "foundation-layer"
 ---
 # String Util Service
 

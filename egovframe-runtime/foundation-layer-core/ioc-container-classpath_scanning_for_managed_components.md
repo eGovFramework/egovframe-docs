@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Components Scan"
-weight: 11
 title: "Classpath Scanning for Managed Components"
+linkTitle: "Components Scan"
 description: 이전의 대부분 예제들은 Spring Container에서 `BeanDefinition`을 생성하기 위한 설정 메타데이터로 XML을 사용했다. 이전 섹션에서는 소스 레벨의 어노테이션을 사용해 많은 설정 메타데이터를 제공할 수 있음을 보여주었다. 그러나 이 예제들에서도 기본적인 bean 정의는 여전히 XML 파일에 명시적으로 작성되었다. 이번 섹션에서는 classpath를 검색하고 filter를 사용해 대상 컴포넌트(candidate component) 를 검출하는 방법을 소개한다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-classpath_scanning_for_managed_components/"
+menu:
+    depth:
+        name: Components Scan
+        weight: 10
+        parent: "ioc-container"
 ---
 # Classpath scanning for managed components
 

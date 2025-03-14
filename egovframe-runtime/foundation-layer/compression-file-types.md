@@ -1,8 +1,13 @@
 ---
-linkTitle: "- 압축 파일의 종류"
-weight: 31
 title: 압축 파일의 종류
+linkTitle: "압축 파일의 종류"
 description: 다양한 압축 파일 형식과 그 사용 방식에 대해 설명하며, 각 형식의 특징과 관련 프로그램을 안내한다.
+url: /egovframe-runtime/foundation-layer/compression-file-types/
+menu:
+    depth:
+        name: 압축 파일의 종류
+        weight: 1
+        parent: "compress-decompress"
 ---
 # 압축 파일의 종류
 | 압축 파일  | 설명                                                                                         |

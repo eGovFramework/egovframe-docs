@@ -1,8 +1,13 @@
 ---
-linkTitle: "Environment"
-weight: 18
 title: Environment
+linkTitle: "Environment"
 description: 표준프레임워크 3.0부터 Spring 3.1의 Environment 인터페이스를 통해 Profile과 Property에 접근할 수 있다.
+url: /egovframe-runtime/foundation-layer/environment/
+menu:
+    depth:
+        name: Environment
+        weight: 7
+        parent: "foundation-layer"
 ---
 # Environment
 

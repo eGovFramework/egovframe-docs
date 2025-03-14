@@ -1,8 +1,13 @@
 ---
-linkTitle: "Marshalling/Unmarshallig"
-weight: 22
 title: Marshalling/Unmarshallig 서비스
+linkTitle: "Marshalling/Unmarshallig"
 description: Marshalling/Unmarshalling 서비스는 Java 객체를 XML로 변환(Marshalling)하거나, XML을 Java 객체로 변환(Unmarshalling)하는 기술이다. Spring은 이를 위해 다양한 OXM 툴(JAXB, Castor, XMLBeans 등)을 지원하며, 이 기능을 활용해 객체와 XML 간의 데이터 매핑을 쉽게 처리할 수 있다. Castor와 XMLBeans를 이용한 샘플 코드는 각각 XML 문서로 데이터를 저장하고 다시 객체로 변환하는 과정으로 구성되어 있다.
+url: /egovframe-runtime/foundation-layer/marshalling-unmarshallig/
+menu:
+    depth:
+        name: Marshalling/Unmarshallig
+        weight: 9
+        parent: "foundation-layer"
 ---
 # Marshalling/Unmarshallig 서비스
 

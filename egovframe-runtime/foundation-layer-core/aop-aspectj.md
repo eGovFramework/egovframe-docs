@@ -1,7 +1,12 @@
 ---
-linkTitle: "- AspectJ"
-weight: 18
+linkTitle: "AspectJ"
 title: "@AspectJ 어노테이션을 이용한 AOP 지원"
+url: "/egovframe-runtime/foundation-layer-core/aop/aop-aspectj/"
+menu:
+  depth:
+    name: "AspectJ"
+    weight: 1
+    parent: "AOP"
 description: "@AspectJ는 Java 5 어노테이션을 사용한 일반 Java 클래스로 관점(Aspect)를 정의하는 방식이다. @AspectJ 방식은 AspectJ 5 버전에서 소개되었으며, Spring은 2.0 버전부터 AspectJ 5 어노테이션을 지원한다. Spring AOP 실행환경은 AspectJ 컴파일러나 직조기(Weaver)에 대한 의존성이 없이 @AspectJ 어노테이션을 지원한다."
 ---
 # @AspectJ 어노테이션을 이용한 AOP 지원

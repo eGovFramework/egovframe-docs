@@ -1,8 +1,13 @@
 ---
-linkTitle: "ItemReader"
-weight: 8
 title: ItemReader
+linkTitle: "ItemReader"
 description: ItemReader는 다양한 데이터 타입(플랫 파일, XML, 데이터베이스)을 처리하며, 데이터를 한 항목씩 읽고 모두 소진되면 Null을 반환하는 인터페이스이다. 플랫 파일, XML, 데이터베이스 각각에 맞는 방식으로 데이터를 읽고 처리할 수 있도록 지원한다.
+url: /egovframe-runtime/batch-layer/itemReader/
+menu:
+    depth:
+        name: ItemReader
+        weight: 4
+        parent: "batch-layer"
 ---
 # ItemReader
 

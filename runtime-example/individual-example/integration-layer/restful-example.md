@@ -1,8 +1,13 @@
 ---
-linkTitle: "Restful 예제"
-weight: 1
 title: "Restful 웹서비스 예제(Restful Web Service Example)"
+linkTitle: "Restful 예제"
 description: Spring 3.0에서 새롭게 추가된 Restful 웹서비스 지원기능을 이용하여 주어진 데이터를 Restful 요청/응답을 통하여 화면 또는 각 파일 양식으로 출력시켜주는 기능의 예제이다. URL을 통하여 각 카테고리의 목록 또는 상세정보를 요청할 수 있으며, HTML, JSON, XML 형태의 출력을 지원한다.
+url: /runtime-example/individual-example/integration-layer/restful-example/
+menu:
+    depth:
+        name: Restful 예제
+        weight: 6
+        parent: "integrationLayer"
 ---
 # Restful 웹서비스 예제(Restful Web Service Example)
 

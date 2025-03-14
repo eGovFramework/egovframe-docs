@@ -1,8 +1,12 @@
 ---
-linkTitle: "- Inheritance"
-weight: 7
 title: "Bean Definition Inheritance"
+linkTitle: "Inheritance"
 description: Bean 정의는 설정 정보를 포함하며, 자식 bean 정의는 부모 bean 정의로부터 설정 정보를 상속받는다. 자식 bean 정의는 부모로부터 상속받은 설정 정보를 필요에 따라 덮어쓰거나 추가할 수 있다.
+url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/"
+menu:
+    depth:
+        weight: 6
+        parent: "ioc-container"
 ---
 # Bean definition inheritance
 

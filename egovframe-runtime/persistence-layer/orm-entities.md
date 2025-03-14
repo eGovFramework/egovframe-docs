@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Entities"
-weight: 26
 title: Entities
+linkTitle: "Entities"
 description: ORM 서비스를 구성하는 가장 기초적인 클래스로 어플리케이션에서 다루고자 하는 테이블에 대응하여 구성할 수 있으며 테이블이 포함하는 컬럼에 대응한 속성들을 가지고 있다.
+url: /egovframe-runtime/persistence-layer/orm/orm-entities/
+menu:
+    depth:
+        name: Entities
+        weight: 1
+        parent: "orm"
 ---
 # Entities
 ORM 서비스를 구성하는 가장 기초적인 클래스로 어플리케이션에서 다루고자 하는 테이블에 대응하여 구성할 수 있으며 테이블이 포함하는 컬럼에 대응한 속성들을 가지고 있다.

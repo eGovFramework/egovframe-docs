@@ -1,8 +1,13 @@
 ---
-linkTitle: MultiResource
-weight: 20
 title: MultiResource 예제
+linkTitle: MultiResource
 description: 한 step에서 여러개의 파일을 처리하는 기능을 예제로 제공한다. 스프링 배치에서는 MultiResourceItemReader와 MultiResourceItemWriter를 제공한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-multi-resource/
+menu:
+    depth:
+        name: MultiResource
+        weight: 16
+        parent: "batchLayer"
 ---
 # MultiResource 예제
 

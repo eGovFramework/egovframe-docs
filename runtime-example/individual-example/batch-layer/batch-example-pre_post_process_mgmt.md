@@ -1,8 +1,13 @@
 ---
-linkTitle: PrePostProcess
-weight: 6
 title: 작업 전후처리 예제
+linkTitle: PrePostProcess
 description: 전자정부 표준프레임워크에서 배치 수행시, Core에서 제공하는 Processor 클래스를 이용하여 Job과 그 하위 구성요소인 Step, Chunk 전후에 적절한 선행/후행 처리 과정을 보여주는 예제이다.
+url: /runtime-example/individual-example/batch-layer/batch-example-pre_post_process_mgmt/
+menu:
+    depth:
+        name: PrePostProcess
+        weight: 6
+        parent: "batchLayer"
 ---
 # 작업 전후처리 예제
 

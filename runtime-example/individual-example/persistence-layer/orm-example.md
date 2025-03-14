@@ -1,8 +1,13 @@
 ---
-linkTitle: ORM 예제
-weight: 2
 title: ORM 예제(ORM Example)
-descriptio: Hibernate를 사용한 ORM 기능의 예제를 제공한다. 별도의 쿼리문을 정의하지 않고, 객체와 테이블간의 Mapping을 정의하여 순수 자바 코드를 사용하여 자료의 조회, 생성, 수정, 삭제를 수행하는 기능을 제공한다. 일반적인 게시판 형식의 예제이지만 Hibernate를 활용하여 데이터의 입출력이 어떻게 이루어지는지 확인할 수 있다.
+linkTitle: ORM 예제
+description: Hibernate를 사용한 ORM 기능의 예제를 제공한다. 별도의 쿼리문을 정의하지 않고, 객체와 테이블간의 Mapping을 정의하여 순수 자바 코드를 사용하여 자료의 조회, 생성, 수정, 삭제를 수행하는 기능을 제공한다. 일반적인 게시판 형식의 예제이지만 Hibernate를 활용하여 데이터의 입출력이 어떻게 이루어지는지 확인할 수 있다.
+url: /runtime-example/individual-example/persistence-layer/orm-example/
+menu:
+    depth:
+        name: ORM 예제
+        weight: 2
+        parent: "persistenceLayer"
 ---
 # ORM 예제(ORM Example)
 

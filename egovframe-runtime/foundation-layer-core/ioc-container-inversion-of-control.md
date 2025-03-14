@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Inversion of Control"
-weight: 15
 title: Inversion of Control
+linkTitle: "Inversion of Control"
 description: 이 문서는 Martin Fowler가 작성한 "Inversion of Control" 글을 번역하고 일부 의역한 내용이다.
+url : "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-iversion-of-control/"
+menu:
+  depth:
+    name: Inversion of Control
+    weight: 14
+    parent: "ioc-container"
 ---
 # Inversion of Control
 

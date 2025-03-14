@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Metadata"
-weight: 3
 title: Integration 서비스 Metadata
+linkTitle: "Metadata"
 description: Integration 서비스 Metadata는 연계에 필요한 정보를 정의하며, API 사용에 앞서 연계등록정보와 기관, 시스템, 서비스 등의 메타데이터를 이해하는 것이 중요하다. 실제 연계 Adaptor 사용법은 연계 서비스 API에서 설명된다.
+url: /egovframe-runtime/integration-layer/integration-service/integration-service-metadata/
+menu:
+    depth:
+        name: Metadata
+        weight: 1
+        parent: "integration-service"
 ---
 # Metadata
 

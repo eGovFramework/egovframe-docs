@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Concurrency"
-weight: 31
 title: Concurrency
+linkTitle: "Concurrency"
 description: 동시에 동일한 데이터에 접근할 때 Optimistic Locking을 지원하며, Pessimistic Locking은 JPA 2.0부터 Hibernate의 Native API를 통해 지원된다.
+url: /egovframe-runtime/persistence-layer/orm/orm-concurrency/
+menu:
+    depth:
+        name: Concurrency
+        weight: 6
+        parent: "orm"
 ---
 # Concurrency
 동시에 동일한 데이터에 접근할 때에 데이터에 대한 접근을 제어하기 위해 Optimistic Locking을 지원한다. 한편 Hibernate의 Native API를 통해서는 지원 가능한 Pessimistic Locking 은 JPA2.0 버전에 정의될 예정이다.

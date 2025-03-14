@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Redis"
-weight: 43
 title: Redis
+linkTitle: "Redis"
 description: Spring Data Redis는 키-값 데이터 저장소인 Redis와의 상호작용을 위해 높은 수준의 추상화 템플릿을 제공하며, Spring의 JDBC 지원 방식과 유사하다. LettuceConnectionFactory 클래스를 사용해 비동기적으로 Redis와 연결하고, 데이터베이스 세션 관리 및 쿼리 실행을 지원한다.
+url: /egovframe-runtime/persistence-layer/reactive/reactive-redis/
+menu:
+    depth:
+        name: Redis
+        weight: 4
+        parent: "reactive"
 ---
 # Redis
 

@@ -1,8 +1,14 @@
 ---
-linkTitle: "- File Upload"
-weight: 33
 title: File Upload Service
+linkTitle: "File Upload"
 description: 파일 업로드를 위한 Spring의 CommonsMultipartResolver 설정 및 구현 방법을 설명하며, JSP 폼과 컨트롤러를 통해 파일을 업로드하는 예제를 제공한다. 파일 저장 경로는 properties 파일에서 설정하며, 다중 파일 업로드 시 폼 이름을 다르게 설정해야 한다.
+url: /egovframe-runtime/foundation-layer/file-upload-download-service/file-upload-service/
+menu:
+    depth:
+        name: "File Upload"
+        weight: 1
+        parent: "fileUpload-download"
+        identifier: "fileUpload"
 ---
 # File Upload Service
 

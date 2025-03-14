@@ -1,8 +1,13 @@
 ---
-linkTitle: JobRunner
-weight: 14
 title: JobRunner
+linkTitle: JobRunner
 description: JobRunner는 외부 실행 모듈과 JobLauncher를 연결해주는 모듈로, 용도에 맞게 구현이 필요하다. 전자정부 표준프레임워크에서는 작업실행 유형에 따라 미리 JobRunner를 미리 구현한 표준 Batch Runner를 제공한다.
+url: /egovframe-runtime/batch-layer/batch-execution-job_runner/
+menu:
+    depth:
+        name: JobRunner
+        weight: 9
+        parent: "batch-layer"
 ---
 # JobRunner
 

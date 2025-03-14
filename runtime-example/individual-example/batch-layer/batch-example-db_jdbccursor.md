@@ -1,8 +1,13 @@
 ---
-linkTitle: JdbcCursor
-weight: 22
 title: JdbcCursor 예제
+linkTitle: JdbcCursor
 description: DB를 한 행씩 읽어서 데이터처리를 수행하는 기능을 예제로 제공한다. 스프링 배치에서는 JdbcCursorItemReader, HibernateCursorItemReader를 제공한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-multi-db_jdbccursor/
+menu:
+    depth:
+        name: JdbcCursor
+        weight: 18
+        parent: "batchLayer"
 ---
 # JdbcCursor 예제
 

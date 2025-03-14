@@ -1,8 +1,13 @@
 ---
-linkTitle: "Bootstrap"
-weight: 29
 title: UI - bootstrap
+linkTitle: "Bootstrap"
 description: Bootstrap은 반응형 웹 디자인을 쉽게 구현하기 위한 프론트엔드 프레임워크로, 다양한 CSS, JavaScript 컴포넌트와 UI 템플릿을 제공하여 빠르게 웹사이트를 구축할 수 있다. 또한 그리드 시스템, 다양한 UI 컴포넌트, 모달과 같은 동적 기능들을 지원하며, 모바일 중심으로 설계되어 다양한 디바이스에서 최적화된 화면을 제공한다.
+url : /egovframe-runtime/presentation-layer/bootstrap/
+menu:
+    depth:
+        name: Bootstrap
+        weight: 11
+        parent: "presentation-layer"
 ---
 # UI - bootstrap
 

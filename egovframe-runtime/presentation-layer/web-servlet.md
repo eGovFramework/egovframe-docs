@@ -1,8 +1,14 @@
 ---
-linkTitle: Web Servlet
-weight: 1
 title: MVC 패턴의 구조와 장점
+linkTitle: Web Servlet
 description: MVC 패턴은 애플리케이션의 기능을 Model, View, Controller로 분리하여 UI 코드와 비즈니스 로직의 종속성을 줄이고, 재사용성과 변경 용이성을 높인다. 표준프레임워크에서 "MVC 서비스"는 이 패턴을 활용한 Web MVC Framework를 의미한다.
+url : /egovframe-runtime/presentation-layer/web-servlet/
+menu:
+    depth:
+        name: Web Servlet
+        weight: 1
+        parent: "presentation-layer"
+        identifier: "web-servlet"
 ---
 # Web Servlet
 
@@ -33,11 +39,11 @@ MVC 패턴이 Web Framework에만 사용되는 단어는 아니지만, 표준프
 ### Spring MVC
 Spring MVC에 대한 설명은 아래 상세 페이지를 참고하라.
 
-- [Spring MVC Architecture](./web-servlet-spring-mvc-architecture.md)
+- [Spring MVC Architecture](web-servlet-spring-mvc-architecture.md)
 - [DispatcherServlet](./web-servlet-dispatcherservlet.md)
 - [HandlerMapping](./web-servlet-handlermapping.md)
 - [Controller](./web-servlet-controller.md)
-- [Annotation-based Controller](./web-servlet-annotation-based-controller.md)
+- [Annotation-based Controller](web-servlet-annotation-based-controller.md)
 - [Validation](./web-servlet-validation.md)
 - [Declarative Validation](./web-servlet-declarative-validation.md)
 - [View](./web-servlet-view.md)

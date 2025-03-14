@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Jakarta Commons Validator"
-weight: 21
 title: Spring Framework + Jakarta Commons Validator
+linkTitle: "Jakarta Commons Validator"
 description: Jakarta Commons Validator는 필수값, 길이, 이메일 등의 검증을 제공하며, Java와 JavaScript로 구현되어 클라이언트와 서버 양쪽에서 검증을 수행할 수 있다. Spring Framework에서는 Spring Modules를 통해 Commons Validator와 연동이 가능하며, 이를 통해 서버와 클라이언트 검증 설정을 통합적으로 관리할 수 있다. 본 문서는 설치 방법과 핵심 클래스(DefaultValidatorFactory, DefaultValidator), 설정 파일, 예제 프로젝트 적용 과정을 설명한다.
+url : /egovframe-runtime/presentation-layer/security/security-jakarta-commons-validator/
+menu:
+    depth:
+        name: Jakarta Commons Validator
+        weight: 1
+        parent: "security"
 ---
 # Spring Framework + Jakarta Commons Validator
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: 데이터 엑세스 예제
-weight: 1
 title: 데이터 엑세스 예제(Data Access Example)
+linkTitle: 데이터 엑세스 예제
 description: iBatis를 사용하여 Database에 데이터를 조회, 생성, 수정, 삭제하는 기능에 대한 예제를 제공한다. SQL Mapping을 통하여 쿼리 및 데이터 매핑을 정의하고, 스프링의 Data Source를 사용하여 Connection을 획득한 뒤, DAO 클래스에서 주어진 메소드를 사용하여 CRUD 작업을 수행한다. 조회 결과를 화면에 출력하거나 화면에서 작성된 입력 내용을 데이터베이스에 반영하는 기능의 예제를 제공한다.
+url: /runtime-example/individual-example/persistence-layer/dataaccess-example/
+menu:
+    depth:
+        name: 데이터 엑세스 예제
+        weight: 1
+        parent: "persistenceLayer"
 ---
 # 데이터 엑세스 예제(Data Access Example)
 

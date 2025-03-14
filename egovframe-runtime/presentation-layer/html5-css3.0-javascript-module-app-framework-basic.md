@@ -1,8 +1,13 @@
 ---
-linkTitle: "JQuery Mobile"
-weight: 31
 title: HTML5 CSS3.0 JavaScript Module App Framework 기본 활용
+linkTitle: "JQuery Mobile"
 description: 전자정부는 효율적인 스마트 전자정부 시스템 구축을 위해 UI/UX Controller Component, HTML5, CSS3, JavaScript Module App Framework를 제공하며, 이 과정에서 jQuery Mobile을 활용하여 모바일 웹 사용자 경험을 최적화한다. Ajax 기반의 페이지 이동 및 다양한 이벤트와 메서드를 지원하여 반응형 모바일 애플리케이션 개발을 용이하게 한다.
+url : /egovframe-runtime/presentation-layer/html5-css3.0-javascript-module-app-framework-basic/
+menu:
+    depth:
+        name: JQuery Mobile
+        weight: 13
+        parent: "presentation-layer"
 ---
 # HTML5 CSS3.0 JavaScript Module App Framework 기본 활용
 

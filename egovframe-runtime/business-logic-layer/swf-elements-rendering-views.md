@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Rendering View"
-weight: 13
 title: Spring Web Flow의 뷰(View) 보여주기
+linkTitle: "Rendering View"
 description: view-state는 화면을 생성해 보여준 후, 사용자의 응답을 기다리는 역할을 하며, ID가 별도의 view 설정 없이 곧 뷰를 의미한다. 예를 들어, "enterBookingDetails"라는 ID는 해당 뷰를 나타내는 역할을 한다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-elements/swf-elements-rendering-views/
+menu:
+  depth:
+    name: Rendering View
+    weight: 3
+    parent: "swf-elements"
 ---
 # 뷰(View) 보여주기
 

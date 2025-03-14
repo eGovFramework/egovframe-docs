@@ -1,8 +1,13 @@
 ---
-linkTitle: "Session 방식 접근제어"
-weight: 7
 title: Session 방식 접근제어 권한설정
+linkTitle: "Session 방식 접근제어"
 description: 표준프레임워크 3.9부터 Session 방식의 접근제어 권한관리를 설정할 수 있으며, 이를 위해 XML 선언 및 SQL 쿼리를 포함한 기본 설정이 필요하다. 롤 권한 변경 시 서버 재기동 없이 `AuthorityResourceMetadata`의 `reload()` 메소드를 호출하여 설정을 적용할 수 있다.
+url: /egovframe-runtime/foundation-layer/session-based-access-control-permission-settings/
+menu:
+    depth:
+        name: Session 방식 접근제어
+        weight: 2
+        parent: "foundation-layer"
 ---
 # Session 방식 접근제어 권한설정
 

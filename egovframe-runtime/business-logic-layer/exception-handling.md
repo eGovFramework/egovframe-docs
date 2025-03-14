@@ -1,8 +1,13 @@
 ---
-linkTitle: Exception Handling
-weight: 1
 title: Exception Handling 서비스
+linkTitle: Exception Handling
 description: 전자정부 표준프레임워크 기반 시스템에서 Exception 처리는 AOP를 이용해 비즈니스 로직과 분리된 After throwing advice로 정의되며, Exception에 따른 적절한 대응을 목표로 한다. Exception 발생 시 클래스 정보와 종류는 후처리 로직 적용 여부를 결정하는 중요한 요소이다.
+url: /egovframe-runtime/business-logic-layer/exception-handling/
+menu:
+  depth:
+    name: Exception Handling
+    weight: 1
+    parent: business-logic-layer
 ---
 # Exception Handling 서비스
 

@@ -1,8 +1,14 @@
 ---
-linkTitle: "Integration Service"
-weight: 2
 title: Integration 서비스
+linkTitle: "Integration Service"
 description: Integration 서비스는 전자정부 개발프레임워크 기반의 시스템이 타 시스템과의 연계를 위해 사용하는 Interface의 표준을 정의한 것이다.
+url: /egovframe-runtime/integration-layer/integration-service/
+menu:
+    depth:
+        name: Integration Service
+        weight: 2
+        parent: "integration-layer"
+        identifier: "integration-service"
 ---
 # Integration 서비스
 

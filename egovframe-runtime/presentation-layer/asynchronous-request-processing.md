@@ -1,8 +1,13 @@
 ---
-linkTitle: "비동기요청"
-weight: 24
 title: Asynchronous request processing
+linkTitle: "비동기요청"
 description: Servlet 3.0과 Spring MVC 3.2 이상에서는 비동기 요청 처리를 통해 요청 쓰레드가 반환된 후에도 내부 쓰레드에서 비동기 작업을 처리할 수 있다. 이를 위해 `Callable`, `DeferredResult`, `WebAsyncTask` 등을 사용해 시간이 오래 걸리는 작업을 비동기로 처리하고, 완료 후 응답을 보낼 수 있다.
+url : /egovframe-runtime/presentation-layer/asynchronous-request-processing/
+menu:
+    depth:
+        name: UI 비동기요청
+        weight: 8
+        parent: "presentation-layer"
 ---
 # Asynchronous request processing
 

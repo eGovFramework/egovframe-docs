@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Inline Parameters"
-weight: 7
 title: Inline Parameters
+linkTitle: "Inline Parameters"
 description: "Inline Parameters는 #property# 노테이션을 사용해 간편하게 바인드 변수 매핑을 처리하며, 별도의 parameterMap 선언 없이 입력 객체의 속성을 SQL에 직접 매핑할 수 있다. Dynamic 요소와 함께 사용 가능하며, 필요한 경우 JDBC 타입과 null 값을 추가 노테이션으로 지정할 수 있다."
+url: /egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-inline_paramters/
+menu:
+    depth:
+        name: Inline Parameters
+        weight: 5
+        parent: dataaccess-ibatis
 ---
 # Inline Parameters
 

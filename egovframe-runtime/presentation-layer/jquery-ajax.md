@@ -1,8 +1,13 @@
 ---
-linkTitle: "jQuery Ajax"
-weight: 25
 title: jQuery 가이드
+linkTitle: "jQuery Ajax"
 description: jQuery는 다양한 UI 기능과 AJAX 요청을 지원하는 JavaScript 라이브러리로, 이를 통해 이벤트 처리, 자동 완성, 탭 등의 기능을 쉽게 구현할 수 있다. AJAX 요청은 `$.ajax()`, `$.get()`, `$.post()`와 같은 메서드를 사용하여 서버와 데이터를 비동기적으로 통신하며, JSON과 같은 형식으로 데이터를 주고받을 수 있다.
+url : /egovframe-runtime/presentation-layer/jquery-ajax/
+menu:
+    depth:
+        name: jQuery Ajax
+        weight: 9
+        parent: "presentation-layer"
 ---
 # jQuery 가이드
 ## 개요

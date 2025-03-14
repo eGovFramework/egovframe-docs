@@ -1,7 +1,13 @@
 ---
-linkTitle: Logging
-weight: 9
 title: Logging
+linkTitle: Logging
+url: /egovframe-runtime/foundation-layer/logging/
+menu:
+    depth:
+        name: Logging
+        weight: 4
+        parent: "foundation-layer"
+        identifier: "logging"
 description: 전자정부 표준프레임워크 3.0부터 SLF4J를 도입하여 다양한 로깅 프레임워크와 연계하며, Log4j 2를 기본 로깅 구현체로 사용한다. 로깅 서비스는 시스템 상태를 기록하고 관리할 수 있지만, 성능 오버헤드를 줄이기 위한 메커니즘이 필요하다. System.out.println() 대신 SLF4J와 Log4j 2를 사용한 로깅이 권장된다.
 ---
 # Logging 서비스

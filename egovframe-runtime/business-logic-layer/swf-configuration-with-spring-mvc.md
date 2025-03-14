@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- MVC 연동"
-weight: 7
 title: Spring Web Flow와 Spring MVC 연동
+linkTitle: "MVC 연동"
 description: Spring Web Flow는 Spring MVC와 연동해 웹 애플리케이션을 개발할 수 있으며, 이를 위해 web.xml에 DispatcherServlet 설정이 필요하다. DispatcherServlet은 웹 애플리케이션별로 등록되며, 요청 경로와 초기화 파라미터(contextConfigLocation)를 설정한다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-with-spring-mvc/
+menu:
+    depth:
+        name: MVC 연동
+        weight: 2
+        parent: "swf-configuration"
 ---
 ## Spring Web Flow 와 MVC 연동
 

@@ -1,8 +1,14 @@
 ---
-linkTitle: "Overview"
-weight: 1
 title: 배치 실행환경 소개
+linkTitle: "Overview"
 description: 전자정부 표준프레임워크는 대용량 데이터 처리 지원을 위해 작업 수행, 결과 관리, 스케줄링 관리 기능을 제공한다.
+url: /egovframe-runtime/batch-layer/intro/
+menu:
+    depth:
+        name: 배치 실행환경 소개
+        weight: 1
+        parent: "batch-layer"
+        identifier: "intro"
 ---
 # 배치 실행환경 소개
 

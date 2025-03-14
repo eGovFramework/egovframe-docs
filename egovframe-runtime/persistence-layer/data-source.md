@@ -1,8 +1,13 @@
 ---
-linkTitle: DataSource
-weight: 1
 title: DataSource 서비스
+linkTitle: DataSource
 description: DataSource 서비스는 데이터베이스 연결을 제공하며, 추상화 계층을 통해 업무 로직과 데이터베이스 연결 방식 간의 종속성을 제거한다. 이를 통해 다양한 방식의 데이터베이스 연결을 지원하고 유연성을 제공한다.
+url: /egovframe-runtime/persistence-layer/data-source/
+menu:
+    depth:
+        name: DataSource
+        weight: 1
+        parent: "persistence-layer"
 ---
 # DataSource 서비스
 

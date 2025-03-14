@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Property Service"
-weight: 16
 title: Property Service
+linkTitle: "Property Service"
 description: Property Service는 시스템 설정 정보를 외부 파일이나 Spring Bean 설정 파일에서 관리하여 유연성을 제공하는 서비스이다. **Bean 설정 파일**을 사용하여 간단하게 설정할 수 있지만, 변경 시 어플리케이션 재시작이 필요하다. **외부 설정 파일**을 사용하면 운영 중에도 설정 정보를 수정할 수 있으며, 실시간 갱신이 가능하다.
+url: /egovframe-runtime/foundation-layer/property/property-service/
+menu:
+    depth:
+        name: Property Service
+        weight: 1
+        parent: "Property"
 ---
 # Property Service
 

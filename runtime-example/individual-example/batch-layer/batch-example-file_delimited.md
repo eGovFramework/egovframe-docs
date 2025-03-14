@@ -1,8 +1,13 @@
 ---
-linkTitle: Delimited
-weight: 25
 title: Delimited 예제
+linkTitle: Delimited
 description: 플랫 파일의 데이터를 구분자(delimiter)로 구분하여 처리하는 기능을 예제로 제공한다. 스프링 배치에서는 플랫 파일을 처리하기 위해 FlatFileItemReader와 FlatFileItemWriter를 제공한다.
+url: /runtime-example/individual-example/batch-layer/batch-example-multi-file_delimitied/
+menu:
+    depth:
+        name: Delimited
+        weight: 21
+        parent: "batchLayer"
 ---
 # Delimited 예제
 

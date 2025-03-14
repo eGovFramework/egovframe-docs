@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Securing Flows"
-weight: 8
 title: Spring Web Flow에서 보안 적용
+linkTitle: "Securing Flows"
 description: Spring Security를 통해 Flow 실행에 보안을 적용하려면 인증 및 권한 규칙을 설정하고, Flow 정의에 secured 구성요소를 추가하며, SecurityFlowExecutionListener를 사용하여 보안 규칙을 처리한다. 보안 규칙은 Flow, state, transition 단계에서 적용 가능하다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-securing-flows/
+menu:
+  depth:
+    name: Securing Flows
+    weight: 3
+    parent: swf-configuration
 ---
 # Flow에 보안 적용하기(Securing Flows)
 

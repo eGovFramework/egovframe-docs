@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Repositories"
-weight: 24
 title: MongoDB Repositories
+linkTitle: "Repositories"
 description: Spring Data MongoDB는 Spring Data의 repository 추상화 인터페이스를 지원하며, 자세한 내용은 Spring Data JPA 가이드의 Repository 섹션을 참조 한다.
+url: /egovframe-runtime/persistence-layer/mongodb/mongodb-repositories3_5_1/
+menu:
+    depth:
+        name: Repositories
+        weight: 2
+        parent: "mongodb"
 ---
 # MongoDB Repositories 3.5.1
 

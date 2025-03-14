@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Job Variable"
-weight: 5
 title: Job Variable
+linkTitle: "- Job Variable"
 description: EgovJobVariableListener는 사용자 정의 변수를 선언하고 여러 Job에서 이를 공유하여 사용할 수 있도록 지원하는 기능을 제공한다. 이를 통해 모든 Job에서 공통 변수를 활용할 수 있다.
+url: "/egovframe-runtime/batch-layer/batch-core-job/batch-core-job_variable/"
+menu:
+    depth:
+        name: Job Variable
+        weight: 1
+        parent: "job"
 ---
 # Job Variable
 

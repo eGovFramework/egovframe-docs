@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Annotation"
-weight: 7
 title: Annotation 기반 Controller
+linkTitle: "Annotation"
 description: 스프링 프레임워크는 2.5 버전부터 Java 5+ 이상에서 @Controller를 이용한 Annotation 기반 컨트롤러 개발을 지원한다. 이는 기존의 계층형 Controller(SimpleFormController, MultiActionController)와 달리 인터페이스 구현 없이 더 유연하고 간결한 방식으로 요청을 처리할 수 있는 점이 주요 개선점이다.
+url : /egovframe-runtime/presentation-layer/web-servlet/web-servlet-annotation-based-controller/
+menu:
+    depth:
+        name: Annotation
+        weight: 6
+        parent: "web-servlet"
 ---
 # Annotation-based Controller
 

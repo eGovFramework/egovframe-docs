@@ -1,8 +1,13 @@
 ---
-linkTitle: "ItemWriter"
-weight: 9
 title: ItemWriter
+linkTitle: "ItemWriter"
 description: ItemWriter는 다양한 데이터 타입에 상관없이 한 번에 여러 항목(Chunk)을 쓰는 역할을 하며, ItemReader와 유사하지만 데이터를 쓰는 반대의 동작을 수행한다. 이를 통해 데이터를 효과적으로 처리하고 저장할 수 있다.
+url: /egovframe-runtime/batch-layer/ItemWriter/
+menu:
+    depth:
+        name: ItemWriter
+        weight: 5
+        parent: "batch-layer"
 ---
 # ItemWriter
 

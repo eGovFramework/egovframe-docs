@@ -1,8 +1,14 @@
 ---
-linkTitle: "Reactive"
-weight: 39
 title: Spring Data - Reactive
+linkTitle: "Reactive"
 description: Spring Data는 데이터베이스와의 상호작용을 단순화하고 다양한 데이터 저장소 기술을 지원하는 하위 프로젝트로, Reactive 프로그래밍과의 연동을 지원한다. 이를 통해 NoSQL 데이터베이스인 R2DBC, MongoDB, Cassandra, Redis와의 비동기적 데이터 처리 기능을 제공한다. 전자정부 표준프레임워크에서도 이와 관련된 라이브러리를 지원한다.
+url: /egovframe-runtime/persistence-layer/reactive/
+menu:
+    depth:
+        name: Reactive
+        weight: 10
+        parent: "persistence-layer"
+        identifier: "reactive"
 ---
 # Spring Data - Reactive
 

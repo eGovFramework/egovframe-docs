@@ -1,8 +1,13 @@
 ---
-linkTitle: "FTP"
-weight: 28
 title: FTP Service
+linkTitle: "FTP"
 description: Apache Commons Net을 사용하여 FTP 서비스를 제공하며, FTP 클라이언트를 통해 파일 업로드, 다운로드, 삭제, 디렉토리 생성 등의 기능을 구현할 수 있다. FTP 사용 예제 및 파일 전송 설정 방법을 함께 제공한다.
+url: /egovframe-runtime/foundation-layer/ftp/
+menu:
+    depth:
+        name: FTP
+        weight: 13
+        parent: "foundation-layer"
 ---
 # FTP Service
 
@@ -15,7 +20,6 @@ Apache Commons Net™은 단순 클라이언트측의 기본적인 Internet Prot
 
 ### FTP정의
 
-```
 FTP란 FTP (File Transfer Protocol) 파일 전송 프로토콜로 FTP[에프 티 피]는 인터넷상의 컴퓨터들 간에 파일을 교환하기 위한 표준 프로토콜로서 가장 간단한 방법이기도 하다.
 화면에 표시할 수 있는 웹 페이지와 관련 파일들을 전송하는 HTTP, 전자우편을 전송하는 SMTP 등과 같이, FTP 역시 인터넷의 TCP/IP 응용 프로토콜 중의 하나이다.
 FTP는 웹 페이지 파일들을 인터넷상에서 모든 사람이 볼 수 있도록 하기 위해 저작자의 컴퓨터로부터 서버로 옮기는 과정에서 사용된다.
@@ -25,7 +29,6 @@ FTP는 웹 페이지 파일들을 인터넷상에서 모든 사람이 볼 수 �
 FTP를 사용하여 서버에 있는 파일을 지우거나 이름을 바꾸거나 옮기거나 복사하는 등 갱신작업을 할 수도 있다. 
 FTP 서버에는 로그온을 해야하지만, 익명의 FTP를 사용하여 모든 사람들에게 공개된 파일들을 쉽게 접근할 수 있도록 하고 있다. 
 FTP는 보통 TCP/IP에 함께 제공되는 일련의 프로그램 속에 포함되어 있다.
-```
 
 ## 설명
 
@@ -87,7 +90,7 @@ public static void main(String[] args) {
  
 		// Novell TEST서버에 접속
 		client.connect("ftp.novell.com");
-		logger.info("Connected to ||||||||||||||||||||||...........");
+		logger.info("Connected to ...........");
  
 		// 응답코드가 비정상일 경우 종료함
 		int reply = client.getReplyCode();

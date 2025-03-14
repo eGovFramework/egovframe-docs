@@ -1,8 +1,13 @@
 ---
-linkTitle: "Restful"
-weight: 6
 title: Restful
+linkTitle: "Restful"
 description: Spring MVC를 통해 구현한 RESTful은 리소스에 대한 접근을 URI를 이용하며, HTTP의 PUT, GET, POST, DELETE 등과 같은 메소드의 의미를 그대로 사용하므로, 단순하게 접근 할 수 있다.
+url: /egovframe-runtime/integration-layer/restful/
+menu:
+    depth:
+        name: Restful
+        weight: 4
+        parent: "integration-layer"
 ---
 # Restful
 

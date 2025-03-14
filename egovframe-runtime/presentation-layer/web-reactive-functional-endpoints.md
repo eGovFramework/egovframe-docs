@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Functional Endpoints"
-weight: 16
 title: 스프링 WebFlux 함수형 프로그래밍 모델(WebFlux.fn)
+linkTitle: "Functional Endpoints"
 description: 스프링 WebFlux의 함수형 모델인 WebFlux.fn은 요청을 함수로 라우팅하고 처리하며, HandlerFunction이 HTTP 요청을 처리해 비동기 응답을 반환한다. RouterFunction은 요청을 해당 HandlerFunction에 매핑하며, 이는 어노테이션 모델의 @RequestMapping과 같은 역할을 수행하지만 데이터와 행동을 함께 제공하는 점이 다르다.
+url : /egovframe-runtime/presentation-layer/web-reactive/web-reactive-functional-endpoints/
+menu:
+    depth:
+        name: Functional Endpoints
+        weight: 4
+        parent: "web_reactive"
 ---
 # Functional Endpoints
 스프링 WebFlux는 경량화 된 함수형 프로그래밍 모델을 지원한다. WebFlux.fn이라고 하는 이 모델은 함수로 요청을 라우팅하고 핸들링하기 때문에 불변성(immutability)을 보장한다.

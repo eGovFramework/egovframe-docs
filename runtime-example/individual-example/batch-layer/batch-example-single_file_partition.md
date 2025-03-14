@@ -1,8 +1,13 @@
 ---
-linkTitle: "- SpigntFilePartition"
-weight: 16
 title: N:1 파일 Partition 예제
+linkTitle: "SpigntFilePartition"
 description: 싱글 파일 파티셔닝 예제에서는 MultiResourcePartitioner를 사용해 입력 리소스 수만큼 Master Step을 파티셔닝하며, grid-size는 생성할 Context 수를 지정한다. 출력 대상 파일이 하나이므로 여러 Slave Step이 공유하는 EgovPartitionFlatFileItemWriter를 사용하고, 출력 정보를 다루는 EgovOutputFileListener 설정은 필요 없다.
+url: /runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-single_file_partition/
+menu:
+  depth:
+    name: SpigntFilePartition
+    weight: 3
+    parent: "multiProcess"
 ---
 # N:1 파일 Partition 예제
 

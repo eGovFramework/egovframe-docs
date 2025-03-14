@@ -1,8 +1,13 @@
 ---
-linkTitle: "Mail 예제"
-weight: 3
 title: Mail 서비스 예제(Mail Service Example)
+linkTitle: "Mail 예제"
 description: 메일 발송 예제에서는 설정된 메일 서버를 통해 입력한 이름과 이메일로 메일을 발송하는 기능을 제공한다. 실행 후 성공적으로 메일이 발송되면 성공 메시지가 출력된다.
+url: /runtime-example/individual-example/foundation-layer/mail-example/
+menu:
+    depth:
+        name: Mail 예제
+        weight: 3
+        parent: "foundationLayer"
 ---
 # 메일 서비스 예제(Mail Service Example)
 

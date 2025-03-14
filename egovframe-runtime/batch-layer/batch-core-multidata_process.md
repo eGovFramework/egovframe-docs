@@ -1,8 +1,13 @@
 ---
-linkTitle: MultiDataProcessing
-weight: 18
 title: MultiDataProcessing
+linkTitle: MultiDataProcessing
 description: 배치 수행 시 여러 리소스를 처리해야 할 경우, 전자정부 배치 프레임워크는 MultiData Processing을 통해 다수의 리소스를 읽고 다수(N→N) 또는 하나(N→1)의 결과로 처리하는 기능을 제공한다. MultiResourceItem은 여러 리소스를 읽어 각각의 결과를 생성하고, CompositeItem은 여러 리소스를 하나의 결과로 처리한다.
+url: /egovframe-runtime/batch-layer/batch-core-multidata_process/
+menu:
+    depth:
+        name: MultiDataProcessing
+        weight: 14
+        parent: "batch-layer"
 ---
 # MultiDataProcessing
 

@@ -1,8 +1,13 @@
 ---
-linkTitle: "\_\_\_- Flow 정의"
-weight: 11
 title: Flow 정의
+linkTitle: "Flow 정의"
 description: Flow는 여러 단계의 흐름을 캡슐화한 재사용 가능한 구조로, 상태(state)로 구성되며 각 상태는 이벤트에 따라 다른 뷰로 전환된다. 웹 애플리케이션 개발자는 XML 기반의 Flow 정의 언어로 Flow를 작성하며, 첫 번째 상태가 Flow의 시작점이 된다.
+url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-elements/swf-elements-flow-definition/
+menu:
+  depth:
+    name: Flow 정의
+    weight: 1
+    parent: swf-elements
 ---
 # Flow 정의
 

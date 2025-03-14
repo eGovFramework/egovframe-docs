@@ -1,8 +1,13 @@
 ---
-title: "스프링 시큐리티 예제(Spring Security Example)"
 linkTitle: Spring Security 예제
-weight: 1
+title: "스프링 시큐리티 예제(Spring Security Example)"
 description: Spring Security를 이용하여 로그인, 보안, 권한관리를 수행하는 기능에 대한 예제이다. 사용자의 로그인 및 권한 관리, 각 페이지에 대한 접근 및 출력 내용에 대한 통제등을 Spring Security 2.0.4를 이용하여 수행하며, 이에 대한 예제 기능을 제공한다.
+url: /runtime-example/individual-example/foundation-layer/spring-security-example/
+menu:
+    depth:
+        name: Spring Security 예제
+        weight: 1
+        parent: "foundationLayer"
 ---
 # 스프링 시큐리티 예제(Spring Security Example)
 

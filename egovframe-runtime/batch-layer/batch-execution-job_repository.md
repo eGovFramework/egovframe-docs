@@ -1,8 +1,13 @@
 ---
-linkTitle: JobRepository
-weight: 11
 title: JobRepository
+linkTitle: JobRepository
 description: JobRepository는 배치 작업 중의 정보를 저장하는 역할을 한다. 어떠한 Job이 언제 수행되었고, 언제 끝났으며, 몇 번이 실행되었고 실행에 대한 결과가 어떤지 등의 배치 작업의 수행과 관련된 모든 meta data가 저장되어 있다.
+url: /egovframe-runtime/batch-layer/batch-execution-job_repository/
+menu:
+    depth:
+        name: JobRepository
+        weight: 7
+        parent: "batch-layer"
 ---
 # JobRepository
 

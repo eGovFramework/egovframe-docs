@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Dynamic SQL"
-weight: 15
 title: Mapper Dynamic SQL
+linkTitle: "Dynamic SQL"
 description: MyBatis는 다양한 조건에 따라 동적으로 SQL을 생성할 수 있는 강력한 동적 SQL 기능을 제공하며, OGNL 기반의 표현식을 통해 유연하고 편리하게 사용할 수 있다. 이는 iBatis보다 간단하고 직관적인 방식으로 동적 SQL 처리를 가능하게 한다.
+url: /egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-mybatis-dynamic-sql/
+menu:
+    depth:
+        name: Dynamic SQL
+        weight: 5
+        parent: mybatis
 ---
 # Dynamic SQL
 

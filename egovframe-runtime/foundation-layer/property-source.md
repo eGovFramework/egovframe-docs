@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Property Source"
-weight: 17
 title: Property Source
+linkTitle: "Property Source"
 description: Property Source는 Spring에서 properties 파일이나 DB 테이블에서 key-value 형식의 설정 값을 가져올 수 있도록 하는 기능이다. **Property-placeholder**는 XML 설정 파일에서 `${}`를 사용해 외부 설정 값을 참조하며, Spring 3.1 이후에는 **PropertySourcesPlaceholderConfigurer**가 사용된다. **DB PropertySource**는 DB 테이블에서 설정 값을 가져오는 기능을 제공하며, `DBPropertySourceInitializer`를 통해 WAS 기동 시 설정 값을 로드할 수 있다.
+url: /egovframe-runtime/foundation-layer/property/property-source/
+menu:
+    depth:
+        name: Property Source
+        weight: 2
+        parent: "Property"
 ---
 # Property Source
 

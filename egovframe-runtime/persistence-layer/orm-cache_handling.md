@@ -1,8 +1,13 @@
 ---
-linkTitle: "- Cache Handling"
-weight: 32
 title: Cache Handling
+linkTitle: "Cache Handling"
 description: JPA에서는 성능 이슈를 개선하기 위해 1레벨 캐시를 활용하며, 객체를 테이블로 매핑해 데이터 액세스 처리를 수행한다. JPA 2.0부터는 2레벨 캐시가 추가되어 더 효율적인 캐시 관리가 가능해졌다.
+url: /egovframe-runtime/persistence-layer/orm/orm-cache_handling/
+menu:
+    depth:
+        name: Cache Handling
+        weight: 7
+        parent: "orm"
 ---
 # Cache Handling
 입력 인자로 전달된 객체를 정의된 테이블로 매핑시켜 데이터 액세스 처리를 수행해야 하는데 JPA에서는 이로 인해 발생 가능한 성능 이슈를 개선하기 위해 Cache를 활용한다. 현재 표준버전에서는 1 level Cache 만을 정의하고 있다. JPA 2.0에서는 2level Cache 정의 추가됨.
