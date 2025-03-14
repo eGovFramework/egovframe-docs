@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <header id="krds-header">
+    {{ partial "header.html" . }}
+  </header>
+  <main id="wrap">
+    
+      <div id="container" class="krds-in-page-navigation-type">
+          <div class="inner in-between layout">
+            {{ if not .IsHome }}
+              {{ partial "side-menu.html" . }}
+            <div class="contents">
+                {{ block "main" . }}{{ end }}
+            </div>
+            {{else}}
+              {{ block "main" . }}{{ end }}
+            {{ end }}
+          </div>
+          <button class="page-top-button krds-tooltip active" type="button" data-tooltip="페이지 상단으로 이동" aria-labelledby="tooltip-popover-0aha8scb"><i class="svg-icon ico-go-top"></i></button>
+      </div>
+  </main>
+  <footer id= "krds-footer">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>

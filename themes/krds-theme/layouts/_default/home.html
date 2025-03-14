@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="mainLayout">
+    <h1>{{.Title}}</h1>
+    <ul>
+      {{ range .Site.Menus.depth}}
+        <li>
+          <a href="{{ .URL }}" class="btn btn-txt ico-more sm">
+            <span class="m-hide">{{ .Name }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

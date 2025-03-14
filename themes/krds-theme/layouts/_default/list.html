@@ -1,0 +1,14 @@
+{{ define "main" }}
+	{{partial "breadcrumb.html" . }}
+	<div class="conts-area">
+		<div class="page-title-wrap">
+			<h2 class="h-tit">{{.Title}}</h2>
+			<p class="info-box">{{.Description}}</p>
+		</div>
+		{{ if not .IsHome }}
+			{{ partial "page-meta-links.html" . }}
+		{{ end }}
+			{{ partial "section-index.html" . -}}
+		</div>
+	</div>
+{{ end -}}

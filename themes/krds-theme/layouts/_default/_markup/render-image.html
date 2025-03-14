@@ -1,0 +1,6 @@
+{{- $src := .Destination -}}
+{{- if strings.HasPrefix $src "./images/" -}}
+  {{- $src = strings.Replace $src "./images/" (print .Page.CurrentSection.RelPermalink "images/") 1 -}}
+{{ end }}
+{{- $safeSrc := $src | safeURL -}}
+<img src="{{ $safeSrc }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} >

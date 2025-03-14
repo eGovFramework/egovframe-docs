@@ -1,0 +1,19 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'My New Hugo Site'
+
+#[[menus.main]]
+#name = 'Home'
+#pageRef = '/'
+#weight = 10
+
+#[[menus.main]]
+#name = '개발환경(예정)'
+#pageRef = '/egovframe-development'
+#weight = 20
+
+
+[[module]]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"

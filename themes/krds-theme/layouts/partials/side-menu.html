@@ -1,0 +1,54 @@
+{{$link := .RelPermalink}}
+<nav class="krds-side-navigation">
+      {{ range sort .Site.Menus.depth "Weight"}}
+      {{ if hasPrefix $link .URL}}
+      <h2 class="lnb-tit">{{.Name}}</h2>
+          {{ if .HasChildren}}
+          <ul class="lnb-list" role="menubar">
+              {{ range $index, $page := sort .Children "Weight" }}
+              {{ $isActive := eq $link .URL }}
+              <li class="lnb-item{{ if or (eq $link .URL) (hasPrefix $link .URL) }} active{{ end }}" role="none">
+                    <button type="button" class="lnb-btn lnb-toggle" role="menuitem" aria-controls="lnbmenu{{$index}}" aria-expanded="false" data-url="{{ .URL }}">{{.Name}}</button>
+                    <div class="lnb-submenu">
+                        <ul id="lnb-menu{{$index}}" role="menu">
+                          {{ range sort .Children "Weight" }}
+                            {{if .HasChildren}}
+                            <li class="lnb-subitem{{ if or (eq $link .URL) (hasPrefix $link .URL) }} active{{ end }}" role="none">
+                                <button type="button" class="lnb-btn lnb-toggle-popup" role="menuitem" aria-controls="lnbmenu-{{$index}}" aria-expanded="false" aria-haspopup="true" data-url="{{ .URL }}">
+                                  {{ .Name }}<span class="sr-only">열기</span>
+                                </button>
+                              <div class="lnb-submenu-lv2 {{ if or (eq $link .URL) (hasPrefix $link .URL) }}active{{ end }}" id="lnbmenu-{{$index}}" role="menu">
+                                <button type="button" class="lnb-btn-tit"  data-url="{{ .URL | replaceRE `[^/]+/$` `` }}">{{.Name}}</button>
+                                <ul>
+                                  {{ range sort .Children "Weight" }}
+                                      <li class="{{ if or (eq $link .URL) (hasPrefix $link .URL) }}active {{ end }}" role="none">
+                                      <a class="lnb-btn" role="menuitem" href="{{ .URL }}">{{.Name}}</a>
+                                      {{ if .HasChildren}}
+                                        <ul class="lnb-submenu-lv3">
+                                        {{ range sort .Children "Weight"}}
+                                          <li class="{{ if or (eq $link .URL) (hasPrefix $link .URL) }}active {{ end }}" role="none">
+                                            <a href="{{ .URL }}">{{ .Name }}</a>
+                                          </li>
+                                        {{ end }}
+                                        </ul>
+                                      {{ end }}
+                                    </li>
+                                  {{ end -}}
+                                </ul>
+                              </div>
+                            </li>
+                            {{ else }}
+                            <li class="lnb-subitem{{ if or (eq $link .URL) (hasPrefix $link .URL) }} active{{ end }}">
+                              <a href="{{ .URL }}" class="lnb-btn lnb-link" role="menuitem">{{.Name}}</a>
+                            </li>
+                            {{ end -}}
+                          {{ end -}}
+                        </ul>
+                    </div>
+                  {{ end -}}
+          {{ end -}}
+        </li>
+      {{ end -}}
+    </ul>
+    {{ end }}
+</nav>

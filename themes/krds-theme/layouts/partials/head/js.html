@@ -1,0 +1,18 @@
+{{ $js1 := resources.Get "js/jquery.min.js" }}
+{{ $js2 := resources.Get "js/component/ui-script.js" }}
+{{ $js3 := resources.Get "js/click-to-copy.js" }}
+{{ $js4 := resources.Get "js/egovframe.js" }}
+
+{{ $mergedJS := slice $js1 $js2 $js3 $js4 | resources.Concat "js/custom.js" }}
+
+{{/* css파일 경로를 절대경로 대신 hugo.toml에서 설정한 baseURL의 상대경로로 표시하기 위해 absURL 사용 */}}
+{{/* baseURL 사용 안 하면 다음처럼 root 디렉토리("/")에서 시작해버림 : <script src="/js/custom.js" integrity="" crossorigin="anonymous" defer=""></script> */}}
+
+{{- if eq hugo.Environment "development" }}
+  <script src="{{ $mergedJS.RelPermalink | absURL }}" defer></script>
+{{- else }}
+  {{/*  {{- $opts := dict "minify" true }}  */}}
+  {{/*  {{- with . | js.Build $opts | fingerprint }}  */}}
+    <script src="{{ $mergedJS.RelPermalink | absURL }}" integrity="{{ $mergedJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{/*  {{- end }}  */}}
+{{- end }}

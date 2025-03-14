@@ -1,0 +1,18 @@
+{{ $content := .Content }}
+
+<!-- 제목 스타일 -->
+{{ $pattern := `<h([1-3])([^>]*)>` }}
+{{ $replacement := `<h${1} class="sec-tit"${2}>` }}
+{{ $updatedContent := $content | replaceRE $pattern $replacement }}
+
+<!-- 링크 스타일 -->
+{{ $linkPattern := `<a([^>]*)>(.*?)</a>` }}
+{{ $linkReplacement := `<a class="btn sm btn-txt ico-go"${1}>${2}</a>` }}
+{{ $finalContent := $updatedContent | replaceRE $linkPattern $linkReplacement }}
+
+<!-- Table 클래스 추가 -->
+{{ $wrappedContent := $finalContent | replaceRE `<table([^>]*)>` `<div class="tbl-wrap"><table class="tbl col data"$1>` | replaceRE `</table>` `</table></div>` }}
+
+<!-- 목록별 section 나눔 -->
+{{ $spattern := `<h2([^>]*)>(.*?)</h2>` }}
+{{ $sections := split ($wrappedContent | replaceRE $spattern "|||<h2$1>$2</h2>") "|||" }}

@@ -1,0 +1,45 @@
+{{/*  {{ $link := .Destination }}
+{{ $parts := split $link "#" }}
+{{ $path := index $parts 0 }} <!-- 앵커를 제외한 경로 -->
+{{ $anchor := "" }}
+{{ if gt (len $parts) 1 }}
+    {{ $anchor = printf "#%s" (index $parts 1) }} <!-- 앵커 부분 -->
+{{ end }}
+
+<!-- $page 찾기 -->
+{{ $page := .Page.GetPage $path }}
+{{ if $page }}
+    {{ $path = $page.RelPermalink }}
+{{ end }}
+
+<!-- 최종 링크 생성 -->
+{{$link}}
+<a href="{{ $path }}{{ $anchor }}">{{ .Text }}</a>  */}}
+
+{{ $link := .Destination }}
+{{ $parts := split $link "#" }}
+{{ $path := index $parts 0 }} <!-- 앵커를 제외한 경로 -->
+{{ $anchor := "" }}
+{{ if gt (len $parts) 1 }}
+    {{ $anchor = printf "#%s" (index $parts 1) }} <!-- 앵커 부분 -->
+{{ end }}
+
+<!-- 앵커만 있는 경우 -->
+{{ if eq $path "" }}
+    {{ $path = .Page.RelPermalink }} <!-- 현재 페이지의 경로 -->
+{{ end }}
+
+<!-- $page 찾기 -->
+{{ $page := .Page.GetPage $path }}
+{{ if $page }}
+    {{ $path = $page.RelPermalink }}
+{{ else }}
+    {{ if strings.HasPrefix $path "./" }}
+        {{ $path = replaceRE "^\\.\\/" (.Page.RelPermalink | path.Dir | replaceRE "/$" "") $path }}
+    {{ end }}
+{{ end }}
+
+<!-- 최종 링크 생성 -->
+<a href="{{ $path }}{{ $anchor }}">{{ .Text }}</a>
+
+

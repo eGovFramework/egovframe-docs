@@ -1,0 +1,14 @@
+{{ $css1 := resources.Get "css/component/output.css"}}
+{{ $css2 := resources.Get "css/token/krds_tokens.css"}}
+{{ $css3 := resources.Get "css/egovframe.css"}}
+
+{{ $mergedCSS := slice $css1 $css2 $css3 | resources.Concat "css/custom.css"}}
+
+{{/* css파일 경로를 절대경로 대신 hugo.toml에서 설정한 baseURL의 상대경로로 표시하기 위해 absURL 사용 */}}
+{{/* baseURL 사용 안 하면 다음처럼 root 디렉토리("/")에서 시작해버림 : <link rel="stylesheet" href="/css/custom.css" integrity="" crossorigin="anonymous">
+     이거를 다음과 같이 바꿔야 함 : <link rel="stylesheet" href="https://egovframework.github.io/egovframe-docs/css/custom.css" integrity="" crossorigin="anonymous">*/}}
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ $mergedCSS.RelPermalink | absURL }}">
+{{- else }}
+  <link rel="stylesheet" href="{{ $mergedCSS.RelPermalink | absURL }}" integrity="{{ $mergedCSS.Data.Integrity }}" crossorigin="anonymous">
+{{- end }}

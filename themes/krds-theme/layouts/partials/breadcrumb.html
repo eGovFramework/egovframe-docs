@@ -1,0 +1,53 @@
+{{/*  <nav class="breadcrumb-wrap" aria-label="브레드크럼">
+    <ol class="breadcrumb">
+        <li class="home">
+            <a href="/" class="txt">Home</a>
+        </li>
+        {{ if and (not (eq .CurrentSection.Parent.RelPermalink .CurrentSection.RelPermalink)) (not (eq "/" .CurrentSection.Parent.RelPermalink)) }}
+            <li>
+                <a href="{{.CurrentSection.Parent.RelPermalink}}" class="txt">{{.CurrentSection.Parent.LinkTitle}}</a>
+            </li>
+        {{ end }}
+        {{ if not (eq .CurrentSection.RelPermalink .RelPermalink)}}
+            <li>
+                <a href="{{.Parent.RelPermalink}}" class="txt">{{.Parent.LinkTitle}}</a>
+            </li>
+        {{ end }}
+        <li>{{.Title}}</li>
+    </ol>
+</nav>  */}}
+{{- $urlParts := split .Params.url "/" -}}
+{{- $url := .Params.url}}
+{{- $name := .Name}}
+<nav class="krds-breadcrumb-wrap" aria-label="브레드크럼">
+  <ol class="breadcrumb">
+    <li class="home">
+      {{/* 자꾸 "{{ '/' | absURL}}" 이렇게 하니까 baseURL(=https://egovframework.github.io/egovframe-docs/) 무시하고 '/' 이것 때문에 root경로?(=https://egovframework.github.io/)로 인식헤서,
+           Hugo의 site 변수를 사용해서 아래처럼 수정  */}}
+      <a href="{{ $.Site.BaseURL }}" class="txt">Home</a>
+    </li>    
+    {{- $currentPath := "/" -}}
+    {{- range $index, $part := $urlParts -}}
+      {{- if ne $part "" -}} <!-- 빈 값 제외 -->
+        {{- $currentPath = printf "%s%s/" $currentPath $part -}}
+        {{- $page := site.GetPage $currentPath -}} <!-- 현재 경로에 해당하는 페이지 가져오기 -->
+        {{- $partName := cond (and $page $page.Title) $page.Title $part -}} <!-- Title이 존재하면 사용, 없으면 $part -->
+
+        {{ if $page}}
+          {{if ne $url $page.RelPermalink}}
+            {{/* "{{ $currentPath | absURL }}" 이게 자꾸 baseURl을 무시해서, 아래처럼 수정*/}}
+            <li><a href="{{ $.Site.BaseURL }}{{ $currentPath }}" class="txt">{{ $partName }}</a></li>
+          {{ end }}
+        {{ end }}
+        
+        {{/*  <li>
+          {{- if lt (add $index 1) (sub (len $urlParts) 1)  -}} <!-- 마지막 항목이 아니면 링크 생성 -->
+            <a href="{{ $currentPath | absURL }}" class="txt">{{ $partName }}</a>
+          {{- else -}} <!-- 마지막 항목은 링크 없이 텍스트로 표시 -->
+            <span>{{ $name }}</span>
+          {{- end -}}
+        </li>  */}}
+      {{- end -}}
+    {{- end -}}
+  </ol>
+</nav>

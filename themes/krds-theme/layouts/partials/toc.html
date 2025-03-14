@@ -1,0 +1,20 @@
+{{ if gt (len .TableOfContents) 32 }}
+  <div class="in-page-navigation-header">
+    <p class="quick-caption">이 페이지의 구성</p>
+    {{ $title := .Params.title | default .Params.name }}
+    <p class="quick-title">{{ $title }}</p>
+  </div>
+  <!-- TableOfContents가 정상적으로 생성된 경우 -->
+    {{ .TableOfContents | replaceRE `(?i)id="TableOfContents"` `class="in-page-navigation-list"` | safeHTML }}
+{{ else }}
+  <!-- H2 이상의 제목이 없는 경우 -->
+  {{/*  <div class="in-page-navigation-list">
+    <ul>
+    {{ range sort .Pages ".Params.menu.depth.weight" -}}
+        {{if eq .Menus.depth.Parent .CurrentSection.Menus.depth.Identifier}}
+        <li><a href="#{{ .Title }}">{{ .LinkTitle }}</a></li>
+        {{ end -}}
+    {{ end -}}
+    </ul>
+  </div>  */}}
+{{ end }}

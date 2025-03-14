@@ -1,0 +1,19 @@
+<!-- 헤더 컨텐츠 영역  -->
+<div class="header-in">
+    <!-- 헤더 상단 기타메뉴 -->
+    <div class="header-container">
+        <div class="inner" style="padding-bottom:0">
+            <div class="header-branding">
+                <h2 class="logo">
+                    <a href="{{ $.Site.BaseURL }}"></a>
+                </h2>
+                <div class="header-actions">
+                    {{/*  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}  */}}
+                    {{ partial "menu.html" . }}
+                </div>
+                {{/*  <div class="right">  */}}
+                {{/*  </div>  */}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+{{ $content := .Content }}
+
+<!-- 제목 스타일 -->
+{{ $hpattern := `<h([1])([^>]*)>` }}
+{{ $hreplacement := `<h${1} class="h-tit"${2}>` }}
+{{ $titleContent := $content | replaceRE $hpattern $hreplacement }}
+
+{{ $pattern := `<h([2-3])([^>]*)>` }}
+{{ $replacement := `<h${1} class="sec-tit"${2}>` }}
+{{ $updatedContent := $titleContent | replaceRE $pattern $replacement }}
+
+<!-- 링크 스타일 -->
+{{ $linkPattern := `<a([^>]*)>(.*?)</a>` }}
+{{ $linkReplacement := `<a class="krds-btn medium text"${1}>${2}<i class="svg-icon ico-go"></i></a>` }}
+{{ $finalContent := $updatedContent | replaceRE $linkPattern $linkReplacement }}
+
+<!-- Table 클래스 추가 -->
+{{ $wrappedContent := $finalContent | replaceRE `<table([^>]*)>` `<div class="krds-table-wrap"><table class="tbl col data"$1>` | replaceRE `</table>` `</table></div>` }}
+
+<!-- 링크의 md파일 제거 -->
+{{- $mdContent := $wrappedContent | replaceRE "\\.md" "" -}}
+
+<!-- 목록별 section 나눔 -->
+{{ $spattern := `<h2([^>]*)>(.*?)</h2>` }}
+{{ $sections := split ($mdContent | replaceRE $spattern "|||<h2$1>$2</h2>") "|||" }}
+
+  {{/*  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>  */}}
+  
+  {{partial "breadcrumb.html" . }}
+    <div class="conts-area">
+        {{ if not .IsHome }}
+            {{ partial "page-meta-links.html" . }}
+        {{ end }}
+        <div class="conts-wrap scroll-check">
+            {{ range $index, $section := $sections }}
+                {{ if $index }}
+                    <div class="conts-wrap section-link" id="section_0{{$index}}">
+                        {{ $section | safeHTML }}
+                    </div>
+                {{ else }}
+                    {{ $section | safeHTML }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

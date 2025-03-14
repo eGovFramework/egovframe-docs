@@ -1,0 +1,12 @@
+{{$link := .RelPermalink}}
+<nav class="krds-main-menu" style="border:none">
+  <div class="inner">
+    <ul class="gnb-menu">
+      {{range .Site.Menus.depth}}
+      <li>
+          <a href="{{.URL}}" class="gnb-main-trigger is-link {{ if or (eq $link .URL) (hasPrefix $link .URL) }}active{{ end }}">{{.Name}}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,47 @@
+<div class="section-index">
+    {{ $page := .Page -}}
+    {{ $pages := (where .Site.Pages "Section" .Section).ByWeight -}}
+    {{ $pages = (where $pages "Type" "!=" "search") }}
+    {{ $pages = (where $pages ".Params.hide_summary" "!=" true) -}}
+    {{ $pages = (where $pages ".Parent" "!=" nil) -}}
+    {{ $pages = (where $pages ".Parent.File" "!=" nil) -}}
+    {{ if $page.File -}}
+        {{ $pages = (where $pages "Parent.File.UniqueID" "==" $page.File.UniqueID) -}}
+    {{ end -}}
+    {{ if or $page.Params.no_list (eq (len $pages) 0) -}}
+    {{/* If no_list is true or we don't have subpages we don't show a list of subpages */}}
+    {{ else if $page.Params.simple_list -}}
+    {{/* If simple_list is true we show a bulleted list of subpages */}}
+        <ul>
+            {{ range $pages -}}
+                {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
+                <li><a href="{{ $manualLink }}"{{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}{{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- .Title -}}</a></li>
+            {{ end -}}
+        </ul>
+    {{ else -}}
+    {{/* Otherwise we show a nice formatted list of subpages with page descriptions */}}
+        {{ if ( lt 0 (len .Sections))}}
+            {{ range sort .Sections ".Params.menu.depth.weight" -}}
+                {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) -}}
+                <div class="conts-wrap">
+                    <h3 class="sec-tit" id="{{.LinkTitle}}">
+                        <a href="{{ $manualLink }}" {{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}{{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }} data-ajax>{{- .Title -}}</a>
+                    </h3>
+                    <div class="conts-desc">{{ .Description | markdownify -}}</div>
+                </div>
+            {{ end -}}
+        {{ else }}
+            {{ range sort $pages ".Params.menu.depth.weight" -}}
+                {{if eq .Menus.depth.Parent .CurrentSection.Menus.depth.Identifier}}
+                    {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) -}}
+                    <div class="conts-wrap">
+                        <h3 class="sec-tit"  id="{{.Title}}">
+                            <a href="{{ $manualLink }}"{{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}{{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- .Title -}}</a>
+                        </h3>
+                        <p>{{ .Description | markdownify -}}</p>
+                    </div>
+                {{ end -}}
+            {{ end -}}
+        {{ end -}}
+    {{ end -}}
+</div>

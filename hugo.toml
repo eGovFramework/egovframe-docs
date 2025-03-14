@@ -1,0 +1,30 @@
+baseURL = "https://eGovFramework.github.io/egovframe-docs/"
+languageCode = 'kr'
+title = '표준프레임워크 개발가이드'
+theme = 'krds-theme'
+port = 8888
+
+[markup.tableOfContents]
+startLevel = 2  # h2부터 시작
+endLevel = 3    # h3까지 포함
+ordered = false # 순서 없는 목록(ul)으로 표시
+
+[params]
+github_repo = 'https://github.com/eGovFramework/egovframe-docs'
+github_project_repo = 'https://github.com/eGovFramework/egovframe-docs'
+github_branch = 'contribution'
+
+#프린트 이용시 설정
+[outputFormats.Print]
+  name = "print"
+  baseName = "print"
+  mediaType = "text/html"
+  isHTML = true
+  rel = "alternate"
+  notAlternative = false
+
+[outputs]
+  home = ["HTML", "RSS", "Print"]
+  section = ["HTML", "Print"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
