@@ -12,7 +12,7 @@ ordered = false # 순서 없는 목록(ul)으로 표시
 [params]
 github_repo = 'https://github.com/eGovFramework/egovframe-docs'
 github_project_repo = 'https://github.com/eGovFramework/egovframe-docs'
-github_branch = 'contribution'
+github_branch = 'main'
 
 #프린트 이용시 설정
 [outputFormats.Print]
