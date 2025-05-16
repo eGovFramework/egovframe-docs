@@ -2580,17 +2580,23 @@ for (let index = 0; index < codeListings.length; index++) {
     'copy-to-clipboard-button'
   );
 
-  copyButton.textContent='복사';
-
+  /* 복사완료 표시를 mouseover 시 변경이 아닌 복사 후 1초 후에 아이콘 변경*/
   copyButton.onclick = () => {
     copyCode(codeSample);
-    copyButton.setAttribute('data-bs-original-title', '복사됨!');
-    copyButton.textContent=copyButton.dataset.bsOriginalTitle;
+    copyButton.classList.add("after");
+    setTimeout(function(){
+      copyButton.classList.remove("after");
+    },1000);
+
   };
 
+  // copyButton.onmouseover = () => {
+  //   console.log(copyButton);
+  //   console.log(copyButton.classList.contains("after"));
+  // }
+
   copyButton.onmouseout = () => {
-    copyButton.setAttribute('data-bs-original-title', '복사');
-    copyButton.textContent=copyButton.dataset.bsOriginalTitle;
+    copyButton.classList.remove("after");
   };
 
   const buttonDiv = document.createElement('div');
