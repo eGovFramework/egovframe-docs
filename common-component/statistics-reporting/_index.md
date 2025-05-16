@@ -1,7 +1,7 @@
 ---
-title: "통계/리프팅"
-linkTitle: "통계/리프팅"
-description: "통계/리프팅"
+title: "통계/리포팅"
+linkTitle: "통계/리포팅"
+description: "통계/리포팅"
 url: /common-component/statistics-reporting/
 menu:
   depth:

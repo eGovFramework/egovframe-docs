@@ -1,7 +1,7 @@
 ---
-title: "메세지 처리"
-linkTitle: "메세지 처리"
-description: "메세지 처리"
+title: "메시지 처리"
+linkTitle: "메시지 처리"
+description: "메시지 처리"
 url: /common-component/elementary-technology/message-process/
 menu:
   depth:

@@ -6,7 +6,7 @@ url: /runtime-example/individual-example/integration-layer/restful-example/
 menu:
     depth:
         name: Restful 예제
-        weight: 6
+        weight: 1
         parent: "integrationLayer"
 ---
 # Restful 웹서비스 예제(Restful Web Service Example)
