@@ -10,9 +10,10 @@
                 <div class="header-actions">
                     {{/*  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}  */}}
                     {{ partial "menu.html" . }}
+                    {{ if not .IsHome }}
+                    <button type="button" class="btn-navi all" aria-controls="mobile-nav"></button>
+                    {{ end }}
                 </div>
-                {{/*  <div class="right">  */}}
-                {{/*  </div>  */}}
             </div>
         </div>
     </div>

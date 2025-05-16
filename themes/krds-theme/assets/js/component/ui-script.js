@@ -348,24 +348,40 @@ const krds_mainMenuMobile = {
   },
   openMainMenu(mobileGnb) {
     const navContainer = mobileGnb.querySelector(".gnb-wrap");
-    // const id = mobileGnb.getAttribute("id");
-    // const openGnb = document.querySelector(`[aria-controls=${id}]`);
-    // const header = document.querySelector("#krds-header");
+    const id = mobileGnb.getAttribute("id");
+    const openGnb = document.querySelector(`[aria-controls=${id}]`);
+    const header = document.querySelector("#krds-header");
 
     mobileGnb.style.display = "block";
     navContainer.setAttribute("tabindex", 0);
-    // openGnb.setAttribute("aria-expanded", "true");
-    // header.style.zIndex = "1000";
+    openGnb.setAttribute("aria-expanded", "true");
+    header.style.zIndex = "1000";
+
+    /* 모바일 active 이동 (추가)*/
+    const activeTrigger = document.querySelector("#mobile-nav .gnb-main-trigger.active");
+    const href = activeTrigger.getAttribute("href");
+    if(activeTrigger){
+      const subtrigger = document.getElementById(href.slice(1));
+      const subBtn = subtrigger.querySelector(".gnb-sub-trigger.active") || subtrigger.querySelector(".gnb-sub-trigger.selected");
+      if(subBtn){
+        document.location="#"+subBtn.getAttribute("id")
+      }else{
+        document.location=href;
+      }
+      
+    }
 
     // active 메뉴로 스크롤 이동
-    const activeTrigger = document.querySelector(".gnb-main-trigger.active");
-    if (activeTrigger) {
-      const id = activeTrigger.getAttribute("aria-controls");
-      const top = document.getElementById(id).offsetTop;
-      const gnbBody = document.querySelector(".gnb-body");
-      gnbBody.style.scrollBehavior = "auto";
-      gnbBody.scrollTop = top
-    } 
+    // const activeTrigger = document.querySelector(".gnb-main-trigger.active");
+    // if (activeTrigger) {
+    //   const id = activeTrigger.getAttribute("aria-controls");
+    //   console.log(activeTrigger)
+    //   console.log(id)
+    //   const top = document.getElementById(id).offsetTop;
+    //   const gnbBody = document.querySelector(".gnb-body");
+    //   gnbBody.style.scrollBehavior = "auto";
+    //   gnbBody.scrollTop = top
+    // } 
     
     setTimeout(() => {
       mobileGnb.classList.add("is-backdrop");
@@ -391,12 +407,12 @@ const krds_mainMenuMobile = {
   closeMainMenu(mobileGnb) {
     const id = mobileGnb.getAttribute("id");
     const openGnb = document.querySelector(`[aria-controls=${id}]`);
-    // const header = document.querySelector("#krds-header");
+    const header = document.querySelector("#krds-header");
 
     mobileGnb.classList.remove("is-backdrop");
     mobileGnb.classList.remove("is-open");
-    // openGnb.setAttribute("aria-expanded", "false");
-    // header.style.zIndex = "";
+    openGnb.setAttribute("aria-expanded", "false");
+    header.style.zIndex = "";
 
     // inert 설정
     document.querySelector("#krds-header .header-in").removeAttribute("inert");
@@ -501,7 +517,9 @@ const krds_mainMenuMobile = {
       const depth4Items = item.querySelectorAll(".has-depth4");
       if (depth4Items.length > 0) {
         depth4Items.forEach((item) => {
-          item.addEventListener("click", (event) => this.handleDepth4Click(event, item));
+          if(item.classList.contains("active")){
+            this.handleDepth4Click(item);
+          }
         });
       }
     });
@@ -529,8 +547,8 @@ const krds_mainMenuMobile = {
       event.target.nextElementSibling.classList.remove("is-open");
     }
   },
-  handleDepth4Click(event) {
-    const target = event.target.nextElementSibling;
+  handleDepth4Click(item) {
+    const target = item.nextElementSibling;
     const prevButton = target.querySelector(".trigger-prev");
     const closeButton = target.querySelector(".trigger-close");
 

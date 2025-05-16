@@ -6,6 +6,9 @@
 <body>
   <header id="krds-header">
     {{ partial "header.html" . }}
+    {{ if not .IsHome }}
+    {{ partial "mobileNav.html" . }}
+    {{ end }}
   </header>
   <main id="wrap">
     

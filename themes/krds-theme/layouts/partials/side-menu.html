@@ -4,7 +4,7 @@
       {{ if hasPrefix $link .URL}}
       <h2 class="lnb-tit">{{.Name}}</h2>
           {{ if .HasChildren}}
-          <ul class="lnb-list" role="menubar">
+          <ul class="lnb-list" role="menubar" id="side-menu-trigger-{{.Name}}">
               {{ range $index, $page := sort .Children "Weight" }}
               {{ $isActive := eq $link .URL }}
               <li class="lnb-item{{ if or (eq $link .URL) (hasPrefix $link .URL) }} active{{ end }}" role="none">

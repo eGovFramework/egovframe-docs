@@ -279,3 +279,24 @@ h3,h4,h5,h6 {
         bottom: var(--krds-contents-padding-x);
     }
 }
+
+/* 모바일 */
+@media(max-width:1024px){
+    #mobileNav{
+        display:block;
+    }
+    .krds-side-navigation{
+        display:none;
+    }
+    .krds-main-menu-mobile .gnb-wrap .gnb-body .gnb-bottom{
+        border-top: var(--krds-main-menu-mobile--header-border-width) solid var(--krds-main-menu-mobile--header-color-border);
+    }
+
+    .krds-main-menu-mobile .gnb-wrap .gnb-body .gnb-menu .menu-wrap{flex:1}
+    .krds-main-menu-mobile .gnb-wrap .gnb-body .gnb-menu .submenu-wrap{flex:2}
+}
+@media(max-width:460px){
+    .krds-main-menu-mobile .gnb-wrap .gnb-body .gnb-menu{
+        flex-direction: column;
+    }
+}
