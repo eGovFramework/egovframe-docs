@@ -2590,15 +2590,6 @@ for (let index = 0; index < codeListings.length; index++) {
 
   };
 
-  // copyButton.onmouseover = () => {
-  //   console.log(copyButton);
-  //   console.log(copyButton.classList.contains("after"));
-  // }
-
-  copyButton.onmouseout = () => {
-    copyButton.classList.remove("after");
-  };
-
   const buttonDiv = document.createElement('div');
   buttonDiv.classList.add('toolbar');
   buttonDiv.append(copyButton);
