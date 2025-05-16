@@ -14,10 +14,11 @@
 .contents{
     width:100%;
 }
-.conts-wrap > * {
-    word-break: break-all;
+@media(max-width:460px){
+    .conts-wrap > *{
+        word-break: break-all;
+    }
 }
-
 /* lnb(sideMenu) */
 .krds-side-navigation{
     flex-shrink: 0;
@@ -153,7 +154,6 @@ h3,h4,h5,h6 {
     width:100%;
     /* position:relative; */
 }
-
 .toolbar{
     height: 50px;
     margin-top: 1rem;
@@ -164,10 +164,15 @@ h3,h4,h5,h6 {
 }
 .toolbar .copy-to-clipboard-button {
     padding: var(--krds-number-3) var(--krds-number-7);
-    background-color: #272822;
-    border: 1px solid var(--krds-color-light-gray-20);
-    border-radius: var(--krds-radius-small1);
-    color: var(--krds-color-light-gray-20);
+    background-image: url(../img/egovframework/ico-clipboard.svg);
+    width:24px;
+    height:24px;
+}
+.toolbar .copy-to-clipboard-button.after{
+    padding: var(--krds-number-3) var(--krds-number-7);
+    background-image: url(../img/egovframework/ico-clipboard-after.svg);
+    width:24px;
+    height:24px;
 }
 .section-link code{
     text-wrap: wrap;
