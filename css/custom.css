@@ -13946,6 +13946,9 @@ label {
 .contents{
     width:100%;
 }
+.conts-wrap > * {
+    word-break: break-all;
+}
 
 /* lnb(sideMenu) */
 .krds-side-navigation{
