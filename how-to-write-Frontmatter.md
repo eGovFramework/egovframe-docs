@@ -42,7 +42,7 @@ menu:
 - **title**
     - `title: "IoC Container Basics”`
     
-    ![1.png](1.png)
+    ![1.png](https://github.com/user-attachments/assets/78a0ba1f-1da9-420c-89bf-c87617c55942)
     
     - MD 파일의 전체적인 제목
     - 우측 사이드 페이지 네비게이션에 "이 페이지의 구성" 바로 아래에 표시됨
@@ -50,7 +50,7 @@ menu:
 - **linkTitle**
     - `linkTitle: "Basics”`
     
-    ![2.png](2.png)
+    ![2.png](https://github.com/user-attachments/assets/1383cad9-7a74-4d13-8182-4f656a881b7f)
     
     - 좌측 사이드메뉴, 브레드크럼 등에서 사용
     - 링크 형식으로 사용되는 타이틀이므로 최대한 간략하게 작성
@@ -59,7 +59,8 @@ menu:
     
     `description: Spring IoC Container는 객체(빈) 관리, 의존성 주입, Bean의 초기화와 소멸 등을 제공하며, 다양한 스코프와 프로파일 설정을 지원한다. 또한, Spring은 XML 스키마 기반 AOP, AspectJ 어노테이션, 그리고 리소스를 활용한 메시지 제공 서비스 등을 통해 개발자의 생산성을 높인다.`
     
-    ![3.png](3.png)
+    ![3.png](https://github.com/user-attachments/assets/7d2a7831-6dd8-4f9e-9299-ab3312cd7c6b)
+
     
     - MD 파일에 대한 설명
     - "_index.md"의 내용이 비어 있고, 그 파일과 같은 디렉토리에 폴더(다른 md파일을 포함)가 있을 경우, 그 폴더 내 다른 md파일들의 description이 그 "_index.md"의 화면에서 표시된다.
@@ -67,7 +68,7 @@ menu:
 - **url**
     - `url: "/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-basics/”`
     
-    ![4.png](4.png)
+    ![4.png](https://github.com/user-attachments/assets/2748478b-687e-4efd-9cae-26c92ee9a478)
     
     - 브레드크럼에서 사용
     *브레드크럼의 경우 현재 위치는 표시되지 않음
@@ -77,7 +78,8 @@ menu:
         
     - `https://egovframework.github.io/egovframe-docs` 이후부터 시작되는 url 경로로서, wiki의 depth 순서로 작성 필요
         
-        ![기존 Wiki의 메뉴 구조](5.png)
+        ![기존 Wiki의 메뉴 구조](https://github.com/user-attachments/assets/acf900b7-62b6-411b-b99a-368e342f341a)
+
         
         기존 Wiki의 메뉴 구조
         
@@ -123,7 +125,7 @@ menu:
                 - **weight** : ioc-container의 3번째 파일
                     - 기존 wiki의 순서 확인
                     
-                    ![6.png](6.png)
+                    ![6.png](https://github.com/user-attachments/assets/af08ff39-c8d9-47f2-9e3d-79992fba4a37)
                     
                 - **parent** : 위의 ioc-container 파일에서 지정한 identifier의 이름을 지정해 부모-자식관계 형성
 
