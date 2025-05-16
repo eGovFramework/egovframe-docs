@@ -1,21 +1,3 @@
-{{/*  <nav class="breadcrumb-wrap" aria-label="브레드크럼">
-    <ol class="breadcrumb">
-        <li class="home">
-            <a href="/" class="txt">Home</a>
-        </li>
-        {{ if and (not (eq .CurrentSection.Parent.RelPermalink .CurrentSection.RelPermalink)) (not (eq "/" .CurrentSection.Parent.RelPermalink)) }}
-            <li>
-                <a href="{{.CurrentSection.Parent.RelPermalink}}" class="txt">{{.CurrentSection.Parent.LinkTitle}}</a>
-            </li>
-        {{ end }}
-        {{ if not (eq .CurrentSection.RelPermalink .RelPermalink)}}
-            <li>
-                <a href="{{.Parent.RelPermalink}}" class="txt">{{.Parent.LinkTitle}}</a>
-            </li>
-        {{ end }}
-        <li>{{.Title}}</li>
-    </ol>
-</nav>  */}}
 {{- $urlParts := split .Params.url "/" -}}
 {{- $url := .Params.url}}
 {{- $name := .Name}}
@@ -34,7 +16,8 @@
         {{- $partName := cond (and $page $page.Title) $page.Title $part -}} <!-- Title이 존재하면 사용, 없으면 $part -->
 
         {{ if $page}}
-          {{if ne $url $page.RelPermalink}}
+          {{/*  {{if ne $url $page.RelPermalink}}  */}} <!-- egovframe-docs URL 경로 추가로 인한 변경-->
+          {{if ne $url $currentPath}}
             {{/* "{{ $currentPath | absURL }}" 이게 자꾸 baseURl을 무시해서, 아래처럼 수정*/}}
             <li><a href="{{ $.Site.BaseURL }}{{ $currentPath }}" class="txt">{{ $partName }}</a></li>
           {{ end }}
