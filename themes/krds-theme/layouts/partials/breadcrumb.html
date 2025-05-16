@@ -13,7 +13,7 @@
       {{- if ne $part "" -}} <!-- 빈 값 제외 -->
         {{- $currentPath = printf "%s%s/" $currentPath $part -}}
         {{- $page := site.GetPage $currentPath -}} <!-- 현재 경로에 해당하는 페이지 가져오기 -->
-        {{- $partName := cond (and $page $page.Title) $page.Title $part -}} <!-- Title이 존재하면 사용, 없으면 $part -->
+        {{- $partName := cond (and $page $page.LinkTitle) $page.LinkTitle $part -}} <!-- Title이 존재하면 사용, 없으면 $part -->
 
         {{ if $page}}
           {{/*  {{if ne $url $page.RelPermalink}}  */}} <!-- egovframe-docs URL 경로 추가로 인한 변경-->
