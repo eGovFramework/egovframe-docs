@@ -6,33 +6,112 @@
 <a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=" class="krds-btn medium text">문서에 이슈 생성 <i class="svg-icon ico-angle right"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn medium text">프로젝트에 이슈 생성 <i class="svg-icon ico-angle right"></i></a></div></div><button type=button class="krds-btn medium icon" id=close-nav>
 <span class=sr-only>전체메뉴 닫기</span>
-<i class="svg-icon ico-popup-close"></i></button></div></nav></header><main id=wrap><div id=container class=krds-in-page-navigation-type><div class="inner in-between layout"><nav class=krds-side-navigation></ul></ul></ul></ul></nav><div class=contents><nav class=krds-breadcrumb-wrap aria-label=브레드크럼><ol class=breadcrumb><li class=home><a href=https://eGovFramework.github.io/egovframe-docs/ class=txt>Home</a></li></ol></nav><div class=conts-area><div class=krds-in-page-navigation-area><nav class=in-page-navigation-action><ul><li><a href=https://github.com/eGovFramework/egovframe-docs/blob/main/README.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_view"></i> 페이지 보기</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/edit/main/README.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_edit"></i> 페이지 편집</a></li><li><a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=" class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 문서에 이슈 생성</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 프로젝트에 이슈 생성</a></li></ul></nav><div class=in-page-navigation-header><p class=quick-caption>이 페이지의 구성</p><p class=quick-title></p></div><nav class=in-page-navigation-list><ul><li><a href=#가이드-문서-보기>가이드 문서 보기</a></li><li><a href=#문서-구조>문서 구조</a><ul><li><a href=#파일-구조>파일 구조</a></li><li><a href=#문서-구조-1>문서 구조</a></li></ul></li><li><a href=#문서-작성-규칙>문서 작성 규칙</a></li><li><a href=#문장-구성-스타일-가이드>문장 구성 스타일 가이드</a></li><li><a href=#예제-및-참고자료>예제 및 참고자료</a><ul><li><a href=#샘플-문서>샘플 문서</a></li><li><a href=#참고자료>참고자료</a></li></ul></li></ul></nav></div><div class="conts-wrap scroll-check"><h1 class=h-tit id=전자정부-표준프레임워크-가이드>전자정부 표준프레임워크 가이드</h1><ul><li>본 GitHub 저장소는 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 문서로 변환하여 기여받기 위해 생성되었습니다.</li><li>이 프로젝트의 목적은 보다 쉽게 접근할 수 있는 문서 형식을 통해 사용자와 개발자들이 표준프레임워크를 더욱 효과적으로 활용할 수 있도록 돕는 것입니다.</li><li>표준프레임워크 가이드 컨트리뷰션 범위는 실행환경 문서로 한정하여 시작하려 합니다.</li></ul><div class="conts-wrap section-link" id=section_01><h2 class=sec-tit id=가이드-문서-보기>가이드 문서 보기</h2><ul><li><a class="krds-btn medium text" href=https://egovframework.github.io/egovframe-docs/>https://egovframework.github.io/egovframe-docs/<i class="svg-icon ico-go"></i></a></li></ul></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=문서-구조>문서 구조</h2><h3 class=sec-tit id=파일-구조>파일 구조</h3><ul><li>문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.</li><li>현재 개발가이드와 유사하게 구성되어 있습니다.<ul><li><a class="krds-btn medium text" href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.2">https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.2<i class="svg-icon ico-go"></i></a>
-참조</li></ul></li></ul><pre tabindex=0><code>/egovframe-runtime
-  /batch-layer #배치처리
-    /images
-  /business-logic-layer #업무처리
-    /images
-  /foundation-layer-core #공통기반 핵심
-    - ioc-container
-    - ioc-container-basics
-    - ioc-container-dependencies
-    - ioc-container-bean-scope
-    - customizing-the-nature-of-a-bean
-    - ...
-    - aop
-    - aop-aspectj
-    - aop-xmlschema
-    - ...
-    /images
-  /foundation-layer #공통기반
-    /images
-  /integration-layer #연계통합
-    /images
-  /persistence-layer #데이터처리
-    /images
-  /presentation-layer #화면처리
-    /images
-</code></pre><h3 class=sec-tit id=문서-구조-1>문서 구조</h3><ul><li>각 문서는 다음과 같은 구조와 템플릿을 따릅니다.</li></ul><pre tabindex=0><code># [문서 제목]
+<i class="svg-icon ico-popup-close"></i></button></div></nav></header><main id=wrap><div id=container class=krds-in-page-navigation-type><div class="inner in-between layout"><nav class=krds-side-navigation></ul></ul></ul></ul></nav><div class=contents><nav class=krds-breadcrumb-wrap aria-label=브레드크럼><ol class=breadcrumb><li class=home><a href=https://eGovFramework.github.io/egovframe-docs/ class=txt>Home</a></li></ol></nav><div class=conts-area><div class=krds-in-page-navigation-area><nav class=in-page-navigation-action><ul><li><a href=https://github.com/eGovFramework/egovframe-docs/blob/main/README.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_view"></i> 페이지 보기</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/edit/main/README.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_edit"></i> 페이지 편집</a></li><li><a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=" class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 문서에 이슈 생성</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 프로젝트에 이슈 생성</a></li></ul></nav><div class=in-page-navigation-header><p class=quick-caption>이 페이지의 구성</p><p class=quick-title></p></div><nav class=in-page-navigation-list><ul><li><a href=#가이드-문서-보기>가이드 문서 보기</a></li><li><a href=#프론트매터frontmatter-작성-방법>프론트매터(Frontmatter) 작성 방법</a></li><li><a href=#pr-방법>PR 방법</a><ul><li><a href=#최초-준비>최초 준비</a></li><li><a href=#작업-시작>작업 시작</a></li><li><a href=#작업-완료>작업 완료</a></li><li><a href=#pr-생성>PR 생성</a></li><li><a href=#결과-확인>결과 확인</a></li></ul></li><li><a href=#디렉토리-구조>디렉토리 구조</a></li><li><a href=#문서-구조>문서 구조</a></li><li><a href=#문서-작성-규칙>문서 작성 규칙</a></li><li><a href=#문장-구성-스타일-가이드>문장 구성 스타일 가이드</a></li><li><a href=#예제-및-참고자료>예제 및 참고자료</a><ul><li><a href=#샘플-문서>샘플 문서</a></li><li><a href=#참고자료>참고자료</a></li></ul></li></ul></nav></div><div class="conts-wrap scroll-check"><h1 class=h-tit id=전자정부-표준프레임워크-가이드>전자정부 표준프레임워크 가이드</h1><ul><li>본 GitHub 저장소 생성 목적은 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 형식의 문서로 변환하여 기여받는 것입니다.</li><li>이 프로젝트의 목적은 쉽게 접근 가능한 Markdown 형식의 문서를 통해 사용자와 개발자들이 표준프레임워크를 더욱 편리하게 활용할 수 있도록 돕는 것입니다.</li><li>이 프로젝트의 특징은 기여자가 문서 및 이미지를 기여하면 그 즉시 자동으로 배포되어 웹사이트를 통해 결과를 확인할 수 있는 것입니다.</li><li>2025년 표준프레임워크 가이드 컨트리뷰션 범위는 개발환경, 실행환경, 실행환경 예제, 공통컴포넌트입니다(2024년도에는 실행환경 문서로 한정).</li></ul><div class="conts-wrap section-link" id=section_01><h2 class=sec-tit id=가이드-문서-보기>가이드 문서 보기</h2><ul><li><a class="krds-btn medium text" href=https://egovframework.github.io/egovframe-docs/>https://egovframework.github.io/egovframe-docs/<i class="svg-icon ico-go"></i></a></li></ul></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=프론트매터frontmatter-작성-방법>프론트매터(Frontmatter) 작성 방법</h2><p><a class="krds-btn medium text" href=/egovframe-docs/how-to-write-frontmatter/>프론트매터 작성 방법<i class="svg-icon ico-go"></i></a>
+을 참고해 주시기 바랍니다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=pr-방법>PR 방법</h2><h3 class=sec-tit id=최초-준비>최초 준비</h3><ul><li>Github의
+<a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs>egovframe-docs 레포지토리<i class="svg-icon ico-go"></i></a>
+를 Fork합니다.</li><li>Fork하여 생성된 개인 레포지토리를 clone하여 로컬에 코드를 받아옵니다.<ul><li><code>git clone {Fork하여 생성된 개인 레포지토리의 URL}</code></li></ul></li><li>upstream으로 egovframe-docs 레포지토리를 연결합니다.<ul><li><code>git remote add upstream https://github.com/eGovFramework/egovframe-docs.git</code></li><li>정상적이라면 <code>git remote -v</code>명령시 origin에는 개인 repository URL이, upstream에는
+<a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs.git>https://github.com/eGovFramework/egovframe-docs.git<i class="svg-icon ico-go"></i></a>
+이 설정되어 있습니다.</li></ul></li></ul><h3 class=sec-tit id=작업-시작>작업 시작</h3><ul><li>작업 시작 전에 upstream인 egovframe-docs 레포지토리의 main 브랜치와 싱크를 맞춥니다.<ul><li><code>git fetch upstream main</code></li></ul></li><li>내 로컬의 메인 브랜치(main)로 체크아웃 합니다.<ul><li><code>git checkout main</code></li></ul></li><li>upstream과 병합합니다(또는 리베이스).<ul><li>병합 : <code>git merge upstream/main</code></li><li>리베이스 : <code>git rebase upstream/main</code></li></ul></li><li>충돌이 발생한다면 해결합니다.</li><li>(선택)내 origin에도 동기화를 해둡니다.<ul><li><code>git push origin main</code></li></ul></li><li>작업을 진행합니다.</li></ul><h3 class=sec-tit id=작업-완료>작업 완료</h3><ul><li>변경사항을 스테이징한 후 커밋합니다.<ul><li><code>git add .</code></li><li><code>git commit -m "커밋 메시지 작성"</code></li></ul></li><li><strong>push 하기 전에 upstream인 egovframe-docs 레포지토리의 main 브랜치와 다시 한 번 싱크를 맞춥니다(충돌 방지 및 자동 배포 목적).</strong><ul><li><code>git fetch upstream main</code></li></ul></li><li>upstream과 병합합니다(또는 리베이스).<ul><li>병합 : <code>git merge upstream/main</code></li><li>리베이스 : <code>git rebase upstream/main</code></li></ul></li><li>충돌이 발생한다면 해결합니다.<ul><li>충돌난 파일을 열어서 수정</li><li>수정된 파일을 스테이징 : <code>git add .</code> 또는 <code>git add {file}</code></li><li>병합(또는 리베이스) 완료<ul><li>병합 : <code>git commit</code> # 자동으로 머지 커밋 메시지가 설정됨</li><li>리베이스 : <code>git rebase --continue</code></li></ul></li><li>병합(또는 리베이스)을 원복하려면<ul><li>병합 취소(원복) : <code>git merge --abort</code></li><li>리베이스 취소(원복) : <code>git rebase --abort</code></li></ul></li></ul></li><li>내 origin에 push 합니다.<ul><li><code>git push origin main</code></li></ul></li></ul><h3 class=sec-tit id=pr-생성>PR 생성</h3><ul><li>Github에서 내 개인 레포지토리(egovframe-docs를 포크한 레포지토리) 페이지로 이동합니다.</li><li>“Compare & pull request” 버튼을 클릭합니다.</li><li>제목과 설명 입력 후 “Create pull request” 버튼을 클릭합니다.</li></ul><h3 class=sec-tit id=결과-확인>결과 확인</h3><h4 id=pr-자동-merge-성공시>PR 자동 Merge 성공시</h4><ul><li>작성자가 남긴 PR이 자동으로 Merge가 성공했다면,
+<a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/pulls>egovframe-docs의 PR탭<i class="svg-icon ico-go"></i></a>
+에서 본인이 남긴 PR이 closed 처리됩니다.</li><li>그 후 자동으로 빌드 및 배포과정이 진행됩니다. 이 과정은
+<a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/actions>egovframe-docs의 Actions탭<i class="svg-icon ico-go"></i></a>
+에서 확인 가능합니다.</li><li>잠시 후 본인의 PR에 대한 배포가 완료되면,
+<a class="krds-btn medium text" href=https://egovframework.github.io/egovframe-docs/>egovframe-docs 사이트<i class="svg-icon ico-go"></i></a>
+에서 작업 결과를 확인하실 수 있습니다.</li></ul><h4 id=pr-자동-merge-실패시>PR 자동 Merge 실패시</h4><ul><li>작성자가 남긴 PR이 자동으로 Merge가 성공했다면,
+<a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/pulls>egovframe-docs의 PR탭<i class="svg-icon ico-go"></i></a>
+에서 본인이 남긴 PR이 여전히 open 상태로 남아 있습니다.</li><li>다시 위 &ldquo;작업 완료&rdquo; 부분에 <code>git fetch upstream main</code>부터 실행하여 <code>git push origin main</code>까지를 완료합니다.</li><li>그러면 추가적인 PR을 작성하지 않더라도, 본인이 이전에 남긴 PR에서 자동으로 새로운 commit이 추가되고, 다시 자동 Merge 과정을 거칩니다.</li><li>자동으로 Merge 성공시, 위 &ldquo;PR 자동 Merge 성공시"에 서술된 프로세스가 진행됩니다.</li></ul></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=디렉토리-구조>디렉토리 구조</h2><ul><li><p>현재 개발가이드와 유사하게 구성되어 있습니다.</p><ul><li><a class="krds-btn medium text" href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init">공통컴포넌트 가이드-개요<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init_guide">공통컴포넌트 가이드-상세<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3">개발환경 개발가이드<i class="svg-icon ico-go"></i></a><ul><li><a class="krds-btn medium text" href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3">실행환경 개발가이드<i class="svg-icon ico-go"></i></a></li></ul></li><li><a class="krds-btn medium text" href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ex:%ea%b0%9c%eb%b0%9c%ed%94%84%eb%a0%88%ec%9e%84%ec%9b%8c%ed%81%ac_%ec%8b%a4%ed%96%89%ed%99%98%ea%b2%bd_%ec%98%88%ec%a0%9c">실행환경 예제 개발가이드<i class="svg-icon ico-go"></i></a></li></ul></li><li><p>문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.</p></li><li><p>모든 _index 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 찹고 부탁드립니다.</p></li></ul><pre tabindex=0><code>/common-component                 #공통컴포넌트
+  /collaboration                    #협업
+    /address                       #주소록/명함록
+    /board                         #게시판
+    /community                     #커뮤니티
+    /edsm                          #전자결재
+    /schedule                      #일정관리
+    /sms                           #문자메세지
+  /digital-asset-management         #디지털 자산관리
+    /kowledge-map                  #지식맵
+  /elementary-technology            #요소기술
+    /calendar                      #달력
+    /cookie-session                #쿠키/세션
+    /external-components           #외부 추가 컴포넌트
+    /formatter-util                #포맷/계산/변환
+    /interface                     #인터페이스/화면
+    /message-process               #메시지 처리
+    /new-components-v3.2           #신규 컴포넌트(v3.2)
+    /print                         #인쇄/출력
+    /system                        #시스템
+    /webeditorm                    #웹에디터
+  /intro                            #개요
+  /security                         #보안
+    /authority-management          #권한관리
+  /statistics-reporting             #통계/리포팅
+  /system-management                #시스템관리
+    /batch-manage                  #배치관리
+    /common-code-manage            #공통코드관리
+    /error-manage                  #장애관리
+    /log-manage                    #로그관리
+    /menu-manage                   #메뉴관리
+    /program-manage                #프로그램관리
+    /system-manage                 #시스템관리
+  /system-service-linkage           #시스템/서비스연계
+  /user-authentication              #사용자디렉토리/통합인증
+    /login                         #일반 로그인
+  /user-support                     #사용자지원
+    /information-provided          #정보제공/알림
+    /member-manage                 #사용자관리
+    /online-help                   #온라인헬프
+    /online-practice               #온라인참여
+    /personalization               #개인화
+    /terms-manage                  #약관관리
+
+/egovframe-development            #개발환경
+  /configuration-management-tool    #형상 관리 도구
+    /change-management             #Change Management
+    /configuration-management      #Configuration Management
+  /deployment-tool                  #배포 도구
+    /build-tool                    #Build Tool
+    /docker                        #컨테이너 가상화(Docker) 빌드
+    /gradle                        #개인빌드(Gradle)
+    /maven                         #개인빌드(Maven)
+  /development-etcdevtool-guide     #활용 가이드
+  /implementation-tool              #구현 도구
+    /editor                        #Editor
+    / batch-IDE                      #Batch IDE
+    / code-generation                #Code Genetation
+    / code-inspection                #Code Inspection
+    / dbio-editor                    #DBIO Editor
+    / server-connection-management   #Server Connection Management
+    / uml-editor                     #UML Editor
+    /debug                         #Debug
+  /individual-insall-guide          #구성 가이드
+  /install-guide                    #설치 가이드
+  /intro                            #소개
+  /operation-guide                  #운영 가이드
+  /test-tool                        #테스트 도구
+    /test-automation               #Test Automation
+    /unit-test                     #Unit Test
+
+/egovframe-runtime                #실행환경
+  /batch-layer                      #배치처리
+  /business-logic-layer             #업무처리
+  /foundation-layer-core            #공통기반 핵심
+  /foundation-layer                 #공통기반
+  /integration-layer                #연계통합
+  /intro                            #실행환경 소개
+  /persistence-layer                #데이터처리
+  /presentation-layer               #화면처리
+
+/runtime-example                  #실행환경 예제
+  /individual-example               #실행환경 개별 예제
+    /batch-layer                      #배치처리 예제
+    /business-logic-layer             #업무처리 예제
+    /foundation-layer                 #공통기반 예제
+    /foundation-layer-core            #공통기반 핵심 예제
+    /integration-layer                #연계통합 예제
+      /cloud-data-stream             #Cloud Data Stream
+    /persistence-layer                #데이터처리 예제
+    /presentation-layer               #화면처리 예제
+/integrated-example                 #실행환경 통합 예제
+</code></pre></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=문서-구조>문서 구조</h2><ul><li>각 문서는 다음과 같은 구조와 템플릿을 따릅니다.</li></ul><pre tabindex=0><code># [문서 제목]
 
 ## 개요
 문서의 목적과 주요 내용을 간략히 설명합니다.
@@ -61,11 +140,11 @@ ApplicationContext 인터페이스와 관련된 내용을 설명합니다.
 ## 참고자료
 - [참고자료 1](링크)
 - [참고자료 2](링크)
-</code></pre><ul><li>헤더<ul><li>문서의 제목과 섹션 제목은 각각 <code>#</code>와 <code>##</code>, <code>###</code>로 구분합니다.</li></ul></li><li>개요<ul><li>문서의 목적, 중요성, 다룰 내용을 간략히 소개합니다.</li></ul></li><li>주요 개념<ul><li>문서에서 다룰 주요 개념을 상세히 설명합니다.</li></ul></li><li>관련문서<ul><li>관련된 외부 문서나 추가 자료의 링크를 제공합니다.</li></ul></li><li>설명<ul><li>문서의 핵심 내용을 구체적으로 설명합니다.</li><li>필요에 따라 하위 섹션으로 나눕니다.</li></ul></li><li>참고자료<ul><li>문서 작성 시 참조한 자료나 독자가 추가로 참고할 수 있는 자료의 링크를 제공합니다.</li></ul></li></ul></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=문서-작성-규칙>문서 작성 규칙</h2><ul><li>파일명은 설명하는 내용을 간결하게 나타내도록 하며, 소문자와 하이픈(-)을 사용합니다.<ul><li>예) <code>ioc-container</code></li></ul></li><li>이미지 파일은 작성하는 폴더의 하위에 위치한 &lsquo;images&rsquo; 폴더에 저장하고, 문서에서 <code>![이미지 설명](이미지 파일 경로)</code> 형식을 사용합니다.<ul><li>예) <code>![IoC Container 구조](./images/ioc-container-structure.png)</code></li></ul></li><li>코드 예시는 삼중 백틱 <code>(```언어명```)</code> 으로 감싸서 표시합니다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Example</span> {
+</code></pre><ul><li>헤더<ul><li>문서의 제목과 섹션 제목은 각각 <code>#</code>와 <code>##</code>, <code>###</code>로 구분합니다.</li></ul></li><li>개요<ul><li>문서의 목적, 중요성, 다룰 내용을 간략히 소개합니다.</li></ul></li><li>주요 개념<ul><li>문서에서 다룰 주요 개념을 상세히 설명합니다.</li></ul></li><li>관련문서<ul><li>관련된 외부 문서나 추가 자료의 링크를 제공합니다.</li></ul></li><li>설명<ul><li>문서의 핵심 내용을 구체적으로 설명합니다.</li><li>필요에 따라 하위 섹션으로 나눕니다.</li></ul></li><li>참고자료<ul><li>문서 작성 시 참조한 자료나 독자가 추가로 참고할 수 있는 자료의 링크를 제공합니다.</li></ul></li></ul></div><div class="conts-wrap section-link" id=section_06><h2 class=sec-tit id=문서-작성-규칙>문서 작성 규칙</h2><ul><li>파일명은 설명하는 내용을 간결하게 나타내도록 하며, 소문자와 하이픈(-)을 사용합니다.<ul><li>예) <code>ioc-container</code></li></ul></li><li>이미지 파일은 작성하는 폴더의 하위에 위치한 &lsquo;images&rsquo; 폴더에 저장하고, 문서에서 <code>![이미지 설명](이미지 파일 경로)</code> 형식을 사용합니다.<ul><li>예) <code>![IoC Container 구조](./images/ioc-container-structure.png)</code></li></ul></li><li>코드 예시는 삼중 백틱 <code>(```언어명```)</code> 으로 감싸서 표시합니다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Example</span> {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
 </span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;Hello, World!&#34;</span>);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ul><li>외부 링크는 절대 경로를 사용하고, 내부 링크는 상대 경로를 사용합니다.<ul><li>예) <code>[Spring Framework Documentation](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html)</code></li></ul></li></ul></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=문장-구성-스타일-가이드>문장 구성 스타일 가이드</h2><ul><li>문체<ul><li>일관된 공식 문체를 사용하며, 기술 용어는 첫 사용 시 정의합니다.</li><li>문장은 격식을 유지하고, 신뢰감을 줄 수 있도록 작성합니다.</li><li>문장은 명확하고 간결하게 작성합니다. 복잡한 개념은 짧은 문장으로 나누어 설명하며, 가능한 한 간단하게 표현합니다.</li><li>일관된 용어와 표현을 사용하며, 문서 전체에서 동일한 어휘와 문체를 유지합니다.</li></ul></li><li>어조<ul><li>주관적인 의견을 피하고, 사실에 근거한 정보를 제공하며, 명확하고 중립적인 어조를 유지합니다.</li><li>내용을 잘 이해할 수 있도록 교육적이고 안내하는 어조를 사용합니다.</li></ul></li><li>예시<ul><li>&ldquo;Inversion of Control(역제어)은 객체의 생성 및 생명주기 관리를 개발자가 아닌 컨테이너가 담당하는 것을 의미한다.&rdquo;</li><li>&ldquo;Spring Framework의 IoC Container는 다양한 기능을 제공하며, 이를 통해 애플리케이션의 유연성과 확장성을 향상시킬 수 있다.&rdquo;</li><li>&ldquo;의존성 주입(Dependency Injection)은 빈 설정 정보를 바탕으로 컨테이너가 클래스 간의 의존 관계를 자동으로 연결해주는 방법이다.&rdquo;</li></ul></li></ul></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=예제-및-참고자료>예제 및 참고자료</h2><h3 class=sec-tit id=샘플-문서>샘플 문서</h3><ul><li><a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/intro/overview>표준프레임워크 실행환경 소개<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/foundation-layer-core/ioc-container>IoC Container<i class="svg-icon ico-go"></i></a></li></ul><h3 class=sec-tit id=참고자료>참고자료</h3><ul><li><a class="krds-btn medium text" href=https://www.markdownguide.org/basic-syntax/>Markdown 기본 문법<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://www.markdownguide.org/extended-syntax/>Markdown 고급 문법<i class="svg-icon ico-go"></i></a></li></ul></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
+</span></span></code></pre></div><ul><li>외부 링크는 절대 경로를 사용하고, 내부 링크는 상대 경로를 사용합니다.<ul><li>예) <code>[Spring Framework Documentation](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html)</code></li></ul></li></ul></div><div class="conts-wrap section-link" id=section_07><h2 class=sec-tit id=문장-구성-스타일-가이드>문장 구성 스타일 가이드</h2><ul><li>문체<ul><li>일관된 공식 문체를 사용하며, 기술 용어는 첫 사용 시 정의합니다.</li><li>문장은 격식을 유지하고, 신뢰감을 줄 수 있도록 작성합니다.</li><li>문장은 명확하고 간결하게 작성합니다. 복잡한 개념은 짧은 문장으로 나누어 설명하며, 가능한 한 간단하게 표현합니다.</li><li>일관된 용어와 표현을 사용하며, 문서 전체에서 동일한 어휘와 문체를 유지합니다.</li></ul></li><li>어조<ul><li>주관적인 의견을 피하고, 사실에 근거한 정보를 제공하며, 명확하고 중립적인 어조를 유지합니다.</li><li>내용을 잘 이해할 수 있도록 교육적이고 안내하는 어조를 사용합니다.</li></ul></li><li>예시<ul><li>&ldquo;Inversion of Control(역제어)은 객체의 생성 및 생명주기 관리를 개발자가 아닌 컨테이너가 담당하는 것을 의미한다.&rdquo;</li><li>&ldquo;Spring Framework의 IoC Container는 다양한 기능을 제공하며, 이를 통해 애플리케이션의 유연성과 확장성을 향상시킬 수 있다.&rdquo;</li><li>&ldquo;의존성 주입(Dependency Injection)은 빈 설정 정보를 바탕으로 컨테이너가 클래스 간의 의존 관계를 자동으로 연결해주는 방법이다.&rdquo;</li></ul></li></ul></div><div class="conts-wrap section-link" id=section_08><h2 class=sec-tit id=예제-및-참고자료>예제 및 참고자료</h2><h3 class=sec-tit id=샘플-문서>샘플 문서</h3><ul><li><a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/intro/overview>표준프레임워크 실행환경 소개<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/foundation-layer-core/ioc-container>IoC Container<i class="svg-icon ico-go"></i></a></li></ul><h3 class=sec-tit id=참고자료>참고자료</h3><ul><li><a class="krds-btn medium text" href=https://www.markdownguide.org/basic-syntax/>Markdown 기본 문법<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://www.markdownguide.org/extended-syntax/>Markdown 고급 문법<i class="svg-icon ico-go"></i></a></li></ul></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
 <a href="https://www.egovframe.go.kr/home/sub.do?menuNo=23" class="krds-btn small text">라이센스</a></div><p class=f-copy>COPYRIGHT (C) 2024 eGovFramework. ALL RIGHTS RESERVED.</p></div></div></div></footer></body></html>

@@ -1,8 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in 전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>kr</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in 전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>kr</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</guid><description>&lt;h1 id="markdown-frontmatter-작성방법">Markdown Frontmatter 작성방법&lt;/h1>
+&lt;h2 id="프론트매터frontmatter란">프론트매터(Frontmatter)란?&lt;/h2>
+&lt;p>프론트매터는 문서 상단에 아래처럼 작성된 코드 부분을 말한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">---&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">title&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">linkTitle&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">description&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">url&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">menu&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">depth&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">weight&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">parent&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">---&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>프론트매터는 문서의 제목, 속성 등의 메타데이터를 지정하기 위해 작성되는 코드를 말한다.
+&lt;code>---&lt;/code> 사이에 작성되며, Yaml 형식이 사용된다.&lt;/p>
+&lt;h2 id="프론트매터frontmatter-작성방법">프론트매터(Frontmatter) 작성방법&lt;/h2>
+&lt;h3 id="형식">형식&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">title&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;wiki의 제목&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">linkTitle&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;메뉴 등 링크에서 보여지는 이름&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">description&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;본문에 대한 요약&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">url&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://egovframework.github.io/egovframe-docs 이후부터 시작되는 url 경로&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">menu&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">depth&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;wiki의 제목&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">weight&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;사이드 네비게이션에 동일한 depth(=동일한 parent를 가진 자식)에서 정렬하는 순번&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">parent&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;부모 파일의 menu에 정의된 identifier 값&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;현재 파일의 id(자식 파일이 있을 때 필요)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>title&lt;/strong>&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
 &lt;ul>
-&lt;li>본 GitHub 저장소는 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 문서로 변환하여 기여받기 위해 생성되었습니다.&lt;/li>
-&lt;li>이 프로젝트의 목적은 보다 쉽게 접근할 수 있는 문서 형식을 통해 사용자와 개발자들이 표준프레임워크를 더욱 효과적으로 활용할 수 있도록 돕는 것입니다.&lt;/li>
-&lt;li>표준프레임워크 가이드 컨트리뷰션 범위는 실행환경 문서로 한정하여 시작하려 합니다.&lt;/li>
+&lt;li>본 GitHub 저장소 생성 목적은 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 형식의 문서로 변환하여 기여받는 것입니다.&lt;/li>
+&lt;li>이 프로젝트의 목적은 쉽게 접근 가능한 Markdown 형식의 문서를 통해 사용자와 개발자들이 표준프레임워크를 더욱 편리하게 활용할 수 있도록 돕는 것입니다.&lt;/li>
+&lt;li>이 프로젝트의 특징은 기여자가 문서 및 이미지를 기여하면 그 즉시 자동으로 배포되어 웹사이트를 통해 결과를 확인할 수 있는 것입니다.&lt;/li>
+&lt;li>2025년 표준프레임워크 가이드 컨트리뷰션 범위는 개발환경, 실행환경, 실행환경 예제, 공통컴포넌트입니다(2024년도에는 실행환경 문서로 한정).&lt;/li>
 &lt;/ul>
 &lt;h2 id="가이드-문서-보기">가이드 문서 보기&lt;/h2>
 &lt;ul>
@@ -29,13 +61,8 @@
 
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="문서-구조">문서 구조&lt;/h2>
-&lt;h3 id="파일-구조">파일 구조&lt;/h3>
-&lt;ul>
-&lt;li>문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.&lt;/li>
-&lt;li>현재 개발가이드와 유사하게 구성되어 있습니다.
-&lt;ul>
-&lt;li>
+&lt;h2 id="프론트매터frontmatter-작성-방법">프론트매터(Frontmatter) 작성 방법&lt;/h2>
+&lt;p>
 
 
 
@@ -53,249 +80,10 @@
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.2">https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.2&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/how-to-write-frontmatter/">프론트매터 작성 방법&lt;/a>
 
 
- 참조&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>/egovframe-runtime
- /batch-layer #배치처리
- /images
- /business-logic-layer #업무처리
- /images
- /foundation-layer-core #공통기반 핵심
- - ioc-container.md
- - ioc-container-basics.md
- - ioc-container-dependencies.md
- - ioc-container-bean-scope.md
- - customizing-the-nature-of-a-bean.md
- - ...
- - aop.md
- - aop-aspectj.md
- - aop-xmlschema.md
- - ...
- /images
- /foundation-layer #공통기반
- /images
- /integration-layer #연계통합
- /images
- /persistence-layer #데이터처리
- /images
- /presentation-layer #화면처리
- /images
-&lt;/code>&lt;/pre>&lt;h3 id="문서-구조-1">문서 구조&lt;/h3>
-&lt;ul>
-&lt;li>각 문서는 다음과 같은 구조와 템플릿을 따릅니다.&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code># [문서 제목]
-
-## 개요
-문서의 목적과 주요 내용을 간략히 설명합니다.
-
-## 주요 개념
-### [개념 1]
-개념 1에 대한 설명을 제공합니다.
-
-### [개념 2]
-개념 2에 대한 설명을 제공합니다.
-
-## 관련 문서
-- [문서 제목 1](링크)
-- [문서 제목 2](링크)
-
-## 설명
-문서의 주요 내용을 상세히 설명합니다. 필요 시 하위 섹션을 추가하여 내용을 체계적으로 나눕니다.
-
-### IoC Container of Spring Framework
-#### BeanFactory
-BeanFactory 인터페이스와 관련된 내용을 설명합니다.
-
-#### ApplicationContext
-ApplicationContext 인터페이스와 관련된 내용을 설명합니다.
-
-## 참고자료
-- [참고자료 1](링크)
-- [참고자료 2](링크)
-&lt;/code>&lt;/pre>&lt;ul>
-&lt;li>헤더
-&lt;ul>
-&lt;li>문서의 제목과 섹션 제목은 각각 &lt;code>#&lt;/code>와 &lt;code>##&lt;/code>, &lt;code>###&lt;/code>로 구분합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>개요
-&lt;ul>
-&lt;li>문서의 목적, 중요성, 다룰 내용을 간략히 소개합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>주요 개념
-&lt;ul>
-&lt;li>문서에서 다룰 주요 개념을 상세히 설명합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>관련문서
-&lt;ul>
-&lt;li>관련된 외부 문서나 추가 자료의 링크를 제공합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>설명
-&lt;ul>
-&lt;li>문서의 핵심 내용을 구체적으로 설명합니다.&lt;/li>
-&lt;li>필요에 따라 하위 섹션으로 나눕니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>참고자료
-&lt;ul>
-&lt;li>문서 작성 시 참조한 자료나 독자가 추가로 참고할 수 있는 자료의 링크를 제공합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="문서-작성-규칙">문서 작성 규칙&lt;/h2>
-&lt;ul>
-&lt;li>파일명은 설명하는 내용을 간결하게 나타내도록 하며, 소문자와 하이픈(-)을 사용합니다.
-&lt;ul>
-&lt;li>예) &lt;code>ioc-container.md&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>이미지 파일은 작성하는 폴더의 하위에 위치한 &amp;lsquo;images&amp;rsquo; 폴더에 저장하고, 문서에서 &lt;code>![이미지 설명](이미지 파일 경로)&lt;/code> 형식을 사용합니다.
-&lt;ul>
-&lt;li>예) &lt;code>![IoC Container 구조](./images/ioc-container-structure.png)&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>코드 예시는 삼중 백틱 &lt;code>(```언어명```)&lt;/code> 으로 감싸서 표시합니다.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Example&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>외부 링크는 절대 경로를 사용하고, 내부 링크는 상대 경로를 사용합니다.
-&lt;ul>
-&lt;li>예) &lt;code>[Spring Framework Documentation](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html)&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="문장-구성-스타일-가이드">문장 구성 스타일 가이드&lt;/h2>
-&lt;ul>
-&lt;li>문체
-&lt;ul>
-&lt;li>일관된 공식 문체를 사용하며, 기술 용어는 첫 사용 시 정의합니다.&lt;/li>
-&lt;li>문장은 격식을 유지하고, 신뢰감을 줄 수 있도록 작성합니다.&lt;/li>
-&lt;li>문장은 명확하고 간결하게 작성합니다. 복잡한 개념은 짧은 문장으로 나누어 설명하며, 가능한 한 간단하게 표현합니다.&lt;/li>
-&lt;li>일관된 용어와 표현을 사용하며, 문서 전체에서 동일한 어휘와 문체를 유지합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>어조
-&lt;ul>
-&lt;li>주관적인 의견을 피하고, 사실에 근거한 정보를 제공하며, 명확하고 중립적인 어조를 유지합니다.&lt;/li>
-&lt;li>내용을 잘 이해할 수 있도록 교육적이고 안내하는 어조를 사용합니다.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>예시
-&lt;ul>
-&lt;li>&amp;ldquo;Inversion of Control(역제어)은 객체의 생성 및 생명주기 관리를 개발자가 아닌 컨테이너가 담당하는 것을 의미한다.&amp;rdquo;&lt;/li>
-&lt;li>&amp;ldquo;Spring Framework의 IoC Container는 다양한 기능을 제공하며, 이를 통해 애플리케이션의 유연성과 확장성을 향상시킬 수 있다.&amp;rdquo;&lt;/li>
-&lt;li>&amp;ldquo;의존성 주입(Dependency Injection)은 빈 설정 정보를 바탕으로 컨테이너가 클래스 간의 의존 관계를 자동으로 연결해주는 방법이다.&amp;rdquo;&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="예제-및-참고자료">예제 및 참고자료&lt;/h2>
-&lt;h3 id="샘플-문서">샘플 문서&lt;/h3>
-&lt;ul>
-&lt;li>
-
-
-
- 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-&lt;a href="https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/intro/overview.md">표준프레임워크 실행환경 소개&lt;/a>
-
-
-&lt;/li>
-&lt;li>
-
-
-
- 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-&lt;a href="https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/foundation-layer-core/ioc-container.md">IoC Container&lt;/a>
-
-
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="참고자료">참고자료&lt;/h3>
-&lt;ul>
-&lt;li>
-
-
-
- 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-&lt;a href="https://www.markdownguide.org/basic-syntax/">Markdown 기본 문법&lt;/a>
-
-
-&lt;/li>
-&lt;li>
-
-
-
- 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-&lt;a href="https://www.markdownguide.org/extended-syntax/">Markdown 고급 문법&lt;/a>
-
-
-&lt;/li>
-&lt;/ul></description></item><item><title>Authorization</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</guid><description>&lt;h1 id="authorization">Authorization&lt;/h1>
+을 참고해 주시기 바랍니다.&lt;/p></description></item><item><title>Authorization</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</guid><description>&lt;h1 id="authorization">Authorization&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>웹 사이트에 존재하는 모든 사용자들은 사이트 정책에 따라 그 부류 별로 컨텐츠에 대한 접근이 제한 되는데 이것을 권한 부여(authorization)라 한다.
 즉, 권한은 특정 사용자가 웹 사이트에서 제공하는 컨텐츠(정보 또는 기능)에 접근 가능한지를 판단하는 과정을 의미한다.&lt;/p>
@@ -1276,7 +1064,7 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 &lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Center-Cut Process Step은 큐에서 들어온 데이터를 읽고 처리 모듈(Busineess Proc)를 활용하여 데이터를 처리하는 구조이다.&lt;/p></description></item><item><title>Change Management</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</guid><description/></item><item><title>Code Genetation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/</guid><description/></item><item><title>Code Inspection</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/</guid><description/></item><item><title>Code Base Exception</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-code_base_exception/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-code_base_exception/</guid><description>&lt;h1 id="code-base-exception">Code Base Exception&lt;/h1>
+&lt;p>Center-Cut Process Step은 큐에서 들어온 데이터를 읽고 처리 모듈(Busineess Proc)를 활용하여 데이터를 처리하는 구조이다.&lt;/p></description></item><item><title>Change Management</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</guid><description/></item><item><title>Cloud Data Stream</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/cloud-data-stream/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/integration-layer/cloud-data-stream/</guid><description/></item><item><title>Code Genetation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/</guid><description/></item><item><title>Code Inspection</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/</guid><description/></item><item><title>Code Base Exception</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-code_base_exception/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-code_base_exception/</guid><description>&lt;h1 id="code-base-exception">Code Base Exception&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치 처리시 Code 기반으로 에러를 처리 할 수 있도록 EgovBatchException를 통해서 지원한다.
 데이터베이스 에러코드관리 테이블을 등록과 에러코드 데이터를 등록이 선행 되야지만 해당 서비스를 사용가능하다.&lt;/p>
@@ -1454,7 +1242,7 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/configuration&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>
-&lt;p>properties : 표준 java properties (key=value 형태)파일에 대한 연결을 지원하며 설정 파일내에서 ${key} 와 같은 형태로 properties 형태로 외부화해놓은 실제 값(여기서는 DB 접속 관련 driver, url, id/pw)을 참조할 수 있다. resource 속성으로 classpath, url 속성으로 유효한 URL 상에 있는 자원을 지정 가능하다.&lt;/p></description></item><item><title>Console</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/console/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/console/</guid><description/></item><item><title>Controller</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-controller/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-controller/</guid><description>&lt;h1 id="controller">Controller&lt;/h1>
+&lt;p>properties : 표준 java properties (key=value 형태)파일에 대한 연결을 지원하며 설정 파일내에서 ${key} 와 같은 형태로 properties 형태로 외부화해놓은 실제 값(여기서는 DB 접속 관련 driver, url, id/pw)을 참조할 수 있다. resource 속성으로 classpath, url 속성으로 유효한 URL 상에 있는 자원을 지정 가능하다.&lt;/p></description></item><item><title>Controller</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-controller/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-controller/</guid><description>&lt;h1 id="controller">Controller&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>DispatcherServlet은 HandlerMapping를 이용해서 해당 요청을 처리할 Controller를 결정한다.
 이 Controller는 요청에 대해서 처리를 하고 데이터를 Model 객체에 반영한다.
@@ -6755,7 +6543,7 @@ DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 
 &lt;p>HTTP 는 초기 handshake (protocol upgrade or switch 요청이고 서버가 동의하는 경우 101 응답을 내려 줌)를 위해서만 사용되며, handshake 가 성공하면 HTTP upgrade 요청에 기인하는 TCP 소켓이 open 된 채 서버와 클라이언트간 통신을 처리한다.&lt;/p></description></item><item><title>XML Manipulation Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</guid><description>&lt;h1 id="xml-manipulation-service">XML Manipulation Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>XML Manipulation 서비스는 XML을 생성하고, 읽고, 쓰는 등과 같은 기능과 조작 기능을 제공하는 서비스이다.
-XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다.XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.XML은 주로 다른 시스템, 특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다. XML은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다. XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>데이터 엑세스 예제(Data Access Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</guid><description>&lt;h1 id="데이터-엑세스-예제data-access-example">데이터 엑세스 예제(Data Access Example)&lt;/h1>
+XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다.XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.XML은 주로 다른 시스템, 특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다. XML은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다. XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>데이터 엑세스 예제(Data Access Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</guid><description>&lt;h1 id="데이터-엑세스-예제data-access-example">데이터 엑세스 예제(Data Access Example)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>iBatis를 사용하여 Database에 데이터를 조회, 생성, 수정, 삭제하는 기능에 대한 예제를 제공한다. SQL Mapping을 통하여 쿼리 및 데이터 매핑을 정의하고, 스프링의 Data Source를 사용하여 Connection을 획득한 뒤, DAO 클래스에서 주어진 메소드를 사용하여 CRUD 작업을 수행한다. 조회 결과를 화면에 출력하거나 화면에서 작성된 입력 내용을 데이터베이스에 반영하는 기능의 예제를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -6768,9 +6556,9 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;li>[등록] 버튼을 눌러 공시 등록페이지를 호출하고, 내용을 작성한다.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/persistence-layer/images/dataacess-2.png" alt="dataacess-2" >
-&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>메뉴관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</guid><description/></item><item><title>메세지 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</guid><description/></item><item><title>UX/UI Controller Component</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</guid><description>&lt;h1 id="uxui-controller-component">UX/UI Controller Component&lt;/h1>
+&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>메뉴관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</guid><description/></item><item><title>메시지 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</guid><description/></item><item><title>UX/UI Controller Component</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</guid><description>&lt;h1 id="uxui-controller-component">UX/UI Controller Component&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>전자정부에서 효율적인 스마트 전자정부 기반시스템의 구축•운영을 통해 전자정부의 서비스 품질 UX 레이어는 UI/UX Controller Component, JavaScript Module App Framework, HTML5, CSS3 서비스를 제공한다. 오픈소스는 JQuery Mobile을 채택하였으며 jQuery Mobile은 html5, CSS3, javascript를 제공한다. 오픈 소스를 Customizing 하여 UI레이어의 기능을 사용 하며 내용은 아래와 같다 UI/UX Controller Component 모바일 웹 사용자 환경(UX/UI)에 대한 유연한 대응을 위해 Touch Optimized 된 필수 UI 컨트롤러 컴포넌트를 제공한다. HTML5는 모바일 웹 페이지 구성 시 사용 할 수 있는 마크업 언어로서 모바일 특화 태그 밑 디바이스 API를 제공한다. CSS3는 모바일 기기 및 브라우저에 따라 적합한 컴포넌트가 보여지는 기능을 제공한다. 또한 JavaScript Module App Framework UX/UI controller component의 효율성을 보장하는 javascript 밑 Json 구조를 제공한다.&lt;/p></description></item><item><title>문자메세지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</guid><description/></item><item><title>병행처리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</guid><description>&lt;h1 id="병행처리">병행처리&lt;/h1>
+&lt;p>전자정부에서 효율적인 스마트 전자정부 기반시스템의 구축•운영을 통해 전자정부의 서비스 품질 UX 레이어는 UI/UX Controller Component, JavaScript Module App Framework, HTML5, CSS3 서비스를 제공한다. 오픈소스는 JQuery Mobile을 채택하였으며 jQuery Mobile은 html5, CSS3, javascript를 제공한다. 오픈 소스를 Customizing 하여 UI레이어의 기능을 사용 하며 내용은 아래와 같다 UI/UX Controller Component 모바일 웹 사용자 환경(UX/UI)에 대한 유연한 대응을 위해 Touch Optimized 된 필수 UI 컨트롤러 컴포넌트를 제공한다. HTML5는 모바일 웹 페이지 구성 시 사용 할 수 있는 마크업 언어로서 모바일 특화 태그 밑 디바이스 API를 제공한다. CSS3는 모바일 기기 및 브라우저에 따라 적합한 컴포넌트가 보여지는 기능을 제공한다. 또한 JavaScript Module App Framework UX/UI controller component의 효율성을 보장하는 javascript 밑 Json 구조를 제공한다.&lt;/p></description></item><item><title>문자메세지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</guid><description/></item><item><title>배치관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</guid><description/></item><item><title>병행처리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</guid><description>&lt;h1 id="병행처리">병행처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>대용량 데이터를 처리하는 배치수행에서 병렬처리를 이용하면, Job의 구성요소들이 여러 쓰레드 분산수행되어 빠른 시간 내에 효율적으로 작업을 완료할 수 있다.
 스프링 배치에서 병렬처리 방식은 실행 유형별로 멀티쓰레드 방식, Parallel 방식, 파티셔닝 방식 등이 있다.&lt;/p>
@@ -7082,7 +6870,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 &lt;/li>
-&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>인쇄/출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</guid><description/></item><item><title>인터페이스 화면</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</guid><description/></item><item><title>일반 로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</guid><description/></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description/></item><item><title>주소록/명함록</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</guid><description/></item><item><title>MyBatis 주요 변경점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</guid><description>&lt;h1 id="mybatis-주요-변경점">MyBatis 주요 변경점&lt;/h1>
+&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>인쇄/출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</guid><description/></item><item><title>인터페이스/화면</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</guid><description/></item><item><title>일반 로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</guid><description/></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description/></item><item><title>주소록/명함록</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</guid><description/></item><item><title>MyBatis 주요 변경점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</guid><description>&lt;h1 id="mybatis-주요-변경점">MyBatis 주요 변경점&lt;/h1>
 &lt;p>본 가이드는 MyBatis와 iBatis의 차이점을 설명한다.&lt;/p>
 &lt;h2 id="변경된-용어종합">변경된 용어(종합)&lt;/h2>
 &lt;table>
