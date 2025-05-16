@@ -113,7 +113,7 @@
             {{ $gh_repo_path = replaceRE "//+" "/" $gh_repo_path -}}
             {{ $gh_repo_path = replace $gh_repo_path "content/" "" -}}
 
-            {{ $viewURL := printf "%s/tree/%s" $gh_repo $gh_repo_path -}}
+            {{ $viewURL := printf "%s/blob/%s" $gh_repo $gh_repo_path -}}
             {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
           
             {{ $issuesURL := printf "%s/issues/new?title=%s" $gh_repo (safeURL $.Title ) -}}

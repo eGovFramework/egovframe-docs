@@ -31,7 +31,7 @@
     <!-- url에서 "content/"를 지우기 위해 아래 한 줄 추가 -->
     {{ $gh_repo_path = replace $gh_repo_path "content/" "" -}}
 
-    {{ $viewURL := printf "%s/tree/%s" $gh_repo $gh_repo_path -}}
+    {{ $viewURL := printf "%s/blob/%s" $gh_repo $gh_repo_path -}}
     {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
   
     {{ $issuesURL := printf "%s/issues/new?title=%s" $gh_repo (safeURL $.Title ) -}}
