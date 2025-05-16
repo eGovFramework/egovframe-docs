@@ -277,4 +277,4 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
 
 ## 참고자료
 
-- [RESTful 예제](./rex-restful-example.md)
+- [RESTful 예제](../../runtime-example/individual-example/integration-layer/restful-example/)

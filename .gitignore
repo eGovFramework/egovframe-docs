@@ -1,1 +1,47 @@
+# macOS 시스템 파일
 .DS_Store
+._.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# Spotlight 검색 인덱스
+.Spotlight-V100
+
+# Thumbnail 캐시
+._*
+
+# macOS에서 응용 프로그램 상태 저장
+.Trashes
+.fseventsd
+.com.apple.timemachine.donotpresent
+
+# macOS에서 resource fork가 저장되는 파일
+Icon?
+
+# Windows Thumbnail 캐시
+Thumbs.db
+ehthumbs.db
+
+# Windows 시스템 파일
+Desktop.ini
+
+# Windows Recycle Bin 정보
+$RECYCLE.BIN/
+
+# Windows에서 숨김 속성이 있는 파일
+*.lnk
+
+# 로그 파일
+*.log
+
+# IDE 및 편집기 설정
+.vscode/
+.idea/
+
+# 임시 디렉토리
+tmp/
+temp/
+*.tmp
+
+# 빌드 결과물
+public/

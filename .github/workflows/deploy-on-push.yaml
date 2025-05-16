@@ -1,0 +1,58 @@
+name: Deploy Hugo site to GitHub Pages on push
+
+on:
+  push:
+    branches:
+      - main  # comtribution 브랜치에 push가 있을 때 트리거
+  workflow_dispatch:  # 수동 실행을 위한 트리거
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+    # Step 1. Hugo 프로젝트가 있는 hugo-project 브랜치 체크아웃
+    - name: Checkout the hugo-project branch
+      uses: actions/checkout@v3
+      with:
+        ref: hugo-project  # hugo 프로젝트가 위치한 브랜치
+        persist-credentials: false  # GitHub 인증 문제 방지
+        submodules: true  # 서브모듈도 함께 체크아웃
+
+    # Step 2. main 브랜치에서 markdown 파일들만 체크아웃
+    - name: Checkout the main branch for markdown files
+      uses: actions/checkout@v3
+      with:
+        ref: main  # main 브랜치에서 파일 가져오기
+        path: main-md  # 임시로 main 브랜치의 markdown 파일을 저장할 위치
+
+    # Step 3. main 브랜치의 markdown 파일들을 content 디렉토리로 복사
+    - name: Copy markdown files to content
+      run: |
+        mkdir -p content  # 필요한 디렉토리 생성
+        cp -r main-md/. content/  # main-md 폴더 이하의 모든 파일과 하위 디렉토리까지 포함하여 복사
+    
+    # Step 4. Node.js 설치
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # 안정적인 최신 버전의 Node.js 설치
+      
+    # Step 5. Hugo 설치
+    - name: Install Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: "0.139.0"
+        extended: true  # Hugo Extended 버전 설치
+
+    # Step 6. Hugo 빌드
+    - name: Build the site
+      run: hugo --minify
+
+    # Step 7. 빌드 결과물을 gh-pages 브랜치로 배포
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_GITHUBAPI_ACCESS_TOKEN }} # 깃허브 actions secret
+        publish_dir: ./public
+        publish_branch: gh-pages

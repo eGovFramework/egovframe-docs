@@ -49,4 +49,4 @@ Spring 3.0에서 새롭게 추가된 Restful 웹서비스 지원기능을 이용
 
 ## 참고자료
 
-- [Restful 가이드](./restful.md)
+- [Restful 가이드](../../../egovframe-runtime/integration-layer/restful.md)

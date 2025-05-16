@@ -197,7 +197,7 @@ public class EgovEventNoticeTriggerFunctionalTests extends EgovAbstractIoSampleT
 ![eventnoticetrigger1](./images/eventnoticetrigger1.png)
 
 ## 참고자료
-- [이벤트알림 템플릿 관리](../../../egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt.md)
+- [이벤트알림 템플릿 관리](/egovframe-runtime/batch-layer/batch-core-event_notice_template_mgmt.md)
 - SMTP 서버
   - naver SMTP 서버 : smtp.naver.com
   - daum SMTP 서버 : smtp.hanmail.net
