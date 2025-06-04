@@ -5,7 +5,6 @@ description: "인증서로그인은 기존 GPKI 인증서 로그인과 동일한
 url: /common-component/user-authentication/certificate-login/
 menu:
   depth:
-    name: certificate-login
     weight: 2
     parent: user-authentication
 ---
