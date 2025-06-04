@@ -5,7 +5,6 @@ description: "로그인정책관리는 특정 IP에 대한 로그인 제한과 �
 url: /common-component/user-authentication/access-policy/
 menu:
   depth:
-    name: access-policy
     weight: 3
     parent: user-authentication
 ---
