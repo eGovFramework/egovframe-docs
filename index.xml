@@ -6556,7 +6556,19 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;li>[등록] 버튼을 눌러 공시 등록페이지를 호출하고, 내용을 작성한다.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/persistence-layer/images/dataacess-2.png" alt="dataacess-2" >
-&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>메뉴관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</guid><description/></item><item><title>메시지 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</guid><description/></item><item><title>UX/UI Controller Component</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</guid><description>&lt;h1 id="uxui-controller-component">UX/UI Controller Component&lt;/h1>
+&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>&lt;strong>로그인정책관리&lt;/strong>는 특정 IP에 대한 로그인 제한과 같은 사용자 로그인 정책을 정의하고, 정의된 정책에 맞게 로그인을 제한하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>로그인정책관리&lt;/strong>는 로그인정책정보를 등록하여 모든 사용자에게 로그인에 대한 정책을 관리하기 위한 목적으로 로그인정책정보의 &lt;strong>등록, 수정, 삭제, 조회, 목록조회&lt;/strong>의 기능을 수반한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> ① 로그인정책목록조회 : 사용자 로그인 정책으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과를 화면에 반영한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 로그인정책등록 : 사용자 로그인 정책으로 정의된 항목을 입력하고, 정합성을 체크한 뒤 저장한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 로그인정책수정 : 정의된 사용자 로그인 정책에 대한 변경항목을 수정 후 저장한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 로그인정책삭제 : 기 등록된 사용자 로그인 정책을 삭제한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 로그인정책반영결과조회 : 등록된 사용자 로그인 정책을 운영시스템에 반영하고 그 결과를 조회한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>로그인정책관리 패키지는 요소기술의 공통(cmm) 패키지와 로그인 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>메뉴관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</guid><description/></item><item><title>메시지 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</guid><description/></item><item><title>UX/UI Controller Component</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</guid><description>&lt;h1 id="uxui-controller-component">UX/UI Controller Component&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부에서 효율적인 스마트 전자정부 기반시스템의 구축•운영을 통해 전자정부의 서비스 품질 UX 레이어는 UI/UX Controller Component, JavaScript Module App Framework, HTML5, CSS3 서비스를 제공한다. 오픈소스는 JQuery Mobile을 채택하였으며 jQuery Mobile은 html5, CSS3, javascript를 제공한다. 오픈 소스를 Customizing 하여 UI레이어의 기능을 사용 하며 내용은 아래와 같다 UI/UX Controller Component 모바일 웹 사용자 환경(UX/UI)에 대한 유연한 대응을 위해 Touch Optimized 된 필수 UI 컨트롤러 컴포넌트를 제공한다. HTML5는 모바일 웹 페이지 구성 시 사용 할 수 있는 마크업 언어로서 모바일 특화 태그 밑 디바이스 API를 제공한다. CSS3는 모바일 기기 및 브라우저에 따라 적합한 컴포넌트가 보여지는 기능을 제공한다. 또한 JavaScript Module App Framework UX/UI controller component의 효율성을 보장하는 javascript 밑 Json 구조를 제공한다.&lt;/p></description></item><item><title>문자메세지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</guid><description/></item><item><title>배치관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</guid><description/></item><item><title>병행처리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</guid><description>&lt;h1 id="병행처리">병행처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
@@ -6870,7 +6882,101 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 &lt;/li>
-&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>인쇄/출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</guid><description/></item><item><title>인터페이스/화면</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</guid><description/></item><item><title>일반 로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</guid><description>&lt;h1 id="일반-로그인-서비스">일반 로그인 서비스&lt;/h1>
+&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>인쇄/출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</guid><description/></item><item><title>인증서로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/certificate-login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/certificate-login/</guid><description>&lt;h1 id="인증서로그인">인증서로그인&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>인증서로그인은 기존 **
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:gpki_%EC%9D%B8%EC%A6%9D%EC%84%9C_%EB%A1%9C%EA%B7%B8%EC%9D%B8">GPKI 인증서 로그인&lt;/a>
+
+
+**과 동일한 기능을 제공한다. 다만, GPKI 인증서 로그인의 경우 행정전자서명 인증관리센터에서 배포하는 표준보안 API를 사용한다. 해당 API와 관련한 구체적인 사항은 GPKI 인증서 로그인 서비스의 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:gpki_%EC%9D%B8%EC%A6%9D%EC%84%9C_%EB%A1%9C%EA%B7%B8%EC%9D%B8#%ea%b0%9c%ec%9a%94">개요&lt;/a>
+
+
+ 또는 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:gpki_%EC%9D%B8%EC%A6%9D%EC%84%9C_%EB%A1%9C%EA%B7%B8%EC%9D%B8#%ec%a0%84%ec%a0%9c%ec%a1%b0%ea%b1%b4">전제조건&lt;/a>
+
+
+ 등을 참조한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>인증서로그인를 행정전자서명 인증관리센터(
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://www.gpki.go.kr">www.gpki.go.kr&lt;/a>
+
+
+)에서 제공하는 GPKISecureWeb 모듈을 통해 인증서로그인 기능을 제공한다. (NPKI 및 GPKI 지원)&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>로그인 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>인터페이스/화면</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/</guid><description/></item><item><title>일반 로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login/</guid><description>&lt;h1 id="일반-로그인-서비스">일반 로그인 서비스&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>로그인 방식은 가입시 작성한 아이디와 비밀번호를 통한 로그인(이하 일반로그인)이다. 일반로그인은 사용자의 분류(일반 회원, 기업 회원, 업무 사용자)에 따라 접속하는 화면이 다르게 구성되어 있다.&lt;/p>
 &lt;ul>
