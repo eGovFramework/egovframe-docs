@@ -1,16 +1,14 @@
 ---
-  title: 로그인정책관리
-  linkTitle: 로그인정책관리
-  description: "로그인정책관리는 특정 IP에 대한 로그인 제한과 같은 사용자 로그인 정책을 정의하고, 정의된 정책에 맞게 로그인을 제한하는 기능을 제공한다."
-  url: common-component/user-authentication/access-policy
-  menu:
-    depth:
-      weight: 1
-      parent: user-authentication
-      identifier: access-policy
-  ---
-  
-  
+title: 로그인정책관리
+linkTitle: 로그인정책관리
+description: "로그인정책관리는 특정 IP에 대한 로그인 제한과 같은 사용자 로그인 정책을 정의하고, 정의된 정책에 맞게 로그인을 제한하는 기능을 제공한다."
+url: /common-component/user-authentication/access-policy/
+menu:
+  depth:
+    name: access-policy
+    weight: 3
+    parent: user-authentication
+---
 
 # 로그인정책 관리
 
