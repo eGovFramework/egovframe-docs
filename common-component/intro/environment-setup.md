@@ -2,7 +2,7 @@
 title: "공통컴포넌트 환경설정"
 linkTitle: "환경설정"
 description: "공통컴포넌트의 개발 및 운영 환경 설정 방법에 대해 설명합니다."
-url: /common-component/intro/environment-setup/
+url: /common-component/common-intro/environment-setup/
 menu:
   depth:
     name: "공통컴포넌트 환경설정"
@@ -14,7 +14,7 @@ menu:
 
 ## 개요
 
-표준프레임워크 4.3에서는 다음과 같은 방법으로 환경설정을 할 수 있습니다:
+표준프레임워크 4.3에서는 다음과 같은 방법으로 환경설정을 할 수 있다.
 
 - web.xml 및 context-egovuserdetailshelper.xml 파일을 통한 설정
 - Servlet 3.1 기능을 활용한 globals.properties를 통한 설정 간소화
@@ -23,15 +23,15 @@ menu:
 
 ### 데이터베이스 설정
 
-globals.properties 설정파일을 기준으로 spring profile 서비스를 이용하여 데이터베이스 환경을 설정합니다.
+globals.properties 설정파일을 기준으로 spring profile 서비스를 이용하여 데이터베이스 환경을 설정한다.
 
-- Globals.DbType 기준으로 context-datasource.xml 파일에 설정된 Spring Profile 기능에 의해 dataSource 빈이 활성화됩니다.
-- 이 기능을 통해 테스트DB, 검증DB, 운영DB로 분리가 가능합니다.
+- Globals.DbType 기준으로 context-datasource.xml 파일에 설정된 Spring Profile 기능에 의해 dataSource 빈이 활성화된다.
+- 이 기능을 통해 테스트DB, 검증DB, 운영DB로 분리가 가능하다.
 
 ### 인증/권한방식 설정
 
 표준프레임워크 3.5 이하 버전에서 개발자가 수동으로 관련 XML 설정하던 불편한 점을
-표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있습니다.
+표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있다.
 
 - dummy: 더미 방식으로 사용자 권한을 인증
 - session: 세션 방식으로 사용자 권한을 인증
@@ -39,7 +39,7 @@ globals.properties 설정파일을 기준으로 spring profile 서비스를 이�
 
 ### 로그인 인증 제한
 
-무차별적인 로그인 시도에 대한 차단 기능을 제공합니다.
+무차별적인 로그인 시도에 대한 차단 기능을 제공한다.
 
 - Globals.login.Lock: 사용/미사용 설정 (기본값: true)
 - Globals.login.LockCount: 인증 시도 횟수 설정 (기본값: 5)
@@ -70,8 +70,8 @@ Globals.mysql.Password =
 #goldilocks
 ```
 
-데이터베이스 변경 시 pom.xml에 해당 JDBC 드라이버 의존성을 추가해야 합니다
-3rd party library의 경우에는 직접 Local Repository에 library를 넣어 주거나 Nexus서버를 구성하여 다운로드 받을 수 있습니다. Nexus에 대한 자세한 설정은 [개발환경의 Nexus 페이지](/egovframe-development/deployment-tool/nexus.md)를 참조합니다.
+데이터베이스 변경 시 pom.xml에 해당 JDBC 드라이버 의존성을 추가해야 한다.
+3rd party library의 경우에는 직접 Local Repository에 library를 넣어 주거나 Nexus서버를 구성하여 다운로드 받을 수 있다. Nexus에 대한 자세한 설정은 [개발환경의 Nexus 페이지](/egovframe-development/deployment-tool/nexus.md)를 참조한다.
 
 ```xml
 <!-- mysql -->
@@ -126,12 +126,9 @@ Globals.mysql.Password =
 
 ### 2. 인증/권한방식 설정
 
-Servlet 3.1 도입으로 web.xml을 dynamic하게 설정 가능하여 간소화가 가능해 졌습니다.
-WebApplicationInitializer를 통해 egovframework.com.cmm.config.EgovWebApplicationInitializer 클래스에 의하여 설정 파일이 동적으로 설정 됩니다.
-security 모드일때 DelegatingFilterProxy, EgovSpringSecurityLoginFilter, EgovSpringSecurityLogoutFilter의 설정내역이 FilterRegistration 빈에 등록 됩니다.
-Spring Profile 기능으로 인증/권한방식에 따라서 egovUserDetailsHelper 빈을 동적으로 생성 합니다.
+Servlet 3.1 도입으로 web.xml을 dynamic하게 설정 가능하여 간소화가 가능해 졌다. WebApplicationInitializer를 통해 egovframework.com.cmm.config.EgovWebApplicationInitializer 클래스에 의하여 설정 파일이 동적으로 설정된다. security 모드일때 DelegatingFilterProxy, EgovSpringSecurityLoginFilter, EgovSpringSecurityLogoutFilter의 설정내역이 FilterRegistration 빈에 등록된다. Spring Profile 기능으로 인증/권한방식에 따라서 egovUserDetailsHelper 빈을 동적으로 생성한다.
 
-globals.properties 파일에 다음과 같이 설정합니다:
+globals.properties 파일에 다음과 같이 설정한다.
 
 ```properties
 # 인증/권한 인증방식(dummy, session, security)
