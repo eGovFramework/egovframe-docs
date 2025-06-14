@@ -5,8 +5,8 @@ description: "공통컴포넌트 v4.3 가이드는 공통컴포넌트 v4.3에 �
 url: /common-component/common-intro/
 menu:
   depth:
+    name: "공통컴포넌트 개요"
     weight: 1
     parent: "common-component"
     identifier: "common-intro"
 ---
-
