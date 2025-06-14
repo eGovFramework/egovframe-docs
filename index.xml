@@ -6576,7 +6576,1232 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>로그인정책관리 패키지는 요소기술의 공통(cmm) 패키지와 로그인 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>메뉴관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/menu-manage/</guid><description/></item><item><title>메시지 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/</guid><description/></item><item><title>UX/UI Controller Component</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/uxui-controller-component/</guid><description>&lt;h1 id="uxui-controller-component">UX/UI Controller Component&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>전자정부에서 효율적인 스마트 전자정부 기반시스템의 구축•운영을 통해 전자정부의 서비스 품질 UX 레이어는 UI/UX Controller Component, JavaScript Module App Framework, HTML5, CSS3 서비스를 제공한다. 오픈소스는 JQuery Mobile을 채택하였으며 jQuery Mobile은 html5, CSS3, javascript를 제공한다. 오픈 소스를 Customizing 하여 UI레이어의 기능을 사용 하며 내용은 아래와 같다 UI/UX Controller Component 모바일 웹 사용자 환경(UX/UI)에 대한 유연한 대응을 위해 Touch Optimized 된 필수 UI 컨트롤러 컴포넌트를 제공한다. HTML5는 모바일 웹 페이지 구성 시 사용 할 수 있는 마크업 언어로서 모바일 특화 태그 밑 디바이스 API를 제공한다. CSS3는 모바일 기기 및 브라우저에 따라 적합한 컴포넌트가 보여지는 기능을 제공한다. 또한 JavaScript Module App Framework UX/UI controller component의 효율성을 보장하는 javascript 밑 Json 구조를 제공한다.&lt;/p></description></item><item><title>문자메세지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</guid><description/></item><item><title>배치관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</guid><description/></item><item><title>병행처리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</guid><description>&lt;h1 id="병행처리">병행처리&lt;/h1>
+&lt;p>전자정부에서 효율적인 스마트 전자정부 기반시스템의 구축•운영을 통해 전자정부의 서비스 품질 UX 레이어는 UI/UX Controller Component, JavaScript Module App Framework, HTML5, CSS3 서비스를 제공한다. 오픈소스는 JQuery Mobile을 채택하였으며 jQuery Mobile은 html5, CSS3, javascript를 제공한다. 오픈 소스를 Customizing 하여 UI레이어의 기능을 사용 하며 내용은 아래와 같다 UI/UX Controller Component 모바일 웹 사용자 환경(UX/UI)에 대한 유연한 대응을 위해 Touch Optimized 된 필수 UI 컨트롤러 컴포넌트를 제공한다. HTML5는 모바일 웹 페이지 구성 시 사용 할 수 있는 마크업 언어로서 모바일 특화 태그 밑 디바이스 API를 제공한다. CSS3는 모바일 기기 및 브라우저에 따라 적합한 컴포넌트가 보여지는 기능을 제공한다. 또한 JavaScript Module App Framework UX/UI controller component의 효율성을 보장하는 javascript 밑 Json 구조를 제공한다.&lt;/p></description></item><item><title>문자메세지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/</guid><description/></item><item><title>배치관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/</guid><description/></item><item><title>공통컴포넌트 배포 파일의 구성</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/intro/deployment-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/intro/deployment-structure/</guid><description>&lt;h1 id="공통컴포넌트-배포파일의-구성">공통컴포넌트 배포파일의 구성&lt;/h1>
+&lt;h2 id="배포파일-패키지-테이블-간-관계">배포파일, 패키지, 테이블 간 관계&lt;/h2>
+&lt;p>배포파일을 구성할 때에 패키지간의 종속성과 업무적 연관성을 포함하여 구성하였습니다. 한 개의 배포파일은 독립적으로 설치하여 동작할 수 있으며, 2개 이상의 배포파일을 설치할 때에는 환경설정에 유의하여야 합니다. 배포파일, 배포파일에 포함된 패키지, 그리고 패키지에 포함되어 있는 소스코드들이 사용하는 테이블 정보는 아래의 표에서 보는 바와 같습니다. 배포파일에는 소스코드와 테이블 생성 스크립트가 함께 제공됩니다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>번호&lt;/th>
+ &lt;th>컴포넌트명&lt;/th>
+ &lt;th>패키지&lt;/th>
+ &lt;th>배포파일명&lt;/th>
+ &lt;th>포함패키지&lt;/th>
+ &lt;th>포함 테이블&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>인증서로그인&lt;/td>
+ &lt;td>egovframework.com.utl.sec&lt;/td>
+ &lt;td>egovframework-certlogin-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.sec&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;!-- raw HTML omitted -->3&lt;/td>
+ &lt;td>일반로그인&lt;!-- raw HTML omitted -->디지털원패스&lt;/td>
+ &lt;td>egovframework.com.uat.uia&lt;/td>
+ &lt;td>egovframework-gnrlogin-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uat.uia&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNAUTHORINFO&lt;!-- raw HTML omitted -->COMTNAUTHORROLERELATE&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNFILESYSMNTRNG&lt;!-- raw HTML omitted -->COMTNFILESYSMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNLOGINPOLICY&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNROLEINFO&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>로그인정책관리&lt;/td>
+ &lt;td>egovframework.com.uat.uap&lt;/td>
+ &lt;td>egovframework-loginpolicy-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uat.uap&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNLOGINPOLICY&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;!-- raw HTML omitted -->9&lt;!-- raw HTML omitted -->10&lt;!-- raw HTML omitted -->11&lt;!-- raw HTML omitted -->12&lt;/td>
+ &lt;td>권한관리&lt;!-- raw HTML omitted -->권한그룹관리&lt;!-- raw HTML omitted -->그룹관리&lt;!-- raw HTML omitted -->롤관리&lt;!-- raw HTML omitted -->부서권한관리&lt;/td>
+ &lt;td>egovframework.com.sec.ram&lt;!-- raw HTML omitted -->egovframework.com.sec.rgm&lt;!-- raw HTML omitted -->egovframework.com.sec.gmt&lt;!-- raw HTML omitted -->egovframework.com.sec.rmt&lt;!-- raw HTML omitted -->egovframework.com.sec.drm&lt;/td>
+ &lt;td>egovframework-authormanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sec.ram&lt;!-- raw HTML omitted -->egovframework.com.sec.drm&lt;!-- raw HTML omitted -->egovframework.com.sec.gmt&lt;!-- raw HTML omitted -->egovframework.com.sec.rgm&lt;!-- raw HTML omitted -->egovframework.com.sec.rmt&lt;!-- raw HTML omitted -->egovframework.com.sec.security&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNEMPLYRSCRTYESTBS&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNAUTHORINFO&lt;!-- raw HTML omitted -->COMTNROLES_HIERARCHY&lt;!-- raw HTML omitted -->COMTNROLEINFO&lt;!-- raw HTML omitted -->COMTNAUTHORROLERELATE&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>암호화/복호화&lt;/td>
+ &lt;td>egovframework.com.sec.pki&lt;/td>
+ &lt;td>egovframework-cryptodecrypto-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sec.pki&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>게시물통계&lt;/td>
+ &lt;td>egovframework.com.sts.bst&lt;/td>
+ &lt;td>egovframework-bbsstats-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sts.bst&lt;!-- raw HTML omitted -->egovframework.com.sts.com&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTSBBSSUMMARY&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>게시판의 부가기능 컴포넌트&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>15&lt;/td>
+ &lt;td>사용자통계&lt;/td>
+ &lt;td>egovframework.com.sts.ust&lt;/td>
+ &lt;td>egovframework-userstats-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sts.ust&lt;!-- raw HTML omitted -->egovframework.com.sts.com&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTSUSERSUMMARY&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;/td>
+ &lt;td>사용자관리 부가기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>16&lt;/td>
+ &lt;td>접속통계&lt;/td>
+ &lt;td>egovframework.com.sts.cst&lt;/td>
+ &lt;td>egovframework-conectstats-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sts.com&lt;!-- raw HTML omitted -->egovframework.com.sts.cst&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uat.sso&lt;!-- raw HTML omitted -->egovframework.com.uat.uia&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNLOGINLOG&lt;!-- raw HTML omitted -->COMTSSYSLOGSUMMARY&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;/td>
+ &lt;td>로그인의 부가기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>17&lt;/td>
+ &lt;td>화면통계&lt;/td>
+ &lt;td>egovframework.com.sts.sst&lt;/td>
+ &lt;td>egovframework-scrinstats-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sts.com&lt;!-- raw HTML omitted -->egovframework.com.sts.sst&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.mcm&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.mpm&lt;!-- raw HTML omitted -->egovframework.com.sym.prm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNEMPLYRSCRTYESTBS&lt;!-- raw HTML omitted -->COMTSWEBLOGSUMMARY&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNAUTHORINFOv&lt;!-- raw HTML omitted -->COMTNPROGRMLIST&lt;!-- raw HTML omitted -->COMTHPROGRMCHANGEDTLS&lt;!-- raw HTML omitted -->COMTNMENUINFO&lt;!-- raw HTML omitted -->COMTNSITEMAP&lt;!-- raw HTML omitted -->COMTNMENUCREATDTLS&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;!-- raw HTML omitted -->COMTNFILE&lt;/td>
+ &lt;td>메뉴관리의 부가기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>18&lt;/td>
+ &lt;td>보고서통계&lt;/td>
+ &lt;td>egovframework.com.sts.rst&lt;/td>
+ &lt;td>egovframework-reprtstats-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sts.rst&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNREPRTSTATS&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>19&lt;/td>
+ &lt;td>자료이용현황통계&lt;/td>
+ &lt;td>egovframework.com.sts.dst&lt;/td>
+ &lt;td>egovframework-dtausestats-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sts.dst&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDTAUSESTATS&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>게시판의 부가기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>20&lt;!-- raw HTML omitted -->21&lt;!-- raw HTML omitted -->22&lt;!-- raw HTML omitted -->23&lt;!-- raw HTML omitted -->24&lt;!-- raw HTML omitted -->25&lt;!-- raw HTML omitted -->26&lt;/td>
+ &lt;td>게시판&lt;!-- raw HTML omitted -->게시판생성관리&lt;!-- raw HTML omitted -->공지사항관리&lt;!-- raw HTML omitted -->디자인템플릿&lt;!-- raw HTML omitted -->유효게시판&lt;!-- raw HTML omitted -->익명게시판&lt;!-- raw HTML omitted -->자료실관리&lt;/td>
+ &lt;td>egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;/td>
+ &lt;td>egovframework-bbsmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.cmt&lt;!-- raw HTML omitted -->egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;!-- raw HTML omitted -->egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBSUSE&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNCMMNTY&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCLUB&lt;!-- raw HTML omitted -->COMTNBBSMASTEROPTN&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>27&lt;/td>
+ &lt;td>댓글관리&lt;!-- raw HTML omitted -->(게시판 포함)&lt;/td>
+ &lt;td>egovframework.com.cop.cmt&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;/td>
+ &lt;td>egovframework-replymanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;!-- raw HTML omitted -->egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBSUSE&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNCMMNTY&lt;!-- raw HTML omitted -->COMTNCOMMENT&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCLUB&lt;!-- raw HTML omitted -->COMTNBBSMASTEROPTN&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>게시판의 부가기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>28&lt;/td>
+ &lt;td>스크랩기능&lt;!-- raw HTML omitted -->(게시판 포함)&lt;/td>
+ &lt;td>egovframework.com.cop.scp&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;/td>
+ &lt;td>egovframework-scrapmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.cmt&lt;!-- raw HTML omitted -->egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;!-- raw HTML omitted -->egovframework.com.cop.scp&lt;!-- raw HTML omitted -->egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNSCRAP&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBSUSE&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNCMMNTY&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCLUB&lt;!-- raw HTML omitted -->COMTNBBSMASTEROPTN&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>29&lt;/td>
+ &lt;td>만족도조사&lt;!-- raw HTML omitted -->(게시판 포함)&lt;/td>
+ &lt;td>egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;/td>
+ &lt;td>egovframework-satisfaction-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.cmt&lt;!-- raw HTML omitted -->egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;!-- raw HTML omitted -->egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTNSTSFDG&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBSUSE&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNCMMNTY&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCLUB&lt;!-- raw HTML omitted -->COMTNBBSMASTEROPTN&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>게시판의 부가기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>30&lt;!-- raw HTML omitted -->31&lt;!-- raw HTML omitted -->32&lt;!-- raw HTML omitted -->33&lt;/td>
+ &lt;td>커뮤니티관리&lt;!-- raw HTML omitted -->커뮤니티방명록&lt;!-- raw HTML omitted -->커뮤니티사진첩&lt;!-- raw HTML omitted -->블로그관리&lt;/td>
+ &lt;td>egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.clb&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;/td>
+ &lt;td>egovframework-communityclub-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.clb&lt;!-- raw HTML omitted -->egovframework.com.cop.cmt&lt;!-- raw HTML omitted -->egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;!-- raw HTML omitted -->egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTHCONFMHISTORY&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBSUSE&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNCMMNTY&lt;!-- raw HTML omitted -->COMTNCMMNTYUSER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCLUB&lt;!-- raw HTML omitted -->COMTNCLUBUSER&lt;!-- raw HTML omitted -->COMTNBBSMASTEROPTN&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>생성/소멸 관계임&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>게시판통합&lt;/td>
+ &lt;td>egovframework.com.cop.bbs&lt;/td>
+ &lt;td>egovframework-unitybbsmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.bbs&lt;!-- raw HTML omitted -->egovframework.com.cop.cmt&lt;!-- raw HTML omitted -->egovframework.com.cop.cmy&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;!-- raw HTML omitted -->egovframework.com.cop.stf&lt;!-- raw HTML omitted -->egovframework.com.cop.tpl&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTMPLATINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNBBSMASTER&lt;!-- raw HTML omitted -->COMTNBBSUSE&lt;!-- raw HTML omitted -->COMTNBBS&lt;!-- raw HTML omitted -->COMTNCMMNTY&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCLUB&lt;!-- raw HTML omitted -->COMTNBBSMASTEROPTN&lt;!-- raw HTML omitted -->COMTNBLOG&lt;!-- raw HTML omitted -->COMTNBLOGUSER&lt;/td>
+ &lt;td>게시판 통합 기능 제공&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>34&lt;/td>
+ &lt;td>문자메시지서비스&lt;/td>
+ &lt;td>egovframework.com.cop.sms&lt;/td>
+ &lt;td>egovframework-smsinfo-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.sms&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNSMS&lt;!-- raw HTML omitted -->COMTNSMSRECPTN&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>35&lt;!-- raw HTML omitted -->36&lt;!-- raw HTML omitted -->37&lt;!-- raw HTML omitted -->38&lt;/td>
+ &lt;td>부서일정관리&lt;!-- raw HTML omitted -->일정관리&lt;!-- raw HTML omitted -->일지관리&lt;!-- raw HTML omitted -->전체일정&lt;/td>
+ &lt;td>egovframework.com.cop.smt.sdm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.sim&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.dsm&lt;/td>
+ &lt;td>egovframework-schedulemanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.dsm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.sam&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.sdm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNMTGINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNSCHDULINFO&lt;!-- raw HTML omitted -->COMTNDIARYINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>39&lt;/td>
+ &lt;td>메일연동 인터페이스&lt;/td>
+ &lt;td>egovframework.com.cop.ems&lt;/td>
+ &lt;td>egovframework-sndngmail-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.ems&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>40&lt;/td>
+ &lt;td>명함관리&lt;/td>
+ &lt;td>egovframework.com.cop.ncm&lt;/td>
+ &lt;td>egovframework-namecardlistmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.ncm&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.zip&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCZIP&lt;!-- raw HTML omitted -->COMTRDNMADRZIP&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNNCRD&lt;!-- raw HTML omitted -->COMTNNCRDUSER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>41&lt;/td>
+ &lt;td>주소록관리&lt;/td>
+ &lt;td>egovframework.com.cop.adb&lt;/td>
+ &lt;td>egovframework-addressbook-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.adb&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNNCRD&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNADBKMANAGE&lt;!-- raw HTML omitted -->COMTNADBK&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>42&lt;/td>
+ &lt;td>간부일정관리&lt;/td>
+ &lt;td>egovframework.com.cop.smt.lsm&lt;/td>
+ &lt;td>egovframework-leaderschdulmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.lsm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNLEADERSTTUS&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNLEADERSCHDUL&lt;!-- raw HTML omitted -->COMTNLEADERSCHDULDE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>43&lt;/td>
+ &lt;td>부서업무함관리&lt;/td>
+ &lt;td>egovframework.com.cop.smt.djm&lt;/td>
+ &lt;td>egovframework-deptjobbxmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.djm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDEPTJOB&lt;!-- raw HTML omitted -->COMTNDEPTJOBBX&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>44&lt;/td>
+ &lt;td>주간/월간보고관리&lt;/td>
+ &lt;td>egovframework.com.cop.smt.wmr&lt;/td>
+ &lt;td>egovframework-wikmnthngreprtmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.wmr&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNWIKMNTHNGREPRT&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>45&lt;/td>
+ &lt;td>메모/할일관리&lt;/td>
+ &lt;td>egovframework.com.cop.smt.mtm&lt;/td>
+ &lt;td>egovframework-memotodomanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.mtm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNMEMOTODO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>46&lt;/td>
+ &lt;td>메모보고&lt;/td>
+ &lt;td>egovframework.com.cop.smt.mrm&lt;/td>
+ &lt;td>egovframework-memoreprtmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.cop.smt.mrm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNMEMOREPRT&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>47&lt;/td>
+ &lt;td>약식결재&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism&lt;/td>
+ &lt;td>egovframework-infrmlsanctn-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ism&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNINFRMLSANCTN&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>48&lt;!-- raw HTML omitted -->49&lt;!-- raw HTML omitted -->50&lt;/td>
+ &lt;td>기업회원관리&lt;!-- raw HTML omitted -->사용자관리&lt;!-- raw HTML omitted -->회원관리&lt;/td>
+ &lt;td>egovframework.com.uss.umt&lt;/td>
+ &lt;td>egovframework-membermanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sec.rnc&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.zip&lt;!-- raw HTML omitted -->egovframework.com.uss.umt&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCZIP&lt;!-- raw HTML omitted -->COMTRDNMADRZIP&lt;!-- raw HTML omitted -->COMTNSTPLATINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMPLYRINFOCHANGEDTLS&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>51&lt;/td>
+ &lt;td>출퇴근관리&lt;/td>
+ &lt;td>egovframework.com.uss.cmt&lt;/td>
+ &lt;td>egovframework-cmtmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.cmt&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNAUTHORINFO&lt;!-- raw HTML omitted -->COMTNROLES_HIERARCHY&lt;!-- raw HTML omitted -->COMTNROLEINFO&lt;!-- raw HTML omitted -->COMTNAUTHORROLERELATE&lt;!-- raw HTML omitted -->COMTNCOMMUTE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>52&lt;/td>
+ &lt;td>마이페이지&lt;/td>
+ &lt;td>egovframework.com.uss.mpe&lt;/td>
+ &lt;td>egovframework-mypage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.mpe&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNINDVDLPGECNTNTS&lt;!-- raw HTML omitted -->COMTNINDVDLPGEESTBS&lt;!-- raw HTML omitted -->COMTNCNTNTSLIST&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>53&lt;/td>
+ &lt;td>약관관리&lt;/td>
+ &lt;td>egovframework.com.uss.sam.stp&lt;/td>
+ &lt;td>egovframework-stipulationmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.sam.stp&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNSTPLATINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>54&lt;/td>
+ &lt;td>저작권보호정책&lt;/td>
+ &lt;td>egovframework.com.uss.sam.cpy&lt;/td>
+ &lt;td>egovframework-rightmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.sam.cpy&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCPYRHTINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>55&lt;/td>
+ &lt;td>개인정보보호정책확인&lt;/td>
+ &lt;td>egovframework.com.uss.sam.ipm&lt;/td>
+ &lt;td>egovframework-privacypolicy-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.sam.ipm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;!-- raw HTML omitted -->egovframework.com.utl.wed.fiter&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNINDVDLINFOPOLICY&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>56&lt;/td>
+ &lt;td>도움말&lt;/td>
+ &lt;td>egovframework.com.uss.olh.hpc&lt;/td>
+ &lt;td>egovframework-onlinehelp-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olh.hpc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNHPCMINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>57&lt;/td>
+ &lt;td>용어사전&lt;/td>
+ &lt;td>egovframework.com.uss.olh.wor&lt;/td>
+ &lt;td>egovframework-wordbook-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olh.wor&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNWORDDICARYINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>58&lt;/td>
+ &lt;td>FAQ관리&lt;/td>
+ &lt;td>egovframework.com.uss.olh.faq&lt;/td>
+ &lt;td>egovframework-faq-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olh.faq&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNFAQINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>59&lt;/td>
+ &lt;td>Q&amp;amp;A관리&lt;/td>
+ &lt;td>egovframework.com.uss.olh.qna&lt;/td>
+ &lt;td>egovframework-qna-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olh.qna&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNQAINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>60&lt;/td>
+ &lt;td>행정전문용어사전관리&lt;/td>
+ &lt;td>egovframework.com.uss.olh.awm&lt;/td>
+ &lt;td>egovframework-administrationdic-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olh.awm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNADMINISTRATIONWORD&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>61&lt;/td>
+ &lt;td>온라인매뉴얼&lt;/td>
+ &lt;td>egovframework.com.uss.olh.omm&lt;/td>
+ &lt;td>egovframework-onlinemanual-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olh.omm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNONLINEMANUAL&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>62&lt;/td>
+ &lt;td>상담관리&lt;/td>
+ &lt;td>egovframework.com.uss.olp.cns&lt;/td>
+ &lt;td>egovframework-onlineconsultation-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.cns&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCNSLTLIST&lt;!-- raw HTML omitted -->COMTNQAINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>63&lt;!-- raw HTML omitted -->64&lt;!-- raw HTML omitted -->65&lt;!-- raw HTML omitted -->66&lt;!-- raw HTML omitted -->67&lt;!-- raw HTML omitted -->68&lt;/td>
+ &lt;td>설문관리&lt;!-- raw HTML omitted -->설문조사&lt;!-- raw HTML omitted -->설문템플릿관리&lt;!-- raw HTML omitted -->응답자관리&lt;!-- raw HTML omitted -->질문관리&lt;!-- raw HTML omitted -->항목관리&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qmc&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qri&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qtm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qrm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qqm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qim&lt;/td>
+ &lt;td>egovframework-onlineparticipation-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qim&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qmc&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qqm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qri&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qrm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.qtm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNQUSTNRTMPLAT&lt;!-- raw HTML omitted -->COMTNQESTNRINFO&lt;!-- raw HTML omitted -->COMTNQUSTNRRESPONDINFO&lt;!-- raw HTML omitted -->COMTNQUSTNRQESITM&lt;!-- raw HTML omitted -->COMTNQUSTNRRSPNSRESULT&lt;!-- raw HTML omitted -->COMTNQUSTNRIEM&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>69&lt;/td>
+ &lt;td>회의관리&lt;/td>
+ &lt;td>egovframework.com.uss.olp.mgt&lt;/td>
+ &lt;td>egovframework-meetmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.mgt&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNMTGINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>70&lt;/td>
+ &lt;td>온라인poll관리&lt;/td>
+ &lt;td>egovframework.com.uss.olp.opm&lt;/td>
+ &lt;td>egovframework-onlinepoll-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.opm&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.opp&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.opr&lt;!-- raw HTML omitted -->egovframework.com.uss.olp.opr&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNONLINEPOLLMANAGE&lt;!-- raw HTML omitted -->COMTNONLINEPOLLIEM&lt;!-- raw HTML omitted -->COMTNONLINEPOLLRESULT&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>71&lt;/td>
+ &lt;td>뉴스관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.nws&lt;/td>
+ &lt;td>egovframework-news-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.nws&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNNEWSINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>72&lt;/td>
+ &lt;td>사이트관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.sit&lt;/td>
+ &lt;td>egovframework-sitemanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.sit&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNSITELIST&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>74&lt;/td>
+ &lt;td>추천사이트관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.rec&lt;/td>
+ &lt;td>egovframework-recommendedsitemanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.rec&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNRECOMENDSITEINFO&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>75&lt;/td>
+ &lt;td>행사/이벤트/캠페인&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ecc&lt;/td>
+ &lt;td>egovframework-infomationoffer-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ecc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNEVENTINFO&lt;!-- raw HTML omitted -->COMTNEXTRLHRINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>76&lt;/td>
+ &lt;td>팝업창관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.pwm&lt;/td>
+ &lt;td>egovframework-popupwindow-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.pwm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNPOPUPMANAGE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>77&lt;/td>
+ &lt;td>정보알림이&lt;/td>
+ &lt;td>egovframework.com.uss.ion.noi&lt;/td>
+ &lt;td>egovframework-notification-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.noi&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNNTFCINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>78&lt;/td>
+ &lt;td>배너관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.bnr&lt;/td>
+ &lt;td>egovframework-banner-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.bnr&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNBANNER&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>79&lt;/td>
+ &lt;td>로그인화면이미지관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.lsi&lt;/td>
+ &lt;td>egovframework-loginimage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.lsi&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNLOGINSCRINIMAGE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>80&lt;/td>
+ &lt;td>최근검색어 조회&lt;/td>
+ &lt;td>egovframework.com.uss.ion.rsm&lt;/td>
+ &lt;td>egovframework-currentsearchword-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.rsm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNRECENTSRCHWRDMANAGE&lt;!-- raw HTML omitted -->COMTNRECENTSRCHWRD&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>81&lt;/td>
+ &lt;td>메인이미지관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.msi&lt;/td>
+ &lt;td>egovframework-mainimage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.msi&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNMAINIMAGE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>82&lt;/td>
+ &lt;td>통합링크관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ulm&lt;/td>
+ &lt;td>egovframework-totallink-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ulm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNUNITYLINK&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>83&lt;/td>
+ &lt;td>사용자부재관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.uas&lt;/td>
+ &lt;td>egovframework-userabsence-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.uas&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNUSERABSNCE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>84&lt;/td>
+ &lt;td>인터넷서비스안내및관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.isg&lt;/td>
+ &lt;td>egovframework-serviceguide-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.isg&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNINTNETSVC&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>85&lt;/td>
+ &lt;td>Wiki기능&lt;/td>
+ &lt;td>egovframework.com.uss.ion.wik.bmk&lt;/td>
+ &lt;td>egovframework-wikibkmk-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.wik.bmk&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNTWITTER&lt;!-- raw HTML omitted -->COMTNWIKIBKMK&lt;/td>
+ &lt;td>소스받아서 설치하며,&lt;!-- raw HTML omitted -->이패키지는 위키북마크임&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>86&lt;/td>
+ &lt;td>RSS태그관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.rss&lt;/td>
+ &lt;td>egovframework-rssmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.rsn&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.rss&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRSS&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>87&lt;/td>
+ &lt;td>Twitter연동&lt;/td>
+ &lt;td>egovframework.com.uss.ion.tir&lt;/td>
+ &lt;td>egovframework-twitterlinkage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.tir&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNTWITTER&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>88&lt;/td>
+ &lt;td>쪽지관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ntm&lt;/td>
+ &lt;td>egovframework-notemanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ntm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.wed&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNNOTE&lt;!-- raw HTML omitted -->COMTNNOTETRNSMIT&lt;!-- raw HTML omitted -->COMTNNOTERECPTN&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>89&lt;/td>
+ &lt;td>받은쪽지함관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ntr&lt;/td>
+ &lt;td>egovframework-noterecptnmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ntr&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.nts&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNNOTE&lt;!-- raw HTML omitted -->COMTNNOTETRNSMIT&lt;!-- raw HTML omitted -->COMTNNOTERECPTN&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>90&lt;/td>
+ &lt;td>보낸쪽지함관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.nts&lt;/td>
+ &lt;td>egovframework-notetrnsmitmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.nts&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNNOTE&lt;!-- raw HTML omitted -->COMTNNOTETRNSMIT&lt;!-- raw HTML omitted -->COMTNNOTERECPTN&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>91&lt;!-- raw HTML omitted -->92&lt;/td>
+ &lt;td>회의실관리&lt;!-- raw HTML omitted -->회의실 예약 관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.mtg&lt;/td>
+ &lt;td>egovframework-mtgplacemanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.mtg&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNMTGPLACEMANAGE&lt;!-- raw HTML omitted -->COMTNFXTRSMANAGE&lt;!-- raw HTML omitted -->COMTNMTGPLACEFXTRS&lt;!-- raw HTML omitted -->COMTNMTGPLACERESVE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>93&lt;/td>
+ &lt;td>직원경조사관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ctn&lt;/td>
+ &lt;td>egovframework-ctsnnmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ctn&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ism&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCTSNNMANAGE&lt;!-- raw HTML omitted -->COMTNINFRMLSANCTN&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>94&lt;/td>
+ &lt;td>휴가관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.vct&lt;/td>
+ &lt;td>egovframework-vcatnmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ism&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.vct&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNINFRMLSANCTN&lt;!-- raw HTML omitted -->COMTNVCATNMANAGE&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNTWITTER&lt;!-- raw HTML omitted -->COMTNINDVDLYRYCMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>95&lt;/td>
+ &lt;td>당직관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.bnt&lt;/td>
+ &lt;td>egovframework-bndtmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.bnt&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ism&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>96&lt;/td>
+ &lt;td>포상관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.rwd&lt;/td>
+ &lt;td>egovframework-rwardmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ism&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.rwd&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRWARDMANAGE&lt;!-- raw HTML omitted -->COMTNINFRMLSANCTN&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>97&lt;/td>
+ &lt;td>기념일관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ans&lt;/td>
+ &lt;td>egovframework-anniversarymanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ans&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNANNVRSRYMANAGE&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>98&lt;!-- raw HTML omitted -->99&lt;/td>
+ &lt;td>행사신청관리&lt;!-- raw HTML omitted -->행사접수관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.evt&lt;/td>
+ &lt;td>egovframework-eventmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.evt&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ism&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNINFRMLSANCTN&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNEVENTMANAGE&lt;!-- raw HTML omitted -->COMTNEVENTATDRN&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>100&lt;/td>
+ &lt;td>약도관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.rmm&lt;/td>
+ &lt;td>egovframework-roughmap-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ans&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNANNVRSRYMANAGE&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>101&lt;/td>
+ &lt;td>페이스북 연동&lt;/td>
+ &lt;td>egovframework.com.uss.ion.fbk&lt;/td>
+ &lt;td>egovframework-facebook-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ans&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNANNVRSRYMANAGE&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>102&lt;/td>
+ &lt;td>개인연차 관리&lt;/td>
+ &lt;td>egovframework.com.uss.ion.yrc&lt;/td>
+ &lt;td>egovframework-indvdlyrycmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.ans&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNANNVRSRYMANAGE&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>103&lt;!-- raw HTML omitted -->104&lt;!-- raw HTML omitted -->105&lt;/td>
+ &lt;td>공통분류코드&lt;!-- raw HTML omitted -->공통상세코드&lt;!-- raw HTML omitted -->공통코드&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.ccc&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.cde&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.cde&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.cda&lt;/td>
+ &lt;td>egovframework-commoncode-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.cca&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.ccc&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.cde&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>106&lt;!-- raw HTML omitted -->107&lt;/td>
+ &lt;td>우편번호주소찾기&lt;!-- raw HTML omitted -->우편번호관리&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.zip&lt;/td>
+ &lt;td>egovframework-zipcodemanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.zip&lt;/td>
+ &lt;td>COMTCZIP&lt;!-- raw HTML omitted -->COMTRDNMADRZIP&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>108&lt;/td>
+ &lt;td>행정코드관리&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.acr&lt;/td>
+ &lt;td>egovframework-admcdmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.acr&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.adc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCADMINISTCODE&lt;!-- raw HTML omitted -->COMTCADMINISTCODERECPTNLOG&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>109&lt;/td>
+ &lt;td>기관코드수신&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.icr&lt;/td>
+ &lt;td>egovframework-organcodereceive-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.icr&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNINSTTCODE&lt;!-- raw HTML omitted -->COMTNINSTTCODERECPTNLOG&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>110&lt;/td>
+ &lt;td>도로명 주소연계&lt;/td>
+ &lt;td>egovframework.com.sym.adr&lt;/td>
+ &lt;td>egovframework-adresscntc-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.icr&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNINSTTCODE&lt;!-- raw HTML omitted -->COMTNINSTTCODERECPTNLOG&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>111&lt;/td>
+ &lt;td>로그관리&lt;/td>
+ &lt;td>egovframework.com.sym.log.lgm&lt;/td>
+ &lt;td>egovframework-syslogmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.log.lgm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNSYSLOG&lt;!-- raw HTML omitted -->COMTSSYSLOGSUMMARY&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>112&lt;/td>
+ &lt;td>사용로그관리&lt;/td>
+ &lt;td>egovframework.com.sym.log.ulg&lt;/td>
+ &lt;td>egovframework-userlogmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.log.ulg&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNSYSLOG&lt;!-- raw HTML omitted -->COMTNUSERLOG&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>113&lt;/td>
+ &lt;td>송/수신로그관리&lt;/td>
+ &lt;td>egovframework.com.sym.log.tlg&lt;/td>
+ &lt;td>egovframework-trsmrcvlogmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.log.tlg&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.trm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCNTCINSTT&lt;!-- raw HTML omitted -->COMTNCNTCSERVICE&lt;!-- raw HTML omitted -->COMTNCNTCSYSTEM&lt;!-- raw HTML omitted -->COMTNSYSTEMCNTC&lt;!-- raw HTML omitted -->COMTNTRSMRCVMNTRNG&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNTRSMRCVLOG&lt;!-- raw HTML omitted -->COMTSTRSMRCVLOGSUMMARY&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>114&lt;/td>
+ &lt;td>시스템이력관리&lt;/td>
+ &lt;td>egovframework.com.sym.log.slg&lt;/td>
+ &lt;td>egovframework-syshistorymanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.log.slg&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTHSYSHIST&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>115&lt;/td>
+ &lt;td>웹로그관리&lt;/td>
+ &lt;td>egovframework.com.sym.log.wlg&lt;/td>
+ &lt;td>egovframework-weblogmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.log.wlg&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNWEBLOG&lt;!-- raw HTML omitted -->COMTSWEBLOGSUMMARY&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>116&lt;/td>
+ &lt;td>접속로그관리&lt;/td>
+ &lt;td>egovframework.com.sym.log.clg&lt;/td>
+ &lt;td>egovframework-loginlogmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.log.clg&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNLOGINLOG&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>117&lt;/td>
+ &lt;td>개인정보 조회 로그&lt;/td>
+ &lt;td>egovframework.com.sym.log.plg&lt;/td>
+ &lt;td>egovframework-privacylogmanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.log.clg&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTNLOGINLOG&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>118&lt;!-- raw HTML omitted -->119&lt;!-- raw HTML omitted -->73&lt;!-- raw HTML omitted -->120&lt;!-- raw HTML omitted -->121&lt;!-- raw HTML omitted -->152&lt;!-- raw HTML omitted -->153&lt;/td>
+ &lt;td>메뉴관리&lt;!-- raw HTML omitted -->메뉴생성관리&lt;!-- raw HTML omitted -->사이트맵&lt;!-- raw HTML omitted -->바로가기메뉴관리&lt;!-- raw HTML omitted -->프로그램관리&lt;!-- raw HTML omitted -->메인메뉴&lt;!-- raw HTML omitted -->트리메뉴&lt;/td>
+ &lt;td>egovframework.com.sym.mnu.mpm&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.mcm&lt;!-- raw HTML omitted -->egovframework.com.sym.mmu.stm&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.bmm&lt;/td>
+ &lt;td>egovframework-menumanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.zip&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.bmm&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.mcm&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.mpm&lt;!-- raw HTML omitted -->egovframework.com.sym.mnu.stm&lt;!-- raw HTML omitted -->egovframework.com.sym.prm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCZIP&lt;!-- raw HTML omitted -->COMTRDNMADRZIP&lt;!-- raw HTML omitted -->COMTNBKMKMENUMANAGERESULT&lt;!-- raw HTML omitted -->COMTNEMPLYRSCRTYESTBS&lt;!-- raw HTML omitted -->COMTNSITEMAP&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNAUTHORINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNPROGRMLIST&lt;!-- raw HTML omitted -->COMTHPROGRMCHANGEDTLS&lt;!-- raw HTML omitted -->COMTNMENUINFO&lt;!-- raw HTML omitted -->COMTNSITEMAP&lt;!-- raw HTML omitted -->COMTNMENUCREATDTLS&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>122&lt;!-- raw HTML omitted -->123&lt;!-- raw HTML omitted -->124&lt;/td>
+ &lt;td>배치작업관리&lt;!-- raw HTML omitted -->배치결과관리&lt;!-- raw HTML omitted -->스케줄처리&lt;/td>
+ &lt;td>egovframework.com.sym.bat&lt;/td>
+ &lt;td>egovframework-batchmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.bat&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNBATCHOPERT&lt;!-- raw HTML omitted -->COMTNBATCHRESULT&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNBATCHSCHDUL&lt;!-- raw HTML omitted -->COMTNBATCHSCHDULDFK&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>125&lt;/td>
+ &lt;td>백업관리&lt;/td>
+ &lt;td>egovframework.com.sym.sym.bak&lt;/td>
+ &lt;td>egovframework-backupmanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.sym.bak&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNBACKUPRESULT&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNBACKUPOPERT&lt;!-- raw HTML omitted -->COMTNBACKUPSCHDULDFK&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>126&lt;/td>
+ &lt;td>네트워크관리&lt;/td>
+ &lt;td>egovframework.com.sym.sym.nwk&lt;/td>
+ &lt;td>egovframework-ntwrk-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.sym.nwk&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNNTWRKINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>127&lt;/td>
+ &lt;td>서버정보관리&lt;/td>
+ &lt;td>egovframework.com.sym.sym.srv&lt;/td>
+ &lt;td>egovframework-server-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.sym.srv&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNSERVEREQPMNINFO&lt;!-- raw HTML omitted -->COMTNSYNCHRNSERVERINFO&lt;!-- raw HTML omitted -->COMTNSERVERINFO&lt;!-- raw HTML omitted -->COMTNSERVEREQPMNRELATE&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>128&lt;/td>
+ &lt;td>장애신청관리&lt;/td>
+ &lt;td>egovframework.com.sym.tbm.tbr&lt;/td>
+ &lt;td>egovframework-troblreqst-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.tbm.tbr&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTROBLINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>129&lt;/td>
+ &lt;td>장애처리결과관리&lt;/td>
+ &lt;td>egovframework.com.sym.tbm.tbp&lt;/td>
+ &lt;td>egovframework-troblprocess-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.sym.tbm.tbp&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNTROBLINFO&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>130&lt;!-- raw HTML omitted -->131&lt;!-- raw HTML omitted -->132&lt;!-- raw HTML omitted -->133&lt;/td>
+ &lt;td>시스템연계관리&lt;!-- raw HTML omitted -->연계현황관리&lt;!-- raw HTML omitted -->연계메시지관리&lt;!-- raw HTML omitted -->연계기관관리&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ist&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ims&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.iis&lt;/td>
+ &lt;td>egovframework-interfacemanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.iis&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ims&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ist&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.sim&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCNTCINSTT&lt;!-- raw HTML omitted -->COMTNCNTCSERVICE&lt;!-- raw HTML omitted -->COMTNCNTCSYSTEM&lt;!-- raw HTML omitted -->COMTNSYSTEMCNTC&lt;!-- raw HTML omitted -->COMTNTRSMRCVLOG&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCNTCMESSAGE&lt;!-- raw HTML omitted -->COMTNCNTCMESSAGEITEM&lt;/td>
+ &lt;td>* 생성/소멸 관계임&lt;!-- raw HTML omitted -->* 업무프로세스 완결성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>131&lt;!-- raw HTML omitted -->132&lt;!-- raw HTML omitted -->133&lt;/td>
+ &lt;td>연계현황관리&lt;!-- raw HTML omitted -->연계메시지관리&lt;!-- raw HTML omitted -->연계기관관리&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ims&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.iis&lt;/td>
+ &lt;td>egovframework-interfacemanagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.iis&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ims&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.ist&lt;!-- raw HTML omitted -->egovframework.com.ssi.syi.sim&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCNTCINSTT&lt;!-- raw HTML omitted -->COMTNCNTCSERVICE&lt;!-- raw HTML omitted -->COMTNCNTCSYSTEM&lt;!-- raw HTML omitted -->COMTNSYSTEMCNTC&lt;!-- raw HTML omitted -->COMTNTRSMRCVLOG&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNCNTCMESSAGE&lt;!-- raw HTML omitted -->COMTNCNTCMESSAGEITEM&lt;/td>
+ &lt;td>* 생성/소멸 관계임&lt;!-- raw HTML omitted -->* 업무프로세스 완결성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>135&lt;/td>
+ &lt;td>개인지식관리&lt;/td>
+ &lt;td>egovframework.com.dam.per&lt;/td>
+ &lt;td>egovframework-knoPersonal-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.dam.per&lt;!-- raw HTML omitted -->egovframework.com.dam.map.mat&lt;!-- raw HTML omitted -->egovframework.com.dam.map.tea&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDAMMAPTEAM&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNDAMKNOIFM&lt;!-- raw HTML omitted -->COMTNDAMMAPKNO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>136&lt;/td>
+ &lt;td>지식맵관리&lt;/td>
+ &lt;td>egovframework.com.dam.map&lt;/td>
+ &lt;td>egovframework-knomap-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.dam.map.mat&lt;!-- raw HTML omitted -->egovframework.com.dam.map.tea&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDAMMAPTEAM&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNDAMMAPKNO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>137&lt;/td>
+ &lt;td>지식전문가관리&lt;/td>
+ &lt;td>egovframework.com.dam.spe.spe&lt;/td>
+ &lt;td>egovframework-knoSpecialist-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.dam.spe.spe&lt;!-- raw HTML omitted -->egovframework.com.dam.map.mat&lt;!-- raw HTML omitted -->egovframework.com.dam.map.tea&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;!-- raw HTML omitted -->egovframework.com.cop.com&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDAMMAPTEAM&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNDAMMAPKNO&lt;!-- raw HTML omitted -->COMTNDAMPRO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>138&lt;/td>
+ &lt;td>지식정보관리&lt;/td>
+ &lt;td>egovframework.com.dam.mgm&lt;/td>
+ &lt;td>egovframework-knoManagement-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.dam.mgm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNEMPLYRSCRTYESTBS&lt;!-- raw HTML omitted -->COMTNDAMMAPTEAM&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNDAMKNOIFM&lt;!-- raw HTML omitted -->COMTNDAMMAPKNO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>139&lt;/td>
+ &lt;td>지식평가관리&lt;/td>
+ &lt;td>egovframework.com.dam.app&lt;/td>
+ &lt;td>egovframework-knoAppraisal-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.dam.app&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDAMMAPTEAM&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNDAMKNOIFM&lt;!-- raw HTML omitted -->COMTNDAMMAPKNO&lt;!-- raw HTML omitted -->COMTNDAMPRO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>지식정보요청제공관리&lt;/td>
+ &lt;td>egovframework.com.dam.spe.req&lt;/td>
+ &lt;td>egovframework-requestOffer-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.dam.spe.req&lt;!-- raw HTML omitted -->egovframework.com.dam.map.mat&lt;!-- raw HTML omitted -->egovframework.com.dam.map.tea&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDAMMAPTEAM&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNDAMKNOIFM&lt;!-- raw HTML omitted -->COMTNDAMCALRES&lt;!-- raw HTML omitted -->COMTNDAMMAPKNO&lt;!-- raw HTML omitted -->COMTNDAMPRO&lt;/td>
+ &lt;td>지식맵관리, 지식정보제공 통합&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>140&lt;!-- raw HTML omitted -->141&lt;!-- raw HTML omitted -->142&lt;/td>
+ &lt;td>일반달력&lt;!-- raw HTML omitted -->행정달력&lt;!-- raw HTML omitted -->휴일관리&lt;/td>
+ &lt;td>egovframework.com.sym.cal&lt;/td>
+ &lt;td>egovframework-calrestdemanage-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>143&lt;!-- raw HTML omitted -->144&lt;!-- raw HTML omitted -->145&lt;!-- raw HTML omitted -->146&lt;!-- raw HTML omitted -->150&lt;!-- raw HTML omitted -->151&lt;/td>
+ &lt;td>경고메시지&lt;!-- raw HTML omitted -->에러메시지&lt;!-- raw HTML omitted -->정보메시지&lt;!-- raw HTML omitted -->확인메시지&lt;!-- raw HTML omitted -->세션관리&lt;!-- raw HTML omitted -->쿠키관리&lt;/td>
+ &lt;td>egovframework.com.utl.cas&lt;/td>
+ &lt;td>egovframework-msgsetcok-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.cas&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>147&lt;!-- raw HTML omitted -->148&lt;!-- raw HTML omitted -->149&lt;/td>
+ &lt;td>화면인쇄&lt;!-- raw HTML omitted -->프린터상태확인&lt;!-- raw HTML omitted -->전자관인출력&lt;/td>
+ &lt;td>egovframework.com.utl.pao&lt;/td>
+ &lt;td>egovframework-prntngoutpt-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.utl.pao&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>154&lt;/td>
+ &lt;td>웹에디터&lt;/td>
+ &lt;td>egovframework.com.utl.wed&lt;/td>
+ &lt;td>egovframework-webeditor-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.utl.wed&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>155&lt;!-- raw HTML omitted -->156&lt;!-- raw HTML omitted -->157&lt;!-- raw HTML omitted -->158&lt;!-- raw HTML omitted -->159&lt;!-- raw HTML omitted -->160&lt;!-- raw HTML omitted -->161&lt;!-- raw HTML omitted -->162&lt;!-- raw HTML omitted -->163&lt;!-- raw HTML omitted -->164&lt;!-- raw HTML omitted -->165&lt;!-- raw HTML omitted -->166&lt;!-- raw HTML omitted -->167&lt;!-- raw HTML omitted -->168&lt;!-- raw HTML omitted -->169&lt;!-- raw HTML omitted -->170&lt;!-- raw HTML omitted -->171&lt;!-- raw HTML omitted -->172&lt;!-- raw HTML omitted -->173&lt;!-- raw HTML omitted -->174&lt;!-- raw HTML omitted -->175&lt;!-- raw HTML omitted -->176&lt;!-- raw HTML omitted -->177&lt;!-- raw HTML omitted -->229&lt;/td>
+ &lt;td>날짜/시간/요일계산&lt;!-- raw HTML omitted -->날짜/시간/요일변환&lt;!-- raw HTML omitted -->날짜/시간/요일유효성체크&lt;!-- raw HTML omitted -->날짜/시간/요일포맷변경&lt;!-- raw HTML omitted -->랜덤날짜구하기&lt;!-- raw HTML omitted -->랜덤문자열구하기&lt;!-- raw HTML omitted -->랜덤숫자구하기&lt;!-- raw HTML omitted -->문자열검색&lt;!-- raw HTML omitted -->문자열변환&lt;!-- raw HTML omitted -->문자열유효성체크&lt;!-- raw HTML omitted -->번호유효성체크&lt;!-- raw HTML omitted -->문자열치환&lt;!-- raw HTML omitted -->숫자검색&lt;!-- raw HTML omitted -->숫자변환&lt;!-- raw HTML omitted -->숫자유효성체크&lt;!-- raw HTML omitted -->숫자치환&lt;!-- raw HTML omitted -->포맷유효성체크&lt;!-- raw HTML omitted -->실수/정수/음수체크&lt;!-- raw HTML omitted -->양력/음력변환&lt;!-- raw HTML omitted -->인코딩/디코딩&lt;!-- raw HTML omitted -->특수문자열처리&lt;!-- raw HTML omitted -->환율계산&lt;!-- raw HTML omitted -->TIMESTAMP값구하기&lt;!-- raw HTML omitted -->로그패턴분석&lt;/td>
+ &lt;td>egovframework.com.utl.fcc&lt;/td>
+ &lt;td>egovframework-utility-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.utl.fcc&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>178&lt;/td>
+ &lt;td>단위계산&lt;/td>
+ &lt;td>egovframe.com.utl.fda.ucc&lt;/td>
+ &lt;td>egovframework-unitcalc-4.3.0.zip&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>179&lt;!-- raw HTML omitted -->180&lt;!-- raw HTML omitted -->181&lt;!-- raw HTML omitted -->182&lt;!-- raw HTML omitted -->183&lt;!-- raw HTML omitted -->184&lt;!-- raw HTML omitted -->185&lt;!-- raw HTML omitted -->186&lt;!-- raw HTML omitted -->187&lt;!-- raw HTML omitted -->188&lt;!-- raw HTML omitted -->189&lt;!-- raw HTML omitted -->190&lt;!-- raw HTML omitted -->191&lt;!-- raw HTML omitted -->192&lt;!-- raw HTML omitted -->193&lt;!-- raw HTML omitted -->194&lt;!-- raw HTML omitted -->195&lt;!-- raw HTML omitted -->196&lt;!-- raw HTML omitted -->197&lt;!-- raw HTML omitted -->198&lt;!-- raw HTML omitted -->199&lt;!-- raw HTML omitted -->200&lt;!-- raw HTML omitted -->201&lt;!-- raw HTML omitted -->202&lt;!-- raw HTML omitted -->203&lt;!-- raw HTML omitted -->204&lt;!-- raw HTML omitted -->205&lt;!-- raw HTML omitted -->206&lt;!-- raw HTML omitted -->207&lt;!-- raw HTML omitted -->208&lt;!-- raw HTML omitted -->209&lt;!-- raw HTML omitted -->210&lt;!-- raw HTML omitted -->211&lt;!-- raw HTML omitted -->212&lt;!-- raw HTML omitted -->213&lt;!-- raw HTML omitted -->214&lt;!-- raw HTML omitted -->216&lt;!-- raw HTML omitted -->217&lt;/td>
+ &lt;td>네트워크상태체크&lt;!-- raw HTML omitted -->네트워크정보확인&lt;!-- raw HTML omitted -->디렉토리감시&lt;!-- raw HTML omitted -->디레토리권한체크&lt;!-- raw HTML omitted -->디렉토리복사&lt;!-- raw HTML omitted -->디렉토리삭제&lt;!-- raw HTML omitted -->디렉토리생성&lt;!-- raw HTML omitted -->디렉토리속성정보체크&lt;!-- raw HTML omitted -->디렉토리압축/해제&lt;!-- raw HTML omitted -->디렉토리이동&lt;!-- raw HTML omitted -->디렉토리일자체크&lt;!-- raw HTML omitted -->디렉토리존재체크&lt;!-- raw HTML omitted -->디스크속성정보체크&lt;!-- raw HTML omitted -->디스크유효용량체크&lt;!-- raw HTML omitted -->디스크존재체크&lt;!-- raw HTML omitted -->서버정보확인&lt;!-- raw HTML omitted -->시스템정보확인&lt;!-- raw HTML omitted -->유효메모리체크&lt;!-- raw HTML omitted -->클라이언트정보확인&lt;!-- raw HTML omitted -->파일권한체크&lt;!-- raw HTML omitted -->파일다운로드&lt;!-- raw HTML omitted -->파일변환&lt;!-- raw HTML omitted -->파일보안&lt;!-- raw HTML omitted -->파일복사&lt;!-- raw HTML omitted -->파일비교&lt;!-- raw HTML omitted -->파일삭제&lt;!-- raw HTML omitted -->파일생성&lt;!-- raw HTML omitted -->파일속성정보체크&lt;!-- raw HTML omitted -->파일송/수신&lt;!-- raw HTML omitted -->파일압축/해제&lt;!-- raw HTML omitted -->파일업로드&lt;!-- raw HTML omitted -->파일이동&lt;!-- raw HTML omitted -->파일일자체크&lt;!-- raw HTML omitted -->파일존재체크&lt;!-- raw HTML omitted -->파일파싱&lt;!-- raw HTML omitted -->프로세스ID확인&lt;!-- raw HTML omitted -->XML데이터조립&lt;!-- raw HTML omitted -->XML데이터파싱&lt;/td>
+ &lt;td>egovframework.com.utl.sim&lt;/td>
+ &lt;td>egovframework-system-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>215&lt;/td>
+ &lt;td>프로퍼티&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;/td>
+ &lt;td>egovframework-common-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>218&lt;/td>
+ &lt;td>송수신모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.trm&lt;/td>
+ &lt;td>egovframework-trvrcvmonitoring-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.trm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNCNTCINSTT&lt;!-- raw HTML omitted -->COMTNCNTCSERVICE&lt;!-- raw HTML omitted -->COMTNCNTCSYSTEM&lt;!-- raw HTML omitted -->COMTNSYSTEMCNTC&lt;!-- raw HTML omitted -->COMTNTRSMRCVMNTRNG&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>219&lt;/td>
+ &lt;td>DB서비스모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.dbm&lt;/td>
+ &lt;td>egovframework-dbmonitoring-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.dbm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNDBMNTRNG&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>220&lt;/td>
+ &lt;td>HTTP서비스모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.htm&lt;/td>
+ &lt;td>egovframework-httpMon-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.htm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNHTTPMON&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHHTTPMONLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>221&lt;/td>
+ &lt;td>프로세스모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.prm&lt;/td>
+ &lt;td>egovframework-processMon-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.prm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTNPROCESSMON&lt;!-- raw HTML omitted -->COMTNPROCESSMONLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>222&lt;/td>
+ &lt;td>네트워크서비스모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.nsm&lt;/td>
+ &lt;td>egovframework-ntwrksvcmonitoring-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.nsm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTNNTWRKSVCMNTRNG&lt;!-- raw HTML omitted -->COMTNNTWRKSVCMNTRNGLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>223&lt;/td>
+ &lt;td>파일시스템모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.fsm&lt;/td>
+ &lt;td>egovframework-filesysmonitoring-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.fsm&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTNFILESYSMNTRNG&lt;!-- raw HTML omitted -->COMTNFILESYSMNTRNGLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>224&lt;/td>
+ &lt;td>프록시서비스&lt;/td>
+ &lt;td>egovframework.com.utl.sys.pxy&lt;/td>
+ &lt;td>egovframework-proxysvc-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.pxy&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTNPROXYINFO&lt;!-- raw HTML omitted -->COMTNPROXYLOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>225&lt;/td>
+ &lt;td>파일동기화&lt;/td>
+ &lt;td>egovframework.com.utl.sys.ssy&lt;/td>
+ &lt;td>egovframework-synchrnserver-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.ssy&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNSYNCHRNSERVERINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>226&lt;/td>
+ &lt;td>로그인세션정보체크&lt;/td>
+ &lt;td>egovframework.com.utl.sys.rsc&lt;/td>
+ &lt;td>egovframework-checkloginsession-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.rsc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>227&lt;/td>
+ &lt;td>서버자원모니터링&lt;/td>
+ &lt;td>egovframework.com.utl.sys.srm&lt;/td>
+ &lt;td>egovframework-serverresrcemntrng-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;!-- raw HTML omitted -->egovframework.com.utl.sys.srm&lt;!-- raw HTML omitted -->egovframework.com.cop.sms&lt;!-- raw HTML omitted -->egovframework.com.sym.cal&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNRESTDE&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTNSMS&lt;!-- raw HTML omitted -->COMTNSMSRECPTN&lt;!-- raw HTML omitted -->COMTHTRSMRCVMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTHDBMNTRNGLOGINFO&lt;!-- raw HTML omitted -->COMTNSERVEREQPMNINFO&lt;!-- raw HTML omitted -->COMTNSYNCHRNSERVERINFO&lt;!-- raw HTML omitted -->COMTNSERVERINFO&lt;!-- raw HTML omitted -->COMTNSERVEREQPMNRELATE&lt;!-- raw HTML omitted -->COMTNSERVERRESRCELOGINFO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>228&lt;/td>
+ &lt;td>웹표준검사&lt;/td>
+ &lt;td>egovframework.com.utl.sys.wsi&lt;/td>
+ &lt;td>egovframework-webStandard-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.utl.sys.wsi&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>jsp 파일만으로 구성됨&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>231&lt;/td>
+ &lt;td>중복로그인 방지&lt;/td>
+ &lt;td>egovframework.com.utl.slm&lt;/td>
+ &lt;td>egovframework-multiLoginpreventor-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.utl.slm&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>240&lt;/td>
+ &lt;td>OAuth&lt;/td>
+ &lt;td>egovframework.com.ext.oauth&lt;/td>
+ &lt;td>egovframework-oauth-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.ext.oauth&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.sec.rnc&lt;!-- raw HTML omitted -->egovframework.com.sym.ccm.zip&lt;!-- raw HTML omitted -->egovframework.com.uss.ion.fbk&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNAUTHORINFO&lt;!-- raw HTML omitted -->COMTNROLES_HIERARCHY&lt;!-- raw HTML omitted -->COMTNROLEINFO&lt;!-- raw HTML omitted -->COMTNAUTHORROLERELATE&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;!-- raw HTML omitted -->COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTNSTPLATINFO&lt;!-- raw HTML omitted -->COMTHEMPLYRINFOCHANGEDTLS&lt;!-- raw HTML omitted -->COMTCZIP&lt;!-- raw HTML omitted -->COMTRDNMADRZIP&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>241&lt;/td>
+ &lt;td>LdAP&lt;/td>
+ &lt;td>egovframework.com.ext.ldap&lt;/td>
+ &lt;td>egovframework-ldap-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.ext.ldap&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>242&lt;/td>
+ &lt;td>EasyBatch&lt;/td>
+ &lt;td>egovframework.com.ext.batch&lt;/td>
+ &lt;td>egovframework-easybatch-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.ext.batch&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>243&lt;/td>
+ &lt;td>WebMessenger&lt;/td>
+ &lt;td>egovframework.com.ext.msg&lt;/td>
+ &lt;td>egovframework-webmessenger-4.3.0.zip&lt;/td>
+ &lt;td>egovframework.com.cmm&lt;!-- raw HTML omitted -->egovframework.com.ext.msg&lt;!-- raw HTML omitted -->egovframework.com.utl.sim&lt;!-- raw HTML omitted -->egovframework.com.utl.fcc&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;!-- raw HTML omitted -->COMTCCMMNCLCODE&lt;!-- raw HTML omitted -->COMTCCMMNCODE&lt;!-- raw HTML omitted -->COMTCCMMNDETAILCODE&lt;!-- raw HTML omitted -->COMTNAUTHORGROUPINFO&lt;!-- raw HTML omitted -->COMTNORGNZTINFO&lt;!-- raw HTML omitted -->COMTNFILE&lt;!-- raw HTML omitted -->COMTNFILEDETAIL&lt;!-- raw HTML omitted -->COMTHEMAILDSPTCHMANAGE&lt;!-- raw HTML omitted -->COMTNGNRLMBER&lt;!-- raw HTML omitted -->COMTNEMPLYRINFO&lt;!-- raw HTML omitted -->COMTNENTRPRSMBER&lt;!-- raw HTML omitted -->COMTNAUTHORINFO&lt;!-- raw HTML omitted -->COMTNROLES_HIERARCHY&lt;!-- raw HTML omitted -->COMTNROLEINFO&lt;!-- raw HTML omitted -->COMTNAUTHORROLERELATE&lt;!-- raw HTML omitted -->COMVNUSERMASTER&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="공통환경-설정파일">공통환경 설정파일&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>구분&lt;/th>
+ &lt;th>경로 및 파일명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>maven config&lt;/td>
+ &lt;td>/pom.xml&lt;/td>
+ &lt;td>maven project config&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Web Application config&lt;/td>
+ &lt;td>/WEB-INF/web.xml&lt;/td>
+ &lt;td>Web Application 단위 config 설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>servlet context config&lt;/td>
+ &lt;td>/WEB-INF/config/egovframework/springmvc/com/egov-com-servlet.xml&lt;/td>
+ &lt;td>DispatcherServlet application context 설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>login Log Aspect config&lt;/td>
+ &lt;td>/WEB-INF/config/egovframework/springmvc/com/egov-com-loginaop.xml&lt;/td>
+ &lt;td>Login Log Aspect (로그인 메소드, 로그아웃 메소드) 설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>login check config&lt;/td>
+ &lt;td>/WEB-INF/config/egovframework/springmvc/com/egov-com-interceptor.xml&lt;/td>
+ &lt;td>IP 정보 기록 및 Login 체크가 필요한 URL과 로그인 여부를 체크해줄 인터셉터 설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>session 권한 config&lt;/td>
+ &lt;td>/WEB-INF/config/egovframework/springmvc/com/egov-com-access.xml&lt;/td>
+ &lt;td>Globals.Auth = session 인 경우의 세션방식 사용자 권한 설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>context bean 정의&lt;/td>
+ &lt;td>/resources/egovframework/spring/com/context-*.xml&lt;/td>
+ &lt;td>bean 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>범용 properties 정의&lt;/td>
+ &lt;td>/resources/egovframework/egovProp/globals.properties&lt;/td>
+ &lt;td>global 상수 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>추가 properties 정의&lt;/td>
+ &lt;td>/WEB-INF/conf/*.properties&lt;/td>
+ &lt;td>추가적인 상수 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>message properties 정의&lt;/td>
+ &lt;td>/resources/egovframework/message/com/*.properties&lt;/td>
+ &lt;td>message 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>요소기술 환경설정&lt;/td>
+ &lt;td>/resources/egovframework/egovProp/conf/*.properties&lt;/td>
+ &lt;td>요소기술에 필요한 환경설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>요소기술 프로그램 설정&lt;/td>
+ &lt;td>/resources/egovframework/egovProp/prg/&lt;em>.sh(&lt;/em>.bat)&lt;/td>
+ &lt;td>요소기술에 필요한 실행 스크립트&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>sql config 파일&lt;/td>
+ &lt;td>/resources/egovframework/sqlmap/com/*.xml&lt;/td>
+ &lt;td>sql map config 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>validator rule 파일&lt;/td>
+ &lt;td>/resources/egovframework/validator/validator-rules.xml&lt;/td>
+ &lt;td>validator를 이용할 시 rule을 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>validator rule 파일&lt;/td>
+ &lt;td>/resources/egovframework/validator/com-rules.xml&lt;/td>
+ &lt;td>validator를 이용할 시 공통컴포넌트 rule을 정의&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>log 설정&lt;/td>
+ &lt;td>/resources/log4j.xml&lt;/td>
+ &lt;td>log 관련 설정&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>병행처리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-parallel_process/</guid><description>&lt;h1 id="병행처리">병행처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>대용량 데이터를 처리하는 배치수행에서 병렬처리를 이용하면, Job의 구성요소들이 여러 쓰레드 분산수행되어 빠른 시간 내에 효율적으로 작업을 완료할 수 있다.
 스프링 배치에서 병렬처리 방식은 실행 유형별로 멀티쓰레드 방식, Parallel 방식, 파티셔닝 방식 등이 있다.&lt;/p>
@@ -6621,7 +7846,23 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="기본적인-설정">기본적인 설정&lt;/h3>
 &lt;p>Spring Web Flow를 사용하려면 FlowRegistry FlowExecutor를 설정해야 한다.&lt;/p>
 &lt;p>FlowRegistry는 등록될 시나리오에 따라 작성된 flow xml 을 가져오는 역할[1]을 수행한다.
-FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템이 실행되는 부분에 대해 다루겠다.&lt;/p></description></item><item><title>시스템관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</guid><description/></item><item><title>MyBatis 시작하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-getting_started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-getting_started/</guid><description>&lt;h2 id="시작하기">시작하기&lt;/h2>
+FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템이 실행되는 부분에 대해 다루겠다.&lt;/p></description></item><item><title>시스템관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</guid><description/></item><item><title>공통컴포넌트 시작하기</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/intro/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/intro/getting-started/</guid><description>&lt;h1 id="공통컴포넌트-시작하기기">공통컴포넌트 시작하기기&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>개발자의 편의성을 위하여 eGovFrame 기반의 웹 공통컴포넌트 254종의 설치를 돕는 생성 마법사를 제공합니다.&lt;/p>
+&lt;h2 id="주요-개념">주요 개념&lt;/h2>
+&lt;h3 id="공통컴포넌트-생성-마법사">공통컴포넌트 생성 마법사&lt;/h3>
+&lt;p>eGovFrame 기반으로 생성한 프로젝트에 공통컴포넌트 관련 파일 복사 기능을 담고 있는 공통컴포넌트 생성 마법사를 제공합니다.&lt;/p>
+&lt;h2 id="사용-방법">사용 방법&lt;/h2>
+&lt;h3 id="공통컴포넌트-생성">공통컴포넌트 생성&lt;/h3>
+&lt;h4 id="공통컴포넌트-생성-마법사-사용-단계">공통컴포넌트 생성 마법사 사용 단계&lt;/h4>
+&lt;ol>
+&lt;li>
+&lt;p>메뉴표시줄에서 우클릭 &amp;gt; New &amp;gt; eGovFrame Web Project를 선택합니다. (단, eGovFrame 퍼스펙티브 내에서)
+&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/common-intro/images/egovframe-web-project.jpg" alt="eGovFrame Web Project 생성" >
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Project name을 입력하고, Target Runtime으로 &lt;strong>Apache Tomcat v9.0&lt;/strong>을 선택합니다.&lt;/p></description></item><item><title>MyBatis 시작하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-getting_started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-getting_started/</guid><description>&lt;h2 id="시작하기">시작하기&lt;/h2>
 &lt;p>모든 MyBatis 애플리케이션은 SqlSessionFactory 인스턴스를 사용한다. SqlSessionFactory 인스턴스는 SqlSessionFactoryBuilder 를 사용하여 만들 수 있다. SqlSessionFactoryBuilder 는 XML 설정파일에서 SqlSessionFactory 인스턴스를 빌드할 수 있다;&lt;/p>
 &lt;h3 id="xml에서-sqlsessionfactory-빌드하기">XML에서 SqlSessionFactory 빌드하기&lt;/h3>
 &lt;p>XML 파일에서 SqlSessionFactory 인스턴스를 빌드하는 것은 매우 간단하다. 설정을 위해 클래스패스 자원을 사용하는 것을 추천하나, 파일 경로나 file URL 로부터 만들어진 InputStream 인스턴스를 사용할 수도 있다. MyBatis 는 클래스패스와 다른 위치에서 자원을 로드하는 것으로 좀더 쉽게 해주는 Resources 라는 유틸성 클래스를 가지고 있다.&lt;/p></description></item><item><title>신규 컴포넌트(v3.2)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/new-components-v3.2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/new-components-v3.2/</guid><description/></item><item><title>Encryption/Decryption Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/crypto/crypto-encryption-decryption/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/crypto/crypto-encryption-decryption/</guid><description>&lt;h1 id="encryptiondecryption-service">Encryption/Decryption Service&lt;/h1>
@@ -7104,7 +8345,1121 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Layout&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">PatternLayout&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pattern&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위 Logger 객체를 org.apache.logging.log4j.core.Logger로 캐스팅하면, Log Level, Appender, Layout 등 설정을 변경할 수 있다.&lt;br>
-예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
+예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>공통컴포넌트 테이블 구성 정보</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/intro/table-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/intro/table-structure/</guid><description>&lt;h1 id="공통컴포넌트-테이블-구성-정보">공통컴포넌트 테이블 구성 정보&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>공통컴포넌트를 적용 시 공통컴포넌트의 종류별 특징을 고려하여 현장 상황에 맞게 적용할 수 있도록 관련 정보를 제공한다.&lt;/p>
+&lt;ul>
+&lt;li>공통기술의 데이터 엔터티 및 어트리뷰트는 공통기술 웹 어플리케이션이 구동되기 위한 최소한의 필수 항목들로 구성되어 있으며, 공통컴포넌트를 이용하여 개발하는 각 기관에서 기관의 업무환경 및 시스템 구성에 맞도록 구체화하여 사용하여야 한다.(관련ERD 참조)&lt;/li>
+&lt;li>요소기술은 Util과 같이 타 어플리케이션 개발 시 참조하여 기능이 재구현되어야 하는 패키지이고, 공통기술은 각 배포단위별로 웹 어플리케이션을 실행 가능한 패키지로 구성되어 있다.&lt;/li>
+&lt;li>요소기술은 관련 데이터 엔터티가 존재하지 않으며, 공통기술은 관련 데이터 엔터티가 존재한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="테이블-목록">테이블 목록&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>NO&lt;/th>
+ &lt;th>구분&lt;/th>
+ &lt;th>테이블ID&lt;/th>
+ &lt;th>테이블명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>COMTECOPSEQ&lt;/td>
+ &lt;td>Sequence 저장테이블&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>IDS&lt;/td>
+ &lt;td>테이블별 아이디생성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNGNRLMBER&lt;/td>
+ &lt;td>일반회원&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNORGNZTINFO&lt;/td>
+ &lt;td>조직정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNEMPLYRINFO&lt;/td>
+ &lt;td>업무사용자정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNENTRPRSMBER&lt;/td>
+ &lt;td>기업회원&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMVNUSERMASTER&lt;/td>
+ &lt;td>사용자정보뷰&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNLOGINPOLICY&lt;/td>
+ &lt;td>로그인정책&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNEMPLYRSCRTYESTBS&lt;/td>
+ &lt;td>사용자보안설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTNMENUINFO&lt;/td>
+ &lt;td>메뉴정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11&lt;/td>
+ &lt;td>사용자디렉토리/통합인증&lt;/td>
+ &lt;td>COMTHEMPLYRINFOCHANGEDTLS&lt;/td>
+ &lt;td>업무사용자정보변경내역&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12&lt;/td>
+ &lt;td>보안관리&lt;/td>
+ &lt;td>COMTNAUTHORGROUPINFO&lt;/td>
+ &lt;td>권한그룹정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>보안관리&lt;/td>
+ &lt;td>COMTNAUTHORINFO&lt;/td>
+ &lt;td>권한정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>보안관리&lt;/td>
+ &lt;td>COMTNROLES_HIERARCHY&lt;/td>
+ &lt;td>롤 계층구조&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>15&lt;/td>
+ &lt;td>보안관리&lt;/td>
+ &lt;td>COMTNROLEINFO&lt;/td>
+ &lt;td>롤정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>16&lt;/td>
+ &lt;td>보안관리&lt;/td>
+ &lt;td>COMTNAUTHORROLERELATE&lt;/td>
+ &lt;td>권한롤관계&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>17&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNBLOG&lt;/td>
+ &lt;td>블로그게시판&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>18&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNBLOGUSER&lt;/td>
+ &lt;td>블로그사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>19&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTHEMAILDSPTCHMANAGE&lt;/td>
+ &lt;td>메일발신관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>20&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNTMPLATINFO&lt;/td>
+ &lt;td>템플릿&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>21&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNBBSMASTER&lt;/td>
+ &lt;td>게시판마스터&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>22&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNBBS&lt;/td>
+ &lt;td>게시판&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>23&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNBBSUSE&lt;/td>
+ &lt;td>게시판활용&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>24&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNCMMNTY&lt;/td>
+ &lt;td>커뮤니티 속성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>25&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNCLUB&lt;/td>
+ &lt;td>동호회속성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>26&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNBBSMASTEROPTN&lt;/td>
+ &lt;td>게시판마스터옵션&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>27&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNCOMMENT&lt;/td>
+ &lt;td>댓글&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>28&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNSCRAP&lt;/td>
+ &lt;td>스크랩&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>29&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNSTSFDG&lt;/td>
+ &lt;td>만족도&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>30&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTHCONFMHISTORY&lt;/td>
+ &lt;td>승인이력&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>31&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNCMMNTYUSER&lt;/td>
+ &lt;td>커뮤니티사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>32&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNCLUBUSER&lt;/td>
+ &lt;td>동호회사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>33&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNSMS&lt;/td>
+ &lt;td>문자메시지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>34&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNSMSRECPTN&lt;/td>
+ &lt;td>문자메시지수신&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>35&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNMTGINFO&lt;/td>
+ &lt;td>회의정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>36&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNSCHDULINFO&lt;/td>
+ &lt;td>일정정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>37&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNDIARYINFO&lt;/td>
+ &lt;td>일지정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>38&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNLEADERSTTUS&lt;/td>
+ &lt;td>간부상태&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>39&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNLEADERSCHDUL&lt;/td>
+ &lt;td>간부일정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>40&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNLEADERSCHDULDE&lt;/td>
+ &lt;td>간부일정일자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>41&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNDEPTJOB&lt;/td>
+ &lt;td>부서업무&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>42&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNDEPTJOBBX&lt;/td>
+ &lt;td>부서업무함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>43&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNWIKMNTHNGREPRT&lt;/td>
+ &lt;td>주간/월간보고&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>44&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNMEMOTODO&lt;/td>
+ &lt;td>메모할일&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>45&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNMEMOREPRT&lt;/td>
+ &lt;td>메모보고&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>46&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNNCRD&lt;/td>
+ &lt;td>명함정보속성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>47&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNNCRDUSER&lt;/td>
+ &lt;td>명함사용자속성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>48&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNADBKMANAGE&lt;/td>
+ &lt;td>주소록관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>49&lt;/td>
+ &lt;td>협업&lt;/td>
+ &lt;td>COMTNADBK&lt;/td>
+ &lt;td>주소록&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>50&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNFILE&lt;/td>
+ &lt;td>파일속성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>51&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNFILEDETAIL&lt;/td>
+ &lt;td>파일상세정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>52&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNSITEMAP&lt;/td>
+ &lt;td>사이트맵&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>53&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNINFRMLSANCTN&lt;/td>
+ &lt;td>약식결재&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>54&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNSTPLATINFO&lt;/td>
+ &lt;td>약관정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>55&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNINDVDLPGECNTNTS&lt;/td>
+ &lt;td>마이페이지 컨텐츠&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>56&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNINDVDLPGEESTBS&lt;/td>
+ &lt;td>마이페이지 설정&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>57&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNCNTNTSLIST&lt;/td>
+ &lt;td>컨텐츠목록&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>58&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNCPYRHTINFO&lt;/td>
+ &lt;td>저작권정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>59&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNINDVDLINFOPOLICY&lt;/td>
+ &lt;td>개인정보정책확인&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>60&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNHPCMINFO&lt;/td>
+ &lt;td>도움말정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>61&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNWORDDICARYINFO&lt;/td>
+ &lt;td>용어사전정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>62&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNFAQINFO&lt;/td>
+ &lt;td>FAQ정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>63&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQAINFO&lt;/td>
+ &lt;td>QA정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>64&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNADMINISTRATIONWORD&lt;/td>
+ &lt;td>행정용어사전관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>65&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNONLINEMANUAL&lt;/td>
+ &lt;td>온라인메뉴얼&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>66&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNCNSLTLIST&lt;/td>
+ &lt;td>상담내역&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>67&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQUSTNRTMPLAT&lt;/td>
+ &lt;td>설문템플릿&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>68&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQESTNRINFO&lt;/td>
+ &lt;td>설문지정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>69&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQUSTNRRESPONDINFO&lt;/td>
+ &lt;td>설문응답자정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>70&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQUSTNRQESITM&lt;/td>
+ &lt;td>설문문항&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>71&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQUSTNRRSPNSRESULT&lt;/td>
+ &lt;td>설문응답결과&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>72&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNQUSTNRIEM&lt;/td>
+ &lt;td>설문항목&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>73&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNONLINEPOLLMANAGE&lt;/td>
+ &lt;td>온라인POLL관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>74&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNONLINEPOLLIEM&lt;/td>
+ &lt;td>온라인POLL항목&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>75&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNONLINEPOLLRESULT&lt;/td>
+ &lt;td>온라인POLL결과&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>76&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNNEWSINFO&lt;/td>
+ &lt;td>뉴스정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>77&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNSITELIST&lt;/td>
+ &lt;td>사이트목록&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>78&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNRECOMENDSITEINFO&lt;/td>
+ &lt;td>추천사이트정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>79&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNEVENTINFO&lt;/td>
+ &lt;td>행사/이벤트정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>80&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNEXTRLHRINFO&lt;/td>
+ &lt;td>외부인사정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>81&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNPOPUPMANAGE&lt;/td>
+ &lt;td>팝업 정보 관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>82&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNNTFCINFO&lt;/td>
+ &lt;td>정보알림&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>83&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNBANNER&lt;/td>
+ &lt;td>배너&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>84&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNLOGINSCRINIMAGE&lt;/td>
+ &lt;td>로그인화면이미지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>85&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNRECENTSRCHWRDMANAGE&lt;/td>
+ &lt;td>최근검색어관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>86&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNRECENTSRCHWRD&lt;/td>
+ &lt;td>최근검색어&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>87&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNMAINIMAGE&lt;/td>
+ &lt;td>메인이미지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>88&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNUNITYLINK&lt;/td>
+ &lt;td>통합링크&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>89&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNUSERABSNCE&lt;/td>
+ &lt;td>사용자부재&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>90&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNINTNETSVC&lt;/td>
+ &lt;td>인터넷서비스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>91&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNTWITTER&lt;/td>
+ &lt;td>트위터인증키관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>92&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNWIKIBKMK&lt;/td>
+ &lt;td>Wiki북마크&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>93&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNRSS&lt;/td>
+ &lt;td>RSS태그관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>94&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNNOTE&lt;/td>
+ &lt;td>쪽지관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>95&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNNOTETRNSMIT&lt;/td>
+ &lt;td>쪽지송신&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>96&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNNOTERECPTN&lt;/td>
+ &lt;td>쪽지수신&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>97&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNMTGPLACEMANAGE&lt;/td>
+ &lt;td>회의실관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>98&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNFXTRSMANAGE&lt;/td>
+ &lt;td>비품관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>99&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNMTGPLACEFXTRS&lt;/td>
+ &lt;td>회의실비품&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>100&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNMTGPLACERESVE&lt;/td>
+ &lt;td>회의실예약&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>101&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNCTSNNMANAGE&lt;/td>
+ &lt;td>경조관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>102&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNVCATNMANAGE&lt;/td>
+ &lt;td>휴가관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>103&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNBNDTDIARY&lt;/td>
+ &lt;td>당직관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>104&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNBNDTMANAGE&lt;/td>
+ &lt;td>당직관리정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>105&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNBNDTCECKMANAGE&lt;/td>
+ &lt;td>당직체크관리정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>106&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNINDVDLYRYCMANAGE&lt;/td>
+ &lt;td>개인별연차관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>107&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNRWARDMANAGE&lt;/td>
+ &lt;td>포상관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>108&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNANNVRSRYMANAGE&lt;/td>
+ &lt;td>기념일관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>109&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNEVENTMANAGE&lt;/td>
+ &lt;td>행사관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>110&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNEVENTATDRN&lt;/td>
+ &lt;td>행사참석자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>111&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNCOMMUTE&lt;/td>
+ &lt;td>출퇴근관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>112&lt;/td>
+ &lt;td>사용자지원&lt;/td>
+ &lt;td>COMTNROUGHMAP&lt;/td>
+ &lt;td>약도관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>113&lt;/td>
+ &lt;td>통계/리포팅&lt;/td>
+ &lt;td>COMTSBBSSUMMARY&lt;/td>
+ &lt;td>게시물통계요약&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>114&lt;/td>
+ &lt;td>통계/리포팅&lt;/td>
+ &lt;td>COMTSUSERSUMMARY&lt;/td>
+ &lt;td>사용자통계요약&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>115&lt;/td>
+ &lt;td>통계/리포팅&lt;/td>
+ &lt;td>COMTNREPRTSTATS&lt;/td>
+ &lt;td>보고서통계&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>116&lt;/td>
+ &lt;td>통계/리포팅&lt;/td>
+ &lt;td>COMTNDTAUSESTATS&lt;/td>
+ &lt;td>자료이용현황통계&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>117&lt;/td>
+ &lt;td>통계/리포팅&lt;/td>
+ &lt;td>COMTNNTTSTATS&lt;/td>
+ &lt;td>게시물통계&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>118&lt;/td>
+ &lt;td>디지털자산관리&lt;/td>
+ &lt;td>COMTNDAMMAPTEAM&lt;/td>
+ &lt;td>지식맵(조직유형)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>119&lt;/td>
+ &lt;td>디지털자산관리&lt;/td>
+ &lt;td>COMTNDAMKNOIFM&lt;/td>
+ &lt;td>지식정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>120&lt;/td>
+ &lt;td>디지털자산관리&lt;/td>
+ &lt;td>COMTNDAMMAPKNO&lt;/td>
+ &lt;td>지식맵(지식유형)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>121&lt;/td>
+ &lt;td>디지털자산관리&lt;/td>
+ &lt;td>COMTNDAMPRO&lt;/td>
+ &lt;td>지식전문가&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>122&lt;/td>
+ &lt;td>디지털자산관리&lt;/td>
+ &lt;td>COMTNDAMCALRES&lt;/td>
+ &lt;td>지식정보제공/지식정보요청&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>123&lt;/td>
+ &lt;td>시스템/서비스연계&lt;/td>
+ &lt;td>COMTNCNTCINSTT&lt;/td>
+ &lt;td>연계기관&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>124&lt;/td>
+ &lt;td>시스템/서비스연계&lt;/td>
+ &lt;td>COMTNCNTCSERVICE&lt;/td>
+ &lt;td>연계서비스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>125&lt;/td>
+ &lt;td>시스템/서비스연계&lt;/td>
+ &lt;td>COMTNCNTCSYSTEM&lt;/td>
+ &lt;td>연계시스템&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>126&lt;/td>
+ &lt;td>시스템/서비스연계&lt;/td>
+ &lt;td>COMTNSYSTEMCNTC&lt;/td>
+ &lt;td>시스템연계&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>127&lt;/td>
+ &lt;td>시스템/서비스연계&lt;/td>
+ &lt;td>COMTNCNTCMESSAGE&lt;/td>
+ &lt;td>연계메시지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>128&lt;/td>
+ &lt;td>시스템/서비스연계&lt;/td>
+ &lt;td>COMTNCNTCMESSAGEITEM&lt;/td>
+ &lt;td>연계메시지항목&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>129&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTCCMMNCLCODE&lt;/td>
+ &lt;td>공통분류코드&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>130&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTCCMMNCODE&lt;/td>
+ &lt;td>공통코드&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>131&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTCCMMNDETAILCODE&lt;/td>
+ &lt;td>공통상세코드&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>132&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNLOGINLOG&lt;/td>
+ &lt;td>접속로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>133&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTSSYSLOGSUMMARY&lt;/td>
+ &lt;td>시스템로그요약&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>134&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTSWEBLOGSUMMARY&lt;/td>
+ &lt;td>웹로그 요약&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>135&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNPROGRMLIST&lt;/td>
+ &lt;td>프로그램목록&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>136&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTHPROGRMCHANGEDTLS&lt;/td>
+ &lt;td>프로그램변경내역&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>137&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNMENUCREATDTLS&lt;/td>
+ &lt;td>메뉴생성내역&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>138&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTCZIP&lt;/td>
+ &lt;td>우편번호&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>139&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTRDNMADRZIP&lt;/td>
+ &lt;td>도로명주소&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>140&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTCADMINISTCODE&lt;/td>
+ &lt;td>행정코드&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>141&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTCADMINISTCODERECPTNLOG&lt;/td>
+ &lt;td>행정코드수신로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>142&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNINSTTCODE&lt;/td>
+ &lt;td>기관코드&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>143&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNINSTTCODERECPTNLOG&lt;/td>
+ &lt;td>기관코드수신로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>144&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNSYSLOG&lt;/td>
+ &lt;td>시스템로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>145&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNUSERLOG&lt;/td>
+ &lt;td>사용자로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>146&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNTRSMRCVLOG&lt;/td>
+ &lt;td>송수신로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>147&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTSTRSMRCVLOGSUMMARY&lt;/td>
+ &lt;td>송수신로그요약&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>148&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTHSYSHIST&lt;/td>
+ &lt;td>시스템이력&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>149&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNWEBLOG&lt;/td>
+ &lt;td>웹로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>150&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBKMKMENUMANAGERESULT&lt;/td>
+ &lt;td>바로가기 메뉴 등록&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>151&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBATCHOPERT&lt;/td>
+ &lt;td>배치작업&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>152&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBATCHRESULT&lt;/td>
+ &lt;td>배치결과&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>153&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBATCHSCHDUL&lt;/td>
+ &lt;td>배치스케줄&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>154&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBATCHSCHDULDFK&lt;/td>
+ &lt;td>배치스케줄요일&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>155&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBACKUPRESULT&lt;/td>
+ &lt;td>백업결과&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>156&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBACKUPOPERT&lt;/td>
+ &lt;td>백업작업&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>157&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNBACKUPSCHDULDFK&lt;/td>
+ &lt;td>백업스케줄요일&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>158&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNNTWRKINFO&lt;/td>
+ &lt;td>네트워크정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>159&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNSERVEREQPMNINFO&lt;/td>
+ &lt;td>서버장비정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>160&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNSERVERINFO&lt;/td>
+ &lt;td>서버정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>161&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNSERVEREQPMNRELATE&lt;/td>
+ &lt;td>서버장비관계&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>162&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNTROBLINFO&lt;/td>
+ &lt;td>장애 정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>163&lt;/td>
+ &lt;td>시스템관리&lt;/td>
+ &lt;td>COMTNPRIVACYLOG&lt;/td>
+ &lt;td>개인정보조회 로그&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>164&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNRESTDE&lt;/td>
+ &lt;td>휴일관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>165&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNTRSMRCVMNTRNG&lt;/td>
+ &lt;td>송수신모니터링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>166&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTHTRSMRCVMNTRNGLOGINFO&lt;/td>
+ &lt;td>송수신모니터링로그정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>167&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNSYNCHRNSERVERINFO&lt;/td>
+ &lt;td>동기화 서버 정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>168&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNDBMNTRNG&lt;/td>
+ &lt;td>DB서비스모니터링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>169&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTHDBMNTRNGLOGINFO&lt;/td>
+ &lt;td>DB서비스모니터링로그정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>170&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNHTTPMON&lt;/td>
+ &lt;td>HTTP모니터링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>171&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTHHTTPMONLOGINFO&lt;/td>
+ &lt;td>HTTP서비스모니터링로그정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>172&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNPROCESSMON&lt;/td>
+ &lt;td>프로세스모니터링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>173&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNPROCESSMONLOGINFO&lt;/td>
+ &lt;td>프로세스모니터링로그정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>174&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNNTWRKSVCMNTRNG&lt;/td>
+ &lt;td>네트워크서비스 모니터링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>175&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNNTWRKSVCMNTRNGLOGINFO&lt;/td>
+ &lt;td>네트워크서비스모니터링로그정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>176&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNFILESYSMNTRNG&lt;/td>
+ &lt;td>파일시스템 모니터링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>177&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNFILESYSMNTRNGLOGINFO&lt;/td>
+ &lt;td>파일시스템모니터링로그정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>178&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNPROXYINFO&lt;/td>
+ &lt;td>프록시정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>179&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNPROXYLOGINFO&lt;/td>
+ &lt;td>프록시 로그 정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>180&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>COMTNSERVERRESRCELOGINFO&lt;/td>
+ &lt;td>서버 자원 로그 정보&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>181&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>J_ATTACHFILE&lt;/td>
+ &lt;td>Jfile업로드&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>182&lt;/td>
+ &lt;td>요소기술&lt;/td>
+ &lt;td>IMGTEMP&lt;/td>
+ &lt;td>전자관인 이미지&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="테이블초기데이터-생성-스크립트">테이블/초기데이터 생성 스크립트&lt;/h2>
+&lt;p>공통컴포넌트는 배포파일을 통해 테이블/초기데이터 생성 스크립트를 제공하므로 전체 테이블/초기데이터 생성 스크립트는 공통컴포넌트의 all-in-one 파일을 통해 얻을 수 있다.&lt;/p></description></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Log4j 2는 기존 Properties 파일 형식의 환경 설정을 지원하지 않으며,&lt;br>
 XML (log4j2.xml) 혹은 JSON (log4j2.json or log4j2.jsn) 파일 형식의 환경 설정만 가능하다.&lt;/p>
@@ -7178,4 +9533,45 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 
 
 &lt;/li>
-&lt;/ul></description></item><item><title>포맷/계산/변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</guid><description/></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item></channel></rss>
+&lt;/ul></description></item><item><title>패키지 간 참조 관계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/intro/package-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/intro/package-reference/</guid><description>&lt;h1 id="패키지-간-참조-관계">패키지 간 참조 관계&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>컴포넌트를 구성하는 패키지 간의 참조관계를 아래 그림과 같이 도식화하였습니다. 경량화를 통해 상호 참조관계 및 이행 참조를 통한 순환 참조 관계를 모두 제거하였음을 도식적으로 확인할 수 있습니다. 함수적 참조관계와 UI 또는 업무적 참조관계를 구분하여 참조관계의 종류를 파악할 수 있도록 하였습니다. 전체 패키지를 함께 표현하는 것은 판독성이 떨어지므로 컴포넌트 분류 단위별로 표현하였습니다. 패키지에 부여된 색을 통해 서로 다른 분류에 속하는 패키지들을 구분하도록 구성하였습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>참고&lt;/strong>: 아래 그림의 유효 공통컴포넌트는 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/intro/deployment-structure/">공통컴포넌트 배포 파일의 구성&lt;/a>
+
+
+ 내역의 공통컴포넌트 및 패키지를 참조하시기 바랍니다.&lt;/p></description></item><item><title>포맷/계산/변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</guid><description/></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>표준프레임워크 4.3에서는 다음과 같은 방법으로 환경설정을 할 수 있습니다:&lt;/p>
+&lt;ul>
+&lt;li>web.xml 및 context-egovuserdetailshelper.xml 파일을 통한 설정&lt;/li>
+&lt;li>Servlet 3.1 기능을 활용한 globals.properties를 통한 설정 간소화&lt;/li>
+&lt;/ul>
+&lt;h2 id="주요-개념">주요 개념&lt;/h2>
+&lt;h3 id="데이터베이스-설정">데이터베이스 설정&lt;/h3>
+&lt;p>globals.properties 설정파일을 기준으로 spring profile 서비스를 이용하여 데이터베이스 환경을 설정합니다.&lt;/p>
+&lt;ul>
+&lt;li>Globals.DbType 기준으로 context-datasource.xml 파일에 설정된 Spring Profile 기능에 의해 dataSource 빈이 활성화됩니다.&lt;/li>
+&lt;li>이 기능을 통해 테스트DB, 검증DB, 운영DB로 분리가 가능합니다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="인증권한방식-설정">인증/권한방식 설정&lt;/h3>
+&lt;p>표준프레임워크 3.5 이하 버전에서 개발자가 수동으로 관련 XML 설정하던 불편한 점을
+표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있습니다.&lt;/p></description></item></channel></rss>
