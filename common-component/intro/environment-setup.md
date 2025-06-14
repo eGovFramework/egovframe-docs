@@ -71,7 +71,7 @@ Globals.mysql.Password =
 ```
 
 데이터베이스 변경 시 pom.xml에 해당 JDBC 드라이버 의존성을 추가해야 합니다
-3rd party library의 경우에는 직접 Local Repository에 library를 넣어 주거나 Nexus서버를 구성하여 다운로드 받을 수 있습니다. Nexus에 대한 자세한 설정은 [개발환경의 Nexus 페이지](/egovframe-development/deployment-tool/nexus)를 참조합니다.
+3rd party library의 경우에는 직접 Local Repository에 library를 넣어 주거나 Nexus서버를 구성하여 다운로드 받을 수 있습니다. Nexus에 대한 자세한 설정은 [개발환경의 Nexus 페이지](/egovframe-development/deployment-tool/nexus.md)를 참조합니다.
 
 ```xml
 <!-- mysql -->
