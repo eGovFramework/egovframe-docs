@@ -2,7 +2,7 @@
 title: "공통컴포넌트 테이블 구성 정보"
 linkTitle: "테이블 구성"
 description: "공통컴포넌트의 데이터베이스 테이블 구조에 대해 설명합니다."
-url: /common-component/intro/table-structure/
+url: /common-component/common-intro/table-structure/
 menu:
   depth:
     name: "공통컴포넌트 테이블 구성 정보"
