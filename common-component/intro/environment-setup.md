@@ -112,14 +112,3 @@ Globals.login.Lock = true
 # 인증 재시도 횟수
 Globals.login.LockCount = 5
 ```
-
-## 관련 문서
-
-- [공통컴포넌트 시작하기](/common-component/intro/getting-started)
-- [공통컴포넌트 배포 파일의 구성](/common-component/intro/deployment-structure)
-- [Nexus 설정](/egovframe-development/deployment-tool/nexus)
-
-## 참고자료
-
-- [전자정부 표준프레임워크 포털](https://www.egovframe.go.kr)
-- [전자정부 표준프레임워크 라이센스](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:license)
