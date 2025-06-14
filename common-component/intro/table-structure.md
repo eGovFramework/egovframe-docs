@@ -215,8 +215,6 @@ menu:
 
 하지만, 전체 테이블/초기데이터에 대한 생성 스크립트만 필요한 경우를 위해 아래의 링크를 통해 제공하니 필요시 참조한다. 스크립트는 Altibase, Cubrid, Maria, MySQL, Oracle, Postgres, Tibero 및 Goldilocks 여덟 개의 DBMS에 해당하는 스크립트가 제공되며, Tibero는 Oracle의 테이블 생성 스크립트와 동일하다. 스크립트 파일은 기본적으로 **UTF-8**로 인코딩 되어있다.
 
-### 스크립트 다운로드
-
 다음 스크립트들을 직접 다운로드할 수 있습니다:
 
 - [**전체 테이블 생성 스크립트 4.3.0**](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:com:v4.3:ddl_dml_script_v4.3.0.zip)

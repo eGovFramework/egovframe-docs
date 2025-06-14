@@ -35,16 +35,19 @@ menu:
 
 ### 사용자디렉토리/통합인증
 
-사용자디렉토리/통합인증 컴포넌트는 시스템의 기본 인증 및 사용자 관리 기능을 제공하며, 다른 대부분의 컴포넌트에서 참조되는 핵심 컴포넌트입니다.
+사용자디렉토리/통합인증 컴포넌트는 시스템의 기본 인증 및 사용자 관리 기능을 제공합니다.
+![사용자디렉토리/통합인증 참조 관계](./images/user-auth-dependency.jpg)
 
 ### 보안
 
 보안 컴포넌트는 시스템의 권한 관리 및 보안 정책을 담당합니다.
+![보안 참조 관계](./images/security-dependency.jpg)
 
 
 ### 통계/리포팅
 
 통계/리포팅 컴포넌트는 시스템 사용 현황 및 각종 통계 정보를 제공합니다.
+![통계/리포팅 참조 관계](./images/statistics-dependency.jpg)
 
 
 ### 협업
@@ -52,44 +55,23 @@ menu:
 협업 컴포넌트는 조직 내 협업을 지원하는 다양한 기능을 제공하며, 크게 두 그룹으로 나뉩니다.
 
 #### 게시판, 커뮤니티(동호회), 블로그
+![협업 - 게시판/커뮤니티/블로그 참조 관계](./images/collaboration-board-dependency.jpg)
 
 
 #### 일정관리, 문자메시지, 주소록 외
+![협업 - 일정관리/문자메시지/주소록 참조 관계](./images/collaboration-schedule-dependency.jpg)
 
 
 ### 사용자지원
 
 사용자지원 컴포넌트는 시스템 사용자를 위한 다양한 지원 기능을 제공합니다.
+![사용자지원 참조 관계 1](./images/user-support-dependency01.jpg)
+![사용자지원 참조 관계 2](./images/user-support-dependency02.jpg)
+![사용자지원 참조 관계 3](./images/user-support-dependency03.jpg)
 
 
 ### 시스템관리
 
-시스템관리 컴포넌트는 시스템 운영 및 관리를 위한 기능을 제공하며, 다른 모든 컴포넌트의 기반이 됩니다.
-
-## 참조 관계 다이어그램
-
-각 컴포넌트별 패키지 간 참조 관계를 시각적으로 확인할 수 있습니다.
-
-### 사용자디렉토리/통합인증 참조 관계
-![사용자디렉토리/통합인증 참조 관계](./images/user-auth-dependency.png)
-
-### 보안 참조 관계
-![보안 참조 관계](./images/security-dependency.png)
-
-### 통계/리포팅 참조 관계
-![통계/리포팅 참조 관계](./images/statistics-dependency.png)
-
-### 협업 - 게시판/커뮤니티/블로그 참조 관계
-![협업 - 게시판/커뮤니티/블로그 참조 관계](./images/collaboration-board-dependency.png)
-
-### 협업 - 일정관리/문자메시지/주소록 참조 관계
-![협업 - 일정관리/문자메시지/주소록 참조 관계](./images/collaboration-schedule-dependency.png)
-
-### 사용자지원 참조 관계
-![사용자지원 참조 관계](./images/user-support-dependency.png)
-
-### 시스템관리 참조 관계
-![시스템관리 참조 관계](./images/system-management-dependency.png)
-
-> **참고**: 상세한 참조 관계 다이어그램은 [원본 페이지](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init_pkg_dependency)에서도 확인하실 수 있습니다.
-
+시스템관리 컴포넌트는 시스템 운영 및 관리를 위한 기능을 제공합니다다.
+![시스템관리 참조 관계 1](./images/system-management-dependency01.jpg)
+![시스템관리 참조 관계 2](./images/system-management-dependency02.jpg)
