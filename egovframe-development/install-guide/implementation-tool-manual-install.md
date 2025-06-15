@@ -2,7 +2,7 @@
 title: "Implementation Tool 수동 설치가이드"
 linkTitle: "수동 설치가이드"
 description: "본 가이드는 Eclipse에서 전자정부 표준프레임워크 플러그인을 수동으로 설치하는 방법을 가이드한다."
-url: "/egovframe-development/install-guide/implementation-tool-manual-install/"
+url: /egovframe-development/install-guide/implementation-tool-manual-install/
 menu:
   depth:
     name: "Implementation Tool 수동 설치가이드"
@@ -30,11 +30,17 @@ menu:
 ### 플러그인 다운로드
 
 1. 인터넷 웹브라우저를 통해 ([eGovFrame 홈페이지](https://www.egovframe.go.kr/))에 접속하여 사이트 상위메뉴를 통해 "다운로드 > 개발환경> 4.x 다운로드"으로 이동한다.
-   ![플러그인 다운로드1](./images/plugin-download-1.png)
+
+![플러그인 다운로드1](./images/plugin-download-1.png)
+
 2. 구현도구 게시물을 선택한다.
-   ![플러그인 다운로드2](./images/plugin-download-2.png)
+
+![플러그인 다운로드2](./images/plugin-download-2.png)
+
 3. 첨부된 파일을 다운로드받아 압축을 해제한다. 편의상 바탕화면에 압축을 풀 것을 권장한다.
-   ![플러그인 다운로드3](./images/plugin-download-3.png)
+
+![플러그인 다운로드3](./images/plugin-download-3.png)
+
 
 ## Step 2. 플러그인 설치
 
@@ -80,6 +86,7 @@ menu:
 2. 우측 상단의 Add 버튼을 클릭한 후 나오는 Add Repository 창에서 우측의 Local 버튼을 클릭한 후 다운받은 표준프레임워크 플러그인을 압축 해제한 폴더를 선택한다.
 
 ![eGovFrame 플러그인 설치 2](./images/egovframe-plugin-install-2.png)
+
 ![eGovFrame 플러그인 설치 3](./images/egovframe-plugin-install-3.png)
 
 3. Pending이 되면 eGovFrame 전체를 선택한 후 Next를 누른다.
@@ -134,7 +141,9 @@ menu:
 ### 1. eclipse theme 기능 변경
 
 1. Window » Preferences » General » Appearance » Theme를 Classic으로 변경.
-   ![Theme 변경](./images/appearance-change.jpg)
+
+![Theme 변경](./images/appearance-change.jpg)
+
 2. Use mixed fonts and colors for labels 체크를 해지
 3. Apply 후 eclipse 재실행.
 

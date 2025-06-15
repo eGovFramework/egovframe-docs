@@ -2,7 +2,7 @@
 title: "개발자 개발환경 설치가이드"
 linkTitle: "개발자 환경 설치"
 description: "개발자 개발환경을 다운로드 받아 설치 후 프로젝트를 생성해서 실행하기까지의 가이드를 제공한다."
-url: "/egovframe-development/install-guide/developer-environment-install-guide/"
+url: /egovframe-development/install-guide/developer-environment-install-guide/
 menu:
   depth:
     name: "개발자 개발환경 설치가이드"
@@ -200,7 +200,9 @@ Data Source Explorer연결 가이드를 참고한다.
 #### 1. eclipse theme 기능 변경
 
 1. Window » Preferences » General » Appearance » Theme를 Classic으로 변경.
+
    ![theme 변경](./images/appearance-change.jpg)
+
 2. Use mixed fonts and colors for labels 체크를 해지
 3. Apply 후 eclipse 재실행.
 

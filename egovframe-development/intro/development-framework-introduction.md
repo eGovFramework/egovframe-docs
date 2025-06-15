@@ -2,7 +2,7 @@
 title: "개발프레임워크 개발환경 소개"
 linkTitle: "개발프레임워크 소개"
 description: "개발프레임워크 개발환경의 목표, 제공 서비스 및 환경설정 관련 도구(JDK, WAS, OpenSource) 정보 등을 안내한다."
-url: "/egovframe-development/development-intro/development-framework-introduction/"
+url: /egovframe-development/development-intro/development-framework-introduction/
 menu:
   depth:
     name: "개발프레임워크 개발환경 소개"
@@ -81,11 +81,11 @@ menu:
 
 **개발환경 4.3.0**
 
-| 항목                                               | 권장버전                                                       | 비고                                                                                                                                                             |
-| -------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Java Development Kit                               | 17 이상                                                        | Mac 버전은 Eclipse 2024-09 (4.33) 버전을 사용하여 21 이상                                                                                                        |
-| Servlet                                            | 3.1 이상                                                       |                                                                                                                                                                  |
-| Eclipse IDE for Enterprise Java and Web Developers | 4.31.0 (2024-03) - Windows/Linux<br />4.33.0 (2024-09) - MacOS | [Windows/Linux 다운로드](https://www.eclipse.org/downloads/packages/release/2024-03/r)``[MacOS 다운로드](https://www.eclipse.org/downloads/packages/release/2024-09/r) |
+| 항목                                               | 권장버전                                                       | 비고                                                                                                                                                                 |
+| -------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Java Development Kit                               | 17 이상                                                        | Mac 버전은 Eclipse 2024-09 (4.33) 버전을 사용하여 21 이상                                                                                                            |
+| Servlet                                            | 3.1 이상                                                       |                                                                                                                                                                      |
+| Eclipse IDE for Enterprise Java and Web Developers | 4.31.0 (2024-03) - Windows/Linux<br />4.33.0 (2024-09) - MacOS | [Windows/Linux 다운로드](https://www.eclipse.org/downloads/packages/release/2024-03/r)<br />[MacOS 다운로드](https://www.eclipse.org/downloads/packages/release/2024-09/r) |
 
 **개발환경 4.2.0**
 
