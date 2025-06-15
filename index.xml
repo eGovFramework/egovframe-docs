@@ -8086,23 +8086,10 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;a href="https://www.egovframe.go.kr/">eGovFrame 홈페이지&lt;/a>
 
 
-)에 접속하여 사이트 상위메뉴를 통해 &amp;ldquo;다운로드 &amp;gt; 개발환경&amp;gt; 4.x 다운로드&amp;quot;으로 이동한다.
-&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/install-guide/images/plugin-download-1.png" alt="플러그인 다운로드1" >
-&lt;/li>
-&lt;li>구현도구 게시물을 선택한다.
-&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/install-guide/images/plugin-download-2.png" alt="플러그인 다운로드2" >
-&lt;/li>
-&lt;li>첨부된 파일을 다운로드받아 압축을 해제한다. 편의상 바탕화면에 압축을 풀 것을 권장한다.
-&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/install-guide/images/plugin-download-3.png" alt="플러그인 다운로드3" >
-&lt;/li>
+)에 접속하여 사이트 상위메뉴를 통해 &amp;ldquo;다운로드 &amp;gt; 개발환경&amp;gt; 4.x 다운로드&amp;quot;으로 이동한다.&lt;/li>
 &lt;/ol>
-&lt;h2 id="step-2-플러그인-설치">Step 2. 플러그인 설치&lt;/h2>
-&lt;h3 id="eclipse-실행">Eclipse 실행&lt;/h3>
-&lt;ol>
-&lt;li>eclipse를 실행한다.&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>주의사항&lt;/strong>&lt;/p></description></item><item><title>시스템</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/</guid><description/></item><item><title>Spring Web Flow 환경 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-setting-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-setting-system/</guid><description>&lt;h1 id="spring-web-flow-환경-구성하기">Spring Web Flow 환경 구성하기&lt;/h1>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/install-guide/images/plugin-download-1.png" alt="플러그인 다운로드1" >
+&lt;/p></description></item><item><title>시스템</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/</guid><description/></item><item><title>Spring Web Flow 환경 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-setting-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-setting-system/</guid><description>&lt;h1 id="spring-web-flow-환경-구성하기">Spring Web Flow 환경 구성하기&lt;/h1>
 &lt;p>Spring Web Flow를 사용하기 위한 Web 개발 환경에 대한 세팅을 설명한다.&lt;/p>
 &lt;h2 id="설정">설정&lt;/h2>
 &lt;p>Spring Web Flow의 Flow 정의를 위한 XML 문서는 아래와 같은 Schema를 갖는다.&lt;/p>
