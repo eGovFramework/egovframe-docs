@@ -2,7 +2,7 @@
 title: "서버 개발환경 소개"
 linkTitle: "서버 환경 소개"
 description: "전자정부 표준프레임워크에서 간편하게 설치할 수 있는 서버환경을 제공한다."
-url: "/egovframe-development/intro/server-environment-introduction/"
+url: "/egovframe-development/development-intro/server-environment-introduction/"
 menu:
   depth:
     name: "서버 개발환경 소개"

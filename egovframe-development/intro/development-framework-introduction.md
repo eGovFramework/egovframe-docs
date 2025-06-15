@@ -2,7 +2,7 @@
 title: "개발프레임워크 개발환경 소개"
 linkTitle: "개발프레임워크 소개"
 description: "개발프레임워크 개발환경의 목표, 제공 서비스 및 환경설정 관련 도구(JDK, WAS, OpenSource) 정보 등을 안내한다."
-url: "/egovframe-development/intro/development-framework-introduction/"
+url: "/egovframe-development/development-intro/development-framework-introduction/"
 menu:
   depth:
     name: "개발프레임워크 개발환경 소개"
@@ -113,9 +113,9 @@ menu:
 
 ### WAS
 
-| 이름          | 권장버전   | 자바호환성   | 비고                                                                                     |
-| ------------- | ---------- | ------------ | ---------------------------------------------------------------------------------------- |
-| Apache Tomcat | 8.5.x 이상 | JDK 7.0 이상 | Servlet 3.1 참고: [Tomcat 버전 호환성](https://tomcat.apache.org/whichversion.html) |
+| 이름          | 권장버전   | 자바호환성   | 비고                                                                            |
+| ------------- | ---------- | ------------ | ------------------------------------------------------------------------------- |
+| Apache Tomcat | 8.5.x 이상 | JDK 7.0 이상 | Servlet 3.1 참고:[Tomcat 버전 호환성](https://tomcat.apache.org/whichversion.html) |
 
 ### Open Source Software 사용 현황
 

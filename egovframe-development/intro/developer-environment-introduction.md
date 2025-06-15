@@ -2,7 +2,7 @@
 title: "개발자 개발환경 소개"
 linkTitle: "개발자 환경 소개"
 description: "개발자를 위한 개발환경으로 경량 개발환경과 통합 개발환경을 제공한다."
-url: "/egovframe-development/intro/developer-environment-introduction/"
+url: "/egovframe-development/development-intro/developer-environment-introduction/"
 menu:
   depth:
     name: "개발자 개발환경 소개"
