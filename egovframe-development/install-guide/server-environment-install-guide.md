@@ -2,7 +2,7 @@
 title: "서버 개발환경 4.3.0 설치가이드"
 linkTitle: "서버 환경 설치"
 description: "Windows용(64bit)와 Unix계열로 제공되는 서버 개발환경을 다운로드 받아 설치하는 방법을 가이드한다."
-url: "/egovframe-development/install-guide/server-environment-install-guide/"
+url: /egovframe-development/install-guide/server-environment-install-guide/
 menu:
   depth:
     name: "서버 개발환경 4.3.0 설치가이드"
@@ -72,15 +72,23 @@ menu:
 - Jenkins(CI) 설치확인
 
   * http://localhost:8082/ 로 들어가서 확인한다.
+
     ![Jenkins 확인1](./images/jenkins-check-1.png)
+
   * Jenkins(CI)가 정상작동하는지 확인한다.
+
     ![Jenkins 확인2](./images/jenkins-check-2.png)
+
 - Nexus 설치확인
 
   * http://localhost:8081/nexus/ 로 들어가서 확인한다.
+
     ![Nexus 확인1](./images/nexus-check-1.png)
+
   * Nexus의 repository가 정상적으로 보이는지 확인한다.
+
     ![Nexus 확인2](./images/nexus-check-2.png)
+
 
 > **✔ 주의사항**
 >
@@ -110,7 +118,9 @@ menu:
 #### 3. 서버별 JDK 설정
 
 - JDK 설치는 사용자에 의해 시스템별로 자체 설치한다.(서버용 개발환경에서 지원하지 않음)
+
   ![서버별 JDK 설정](./images/jdk-path.png)
+
 - JDK PATH 설정 필요
 
 #### 4. SVN 설치

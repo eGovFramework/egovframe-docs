@@ -2,7 +2,7 @@
 title: "개발환경 Getting Started"
 linkTitle: "Getting Started"
 description: "본 가이드는 전자정부 표준프레임워크 기반의 단순한 응용프로그램(HelloWorld)를 직접 실습해 봄으로써 빠른 시간 내에 전자정부 프레임워크의 기본 기능을 파악하기 위하여 제공된다."
-url: "/egovframe-development/install-guide/getting-started/"
+url: /egovframe-development/install-guide/getting-started/
 menu:
   depth:
     name: "개발환경 Getting Started"
@@ -77,7 +77,8 @@ menu:
 4. 구현도구를 실행한다.
 5. 구현도구의 window>preferences 메뉴를 선택하여 설정화면을 표시한다. 설정화면에서 Maven>Installations 의 User Settings 항목을 **[MavenRepository 설치디렉토리]**/settings.xml 파일로 지정한다.
 6. Local Repository 항목에 settings.xml 파일을 수정한 내용과 일치하는 것을 확인한다. 만약 설정한 내용과 다른 경우, refresh settings 버튼을 클릭한다.
-   ![사용자 세팅](./images/user-setting.jpg)
+
+![사용자 세팅](./images/user-setting.jpg)
 
 ## Step 2. 프로젝트 생성(Core) 및 실행
 
@@ -89,12 +90,17 @@ menu:
 
 1. HelloWorld 프로젝트 파일을 다운로드 받아서 임의의 디렉토리에 저장한다. (다운로드 받은 파일의 압축을 해제할 필요는 없다.)
 2. 구현도구에서 File>Import.. 메뉴를 선택한다.
+
    ![프로젝트 생성1](./images/create-project-1.png)
+
 3. Import wizard에서 General>Existing Projects into Workspace 를 선택한다.
 4. next 버튼을 클릭한다.
+
    ![프로젝트 생성2](./images/create-project-2.png)
+
 5. Import Projects에서 select archive file 항목을 선택하고 제공한 egovGettingStarted.zip 파일을 지정한다.
 6. Finish 버튼을 클릭한다.
+
    ![프로젝트 생성3](./images/create-project-3.png)
 
 ### Maven을 이용한 빌드
@@ -104,10 +110,15 @@ menu:
 #### 프로젝트 빌드순서
 
 1. 개발환경에서 egovframework.guide 프로젝트를 마우스 오른쪽 버튼으로 클릭하고 Run As>Maven Build를 클릭한다.
+ 
    ![Maven 빌드1](./images/maven-build-1.png)
+
 2. Run 버튼을 클릭한다.
+  
    ![Maven 빌드2](./images/maven-build-2.png)
+
 3. 콘솔창에서 Maven 빌드의 결과를 확인한다. 메이븐 빌드는 프로젝트의 컴파일, 테스트, 패키징을 모두 수행하고 그 결과를 제공한다.
+
    ![Maven 빌드3](./images/maven-build-3.png)
 
 ### HelloWorld 실행
@@ -115,11 +126,17 @@ menu:
 #### HelloWorld 실행순서
 
 1. 프로젝트의 src/main/java에서 HelloWorldClient.java를 마우스 오른쪽 버튼으로 클릭하고 Run As>Java Application 을 클릭한다.
+
    ![HelloWorld 실행1](./images/run-helloworld-1.png)
+
 2. HelloWorldClient를 선택하고 OK 버튼을 클릭한다.
+
    ![HelloWorld 실행2](./images/run-helloworld-2.png)
+
 3. Console창에서 실행 결과를 확인할 수 있다.
+
    ![HelloWorld 실행3](./images/run-helloworld-3.png)
+
 
 ### HelloWorld 테스트 실행
 
@@ -128,9 +145,13 @@ HelloWorld 프로젝트는 JUnit Test Framework 기반의 Test Case를 포함하
 #### HelloWorld 테스트 실행순서
 
 1. 프로젝트의 src/test/java에서 HelloWorld 서비스의 junit test case(HelloWorldServiceTest.java)를 마우스 오른쪽 버튼으로 클릭하고 Run As>Junit test 을 클릭한다.
+
    ![HelloWorld1](./images/helloworld-1.png)
+
 2. JUnit 결과창에서 테스트(testSayHello)의 수행시간 및 성공여부를 확인 할 수 있다.
+
    ![HelloWorld2](./images/helloworld-2.png)
+
 
 ## Step 3. 자세히 들여다 보기
 
