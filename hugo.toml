@@ -28,3 +28,11 @@ github_branch = 'main'
   section = ["HTML", "Print"]
   taxonomy = ["HTML"]
   term = ["HTML"]
+
+# Markdown 내부에 html태그를 보안상의 이유로 필터링하여 적용하지 않는 기능을 해제
+# 태그 예시 : <br>, <script>, <iframe>
+# 표(table) 안에 <br> 태그 적용을 위해 html태그 필터링 해제
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
