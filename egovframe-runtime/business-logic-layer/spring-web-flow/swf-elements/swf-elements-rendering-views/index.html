@@ -169,8 +169,8 @@ Web Flow 는 view-stat에서 모델로 넘어간 시점(view-state postback life
 </span></span><span style=display:flex><span>	}
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>enterBookingDetails에 대한 이벤트가 발생했을 때 자동으로 validateEnterBookingDetails이 호출 된다.
-메소드 이름을 validate$ 로 정의하면 된다.</p><h4 id=validator-구현>Validator 구현</h4><p>Validator로 불리는 별도의 객체로 정의할 수도 있다. 클래스 이름을 $Validator 로 지정하면 된다.
-메소드 이름은 역시 validate$로 한다.
+메소드 이름을 validate$<state> 로 정의하면 된다.</p><h4 id=validator-구현>Validator 구현</h4><p>Validator로 불리는 별도의 객체로 정의할 수도 있다. 클래스 이름을 $<model>Validator 로 지정하면 된다.
+메소드 이름은 역시 validate$<state>로 한다.
 아래 클래스명은 Booking + Validator 이며 메소드 이름은 validate + EnterBookingDetails 임을 볼 수 있다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Component</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>BookingValidator</span> {
 </span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>validateEnterBookingDetails</span>(Booking booking, ValidationContext context) {
