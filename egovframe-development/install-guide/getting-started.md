@@ -2,13 +2,13 @@
 title: "개발환경 Getting Started"
 linkTitle: "Getting Started"
 description: "본 가이드는 전자정부 표준프레임워크 기반의 단순한 응용프로그램(HelloWorld)를 직접 실습해 봄으로써 빠른 시간 내에 전자정부 프레임워크의 기본 기능을 파악하기 위하여 제공된다."
-url: /egovframe-development/install-guide/getting-started/
+url: /egovframe-development/install-guide/dev-getting-started/
 menu:
   depth:
     name: "개발환경 Getting Started"
     weight: 3
     parent: "install-guide"
-    identifier: "getting-started"
+    identifier: "dev-getting-started"
 ---
 # 개발환경 Getting Started
 
@@ -92,12 +92,10 @@ menu:
 2. 구현도구에서 File>Import.. 메뉴를 선택한다.
 
    ![프로젝트 생성1](./images/create-project-1.png)
-
 3. Import wizard에서 General>Existing Projects into Workspace 를 선택한다.
 4. next 버튼을 클릭한다.
 
    ![프로젝트 생성2](./images/create-project-2.png)
-
 5. Import Projects에서 select archive file 항목을 선택하고 제공한 egovGettingStarted.zip 파일을 지정한다.
 6. Finish 버튼을 클릭한다.
 
@@ -110,13 +108,11 @@ menu:
 #### 프로젝트 빌드순서
 
 1. 개발환경에서 egovframework.guide 프로젝트를 마우스 오른쪽 버튼으로 클릭하고 Run As>Maven Build를 클릭한다.
- 
+
    ![Maven 빌드1](./images/maven-build-1.png)
-
 2. Run 버튼을 클릭한다.
-  
-   ![Maven 빌드2](./images/maven-build-2.png)
 
+   ![Maven 빌드2](./images/maven-build-2.png)
 3. 콘솔창에서 Maven 빌드의 결과를 확인한다. 메이븐 빌드는 프로젝트의 컴파일, 테스트, 패키징을 모두 수행하고 그 결과를 제공한다.
 
    ![Maven 빌드3](./images/maven-build-3.png)
@@ -128,15 +124,12 @@ menu:
 1. 프로젝트의 src/main/java에서 HelloWorldClient.java를 마우스 오른쪽 버튼으로 클릭하고 Run As>Java Application 을 클릭한다.
 
    ![HelloWorld 실행1](./images/run-helloworld-1.png)
-
 2. HelloWorldClient를 선택하고 OK 버튼을 클릭한다.
 
    ![HelloWorld 실행2](./images/run-helloworld-2.png)
-
 3. Console창에서 실행 결과를 확인할 수 있다.
 
    ![HelloWorld 실행3](./images/run-helloworld-3.png)
-
 
 ### HelloWorld 테스트 실행
 
@@ -147,11 +140,9 @@ HelloWorld 프로젝트는 JUnit Test Framework 기반의 Test Case를 포함하
 1. 프로젝트의 src/test/java에서 HelloWorld 서비스의 junit test case(HelloWorldServiceTest.java)를 마우스 오른쪽 버튼으로 클릭하고 Run As>Junit test 을 클릭한다.
 
    ![HelloWorld1](./images/helloworld-1.png)
-
 2. JUnit 결과창에서 테스트(testSayHello)의 수행시간 및 성공여부를 확인 할 수 있다.
 
    ![HelloWorld2](./images/helloworld-2.png)
-
 
 ## Step 3. 자세히 들여다 보기
 
@@ -180,7 +171,7 @@ public class HelloWorldServiceImpl implements HelloWorldService{
 
     private String name;
 
-    @Required    
+    @Required  
     public void setName(String name) {
         this.name = name;
     }
@@ -237,7 +228,7 @@ public class HelloWorldClient {
         String configLocation = "context-helloworld.xml"; 
         ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
         HelloWorldService helloworld = (HelloWorldService)context.getBean("helloworld");
-    
+  
         LOGGER.debug(helloworld.sayHello());
     }
 }
