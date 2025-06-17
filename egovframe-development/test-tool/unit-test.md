@@ -35,20 +35,20 @@ Unit Test란 대상 코드에 대해 테스트하고자 개발자가 작성한 �
 ### TestCase 작성
 
 * 개발자가 구현도구를 통해 코드를 작성할 때, 그 코드를 대상으로 하는 TestCase를 작성할 수 있다.  
- 예를 들어, OOService 클래스의 TestCase인 OOServiceTest를 작성할 수 있는 기반 Framework인 Unit Test Framework을 제공한다. - Test Case
-* 개발자가 테스트하고자하는 OOService와 관련있는 OODao에 대해서, MockDao를 작성할 수 있는 라이브러리를 제공한다. 혹은, 이미 구현된 기능을 제공하는 Mock 객체도 제공한다. - Mock Support
-* Dao와 DB에 걸쳐진 Persistence Layer를 테스트할 수 있는 DB Test Framework을 제공하여 DB 연결, 데이터 초기화, 트랜잭션 처리 등 DB Test를 위한 TestCase 작성을 지원한다. - DB Support
+ 예를 들어, OOService 클래스의 TestCase인 OOServiceTest를 작성할 수 있는 기반 Framework인 Unit Test Framework을 제공한다. - [Test Case](./test-case.md)
+* 개발자가 테스트하고자하는 OOService와 관련있는 OODao에 대해서, MockDao를 작성할 수 있는 라이브러리를 제공한다. 혹은, 이미 구현된 기능을 제공하는 Mock 객체도 제공한다. - [Mock Support](./mock-support.md)
+* Dao와 DB에 걸쳐진 Persistence Layer를 테스트할 수 있는 DB Test Framework을 제공하여 DB 연결, 데이터 초기화, 트랜잭션 처리 등 DB Test를 위한 TestCase 작성을 지원한다. - [DB Support](./db-support.md)
 
 ### Test 수행
 
 * 작성한 TestCase를 수행하여 성공/실패 여부를 알려준다.
-* TestCase가 작성된 범위를 수치나 코드 라인으로 알려줌으로써 TestCase가 테스트하지 못한 영역을 알려준다. - Test Coverage
-* 작성된 TestCase를 자동화하여 수시로 테스트할 수 있도록 한다. - Test Automation
+* TestCase가 작성된 범위를 수치나 코드 라인으로 알려줌으로써 TestCase가 테스트하지 못한 영역을 알려준다. - [Test Coverage](./test-coverage.md)
+* 작성된 TestCase를 자동화하여 수시로 테스트할 수 있도록 한다. - [Test Automation](./test-automation.md)
 
 ### Test Reporting
 
-* Coverage 분석 : 테스트 대상 모듈에 대해 테스트 클래스가 테스트를 수행하는 그 범위를 수치를 분석하여, 테스트 수행 범위를 보여줌 - Test Coverage
-* Test Reporting : 테스트를 수행한 결과를 Text, Html, XML, Excel 등의 보고서 형태로 작성함 - Test Reporting
+* Coverage 분석 : 테스트 대상 모듈에 대해 테스트 클래스가 테스트를 수행하는 그 범위를 수치를 분석하여, 테스트 수행 범위를 보여줌 - [Test Coverage](./test-coverage.md)
+* Test Reporting : 테스트를 수행한 결과를 Text, Html, XML, Excel 등의 보고서 형태로 작성함 - [Test Reporting](./test-reporting.md)
 
 ### 사용 된 오픈 소스
 
@@ -125,13 +125,13 @@ Unit Test Case 는 다음과 같은 구조로 이루어져 있다.
 
 이를 직접 작성하면 된다.
 
-기본적인 JUnit 기술은 Test Case 을 참조하도록 하며, 필요할 경우 나아가 Mock Support, DB Support 또한 함께 살펴보도록 한다.
+기본적인 JUnit 기술은 [Test Case](./test-case.md) 을 참조하도록 하며, 필요할 경우 나아가 [Mock Support](./mock-support.md), [DB Support](./db-support.md) 또한 함께 살펴보도록 한다.
 
 ## 샘플
 
-* 기본적인 JUnit Test Case 작성 예 : Test Case
-* Mocking 을 이용한 Test Case 작성 예 : Mock Support
-* DAO 테스트를 위한 Test Case 작성 예 : DB Support
+* 기본적인 JUnit Test Case 작성 예 : [Test Case](./test-case.md)
+* Mocking 을 이용한 Test Case 작성 예 : [Mock Support](./mock-support.md)
+* DAO 테스트를 위한 Test Case 작성 예 : [DB Support](./db-support.md)
 
 ## 참고자료
 

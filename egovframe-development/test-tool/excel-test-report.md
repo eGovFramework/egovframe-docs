@@ -27,7 +27,7 @@ Excel 형식의 리포트에서는 디폴트 템플릿을 사용하게 되며, �
 | outputDirectory                                                       | ${project.build.directory}/egovtest                | 엑셀 파일이 생성될 디렉토리                                                                     |
 | outputname                                                            | egovtest-junit.xls                                 | 엑셀 리포트명                                                                                   |
 | templatepath                                                          | template-junit.xls                                 | 템플릿 엑셀 파일 위치 정보 (Full Path), 디폴트는 jar에서 제공됨                                 |
-| headerPosition`<br>` - summary `<br>` - packages `<br>` - lists | `<br>` "0,A,4" `<br>` "0,A,8" `<br>` "1,A,4" | Summary, Package, TestCase Lists 정보의`<br>` 엑셀 테이블 헤더 위치 정보 (sheet, column, row) |
+| headerPosition <br> - summary <br> - packages <br> - lists | <br> "0,A,4" <br> "0,A,8" <br> "1,A,4" | Summary, Package, TestCase Lists 정보의 <br> 엑셀 테이블 헤더 위치 정보 (sheet, column, row) |
 | reportsDirectory                                                      | ${project.build.directory}/surefire-reports        | 테스트 결과 XML 파일 위치                                                                       |
 
 ### Ant 설정값
