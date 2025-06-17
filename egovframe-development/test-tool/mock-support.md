@@ -44,7 +44,7 @@ Mock 객체([Mock Object - wikipedia](http://en.wikipedia.org/wiki/Mock_object),
   
 혹시 더 관련있는 클래스가 있다면 해당 클래스에 대해서도 Mock을 작성하거나 코드 내에서 Mocking하여 대상 코드의 테스트에 집중할 수 있다. 특히, DB의 경우 실제 DB를 사용하여 테스트하고자 한다면, DB Support를 참조하면 되고, 드물게 JDBC 코딩 관련해서는 Mock을 사용하여 DB 자체에 대한 테스트를 배제하고 Dao에 대한 테스트에만 집중할 수도 있다.  
 
-![Mock 객체 구조도](./images/mock-tier.jpg)
+![Mock 객체 구조도](./images/mock-tier.png)
 
 ### Mock 객체 구현 종류
 
