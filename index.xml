@@ -879,7 +879,22 @@ UserDetailsService 인터페이스 내 loadUserByUsername 메소드의 리턴된
 &lt;p>Spring Framework에서 객체가 생성자 인수, 팩토리 메서드에 대한 인수 또는 객체 인스턴스가 생성되거나 팩토리 메서드에서 반환된 후 객체 인스턴스에 설정된 속성을 통해서만 종속성(함께 작업하는 다른 객체)을 정의하는 프로세스를 제어의 역전(Inversion of Control, IoC)라고 한다. 의존성 주입(Dependency Injection, DI)은 모듈간의 의존성을 모듈의 외부 컨테이너 에서 주입시켜주는 기능으로 IoC의 한 종류이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>Spring Framework에서 Bean은 어플리케이션을 구성하고, IoC Container에 의해 관리되어지는 객체로 간단히 말해 IoC Container에 의해 객체화되고, 조립되고, 또는 관리되는 객체를 의미한다.&lt;br>
-Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데이터에 의해 결정된다.&lt;/p></description></item><item><title>Batch IDE</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/</guid><description/></item><item><title>Bean Scopes</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_scope/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_scope/</guid><description>&lt;h1 id="bean-scope">Bean scope&lt;/h1>
+Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데이터에 의해 결정된다.&lt;/p></description></item><item><title>Batch IDE</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/</guid><description/></item><item><title>Batch Job Test Wizard</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/batch-job-test-wizard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/batch-job-test-wizard/</guid><description>&lt;h1 id="batch-job-test-wizard">Batch Job Test Wizard&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전자정부 표준프레임워크에서는 생성된 배치 파일들을 활용하여 간단한 테스트를 할 수 있는 테스트 마법사를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>배치 테스트시 필요한 항목들을 골라 테스트 파일을 생성해주고 JUnit을 통한 테스트를 진행한다.&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/batch-flow.png" alt="배치 테스트 마법사 흐름" >
+&lt;/p>
+&lt;p>✔ 배치 테스트 마법사를 통해 생성된 테스트 파일은 별도로 JUnit Test를 진행할 경우에도 사용가능하다.&lt;/p>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;ol>
+&lt;li>배치 테스트 마법사 시작하기
+&lt;ul>
+&lt;li>
+&lt;p>메뉴 표시줄에서 &lt;strong>File&lt;/strong> &amp;gt; &lt;strong>New&lt;/strong> &amp;gt; &lt;strong>eGovFrame Batch Job Test&lt;/strong>를 선택한다. (단 eGovFrame Perspective내에서)&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/how-to-use-batch-wizard-1.png" alt="배치마법사 사용법 1" >
+&lt;/p></description></item><item><title>Bean Scopes</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_scope/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_scope/</guid><description>&lt;h1 id="bean-scope">Bean scope&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Bean 정의는 실제 Bean 객체를 생성하는 방식을 정의하는 것으로 Class와 마찬가지로 하나의 Bean 정의에 해당하는 다수의 객체가 생성될 수 있다.&lt;br>
 Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 수 있을 뿐 아니라, 객체의 범위(Scope)를 정의할 수 있다.&lt;/p>
@@ -2061,7 +2076,266 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//클래스 패스를 이용하여 설정파일 읽어서 Cache Manager 생성하기.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>URL url &lt;span style="color:#f92672">=&lt;/span> getClass().&lt;span style="color:#a6e22e">getResource&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/ehcache-default.xml&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>manager &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> CacheManager(url);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위에서 getResource를 통해서 읽어들이는 /ehcache-default.xml 의 파일 내용은 다음과 같다.&lt;/p></description></item><item><title>Entities</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-entities/</guid><description>&lt;h1 id="entities">Entities&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위에서 getResource를 통해서 읽어들이는 /ehcache-default.xml 의 파일 내용은 다음과 같다.&lt;/p></description></item><item><title>EMMA 실행을 위한 build.xml 설정 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/build-example-for-run-emma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/build-example-for-run-emma/</guid><description>&lt;h2 id="emma-실행을-위한-buildxml-설정-샘플">EMMA 실행을 위한 build.xml 설정 샘플&lt;/h2>
+&lt;p>다음은 EMMA를 이용하여 Test Coverage를 수행하기 위한 build.xml 설정 샘플이다.
+EMMA를 수행하기 위해서는 Test 수행을 위한 설정(junit)을 반드시 같이 써야 한다.&lt;/p>
+&lt;p>✔ 자세한 내용은 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://emma.sourceforge.net/userguide_single/userguide.html#introANT">EMMA 사이트&lt;/a>
+
+
+와 함께 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://wiki.metawerx.net/wiki/UsingEMMAWithANTForJUnitTestCoverageReporting">Using EMMA With ANT For JUnit Test Coverage Reporting&lt;/a>
+
+
+을 참조하기 바란다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;artifactsDir&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">value=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${basedir}/build/report&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 1. EMMA Task 라이브러리 설정 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma.enabled&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">value=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma.lib&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;define the basic classpath for emma instrumentation&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${antlib.dir}/emma&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;include&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;*.jar&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/fileset&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/path&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;taskdef&lt;/span> &lt;span style="color:#a6e22e">resource=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma_ant.properties&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">classpathref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma.lib&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;this loads &amp;lt;emma&amp;gt; and &amp;lt;emmajava&amp;gt; custom tasks:&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 2. EMMA Instrument --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma-jars&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;build&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Uses Emma to instrument the jar files&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;emma&lt;/span> &lt;span style="color:#a6e22e">enabled=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${emma.enabled}&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;instr&lt;/span> &lt;span style="color:#a6e22e">mode=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;fullcopy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">outdir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${basedir}/build/temp&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">merge=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yes&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filter=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">metadatafile=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-coverage/coverage.em&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;instrpath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;build/&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${ant.project.name}.jar&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/instrpath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/instr&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/emma&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/target&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test.with.emma&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma-jars&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;delete&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testbuild.dir}&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;mkdir&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testbuild.dir}&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;javac&lt;/span> &lt;span style="color:#a6e22e">srcdir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testsrc.dir}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">destdir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testbuild.dir}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">debug=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">encoding=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">deprecation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;classpath&lt;/span> &lt;span style="color:#a6e22e">path=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${build.dir}&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;classpath&lt;/span> &lt;span style="color:#a6e22e">refid=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;master-classpath&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;classpath&lt;/span> &lt;span style="color:#a6e22e">refid=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test-classpath&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/javac&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;copy&lt;/span> &lt;span style="color:#a6e22e">todir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testbuild.dir}&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">preservelastmodified=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${build.dir}&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;**/*&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testresource.dir}&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;**/*&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/copy&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;mkdir&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-results/xml&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;junit&lt;/span> &lt;span style="color:#a6e22e">fork=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yes&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printsummary=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yes&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">haltonfailure=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;no&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">failureproperty=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test.failed&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">errorproperty=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test.failed&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${basedir}&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;classpath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">refid=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;master-classpath&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">refid=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test-classpath&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">refid=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emma.lib&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${basedir}/build/temp/lib&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${ant.project.name}.jar&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pathelement&lt;/span> &lt;span style="color:#a6e22e">location=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testbuild.dir}&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/classpath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;formatter&lt;/span> &lt;span style="color:#a6e22e">type=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;xml&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;batchtest&lt;/span> &lt;span style="color:#a6e22e">fork=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">todir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-results/xml&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testbuild.dir}&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;include&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;**/*Test.class&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/fileset&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/batchtest&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/junit&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/target&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 3. EMMA Test Coverage Reporting --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- Test Code Coverage Report --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;emmareport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;test.with.emma&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;move&lt;/span> &lt;span style="color:#a6e22e">file=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${basedir}/coverage.ec&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">todir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-coverage&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;emma&lt;/span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;now we can generate the emma report&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">enabled=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${emma.enabled}&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;report&lt;/span> &lt;span style="color:#a6e22e">sourcepath=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${src.dir}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">sort=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;+name,+method,+class&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">metrics=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;method:70,line:80,class:100&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">depth=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;method&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">columns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name,class,method,block,line&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">encoding=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;infileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-coverage&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;*.em, *.ec&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- XML Report --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;xml&lt;/span> &lt;span style="color:#a6e22e">outfile=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-coverage/coverage.xml&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- Text Report --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;txt&lt;/span> &lt;span style="color:#a6e22e">outfile=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-coverage/coverage.txt&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- HTML Report --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;html&lt;/span> &lt;span style="color:#a6e22e">outfile=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${artifactsDir}/test-coverage/coverage.html&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/report&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/emma&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/target&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>EMMA 실행을 위한 pom.xml 설정 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/pom-example-for-run-emma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/pom-example-for-run-emma/</guid><description>&lt;h2 id="emma-실행을-위한-pomxml-설정-샘플">EMMA 실행을 위한 pom.xml 설정 샘플&lt;/h2>
+&lt;p>다음은 EMMA를 이용하여 Test Coverage를 수행하기 위한 pom.xml 설정 샘플이다.
+EMMA를 수행하기 위해서는 Test 수행을 위한 설정(maven-surefire-plugin)을 반드시 같이 써야 한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;build&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- test --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.maven.plugins&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>maven-surefire-plugin&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;skipTests&amp;gt;&lt;/span>false&lt;span style="color:#f92672">&amp;lt;/skipTests&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;forkMode&amp;gt;&lt;/span>always&lt;span style="color:#f92672">&amp;lt;/forkMode&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;reportFormat&amp;gt;&lt;/span>xml&lt;span style="color:#f92672">&amp;lt;/reportFormat&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- EMMA --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.codehaus.mojo&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>emma-maven-plugin&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.0-alpha-1&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/build&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;reporting&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- EMMA Coverage Reporting --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.codehaus.mojo&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>emma-maven-plugin&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;inherited&amp;gt;&lt;/span>true&lt;span style="color:#f92672">&amp;lt;/inherited&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugins&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/reporting&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>EMMA에서 생성한 HTML 리포트 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/emma-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/emma-test-report/</guid><description>&lt;h3 id="emma에서-생성한-html-리포트-샘플">EMMA에서 생성한 HTML 리포트 샘플&lt;/h3>
+&lt;p>EMMA 리포트에서는 다음의 정보를 제공한다.&lt;/p>
+&lt;h4 id="통계치-그룹">통계치 그룹&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>OVERALL COVERAGE SUMMARY&lt;/th>
+ &lt;th>전체 클래스에 대한 통계치&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>OVERALL STATS SUMMARY&lt;/td>
+ &lt;td>전반적인 요약 통계치&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>COVERAGE BREAKDOWN BY PACKAGE&lt;/td>
+ &lt;td>패키지별 커버리지 통계치&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>COVERAGE BREAKDOWN BY SOURCE FILE&lt;/td>
+ &lt;td>소스 파일별 커버리지 통계치&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>COVERAGE BREAKDOWN BY CLASS AND METHOD&lt;/td>
+ &lt;td>클래스와 메소드별 커버리지 통계치 &lt;br> 여기에서 소스코드와의 연결 정보를 보여준다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="통계치-항목">통계치 항목&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>name&lt;/th>
+ &lt;th>이름&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>class, %&lt;/td>
+ &lt;td>클래스별 커버리지 백분율&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>method, %&lt;/td>
+ &lt;td>메소드별 커버리지 백분율&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>block, %&lt;/td>
+ &lt;td>basic block(커버리지 기본단위) 별 커버리지 백분율&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>line, %&lt;/td>
+ &lt;td>코드 라인별 커버리지 백분율&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="리포트-샘플-화면">리포트 샘플 화면&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>EMMA 사이트에서 제공하는 샘플 리포트 : 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://emma.sourceforge.net/coverage_sample_a/index.html">http://emma.sourceforge.net/coverage_sample_a/index.html&lt;/a>
+
+
+&lt;/p></description></item><item><title>Entities</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-entities/</guid><description>&lt;h1 id="entities">Entities&lt;/h1>
 &lt;p>ORM 서비스를 구성하는 가장 기초적인 클래스로 어플리케이션에서 다루고자 하는 테이블에 대응하여 구성할 수 있으며 테이블이 포함하는 컬럼에 대응한 속성들을 가지고 있다.&lt;/p>
 &lt;h2 id="기본-필요-요건">기본 필요 요건&lt;/h2>
 &lt;p>Entity를 구성하기 위한 아래와 같은 요건이 있다.(JPA요건)&lt;/p>
@@ -5985,7 +6259,42 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/bean&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="클래스-설정">클래스 설정&lt;/h4>
 &lt;h5 id="multiresourcepartitioner">MultiResourcePartitioner&lt;/h5>
-&lt;p>스프링에서 제공하는 MultiResourcePartitioner 를 사용하며 입력리소스의 수(입력파일 수)만큼 Context를 생성하고 출력위치를 셋팅하는 역할을 한다.(Context 생성으로 여러 Slave Step들을 사용할 수 있게 됨)&lt;/p></description></item><item><title>Spring Data</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/jpa-spring-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/jpa-spring-data/</guid><description>&lt;h1 id="spring-data">Spring Data&lt;/h1>
+&lt;p>스프링에서 제공하는 MultiResourcePartitioner 를 사용하며 입력리소스의 수(입력파일 수)만큼 Context를 생성하고 출력위치를 셋팅하는 역할을 한다.(Context 생성으로 여러 Slave Step들을 사용할 수 있게 됨)&lt;/p></description></item><item><title>SpotBugs</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/spotbugs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/spotbugs/</guid><description>&lt;h1 id="find-security-bugs">Find Security Bugs&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>버그 및 보안취약점 등 정적 소스코드 분석이 가능한 오픈소스로 SpotBugs(구 FindSecurityBugs)를 추가할 수 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>SpotBugs는 Philippe Arteau에서 만든 자바 웹 애플리케이션에 대한 보안 감사를 지원하는 플러그인이다.&lt;/p>
+&lt;p>2024년 5월에 4.8.5 버전이 배포되었고, 특징은 다음과 같다.&lt;/p>
+&lt;ul>
+&lt;li>823개 이상의 고유 API 시그니처를 가진 141개의 다른 취약성 유형을 검출 가능&lt;/li>
+&lt;li>Spring-MVC, Struts, Tapestry등 다양한 소프트웨어 개발 프레임워크를 지원&lt;/li>
+&lt;li>Eclipse, IntelliJ, Android Studio, NetBeans 등 통합개발환경(IDE) 도구에 플러그인으로 활용 가능, Ant와 Maven에선 커맨드라인으로 활용 가능&lt;/li>
+&lt;li>Jenkins와 SonarQube와 같은 CI(Continuous Integration) 도구에서 활용 가능&lt;/li>
+&lt;li>OWASP TOP 10과 CWE를 커버하는 광범위한 참조 제공&lt;/li>
+&lt;li>SpotBugs는 오픈소스이며 contributions에 열려있음&lt;/li>
+&lt;/ul>
+&lt;p>공식 홈페이지인 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://github.com/spotbugs/spotbugs">https://github.com/spotbugs/spotbugs&lt;/a>
+
+
+ 를 통해 소프트웨어에 대한 소개와 튜토리얼을 제공하고 있으며, LGPL 공개소프트웨어 라이선스에 따라 소프트웨어 다운로드 기능을 제공한다.&lt;/p></description></item><item><title>Spring Data</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/jpa-spring-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/jpa-spring-data/</guid><description>&lt;h1 id="spring-data">Spring Data&lt;/h1>
 &lt;p>Spring Data는 데이터베이스 관련 많은 하위 프로젝트를 포함하는 오픈 소스 프로젝트로, non-relational databases, map-reduce frameworks, and cloud based data services 등의 새로운 데이터 액세스 기술을 보다 쉽게 사용 할 수 있는 기능을 제공한다. 또한 관계형 데이터베이스 기술에 대한 향상된 지원도 제공한다.&lt;/p>
 &lt;h3 id="spring-data-project">Spring Data Project&lt;/h3>
 &lt;table>
@@ -6637,7 +6946,41 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="환경설정">환경설정&lt;/h2>
-&lt;p>Maven Project 인 경우에는 아래와 같은 dependency 를 설정하면 된다.&lt;/p></description></item><item><title>Test Reporting</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</guid><description>&lt;h1 id="test-reporting">Test Reporting&lt;/h1>
+&lt;p>Maven Project 인 경우에는 아래와 같은 dependency 를 설정하면 된다.&lt;/p></description></item><item><title>Test Coverage</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-coverage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-coverage/</guid><description>&lt;h1 id="test-coverage">Test Coverage&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Test Coverage는 개발자가 작성한 테스트 코드가 대상 소스 코드에 대해 테스트하는 코드를 작성했는지 그 커버하는 정도를 백분률과 코드 라인을 통해 알려주는 것을 말하며, Test Coverage를 분석하고 그 결과를 리포팅하는 것에 대해 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Test Coverage는 개발자가 작성한 코드에 대해 상응하는 테스트를 갖는 소스 코드의 비율을 평가하는 작업으로 다음과 같은 개념을 이해하는 것이 좋다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>instrument&lt;/strong> : 테스트 대상 코드를 실행하거나 JUnit Test를 수행하거나(EMMA), 컴파일을 수행하는(Cobertura) 동안 대상 코드에 테스트 코드 정보를 삽입하는 작업을 일컫는다.&lt;/li>
+&lt;li>&lt;strong>Test Coverage report&lt;/strong> : Test Coverage 결과 리포팅 (XML, HTML 등)
+기본적으로 XML과 HTML 형식을 지원하며, EMMA는 TXT, XML, HTML 형식을 모두 지원한다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="test-coverage-tool">
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-coverage/">Test Coverage Tool&lt;/a>
+
+
+&lt;/h3>
+&lt;p>Test Coverage를 수행하는 데는 다양한 툴이 있고, 각각 평가하는 나름의 로직을 갖고 있으며, 리포팅 또한 그 로직에 상응하는 형태라고 볼 수 있다. 따라서, 필요에 맞는 도구를 잘 선택하면 된다.&lt;/p></description></item><item><title>Test Reporting</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</guid><description>&lt;h1 id="test-reporting">Test Reporting&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Test Automation 수행 후에는 테스트 결과를 갖는 txt, XML 파일을 읽어 통계와 의미있는 테스트 결과를 보여주는 리포팅이 중요하다.&lt;br>
 여기에서는 테스트 결과 생성된 txt나 XML 파일을 읽고 HTML, Excel 형식의 리포트를 생성하는 방법에 대해 설명한다.&lt;/p>
