@@ -2,9 +2,12 @@
 title: "이클립스에서 Maven 실행하기"
 linkTitle: "이클립스에서 Maven 실행하기"
 description: "이클립스에서 Maven 실행하는 방법을을 설명한다."
-url: /egovframe-development/test-tool/run-maven-on-eclipse
+url: /egovframe-development/test-tool/ref/run-maven-on-eclipse
+menu:
+  depth:
+    weight: 8
+    parent: "ref"
 ---
-
 ## 이클립스에서 Maven 실행하기
 
 이클립스에서 Maven을 실행하기 위해서는 [m2eclipse](http://m2eclipse.sonatype.org/index.html)가 설치되어 있어야 하고, m2eclipse를 사용하여 실행하는 방법에 대해 설명하도록 한다.

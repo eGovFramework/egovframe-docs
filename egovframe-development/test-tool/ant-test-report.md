@@ -2,9 +2,12 @@
 title: "Ant에서 생성한 테스트 결과 HTML 리포트"
 linkTitle: "Ant에서 생성한 테스트 결과 HTML 리포트"
 description: "Ant에서 생성한 테스트 결과 HTML 리포트다."
-url: /egovframe-development/test-tool/ant-test-report
+url: /egovframe-development/test-tool/ref/ant-test-report
+menu:
+  depth:
+    weight: 10
+    parent: "ref"
 ---
-
 # Ant에서 생성한 테스트 결과 HTML 리포트
 
 Ant를 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 HTML 리포트가 생성됩니다.
@@ -18,6 +21,5 @@ Ant를 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 
 | Time         | TestCase가 수행되는 걸린 초단위 시간 |
 | Time Stamp   | TestCase를 수행한 시각               |
 | Host         | TestCase가 수행된 컴퓨터의 Host명    |
-
 
 ![Ant 리포트 예시](./images/ant-report-example.jpg)

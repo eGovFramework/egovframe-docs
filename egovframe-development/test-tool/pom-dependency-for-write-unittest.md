@@ -5,10 +5,9 @@ description: "Unit Test 작성을 위한 pom.xml dependency 설정 방법을 코
 url: /egovframe-development/test-tool/ref/pom-dependency-for-write-unittest
 menu:
   depth:
-    weight: 1
+    weight: 6
     parent: "ref"
 ---
-
 ## Unit Test 작성을 위한 pom.xml dependency 설정
 
 ```xml
