@@ -2,9 +2,12 @@
 title: "egovframework-dev-tst 프로젝트 소스 코드"
 linkTitle: "egovframework-dev-tst 프로젝트 소스 코드"
 description: "egovframework-dev-tst 프로젝트 소스 코드이다."
-url: /egovframe-development/test-tool/egovframework-dev-tst-source
+url: /egovframe-development/test-tool/ref/egovframework-dev-tst-source/
+menu:
+  depth:
+    weight: 2
+    parent: "ref"
 ---
-
 ## egovframework-dev-tst 프로젝트 소스 코드
 
 egovframework-dev-tst 프로젝트는 JUnit Test XML 파일을 파싱하고, 템플릿 엑셀 파일을 읽어 들여, 해당값을 매핑한 후 엑셀 형식 리포트로 생성하는 주요 작업을 구성하는 라이브러리이다. 여기에서는 소스 코드에 대한 설명을 하도록 하고, 자세한 내용은 API 문서나 소스를 직접 참조하기 바란다.

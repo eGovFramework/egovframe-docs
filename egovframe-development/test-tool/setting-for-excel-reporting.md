@@ -2,7 +2,11 @@
 title: "엑셀 리포팅 사용을 위한 setting.xml 설정"
 linkTitle: "엑셀 리포팅 사용을 위한 setting.xml 설정"
 description: "엑셀 리포팅 사용을 위한 setting.xml 설정 방법에 대해 설명한다."
-url: /egovframe-development/test-tool/setting-for-excel-reporting
+url: /egovframe-development/test-tool/ref/setting-for-excel-reporting/
+menu:
+  depth:
+    weight: 9
+    parent: "ref"
 ---
 ## 엑셀 리포팅 사용을 위한 setting.xml 설정
 

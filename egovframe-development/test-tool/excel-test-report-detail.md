@@ -2,7 +2,11 @@
 title: "테스트 결과 Excel 리포트 상세"
 linkTitle: "테스트 결과 Excel 리포트 상세"
 description: "테스트 결과 Excel Report 상세 결과이다."
-url: /egovframe-development/test-tool/excel-test-report-detail
+url: /egovframe-development/test-tool/ref/excel-test-report-detail/
+menu:
+  depth:
+    weight: 4
+    parent: "ref"
 ---
 # 테스트 결과 Excel Report 상세
 
@@ -72,8 +76,7 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 
 ![egovframework-dev-tst 구조](./images/class-detail.png)
 
->✔ egovframework-dev-tst 프로젝트의 클래스 설명은 API 문서와 해당 소스를 참조하기 바란다. 또한 [egovframework-dev-tst 프로젝트 소스 코드](./egovframework-dev-tst-source.md)에서 관련 내용을 확인하기 바란다.
-
+> ✔ egovframework-dev-tst 프로젝트의 클래스 설명은 API 문서와 해당 소스를 참조하기 바란다. 또한 [egovframework-dev-tst 프로젝트 소스 코드](./egovframework-dev-tst-source.md)에서 관련 내용을 확인하기 바란다.
 
 ### JUnit Test XML 구조
 
@@ -205,7 +208,6 @@ Maven에 기능을 제공하는 Plug-in 또한 몇 가지 틀을 갖추면 작�
 
 ### Maven Plugin Project 생성
 
-
 * New Maven Project를 선택하고, archetype을 선택할 때 **GroupID:org.apache.maven.archetypes, ArtifactID: maven-archetype-mojo**를 선택하면 기본적인 구조를 만들어 준다.
 * groupID, artifactID 정의 : **maven-${prefix}-plugin**이나 **${prefix}-maven-plugin** 형태의 이름을 짓도록 한다. 이는 나중에 goal을 호출할 때 prefix를 이용하여 짧게 할 수 있게 해준다.
 * pom.xml은 다음과 같이 정의된다.
@@ -236,7 +238,7 @@ Maven에 기능을 제공하는 Plug-in 또한 몇 가지 틀을 갖추면 작�
 
 ### Mojo 클래스 작성
 
-Mojo란 Maven Old Java Object의 약자로 Maven2의 goal을 의미하며, 자세한 내용은 <http://maven.apache.org/guides/introduction/introduction-to-plugins.html>를 참조하기 바란다. Mojo를 작성하기 위해서는 미리 몇 가지를 정의해야 한다.
+Mojo란 Maven Old Java Object의 약자로 Maven2의 goal을 의미하며, 자세한 내용은 [http://maven.apache.org/guides/introduction/introduction-to-plugins.html](http://maven.apache.org/guides/introduction/introduction-to-plugins.html)를 참조하기 바란다. Mojo를 작성하기 위해서는 미리 몇 가지를 정의해야 한다.
 
 1. 본 Plugin을 사용하는 pom.xml에 설정할 내용을 정의한다. 특히, 디폴트 값과 입력받을 값이나 이름 등을 정의해둔다. - [엑셀 리포트 생성 샘플](./test-reporting.md#엑셀-리포트-생성-샘플) 참조
 2. Mojo를 사용할 때 사용될 goal, phase, lifecycle : 이는 빌드 Lifecycle을 참조하기 바란다.
@@ -311,7 +313,6 @@ Mojo란 Maven Old Java Object의 약자로 Maven2의 goal을 의미하며, 자�
        }
    ```
 
-
 ## 확장 방안
 
 ### 주요 기능 확장
@@ -336,7 +337,6 @@ Mojo란 Maven Old Java Object의 약자로 Maven2의 goal을 의미하며, 자�
 1. egovtest-maven-plugin 프로젝트에 Mojo 클래스를 추가한다.
 2. `egovframework.dev.tst.mojo` 패키지 밑에 `Egov<em>JUnit</em>ExcelReportMojo`와 같이 클래스명을 작성한다.
 3. [Mojo 클래스 작성](#mojo-클래스-작성)을 참조하여 Mojo 클래스를 작성한다. 이 때, goal만 재정의해서 작성하면 된다. 나머지는 기존 Mojo와 동일하게 쓰면 된다.
-
 
 ## TestCase 설명
 
@@ -383,7 +383,7 @@ Mojo를 작성할 때도 pom.xml을 테스트할 수 있는 기반을 제공해 
 * Apache POI : [http://poi.apache.org/](http://poi.apache.org/)
   * Busy Developers' Guide to HSSF and XSSF Features : [http://poi.apache.org/spreadsheet/quick-guide.html](http://poi.apache.org/spreadsheet/quick-guide.html)
 * Custom Ant Task 작성
-  * Apache Ant Manual : [http://ant.apache.org/manual/](http://ant.apache.org/manual/ )
+  * Apache Ant Manual : [http://ant.apache.org/manual/](http://ant.apache.org/manual/)
   * Introduction to Custom Ant Tasks : [http://www.developer.com/java/article.php/3630721](http://www.developer.com/java/article.php/3630721)
   * More on Custom Ant Tasks : [http://www.developer.com/java/article.php/3636196](http://www.developer.com/java/article.php/3636196 "http://www.developer.com/java/article.php/3636196")
 * Maven Home : [http://maven.apache.org/](http://maven.apache.org/)

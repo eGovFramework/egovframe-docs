@@ -2,13 +2,12 @@
 title: "Unit Test 작성을 위한 pom.xml dependency 설정"
 linkTitle: "Unit Test 작성을 위한 pom.xml dependency 설정"
 description: "Unit Test 작성을 위한 pom.xml dependency 설정 방법을 코드로 보여준다."
-url: /egovframe-development/test-tool/ref/pom-dependency-for-write-unittest
+url: /egovframe-development/test-tool/ref/pom-dependency-for-write-unittest/
 menu:
   depth:
-    weight: 1
+    weight: 6
     parent: "ref"
 ---
-
 ## Unit Test 작성을 위한 pom.xml dependency 설정
 
 ```xml

@@ -2,9 +2,12 @@
 title: "egovframework-dev-tst-ant 프로젝트 소스 코드"
 linkTitle: "egovframework-dev-tst-ant 프로젝트 소스 코드"
 description: "egovframework-dev-tst-ant 프로젝트 소스 코드이다."
-url: /egovframe-development/test-tool/egovframework-dev-tst-ant-source
+url: /egovframe-development/test-tool/ref/egovframework-dev-tst-ant-source/
+menu:
+  depth:
+    weight: 1
+    parent: "ref"
 ---
-
 ## egovframework-dev-tst-ant 프로젝트 소스 코드
 
 egovframework-dev-tst-ant에는 Custom Ant Task 클래스를 포함한다.
