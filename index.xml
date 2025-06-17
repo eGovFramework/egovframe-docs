@@ -407,7 +407,48 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 &lt;/li>
 &lt;/ul>
 &lt;p>계층형 Controller로 작성된 폼 처리를 @Controller로 구현하는 예도 설명한다.
-예제 코드 easycompany의 Controller는 동일한 기능(또한 공통의 Service, DAO, JSP를 사용)을 계층형 Controller와 @Controller로 각각 작성했다.&lt;/p></description></item><item><title>AOP 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/aop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/aop/</guid><description>&lt;h1 id="aop-서비스">AOP 서비스&lt;/h1>
+예제 코드 easycompany의 Controller는 동일한 기능(또한 공통의 Service, DAO, JSP를 사용)을 계층형 Controller와 @Controller로 각각 작성했다.&lt;/p></description></item><item><title>Ant에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ant-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ant-test-report/</guid><description>&lt;h1 id="ant에서-생성한-테스트-결과-html-리포트">Ant에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
+&lt;p>Ant를 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 HTML 리포트가 생성됩니다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>항목&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Tests&lt;/td>
+ &lt;td>전체 TestCase 수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Failures&lt;/td>
+ &lt;td>전체 실패한 TestCase 수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Errors&lt;/td>
+ &lt;td>전체 에러가 발생한 TestCase 수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Success rate&lt;/td>
+ &lt;td>전체 성공한 TestCase 백분율&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Time&lt;/td>
+ &lt;td>TestCase가 수행되는 걸린 초단위 시간&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Time Stamp&lt;/td>
+ &lt;td>TestCase를 수행한 시각&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Host&lt;/td>
+ &lt;td>TestCase가 수행된 컴퓨터의 Host명&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/ant-report-example.jpg" alt="Ant 리포트 예시" >
+&lt;/p></description></item><item><title>AOP 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/aop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/aop/</guid><description>&lt;h1 id="aop-서비스">AOP 서비스&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>AOP 서비스는 관점지향 프로그래밍(Aspect Oriented Programming: AOP) 사상을 구현하고 지원한다. 실행환경 AOP 서비스는 Spring AOP를 사용한다. 본 장에서는 AOP의 개요 및 Spring의 AOP 지원을 중심으로 살펴본다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -1473,7 +1514,20 @@ eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 �
 &lt;a href="http://commons.apache.org/dbcp/">Commons DBCP&lt;/a>
 
 
-라 불리는 Jakarta의 Database Connection Pool이다.&lt;/p></description></item><item><title>DBIO Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</guid><description/></item><item><title>DB 파티셔닝 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</guid><description>&lt;h1 id="db-파티셔닝-예제">DB 파티셔닝 예제&lt;/h1>
+라 불리는 Jakarta의 Database Connection Pool이다.&lt;/p></description></item><item><title>DB Support</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/db-support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/db-support/</guid><description>&lt;h1 id="db-support">DB Support&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>데이터베이스 관련 단위 테스트를 수행하기 위한 Test Case 를 작성하고 실행하는 방법을 안내한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>DAO (Data Access Object) 클래스를 개발하는 경우 이에 대한 단위 테스트 케이스를 작성하기 위해 고려해야 할 사항은 다음과 같다.&lt;/p>
+&lt;ul>
+&lt;li>데이터베이스 연결&lt;/li>
+&lt;li>테이블 생성 및 초기 데이터 입력&lt;/li>
+&lt;li>DAO 클래스 실행 시 필요한 테스트 데이터 관리&lt;/li>
+&lt;li>DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리&lt;/li>
+&lt;/ul>
+&lt;p>이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.&lt;br>
+데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.&lt;br>
+또한, 프로그램이 수정 보완 되는 과정에서 여러 번 중복 테스트를 하기 위해서는 다시 dbms 에 접속하여 rollback 을 하는 등의 작업을 수행하기도 한다.&lt;/p></description></item><item><title>DBIO Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</guid><description/></item><item><title>DB 파티셔닝 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</guid><description>&lt;h1 id="db-파티셔닝-예제">DB 파티셔닝 예제&lt;/h1>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="설정">설정&lt;/h3>
 &lt;h4 id="job-설정">Job 설정&lt;/h4>
@@ -1775,7 +1829,129 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;h4 id="commandline-배치-템플릿-전체-설정">CommandLine 배치 템플릿 전체 설정&lt;/h4>
 &lt;p>&lt;strong>CommandLine 배치 템플릿 설정 파일인 context-commandline.xml을 확인한다.&lt;/strong>&lt;/p>
 &lt;p>✔ CommandLine 배치 템플릿 실행에 필요한 xml 정보가 기술되어 있다.&lt;br>
-✔ Job 관련 xml의 경우 특정 폴더 밑에 Job당 하나의 xml 파일로 나누어져 있다.&lt;/p></description></item><item><title>배치 템플릿을 이용한 EgovSchedulerRunner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</guid><description>&lt;h1 id="배치-템플릿을-이용한-egovschedulerrunner-예제">배치 템플릿을 이용한 EgovSchedulerRunner 예제&lt;/h1>
+✔ Job 관련 xml의 경우 특정 폴더 밑에 Job당 하나의 xml 파일로 나누어져 있다.&lt;/p></description></item><item><title>egovframework-dev-tst 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/egovframework-dev-tst-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/egovframework-dev-tst-source/</guid><description>&lt;h2 id="egovframework-dev-tst-프로젝트-소스-코드">egovframework-dev-tst 프로젝트 소스 코드&lt;/h2>
+&lt;p>egovframework-dev-tst 프로젝트는 JUnit Test XML 파일을 파싱하고, 템플릿 엑셀 파일을 읽어 들여, 해당값을 매핑한 후 엑셀 형식 리포트로 생성하는 주요 작업을 구성하는 라이브러리이다. 여기에서는 소스 코드에 대한 설명을 하도록 하고, 자세한 내용은 API 문서나 소스를 직접 참조하기 바란다.&lt;/p>
+&lt;h3 id="junit-test-xml-파일-예">JUnit Test XML 파일 예&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34; ?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;testsuite&lt;/span> &lt;span style="color:#a6e22e">errors=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">skipped=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">tests=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;6&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;3.359&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">failures=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">value=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Sun Microsystems Inc.&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;java.vendor&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">value=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;C:\Documents and Settings\juroh\.m2\repository&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;localRepository&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . . . 중략 . . . .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;testcase&lt;/span> &lt;span style="color:#a6e22e">classname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0.594&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;testNonXmlReportFileListException&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;testcase&lt;/span> &lt;span style="color:#a6e22e">classname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;testNotExistXmlReportFileListException&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;testcase&lt;/span> &lt;span style="color:#a6e22e">classname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;testNonOutputDirException&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;testcase&lt;/span> &lt;span style="color:#a6e22e">classname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;testNotExistOutputDirException&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;testcase&lt;/span> &lt;span style="color:#a6e22e">classname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0.016&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;testGenerateExcelDefault&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;skipped/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/testcase&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;testcase&lt;/span> &lt;span style="color:#a6e22e">classname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovframework.dev.tst.report.junit.JUnitExcelReportGeneratorTest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">time=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.609&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;testGenerateExcelFile&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/testsuite&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="report-vo-클래스">Report VO 클래스&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>ReportTestCase&lt;/code>는 위 XML에서 &lt;code>&amp;lt;testcase&amp;gt;&lt;/code> 태그 정보를 하나씩 담는다.&lt;/li>
+&lt;li>&lt;code>ReportTestSuite&lt;/code>는 위 XML에서 &lt;code>&amp;lt;testsuite&amp;gt;&lt;/code> 태그의 요약 정보를 담는다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="testsuitexmlparser">TestSuiteXmlParser&lt;/h3>
+&lt;p>JUnit Test XML 파일을 파싱하는 &lt;code>&amp;lt;strong&amp;gt;TestSuiteXmlParser&amp;lt;/strong&amp;gt;&lt;/code> 클래스에 대해 알아보자.&lt;/p></description></item><item><title>egovframework-dev-tst-ant 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/egovframework-dev-tst-ant-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/egovframework-dev-tst-ant-source/</guid><description>&lt;h2 id="egovframework-dev-tst-ant-프로젝트-소스-코드">egovframework-dev-tst-ant 프로젝트 소스 코드&lt;/h2>
+&lt;p>egovframework-dev-tst-ant에는 Custom Ant Task 클래스를 포함한다.&lt;/p>
+&lt;h3 id="buildxml">build.xml&lt;/h3>
+&lt;pre tabindex="0">&lt;code>&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+ 
+&amp;lt;project ... &amp;gt;
+ &amp;lt;path id=&amp;#34;egov.lib&amp;#34;&amp;gt;
+ &amp;lt;path refid=&amp;#34;master-classpath&amp;#34; /&amp;gt;
+ &amp;lt;path location=&amp;#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&amp;#34; /&amp;gt;
+ &amp;lt;/path&amp;gt;
+ 
+ &amp;lt;taskdef resource=&amp;#34;egovtest.properties&amp;#34;
+ classpathref=&amp;#34;egov.lib&amp;#34;
+ description=&amp;#34;egovtest junit tasks:&amp;#34; /&amp;gt;
+ 
+ &amp;lt;!-- JUnit Excel Report --&amp;gt;
+ &amp;lt;target name=&amp;#34;egovtest&amp;#34; depends=&amp;#34;tests&amp;#34;&amp;gt;
+ &amp;lt;egov-junitreport todir=&amp;#34;${testxls.dir}&amp;#34;&amp;gt;
+ &amp;lt;fileset dir=&amp;#34;${testreports.dir}&amp;#34; includes=&amp;#34;**/TEST-*.xml&amp;#34; /&amp;gt;
+ &amp;lt;/egov-junitreport&amp;gt;
+ &amp;lt;/target&amp;gt;
+ 
+ &amp;lt;target name=&amp;#34;egovtest-full&amp;#34; depends=&amp;#34;tests&amp;#34;&amp;gt;
+ &amp;lt;egov-junitreport todir=&amp;#34;${testxls.dir}&amp;#34;
+ outputname=&amp;#34;egovtest-junit-full.xls&amp;#34;
+ templatepath=&amp;#34;${basedir}/build/template-kr.xls&amp;#34;
+ summary=&amp;#34;0,B,6&amp;#34;
+ packages=&amp;#34;0,B,11&amp;#34;
+ lists=&amp;#34;1,A,5&amp;#34;&amp;gt;
+ &amp;lt;fileset dir=&amp;#34;${testreports.dir}&amp;#34;
+ includes=&amp;#34;**/TEST-*.xml&amp;#34; /&amp;gt;
+ &amp;lt;/egov-junitreport&amp;gt;
+ &amp;lt;/target&amp;gt;
+ 
+ &amp;lt;target name=&amp;#34;build-report-junit-excel&amp;#34;
+ depends=&amp;#34;clean, egovtest&amp;#34;
+ description=&amp;#34;clean, egovtest&amp;#34; /&amp;gt;
+ 
+ &amp;lt;target name=&amp;#34;build-report-junit-excel-full&amp;#34;
+ depends=&amp;#34;clean, egovtest-full&amp;#34;
+ description=&amp;#34;clean, egovtest-full&amp;#34; /&amp;gt;
+&amp;lt;/project&amp;gt;
+&lt;/code>&lt;/pre>&lt;h3 id="egovjunitexcelreporttask">EgovJUnitExcelReportTask&lt;/h3>
+&lt;pre tabindex="0">&lt;code>public class EgovJUnitExcelReportTask extends Task {
+ /** Excel 파일이 작성될 디렉토리 위치 */
+ String todir;
+ 
+ /** Excel 파일이 작성될 디렉토리 위치 */
+ File outputDirectory;
+ 
+ /** Excel 리포트 파일명 */
+ String outputname;
+ 
+ /** Excel 리포트의 템플릿 리포트 파일의 Full Path */
+ String templatepath;
+ 
+ /** Excel 리포트의 템플릿 리포트 파일의 Full Path */
+ File templateFile;
+ 
+ /** Template Excel 파일의 Summary Header 위치 정보 */
+ String summary;
+ 
+ /** Template Excel 파일의 Package Header 위치 정보 */
+ String packages;
+ 
+ /** Template Excel 파일의 TestCase Lists Header 위치 정보 */
+ String lists;
+ 
+ public void setTodir(String todir) {
+ this.todir = todir;
+ }
+ 
+ public void setOutputname(String outputname) {
+ this.outputname = outputname;
+ }
+ 
+ public void setTemplatepath(String templatepath) {
+ if (templatepath != null &amp;amp;&amp;amp; templatepath.length() &amp;gt; 0) {
+ this.templatepath = templatepath;
+ }
+ }
+ 
+ public void setSummary(String summary) {
+ this.summary = summary;
+ }
+ 
+ public void setPackages(String packages) {
+ this.packages = packages;
+ }
+ 
+ . . .
+ 
+ List filesets = new ArrayList();
+ 
+ public void addFileset(FileSet fileset) {
+ filesets.add(fileset);
+ }
+&lt;/code>&lt;/pre></description></item><item><title>배치 템플릿을 이용한 EgovSchedulerRunner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</guid><description>&lt;h1 id="배치-템플릿을-이용한-egovschedulerrunner-예제">배치 템플릿을 이용한 EgovSchedulerRunner 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Scheduler 기반의 배치 템플릿 프로젝트를 이용하여 EgovSchedulerRunner의 사용법을 보여주는 예제이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -3891,7 +4067,42 @@ SQL문 실행을 위해 Parameter Object를 받아오거나 SQL문 실행 결과
 &lt;pre tabindex="0">&lt;code>Client &amp;lt;------ XML ------&amp;gt; Server
 &lt;/code>&lt;/pre>&lt;p>WS는 Server와 Client 두 대상 간의 데이터를 주고받는 기술 중 하나이다. 정보를 요청하는쪽이 Client이다.(Client는 Server가 될 수도 있고 일반 사용자가 될 수도 있다.) 요청한 정보를 받아서 알맞게 처리 후 결과값을 리턴하는 쪽이 Server이다.&lt;/p>
 &lt;pre tabindex="0">&lt;code>Client(OXM) &amp;lt;------ XML(WSDL) ------&amp;gt; (OXM)Server
-&lt;/code>&lt;/pre>&lt;p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.&lt;/p></description></item><item><title>개인빌드(Maven)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</guid><description/></item><item><title>Integration 서비스 Metadata</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/integration-service/integration-service-metadata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/integration-service/integration-service-metadata/</guid><description>&lt;h1 id="metadata">Metadata&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.&lt;/p></description></item><item><title>개인빌드(Maven)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</guid><description/></item><item><title>Maven에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/maven-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/maven-test-report/</guid><description>&lt;h1 id="maven에서-생성한-테스트-결과-html-리포트">Maven에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
+&lt;p>Maven을 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 HTML 리포트가 생성됩니다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>항목&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Tests&lt;/td>
+ &lt;td>전체 TestCase 수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Errors&lt;/td>
+ &lt;td>전체 에러가 발생한 TestCase 수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Failures&lt;/td>
+ &lt;td>전체 실패한 TestCase 수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Skipped&lt;/td>
+ &lt;td>전체 테스트를 수행하지 않은 TestCase 수 (@Ignore 설정된 TestCase)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Success Rate&lt;/td>
+ &lt;td>전체 성공한 TestCase 백분율&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Time&lt;/td>
+ &lt;td>TestCase가 수행되는 걸린 초단위 시간&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Integration 서비스 Metadata</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/integration-service/integration-service-metadata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/integration-layer/integration-service/integration-service-metadata/</guid><description>&lt;h1 id="metadata">Metadata&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Integration 서비스 Metadata는 연계에 필요한 정보를 정의하고 있다.
 본 장은 실제 Integration 서비스로 구현된 연계 Adaptor를 사용하는 방식에 직접적인 도움을 주지는 않는다. 실제 사용법은 
@@ -3920,7 +4131,57 @@ SQL문 실행을 위해 Parameter Object를 받아오거나 SQL문 실행 결과
 &lt;h3 id="논리모델">논리모델&lt;/h3>
 &lt;p>Integration 서비스 Metadata의 논리모델은 연계를 위해 필요한 논리적인 정보를 정의한다.&lt;/p>
 &lt;h4 id="논리erd">논리ERD&lt;/h4>
-&lt;p>Integration 서비스 Metadata의 논리ERD 및 Entity 설명은 다음과 같다.&lt;/p></description></item><item><title>MongoDB</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/reactive/reactive-mongodb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/reactive/reactive-mongodb/</guid><description>&lt;h1 id="mongodb">MongoDB&lt;/h1>
+&lt;p>Integration 서비스 Metadata의 논리ERD 및 Entity 설명은 다음과 같다.&lt;/p></description></item><item><title>Mock Support</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/mock-support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/mock-support/</guid><description>&lt;h1 id="mock-support">Mock Support&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Unit Test Case 작성 시 Mock 객체 (모의 객체)를 사용하는 방법에 대해 가이드한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="mock-객체의-의미">Mock 객체의 의미&lt;/h3>
+&lt;p>Mock 객체(
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://en.wikipedia.org/wiki/Mock_object">Mock Object - wikipedia&lt;/a>
+
+
+, 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://endic.naver.com/search.nhn?query_utf=mock&amp;amp;kind=keyword">mock - 네이버 영어사전&lt;/a>
+
+
+)는 Unit Test의 독립성(isolation)을 높여주기 위해 사용하며, 테스트하고자 코드와 관련이 있는 객체(collaborator)를 흉내내어 Unit Test를 수행할 수 있도록 도와주는 객체이다.&lt;/p>
+&lt;p>다음과 같이 Program에서 Object라는 객체를 테스트하고자 할 경우, 그 Object는 다른 클래스와 관계를 갖고 있게 마련이다.&lt;br>
+개발자는 Object 하나만을 테스트하고 싶고, 여러 가지 이유로 Collaborator1, Collaborator2, Collaborator3 객체를 사용할 수가 없다고 한다면,&lt;br>
+컴파일에 지장이 없도록 Collaborator를 흉내내는 Mock 객체 (MockCollaborator1, MockCollaborator2, MockCollaborator3)를 생성하고 Object가 사용하는 메소드에 대해서만 원하는 동작을 정의한 뒤, Object를 테스트하는 것이다.&lt;/p></description></item><item><title>MongoDB</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/reactive/reactive-mongodb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/reactive/reactive-mongodb/</guid><description>&lt;h1 id="mongodb">MongoDB&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring Data MongoDB 프로젝트는 MongoDB 문서 스타일 데이터 저장소를 사용하는 솔루션 개발에 Spring의 핵심 개념을 적용하여 문서를 저장하고 쿼리하기 위한 높은 수준의 추상화 템플릿을 제공한다. Spring 프레임워크에서 제공하는 JDBC 지원과 유사하다는 것을 알 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -4073,7 +4334,13 @@ Spring MVC는 기본요소인 Model, View, Controller 외에도, 아래와 같�
 &lt;li>JSP Form을 쉽게 구성하도록 Tag를 제공한다.&lt;/li>
 &lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>Spring MVC(Model-View-Controller)의 핵심 Component는 아래와 같다.&lt;/p></description></item><item><title>Spring Web Flow와 Spring MVC 연동</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-with-spring-mvc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-with-spring-mvc/</guid><description>&lt;h2 id="spring-web-flow-와-mvc-연동">Spring Web Flow 와 MVC 연동&lt;/h2>
+&lt;p>Spring MVC(Model-View-Controller)의 핵심 Component는 아래와 같다.&lt;/p></description></item><item><title>MVC Test</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/mvc-test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/mvc-test/</guid><description>&lt;h1 id="mvc-test">MVC Test&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Spring mvc test framework에서는 API를 통한 Spring MVC 테스트를 지원한다. MVC Test Framework는 내부에서 TestContext를 통해 실제 스프링 구성을 로드하고, 실행 ServletContext를 사용없이 MVC 테스트가 가능하다.&lt;/p>
+&lt;h3 id="spring-mvc-server-side-test">Spring mvc server-side test&lt;/h3>
+&lt;p>기존 Spring 3.2버전까지 스프링 MVC Controller를 테스트하는 방법은 Controller를 객체화하거나 객체주입하고 Mock객체(MockHttpServletRequest, MockHttpServletResponse)를 사용하여 단위테스트를 작성하는 것이었다.
+그러나 이러한 테스트 방식은 Controller내부에서 쓰이는 많은 annotation기능과 request처리과정의 로직들을 모두 검증/지원하지는 못한다는 단점이 있다. (@initBinder, @ModelAttribute, @ExceptionHandler 등…)&lt;/p>
+&lt;p>Spring 3.2부터는 Spring mvc test framework에서 Spring MVC Test를 보다 쉽고 간편하게 할 수 있는 방법을 제시한다.&lt;/p></description></item><item><title>Spring Web Flow와 Spring MVC 연동</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-with-spring-mvc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-with-spring-mvc/</guid><description>&lt;h2 id="spring-web-flow-와-mvc-연동">Spring Web Flow 와 MVC 연동&lt;/h2>
 &lt;p>Spring Web Flow를 사용하여 웹을 개발할 때 Spring MVC와 연동하여 개발할 수 있다. 이를 위해 Spring MVC 연동 모듈 등을 설정해야 한다.
 여기서는 booking-mvc sample( 실행데모(faces이지만 시나리오는 같음) )을 기준으로 설정하겠다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -5158,7 +5425,35 @@ Hessian 웹서비스는 별도의 대형 프레임워크를 설치하지 않고�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/job&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="junittest-구성-및-수행">JunitTest 구성 및 수행&lt;/h3>
 &lt;h4 id="junittest-구성">JunitTest 구성&lt;/h4>
-&lt;p>&lt;b>retrySample 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/b>&lt;/p></description></item><item><title>배치 Runner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-batch_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-batch_runner/</guid><description>&lt;h1 id="배치-runner-예제">배치 Runner 예제&lt;/h1>
+&lt;p>&lt;b>retrySample 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/b>&lt;/p></description></item><item><title>Run TestSuite</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/run-testsuite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/run-testsuite/</guid><description>&lt;h1 id="run-testsuite">Run TestSuite&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>작성된 TestSuite 클래스나, TestCase 들을 Ant나 Maven 같은 빌드도구를 사용하여 자동으로 수행할 수 있는 방법에 대해 설명한다.
+테스트 결과 리포트가 생성되는데, 이는 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/">Test Reporting&lt;/a>
+
+
+에서 자세하게 설명하도록 한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>개발자가 단위테스트 클래스인 TestCase를 작성하고 나면, 개별적으로 테스트를 수행하여 결과를 볼 수 있다.
+그러나, 일단 코드로 작성된 TestCase들은 빌드도구를 사용하여 자동화된 테스트를 수행할 수 있다.
+빌드도구는 Ant와 Maven을 사용할 수 있으며, 이클립스에서는 각각 Ant와 Maven의 Plug-in을 사용하여 GUI 환경에서 테스트할 수 있고, CI 서버에 등록하면 동일한 프로세스를 서버단에서 수행한 뒤 CI 서버에서 리포트를 merge할 수 있도록 XML 파일을 제공할 수 있다.&lt;/p></description></item><item><title>배치 Runner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-batch_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-batch_runner/</guid><description>&lt;h1 id="배치-runner-예제">배치 Runner 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치 수행에 사용되는 EgovBatchRunner의 사용법을 보여주는 예제이다. 비동기 방식으로 실행하는 Job의 시작, 정지, 재시작 방법을 보여준다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -6229,7 +6524,128 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/bean&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="junittest-구성-및-수행">JunitTest 구성 및 수행&lt;/h3>
 &lt;h4 id="junittest-구성">JunitTest 구성&lt;/h4>
-&lt;p>&lt;strong>taskletJob 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/strong>&lt;/p></description></item><item><title>Test Automation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</guid><description/></item><item><title>Tomcat 한글 설정하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/</guid><description>&lt;h1 id="tomcat-한글-설정하기">Tomcat 한글 설정하기&lt;/h1>
+&lt;p>&lt;strong>taskletJob 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/strong>&lt;/p></description></item><item><title>Test Automation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</guid><description>&lt;h1 id="test-automation">Test Automation&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://en.wikipedia.org/wiki/Test_automation">Test Automation&lt;/a>
+
+
+은 개발자가 작성한 다수의 단위테스트 클래스를 자동으로 테스트하고 그 결과 리포트를 생성하는 기능을 제공하는 것을 말한다. Test Automation의 개념과 방법에 대해 알아본다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>Test Automation&lt;/strong>은 &lt;strong>지속적인 통합&lt;/strong>(
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://www.martinfowler.com/articles/continuousIntegration.html">Continuous Integration - CI&lt;/a>
+
+
+)를 실천하기 위한 방안 중 하나인 &amp;ldquo;
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://www.martinfowler.com/articles/continuousIntegration.html#MakeYourBuildSelf-testing">Make Your Build Self-Testing&lt;/a>
+
+
+&amp;rdquo; 개념에서 나온 것으로 개발자 코드에 대해 작성된 단위테스트 클래스들을 자동으로 테스트를 수행하도록 하고, 매일 지속적으로 테스트를 수행하고 그 결과를 확인함으로써 지속적인 통합의 이점을 극대화시키고자 하는 목적을 갖고 있다.&lt;/p></description></item><item><title>Test Case</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/</guid><description>&lt;h1 id="junit-test-case">JUnit Test Case&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>JUnit 을 이용하여 Unit Test Case 를 작성하고 실행하는 방법을 안내한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Unit Test Case 를 작성하기 위해 알아야 할 기본적인 내용은 다음과 같다.
+자세한 사용법과 예제 프로그램은 본 문서 아래 부분에서 설명하도록 한다.
+추가적으로, Mocking 이나 DAO 테스트 관련하여서는 각각 Mock Support, DB Support 를 참조하도록 한다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>테스트 종류&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Constructor Test&lt;/td>
+ &lt;td>단순한 로직의 경우 굳이 테스트하지 않는다. 단, 값을 초기화하거나 Load 하는 경우가 있는 때에는 테스트를 수행한다.&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Setter/Getter Test&lt;/td>
+ &lt;td>단순한 Set/Get 은 굳이 테스트 하지 않는다. 로직이 있는 경우에는 로직을 별도의 메소드로 분리하고 이를 테스트하는 것이 바람직하다.&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Boundary Test&lt;/td>
+ &lt;td>Null 에 대한 확인, Default 값에 대한 확인, 범위가 있는 경우 MIN/MAX 값에 대한 확인이 목적이다. 이 경우 결국엔 NullPointer 가 발생하지 않도록 방어로직 혹은 검증 로직을 보완하는 것이 바람직하다.&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Equality Test&lt;/td>
+ &lt;td>value, reference, 숫자, 리스트/배열, Value Object 간의 비교 등이 목적이다. 여기서 중요한 것은 Override 된 equals method 를 제대로 작성 했는지 확인하는 것이다.&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Exception Test&lt;/td>
+ &lt;td>예상한 Exception 이 발생하는지 확인&lt;/td>
+ &lt;td>이것은 오로지 JUnit4 에만 해당함&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>Maven Project 인 경우에는 아래와 같은 dependency 를 설정하면 된다.&lt;/p></description></item><item><title>Test Reporting</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</guid><description>&lt;h1 id="test-reporting">Test Reporting&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Test Automation 수행 후에는 테스트 결과를 갖는 txt, XML 파일을 읽어 통계와 의미있는 테스트 결과를 보여주는 리포팅이 중요하다.&lt;br>
+여기에서는 테스트 결과 생성된 txt나 XML 파일을 읽고 HTML, Excel 형식의 리포트를 생성하는 방법에 대해 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>테스트 수행한 결과를 의미있는 리포트를 만드는 데에도 Ant와 Maven 빌드도구를 사용한다.&lt;br>
+다만, 리포트를 생성하는 기능을 수행하는 Ant Task와 Maven Plug-in이 있어야 하는데, HTML 형식은 오픈소스에서 제공한다.&lt;br>
+각각 JUnit Report Task와 maven-surefire-report-plugin 이라는 라이브러리가 그것이다.&lt;br>
+그리고, Excel 형식의 리포트를 생성하는 기능은 전자정부 표준 프레임워크 개발환경에서 추가했는데, Ant Task와 Maven plugin으로 제공된다.&lt;/p></description></item><item><title>Tomcat 한글 설정하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/</guid><description>&lt;h1 id="tomcat-한글-설정하기">Tomcat 한글 설정하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Tomcat에서 문자셋 인코딩을 하여 한글이 깨지는 문제를 해결할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -6328,7 +6744,76 @@ Controller 역할을 수행하는 Servlet 객체에서 업무 로직을 호출 �
 &lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/presentation-layer/images/ui-adaptor-7.png" alt="ui-adaptor-7" >
 &lt;/p>
-&lt;h2 id="참고자료">참고자료&lt;/h2></description></item><item><title>UML Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/</guid><description/></item><item><title>Unit Test</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/</guid><description/></item><item><title>Spring의 Validator 인터페이스와 유효성 검증</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-validation/</guid><description>&lt;h1 id="validation">Validation&lt;/h1>
+&lt;h2 id="참고자료">참고자료&lt;/h2></description></item><item><title>UML Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/</guid><description/></item><item><title>Unit Test</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/unit-test/</guid><description>&lt;h1 id="unit-test">Unit Test&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>개발한 대상 코드에 대해 테스트하고자 개발자가 작성한 테스트를 위한 코드로서의 Unit Test 에 대해 가이드한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Unit Test란 대상 코드에 대해 테스트하고자 개발자가 작성한 코드로서, 주로 특정 메소드를 실행해서 그 결과가 기대값과 일치하는지 확인하는 형태이며, Unit Test는 서로 독립적으로 수행되어야 한다.&lt;/p>
+&lt;ul>
+&lt;li>효과
+&lt;ul>
+&lt;li>작성한 코드의 설계 개선 작업 시, 코드 품질에 대한 확신&lt;/li>
+&lt;li>코드 수정 시 버그를 쉽게 찾을 수 있게 해줌&lt;/li>
+&lt;li>자동화된 회귀 테스트 (Regression Test)를 가능하게 해주는 Source가 됨&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>작성범위
+&lt;ul>
+&lt;li>주요 흐름에 대한 테스트 (the happy path)&lt;/li>
+&lt;li>또 다른 주요 흐름에 대한 테스트 (the main alternative path)&lt;/li>
+&lt;li>경계 조건에 대한 테스트 (null 인자 체크 등)&lt;/li>
+&lt;li>Exception 테스트 (Exception 발생하는 조건에 대한 테스트)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>제공하는 테스트 도구는 Unit Test, Mock, DB Test Framework을 통해 TestCase 작성을 지원하고, Test Automation, Test Coverage, Test Reporting 등의 기능을 제공한다.&lt;/p></description></item><item><title>Unit Test 작성을 위한 pom.xml dependency 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/pom-dependency-for-write-unittest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/pom-dependency-for-write-unittest/</guid><description>&lt;h2 id="unit-test-작성을-위한-pomxml-dependency-설정">Unit Test 작성을 위한 pom.xml dependency 설정&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . . 중략 . . .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>junit&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>4.4&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.easymock&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>easymock&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.4&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.easymock&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>easymockclassextension&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.4&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.dbunit&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>dbunit&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.4.3&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.unitils&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>unitils&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>2.2&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.slf4j&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>slf4j-api&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.5.6&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.slf4j&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>slf4j-nop&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.5.6&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>runtime&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#f92672">&amp;lt;optional&amp;gt;&lt;/span>true&lt;span style="color:#f92672">&amp;lt;/optional&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . . 중략 . . .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Spring의 Validator 인터페이스와 유효성 검증</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-validation/</guid><description>&lt;h1 id="validation">Validation&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>객체의 유효성 검증을 위해 스프링 프레임워크는 org.springframework.validation.Validator라는 인터페이스를 제공한다.
 Validator는 특정 계층에 종속적인 구조가 아니라서, web이나 data-access등 어떤 계층의 객체라도 유효성 검증이 가능하게 한다.
@@ -6776,7 +7261,13 @@ DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>WebSocket 은 HTTP 환경에서 소켓 통신을 지원하기 위한 Spring 기술이다. Spring 은 기본적으로 WebSocket sub-protocol 로 STOMP 를 사용한다.&lt;/p>
 &lt;p>(RFC6455는 웹 어플리케이션을 위한 새 기능으로 WebSocket protocol을 정의한다. 서버와 클라이언트간 양방향 통신(full-duplex)을 지원하는데, 이것은 웹을 좀 더 인터랙티브하게 만들기 위해 사용하였던 java applet, XMLHttpRequest, Flash, ActiveX 등의 기술을 대체하기 위한 중요한 기능이 될 수 있다.)&lt;/p>
-&lt;p>HTTP 는 초기 handshake (protocol upgrade or switch 요청이고 서버가 동의하는 경우 101 응답을 내려 줌)를 위해서만 사용되며, handshake 가 성공하면 HTTP upgrade 요청에 기인하는 TCP 소켓이 open 된 채 서버와 클라이언트간 통신을 처리한다.&lt;/p></description></item><item><title>XML Manipulation Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</guid><description>&lt;h1 id="xml-manipulation-service">XML Manipulation Service&lt;/h1>
+&lt;p>HTTP 는 초기 handshake (protocol upgrade or switch 요청이고 서버가 동의하는 경우 101 응답을 내려 줌)를 위해서만 사용되며, handshake 가 성공하면 HTTP upgrade 요청에 기인하는 TCP 소켓이 open 된 채 서버와 클라이언트간 통신을 처리한다.&lt;/p></description></item><item><title>Write TestSuite</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/write-testsuite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/write-testsuite/</guid><description>&lt;h1 id="write-testsuite">Write TestSuite&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Test Automation을 위해 기존에 작성된 다수의 TestCase 들을 몇 개 그룹으로 묶는 방법을 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>TestSuite&lt;/strong>은 개발자가 작성한 다수의 TestCase를 그룹으로 묶거나 모아서 한꺼번에 테스트를 수행할 수 있도록 JUnit 3.8에서 제공하던 클래스이다.
+JUnit4에서는 TestSuite 클래스를 더이상 지원하지 않으며, 단지 다수의 TestCase를 특징에 따라 한꺼번에 수행할 수 있도록 그룹으로 묶는 개념으로 생각하는 것이 좋겠다.
+따라서, JUnit3.8에서는 TestSuite Class를 작성하곤 했지만, JUnit4에서는 작성할 수는 있지만 잘 쓰지 않고, 빌드도구를 사용하는 방법을 많이 사용한다.&lt;/p></description></item><item><title>XML Manipulation Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</guid><description>&lt;h1 id="xml-manipulation-service">XML Manipulation Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>XML Manipulation 서비스는 XML을 생성하고, 읽고, 쓰는 등과 같은 기능과 조작 기능을 제공하는 서비스이다.
 XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다.XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.XML은 주로 다른 시스템, 특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다. XML은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다. XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.&lt;/p></description></item><item><title>개발자 개발환경 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</guid><description>&lt;h1 id="개발자-개발환경-설치가이드">개발자 개발환경 설치가이드&lt;/h1>
@@ -8572,7 +9063,27 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;li>적용 버전은 최신 버전 확인 후 적용(patch 버전 등)&lt;/li>
 &lt;/ul>
 &lt;h3 id="2-webxml-수정">2. web.xml 수정&lt;/h3>
-&lt;p>접속 제한을 사용하는 경우 web.xml 상에 HttpSessionEventPublisher listener의 패키지 변경 필요&lt;/p></description></item><item><title>엑셀 예제(Excel Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/excel-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/excel-example/</guid><description>&lt;h1 id="엑셀-예제excel-example">엑셀 예제(Excel Example)&lt;/h1>
+&lt;p>접속 제한을 사용하는 경우 web.xml 상에 HttpSessionEventPublisher listener의 패키지 변경 필요&lt;/p></description></item><item><title>엑셀 리포팅 사용을 위한 setting.xml 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/setting-for-excel-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/setting-for-excel-reporting/</guid><description>&lt;h2 id="엑셀-리포팅-사용을-위한-settingxml-설정">엑셀 리포팅 사용을 위한 setting.xml 설정&lt;/h2>
+&lt;p>오픈소스가 아닌 전자정부 개발프레임워크에서 개발한 테스트 엑셀 리포팅을 사용하기 위해서는 setting.xml에 다음과 같이 설정해야 한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;settings&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . . 중략 . . .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pluginGroups&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pluginGroup&amp;gt;&lt;/span>egovframework.dev&lt;span style="color:#f92672">&amp;lt;/pluginGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/pluginGroups&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/settings&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="maven에서-기능-호출하는-방법">Maven에서 기능 호출하는 방법&lt;/h3>
+&lt;p>Maven에서 해당 기능을 사용하기 위해 호출하는 방법은 두 가지가 있다.&lt;/p>
+&lt;ol>
+&lt;li>Full Name 방식 : goal에 &lt;strong>groupID:artifactID:version:goal&lt;/strong> 식으로 지정하는 것이다.&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code> Maven clean 기능을 사용하고자 할 때, 다음과 같이 사용한다.
+&amp;gt;mvn org.apache.maven.plugins:maven-clean-plugin:2.3:clean
+&lt;/code>&lt;/pre>&lt;ol start="2">
+&lt;li>간단한 방식 : 몇 가지 조건을 만족하는 경우 &lt;strong>artifactID&lt;/strong>의 &lt;strong>prefix:version:goal&lt;/strong>와 같이 간단하게 기능을 호출할 수 있다.&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code> Maven clean 기능을 사용하고자 할 때, 다음과 같이 사용한다.
+&amp;gt;mvn clean:clean
+&lt;/code>&lt;/pre>&lt;p>기본적으로 Maven에서 빌드 Lifecycle을 호출하여 기능을 수행하고자 할 때, Full Name으로 호출을 해야 한다. 그러나, 그것이 너무 번거로운 관계로 몇 가지 조건을 만족하는 경우 간단한 방식으로 호출할 수 있다. 그 조건은 다음과 같다.&lt;/p></description></item><item><title>엑셀 예제(Excel Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/excel-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/foundation-layer/excel-example/</guid><description>&lt;h1 id="엑셀-예제excel-example">엑셀 예제(Excel Example)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>데이터베이스에 저장된 내용을 화면에 출력하고, 해당 내용을 엑셀 파일로 내보내는 기능에 대한 예제이다. 사용자는 주어진 목록을 엑셀파일 형태로 다운로드 받을 수 있으며, 개발자는 엑셀 템플릿 형태로 양식을 정의하고 이에 맞추어서 데이터를 추가할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -8610,7 +9121,79 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 &lt;/li>
-&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>인쇄/출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</guid><description/></item><item><title>인증서로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/certificate-login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/certificate-login/</guid><description>&lt;h1 id="인증서로그인">인증서로그인&lt;/h1>
+&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>이클립스에서 Ant 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/run-ant-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/run-ant-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-ant-실행하기">이클립스에서 Ant 실행하기&lt;/h2>
+&lt;p>다음은 이클립스에서 Ant View를 사용하여 Ant task를 수행하는 방법이다.&lt;/p>
+&lt;ol>
+&lt;li>Ant View를 띄우고, 실행할 build file을 선택한다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/run-ant-on-eclipse-1.png" alt="Ant 실행 1" >
+&lt;/p>
+&lt;ol start="2">
+&lt;li>실행할 task를 더블클릭한다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/run-ant-on-eclipse-2.png" alt="Ant 실행 2" >
+&lt;/p>
+&lt;ol start="3">
+&lt;li>Console View에서 실행 결과를 확인한다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/run-ant-on-eclipse-3.png" alt="Ant 실행 3" >
+&lt;/p></description></item><item><title>이클립스에서 Maven 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/run-maven-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/run-maven-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-maven-실행하기">이클립스에서 Maven 실행하기&lt;/h2>
+&lt;p>이클립스에서 Maven을 실행하기 위해서는 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://m2eclipse.sonatype.org/index.html">m2eclipse&lt;/a>
+
+
+가 설치되어 있어야 하고, m2eclipse를 사용하여 실행하는 방법에 대해 설명하도록 한다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>기본적인 Maven goal 실행&lt;/strong> : Context Menu에서 Run As 에서 실행 - &lt;strong>clean, install, package, test&lt;/strong> 등 수행 가능&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/run-maven-on-eclipse-1.jpg" alt="이클립스에서 Maven 실행하기 1" >
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>별도의 goal 실행&lt;/strong>
+&lt;ol>
+&lt;li>Context Menu에서 &lt;strong>Run As &amp;gt; Maven build…&lt;/strong> 선택&lt;/li>
+&lt;li>Goals에 원하는 goal 입력&lt;/li>
+&lt;li>Run 클릭&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/run-maven-on-eclipse-2.gif" alt="이클립스에서 Maven 실행하기 2" >
+&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Name&lt;/th>
+ &lt;th>Run As Maven 이름&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Base directory&lt;/td>
+ &lt;td>적용될 프로젝트 디렉토리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Goals&lt;/td>
+ &lt;td>실행할 goal. 여러 개를 수행할 경우, space를 이용하여 구분한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>인쇄/출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/</guid><description/></item><item><title>인증서로그인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/certificate-login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/certificate-login/</guid><description>&lt;h1 id="인증서로그인">인증서로그인&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>인증서로그인은 기존 **
 
@@ -8828,7 +9411,83 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Layout&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">PatternLayout&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pattern&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위 Logger 객체를 org.apache.logging.log4j.core.Logger로 캐스팅하면, Log Level, Appender, Layout 등 설정을 변경할 수 있다.&lt;br>
-예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>공통컴포넌트 테이블 구성 정보</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/table-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/table-structure/</guid><description>&lt;h1 id="공통컴포넌트-테이블-구성-정보">공통컴포넌트 테이블 구성 정보&lt;/h1>
+예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>테스트 결과 Excel 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/excel-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/excel-test-report/</guid><description>&lt;h1 id="테스트-결과-excel-리포트">테스트 결과 Excel 리포트&lt;/h1>
+&lt;p>테스트 결과를 엑셀 형식으로 리포트하는 기능은 오픈소스가 아닌 전자정부 개발프레임워크 개발환경에서 추가 개발한 내용이다.&lt;br>
+기본적으로 Ant나 Maven을 사용할 경우 스타일이 달라지지는 않으며, 별도로 커스터마이즈된 템플릿 엑셀 파일을 사용할 경우 그 스타일에 따른 엑셀 리포트를 만들게 된다. 기본적인 내용은 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/#%ec%97%91%ec%85%80-%eb%a6%ac%ed%8f%ac%ed%8a%b8-%ec%83%9d%ec%84%b1-%eb%b0%a9%eb%b2%95">엑셀 리포트 생성 방법&lt;/a>
+
+
+을 참조하도록 한다.
+테스트 결과 Excel Reporting 유지보수 관련해서는 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/excel-test-report-detail/">테스트 결과 Excel Report 상세&lt;/a>
+
+
+를 참조하기 바란다.&lt;/p>
+&lt;h2 id="테스트-결과-엑셀-리포트-생성-설정값">테스트 결과 엑셀 리포트 생성 설정값&lt;/h2>
+&lt;p>Excel 형식의 리포트에서는 디폴트 템플릿을 사용하게 되며, 앞에서 보여준 모습의 Excel 리포트를 생성하게 된다.&lt;br>
+그 외에도 다양한 설정이 가능한데, 설정하지 않을 경우 디폴트 값을 사용하게 된다.&lt;br>
+엑셀 리포트는 원하는 스타일의 템플릿을 만들고 설정 정보를 지정하면 엑셀 스타일을 커스터마이즈할 수 있어, 프로젝트마다 원하는 모양으로 리포트를 생성할 수 있다. 그 사용법은 다음과 같다.&lt;/p></description></item><item><title>테스트 결과 Excel 리포트 상세</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/excel-test-report-detail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/excel-test-report-detail/</guid><description>&lt;h1 id="테스트-결과-excel-report-상세">테스트 결과 Excel Report 상세&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>JUnit 테스트 결과를 Excel Report로 생성하는 것은 오픈소스를 사용한 것이 아니라 전자정부 개발 프레임워크 개발환경의 테스트 도구에서 자체 개발한 기능이다. 여기에서는 Excel Report 기능에 대한 상세 내용에 대해 설명하도록 한다.&lt;/p>
+&lt;h2 id="기능">기능&lt;/h2>
+&lt;p>JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/">Test Reporting&lt;/a>
+
+
+에서 관련 내용을 확인할 수 있다. 국내에서는 엑셀 문서를 통한 보고나 관리 작업이 다양하게 일어나므로, 기본적으로 제공하는 Text, XML, HTML 외에 엑셀 형식을 작성할 수 있는 기능을 Ant Task와 Maven Plug-in으로 제공한다.&lt;/p></description></item><item><title>공통컴포넌트 테이블 구성 정보</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/table-structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/table-structure/</guid><description>&lt;h1 id="공통컴포넌트-테이블-구성-정보">공통컴포넌트 테이블 구성 정보&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>공통컴포넌트를 적용 시 공통컴포넌트의 종류별 특징을 고려하여 현장 상황에 맞게 적용할 수 있도록 관련 정보를 제공한다.&lt;/p>
 &lt;ul>

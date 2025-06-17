@@ -1,0 +1,432 @@
+<!doctype html><html lang=kr dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>DB Support | 표준프레임워크 개발가이드</title><link rel=stylesheet href=https://eGovFramework.github.io/egovframe-docs/css/custom.css integrity crossorigin=anonymous><script src=https://eGovFramework.github.io/egovframe-docs/js/custom.js integrity crossorigin=anonymous defer></script></head><body><header id=krds-header><div class=header-in><div class=header-container><div class=inner style=padding-bottom:0><div class=header-branding><h2 class=logo><a href=https://eGovFramework.github.io/egovframe-docs/></a></h2><div class=header-actions><nav class=krds-main-menu style=border:none><div class=inner><ul class=gnb-menu><li><a href=/egovframe-docs/egovframe-development/ class="gnb-main-trigger is-link active">개발환경</a></li><li><a href=/egovframe-docs/egovframe-runtime/ class="gnb-main-trigger is-link">실행환경</a></li><li><a href=/egovframe-docs/runtime-example/ class="gnb-main-trigger is-link">실행환경 예제</a></li><li><a href=/egovframe-docs/common-component/ class="gnb-main-trigger is-link">공통컴포넌트</a></li></ul></div></nav><button type=button class="btn-navi all" aria-controls=mobile-nav></button></div></div></div></div></div><nav id=mobile-nav class=krds-main-menu-mobile style=display:none><div class=gnb-wrap style=width:80%><div class=gnb-header><div class=gnb-utils style=margin-bottom:30px></div><div class=gnb-service-menu style=flex-direction:column><a href=/egovframe-docs/egovframe-development/ class=link style=width:auto;flex-direction:row;height:auto>개발환경</a>
+<a href=/egovframe-docs/egovframe-runtime/ class=link style=width:auto;flex-direction:row;height:auto>실행환경</a>
+<a href=/egovframe-docs/runtime-example/ class=link style=width:auto;flex-direction:row;height:auto>실행환경 예제</a>
+<a href=/egovframe-docs/common-component/ class=link style=width:auto;flex-direction:row;height:auto>공통컴포넌트</a></div></div><div class=gnb-body><div class=gnb-menu><div class=menu-wrap><ul><li><a href=#mGnb-anchor0 class=gnb-main-trigger>소개</a></li><li><a href=#mGnb-anchor1 class=gnb-main-trigger>설치 가이드</a></li><li><a href=#mGnb-anchor2 class=gnb-main-trigger>구현 도구</a></li><li><a href=#mGnb-anchor3 class="gnb-main-trigger active">테스트 도구</a></li><li><a href=#mGnb-anchor4 class=gnb-main-trigger>배포 도구</a></li><li><a href=#mGnb-anchor5 class=gnb-main-trigger>형상 관리 도구</a></li><li><a href=#mGnb-anchor6 class=gnb-main-trigger>구성 가이드</a></li><li><a href=#mGnb-anchor7 class=gnb-main-trigger>활용 가이드</a></li><li><a href=#mGnb-anchor8 class=gnb-main-trigger>운영 가이드</a></li></ul></div><div class=submenu-wrap><div class=gnb-sub-list id=mGnb-anchor0><a href=/egovframe-docs/egovframe-development/development-intro/ class=sub-title data-url=/egovframe-docs/egovframe-development/development-intro/>소개</a><ul><li><a href=/egovframe-docs/egovframe-development/development-intro/development-framework-introduction/ id="sub-menu-개발프레임워크 개발환경 소개-0" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/development-intro/development-framework-introduction/>개발프레임워크 개발환경 소개</a></li><li><a href=/egovframe-docs/egovframe-development/development-intro/developer-environment-introduction/ id="sub-menu-개발자 개발환경 소개-1" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/development-intro/developer-environment-introduction/>개발자 개발환경 소개</a></li><li><a href=/egovframe-docs/egovframe-development/development-intro/server-environment-introduction/ id="sub-menu-서버 개발환경 소개-2" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/development-intro/server-environment-introduction/>서버 개발환경 소개</a></li></ul></div><div class=gnb-sub-list id=mGnb-anchor1><a href=/egovframe-docs/egovframe-development/install-guide/ class=sub-title data-url=/egovframe-docs/egovframe-development/install-guide/>설치 가이드</a><ul><li><a href=/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/ id="sub-menu-개발자 개발환경 설치가이드-0" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/>개발자 개발환경 설치가이드</a></li><li><a href=/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/ id="sub-menu-서버 개발환경 4.3.0 설치가이드-1" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/>서버 개발환경 4.3.0 설치가이드</a></li><li><a href=/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/ id="sub-menu-Implementation Tool 수동 설치가이드-2" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/>Implementation Tool 수동 설치가이드</a></li></ul></div><div class=gnb-sub-list id=mGnb-anchor2><a href=/egovframe-docs/egovframe-development/implementation-tool/ class=sub-title data-url=/egovframe-docs/egovframe-development/implementation-tool/>구현 도구</a><ul><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/ id=sub-menu-Editor-0 class="gnb-sub-trigger has-depth3">Editor</a><div class=depth3-wrap><ul><li><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/>Batch IDE</a></li><li><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/>UML Editor</a></li><li><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/>DBIO Editor</a></li><li><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/>Code Genetation</a></li><li><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/>Code Inspection</a></li><li><a href=/egovframe-docs/egovframe-development/implementation-tool/editor/server-connection-management/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/server-connection-management/>Server Connection Management</a></li></ul></div><li><a href=/egovframe-docs/egovframe-development/implementation-tool/debug/ id=sub-menu-Debug-1 class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/implementation-tool/debug/>Debug</a></li></ul></div><div class=gnb-sub-list id=mGnb-anchor3><a href=/egovframe-docs/egovframe-development/test-tool/ class=sub-title data-url=/egovframe-docs/egovframe-development/test-tool/>테스트 도구</a><ul><a href=/egovframe-docs/egovframe-development/test-tool/unit-test/ id="sub-menu-Unit Test-0" class="gnb-sub-trigger has-depth3 active">Unit Test</a><div class="depth3-wrap is-open"><ul><li><a href=/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/>Test Case</a></li><li><a href=/egovframe-docs/egovframe-development/test-tool/unit-test/mock-support/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/unit-test/mock-support/>Mock Support</a></li><li><a href=/egovframe-docs/egovframe-development/test-tool/unit-test/db-support/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/unit-test/db-support/>DB Support</a></li><li><a href=/egovframe-docs/egovframe-development/test-tool/unit-test/mvc-test/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/unit-test/mvc-test/>MVC Test</a></li></ul></div><a href=/egovframe-docs/egovframe-development/test-tool/test-automation/ id="sub-menu-Test Automation-1" class="gnb-sub-trigger has-depth3">Test Automation</a><div class=depth3-wrap><ul><li><a href=/egovframe-docs/egovframe-development/test-tool/test-automation/write-testsuite/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/test-automation/write-testsuite/>Write TestSuite</a></li><li><a href=/egovframe-docs/egovframe-development/test-tool/test-automation/run-testsuite/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/test-automation/run-testsuite/>Run TestSuite</a></li><li><a href=/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/>Test Reporting</a></li></ul></div></ul></div><div class=gnb-sub-list id=mGnb-anchor4><a href=/egovframe-docs/egovframe-development/deployment-tool/ class=sub-title data-url=/egovframe-docs/egovframe-development/deployment-tool/>배포 도구</a><ul><a href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/ id="sub-menu-Build Tool-0" class="gnb-sub-trigger has-depth3">Build Tool</a><div class=depth3-wrap><ul><li><a href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/>Maven</a></li><li><a href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/>Gradle</a></li><li><a href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/ class=depth3-trigger data-url=/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/>Docker</a></li></ul></div></ul></div><div class=gnb-sub-list id=mGnb-anchor5><a href=/egovframe-docs/egovframe-development/configuration-management-tool/ class=sub-title data-url=/egovframe-docs/egovframe-development/configuration-management-tool/>형상 관리 도구</a><ul><li><a href=/egovframe-docs/egovframe-development/configuration-management-tool/change-management/ id="sub-menu-Change Management-0" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/configuration-management-tool/change-management/>Change Management</a></li><li><a href=/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/ id="sub-menu-Configuration Management-1" class=gnb-sub-trigger data-url=/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/>Configuration Management</a></li></ul></div><div class=gnb-sub-list id=mGnb-anchor6><a href=/egovframe-docs/egovframe-development/individual-insall-guide/ class=sub-title data-url=/egovframe-docs/egovframe-development/individual-insall-guide/>구성 가이드</a><ul></ul></div><div class=gnb-sub-list id=mGnb-anchor7><a href=/egovframe-docs/egovframe-development/development-etcdevtool-guide/ class=sub-title data-url=/egovframe-docs/egovframe-development/development-etcdevtool-guide/>활용 가이드</a><ul></ul></div><div class=gnb-sub-list id=mGnb-anchor8><a href=/egovframe-docs/egovframe-development/operation-guide/ class=sub-title data-url=/egovframe-docs/egovframe-development/operation-guide/>운영 가이드</a><ul></ul></div></div></div><div class=gnb-bottom><a href=https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-development/test-tool/db-support.md class="krds-btn medium text">페이지보기 <i class="svg-icon ico-angle right"></i></a>
+<a href=https://github.com/eGovFramework/egovframe-docs/edit/main/egovframe-development/test-tool/db-support.md class="krds-btn medium text">페이지편집 <i class="svg-icon ico-angle right"></i></a>
+<a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=DB%20Support" class="krds-btn medium text">문서에 이슈 생성 <i class="svg-icon ico-angle right"></i></a>
+<a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn medium text">프로젝트에 이슈 생성 <i class="svg-icon ico-angle right"></i></a></div></div><button type=button class="krds-btn medium icon" id=close-nav>
+<span class=sr-only>전체메뉴 닫기</span>
+<i class="svg-icon ico-popup-close"></i></button></div></nav></header><main id=wrap><div id=container class=krds-in-page-navigation-type><div class="inner in-between layout"><nav class=krds-side-navigation><h2 class=lnb-tit>개발환경</h2><ul class=lnb-list role=menubar id=side-menu-trigger-개발환경><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu0 aria-expanded=false data-url=/egovframe-docs/egovframe-development/development-intro/>소개</button><div class=lnb-submenu><ul id=lnb-menu0 role=menu><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/development-intro/development-framework-introduction/ class="lnb-btn lnb-link" role=menuitem>개발프레임워크 개발환경 소개</a></li><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/development-intro/developer-environment-introduction/ class="lnb-btn lnb-link" role=menuitem>개발자 개발환경 소개</a></li><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/development-intro/server-environment-introduction/ class="lnb-btn lnb-link" role=menuitem>서버 개발환경 소개</a></li></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu1 aria-expanded=false data-url=/egovframe-docs/egovframe-development/install-guide/>설치 가이드</button><div class=lnb-submenu><ul id=lnb-menu1 role=menu><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/ class="lnb-btn lnb-link" role=menuitem>개발자 개발환경 설치가이드</a></li><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/ class="lnb-btn lnb-link" role=menuitem>서버 개발환경 4.3.0 설치가이드</a></li><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/ class="lnb-btn lnb-link" role=menuitem>Implementation Tool 수동 설치가이드</a></li></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu2 aria-expanded=false data-url=/egovframe-docs/egovframe-development/implementation-tool/>구현 도구</button><div class=lnb-submenu><ul id=lnb-menu2 role=menu><li class=lnb-subitem role=none><button type=button class="lnb-btn lnb-toggle-popup" role=menuitem aria-controls=lnbmenu-2 aria-expanded=false aria-haspopup=true data-url=/egovframe-docs/egovframe-development/implementation-tool/editor/>
+Editor<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 id=lnbmenu-2 role=menu><button type=button class=lnb-btn-tit data-url=/egovframe-docs/egovframe-development/implementation-tool/>Editor</button><ul><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/implementation-tool/editor/batch-ide/>Batch IDE</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/implementation-tool/editor/uml-editor/>UML Editor</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/>DBIO Editor</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/implementation-tool/editor/code-generation/>Code Genetation</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/implementation-tool/editor/code-inspection/>Code Inspection</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/implementation-tool/editor/server-connection-management/>Server Connection Management</a></li></ul></div></li><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/implementation-tool/debug/ class="lnb-btn lnb-link" role=menuitem>Debug</a></li></ul></div><li class="lnb-item active" role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu3 aria-expanded=false data-url=/egovframe-docs/egovframe-development/test-tool/>테스트 도구</button><div class=lnb-submenu><ul id=lnb-menu3 role=menu><li class="lnb-subitem active" role=none><button type=button class="lnb-btn lnb-toggle-popup" role=menuitem aria-controls=lnbmenu-3 aria-expanded=false aria-haspopup=true data-url=/egovframe-docs/egovframe-development/test-tool/unit-test/>
+Unit Test<span class=sr-only>열기</span></button><div class="lnb-submenu-lv2 active" id=lnbmenu-3 role=menu><button type=button class=lnb-btn-tit data-url=/egovframe-docs/egovframe-development/test-tool/>Unit Test</button><ul><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/>Test Case</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/unit-test/mock-support/>Mock Support</a></li><li class=active role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/unit-test/db-support/>DB Support</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/unit-test/mvc-test/>MVC Test</a></li></ul></div></li><li class=lnb-subitem role=none><button type=button class="lnb-btn lnb-toggle-popup" role=menuitem aria-controls=lnbmenu-3 aria-expanded=false aria-haspopup=true data-url=/egovframe-docs/egovframe-development/test-tool/test-automation/>
+Test Automation<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 id=lnbmenu-3 role=menu><button type=button class=lnb-btn-tit data-url=/egovframe-docs/egovframe-development/test-tool/>Test Automation</button><ul><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/test-automation/write-testsuite/>Write TestSuite</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/test-automation/run-testsuite/>Run TestSuite</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/>Test Reporting</a></li></ul></div></li></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu4 aria-expanded=false data-url=/egovframe-docs/egovframe-development/deployment-tool/>배포 도구</button><div class=lnb-submenu><ul id=lnb-menu4 role=menu><li class=lnb-subitem role=none><button type=button class="lnb-btn lnb-toggle-popup" role=menuitem aria-controls=lnbmenu-4 aria-expanded=false aria-haspopup=true data-url=/egovframe-docs/egovframe-development/deployment-tool/build-tool/>
+Build Tool<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 id=lnbmenu-4 role=menu><button type=button class=lnb-btn-tit data-url=/egovframe-docs/egovframe-development/deployment-tool/>Build Tool</button><ul><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/>Maven</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/>Gradle</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/>Docker</a></li></ul></div></li></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu5 aria-expanded=false data-url=/egovframe-docs/egovframe-development/configuration-management-tool/>형상 관리 도구</button><div class=lnb-submenu><ul id=lnb-menu5 role=menu><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/configuration-management-tool/change-management/ class="lnb-btn lnb-link" role=menuitem>Change Management</a></li><li class=lnb-subitem><a href=/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/ class="lnb-btn lnb-link" role=menuitem>Configuration Management</a></li></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu6 aria-expanded=false data-url=/egovframe-docs/egovframe-development/individual-insall-guide/>구성 가이드</button><div class=lnb-submenu><ul id=lnb-menu6 role=menu></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu7 aria-expanded=false data-url=/egovframe-docs/egovframe-development/development-etcdevtool-guide/>활용 가이드</button><div class=lnb-submenu><ul id=lnb-menu7 role=menu></ul></div><li class=lnb-item role=none><button type=button class="lnb-btn lnb-toggle" role=menuitem aria-controls=lnbmenu8 aria-expanded=false data-url=/egovframe-docs/egovframe-development/operation-guide/>운영 가이드</button><div class=lnb-submenu><ul id=lnb-menu8 role=menu></ul></div></li></ul></ul></ul></ul></nav><div class=contents><nav class=krds-breadcrumb-wrap aria-label=브레드크럼><ol class=breadcrumb><li class=home><a href=https://eGovFramework.github.io/egovframe-docs/ class=txt>Home</a></li><li><a href=https://eGovFramework.github.io/egovframe-docs//egovframe-development/ class=txt>개발환경</a></li><li><a href=https://eGovFramework.github.io/egovframe-docs//egovframe-development/test-tool/ class=txt>테스트 도구</a></li><li><a href=https://eGovFramework.github.io/egovframe-docs//egovframe-development/test-tool/unit-test/ class=txt>Unit Test</a></li></ol></nav><div class=conts-area><div class=krds-in-page-navigation-area><nav class=in-page-navigation-action><ul><li><a href=https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-development/test-tool/db-support.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_view"></i> 페이지 보기</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/edit/main/egovframe-development/test-tool/db-support.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_edit"></i> 페이지 편집</a></li><li><a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=DB%20Support" class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 문서에 이슈 생성</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 프로젝트에 이슈 생성</a></li></ul></nav><div class=in-page-navigation-header><p class=quick-caption>이 페이지의 구성</p><p class=quick-title>DB Support</p></div><nav class=in-page-navigation-list><ul><li><a href=#개요>개요</a></li><li><a href=#설명>설명</a></li><li><a href=#환경설정>환경설정</a></li><li><a href=#사용법>사용법</a><ul><li><a href=#데이터베이스-연결>데이터베이스 연결</a></li><li><a href=#테이블-생성-및-초기-데이터-입력>테이블 생성 및 초기 데이터 입력</a></li><li><a href=#dao-클래스-실행-시-필요한-테스트-데이터-관리>DAO 클래스 실행 시 필요한 테스트 데이터 관리</a></li><li><a href=#dao-테스트-후-트랜잭션-rollback-혹은-commit-처리>DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리</a></li></ul></li><li><a href=#샘플>샘플</a><ul><li><a href=#테스트-대상>테스트 대상</a></li><li><a href=#테스트-시나리오>테스트 시나리오</a></li><li><a href=#환경-구성>환경 구성</a></li><li><a href=#테스트-데이터>테스트 데이터</a></li><li><a href=#테스트-수행결과>테스트 수행결과</a></li></ul></li><li><a href=#참고자료>참고자료</a></li></ul></nav></div><div class="conts-wrap scroll-check"><h1 class=h-tit id=db-support>DB Support</h1><div class="conts-wrap section-link" id=section_01><h2 class=sec-tit id=개요>개요</h2><p>데이터베이스 관련 단위 테스트를 수행하기 위한 Test Case 를 작성하고 실행하는 방법을 안내한다.</p></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><p>DAO (Data Access Object) 클래스를 개발하는 경우 이에 대한 단위 테스트 케이스를 작성하기 위해 고려해야 할 사항은 다음과 같다.</p><ul><li>데이터베이스 연결</li><li>테이블 생성 및 초기 데이터 입력</li><li>DAO 클래스 실행 시 필요한 테스트 데이터 관리</li><li>DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리</li></ul><p>이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.<br>데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.<br>또한, 프로그램이 수정 보완 되는 과정에서 여러 번 중복 테스트를 하기 위해서는 다시 dbms 에 접속하여 rollback 을 하는 등의 작업을 수행하기도 한다.</p><p>만약 dbunit / unitils / spring-test 등을 기본으로 몇 가지 Tip 을 적절히 이용하면 보다 손 쉽게 데이터베이스 관련 테스트 케이스 개발을 수행 할 수 있다.<br>자세한 사항은 아래 사용법을 참조하도록 한다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=환경설정>환경설정</h2><p>Unit Test 환경설정과 동일하다.</p></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=사용법>사용법</h2><h3 class=sec-tit id=데이터베이스-연결>데이터베이스 연결</h3><p>먼저, 데이터베이스 준비(기동, DataSource 생성)에 대해 알아보자.<br>테스트를 위해 사용할 수 있는 Database 가 준비되어 있고 이를 위한 접근 방법에 대한 안내까지 받았다면 고민할 필요는 없다.<br>만약 이러한 상황이 아니라면, apache dbcp datasource 를 이용하여 생성하면 되고, springframework 를 사용하고 있다면 더더욱 간단히 해결될 수 있다.<br>사실, egovframework 의 개발환경에서 제공하고 있는 CI Server 를 이용해 반복적으로 테스트를 수행하기 위해서는 테스트만을 위한 전용 DBMS 를 준비하는 것이 이상적이지만, 테스트 수행 후 깔끔하게 rollback 을 수행한다면 테스트 용 전용 DBMS 가 없어도 큰 무리는 없다.</p><h4 id=프로퍼티-설정>프로퍼티 설정</h4><pre tabindex=0><code># Properties for the PropertiesDataSourceFactory
+database.driverClassName=org.hsqldb.jdbcDriver
+database.url=jdbc:hsqldb:sampledb
+database.userName=sa
+database.password=
+</code></pre><h4 id=test-case-작성>Test Case 작성</h4><p>Test Case 작성 시 <strong><code>@RunWith(UnitilsJUnit4TestClassRunner.class)</code></strong> 을 선언하면 된다.</p><p>Unitils 는 springframework 와 달리 DataSource 가 아닌 TestDataSource 라는 것을 사용한다.<br>이 TestDataSource 는 Unitils 설정에 따라 선언과 동시에 DataSource 를 Getting 하는 것 뿐 아니라 dbmaintain 과 같은 별도의 작업을 동시에 수행할 수 있다.<br>이는 다음에 설명하기로 하고, 여기서는 단순히 unitils 를 이용하여 TestDataSource 를 Getting 하는 예제만을 이해하도록 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RunWith</span>(UnitilsJUnit4TestClassRunner.<span style=color:#a6e22e>class</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DataSourceGetTest_unitilsDataSource</span> {
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/*
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * unitils.properties 에 설정 된 database 접근 정보를 기반으로 
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 테스트 용 DataSource 를 만든 후 자동으로 injection 해 준다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * (unitils.properties 파일의 위치와 이름은 변경할 수 없다.)
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @see  unitils.properties
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@TestDataSource</span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> DataSource dataSource;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Test</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>checkTestDataSource</span>() {
+</span></span><span style=display:flex><span>        assertNotNull(<span style=color:#e6db74>&#34;dataSource를 정상적으로 get 했는지를 확인한다.&#34;</span>, dataSource);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 class=sec-tit id=테이블-생성-및-초기-데이터-입력>테이블 생성 및 초기 데이터 입력</h3><p>Unitils 를 이용하면 위처럼 TestDataSource 를 생성하거나, spring+unitils 조합의 DataSource 를 생성함과 동시에 테스트에 필요한 테이블을 생성하고 초기 데이터를 입력할 수 있다.</p><p>이 기능은 다음의 단계로 활용할 수 있다.</p><ul><li>단위 테스트에 필요한 테이블을 생성하는 DML 스크립트 작성</li><li>이 DML 스크립트 실행 여부를 설정하고, 해당 디렉토리를 설정</li><li>테스트 케이스 수행 시 해당 기능 호출</li></ul><p>현재는 &lsquo;oracle&rsquo;, &lsquo;db2&rsquo;, &lsquo;mysql&rsquo;, &lsquo;hsqldb&rsquo; and &lsquo;postgresql&rsquo; 의 DBMS 만 지원한다.</p><h4 id=프로퍼티-설정-1>프로퍼티 설정</h4><h5 id=dbms-의-종류-스키마-정보-등을-설정>DBMS 의 종류, 스키마 정보 등을 설정</h5><pre tabindex=0><code># This property specifies the underlying DBMS implementation. Supported values are &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39; and &#39;postgresql&#39;.
+# The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.
+database.dialect=hsqldb
+ 
+# A comma-separated list of all used database schemas. The first schema name is the default one, if no schema name is
+# specified in for example a dbunit data set, this default one is used.
+# A schema name is case sensitive.
+database.schemaNames=PUBLIC
+ 
+# Type of transaction manager that should be created:
+# simple: a simple transaction manager that wraps the datasource to control transactions
+# spring: a transaction manager that delegates actions to the transaction manager that is configured in the current spring context
+# auto: this will first try to load the spring transaction manager. if spring is not available, it will load the simple transaction manager
+transactionManager.type=auto
+</code></pre><h5 id=데이터베이스-스키마-정보를-자동으로-update-할지를-설정>데이터베이스 스키마 정보를 자동으로 update 할지를 설정</h5><p>이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.<br>dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.</p><pre tabindex=0><code># If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each
+# test run, when creating the DataSource that provides access to the unit test database.
+updateDataBaseSchema.enabled=true
+ 
+# Comma separated list of directories and files in which the database update scripts are located. Directories in this
+# list are recursively searched for files.
+dbMaintainer.script.locations=src/test/resources/META-INF/persistence/maintenance/hsqldb
+ 
+# If set to true, an implementation of org.unitils.dbmaintainer.constraints.ConstraintsDisabler will be used to disable
+# the foreign key and not null constraints of the unit test database schema.
+# The ConstraintsDisabler is configured using the properties specified below. The property with key &#39;database.dialect&#39;
+# specifies which implementation is used.
+dbMaintainer.disableConstraints.enabled=true
+</code></pre><h3 class=sec-tit id=dao-클래스-실행-시-필요한-테스트-데이터-관리>DAO 클래스 실행 시 필요한 테스트 데이터 관리</h3><p>데이터베이스 관련 CRUD 단위 테스트 수행 시, 테스트 수행 전에 데이터베이스에 필요한 데이터를 미리 저장해 두고 테스트 종료 후 이를 삭제하는 등의 작업을 좀 더 편리하게 수행할 수 있는 방법을 가이드한다.</p><p>Dbunit 은 이런 문제를 DBUnit 을 사용할 경우 유용한 기본적인 기능은 다음과 같다.</p><ul><li>XML 로 필요한 데이터를 선언 해 두면 단위 테스트 수행 시 이 데이터가 데이터베이스에 자동 저장된다.</li><li>데이터베이스 관련 테스트를 수행하고 그 결과값이 미리 XML 로 저장해 놓은 데이터와 자동으로 비교된다.</li><li>테스트 수행 후 트랜잭션 commit/rollback을 지정할 수 있다.</li></ul><p>그러나, DBUnit 을 직접 테스트 코드에서 사용하기 위해서는 별도의 이 XML 파일을 Load 하는 등의 별도 프로그램 로직이 필요하여 사용하기에 불편함이 따른다.
+이의 해소를 위해서 Unitils 는 DBUnit 관련한 기능을 Annotation만으로도 간단하게 사용할 수 있는 기능을 제공하므로, 이를 활용하는 방법을 안내한다.</p><h4 id=프로퍼티-설정-2>프로퍼티 설정</h4><h5 id=dbunit-이용할-경우-트랜잭션-처리-방법-설정>DBUnit 이용할 경우 트랜잭션 처리 방법 설정</h5><p>DBUnit 을 이용해 데이터를 저장 혹은 삭제한 경우 commit/rollback 할런지를 설정하는 부분이다.
+이 부분은 Test Case 를 작성할 때 동적으로 변경할 수 있으므로 우선은 disabled 로 선언 해 둔다.
+(CI 등을 활용하여 주기적으로 반복 테스트를 수행할 경우에는 rollback으로 설정하는 것을 권장한다.)</p><pre tabindex=0><code># Default behavior concerning execution of tests in a transaction. Supported values are &#39;disabled&#39;, &#39;commit&#39; and &#39;rollback&#39;.
+# If set to disabled, test are not executed in a transaction by default. If set to commit, each test is run in a transaction,
+# which is committed. If set to rollback, each test is run in a transaction, which is rolled back.
+DatabaseModule.Transactional.value.default=disabled
+</code></pre><h5 id=사용하는-dbms-의-종류-스키마-정보-등을-설정>사용하는 DBMS 의 종류, 스키마 정보 등을 설정</h5><p>Unitils 는 여기서 언급된 종류의 DBMS를 지원하며 여기에 없는 DBMS 는 unitils 의 기능을 제한적으로 사용할 수 밖에 없으므로 설정하지 않는다.</p><pre tabindex=0><code># This property specifies the underlying DBMS implementation. Supported values are &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39; and &#39;postgresql&#39;.
+# The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.
+database.dialect=hsqldb
+ 
+# A comma-separated list of all used database schemas. The first schema name is the default one, if no schema name is
+# specified in for example a dbunit data set, this default one is used.
+# A schema name is case sensitive.
+database.schemaNames=PUBLIC
+ 
+# Type of transaction manager that should be created:
+# simple: a simple transaction manager that wraps the datasource to control transactions
+# spring: a transaction manager that delegates actions to the transaction manager that is configured in the current spring context
+# auto: this will first try to load the spring transaction manager. if spring is not available, it will load the simple transaction manager
+transactionManager.type=auto
+</code></pre><h5 id=데이터베이스-스키마-정보를-자동으로-update-할지를-설정-1>데이터베이스 스키마 정보를 자동으로 update 할지를 설정</h5><p>이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.
+dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.</p><pre tabindex=0><code># If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each
+# test run, when creating the DataSource that provides access to the unit test database.
+updateDataBaseSchema.enabled=true
+ 
+# Comma separated list of directories and files in which the database update scripts are located. Directories in this
+# list are recursively searched for files.
+dbMaintainer.script.locations=src/test/resources/META-INF/persistence/maintenance/hsqldb
+ 
+# If set to true, an implementation of org.unitils.dbmaintainer.constraints.ConstraintsDisabler will be used to disable
+# the foreign key and not null constraints of the unit test database schema.
+# The ConstraintsDisabler is configured using the properties specified below. The property with key &#39;database.dialect&#39;
+# specifies which implementation is used.
+dbMaintainer.disableConstraints.enabled=true
+</code></pre><h5 id=테스트-수행-전-자동으로-입력할-데이터-정의>테스트 수행 전 자동으로 입력할 데이터 정의</h5><p>테스트 클래스 혹은 테스트 메소드 선언부에 <strong>@DataSet (파일의 경로)</strong> 와 같은 방법으로 호출한다.
+XML 포맷의 데이터로서 작성 법은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;테이블이름</span> <span style=color:#a6e22e>컬럼이름1=</span><span style=color:#e6db74>&#34;값&#34;</span> <span style=color:#a6e22e>컬럼이름2=</span><span style=color:#e6db74>&#34;값&#34;</span>  <span style=color:#960050;background-color:#1e0010>......</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
+</span></span></code></pre></div><h5 id=테스트-수행-결과를-자동으로-비교할-데이터-정의>테스트 수행 결과를 자동으로 비교할 데이터 정의</h5><p>테스트 클래스 혹은 테스트 메소드 선언부에 <strong>@ExpectedDataSet (파일의 경로)</strong> 와 같은 방법으로 호출한다.
+XML 포맷의 데이터로서 작성 법은 위와 동일하다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;테이블이름</span> <span style=color:#a6e22e>컬럼이름1=</span><span style=color:#e6db74>&#34;값&#34;</span> <span style=color:#a6e22e>컬럼이름2=</span><span style=color:#e6db74>&#34;값&#34;</span>  <span style=color:#960050;background-color:#1e0010>......</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=dao-테스트-후-트랜잭션-rollback-혹은-commit-처리>DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리</h3><p>전체 Test Case 에 모두 적용시킬 수 있는 설정을 수행할 수도 있지만, 프로그램에서 선언하여 설정하는 것을 권장한다. 또한, springframework 을 이용하는 경우 해당 springframework 의 txManager 를 Test Case 클래스 선언부에 설정할 수도 있다. 자세한 방법은 샘플 프로그램을 보고 확인하도록 한다.</p></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><p>아래는 이클립스 메이븐 프로젝트의 예제이다.</p><p>예제는 다음의 내용으로 구성되어 있다.</p><ul><li>테스트 대상</li><li>테스트 시나리오</li><li>환경 구성 정보</li><li>테스트 프로그램</li><li>테스트에 필요한 데이터</li><li>테스트 수행 결과</li></ul><h3 class=sec-tit id=테스트-대상>테스트 대상</h3><h4 id=dao-구현-클래스--noticedaojava>DAO 구현 클래스 : NoticeDao.java</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Repository</span>(<span style=color:#e6db74>&#34;noticeDao&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NoticeDao</span> <span style=color:#66d9ef>extends</span> SqlMapClientDaoSupport {
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * iBatis SqlMap 정보를 읽기 위한 sqlMapClient 세팅
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param sqlMapClient - 설정파일로부터 읽어온 정보 
+</span></span></span><span style=display:flex><span><span style=color:#75715e>    */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>(name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;sqlMapClient&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setSuperSqlMapClient</span>(SqlMapClient sqlMapClient) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.<span style=color:#a6e22e>setSqlMapClient</span>(sqlMapClient);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 등록된 글의 수를 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return	등록된 글의 수
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>selectCount</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> (Integer) getSqlMapClientTemplate().<span style=color:#a6e22e>queryForObject</span>(<span style=color:#e6db74>&#34;selectCount&#34;</span>);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * id 에 해당하는 글을 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param id - 등록된 글의 아이디
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return 등록된 글의 정보가 담긴 NoticeVo
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> NoticeVo <span style=color:#a6e22e>select</span>(<span style=color:#66d9ef>int</span> id) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> (NoticeVo) getSqlMapClientTemplate().<span style=color:#a6e22e>queryForObject</span>(<span style=color:#e6db74>&#34;select&#34;</span>, id);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 등록된 모든 글을 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return	등록된 글의 목록을 담고 있는 NoticeVo 의 리스트
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@SuppressWarnings</span>(<span style=color:#e6db74>&#34;unchecked&#34;</span>)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>NoticeVo<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>selectList</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> getSqlMapClientTemplate().<span style=color:#a6e22e>queryForList</span>(<span style=color:#e6db74>&#34;selectList&#34;</span>, <span style=color:#66d9ef>new</span> NoticeVo());
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 조회 조건에 해당하는 글을 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param   searchNoticeVo  조회 조건을 담고 있는 NoticeVo 
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return	등록된 글의 목록을 담고 있는 NoticeVo 의 리스트
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@SuppressWarnings</span>(<span style=color:#e6db74>&#34;unchecked&#34;</span>)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>NoticeVo<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>selectList</span>(NoticeVo searchNoticeVo) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> getSqlMapClientTemplate().<span style=color:#a6e22e>queryForList</span>(<span style=color:#e6db74>&#34;selectList&#34;</span>, searchNoticeVo);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 글을 등록한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param 등록할 글의 정보를 담고 있는 noticeVo
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>insert</span>(NoticeVo noticeVo) {
+</span></span><span style=display:flex><span>		getSqlMapClientTemplate().<span style=color:#a6e22e>insert</span>(<span style=color:#e6db74>&#34;insert&#34;</span>, noticeVo);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 글을 삭제한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param id - 등록된 글의 아이디
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>delete</span>(<span style=color:#66d9ef>int</span> id) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> getSqlMapClientTemplate().<span style=color:#a6e22e>delete</span>(<span style=color:#e6db74>&#34;delete&#34;</span>, id);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=dao-참조-클래스--noticevojava>DAO 참조 클래스 : NoticeVo.java</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Repository</span>(<span style=color:#e6db74>&#34;noticeVo&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NoticeVo</span> <span style=color:#66d9ef>implements</span> Serializable {
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> 1L;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** id */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> id;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** title */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String title;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** contents */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String contents;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** registrationDate */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> Date registrationDate;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** lastModifier */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String lastModifier;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** lastModifiedDate */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> Date lastModifiedDate;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** fileCnt */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> fileCnt;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/** retrievedCnt */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> retrievedCnt;
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getId
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getId</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> id;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getTitle
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getTitle</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> title;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getContents
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getContents</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> contents;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getRegistrationDate
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Date <span style=color:#a6e22e>getRegistrationDate</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> registrationDate;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getLastModifier
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getLastModifier</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> lastModifier;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getLastModifiedDate
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Date <span style=color:#a6e22e>getLastModifiedDate</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> lastModifiedDate;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getFileCnt
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getFileCnt</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> fileCnt;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getRetrievedCnt
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getRetrievedCnt</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> retrievedCnt;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setId
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setId</span>(<span style=color:#66d9ef>int</span> id) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>id</span> <span style=color:#f92672>=</span> id;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setTitle
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param title
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setTitle</span>(String title) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>title</span> <span style=color:#f92672>=</span> title;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setContents
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param contents
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setContents</span>(String contents) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>contents</span> <span style=color:#f92672>=</span> contents;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setRegistrationDate
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param registrationDate
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setRegistrationDate</span>(Date registrationDate) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>registrationDate</span> <span style=color:#f92672>=</span> registrationDate;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setLastModifier
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param lastModifier
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setLastModifier</span>(String lastModifier) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>lastModifier</span> <span style=color:#f92672>=</span> lastModifier;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setLastModifiedDate
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param lastModifiedDate
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setLastModifiedDate</span>(Date lastModifiedDate) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>lastModifiedDate</span> <span style=color:#f92672>=</span> lastModifiedDate;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setFileCnt
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param fileCnt
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setFileCnt</span>(<span style=color:#66d9ef>int</span> fileCnt) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>fileCnt</span> <span style=color:#f92672>=</span> fileCnt;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setRetrievedCnt
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param retrievedCnt
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setRetrievedCnt</span>(<span style=color:#66d9ef>int</span> retrievedCnt) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>retrievedCnt</span> <span style=color:#f92672>=</span> retrievedCnt;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 class=sec-tit id=테스트-시나리오>테스트 시나리오</h3><ol><li>HSQLDB 를 이용 해 Notice 업무 수행을 위한 테이블을 생성(변경 시 업데이트만 수행)한다.</li><li>selectList, selectCount 등의 메소드 실행을 위해 외부의 XML 로 정의해 둔 기초 데이터 3건을 자동 입력한다.</li><li>insert / update / delete 메소드 실행을 위해 기초 데이터인 noticeVo 객체를 테스트 수행 전에 생성한다.</li><li>selectList 의 select 결과에 대해 예상하는 값을 외부의 XML 파일로 저장해 두고 자동으로 비교해 본다.</li><li>중복 insert 가 발생 한 경우 예상 한 Exception 이 발생하는 지 확인한다.</li></ol><p>unitils.properties 파일로, 여러 개의 unitils 관련 파일을 관리하고 싶을 경우 아래와 같이 해당 위치를 선언해두면 된다. 물론 동시에는 하나의 설정 값만 인식된다.</p><h3 class=sec-tit id=환경-구성>환경 구성</h3><h4 id=unitilsproperties>unitils.properties</h4><pre tabindex=0><code>unitils.configuration.localFileName=META-INF/persistence/unitils-local-hsqldb.properties
+#unitils.configuration.localFileName=META-INF/persistence/unitils-local-oracle.properties
+#unitils.configuration.localFileName=META-INF/persistence/unitils-local-mysql.properties
+#unitils.configuration.localFileName=META-INF/persistence/unitils-local-altibase.properties
+#unitils.configuration.localFileName=META-INF/persistence/unitils-local-tibero.properties
+</code></pre><p>위에서 DBMS 별로 설정 파일을 구성해 놓은 이유는 DMBS 별로 설정해야 하는 값이 다르기 때문이다. 먼저 HSQLDB 를 사용하는 경우를 살펴보자.</p><h4 id=unitils-local-hsqldbproperties>unitils-local-hsqldb.properties</h4><pre tabindex=0><code># HSQLDB 연결 정보 설정
+database.driverClassName=org.hsqldb.jdbcDriver
+database.url=jdbc:hsqldb:hsql://localhost/sampledb
+database.userName=sa
+database.password=
+# 트랜잭션 처리 설정 ( &#39;disabled&#39;, &#39;commit&#39;, &#39;rollback&#39; )
+DatabaseModule.Transactional.value.default=disabled
+# DataSet, ExpectedDataSet 사용을 위한 dms 정보 설정 ( &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39;, &#39;postgresql&#39; )
+database.dialect=hsqldb
+# 스키마 이름 설정
+database.schemaNames=PUBLIC
+# 트랜잭션 매니저 설정 ( &#39;auto&#39;, &#39;spring&#39;, &#39;simple&#39; )
+transactionManager.type=auto
+# 테이블 자동 생성 등의 스키마 관리 기능 사용 여부 및 DML 위치 설정
+updateDataBaseSchema.enabled=true
+dbMaintainer.script.locations=src/test/resources/META-INF/persistence/maintenance/hsqldb
+dbMaintainer.disableConstraints.enabled=true
+</code></pre><h3 class=sec-tit id=테스트-데이터>테스트 데이터</h3><h4 id=테이블-자동-생성을-위한-dml--001_initialsql>테이블 자동 생성을 위한 DML : 001_initial.sql</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> NOTICE (
+</span></span><span style=display:flex><span>        NOTICE_ID                   INTEGER <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
+</span></span><span style=display:flex><span>        NOTICE_TITLE                VARCHAR(<span style=color:#ae81ff>500</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
+</span></span><span style=display:flex><span>        NOTICE_CONTENTS             VARCHAR(<span style=color:#ae81ff>4000</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
+</span></span><span style=display:flex><span>        NOTICE_REGISTRATION_DATE    VARCHAR(<span style=color:#ae81ff>10</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
+</span></span><span style=display:flex><span>        NOTICE_LAST_MODIFIER        VARCHAR(<span style=color:#ae81ff>100</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
+</span></span><span style=display:flex><span>        NOTICE_LAST_MODIFIED_DATE   DATE,
+</span></span><span style=display:flex><span>        NOTICE_FILE_CNT             INTEGER,
+</span></span><span style=display:flex><span>        NOTICE_RETRIEVED_CNT        INTEGER
+</span></span><span style=display:flex><span>    );
+</span></span></code></pre></div><h4 id=데이터-자동-입력을-위한-xml--autoinsertiontestdatatest_datasetxml>데이터 자동 입력을 위한 XML : AutoInsertionTestDataTest_DataSet.xml</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;101&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;101번 공지&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 101번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_REGISTRATION_DATE=</span><span style=color:#e6db74>&#34;2009-03-18&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.xml&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#e6db74>&#34;2009-03-17&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_FILE_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_RETRIEVED_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;102&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;102번 공지&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 102번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_REGISTRATION_DATE=</span><span style=color:#e6db74>&#34;2009-03-18&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.xml&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#e6db74>&#34;2009-03-17&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_FILE_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_RETRIEVED_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;103&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;103번 공지&#34;</span>  
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 103번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_REGISTRATION_DATE=</span><span style=color:#e6db74>&#34;2009-03-18&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.xml&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#e6db74>&#34;2009-03-17&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_FILE_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_RETRIEVED_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
+</span></span></code></pre></div><h4 id=조회-결과와-자동으로-비교할-xml--autoverifytestresultstest_expecteddatasetxml>조회 결과와 자동으로 비교할 XML : AutoVerifyTestResultsTest_ExpectedDataSet.xml</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;201&#34;</span> 
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;201번 공지&#34;</span>  
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 201번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.class&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=테스트-수행결과>테스트 수행결과</h3><h4 id=콘솔-로그>콘솔 로그</h4><p><strong>데이터 소스 생성하는 모습</strong></p><pre tabindex=0><code>2009. 4. 28 오후 2:29:33 org.unitils.database.config.PropertiesDataSourceFactory createDataSource
+정보: Creating data source. Driver: org.hsqldb.jdbcDriver, url: jdbc:hsqldb:sampledb, user: sa, password: &lt;not shown&gt;
+</code></pre><p><strong>데이터베이스 스키마 업데이트 모습</strong></p><pre tabindex=0><code>2009. 4. 28 오후 2:29:33 org.unitils.database.DatabaseModule updateDatabase
+정보: Checking if database has to be updated.
+2009. 4. 28 오후 2:29:34 org.unitils.dbmaintainer.DBMaintainer updateDatabase
+정보: Database is up to date
+</code></pre><p><strong>Spring Context Loading 모습</strong></p><pre tabindex=0><code>2009. 4. 28 오후 2:29:34 org.springframework.context.support.AbstractApplicationContext prepareRefresh
+정보: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@17a29a1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@17a29a1]; startup date [Tue Apr 28 14:29:34 KST 2009]; root of context hierarchy
+2009. 4. 28 오후 2:29:35 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+정보: Loading XML bean definitions from class path resource [META-INF/persistence/connection/datasource-spring-with-unitils.xml]
+2009. 4. 28 오후 2:29:35 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+정보: Loading XML bean definitions from class path resource [META-INF/spring/context-common.xml]
+2009. 4. 28 오후 2:29:37 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+정보: Loading XML bean definitions from class path resource [META-INF/spring/context-sqlmap.xml]
+2009. 4. 28 오후 2:29:37 org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+정보: Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@17a29a1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1a7508a
+2009. 4. 28 오후 2:29:37 org.springframework.core.io.support.PropertiesLoaderSupport loadProperties
+정보: Loading properties file from class path resource [META-INF/spring/jdbc.properties]
+2009. 4. 28 오후 2:29:37 org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+정보: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a7508a: defining beans [dataSource,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,noticeDao,noticeService,noticeVo,emailController,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,sqlMapClient]; root of factory hierarchy
+</code></pre><p><strong>XML 로 지정한 입력 DataSet 을 읽어오는 부분</strong></p><p>위 샘플에서는 클래스 상위에 선언을 했기 때문에 각 테스트 메소드 실행 전마다 호출되고 있음</p><pre tabindex=0><code>2009. 4. 28 오후 2:29:37 org.unitils.dbunit.DbUnitModule getDataSet
+정보: Loading DbUnit data set. File names: [D:\_dev\egov_dev\workspace\egovframework.guideprogram.testcase\target\test-classes\META-INF\persistence\testdata\AutoInsertionTestDataTest_DataSet.xml]
+2009. 4. 28 오후 2:29:38 org.unitils.dbunit.DbUnitModule getDataSet
+정보: Loading DbUnit data set. File names: [D:\_dev\egov_dev\workspace\egovframework.guideprogram.testcase\target\test-classes\META-INF\persistence\testdata\AutoInsertionTestDataTest_DataSet.xml]
+2009. 4. 28 오후 2:29:38 org.unitils.dbunit.DbUnitModule getDataSet
+정보: Loading DbUnit data set. File names: [D:\_dev\egov_dev\workspace\egovframework.guideprogram.testcase\target\test-classes\META-INF\persistence\testdata\AutoInsertionTestDataTest_DataSet.xml]
+2009. 4. 28 오후 2:29:38 org.unitils.dbunit.DbUnitModule getDataSet
+정보: Loading DbUnit data set. File names: [D:\_dev\egov_dev\workspace\egovframework.guideprogram.testcase\target\test-classes\META-INF\persistence\testdata\AutoVerifyTestResultsTest_ExpectedDataSet.xml]
+2009. 4. 28 오후 2:29:38 org.unitils.dbunit.DbUnitModule getDataSet
+정보: Loading DbUnit data set. File names: [D:\_dev\egov_dev\workspace\egovframework.guideprogram.testcase\target\test-classes\META-INF\persistence\testdata\AutoInsertionTestDataTest_DataSet.xml]
+</code></pre><h4 id=junit-view>JUnit View</h4><p><img src=/egovframe-docs/egovframe-development/test-tool/images/junit-view.jpg alt="Junit View"></p></div><div class="conts-wrap section-link" id=section_06><h2 class=sec-tit id=참고자료>참고자료</h2><ul><li><a class="krds-btn medium text" href=http://www.junit.org/>JUnit 공식 사이트<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=http://www.dbunit.org/>DbUnit 공식 사이트<i class="svg-icon ico-go"></i></a></li></ul></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
+<a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
+<a href="https://www.egovframe.go.kr/home/sub.do?menuNo=23" class="krds-btn small text">라이센스</a></div><p class=f-copy>COPYRIGHT (C) 2024 eGovFramework. ALL RIGHTS RESERVED.</p></div></div></div></footer></body></html>
