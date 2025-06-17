@@ -2,7 +2,7 @@
 title: "egovframework-dev-tst 프로젝트 소스 코드"
 linkTitle: "egovframework-dev-tst 프로젝트 소스 코드"
 description: "egovframework-dev-tst 프로젝트 소스 코드이다."
-url: /egovframe-development/test-tool/ref/egovframework-dev-tst-source/
+url: /egovframe-development/test-tool/ref/egovframework-dev-tst-source
 menu:
   depth:
     weight: 2
@@ -247,7 +247,7 @@ JUnit Test XML 파일 Full Path 목록과, TestSuite List를 사용한다.
 
 엑셀 파일로 저장하는 기능은 `writeExcelReport` 메소드에서 담당한다.
 
-```
+```java
     public static void writeExcelReport(File fullPath, HSSFWorkbook wb) {
         FileOutputStream fos = null;
         try {

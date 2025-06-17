@@ -100,8 +100,8 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 | 구분                                        | 입력 파라미터                           | 설명                                                                                       | Default                           |
 | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
 | XML로부터 테스트 결과 정보를 갖기 위한 정보 | JUnitReportParser parser                | JUnit XML Parser                                                                           | N/A                               |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List `<File>` xmlReportFileList       | JUnit Test XML 파일 Full Path 목록                                                         | 없으면 오류 처리                  |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List `<ReportTestSuite>` testSuites   | Test Suite Lists                                                                           | N/A                               |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List <File> xmlReportFileList       | JUnit Test XML 파일 Full Path 목록                                                         | 없으면 오류 처리                  |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List <ReportTestSuite> testSuites   | Test Suite Lists                                                                           | N/A                               |
 | 엑셀 파일 생성을 위해 필요한 정보           | File templatePath                       | Excel 리포트의 템플릿 리포트 파일의 Full Path                                              | "/template-junit.xls"의 파일 객체 |
 | 엑셀 파일 생성을 위해 필요한 정보           | File outputDirectory                    | Excel 파일이 작성될 디렉토리 위치                                                          | 없으면 오류 처리                  |
 | 엑셀 파일 생성을 위해 필요한 정보           | String outputName                       | Excel 리포트 파일명                                                                        | "egovtest-junit.xls"              |
@@ -115,7 +115,7 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 
 생성자에서 입력 받아야 하는 정보는 다음과 같다.
 
-* List `<File>` xmlReportFileList : JUnit Test XML 파일의 Full Path List
+* List <File> xmlReportFileList : JUnit Test XML 파일의 Full Path List
 * File templatePath : 템플릿 엑셀 파일 객체
 * File outputDirectory : 파일 생성 위치 객체
 * String outputName : 생성될 엑셀 파일 명
@@ -251,7 +251,7 @@ Mojo란 Maven Old Java Object의 약자로 Maven2의 goal을 의미하며, 자�
    ```
 3. 클래스명을 정하고 (보통 Mojo를 끝에 붙인다.) `org.apache.maven.plugin.AbstractMojo`를 상속받는다.
    이 상위 클래스를 상속받을 경우, pom.xml에서 `<build>`…`</build>` 항목 안에서 설정을 할 수 있다.
-   ```
+   ```java
    import org.apache.maven.plugin.AbstractMojo;
     
    public class EgovJUnitExcelReportMojo extends AbstractMojo {}
@@ -376,7 +376,6 @@ Mojo를 작성할 때도 pom.xml을 테스트할 수 있는 기반을 제공해 
     
    public class JUnitExcelReportMojoTest extends AbstractMojoTestCase {}
    ```
-3. 테스트할 pom.xml
 
 ## 참고자료
 

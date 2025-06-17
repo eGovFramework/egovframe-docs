@@ -14,7 +14,7 @@ egovframework-dev-tst-ant에는 Custom Ant Task 클래스를 포함한다.
 
 ### build.xml
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  
 <project ... >
@@ -58,7 +58,7 @@ egovframework-dev-tst-ant에는 Custom Ant Task 클래스를 포함한다.
 
 ### EgovJUnitExcelReportTask
 
-```
+```java
 public class EgovJUnitExcelReportTask extends Task {
     /** Excel 파일이 작성될 디렉토리 위치 */
     String todir;
