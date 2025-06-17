@@ -2,7 +2,7 @@
 title: "테스트 결과 Excel 리포트"
 linkTitle: "테스트 결과 Excel 리포트"
 description: "테스트 결과를 엑셀 형식으로 리포트하는 기능에 대해 설명한다."
-url: /egovframe-development/test-tool/ref/excel-test-report
+url: /egovframe-development/test-tool/ref/excel-test-report/
 menu:
   depth:
     weight: 3

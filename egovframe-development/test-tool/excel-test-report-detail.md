@@ -2,7 +2,7 @@
 title: "테스트 결과 Excel 리포트 상세"
 linkTitle: "테스트 결과 Excel 리포트 상세"
 description: "테스트 결과 Excel Report 상세 결과이다."
-url: /egovframe-development/test-tool/ref/excel-test-report-detail
+url: /egovframe-development/test-tool/ref/excel-test-report-detail/
 menu:
   depth:
     weight: 4
