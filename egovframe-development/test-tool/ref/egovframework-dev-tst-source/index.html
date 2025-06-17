@@ -143,15 +143,15 @@ Build Tool<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 i
 </span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (...) { . . . }
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> wb;
 </span></span><span style=display:flex><span>    }
-</span></span></code></pre></div><h4 id=엑셀파일-저장>엑셀파일 저장</h4><p>엑셀 파일로 저장하는 기능은 <code>writeExcelReport</code> 메소드에서 담당한다.</p><pre tabindex=0><code>    public static void writeExcelReport(File fullPath, HSSFWorkbook wb) {
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(fullPath);
-            wb.write(fos);
-            fos.close();
-        } catch (...) { . . . }
-    }
-</code></pre><h4 id=cell에-값을-세팅>Cell에 값을 세팅</h4><p>Cell은 엑셀 파일의 Sheet 내에서 column과 row 값을 갖는 단위를 말한다. Cell에 값을 세팅하는 기능은 <code>setCellValues</code>에서 담당한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setCellValues</span>(HSSFRow row, List values, <span style=color:#66d9ef>int</span> startColumn, HSSFRow startRow) {
+</span></span></code></pre></div><h4 id=엑셀파일-저장>엑셀파일 저장</h4><p>엑셀 파일로 저장하는 기능은 <code>writeExcelReport</code> 메소드에서 담당한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>writeExcelReport</span>(File fullPath, HSSFWorkbook wb) {
+</span></span><span style=display:flex><span>        FileOutputStream fos <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            fos <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream(fullPath);
+</span></span><span style=display:flex><span>            wb.<span style=color:#a6e22e>write</span>(fos);
+</span></span><span style=display:flex><span>            fos.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (...) { . . . }
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><h4 id=cell에-값을-세팅>Cell에 값을 세팅</h4><p>Cell은 엑셀 파일의 Sheet 내에서 column과 row 값을 갖는 단위를 말한다. Cell에 값을 세팅하는 기능은 <code>setCellValues</code>에서 담당한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setCellValues</span>(HSSFRow row, List values, <span style=color:#66d9ef>int</span> startColumn, HSSFRow startRow) {
 </span></span><span style=display:flex><span>        HSSFCellStyle style <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
 </span></span><span style=display:flex><span>        HSSFCell cell <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
 </span></span><span style=display:flex><span>        HSSFCell startCell <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;

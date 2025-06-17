@@ -1872,101 +1872,101 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;p>JUnit Test XML 파일을 파싱하는 &lt;code>&amp;lt;strong&amp;gt;TestSuiteXmlParser&amp;lt;/strong&amp;gt;&lt;/code> 클래스에 대해 알아보자.&lt;/p></description></item><item><title>egovframework-dev-tst-ant 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-ant-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-ant-source/</guid><description>&lt;h2 id="egovframework-dev-tst-ant-프로젝트-소스-코드">egovframework-dev-tst-ant 프로젝트 소스 코드&lt;/h2>
 &lt;p>egovframework-dev-tst-ant에는 Custom Ant Task 클래스를 포함한다.&lt;/p>
 &lt;h3 id="buildxml">build.xml&lt;/h3>
-&lt;pre tabindex="0">&lt;code>&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
- 
-&amp;lt;project ... &amp;gt;
- &amp;lt;path id=&amp;#34;egov.lib&amp;#34;&amp;gt;
- &amp;lt;path refid=&amp;#34;master-classpath&amp;#34; /&amp;gt;
- &amp;lt;path location=&amp;#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&amp;#34; /&amp;gt;
- &amp;lt;/path&amp;gt;
- 
- &amp;lt;taskdef resource=&amp;#34;egovtest.properties&amp;#34;
- classpathref=&amp;#34;egov.lib&amp;#34;
- description=&amp;#34;egovtest junit tasks:&amp;#34; /&amp;gt;
- 
- &amp;lt;!-- JUnit Excel Report --&amp;gt;
- &amp;lt;target name=&amp;#34;egovtest&amp;#34; depends=&amp;#34;tests&amp;#34;&amp;gt;
- &amp;lt;egov-junitreport todir=&amp;#34;${testxls.dir}&amp;#34;&amp;gt;
- &amp;lt;fileset dir=&amp;#34;${testreports.dir}&amp;#34; includes=&amp;#34;**/TEST-*.xml&amp;#34; /&amp;gt;
- &amp;lt;/egov-junitreport&amp;gt;
- &amp;lt;/target&amp;gt;
- 
- &amp;lt;target name=&amp;#34;egovtest-full&amp;#34; depends=&amp;#34;tests&amp;#34;&amp;gt;
- &amp;lt;egov-junitreport todir=&amp;#34;${testxls.dir}&amp;#34;
- outputname=&amp;#34;egovtest-junit-full.xls&amp;#34;
- templatepath=&amp;#34;${basedir}/build/template-kr.xls&amp;#34;
- summary=&amp;#34;0,B,6&amp;#34;
- packages=&amp;#34;0,B,11&amp;#34;
- lists=&amp;#34;1,A,5&amp;#34;&amp;gt;
- &amp;lt;fileset dir=&amp;#34;${testreports.dir}&amp;#34;
- includes=&amp;#34;**/TEST-*.xml&amp;#34; /&amp;gt;
- &amp;lt;/egov-junitreport&amp;gt;
- &amp;lt;/target&amp;gt;
- 
- &amp;lt;target name=&amp;#34;build-report-junit-excel&amp;#34;
- depends=&amp;#34;clean, egovtest&amp;#34;
- description=&amp;#34;clean, egovtest&amp;#34; /&amp;gt;
- 
- &amp;lt;target name=&amp;#34;build-report-junit-excel-full&amp;#34;
- depends=&amp;#34;clean, egovtest-full&amp;#34;
- description=&amp;#34;clean, egovtest-full&amp;#34; /&amp;gt;
-&amp;lt;/project&amp;gt;
-&lt;/code>&lt;/pre>&lt;h3 id="egovjunitexcelreporttask">EgovJUnitExcelReportTask&lt;/h3>
-&lt;pre tabindex="0">&lt;code>public class EgovJUnitExcelReportTask extends Task {
- /** Excel 파일이 작성될 디렉토리 위치 */
- String todir;
- 
- /** Excel 파일이 작성될 디렉토리 위치 */
- File outputDirectory;
- 
- /** Excel 리포트 파일명 */
- String outputname;
- 
- /** Excel 리포트의 템플릿 리포트 파일의 Full Path */
- String templatepath;
- 
- /** Excel 리포트의 템플릿 리포트 파일의 Full Path */
- File templateFile;
- 
- /** Template Excel 파일의 Summary Header 위치 정보 */
- String summary;
- 
- /** Template Excel 파일의 Package Header 위치 정보 */
- String packages;
- 
- /** Template Excel 파일의 TestCase Lists Header 위치 정보 */
- String lists;
- 
- public void setTodir(String todir) {
- this.todir = todir;
- }
- 
- public void setOutputname(String outputname) {
- this.outputname = outputname;
- }
- 
- public void setTemplatepath(String templatepath) {
- if (templatepath != null &amp;amp;&amp;amp; templatepath.length() &amp;gt; 0) {
- this.templatepath = templatepath;
- }
- }
- 
- public void setSummary(String summary) {
- this.summary = summary;
- }
- 
- public void setPackages(String packages) {
- this.packages = packages;
- }
- 
- . . .
- 
- List filesets = new ArrayList();
- 
- public void addFileset(FileSet fileset) {
- filesets.add(fileset);
- }
-&lt;/code>&lt;/pre></description></item><item><title>배치 템플릿을 이용한 EgovSchedulerRunner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</guid><description>&lt;h1 id="배치-템플릿을-이용한-egovschedulerrunner-예제">배치 템플릿을 이용한 EgovSchedulerRunner 예제&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;project&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">...&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egov.lib&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">refid=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;master-classpath&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;path&lt;/span> &lt;span style="color:#a6e22e">location=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/path&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;taskdef&lt;/span> &lt;span style="color:#a6e22e">resource=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovtest.properties&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">classpathref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egov.lib&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovtest junit tasks:&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- JUnit Excel Report --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovtest&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;tests&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;egov-junitreport&lt;/span> &lt;span style="color:#a6e22e">todir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testxls.dir}&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testreports.dir}&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;**/TEST-*.xml&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/egov-junitreport&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/target&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovtest-full&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;tests&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;egov-junitreport&lt;/span> &lt;span style="color:#a6e22e">todir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testxls.dir}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">outputname=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;egovtest-junit-full.xls&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">templatepath=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${basedir}/build/template-kr.xls&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">summary=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0,B,6&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">packages=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0,B,11&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">lists=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1,A,5&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;fileset&lt;/span> &lt;span style="color:#a6e22e">dir=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${testreports.dir}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">includes=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;**/TEST-*.xml&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/egov-junitreport&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/target&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;build-report-junit-excel&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;clean, egovtest&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;clean, egovtest&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;target&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;build-report-junit-excel-full&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">depends=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;clean, egovtest-full&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">description=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;clean, egovtest-full&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/project&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="egovjunitexcelreporttask">EgovJUnitExcelReportTask&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">EgovJUnitExcelReportTask&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> Task {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Excel 파일이 작성될 디렉토리 위치 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String todir;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Excel 파일이 작성될 디렉토리 위치 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File outputDirectory;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Excel 리포트 파일명 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String outputname;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Excel 리포트의 템플릿 리포트 파일의 Full Path */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String templatepath;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Excel 리포트의 템플릿 리포트 파일의 Full Path */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> File templateFile;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Template Excel 파일의 Summary Header 위치 정보 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String summary;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Template Excel 파일의 Package Header 위치 정보 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String packages;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** Template Excel 파일의 TestCase Lists Header 위치 정보 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String lists;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setTodir&lt;/span>(String todir) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todir&lt;/span> &lt;span style="color:#f92672">=&lt;/span> todir;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setOutputname&lt;/span>(String outputname) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">outputname&lt;/span> &lt;span style="color:#f92672">=&lt;/span> outputname;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setTemplatepath&lt;/span>(String templatepath) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (templatepath &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> templatepath.&lt;span style="color:#a6e22e">length&lt;/span>() &lt;span style="color:#f92672">&amp;gt;&lt;/span> 0) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">templatepath&lt;/span> &lt;span style="color:#f92672">=&lt;/span> templatepath;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setSummary&lt;/span>(String summary) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">summary&lt;/span> &lt;span style="color:#f92672">=&lt;/span> summary;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setPackages&lt;/span>(String packages) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">packages&lt;/span> &lt;span style="color:#f92672">=&lt;/span> packages;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> List filesets &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ArrayList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">addFileset&lt;/span>(FileSet fileset) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filesets.&lt;span style="color:#a6e22e">add&lt;/span>(fileset);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>배치 템플릿을 이용한 EgovSchedulerRunner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_scheduler_runner_template/</guid><description>&lt;h1 id="배치-템플릿을-이용한-egovschedulerrunner-예제">배치 템플릿을 이용한 EgovSchedulerRunner 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Scheduler 기반의 배치 템플릿 프로젝트를 이용하여 EgovSchedulerRunner의 사용법을 보여주는 예제이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -6908,7 +6908,49 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>Unit Test Case 를 작성하기 위해 알아야 할 기본적인 내용은 다음과 같다.
 자세한 사용법과 예제 프로그램은 본 문서 아래 부분에서 설명하도록 한다.
-추가적으로, Mocking 이나 DAO 테스트 관련하여서는 각각 Mock Support, DB Support 를 참조하도록 한다.&lt;/p>
+추가적으로, Mocking 이나 DAO 테스트 관련하여서는 각각 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/mock-support/">Mock Support&lt;/a>
+
+
+, 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/db-support/">DB Support&lt;/a>
+
+
+ 를 참조하도록 한다.&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
