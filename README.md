@@ -1,10 +1,12 @@
 # 전자정부 표준프레임워크 가이드
+
 - 본 GitHub 저장소 생성 목적은 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 형식의 문서로 변환하여 기여받는 것입니다.
 - 이 프로젝트의 목적은 쉽게 접근 가능한 Markdown 형식의 문서를 통해 사용자와 개발자들이 표준프레임워크를 더욱 편리하게 활용할 수 있도록 돕는 것입니다.
 - 이 프로젝트의 특징은 기여자가 문서 및 이미지를 기여하면 그 즉시 자동으로 배포되어 웹사이트를 통해 결과를 확인할 수 있는 것입니다.
 - 2025년 표준프레임워크 가이드 컨트리뷰션 범위는 개발환경, 실행환경, 실행환경 예제, 공통컴포넌트입니다(2024년도에는 실행환경 문서로 한정).
 
 ## 가이드 문서 보기
+
 - https://egovframework.github.io/egovframe-docs/
 
 ## 프론트매터(Frontmatter) 작성 방법
@@ -80,14 +82,14 @@
 - 자동으로 Merge 성공시, 위 "PR 자동 Merge 성공시"에 서술된 프로세스가 진행됩니다.
 
 ## 디렉토리 구조
+
 - 현재 개발가이드와 유사하게 구성되어 있습니다.
+
   - [공통컴포넌트 가이드-개요](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init)
   - [공통컴포넌트 가이드-상세](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init_guide)
   - [개발환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3)
-	- [실행환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3)
+    - [실행환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3)
   - [실행환경 예제 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ex:개발프레임워크_실행환경_예제)
-
-
 - 문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.
 - 모든 _index.md 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 찹고 부탁드립니다.
 
@@ -155,7 +157,7 @@
     / server-connection-management.md   #Server Connection Management
     / uml-editor.md                     #UML Editor
     /debug.md                         #Debug
-  /individual-insall-guide          #구성 가이드
+  /individual-install-guide          #구성 가이드
   /install-guide                    #설치 가이드
   /intro                            #소개
   /operation-guide                  #운영 가이드
@@ -187,6 +189,7 @@
 ```
 
 ## 문서 구조
+
 - 각 문서는 다음과 같은 구조와 템플릿을 따릅니다.
 
 ```
@@ -222,24 +225,27 @@ ApplicationContext 인터페이스와 관련된 내용을 설명합니다.
 ```
 
 - 헤더
-	- 문서의 제목과 섹션 제목은 각각 `#`와 `##`, `###`로 구분합니다.
+  - 문서의 제목과 섹션 제목은 각각 `#`와 `##`, `###`로 구분합니다.
 - 개요
-	- 문서의 목적, 중요성, 다룰 내용을 간략히 소개합니다.
+  - 문서의 목적, 중요성, 다룰 내용을 간략히 소개합니다.
 - 주요 개념
-	- 문서에서 다룰 주요 개념을 상세히 설명합니다.
+  - 문서에서 다룰 주요 개념을 상세히 설명합니다.
 - 관련문서
-	- 관련된 외부 문서나 추가 자료의 링크를 제공합니다.
+  - 관련된 외부 문서나 추가 자료의 링크를 제공합니다.
 - 설명
-	- 문서의 핵심 내용을 구체적으로 설명합니다.
-	- 필요에 따라 하위 섹션으로 나눕니다.
+  - 문서의 핵심 내용을 구체적으로 설명합니다.
+  - 필요에 따라 하위 섹션으로 나눕니다.
 - 참고자료
-	- 문서 작성 시 참조한 자료나 독자가 추가로 참고할 수 있는 자료의 링크를 제공합니다.
+  - 문서 작성 시 참조한 자료나 독자가 추가로 참고할 수 있는 자료의 링크를 제공합니다.
+
 ## 문서 작성 규칙
+
 - 파일명은 설명하는 내용을 간결하게 나타내도록 하며, 소문자와 하이픈(-)을 사용합니다.
-	- 예) `ioc-container.md`
+  - 예) `ioc-container.md`
 - 이미지 파일은 작성하는 폴더의 하위에 위치한 'images' 폴더에 저장하고, 문서에서 `![이미지 설명](이미지 파일 경로)` 형식을 사용합니다.
-	- 예) `![IoC Container 구조](./images/ioc-container-structure.png)`
-- 코드 예시는 삼중 백틱 ` (```언어명```) ` 으로 감싸서 표시합니다.
+  - 예) `![IoC Container 구조](./images/ioc-container-structure.png)`
+- 코드 예시는 삼중 백틱 `(```언어명```)` 으로 감싸서 표시합니다.
+
 ```java
 public class Example {
     public static void main(String[] args) {
@@ -247,29 +253,33 @@ public class Example {
     }
 }
 ```
+
 - 외부 링크는 절대 경로를 사용하고, 내부 링크는 상대 경로를 사용합니다.
-	- 예) `[Spring Framework Documentation](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html)`
+  - 예) `[Spring Framework Documentation](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html)`
 
 ## 문장 구성 스타일 가이드
+
 - 문체
-	- 일관된 공식 문체를 사용하며, 기술 용어는 첫 사용 시 정의합니다.
-	- 문장은 격식을 유지하고, 신뢰감을 줄 수 있도록 작성합니다.
-	- 문장은 명확하고 간결하게 작성합니다. 복잡한 개념은 짧은 문장으로 나누어 설명하며, 가능한 한 간단하게 표현합니다.
-	- 일관된 용어와 표현을 사용하며, 문서 전체에서 동일한 어휘와 문체를 유지합니다.
+  - 일관된 공식 문체를 사용하며, 기술 용어는 첫 사용 시 정의합니다.
+  - 문장은 격식을 유지하고, 신뢰감을 줄 수 있도록 작성합니다.
+  - 문장은 명확하고 간결하게 작성합니다. 복잡한 개념은 짧은 문장으로 나누어 설명하며, 가능한 한 간단하게 표현합니다.
+  - 일관된 용어와 표현을 사용하며, 문서 전체에서 동일한 어휘와 문체를 유지합니다.
 - 어조
-	- 주관적인 의견을 피하고, 사실에 근거한 정보를 제공하며, 명확하고 중립적인 어조를 유지합니다.
-	- 내용을 잘 이해할 수 있도록 교육적이고 안내하는 어조를 사용합니다.
+  - 주관적인 의견을 피하고, 사실에 근거한 정보를 제공하며, 명확하고 중립적인 어조를 유지합니다.
+  - 내용을 잘 이해할 수 있도록 교육적이고 안내하는 어조를 사용합니다.
 - 예시
-	- "Inversion of Control(역제어)은 객체의 생성 및 생명주기 관리를 개발자가 아닌 컨테이너가 담당하는 것을 의미한다."
-	- "Spring Framework의 IoC Container는 다양한 기능을 제공하며, 이를 통해 애플리케이션의 유연성과 확장성을 향상시킬 수 있다."
-	- "의존성 주입(Dependency Injection)은 빈 설정 정보를 바탕으로 컨테이너가 클래스 간의 의존 관계를 자동으로 연결해주는 방법이다."
+  - "Inversion of Control(역제어)은 객체의 생성 및 생명주기 관리를 개발자가 아닌 컨테이너가 담당하는 것을 의미한다."
+  - "Spring Framework의 IoC Container는 다양한 기능을 제공하며, 이를 통해 애플리케이션의 유연성과 확장성을 향상시킬 수 있다."
+  - "의존성 주입(Dependency Injection)은 빈 설정 정보를 바탕으로 컨테이너가 클래스 간의 의존 관계를 자동으로 연결해주는 방법이다."
 
 ## 예제 및 참고자료
 
 ### 샘플 문서
+
 - [표준프레임워크 실행환경 소개](https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/intro/overview.md)
 - [IoC Container](https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/foundation-layer-core/ioc-container.md)
 
 ### 참고자료
+
 - [Markdown 기본 문법](https://www.markdownguide.org/basic-syntax/)
 - [Markdown 고급 문법](https://www.markdownguide.org/extended-syntax/)
