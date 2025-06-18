@@ -23,7 +23,7 @@ Test Coverage는 개발자가 작성한 코드에 대해 상응하는 테스트�
 * **Test Coverage report** : Test Coverage 결과 리포팅 (XML, HTML 등)
   기본적으로 XML과 HTML 형식을 지원하며, EMMA는 TXT, XML, HTML 형식을 모두 지원한다.
 
-### [Test Coverage Tool]()
+### Test Coverage Tool
 
 Test Coverage를 수행하는 데는 다양한 툴이 있고, 각각 평가하는 나름의 로직을 갖고 있으며, 리포팅 또한 그 로직에 상응하는 형태라고 볼 수 있다. 따라서, 필요에 맞는 도구를 잘 선택하면 된다.
 
