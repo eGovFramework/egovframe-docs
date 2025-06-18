@@ -50,7 +50,7 @@ Maven을 사용하여 개인빌드를 하는 경우, 다음과 같이 테스트�
 
 3. XML 리포트 확인 : **`<reportFormat>`xml`</reportFormat>`** 항목에 xml, txt를 명시할 수 있으며, **TEST-{TestcaseFullName}.xml** 식의 파일이 생성된다.
 
-![Maven 테스트 자동화 2](./images/maven-automation-2.jpg)
+![Maven 테스트 자동화 2](./images/maven-automation-2.png)
 
 ### Ant를 사용한 테스트 자동화
 

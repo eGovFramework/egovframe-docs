@@ -9,7 +9,6 @@ menu:
     parent: "unit-test"
     identifier: "db-support"
 ---
-
 # DB Support
 
 ## 개요
@@ -25,11 +24,11 @@ DAO (Data Access Object) 클래스를 개발하는 경우 이에 대한 단위 �
 * DAO 클래스 실행 시 필요한 테스트 데이터 관리
 * DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리
 
-이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.  
-데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.  
+이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.
+데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.
 또한, 프로그램이 수정 보완 되는 과정에서 여러 번 중복 테스트를 하기 위해서는 다시 dbms 에 접속하여 rollback 을 하는 등의 작업을 수행하기도 한다.
 
-만약 dbunit / unitils / spring-test 등을 기본으로 몇 가지 Tip 을 적절히 이용하면 보다 손 쉽게 데이터베이스 관련 테스트 케이스 개발을 수행 할 수 있다.   
+만약 dbunit / unitils / spring-test 등을 기본으로 몇 가지 Tip 을 적절히 이용하면 보다 손 쉽게 데이터베이스 관련 테스트 케이스 개발을 수행 할 수 있다.
 자세한 사항은 아래 사용법을 참조하도록 한다.
 
 ## 환경설정
@@ -40,14 +39,14 @@ Unit Test 환경설정과 동일하다.
 
 ### 데이터베이스 연결
 
-먼저, 데이터베이스 준비(기동, DataSource 생성)에 대해 알아보자.  
-테스트를 위해 사용할 수 있는 Database 가 준비되어 있고 이를 위한 접근 방법에 대한 안내까지 받았다면 고민할 필요는 없다.  
-만약 이러한 상황이 아니라면, apache dbcp datasource 를 이용하여 생성하면 되고, springframework 를 사용하고 있다면 더더욱 간단히 해결될 수 있다.  
-사실, egovframework 의 개발환경에서 제공하고 있는 CI Server 를 이용해 반복적으로 테스트를 수행하기 위해서는 테스트만을 위한 전용 DBMS 를 준비하는 것이 이상적이지만, 테스트 수행 후 깔끔하게 rollback 을 수행한다면 테스트 용 전용 DBMS 가 없어도 큰 무리는 없다.  
+먼저, 데이터베이스 준비(기동, DataSource 생성)에 대해 알아보자.
+테스트를 위해 사용할 수 있는 Database 가 준비되어 있고 이를 위한 접근 방법에 대한 안내까지 받았다면 고민할 필요는 없다.
+만약 이러한 상황이 아니라면, apache dbcp datasource 를 이용하여 생성하면 되고, springframework 를 사용하고 있다면 더더욱 간단히 해결될 수 있다.
+사실, egovframework 의 개발환경에서 제공하고 있는 CI Server 를 이용해 반복적으로 테스트를 수행하기 위해서는 테스트만을 위한 전용 DBMS 를 준비하는 것이 이상적이지만, 테스트 수행 후 깔끔하게 rollback 을 수행한다면 테스트 용 전용 DBMS 가 없어도 큰 무리는 없다.
 
 #### 프로퍼티 설정
 
-```
+```properties
 # Properties for the PropertiesDataSourceFactory
 database.driverClassName=org.hsqldb.jdbcDriver
 database.url=jdbc:hsqldb:sampledb
@@ -59,8 +58,8 @@ database.password=
 
 Test Case 작성 시 **`@RunWith(UnitilsJUnit4TestClassRunner.class)`** 을 선언하면 된다.
 
-Unitils 는 springframework 와 달리 DataSource 가 아닌 TestDataSource 라는 것을 사용한다.   
-이 TestDataSource 는 Unitils 설정에 따라 선언과 동시에 DataSource 를 Getting 하는 것 뿐 아니라 dbmaintain 과 같은 별도의 작업을 동시에 수행할 수 있다.  
+Unitils 는 springframework 와 달리 DataSource 가 아닌 TestDataSource 라는 것을 사용한다.
+이 TestDataSource 는 Unitils 설정에 따라 선언과 동시에 DataSource 를 Getting 하는 것 뿐 아니라 dbmaintain 과 같은 별도의 작업을 동시에 수행할 수 있다.
  이는 다음에 설명하기로 하고, 여기서는 단순히 unitils 를 이용하여 TestDataSource 를 Getting 하는 예제만을 이해하도록 한다.
 
 ```java
@@ -74,7 +73,7 @@ public class DataSourceGetTest_unitilsDataSource {
      * 
      * @see  unitils.properties
      */
-    @TestDataSource    
+    @TestDataSource  
     private DataSource dataSource;
  
     @Test
@@ -100,7 +99,7 @@ Unitils 를 이용하면 위처럼 TestDataSource 를 생성하거나, spring+un
 
 ##### DBMS 의 종류, 스키마 정보 등을 설정
 
-```
+```properties
 # This property specifies the underlying DBMS implementation. Supported values are 'oracle', 'db2', 'mysql', 'hsqldb' and 'postgresql'.
 # The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.
 database.dialect=hsqldb
@@ -119,10 +118,10 @@ transactionManager.type=auto
 
 ##### 데이터베이스 스키마 정보를 자동으로 update 할지를 설정
 
-이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.  
+이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.
 dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.
 
-```
+```properties
 # If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each
 # test run, when creating the DataSource that provides access to the unit test database.
 updateDataBaseSchema.enabled=true
@@ -159,7 +158,7 @@ DBUnit 을 이용해 데이터를 저장 혹은 삭제한 경우 commit/rollback
 이 부분은 Test Case 를 작성할 때 동적으로 변경할 수 있으므로 우선은 disabled 로 선언 해 둔다.
 (CI 등을 활용하여 주기적으로 반복 테스트를 수행할 경우에는 rollback으로 설정하는 것을 권장한다.)
 
-```
+```properties
 # Default behavior concerning execution of tests in a transaction. Supported values are 'disabled', 'commit' and 'rollback'.
 # If set to disabled, test are not executed in a transaction by default. If set to commit, each test is run in a transaction,
 # which is committed. If set to rollback, each test is run in a transaction, which is rolled back.
@@ -170,7 +169,7 @@ DatabaseModule.Transactional.value.default=disabled
 
 Unitils 는 여기서 언급된 종류의 DBMS를 지원하며 여기에 없는 DBMS 는 unitils 의 기능을 제한적으로 사용할 수 밖에 없으므로 설정하지 않는다.
 
-```
+```properties
 # This property specifies the underlying DBMS implementation. Supported values are 'oracle', 'db2', 'mysql', 'hsqldb' and 'postgresql'.
 # The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.
 database.dialect=hsqldb
@@ -192,7 +191,7 @@ transactionManager.type=auto
 이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.
 dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.
 
-```
+```properties
 # If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each
 # test run, when creating the DataSource that provides access to the unit test database.
 updateDataBaseSchema.enabled=true
@@ -238,6 +237,7 @@ XML 포맷의 데이터로서 작성 법은 위와 동일하다.
 
 아래는 이클립스 메이븐 프로젝트의 예제이다.
 
+![프로젝트 예제](./images/eclipse-maven-example.jpg)
 예제는 다음의 내용으로 구성되어 있다.
 
 * 테스트 대상
@@ -483,11 +483,11 @@ public class NoticeVo implements Serializable {
 
 ### 테스트 시나리오
 
- 1. HSQLDB 를 이용 해 Notice 업무 수행을 위한 테이블을 생성(변경 시 업데이트만 수행)한다.
- 2. selectList, selectCount 등의 메소드 실행을 위해 외부의 XML 로 정의해 둔 기초 데이터 3건을 자동 입력한다.
- 3. insert / update / delete 메소드 실행을 위해 기초 데이터인 noticeVo 객체를 테스트 수행 전에 생성한다.
- 4. selectList 의 select 결과에 대해 예상하는 값을 외부의 XML 파일로 저장해 두고 자동으로 비교해 본다.
- 5. 중복 insert 가 발생 한 경우 예상 한 Exception 이 발생하는 지 확인한다.
+1. HSQLDB 를 이용 해 Notice 업무 수행을 위한 테이블을 생성(변경 시 업데이트만 수행)한다.
+2. selectList, selectCount 등의 메소드 실행을 위해 외부의 XML 로 정의해 둔 기초 데이터 3건을 자동 입력한다.
+3. insert / update / delete 메소드 실행을 위해 기초 데이터인 noticeVo 객체를 테스트 수행 전에 생성한다.
+4. selectList 의 select 결과에 대해 예상하는 값을 외부의 XML 파일로 저장해 두고 자동으로 비교해 본다.
+5. 중복 insert 가 발생 한 경우 예상 한 Exception 이 발생하는 지 확인한다.
 
 unitils.properties 파일로, 여러 개의 unitils 관련 파일을 관리하고 싶을 경우 아래와 같이 해당 위치를 선언해두면 된다. 물론 동시에는 하나의 설정 값만 인식된다.
 
@@ -495,7 +495,7 @@ unitils.properties 파일로, 여러 개의 unitils 관련 파일을 관리하�
 
 #### unitils.properties
 
-```
+```properties
 unitils.configuration.localFileName=META-INF/persistence/unitils-local-hsqldb.properties
 #unitils.configuration.localFileName=META-INF/persistence/unitils-local-oracle.properties
 #unitils.configuration.localFileName=META-INF/persistence/unitils-local-mysql.properties
@@ -507,7 +507,7 @@ unitils.configuration.localFileName=META-INF/persistence/unitils-local-hsqldb.pr
 
 #### unitils-local-hsqldb.properties
 
-```
+```properties
 # HSQLDB 연결 정보 설정
 database.driverClassName=org.hsqldb.jdbcDriver
 database.url=jdbc:hsqldb:hsql://localhost/sampledb
@@ -545,7 +545,8 @@ CREATE TABLE NOTICE (
 ```
 
 #### 데이터 자동 입력을 위한 XML : AutoInsertionTestDataTest_DataSet.xml
-``` XML
+
+```XML
 <?xml version="1.0" encoding="UTF-8"?>
  
 <dataset>
@@ -581,7 +582,7 @@ CREATE TABLE NOTICE (
 
 #### 조회 결과와 자동으로 비교할 XML : AutoVerifyTestResultsTest_ExpectedDataSet.xml
 
-``` XML
+```XML
 <?xml version="1.0" encoding="UTF-8"?>
  
 <dataset>
@@ -591,6 +592,131 @@ CREATE TABLE NOTICE (
             NOTICE_LAST_MODIFIER="OracleDataSetTest.class"
     />
 </dataset>
+```
+
+### 테스트 프로그램
+
+NoticeDao.java 에 대한 단위 테스트 프로그램
+
+```java
+@RunWith(UnitilsJUnit4TestClassRunner.class)
+@Transactional(TransactionMode.ROLLBACK)
+@SpringApplicationContext({"/META-INF/persistence/connection/datasource-spring-with-unitils.xml",
+	                   "/META-INF/spring/context-common.xml", 
+	                   "/META-INF/spring/context-sqlmap.xml"})
+public class DaoOperationTest_noticeDao {
+ 
+	/**
+	 * unitils.properties 에 설정 된 database 접근 정보를 기반으로 
+	 * 테스트 용 DataSource 를 만든 후 자동으로 injection 해 준다.
+	 * (unitils.properties 파일의 위치와 이름은 변경할 수 없다.)
+	 * 
+	 * updateDataBaseSchema.enabled=true 로 설정되어 있으면
+	 * dbMaintainer.script.locations 에서 지정한 위치의 sql 문을 실행시켜준다.
+	 * 주의) 생성 시점은 test 메소드가 실행되기 전이다.
+	 *        따라서, 단순히 TestDataSource 만 선언하는 것이 아니라,
+	 *        하나 이상의 test 메소드라도 있어야 결과 확인이 가능하다.
+	 * 
+	 * @see		unitils.properties
+	 * @see      dbMaintainer.script.locations 에서 지정한 위치의 sql 문
+	 */
+	@TestDataSource
+	private DataSource dataSource;
+ 
+	/** 테스트를 위해 만든 타겟 클래스로서 공지사항 비즈니스 구현을 위한 Dao */
+	@SpringBean("noticeDao")
+	private NoticeDao noticeDao;
+ 
+	/** 테스트를 위해 만든 타겟 클래스로서 공지사항 비즈니스 구현을 위한 Value Object */
+	private NoticeVo noticeVo;
+ 
+	/**
+	 * 공지사항 등록을 위한 Value Object 를 만들어내는 메소드로서 테스트 수행 직전에 수행
+	*/
+	@Before
+	public void makeNoticeVo() {
+		noticeVo = new NoticeVo();
+		noticeVo.setId(201);
+    	        noticeVo.setTitle("201번 공지");
+    	        noticeVo.setContents("테스트용으로 자동 입력된 공지사항 201번입니다.");
+    	        noticeVo.setLastModifier("OracleDataSetTest.class");
+ 
+                long currentTime = new java.util.Date().getTime();
+		noticeVo.setRegistrationDate(new java.sql.Date(currentTime));
+	}
+ 
+	/**
+	 * 자동으로 생성된 Test 용 DataSource 를 정상적으로 Get 했는지를 확인
+	*/
+	@Test
+	public void checkTestDataSource() {
+		assertNotNull("Test DataSource 를 정상적으로 get 했는지를 확인한다.", dataSource);
+	}
+ 
+	/**
+	 * 자동으로 생성된 Test 용 Dao 를 정상적으로 Get 했는지를 확인
+	*/
+	@Test
+	public void checkTestDao()  {
+		assertNotNull("Test 대상 Dao 를 정상적으로 get 했는지를 확인한다.", noticeDao);
+	}
+ 
+	/**
+	 * Dao 의 selectCount 메소드에 대한 테스트
+	 * 테스트용 데이터) 클래스에 선언한 DataSet 에 정의 된 데이터
+	 * 테스트 결과) DataSet 에 3건을 정의했으므로 selectCount 의 결과는 3건이면 성공
+	*/
+	@Test
+        @DataSet("/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml")
+	public void testSelectCount() {
+		int count = noticeDao.selectCount();
+		assertEquals("테스트용 데이터셋 3건을 입력한 뒤 전체 목록을 조회하면 3건임을 확인", 3, count);
+	}
+ 
+	/**
+	 * Dao 의 selectList 메소드에 대한 테스트
+	 * 테스트용 데이터) 클래스에 선언한 DataSet 에 정의 된 데이터
+	 * 테스트 결과) 전체 목록을 조회하여 각각의 내용을 담은 Value Object 가 Null 이 아니면 성공
+	*/
+	@Test
+        @DataSet("/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml")
+	public void testSelectList() {
+		List<NoticeVo> noticeList = noticeDao.selectList();
+ 
+		for(NoticeVo noticeVo:noticeList) {
+			assertNotNull("조회한 noticeVo 객체가 null 이 아님을 확인", noticeVo);
+		}
+	}
+ 
+	/**
+	 * Dao 의 Insert 메소드에 대한 테스트
+	 * 테스트용 데이터 ) 테스트 프로그램 수행 중 만들어낸 noticeVo
+	 * 테스트 결과) 테스트용 데이터셋 1건을 추가 입력한 뒤 목록조회하면 4건이면 성공
+	*/
+	@Test
+        @DataSet("/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml")
+	@ExpectedDataSet("/META-INF/persistence/testdata/AutoVerifyTestResultsTest_ExpectedDataSet.xml")
+	public void testInsert() {
+		assertNotNull(noticeVo);
+    	noticeDao.insert(noticeVo);
+		int count = noticeDao.selectCount();
+		assertEquals("테스트용 데이터셋 1건을 추가 입력한 뒤 목록조회하면 4건임을 확인", 4, count);
+	}
+ 
+	/**
+	 * Dao 의 Delete 메소드에 대한 테스트
+	 * 테스트용 데이터 ) DataSet 에 선언한 항목 중 2건에 해당하는 Id 값(101, 102)
+	 * 테스트 결과) 테스트용 데이터셋 3건을 입력한 뒤2건을 삭제 후 목록조회하면 1건이면 성공
+	*/
+	@Test
+        @DataSet("/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml")
+	public void testDelete() {
+		noticeDao.delete(101);
+		noticeDao.delete(102);
+		int count = noticeDao.selectCount();
+		assertEquals("테스트용 데이터셋 3건을 입력한 뒤2건을 삭제 후 목록조회하면 1건임을 확인", 1, count);
+	}
+}
 ```
 
 ### 테스트 수행결과
@@ -655,5 +781,5 @@ CREATE TABLE NOTICE (
 
 ## 참고자료
 
-* [JUnit 공식 사이트](http://www.junit.org/)   
+* [JUnit 공식 사이트](http://www.junit.org/)
 * [DbUnit 공식 사이트](http://www.dbunit.org/)
