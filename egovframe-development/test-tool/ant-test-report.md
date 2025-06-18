@@ -2,11 +2,11 @@
 title: "Ant에서 생성한 테스트 결과 HTML 리포트"
 linkTitle: "Ant에서 생성한 테스트 결과 HTML 리포트"
 description: "Ant에서 생성한 테스트 결과 HTML 리포트다."
-url: /egovframe-development/test-tool/ref/ant-test-report/
+url: /egovframe-development/test-tool/test-tool-ref/ant-test-report/
 menu:
   depth:
     weight: 10
-    parent: "ref"
+    parent: "test-tool-ref"
 ---
 # Ant에서 생성한 테스트 결과 HTML 리포트
 

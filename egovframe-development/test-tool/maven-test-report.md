@@ -2,11 +2,11 @@
 title: "Maven에서 생성한 테스트 결과 HTML 리포트"
 linkTitle: "Maven에서 생성한 테스트 결과 HTML 리포트"
 description: "Maven에서 생성한 테스트 결과 HTML 리포트다."
-url: /egovframe-development/test-tool/ref/maven-test-report/
+url: /egovframe-development/test-tool/test-tool-ref/maven-test-report/
 menu:
   depth:
     weight: 5
-    parent: "ref"
+    parent: "test-tool-ref"
 ---
 # Maven에서 생성한 테스트 결과 HTML 리포트
 

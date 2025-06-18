@@ -2,11 +2,11 @@
 title: "EMMA에서 생성한 HTML 리포트 샘플"
 linkTitle: "EMMA에서 생성한 HTML 리포트 샘플"
 description: "EMMA에서 생성한 HTML 리포트 샘플이다."
-url: /egovframe-development/test-tool/ref/emma-test-report/
+url: /egovframe-development/test-tool/test-tool-ref/emma-test-report/
 menu:
   depth:
     weight: 13
-    parent: "ref"
+    parent: "test-tool-ref"
 ---
 ### EMMA에서 생성한 HTML 리포트 샘플
 

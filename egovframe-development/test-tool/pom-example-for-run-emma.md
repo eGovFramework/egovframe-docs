@@ -2,11 +2,11 @@
 title: "EMMA 실행을 위한 pom.xml 설정 샘플"
 linkTitle: "EMMA 실행을 위한 pom.xml 설정 샘플"
 description: "EMMA 실행을 위한 pom.xml 설정 샘플을 코드로 보여준다."
-url: /egovframe-development/test-tool/ref/pom-example-for-run-emma/
+url: /egovframe-development/test-tool/test-tool-ref/pom-example-for-run-emma/
 menu:
   depth:
     weight: 11
-    parent: "ref"
+    parent: "test-tool-ref"
 ---
 ## EMMA 실행을 위한 pom.xml 설정 샘플
 

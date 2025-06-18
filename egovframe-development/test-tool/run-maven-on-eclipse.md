@@ -2,11 +2,11 @@
 title: "이클립스에서 Maven 실행하기"
 linkTitle: "이클립스에서 Maven 실행하기"
 description: "이클립스에서 Maven 실행하는 방법을을 설명한다."
-url: /egovframe-development/test-tool/ref/run-maven-on-eclipse/
+url: /egovframe-development/test-tool/test-tool-ref/run-maven-on-eclipse/
 menu:
   depth:
     weight: 8
-    parent: "ref"
+    parent: "test-tool-ref"
 ---
 ## 이클립스에서 Maven 실행하기
 
