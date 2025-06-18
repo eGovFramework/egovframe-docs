@@ -2,12 +2,12 @@
 title: "참조 문서 목록"
 linkTitle: 참조 문서 목록
 description: "복수의 문서에서 참조되는 파일들의 목록을 보여준다."
-url: /egovframe-development/test-tool/ref/
+url: /egovframe-development/test-tool/test-tool-ref/
 menu:
   depth:
     weight: 100
     parent: "test-tool"
-    identifier: "ref"
+    identifier: "test-tool-ref"
 ---
 # 참조 문서 목록
 
@@ -23,3 +23,6 @@ menu:
 | 8 | 이클립스에서 Maven 실행하기 | [바로가기](./run-maven-on-eclipse.md) | 이클립스에서 Maven 실행하는 방법을을 설명한다. |
 | 9 | 엑셀 리포팅 사용을 위한 setting.xml 설정 | [바로가기](./setting-for-excel-reporting.md) | 엑셀 리포팅 사용을 위한 setting.xml 설정 방법에 대해 설명한다. |
 | 10 | Ant에서 생성한 테스트 결과 HTML 리포트 | [바로가기](./ant-test-report.md) | Ant에서 생성한 테스트 결과 HTML 리포트다. |
+| 11 | EMMA 실행을 위한 pom.xml 설정 샘플 | [바로가기](./pom-example-for-run-emma.md) | EMMA 실행을 위한 pom.xml 설정 샘플을 코드로 보여준다. |
+| 12 | EMMA 실행을 위한 build.xml 설정 샘플 | [바로가기](./build-example-for-run-emma.md) | EMMA 실행을 위한 build.xml 설정 샘플을 코드로 보여준다. |
+| 13 | EMMA에서 생성한 HTML 리포트 샘플 | [바로가기](./emma-test-report.md) | EMMA에서 생성한 HTML 리포트 샘플이다. |

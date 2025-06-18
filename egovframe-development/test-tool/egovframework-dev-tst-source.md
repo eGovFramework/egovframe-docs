@@ -2,11 +2,11 @@
 title: "egovframework-dev-tst 프로젝트 소스 코드"
 linkTitle: "egovframework-dev-tst 프로젝트 소스 코드"
 description: "egovframework-dev-tst 프로젝트 소스 코드이다."
-url: /egovframe-development/test-tool/ref/egovframework-dev-tst-source
+url: /egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-source
 menu:
   depth:
     weight: 2
-    parent: "ref"
+    parent: "test-tool-ref"
 ---
 ## egovframework-dev-tst 프로젝트 소스 코드
 
