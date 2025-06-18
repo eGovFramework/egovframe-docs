@@ -99,26 +99,26 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 
 | 구분                                        | 입력 파라미터                           | 설명                                                                                       | Default                           |
 | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | JUnitReportParser parser                | JUnit XML Parser                                                                           | N/A                               |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List `<File>` xmlReportFileList       | JUnit Test XML 파일 Full Path 목록                                                         | 없으면 오류 처리                  |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List `<ReportTestSuite>` testSuites   | Test Suite Lists                                                                           | N/A                               |
-| 엑셀 파일 생성을 위해 필요한 정보           | File templatePath                       | Excel 리포트의 템플릿 리포트 파일의 Full Path                                              | "/template-junit.xls"의 파일 객체 |
-| 엑셀 파일 생성을 위해 필요한 정보           | File outputDirectory                    | Excel 파일이 작성될 디렉토리 위치                                                          | 없으면 오류 처리                  |
-| 엑셀 파일 생성을 위해 필요한 정보           | String outputName                       | Excel 리포트 파일명                                                                        | "egovtest-junit.xls"              |
-| POI 엑셀 파일 정보                          | HSSFWorkbook book                       | POI 엑셀 파일 정보                                                                         | N/A                               |
-| 템플릿 엑셀 파일의 각 헤더 위치 정보        | int[] summaryPosInfos                   | Summary 헤더 위치 정보                                                                     | { 0, 0, 3 }                       |
-| 템플릿 엑셀 파일의 각 헤더 위치 정보        | int[] packagePosInfos                   | Package 헤더 위치 정보                                                                     | { 0, 0, 7 }                       |
-| 템플릿 엑셀 파일의 각 헤더 위치 정보        | int[] listsPosInfos                     | TestCase Lists 헤더 위치 정보                                                              | { 1, 0, 3 }                       |
-| 상수                                        | IDX_SHEET = 0, IDX_COL = 1, IDX_ROW = 2 | 템플릿 엑셀 파일의 헤더 위치 정보를 담고 있는 Array의 인덱스 상수. sheet, column, row 순서 |                                   |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | `JUnitReportParser parser`                | JUnit XML Parser                                                                           | N/A                               |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | `List <File> xmlReportFileList`       | JUnit Test XML 파일 Full Path 목록                                                         | 없으면 오류 처리                  |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | `List <ReportTestSuite> testSuites`   | Test Suite Lists                                                                           | N/A                               |
+| 엑셀 파일 생성을 위해 필요한 정보           | `File templatePath`                       | Excel 리포트의 템플릿 리포트 파일의 Full Path                                              | "/template-junit.xls"의 파일 객체 |
+| 엑셀 파일 생성을 위해 필요한 정보           | `File outputDirectory`                    | Excel 파일이 작성될 디렉토리 위치                                                          | 없으면 오류 처리                  |
+| 엑셀 파일 생성을 위해 필요한 정보           | `String outputName`                       | Excel 리포트 파일명                                                                        | "egovtest-junit.xls"              |
+| POI 엑셀 파일 정보                          | `HSSFWorkbook book`                       | POI 엑셀 파일 정보                                                                         | N/A                               |
+| 템플릿 엑셀 파일의 각 헤더 위치 정보        | `int[] summaryPosInfos`                   | Summary 헤더 위치 정보                                                                     | { 0, 0, 3 }                       |
+| 템플릿 엑셀 파일의 각 헤더 위치 정보        | `int[] packagePosInfos`                   | Package 헤더 위치 정보                                                                     | { 0, 0, 7 }                       |
+| 템플릿 엑셀 파일의 각 헤더 위치 정보        | `int[] listsPosInfos`                     | TestCase Lists 헤더 위치 정보                                                              | { 1, 0, 3 }                       |
+| 상수                                        | `IDX_SHEET = 0, IDX_COL = 1, IDX_ROW = 2` | 템플릿 엑셀 파일의 헤더 위치 정보를 담고 있는 Array의 인덱스 상수. sheet, column, row 순서 |                                   |
 
 #### Constructor
 
 생성자에서 입력 받아야 하는 정보는 다음과 같다.
 
-* List `<File>` xmlReportFileList : JUnit Test XML 파일의 Full Path List
-* File templatePath : 템플릿 엑셀 파일 객체
-* File outputDirectory : 파일 생성 위치 객체
-* String outputName : 생성될 엑셀 파일 명
+* `List <File> xmlReportFileList` : JUnit Test XML 파일의 Full Path List
+* `File templatePath` : 템플릿 엑셀 파일 객체
+* `File outputDirectory` : 파일 생성 위치 객체
+* `String outputName` : 생성될 엑셀 파일 명
 
 생성자에서 입력 받아야 하는 정보는 다음과 같다.
 
