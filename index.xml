@@ -407,7 +407,7 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 &lt;/li>
 &lt;/ul>
 &lt;p>계층형 Controller로 작성된 폼 처리를 @Controller로 구현하는 예도 설명한다.
-예제 코드 easycompany의 Controller는 동일한 기능(또한 공통의 Service, DAO, JSP를 사용)을 계층형 Controller와 @Controller로 각각 작성했다.&lt;/p></description></item><item><title>Ant에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/ant-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/ant-test-report/</guid><description>&lt;h1 id="ant에서-생성한-테스트-결과-html-리포트">Ant에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
+예제 코드 easycompany의 Controller는 동일한 기능(또한 공통의 Service, DAO, JSP를 사용)을 계층형 Controller와 @Controller로 각각 작성했다.&lt;/p></description></item><item><title>Ant에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/ant-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/ant-test-report/</guid><description>&lt;h1 id="ant에서-생성한-테스트-결과-html-리포트">Ant에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
 &lt;p>Ant를 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 HTML 리포트가 생성됩니다.&lt;/p>
 &lt;table>
  &lt;thead>
@@ -1844,7 +1844,7 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;h4 id="commandline-배치-템플릿-전체-설정">CommandLine 배치 템플릿 전체 설정&lt;/h4>
 &lt;p>&lt;strong>CommandLine 배치 템플릿 설정 파일인 context-commandline.xml을 확인한다.&lt;/strong>&lt;/p>
 &lt;p>✔ CommandLine 배치 템플릿 실행에 필요한 xml 정보가 기술되어 있다.&lt;br>
-✔ Job 관련 xml의 경우 특정 폴더 밑에 Job당 하나의 xml 파일로 나누어져 있다.&lt;/p></description></item><item><title>egovframework-dev-tst 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-source/</guid><description>&lt;h2 id="egovframework-dev-tst-프로젝트-소스-코드">egovframework-dev-tst 프로젝트 소스 코드&lt;/h2>
+✔ Job 관련 xml의 경우 특정 폴더 밑에 Job당 하나의 xml 파일로 나누어져 있다.&lt;/p></description></item><item><title>egovframework-dev-tst 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-source/</guid><description>&lt;h2 id="egovframework-dev-tst-프로젝트-소스-코드">egovframework-dev-tst 프로젝트 소스 코드&lt;/h2>
 &lt;p>egovframework-dev-tst 프로젝트는 JUnit Test XML 파일을 파싱하고, 템플릿 엑셀 파일을 읽어 들여, 해당값을 매핑한 후 엑셀 형식 리포트로 생성하는 주요 작업을 구성하는 라이브러리이다. 여기에서는 소스 코드에 대한 설명을 하도록 하고, 자세한 내용은 API 문서나 소스를 직접 참조하기 바란다.&lt;/p>
 &lt;h3 id="junit-test-xml-파일-예">JUnit Test XML 파일 예&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34; ?&amp;gt;&lt;/span>
@@ -1869,7 +1869,7 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;li>&lt;code>ReportTestSuite&lt;/code>는 위 XML에서 &lt;code>&amp;lt;testsuite&amp;gt;&lt;/code> 태그의 요약 정보를 담는다.&lt;/li>
 &lt;/ul>
 &lt;h3 id="testsuitexmlparser">TestSuiteXmlParser&lt;/h3>
-&lt;p>JUnit Test XML 파일을 파싱하는 &lt;code>&amp;lt;strong&amp;gt;TestSuiteXmlParser&amp;lt;/strong&amp;gt;&lt;/code> 클래스에 대해 알아보자.&lt;/p></description></item><item><title>egovframework-dev-tst-ant 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-ant-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-ant-source/</guid><description>&lt;h2 id="egovframework-dev-tst-ant-프로젝트-소스-코드">egovframework-dev-tst-ant 프로젝트 소스 코드&lt;/h2>
+&lt;p>JUnit Test XML 파일을 파싱하는 &lt;code>&amp;lt;strong&amp;gt;TestSuiteXmlParser&amp;lt;/strong&amp;gt;&lt;/code> 클래스에 대해 알아보자.&lt;/p></description></item><item><title>egovframework-dev-tst-ant 프로젝트 소스 코드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-ant-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-ant-source/</guid><description>&lt;h2 id="egovframework-dev-tst-ant-프로젝트-소스-코드">egovframework-dev-tst-ant 프로젝트 소스 코드&lt;/h2>
 &lt;p>egovframework-dev-tst-ant에는 Custom Ant Task 클래스를 포함한다.&lt;/p>
 &lt;h3 id="buildxml">build.xml&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
@@ -2076,7 +2076,7 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//클래스 패스를 이용하여 설정파일 읽어서 Cache Manager 생성하기.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>URL url &lt;span style="color:#f92672">=&lt;/span> getClass().&lt;span style="color:#a6e22e">getResource&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/ehcache-default.xml&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>manager &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> CacheManager(url);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위에서 getResource를 통해서 읽어들이는 /ehcache-default.xml 의 파일 내용은 다음과 같다.&lt;/p></description></item><item><title>EMMA 실행을 위한 build.xml 설정 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/build-example-for-run-emma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/build-example-for-run-emma/</guid><description>&lt;h2 id="emma-실행을-위한-buildxml-설정-샘플">EMMA 실행을 위한 build.xml 설정 샘플&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위에서 getResource를 통해서 읽어들이는 /ehcache-default.xml 의 파일 내용은 다음과 같다.&lt;/p></description></item><item><title>EMMA 실행을 위한 build.xml 설정 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/build-example-for-run-emma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/build-example-for-run-emma/</guid><description>&lt;h2 id="emma-실행을-위한-buildxml-설정-샘플">EMMA 실행을 위한 build.xml 설정 샘플&lt;/h2>
 &lt;p>다음은 EMMA를 이용하여 Test Coverage를 수행하기 위한 build.xml 설정 샘플이다.
 EMMA를 수행하기 위해서는 Test 수행을 위한 설정(junit)을 반드시 같이 써야 한다.&lt;/p>
 &lt;p>✔ 자세한 내용은 
@@ -2221,7 +2221,7 @@ EMMA를 수행하기 위해서는 Test 수행을 위한 설정(junit)을 반드�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/report&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/emma&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/target&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>EMMA 실행을 위한 pom.xml 설정 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/pom-example-for-run-emma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/pom-example-for-run-emma/</guid><description>&lt;h2 id="emma-실행을-위한-pomxml-설정-샘플">EMMA 실행을 위한 pom.xml 설정 샘플&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>EMMA 실행을 위한 pom.xml 설정 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/pom-example-for-run-emma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/pom-example-for-run-emma/</guid><description>&lt;h2 id="emma-실행을-위한-pomxml-설정-샘플">EMMA 실행을 위한 pom.xml 설정 샘플&lt;/h2>
 &lt;p>다음은 EMMA를 이용하여 Test Coverage를 수행하기 위한 pom.xml 설정 샘플이다.
 EMMA를 수행하기 위해서는 Test 수행을 위한 설정(maven-surefire-plugin)을 반드시 같이 써야 한다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;build&amp;gt;&lt;/span>
@@ -2255,7 +2255,7 @@ EMMA를 수행하기 위해서는 Test 수행을 위한 설정(maven-surefire-pl
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugins&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/reporting&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>EMMA에서 생성한 HTML 리포트 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/emma-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/emma-test-report/</guid><description>&lt;h3 id="emma에서-생성한-html-리포트-샘플">EMMA에서 생성한 HTML 리포트 샘플&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>EMMA에서 생성한 HTML 리포트 샘플</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/emma-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/emma-test-report/</guid><description>&lt;h3 id="emma에서-생성한-html-리포트-샘플">EMMA에서 생성한 HTML 리포트 샘플&lt;/h3>
 &lt;p>EMMA 리포트에서는 다음의 정보를 제공한다.&lt;/p>
 &lt;h4 id="통계치-그룹">통계치 그룹&lt;/h4>
 &lt;table>
@@ -4341,7 +4341,7 @@ SQL문 실행을 위해 Parameter Object를 받아오거나 SQL문 실행 결과
 &lt;pre tabindex="0">&lt;code>Client &amp;lt;------ XML ------&amp;gt; Server
 &lt;/code>&lt;/pre>&lt;p>WS는 Server와 Client 두 대상 간의 데이터를 주고받는 기술 중 하나이다. 정보를 요청하는쪽이 Client이다.(Client는 Server가 될 수도 있고 일반 사용자가 될 수도 있다.) 요청한 정보를 받아서 알맞게 처리 후 결과값을 리턴하는 쪽이 Server이다.&lt;/p>
 &lt;pre tabindex="0">&lt;code>Client(OXM) &amp;lt;------ XML(WSDL) ------&amp;gt; (OXM)Server
-&lt;/code>&lt;/pre>&lt;p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.&lt;/p></description></item><item><title>개인빌드(Maven)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</guid><description/></item><item><title>Maven에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/maven-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/maven-test-report/</guid><description>&lt;h1 id="maven에서-생성한-테스트-결과-html-리포트">Maven에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.&lt;/p></description></item><item><title>개인빌드(Maven)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</guid><description/></item><item><title>Maven에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/</guid><description>&lt;h1 id="maven에서-생성한-테스트-결과-html-리포트">Maven에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
 &lt;p>Maven을 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 HTML 리포트가 생성됩니다.&lt;/p>
 &lt;table>
  &lt;thead>
@@ -7151,7 +7151,7 @@ Controller 역할을 수행하는 Servlet 객체에서 업무 로직을 호출 �
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>제공하는 테스트 도구는 Unit Test, Mock, DB Test Framework을 통해 TestCase 작성을 지원하고, Test Automation, Test Coverage, Test Reporting 등의 기능을 제공한다.&lt;/p></description></item><item><title>Unit Test 작성을 위한 pom.xml dependency 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/pom-dependency-for-write-unittest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/pom-dependency-for-write-unittest/</guid><description>&lt;h2 id="unit-test-작성을-위한-pomxml-dependency-설정">Unit Test 작성을 위한 pom.xml dependency 설정&lt;/h2>
+&lt;p>제공하는 테스트 도구는 Unit Test, Mock, DB Test Framework을 통해 TestCase 작성을 지원하고, Test Automation, Test Coverage, Test Reporting 등의 기능을 제공한다.&lt;/p></description></item><item><title>Unit Test 작성을 위한 pom.xml dependency 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/pom-dependency-for-write-unittest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/pom-dependency-for-write-unittest/</guid><description>&lt;h2 id="unit-test-작성을-위한-pomxml-dependency-설정">Unit Test 작성을 위한 pom.xml dependency 설정&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . . 중략 . . .
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
@@ -9448,7 +9448,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;li>적용 버전은 최신 버전 확인 후 적용(patch 버전 등)&lt;/li>
 &lt;/ul>
 &lt;h3 id="2-webxml-수정">2. web.xml 수정&lt;/h3>
-&lt;p>접속 제한을 사용하는 경우 web.xml 상에 HttpSessionEventPublisher listener의 패키지 변경 필요&lt;/p></description></item><item><title>엑셀 리포팅 사용을 위한 setting.xml 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/setting-for-excel-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/setting-for-excel-reporting/</guid><description>&lt;h2 id="엑셀-리포팅-사용을-위한-settingxml-설정">엑셀 리포팅 사용을 위한 setting.xml 설정&lt;/h2>
+&lt;p>접속 제한을 사용하는 경우 web.xml 상에 HttpSessionEventPublisher listener의 패키지 변경 필요&lt;/p></description></item><item><title>엑셀 리포팅 사용을 위한 setting.xml 설정</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/setting-for-excel-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/setting-for-excel-reporting/</guid><description>&lt;h2 id="엑셀-리포팅-사용을-위한-settingxml-설정">엑셀 리포팅 사용을 위한 setting.xml 설정&lt;/h2>
 &lt;p>오픈소스가 아닌 전자정부 개발프레임워크에서 개발한 테스트 엑셀 리포팅을 사용하기 위해서는 setting.xml에 다음과 같이 설정해야 한다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;settings&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> . . . 중략 . . .
@@ -9506,7 +9506,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 &lt;/li>
-&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>이클립스에서 Ant 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/run-ant-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/run-ant-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-ant-실행하기">이클립스에서 Ant 실행하기&lt;/h2>
+&lt;/ul></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description/></item><item><title>웹에디터</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description/></item><item><title>이클립스에서 Ant 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-ant-실행하기">이클립스에서 Ant 실행하기&lt;/h2>
 &lt;p>다음은 이클립스에서 Ant View를 사용하여 Ant task를 수행하는 방법이다.&lt;/p>
 &lt;ol>
 &lt;li>Ant View를 띄우고, 실행할 build file을 선택한다.&lt;/li>
@@ -9522,7 +9522,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;li>Console View에서 실행 결과를 확인한다.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/images/run-ant-on-eclipse-3.png" alt="Ant 실행 3" >
-&lt;/p></description></item><item><title>이클립스에서 Maven 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/run-maven-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/run-maven-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-maven-실행하기">이클립스에서 Maven 실행하기&lt;/h2>
+&lt;/p></description></item><item><title>이클립스에서 Maven 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-maven-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-maven-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-maven-실행하기">이클립스에서 Maven 실행하기&lt;/h2>
 &lt;p>이클립스에서 Maven을 실행하기 위해서는 
 
 
@@ -9782,7 +9782,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;p>패키지 구조는 변경되었으나 기존에 iBatis 패키지명은 그대로 사용한다.&lt;/p>
 &lt;h3 id="mybatis-library-별도-제공">MyBatis library 별도 제공&lt;/h3>
-&lt;p>Maven Dependency Information 예시&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description/></item><item><title>참조 문서 목록</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/</guid><description>&lt;h1 id="참조-문서-목록">참조 문서 목록&lt;/h1>
+&lt;p>Maven Dependency Information 예시&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description/></item><item><title>참조 문서 목록</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/</guid><description>&lt;h1 id="참조-문서-목록">참조 문서 목록&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -9814,7 +9814,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-ant-source/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-ant-source/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -9841,7 +9841,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/egovframework-dev-tst-source/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/egovframework-dev-tst-source/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -9868,7 +9868,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -9895,7 +9895,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report-detail/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report-detail/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -9922,7 +9922,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/maven-test-report/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -9949,7 +9949,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/pom-dependency-for-write-unittest/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/pom-dependency-for-write-unittest/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -9976,7 +9976,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/run-ant-on-eclipse/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -10003,7 +10003,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/run-maven-on-eclipse/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-maven-on-eclipse/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -10030,7 +10030,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/setting-for-excel-reporting/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/setting-for-excel-reporting/">바로가기&lt;/a>
 
 
 &lt;/td>
@@ -10057,11 +10057,92 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/ant-test-report/">바로가기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/ant-test-report/">바로가기&lt;/a>
 
 
 &lt;/td>
  &lt;td>Ant에서 생성한 테스트 결과 HTML 리포트다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11&lt;/td>
+ &lt;td>EMMA 실행을 위한 pom.xml 설정 샘플&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/pom-example-for-run-emma/">바로가기&lt;/a>
+
+
+&lt;/td>
+ &lt;td>EMMA 실행을 위한 pom.xml 설정 샘플을 코드로 보여준다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12&lt;/td>
+ &lt;td>EMMA 실행을 위한 build.xml 설정 샘플&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/build-example-for-run-emma/">바로가기&lt;/a>
+
+
+&lt;/td>
+ &lt;td>EMMA 실행을 위한 build.xml 설정 샘플을 코드로 보여준다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>EMMA에서 생성한 HTML 리포트 샘플&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/emma-test-report/">바로가기&lt;/a>
+
+
+&lt;/td>
+ &lt;td>EMMA에서 생성한 HTML 리포트 샘플이다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/communitiy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/communitiy/</guid><description/></item><item><title>Log4j 2 환경설정 (코드 내에서 직접 설정 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</guid><description>&lt;h1 id="log4j-2-환경설정-코드-내에서-직접-설정-시">Log4j 2 환경설정 (코드 내에서 직접 설정 시)&lt;/h1>
@@ -10078,7 +10159,7 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Layout&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">PatternLayout&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pattern&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위 Logger 객체를 org.apache.logging.log4j.core.Logger로 캐스팅하면, Log Level, Appender, Layout 등 설정을 변경할 수 있다.&lt;br>
-예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>테스트 결과 Excel 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report/</guid><description>&lt;h1 id="테스트-결과-excel-리포트">테스트 결과 Excel 리포트&lt;/h1>
+예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>테스트 결과 Excel 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report/</guid><description>&lt;h1 id="테스트-결과-excel-리포트">테스트 결과 Excel 리포트&lt;/h1>
 &lt;p>테스트 결과를 엑셀 형식으로 리포트하는 기능은 오픈소스가 아닌 전자정부 개발프레임워크 개발환경에서 추가 개발한 내용이다.
 기본적으로 Ant나 Maven을 사용할 경우 스타일이 달라지지는 않으며, 별도로 커스터마이즈된 템플릿 엑셀 파일을 사용할 경우 그 스타일에 따른 엑셀 리포트를 만들게 된다. 기본적인 내용은 
 
@@ -10122,14 +10203,14 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report-detail/">테스트 결과 Excel Report 상세&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report-detail/">테스트 결과 Excel Report 상세&lt;/a>
 
 
 를 참조하기 바란다.&lt;/p>
 &lt;h2 id="테스트-결과-엑셀-리포트-생성-설정값">테스트 결과 엑셀 리포트 생성 설정값&lt;/h2>
 &lt;p>Excel 형식의 리포트에서는 디폴트 템플릿을 사용하게 되며, 앞에서 보여준 모습의 Excel 리포트를 생성하게 된다.
 그 외에도 다양한 설정이 가능한데, 설정하지 않을 경우 디폴트 값을 사용하게 된다.
-엑셀 리포트는 원하는 스타일의 템플릿을 만들고 설정 정보를 지정하면 엑셀 스타일을 커스터마이즈할 수 있어, 프로젝트마다 원하는 모양으로 리포트를 생성할 수 있다. 그 사용법은 다음과 같다.&lt;/p></description></item><item><title>테스트 결과 Excel 리포트 상세</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report-detail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/ref/excel-test-report-detail/</guid><description>&lt;h1 id="테스트-결과-excel-report-상세">테스트 결과 Excel Report 상세&lt;/h1>
+엑셀 리포트는 원하는 스타일의 템플릿을 만들고 설정 정보를 지정하면 엑셀 스타일을 커스터마이즈할 수 있어, 프로젝트마다 원하는 모양으로 리포트를 생성할 수 있다. 그 사용법은 다음과 같다.&lt;/p></description></item><item><title>테스트 결과 Excel 리포트 상세</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report-detail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report-detail/</guid><description>&lt;h1 id="테스트-결과-excel-report-상세">테스트 결과 Excel Report 상세&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>JUnit 테스트 결과를 Excel Report로 생성하는 것은 오픈소스를 사용한 것이 아니라 전자정부 개발 프레임워크 개발환경의 테스트 도구에서 자체 개발한 기능이다. 여기에서는 Excel Report 기능에 대한 상세 내용에 대해 설명하도록 한다.&lt;/p>
 &lt;h2 id="기능">기능&lt;/h2>
