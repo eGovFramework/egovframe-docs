@@ -889,7 +889,8 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 &lt;p>✔ 배치 테스트 마법사를 통해 생성된 테스트 파일은 별도로 JUnit Test를 진행할 경우에도 사용가능하다.&lt;/p>
 &lt;h2 id="사용법">사용법&lt;/h2>
 &lt;ol>
-&lt;li>배치 테스트 마법사 시작하기
+&lt;li>
+&lt;p>배치 테스트 마법사 시작하기&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>메뉴 표시줄에서 &lt;strong>File&lt;/strong> &amp;gt; &lt;strong>New&lt;/strong> &amp;gt; &lt;strong>eGovFrame Batch Job Test&lt;/strong>를 선택한다. (단 eGovFrame Perspective내에서)&lt;/p>
@@ -1540,8 +1541,8 @@ eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 �
 &lt;li>DAO 클래스 실행 시 필요한 테스트 데이터 관리&lt;/li>
 &lt;li>DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리&lt;/li>
 &lt;/ul>
-&lt;p>이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.&lt;br>
-데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.&lt;br>
+&lt;p>이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.
+데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.
 또한, 프로그램이 수정 보완 되는 과정에서 여러 번 중복 테스트를 하기 위해서는 다시 dbms 에 접속하여 rollback 을 하는 등의 작업을 수행하기도 한다.&lt;/p></description></item><item><title>DBIO Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</guid><description/></item><item><title>DB 파티셔닝 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</guid><description>&lt;h1 id="db-파티셔닝-예제">DB 파티셔닝 예제&lt;/h1>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="설정">설정&lt;/h3>
@@ -6961,29 +6962,249 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>Constructor Test&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#constructor-test">Constructor Test&lt;/a>
+
+
+&lt;/td>
  &lt;td>단순한 로직의 경우 굳이 테스트하지 않는다. 단, 값을 초기화하거나 Load 하는 경우가 있는 때에는 테스트를 수행한다.&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>Setter/Getter Test&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#setter--getter-test">Setter/Getter Test&lt;/a>
+
+
+&lt;/td>
  &lt;td>단순한 Set/Get 은 굳이 테스트 하지 않는다. 로직이 있는 경우에는 로직을 별도의 메소드로 분리하고 이를 테스트하는 것이 바람직하다.&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>Boundary Test&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#boundary-test">Boundary Test&lt;/a>
+
+
+&lt;/td>
  &lt;td>Null 에 대한 확인, Default 값에 대한 확인, 범위가 있는 경우 MIN/MAX 값에 대한 확인이 목적이다. 이 경우 결국엔 NullPointer 가 발생하지 않도록 방어로직 혹은 검증 로직을 보완하는 것이 바람직하다.&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Equality Test&lt;/td>
- &lt;td>value, reference, 숫자, 리스트/배열, Value Object 간의 비교 등이 목적이다. 여기서 중요한 것은 Override 된 equals method 를 제대로 작성 했는지 확인하는 것이다.&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Exception Test&lt;/td>
  &lt;td>예상한 Exception 이 발생하는지 확인&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#equality-test">Equality Test&lt;/a>
+
+
+&lt;/td>
+ &lt;td>value, reference, 숫자, 리스트/배열, Value Object 간의 비교 등이 목적이다. 여기서 중요한 것은 Override 된 equals method 를 제대로 작성 했는지 확인하는 것이다.&lt;/td>
  &lt;td>이것은 오로지 JUnit4 에만 해당함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#%ed%85%8c%ec%8a%a4%ed%8a%b8-%ec%88%98%ed%96%89-%ec%a0%84%ed%9b%84-%ec%b2%98%eb%a6%ac">테스트 수행 전후 처리&lt;/a>
+
+
+&lt;/td>
+ &lt;td>메소드 혹은 클래스 단위로 테스트 수행 전후처리&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#parameterized-test">Parameterized Test&lt;/a>
+
+
+&lt;/td>
+ &lt;td>파라미터 값만 바꿔가면서 동일한 테스트를 반복해서 수행&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#timeout-test">Timeout Test&lt;/a>
+
+
+&lt;/td>
+ &lt;td>테스트에 걸리는 시간을 지정하여, 해당 시간이 넘은 경우 Fail 처리할 수 있다.&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/unit-test/test-case/#test-ignore">Test Ignore&lt;/a>
+
+
+&lt;/td>
+ &lt;td>메소드 혹은 클래스 단위로 테스트를 Skip 할 수 있다.&lt;/td>
+ &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -6998,38 +7219,15 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;li>&lt;strong>Test Coverage report&lt;/strong> : Test Coverage 결과 리포팅 (XML, HTML 등)
 기본적으로 XML과 HTML 형식을 지원하며, EMMA는 TXT, XML, HTML 형식을 모두 지원한다.&lt;/li>
 &lt;/ul>
-&lt;h3 id="test-coverage-tool">
-
-
-
- 
-
-
-
-
-
- 
-
-
-
-
-
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-coverage/">Test Coverage Tool&lt;/a>
-
-
-&lt;/h3>
+&lt;h3 id="test-coverage-tool">Test Coverage Tool&lt;/h3>
 &lt;p>Test Coverage를 수행하는 데는 다양한 툴이 있고, 각각 평가하는 나름의 로직을 갖고 있으며, 리포팅 또한 그 로직에 상응하는 형태라고 볼 수 있다. 따라서, 필요에 맞는 도구를 잘 선택하면 된다.&lt;/p></description></item><item><title>Test Reporting</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/test-reporting/</guid><description>&lt;h1 id="test-reporting">Test Reporting&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>Test Automation 수행 후에는 테스트 결과를 갖는 txt, XML 파일을 읽어 통계와 의미있는 테스트 결과를 보여주는 리포팅이 중요하다.&lt;br>
+&lt;p>Test Automation 수행 후에는 테스트 결과를 갖는 txt, XML 파일을 읽어 통계와 의미있는 테스트 결과를 보여주는 리포팅이 중요하다.
 여기에서는 테스트 결과 생성된 txt나 XML 파일을 읽고 HTML, Excel 형식의 리포트를 생성하는 방법에 대해 설명한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>테스트 수행한 결과를 의미있는 리포트를 만드는 데에도 Ant와 Maven 빌드도구를 사용한다.&lt;br>
-다만, 리포트를 생성하는 기능을 수행하는 Ant Task와 Maven Plug-in이 있어야 하는데, HTML 형식은 오픈소스에서 제공한다.&lt;br>
-각각 JUnit Report Task와 maven-surefire-report-plugin 이라는 라이브러리가 그것이다.&lt;br>
+&lt;p>테스트 수행한 결과를 의미있는 리포트를 만드는 데에도 Ant와 Maven 빌드도구를 사용한다.
+다만, 리포트를 생성하는 기능을 수행하는 Ant Task와 Maven Plug-in이 있어야 하는데, HTML 형식은 오픈소스에서 제공한다.
+각각 JUnit Report Task와 maven-surefire-report-plugin 이라는 라이브러리가 그것이다.
 그리고, Excel 형식의 리포트를 생성하는 기능은 전자정부 표준 프레임워크 개발환경에서 추가했는데, Ant Task와 Maven plugin으로 제공된다.&lt;/p></description></item><item><title>Tomcat 한글 설정하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/file-upload-download-service/file-download/file-download-service-tomcat-encoding/</guid><description>&lt;h1 id="tomcat-한글-설정하기">Tomcat 한글 설정하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Tomcat에서 문자셋 인코딩을 하여 한글이 깨지는 문제를 해결할 수 있다.&lt;/p>
@@ -7756,7 +7954,429 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;/table>
 &lt;h3 id="개발자-개발환경과-서버-개발환경">개발자 개발환경과 서버 개발환경&lt;/h3>
 &lt;h4 id="개발자-개발환경">개발자 개발환경&lt;/h4>
-&lt;p>개발자 개발환경은 Implementation Tool(Editor, Debug, IDE, Common Component, Mobile IDE, Batch IDE)과 Test Tool(Test Reporting, Unit Test, Batch Test)로 구성되어있다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>데이터 엑세스 예제(Data Access Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</guid><description>&lt;h1 id="데이터-엑세스-예제data-access-example">데이터 엑세스 예제(Data Access Example)&lt;/h1>
+&lt;p>개발자 개발환경은 Implementation Tool(Editor, Debug, IDE, Common Component, Mobile IDE, Batch IDE)과 Test Tool(Test Reporting, Unit Test, Batch Test)로 구성되어있다.&lt;/p></description></item><item><title>개발환경 구성 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/individual-install-guide/individual-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/individual-install-guide/individual-install-guide/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전자정부 개발자 개발환경은 기본적으로 &lt;strong>Windows 64 Bit&lt;/strong> 기반으로 제공되나 이 이외의 환경에서도 사용 가능하다.
+Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을 경우 본 가이드를 참고하여 설치 가능하다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>개발환경을 개별적으로 구성해야 할 필요가 있을 경우 환경에 맞는 eclipse를 다운로드 받아 다음의 순서에 맞게 설치하도록 한다.
+설치 소프트웨어 간 dependency 정보가 있으므로 반드시 아래의 순서를 따르도록 한다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>주의&lt;/strong> 설치가이드 플러그인 [자동설치/업데이트주소]는 최신버전을 다운로드 받을 수 있는 주소 입니다. 개발환경에 설치된 &lt;strong>버전과의 차이&lt;/strong>가 있을 수 있습니다.&lt;/li>
+&lt;li>&lt;strong>주의&lt;/strong> 설치가이드 플러그인 [자동설치/업데이트주소]는 해당 플러그인을 공식적으로 받을 수 있는 저작자의 배포 주소 입니다. &lt;strong>주소가 변경되거나 상황에 따라서 다운로드가 안될 수&lt;/strong> 있습니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="설치가이드">설치가이드&lt;/h2>
+&lt;h3 id="eclipse-2024-03431-packages-이용-시-설치가이드">Eclipse 2024-03(4.31) Packages 이용 시 설치가이드&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>소프트웨어&lt;/th>
+ &lt;th>버전&lt;/th>
+ &lt;th>자동설치/업데이트주소&lt;/th>
+ &lt;th>필수여부&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Eclipse&lt;/td>
+ &lt;td>4.31.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.eclipse.org/downloads/packages/release/2024-03/r">https://www.eclipse.org/downloads/packages/release/2024-03/r&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → Eclipse IDE for Enterprise Java and Web Developers 다운로드&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Spring Tools&lt;/td>
+ &lt;td>4.22.1&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/4.22.1.RELEASE/e4.31/">https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/4.22.1.RELEASE/e4.31/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Spring Tools&lt;/strong> : Spring Boot Language Server Feature, Spring IDE Boot Microservices Dash, Spring Tool Suite 4 main Feature &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Spring Tools - Developer Resources&lt;/strong> : Spring Boot Language Server Feature Developer Resources, Spring IDE Boot Microservices Dash Developer Resources, Spring Tool Suite 4 main Feature Developer Resources&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>UML2 Extension&lt;/td>
+ &lt;td>5.5.3&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://download.eclipse.org/releases/2023-09/">https://download.eclipse.org/releases/2023-09/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Modeling&lt;/strong> : UML2 Extender SDK&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Subversive SVN Team Provider&lt;/td>
+ &lt;td>4.8.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://download.eclipse.org/technology/subversive/4.8/release/latest/">https://download.eclipse.org/technology/subversive/4.8/release/latest/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Subversive&lt;/strong> : Subversive SVN Team Provider&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Subversive SVN Connectors&lt;/td>
+ &lt;td>6.0.4&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://osspit.org/eclipse/subversive-connectors/">https://osspit.org/eclipse/subversive-connectors/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Subversive SVN Connectors&lt;/strong> : Subversive SVN Connectors, SVNKit 1.10.x Implementation&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>MyBatipse&lt;/td>
+ &lt;td>1.3.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://harawata.github.io/eclipse-site/">https://harawata.github.io/eclipse-site/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>MyBatipse&lt;/strong> : MyBatipse&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>PMD&lt;/td>
+ &lt;td>7.4&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://pmd.github.io/pmd-eclipse-plugin-p2-site/">https://pmd.github.io/pmd-eclipse-plugin-p2-site/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>PMD for Eclipse&lt;/strong> : PMD Plug-in&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Properties Editor&lt;/td>
+ &lt;td>6.0.5&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://propedit.sourceforge.jp/eclipse/updates/">http://propedit.sourceforge.jp/eclipse/updates/&lt;/a>
+
+
+ 또는 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://osdn.net/projects/propedit/storage/eclipse/updates">http://osdn.net/projects/propedit/storage/eclipse/updates&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>PropertiesEditor&lt;/strong> : Properties Editor v6.0.5, ropertiesEditor_Asian_NLS v6.0.0 &lt;code>&amp;lt;br&amp;gt;&lt;/code> * 위 url로 연결이 안 되는 경우가 잦음&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>SpotBugs&lt;/td>
+ &lt;td>4.8.5&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://spotbugs.github.io/eclipse/">https://spotbugs.github.io/eclipse/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>SpotBugs&lt;/strong> : SpotBugs&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Lombok&lt;/td>
+ &lt;td>1.18.34&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://projectlombok.org/p2">https://projectlombok.org/p2&lt;/a>
+
+
+ → &lt;strong>Lombok&lt;/strong> : Lombok&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Grep Console&lt;/td>
+ &lt;td>3.7.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://eclipse.schedenig.name/">http://eclipse.schedenig.name&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Grep Console&lt;/strong> : Grep Console&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Eclipse Docker Tooling&lt;/td>
+ &lt;td>5.14.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://download.eclipse.org/linuxtools/update-docker">https://download.eclipse.org/linuxtools/update-docker&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Linux Tools&lt;/strong> : Docker Tooling&lt;/td>
+ &lt;td>선택&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Amateras Modeler&lt;/td>
+ &lt;td>2.2.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://takezoe.github.io/amateras-update-site/">https://takezoe.github.io/amateras-update-site/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>Amateras Modeler&lt;/strong> : Amateras Modeler &lt;code>&amp;lt;br&amp;gt;&lt;/code> * 설치 후 eclipse.ini 에 –add-opens=java.desktop/java.beans=ALL-UNNAMED 추가&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>eGovFrame&lt;/td>
+ &lt;td>4.3.0&lt;/td>
+ &lt;td>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://maven.egovframe.go.kr/update_4.3/">https://maven.egovframe.go.kr/update_4.3/&lt;/a>
+
+
+ &lt;code>&amp;lt;br&amp;gt;&lt;/code> → &lt;strong>eGovFrame Plug-ins&lt;/strong> : 필요 기능 설치&lt;/td>
+ &lt;td>필수&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>데이터 엑세스 예제(Data Access Example)</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/persistence-layer/dataaccess-example/</guid><description>&lt;h1 id="데이터-엑세스-예제data-access-example">데이터 엑세스 예제(Data Access Example)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>iBatis를 사용하여 Database에 데이터를 조회, 생성, 수정, 삭제하는 기능에 대한 예제를 제공한다. SQL Mapping을 통하여 쿼리 및 데이터 매핑을 정의하고, 스프링의 Data Source를 사용하여 Connection을 획득한 뒤, DAO 클래스에서 주어진 메소드를 사용하여 CRUD 작업을 수행한다. 조회 결과를 화면에 출력하거나 화면에서 작성된 입력 내용을 데이터베이스에 반영하는 기능의 예제를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
