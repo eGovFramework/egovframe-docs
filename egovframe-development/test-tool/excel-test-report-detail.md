@@ -100,8 +100,8 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 | 구분                                        | 입력 파라미터                           | 설명                                                                                       | Default                           |
 | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
 | XML로부터 테스트 결과 정보를 갖기 위한 정보 | JUnitReportParser parser                | JUnit XML Parser                                                                           | N/A                               |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List <File> xmlReportFileList       | JUnit Test XML 파일 Full Path 목록                                                         | 없으면 오류 처리                  |
-| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List <ReportTestSuite> testSuites   | Test Suite Lists                                                                           | N/A                               |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List `<File>` xmlReportFileList       | JUnit Test XML 파일 Full Path 목록                                                         | 없으면 오류 처리                  |
+| XML로부터 테스트 결과 정보를 갖기 위한 정보 | List `<ReportTestSuite>` testSuites   | Test Suite Lists                                                                           | N/A                               |
 | 엑셀 파일 생성을 위해 필요한 정보           | File templatePath                       | Excel 리포트의 템플릿 리포트 파일의 Full Path                                              | "/template-junit.xls"의 파일 객체 |
 | 엑셀 파일 생성을 위해 필요한 정보           | File outputDirectory                    | Excel 파일이 작성될 디렉토리 위치                                                          | 없으면 오류 처리                  |
 | 엑셀 파일 생성을 위해 필요한 정보           | String outputName                       | Excel 리포트 파일명                                                                        | "egovtest-junit.xls"              |
@@ -115,7 +115,7 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 
 생성자에서 입력 받아야 하는 정보는 다음과 같다.
 
-* List <File> xmlReportFileList : JUnit Test XML 파일의 Full Path List
+* List `<File>` xmlReportFileList : JUnit Test XML 파일의 Full Path List
 * File templatePath : 템플릿 엑셀 파일 객체
 * File outputDirectory : 파일 생성 위치 객체
 * String outputName : 생성될 엑셀 파일 명
@@ -139,6 +139,7 @@ JUnit TestCase를 자동화하게 되면 결과를 남기게 되는데, [Test Re
 * `EgovExcelUtil.setCellValues` : Cell에 값을 세팅한다.
 * `EgovExcelUtil.getLogicalRowNum` : 실제 열 값 (1-based) 값을 논리적인 0 기준의 열 값으로 바꾼다.
 * `EgovExcelUtil.getLogicalColNum` : 실제 컬럼명인 알파벳 (e.g, A ~ Z) 값을 논리적인 0 기준의 칼럼값으로 바꾼다.
+
   ✔ 2자리 칼럼(eg, AA ~ ZZ)까지는 사용할 가능성이 거의 없으므로 현재 구현되지 않았으나 필요할 경우 로직을 구현해야 한다.
 
 #### POI를 이용한 엑셀 파일 핸들링
@@ -209,7 +210,7 @@ Maven에 기능을 제공하는 Plug-in 또한 몇 가지 틀을 갖추면 작�
 ### Maven Plugin Project 생성
 
 * New Maven Project를 선택하고, archetype을 선택할 때 **GroupID:org.apache.maven.archetypes, ArtifactID: maven-archetype-mojo**를 선택하면 기본적인 구조를 만들어 준다.
-* groupID, artifactID 정의 : **maven-${prefix}-plugin**이나 **${prefix}-maven-plugin** 형태의 이름을 짓도록 한다. 이는 나중에 goal을 호출할 때 prefix를 이용하여 짧게 할 수 있게 해준다.
+* groupID, artifactID 정의 : `maven-${prefix}-plugin`이나 `${prefix}-maven-plugin` 형태의 이름을 짓도록 한다. 이는 나중에 goal을 호출할 때 prefix를 이용하여 짧게 할 수 있게 해준다.
 * pom.xml은 다음과 같이 정의된다.
   ```xml
 
