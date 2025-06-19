@@ -35,31 +35,7 @@
 &lt;p>✔ 표준프레임워크 개발자용 개발환경에는 Docker tooling이 이미 설치되어있어 별도의 설치가 필요 없다.&lt;/p>
 &lt;h2 id="설치">설치&lt;/h2>
 &lt;h3 id="1-docker-tooling-플러그인-설치">1. Docker Tooling 플러그인 설치&lt;/h3>
-&lt;p>Eclipse에서 Help &amp;gt; Eclipse Marketplace 클릭&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/server-migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/server-migration/</guid><description>&lt;h1 id="서버이관">서버이관&lt;/h1>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>개발완료된 war 파일에 대해 WAS서버로의 &lt;strong>ftp 이관&lt;/strong> , &lt;strong>WAS Deploy&lt;/strong> 및 해당 &lt;strong>WAS 서버의 기동/중지&lt;/strong>에 대해 설명한다.&lt;/p>
-&lt;h2 id="설명">설명&lt;/h2>
-&lt;p>완성된 모듈(WAR)에 대한 서버로의 FTP, Deploy 및 WAS 기동/중지를 수행하기 위해서는 다음의 절차를 따라야 한다.&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>관리자 로그인&lt;/strong>
-WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.
-시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.&lt;/li>
-&lt;li>서버 정보 등록
-프로젝트에서 관리할 서버 정보(IP)를 등록한다.&lt;/li>
-&lt;li>WAS 정보 등록
-프로젝트에서 사용하는 WAS 정보(WAS 종류, 기동/중지 스크립트)를 등록한다.
-현재 지원가능한 WAS는 Jeus, Weblogic, JBoss이다.&lt;/li>
-&lt;li>배포작업 등록
-배포작업 정보(이관모듈, WAS정보, ftp경로, 디플로이 대상)를 등록한다.&lt;/li>
-&lt;li>WAS 기동 및 중지
-등록되어 있는 WAS 정보를 참조하여 WAS 서버의 기동 및 중지를 수행한다.
-WAS 정보 등록이 선행되어야 한다.&lt;/li>
-&lt;li>FTP 및 Deploy
-등록되어 있는 배포작업 정보를 참조하여 FTP 및 Deploy를 수행한다.
-배포작업 등록이 선행되어야 한다.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/server-migration-process.gif" alt="서버이관 프로세스 절차" >
-&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</guid><description>&lt;h1 id="markdown-frontmatter-작성방법">Markdown Frontmatter 작성방법&lt;/h1>
+&lt;p>Eclipse에서 Help &amp;gt; Eclipse Marketplace 클릭&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</guid><description>&lt;h1 id="markdown-frontmatter-작성방법">Markdown Frontmatter 작성방법&lt;/h1>
 &lt;h2 id="프론트매터frontmatter란">프론트매터(Frontmatter)란?&lt;/h2>
 &lt;p>프론트매터는 문서 상단에 아래처럼 작성된 코드 부분을 말한다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">---&lt;/span>
@@ -10121,6 +10097,30 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 &lt;/ol>
 &lt;h3 id="사용자-목록">사용자 목록&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/configuration-management-tool/images/user-list.jpg" alt="사용자 목록록" >
+&lt;/p></description></item><item><title>서버 이관</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/server-migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/server-migration/</guid><description>&lt;h1 id="서버이관">서버이관&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>개발완료된 war 파일에 대해 WAS서버로의 &lt;strong>ftp 이관&lt;/strong> , &lt;strong>WAS Deploy&lt;/strong> 및 해당 &lt;strong>WAS 서버의 기동/중지&lt;/strong>에 대해 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>완성된 모듈(WAR)에 대한 서버로의 FTP, Deploy 및 WAS 기동/중지를 수행하기 위해서는 다음의 절차를 따라야 한다.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>관리자 로그인&lt;/strong>
+WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.
+시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.&lt;/li>
+&lt;li>서버 정보 등록
+프로젝트에서 관리할 서버 정보(IP)를 등록한다.&lt;/li>
+&lt;li>WAS 정보 등록
+프로젝트에서 사용하는 WAS 정보(WAS 종류, 기동/중지 스크립트)를 등록한다.
+현재 지원가능한 WAS는 Jeus, Weblogic, JBoss이다.&lt;/li>
+&lt;li>배포작업 등록
+배포작업 정보(이관모듈, WAS정보, ftp경로, 디플로이 대상)를 등록한다.&lt;/li>
+&lt;li>WAS 기동 및 중지
+등록되어 있는 WAS 정보를 참조하여 WAS 서버의 기동 및 중지를 수행한다.
+WAS 정보 등록이 선행되어야 한다.&lt;/li>
+&lt;li>FTP 및 Deploy
+등록되어 있는 배포작업 정보를 참조하여 FTP 및 Deploy를 수행한다.
+배포작업 등록이 선행되어야 한다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/server-migration-process.gif" alt="서버이관 프로세스 절차" >
 &lt;/p></description></item><item><title>서버 개발환경 4.3.0 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/</guid><description>&lt;h1 id="서버-개발환경-430-설치가이드">서버 개발환경 4.3.0 설치가이드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 표준프레임워크에서 제공하는 서버 환경 4.3.0 구성 가이드를 제공한다.&lt;/p>
