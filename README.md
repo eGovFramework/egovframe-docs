@@ -76,7 +76,7 @@
 
 #### PR 자동 Merge 실패시
 
-- 작성자가 남긴 PR이 자동으로 Merge가 성공했다면,[egovframe-docs의 PR탭](https://github.com/eGovFramework/egovframe-docs/pulls)에서 본인이 남긴 PR이 여전히 open 상태로 남아 있습니다.
+- 작성자가 남긴 PR이 자동으로 Merge가 실패했다면,[egovframe-docs의 PR탭](https://github.com/eGovFramework/egovframe-docs/pulls)에서 본인이 남긴 PR이 여전히 open 상태로 남아 있습니다.
 - 다시 위 "작업 완료" 부분에 `git fetch upstream main`부터 실행하여 `git push origin main`까지를 완료합니다.
 - 그러면 추가적인 PR을 작성하지 않더라도, 본인이 이전에 남긴 PR에서 자동으로 새로운 commit이 추가되고, 다시 자동 Merge 과정을 거칩니다.
 - 자동으로 Merge 성공시, 위 "PR 자동 Merge 성공시"에 서술된 프로세스가 진행됩니다.
@@ -144,18 +144,18 @@
     /configuration-management.md      #Configuration Management
   /deployment-tool                  #배포 도구
     /build-tool.md                    #Build Tool
-    /docker.md                        #컨테이너 가상화(Docker) 빌드
-    /gradle.md                        #개인빌드(Gradle)
-    /maven.md                         #개인빌드(Maven)
+      /docker.md                        #컨테이너 가상화(Docker) 빌드
+      /gradle.md                        #개인빌드(Gradle)
+      /maven.md                         #개인빌드(Maven)
   /development-etcdevtool-guide     #활용 가이드
   /implementation-tool              #구현 도구
     /editor.md                        #Editor
-    / batch-IDE.md                      #Batch IDE
-    / code-generation.md                #Code Genetation
-    / code-inspection.md                #Code Inspection
-    / dbio-editor.md                    #DBIO Editor
-    / server-connection-management.md   #Server Connection Management
-    / uml-editor.md                     #UML Editor
+    /batch-IDE.md                      #Batch IDE
+    /code-generation.md                #Code Genetation
+    /code-inspection.md                #Code Inspection
+    /dbio-editor.md                    #DBIO Editor
+    /server-connection-management.md   #Server Connection Management
+    /uml-editor.md                     #UML Editor
     /debug.md                         #Debug
   /individual-install-guide          #구성 가이드
   /install-guide                    #설치 가이드
