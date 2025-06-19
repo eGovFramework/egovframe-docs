@@ -5,7 +5,7 @@ description: "컨테이너 가상화(Docker) 기술을 사용하여 소프트웨
 url: /egovframe-development/deployment-tool/build-tool/docker/
 menu:
   depth:
-    weight: 3
+    weight: 4
     parent: "build-tool"
     identifier: "docker"
 ---
