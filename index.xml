@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in 전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>kr</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</guid><description>&lt;h1 id="markdown-frontmatter-작성방법">Markdown Frontmatter 작성방법&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in 전자정부 표준프레임워크 가이드 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>kr</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/docker-tooling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/docker-tooling/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>본 가이드는 이클립스 플러그인 Docker Tooling 사용 가이드를 제공한다.&lt;/p>
+&lt;p>사용자는 기본 도커(Docker)에 대한 기본적인 지식 있는다는 것을 가정하였다.&lt;/p>
+&lt;ul>
+&lt;li>도커 관련 기본 내용은 도커사이트에서 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.docker.com/">https://www.docker.com&lt;/a>
+
+
+ 확인 가능하다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="들어가기-전에">들어가기 전에&lt;/h2>
+&lt;p>본 가이드의 환경은 다음과 같다.&lt;/p>
+&lt;ul>
+&lt;li>WIndows 11 home&lt;/li>
+&lt;li>표준프레임워크 개발자용 개발환경 4.2.0&lt;/li>
+&lt;li>Windows Docker Desktop v4.26.0 (Docker Engine 24.0.7) - Eclipse Docker Tooling 5.9.0&lt;/li>
+&lt;/ul>
+&lt;p>✔ 표준프레임워크 개발자용 개발환경에는 Docker tooling이 이미 설치되어있어 별도의 설치가 필요 없다.&lt;/p>
+&lt;h2 id="설치">설치&lt;/h2>
+&lt;h3 id="1-docker-tooling-플러그인-설치">1. Docker Tooling 플러그인 설치&lt;/h3>
+&lt;p>Eclipse에서 Help &amp;gt; Eclipse Marketplace 클릭&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/server-migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/server-migration/</guid><description>&lt;h1 id="서버이관">서버이관&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>개발완료된 war 파일에 대해 WAS서버로의 &lt;strong>ftp 이관&lt;/strong> , &lt;strong>WAS Deploy&lt;/strong> 및 해당 &lt;strong>WAS 서버의 기동/중지&lt;/strong>에 대해 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>완성된 모듈(WAR)에 대한 서버로의 FTP, Deploy 및 WAS 기동/중지를 수행하기 위해서는 다음의 절차를 따라야 한다.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>관리자 로그인&lt;/strong>
+WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.
+시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.&lt;/li>
+&lt;li>서버 정보 등록
+프로젝트에서 관리할 서버 정보(IP)를 등록한다.&lt;/li>
+&lt;li>WAS 정보 등록
+프로젝트에서 사용하는 WAS 정보(WAS 종류, 기동/중지 스크립트)를 등록한다.
+현재 지원가능한 WAS는 Jeus, Weblogic, JBoss이다.&lt;/li>
+&lt;li>배포작업 등록
+배포작업 정보(이관모듈, WAS정보, ftp경로, 디플로이 대상)를 등록한다.&lt;/li>
+&lt;li>WAS 기동 및 중지
+등록되어 있는 WAS 정보를 참조하여 WAS 서버의 기동 및 중지를 수행한다.
+WAS 정보 등록이 선행되어야 한다.&lt;/li>
+&lt;li>FTP 및 Deploy
+등록되어 있는 배포작업 정보를 참조하여 FTP 및 Deploy를 수행한다.
+배포작업 등록이 선행되어야 한다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/server-migration-process.gif" alt="서버이관 프로세스 절차" >
+&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/how-to-write-frontmatter/</guid><description>&lt;h1 id="markdown-frontmatter-작성방법">Markdown Frontmatter 작성방법&lt;/h1>
 &lt;h2 id="프론트매터frontmatter란">프론트매터(Frontmatter)란?&lt;/h2>
 &lt;p>프론트매터는 문서 상단에 아래처럼 작성된 코드 부분을 말한다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">---&lt;/span>
@@ -1123,7 +1184,31 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 &lt;li>반응형 웹에 최적화 되어있다. 부트스트랩은 스마트폰, 태블릿, 데스크탑에 최적화 되어 css가 조정이 된다.&lt;/li>
 &lt;li>시작이 용이하다. HTML, CSS만 알고 있어도 부트스트랩의 사용이 가능하다.&lt;/li>
 &lt;/ul>
-&lt;p>이러한 장점들로 인해 표준프레임워크에서는 실행환경 UI로 bootstrap을 선정하였다.&lt;/p></description></item><item><title>Build Tool</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/</guid><description/></item><item><title>Cache Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/</guid><description>&lt;h1 id="cache-service">Cache Service&lt;/h1>
+&lt;p>이러한 장점들로 인해 표준프레임워크에서는 실행환경 UI로 bootstrap을 선정하였다.&lt;/p></description></item><item><title>Build Tool</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/</guid><description>&lt;h1 id="build-tool">Build Tool&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>빌드 도구는 개발자 PC에서 빌드를 실행시켜 작동 가능한 코드를 생성하는 개인 빌드와 개발 서버에서 프로젝트의 개발자들이
+작성한 코드를 통합하여 빌드를 수행하는 통합 빌드로 구성되며 전자정부 표준 프레임워크에서는 개인빌드와 통합 빌드를 위해 Maven과 오픈 소스 CI 서버인 Hudson을 빌드 도구로 제공하고 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>소프트웨어 프로젝트 빌드 프로세스&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>개인 빌드
+&lt;ol>
+&lt;li>개발자가 소프트웨어 소스 코드를 작성한다.&lt;/li>
+&lt;li>개인 빌드를 통해 실행 가능한 바이너리 코드를 생성한다.&lt;/li>
+&lt;li>정상 코드 여부를 판별후 형상 관리 서버로 작성한 코드를 commit한다.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>통합 빌드
+&lt;ol>
+&lt;li>개발 서버는 형상 관리 서버로부터 최신의 소스 코드를 check out 받는다.&lt;/li>
+&lt;li>주기적 자동 빌드 프로세스를 통해 코드 빌드 후 동작 가능한 소프트웨어 패키지를 생성한다.&lt;/li>
+&lt;li>운영 서버로 패키징한 소프트웨어를 배포한다.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>운영서버의 WAS 재기동 작업을 통하여 작성한 소프트웨어를 실행시킨다.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/build-tool-process.gif" alt="소프트웨어 프로젝트 빌드 프로세스" >
+&lt;/p></description></item><item><title>Cache Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/</guid><description>&lt;h1 id="cache-service">Cache Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 프레임워크에서 Cache Service는 
 
@@ -1811,7 +1896,45 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 &lt;li>Model 객체의 데이터를 보여주기 위해 해당 View 객체의 render 메소드가 수행된다.&lt;/li>
 &lt;/ol>
 &lt;h3 id="webxml에-dispatcherservlet-설정하기">web.xml에 DispatcherServlet 설정하기&lt;/h3>
-&lt;p>Spring MVC Framework을 사용하기 위해서는 web.xml에 DispatcherServlet을 설정하고, DispatcherServlet이 WebApplicationContext를 생성할수 있도록 빈(Bean) 정보가 있는 파일들도 설정해주어야 한다.&lt;/p></description></item><item><title>컨테이너 가상화(Docker) 빌드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/</guid><description/></item><item><title>iBATIS Dynamic SQL 사용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-dynamic-sql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-dynamic-sql/</guid><description>&lt;h1 id="dynamic-sql">Dynamic SQL&lt;/h1>
+&lt;p>Spring MVC Framework을 사용하기 위해서는 web.xml에 DispatcherServlet을 설정하고, DispatcherServlet이 WebApplicationContext를 생성할수 있도록 빈(Bean) 정보가 있는 파일들도 설정해주어야 한다.&lt;/p></description></item><item><title>컨테이너 가상화(Docker) 빌드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/</guid><description>&lt;h1 id="컨테이너-가상화docker를-활용한-전자정부-표준프레임워크-기반-프로그램의-도커-이미지-제작">컨테이너 가상화(Docker)를 활용한 전자정부 표준프레임워크 기반 프로그램의 도커 이미지 제작&lt;/h1>
+&lt;h2 id="1-개요">1. 개요&lt;/h2>
+&lt;p>본 가이드는 컨테이너 가상화 기술인 도커(Docker)를 활용하여 전자정부 표준프레임워크의 기반 응용프로그램(Web Application)의 도커 이미지 제작 가이드를 제공한다.&lt;/p>
+&lt;p>본 가이드의 사용자는 기본 도커(Docker)에 대한 기본적인 지식 있는다는 것을 가정하였다.&lt;/p>
+&lt;ul>
+&lt;li>도커 관련 기본 내용은 도커사이트에서 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.docker.com/">https://www.docker.com&lt;/a>
+
+
+ 확인 가능하다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="특징">특징&lt;/h3>
+&lt;p>표준프레임워크 개발환경에 도커 이미지 제작을 통하여 아래와 같은 특징으로 적용 효과를 제시한다.&lt;/p>
+&lt;ul>
+&lt;li>호스트 OS 와 서비스 운영 환경 분리&lt;/li>
+&lt;li>다양한 환경의 플랫폼 실행 가능&lt;/li>
+&lt;li>컨테이너 호환성 및 경량화&lt;/li>
+&lt;li>클라우스보다 진보된 Container 서비스&lt;/li>
+&lt;li>마이크로 서비스 기반의 Container로 자원 효율성 향상&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/01-docker-deploy-archi2.png" alt="Docker 배포 아키텍처" >
+&lt;/p></description></item><item><title>iBATIS Dynamic SQL 사용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-dynamic-sql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-dynamic-sql/</guid><description>&lt;h1 id="dynamic-sql">Dynamic SQL&lt;/h1>
 &lt;p>일반적으로 JDBC API 를 사용한 코딩에서 한번 정의한 쿼리문을 최대한 재사용하고자 하나 단순 파라메터 변수의 값만 변경하는 것으로 해결하기 어렵고 다양한 조건에 따라 조금씩 다른 쿼리의 실행이 필요한 경우 많은 if~else 조건 분기의 연결이 필요한 문제가 있다. 여기에서는 SQL 문의 동적인 변경에 대한 상대적으로 유연한 방법을 제공하는 iBATIS 의 Dynamic 요소에 대해 알아본다.&lt;/p>
 &lt;h2 id="기본-dynamic-요소-사용-방법">기본 Dynamic 요소 사용 방법&lt;/h2>
 &lt;p>아래의 샘플 Dynamic 요소 사용예를 참고하라.&lt;/p>
@@ -2998,7 +3121,23 @@ FTP는 보통 TCP/IP에 함께 제공되는 일련의 프로그램 속에 포함
 &lt;li>&lt;strong>프로젝트 생성&lt;/strong>: 제공한 샘플 프로젝트를 이용하여 HelloWorld 응용 어플리케이션을 생성하고 실행해 본다.&lt;/li>
 &lt;li>&lt;strong>자세히 들여다 보기&lt;/strong>: 생성/실행한 프로젝트의 내부 소스코드를 학습하여 전자정부 표준 프레임워크 기반의 응용 어플리케이션 구현의 원리를 이해한다.&lt;/li>
 &lt;/ol>
-&lt;p>전자정부 표준 프레임워크 기반의 Hello World 응용 프로그램 개발 및 실행을 위한 구현도구의 환경정보는 다음과 같다.&lt;/p></description></item><item><title>개인빌드(Gradle)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/</guid><description/></item><item><title>HandlerMapping</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-handlermapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-handlermapping/</guid><description>&lt;h1 id="handlermapping">HandlerMapping&lt;/h1>
+&lt;p>전자정부 표준 프레임워크 기반의 Hello World 응용 프로그램 개발 및 실행을 위한 구현도구의 환경정보는 다음과 같다.&lt;/p></description></item><item><title>개인빌드(Gradle)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/</guid><description>&lt;h1 id="개인-빌드-gradle">개인 빌드 (Gradle)&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Gradle은 Groovy를 기반으로 한 오픈소스 빌드 도구이다. Ant의 자유도와 Maven의 관례를 통한 접근성을 바탕으로 이전 빌드툴의 단점을 보완하여 개선된 서비스를 제공한다.&lt;/p>
+&lt;h2 id="특징">특징&lt;/h2>
+&lt;ul>
+&lt;li>Ant처럼 매우 유연한 범용 빌드 도구.&lt;/li>
+&lt;li>Maven과 같은 구조화 된 build프레임워크 (구조의 전환이 가능).&lt;/li>
+&lt;li>Maven, Ivy등의 기존 저장소 인프라 또는 pom.xml 파일과 ivy.xml 파일에 대한 migration의 편이성 제공&lt;/li>
+&lt;li>멀티 프로젝트 빌드 지원.&lt;/li>
+&lt;li>의존성 관리의 다양한 방법 제공&lt;/li>
+&lt;li>Build script를 xml이 아닌 Groovy 기반의 DSL(Domain Specific Language)을 사용&lt;/li>
+&lt;li>기존 Build를 구성하기 위한 풍부한 도메인 모델 제공.&lt;/li>
+&lt;li>Gradle 설치 없이 Gradle Wrapper를 이용하여 빌드 지원&lt;/li>
+&lt;/ul>
+&lt;h3 id="장점">장점&lt;/h3>
+&lt;p>Ant, Maven과 같은 기존의 빌드툴은 xml형식을 이용하여 정적인 설정정보를 구성했다.
+Gradle은 Groovy라는 언어를 이용하여 코드로서 설정정보를 구성하기 때문에 구조적인 장점이 있다.&lt;/p></description></item><item><title>HandlerMapping</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-handlermapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-handlermapping/</guid><description>&lt;h1 id="handlermapping">HandlerMapping&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>DispatcherServlet에 Client로부터 Http Request가 들어 오면 HandlerMapping은 요청처리를 담당할 Controller를 mapping한다.
 Spring MVC는 interface인 HandlerMapping의 구현 클래스도 가지고 있는데, 용도에 따라 여러 개의 HandlerMapping을 사용하는 것도 가능하다.
@@ -4416,7 +4555,115 @@ SQL문 실행을 위해 Parameter Object를 받아오거나 SQL문 실행 결과
 &lt;pre tabindex="0">&lt;code>Client &amp;lt;------ XML ------&amp;gt; Server
 &lt;/code>&lt;/pre>&lt;p>WS는 Server와 Client 두 대상 간의 데이터를 주고받는 기술 중 하나이다. 정보를 요청하는쪽이 Client이다.(Client는 Server가 될 수도 있고 일반 사용자가 될 수도 있다.) 요청한 정보를 받아서 알맞게 처리 후 결과값을 리턴하는 쪽이 Server이다.&lt;/p>
 &lt;pre tabindex="0">&lt;code>Client(OXM) &amp;lt;------ XML(WSDL) ------&amp;gt; (OXM)Server
-&lt;/code>&lt;/pre>&lt;p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.&lt;/p></description></item><item><title>개인빌드(Maven)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</guid><description/></item><item><title>Maven에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/</guid><description>&lt;h1 id="maven에서-생성한-테스트-결과-html-리포트">Maven에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.&lt;/p></description></item><item><title>개인빌드(Maven)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/</guid><description>&lt;h1 id="개인-빌드">개인 빌드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>개인 빌드란 소프트웨어 개발자가 소프트웨어 소스 코드를 작성하고 이를 자신의 로컬 PC에서 컴파일 하여 실행 코드로 변환하는 일련의 과정을 말하며 주로 빌드 도구를 사용하여 실행한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>대표적인 오픈소스 빌드 도구로는 make, ant, maven 등이 있으며 &lt;strong>전자정부 표준 프레임워크에서는 maven을 기본 빌드 도구로 사용&lt;/strong>한다.&lt;/p>
+&lt;h3 id="오픈-소스-빌드-도구">오픈 소스 빌드 도구&lt;/h3>
+&lt;ul>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://www.gnu.org/software/make/">GNU Make&lt;/a>
+
+
+
+make는 소프트웨어 개발에서 Unix계열 OS에서 주로 사용되는 프로그램 빌드 도구이다.&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://ant.apache.org/">Apache Ant&lt;/a>
+
+
+
+Ant는 &lt;strong>자바 기반의 빌드 도구&lt;/strong>로 자바 언어를 사용하는 프로젝트에서 make를 사용하면서 겪게되는 많은 어려움을 줄여주고 더 많은 기능을 제공한다.
+&lt;ul>
+&lt;li>자바 소스 파일 컴피일&lt;/li>
+&lt;li>jar, war, ear, zip 파일의 생성&lt;/li>
+&lt;li>javadoc을 실행하여 도움말 생성&lt;/li>
+&lt;li>각각의 작업에 대한 의존성 설정&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://maven.apache.org/">Maven - 전자정부 표준 프레임워크 기본 빌드 도구&lt;/a>
+
+
+
+Maven은 &lt;strong>프로젝트 관리 도구&lt;/strong>로 빌드 기능의 수행 뿐 아니라 프로젝트 리포팅, documentation 생성 기능을 제공한다.&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://gradle.org/">Gradle&lt;/a>
+
+
+
+Gradle은 groovy 언어로 개발된 &lt;strong>프로젝트 관리 도구&lt;/strong>로 코드기반의 스크립트를 이용하여 빌드, 배포, 리포팅, documentation 생성 기능을 제공한다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="maven">Maven&lt;/h3>
+&lt;p>메이븐은 프로젝트 객체 모델(Project Object Model : POM)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 &lt;strong>프로젝트 관리 도구&lt;/strong>이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 &lt;strong>빌드 기능&lt;/strong> 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.&lt;/p></description></item><item><title>Maven에서 생성한 테스트 결과 HTML 리포트</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/maven-test-report/</guid><description>&lt;h1 id="maven에서-생성한-테스트-결과-html-리포트">Maven에서 생성한 테스트 결과 HTML 리포트&lt;/h1>
 &lt;p>Maven을 통해 테스트를 실행하면 다음과 같은 항목들이 포함된 HTML 리포트가 생성됩니다.&lt;/p>
 &lt;table>
  &lt;thead>
@@ -4899,7 +5146,12 @@ DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> query.&lt;span style="color:#a6e22e">setParameter&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;condition&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;%%&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> List deptList &lt;span style="color:#f92672">=&lt;/span> query.&lt;span style="color:#a6e22e">getResultList&lt;/span>();
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위와 같이 정의된 SQL문을 통해 조회 조건에 맞는 Department 객체의 List가 리턴된다. WHERE절에서 &amp;lsquo;:&amp;lsquo;을 사용하여 Named Paramenter를 통해 조회 조건을 완성할 수 있다. 조회 조건의 값은 Query의 setParameter() 메소드를 통해 지정해 주고 있다. 또한, createNativeQuery의 두번재 인자로 리턴받고자하는 Entity 클래스(Department.class)를 지정한 것을 확인할 수 있다.&lt;/p></description></item><item><title>Object Pooling Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</guid><description>&lt;h1 id="object-pooling-service">Object Pooling Service&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위와 같이 정의된 SQL문을 통해 조회 조건에 맞는 Department 객체의 List가 리턴된다. WHERE절에서 &amp;lsquo;:&amp;lsquo;을 사용하여 Named Paramenter를 통해 조회 조건을 완성할 수 있다. 조회 조건의 값은 Query의 setParameter() 메소드를 통해 지정해 주고 있다. 또한, createNativeQuery의 두번재 인자로 리턴받고자하는 Entity 클래스(Department.class)를 지정한 것을 확인할 수 있다.&lt;/p></description></item><item><title>Nexus</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/nexus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/nexus/</guid><description>&lt;h1 id="nexus">Nexus&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Maven 프로젝트 시에 Maven central repository에서 제공하는 다양한 장점에도 불구하고 사용성 측면에서 내부 repository manager의 사용을 권고하고 있다. 실제 기업 또는 organization에서는 하나 이상의 central repository를 제공 하고 있으며 Nexus는 이런 여러 개의 외부 리포지토리를 Proxy 개념으로 연결해서 효율적으로 내부 개발자들에게 virtual한 하나의 repository 연결 포인트를 제공한다. 실제 내부 개발자들은 Nexus 리포지토리만을 바라보고 필요한 artifact들을 요청한다.&lt;/p>
+&lt;p>Maven을 사용할 때 유용한 오픈소스인 Nexus의 사용법에 대해 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Nexus는 &lt;strong>Maven repository manager&lt;/strong>로 프로젝트 또는 기업에서 필요로 하는 &lt;strong>내부 리포지토리 구성을 위한 도구&lt;/strong>이다.&lt;/p></description></item><item><title>Object Pooling Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</guid><description>&lt;h1 id="object-pooling-service">Object Pooling Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>객체에 대한 Pooling 기능을 제공하는 서비스이다. 객체의 생성 비용이 크고,생성 횟수가 많으면, 평균적으로 사용되는 객체의 수가 적은 경우,성능을 향상시키기 위해서 사용한다.
 &lt;strong>Object Pool&lt;/strong>은 소프트웨어 디자인 패턴으로서, 객체를 필요에 따라 생성하고 파괴하는 방식이 아닌,적절한 개수의 객체를 미리 사용 가능한 상태로 생성하여 이를 이용하는 방식이다.Client는 Pool에 객체를 요청하여 객체를 얻은 후, 업무를 수행한다. 얻어온 객체를 이용하여 업무 수행을 끝마친 후, 객체를 파괴하는 것이 아니라 Pool에게 돌려주어 다른 Client가 사용할 수 있도록 한다. &lt;strong>Object Pooling&lt;/strong>은 객체 생성 비용이 크고,객체 생성 횟수가 많으며,평균적으로 사용되는 객체의 수가 적은 경우,높은 성능의 향상을 가져다 준다.&lt;/p></description></item><item><title>ORM 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/</guid><description>&lt;h1 id="orm-서비스">ORM 서비스&lt;/h1>
@@ -8459,7 +8711,79 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;li>피처 프로젝트 : 여러개의 단위 플러그인을 묶어서 플러그인 묶음을 하나의 단위로 쉽게 로딩하고 관리하기 위한 프로젝트이다.&lt;/li>
 &lt;li>업데이트 사이트 프로젝트 : 플러그인 묶음을 카테고리 단위로 분류하고 빌드하여 사용자에게 배포하기 위한 프로젝트이다.&lt;/li>
 &lt;/ul>
-&lt;p>전자정부 프레임워크 개발환경 구현도구에 기능을 추가하거나 개선한 이후에는 해당 단위 플러그인 프로젝트에 대한 버전을 변경하여 사용자가 버전이 변경되었음을 알 수 있도록 해야 한다. 그리고, update site 를 사용하여 update를 할 수 있도록 Feature 단위로 묶고 Build 하여 재배포를 해야 한다. 그러므로 수정후 재배포 순서는 다음과 같다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
+&lt;p>전자정부 프레임워크 개발환경 구현도구에 기능을 추가하거나 개선한 이후에는 해당 단위 플러그인 프로젝트에 대한 버전을 변경하여 사용자가 버전이 변경되었음을 알 수 있도록 해야 한다. 그리고, update site 를 사용하여 update를 할 수 있도록 Feature 단위로 묶고 Build 하여 재배포를 해야 한다. 그러므로 수정후 재배포 순서는 다음과 같다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>구현도구 플러그인(Buildship)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</guid><description>&lt;h1 id="구현도구-플러그인buildship">구현도구 플러그인(Buildship)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전자정부 개발 프레임워크의 개발환경 IDE에서는 Gradle 빌드 플러그인으로 Buildship을 사용하고 있다.
+Buildship 플러그인은 Eclipse에서 제공하는 플러그인으로서 Gradle 프로젝트 개발의 편의성을 제공하고 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="buildship의-특징">Buildship의 특징&lt;/h3>
+&lt;ol>
+&lt;li>이클립스에서 gradle을 운영할 모듈 설정&lt;/li>
+&lt;li>Gradle 프로젝트 생성(craete), 등록(import) 위자드(wizards) 제공&lt;/li>
+&lt;li>이클립스에서의 gradle build 실행 및 Task 조회(View), 실행(Execution) 등의 기능 제공&lt;/li>
+&lt;/ol>
+&lt;h3 id="buildship의-설치">Buildship의 설치&lt;/h3>
+&lt;p>eclipse에서 제공하는 Buildship은 Help &amp;gt; Install New Software 에서 아래 업데이트 사이트를 이용해 설치한다.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Eclipse Mars update site : 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="http://download.eclipse.org/buildship/updates/e45/releases/1.0">http://download.eclipse.org/buildship/updates/e45/releases/1.0&lt;/a>
+
+
+&lt;/p></description></item><item><title>구현도구 플러그인(m2eclipse)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-m2eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-m2eclipse/</guid><description>&lt;h1 id="구현도구-플러그인m2eclipse">구현도구 플러그인(m2eclipse)&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전자정부 개발 프레임워크의 개발환경 IDE에서는 메이븐 통합 플러그인으로 m2eclipse을 사용하고 있으며
+m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 제공하고 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="m2eclipse의-특징">m2eclipse의 특징&lt;/h3>
+&lt;ol>
+&lt;li>이클립스에서의 maven build 실행&lt;/li>
+&lt;li>pom.xml에 기반한 이클립스 빌드 패스의 의존성(dependency) 관리&lt;/li>
+&lt;li>리모트 리포지토리로부터 pom.xml에서 선언한 dependency의 자동 다운로드&lt;/li>
+&lt;li>Maven 프로젝트 생성 위자드(wizards) 제공&lt;/li>
+&lt;li>Maven 리포트 리포지토리 연동을 통한 dependency quick search 기능 제공&lt;/li>
+&lt;/ol>
+&lt;h2 id="환경-설정">환경 설정&lt;/h2>
+&lt;p>전자정부 개발 프레임워크의 개발환경 IDE에 메이븐 통합 플러그인인 m2eclipse가 설치되어 있다.
+구현 도구의 IDE 참조: 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:editor:ide">IDE&lt;/a>
+
+
+&lt;/p></description></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본인이 속해있는 스페이스별로 등록된 이슈상태를 조회하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -9747,7 +10071,32 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TaskExecutor 예제에서 TaskExecutor 인터페이스를 구현하기 위해 빈을 정의한다. TaskExecutor 는 스프링 인터페이스 표준이므로 상세한 내용은 스프링 가이드를 참고한다. 가장 간단한 멀티쓰레드 TaskExecutor 는 SimpleAsyncTaskExecutor 이다. 위 Step 구성으로 수행한 결과 각 청크단위의 reading, processing, writing 과정이 분리된 쓰레드에서 수행된다. 즉, 처리시 순서를 보장하지 않으며 Chunk는 단일 쓰레드 수행과 비교해 item 들이 연속적이지 않다.(commit-Interval의 영향으로 Chunk 내의 순서는 같을 수 있다.)&lt;/p></description></item><item><title>Asynchronous request processing</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/asynchronous-request-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/asynchronous-request-processing/</guid><description>&lt;h1 id="asynchronous-request-processing">Asynchronous request processing&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>기존의 요청 처리는 하나의 요청에 대해 한 개의 쓰레드를 사용하였다. 하나의 쓰레드에서 요청-응답 과정을 모두 처리하기 때문에 요청처리 이후 응답이 오기까지 쓰레드를 대기상태로 유지하였다. 그러나 서버와의 연결을 유지한채 대기상태로 있는 것이 아니라 서버와의 처리를 계속 이어가게 해주기 위해서는 이러한 기존의 처리에 한계가 있었다.&lt;/p>
-&lt;p>Servlet 3.0에서 제공하는 비동기 요청 처리는 쓰레드가 대기상태로 있는 것이 아니라 요청을 처리하는 Servlet 쓰레드가 요청후 바로 반환되고 내부의 다른 쓰레드가 이를 처리했다가 처리완료 후 응답처리 리소스가 가용할 때 Servlet쓰레드가 응답처리를 계속 이어가게 해 주는 것이다.&lt;/p></description></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</guid><description/></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</guid><description>&lt;h1 id="사용자관리">사용자관리&lt;/h1>
+&lt;p>Servlet 3.0에서 제공하는 비동기 요청 처리는 쓰레드가 대기상태로 있는 것이 아니라 요청을 처리하는 Servlet 쓰레드가 요청후 바로 반환되고 내부의 다른 쓰레드가 이를 처리했다가 처리완료 후 응답처리 리소스가 가용할 때 Servlet쓰레드가 응답처리를 계속 이어가게 해 주는 것이다.&lt;/p></description></item><item><title>빌드 Lifecycle</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-lifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-lifecycle/</guid><description>&lt;h1 id="빌드-lifecycle">빌드 Lifecycle&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>메이븐 빌드는 소프트웨어 프로젝트의 핵심적인 빌드 라이프 사이클 개념을 따르고 있으며 빌드 초기화 단계부터
+artifact의 배포까지의 생명 주기를 정의하고 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Maven 생명 주기 단계는 각각의 플러그인과 바인딩 되어 플러그인이 명령을 실행 하며 생명주기 단계 순서에 따라 순차적으로 빌드가 실행되어
+개발자가 실행한 명령을 수행한다.&lt;/p>
+&lt;blockquote>
+&lt;p>예) &lt;code>mvn install&lt;/code> 명령을 실행하면 generate-sources 단계부터 compile, test 명령 등을 거쳐 install 명령을 실행한다.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/build-lifecycle-1.gif" alt="" >
+&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/build-lifecycle-2.gif" alt="" >
+&lt;/p>
+&lt;blockquote>
+&lt;p>예) 자바 컴파일: &lt;code>$mvn complile&lt;/code> 명령을 실행한다.&lt;/p></description></item><item><title>빌드 레퍼지토리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-repository/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-repository/</guid><description>&lt;h1 id="빌드-레퍼지토리">빌드 레퍼지토리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Maven Repository는 artifact들의 저장소로 로컬 및 리모트 repository로 구성되며 프로젝트의 pom.xml에서 선언한 dependency들을 저장소로부터 불러와서 사용한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;ul>
+&lt;li>Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.
+기본 설정은 C:\Documents and Settings\Administrator.m2\repository 디렉토리에 구성된다.&lt;/li>
+&lt;li>Maven 리모트 repository
+Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며
+개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>리포지토리 구성도&lt;/strong>&lt;/p></description></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</guid><description/></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</guid><description>&lt;h1 id="사용자관리">사용자관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 정보를 등록, 수정, 삭제 관리하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -12223,7 +12572,27 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 &lt;/ol>
 &lt;h3 id="사용자별-통계">사용자별 통계&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/configuration-management-tool/images/user-statistics.jpg" alt="사용자별 통계" >
-&lt;/p></description></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
+&lt;/p></description></item><item><title>통합빌드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/integration-build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/integration-build/</guid><description>&lt;h1 id="통합빌드">통합빌드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>각 개발자들이 개인 빌드 과정을 거쳐 작성한 코드들을 통합하여 실행 가능한 산출물로 만들어 내는 일련의 과정을 통합 빌드라 하며 지속적이고 자동화된 통합을 위하여 &lt;br>
+CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이 작업한 것을 자주 각 팀원이 하루에 한 번 이상, 매일 여러 번-통합하는 것을 가리키는 소프트웨어 개발 Practice를 말한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>CI 효과와 특징&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>효과&lt;/p>
+&lt;ol>
+&lt;li>흔히 발생하는 일반적인 위험을 줄여준다.&lt;/li>
+&lt;li>에러를 초기에 발견할 수 있다. 자주 통합할수록 에러가 발생하는 범위가 좁아 에러를 잡는 것이 수월해진다.&lt;/li>
+&lt;li>잘 동작하고 에러가 거의 없는 S/W를 유지할 수 있다.&lt;/li>
+&lt;li>언제 어느 때라도 배포할 수 있는 S/W를 생성해낸다.&lt;/li>
+&lt;li>반복적인 수작업을 줄여준다.&lt;/li>
+&lt;li>프로젝트 가시성을 좋게 해준다.&lt;/li>
+&lt;li>개발 팀이 S/W 제품에 대해 보다 큰 자신감을 갖게 해준다.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>특징&lt;/p></description></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Log4j 2는 기존 Properties 파일 형식의 환경 설정을 지원하지 않으며,&lt;br>
 XML (log4j2.xml) 혹은 JSON (log4j2.json or log4j2.jsn) 파일 형식의 환경 설정만 가능하다.&lt;/p>
@@ -12322,7 +12691,144 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/common-intro/deployment-structure/">공통컴포넌트 배포 파일의 구성&lt;/a>
 
 
- 내역의 공통컴포넌트 및 패키지를 참조하시기 바랍니다.&lt;/p></description></item><item><title>포맷/계산/변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</guid><description/></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
+ 내역의 공통컴포넌트 및 패키지를 참조하시기 바랍니다.&lt;/p></description></item><item><title>포맷/계산/변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/</guid><description/></item><item><title>표준프레임워크 Boot Sample 프로젝트를 Gradle로 빌드환경 전환</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/boot-to-gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/boot-to-gradle/</guid><description>&lt;h2 id="표준프레임워크-boot-sample-프로젝트를-gradle로-빌드환경-전환">표준프레임워크 Boot Sample 프로젝트를 Gradle로 빌드환경 전환&lt;/h2>
+&lt;h3 id="빌드-환경-전환">빌드 환경 전환&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Eclipse Gradle Plugin 설치&lt;/p>
+&lt;ul>
+&lt;li>Buildship : 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/">설치가이드&lt;/a>
+
+
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Sample 프로젝트 생성&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>개발환경 &amp;gt; eGovFrame &amp;gt; New Boot Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish] (또는)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>개발환경 &amp;gt; file &amp;gt; New &amp;gt; eGovframe Boot Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish]&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-1.png" alt="생성 프로젝트 선택" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-2.png" alt="프로젝트 정보 입력" >
+ &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-4.png" alt="메이븐 프로젝트 속성 확인" >
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>표준프레임워크 Sample 프로젝트를 Gradle로 빌드환경 전환</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/</guid><description>&lt;h3 id="빌드-환경-전환">빌드 환경 전환&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Eclipse Gradle Plugin 설치&lt;/p>
+&lt;ul>
+&lt;li>Buildship : 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/">설치가이드&lt;/a>
+
+
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Sample 프로젝트 생성&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>개발환경 &amp;gt; eGovFrame &amp;gt; New Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish] (또는)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>개발환경 &amp;gt; file &amp;gt; New &amp;gt; eGovfroame Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish]&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-1.png" alt="생성 프로젝트 선택" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-2.png" alt="프로젝트 정보 입력" >
+ &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-4.png" alt="메이븐 프로젝트 속성 확인" >
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>build.gradle 파일 추가&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/#buildgradle-%ed%8c%8c%ec%9d%bc">build.gradle&lt;/a>
+
+
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-5.png" alt="파일생성" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-5-1.png" alt="파일명입력" >
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>기존 Maven Nature 삭제&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Mavne &amp;gt; Disable Maven Nature&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>표준프레임워크 4.3에서는 다음과 같은 방법으로 환경설정을 할 수 있다.&lt;/p>
 &lt;ul>
