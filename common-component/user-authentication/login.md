@@ -77,7 +77,7 @@ menu:
 
 #### 로그인 성공 후 이동 페이지 설정
 
- 로그인이 성공적으로 수행되었을 경우 이후 이동할 페이지에 대한 설정은 globals.properties 파일의 `lobals.MainPage` 프러퍼티 값을 통해 설정할수 있다. 아래와 같이 설정할 수 있으며 사용자가 로그인에 성공한 경우 /EgovContent.do 페이지로 이동하게 된다.
+ 로그인이 성공적으로 수행되었을 경우 이후 이동할 페이지에 대한 설정은 globals.properties 파일의 `globals.MainPage` 프러퍼티 값을 통해 설정할수 있다. 아래와 같이 설정할 수 있으며 사용자가 로그인에 성공한 경우 /EgovContent.do 페이지로 이동하게 된다.
 
 ```bash
 # MainPage Setting
