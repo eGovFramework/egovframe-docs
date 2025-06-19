@@ -127,7 +127,7 @@ menu:
 
 * 스페이스 : 스페이스 전체 목록 중 선택
 * 필드명 : 이슈관리 항목으로 사용되는 필드 이름
-* 타입 : Priority(priority), Severity(Severity), 선택박스(custInt01~custInt10), 숫자(custDbl01~custDbl03), 텍스트(cusStr01~cusStr05), 날짜(cusTim01~cusTim03)
+* 타입 : Priority(priority), Severity(Severity), 선택박스(custInt01\~custInt10), 숫자(custDbl01\~custDbl03), 텍스트(cusStr01\~cusStr05), 날짜(cusTim01\~cusTim03)
 * 옵션리스트 : Priority, Severity, Drop Down List의 경우에 나타나는 옵션 목록
 
 2. '수정' 버튼을 클릭하여 필드수정 화면으로 이동한다.
