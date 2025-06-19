@@ -1,3 +1,15 @@
+---
+title: 서버 이관
+linkTitle: 서버 이관
+description: "빌드 후 패키징 된 모듈에 대해 Target 서버로의 이관 및 WAS 기동/중지 기능을 제공한다."
+url: /egovframe-development/deployment-tool/server-migration/
+menu:
+  depth:
+    name: 서버 이관
+    weight: 2
+    parent: "deployment-tool"
+    identifier: "server-migration"
+---
 # 서버이관
 
 ## 개요
@@ -125,12 +137,15 @@
 ### FTP
 
 [배포작업목록 조회]
+
 ![배포작업목록 조회](./images/server-migration-ftp-1.jpg)
 
 [FTP 작업중]
+
 ![FTP 작업중](./images/server-migration-ftp-2.jpg)
 
 [작업완료 후 작업로그]
+
 ![작업완료 후 작업로그](./images/server-migration-ftp-3.jpg)
 
 1. 배포작업목록을 조회한다.
@@ -141,12 +156,15 @@
 ### Deploy
 
 [배포작업목록 조회]
+
 ![배포작업목록 조회](./images/server-migration-deploy-1.jpg)
 
 [Deploy 작업중]
+
 ![Deploy 작업중](./images/server-migration-deploy-2.jpg)
 
 [작업완료 후 작업로그]
+
 ![작업완료 후 작업로그](./images/server-migration-deploy-3.jpg)
 
 1. 배포작업목록을 조회한다.
@@ -157,12 +175,15 @@
 ### WAS 기동
 
 [WAS목록 조회]
+
 ![WAS목록 조회](./images/server-migration-was-1.jpg)
 
 [WAS기동 작업중]
+
 ![WAS기동 작업중](./images/server-migration-was-2.jpg)
 
 [WAS기동 작업완료]
+
 ![WAS기동 작업완료](./images/server-migration-was-3.jpg)
 
 1. WAS목록을 조회한다.
@@ -173,12 +194,15 @@
 ### WAS 중지
 
 [WAS목록 조회]
+
 ![WAS목록 조회](./images/server-migration-was-stop-1.jpg)
 
 [WAS중지 작업중]
+
 ![WAS중지 작업중](./images/server-migration-was-stop-2.jpg)
 
 [WAS중지 작업완료]
+
 ![WAS중지 작업완료](./images/server-migration-was-stop-3.jpg)
 
 1. WAS목록을 조회한다.
@@ -189,9 +213,11 @@
 ### 작업로그 조회
 
 [작업로그목록 조회]
+
 ![작업로그목록 조회](./images/server-migration-log-1.jpg)
 
 [작업로그상세 조회]
+
 ![작업로그상세 조회](./images/server-migration-log-2.jpg)
 
 1. 검색조건(로그구분 및 검색기간)을 입력하고 '검색' 버튼을 클릭한다.
