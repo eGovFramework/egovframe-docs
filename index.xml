@@ -8759,7 +8759,100 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:editor:ide">IDE&lt;/a>
 
 
-&lt;/p></description></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description/></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
+&lt;/p></description></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description>&lt;h1 id="권한관리">권한관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템 구축시 스프링의 보안 메카니즘을 적용하기 위해 Spring Security 에서 관리하는 **권한(Authority)**을 정의하는 컴포넌트이다. 당 컴포넌트를 이용하여 담당자는 시스템 사용자에게 부여하는 권한을 정의하여 관리할 수 있다. 표준프레임워크 3.9부터는 &lt;strong>Session 방식 권한처리&lt;/strong> 기능을 추가하여 Spring Security 를 사용하지 않고도 당 컴포넌트를 이용하여 접근제어가 가능하도록 하였다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>권한관리&lt;/strong>는 사용자별 권한을 관리하기 위한 목적으로 &lt;strong>등록&lt;/strong>, &lt;strong>수정&lt;/strong>, &lt;strong>삭제&lt;/strong>, &lt;strong>조회&lt;/strong>, &lt;strong>목록조회&lt;/strong>의 기능을 수반한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> ① 권한등록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 등록한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 권한수정 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 수정한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 권한삭제 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 삭제한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 권한조회 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 조회한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 권한목록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보 목록을 조회한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="환경설정">환경설정&lt;/h3>
+&lt;h4 id="권한-기본-설정">권한 기본 설정&lt;/h4>
+&lt;h5 id="-스프링에서-제공하는-기본-권한authority">* 스프링에서 제공하는 기본 권한(Authority)&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>AUTHORITI&lt;/th>
+ &lt;th>DESCRIPTION&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>ROLE_ANONYMOUS&lt;/td>
+ &lt;td>모든 사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>IS_AUTHENTICATED_ANONYMOUSLY&lt;/td>
+ &lt;td>익명 사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>IS_AUTHENTICATED_FULLY&lt;/td>
+ &lt;td>인증된 사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>IS_AUTHENTICATED_REMEMBERED&lt;/td>
+ &lt;td>REMEMBERED 사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_RESTRICTED&lt;/td>
+ &lt;td>제한된 사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_USER&lt;/td>
+ &lt;td>일반 사용자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_ADMIN&lt;/td>
+ &lt;td>관리자&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="권한-추가-설정">권한 추가 설정&lt;/h4>
+&lt;h5 id="-업무적으로-필요에-의해-추가한-권한authority">* 업무적으로 필요에 의해 추가한 권한(Authority)&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>AUTHORITI&lt;/th>
+ &lt;th>DESCRIPTION&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>ROLE_SYM&lt;/td>
+ &lt;td>시스템 업무 담당자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_COP&lt;/td>
+ &lt;td>협업 담당자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_USS&lt;/td>
+ &lt;td>사용자지원 담당자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_USER_MANAGER&lt;/td>
+ &lt;td>업무사용자 관리자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_SEC&lt;/td>
+ &lt;td>보안 업무 담당자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_ENTRPRSMBER_MANAGER&lt;/td>
+ &lt;td>기업회원 관리자&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROLE_MBER_MANAGER&lt;/td>
+ &lt;td>일반회원 관리자&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="권한롤-상속구조-정의roles_hierarchy">권한(롤) 상속구조 정의(ROLES_HIERARCHY)&lt;/h4>
+&lt;h5 id="-정의된-하위-권한의-롤을-상속하기-위해-comtnroles_hierarchy-table에-상속구조를-정의한다">* 정의된 하위 권한의 롤을 상속하기 위해 COMTNROLES_HIERARCHY Table에 상속구조를 정의한다.&lt;/h5>
+&lt;p>ROLE_ANONYMOUS → IS_AUTHENTICATED_ANONYMOUSLY → IS_AUTHENTICATED_FULLY → IS_AUTHENTICATED_REMEMBERED → ROLE_USER → ROLE_ADMIN&lt;/p></description></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본인이 속해있는 스페이스별로 등록된 이슈상태를 조회하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
