@@ -7,7 +7,7 @@ menu:
     depth:
         name: Jakarta Commons Validator
         weight: 1
-        parent: "security"
+        parent: "/egovframe-runtime/presentation-layer/security/"
 ---
 # Spring Framework + Jakarta Commons Validator
 

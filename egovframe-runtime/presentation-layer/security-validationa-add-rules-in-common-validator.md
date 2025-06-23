@@ -7,7 +7,7 @@ menu:
     depth:
         name: Validation Rule
         weight: 2
-        parent: "security"
+        parent: "/egovframe-runtime/presentation-layer/security/"
 ---
 # Commons Validator에 validation rule 추가하기
 

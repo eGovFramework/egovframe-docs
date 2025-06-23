@@ -8,7 +8,7 @@ menu:
         name: Security
         weight: 6
         parent: "presentation-layer"
-        identifier: "security"
+        identifier: "/egovframe-runtime/presentation-layer/security/"
 ---
 # Security Service
 
