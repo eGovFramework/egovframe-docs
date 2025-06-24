@@ -10181,8 +10181,7 @@ artifact의 배포까지의 생명 주기를 정의하고 있다.&lt;/p>
 &lt;p>Maven Repository는 artifact들의 저장소로 로컬 및 리모트 repository로 구성되며 프로젝트의 pom.xml에서 선언한 dependency들을 저장소로부터 불러와서 사용한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;ul>
-&lt;li>Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.
-기본 설정은 C:\Documents and Settings\Administrator.m2\repository 디렉토리에 구성된다.&lt;/li>
+&lt;li>Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.기본 설정은 C:\Documents and Settings\Administrator.m2\repository 디렉토리에 구성된다.&lt;/li>
 &lt;li>Maven 리모트 repository
 Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며
 개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/li>
@@ -10218,25 +10217,14 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>완성된 모듈(WAR)에 대한 서버로의 FTP, Deploy 및 WAS 기동/중지를 수행하기 위해서는 다음의 절차를 따라야 한다.&lt;/p>
 &lt;ol>
-&lt;li>&lt;strong>관리자 로그인&lt;/strong>
-WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.
-시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.&lt;/li>
-&lt;li>서버 정보 등록
-프로젝트에서 관리할 서버 정보(IP)를 등록한다.&lt;/li>
-&lt;li>WAS 정보 등록
-프로젝트에서 사용하는 WAS 정보(WAS 종류, 기동/중지 스크립트)를 등록한다.
-현재 지원가능한 WAS는 Jeus, Weblogic, JBoss이다.&lt;/li>
-&lt;li>배포작업 등록
-배포작업 정보(이관모듈, WAS정보, ftp경로, 디플로이 대상)를 등록한다.&lt;/li>
-&lt;li>WAS 기동 및 중지
-등록되어 있는 WAS 정보를 참조하여 WAS 서버의 기동 및 중지를 수행한다.
-WAS 정보 등록이 선행되어야 한다.&lt;/li>
-&lt;li>FTP 및 Deploy
-등록되어 있는 배포작업 정보를 참조하여 FTP 및 Deploy를 수행한다.
-배포작업 등록이 선행되어야 한다.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/server-migration-process.gif" alt="서버이관 프로세스 절차" >
-&lt;/p></description></item><item><title>서버 개발환경 4.3.0 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/</guid><description>&lt;h1 id="서버-개발환경-430-설치가이드">서버 개발환경 4.3.0 설치가이드&lt;/h1>
+&lt;li>
+&lt;p>&lt;strong>관리자 로그인&lt;/strong>&lt;br>
+WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.&lt;br>
+시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>서버 정보 등록&lt;br>
+프로젝트에서 관리할 서버 정보(IP)를 등록한다.&lt;/p></description></item><item><title>서버 개발환경 4.3.0 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/server-environment-install-guide/</guid><description>&lt;h1 id="서버-개발환경-430-설치가이드">서버 개발환경 4.3.0 설치가이드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 표준프레임워크에서 제공하는 서버 환경 4.3.0 구성 가이드를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -12847,15 +12835,12 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-1.png" alt="생성 프로젝트 선택" >
 &lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-2.png" alt="프로젝트 정보 입력" >
- &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >
 &lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-4.png" alt="메이븐 프로젝트 속성 확인" >
-&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>표준프레임워크 Sample 프로젝트를 Gradle로 빌드환경 전환</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/</guid><description>&lt;h3 id="빌드-환경-전환">빌드 환경 전환&lt;/h3>
+&lt;/p></description></item><item><title>표준프레임워크 Sample 프로젝트를 Gradle로 빌드환경 전환</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/</guid><description>&lt;h2 id="표준프레임워크-sample-프로젝트를-gradle로-빌드환경-전환">표준프레임워크 Sample 프로젝트를 Gradle로 빌드환경 전환&lt;/h2>
+&lt;h3 id="빌드-환경-전환">빌드 환경 전환&lt;/h3>
 &lt;ol>
 &lt;li>
 &lt;p>Eclipse Gradle Plugin 설치&lt;/p>
@@ -12895,7 +12880,8 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-1.png" alt="생성 프로젝트 선택" >
 &lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-2.png" alt="프로젝트 정보 입력" >
- &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >
+&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >
 &lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-4.png" alt="메이븐 프로젝트 속성 확인" >
 &lt;/p>
@@ -12903,47 +12889,7 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>build.gradle 파일 추가&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>
-
-
-
- 
-
-
- 
-
-
-
-
- 
-
-
-
-
-
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/to-gradle/#buildgradle-%ed%8c%8c%ec%9d%bc">build.gradle&lt;/a>
-
-
-&lt;/p>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-5.png" alt="파일생성" >
-&lt;/p>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/gradle-sample-5-1.png" alt="파일명입력" >
-&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>기존 Maven Nature 삭제&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Mavne &amp;gt; Disable Maven Nature&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
+&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>표준프레임워크 4.3에서는 다음과 같은 방법으로 환경설정을 할 수 있다.&lt;/p>
 &lt;ul>
