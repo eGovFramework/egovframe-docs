@@ -52,8 +52,8 @@ menu:
 
 2. WAS 환경변수 설정  
    WAS 서버 구동시 환경변수(deploy.script.home, deploy.path)를 설정한다.  
-   –Ddeploy.script.home=“배포스크립트 및 로그파일이 저장될 디렉토리”
-   –Ddeploy.path=“war 파일이 존재하는 루트 디렉토리”
+   * `–Ddeploy.script.home`=“배포스크립트 및 로그파일이 저장될 디렉토리”   
+   * `–Ddeploy.path=`“war 파일이 존재하는 루트 디렉토리”   
 
 3. 프로퍼티 파일 변경  
    Deployment Tool을 해당 WAS에 Deploy한 후 배포위치 하위의 WEB-INF/classes/deployscript에서 common.properties 파일을 복사하여 deploy.script.home에서 지정한 디렉토리에 저장하고 해당 프로젝트에 맞게 변경한다.  
