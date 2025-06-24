@@ -49,8 +49,9 @@ menu:
 Maven은 프로젝트 전체 내용에 대한 기술 및 설정을 담당하는 POM과 라이브러리(Maven에서는 artifact라 호칭함)관리에 대한 dependency/repository 관리 모델 그리고 컴파일, 테스트, 패키징 등의 빌드 생명 주기를 다루는 lifecycle 및 관련된 plugin들과의 연동을 다루는 부분으로 구성된다.
 ![Maven 아키텍처](./images/maven-architecture.gif)
 
-| POM                     | 메이븐 엔진 내장 + POM.XML 파일에서 선언적으로 제공한다. - 참조:[POM(프로젝트 객체 모델)](#pom)                 |
+| Maven 아키텍쳐           | 내용 |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| POM                     | 메이븐 엔진 내장 + POM.XML 파일에서 선언적으로 제공한다. - 참조:[POM(프로젝트 객체 모델)](#pom)                 |
 | 의존성 관리 모델        | 로컬 및 리모트 저장소를 이용 - 참조:[Dependency Management](#dependency-management)                                                   |
 | 프로젝트 생명 주기 모듈 | 메이븐 엔진은 플러그인을 통해 파일을 다루는 거의 모든 작업을 수행 - 참조:[빌드 lifecycle](./build-lifecycle.md) |
 
@@ -65,22 +66,22 @@ pom.xml 파일은 프로젝트의 세부 메타 데이터 정보를 포함하며
 
 ![pom.xml 구조](./images/pom-tier.gif)
 
-* **General Information**
+* **General Information**  
   프로젝트 이름, 설명, 버전 정보 등을 기술한다. - [프로젝트 정보 생성](#프로젝트-정보-생성)) 참조
 * Organization : 프로젝트 조직 정보: 이름, 홈페이지 URL
-* Project Team and Collaborations tools
+* Project Team and Collaborations tools  
   형상관리 서버, 이슈 트랙커, 통합 빌드 서버 정보 등
-* **Build**
+* **Build**  
   인코딩 정보 등 [빌드 Lifecycle](./build-lifecycle.md) 환경 설정
-* **Reporting**
+* **Reporting**  
   리포트 생성 기능을 설정한다.
-* **Dependencies**
+* **Dependencies**  
   프로젝트에서 사용하는 *라이브러리*를 선언하여 Build Path에 포함시킨다. - [Dependency(의존성) 설정](#dependency의존성-설정) 참조
-* Repositories
+* Repositories  
   라이브러리 저장소 위치 설정
-* Distribution Management
+* Distribution Management  
   배포 환경 설정
-* Profiles
+* Profiles  
   이기종 환경에서의 이식성을 높여 주기 위한 빌드 설정
   [Maven 빌드 profile 소개](http://maven.apache.org/guides/introduction/introduction-to-profiles.html)
 * Properties - 프로젝트 property를 설정한다.

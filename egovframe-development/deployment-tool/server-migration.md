@@ -20,37 +20,44 @@ menu:
 
 완성된 모듈(WAR)에 대한 서버로의 FTP, Deploy 및 WAS 기동/중지를 수행하기 위해서는 다음의 절차를 따라야 한다.
 
-1. **관리자 로그인**
-   WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.
+1. **관리자 로그인**  
+   WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.  
    시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.
-2. 서버 정보 등록
+
+2. 서버 정보 등록  
    프로젝트에서 관리할 서버 정보(IP)를 등록한다.
-3. WAS 정보 등록
-   프로젝트에서 사용하는 WAS 정보(WAS 종류, 기동/중지 스크립트)를 등록한다.
+
+3. WAS 정보 등록  
+   프로젝트에서 사용하는 WAS 정보(WAS 종류, 기동/중지 스크립트)를 등록한다.  
    현재 지원가능한 WAS는 Jeus, Weblogic, JBoss이다.
-4. 배포작업 등록
+
+4. 배포작업 등록  
    배포작업 정보(이관모듈, WAS정보, ftp경로, 디플로이 대상)를 등록한다.
-5. WAS 기동 및 중지
-   등록되어 있는 WAS 정보를 참조하여 WAS 서버의 기동 및 중지를 수행한다.
+
+5. WAS 기동 및 중지  
+   등록되어 있는 WAS 정보를 참조하여 WAS 서버의 기동 및 중지를 수행한다.  
    WAS 정보 등록이 선행되어야 한다.
-6. FTP 및 Deploy
-   등록되어 있는 배포작업 정보를 참조하여 FTP 및 Deploy를 수행한다.
+
+6. FTP 및 Deploy  
+   등록되어 있는 배포작업 정보를 참조하여 FTP 및 Deploy를 수행한다.  
    배포작업 등록이 선행되어야 한다.
 
 ![서버이관 프로세스 절차](./images/server-migration-process.gif)
 
 ## 환경설정
 
-1. Deployment Tool 설치
-   전자정부 프레임워크 포탈([http://www.egovframe.go.kr](http://www.egovframe.go.kr/))을 통해 Deployment Tool을 내려받고 해당 WAS서버에 Deploy한다.
+1. Deployment Tool 설치  
+   전자정부 프레임워크 포탈([http://www.egovframe.go.kr](http://www.egovframe.go.kr/))을 통해 Deployment Tool을 내려받고 해당 WAS서버에 Deploy한다.  
    Deploy 위치는 형상관리서버가 설치되어 있는 서버로 하여야 한다.(war 파일이 존재하는 서버)
-2. WAS 환경변수 설정
-   WAS 서버 구동시 환경변수(deploy.script.home, deploy.path)를 설정한다.
 
+2. WAS 환경변수 설정  
+   WAS 서버 구동시 환경변수(deploy.script.home, deploy.path)를 설정한다.  
    –Ddeploy.script.home=“배포스크립트 및 로그파일이 저장될 디렉토리”
    –Ddeploy.path=“war 파일이 존재하는 루트 디렉토리”
-3. 프로퍼티 파일 변경
-   Deployment Tool을 해당 WAS에 Deploy한 후 배포위치 하위의 WEB-INF/classes/deployscript에서 common.properties 파일을 복사하여 deploy.script.home에서 지정한 디렉토리에 저장하고 해당 프로젝트에 맞게 변경한다. 디렉토리 구분자는 windows인 경우는 ‘\\’, 유닉스인경우는 ‘/’을 사용한다.
+
+3. 프로퍼티 파일 변경  
+   Deployment Tool을 해당 WAS에 Deploy한 후 배포위치 하위의 WEB-INF/classes/deployscript에서 common.properties 파일을 복사하여 deploy.script.home에서 지정한 디렉토리에 저장하고 해당 프로젝트에 맞게 변경한다.  
+   디렉토리 구분자는 windows인 경우는 ‘\\’, 유닉스인경우는 ‘/’을 사용한다.
 
 ```properties
    # common.properties
@@ -70,21 +77,25 @@ menu:
    jeus.adm.pwd=“jeus admin password”
 ```
 
-4. DB 스키마 생성
+4. DB 스키마 생성  
    전자정부 프레임워크 포탈([http://www.egovframe.go.kr](http://www.egovframe.go.kr/))을 통해 Deployment Tool의 DB Schema 생성 sql을 다운로드 받는다. DB에 접속하여 sql을 실행한다.
-5. DB 접속정보 변경
-   Deployment Tool을 해당 WAS에 Deploy한 후 배포위치 하위의 WEB-INF/config/context-datasource.xml파일을 해당 프로젝트에 맞게 변경한다.
+
+5. DB 접속정보 변경  
+   Deployment Tool을 해당 WAS에 Deploy한 후 배포위치 하위의 WEB-INF/config/context-datasource.xml파일을 해당 프로젝트에 맞게 변경한다.  
    배포시 mysql 데이터베이스의 dev유저에 대해 default 셋팅되어 있다.
-6. WAS 작업유저 환경설정
-   FTP 환경구성 : 배포서버에서 해당 WAS로의 FTP 작업을 위한 환경구성을 한다.
-   Telnet 환경구성 : 배포서버에서 해당 WAS로의 Telnet 작업을 위한 환경구성을 한다.
-   ANT 환경구성 : ${ANT_HOME}/bin 폴더 PATH에 추가
-   작업폴더 구성 : 작업유저에게 R/W 권한이 있는 아무 폴더나 상관없으나 작업폴더를 지정하는 것을 권고한다.
-7. Ant 설치
-   Deployment Tool이 배포된 서버 및 작업 WAS 서버에 Ant가 설치되어 있어야 한다.
-   다음 사이트를 참조하여 최신의 ANT를 설치한다.
+
+6. WAS 작업유저 환경설정  
+   * FTP 환경구성 : 배포서버에서 해당 WAS로의 FTP 작업을 위한 환경구성을 한다.
+   * Telnet 환경구성 : 배포서버에서 해당 WAS로의 Telnet 작업을 위한 환경구성을 한다.
+   * ANT 환경구성 : ${ANT_HOME}/bin 폴더 PATH에 추가
+   * 작업폴더 구성 : 작업유저에게 R/W 권한이 있는 아무 폴더나 상관없으나 작업폴더를 지정하는 것을 권고한다.
+
+7. Ant 설치  
+   Deployment Tool이 배포된 서버 및 작업 WAS 서버에 Ant가 설치되어 있어야 한다.  
+   다음 사이트를 참조하여 최신의 ANT를 설치한다.  
    [http://ant.apache.org/](http://ant.apache.org/)
-8. WAS 기동/중지 스크립트
+
+8. WAS 기동/중지 스크립트  
    WAS 기동/중지를 위해 해당 WAS서버 벤더에서 제공한 기동/중지 스크립트가 준비되어 있어야 한다.
 
 ## 사용법
