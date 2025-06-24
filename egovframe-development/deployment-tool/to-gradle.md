@@ -8,6 +8,7 @@ menu:
     weight: 2
     parent: "gradle"
 ---
+## 표준프레임워크 Sample 프로젝트를 Gradle로 빌드환경 전환
 
 ### 빌드 환경 전환
 
@@ -21,7 +22,9 @@ menu:
 
      ![생성 프로젝트 선택](./images/gradle-sample-1.png)
 
-     ![프로젝트 정보 입력](./images/gradle-sample-2.png) ![게시판 컨텐츠 자동생성 체크](./images/gradle-sample-3.png)
+     ![프로젝트 정보 입력](./images/gradle-sample-2.png)
+     
+     ![게시판 컨텐츠 자동생성 체크](./images/gradle-sample-3.png)
 
      ![메이븐 프로젝트 속성 확인](./images/gradle-sample-4.png)
 
@@ -35,14 +38,19 @@ menu:
 4. 기존 Maven Nature 삭제
    * Mavne > Disable Maven Nature
 
-     ![Maven Nature 삭제](./images/gradle-sample-6.png) ![Compile 오류](./images/gradle-sample-6-1.png)
+     ![Maven Nature 삭제](./images/gradle-sample-6.png)
+     
+     ![Compile 오류](./images/gradle-sample-6-1.png)
 
 5. Gradle Nature 추가
    * Configure > Add Gradle Nature
 
-     ![Gradle Nature 추가](./images/gradle-sample-7.png) ![Compile 오류 정리](./images/gradle-sample-7-1.png)
+     ![Gradle Nature 추가](./images/gradle-sample-7.png)
+     
+     ![Compile 오류 정리](./images/gradle-sample-7-1.png)
 
 6. pom.xml 삭제
+
 7. Gradle 설정 확인
    * Gradle > Refresh Gradle Project
 
