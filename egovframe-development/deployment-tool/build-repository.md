@@ -83,27 +83,30 @@ Maven의 환경 설정 파일인 settings.xml 파일에서 로컬 repository의 
 
 실제 3rd 파티에서 제공하는 라이브러리는 각 기업 또는 organization에서 배포하는 라이브러리 파일을 다운로드하여 사용한다. 다운로드한 라이브러리의 이름 및 버전 정보를 확인한다.받은 라이브러리를 Maven의 artifact로 등록하기 위해서는 3가지 필수 항목을 준수 하여야 한다. - [Maven Dependency Management](./maven.md#dependency-management) 참조
 
-* groupId  
+  * groupId  
   다운로드 받은 라이브러리는 groupId 정보를 가지고 있지 않으며 임의로 groupId를 만들어 주어야 한다.  
   예) com.tmax.tibero
   
-* artifactId  
+  * artifactId  
   artifactId는 다운로드 받은 라이브러리 이름을 사용한다.  
   예) tibero-jdbc
 
-* version  
+  * version  
   다운로드 받은 라이브러리의 버전을 확인한다.  
   예) 3.0
 
+이제 아래 순서에 따라 artifact를 실제로 로컬 repository에 추가한다.
+
 1. [로컬 repository의 디렉토리 구조](#로컬-repository의-디렉토리-구조)에서 설명한 구조로 메이븐 repository에 폴더들을 생성한다.
 
-* 디렉토리 구조: com/tmax/tibero/tibero-jdbc/3.0 이 디렉토리 밑에 다운로드 받은 라이브러리와 프로젝트 정보를 기술한 pom 파일을 넣는다.
+디렉토리 구조: com/tmax/tibero/tibero-jdbc/3.0 이 디렉토리 밑에 다운로드 받은 라이브러리와 프로젝트 정보를 기술한 pom 파일을 넣는다.
 
 > 예) 일반적인 artifactId는 라이브러리 이름-버전으로 구성되고 pom 파일의 이름은 artifactId.pom 파일 형태가 된다.
 > 따라서 tibero jdbc의 artifactId는 tibero-jdbc-3.0.jar가 되고 pom 파일 이름은 tibero-jdbc-3.0.pom 이 된다.
 
 2. artifactId.pom 파일을 작성한다.
-   pom 파일에 기술 되어야 할 정보는 위에서 언급한 groupId, artifactId, version 정보이다. **tibero-jdbc-3.0.pom**
+
+pom 파일에 기술 되어야 할 정보는 위에서 언급한 groupId, artifactId, version 정보이다. **tibero-jdbc-3.0.pom**
 
 ```xml
 <project>
