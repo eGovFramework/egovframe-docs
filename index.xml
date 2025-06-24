@@ -10181,12 +10181,14 @@ artifact의 배포까지의 생명 주기를 정의하고 있다.&lt;/p>
 &lt;p>Maven Repository는 artifact들의 저장소로 로컬 및 리모트 repository로 구성되며 프로젝트의 pom.xml에서 선언한 dependency들을 저장소로부터 불러와서 사용한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;ul>
-&lt;li>Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.기본 설정은 C:\Documents and Settings\Administrator.m2\repository 디렉토리에 구성된다.&lt;/li>
-&lt;li>Maven 리모트 repository
-Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며
-개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>리포지토리 구성도&lt;/strong>&lt;/p></description></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</guid><description/></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</guid><description>&lt;h1 id="사용자관리">사용자관리&lt;/h1>
+&lt;li>
+&lt;p>Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.&lt;br>
+기본 설정은 C:\Documents and Settings\Administrator.m2\repository 디렉토리에 구성된다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Maven 리모트 repository
+Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며&lt;br>
+개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/p></description></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</guid><description/></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</guid><description>&lt;h1 id="사용자관리">사용자관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 정보를 등록, 수정, 삭제 관리하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
