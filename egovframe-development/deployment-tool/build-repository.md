@@ -16,9 +16,11 @@ Maven Repository는 artifact들의 저장소로 로컬 및 리모트 repository�
 
 ## 설명
 
-* Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.기본 설정은 C:\Documents and Settings\Administrator\.m2\repository 디렉토리에 구성된다.
+* Maven 설치 시 로컬에 Maven artifact들을 저장하고 관리하는 repository가 자동으로 구성된다.  
+ 기본 설정은 C:\Documents and Settings\Administrator\.m2\repository 디렉토리에 구성된다.
+
 * Maven 리모트 repository
-  Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며
+  Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며  
   개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.
 
 **리포지토리 구성도**
@@ -81,11 +83,16 @@ Maven의 환경 설정 파일인 settings.xml 파일에서 로컬 repository의 
 
 실제 3rd 파티에서 제공하는 라이브러리는 각 기업 또는 organization에서 배포하는 라이브러리 파일을 다운로드하여 사용한다. 다운로드한 라이브러리의 이름 및 버전 정보를 확인한다.받은 라이브러리를 Maven의 artifact로 등록하기 위해서는 3가지 필수 항목을 준수 하여야 한다. - [Maven Dependency Management](./maven.md#dependency-management) 참조
 
-* groupId다운로드 받은 라이브러리는 groupId 정보를 가지고 있지 않으며 임의로 groupId를 만들어 주어야 한다.
+* groupId  
+  다운로드 받은 라이브러리는 groupId 정보를 가지고 있지 않으며 임의로 groupId를 만들어 주어야 한다.  
   예) com.tmax.tibero
-* artifactIdartifactId는 다운로드 받은 라이브러리 이름을 사용한다.예) tibero-jdbc
-* version
-  다운로드 받은 라이브러리의 버전을 확인한다.
+  
+* artifactId  
+  artifactId는 다운로드 받은 라이브러리 이름을 사용한다.  
+  예) tibero-jdbc
+
+* version  
+  다운로드 받은 라이브러리의 버전을 확인한다.  
   예) 3.0
 
 1. [로컬 repository의 디렉토리 구조](#로컬-repository의-디렉토리-구조)에서 설명한 구조로 메이븐 repository에 폴더들을 생성한다.
