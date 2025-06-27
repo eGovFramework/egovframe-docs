@@ -243,9 +243,9 @@ h3,h4,h5,h6 {
     mask-size: contain;
     -webkit-mask-image: url(../img/egovframework/ico_issue.svg);
     mask-image: url(../img/egovframework/ico_issue.svg);
-  }
+}
 
-  .svg-icon.ico_page_view {
+.svg-icon.ico_page_view {
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center center;
     -webkit-mask-size: contain;
@@ -254,9 +254,9 @@ h3,h4,h5,h6 {
     mask-size: contain;
     -webkit-mask-image: url(../img/egovframework/ico_page_view.svg);
     mask-image: url(../img/egovframework/ico_page_view.svg);
-  }
+}
 
-  .svg-icon.ico_page_edit {
+.svg-icon.ico_page_edit {
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center center;
     -webkit-mask-size: contain;
@@ -265,7 +265,7 @@ h3,h4,h5,h6 {
     mask-size: contain;
     -webkit-mask-image: url(../img/egovframework/ico_page_edit.svg);
     mask-image: url(../img/egovframework/ico_page_edit.svg);
-  }
+}
 
 /* 페이지 상단으로 이동*/
 .page-top-button{
@@ -317,4 +317,38 @@ h3,h4,h5,h6 {
     .krds-main-menu-mobile .gnb-wrap .gnb-body .gnb-menu{
         flex-direction: column;
     }
+}
+
+/*20250626 수정*/
+/*page-navigation이 contents영역을 침범하는 문제 수정 */
+@media (max-width: 1580px) {
+    .krds-in-page-navigation-type .krds-in-page-navigation-area {
+        --krds-in-page-navigation--position-right: var(--krds-contents-padding-x);
+    }
+    .krds-in-page-navigation-type > .inner:not(.in-between) {
+        padding-right: var(--krds-contents-padding-x);
+    }
+    .krds-in-page-navigation-type .krds-in-page-navigation-area {
+        position: static;
+        width: 100%;
+        transition: none;
+    }
+    .krds-in-page-navigation-type .krds-in-page-navigation-area ~ .tab-conts {
+        margin-top: var(--krds-gap-8);
+    }
+    .krds-in-page-navigation-type .krds-in-page-navigation-area .in-page-navigation-action {
+        display: none;
+    }
+}
+
+/*20250626 수정*/
+@media (max-width: 1680px) {
+    .krds-in-page-navigation-type .krds-in-page-navigation-area {
+        --krds-in-page-navigation--position-right: calc((100% - 1580px) / 2 + var(--krds-contents-padding-x));
+    }
+}
+
+/* 250626 수정 krds reset 제거 */
+em{
+    font-style: italic;
 }
