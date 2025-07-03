@@ -8910,7 +8910,227 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;li>[등록] 버튼을 눌러 공시 등록페이지를 호출하고, 내용을 작성한다.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/persistence-layer/images/dataacess-2.png" alt="dataacess-2" >
-&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
+&lt;/p></description></item><item><title>디지털원패스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/digital-one-pass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/digital-one-pass/</guid><description>&lt;h1 id="디지털원패스">디지털원패스&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>디지털원패스는 하나의 아이디로 본인이 선택한 인증수단을 사용하여 안전하고 편리하게 여러 전자정부 서비스를 이용할 수 있는 인증서비스이다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>전자정부 서비스 이용 시 웹사이트마다 아이디를 일일이 기억할 필요없이 하나의 디지털원패스 아이디를 통해 여러 전자정부 서비스를 이용할 수 있다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>디지털원패스는 모바일인증(지문/안면/공인인증서/간편번호(PIN)/패턴), 공인인증서, 문자(SMS)인증의 인증수단을 지원한다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>디지털원패스는 행정안전부(디지털안전정책과), 한국지역정보개발원(정보인증부)로 공문을 통해 신청 후 연계모듈을 제공받아야 한다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>디지털원패스 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.onepass.go.kr/">홈페이지&lt;/a>
+
+
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>표준프레임워크는 연계모듈을 이용한 애플리케이션 개발에 활용할 수 있는 예제를 제공한다.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>연계용 환경설정&lt;/td>
+ &lt;td>onepass.properties&lt;/td>
+ &lt;td>디지털원패스 환경설정 파일&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>연계용 모듈&lt;/td>
+ &lt;td>egovframework/onepass/onepass.jks&lt;/td>
+ &lt;td>디지털원패스 SSL 인증서 키 체인 스토어(연계모듈에 포함)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>연계용 모듈&lt;/td>
+ &lt;td>egovframework/onepass/pubkey_share.der&lt;/td>
+ &lt;td>디지털원패스 서명검증 파일(공개키)(연계모듈에 포함)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>연계용 모듈&lt;/td>
+ &lt;td>WEB-INF/lib/onepass-client-2.0.0.jar&lt;/td>
+ &lt;td>디지털원패스 라이브러리(연계모듈에 포함)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.umt.onepass.web.EgovOnepassController.java&lt;/td>
+ &lt;td>디지털원패스 연동 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.umt.web.EgovMberManageController.java&lt;/td>
+ &lt;td>디지털원패스 연동해지 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.umt.web.EgovEntrprsManageController.java&lt;/td>
+ &lt;td>디지털원패스 연동해지 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.umt.onepass.service.EgovOnepassService.java&lt;/td>
+ &lt;td>디지털원패스 연동 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.umt.onepass.serviceImpl.EgovOnepassServiceImpl.java&lt;/td>
+ &lt;td>디지털원패스 연동 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.umt.onepass.serviceImpl.EgovOnepassDAO.java&lt;/td>
+ &lt;td>디지털원패스 연동 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Property&lt;/td>
+ &lt;td>egovframework/message/com/uss/umt/onepass/message_en.properties&lt;/td>
+ &lt;td>디지털원패스 메시지처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Property&lt;/td>
+ &lt;td>egovframework/message/com/uss/umt/onepass/message_ko.properties&lt;/td>
+ &lt;td>디지털원패스 메시지처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_altibase.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_cubrid.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_maria.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_mysql.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_oracle.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_tibero.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_postgres.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>egovframework/mapper/com/uat/uia/EgovOnepass_SQL_goldilocks.xml&lt;/td>
+ &lt;td>디지털원패스 인증 회원 조회&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/cmm/error/onepassAccessDenied.jsp&lt;/td>
+ &lt;td>디지털원패스 에러페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp&lt;/td>
+ &lt;td>로그인 화면&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uss/umt/onepass/onepassLogin.jsp&lt;/td>
+ &lt;td>디지털원패스 로그인/로그아웃 모듈&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uss/umt/onepass/onepassResult.jsp&lt;/td>
+ &lt;td>디지털원패스 결과 메시지 출력 후 메인화면으로 이동&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberSelectUpdt.jsp&lt;/td>
+ &lt;td>디지털원패스 연동해지 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uss/umt/EgovMberSelectUpdt.jsp&lt;/td>
+ &lt;td>디지털원패스 연동해지 처리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CSS&lt;/td>
+ &lt;td>css/egovframework/com/com.css&lt;/td>
+ &lt;td>디지털원패스 에러페이지 css 추가&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Image&lt;/td>
+ &lt;td>images/egovframework/com/uat/uia/onepass.png&lt;/td>
+ &lt;td>디지털원패스 로그인 이미지&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="환경설정">환경설정&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>위키가이드의 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3:imp:editor:common_component">공통컴포넌트 시작하기&lt;/a>
+
+
+를 참고하여 공통컴포넌트를 설치한다.&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>로그인정책관리&lt;/strong>는 특정 IP에 대한 로그인 제한과 같은 사용자 로그인 정책을 정의하고, 정의된 정책에 맞게 로그인을 제한하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
