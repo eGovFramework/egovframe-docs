@@ -1,11 +1,11 @@
 ---
-  title: 암호화_복호화
-  linkTitle: 암호화_복호화
+  title: 암호화 복호화
+  linkTitle: 암호화 복호화
   description: "암호화/복호화는 보안을 위하여 데이터를 암호화하거나 암호화된 데이터를 복호화하기 위해, ARIA 방식을 통한 데이터의 암호화 및 복호화 기능을 제공한다."
   url: /common-component/security/encrypt_decrypt/
   menu:
     depth:
-      name: 암호화_복호화
+      name: 암호화 복호화
       weight: 6
       parent: "security"
       identifier: "encrypt_decrypt"
