@@ -7,7 +7,7 @@
     depth:
       name: 암호화_복호화
       weight: 6
-      parent: "user-security"
+      parent: "security"
       identifier: "encrypt_decrypt"
 ---
 
