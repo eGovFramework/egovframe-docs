@@ -10731,7 +10731,37 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>암호화는 시큐리티에 대처하는 가장 강력한 수단이다. 이때 본래의 메시지를 평문(Plan Text,Clear Text)이라고 부르고, 암호화된 메시지는 암호문(Cipher Text,Cryptogram)이라고 부른다.
 암호화(Encryption,Ciphering)는 메시지의 내용이 불명확하도록 평문을 재구성하여 암호문을 만드는 것인데, 이 때 사용되는 메시지의 재구성 방법을 암호화 알고리즘(Encryption Algorithm)이라고 부른다. 암호화 알고리즘에서는 암호화의 비밀성을 높이기 위해 키(Key)를 사용하기도 한다.
 복호화(Decyption,decipheing)란 암호화의 역과정으로, 불명확한 메시지로부터 본래의 메시지를 환원하는 과정이다. 일반적으로 복호화에도 암호화에 사용된 것과 동일한 알고리즘이 사용된다.
-그리고 암호화 기법을 적용하는 암호화 및 복호화 과정으로 구성된 시스템을 암호계(Crypto System)라고 부른다. 암호계에는 키나 알고리즘이 포함되는데 하나의 비밀키(Private Key,Secret Key)를 암호화와 복호화에 모두 사용하는 관용암호계(Conventional Crypto System) 와 비밀키와 공개키를 사용하는 공개키(Public Key System)시스템으로 구분된다.&lt;/p></description></item><item><title>압축 파일의 종류</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/compression-file-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/compression-file-types/</guid><description>&lt;h1 id="압축-파일의-종류">압축 파일의 종류&lt;/h1>
+그리고 암호화 기법을 적용하는 암호화 및 복호화 과정으로 구성된 시스템을 암호계(Crypto System)라고 부른다. 암호계에는 키나 알고리즘이 포함되는데 하나의 비밀키(Private Key,Secret Key)를 암호화와 복호화에 모두 사용하는 관용암호계(Conventional Crypto System) 와 비밀키와 공개키를 사용하는 공개키(Public Key System)시스템으로 구분된다.&lt;/p></description></item><item><title>암호화_복호화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/encrypt_decrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/encrypt_decrypt/</guid><description>&lt;h1 id="암호화복호화">암호화/복호화&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>암호화/복호화는 보안을 위하여 데이터를 암호화하거나 암호화된 데이터를 복호화하기 위해, ARIA 방식을 통한 데이터의 암호화 및 복호화 기능을 제공한다.&lt;/p>
+&lt;h2 id="전제조건">전제조건&lt;/h2>
+&lt;p>암복호화 기능을 사용하기 위해서는 전자정부 표준프레임워크 실행환경중 egovframework.rte.fdl.crypto-x.x.x.jar 라이브러리를 필요로 한다.&lt;/p>
+&lt;p>보다 자세한 사항은 실행환경의 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:encryption_decryption">암호화/복호화&lt;/a>
+
+
+ 서비스를 참조한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>암복호화는 서비스를 통해 데이터 암호화 및 복호화를 제공하는 기능으로 별도의 화면에서 평문을 입력하고 암호화 문자열을 암호화하여 BASE64형태로 전달받으며, 이를 다시 원문으로 복호화 하는 참고 화면을 제공한다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>암호화/복호화 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p></description></item><item><title>압축 파일의 종류</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/compression-file-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/compression-file-types/</guid><description>&lt;h1 id="압축-파일의-종류">압축 파일의 종류&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
