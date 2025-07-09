@@ -9130,7 +9130,80 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3:imp:editor:common_component">공통컴포넌트 시작하기&lt;/a>
 
 
-를 참고하여 공통컴포넌트를 설치한다.&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
+를 참고하여 공통컴포넌트를 설치한다.&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>로그인 시간관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/login_session_management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/login_session_management/</guid><description>&lt;h1 id="로그인-시간관리">로그인 시간관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>로그인후 만료시간까지의 남은 시간을 표시한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 갖으며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Filter&lt;/td>
+ &lt;td>egovframework.com.cmm.filter.SessionTimeoutCookieFilter.java&lt;/td>
+ &lt;td>시간관리 필터&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.cmm.web.EgovComIndexController.java&lt;/td>
+ &lt;td>상단프레임 Controller&lt;/td>
+ &lt;td>시간관리 표시&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uat.uia.web.EgovLoginController.java&lt;/td>
+ &lt;td>로그인시간 연장 Controller&lt;/td>
+ &lt;td>시간연장&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/cmm/EgovUnitTop.jsp&lt;/td>
+ &lt;td>상단프레임 페이지&lt;/td>
+ &lt;td>시간관리 표시&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="필터-쿠키값-설정">필터 쿠키값 설정&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>쿠키명&lt;/th>
+ &lt;th>변수타입&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>egovLatestServerTime&lt;/td>
+ &lt;td>long&lt;/td>
+ &lt;td>서버의 최근 시간&lt;/td>
+ &lt;td>시스템의 최근 시간을 밀리초 단위의 Epoch시간(Unix time, POSIX time)으로 기록한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>egovExpireSessionTime&lt;/td>
+ &lt;td>long&lt;/td>
+ &lt;td>세션 객체 생성&lt;/td>
+ &lt;td>HttpSession에서 만료 시간을 밀리초 단위의 Epoch시간(Unix time, POSIX time)으로 기록한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="output">Output&lt;/h3>
+&lt;ul>
+&lt;li>String, long : 필터를 통해 쿠키명(String)에 값(long)형태로 저장된다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>세션 만료 시간을 적절하게 설정하여야 한다.&lt;br>
+너무 짧으면 사용시 불편을 초래할수 있고, 너무 길면 보안상 좋지 않으며 서버에 세션정보가 누적되어 성능저하나 오동작을 유발할수 있다.&lt;/p></description></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/access-policy/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>로그인정책관리&lt;/strong>는 특정 IP에 대한 로그인 제한과 같은 사용자 로그인 정책을 정의하고, 정의된 정책에 맞게 로그인을 제한하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
