@@ -5,12 +5,11 @@
   url: /common-component/security/login_session_management/
   menu:
     depth:
-      name: login_session_management
+      name: 로그인 시간관리
       weight: 7
       parent: "security"
       identifier: "login_session_management"
 ---
-
 
 
 # 로그인 시간관리
