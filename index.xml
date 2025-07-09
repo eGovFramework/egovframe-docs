@@ -10531,7 +10531,34 @@ artifact의 배포까지의 생명 주기를 정의하고 있다.&lt;/p>
 &lt;li>
 &lt;p>Maven 리모트 repository
 Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며&lt;br>
-개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/p></description></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</guid><description/></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</guid><description>&lt;h1 id="사용자관리">사용자관리&lt;/h1>
+개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/p></description></item><item><title>사용자 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/user_statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/user_statistics/</guid><description>&lt;h1 id="사용자-통계">사용자 통계&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>사용자통계 기능은 각종 사용자 현황에 대한 통계자료를 회원유형, 회원상태, 성별에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
+&lt;ul>
+&lt;li>기능흐름&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>기능명&lt;/th>
+ &lt;th>기능 흐름&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>사용자통계 집계&lt;/td>
+ &lt;td>&lt;em>&lt;strong>&lt;strong>사용자정보 요약 배치수행&lt;/strong>&lt;/strong>&lt;/em> → &lt;em>&lt;strong>&lt;strong>사용자요약정보 집계&lt;/strong>&lt;/strong>&lt;/em>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>사용자통계 검색&lt;/td>
+ &lt;td>검색조건 입력 → 조건별 사용자 통계 검색&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>사용자 통계 수치를 특정 검색 조건에 따라 정보를 조회하는 기능이다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>사용자통계 패키지는 요소기술의 공통(cmm) 패키지와 리포팅 공통(sts.com) 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/</guid><description/></item><item><title>사용자관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-user-management/</guid><description>&lt;h1 id="사용자관리">사용자관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 정보를 등록, 수정, 삭제 관리하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
