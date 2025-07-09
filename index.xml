@@ -8687,7 +8687,34 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;li>피처 프로젝트 : 여러개의 단위 플러그인을 묶어서 플러그인 묶음을 하나의 단위로 쉽게 로딩하고 관리하기 위한 프로젝트이다.&lt;/li>
 &lt;li>업데이트 사이트 프로젝트 : 플러그인 묶음을 카테고리 단위로 분류하고 빌드하여 사용자에게 배포하기 위한 프로젝트이다.&lt;/li>
 &lt;/ul>
-&lt;p>전자정부 프레임워크 개발환경 구현도구에 기능을 추가하거나 개선한 이후에는 해당 단위 플러그인 프로젝트에 대한 버전을 변경하여 사용자가 버전이 변경되었음을 알 수 있도록 해야 한다. 그리고, update site 를 사용하여 update를 할 수 있도록 Feature 단위로 묶고 Build 하여 재배포를 해야 한다. 그러므로 수정후 재배포 순서는 다음과 같다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>구현도구 플러그인(Buildship)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</guid><description>&lt;h1 id="구현도구-플러그인buildship">구현도구 플러그인(Buildship)&lt;/h1>
+&lt;p>전자정부 프레임워크 개발환경 구현도구에 기능을 추가하거나 개선한 이후에는 해당 단위 플러그인 프로젝트에 대한 버전을 변경하여 사용자가 버전이 변경되었음을 알 수 있도록 해야 한다. 그리고, update site 를 사용하여 update를 할 수 있도록 Feature 단위로 묶고 Build 하여 재배포를 해야 한다. 그러므로 수정후 재배포 순서는 다음과 같다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시물 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post_statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post_statistics/</guid><description>&lt;h1 id="게시물-통계">게시물 통계&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>게시물 통계 기능은 각종 게시물 현황에 대한 통계자료를 게시판 유형, 게시판 템플릿, 게시판 속성에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
+&lt;ul>
+&lt;li>기능흐름&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>기능명&lt;/th>
+ &lt;th>기능 흐름&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>게시물통계 집계&lt;/td>
+ &lt;td>&lt;em>&lt;strong>&lt;strong>게시물정보 요약 배치수행&lt;/strong>&lt;/strong>&lt;/em> → &lt;em>&lt;strong>&lt;strong>게시물요약정보 집계&lt;/strong>&lt;/strong>&lt;/em>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>게시물통계 검색&lt;/td>
+ &lt;td>검색조건 입력 → 조건별 게시물 통계 검색&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>게시물 통계 수치를 특정 검색 조건에 따라 생성글수, 총조회수, 평균조회수, 최고/최소조회수 게시글 정보, 최고게시자 정보를 조회하는 기능이다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>게시물통계 패키지는 요소기술의 공통(cmm) 패키지와 리포팅 공통(sts.com) 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>구현도구 플러그인(Buildship)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</guid><description>&lt;h1 id="구현도구-플러그인buildship">구현도구 플러그인(Buildship)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 개발 프레임워크의 개발환경 IDE에서는 Gradle 빌드 플러그인으로 Buildship을 사용하고 있다.
 Buildship 플러그인은 Eclipse에서 제공하는 플러그인으로서 Gradle 프로젝트 개발의 편의성을 제공하고 있다.&lt;/p>
@@ -10804,7 +10831,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>암호화는 시큐리티에 대처하는 가장 강력한 수단이다. 이때 본래의 메시지를 평문(Plan Text,Clear Text)이라고 부르고, 암호화된 메시지는 암호문(Cipher Text,Cryptogram)이라고 부른다.
 암호화(Encryption,Ciphering)는 메시지의 내용이 불명확하도록 평문을 재구성하여 암호문을 만드는 것인데, 이 때 사용되는 메시지의 재구성 방법을 암호화 알고리즘(Encryption Algorithm)이라고 부른다. 암호화 알고리즘에서는 암호화의 비밀성을 높이기 위해 키(Key)를 사용하기도 한다.
 복호화(Decyption,decipheing)란 암호화의 역과정으로, 불명확한 메시지로부터 본래의 메시지를 환원하는 과정이다. 일반적으로 복호화에도 암호화에 사용된 것과 동일한 알고리즘이 사용된다.
-그리고 암호화 기법을 적용하는 암호화 및 복호화 과정으로 구성된 시스템을 암호계(Crypto System)라고 부른다. 암호계에는 키나 알고리즘이 포함되는데 하나의 비밀키(Private Key,Secret Key)를 암호화와 복호화에 모두 사용하는 관용암호계(Conventional Crypto System) 와 비밀키와 공개키를 사용하는 공개키(Public Key System)시스템으로 구분된다.&lt;/p></description></item><item><title>암호화_복호화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/encrypt_decrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/encrypt_decrypt/</guid><description>&lt;h1 id="암호화복호화">암호화/복호화&lt;/h1>
+그리고 암호화 기법을 적용하는 암호화 및 복호화 과정으로 구성된 시스템을 암호계(Crypto System)라고 부른다. 암호계에는 키나 알고리즘이 포함되는데 하나의 비밀키(Private Key,Secret Key)를 암호화와 복호화에 모두 사용하는 관용암호계(Conventional Crypto System) 와 비밀키와 공개키를 사용하는 공개키(Public Key System)시스템으로 구분된다.&lt;/p></description></item><item><title>암호화 복호화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/encrypt_decrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/encrypt_decrypt/</guid><description>&lt;h1 id="암호화복호화">암호화/복호화&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>암호화/복호화는 보안을 위하여 데이터를 암호화하거나 암호화된 데이터를 복호화하기 위해, ARIA 방식을 통한 데이터의 암호화 및 복호화 기능을 제공한다.&lt;/p>
 &lt;h2 id="전제조건">전제조건&lt;/h2>
