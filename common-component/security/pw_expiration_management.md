@@ -1,11 +1,11 @@
 ---
-  title: pw_expiration_management
-  linkTitle: pw_expiration_management
+  title: 비밀번호 만료기간 관리
+  linkTitle: 비밀번호 만료기간 관리
   description: "아이디 생성후 또는 비밀번호를 변경후 정해진 기간이 경과하면 비밀번호 변경을 요청한다."
   url: /common-component/security/pw_expiration_management/
   menu:
     depth:
-      name: pw_expiration_management
+      name: 비밀번호 만료기간 관리
       weight: 8
       parent: "security"
       identifier: "pw_expiration_management"
