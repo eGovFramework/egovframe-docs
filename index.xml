@@ -5408,172 +5408,7 @@ Property Service와 Property Source는 각각의 특성과 용도에 따라 시�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;password&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">value=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${database.password}&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/bean&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Spring 3.1이전에는 &lt;code>&amp;lt;context:property-placeholder&amp;gt;&lt;/code>를 정의하면 PropertyPlaceholderConfigurer를 사용하였다. 그러나 Spring 3.1이후부터 PropertySourcesPlaceholderConfigurer를 내부에서 사용하고 있으며 위에서 ${database.*}값을 datasource.properties에서 찾지 못하면 Environment의 Property를 사용하도록 하고 있다.
-PropertySource는 Environment를 통해 접근 가능하다. 즉, 사용자가 정의한 PropertySource 또한 Spring 3.1부터 property-placeholder를 통해 사용할 수 있는 것이다.&lt;/p></description></item><item><title>pw_expiration_management</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/pw_expiration_management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/pw_expiration_management/</guid><description>&lt;h1 id="비밀번호-만료기간-관리">비밀번호 만료기간 관리&lt;/h1>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>아이디 생성후 또는 비밀번호를 변경후 정해진 기간이 경과하면 비밀번호 변경을 요청한다.&lt;/p>
-&lt;h2 id="설명">설명&lt;/h2>
-&lt;p>계정별 비밀번호 생성 또는 변경일시는 DB테이블의 컬럼에 저장되며 지정된 기간이 경과하면 로그인시 체크하여 변경을 요청한다.&lt;/p>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스&lt;/th>
- &lt;th>설명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.cmm.web.EgovComIndexController.java&lt;/td>
- &lt;td>초기 컨텐츠표시 Controller&lt;/td>
- &lt;td>시간관리 표시&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.uat.uia.service.EgovLoginService&lt;/td>
- &lt;td>비밀번호 만료 및 로그인 관련 서비스 인터페이스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl&lt;/td>
- &lt;td>비밀번호 만료 및 로그인 관련 서비스 구현 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl&lt;/td>
- &lt;td>비밀번호 만료 및 로그인위한 데이터처리 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/cmm/EgovUnitContent.jsp&lt;/td>
- &lt;td>초기 컨텐츠표시 페이지&lt;/td>
- &lt;td>시간관리 표시 팝업호출&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uat/uia/EgovExpirePwd.jsp&lt;/td>
- &lt;td>비밀번호 만료 안내 페이지&lt;/td>
- &lt;td>시간관리 표시 팝업&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_mysql.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을위한 MySQL용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_oracle.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Oracle용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_tibero.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Tibero용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_altibase.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Altibase용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_cubrid.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Cubrid용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_maria.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Maria용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_postgres.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Postgres용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_goldilocks.xml&lt;/td>
- &lt;td>비밀번호 만료 및 로그인을 위한 Goldilocks용 Query XML&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="관련테이블">관련테이블&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>테이블명&lt;/th>
- &lt;th>테이블명(영문)&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>일반회원&lt;/td>
- &lt;td>COMTNGNRLMBER&lt;/td>
- &lt;td>일반회원 정보를 관리한다.&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>주민등록번호(IHIDNUM) 컬럼이 존재하나 데이터 저장 및 조회 로직에서는 제외되어 있으므로&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>필요시 &lt;strong>암호화&lt;/strong>하여 구현해야 함&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>기업회원&lt;/td>
- &lt;td>COMTNENTRPRSMBER&lt;/td>
- &lt;td>기업회원 정보를 관리한다.&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>신청인주민등록번호(APPLCNT_IHIDNUM) 컬럼이 존재하나 데이터 저장 및 조회 로직에서는 제외되어 있으므로,&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>필요시 &lt;strong>암호화&lt;/strong>하여 구현해야 함&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>업무사용자&lt;/td>
- &lt;td>COMTNEMPLYRINFO&lt;/td>
- &lt;td>업무사용자 정보를 관리한다.&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 id="환경설정">환경설정&lt;/h2>
-&lt;p>비밀번호 등록 또는 수정후 만료 기간을 설정할수 있다.&lt;/p></description></item><item><title>JPA Query Language</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</guid><description>&lt;h1 id="query-language">Query Language&lt;/h1>
+PropertySource는 Environment를 통해 접근 가능하다. 즉, 사용자가 정의한 PropertySource 또한 Spring 3.1부터 property-placeholder를 통해 사용할 수 있는 것이다.&lt;/p></description></item><item><title>JPA Query Language</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</guid><description>&lt;h1 id="query-language">Query Language&lt;/h1>
 &lt;p>JPA에는 별도의 Query Language를 제공함으로써 객체 지향 관점에서 특정 객체에 대한 조회와 DB 유형에 독립적인 Query 정의를 가능하도록 한다. 구성요소 및 작성 방법은 아래와 같다.&lt;/p>
 &lt;h2 id="구성요소">구성요소&lt;/h2>
 &lt;p>QL Statement 유형으로는 SELECT 문과 Update and Delete 문 두가지가 있다.&lt;/p>
@@ -10670,7 +10505,172 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>부서권한관리 패키지는 권한관리 패키지와 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 그룹관리 , 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>Asynchronous request processing</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/asynchronous-request-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/asynchronous-request-processing/</guid><description>&lt;h1 id="asynchronous-request-processing">Asynchronous request processing&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>기존의 요청 처리는 하나의 요청에 대해 한 개의 쓰레드를 사용하였다. 하나의 쓰레드에서 요청-응답 과정을 모두 처리하기 때문에 요청처리 이후 응답이 오기까지 쓰레드를 대기상태로 유지하였다. 그러나 서버와의 연결을 유지한채 대기상태로 있는 것이 아니라 서버와의 처리를 계속 이어가게 해주기 위해서는 이러한 기존의 처리에 한계가 있었다.&lt;/p>
-&lt;p>Servlet 3.0에서 제공하는 비동기 요청 처리는 쓰레드가 대기상태로 있는 것이 아니라 요청을 처리하는 Servlet 쓰레드가 요청후 바로 반환되고 내부의 다른 쓰레드가 이를 처리했다가 처리완료 후 응답처리 리소스가 가용할 때 Servlet쓰레드가 응답처리를 계속 이어가게 해 주는 것이다.&lt;/p></description></item><item><title>빌드 Lifecycle</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-lifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-lifecycle/</guid><description>&lt;h1 id="빌드-lifecycle">빌드 Lifecycle&lt;/h1>
+&lt;p>Servlet 3.0에서 제공하는 비동기 요청 처리는 쓰레드가 대기상태로 있는 것이 아니라 요청을 처리하는 Servlet 쓰레드가 요청후 바로 반환되고 내부의 다른 쓰레드가 이를 처리했다가 처리완료 후 응답처리 리소스가 가용할 때 Servlet쓰레드가 응답처리를 계속 이어가게 해 주는 것이다.&lt;/p></description></item><item><title>비밀번호 만료기간 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/pw_expiration_management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/pw_expiration_management/</guid><description>&lt;h1 id="비밀번호-만료기간-관리">비밀번호 만료기간 관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>아이디 생성후 또는 비밀번호를 변경후 정해진 기간이 경과하면 비밀번호 변경을 요청한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>계정별 비밀번호 생성 또는 변경일시는 DB테이블의 컬럼에 저장되며 지정된 기간이 경과하면 로그인시 체크하여 변경을 요청한다.&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.cmm.web.EgovComIndexController.java&lt;/td>
+ &lt;td>초기 컨텐츠표시 Controller&lt;/td>
+ &lt;td>시간관리 표시&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uat.uia.service.EgovLoginService&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인 관련 서비스 인터페이스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인 관련 서비스 구현 클래스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인위한 데이터처리 클래스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/cmm/EgovUnitContent.jsp&lt;/td>
+ &lt;td>초기 컨텐츠표시 페이지&lt;/td>
+ &lt;td>시간관리 표시 팝업호출&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uat/uia/EgovExpirePwd.jsp&lt;/td>
+ &lt;td>비밀번호 만료 안내 페이지&lt;/td>
+ &lt;td>시간관리 표시 팝업&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_mysql.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을위한 MySQL용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_oracle.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Oracle용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_tibero.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Tibero용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_altibase.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Altibase용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_cubrid.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Cubrid용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_maria.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Maria용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_postgres.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Postgres용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_goldilocks.xml&lt;/td>
+ &lt;td>비밀번호 만료 및 로그인을 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="관련테이블">관련테이블&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>테이블명&lt;/th>
+ &lt;th>테이블명(영문)&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>일반회원&lt;/td>
+ &lt;td>COMTNGNRLMBER&lt;/td>
+ &lt;td>일반회원 정보를 관리한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>주민등록번호(IHIDNUM) 컬럼이 존재하나 데이터 저장 및 조회 로직에서는 제외되어 있으므로&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>필요시 &lt;strong>암호화&lt;/strong>하여 구현해야 함&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>기업회원&lt;/td>
+ &lt;td>COMTNENTRPRSMBER&lt;/td>
+ &lt;td>기업회원 정보를 관리한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>신청인주민등록번호(APPLCNT_IHIDNUM) 컬럼이 존재하나 데이터 저장 및 조회 로직에서는 제외되어 있으므로,&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>필요시 &lt;strong>암호화&lt;/strong>하여 구현해야 함&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>업무사용자&lt;/td>
+ &lt;td>COMTNEMPLYRINFO&lt;/td>
+ &lt;td>업무사용자 정보를 관리한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>비밀번호 등록 또는 수정후 만료 기간을 설정할수 있다.&lt;/p></description></item><item><title>빌드 Lifecycle</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-lifecycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/maven/build-lifecycle/</guid><description>&lt;h1 id="빌드-lifecycle">빌드 Lifecycle&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>메이븐 빌드는 소프트웨어 프로젝트의 핵심적인 빌드 라이프 사이클 개념을 따르고 있으며 빌드 초기화 단계부터
 artifact의 배포까지의 생명 주기를 정의하고 있다.&lt;/p>
