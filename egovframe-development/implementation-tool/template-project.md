@@ -6,8 +6,8 @@ url: /egovframe-development/implementation-tool/editor/template-project/
 menu:
   depth:
     weight: 3
-    parent: "template-project"
-    identifier: "editor"
+    parent: "editor"
+    identifier: "template-project"
 ---
 ## 개요
 
