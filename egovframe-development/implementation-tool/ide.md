@@ -6,8 +6,8 @@ url: /egovframe-development/implementation-tool/editor/ide/
 menu:
   depth:
     weight: 2
-    parent: "ide"
-    identifier: "editor"
+    parent: "editor"
+    identifier: "ide"
 ---
 ## 개요
 
@@ -41,7 +41,6 @@ eGovFrame기반의 어플리케이션을 빌드하기 위한 소스 코드 및 �
 3. **eGovFrame** Perspective를 선택한다.
 
    ![](./images/mobile-perspective.png)
-
 4. 제목 표시줄이 변경되어 **eGovFrame**이 표시된다.
 
    ![IDE Perspective](./images/4th-ide.png)
@@ -75,24 +74,22 @@ Perspective를 eGovFrame으로 변경하면 메뉴 표시줄에 **eGovFrame** �
    또는, **Ctrl+N** 단축키를 이용하여 새로작성 마법사를 실행한 후 **eGovFrame** > **eGovFrame Core Project**을 선택하고 **Next**를 클릭한다.
 
    ![Core Project 생성 1](./images/4th-new-core.png)
-
 2. 프로젝트명과 메이븐 설정에 필요한 값들을 입력하고 **Next**를 클릭한다.
 
    ![Core Project 생성 2](./images/4th-core.png)
-
 3. 예제 소스 파일 생성 여부를 체크하고 **Finish**를 클릭한다.
 
    ![Core Project 생성 3](./images/4th-core-example.png)
 
 **Create a eGovFrame Core Project 페이지**
 
-| 옵션         | 설명                                                                                                                                                                                               | 기본값                         |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| Project Name | 새 프로젝트 이름을 입력한다.                                                                                                                                                                       | 공백                           |
-| Contents     | Use default Workspace location체크시 기본 작업공간에 프로젝트 명으로 프로젝트 디렉토리가 생성된다.``임의의 디렉토리 선택시 옵션을 해제하고 **Browse**버튼을 클릭하여 위치를 선택한다. | Use default Workspace location |
-| Group Id     | Maven에서의 Group Id를 입력한다.                                                                                                                                                                   | 공백                           |
-| Artifact Id  | Maven에서의 Artifact Id를 입력한다.                                                                                                                                                                | 공백                           |
-| Version      | Maven에서의 버젼을 입력한다.                                                                                                                                                                       | 1.0.0                          |
+| 옵션         | 설명                                                                                                                                                                                       | 기본값                         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| Project Name | 새 프로젝트 이름을 입력한다.                                                                                                                                                               | 공백                           |
+| Contents     | Use default Workspace location체크시 기본 작업공간에 프로젝트 명으로 프로젝트 디렉토리가 생성된다.``임의의 디렉토리 선택시 옵션을 해제하고**Browse**버튼을 클릭하여 위치를 선택한다. | Use default Workspace location |
+| Group Id     | Maven에서의 Group Id를 입력한다.                                                                                                                                                           | 공백                           |
+| Artifact Id  | Maven에서의 Artifact Id를 입력한다.                                                                                                                                                        | 공백                           |
+| Version      | Maven에서의 버젼을 입력한다.                                                                                                                                                               | 1.0.0                          |
 
 **Generate Example 페이지**
 
@@ -106,26 +103,24 @@ Perspective를 eGovFrame으로 변경하면 메뉴 표시줄에 **eGovFrame** �
    또는, **Ctrl+N** 단축키를 이용하여 새로작성 마법사를 실행한 후 **eGovFrame** > **eGovFrame Web Project**을 선택하고 **Next**를 클릭한다.
 
    ![Web Project 생성 1](./images/4th-new-web.png)
-
 2. 프로젝트명과 메이븐 설정에 필요한 값들을 입력하고 **Next**를 클릭한다.
 
    ![Web Project 생성 2](./images/4th-web.png)
-
 3. 예제 소스 파일 생성 여부를 체크하고 **Finish**를 클릭한다.
 
    ![Web Project 생성 3](./images/4th-web-example.png)
 
 **Create a eGovFrame Web Project 페이지**
 
-| 옵션                           | 설명                                                                                                                                                                 | 기본값     |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| Project Name                   | 새 프로젝트 이름을 입력한다.                                                                                                                                         | 공백       |
-| Use default Workspace location | 체크시 기본 작업공간에 프로젝트 명으로 프로젝트 디렉토리가 생성된다.``임의의 디렉토리 선택시 옵션을 해제하고 **Browse**버튼을 클릭하여 위치를 선택한다. | Checked    |
-| Target Runtime                 | 웹 어플리케이션을 실행할 타겟 서버를 선택한다.                                                                                                                       | None |
-| Dynamic Web Module Version     | 동적 웹 모듈 버젼을 선택한다.                                                                                                                                        | 2.5        |
-| Group Id                       | Maven에서의 Group Id를 입력한다.                                                                                                                                     | 공백       |
-| Artifact Id                    | Maven에서의 Artifact Id를 입력한다.                                                                                                                                  | 공백       |
-| Version                        | Maven에서의 버젼을 입력한다.                                                                                                                                         | 1.0.0      |
+| 옵션                           | 설명                                                                                                                                                         | 기본값  |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| Project Name                   | 새 프로젝트 이름을 입력한다.                                                                                                                                 | 공백    |
+| Use default Workspace location | 체크시 기본 작업공간에 프로젝트 명으로 프로젝트 디렉토리가 생성된다.``임의의 디렉토리 선택시 옵션을 해제하고**Browse**버튼을 클릭하여 위치를 선택한다. | Checked |
+| Target Runtime                 | 웹 어플리케이션을 실행할 타겟 서버를 선택한다.                                                                                                               | None    |
+| Dynamic Web Module Version     | 동적 웹 모듈 버젼을 선택한다.                                                                                                                                | 2.5     |
+| Group Id                       | Maven에서의 Group Id를 입력한다.                                                                                                                             | 공백    |
+| Artifact Id                    | Maven에서의 Artifact Id를 입력한다.                                                                                                                          | 공백    |
+| Version                        | Maven에서의 버젼을 입력한다.                                                                                                                                 | 1.0.0   |
 
 **Generate Example 페이지**
 
