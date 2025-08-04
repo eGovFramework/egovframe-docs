@@ -6,8 +6,8 @@ url: /egovframe-development/implementation-tool/editor/sourcecode-editor/
 menu:
   depth:
     weight: 1
-    parent: "sourcecode-editor"
-    identifier: "editor"
+    parent: "editor"
+    identifier: "sourcecode-editor"
 ---
 ## 개요
 
@@ -68,7 +68,6 @@ Java Code 구현 중 현재 컨텍스트에 입력하던 내용을 완성하는 
 
 ![코드 스타일 적용 2](./images/codestyle2.png)
 
-
 ### 코드 템플릿 처리
 
 전자정부 프레임워크 코드 템플릿을 정의하여 표준화된 코드를 소스코드 작성을 지원해주는 도구로 개발 생산성 및 유지보수성을 향상을 지원한다.
@@ -78,7 +77,6 @@ Java Code 구현 중 현재 컨텍스트에 입력하던 내용을 완성하는 
 3. try 문 입력 시 try까지만 입력하고 Ctrl + Space 를 눌러서 Template 를 적용 가능하다.
 
 ![코드 템플릿 처리](./images/codetemplatenew.png)
-
 
 ### Quick Type Hierarchy
 
