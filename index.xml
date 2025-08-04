@@ -1678,7 +1678,11 @@ eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 �
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="클래스-설정">클래스 설정&lt;/h4>
 &lt;h5 id="partitioner">Partitioner&lt;/h5>
 &lt;p>EgovColumnRangePartitioner는 gridSize 만큼 테이블 영역을 나누고 영역 수 만큼 Context를 생성하여, 각 영역의 시작열(min)과 마지막열 (max)을 구해 각 Context에 셋팅하는 역할을 한다.&lt;br>
-(결론적으로, gridSize 만큼 Context가 생성되어 여러 Slave Step 들을 사용할 수 있게 됨)&lt;/p></description></item><item><title>Debug</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/debug/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/debug/</guid><description/></item><item><title>선언적 Transaction 관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/transaction/declarative/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/transaction/declarative/</guid><description>&lt;h1 id="declarative-transaction-management">Declarative Transaction Management&lt;/h1>
+(결론적으로, gridSize 만큼 Context가 생성되어 여러 Slave Step 들을 사용할 수 있게 됨)&lt;/p></description></item><item><title>Debug</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/debug/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/debug/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Implentation Tool에는 로컬 또는 원격으로 실행 중인 프로그램에서 오류를 발견하고 진단할 수 있는 디버거가 포함되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>디버거를 사용하면 중단점을 설정하고, 실행된 프로그램을 일시중단하고, 코드를 단계별로 진행하고, 변수 컨텐츠를 검토하여 프로그램 실행을 제어할 수 있다.&lt;/p>
+&lt;p>디버거에는 클라이언트/서버 설계가 있으므로 워크스테이션에서 로컬로 실행 중인 프로그램은 물론 네트워크의 다른 시스템에서 원격으로 실행 중인 프로그램도 디버그할 수 있습니다. 디버그 클라이언트는 워크스테이션의 Workbench에서 실행합니다. 디버거 서버는 디버그할 프로그램과 동일한 시스템에서 실행합니다. 이 디버거 서버는 워크스테이션에서 실행된 프로그램에 있을 수도 있고(로컬 디버깅) 네트워크를 통해 액세스할 수 있는 시스템에 있을 수도(원격 디버깅) 있습니다&lt;/p></description></item><item><title>선언적 Transaction 관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/transaction/declarative/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/transaction/declarative/</guid><description>&lt;h1 id="declarative-transaction-management">Declarative Transaction Management&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>코드에서 직접적으로 Transaction 처리하지 않고, 선언적으로 Transaction을 관리할 수 있는데 Annotation을 이용한 Transaction 관리, XML 정의를 이용한 Transaction 관리를 지원한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -1960,7 +1964,17 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 이클립스에서 해당 프로젝트를 보면 아래와 같은 구조를 가지고 있습니다.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/presentation-layer/images/projectexplore.jpg" alt="projectexplore" >
-&lt;/p></description></item><item><title>Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/</guid><description/></item><item><title>배치 템플릿을 이용한 EgovCommandLineRunner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_commandline_runner_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_commandline_runner_template/</guid><description>&lt;h1 id="배치-템플릿을-이용한-egovcommandlinerunner-예제">배치 템플릿을 이용한 EgovCommandLineRunner 예제&lt;/h1>
+&lt;/p></description></item><item><title>Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>eGovFrame Editor는 전자정부 개발 도구 통합을 위한 개방형 플랫폼으로, IDE(Integrated Development Environment) 기반으로 Edit 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>eGovFrame Editor에서 기본 eclipse tool에서 제공하는 Editor외에 다음과 같은 Edit 기능을 제공한다.&lt;/p>
+&lt;ul>
+&lt;li>UML Editor : UML 작성도구로써 Activity/Class/Sequence/UseCase Diagram 작성을 지원&lt;/li>
+&lt;li>ERD Editor : 통합개발환경에서 ER 의 논리모델과 물리모델 작성을 지원하는 Editor&lt;/li>
+&lt;li>DBIO Editor :DataBase 접근에 관한 표준적인 방법을 제공하는 Editor&lt;/li>
+&lt;li>SourceCode Editor : 자바 개발도구로써 eGovFrame기반의 어플리케이션 개발을 지원&lt;/li>
+&lt;/ul>
+&lt;p>각 editor 는 기본적으로 이클립스 워크벤치 사용자 인터페이스를 따르고 있으며 기본 주요 구성 영역은 다음과 같다.&lt;/p></description></item><item><title>배치 템플릿을 이용한 EgovCommandLineRunner 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_commandline_runner_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_commandline_runner_template/</guid><description>&lt;h1 id="배치-템플릿을-이용한-egovcommandlinerunner-예제">배치 템플릿을 이용한 EgovCommandLineRunner 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>CommandLine 배치 템플릿 프로젝트를 이용하여 EgovCommandLineRunner의 사용법을 보여주는 예제이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -3594,7 +3608,14 @@ SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화�
 
 &lt;/li>
 &lt;/ul>
-&lt;p>UUID는 다음 5개의 Version이 존재한다.&lt;/p></description></item><item><title>Bean Definition Inheritance</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/</guid><description>&lt;h1 id="bean-definition-inheritance">Bean definition inheritance&lt;/h1>
+&lt;p>UUID는 다음 5개의 Version이 존재한다.&lt;/p></description></item><item><title>IDE</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/ide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/ide/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>eGovFrame기반의 어플리케이션 개발 시 개발자 편의성을 위하여 eclipse기반의 Perspective, Menu, 프로젝트 생성 마법사 등을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>기본 Eclipse IDE 에 eGovFrame기반의 어플리케이션 개발을 위한 View 초기세트와 LayOut, 메뉴, 프로젝트 생성 마법사 등을 추가하였고 그에 대한 상세내용은 다음과 같다.&lt;/p>
+&lt;h5 id="perspective">Perspective&lt;/h5>
+&lt;p>eGovFrame기반의 어플리케이션 개발을 위한 최적의 View 초기 세트와 레이아웃을 제공한다.&lt;/p>
+&lt;h5 id="menu">Menu&lt;/h5>
+&lt;p>eGovFrame Perspective에서만 활성화 되는 메뉴로 eclipse내에서 분산되어 있는 플러그인들의 기능(eGovFrame에서 필히 사용되어지는 기능)을 빠르게 접근할 수 있는 통합 메뉴를 제공한다.&lt;/p></description></item><item><title>Bean Definition Inheritance</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/</guid><description>&lt;h1 id="bean-definition-inheritance">Bean definition inheritance&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Bean 정의는 많은 양의 설정 정보를 포함하고 있다. 자식 bean 정의는 부모 bean 정의로부터 설정 정보를 상속받은 bean 정의를 의미한다. 자식 bean 정의는 필요에 따라 부모 bean 정의로부터 상속받은 설정 정보를 덮어쓰거나 추가할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -4194,7 +4215,27 @@ Spring에서는 Spring Modules 프로젝트에서 연계 모듈을 제공한다.
 &lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="기본-활용-구조">기본 활용 구조&lt;/h3>
-&lt;p>전자정부 모바일 표준프레임워크 실행환경은 기존 전자정부 표준프레임워크의 디렉터리 구조 및 표준을 준수하고 있으며, 모바일 웹 개발에 편의를 제공하기 위해 하위 디렉터리 구조를 다음과 같이 구성하고 있다.&lt;/p></description></item><item><title>JSR 330 표준 어노테이션 사용하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-jsr_330_standard_annotations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-jsr_330_standard_annotations/</guid><description>&lt;h1 id="jsr-330-표준-어노테이션-사용하기">JSR 330 표준 어노테이션 사용하기&lt;/h1>
+&lt;p>전자정부 모바일 표준프레임워크 실행환경은 기존 전자정부 표준프레임워크의 디렉터리 구조 및 표준을 준수하고 있으며, 모바일 웹 개발에 편의를 제공하기 위해 하위 디렉터리 구조를 다음과 같이 구성하고 있다.&lt;/p></description></item><item><title>jsp-api.jar import 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/implementation-tool-ref/importjspapi-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/implementation-tool-ref/importjspapi-guide/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>jsp-api.jar 파일을 import하는 방법을 설명한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>모바일 사이트 템플릿 프로젝트 생성 후 EgovComCrossSiteHndlr.java 파일에서 javax.servlet.jsp. 로 시작하는 파일들의 import 에러가 나타날 때 본 가이드를 참고한다.&lt;/p>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>프로젝트 우클릭 &amp;gt; Build Path &amp;gt; Configure Build Path… 메뉴를 클릭한다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>나타나는 Java Build Path 창에서 Libraries 탭의 Add External JARs… 버튼을 클릭한다.&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/images/jsp-api_01.png" alt="" >
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tomcat이 설치되어 있는 폴더의 lib 폴더에 있는 jsp-api.jar 파일을 선택한다.&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/images/jsp-api_02.png" alt="" >
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>jsp-api.jar 파일이 목록에 추가되었음을 확인 후 OK 버튼을 클릭한다.&lt;/p></description></item><item><title>JSR 330 표준 어노테이션 사용하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-jsr_330_standard_annotations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-jsr_330_standard_annotations/</guid><description>&lt;h1 id="jsr-330-표준-어노테이션-사용하기">JSR 330 표준 어노테이션 사용하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>스프링 3.0부터 JSR-330 표준 어노테이션(의존성 주입)을 지원한다. 이 어노테이션들은 스프링 어노테이션들과 같은 방법으로 스캔된다. 이 어노테이션들을 사용하기 위해서는 클래스패스에 관련 jar 파일들을 가지고 있어야 한다.&lt;br>
 Maven을 사용한다면 Maven Repository(
@@ -6470,7 +6511,57 @@ Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.
 &lt;li>SockJS 서버 구현 - spring-websocket 모듈을 통해 제공&lt;/li>
 &lt;/ul>
 &lt;p>SockJS 는 여러가지 테크닉을 이용하여 다양한 브라우저 및 브라우저 버전을 지원한다. 전송 타입은 다음의 3가지로 분류된다.
-&lt;strong>WebSocket, HTTP Streaming, HTTP Long Polling&lt;/strong>. 이들 각각을 살펴보려면 여기 를 참조한다.&lt;/p></description></item><item><title>Spring Expression Language(SpEL)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/</guid><description>&lt;h1 id="spring-expression-languagespel">Spring Expression Language(SpEL)&lt;/h1>
+&lt;strong>WebSocket, HTTP Streaming, HTTP Long Polling&lt;/strong>. 이들 각각을 살펴보려면 여기 를 참조한다.&lt;/p></description></item><item><title>SourceCode Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/sourcecode-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/sourcecode-editor/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Source Editor는 전자정부 표준프레임워크 개발 도구 통합을 위한 개방형 플랫폼으로, IDE(Integrated Development Environment) 기반으로 Edit 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/images/ide-basic-old-base.png" alt="Perspective" >
+&lt;/p>
+&lt;p>이클립스 워크벤치 사용자 인터페이스는 다양한 윈도우의 모임으로 각 창의 메뉴 모음, 도구 모음, 바로 가기 모음과 하나 이상의 Perspective가 포함되어 있고 주요 구성 영역은 다음과 같다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>영역&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Workbench&lt;/td>
+ &lt;td>WindowEditor, Menu Bar, toolbar, shortcut bar 등의 다양한 Window와 하나 이상의 Perspective 로 구성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Perspective&lt;/td>
+ &lt;td>View와 Content editor로 구성된 집합&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Views&lt;/td>
+ &lt;td>workbench 페이지 내에서 시각적 구성 요소로서 기본 작업을 위한 지원 역할에 사용&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Editor&lt;/td>
+ &lt;td>한 workbench 페이지 내에서 시각적 구성 요소로서 문서 또는 데이터 변경 등의 역할에 사용&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Menu bar&lt;/td>
+ &lt;td>일반적으로 파일, 편집, 이동, 프로젝트, 창, 도움말 수준의 메뉴가 포함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Tool bar&lt;/td>
+ &lt;td>툴 실행의 편의성 제공을 위해 제공된 아이콘&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Short cut bar&lt;/td>
+ &lt;td>Perspective 또는 View의 바로가기 아이콘&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Status line&lt;/td>
+ &lt;td>개발자 지원을 위한 콘텐츠 정보로서 현재의 라인과 컬럼 번호 등의 글로벌 상태 표시&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;h3 id="code-assist-메서드">Code Assist 메서드&lt;/h3>
+&lt;p>Java Code 구현 중 현재 컨텍스트에 입력하던 내용을 완성하는 데 필요한 코드(메소드, 코드 템플릿 등)를 표시하여 개발을 지원하기 위한 도구이다.&lt;/p></description></item><item><title>Spring Expression Language(SpEL)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/</guid><description>&lt;h1 id="spring-expression-languagespel">Spring Expression Language(SpEL)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring 3.0에서 처음 소개된 스프링 전용 표현식 언어로 강력하고 유연하게 사용된다.&lt;br>
 SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해서 프로퍼티 값을 능동적으로 가져오는 방법이며 가장 기본적이다. 또한 jsp에서 &amp;lt;spring:eval&amp;gt;태그를 사용하여 SpEL을 적용 할 수도 있다.&lt;/p>
@@ -7136,7 +7227,32 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/bean&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="junittest-구성-및-수행">JunitTest 구성 및 수행&lt;/h3>
 &lt;h4 id="junittest-구성">JunitTest 구성&lt;/h4>
-&lt;p>&lt;strong>taskletJob 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/strong>&lt;/p></description></item><item><title>Test Automation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</guid><description>&lt;h1 id="test-automation">Test Automation&lt;/h1>
+&lt;p>&lt;strong>taskletJob 설정과 관련 클래스들로 Junit Test를 수행한다. 이 때 배치가 수행되고, 관련된 내용을 확인할 수 있다.&lt;/strong>&lt;/p></description></item><item><title>Template Project Wizard</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/template-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/template-project/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>eGovFrame 기반의 어플리케이션 개발 시 개발자 편의성을 위하여 기본적인 코드 등을 포함하고 있는 템플릿 프로젝트 자동 생성 마법사를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>eGovFrame기반의 전자정부 표준프레임워크 공통컴포넌트를 포함하고 있는 템플릿 프로젝트 자동 생성 마법사를 제공한다.&lt;/p>
+&lt;ul>
+&lt;li>Simple Homepage : 단순 홈페이지 기능 구현 시 필수적인 부분만 사용 가능하도록 경량화 된 실행환경 제공
+&lt;ul>
+&lt;li>메인 페이지, 사용자 관리, 공지사항 관리, 게시판 관리, 안내 관리 기능을 제공한다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Portal Site : 포털 사이트 기능 구현 시 필수적인 부분만 사용 가능하도록 경량화 된 실행환경 제공
+&lt;ul>
+&lt;li>포털 공지사항 관리 템플릿, 사용자 관리 템플릿, 권한 관리 템플릿, 포털 초기화면 관리 템플릿, 포털 FAQ 관리 템플릿, 포털 행사 참가 관리 템플릿 기능을 제공한다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Enterprise Business : 내부업무 기능 구현 시 필수적인 부분만 사용 가능하도록 경량화 된 실행환경 제공
+&lt;ul>
+&lt;li>메인 페이지, 업무사용자 관리, 공지사항 관리, 게시판 관리, 권한 관리, 프로그램 관리, 메뉴 관리 기능을 제공한다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>메뉴 표시줄에서 &lt;strong>File&lt;/strong> &amp;gt; &lt;strong>New&lt;/strong> &amp;gt; &lt;strong>eGovFrame Template Project&lt;/strong>를 선택한다. (단 eGovFrame Perspective 내에서)
+또는, &lt;strong>Ctrl+N&lt;/strong> 단축키를 이용하여 새로 작성 마법사를 실행한 후 &lt;strong>eGovFrame&lt;/strong> &amp;gt; &lt;strong>eGovFrame Template Project&lt;/strong>을 선택하고 &lt;strong>Next&lt;/strong>를 클릭한다.&lt;/p></description></item><item><title>Test Automation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-automation/</guid><description>&lt;h1 id="test-automation">Test Automation&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>
 
@@ -11647,7 +11763,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;p>패키지 구조는 변경되었으나 기존에 iBatis 패키지명은 그대로 사용한다.&lt;/p>
 &lt;h3 id="mybatis-library-별도-제공">MyBatis library 별도 제공&lt;/h3>
-&lt;p>Maven Dependency Information 예시&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description/></item><item><title>참조 문서 목록</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/</guid><description>&lt;h1 id="참조-문서-목록">참조 문서 목록&lt;/h1>
+&lt;p>Maven Dependency Information 예시&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description/></item><item><title>참조 문서 목록</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/implementation-tool-ref/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/implementation-tool-ref/</guid><description>&lt;h1 id="참조-문서-목록">참조 문서 목록&lt;/h1></description></item><item><title>참조 문서 목록</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/</guid><description>&lt;h1 id="참조-문서-목록">참조 문서 목록&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
