@@ -1,6 +1,6 @@
 ---
-  title: numberformat
-  linkTitle: numberformat
+  title: 숫자 지역화 처리
+  linkTitle: 숫자 지역화 처리
   description: "다국어 지원을 위한 국가간 숫자 표시 변환 기능을 제공한다."
   url: /common-component/elementary-technology/numberformat/
   menu:
