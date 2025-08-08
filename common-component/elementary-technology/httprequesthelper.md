@@ -5,7 +5,7 @@
   url: /common-component/elementary-technology/httprequesthelper/
   menu:
     depth:
-      name: httprequesthelper
+      name: Http Request 정보 취득
       weight: 2
       parent: "new-components-v3.2"
       identifier: "httprequesthelper"

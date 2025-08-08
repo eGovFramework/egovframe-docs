@@ -5,7 +5,7 @@
   url: /common-component/elementary-technology/dateformat/
   menu:
     depth:
-      name: dateformat
+      name: 날짜 지역화 처리
       weight: 4
       parent: "new-components-v3.2"
       identifier: "dateformat"
