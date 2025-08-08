@@ -5233,7 +5233,192 @@ DispatcherServlet은 웹 애플리케이션별 하나를 등록한다.&lt;/p>
 &lt;p>Maven 프로젝트 시에 Maven central repository에서 제공하는 다양한 장점에도 불구하고 사용성 측면에서 내부 repository manager의 사용을 권고하고 있다. 실제 기업 또는 organization에서는 하나 이상의 central repository를 제공 하고 있으며 Nexus는 이런 여러 개의 외부 리포지토리를 Proxy 개념으로 연결해서 효율적으로 내부 개발자들에게 virtual한 하나의 repository 연결 포인트를 제공한다. 실제 내부 개발자들은 Nexus 리포지토리만을 바라보고 필요한 artifact들을 요청한다.&lt;/p>
 &lt;p>Maven을 사용할 때 유용한 오픈소스인 Nexus의 사용법에 대해 설명한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>Nexus는 &lt;strong>Maven repository manager&lt;/strong>로 프로젝트 또는 기업에서 필요로 하는 &lt;strong>내부 리포지토리 구성을 위한 도구&lt;/strong>이다.&lt;/p></description></item><item><title>Object Pooling Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</guid><description>&lt;h1 id="object-pooling-service">Object Pooling Service&lt;/h1>
+&lt;p>Nexus는 &lt;strong>Maven repository manager&lt;/strong>로 프로젝트 또는 기업에서 필요로 하는 &lt;strong>내부 리포지토리 구성을 위한 도구&lt;/strong>이다.&lt;/p></description></item><item><title>numberformat</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/numberformat/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/numberformat/</guid><description>&lt;h1 id="요소기술---숫자-지역화-처리">요소기술 - 숫자 지역화 처리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>다국어 지원을 위한 국가간 숫자 표시 변환 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Locale에 맞게 숫자, 통화, 퍼센트의 출력 형식을 변환한다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.service.EgovNumberFormat&lt;/td>
+ &lt;td>숫자, 통화, 퍼센트에 대한 출력 형식 변환&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Number number)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Locale locale, Number number)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Number number, boolean groupingUsed)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Locale locale, Number number, boolean groupingUsed)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Number number, int maxFactionDigits)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Locale locale, Number number, int maxFactionDigits)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Number number, boolean groupingUsed, int maxFactionDigits)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatNumber(Locale locale, Number number, boolean groupingUsed, int maxFactionDigits)&lt;/td>
+ &lt;td>숫자 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 숫자를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatCurrency(Number number)&lt;/td>
+ &lt;td>통화 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 통화를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatCurrency(Locale locale, Number number)&lt;/td>
+ &lt;td>통화 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 통화를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatCurrency(Number number, boolean groupingUsed)&lt;/td>
+ &lt;td>통화 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 통화를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatCurrency(Locale locale, Number number, boolean groupingUsed)&lt;/td>
+ &lt;td>통화 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 통화를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Number number)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Locale locale, Number number)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Number number, boolean groupingUsed)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Locale locale, Number number, boolean groupingUsed)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Number number, int maxFactionDigits)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Locale locale, Number number, int maxFactionDigits)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Number number, boolean groupingUsed, int maxFactionDigits)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatPercent(Locale locale, Number number, boolean groupingUsed, int maxFactionDigits)&lt;/td>
+ &lt;td>퍼센트 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 퍼센트를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="input">Input&lt;/h5>
+&lt;ul>
+&lt;li>숫자 : Number 타입&lt;/li>
+&lt;li>Locale : 지역화 처리를 위한 Locale&lt;/li>
+&lt;li>groupingUsed : 그룹 분리기호 포함 여부&lt;/li>
+&lt;li>maxFactionDigits : 변환된 문자열에서 출력할 소수점 이하 최대 자리수&lt;/li>
+&lt;/ul>
+&lt;h5 id="output">Output&lt;/h5>
+&lt;ul>
+&lt;li>String : Locale에 맞게 변환된 숫자, 통화, 퍼센트 문자열&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>사용방법
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovNumberFormat;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Double amount &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Double(10000000.&lt;span style="color:#a6e22e">567&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Double percent &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Double(11.&lt;span style="color:#a6e22e">23456&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Locale&lt;span style="color:#f92672">[]&lt;/span> locales &lt;span style="color:#f92672">=&lt;/span> NumberFormat.&lt;span style="color:#a6e22e">getAvailableLocales&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> (Locale locale : locales ) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> StringBuffer buffer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> StringBuffer();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buffer.&lt;span style="color:#a6e22e">append&lt;/span>(locale).&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;,&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(locale.&lt;span style="color:#a6e22e">getDisplayLanguage&lt;/span>()).&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;,&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(locale.&lt;span style="color:#a6e22e">getDisplayCountry&lt;/span>()).&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34; : &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Number : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovNumberFormat.&lt;span style="color:#a6e22e">formatNumber&lt;/span>(locale, amount))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Currency : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovNumberFormat.&lt;span style="color:#a6e22e">formatCurrency&lt;/span>(locale, amount))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Percent : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovNumberFormat.&lt;span style="color:#a6e22e">formatPercent&lt;/span>(locale, percent));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(buffer.&lt;span style="color:#a6e22e">toString&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>출력 예&lt;/p></description></item><item><title>Object Pooling Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/object-pooling/</guid><description>&lt;h1 id="object-pooling-service">Object Pooling Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>객체에 대한 Pooling 기능을 제공하는 서비스이다. 객체의 생성 비용이 크고,생성 횟수가 많으면, 평균적으로 사용되는 객체의 수가 적은 경우,성능을 향상시키기 위해서 사용한다.
 &lt;strong>Object Pool&lt;/strong>은 소프트웨어 디자인 패턴으로서, 객체를 필요에 따라 생성하고 파괴하는 방식이 아닌,적절한 개수의 객체를 미리 사용 가능한 상태로 생성하여 이를 이용하는 방식이다.Client는 Pool에 객체를 요청하여 객체를 얻은 후, 업무를 수행한다. 얻어온 객체를 이용하여 업무 수행을 끝마친 후, 객체를 파괴하는 것이 아니라 Pool에게 돌려주어 다른 Client가 사용할 수 있도록 한다. &lt;strong>Object Pooling&lt;/strong>은 객체 생성 비용이 크고,객체 생성 횟수가 많으며,평균적으로 사용되는 객체의 수가 적은 경우,높은 성능의 향상을 가져다 준다.&lt;/p></description></item><item><title>ORM 서비스</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/</guid><description>&lt;h1 id="orm-서비스">ORM 서비스&lt;/h1>
