@@ -23,15 +23,32 @@ Controller 역할을 수행하는 Servlet 객체에서 업무 로직을 호출 �
 (사실 @ModelAttribute 를 이용하는 것과 같다.)
 하지만 프로젝트 별로 비기능 요구사항의 특성을 고려하여 적합한 구조를 정의하여 적용하는 것이 필요하다.
 
-UI 솔루션 업체별 상세 가이드
-- [연동_샘플_설명서포함_.zip](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:rte:ptl:%EB%A7%88%EC%9D%B4%ED%94%8C%EB%9E%AB%ED%8F%BC_%EC%97%B0%EB%8F%99_%EC%83%98%ED%94%8C_%EC%84%A4%EB%AA%85%EC%84%9C%ED%8F%AC%ED%95%A8_.zip) - written by 고석률(MiPlatform)
-- [XPlatform.zip](https://maven.egovframe.go.kr/publist/HDD1/public/XPlatform.zip) - XPlatform 제공(신규 템플릿)
-- 넥사크로
-  - [넥사크로플랫폼 UI Adaptor 개발가이드.zip](https://maven.egovframe.go.kr/publist/HDD1/public/nexacro14/nexacroPlatform_UI%20Adaptor-Guide.zip) - 넥사크로플랫폼
-  - [nexacro14_2015.03.05.01(14.0.0.143).zip](https://maven.egovframe.go.kr/publist/HDD1/public/nexacro14/nexacro14_2015.03.05.01(14.0.0.143).zip) - nexacro14
-  - [eGovFrame-3.2.7z](https://maven.egovframe.go.kr/publist/HDD1/public/nexacro14/eGovFrame-3.2.7z) - 개발프로젝트
+UI 솔루션 업체별 상세 가이드 (업체명 가나다순)
+- 소프트베이스
+  - xFrame5
+    - [표준프레임워크-연동가이드(소프트베이스).pdf](https://www.egovframe.go.kr/home/compatsw/compatswRead.do?menuNo=73&param.cateCd=06&compatSwId=1814)
+- 아이비리더스
+  - IB Sheet v8.2
+    - [표준프레임워크-연동가이드(아이비리더스).pdf](https://www.egovframe.go.kr/home/compatsw/compatswRead.do?menuNo=73&param.cateCd=06&compatSwId=2071)
+- 인스웨이브시스템즈
+  - 웹스퀘어 V5.0
+    - [표준프레임워크-연동가이드(인스웨이브시스템즈).pdf](https://www.egovframe.go.kr/home/compatsw/compatswRead.do?menuNo=73&compatSwId=1809)
+- 투비소프트
+  - 마이플랫폼
+    - [연동_샘플_설명서포함_.zip](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:rte:ptl:%EB%A7%88%EC%9D%B4%ED%94%8C%EB%9E%AB%ED%8F%BC_%EC%97%B0%EB%8F%99_%EC%83%98%ED%94%8C_%EC%84%A4%EB%AA%85%EC%84%9C%ED%8F%AC%ED%95%A8_.zip) - written by 고석률(MiPlatform)
+  - 엑스플랫폼
+    - [XPlatform.zip](https://maven.egovframe.go.kr/publist/HDD1/public/XPlatform.zip) - XPlatform 제공(신규 템플릿)
+  - 넥사크로
+    - [넥사크로플랫폼 UI Adaptor 개발가이드.zip](https://maven.egovframe.go.kr/publist/HDD1/public/nexacro14/nexacroPlatform_UI%20Adaptor-Guide.zip) - 넥사크로플랫폼
+    - [nexacro14_2015.03.05.01(14.0.0.143).zip](https://maven.egovframe.go.kr/publist/HDD1/public/nexacro14/nexacro14_2015.03.05.01(14.0.0.143).zip) - nexacro14
+    - [eGovFrame-3.2.7z](https://maven.egovframe.go.kr/publist/HDD1/public/nexacro14/eGovFrame-3.2.7z) - 개발프로젝트
+    - [표준프레임워크-연동가이드(투비소프트).pdf](https://www.egovframe.go.kr/home/compatsw/compatswRead.do?menuNo=73&param.cateCd=06&compatSwId=1880)
 - 토마토시스템즈
-- SHIFT(Gauce)
+  - eXria
+    - [UI Adaptor 활용 가이드 및 template](https://www.egovframe.go.kr/home/ntt/nttRead.do?menuNo=75&bbsId=3&nttId=730)
+  - eXBuilder6
+    - [표준프레임워크-연동가이드(토마토시스템).pdf](https://www.egovframe.go.kr/home/compatsw/compatswRead.do?menuNo=73&param.cateCd=06&compatSwId=1942)
+
 
 ## 설명
 
