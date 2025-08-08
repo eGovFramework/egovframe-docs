@@ -9043,7 +9043,144 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 그룹목록 : 시스템을 사용하는 목적별 사용자 그룹정보목록을 조회한다.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="설명-1">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>그룹관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 권한관리, 부서권한관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
+&lt;p>그룹관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 권한관리, 부서권한관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>날짜 지역화 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/dateformat/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/dateformat/</guid><description>&lt;h1 id="요소기술---날짜-지역화-처리">요소기술 - 날짜 지역화 처리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>다국어 지원을 위한 국가간 날짜 표시 변환 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Locale에 맞게 날짜 및 시간의 출력 형식을 변환한다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.service.EgovDateFormat&lt;/td>
+ &lt;td>날짜 및 시간에 대한 출력 형식 변환&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="메소드">메소드&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDate(Date date)&lt;/td>
+ &lt;td>날짜 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 날짜를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDate(Locale locale, Date date)&lt;/td>
+ &lt;td>날짜 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 날짜를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDate(int style, Date date)&lt;/td>
+ &lt;td>날짜 표시 형식 변환&lt;/td>
+ &lt;td>주어진 스타일에 따라 기본 Locale(JVM의 Locale)에 해당하는 형식으로 날짜를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDate(int style, Locale locale, Date date)&lt;/td>
+ &lt;td>날짜 표시 형식 변환&lt;/td>
+ &lt;td>주어진 스타일에 따라 Locale에 해당하는 형식으로 날짜를 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDateTime(Date date)&lt;/td>
+ &lt;td>날짜, 시간 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 날짜 및 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDateTime(Locale locale, Date date)&lt;/td>
+ &lt;td>날짜, 시간 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 날짜 및 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDateTime(int dateStyle, int timeStyle, Date date)&lt;/td>
+ &lt;td>날짜, 시간 표시 형식 변환&lt;/td>
+ &lt;td>주어진 스타일에 따라 기본 Locale(JVM의 Locale)에 해당하는 형식으로 날짜 및 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatDateTime(int dateStyle, int timeStyle, Locale locale, Date date)&lt;/td>
+ &lt;td>날짜, 시간 표시 형식 변환&lt;/td>
+ &lt;td>주어진 스타일에 따라 Locale에 해당하는 형식으로 날짜 및 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatTime(Date date)&lt;/td>
+ &lt;td>시간 표시 형식 변환&lt;/td>
+ &lt;td>기본 Locale(JVM의 Locale)에 해당하는 형식으로 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatTime(Locale locale, Date date)&lt;/td>
+ &lt;td>시간 표시 형식 변환&lt;/td>
+ &lt;td>Locale에 해당하는 형식으로 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatTime(int style, Date date)&lt;/td>
+ &lt;td>시간 표시 형식 변환&lt;/td>
+ &lt;td>주어진 스타일에 따라 기본 Locale(JVM의 Locale)에 해당하는 형식으로 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>formatTime(int style, Locale locale, Date date)&lt;/td>
+ &lt;td>시간 표시 형식 변환&lt;/td>
+ &lt;td>주어진 스타일에 따라 Locale에 해당하는 형식으로 시간을 변환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="input">Input&lt;/h5>
+&lt;ul>
+&lt;li>날짜 및 시간 : Date 타입&lt;/li>
+&lt;li>Locale : 지역화 처리를 위한 Locale&lt;/li>
+&lt;li>style, dateStyle, timeStyle : 날짜 또는 시간의 스타일.&lt;br>
+사용 가능한 값은 java.text.DateFormat.FULL, java.text.DateFormat.LONG, java.text.DateFormat.MEDIUM, java.text.DateFormat.SHORT, java.text.DateFormat.DEFAULT 이다.&lt;/li>
+&lt;/ul>
+&lt;h5 id="output">Output&lt;/h5>
+&lt;ul>
+&lt;li>String : Locale에 맞게 변환된 날짜 및 시간 문자열&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.text.DateFormat;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovDateFormat;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Date today &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Date();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Locale&lt;span style="color:#f92672">[]&lt;/span> locales &lt;span style="color:#f92672">=&lt;/span> NumberFormat.&lt;span style="color:#a6e22e">getAvailableLocales&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> (Locale locale : locales ) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> StringBuffer buffer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> StringBuffer();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buffer.&lt;span style="color:#a6e22e">append&lt;/span>(locale).&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;,&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(locale.&lt;span style="color:#a6e22e">getDisplayLanguage&lt;/span>()).&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;,&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(locale.&lt;span style="color:#a6e22e">getDisplayCountry&lt;/span>()).&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34; : &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Date : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovDateFormat.&lt;span style="color:#a6e22e">formatDate&lt;/span>(DateFormat.&lt;span style="color:#a6e22e">FULL&lt;/span>, locale, today))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Time : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovDateFormat.&lt;span style="color:#a6e22e">formatTime&lt;/span>(DateFormat.&lt;span style="color:#a6e22e">FULL&lt;/span>, locale, today))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Date and Time : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovDateFormat.&lt;span style="color:#a6e22e">formatDateTime&lt;/span>(locale, today));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(buffer.&lt;span style="color:#a6e22e">toString&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>출력 예&lt;/p></description></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본인이 속해있는 스페이스별로 등록된 이슈상태를 조회하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
