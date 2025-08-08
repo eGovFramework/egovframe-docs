@@ -1,6 +1,6 @@
 ---
-  title: httprequesthelper
-  linkTitle: httprequesthelper
+  title: Http Request 정보 취득
+  linkTitle: Http Request 정보 취득
   description: "Http Request(HttpServletRequest) 정보를 서비스 코드나 DAO 코드 상에서 취득할 수 있는 기능을 제공한다."
   url: /common-component/elementary-technology/httprequesthelper/
   menu:
