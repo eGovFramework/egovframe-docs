@@ -3431,7 +3431,33 @@ SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화�
 
 
 &lt;/li>
-&lt;/ul></description></item><item><title>Ibatis 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi-db_ibatis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi-db_ibatis/</guid><description>&lt;h1 id="ibatis-예제">Ibatis 예제&lt;/h1>
+&lt;/ul></description></item><item><title>httprequesthelper</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/httprequesthelper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/httprequesthelper/</guid><description>&lt;h1 id="요소기술---http-request-정보-취득">요소기술 - Http request 정보 취득&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Http Request(HttpServletRequest) 정보를 서비스 코드나 DAO 코드 상에서 취득할 수 있는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Controller의 경우는 Http request에 대한 정보를 얻기 위해서 각 메소드에 파라미터에 HttpServerRequest를 추가하면 된다. 그러나 Service 부분이나 Repository 부분에서 Http request 정보를 얻으려면 파라미터화하여야 한다.&lt;br>
+HTTP Request 정보 취득을 사용하면 파미리터를 통하지 않고 Http request 정보를 얻을 수 있다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Util&lt;/td>
+ &lt;td>egovframework.com.cmm.util.EgovHttpRequestHelper.java&lt;/td>
+ &lt;td>Http Request 정보 취득 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>EgovHttpRequestHelper를 통해 Http Request 정보를 취득하려면 web.xml에 다음과 같은 설정이 추가되어야 한다.&lt;/p></description></item><item><title>Ibatis 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi-db_ibatis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi-db_ibatis/</guid><description>&lt;h1 id="ibatis-예제">Ibatis 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>iBatis를 사용하여 Database의 데이터를 읽고 쓰는 기능에 대한 예제를 제공한다. 스프링 배치에서는 IbatisPagingItemReader와 IbatisBatchItemWriter를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
