@@ -5,7 +5,7 @@
   url: /common-component/elementary-technology/numberformat/
   menu:
     depth:
-      name: numberformat
+      name: 숫자 지역화 처리
       weight: 3
       parent: "new-components-v3.2"
       identifier: "numberformat"

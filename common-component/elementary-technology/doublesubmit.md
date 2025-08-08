@@ -5,7 +5,7 @@
   url: /common-component/elementary-technology/doublesubmit/
   menu:
     depth:
-      name: doublesubmit
+      name: 이중등록(Double Submit) 방지
       weight: 1
       parent: "new-components-v3.2"
       identifier: "doublesubmit"
