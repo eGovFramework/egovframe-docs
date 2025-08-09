@@ -12601,7 +12601,116 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;td>EMMA에서 생성한 HTML 리포트 샘플이다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
-&lt;/table></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description/></item><item><title>Log4j 2 환경설정 (코드 내에서 직접 설정 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</guid><description>&lt;h1 id="log4j-2-환경설정-코드-내에서-직접-설정-시">Log4j 2 환경설정 (코드 내에서 직접 설정 시)&lt;/h1>
+&lt;/table></description></item><item><title>출퇴근 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cmtmanage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cmtmanage/</guid><description>&lt;h1 id="출퇴근-관리">출퇴근 관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>&lt;strong>출퇴근 관리&lt;/strong>는 출근, 퇴근 정보를 관리하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>출퇴근 관리&lt;/strong>는 출근, 퇴근 정보를 관리하기 위한 목적으로, 출근, 퇴근, 조회 기능을 수반한다.&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.cmt.web.EgovCmtManageController.java&lt;/td>
+ &lt;td>출퇴근관리 Controller Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.cmt.service.EgovCmtManageService.java&lt;/td>
+ &lt;td>출퇴근관리 Service Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.cmt.service.impl.EgovCmtManageServiceImpl.java&lt;/td>
+ &lt;td>출퇴근관리 Serviceimpl Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.cmt.service.CmtDefaultVO.java&lt;/td>
+ &lt;td>검색 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.cmt.service.CmtManageVO.java&lt;/td>
+ &lt;td>출퇴근 관리 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.cmt.service.impl.EgovCmtManageDAO.java&lt;/td>
+ &lt;td>출퇴근관리 DAO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/cmt/EgovCmtManageList.jsp&lt;/td>
+ &lt;td>출퇴근관리 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/cmt/EgovCmtManage_SQL_altibase.xml&lt;/td>
+ &lt;td>출퇴근관리 Altibase용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/cmt/EgovCmtManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>출퇴근관리 Cubrid용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage_SQL_maria.xml&lt;/td>
+ &lt;td>출퇴근관리 Maria용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage_SQL_mysql.xml&lt;/td>
+ &lt;td>출퇴근관리 Mysql용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage_SQL_oracle.xml&lt;/td>
+ &lt;td>출퇴근관리 Oracle용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage_SQL_postgres.xml&lt;/td>
+ &lt;td>출퇴근관리 Postgres용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage_SQL_tibero.xml&lt;/td>
+ &lt;td>출퇴근관리 Tibero용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>출퇴근관리 Goldilocks용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-Cmt.xml&lt;/td>
+ &lt;td>출퇴근관리 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/cmt/message_ko.properties&lt;/td>
+ &lt;td>출퇴근관리 message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/cmt/message_ko.properties&lt;/td>
+ &lt;td>출퇴근관리 message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/cmm-%ec%b6%9c%ed%87%b4%ea%b7%bc%ea%b4%80%eb%a6%ac_%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.png" alt="image" >
+&lt;/p></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description/></item><item><title>Log4j 2 환경설정 (코드 내에서 직접 설정 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</guid><description>&lt;h1 id="log4j-2-환경설정-코드-내에서-직접-설정-시">Log4j 2 환경설정 (코드 내에서 직접 설정 시)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Log4j 2 환경 설정(Appender, Layout, Log Level 등)을 코드 내에서 직접 제어할 수 있다.&lt;br>
 아래는 별도의 외부 설정파일 없이도 로깅할 수 있는 방법을 설명한다.&lt;/p>
