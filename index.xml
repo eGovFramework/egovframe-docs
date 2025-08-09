@@ -874,7 +874,34 @@ Spring Security에서 제공하는 인증을 사용하기 위해서는 Authentic
 AuthenticationManager는 요청을 AuthenticationProvider 체인에 전달해야 할 임무가 있다.&lt;br>
 AuthenticationProvider는 기본적으로 UserDetails와 UserDetailsService인터페이스를 이용한다.&lt;br>
 UserDetailsService 인터페이스 내 loadUserByUsername 메소드의 리턴된 UserDetails은 사용자명(username), 패스워드(password), 허가권한(GrantedAuthority[]) 및 사용여부(enabled)와 같은 기초적인 인증 정보들을 제공한다.&lt;br>
-이에 전자정부 표준프레임워크에서는 UserDetails 인터페이스를 확장하였으며 JDBC 기반으로 사용자 테이블로부터 사용자 정보를 Map 또는 VO형태로 사용할 수 있도록 하였다.&lt;/p></description></item><item><title>IoC Container Basics</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-basics/</guid><description>&lt;h1 id="basics">Basics&lt;/h1>
+이에 전자정부 표준프레임워크에서는 UserDetails 인터페이스를 확장하였으며 JDBC 기반으로 사용자 테이블로부터 사용자 정보를 Map 또는 VO형태로 사용할 수 있도록 하였다.&lt;/p></description></item><item><title>Basic 로그</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/basiclog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/basiclog/</guid><description>&lt;h1 id="요소기술---basic-로그">요소기술 - Basic 로그&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>JDK에서 제공하는 Logger 클래스를 이용하여 3가지 레벨로 로그를 남길 수 있는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>사용법이 간단하며 로그를 콘솔에 출력 할 수 있고 파일로도 저장이 가능하다.&lt;br>
+OFF, FINEST, INFO 세 개의 레벨을 제공하며 레벨에 따라 메소드를 이용하여 간단하게 로그를 관리 할 수 있다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Util&lt;/td>
+ &lt;td>egovframework.com.cmm.util.EgovBasicLogger.java&lt;/td>
+ &lt;td>Basic 로그 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>EgovBasicLogger를 통해 로그를 파일로 저장하기 위해서는 %JAVA_HOME%/jre/lib에 저장되어 있는 logging.properties 파일에 있는&lt;br>
+handlers 값을 다음과 같이 주어야 한다.&lt;/p></description></item><item><title>IoC Container Basics</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-basics/</guid><description>&lt;h1 id="basics">Basics&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring Framework에서 객체가 생성자 인수, 팩토리 메서드에 대한 인수 또는 객체 인스턴스가 생성되거나 팩토리 메서드에서 반환된 후 객체 인스턴스에 설정된 속성을 통해서만 종속성(함께 작업하는 다른 객체)을 정의하는 프로세스를 제어의 역전(Inversion of Control, IoC)라고 한다. 의존성 주입(Dependency Injection, DI)은 모듈간의 의존성을 모듈의 외부 컨테이너 에서 주입시켜주는 기능으로 IoC의 한 종류이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
