@@ -6248,6 +6248,57 @@ Server Security의 주요기능은 다음과 같다.&lt;/p></description></item>
 &lt;li>명령프롬프트 창에 runHsqlDB를 입력하여 runHsqlDB.cmd 파일을 실행시킨다.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/batch-layer/images/setup_cmd2.png" alt="" >
+&lt;/p></description></item><item><title>showModalDialog 대체 기능</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/showmodaldialog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/showmodaldialog/</guid><description>&lt;h1 id="요소기술---showmodaldialog-대체-기능">요소기술 - showModalDialog 대체 기능&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>JavaScript의 Modal 방식의 dialog를 지원하는 windows.showModalDialog의 기능이 chrome 37 버전부터 지원하지 않음에 따라 대체 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>showModalDialog 대체 기능은 기존 showModalDialog 함수를 그대로 사용할 수 있도록 처리되었으면, 파라미터 전달 및 return 전달에 필요한 경우 추가적인 함수만을 호출하도록 제공된다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>js&lt;/td>
+ &lt;td>/js/egovframework/com/cmm/showModalDialog.js&lt;/td>
+ &lt;td>기존 showModalDialog 대체 기능 제공&lt;/td>
+ &lt;td>showModalDialog() 함수를 호출하는 페이지에 필요&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>js&lt;/td>
+ &lt;td>/js/egovframework/com/cmm/showModalDialogCallee.js&lt;/td>
+ &lt;td>기존 showModalDialog 대체 기능 제공&lt;/td>
+ &lt;td>팝업으로 호출되는 페이지에 필요&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:com:v3:cmm:showmodaldialog.zip">showmodaldialog.zip&lt;/a>
+
+
 &lt;/p></description></item><item><title>건너뛰기(Skip) 기능 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-skip_mgmt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-skip_mgmt/</guid><description>&lt;h1 id="건너뛰기skip-기능-예제">건너뛰기(Skip) 기능 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치 수행 중, 데이터를 처리하는 과정에서 에러가 발생한 데이터를 건너뛰고 다음 데이터를 처리하는 기능을 보여주는 예제이다. EgovSkipSampleFunctionalTests 예제는 ItemReading,ItemProcessing, ItemWriting 에서 발생한 예외상황에 대해 정해진 설정대로 Skip을 수행되는 과정을 보여준다.&lt;/p>
