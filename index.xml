@@ -6654,7 +6654,89 @@ Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LOGGER.&lt;span style="color:#a6e22e">debug&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;SLF4J Logger - {}&amp;#34;&lt;/span>, message);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="migration-to-slf4j-from-legacy-apis">Migration to SLF4J from Legacy APIs&lt;/h3>
 &lt;p>기존 Legacy API을 유지한 채 SLF4J를 함께 사용하려면, SLF4J와 레거시 API를 연결할 수 있는 Bridge jar가 필요하다.&lt;br>
-아래에서는 Log4j 1.x와 JCL 레거시를 기준으로 설명한다.&lt;/p></description></item><item><title>SockJS Fallback Options</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</guid><description>&lt;h1 id="sockjs-fallback-options">SockJS Fallback Options&lt;/h1>
+아래에서는 Log4j 1.x와 JCL 레거시를 기준으로 설명한다.&lt;/p></description></item><item><title>Social Login(Naver, Google, KAKAO)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/social_login_naver_google_kakao/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/social_login_naver_google_kakao/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Social Login은 네이버, 구글, 카카오의 로그인API를 이용해 로그인을 진행하는 연계로그인 기능을 제공합니다.&lt;/p>
+&lt;h2 id="특징">특징&lt;/h2>
+&lt;p>Social Login 연동은 다음과 같은 특징을 제공합니다.&lt;/p>
+&lt;ul>
+&lt;li>네이버(Naver), 구글(Google), 카카오(KaKao) 계정으로 로그인&lt;/li>
+&lt;/ul>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.web.EgovSignupController.java&lt;/td>
+ &lt;td>소셜 로그인을 처리하는 컨트롤러 클래스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.service.NAVERAPI20.java&lt;/td>
+ &lt;td>네이버 로그인을 돕는 서비스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.service.OAuthConfig.java&lt;/td>
+ &lt;td>소셜 로그인 인증과 토큰 관련 URL이 있는 서비스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.service.OAuthLogin.java&lt;/td>
+ &lt;td>소셜 로그인 인증 및 로그인 정보를 처리하는 서비스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.service.OAuthUniversalUser.java&lt;/td>
+ &lt;td>소셜 로그인 계정에 대한 VO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.service.OAuthVO.java&lt;/td>
+ &lt;td>소셜 로그인 인증을 받기 위한 VO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp&lt;/td>
+ &lt;td>소셜 로그인을 연동하는 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauth.jsp&lt;/td>
+ &lt;td>소셜 로그인을 처리하는 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauthResult.jsp&lt;/td>
+ &lt;td>소셜 로그인 결과를 출력하는 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/context-oauth.xml&lt;/td>
+ &lt;td>소셜 로그인의 ID, Secret 등 인증값을 설정하는 XML&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="설정방법">설정방법&lt;/h2>
+&lt;h3 id="소셜-로그인-api-생성-방법">소셜 로그인 API 생성 방법&lt;/h3>
+&lt;p>각 소셜에서 로그인API를 등록해 ClientID / ClientSecret 를 발급받고 RedirectURl을 지정해야합니다.&lt;/p></description></item><item><title>SockJS Fallback Options</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</guid><description>&lt;h1 id="sockjs-fallback-options">SockJS Fallback Options&lt;/h1>
 &lt;p>
 
 
