@@ -1975,7 +1975,32 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 &lt;h2 id="기본-dynamic-요소-사용-방법">기본 Dynamic 요소 사용 방법&lt;/h2>
 &lt;h3 id="sample-dynamic-sql-mapper-xml">Sample Dynamic SQL mapper xml&lt;/h3>
 &lt;p>MyBatis에서 제공하는 Dynamic 요소의 기본적인 형태에 대해 알아보도록 한다.&lt;br>
-아래 Sql 매퍼 파일은 파라미터 객체의 empNo 속성의 값 유무에 따라 &lt;code>where EMP_NO = #{empNo}&lt;/code> 조건절을 동적으로 추가/제거할 수 있는 예이다.&lt;/p></description></item><item><title>easycompany 예제 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</guid><description>&lt;h1 id="easycompany-예제-실행하기">easycompany 예제 실행하기&lt;/h1>
+아래 Sql 매퍼 파일은 파라미터 객체의 empNo 속성의 값 유무에 따라 &lt;code>where EMP_NO = #{empNo}&lt;/code> 조건절을 동적으로 추가/제거할 수 있는 예이다.&lt;/p></description></item><item><title>EasyBatch(v3.2 신규)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/easybatch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/easybatch/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>Batch 개발은 업무 특성으로 일반 개발과 달라, 학습과 설정이 필요하다. &lt;strong>Easy Batch&lt;/strong>는 는 이 부분을 간소화 할 수 있는 기능을 제공한다. Batch 업무 특성 상 그 구조가 정형화 되어있으므로, 기본 구조의 Job 개발일 경우 본 모듈을 사용하면, 많은 설정부분들에 대한 내용없이 개발이 가능하다.&lt;br>
+기본적인 형태(ItemReader - ItemProcessor - ItemWriter)의 Job인 경우 ItemReader, ItemWriter 설정에 Easy Batch 가 제공하는 Reader, Writer를 설정하면, XML 설정을 간략화해서 사용가능하다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>Easy Batch는 표준프레임워크 배치 실행환경 기반으로 작성되었으며, 표준프레임워크 배치 중 아래의 부분을 간단하게 사용하는 기능을 제공한다. 표준프레임워크 배치프레임워크에 대한 상세 내용은 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte">표준프레임워크 배치실행환경&lt;/a>
+
+
+ 을 참고하도록 한다.&lt;/p></description></item><item><title>easycompany 예제 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</guid><description>&lt;h1 id="easycompany-예제-실행하기">easycompany 예제 실행하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>EasyCompany 예제는 MVC와 Ajax Support, Security의 예제 코드로서, JDK 1.8, Eclipse 4.8.0, Tomcat 8.0, HSQLDB 2.3.2 환경에서 실행된다. 사원 리스트 페이지 확인은 SVN에서 프로젝트를 다운받아 DBMS(runHsqlDB.cmd)와 Tomcat을 실행 후 http://localhost:8080/easycompany 에 접속해 id/pwd: 1/1로 로그인하면 가능하다.&lt;/p>
 &lt;h2 id="개발환경">개발환경&lt;/h2>
