@@ -5904,7 +5904,70 @@ Hessian 웹서비스는 별도의 대형 프레임워크를 설치하지 않고�
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/resource/#%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c">4.참고자료&lt;/a>
 
 
- 참조.&lt;/p></description></item><item><title>Resource Variable</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/resource_variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/resource_variable/</guid><description>&lt;h1 id="resource-variable">Resource Variable&lt;/h1>
+ 참조.&lt;/p></description></item><item><title>Resource close 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/resourceclose/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/resourceclose/</guid><description>&lt;h1 id="요소기술---resource-close-처리">요소기술 - Resource close 처리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>자원(Stream, DB 관련 Object, Socket 관련 Object)에 대한 해제 처리 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>한 개 또는 다수의 resource를 타입별로 동시에 close할 수 있도록 메소드를 제공한다.&lt;/p>
+&lt;p>close 할 resource를 파라미터로 넘기면 해당 자원을 close해 준다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Util&lt;/td>
+ &lt;td>egovframework.com.cmm.util.EgovResourceCloseHelper.java&lt;/td>
+ &lt;td>Resource close 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;p>EgovResourceCloseHelper는 다음과 같은 메소드를 제공한다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>close(Closeable … resources)&lt;/td>
+ &lt;td>Resource close 처리&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>closeDBObjects(Wrapper … objects)&lt;/td>
+ &lt;td>JDBC 관련 resource 객체 close 처리&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>closeSocketObjects(Socket socket, ServerSocket server)&lt;/td>
+ &lt;td>Socket 관련 resource 객체 close 처리&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>closeSockets(Socket … sockets)&lt;/td>
+ &lt;td>Socket 관련 resource 객체 close 처리&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>close()메소드를 이용하여 다수의 io 관련 resource를 닫는 방법이다.&lt;/p></description></item><item><title>Resource Variable</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/resource_variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/resource_variable/</guid><description>&lt;h1 id="resource-variable">Resource Variable&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 정의 리소스 변수 선언 후 Setp에서 ItemReader, ItemWriter에서 사용자 정의 리소스를 사용할 수 있도록 EgovResourceVariable를 통해서 지원한다.&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/images/resource_variable_architecture7.png" alt="image" >
