@@ -4403,7 +4403,39 @@ Maven을 사용한다면 Maven Repository(
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">EgovParallelJobFunctionalTests&lt;/span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>✔ 공통으로 사용되는 설정파일이 있을 경우, 다음과 같이 부모클래스에 담고 이를 상속받아 사용할 수 있다.&lt;/p></description></item><item><title>Listener (Pre/Post Processing)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-listener/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-listener/</guid><description>&lt;h1 id="listener-prepost-processing">Listener (Pre/Post Processing)&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>✔ 공통으로 사용되는 설정파일이 있을 경우, 다음과 같이 부모클래스에 담고 이를 상속받아 사용할 수 있다.&lt;/p></description></item><item><title>LDAP조직도관리(v3.2 신규)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/ldap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/ldap/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>&lt;strong>LDAP조직도관리&lt;/strong>는 조직과 사용자 정보를 효율적으로 관리하기 위한 컴포넌트로,&lt;br>
+LDAP과의 연계를 통해 조회 성능을 향상시키고, 차트형태와 같이 다양한 방식으로 조직도를 표현할 수 있는 기능을 제공한다.&lt;/p>
+&lt;p>LDAP조직도관리는 아래와 같은 기능을 포함한다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>기능&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>조직도 조회&lt;/td>
+ &lt;td>LDAP에 저장된 조직도 정보를 트리형태 또는 차트형태로 렌더링&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>엔트리 동적생성 기능&lt;/td>
+ &lt;td>UI를 통한 새로운 엔트리 추가 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>엔트리 정보 편집&lt;/td>
+ &lt;td>UI를 통한 기존 엔트리 속성값수정/삭제/이동 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>행자부 표준지원&lt;/td>
+ &lt;td>행자부 유통표준 LDAP스키마인 UCORG2를 지원&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>LDAP조직도관리 컴포넌트에서 조직도 정보는 아래와 같이 트리형태과 차트형태 두가지로 표현한다.&lt;br>
+엔트리 추가/수정/삭제를 위한 컨텍스트 메뉴는 트리형태로 표현된 경우에만 제공한다.&lt;/p></description></item><item><title>Listener (Pre/Post Processing)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-listener/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-listener/</guid><description>&lt;h1 id="listener-prepost-processing">Listener (Pre/Post Processing)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치 수행시 Job을 구성하는 각 단계(Job, Step, Chunk, Read, Process, Write)에서 이벤트설정을 통해 다양한 추가구성을 할 수 있다. 이벤트는 Listener를 활용하여 설정하고, 배치 수행중 설정한 Listener를 접하게 되면 관련된 이벤트를 수행하게 된다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
