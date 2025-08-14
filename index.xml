@@ -12695,7 +12695,100 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;ul>
 &lt;li>로그인 컴포넌트 사용시 보안 고려사항&lt;/li>
 &lt;/ul>
-&lt;p>제공되는 로그인 컴포넌트는 구간 암호화(Browser와 서버 사이의 암호화)를 제공하지 않는다.(이는 서버 측 컴포넌트이므로 구간 암호화를 제공할 수 없다.) 이를 위해서는 공통 컴포넌트를 이용하여 구현할 때 별도의 구간 암호화 솔루션을 도입하거나 로그인 요청에 대하여 SSL을 적용하는 방식으로 로그인 정보의 보안을 유지할 것을 권장한다.&lt;/p></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description/></item><item><title>주소록/명함록</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</guid><description/></item><item><title>MyBatis 주요 변경점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</guid><description>&lt;h1 id="mybatis-주요-변경점">MyBatis 주요 변경점&lt;/h1>
+&lt;p>제공되는 로그인 컴포넌트는 구간 암호화(Browser와 서버 사이의 암호화)를 제공하지 않는다.(이는 서버 측 컴포넌트이므로 구간 암호화를 제공할 수 없다.) 이를 위해서는 공통 컴포넌트를 이용하여 구현할 때 별도의 구간 암호화 솔루션을 도입하거나 로그인 요청에 대하여 SSL을 적용하는 방식으로 로그인 정보의 보안을 유지할 것을 권장한다.&lt;/p></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>정보메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/info_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/info_message/</guid><description>&lt;h1 id="요소기술---정보메시지">요소기술 - 정보메시지&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>정보에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>정보(info)로 구분된 메시지 정보를 property 처리를 통해 처리된다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.cas.service.EgovMessageUtil.java&lt;/td>
+ &lt;td>메시지 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.web.EgovComUtlTestController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovMessage.jsp&lt;/td>
+ &lt;td>테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="메소드">메소드&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>getInfoMsg(String key)&lt;/td>
+ &lt;td>정보 메시지 취득&lt;/td>
+ &lt;td>메시지키에 해당 에러메시지를 얻는 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>getInfoMsg(String key, String[] params)&lt;/td>
+ &lt;td>정보 메시지 파라미터 취득&lt;/td>
+ &lt;td>메시지키에 해당 정보메시지를 해당되는 파라미터 값을 대치하여 얻는 기능&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="input">Input&lt;/h5>
+&lt;ul>
+&lt;li>key : 속성 파일에 기록된 key 정보&lt;/li>
+&lt;li>params : 대치될 문자열 배열 정보&lt;/li>
+&lt;li>Validation 체크: 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%9A%94%EC%86%8C%EA%B8%B0%EC%88%A0_validation_%EC%B2%B4%ED%81%AC">요소기술 Validation 체크&lt;/a>
+
+
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="output">Output&lt;/h5>
+&lt;ul>
+&lt;li>String : 해당 key 지정된 속성 정보로 해당 속성이 없으면 null 리턴&lt;/li>
+&lt;/ul>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>메시지 처리를 위해서는 &lt;em>&lt;strong>User home&lt;/strong>&lt;/em> 디렉토리밑에 egovProps/conf/infomessage.properties 파일에 메시지가 정의되어 있어야 한다. 해당 메시지 정의는 일반 property 정의 방식과 같다.&lt;/p></description></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description/></item><item><title>주소록/명함록</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/</guid><description/></item><item><title>MyBatis 주요 변경점</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-ibatis_vs_maybatis/</guid><description>&lt;h1 id="mybatis-주요-변경점">MyBatis 주요 변경점&lt;/h1>
 &lt;p>본 가이드는 MyBatis와 iBatis의 차이점을 설명한다.&lt;/p>
 &lt;h2 id="변경된-용어종합">변경된 용어(종합)&lt;/h2>
 &lt;table>
