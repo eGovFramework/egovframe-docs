@@ -14802,7 +14802,100 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
+&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>확인메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/</guid><description>&lt;h1 id="요소기술---확인메시지">요소기술 - 확인메시지&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>확인에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>확인(confirm)으로 구분된 메시지 정보를 property 처리를 통해 처리된다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.cas.service.EgovMessageUtil.java&lt;/td>
+ &lt;td>메시지 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.web.EgovComUtlTestController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovMessage.jsp&lt;/td>
+ &lt;td>테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="메소드">메소드&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>getConfirmMsg(String key)&lt;/td>
+ &lt;td>확인 메시지 취득&lt;/td>
+ &lt;td>메시지키에 해당 확인메시지를 얻는 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>getConfirmMsg(String key, String[] params)&lt;/td>
+ &lt;td>확인 메시지 파라미터 취득&lt;/td>
+ &lt;td>메시지키에 해당 확인메시지를 해당되는 파라미터 값을 대치하여 얻는 기능&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="input">Input&lt;/h5>
+&lt;ul>
+&lt;li>key : 속성 파일에 기록된 key 정보&lt;/li>
+&lt;li>params : 대치될 문자열 배열 정보&lt;/li>
+&lt;li>Validation 체크: 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%9A%94%EC%86%8C%EA%B8%B0%EC%88%A0_validation_%EC%B2%B4%ED%81%AC">요소기술 Validation 체크&lt;/a>
+
+
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="output">Output&lt;/h5>
+&lt;ul>
+&lt;li>String : 해당 key 지정된 속성 정보로 해당 속성이 없으면 null 리턴&lt;/li>
+&lt;/ul>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>메시지 처리를 위해서는 &lt;em>&lt;strong>User home&lt;/strong>&lt;/em> 디렉토리밑에 egovProps/conf/confirmmessage.properties 파일에 메시지가 정의되어 있어야 한다. 해당 메시지 정의는 일반 property 정의 방식과 같다.&lt;/p></description></item><item><title>공통컴포넌트 환경설정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/common-intro/environment-setup/</guid><description>&lt;h1 id="공통컴포넌트-환경설정">공통컴포넌트 환경설정&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>표준프레임워크 4.3에서는 다음과 같은 방법으로 환경설정을 할 수 있다.&lt;/p>
 &lt;ul>
