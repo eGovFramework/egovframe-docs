@@ -20,7 +20,8 @@
 
 ## 설명
 
- Easy Batch는 표준프레임워크 배치 실행환경 기반으로 작성되었으며, 표준프레임워크 배치 중 아래의 부분을 간단하게 사용하는 기능을 제공한다. 표준프레임워크 배치프레임워크에 대한 상세 내용은 [표준프레임워크 배치실행환경](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte) 을 참고하도록 한다.  
+ Easy Batch는 표준프레임워크 배치 실행환경 기반으로 작성되었으며, 표준프레임워크 배치 중 아래의 부분을 간단하게 사용하는 기능을 제공한다. 표준프레임워크 배치프레임워크에 대한 상세 내용은 [표준프레임워크 배치실행환경](../../egovframe-runtime/batch-layer/intro.md) 을 참고하도록 한다.
+
 
  ![image](./images/egovframework-batchprocess.jpg)
 
