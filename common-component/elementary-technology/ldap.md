@@ -120,9 +120,10 @@ LDAP과의 연계를 통해 조회 성능을 향상시키고, 차트형태와 �
 
  [schema.zip](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:schema.zip)
 
-| object class :: ucOrg2 |
-| --- |
+### object class :: ucOrg2
+
 | attribute | description | attribute | description | attribute | description |
+| --- | --- | --- | --- | --- | --- |
 | docSystemInfo | 기관별 문서함 | ou | 해당기관의 명칭(필수) | ouCode | 기관코드(필수) |
 | ouDocumentReceipientSymbol | 수신 문서 symbol | ouLevel | 조직의 차수 | ouOrder | 차상위 기관내의 조직의 서열 |
 | ouReceiveDocumentYN | 대외문서 처리과여부 | ouSendOutDocumentYN | 대외문서 송신여부 | ouSMTPAddress | 조직 전자메일 주소 |
@@ -132,9 +133,10 @@ LDAP과의 연계를 통해 조회 성능을 향상시키고, 차트형태와 �
 | ucOrgFullName | 상위기관을 포함한 전체 조직명 | useGroupware | 조직 사용하는 그룹웨어명 | userCertificate | 조직 인증서 정보 |
 | wsignCertificate | 무선 서명용 인증서 | wuserCertificate | 무선 암호화용 인증서 |
 
-| object class :: User |
-| --- |
+### object class :: User
+
 | attribute | description | attribute | description | attribute | description |
+| --- | --- | --- | --- | --- | --- |
 | birthday | 생일 | business | 업무 | cn | 행정전자서명 아이디 |
 | companyName | 사용자가 속한 부처명 | departmentName | 사용자가 속한 실국명 | dispatchYN | 파견여부 |
 | displayName | 화면에 보여줄 사용자의 이름 예) 홍길동 | facsimileTelephoneNumber | 회사팩스번호 | givenName | 사용자의 영문이름 |
