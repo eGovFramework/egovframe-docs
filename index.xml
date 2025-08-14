@@ -1997,7 +1997,7 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte">표준프레임워크 배치실행환경&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/intro/">표준프레임워크 배치실행환경&lt;/a>
 
 
  을 참고하도록 한다.&lt;/p></description></item><item><title>easycompany 예제 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/presentation-layer/easycompany-example/</guid><description>&lt;h1 id="easycompany-예제-실행하기">easycompany 예제 실행하기&lt;/h1>
