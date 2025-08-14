@@ -79,6 +79,6 @@ message = EgovMessageUtil.getInfoMsg("param.message", new String[2] {"정보", "
 
 ## 참고자료
 
-- 경고메시지 참조: [경고메시지](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EA%B2%BD%EA%B3%A0%EB%A9%94%EC%8B%9C%EC%A7%80)
-- 에러메시지 참조: [에러메시지](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%97%90%EB%9F%AC%EB%A9%94%EC%8B%9C%EC%A7%80)
-- 확인메시지 참조: [확인메시지](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%ED%99%95%EC%9D%B8%EB%A9%94%EC%8B%9C%EC%A7%80)
+- 경고메시지 참조: [경고메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/)
+- 에러메시지 참조: [에러메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/error_message/)
+- 확인메시지 참조: [확인메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/)
