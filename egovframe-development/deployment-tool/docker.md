@@ -202,7 +202,7 @@ $ docker run –t –i –p 8080:8080 egovframe/webtest:v1
 
   생성 과정은 위 “Docker 파일(Dockerfile)을 활용한 이미지 제작”을 참조한다.
 
-#### Step 2. POM의 `<build>` 테그 내에 아래와 같은 플러그인 스크립트를 추가한다.
+#### Step 2. POM의 `<build>` 태그 내에 아래와 같은 플러그인 스크립트를 추가한다.
 
 ```xml
  
