@@ -168,7 +168,7 @@ $ docker build –t egovframe/webtest:v1 .
 * 자세한 옵션 설정은 docker build –help를 통하여 확인 가능하다.
 * 명령어 마지막 뒤의 점(.)을 꼭! 잊지 말고 입력하여야 한다.
 
-##### 3. 빌드가 성공적으로 이루어지면 아래와같이 이미지를 확인 할 수 있다.
+##### 3. 빌드가 성공적으로 이루어지면 아래와 같이 이미지를 확인 할 수 있다.
 
 ![Docker 이미지 목록](./images/11-docker-images-list.png)
 
@@ -248,7 +248,7 @@ $ docker run –t –i –p 8080:8080 egovframe/webtest:v1
 
 #### Step 3. 메이븐(Maven) 빌드를 통하여 docker daemon에 이미지 제작
 
-##### 1. 샘플 프로젝트에서 메이븐 빌드을 시작한다.
+##### 1. 샘플 프로젝트에서 메이븐 빌드를 시작한다.
 
 > (예: 프로젝트명 마우스 오른쪽 클릭 > Run As > Maven build)
 
