@@ -196,7 +196,7 @@ $ docker run –t –i –p 8080:8080 egovframe/webtest:v1
 
 ### 메이븐(Maven) 빌드 시 플러그인(docker-maven-plugin)을 활용하여 도커 이미지 제작
 
-메이븐 빌드 시 플러그인을 사용하여 빌드된 war파일과 베이지 이미지를 docker daemon에 직접 주입한다.
+메이븐 빌드 시 플러그인을 사용하여 빌드된 war파일과 베이스 이미지를 docker daemon에 직접 주입한다.
 
 #### Step 1. 표준프레임워크 개발환경에서 템플릿 샘플 프로젝트를 생성한다.
 
