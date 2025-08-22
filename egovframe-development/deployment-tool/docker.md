@@ -82,7 +82,7 @@ $ docker version
 
 ![Docker 버전 확인](./images/02-docker-version.png)
 
-[참고] 본 가이드의 도커 버전과 동일 할 필요는 없으나 이하 버전 및 최신 버전에서 가이드에서 사용한 API 및 구조가 변경 될 수 있으며, 도커 버이한 API 및 구조는 도커 사이트에서 확인 할 수 있다.
+[참고] 본 가이드의 도커 버전과 동일 할 필요는 없으나 이하 버전 및 최신 버전에서 가이드에서 사용한 API 및 구조가 변경 될 수 있으며, 도커 버전별 상이한 API 및 구조는 도커 사이트에서 확인 할 수 있다.
 
 ### Docker 파일(Dockerfile)을 활용한 이미지 제작
 
@@ -164,7 +164,7 @@ Dockerfile pom.xml src/ target/
 $ docker build –t egovframe/webtest:v1 .
 ```
 
-* -t 옵션을 사용하여 태태그를 설정한다.
+* -t 옵션을 사용하여 태그를 설정한다.
 * 자세한 옵션 설정은 docker build –help를 통하여 확인 가능하다.
 * 명령어 마지막 뒤의 점(.)을 꼭! 잊지 말고 입력하여야 한다.
 
