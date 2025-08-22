@@ -1900,8 +1900,8 @@ DispatcherServlet은 Spring MVC의 웹요청 Life Cycle을 주관한다 할 수 
 &lt;li>호스트 OS 와 서비스 운영 환경 분리&lt;/li>
 &lt;li>다양한 환경의 플랫폼 실행 가능&lt;/li>
 &lt;li>컨테이너 호환성 및 경량화&lt;/li>
-&lt;li>클라우스보다 진보된 Container 서비스&lt;/li>
-&lt;li>마이크로 서비스 기반의 Container로 자원 효율성 향상&lt;/li>
+&lt;li>클라우드보다 진보된 Container 서비스&lt;/li>
+&lt;li>마이크로서비스 기반의 Container로 자원 효율성 향상&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/01-docker-deploy-archi2.png" alt="Docker 배포 아키텍처" >
 &lt;/p></description></item><item><title>Docker Tooling</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/docker-tooling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/docker/docker-tooling/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
