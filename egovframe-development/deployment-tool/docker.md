@@ -27,7 +27,7 @@ menu:
 * 호스트 OS 와 서비스 운영 환경 분리
 * 다양한 환경의 플랫폼 실행 가능
 * 컨테이너 호환성 및 경량화
-* 클라우스보다 진보된 Container 서비스
+* 클라우드보다 진보된 Container 서비스
 * 마이크로서비스 기반의 Container로 자원 효율성 향상
 
 ![Docker 배포 아키텍처](./images/01-docker-deploy-archi2.png)
