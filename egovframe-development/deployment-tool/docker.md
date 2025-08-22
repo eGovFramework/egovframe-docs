@@ -61,7 +61,7 @@ menu:
 
 응용프로그램의 Docker 이미지화를 위하여 2가지의 방법을 제시한다.
 
-##### 1. Docker파일(Dockerfile)을 통하여 베이스이미지와 같이 실행 가능한 환경을 구성하며, Docker 데몬에서 Docker파일 빌드를 통한 도커 이미지를 제작 및 테스트를 진행한다.
+##### 1. Docker파일(Dockerfile)을 통하여 베이스 이미지와 같이 실행 가능한 환경을 구성하며, Docker 데몬에서 Docker파일 빌드를 통한 도커 이미지를 제작 및 테스트를 진행한다.
 
 ##### 2. 메이븐(Maven) 빌드 시 플러그인(docker-maven-plugin)을 활용하여 도커 이미지를 제작과 Docker 이미지를 주입하여 테스트를 진행한다.
 
@@ -158,13 +158,13 @@ Dockerfile pom.xml src/ target/
 
 ##### 2. Docker파일을 아래와 같은 명령어로 빌드하여 이미지를 제작한다.
 
-(예: 도커 이미지명을 egovframe/webtest 이며, 테그를 v1로 설정한다.)
+(예: 도커 이미지명을 egovframe/webtest 이며, 태그를 v1로 설정한다.)
 
 ```bash
 $ docker build –t egovframe/webtest:v1 .
 ```
 
-* -t 옵션을 사용하여 테그를 설정한다.
+* -t 옵션을 사용하여 태태그를 설정한다.
 * 자세한 옵션 설정은 docker build –help를 통하여 확인 가능하다.
 * 명령어 마지막 뒤의 점(.)을 꼭! 잊지 말고 입력하여야 한다.
 
