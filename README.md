@@ -91,7 +91,7 @@
     - [실행환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3)
   - [실행환경 예제 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ex:개발프레임워크_실행환경_예제)
 - 문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.
-- 모든 _index.md 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 찹고 부탁드립니다.
+- 모든 _index.md 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 참고 부탁드립니다.
 
 ```
 /common-component                 #공통컴포넌트
@@ -103,7 +103,7 @@
     /schedule.md                      #일정관리
     /sms.md                           #문자메세지
   /digital-asset-management         #디지털 자산관리
-    /kowledge-map.md                  #지식맵
+    /knowledge-map.md                  #지식맵
   /elementary-technology            #요소기술
     /calendar.md                      #달력
     /cookie-session.md                #쿠키/세션
@@ -114,7 +114,7 @@
     /new-components-v3.2.md           #신규 컴포넌트(v3.2)
     /print.md                         #인쇄/출력
     /system.md                        #시스템
-    /webeditorm.md                    #웹에디터
+    /webeditor.md                    #웹에디터
   /intro                            #개요
   /security                         #보안
     /authority-management.md          #권한관리
