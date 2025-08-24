@@ -14802,7 +14802,51 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>화면인쇄</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_scrin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_scrin/</guid><description>&lt;h1 id="요소기술---화면인쇄">요소기술 - 화면인쇄&lt;/h1>
+&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>프린터상태확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_status/</guid><description>&lt;h1 id="요소기술---프린터상태확인">요소기술 - 프린터상태확인&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>인터넷 웹 브라우저에서 인쇄/출력 시 프린터 상태 확인 팝업 창을 자동으로 보여주는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>사용자가 프린터상태확인 클릭시 프린터상태확인 창이 열려, 프린터 상태를 볼수 있으며, 프린터 설정도 가능하다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.web.EgovComUtlTestController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovPrintStatus.jsp&lt;/td>
+ &lt;td>프린터상태확인 테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="관련테이블">관련테이블&lt;/h5>
+&lt;p>&lt;strong>N/A&lt;/strong>&lt;/p>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>&lt;strong>해당없음&lt;/strong>&lt;/p>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;h5 id="1-프린터상태확인">1. 프린터상태확인&lt;/h5>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/utl-egovpirntstatus.jpg" alt="image" >
+&lt;br>
+프린터상태확인 버튼: 프린터상태확인 팝업 창이 열린다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">button&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;프린터상태확인&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;window.print();&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="2-프린터상태확인-팝업">2. 프린터상태확인 팝업&lt;/h5>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/utl-egovpirntstatus_1.jpg" alt="image" >
+&lt;/p>
+&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;p>N/A&lt;/p></description></item><item><title>화면인쇄</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_scrin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_scrin/</guid><description>&lt;h1 id="요소기술---화면인쇄">요소기술 - 화면인쇄&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>화면인쇄 서비스는 화면을 인쇄 할수 있는 기능과 인쇄 설정할수있는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
