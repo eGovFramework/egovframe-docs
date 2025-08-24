@@ -13546,7 +13546,75 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Layout&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">PatternLayout&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pattern&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위 Logger 객체를 org.apache.logging.log4j.core.Logger로 캐스팅하면, Log Level, Appender, Layout 등 설정을 변경할 수 있다.&lt;br>
-예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>소스관리도구 클라이언트환경 사용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/client-environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/client-environment/</guid><description>&lt;h1 id="소스관리도구-클라이언트환경-사용">소스관리도구 클라이언트환경 사용&lt;/h1>
+예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>쿠키처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/handling_cookie/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/handling_cookie/</guid><description>&lt;h1 id="요소기술---쿠키처리">요소기술 - 쿠키처리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>쿠키 처리와 관련된 다양한 공통기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>쿠키에 객체 정보 저장, 취득, 제거의 기능으로 구성되어 있다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.cas.service.EgovSessionCookieUtil.java&lt;/td>
+ &lt;td>세션/쿠키 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.cmm.web.EgovComUtlController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovCookieProcess.jsp&lt;/td>
+ &lt;td>쿠키처리 테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="메소드">메소드&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>setCookie(HttpServletResponse response, String cookieNm, String cookieVal, int minute)&lt;/td>
+ &lt;td>쿠키 정보 생성&lt;/td>
+ &lt;td>입력받은 분만큼 쿠키를 유지되도록 세팅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>getCookie(HttpServletRequest request, String cookieNm)&lt;/td>
+ &lt;td>쿠키정보 취득&lt;/td>
+ &lt;td>쿠키값을 읽어들인다&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>setCookie(HttpServletResponse response, String cookieNm)&lt;/td>
+ &lt;td>쿠키정보 삭제&lt;/td>
+ &lt;td>쿠키의 유효시간을 0으로 설정&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="관련테이블">관련테이블&lt;/h5>
+&lt;p>&lt;strong>N/A&lt;/strong>&lt;/p></description></item><item><title>소스관리도구 클라이언트환경 사용</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/client-environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/configuration-management/client-environment/</guid><description>&lt;h1 id="소스관리도구-클라이언트환경-사용">소스관리도구 클라이언트환경 사용&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 표준프레임워크에서는 개발환경의 소스관리도구로 오픈소스인 Subversion(SVN)을 사용하며, 다른 소스관리도구와 마찬가지로, 시스템의 콘솔을 통한 직접적인 사용 이외에 사용자의 PC에서 편리하게 사용할 수 있도록 GUI를 가진 다양한 클라언트가 존재한다.&lt;/p>
 &lt;p>전자정부 표준프레임워크 구축 사업을 통하여 여러 Subversion 클라이언트들을 검토하고 테스트하였으며, 이를 통해 타 SVN 클라이언트에 비하여 기능적으로 우수하고 상대적으로 안정적인 동작을 보인 Subversive Eclipse IDE 플러그인을 전자정부 표준프레임워크의 개발환경에 포함시켜 제공한다.
