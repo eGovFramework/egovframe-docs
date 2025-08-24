@@ -14802,7 +14802,65 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>확인메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/</guid><description>&lt;h1 id="요소기술---확인메시지">요소기술 - 확인메시지&lt;/h1>
+&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>화면인쇄</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_scrin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_scrin/</guid><description>&lt;h1 id="요소기술---화면인쇄">요소기술 - 화면인쇄&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>화면인쇄 서비스는 화면을 인쇄 할수 있는 기능과 인쇄 설정할수있는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>화면인쇄 서비스는 인쇄미리보기, 인쇄바로하기, 페이지설정 기능으로 구분한다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.web.EgovComUtlTestController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovPrint.jsp&lt;/td>
+ &lt;td>화면인쇄 테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="관련테이블">관련테이블&lt;/h5>
+&lt;p>&lt;strong>N/A&lt;/strong>&lt;/p>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>&lt;strong>해당없음&lt;/strong>&lt;/p>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;p>익스플로러의경우 인터넷옵션→보완→사용자정의수준→ActiveX관련 항목을 사용을 선택한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">Language&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Javascript&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!--&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">NS&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span>( document.&lt;span style="color:#a6e22e">all&lt;/span>) &lt;span style="color:#a6e22e">NS&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">PrintOption&lt;/span>(&lt;span style="color:#a6e22e">type1&lt;/span>,&lt;span style="color:#a6e22e">type2&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//네스케이프일 경우
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">NS&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window.&lt;span style="color:#a6e22e">print&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//익스플로러일 경우
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">active&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;lt;OBJECT ID=&amp;#34;active1&amp;#34; WIDTH=0 HEIGHT=0 CLASSID=&amp;#34;CLSID:8856F961-340A-11D0-A96B-00C04FD705A2&amp;#34;&amp;gt;&amp;lt;/OBJECT&amp;gt;&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> document.&lt;span style="color:#a6e22e">body&lt;/span>.&lt;span style="color:#a6e22e">insertAdjacentHTML&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;beforeEnd&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">active&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">active1&lt;/span>.&lt;span style="color:#a6e22e">ExecWB&lt;/span>(&lt;span style="color:#a6e22e">type1&lt;/span>,&lt;span style="color:#a6e22e">type2&lt;/span>); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">active1&lt;/span>.&lt;span style="color:#a6e22e">outerHTML&lt;/span> &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//--&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">button&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;인쇄 미리 보기&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;PrintOption(7,1)&amp;#34;&lt;/span>&amp;gt; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">button&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;인쇄 바로 하기&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;PrintOption(6,-1)&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">button&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;페이지 설정&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;PrintOption(8,1)&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;p>N/A&lt;/p></description></item><item><title>확인메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/</guid><description>&lt;h1 id="요소기술---확인메시지">요소기술 - 확인메시지&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>확인에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
