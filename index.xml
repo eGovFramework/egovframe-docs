@@ -11577,7 +11577,119 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;p>✔ 수정은 같은 라인의 변경정보만 수정한다.&lt;/p>
 &lt;h3 id="sms-설정">SMS 설정&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/configuration-management-tool/images/sms-setting.jpg" alt="SMS 설정정" >
-&lt;/p></description></item><item><title>Implementation Tool 수동 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/</guid><description>&lt;h1 id="implementation-tool-수동-설치가이드">Implementation Tool 수동 설치가이드&lt;/h1>
+&lt;/p></description></item><item><title>세션처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/handling_session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/handling_session/</guid><description>&lt;h1 id="요소기술---세션처리">요소기술 - 세션처리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>세션 처리와 관련된 다양한 공통기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 갖으며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.cas.service.EgovSessionCookieUtil.java&lt;/td>
+ &lt;td>세션 처리 관련 유틸리티&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.fcc.web.EgovComUtlTestController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovSession.jsp&lt;/td>
+ &lt;td>테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="메소드">메소드&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>setSessionAttribute(HttpServletRequest request, String key, String value)&lt;/td>
+ &lt;td>세션 정보 생성&lt;/td>
+ &lt;td>HttpSession에 주어진 키 값으로 세션 정보를 생성하는 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>setSessionAttribute(HttpServletRequest request, String key, Object obj)&lt;/td>
+ &lt;td>세션 객체 생성&lt;/td>
+ &lt;td>HttpSession에 주어진 키 값으로 세션 객체를 생성하는 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Object&lt;/td>
+ &lt;td>getSessionAttribute(HttpServletRequest request, String key)&lt;/td>
+ &lt;td>세션 객체 취득&lt;/td>
+ &lt;td>HttpSession에 존재하는 주어진 키 값에 해당하는 세션 객체를 얻어오는 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>getSessionValues(HttpServletRequest request)&lt;/td>
+ &lt;td>세션 객체 리스트 취득&lt;/td>
+ &lt;td>HttpSession 객체내의 모든 값을 호출하는 기능&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>void&lt;/td>
+ &lt;td>removeSessionAttribute(HttpServletRequest request, String key)&lt;/td>
+ &lt;td>세션 객체 삭제&lt;/td>
+ &lt;td>HttpSession에 존재하는 세션을 주어진 키 값으로 삭제하는 기능&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="input">Input&lt;/h5>
+&lt;ul>
+&lt;li>request : JSP 또는 Servlet의 request 객체&lt;/li>
+&lt;li>key : 세션에 사용 키값으로 null이 아닌 문자열 사용 (예, “UserId”)&lt;/li>
+&lt;li>value, obj : 세션에 해당 key 값으로 저장될 객체로 null 가능 (예, “KILDONG”)&lt;/li>
+&lt;li>Validation 체크: 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%9A%94%EC%86%8C%EA%B8%B0%EC%88%A0_validation_%EC%B2%B4%ED%81%AC">요소기술 Validation 체크&lt;/a>
+
+
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="output">Output&lt;/h5>
+&lt;ul>
+&lt;li>Object, String : 해당 key로 저정된 객체&lt;/li>
+&lt;/ul>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>&lt;strong>해당없음&lt;/strong>&lt;/p></description></item><item><title>Implementation Tool 수동 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/implementation-tool-manual-install/</guid><description>&lt;h1 id="implementation-tool-수동-설치가이드">Implementation Tool 수동 설치가이드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본 가이드는 Eclipse에서 전자정부 프레임워크 플러그인을 설치하는 방법을 제공한다.
 개발환경 4.3.0 기준으로 작성되었다.&lt;/p>
