@@ -12695,7 +12695,71 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;ul>
 &lt;li>로그인 컴포넌트 사용시 보안 고려사항&lt;/li>
 &lt;/ul>
-&lt;p>제공되는 로그인 컴포넌트는 구간 암호화(Browser와 서버 사이의 암호화)를 제공하지 않는다.(이는 서버 측 컴포넌트이므로 구간 암호화를 제공할 수 없다.) 이를 위해서는 공통 컴포넌트를 이용하여 구현할 때 별도의 구간 암호화 솔루션을 도입하거나 로그인 요청에 대하여 SSL을 적용하는 방식으로 로그인 정보의 보안을 유지할 것을 권장한다.&lt;/p></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>정보메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/info_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/info_message/</guid><description>&lt;h1 id="요소기술---정보메시지">요소기술 - 정보메시지&lt;/h1>
+&lt;p>제공되는 로그인 컴포넌트는 구간 암호화(Browser와 서버 사이의 암호화)를 제공하지 않는다.(이는 서버 측 컴포넌트이므로 구간 암호화를 제공할 수 없다.) 이를 위해서는 공통 컴포넌트를 이용하여 구현할 때 별도의 구간 암호화 솔루션을 도입하거나 로그인 요청에 대하여 SSL을 적용하는 방식으로 로그인 정보의 보안을 유지할 것을 권장한다.&lt;/p></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>전자관인출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_digital_seal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_digital_seal/</guid><description>&lt;h1 id="요소기술---전자관인-출력">요소기술 - 전자관인 출력&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>기관코드, 관인구분을 받아 해당 관인이미지를 출력하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>입력된 URL의 해당 관인이미지를 출력한다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.pao.web.EgovErncslController.java&lt;/td>
+ &lt;td>전자관인 출력 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.utl.pao.service.PrntngOutptVO.java&lt;/td>
+ &lt;td>전자관인 VO&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.utl.pao.web.EgovPrntngOutptController.java&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.utl.pao.service.EgovPrntngOutpt.java&lt;/td>
+ &lt;td>테스트용 인터페이스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.utl.pao.service.impl.EgovPrntngOutptImpl.java&lt;/td>
+ &lt;td>테스트용 구현&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.utl.pao.service.impl.PrntngOutptDAO.java&lt;/td>
+ &lt;td>테스트용 데이터 처리&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/cmm/utl/EgovErncslOutpt.jsp&lt;/td>
+ &lt;td>테스트 페이지&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="사용방법">사용방법&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>%@page import=&amp;#34;egovframework.com.utl.pao.service.EgovPrntngOutpt&amp;#34; %&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">img&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/utl/pao/EgovErncsl.do?sOrgCode=&amp;lt;%=sOrgCode%&amp;gt;&amp;amp;sErncslSe=&amp;lt;%=sErncslSe%&amp;gt;&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>관인정보에 확인에 필요한 sOrgCode : 기관코드, sErncslSe : 관인구분으로 해당관인을 직접 출력한다.&lt;/p></description></item><item><title>정보메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/info_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/info_message/</guid><description>&lt;h1 id="요소기술---정보메시지">요소기술 - 정보메시지&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>정보에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
