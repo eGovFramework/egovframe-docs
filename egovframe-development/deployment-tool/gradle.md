@@ -40,7 +40,7 @@ Gradle은 Groovy라는 언어를 이용하여 코드로서 설정정보를 구�
 * 모든 Gradle script는 하나 이상의 project로 구성되며, 모든 프로젝트는 하나이상의 task로 구성된다.
   * Project : 소스를 jar로 모으거나, 자바 프로젝트를 컴파일하거나, 테스트를 실행하고, 어플리케이션을 배포하는 등의 업무로 구성된다.
   * Task : 작업의 최소단위이다.
-    Task간 의존관계 설정과 함께 흐름에 따른 구성이 가능하며, 동적인 테스크의 생성도 가능하다. Gradle Tasks
+    Task간 의존관계 설정과 함께 흐름에 따른 구성이 가능하며, 동적인 스크의 생성도 가능하다. Gradle Tasks
 * Gradle은 자바6버전 이상의 VM환경에서 사용이 가능하며, 설치를 하거나 gradle wrapper를 이용하여 실행환경을 구성할 수 있다.
 
 ### Build Lifecycle
