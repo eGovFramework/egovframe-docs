@@ -22,7 +22,7 @@
   - `git clone {Fork하여 생성된 개인 레포지토리의 URL}`
 - upstream으로 egovframe-docs 레포지토리를 연결합니다.
   - `git remote add upstream https://github.com/eGovFramework/egovframe-docs.git`
-  - 정상적이라면 `git remote -v`명령시 origin에는 개인 repository URL이, upstream에는 https://github.com/eGovFramework/egovframe-docs.git이 설정되어 있습니다.
+  - 정상적이라면 `git remote -v` 명령시 origin에는 개인 repository URL이, upstream에는 `https://github.com/eGovFramework/egovframe-docs.git`이 설정되어 있습니다.
 
 ### 작업 시작
 
@@ -91,7 +91,7 @@
     - [실행환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3)
   - [실행환경 예제 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ex:개발프레임워크_실행환경_예제)
 - 문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.
-- 모든 _index.md 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 참고 부탁드립니다.
+- 모든 `_index.md` 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 참고 부탁드립니다.
 
 ```
 /common-component                 #공통컴포넌트
@@ -151,7 +151,7 @@
   /implementation-tool              #구현 도구
     /editor.md                        #Editor
     /batch-IDE.md                      #Batch IDE
-    /code-generation.md                #Code Genetation
+    /code-generation.md                #Code Generation
     /code-inspection.md                #Code Inspection
     /dbio-editor.md                    #DBIO Editor
     /server-connection-management.md   #Server Connection Management
