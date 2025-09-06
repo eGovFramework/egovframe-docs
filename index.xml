@@ -7201,7 +7201,8 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
 &lt;li>UPDATE SQL 작성 예시&lt;/li>
 &lt;li>DELETE SQL 작성 예시&lt;/li>
 &lt;li>성능을 고려한 SQL 작성 원칙&lt;/li>
-&lt;li>자주하는 질문 FAQ&lt;/li>
+&lt;li>자주하는 질문 FAQ
+&lt;br>&lt;/li>
 &lt;/ol>
 &lt;h1 id="sql-규칙-정리">SQL 규칙 정리&lt;/h1>
 &lt;table>
@@ -7283,6 +7284,11 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;td>Static&lt;/td>
  &lt;td>Static Embeded SQL 사용을 원칙으로 함 &lt;br> Precompiler 제약에 의해서 반드시 Dynamic SQL로 구현되야 하는 MERGE INTO 문은 허용 &lt;br> 임시 테이블이 생성되는 WITH 문은 Online 환경(센터컷 포함)에서는 허용하지 않음 ( 배치에서만 허용 )&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h1 id="sql-작성-규칙-예시">SQL 작성 규칙 예시&lt;/h1>
@@ -7304,6 +7310,10 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
 &lt;/td>
  &lt;td>FROM 절 테이블 별칭은 알파벳 대문자 A , B, C … 순서대로 기술 &lt;br> 서브쿼리는 3개 이내로 사용 권장 &lt;br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 &lt;br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 &lt;br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h1 id="select-sql-작성-예시">SELECT SQL 작성 예시&lt;/h1>
@@ -7318,6 +7328,9 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/select01.png" alt="SELECT SQL 예시01" >
  &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/select02.png" alt="SELECT SQL 예시02" >
 &lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -7336,6 +7349,10 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
 &lt;/td>
  &lt;td>INTO, VALUES, SELECT, FROM, WHERE, AND, OR, 괄호, 콤마(,)등은 INSERT의 “T”자 기준으로 정렬한다. &lt;br> INSERT 대상 칼럼 및 VALUES 절의 값들은 새로운 라인에서 시작괄호 ‘(‘ 다음에 빈칸 없이 바로 시작되고, &lt;br> INSERT 기술이 모두 끝난 후 새로운 라인에 ‘(‘ 괄호가 위치하는 위치에 ‘)’를 정렬한다. &lt;br> 한 라인에 하나의 칼럼/값만 기술하고 콤마(,)는 새로운 라인에 기술&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h1 id="update-sql-작성-예시">UPDATE SQL 작성 예시&lt;/h1>
@@ -7352,6 +7369,10 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
 &lt;/td>
  &lt;td>SET, FROM, WHERE, AND, OR, 콤마(,)등은 UPDATE의 “E”자 기준으로 정렬한다. &lt;br> 한 라인에 하나의 업데이트될 칼럼만 기술하고 콤마(,)는 새로운 라인에 기술한다. &lt;br> 업데이트될 컬럼은 첫 번째만 제외하고 콤마로 시작하고 콤마 뒤에 한 칸 띄운 후 칼럼과 변경 값을 기술한다.&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h1 id="delete-sql-작성-예시">DELETE SQL 작성 예시&lt;/h1>
@@ -7367,6 +7388,10 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/delete01.png" alt="DELETE SQL 예시01" >
 &lt;/td>
  &lt;td>주석은 SQL 상단에 표기 &lt;br> FROM, WHERE, AND, OR, 콤마(,)등은 DELETE의 끝문자 “E”자 기준으로 정렬 &lt;br> WHERE절은 생략하지 않고 반드시 표기&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
+ &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -7450,6 +7475,10 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;tr>
  &lt;td>18&lt;/td>
  &lt;td>Scalar Sub Query는 10,000건 이하의 테이블에서만 사용&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;br>&lt;/td>
+ &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
