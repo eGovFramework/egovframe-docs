@@ -25,7 +25,7 @@ menu:
 6. DELETE SQL 작성 예시
 7. 성능을 고려한 SQL 작성 원칙
 8. 자주하는 질문 FAQ
-
+<br>
 
 # SQL 규칙 정리
 
@@ -45,32 +45,38 @@ menu:
 | 12 | FROM절 | 인라인 뷰의 깊이는 최대 3단계까지만 허용함(권장 2단계) |
 | 13 | 하드코딩 | DECODE, CASE WHEN에서 데이터 값을 하드 코딩하여 비교하는 형태는 허용하지 않음 |
 | 14 | Static | Static Embeded SQL 사용을 원칙으로 함 <br> Precompiler 제약에 의해서 반드시 Dynamic SQL로 구현되야 하는 MERGE INTO 문은 허용 <br> 임시 테이블이 생성되는 WITH 문은 Online 환경(센터컷 포함)에서는 허용하지 않음 ( 배치에서만 허용 ) |
+<br>
 
 # SQL 작성 규칙 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
 | ![SQL 예시01](./images/rule01.png) |  SELECT 이후 반드시 공백 1칸을 주고 칼럼을 기술 <br> 1줄에 1개 컬럼 기술을 원칙으로 함 <br> 컬럼명 이후 공백을 주고  주석을 추가 <br> 컬럼명,테이블명의 구분 콤마(,)는 앞쪽에 기술<br> 콤마 와 칼럼/테이블 명 사이에 공백 한 칸을 둠<br> FROM 절에 나타난 순서대로 알파벳 대문자 A , B ,… 순서로 사용<br> 테이블 별칭 이후 공백을 주고 주석을 추가<br> SELECT , FROM, WHER , AND 가 오른쪽 맞춤이 되도록 정렬  ( SELECT의 “T”알파벳을 기준으로 정렬 )<br> WHERE 절의 조인 조건에 대해서는 주석은 필수가 아님 <br> WHERE 절에서 조인 조건을 먼저 기술함    테이블 lookup 조건은 조인조건 이후에 기술 |
 | ![SQL 예시02](./images/rule02.png)  | FROM 절 테이블 별칭은 알파벳 대문자 A , B, C …  순서대로  기술 <br> 서브쿼리는 3개 이내로 사용 권장 <br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 <br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 <br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다 |
+<br>
 
 # SELECT SQL 작성 예시
 | SQL 예시 |
 | ---------- |
 | ![SELECT SQL 예시01](./images/select01.png) <br> ![SELECT SQL 예시02](./images/select02.png) |
+<br>
 
 # INSERT SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
 | ![INSERT SQL 예시01](./images/insert01.png) <br> ![INSERT SQL 예시02](./images/insert02.png) | INTO, VALUES, SELECT, FROM, WHERE, AND, OR, 괄호, 콤마(,)등은 INSERT의 “T”자 기준으로 정렬한다. <br> INSERT 대상 칼럼 및 VALUES 절의 값들은 새로운 라인에서 시작괄호 ‘(‘ 다음에 빈칸 없이 바로 시작되고, <br> INSERT 기술이 모두 끝난 후 새로운 라인에 ‘(‘ 괄호가 위치하는 위치에 ‘)’를 정렬한다. <br> 한 라인에 하나의 칼럼/값만 기술하고 콤마(,)는 새로운 라인에 기술 |
+<br>
 
 # UPDATE SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
 | ![UPDATE SQL 예시01](./images/update01.png) | SET, FROM, WHERE, AND, OR, 콤마(,)등은 UPDATE의 “E”자 기준으로 정렬한다. <br> 한 라인에 하나의 업데이트될 칼럼만 기술하고 콤마(,)는 새로운 라인에 기술한다. <br> 업데이트될 컬럼은 첫 번째만 제외하고 콤마로 시작하고 콤마 뒤에 한 칸 띄운 후 칼럼과 변경 값을 기술한다. |
+<br>
 
 # DELETE SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
 | ![DELETE SQL 예시01](./images/delete01.png) | 주석은 SQL  상단에 표기 <br> FROM, WHERE, AND, OR, 콤마(,)등은 DELETE의 끝문자 “E”자 기준으로 정렬 <br> WHERE절은 생략하지 않고 반드시 표기 |
+<br>
 
 # 성능을 고려한 SQL 작성 원칙
 | 번호 | 내용 |
@@ -93,6 +99,7 @@ menu:
 | 16 | FROM 절은 4개의 테이블 이하로 사용 (3개의 조인 조건) |
 | 17 | 분석함수 사용은 통계화면을 제외한 화면에서는 사용하지 말 것 |
 | 18 | Scalar Sub Query는 10,000건 이하의 테이블에서만 사용 |
+<br>
 
 # 자주하는 질문 FAQ
 | 번호 | 구분 | 내용 |
