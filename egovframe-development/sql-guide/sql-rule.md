@@ -1,16 +1,15 @@
-- - -
-
-## title: "SQL 작성 규칙"
+---
+title: "SQL 작성 규칙"
 linkTitle: "SQL 작성 규칙"
 description: "본 가이드는 SQL 문법을 통일하여 가독성을 높일 수 있도록 가이드를 하기 위해 SQL 작성 규칙을 제공한다."
 url: /egovframe-development/sql-guide/sql-rule/
 menu:
-depth:
-name: "SQL 작성 규칙"
-weight: 1
-parent: "sql-guide"
-identifier: "sql-rule"
-
+  depth:
+    name: "SQL 작성 규칙"
+    weight: 1
+    parent: "sql-guide"
+    identifier: "sql-rule"
+---
 # SQL 작성 규칙
 
 ## 개요
@@ -40,11 +39,11 @@ identifier: "sql-rule"
 | 13 | 하드코딩 | DECODE, CASE WHEN에서 데이터 값을 하드 코딩하여 비교하는 형태는 허용하지 않음 |
 | 14 | Static | Static Embeded SQL 사용을 원칙으로 함 <br> Precompiler 제약에 의해서 반드시 Dynamic SQL로 구현되야 하는 MERGE INTO 문은 허용 <br> 임시 테이블이 생성되는 WITH 문은 Online 환경(센터컷 포함)에서는 허용하지 않음 ( 배치에서만 허용 ) |
 
-# SQL 작성 예시
+# SQL 작성 규칙 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
 | ![SQL 예시01](./images/rule01.png) |  SELECT 이후 반드시 공백 1칸을 주고 칼럼을 기술 <br> 1줄에 1개 컬럼 기술을 원칙으로 함 <br> 컬럼명 이후 공백을 주고  주석을 추가 <br> 컬럼명,테이블명의 구분 콤마(,)는 앞쪽에 기술<br> 콤마 와 칼럼/테이블 명 사이에 공백 한 칸을 둠<br> FROM 절에 나타난 순서대로 알파벳 대문자 A , B ,… 순서로 사용<br> 테이블 별칭 이후 공백을 주고 주석을 추가<br> SELECT , FROM, WHER , AND 가 오른쪽 맞춤이 되도록 정렬  ( SELECT의 “T”알파벳을 기준으로 정렬 )<br> WHERE 절의 조인 조건에 대해서는 주석은 필수가 아님 <br> WHERE 절에서 조인 조건을 먼저 기술함    테이블 lookup 조건은 조인조건 이후에 기술 |
-| ![SQL 예시02](./images/rule02.png)  | FROM 절 테이블 별칭은 알파벳 대문자 A , B, C …   순서대로  기술 <br> 서브쿼리는 3개 이내로 사용 권장 <br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 <br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 <br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다 |
+| ![SQL 예시02](./images/rule02.png)  | FROM 절 테이블 별칭은 알파벳 대문자 A , B, C …  순서대로  기술 <br> 서브쿼리는 3개 이내로 사용 권장 <br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 <br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 <br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다 |
 
 # SELECT SQL 작성 예시
 | SQL 예시 |
