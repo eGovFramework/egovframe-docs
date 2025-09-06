@@ -1,11 +1,11 @@
 ---
-title: 개발환경 소개
-linkTitle: "소개"
-description: "개발프레임워크 개발환경의 목표, 제공 서비스 및 환경설정 관련 도구(JDK, WAS, OpenSource) 정보 등을 안내한다."
-url: /egovframe-development/development-intro/
+title: SQL 문법 작성 가이드 소개
+linkTitle: SQL 문법 작성 가이드 소개
+description: "본 가이드는 SQL 문법을 통일하여 가독성을 높일 수 있도록 가이드를 안내한다."
+url: /egovframe-development/sql-guide/
 menu:
   depth:
-    weight: 1
-    identifier: "development-intro"
-    parent: "egovframe-development"
+    weight: 10
+    identifier: "egovframe-development"
+    parent: "sql-guide"
 ---
