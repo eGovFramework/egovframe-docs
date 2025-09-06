@@ -18,7 +18,7 @@
   * [Container extension points](./foundation-layer-core/ioc-container-container_extension_points.md)  
     IoC Container의 기능을 확장하는 방법을 설명한다.
   * [The ApplicationContext](./foundation-layer-core/ioc-container-the_applicationcontext.md)  
-    ApplicationContext만이 제공하는 기능을 설명한다.
+    ApplicationContext 에서 제공하는 기능을 설명한다.
   * [Annotation-based configuration](./foundation-layer-core/ioc-container-annotation-based_configuration.md)  
     Annotation을 기반으로 Container를 구성하는 방법을 설명한다.
   * [Classpath scanning for managed components](./foundation-layer-core/ioc-container-classpath_scanning_for_managed_components.md)  
