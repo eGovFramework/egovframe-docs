@@ -10,7 +10,7 @@ menu:
     identifier: "webeditor2"
 ---
 
-
+# 웹에디터
 
 ## 개요
 
@@ -79,6 +79,7 @@ textarea
 
 테스트 페이지 호출시
 URL : /html/egovframework/com/cmm/utl/htmlarea3.0/examples/index.html
+
 
 ## 키보드 단축키
 
