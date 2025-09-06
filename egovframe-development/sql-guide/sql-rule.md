@@ -43,28 +43,28 @@ identifier: "sql-rule"
 # SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
-| ![SQL 예시01](./images.png/rule01.png) |  SELECT 이후 반드시 공백 1칸을 주고 칼럼을 기술 <br> 1줄에 1개 컬럼 기술을 원칙으로 함 <br> 컬럼명 이후 공백을 주고  주석을 추가 <br> 컬럼명,테이블명의 구분 콤마(,)는 앞쪽에 기술<br> 콤마 와 칼럼/테이블 명 사이에 공백 한 칸을 둠<br> FROM 절에 나타난 순서대로 알파벳 대문자 A , B ,… 순서로 사용<br> 테이블 별칭 이후 공백을 주고 주석을 추가<br> SELECT , FROM, WHER , AND 가 오른쪽 맞춤이 되도록 정렬  ( SELECT의 “T”알파벳을 기준으로 정렬 )<br> WHERE 절의 조인 조건에 대해서는 주석은 필수가 아님 <br> WHERE 절에서 조인 조건을 먼저 기술함    테이블 lookup 조건은 조인조건 이후에 기술 |
-| ![SQL 예시02](./images.png/rule02.png)  | FROM 절 테이블 별칭은 알파벳 대문자 A , B, C …   순서대로  기술 <br> 서브쿼리는 3개 이내로 사용 권장 <br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 <br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 <br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다 |
+| ![SQL 예시01](./images/rule01.png) |  SELECT 이후 반드시 공백 1칸을 주고 칼럼을 기술 <br> 1줄에 1개 컬럼 기술을 원칙으로 함 <br> 컬럼명 이후 공백을 주고  주석을 추가 <br> 컬럼명,테이블명의 구분 콤마(,)는 앞쪽에 기술<br> 콤마 와 칼럼/테이블 명 사이에 공백 한 칸을 둠<br> FROM 절에 나타난 순서대로 알파벳 대문자 A , B ,… 순서로 사용<br> 테이블 별칭 이후 공백을 주고 주석을 추가<br> SELECT , FROM, WHER , AND 가 오른쪽 맞춤이 되도록 정렬  ( SELECT의 “T”알파벳을 기준으로 정렬 )<br> WHERE 절의 조인 조건에 대해서는 주석은 필수가 아님 <br> WHERE 절에서 조인 조건을 먼저 기술함    테이블 lookup 조건은 조인조건 이후에 기술 |
+| ![SQL 예시02](./images/rule02.png)  | FROM 절 테이블 별칭은 알파벳 대문자 A , B, C …   순서대로  기술 <br> 서브쿼리는 3개 이내로 사용 권장 <br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 <br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 <br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다 |
 
 # SELECT SQL 작성 예시
 | SQL 예시 |
 | ---------- |
-| ![SELECT SQL 예시01](./images.png/select01.png) <br> ![SELECT SQL 예시02](./images.png/select02.png) |
+| ![SELECT SQL 예시01](./images/select01.png) <br> ![SELECT SQL 예시02](./images/select02.png) |
 
 # INSERT SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
-| ![INSERT SQL 예시01](./images.png/insert01.png) <br> ![INSERT SQL 예시02](./images.png/insert02.png) | INTO, VALUES, SELECT, FROM, WHERE, AND, OR, 괄호, 콤마(,)등은 INSERT의 “T”자 기준으로 정렬한다. <br> INSERT 대상 칼럼 및 VALUES 절의 값들은 새로운 라인에서 시작괄호 ‘(‘ 다음에 빈칸 없이 바로 시작되고, <br> INSERT 기술이 모두 끝난 후 새로운 라인에 ‘(‘ 괄호가 위치하는 위치에 ‘)’를 정렬한다. <br> 한 라인에 하나의 칼럼/값만 기술하고 콤마(,)는 새로운 라인에 기술 |
+| ![INSERT SQL 예시01](./images/insert01.png) <br> ![INSERT SQL 예시02](./images/insert02.png) | INTO, VALUES, SELECT, FROM, WHERE, AND, OR, 괄호, 콤마(,)등은 INSERT의 “T”자 기준으로 정렬한다. <br> INSERT 대상 칼럼 및 VALUES 절의 값들은 새로운 라인에서 시작괄호 ‘(‘ 다음에 빈칸 없이 바로 시작되고, <br> INSERT 기술이 모두 끝난 후 새로운 라인에 ‘(‘ 괄호가 위치하는 위치에 ‘)’를 정렬한다. <br> 한 라인에 하나의 칼럼/값만 기술하고 콤마(,)는 새로운 라인에 기술 |
 
 # UPDATE SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
-| ![UPDATE SQL 예시01](./images.png/update01.png) | SET, FROM, WHERE, AND, OR, 콤마(,)등은 UPDATE의 “E”자 기준으로 정렬한다. <br> 한 라인에 하나의 업데이트될 칼럼만 기술하고 콤마(,)는 새로운 라인에 기술한다. <br> 업데이트될 컬럼은 첫 번째만 제외하고 콤마로 시작하고 콤마 뒤에 한 칸 띄운 후 칼럼과 변경 값을 기술한다. |
+| ![UPDATE SQL 예시01](./images/update01.png) | SET, FROM, WHERE, AND, OR, 콤마(,)등은 UPDATE의 “E”자 기준으로 정렬한다. <br> 한 라인에 하나의 업데이트될 칼럼만 기술하고 콤마(,)는 새로운 라인에 기술한다. <br> 업데이트될 컬럼은 첫 번째만 제외하고 콤마로 시작하고 콤마 뒤에 한 칸 띄운 후 칼럼과 변경 값을 기술한다. |
 
 # DELETE SQL 작성 예시
 | SQL 예시 | SQL 규칙 |
 | ---------- | ---------- |
-| ![DELETE SQL 예시01](./images.png/delete01.png) | 주석은 SQL  상단에 표기 <br> FROM, WHERE, AND, OR, 콤마(,)등은 DELETE의 끝문자 “E”자 기준으로 정렬 <br> WHERE절은 생략하지 않고 반드시 표기 |
+| ![DELETE SQL 예시01](./images/delete01.png) | 주석은 SQL  상단에 표기 <br> FROM, WHERE, AND, OR, 콤마(,)등은 DELETE의 끝문자 “E”자 기준으로 정렬 <br> WHERE절은 생략하지 않고 반드시 표기 |
 
 # 성능을 고려한  SQL 작성 원칙
 | 번호 | 내용 |
