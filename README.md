@@ -176,6 +176,8 @@
   /presentation-layer               #화면처리
 
 /runtime-example                  #실행환경 예제
+  /integrated-example               #실행환경 통합 예제
+    /intro                            #개요
   /individual-example               #실행환경 개별 예제
     /batch-layer                      #배치처리 예제
     /business-logic-layer             #업무처리 예제
@@ -185,7 +187,7 @@
       /cloud-data-stream.md             #Cloud Data Stream
     /persistence-layer                #데이터처리 예제
     /presentation-layer               #화면처리 예제
-/integrated-example                 #실행환경 통합 예제
+  
 ```
 
 ## 문서 구조

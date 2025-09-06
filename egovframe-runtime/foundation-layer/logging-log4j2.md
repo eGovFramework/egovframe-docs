@@ -257,6 +257,6 @@ Log4j 2에서는 설정 태그들이 직관적이고 간단하게 변경되었�
 
 #### 참고자료
 
-[Migration to Log4j 2](http://logging.apachttp://logging.apache.org/log4j/2.x/manual/migration.html)  
+[Migration to Log4j 2](https://logging.apache.org/log4j/2.x/manual/migration.html) 
 [Log4j 2 API Documentation](http://logging.apache.org/log4j/2.x/log4j-api/apidocs/index.html)  
 [Log4j 2 Implementation Documentation](http://logging.apache.org/log4j/2.x/log4j-core/apidocs/index.html)
