@@ -5,9 +5,9 @@ description: "게시판, 자료실의 메모장에서 사용자가 자유롭게 
 url: /common-component/elementary-technology/webeditor/
 menu:
   depth:
-    weight: 1 ???
+    weight: 1
     parent: "webeditor"
-    identifier: "wysiwygEditor"  ???
+    identifier: "wysiwygEditor"
 ---
 
 # 요소기술 - 위지윅 에디터(WYSIWYG Editor) 방지
@@ -49,7 +49,7 @@ taglib 선언
 ```
 
 ckeditor:replace 선언(body 태그안에 선언해야 함)
-```html
+```xml
    <form:textarea path="indvdlInfoDc" rows="75" cols="14" cssClass="txaClass2"/>
 ...
 <ckeditor:replace replace="indvdlInfoDc" basePath="${pageContext.request.contextPath}/html/egovframework/com/cmm/utl/ckeditor/" />
