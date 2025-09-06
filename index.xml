@@ -14889,7 +14889,105 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
 &lt;/ol>
 &lt;/li>
 &lt;li>
-&lt;p>특징&lt;/p></description></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
+&lt;p>특징&lt;/p></description></item><item><title>통합예제 개요</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/intro/integrated-example-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/intro/integrated-example-intro/</guid><description>&lt;h1 id="통합예제">통합예제&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>경량화 표준프레임워크의 기능을 효과적으로 교육 및 활용하기 위해 프레임워크의 기능을 활용한 전체기능 예제 프로그램이다. 전자정부 표준프레임워크에서 선정한 오픈소스를 사용하여 경량화된 실행환경을 테스트 할 수 있다.&lt;/p>
+&lt;p>이 통합예제는 조달업무를 기본으로 작성되었으며, 예제 프로그램이므로 실제 업무와는 다를 수도 있음을 명시한다.&lt;/p>
+&lt;p>각 업무 예제 별로 사용된 오픈소스가 다르므로 살펴보고 참고해야 한다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>오픈소스 명&lt;/th>
+ &lt;th>해당 업무&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>AJAX&lt;/td>
+ &lt;td>메인화면&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Internationalization(국제화)&lt;/td>
+ &lt;td>헤더부분&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Security&lt;/td>
+ &lt;td>품목관리, 게시판 관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>SpEL&lt;/td>
+ &lt;td>품목관리, 납품관리, 입찰관리, DB연결&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Validation&lt;/td>
+ &lt;td>품목관리, 게시판 관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Data Access&lt;/td>
+ &lt;td>공통&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ORM&lt;/td>
+ &lt;td>카테고리 관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Transaction&lt;/td>
+ &lt;td>카테고리 관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>RESTful&lt;/td>
+ &lt;td>카테고리 관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Cache&lt;/td>
+ &lt;td>공시(게시판관리)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Encryption/Decrption&lt;/td>
+ &lt;td>회원관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Excel&lt;/td>
+ &lt;td>품목관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>File Upload&lt;/td>
+ &lt;td>품목관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ID Generation&lt;/td>
+ &lt;td>공통&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Logging&lt;/td>
+ &lt;td>공통&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mail&lt;/td>
+ &lt;td>회원관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>OXM&lt;/td>
+ &lt;td>품목관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Property&lt;/td>
+ &lt;td>공통&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Server Security&lt;/td>
+ &lt;td>공통&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String Util&lt;/td>
+ &lt;td>회원관리&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Declarative validation&lt;/td>
+ &lt;td>회원관리&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Log4j 2 환경설정 (설정 파일 사용 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_file/</guid><description>&lt;h1 id="log4j-2-환경설정-설정-파일-사용-시">Log4j 2 환경설정 (설정 파일 사용 시)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Log4j 2는 기존 Properties 파일 형식의 환경 설정을 지원하지 않으며,&lt;br>
 XML (log4j2.xml) 혹은 JSON (log4j2.json or log4j2.jsn) 파일 형식의 환경 설정만 가능하다.&lt;/p>
