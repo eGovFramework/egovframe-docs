@@ -7189,7 +7189,345 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 흐름(flow)은 종종 HTTP 요청을 처리하고 상태를 가지며, 트랜잭션 특성을 보이고 동적이고/이거나 장시간 구동될 수 있다.&lt;/p>
 &lt;p>Spring Web Flow는 추상화의 좀 더 높은 레벨에 존재하고 Struts, Spring MVC, Portlet MVC, 그리고 JSF와 같은 기본 프레임워크 내에서 자족적인 페이지 흐름(flow) 엔진(page flow engine)처럼 통합된다.&lt;br>
 SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 가지는 형태로 명시적으로 애플리케이션의 페이지 흐름(flow)을 획득하는 기능을 제공한다.&lt;/p></description></item><item><title>Spring-iBATIS Integration</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/</guid><description>&lt;h1 id="spring-ibatis-integration">Spring-iBATIS Integration&lt;/h1>
-&lt;p>Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.&lt;/p></description></item><item><title>SQLite</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/intro/batch-core-sqllite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/intro/batch-core-sqllite/</guid><description>&lt;h1 id="sqlite">SQLite&lt;/h1>
+&lt;p>Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.&lt;/p></description></item><item><title>SQL 작성 규칙</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</guid><description>&lt;h1 id="sql-작성-규칙">SQL 작성 규칙&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>본 가이드는 SQL 문법을 통일하여 가독성을 높일 수 있도록 가이드를 하기 위해 SQL 작성 규칙을 제공한다.&lt;/p>
+&lt;p>아래의 규칙을 준수하여 SQL 예시와 해당 규칙을 설명하는 방식으로 진행된다.&lt;/p>
+&lt;ol>
+&lt;li>가독성 준수 규칙&lt;/li>
+&lt;/ol>
+&lt;h1 id="sql-규칙-정리">SQL 규칙 정리&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>번호&lt;/th>
+ &lt;th>구분&lt;/th>
+ &lt;th>SQL 규칙&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>넓이&lt;/td>
+ &lt;td>가로 최대 길이가 80칼럼 이하가 되도록 작성하길 권장하며 최대 120 칼럼을 넘지 않도록 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;/td>
+ &lt;td>대소문자&lt;/td>
+ &lt;td>대문자 작성을 원칙으로 하며, 변수는 UI 네이밍룰에 맞추어서 작성&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3&lt;/td>
+ &lt;td>공백&lt;/td>
+ &lt;td>공백(SPACE) 문자를 사용하며, 탭(TAB)은 사용하지 않음&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>컬럼명, 테이블명&lt;/td>
+ &lt;td>SQL문은 들여쓰기를 하여 가독성을 높일 수 있다. &lt;br> 반드시 어플리케이션에서 사용되는 칼럼명과 테이블 명 만을 SQL 구문에 기술하며,* 등 테이블 전체 칼럼을 사용하는 것은 허용하지 않음&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5&lt;/td>
+ &lt;td>줄바꿈&lt;/td>
+ &lt;td>줄 바꾸기는 키워드, 테이블, 칼럼에서 하는 것을 원칙으로 함 &lt;br> (단, 가독성 향상을 위해 임의로 줄 바꾸기를 할 수 있음)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6&lt;/td>
+ &lt;td>콤마&lt;/td>
+ &lt;td>단어와 단어 사이, 콤마(,) 다음에는 한 칸을 띄운다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>괄호&lt;/td>
+ &lt;td>괄호 다음엔 공백을 두지 않는다. (단, EXISTS, 서브쿼리에서 괄호는 예시 참조)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;/td>
+ &lt;td>주석&lt;/td>
+ &lt;td>주석은 /* 와 */ 를 사용하고 “&amp;ndash;“은 사용하지 않는다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9&lt;/td>
+ &lt;td>힌트&lt;/td>
+ &lt;td>힌트는 /*+ 와 */ 를 사용하고 “&amp;ndash;+”은 사용하지 않는다. &lt;br> 개발자 임의의 힌트를 사용은 금지하며 튜닝 요소가 있을 경우 담당자와 협의하여 사용 &lt;br> ( 연속조회/최대값 조회를 위한 INDEX, INDEX_DESC 힌트는 사용가능, 그 이외에 어떠한 힌트도 사용불가 )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10&lt;/td>
+ &lt;td>변수&lt;/td>
+ &lt;td>WHERE절에서 사용되는 모든 비교 값은 바인드 변수(Bind Variable)로 처리함을 원칙으로 하며 &lt;br> 변수 이름은 어플리케이션 개발가이드에 따름&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11&lt;/td>
+ &lt;td>ANSI&lt;/td>
+ &lt;td>가독성의 향상과 쉬운 유지보수를 위해서 ANSI SQL-92 표준의 조인 방식은 사용하지 않음 &lt;br> (업무적으로 FULL OUTER 조인이 사용될 경우는 허용함)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12&lt;/td>
+ &lt;td>FROM절&lt;/td>
+ &lt;td>인라인 뷰의 깊이는 최대 3단계까지만 허용함(권장 2단계)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>하드코딩&lt;/td>
+ &lt;td>DECODE, CASE WHEN에서 데이터 값을 하드 코딩하여 비교하는 형태는 허용하지 않음&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>Static&lt;/td>
+ &lt;td>Static Embeded SQL 사용을 원칙으로 함 &lt;br> Precompiler 제약에 의해서 반드시 Dynamic SQL로 구현되야 하는 MERGE INTO 문은 허용 &lt;br> 임시 테이블이 생성되는 WITH 문은 Online 환경(센터컷 포함)에서는 허용하지 않음 ( 배치에서만 허용 )&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="sql-작성-규칙-예시">SQL 작성 규칙 예시&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>SQL 예시&lt;/th>
+ &lt;th>SQL 규칙&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/rule01.png" alt="SQL 예시01" >
+&lt;/td>
+ &lt;td>SELECT 이후 반드시 공백 1칸을 주고 칼럼을 기술 &lt;br> 1줄에 1개 컬럼 기술을 원칙으로 함 &lt;br> 컬럼명 이후 공백을 주고 주석을 추가 &lt;br> 컬럼명,테이블명의 구분 콤마(,)는 앞쪽에 기술&lt;br> 콤마 와 칼럼/테이블 명 사이에 공백 한 칸을 둠&lt;br> FROM 절에 나타난 순서대로 알파벳 대문자 A , B ,… 순서로 사용&lt;br> 테이블 별칭 이후 공백을 주고 주석을 추가&lt;br> SELECT , FROM, WHER , AND 가 오른쪽 맞춤이 되도록 정렬 ( SELECT의 “T”알파벳을 기준으로 정렬 )&lt;br> WHERE 절의 조인 조건에 대해서는 주석은 필수가 아님 &lt;br> WHERE 절에서 조인 조건을 먼저 기술함 테이블 lookup 조건은 조인조건 이후에 기술&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/rule02.png" alt="SQL 예시02" >
+&lt;/td>
+ &lt;td>FROM 절 테이블 별칭은 알파벳 대문자 A , B, C … 순서대로 기술 &lt;br> 서브쿼리는 3개 이내로 사용 권장 &lt;br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 &lt;br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 &lt;br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="select-sql-작성-예시">SELECT SQL 작성 예시&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>SQL 예시&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/select01.png" alt="SELECT SQL 예시01" >
+ &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/select02.png" alt="SELECT SQL 예시02" >
+&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="insert-sql-작성-예시">INSERT SQL 작성 예시&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>SQL 예시&lt;/th>
+ &lt;th>SQL 규칙&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/insert01.png" alt="INSERT SQL 예시01" >
+ &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/insert02.png" alt="INSERT SQL 예시02" >
+&lt;/td>
+ &lt;td>INTO, VALUES, SELECT, FROM, WHERE, AND, OR, 괄호, 콤마(,)등은 INSERT의 “T”자 기준으로 정렬한다. &lt;br> INSERT 대상 칼럼 및 VALUES 절의 값들은 새로운 라인에서 시작괄호 ‘(‘ 다음에 빈칸 없이 바로 시작되고, &lt;br> INSERT 기술이 모두 끝난 후 새로운 라인에 ‘(‘ 괄호가 위치하는 위치에 ‘)’를 정렬한다. &lt;br> 한 라인에 하나의 칼럼/값만 기술하고 콤마(,)는 새로운 라인에 기술&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="update-sql-작성-예시">UPDATE SQL 작성 예시&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>SQL 예시&lt;/th>
+ &lt;th>SQL 규칙&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/update01.png" alt="UPDATE SQL 예시01" >
+&lt;/td>
+ &lt;td>SET, FROM, WHERE, AND, OR, 콤마(,)등은 UPDATE의 “E”자 기준으로 정렬한다. &lt;br> 한 라인에 하나의 업데이트될 칼럼만 기술하고 콤마(,)는 새로운 라인에 기술한다. &lt;br> 업데이트될 컬럼은 첫 번째만 제외하고 콤마로 시작하고 콤마 뒤에 한 칸 띄운 후 칼럼과 변경 값을 기술한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="delete-sql-작성-예시">DELETE SQL 작성 예시&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>SQL 예시&lt;/th>
+ &lt;th>SQL 규칙&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/delete01.png" alt="DELETE SQL 예시01" >
+&lt;/td>
+ &lt;td>주석은 SQL 상단에 표기 &lt;br> FROM, WHERE, AND, OR, 콤마(,)등은 DELETE의 끝문자 “E”자 기준으로 정렬 &lt;br> WHERE절은 생략하지 않고 반드시 표기&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="성능을-고려한--sql-작성-원칙">성능을 고려한 SQL 작성 원칙&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>번호&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>조회 , 변경에서 view를 통한 액세스는 허용하지 않음&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;/td>
+ &lt;td>WHERE 조건 절은 항상 Static 하게 사용하는 것을 권장 ( iBatis “&lt;isNotEmpty >” 등 문법을 악용하지 말 것 )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3&lt;/td>
+ &lt;td>인라인 뷰의 최대 깊이는 메인 쿼리로부터 3단계 이하로 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>스칼라 서브쿼리 내에서 데이터를 가공하지 않도록 함 &lt;br> 배치 프로그램에서 스칼라 서브 쿼리 사용을 금지함 ( 필요 시 별도 협의 할 것 )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5&lt;/td>
+ &lt;td>SELECT/WHERE 절에서 컬럼의 불필요한 가공 금지 ( index 스캔을 하지 못하는 주요 원인임 )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6&lt;/td>
+ &lt;td>데이터 조회 나 변경은 꼭 필요한 대상 칼럼을 대상으로 해야 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>다수의 IF/ELSE 비교를 할 경우에는 DECODE 보다 CASE ~ WHEN 구문을 사용하도록 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;/td>
+ &lt;td>과도한 NVL 함수 사용을 금지 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9&lt;/td>
+ &lt;td>최대값을 갖는 ROW을 찾을 경우나 정렬된 데이터 추출 시 인덱스를 활용하여 sort 오퍼레이션을 최소화 해야 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10&lt;/td>
+ &lt;td>Literal SQL 사용을 금지하고 항상 BIND 변수를 사용함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11&lt;/td>
+ &lt;td>HAVING보다는 WHERE 절에서 필터링을 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12&lt;/td>
+ &lt;td>온라인 환경에서 WITH 절 사용을 금지 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>OR 논리 연산자 사용을 최소화 해야 함&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>조회 데이터의 UNIQUE 제약 조건이 없을 경우 UNION ALL 사용 ( UNION 사용금지 )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>15&lt;/td>
+ &lt;td>어플리케이션 Loop문장에서 INSERT, UPDATE, DELETE를 반복적으로 호출하지 말 것. ( Collection 객체로 한번에 처리)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>16&lt;/td>
+ &lt;td>FROM 절은 4개의 테이블 이하로 사용 (3개의 조인 조건)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>17&lt;/td>
+ &lt;td>분석함수 사용은 통계화면을 제외한 화면에서는 사용하지 말 것&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>18&lt;/td>
+ &lt;td>Scalar Sub Query는 10,000건 이하의 테이블에서만 사용&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h1 id="자주하는-질문-faq">자주하는 질문 FAQ&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>번호&lt;/th>
+ &lt;th>구분&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>COUNT(*)와 COUNT(1) 중 어느 것이 빠른가?&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>오라클 내부적으로 똑같이 처리하므로 같다. &lt;br> 보편적으로 사용하는 직관적인 count(*)을 사용한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>처음 실행 때는 느리지만 그 다음부터는 빠르다?&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>SQL 처음 실행 시 원하는 값이 메모리(DB Buffer Cache)에 없으므로 물리적인 디스크를 읽어 데이터를 가져오고 &lt;br> 두번째 이후부터는 메모리에서 가져오므로 처음과 두번째 이후의 어플리케이션 속도 차이가 난다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>데이터 건수가 너무 많아 성능개선이 어렵다&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>조회조건에 해당하는 데이터가 어느 정도 이상을 넘어가면 인덱스를 이용하거나 풀스캔을 사용해도 성능개선이 어렵다. &lt;br> 조회 조건 중 데이터 범위를 줄일 수 있는 조건을 필수 조건으로 한다. &lt;br> 업무담당자와 협의하여 조회 조건 중에 기간범위, 해당범위 등을 이용하여 줄이도록 한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>ORA-01555 오류 ( Snapshot Too Old )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>일반적으로 배치프로그램에서 많이 발생하며 하나의 오브젝트에 대해 두 개 이상의 세션이 작업할 때 일어난다. &lt;br> 어플리케이션의 SELECT 문장 수행시간을 줄이거나 Commit 간격 시간을 늘려야 한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>ORA-01003 오류 ( No Statement Parsed )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>데이터베이스에서도 원인과 조치방법 모르는 오류 &lt;br> 어플리케이션의 소스파일을 삭제한 후 새로운 파일에 소스를 작성하여 재실행하면 되는 경우가 많음.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>ORA-00600 오류 ( Internal Error Code )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>데이터베이스 버그일 가능성이 높은 오류 &lt;br> 발생시 DBA에게 알려 DBMS와 관련된 후속 조치를 취할 수 있도록 한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>질문&lt;/td>
+ &lt;td>ORA-00060 오류 ( Deadlock )&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>답변&lt;/td>
+ &lt;td>데드락 오류는 어플리케이션의 DML 작업이 모듈 별로 일관성을 유지하지 아닐 때 발생하는 오류이므로 &lt;br> 모듈 별로 일관성을 유지하도록 어플리케이션을 수정함 ( AA간 협의하여 진행 할 것 )&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>SQLite</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/intro/batch-core-sqllite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/intro/batch-core-sqllite/</guid><description>&lt;h1 id="sqlite">SQLite&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치 처리시 경량화된 Repository를 사용을 위한 SQLite 처리를 지원한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -8602,7 +8940,33 @@ DispatcherServlet은 View 이름을 가지고 ViewResolver에게서 실제 View 
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>&lt;strong>TestSuite&lt;/strong>은 개발자가 작성한 다수의 TestCase를 그룹으로 묶거나 모아서 한꺼번에 테스트를 수행할 수 있도록 JUnit 3.8에서 제공하던 클래스이다.
 JUnit4에서는 TestSuite 클래스를 더이상 지원하지 않으며, 단지 다수의 TestCase를 특징에 따라 한꺼번에 수행할 수 있도록 그룹으로 묶는 개념으로 생각하는 것이 좋겠다.
-따라서, JUnit3.8에서는 TestSuite Class를 작성하곤 했지만, JUnit4에서는 작성할 수는 있지만 잘 쓰지 않고, 빌드도구를 사용하는 방법을 많이 사용한다.&lt;/p></description></item><item><title>XML Manipulation Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</guid><description>&lt;h1 id="xml-manipulation-service">XML Manipulation Service&lt;/h1>
+따라서, JUnit3.8에서는 TestSuite Class를 작성하곤 했지만, JUnit4에서는 작성할 수는 있지만 잘 쓰지 않고, 빌드도구를 사용하는 방법을 많이 사용한다.&lt;/p></description></item><item><title>WYSIWYG Editor(v3.2 신규)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/webeditor/</guid><description>&lt;h1 id="요소기술---위지윅-에디터wysiwyg-editor-방지">요소기술 - 위지윅 에디터(WYSIWYG Editor) 방지&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>게시판, 자료실의 메모장에서 사용자가 자유롭게 컨텐츠를 편집할 수 있는 기능의 컴포넌트을 제공한다. 텍스트 및 HTML 편집 기능을 지원하고, 이미지 업로드 및 이미지를 편집기에 보여주는 기능이 있어야 한다. 웹 에디터는 웹 브라우저에서 게시판, 공지사항, 자료실, 사진첩과 같이 입력기능이 있는 곳에서 사용할 수 있다.&lt;/p>
+&lt;p>본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 중 &lt;strong>개인정보보호정책&lt;/strong>의 등록 화면에 구성되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>기존 사용하던 htmlarea를 ckeditor로 변경한다.&lt;/p>
+&lt;h5 id="관련소스">관련소스&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JS&lt;/td>
+ &lt;td>webapp/html/egovframework/com/cmm/utl/ckeditor&lt;/td>
+ &lt;td>에디터 소스&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>pom.xml 선언&lt;/p></description></item><item><title>XML Manipulation Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/xml-manipulation/</guid><description>&lt;h1 id="xml-manipulation-service">XML Manipulation Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>XML Manipulation 서비스는 XML을 생성하고, 읽고, 쓰는 등과 같은 기능과 조작 기능을 제공하는 서비스이다.
 XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다.XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.XML은 주로 다른 시스템, 특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다. XML은 W3C에서 다른 특수 목적의 마크업 언어를 만드는 용도에서 권장되는 다목적 마크업 언어이다. XML은 SGML의 단순화된 부분집합이지만, 수많은 종류의 데이터를 기술하는데 적용할 수 있다.&lt;/p></description></item><item><title>개발자 개발환경 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</guid><description>&lt;h1 id="개발자-개발환경-설치가이드">개발자 개발환경 설치가이드&lt;/h1>
