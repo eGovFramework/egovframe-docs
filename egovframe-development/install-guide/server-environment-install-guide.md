@@ -10,6 +10,7 @@ menu:
     parent: "install-guide"
     identifier: "server-environment-install-guide"
 ---
+
 # 서버 개발환경 4.3.0 설치가이드
 
 ## 개요
@@ -20,9 +21,9 @@ menu:
 
 전자정부 표준프레임워크에서 제공하는 서버환경을 설치하기 위한 서버 환경 구성 가이드를 제공한다.
 
-- **서버환경 구성(Windows)**윈도우 환경에서 전자정부 표준프레임워크에서 제공하는 설치파일을 이용하여 서버 환경을 구성한다.
-- **서버환경 구성(Unix 계열)**Unix 계열(Aix, Linux, Solaris) 환경에서 eGovFrame에서 제공하는 설치파일을 이용하여 서버 환경을 구성한다.
-- **설치가이드**윈도우 환경 및 Unix 계열 설치가이드는 동일하며, Unix계열의 SVN 설치가이드를 별도로 제공한다.
+- **서버환경 구성(Windows)** 윈도우 환경에서 전자정부 표준프레임워크에서 제공하는 설치파일을 이용하여 서버 환경을 구성한다.
+- **서버환경 구성(Unix 계열)** Unix 계열(Aix, Linux, Solaris) 환경에서 eGovFrame에서 제공하는 설치파일을 이용하여 서버 환경을 구성한다.
+- **설치가이드** 윈도우 환경 및 Unix 계열 설치가이드는 동일하며, Unix계열의 SVN 설치가이드를 별도로 제공한다.
   - [[표준프레임워크] CI 및 Nexus 환경구축 가이드 v4.3](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:dev4.3:egovci-4.3.0-installation-guide.pdf)
   - [SVN 설치 가이드(리눅스용)](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:dev4.0:svn-installation-guide.pdf)
 
@@ -66,29 +67,29 @@ menu:
 
 - 사용 포트 변경
 
-  * Jenkins : start-jenkins.bat 파일에서 –httpPort의 값을 수정
-  * Nexus : {CI-HOME}\app\nexus-2.15.2-03-bundle\nexus-2.15.2-03\conf\nexus.properties 파일에서 application-port의 값을 수정
+  - Jenkins : start-jenkins.bat 파일에서 –httpPort의 값을 수정
+  - Nexus : {CI-HOME}\app\nexus-2.15.2-03-bundle\nexus-2.15.2-03\conf\nexus.properties 파일에서 application-port의 값을 수정
+
 - 서비스 실행은 {CI-HOME}\start-jenkins.bat 파일을 관리자권한으로 수행하여 진행한다.
 - Jenkins(CI) 설치확인
 
-  * http://localhost:8082/ 로 들어가서 확인한다.
+  - http://localhost:8082/ 로 들어가서 확인한다.
 
     ![Jenkins 확인1](./images/jenkins-check-1.png)
 
-  * Jenkins(CI)가 정상작동하는지 확인한다.
+  - Jenkins(CI)가 정상작동하는지 확인한다.
 
     ![Jenkins 확인2](./images/jenkins-check-2.png)
 
 - Nexus 설치확인
 
-  * http://localhost:8081/nexus/ 로 들어가서 확인한다.
+  - http://localhost:8081/nexus/ 로 들어가서 확인한다.
 
     ![Nexus 확인1](./images/nexus-check-1.png)
 
-  * Nexus의 repository가 정상적으로 보이는지 확인한다.
+  - Nexus의 repository가 정상적으로 보이는지 확인한다.
 
     ![Nexus 확인2](./images/nexus-check-2.png)
-
 
 > **✔ 주의사항**
 >
