@@ -7189,7 +7189,32 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 흐름(flow)은 종종 HTTP 요청을 처리하고 상태를 가지며, 트랜잭션 특성을 보이고 동적이고/이거나 장시간 구동될 수 있다.&lt;/p>
 &lt;p>Spring Web Flow는 추상화의 좀 더 높은 레벨에 존재하고 Struts, Spring MVC, Portlet MVC, 그리고 JSF와 같은 기본 프레임워크 내에서 자족적인 페이지 흐름(flow) 엔진(page flow engine)처럼 통합된다.&lt;br>
 SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 가지는 형태로 명시적으로 애플리케이션의 페이지 흐름(flow)을 획득하는 기능을 제공한다.&lt;/p></description></item><item><title>Spring-iBATIS Integration</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/</guid><description>&lt;h1 id="spring-ibatis-integration">Spring-iBATIS Integration&lt;/h1>
-&lt;p>Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.&lt;/p></description></item><item><title>SQL 작성 규칙</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</guid><description>&lt;h1 id="sql-작성-규칙">SQL 작성 규칙&lt;/h1>
+&lt;p>Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.&lt;/p></description></item><item><title>SQL DB 다중 접속 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-connection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-connection/</guid><description>&lt;h1 id="sql-db-다중-접속-가이드">SQL DB 다중 접속 가이드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>본 가이드는 여러개의 DB 접속하여 쿼리를 분리하여 사용할때 접속 방법을 가이드한다.&lt;/p>
+&lt;p>아래의 순서로 SQL 예시와 해당 규칙을 설명하는 방식으로 진행된다.&lt;/p>
+&lt;ol>
+&lt;li>SQL DB 다중 접속 개요&lt;/li>
+&lt;li>globals.properties 설정&lt;/li>
+&lt;li>context-datasource.xml 설정&lt;/li>
+&lt;li>context-mapper.xml 설정&lt;/li>
+&lt;li>mapper SQL 폴더 구조&lt;/li>
+&lt;li>DAO 호출 분기 방법&lt;/li>
+&lt;li>그외 설정 파일&lt;/li>
+&lt;li>기타
+&lt;br>&lt;/li>
+&lt;/ol>
+&lt;h2 id="sql-db-다중-접속-개요">SQL DB 다중 접속 개요&lt;/h2>
+&lt;p>프로젝트에서 여러개의 DB를 접속하여 데이터를 관리해야 하거나 데이터 조회가 필요할 때 설정파일에 정보를 추가하여 mapper 폴더 밑에 프로젝트명으로 폴더를 구분하여 SQL을 선택적으로 사용 할 수 있다.
+&lt;br>
+&lt;br>
+예시 1. 업무시스템에서 통계시스템 DB의 데이터를 API가 아닌 DB에서 직접 조회를 할 때
+&lt;br>
+예시 2. 신규 업무시스템에서 로그인시 정보가 없을 때 레거시 시스템 DB의 정보를 복사해야
+할 때
+&lt;br>
+예시 3. 통합시스템에서 여러개의 분할 된 DB를 통합해서 관리해야 할 때
+&lt;br>&lt;/p></description></item><item><title>SQL 작성 규칙</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</guid><description>&lt;h1 id="sql-작성-규칙">SQL 작성 규칙&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본 가이드는 SQL 문법을 통일하여 가독성을 높일 수 있도록 가이드를 하기 위해 SQL 작성 규칙을 제공한다.&lt;/p>
 &lt;p>아래의 순서로 SQL 예시와 해당 규칙을 설명하는 방식으로 진행된다.&lt;/p>
