@@ -1,12 +1,12 @@
 ---
-title: 개발환경 활용 가이드
-linkTitle: "개발환경 활용 가이드"
-description: "개발환경 활용 가이드를 설명한다."
+title: Intellij 활용 가이드
+linkTitle: "Intellij 활용 가이드"
+description: "Intellij 환경에서 프로젝트를 구성하는 방법을 가이드한다."
 url: /egovframe-development/development-etcdevtool-guide/etcdevtool-intellij/
 menu:
   depth:
-    name: "활용 가이드"
-    weight: 9
+    name: "Intellij 활용 가이드"
+    weight: 1
     parent: "development-etcdevtool-guide"
 ---
 
