@@ -3744,7 +3744,16 @@ HTTP Request 정보 취득을 사용하면 파미리터를 통하지 않고 Http
 &lt;p>Integration 서비스는 전자정부 개발프레임워크 기반의 시스템이 타 시스템과의 연계를 위해 사용하는 Interface의 표준을 정의한 것이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="목적">목적&lt;/h3>
-&lt;p>기존의 전자정부 시스템은 타 시스템과의 연계를 위해 연계 솔루션을 사용하거나 자체 개발한 연계 모듈을 사용해왔다. 기존에 사용된 연계 솔루션 및 자체 연계 모듈은 각각 고유한 설정 및 사용 방식을 가지고 있어, 동일한 연계 서비스라 할지라도 사용하는 연계 모듈에 따라 각기 다른 방식으로 개발되어 왔다. 본 Integration 서비스는 이러한 중복 개발을 없애고, 표준화된 설정 및 사용 방식을 정의하여 개발 효율성을 제고한다.&lt;/p></description></item><item><title>Internationalization(국제화)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/internationalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/internationalization/</guid><description>&lt;h1 id="internationalization국제화">Internationalization(국제화)&lt;/h1>
+&lt;p>기존의 전자정부 시스템은 타 시스템과의 연계를 위해 연계 솔루션을 사용하거나 자체 개발한 연계 모듈을 사용해왔다. 기존에 사용된 연계 솔루션 및 자체 연계 모듈은 각각 고유한 설정 및 사용 방식을 가지고 있어, 동일한 연계 서비스라 할지라도 사용하는 연계 모듈에 따라 각기 다른 방식으로 개발되어 왔다. 본 Integration 서비스는 이러한 중복 개발을 없애고, 표준화된 설정 및 사용 방식을 정의하여 개발 효율성을 제고한다.&lt;/p></description></item><item><title>Intellij 활용 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/development-etcdevtool-guide/etcdevtool-intellij/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/development-etcdevtool-guide/etcdevtool-intellij/</guid><description>&lt;h1 id="intellij-사용-가이드">Intellij 사용 가이드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>본 가이드는 Intellij 환경에서 프로젝트를 구성하는 방법을 제공한다.
+전자정부 표준프레임워크의 개발환경과는 달리 상용 프로그램 의존적으로 플러그인을 제공 할 수 없어 기존 전자정부 실행환경 기반 프로젝트를 Intellij에서 개발할 수 있는 간단한 활용 가이드만 제공한다.
+이후 제공하는 예제는 포털의 All-in-one 공통컴포넌트 프로젝트를 활용하는 예제이다.&lt;/p>
+&lt;p>※ 커뮤니티 버전의 경우 일부 기능에 제한이 있을수 있습니다.&lt;/p>
+&lt;h2 id="들어가기-전에">들어가기 전에&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>기본적으로 Eclipse 계열과 Intellij 계열에서 사용 용어에 차이가 있을 수 있는 바 이는 필요시 언급하며 가이드 하도록 한다.&lt;/p></description></item><item><title>Internationalization(국제화)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/internationalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/internationalization/</guid><description>&lt;h1 id="internationalization국제화">Internationalization(국제화)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 표준 프레임워크에서는 Spring MVC 에서 제공하는 LocaleResolver를 이용한다.
 우리는 여기서 LocaleResolver를 알아보고 적용하는 설정과 다국어가 적용된 message resource 를 가져와 활용하는 것을 보도록 하겠다.
@@ -9562,16 +9571,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;li>피처 프로젝트 : 여러개의 단위 플러그인을 묶어서 플러그인 묶음을 하나의 단위로 쉽게 로딩하고 관리하기 위한 프로젝트이다.&lt;/li>
 &lt;li>업데이트 사이트 프로젝트 : 플러그인 묶음을 카테고리 단위로 분류하고 빌드하여 사용자에게 배포하기 위한 프로젝트이다.&lt;/li>
 &lt;/ul>
-&lt;p>전자정부 프레임워크 개발환경 구현도구에 기능을 추가하거나 개선한 이후에는 해당 단위 플러그인 프로젝트에 대한 버전을 변경하여 사용자가 버전이 변경되었음을 알 수 있도록 해야 한다. 그리고, update site 를 사용하여 update를 할 수 있도록 Feature 단위로 묶고 Build 하여 재배포를 해야 한다. 그러므로 수정후 재배포 순서는 다음과 같다.&lt;/p></description></item><item><title>개발환경 활용 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/development-etcdevtool-guide/etcdevtool-intellij/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/development-etcdevtool-guide/etcdevtool-intellij/</guid><description>&lt;h1 id="intellij-사용-가이드">Intellij 사용 가이드&lt;/h1>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>본 가이드는 Intellij 환경에서 프로젝트를 구성하는 방법을 제공한다.
-전자정부 표준프레임워크의 개발환경과는 달리 상용 프로그램 의존적으로 플러그인을 제공 할 수 없어 기존 전자정부 실행환경 기반 프로젝트를 Intellij에서 개발할 수 있는 간단한 활용 가이드만 제공한다.
-이후 제공하는 예제는 포털의 All-in-one 공통컴포넌트 프로젝트를 활용하는 예제이다.&lt;/p>
-&lt;p>※ 커뮤니티 버전의 경우 일부 기능에 제한이 있을수 있습니다.&lt;/p>
-&lt;h2 id="들어가기-전에">들어가기 전에&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>기본적으로 Eclipse 계열과 Intellij 계열에서 사용 용어에 차이가 있을 수 있는 바 이는 필요시 언급하며 가이드 하도록 한다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시물 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post_statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post_statistics/</guid><description>&lt;h1 id="게시물-통계">게시물 통계&lt;/h1>
+&lt;p>전자정부 프레임워크 개발환경 구현도구에 기능을 추가하거나 개선한 이후에는 해당 단위 플러그인 프로젝트에 대한 버전을 변경하여 사용자가 버전이 변경되었음을 알 수 있도록 해야 한다. 그리고, update site 를 사용하여 update를 할 수 있도록 Feature 단위로 묶고 Build 하여 재배포를 해야 한다. 그러므로 수정후 재배포 순서는 다음과 같다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시물 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post_statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post_statistics/</guid><description>&lt;h1 id="게시물-통계">게시물 통계&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>게시물 통계 기능은 각종 게시물 현황에 대한 통계자료를 게시판 유형, 게시판 템플릿, 게시판 속성에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
 &lt;ul>
