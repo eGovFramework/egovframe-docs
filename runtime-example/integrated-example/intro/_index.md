@@ -1,14 +1,14 @@
 ---
 title: 통합예제 개요
 linkTitle: 통합예제 개요
-description: 통합예제 개요이다.
+description: 통합예제 개요이다
 url: /runtime-example/integrated-example/intro/
 menu:
     depth:
-        name: 통합예제 개요.
+        name: 통합예제 개요
         weight: 1
         parent: "integrated-example"
-        identifier: "intro"
+        identifier: "integrated-example-intro"
 ---
 # 통합예제 개요
 
