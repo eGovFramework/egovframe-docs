@@ -7,7 +7,7 @@ menu:
   depth:
     name: "활용 가이드"
     weight: 9
-    parent: "development-etcdevtool-guide/"
+    parent: "development-etcdevtool-guide"
 ---
 
 # Intellij 사용 가이드
