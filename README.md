@@ -94,100 +94,99 @@
 - 모든 `_index.md` 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 참고 부탁드립니다.
 
 ```
-/common-component                 #공통컴포넌트
-  /collaboration                    #협업
-    /address.md                       #주소록/명함록
-    /board.md                         #게시판
-    /community.md                     #커뮤니티
-    /edsm.md                          #전자결재
-    /schedule.md                      #일정관리
-    /sms.md                           #문자메세지
-  /digital-asset-management         #디지털 자산관리
-    /knowledge-map.md                  #지식맵
-  /elementary-technology            #요소기술
-    /calendar.md                      #달력
-    /cookie-session.md                #쿠키/세션
-    /external-components.md           #외부 추가 컴포넌트
-    /formatter-util.md                #포맷/계산/변환
-    /interface.md                     #인터페이스/화면
-    /message-process.md               #메시지 처리
-    /new-components-v3.2.md           #신규 컴포넌트(v3.2)
-    /print.md                         #인쇄/출력
-    /system.md                        #시스템
-    /webeditor.md                    #웹에디터
-  /intro                            #개요
-  /security                         #보안
-    /authority-management.md          #권한관리
-  /statistics-reporting             #통계/리포팅
-  /system-management                #시스템관리
-    /batch-manage.md                  #배치관리
-    /common-code-manage.md            #공통코드관리
-    /error-manage.md                  #장애관리
-    /log-manage.md                    #로그관리
-    /menu-manage.md                   #메뉴관리
-    /program-manage.md                #프로그램관리
-    /system-manage.md                 #시스템관리
-  /system-service-linkage           #시스템/서비스연계
-  /user-authentication              #사용자디렉토리/통합인증
-    /login.md                         #일반 로그인
-  /user-support                     #사용자지원
-    /information-provided.md          #정보제공/알림
-    /member-manage.md                 #사용자관리
-    /online-help.md                   #온라인헬프
-    /online-practice.md               #온라인참여
-    /personalization.md               #개인화
-    /terms-manage.md                  #약관관리
+/common-component                           공통컴포넌트
+├── /collaboration                             협업
+│   ├── /address.md                                주소록/명함록
+│   ├── /board.md                                  게시판
+│   ├── /community.md                              커뮤니티
+│   ├── /edsm.md                                   전자결재
+│   ├── /schedule.md                               일정관리
+│   └── /sms.md                                    문자메세지
+├── /digital-asset-management                  디지털 자산관리
+│   └── /knowledge-map.md                          지식맵
+├── /elementary-technology                     요소기술
+│   ├── /calendar.md                               달력
+│   ├── /cookie-session.md                         쿠키/세션
+│   ├── /external-components.md                    외부 추가 컴포넌트
+│   ├── /formatter-util.md                         포맷/계산/변환
+│   ├── /interface.md                              인터페이스/화면
+│   ├── /message-process.md                        메시지 처리
+│   ├── /new-components-v3.2.md                    신규 컴포넌트(v3.2)
+│   ├── /print.md                                  인쇄/출력
+│   ├── /system.md                                 시스템
+│   └── /webeditor.md                              웹에디터
+├── /intro                                     개요
+├── /security                                  보안
+│   └── /authority-management.md                   권한관리
+├── /statistics-reporting                      통계/리포팅
+├── /system-management                         시스템관리
+│   ├── /batch-manage.md                           배치관리
+│   ├── /common-code-manage.md                     공통코드관리
+│   ├── /error-manage.md                           장애관리
+│   ├── /log-manage.md                             로그관리
+│   ├── /menu-manage.md                            메뉴관리
+│   ├── /program-manage.md                         프로그램관리
+│   └── /system-manage.md                          시스템관리
+├── /system-service-linkage                    시스템/서비스연계
+├── /user-authentication                       사용자디렉토리/통합인증
+│   └── /login.md                                  일반 로그인
+└── /user-support                              사용자지원
+    ├── /information-provided.md                   정보제공/알림
+    ├── /member-manage.md                          사용자관리
+    ├── /online-help.md                            온라인헬프
+    ├── /online-practice.md                        온라인참여
+    ├── /personalization.md                        개인화
+    └── /terms-manage.md                           약관관리
 
-/egovframe-development            #개발환경
-  /configuration-management-tool    #형상 관리 도구
-    /change-management.md             #Change Management
-    /configuration-management.md      #Configuration Management
-  /deployment-tool                  #배포 도구
-    /build-tool.md                    #Build Tool
-      /docker.md                        #컨테이너 가상화(Docker) 빌드
-      /gradle.md                        #개인빌드(Gradle)
-      /maven.md                         #개인빌드(Maven)
-  /development-etcdevtool-guide     #활용 가이드
-  /implementation-tool              #구현 도구
-    /editor.md                        #Editor
-    /batch-IDE.md                      #Batch IDE
-    /code-generation.md                #Code Generation
-    /code-inspection.md                #Code Inspection
-    /dbio-editor.md                    #DBIO Editor
-    /server-connection-management.md   #Server Connection Management
-    /uml-editor.md                     #UML Editor
-    /debug.md                         #Debug
-  /individual-install-guide          #구성 가이드
-  /install-guide                    #설치 가이드
-  /intro                            #소개
-  /operation-guide                  #운영 가이드
-  /test-tool                        #테스트 도구
-    /test-automation.md               #Test Automation
-    /unit-test.md                     #Unit Test
+/egovframe-development                     개발환경
+├── /configuration-management-tool            형상 관리 도구
+│   ├── /change-management.md                     Change Management
+│   └── /configuration-management.md              Configuration Management
+├── /deployment-tool                          배포 도구
+│   └── /build-tool.md                            Build Tool
+│       ├── /docker.md                                컨테이너 가상화(Docker) 빌드
+│       ├── /gradle.md                                개인빌드(Gradle)
+│       └── /maven.md                                 개인빌드(Maven)
+├── /development-etcdevtool-guide             활용 가이드
+├── /implementation-tool                      구현 도구
+│   ├── /editor.md                                Editor
+│   ├── /batch-IDE.md                             Batch IDE
+│   ├── /code-generation.md                       Code Generation
+│   ├── /code-inspection.md                       Code Inspection
+│   ├── /dbio-editor.md                           DBIO Editor
+│   ├── /server-connection-management.md          Server Connection Management
+│   ├── /uml-editor.md                            UML Editor
+│   └── /debug.md                                 Debug
+├── /individual-install-guide                 구성 가이드
+├── /install-guide                            설치 가이드
+├── /intro                                    소개
+├── /operation-guide                          운영 가이드
+└── /test-tool                                테스트 도구
+    ├── /test-automation.md                       Test Automation
+    └── /unit-test.md                             Unit Test
 
-/egovframe-runtime                #실행환경
-  /batch-layer                      #배치처리
-  /business-logic-layer             #업무처리
-  /foundation-layer-core            #공통기반 핵심
-  /foundation-layer                 #공통기반
-  /integration-layer                #연계통합
-  /intro                            #실행환경 소개
-  /persistence-layer                #데이터처리
-  /presentation-layer               #화면처리
+/egovframe-runtime                        실행환경
+├── /batch-layer                             배치처리
+├── /business-logic-layer                    업무처리
+├── /foundation-layer-core                   공통기반 핵심
+├── /foundation-layer                        공통기반
+├── /integration-layer                       연계통합
+├── /intro                                   실행환경 소개
+├── /persistence-layer                       데이터처리
+└── /presentation-layer                      화면처리
 
-/runtime-example                  #실행환경 예제
-  /integrated-example               #실행환경 통합 예제
-    /intro                            #개요
-  /individual-example               #실행환경 개별 예제
-    /batch-layer                      #배치처리 예제
-    /business-logic-layer             #업무처리 예제
-    /foundation-layer                 #공통기반 예제
-    /foundation-layer-core            #공통기반 핵심 예제
-    /integration-layer                #연계통합 예제
-      /cloud-data-stream.md             #Cloud Data Stream
-    /persistence-layer                #데이터처리 예제
-    /presentation-layer               #화면처리 예제
-  
+/runtime-example                          실행환경 예제
+├── /integrated-example                      실행환경 통합 예제
+│   └── /intro                                   개요
+└── /individual-example                      실행환경 개별 예제
+    ├── /batch-layer                             배치처리 예제
+    ├── /business-logic-layer                    업무처리 예제
+    ├── /foundation-layer                        공통기반 예제
+    ├── /foundation-layer-core                   공통기반 핵심 예제
+    ├── /integration-layer                       연계통합 예제
+    │   └── /cloud-data-stream.md                    Cloud Data Stream
+    ├── /persistence-layer                       데이터처리 예제
+    └── /presentation-layer                      화면처리 예제
 ```
 
 ## 문서 구조
