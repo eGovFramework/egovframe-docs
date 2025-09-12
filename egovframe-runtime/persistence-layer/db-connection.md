@@ -1,16 +1,16 @@
 ---
-title: "SQL DB 다중 접속 가이드"
-linkTitle: "SQL DB 다중 접속 가이드"
+title: "DB 다중 접속 가이드"
+linkTitle: "DB 다중 접속 가이드"
 description: "본 가이드는 여러개의 DB 접근하거나 쿼리를 master/salve로 분리하여 사용할때 접속 방법을 가이드한다."
-url: /egovframe-development/sql-guide/sql-connection/
+url: /egovframe-runtime/persistence-layer/sql-connection/
 menu:
   depth:
-    name: "SQL DB 다중 접속 가이드"
-    weight: 2
-    parent: "sql-guide"
-    identifier: "sql-connection"
+    name: "DB 다중 접속 가이드"
+    weight: 12
+    parent: "persistence-layer"
+    identifier: "db-connection"
 ---
-# SQL DB 다중 접속 가이드
+# DB 다중 접속 가이드
 
 ## 개요
 
@@ -28,15 +28,14 @@ menu:
 <br>
 
 ## SQL DB 다중 접속 개요
-프로젝트에서 여러개의 DB를 접속하여 데이터를 관리해야 하거나 데이터 조회가 필요할 때 설정파일에 정보를 추가하여 mapper 폴더 밑에 프로젝트명으로 폴더를 구분하여 SQL을 선택적으로 사용 할 수 있다. 
+프로젝트에서 여러개의 DB를 접속하여 데이터를 관리해야 하거나 데이터 조회가 필요할 때 설정파일에 정보를 추가하여 mapper 폴더 밑에 프로젝트명으로 폴더를 구분하여 SQL을 선택적으로 사용할 수 있다. 
 <br>
 <br>
 예시 1. 업무시스템에서 통계시스템 DB의 데이터를 API가 아닌 DB에서 직접 조회를 할 때
 <br>
-예시 2. 신규 업무시스템에서 로그인시 정보가 없을 때 레거시 시스템 DB의 정보를 복사해야 
-할 때
+예시 2. 신규 업무시스템에서 로그인시 정보가 없을 때 레거시 시스템 DB의 정보를 복사해야 할 때
 <br>
-예시 3. 통합시스템에서 여러개의 분할 된 DB를 통합해서 관리해야 할 때
+예시 3. 통합시스템에서 여러개의 분할된 DB를 통합해서 관리해야 할 때
 <br>
 
 ## globals.properties 설정 (예시)
@@ -130,7 +129,7 @@ Globals.Url2=jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=ebt
 
 ## mapper SQL 폴더 구조
 mapper 폴더 밑에 프로젝트를 각각 위치한다.
-![SELECT SQL 예시01](./images/connection01.png)
+![SELECT SQL 예시01](./images/db-connection01.png)
 
 ## DAO 호출 분기 방법
 LoginDAO2.java
@@ -172,4 +171,6 @@ context-security.xml
 ```
 
 ## 기타
-본 가이드의 잘못된 부분이나 부족한 부분의 정보를 아시는 분이라면 누구라도 업데이트 하셔도 됩니다.
+* 본 가이드는 [wiki 가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3)에는 없고, 본 Github egovframe docs 에만 존재하는 가이드입니다. 본 가이드의 내용 중 오류가 있는 부분을 발견한다면 누구든 수정해주시기 바랍니다.
+* DB 다중 접속 가이드 예제는 다음 경로에서 다운받으실 수 있습니다
+	* https://www.egovframe.go.kr/home/sub.do?menuNo=37 > 실행환경 MultiDataSource 예제 (릴리즈 일자 - 2014-06-17)
