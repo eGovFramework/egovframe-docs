@@ -1668,7 +1668,31 @@ eclipse에서 인터페이스 Controller를 Hierarchy View에서 열어보면 �
 &lt;/ul>
 &lt;p>이를 위해, 데이터베이스가 아직 준비 되지 않은 경우에는 개발자 로컬에 hsqldb, derby, mysql 과 같은 dbms를 임시로 설치하기도 한다.
 데이터베이스가 준비 되었다 하더라도 테이블 생성 스크립트를 작성하고 직접 dbms 와 연결하여 commit 후의 데이터를 확인해야 한다.
-또한, 프로그램이 수정 보완 되는 과정에서 여러 번 중복 테스트를 하기 위해서는 다시 dbms 에 접속하여 rollback 을 하는 등의 작업을 수행하기도 한다.&lt;/p></description></item><item><title>DBIO Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</guid><description/></item><item><title>DB 파티셔닝 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</guid><description>&lt;h1 id="db-파티셔닝-예제">DB 파티셔닝 예제&lt;/h1>
+또한, 프로그램이 수정 보완 되는 과정에서 여러 번 중복 테스트를 하기 위해서는 다시 dbms 에 접속하여 rollback 을 하는 등의 작업을 수행하기도 한다.&lt;/p></description></item><item><title>DB 다중 접속 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/sql-connection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/sql-connection/</guid><description>&lt;h1 id="db-다중-접속-가이드">DB 다중 접속 가이드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>본 가이드는 여러개의 DB 접속하여 쿼리를 분리하여 사용할때 접속 방법을 가이드한다.&lt;/p>
+&lt;p>아래의 순서로 SQL 예시와 해당 규칙을 설명하는 방식으로 진행된다.&lt;/p>
+&lt;ol>
+&lt;li>SQL DB 다중 접속 개요&lt;/li>
+&lt;li>globals.properties 설정&lt;/li>
+&lt;li>context-datasource.xml 설정&lt;/li>
+&lt;li>context-mapper.xml 설정&lt;/li>
+&lt;li>mapper SQL 폴더 구조&lt;/li>
+&lt;li>DAO 호출 분기 방법&lt;/li>
+&lt;li>그외 설정 파일&lt;/li>
+&lt;li>기타
+&lt;br>&lt;/li>
+&lt;/ol>
+&lt;h2 id="sql-db-다중-접속-개요">SQL DB 다중 접속 개요&lt;/h2>
+&lt;p>프로젝트에서 여러개의 DB를 접속하여 데이터를 관리해야 하거나 데이터 조회가 필요할 때 설정파일에 정보를 추가하여 mapper 폴더 밑에 프로젝트명으로 폴더를 구분하여 SQL을 선택적으로 사용할 수 있다.
+&lt;br>
+&lt;br>
+예시 1. 업무시스템에서 통계시스템 DB의 데이터를 API가 아닌 DB에서 직접 조회를 할 때
+&lt;br>
+예시 2. 신규 업무시스템에서 로그인시 정보가 없을 때 레거시 시스템 DB의 정보를 복사해야 할 때
+&lt;br>
+예시 3. 통합시스템에서 여러개의 분할된 DB를 통합해서 관리해야 할 때
+&lt;br>&lt;/p></description></item><item><title>DBIO Editor</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/editor/dbio-editor/</guid><description/></item><item><title>DB 파티셔닝 예제</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/individual-example/batch-layer/batch-example-multi_process/batch-example-db_partition/</guid><description>&lt;h1 id="db-파티셔닝-예제">DB 파티셔닝 예제&lt;/h1>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="설정">설정&lt;/h3>
 &lt;h4 id="job-설정">Job 설정&lt;/h4>
@@ -7198,32 +7222,7 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 흐름(flow)은 종종 HTTP 요청을 처리하고 상태를 가지며, 트랜잭션 특성을 보이고 동적이고/이거나 장시간 구동될 수 있다.&lt;/p>
 &lt;p>Spring Web Flow는 추상화의 좀 더 높은 레벨에 존재하고 Struts, Spring MVC, Portlet MVC, 그리고 JSF와 같은 기본 프레임워크 내에서 자족적인 페이지 흐름(flow) 엔진(page flow engine)처럼 통합된다.&lt;br>
 SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 가지는 형태로 명시적으로 애플리케이션의 페이지 흐름(flow)을 획득하는 기능을 제공한다.&lt;/p></description></item><item><title>Spring-iBATIS Integration</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-spring_ibatis_integration/</guid><description>&lt;h1 id="spring-ibatis-integration">Spring-iBATIS Integration&lt;/h1>
-&lt;p>Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.&lt;/p></description></item><item><title>SQL DB 다중 접속 가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-connection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-connection/</guid><description>&lt;h1 id="sql-db-다중-접속-가이드">SQL DB 다중 접속 가이드&lt;/h1>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>본 가이드는 여러개의 DB 접속하여 쿼리를 분리하여 사용할때 접속 방법을 가이드한다.&lt;/p>
-&lt;p>아래의 순서로 SQL 예시와 해당 규칙을 설명하는 방식으로 진행된다.&lt;/p>
-&lt;ol>
-&lt;li>SQL DB 다중 접속 개요&lt;/li>
-&lt;li>globals.properties 설정&lt;/li>
-&lt;li>context-datasource.xml 설정&lt;/li>
-&lt;li>context-mapper.xml 설정&lt;/li>
-&lt;li>mapper SQL 폴더 구조&lt;/li>
-&lt;li>DAO 호출 분기 방법&lt;/li>
-&lt;li>그외 설정 파일&lt;/li>
-&lt;li>기타
-&lt;br>&lt;/li>
-&lt;/ol>
-&lt;h2 id="sql-db-다중-접속-개요">SQL DB 다중 접속 개요&lt;/h2>
-&lt;p>프로젝트에서 여러개의 DB를 접속하여 데이터를 관리해야 하거나 데이터 조회가 필요할 때 설정파일에 정보를 추가하여 mapper 폴더 밑에 프로젝트명으로 폴더를 구분하여 SQL을 선택적으로 사용 할 수 있다.
-&lt;br>
-&lt;br>
-예시 1. 업무시스템에서 통계시스템 DB의 데이터를 API가 아닌 DB에서 직접 조회를 할 때
-&lt;br>
-예시 2. 신규 업무시스템에서 로그인시 정보가 없을 때 레거시 시스템 DB의 정보를 복사해야
-할 때
-&lt;br>
-예시 3. 통합시스템에서 여러개의 분할 된 DB를 통합해서 관리해야 할 때
-&lt;br>&lt;/p></description></item><item><title>SQL 작성 규칙</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/sql-guide/sql-rule/</guid><description>&lt;h1 id="sql-작성-규칙">SQL 작성 규칙&lt;/h1>
+&lt;p>Spring 프레임워크는 iBATIS SQL Map 을 이미 잘 통합하고 있으며, JDBC/Hibernate 에 대한 연동과 동일하게 template 스타일 프로그래밍이 가능토록 지원한다. 이러한 지원으로 Spring 의 특징인 IoC 의 장점과 Exception 계층 구조의 처리가 iBATIS 통합 환경에서도 쉽게 사용되고 있으며, iBATIS 단독 사용 시에 트랜잭션 관리 및 DataSource 에 대한 설정 및 관리가 별도로 필요했던 것에 비해 Spring-iBATIS 통합 환경에서는 Spring 의 유연한 트랜잭션 처리와 dataSource 를 그대로 사용할 수 있다.&lt;/p></description></item><item><title>SQL 작성 규칙</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/sql-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/sql-rule/</guid><description>&lt;h1 id="sql-작성-규칙">SQL 작성 규칙&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본 가이드는 SQL 문법을 통일하여 가독성을 높일 수 있도록 가이드를 하기 위해 SQL 작성 규칙을 제공한다.&lt;/p>
 &lt;p>아래의 순서로 SQL 예시와 해당 규칙을 설명하는 방식으로 진행된다.&lt;/p>
@@ -7266,7 +7265,7 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;tr>
  &lt;td>4&lt;/td>
  &lt;td>컬럼명, 테이블명&lt;/td>
- &lt;td>SQL문은 들여쓰기를 하여 가독성을 높일 수 있다. &lt;br> 반드시 어플리케이션에서 사용되는 칼럼명과 테이블 명 만을 SQL 구문에 기술하며,* 등 테이블 전체 칼럼을 사용하는 것은 허용하지 않음&lt;/td>
+ &lt;td>SQL문은 들여쓰기를 하여 가독성을 높일 수 있다. &lt;br> 반드시 어플리케이션에서 사용되는 칼럼명과 테이블 명 만을 SQL 구문에 기술하며,&lt;code>*&lt;/code> 등 테이블 전체 칼럼을 사용하는 것은 허용하지 않음&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>5&lt;/td>
@@ -7286,12 +7285,12 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;tr>
  &lt;td>8&lt;/td>
  &lt;td>주석&lt;/td>
- &lt;td>주석은 /* 와 */ 를 사용하고 “&amp;ndash;“은 사용하지 않는다.&lt;/td>
+ &lt;td>주석은 &lt;code>/*&lt;/code> 와 &lt;code>*/&lt;/code> 를 사용하고 &lt;code>--&lt;/code>은 사용하지 않는다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>9&lt;/td>
  &lt;td>힌트&lt;/td>
- &lt;td>힌트는 /*+ 와 */ 를 사용하고 “&amp;ndash;+”은 사용하지 않는다. &lt;br> 개발자 임의의 힌트를 사용은 금지하며 튜닝 요소가 있을 경우 담당자와 협의하여 사용 &lt;br> ( 연속조회/최대값 조회를 위한 INDEX, INDEX_DESC 힌트는 사용가능, 그 이외에 어떠한 힌트도 사용불가 )&lt;/td>
+ &lt;td>힌트는 &lt;code>/*+&lt;/code> 와 &lt;code>*/&lt;/code> 를 사용하고 &lt;code>--+&lt;/code>은 사용하지 않는다. &lt;br> 개발자 임의의 힌트를 사용은 금지하며 튜닝 요소가 있을 경우 담당자와 협의하여 사용 &lt;br> ( 연속조회/최대값 조회를 위한 &lt;code>INDEX&lt;/code>, &lt;code>INDEX_DESC&lt;/code> 힌트는 사용가능, 그 이외에 어떠한 힌트도 사용불가 )&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>10&lt;/td>
@@ -7301,7 +7300,7 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;tr>
  &lt;td>11&lt;/td>
  &lt;td>ANSI&lt;/td>
- &lt;td>가독성의 향상과 쉬운 유지보수를 위해서 ANSI SQL-92 표준의 조인 방식은 사용하지 않음 &lt;br> (업무적으로 FULL OUTER 조인이 사용될 경우는 허용함)&lt;/td>
+ &lt;td>가독성의 향상과 쉬운 유지보수를 위해서 ANSI SQL-92 표준의 조인 방식은 사용하지 않음 &lt;br> (업무적으로 &lt;code>FULL OUTER 조인&lt;/code>이 사용될 경우는 허용함)&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>12&lt;/td>
@@ -7311,12 +7310,12 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;tr>
  &lt;td>13&lt;/td>
  &lt;td>하드코딩&lt;/td>
- &lt;td>DECODE, CASE WHEN에서 데이터 값을 하드 코딩하여 비교하는 형태는 허용하지 않음&lt;/td>
+ &lt;td>&lt;code>DECODE&lt;/code>, &lt;code>CASE WHEN&lt;/code>에서 데이터 값을 하드 코딩하여 비교하는 형태는 허용하지 않음&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>14&lt;/td>
  &lt;td>Static&lt;/td>
- &lt;td>Static Embeded SQL 사용을 원칙으로 함 &lt;br> Precompiler 제약에 의해서 반드시 Dynamic SQL로 구현되야 하는 MERGE INTO 문은 허용 &lt;br> 임시 테이블이 생성되는 WITH 문은 Online 환경(센터컷 포함)에서는 허용하지 않음 ( 배치에서만 허용 )&lt;/td>
+ &lt;td>Static Embeded SQL 사용을 원칙으로 함 &lt;br> Precompiler 제약에 의해서 반드시 Dynamic SQL로 구현되야 하는 &lt;code>MERGE INTO&lt;/code> 문은 허용 &lt;br> 임시 테이블이 생성되는 &lt;code>WITH&lt;/code> 문은 Online 환경(센터컷 포함)에서는 허용하지 않음 ( 배치에서만 허용 )&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;br>&lt;/td>
@@ -7335,12 +7334,12 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/rule01.png" alt="SQL 예시01" >
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-rule01.png" alt="SQL 예시01" >
 &lt;/td>
  &lt;td>SELECT 이후 반드시 공백 1칸을 주고 칼럼을 기술 &lt;br> 1줄에 1개 컬럼 기술을 원칙으로 함 &lt;br> 컬럼명 이후 공백을 주고 주석을 추가 &lt;br> 컬럼명,테이블명의 구분 콤마(,)는 앞쪽에 기술&lt;br> 콤마 와 칼럼/테이블 명 사이에 공백 한 칸을 둠&lt;br> FROM 절에 나타난 순서대로 알파벳 대문자 A , B ,… 순서로 사용&lt;br> 테이블 별칭 이후 공백을 주고 주석을 추가&lt;br> SELECT , FROM, WHER , AND 가 오른쪽 맞춤이 되도록 정렬 ( SELECT의 “T”알파벳을 기준으로 정렬 )&lt;br> WHERE 절의 조인 조건에 대해서는 주석은 필수가 아님 &lt;br> WHERE 절에서 조인 조건을 먼저 기술함 테이블 lookup 조건은 조인조건 이후에 기술&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/rule02.png" alt="SQL 예시02" >
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-rule02.png" alt="SQL 예시02" >
 &lt;/td>
  &lt;td>FROM 절 테이블 별칭은 알파벳 대문자 A , B, C … 순서대로 기술 &lt;br> 서브쿼리는 3개 이내로 사용 권장 &lt;br> 칼럼 별칭은 반드시 AS를 사용한 후 별칭을 사용함 &lt;br> 스칼라 서브쿼리 결과는 항상 칼럼 별칭을 사용함 &lt;br> EXISTS 절에서는 괄호 다음에 한 라인을 부여한다&lt;/td>
  &lt;/tr>
@@ -7359,8 +7358,8 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/select01.png" alt="SELECT SQL 예시01" >
- &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/select02.png" alt="SELECT SQL 예시02" >
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-select01.png" alt="SELECT SQL 예시01" >
+ &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-select02.png" alt="SELECT SQL 예시02" >
 &lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -7378,8 +7377,8 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/insert01.png" alt="INSERT SQL 예시01" >
- &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/insert02.png" alt="INSERT SQL 예시02" >
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-insert01.png" alt="INSERT SQL 예시01" >
+ &lt;br> &lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-insert02.png" alt="INSERT SQL 예시02" >
 &lt;/td>
  &lt;td>INTO, VALUES, SELECT, FROM, WHERE, AND, OR, 괄호, 콤마(,)등은 INSERT의 “T”자 기준으로 정렬한다. &lt;br> INSERT 대상 칼럼 및 VALUES 절의 값들은 새로운 라인에서 시작괄호 ‘(‘ 다음에 빈칸 없이 바로 시작되고, &lt;br> INSERT 기술이 모두 끝난 후 새로운 라인에 ‘(‘ 괄호가 위치하는 위치에 ‘)’를 정렬한다. &lt;br> 한 라인에 하나의 칼럼/값만 기술하고 콤마(,)는 새로운 라인에 기술&lt;/td>
  &lt;/tr>
@@ -7399,7 +7398,7 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/update01.png" alt="UPDATE SQL 예시01" >
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-update01.png" alt="UPDATE SQL 예시01" >
 &lt;/td>
  &lt;td>SET, FROM, WHERE, AND, OR, 콤마(,)등은 UPDATE의 “E”자 기준으로 정렬한다. &lt;br> 한 라인에 하나의 업데이트될 칼럼만 기술하고 콤마(,)는 새로운 라인에 기술한다. &lt;br> 업데이트될 컬럼은 첫 번째만 제외하고 콤마로 시작하고 콤마 뒤에 한 칸 띄운 후 칼럼과 변경 값을 기술한다.&lt;/td>
  &lt;/tr>
@@ -7419,7 +7418,7 @@ SWF는 선언적이고 높은 이식성을 가지며 뛰어난 관리능력을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/sql-guide/images/delete01.png" alt="DELETE SQL 예시01" >
+ &lt;td>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/images/sql-delete01.png" alt="DELETE SQL 예시01" >
 &lt;/td>
  &lt;td>주석은 SQL 상단에 표기 &lt;br> FROM, WHERE, AND, OR, 콤마(,)등은 DELETE의 끝문자 “E”자 기준으로 정렬 &lt;br> WHERE절은 생략하지 않고 반드시 표기&lt;/td>
  &lt;/tr>
