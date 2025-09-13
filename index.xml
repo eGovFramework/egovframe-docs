@@ -9597,7 +9597,200 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>게시물 통계 수치를 특정 검색 조건에 따라 생성글수, 총조회수, 평균조회수, 최고/최소조회수 게시글 정보, 최고게시자 정보를 조회하는 기능이다.&lt;/p>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>게시물통계 패키지는 요소기술의 공통(cmm) 패키지와 리포팅 공통(sts.com) 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>경고메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/</guid><description>&lt;h1 id="요소기술---경고메시지">요소기술 - 경고메시지&lt;/h1>
+&lt;p>게시물통계 패키지는 요소기술의 공통(cmm) 패키지와 리포팅 공통(sts.com) 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>게시판</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/</guid><description/></item><item><title>게시판 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/board/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/board/</guid><description>&lt;h1 id="게시판-관리">게시판 관리&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>가장 기본적인 기능으로 글을 등록, 수정, 삭제, 검색 하는 기능이 있다. 관리자의 경우 모든 글을 삭제할 수 있는 권한이 있다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 메뉴에서 &lt;span style="color:#f92672">[&lt;/span>공시&lt;span style="color:#f92672">]&lt;/span>를 선택하여 게시글 목록을 확인한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-1._boardlist.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. &lt;span style="color:#f92672">[&lt;/span>등록&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭 후, 글제목과 글내용을 입력하여 글을 등록한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-2._regist.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 등록한 글 중 수정할 글을 선택하면, 다음과 같이 수정, 삭제가 가능하다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3-1._%ea%b2%8c%ec%8b%9c%ed%8c%90_%ec%88%98%ec%a0%95.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>4. 관리자의 경우, 다른 회원이 작성한 글에 대해 삭제 권한을 갖는다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3-2._%ea%b2%8c%ec%8b%9c%ed%8c%90_%ec%88%98%ec%a0%95.jpg" alt="image" >
+&lt;/p>
+&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;ul>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:validation">validation&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:security">Security&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:cache">Cache&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spel">SpEL&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:internationalization">Internationalization(국제화)&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:data_access">Data Access&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:id_generation">ID Generation&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:property">Property&lt;/a>
+
+
+&lt;/li>
+&lt;/ul></description></item><item><title>경고메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/</guid><description>&lt;h1 id="요소기술---경고메시지">요소기술 - 경고메시지&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>경고에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -10014,7 +10207,153 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Date and Time : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovDateFormat.&lt;span style="color:#a6e22e">formatDateTime&lt;/span>(locale, today));
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(buffer.&lt;span style="color:#a6e22e">toString&lt;/span>());
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>출력 예&lt;/p></description></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>출력 예&lt;/p></description></item><item><title>납품 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/delivery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/delivery/</guid><description>&lt;h1 id="납품-관리">납품 관리&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>납품 관리는 관리자 권한에서 확인할 수 있으며, 회원의 입찰 목록을 출력하고, 납품 상태를 변경한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 관리자로 로그인 후 &lt;span style="color:#f92672">[&lt;/span>납품목록 조회&lt;span style="color:#f92672">]&lt;/span>를 선택한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-1._%eb%82%a9%ed%92%88%eb%aa%a9%eb%a1%9d.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. 품목의 상태를 변경한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-2._%eb%82%a9%ed%92%88%ec%83%81%ed%83%9c_%eb%b3%80%ea%b2%bd.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 다시 사용자로 로그인하여, &lt;span style="color:#f92672">[&lt;/span>입찰목록조회&lt;span style="color:#f92672">]&lt;/span>를 선택한 후 변경된 상태를 확인한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3._%eb%82%a9%ed%92%88_%ec%83%81%ed%83%9c_%eb%b3%80%ea%b2%bd_%ed%9b%84_%ec%82%ac%ec%9a%a9%ec%9e%90_%ed%99%95%ec%9d%b8.jpg" alt="image" >
+&lt;/p>
+&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;ul>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spel">SpEL&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:server_security">Server Security&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:internationalization">Internationalization(국제화)&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:data_access">Data Access&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:id_generation">ID Generation&lt;/a>
+
+
+&lt;/li>
+&lt;li>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:property">Property&lt;/a>
+
+
+&lt;/li>
+&lt;/ul></description></item><item><title>달력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/</guid><description/></item><item><title>대시보드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-dashboard/</guid><description>&lt;h1 id="대시보드">대시보드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본인이 속해있는 스페이스별로 등록된 이슈상태를 조회하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -13298,7 +13637,21 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;ul>
 &lt;li>로그인 컴포넌트 사용시 보안 고려사항&lt;/li>
 &lt;/ul>
-&lt;p>제공되는 로그인 컴포넌트는 구간 암호화(Browser와 서버 사이의 암호화)를 제공하지 않는다.(이는 서버 측 컴포넌트이므로 구간 암호화를 제공할 수 없다.) 이를 위해서는 공통 컴포넌트를 이용하여 구현할 때 별도의 구간 암호화 솔루션을 도입하거나 로그인 요청에 대하여 SSL을 적용하는 방식으로 로그인 정보의 보안을 유지할 것을 권장한다.&lt;/p></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>전자관인출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_digital_seal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_digital_seal/</guid><description>&lt;h1 id="요소기술---전자관인-출력">요소기술 - 전자관인 출력&lt;/h1>
+&lt;p>제공되는 로그인 컴포넌트는 구간 암호화(Browser와 서버 사이의 암호화)를 제공하지 않는다.(이는 서버 측 컴포넌트이므로 구간 암호화를 제공할 수 없다.) 이를 위해서는 공통 컴포넌트를 이용하여 구현할 때 별도의 구간 암호화 솔루션을 도입하거나 로그인 요청에 대하여 SSL을 적용하는 방식으로 로그인 정보의 보안을 유지할 것을 권장한다.&lt;/p></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule/</guid><description/></item><item><title>입찰 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/bid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/bid/</guid><description>&lt;h1 id="입찰-관리">입찰 관리&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>회원은 품목을 입찰 할 수 있으며, 입찰 전 입찰 대기 목록에 저장 할 수 있다. 입찰한 품목에 한하여 상태를 확인 할 수 있다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 입찰 할 품목을 선택하여 수량을 입력하고 &lt;span style="color:#f92672">[&lt;/span>입찰대기&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-1._%ec%9e%85%ec%b0%b0%eb%8c%80%ea%b8%b0.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. 사용자 메뉴의 &lt;span style="color:#f92672">[&lt;/span>입찰대기목록&lt;span style="color:#f92672">]&lt;/span>을 선택하면 입찰 대기 중인 품목이 출력된다. 입찰 할 품목을 체크한 후 &lt;span style="color:#f92672">[&lt;/span>입찰하기&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭하면 입찰 할 수 있다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-2._%eb%8c%80%ea%b8%b0%eb%aa%a9%eb%a1%9d.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 사용자 메뉴의 &lt;span style="color:#f92672">[&lt;/span>입찰목록&lt;span style="color:#f92672">]&lt;/span>을 선택하면 입찰한 품목이 출력되며 상태가 확인 가능하다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3._%eb%aa%a9%eb%a1%9d.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>4. 입찰대기 목록을 거치지 않고 바로 입찰할 경우, 품목 수량 입력 후 &lt;span style="color:#f92672">[&lt;/span>바로입찰&lt;span style="color:#f92672">]&lt;/span>을 클릭한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-4._%eb%b0%94%eb%a1%9c_%ec%9e%85%ec%b0%b0.jpg" alt="image" >
+&lt;/p></description></item><item><title>장애관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/error-manage/</guid><description/></item><item><title>전자결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/</guid><description/></item><item><title>전자관인출력</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_digital_seal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_digital_seal/</guid><description>&lt;h1 id="요소기술---전자관인-출력">요소기술 - 전자관인 출력&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>기관코드, 관인구분을 받아 해당 관인이미지를 출력하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -14023,6 +14376,23 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/cmm-%ec%b6%9c%ed%87%b4%ea%b7%bc%ea%b4%80%eb%a6%ac_%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.png" alt="image" >
+&lt;/p></description></item><item><title>카테고리 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/category/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/category/</guid><description>&lt;h1 id="카테고리-관리">카테고리 관리&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>카테고리를 등록, 수정, 삭제할 수 있는 기능으로 관리자만 접근 가능하다. Restful을 사용하였으며, xml, json으로 화면 출력이 가능하다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 관리자로 로그인 하고, 메뉴에서 &lt;span style="color:#f92672">[&lt;/span>카테고리 조회&lt;span style="color:#f92672">]&lt;/span>를 선택한다. 현재 목록을 json으로 출력 가능하다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-1._%eb%a6%ac%ec%8a%a4%ed%8a%b8.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. 목록 페이지에서 &lt;span style="color:#f92672">[&lt;/span>등록&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭한 후, 카테고리명과 비고을 입력하고 &lt;span style="color:#f92672">[&lt;/span>등록&lt;span style="color:#f92672">]&lt;/span> 버튼을 클릭한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-2._%eb%93%b1%eb%a1%9d.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 등록한 카테고리 중 수정할 카테고리를 선택하면, 다음과 같이 수정, 삭제가 가능하다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3.%ec%88%98%ec%a0%95.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>4. 카테고리 정보를 xml과 json으로 출력가능하며, 다음은 xml 화면이다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-4._xml.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>5. 카테고리에 포함된 품목이 존재 할 경우, 다음과 같은 에러 메세지를 출력한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-5._%ec%82%ad%ec%a0%9c%ec%97%90%eb%9f%ac.jpg" alt="image" >
 &lt;/p></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description/></item><item><title>Log4j 2 환경설정 (코드 내에서 직접 설정 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</guid><description>&lt;h1 id="log4j-2-환경설정-코드-내에서-직접-설정-시">Log4j 2 환경설정 (코드 내에서 직접 설정 시)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Log4j 2 환경 설정(Appender, Layout, Log Level 등)을 코드 내에서 직접 제어할 수 있다.&lt;br>
@@ -15635,7 +16005,21 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>프린터상태확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_status/</guid><description>&lt;h1 id="요소기술---프린터상태확인">요소기술 - 프린터상태확인&lt;/h1>
+&lt;p>build.gradle 파일 추가&lt;/p></description></item><item><title>품목 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/product/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/product/</guid><description>&lt;h1 id="품목-관리">품목 관리&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>품목을 등록, 수정, 삭제 할 수 있으며 관리자에 한해 등록이 가능하다. 품목리스트는 엑셀과 xml로 출력 가능하다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 메뉴에서 &lt;span style="color:#f92672">[&lt;/span>품목조회&lt;span style="color:#f92672">]&lt;/span>를 선택하여 품목을 조회할 수 있다. &lt;span style="color:#f92672">[&lt;/span>전체 목록 엑셀 다운로드&lt;span style="color:#f92672">]&lt;/span>, &lt;span style="color:#f92672">[&lt;/span>전체 목록 xml&lt;span style="color:#f92672">]&lt;/span> 버튼을 클릭하여 목록을 엑셀과 xml로 확인할 수 있다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-2._%eb%a6%ac%ec%8a%a4%ed%8a%b8.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. 관리자로 로그인 한 후, 관리자 메뉴의 &lt;span style="color:#f92672">[&lt;/span>품목 추가&lt;span style="color:#f92672">]&lt;/span>를 선택하여 품목을 등록한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-1._%ed%92%88%eb%aa%a9%eb%93%b1%eb%a1%9d.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 등록을 완료 한 품목은 품목조회 화면에서 확인 가능하며, 관리자에 한해 수정, 삭제가 가능하다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3._%ec%83%81%ec%84%b8%ec%a1%b0%ed%9a%8c.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>4. 품목조회 화면에서 &lt;span style="color:#f92672">[&lt;/span>수정&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭하여 품목을 수정하고 품목조회 화면에서 수정된 품목을 확인한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-4._%ec%88%98%ec%a0%95.jpg" alt="image" >
+&lt;/p></description></item><item><title>프로그램관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/program-manage/</guid><description/></item><item><title>프린터상태확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print_status/</guid><description>&lt;h1 id="요소기술---프린터상태확인">요소기술 - 프린터상태확인&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>인터넷 웹 브라우저에서 인쇄/출력 시 프린터 상태 확인 팝업 창을 자동으로 보여주는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -15846,4 +16230,21 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;h3 id="인증권한방식-설정">인증/권한방식 설정&lt;/h3>
 &lt;p>표준프레임워크 3.5 이하 버전에서 개발자가 수동으로 관련 XML 설정하던 불편한 점을
-표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있다.&lt;/p></description></item></channel></rss>
+표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있다.&lt;/p></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/member/</guid><description>&lt;h1 id="회원관리">회원관리&lt;/h1>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>사용자의 등급에 따라 사용할 수 있는 메뉴가 달라진다. 회원관리에서는 회원의 등록과 수정, 탈퇴가 가능하며 사용자 등급을 관리자와 일반 사용자로 구분하였다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 메인페이지에서 회원가입을 클릭한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-1._main.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. 회원정보를 입력하고 &lt;span style="color:#f92672">[&lt;/span>등록&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭하여 회원등록을 한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-2._memberregist.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 위에서 등록한 아이디와 비밀번호를 입력한다. &lt;span style="color:#f92672">(&lt;/span>설치법에 따라 테이블을 생성했을 경우 - 관리자 아이디/비밀번호: admin/admin, 일반 사용자 아이디/비밀번호: user/user&lt;span style="color:#f92672">)&lt;/span> 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-3._login.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>4. 비밀번호를 분실하였을 경우 로그인 페이지에서 &lt;span style="color:#f92672">[&lt;/span>비밀번호 찾기&lt;span style="color:#f92672">]&lt;/span>를 클릭하여 메일로 임시 비밀번호를 발급받는다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-4._searchpassword.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>5. 로그인 후 &lt;span style="color:#f92672">[&lt;/span>마이페이지&lt;span style="color:#f92672">]&lt;/span>버튼을 클릭하여 회원 정보를 수정하거나, 탈퇴할 수 있다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/usage/images/%ec%82%ac%ec%9a%a9%eb%b2%95-5._memberupdate.jpg" alt="image" >
+&lt;/p></description></item></channel></rss>
