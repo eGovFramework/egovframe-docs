@@ -1,0 +1,9 @@
+{
+  "default": true,
+  "MD003": { "style": "atx" },
+  "MD007": { "indent": 4 },
+  "MD013": { "line_length": 120 },
+  "MD024": { "allow_different_nesting": true },
+  "MD033": { "allowed_elements": ["br", "img", "details", "summary"] },
+  "MD041": false
+}
