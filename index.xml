@@ -12010,6 +12010,26 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;p>✔ 수정은 같은 라인의 변경정보만 수정한다.&lt;/p>
 &lt;h3 id="sms-설정">SMS 설정&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/configuration-management-tool/images/sms-setting.jpg" alt="SMS 설정정" >
+&lt;/p></description></item><item><title>설치법</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/intro/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/intro/installation/</guid><description>&lt;h1 id="설치법">설치법&lt;/h1>
+&lt;h2 id="설치-순서">설치 순서&lt;/h2>
+&lt;ul>
+&lt;li>기본순서&lt;/li>
+&lt;/ul>
+&lt;p>전자정부 표준프레임워크 홈페이지에서 소스파일을 다운 받아 압축을 풀고, m2 이클립스가 설치되어 있다는 가정하에 설명한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. Package Explorer에서 오른쪽 마우스를 클릭하여 소스를 임포트한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/intro/images/%ea%b0%9c%ec%9a%94-%ec%82%ac%ec%9a%a9%ec%9e%90_%ec%a7%80%ec%a0%95_3.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>2. General &amp;gt; Existing Project into Workspace를 선택하여 압축을 풀어놓은 폴더를 선택한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/intro/images/%ea%b0%9c%ec%9a%94-%ec%82%ac%ec%9a%a9%ec%9e%90_%ec%a7%80%ec%a0%95_4.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>3. 임포드 된 소스에서 DB정보를 알맞게 바꿔준다. 위치:src/main/resources/egovframework/property/globals.properties
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/intro/images/%ea%b0%9c%ec%9a%94-%ec%82%ac%ec%9a%a9%ec%9e%90_%ec%a7%80%ec%a0%95_2.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>4. script 폴더의 script, data 파일을 참고하여 테이블을 생성한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/intro/images/%ea%b0%9c%ec%9a%94-db.jpg" alt="image" >
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>5. 프로젝트를 실행시킨다. &lt;span style="color:#f92672">(&lt;/span>오른쪽마우스 클릭 &amp;gt; Run As &amp;gt; Run On Server&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/integrated-example/intro/images/%ea%b0%9c%ec%9a%94-%ec%82%ac%ec%9a%a9%ec%9e%90_%ec%a7%80%ec%a0%95_15.jpg" alt="image" >
 &lt;/p></description></item><item><title>세션처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/handling_session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/handling_session/</guid><description>&lt;h1 id="요소기술---세션처리">요소기술 - 세션처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>세션 처리와 관련된 다양한 공통기능을 제공한다.&lt;/p>
