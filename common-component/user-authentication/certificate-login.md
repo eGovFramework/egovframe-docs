@@ -17,13 +17,13 @@ menu:
 
 ## 설명
 
- 인증서로그인를 행정전자서명 인증관리센터([www.gpki.go.kr](http://www.gpki.go.kr))에서 제공하는 GPKISecureWeb 모듈을 통해 인증서로그인 기능을 제공한다. (NPKI 및 GPKI 지원)
+ 인증서로그인를 행정전자서명 인증관리센터([www.gpki.go.kr](https://www.gpki.go.kr))에서 제공하는 GPKISecureWeb 모듈을 통해 인증서로그인 기능을 제공한다. (NPKI 및 GPKI 지원)
 
 ### 패키지 참조 관계
 
  로그인 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.
 
-- 패키지 간 참조 관계 : [사용자디렉토리/통합인증 Package Dependency](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v2:init_pkg_dependency#사용자디렉토리_통합인증)
+- 패키지 간 참조 관계 : [사용자디렉토리/통합인증 Package Dependency](../intro/package-reference.md/#사용자디렉토리통합인증)
 
 ### 관련소스
 
@@ -68,7 +68,7 @@ menu:
         <filter-name>HTMLTagFilter</filter-name>
         <url-pattern>*.do</url-pattern>
     </filter-mapping>
- 
+
     <!-- Restoration from HTMLTagFilter's action (certification login) -->
     <filter>
         <filter-name>CertProcessFilter</filter-name>
@@ -169,11 +169,11 @@ java ... -Dcom.dsjdf.config.file="/product/jeus/egovProps/gpkisecureweb/conf/dsj
 ```properties
 #[Log 관련]
 logger.driver=com.dsjdf.jdf.DefaultLoggerWriter
- 
+
 #[로그를 남기는 디렉토리]
 #Log directory의 Absolute Path
 logger.dir=/product/jeus/egovProps/gpkisecureweb/log
- 
+
 #[로그레벨]
 logger.sys.trace=false
 logger.err.trace=true
@@ -181,7 +181,7 @@ logger.warn.trace=false
 logger.info.trace=true
 logger.debug.trace=false
 logger.autoflush=true
- 
+
 #[프로젝트 설정파일 or Server 설정파일]
 pbf.propertiesFile=/product/jeus/egovProps/gpkisecureweb/conf/gpkisecureweb.properties
 ```
@@ -203,14 +203,14 @@ pbf.propertiesFile=/product/jeus/egovProps/gpkisecureweb/conf/gpkisecureweb.prop
 GPKISecureWeb.CertFilePathName = /product/jeus/egovProps/gpkisecureweb/certs/SVR131..._env.cer
 GPKISecureWeb.PrivateKeyFilePathName = /product/jeus/egovProps/gpkisecureweb/certs/SVR131..._env.key
 GPKISecureWeb.PrivateKeyPasswd = test
- 
+
 #GPKI API 경로 설정
 GPKISecureWeb.gpkiapi.ConfFilePath=/product/jeus/egovProps/gpkisecureweb/conf
 GPKISecureWeb.CheckChallenge = yes
- 
+
 # ROOTCA 인증서의 갯수
 GPKISecureWeb.TrustedROOTCACert.count=2
- 
+
 # ROOTCA 인증서 위치
 # ROOTCA 인증서는 유효기간이 지나기 전에 업데이트를 해주어야 한다.
 # ROOTCA 인증서는 해당 위치의 인증서를 (윈도우상에서) 더블클릭하면, 화면상의

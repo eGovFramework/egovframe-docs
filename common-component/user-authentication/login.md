@@ -33,7 +33,7 @@ menu:
 
  로그인 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.
 
-- 패키지 간 참조 관계 : [사용자디렉토리/통합인증 Package Dependency](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v2:init_pkg_dependency#사용자디렉토리_통합인증)
+- 패키지 간 참조 관계 : [사용자디렉토리/통합인증 Package Dependency](../intro/package-reference.md/#사용자디렉토리통합인증)
 
 ### 관련소스
 
@@ -88,9 +88,9 @@ Globals.MainPage = /EgovContent.do
 
 1) context-egovuserdetailshelper.xml 수정 : 아래와 같이 `egovUserDetailsSessionService`빈 설정의 주석을 해제한 후 `egovUserDetailsHelper` 빈의 `egovUserDetailsService` 프러퍼티에 `egovUserDetailsSessionService`빈을 등록하면 된다.
    \- beans의 profile속성은 Spring f/w ver 3.1부터 추가되었으며, Spring Container에서 bean적용이 달리 적용되도록 하는데 쓰인다.
-   Bean Definition Profiles - [bean_definition_profiles](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:ioc_container:bean_definition_profiles)
+   Bean Definition Profiles - [bean_definition_profiles](/egovframe-runtime/foundation-layer-core/ioc-container-bean-definition-profiles.md)
    \- 그리고 globals.properties에서 `Globals.Auth = session` 이나 `Globals.Auth = security` 를 통해서 사용자의 로그인시 인증방식을 세션방식 또는 Spring security 방식으로 결정할 수 있다.
-   Server Security 설정 간소화 - [xmlschema](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3:fdl:server_security:xmlschema)
+   Server Security 설정 간소화 - [xmlschema](/egovframe-runtime/foundation-layer/server-security-simplifying-settings.md)
 
 ```xml
 <beans profile="session">  
@@ -101,7 +101,7 @@ Globals.MainPage = /EgovContent.do
                 <ref bean="egovUserDetailsSessionService" />
             </property>
         </bean>
- 
+
         <!-- 세션을 이용한 인증을 사용하는 빈 -->
         <bean id="egovUserDetailsSessionService" class="egovframework.com.cmm.service.impl.EgovUserDetailsSessionServiceImpl"/>
 </beans>
@@ -144,28 +144,28 @@ Globals.MainPage = /EgovContent.do
 
 ```java
 package egovframework.com.cmm.service;
- 
+
 public interface EgovUserDetailsService {
- 
+
 	/**
 	 * 인증된 사용자객체를 VO형식으로 가져온다.
 	 * @return Object - 사용자 ValueObject
 	 */
 	public Object getAuthenticatedUser();
- 
+
 	/**
 	 * 인증된 사용자의 권한 정보를 가져온다.
 	 * 예) [ROLE_ADMIN, ROLE_USER, ROLE_A, ROLE_B, ROLE_RESTRICTED, IS_AUTHENTICATED_FULLY, IS_AUTHENTICATED_REMEMBERED, IS_AUTHENTICATED_ANONYMOUSLY]
 	 * @return List - 사용자 권한정보 목록
 	 */
 	public List<String> getAuthorities();
- 
+
 	/**
 	 * 인증된 사용자 여부를 체크한다.
 	 * @return Boolean - 인증된 사용자 여부(TRUE / FALSE)
 	 */
-	public [Boolean](http://www.google.com/search?hl=en&q=allinurl%3Aboolean+java.sun.com&btnI=I%27m%20Feeling%20Lucky) isAuthenticated(); 
- 
+	public Boolean isAuthenticated();
+
 }
 ```
 
@@ -177,9 +177,9 @@ public interface EgovUserDetailsService {
 
 ```java
 public Object getAuthenticatedUser() {
- 
+
       return RequestContextHolder.getRequestAttributes().getAttribute("loginVO", RequestAttributes.SCOPE_SESSION);
- 
+
 }
 ```
 
@@ -187,7 +187,7 @@ public Object getAuthenticatedUser() {
 
 ```java
 public List<String> getAuthorities() {
- 
+
 	List<String> listAuth = new ArrayList<String>();
 	listAuth.add("IS_AUTHENTICATED_ANONYMOUSLY");
 	listAuth.add("IS_AUTHENTICATED_FULLY");
@@ -196,7 +196,7 @@ public List<String> getAuthorities() {
 	listAuth.add("ROLE_ANONYMOUS");
 	listAuth.add("ROLE_RESTRICTED");
 	listAuth.add("ROLE_USER");
- 
+
 	return listAuth;
 }
 ```
@@ -204,14 +204,14 @@ public List<String> getAuthorities() {
  `isAuthenticated()`메서드는 현재 사용자가 인증된 사용자인지 점검하기 위해 사용된다. 아래의 예제는 세션에 `loginVO` 값이 있는지 체크를 통해 인증여부를 검사하고 있다.
 
 ```java
-public [Boolean](http://www.google.com/search?hl=en&q=allinurl%3Aboolean+java.sun.com&btnI=I%27m%20Feeling%20Lucky) isAuthenticated() {
- 
- 
+public Boolean isAuthenticated() {
+
+
 	if (RequestContextHolder.getRequestAttributes() == null) {
 		return false;
- 
+
 	} else {
- 
+
 		if (RequestContextHolder.getRequestAttributes().getAttribute(
 				"loginVO", RequestAttributes.SCOPE_SESSION) == null) {
 			return false;
@@ -219,8 +219,8 @@ public [Boolean](http://www.google.com/search?hl=en&q=allinurl%3Aboolean+java.su
 			return true;
 		}
 	}
- 
- 
+
+
 }
 ```
 
