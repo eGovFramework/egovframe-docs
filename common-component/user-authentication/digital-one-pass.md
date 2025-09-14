@@ -62,7 +62,7 @@
 
 ### 환경설정
 
-- 위키가이드의 [공통컴포넌트 시작하기](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3:imp:editor:common_component)를 참고하여 공통컴포넌트를 설치한다.
+- 위키가이드의 [공통컴포넌트 시작하기](../intro/getting-started.md)를 참고하여 공통컴포넌트를 설치한다.
 - 디지털원패스 신청 후 받은 연계모듈 중 디지털원패스 SSL 인증서 키 체인 스토어(onepass.jks) 및 서명검증 파일(pubkey\_share.der)을 공통컴포넌트 프로젝트에 추가한다.
 
 - 추가할 위치는 위의 관련소스 부분을 참고한다.
@@ -113,7 +113,7 @@ public String onepassLogin(HttpServletRequest request, HttpServletResponse respo
 	String inputName = null;
 	String inputValue = null;
 	String pageType = OnepassRequestHandler.pageType(request);
- 
+
 	try {
 		if ("LOGIN".equals(serviceType)) {
 			action = OnepassRequestHandler.LOGIN_DEST;
@@ -131,12 +131,12 @@ public String onepassLogin(HttpServletRequest request, HttpServletResponse respo
 	} catch (Exception e) {
 		return "egovframework/com/cmm/error/onepassAccessDenied";
 	}
- 
+
 	model.addAttribute("redirectUrl", action);
 	model.addAttribute("inputName", inputName);
 	model.addAttribute("inputValue", inputValue);
 	model.addAttribute("pageType", pageType);
- 
+
 	return "egovframework/com/uat/uia/onepass/onepassLogin";
 }
 ```
@@ -166,22 +166,22 @@ public String onepassLogin(HttpServletRequest request, HttpServletResponse respo
 public String onepassCallback(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
 	// 인증체크
 	OnepassResponse onepassResponse = OnepassResponseHandler.check(request);
- 
+
 	// 인증 성공
 	if (onepassResponse.getStatus() == STATUS.SUCCESS  && onepassResponse.getResultCode() == RESULT_CODE.SUCCESS) {
- 
+
 		// type 이 LOGIN
 		if (onepassResponse.getType() == TYPE.LOGIN) {
 			String userKey = onepassResponse.getUserKey();
 			String intfToken = onepassResponse.getIntfToken();
- 
+
 			// 인증 후 사용자 정보 조회
 			ApiSendHandler apiSendHandler = new ApiSendHandler();
 			OnepassUserResponse findOnepassUser = apiSendHandler.findUser(userKey, intfToken);
- 
+
 			// 사용자 정보 조회 성공
 			if (findOnepassUser != null && findOnepassUser.getStatus() == USER_STATUS.USE) {
- 
+
 				// 디지털원패스 사용자 정보 - 신규회원일 경우 이 정보를 이용할 수 있음
 				LOGGER.info("getId:{}", findOnepassUser.getId()); // 사용자의 ID (최대 30자)
 				LOGGER.info("getName:{}", findOnepassUser.getName()); // 사용자의 이름 (최대 70자)
@@ -192,10 +192,10 @@ public String onepassCallback(HttpServletRequest request, HttpServletResponse re
 				LOGGER.info("getEmail:{}", findOnepassUser.getEmail()); // 사용자의 E-mail (최대 70자)
 				LOGGER.info("getSex:{}", findOnepassUser.getSex()); // 사용자의 성별 (남:M, 여:F)
 				LOGGER.info("getNation:{}", findOnepassUser.getNation()); // 내외국인 구분(내국인:L, 외국인:F)
- 
+
 				// 기관 아이디 조회
 				int usedCnt = egovOnepassService.onePassCheckIdDplct(findOnepassUser.getId());
- 
+
 				// 기관 아이디 조회 성공
 				if (usedCnt > 0) {
 					// 디지털원패스에서 받은 아이디로 회원정보 조회 후 세션 저장
@@ -203,7 +203,7 @@ public String onepassCallback(HttpServletRequest request, HttpServletResponse re
 					resultVO.setOnepassUserkey(userKey);
 					resultVO.setOnepassIntfToken(intfToken);
 					request.getSession().setAttribute("loginVO", resultVO);
- 
+
 					// 로그인 인증세션 추가
 					request.getSession().setAttribute("accessUser", resultVO.getUserSe().concat(resultVO.getId()));
 					model.addAttribute("resultMessage", egovMessageSource.getMessageArgs("digital.onepass.connect.success", new Object[]{resultVO.getId()}));
@@ -254,9 +254,9 @@ public String onepassCancel(HttpServletRequest request, HttpServletResponse resp
 	ApiSendHandler apiSendHandler = new ApiSendHandler();
 	String userKey = request.getParameter("userKey");
 	String intfToken = request.getParameter("intfToken");
- 
+
 	OnepassUserResponse onepassUser = apiSendHandler.InterLockRelease(userKey, intfToken);
- 
+
 	if (Objects.isNull(onepassUser)) {
 		onepassUser = new OnepassUserResponse();
 		model.addAttribute("resultMessage", egovMessageSource.getMessage("digital.onepass.connect.athentication.failure"));

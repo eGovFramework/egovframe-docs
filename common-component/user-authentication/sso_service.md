@@ -56,7 +56,7 @@
 			ServletResponse response) {
 		SSORspData rspData = ssoService.ssoGetLoginData((HttpServletRequest)request);
 		String uid = rspData.getUID();
- 
+
 		if(uid == null || uid.equals("")){
 			return false;
 		}else{
@@ -73,20 +73,20 @@
 	 * 
 	 */
 	public void requestIssueToken(ServletRequest request, ServletResponse response) throws Exception {
- 
+
 		String serverIp = "";
     	String userIp = "";
     	String rtrURL = "";
     	String clientPort = "";
- 
-		serverIp = [InetAddress](http://www.google.com/search?hl=en&q=allinurl%3Ainetaddress+java.sun.com&btnI=I%27m%20Feeling%20Lucky).getLocalHost().getHostAddress();
+
+		serverIp = InetAddress.getLocalHost().getHostAddress();
 		userIp = EgovClntInfo.getClntIP((HttpServletRequest)request);
 		clientPort = ":" + request.getServerPort();	
     	rtrURL = ((HttpServletRequest)request).getRequestURI();
- 
- 
+
+
     	LoginVO loginVO = (LoginVO)((HttpServletRequest)request).getSession().getAttribute("loginVO");	
- 
+
 		ssoService.ssoReqIssueToken((HttpServletRequest)request, // 서블릿 요청 객체
 			    (HttpServletResponse)response,	// 서블릿 응답 객체
                 "form-based",			// 인증 방법
@@ -109,22 +109,22 @@
 	public void ssoLoginByServer(ServletRequest request,
 			ServletResponse response) throws Exception {
 		SSORspData rspData = ssoService.ssoGetLoginData((HttpServletRequest)request);
- 
+
 		LoginVO loginVO = new LoginVO();
 		loginVO.setUniqId(rspData.getUID());
 		loginVO.setUserSe(rspData.getCN());
- 
+
 		//로컬 로그인 작성
 		loginVO = loginService.actionLoginByEsntlId(loginVO);
- 
- 
+
+
 		//((HttpServletRequest)request).getSession().setAttribute("uid", rspData.getUID());
- 
+
 		//스프링 시큐리티 로그인
 		((HttpServletResponse)response).sendRedirect("/j_spring_security_check?j_username=" + loginVO.getUserSe() + loginVO.getId() + "&j_password=" + loginVO.getUniqId());
 		//((HttpServletRequest)request).getRequestDispatcher("/j_spring_security_check?j_username=" + loginVO.getUserSe() + loginVO.getId() + "&j_password=" +                loginVO.getUniqId()).forward(request, response);
- 
- 
+
+
 	}
 ```
 
@@ -137,11 +137,11 @@
 	 */
 	public LoginVO getLoginVO(ServletRequest request, ServletResponse response){
 		SSORspData rspData = ssoService.ssoGetLoginData((HttpServletRequest)request);
- 
+
 		LoginVO loginVO = new LoginVO();
 		loginVO.setUniqId(rspData.getUID());
 		loginVO.setUserSe(rspData.getCN());
- 
+
 		return  loginVO;
 	}
 ```
@@ -155,7 +155,7 @@
 	 * @throws IOException 
 	 * 
 	 */
-	public void ssoLogout(ServletRequest request, ServletResponse response, String returnURL) throws [IOException](http://www.google.com/search?hl=en&q=allinurl%3Aioexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky){
+	public void ssoLogout(ServletRequest request, ServletResponse response, String returnURL) throws IOException{
 		((HttpServletResponse)response).sendRedirect("/exam/sso/globalLogout.do?returnURL=" + returnURL);
 	}
 ```
