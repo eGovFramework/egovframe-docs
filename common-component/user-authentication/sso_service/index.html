@@ -21,7 +21,7 @@
 </span></span><span style=display:flex><span>			ServletResponse response) {
 </span></span><span style=display:flex><span>		SSORspData rspData <span style=color:#f92672>=</span> ssoService.<span style=color:#a6e22e>ssoGetLoginData</span>((HttpServletRequest)request);
 </span></span><span style=display:flex><span>		String uid <span style=color:#f92672>=</span> rspData.<span style=color:#a6e22e>getUID</span>();
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(uid <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> uid.<span style=color:#a6e22e>equals</span>(<span style=color:#e6db74>&#34;&#34;</span>)){
 </span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
 </span></span><span style=display:flex><span>		}<span style=color:#66d9ef>else</span>{
@@ -33,20 +33,20 @@
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
 </span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>requestIssueToken</span>(ServletRequest request, ServletResponse response) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		String serverIp <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
 </span></span><span style=display:flex><span>    	String userIp <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
 </span></span><span style=display:flex><span>    	String rtrURL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
 </span></span><span style=display:flex><span>    	String clientPort <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		serverIp <span style=color:#f92672>=</span> <span style=color:#f92672>[</span>InetAddress<span style=color:#f92672>]</span>(http:<span style=color:#75715e>//www.google.com/search?hl=en&amp;q=allinurl%3Ainetaddress+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky).getLocalHost().getHostAddress();</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		serverIp <span style=color:#f92672>=</span> InetAddress.<span style=color:#a6e22e>getLocalHost</span>().<span style=color:#a6e22e>getHostAddress</span>();
 </span></span><span style=display:flex><span>		userIp <span style=color:#f92672>=</span> EgovClntInfo.<span style=color:#a6e22e>getClntIP</span>((HttpServletRequest)request);
 </span></span><span style=display:flex><span>		clientPort <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> request.<span style=color:#a6e22e>getServerPort</span>();	
 </span></span><span style=display:flex><span>    	rtrURL <span style=color:#f92672>=</span> ((HttpServletRequest)request).<span style=color:#a6e22e>getRequestURI</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    	LoginVO loginVO <span style=color:#f92672>=</span> (LoginVO)((HttpServletRequest)request).<span style=color:#a6e22e>getSession</span>().<span style=color:#a6e22e>getAttribute</span>(<span style=color:#e6db74>&#34;loginVO&#34;</span>);	
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		ssoService.<span style=color:#a6e22e>ssoReqIssueToken</span>((HttpServletRequest)request, <span style=color:#75715e>// 서블릿 요청 객체</span>
 </span></span><span style=display:flex><span>			    (HttpServletResponse)response,	<span style=color:#75715e>// 서블릿 응답 객체</span>
 </span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;form-based&#34;</span>,			<span style=color:#75715e>// 인증 방법</span>
@@ -64,22 +64,22 @@
 </span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>ssoLoginByServer</span>(ServletRequest request,
 </span></span><span style=display:flex><span>			ServletResponse response) <span style=color:#66d9ef>throws</span> Exception {
 </span></span><span style=display:flex><span>		SSORspData rspData <span style=color:#f92672>=</span> ssoService.<span style=color:#a6e22e>ssoGetLoginData</span>((HttpServletRequest)request);
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		LoginVO loginVO <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> LoginVO();
 </span></span><span style=display:flex><span>		loginVO.<span style=color:#a6e22e>setUniqId</span>(rspData.<span style=color:#a6e22e>getUID</span>());
 </span></span><span style=display:flex><span>		loginVO.<span style=color:#a6e22e>setUserSe</span>(rspData.<span style=color:#a6e22e>getCN</span>());
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		<span style=color:#75715e>//로컬 로그인 작성</span>
 </span></span><span style=display:flex><span>		loginVO <span style=color:#f92672>=</span> loginService.<span style=color:#a6e22e>actionLoginByEsntlId</span>(loginVO);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		<span style=color:#75715e>//((HttpServletRequest)request).getSession().setAttribute(&#34;uid&#34;, rspData.getUID());</span>
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		<span style=color:#75715e>//스프링 시큐리티 로그인</span>
 </span></span><span style=display:flex><span>		((HttpServletResponse)response).<span style=color:#a6e22e>sendRedirect</span>(<span style=color:#e6db74>&#34;/j_spring_security_check?j_username=&#34;</span> <span style=color:#f92672>+</span> loginVO.<span style=color:#a6e22e>getUserSe</span>() <span style=color:#f92672>+</span> loginVO.<span style=color:#a6e22e>getId</span>() <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;&amp;j_password=&#34;</span> <span style=color:#f92672>+</span> loginVO.<span style=color:#a6e22e>getUniqId</span>());
 </span></span><span style=display:flex><span>		<span style=color:#75715e>//((HttpServletRequest)request).getRequestDispatcher(&#34;/j_spring_security_check?j_username=&#34; + loginVO.getUserSe() + loginVO.getId() + &#34;&amp;j_password=&#34; +                loginVO.getUniqId()).forward(request, response);</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>	}
 </span></span></code></pre></div><ul><li>통합 인증 서버의 토큰 정보를 바탕으로 LoginVO 객체를 생성하는 메서드 구현</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#75715e>/**
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 토큰 정보를 바탕으로  loginVO 객체를 생성하는 메서드
@@ -87,11 +87,11 @@
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
 </span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> LoginVO <span style=color:#a6e22e>getLoginVO</span>(ServletRequest request, ServletResponse response){
 </span></span><span style=display:flex><span>		SSORspData rspData <span style=color:#f92672>=</span> ssoService.<span style=color:#a6e22e>ssoGetLoginData</span>((HttpServletRequest)request);
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		LoginVO loginVO <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> LoginVO();
 </span></span><span style=display:flex><span>		loginVO.<span style=color:#a6e22e>setUniqId</span>(rspData.<span style=color:#a6e22e>getUID</span>());
 </span></span><span style=display:flex><span>		loginVO.<span style=color:#a6e22e>setUserSe</span>(rspData.<span style=color:#a6e22e>getCN</span>());
-</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span>  loginVO;
 </span></span><span style=display:flex><span>	}
 </span></span></code></pre></div><ul><li>통합 인증 서버에 글로벌 로그아웃(토큰 삭제)을 요청하는 메서드 구현</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    <span style=color:#75715e>/**
@@ -100,7 +100,7 @@
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @throws IOException 
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 
 </span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>ssoLogout</span>(ServletRequest request, ServletResponse response, String returnURL) <span style=color:#66d9ef>throws</span> <span style=color:#f92672>[</span>IOException<span style=color:#f92672>]</span>(http:<span style=color:#75715e>//www.google.com/search?hl=en&amp;q=allinurl%3Aioexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky){</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>ssoLogout</span>(ServletRequest request, ServletResponse response, String returnURL) <span style=color:#66d9ef>throws</span> IOException{
 </span></span><span style=display:flex><span>		((HttpServletResponse)response).<span style=color:#a6e22e>sendRedirect</span>(<span style=color:#e6db74>&#34;/exam/sso/globalLogout.do?returnURL=&#34;</span> <span style=color:#f92672>+</span> returnURL);
 </span></span><span style=display:flex><span>	}
 </span></span></code></pre></div></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>

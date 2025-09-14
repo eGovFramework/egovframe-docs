@@ -10606,7 +10606,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3:imp:editor:common_component">공통컴포넌트 시작하기&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/common-intro/getting-started/">공통컴포넌트 시작하기&lt;/a>
 
 
 를 참고하여 공통컴포넌트를 설치한다.&lt;/p></description></item><item><title>로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/</guid><description/></item><item><title>로그인 시간관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/login_session_management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/login_session_management/</guid><description>&lt;h1 id="로그인-시간관리">로그인 시간관리&lt;/h1>
@@ -13609,7 +13609,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="http://www.gpki.go.kr">www.gpki.go.kr&lt;/a>
+&lt;a href="https://www.gpki.go.kr">www.gpki.go.kr&lt;/a>
 
 
 )에서 제공하는 GPKISecureWeb 모듈을 통해 인증서로그인 기능을 제공한다. (NPKI 및 GPKI 지원)&lt;/p>
