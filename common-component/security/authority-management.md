@@ -96,17 +96,17 @@ SELECT A.CHILD_ROLE CHILD,
 
 ### Spring Security Configuration
 
-- [Spring Security](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:server_security:architecture)
+- [Spring Security](/egovframe-runtime/foundation-layer/server-security-architecture.md)
 
 ### Session 방식 접근제어 Configuration
 
-- [Session 방식 접근제어 권한설정](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.9:fdl:access_v3_9)
+- [Session 방식 접근제어 권한설정](/egovframe-runtime/foundation-layer/session-based-access-control-permission-settings.md)
 
 ## 관련기능
 
-- [권한관리_기능](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:sec:%EA%B6%8C%ED%95%9C%EA%B4%80%EB%A6%AC_%EA%B8%B0%EB%8A%A5)
-- [권한별 롤관리](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:sec:%EA%B6%8C%ED%95%9C%EB%B3%84_%EB%A1%A4%EA%B4%80%EB%A6%AC)
+- [권한관리_기능](./authority-management-function.md)
+- [권한별 롤관리](./authority-role-management.md)
 
 ## 참고자료
 
-- [Server Security](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:server_security)
+- [Server Security](/egovframe-runtime/foundation-layer/server-security.md)
