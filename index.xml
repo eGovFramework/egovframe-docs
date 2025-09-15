@@ -874,7 +874,168 @@ Spring Security에서 제공하는 인증을 사용하기 위해서는 Authentic
 AuthenticationManager는 요청을 AuthenticationProvider 체인에 전달해야 할 임무가 있다.&lt;br>
 AuthenticationProvider는 기본적으로 UserDetails와 UserDetailsService인터페이스를 이용한다.&lt;br>
 UserDetailsService 인터페이스 내 loadUserByUsername 메소드의 리턴된 UserDetails은 사용자명(username), 패스워드(password), 허가권한(GrantedAuthority[]) 및 사용여부(enabled)와 같은 기초적인 인증 정보들을 제공한다.&lt;br>
-이에 전자정부 표준프레임워크에서는 UserDetails 인터페이스를 확장하였으며 JDBC 기반으로 사용자 테이블로부터 사용자 정보를 Map 또는 VO형태로 사용할 수 있도록 하였다.&lt;/p></description></item><item><title>Basic 로그</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/basiclog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/basiclog/</guid><description>&lt;h1 id="요소기술---basic-로그">요소기술 - Basic 로그&lt;/h1>
+이에 전자정부 표준프레임워크에서는 UserDetails 인터페이스를 확장하였으며 JDBC 기반으로 사용자 테이블로부터 사용자 정보를 Map 또는 VO형태로 사용할 수 있도록 하였다.&lt;/p></description></item><item><title>권한관리 기능</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/authority-management-function/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/authority-management-function/</guid><description>&lt;h1 id="권한관리-기능">권한관리 기능&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템 사용자에게 사용권한을 부여하기 위해 권한을 정의하고, 관리한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>권한관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
+하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라
+부서권한관리, 그룹관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p>
+&lt;p>* 패키지 간 참조 관계 : 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/common-intro/package-reference/#%eb%b3%b4%ec%95%88">보안 Package Dependency&lt;/a>
+
+
+&lt;/p>
+&lt;h3 id="클래스">클래스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.sec.ram.web.EgovAuthorManageController.java&lt;/td>
+ &lt;td>권한 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.sec.ram.service.EgovAuthorManageService.java&lt;/td>
+ &lt;td>권한 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.sec.ram.service.impl.EgovAuthorManageServiceImpl.java&lt;/td>
+ &lt;td>권한 관리를 위한 서비스 구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.sec.ram.service.AuthorManage.java&lt;/td>
+ &lt;td>권한 관리를 위한 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.sec.ram.service.AuthorManageVO.java&lt;/td>
+ &lt;td>권한 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.sec.ram.service.impl.AuthorManageDAO.java&lt;/td>
+ &lt;td>권한 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sec/ram/EgovAuthorManage.jsp&lt;/td>
+ &lt;td>권한 관리를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sec/ram/EgovAuthorInsert.jsp&lt;/td>
+ &lt;td>권한 등록을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sec/ram/EgovAuthorUpdate.jsp&lt;/td>
+ &lt;td>권한 수정을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_mysql.xml&lt;/td>
+ &lt;td>권한 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_oracle.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_tibero.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_altibase.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_maria.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Maria용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_postgres.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Postgres용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Validator XML&lt;/td>
+ &lt;td>resources/egovframework/validator/com/sec/ram/SecurityManage.xml&lt;/td>
+ &lt;td>권한 관리를 위한 Validator XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/sec/ram/message_ko.properties&lt;/td>
+ &lt;td>권한 관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/sec/ram/message_en.properties&lt;/td>
+ &lt;td>권한 관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/security/images/%e1%84%80%e1%85%af%e1%86%ab%e1%84%92%e1%85%a1%e1%86%ab%e1%84%80%e1%85%aa%e1%86%ab%e1%84%85%e1%85%b5_%e1%84%8f%e1%85%b3%e1%86%af%e1%84%85%e1%85%a2%e1%84%89%e1%85%b3%e1%84%83%e1%85%a1%e1%84%8b%e1%85%b5%e1%84%8b%e1%85%a5%e1%84%80%e1%85%b3%e1%84%85%e1%85%a2%e1%86%b7.jpg" alt="권한관리_클래스다이어그램" >
+&lt;/p></description></item><item><title>권한별 롤관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/authority-role-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/authority-role-management/</guid><description>&lt;h1 id="권한별-롤관리">권한별 롤관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>롤(Role)은 접근대상이 되는 자원을 의미한다.
+롤관리 컴포넌트를 통하여 시스템 내에서 접근하고자 하는 자원을 정의하고 관리할 수 있다.
+본 컴포넌트에서 사용 가능한 자원은 URL, method, aop 세 가지 유형이 있다.
+&lt;strong>권한별롤관리&lt;/strong>는 시스템 사용을 위해 사용자의 특성에 따라 정의된 권한에 특정 자원에 접근할 수 있는 롤을 부여할 수 있는 관리기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>&lt;strong>권한별롤관리&lt;/strong>는 권한별로 시스템 접근에 대한 롤을 관리하기 위한 목적으로 &lt;strong>등록, 수정, 삭제 조회&lt;/strong>의 기능을 수반한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> ① 권한별 롤 등록 : 권한별 시스템 접근 롤정보를 일괄 및 개별 등록한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 권한별 롤 수정 : 권한별 시스템 접근 롤정보를 일괄 및 개별 수정한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 권한별 롤 삭제 : 권한별 시스템 접근 롤정보를 일괄 및 개별 삭제한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 권한별 롤 조회 : 권한별 시스템 접근 롤정보 목록을 조회한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>권한관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
+하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라
+부서권한관리, 그룹관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>Basic 로그</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/basiclog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/basiclog/</guid><description>&lt;h1 id="요소기술---basic-로그">요소기술 - Basic 로그&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>JDK에서 제공하는 Logger 클래스를 이용하여 3가지 레벨로 로그를 남길 수 있는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
