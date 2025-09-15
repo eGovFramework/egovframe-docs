@@ -145,7 +145,7 @@ public String noticeExpirePwd(@RequestParam Map<String, Object> commandMap, Mode
 	int expirePwdDay = 0 ;
 	try {
 		expirePwdDay =  Integer.parseInt(propertyExpirePwdDay);
-	} catch ([NumberFormatException](http://www.google.com/search?hl=en&q=allinurl%3Anumberformatexception+java.sun.com&btnI=I%27m%20Feeling%20Lucky) e) {
+	} catch (NumberFormatException e) {
 		LOGGER.debug("convert expirePwdDay Err : "+e.getMessage());
 	} catch (Exception e) {
 		LOGGER.debug("convert expirePwdDay Err : "+e.getMessage());
