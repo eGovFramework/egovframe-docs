@@ -23,7 +23,7 @@
 
  암복호화 기능을 사용하기 위해서는 전자정부 표준프레임워크 실행환경중 egovframework.rte.fdl.crypto-x.x.x.jar 라이브러리를 필요로 한다.
 
- 보다 자세한 사항은 실행환경의 [암호화/복호화](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:encryption_decryption) 서비스를 참조한다.
+ 보다 자세한 사항은 실행환경의 [암호화/복호화](/egovframe-runtime/foundation-layer/crypto-encryption-decryption.md) 서비스를 참조한다.
 
 ## 설명
 
@@ -33,7 +33,7 @@
 
  암호화/복호화 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
 
-- 패키지 간 참조 관계 : [보안 Package Dependency](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v2:init_pkg_dependency#보안)
+- 패키지 간 참조 관계 : [보안 Package Dependency](../intro/package-reference.md/#보안)
 
 ### 관련소스
 
