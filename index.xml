@@ -9952,7 +9952,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:editor:ide">IDE&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/editor/ide/">IDE&lt;/a>
 
 
 &lt;/p></description></item><item><title>권한관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-management/</guid><description>&lt;h1 id="권한관리">권한관리&lt;/h1>
@@ -10193,7 +10193,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/security/images/author_%e1%84%80%e1%85%af%e1%86%ab%e1%84%92%e1%85%a1%e1%86%ab%e1%84%80%e1%85%aa%e1%86%ab%e1%84%85%e1%85%b5_%e1%84%8f%e1%85%b3%e1%86%af%e1%84%85%e1%85%a2%e1%84%89%e1%85%b3%e1%84%83%e1%85%a1%e1%84%8b%e1%85%b5%e1%84%8b%e1%85%a5%e1%84%80%e1%85%b3%e1%84%85%e1%85%a2%e1%86%b7.jpg" alt="권한관리_클래스다이어그램" >
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/security/images/author_class_diagram.jpg" alt="권한관리_클래스다이어그램" >
 &lt;/p></description></item><item><title>권한그룹관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-group-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-group-management/</guid><description>&lt;h1 id="권한-그룹-관리">권한 그룹 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>권한그룹관리&lt;/strong>는 시스템 사용을 위해 사용자의 특성에 따라 그룹을 설정하고, 특정 그룹을 선택한 뒤 해당 그룹에 속한 사용자에게 일괄적으로 권한을 부여할 수 있는 관리기능을 제공한다.&lt;/p>
@@ -12976,7 +12976,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:encryption_decryption">암호화/복호화&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/crypto/crypto-encryption-decryption/">암호화/복호화&lt;/a>
 
 
  서비스를 참조한다.&lt;/p>
