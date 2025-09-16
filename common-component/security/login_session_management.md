@@ -174,5 +174,5 @@ public ModelAndView refreshSessionTimeout(@RequestParam Map<String, Object> comm
 
 ## 참고자료
 
-- 쿠키처리 참조: [쿠키처리](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%BF%A0%ED%82%A4%EC%B2%98%EB%A6%AC)
-- 세션처리 참조: [세션처리](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%84%B8%EC%85%98%EC%B2%98%EB%A6%AC)
+- 쿠키처리 참조: [쿠키처리](../elementary-technology/handling_cookie.md)
+- 세션처리 참조: [세션처리](../elementary-technology/handling_session.md)

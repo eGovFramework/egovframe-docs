@@ -304,7 +304,7 @@ Paging 처리는 한 페이지에 보여줘야 할 조회 목록에 제한을 �
 위와 같이 정의할 경우 QL에서는 persistence.xml 파일에 정의된 hibernate.dialect 속성에 따라 각각의 DB에 맞는 SQL을 생성한다. 이는 Pagination을 할 때 모든 데이터를 읽은 후 해당 페이지에 속한 데이터 갯수를 결과값으로 전달하는 것이 아니라 조회해야 할 데이터 즉, 해당 페이지에 속한 갯수만큼의 데이터만 읽어오게 된다.
 
 ## QL을 이용한 CUD
-기본적으로 JPA를 이용한 CUD(Create, Update, Delete)를 할 때에는 기본 API를 사용하게 된다. (본메뉴얼 [Basic CRUD](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:orm:basic_crud) 참고) 그러나 특이한 경우 QL을 통해 기본 CUD를 수행해야 하는 경우가 발생할 수 있다.
+기본적으로 JPA를 이용한 CUD(Create, Update, Delete)를 할 때에는 기본 API를 사용하게 된다. (본메뉴얼 [Basic CRUD](#기본적인-사용-방법) 참고) 그러나 특이한 경우 QL을 통해 기본 CUD를 수행해야 하는 경우가 발생할 수 있다.
 
 ### INSERT
 다음은 QL을 사용한 Insert문의 예이다.

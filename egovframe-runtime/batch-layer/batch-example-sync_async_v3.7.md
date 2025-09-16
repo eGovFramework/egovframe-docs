@@ -129,9 +129,9 @@ public class EgovSyncDelegatingJobFunctionalTests {
 
 ##### AsyncItemWriter
 
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr//wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_실행)을 참고한다.
+수행방법은 [JunitTest 실행](/egovframe-development/test-tool/test-case.md#test-case-실행)을 참고한다.
 
 ## 참고자료
 
-- [동기/비동기 예제](../../runtime-example/individual-example/batch-layer/batch-example-sync-async.md)
-- [JobLauncher](./batch-execution-job-launcher.md)
+- [동기/비동기 예제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte:batch_example:sync_async)
+- [JobLauncher](./batch-execution-job_launcher.md)

@@ -34,7 +34,7 @@
 
  사용자통계 패키지는 요소기술의 공통(cmm) 패키지와 리포팅 공통(sts.com) 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.
 
-- 패키지 간 참조 관계 : [통계/리포팅 Package Dependency](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v2:init_pkg_dependency#통계_리포팅)
+- 패키지 간 참조 관계 : [통계/리포팅 Package Dependency](../intro/package-reference.md/#통계리포팅)
 
 ### 관련소스
 
@@ -71,7 +71,7 @@
 ### 환경설정
 
  하루에 한번씩 사용자 정보를 모두 조회하여 회원유형, 회원상태, 성별 조건에 부합하는 회원수를 요약하는 작업이 배치형태로 구성되어야 한다.  
-본 기능은 전자정부 표준프레임워크 실행환경의 **[scheduling](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:scheduling)** 기능을 활용하여 구성되어있다.  
+본 기능은 전자정부 표준프레임워크 실행환경의 **[scheduling](/egovframe-runtime/foundation-layer/scheduling.md)** 기능을 활용하여 구성되어있다.  
 
 - 작업 클래스 생성(src/main/java/egovframework/com/sts/ust/service/EgovUserStatsScheduling.java)
 
@@ -155,4 +155,4 @@ public class EgovUserStatsScheduling {
 
 ## 참고자료
 
-- 실행환경 참조 : [scheduling](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:fdl:scheduling)
+- 실행환경 참조 : [scheduling](/egovframe-runtime/foundation-layer/scheduling.md)
