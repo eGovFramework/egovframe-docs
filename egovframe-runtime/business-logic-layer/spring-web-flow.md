@@ -36,7 +36,7 @@ Spring과 마찬가지로, Spring Web Flow는 필요한 부분만 선택적으�
 SWF의 중요한 이득은 어떤 환경에서도 수행될 수 있는 자족적인 컨트롤러의 모듈을 재사용하여 정의할 수 있도록 하는 것이다.
 
 구체적인 내용을 살펴보기 전에 Hello World를 실행해 보자.
-- [Hello world](./getting-started.md)
+- [Hello world](./swf-getting-started-hello-world.md)
 
 Spring Web Flow의 기본 샘플로 Spring Source에서는 Hotel Booking 을 제공하고 있다.<br>
 우리는 Spring Web Flow 레퍼런스 문서를 기준으로 하고 샘플인 Hotel Booking 을 참고하는 형태로 설명하도록 하겠다.
@@ -45,19 +45,19 @@ Hotel Booking 샘플 데모 : 🌏 [http://richweb.springframework.org/swf-booki
 
 ### SWF Configuration
 
-- [SWF 시스템 설정](./setting-system.md)
-- [Spring Web Flow 와 MVC 연동](./with-spring-mvc.md)
-- [Securing Flows](./securing-flows.md)
-- [Flow Managed Persistence](./flow-managed-persistence.md)
+- [SWF 시스템 설정](./swf-configuration-setting-system.md)
+- [Spring Web Flow 와 MVC 연동](./swf-configuration-with-spring-mvc.md)
+- [Securing Flows](./swf-configuration-securing-flows.md)
+- [Flow Managed Persistence](./swf-configuration-flow-managed-persistence.md)
 
 ### SWF
 
-- [Getting Started -Hello world](./setting-system.md)
-- [Flow Definition](./flow-definiton.md)
-- [Expression Language](./expression-language.md)
-- [Rendering Views](./rendering-views.md)
-- [Executing actions](./executing_actions.md)
-- [Flow Inheritance](./flow-inheritance.md)
+- [Getting Started -Hello world](./swf-getting-started-hello-world.md)
+- [Flow Definition](./swf-elements-flow-definiton.md)
+- [Expression Language](./swf-elements-expression-language.md)
+- [Rendering Views](./swf-elements-rendering-views.md)
+- [Executing actions](./swf-elements-executing-actions.md)
+- [Flow Inheritance](./swf-elements-flow-inheritance.md)
 
 
 ## 참고 자료

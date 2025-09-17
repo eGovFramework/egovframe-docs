@@ -141,7 +141,7 @@ EgovCommandLineRunner에서는 start 메소드를 이용하여 Job을 시작한�
 ### EgovSchedulerRunner
 
 #### 구조
-기존의 Batch Runner와는 다르게, EgovSchedulerRunner는 Job을 직접 실행하는 것이 아니라 Scheduler를 실행한다. 이 Scheduler가 설정되어 있는 시간 및 주기 간격으로 Job을 실행하게 된다. Scheduler는 Quartz를 사용하고 있으며, Quartz의 자세한 사용법 및 설정 방법은 [Scheduling](../foundation-layer/scheduling-service.md) 서비스를 참고한다.
+기존의 Batch Runner와는 다르게, EgovSchedulerRunner는 Job을 직접 실행하는 것이 아니라 Scheduler를 실행한다. 이 Scheduler가 설정되어 있는 시간 및 주기 간격으로 Job을 실행하게 된다. Scheduler는 Quartz를 사용하고 있으며, Quartz의 자세한 사용법 및 설정 방법은 [Scheduling](../foundation-layer/scheduling.md) 서비스를 참고한다.
 
 ![image](./images/egov_scheduler_runner.png)
 
