@@ -213,7 +213,7 @@ Log4j 2의 Logger 객체를 생성할 수 있도록, Logger 생성 메서드를 
 
 #### 4. Log4j 2 설정 추가 (log4j2.xml)
 
-Log4j 2에서는 설정 태그들이 직관적이고 간단하게 변경되었다. 더 자세한 설명은 [Log4j 2 상세 설정](./logging-log4j2_configuration_file.md) 을 참조하도록 한다.
+Log4j 2에서는 설정 태그들이 직관적이고 간단하게 변경되었다. 더 자세한 설명은 [Log4j 2 상세 설정](./logging-log4j2-configuration_file.md) 을 참조하도록 한다.
 
 - Log4j 1.x
 
