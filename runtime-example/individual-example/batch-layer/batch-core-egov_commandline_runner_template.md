@@ -24,7 +24,7 @@ CommandLine 배치 템플릿 프로젝트를 이용하여 EgovCommandLineRunner�
 **아래를 참고하여 File(SAM) / DB 타입의 CommandLine 배치 템플릿 프로젝트 를 생성한다.**
 
 1. [File(SAM)타입](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:batch_template_wizard:sam_commandline_template_mgmt)
-2. [DB타입](./https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:batch_template_wizard:db_commandline_template_mgmt)
+2. [DB타입](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:batch_template_wizard:db_commandline_template_mgmt)
 
 #### CommandLine 배치 템플릿 전체 설정
 
