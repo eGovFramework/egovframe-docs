@@ -2095,12 +2095,10 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 
 
  
- 
- 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/runtime-example/individual-example/batch-layer/batch-core-egov_commandline_runner_templatehttps://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:batch_template_wizard:db_commandline_template_mgmt">DB타입&lt;/a>
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:batch_template_wizard:db_commandline_template_mgmt">DB타입&lt;/a>
 
 
 &lt;/li>
@@ -2305,7 +2303,7 @@ iBatis도 다양한 Dynamic 요소를 제공하였으나 이해해야 하는 요
 
 
 
-&lt;a href="../foundation-layer/scheduling-service.md">Scheduling 서비스&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/scheduling/">Scheduling 서비스&lt;/a>
 
 
  를 참고한다.&lt;/p></description></item><item><title>EhCache</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/ehCache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/ehCache/</guid><description>&lt;h1 id="ehcache">EhCache&lt;/h1>
