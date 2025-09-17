@@ -154,7 +154,7 @@ stopAndCheckStatus() 메소드는 Job 실행 정보를 확인하고 실행 중�
 
 #### JunitTest 수행
 
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
+수행방법은 [JunitTest 실행](/egovframe-development/test-tool/test-case.md)을 참고한다.
 
 ### 결과확인
 
