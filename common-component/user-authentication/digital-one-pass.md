@@ -185,7 +185,7 @@ public String onepassCallback(HttpServletRequest request, HttpServletResponse re
 				// 디지털원패스 사용자 정보 - 신규회원일 경우 이 정보를 이용할 수 있음
 				LOGGER.info("getId:{}", findOnepassUser.getId()); // 사용자의 ID (최대 30자)
 				LOGGER.info("getName:{}", findOnepassUser.getName()); // 사용자의 이름 (최대 70자)
-				LOGGER.info("getUserKey:{}", findOnepassUser.getUserKey()); // 사용자 유일값인 user key 가 전달된다. (최대 50자)
+				LOGGER.info("getUserKey:{}", findOnepassUser.getUserKey()); // 사용자 유일값인 userKey 가 전달된다. (최대 50자)
 				LOGGER.info("getCi:{}", findOnepassUser.getCi()); // 사용자의 CI (최대 255자)
 				LOGGER.info("getBirth:{}", findOnepassUser.getBirth()); // 사용자의 생년월일 (최대 8자)
 				LOGGER.info("getPhone:{}", findOnepassUser.getPhone()); // 사용자의 휴대전화번호 (최대 14자)
