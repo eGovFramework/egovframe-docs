@@ -43,11 +43,11 @@ menu:
 
 ## 참고자료
 
-- [validation](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:validation)
-- [Security](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:security)
-- [Cache](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:cache)
-- [SpEL](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spel)
-- [Internationalization(국제화)](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:internationalization)
-- [Data Access](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:data_access)
-- [ID Generation](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:id_generation)
-- [Property](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:property)
+- [validation](/egovframe-runtime/presentation-layer/web-servlet-validation.md)
+- [Security](/egovframe-runtime/presentation-layer/security.md)
+- [Cache](/egovframe-runtime/foundation-layer/cache.md)
+- [SpEL](/egovframe-runtime/foundation-layer-core/spel.md)
+- [Internationalization(국제화)](/egovframe-runtime/presentation-layer/internationalization.md)
+- [Data Access](/egovframe-runtime/persistence-layer/dataaccess-ibatis.md)
+- [ID Generation](/egovframe-runtime/foundation-layer/id-generation.md)
+- [Property](/egovframe-runtime/foundation-layer/property-service.md)

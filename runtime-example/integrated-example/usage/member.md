@@ -55,12 +55,12 @@ menu:
 
 ## 참고자료
 
-- [Declarative validation(JSR-303)](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:jsr303)
-- [AJAX](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:ajax_support)
-- [encryption_decryption](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:encryption_decryption)
-- [Mail](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:mail)
-- [SpEL](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spel)
-- [Internationalization(국제화)](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:internationalization)
-- [Data Access](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:data_access)
-- [ID Generation](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:id_generation)
-- [Property](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:property)
+- [Declarative validation(JSR-303)](/egovframe-runtime/presentation-layer/web-servlet-declarative-validation.md)
+- [AJAX](/egovframe-runtime/presentation-layer/ajax.md)
+- [encryption_decryption](/egovframe-runtime/foundation-layer/crypto-encryption-decryption.md)
+- [Mail](/egovframe-runtime/foundation-layer/mail.md)
+- [SpEL](/egovframe-runtime/foundation-layer-core/spel.md)
+- [Internationalization(국제화)](/egovframe-runtime/presentation-layer/internationalization.md)
+- [Data Access](/egovframe-runtime/persistence-layer/dataaccess-ibatis.md)
+- [ID Generation](/egovframe-runtime/foundation-layer/id-generation.md)
+- [Property](/egovframe-runtime/foundation-layer/property-service.md)

@@ -2,7 +2,7 @@
 title: Commons Validator에 validation rule 추가하기
 linkTitle: "Validation Rule"
 description: Commons Validator는 기본적인 유형 외에도 프로젝트 특성에 맞는 공통 validation rule을 추가할 수 있다. 예제로 주민등록번호 검증기를 추가하여 validation rule을 확장하는 방법을 설명하며, 이를 easycompany 프로젝트에 적용했다.
-url : /egovframe-runtime/presentation-layer/security/security-validationa-add-rules-in-common-validator/
+url : /egovframe-runtime/presentation-layer/security/security-validation-add-rules-in-common-validator/
 menu:
     depth:
         name: Validation Rule

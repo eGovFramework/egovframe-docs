@@ -189,7 +189,7 @@ public class EgovEventNoticeTriggerFunctionalTests extends EgovAbstractIoSampleT
 ```
 
 #### JunitTest 수행
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
+수행방법은 [JunitTest 실행](/egovframe-development/test-tool/test-case.md)을 참고한다.
 
 ### 결과 확인
 이 예제의 테스트 결과는 배치수행 결과만 반영하므로, 이벤트알림의 성공여부는 실제 메일계정에 접속하여 Email 수신여부로 판단한다.

@@ -110,7 +110,7 @@ public class EgovSyncDelegatingJobFunctionalTests {
 
 #### JunitTest 수행
 
-수행방법은 [JunitTest 실행](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case)을 참고한다.
+수행방법은 [JunitTest 실행](/egovframe-development/test-tool/test-case.md)을 참고한다.
 
 ## 참고자료
 * [JobLauncher](../../../egovframe-runtime/batch-layer/batch-execution-job_launcher.md)
