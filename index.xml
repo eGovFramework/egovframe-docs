@@ -8561,7 +8561,7 @@ Jakarta Commons Validator나 Valang 같은 외부 Validator들도 Spring 프레�
 Spring Modules를 이용한 Jakarta Commons Validator 사용 방법에 대해서는 Spring Framework에서 Commons Validator 사용 을 참고하라.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>부서 정보를 수정하는 페이지에서 커맨드 객체인 부서 정보 클래스를 유효성 검증하는 코드를 작성해 보자.
-부서 클래스인 Department 클래스는 아래와 같다.&lt;/p></description></item><item><title>Commons Validator에 validation rule 추가하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-validationa-add-rules-in-common-validator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-validationa-add-rules-in-common-validator/</guid><description>&lt;h1 id="commons-validator에-validation-rule-추가하기">Commons Validator에 validation rule 추가하기&lt;/h1>
+부서 클래스인 Department 클래스는 아래와 같다.&lt;/p></description></item><item><title>Commons Validator에 validation rule 추가하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-validation-add-rules-in-common-validator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-validation-add-rules-in-common-validator/</guid><description>&lt;h1 id="commons-validator에-validation-rule-추가하기">Commons Validator에 validation rule 추가하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Commons Validator는 primitive type, 필수값, 이메일등 흔히 사용되는 유형에 대한 validation rule을 template으로 제공하지만,
 프로젝트의 특성에 따라 공통으로 사용되는 validation rule이 발생되고 이를 추가해야할 필요가 생길 수 있다.
@@ -9630,7 +9630,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:validation">validation&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet/web-servlet-validation/">validation&lt;/a>
 
 
 &lt;/li>
@@ -9652,7 +9652,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:security">Security&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/security/">Security&lt;/a>
 
 
 &lt;/li>
@@ -9674,7 +9674,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:cache">Cache&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/cache/">Cache&lt;/a>
 
 
 &lt;/li>
@@ -9696,7 +9696,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spel">SpEL&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/">SpEL&lt;/a>
 
 
 &lt;/li>
@@ -9718,7 +9718,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:internationalization">Internationalization(국제화)&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/internationalization/">Internationalization(국제화)&lt;/a>
 
 
 &lt;/li>
@@ -9740,7 +9740,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:data_access">Data Access&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/">Data Access&lt;/a>
 
 
 &lt;/li>
@@ -9762,7 +9762,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:id_generation">ID Generation&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/id-generated/">ID Generation&lt;/a>
 
 
 &lt;/li>
@@ -9784,7 +9784,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:property">Property&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/property/property-service/">Property&lt;/a>
 
 
 &lt;/li>
@@ -10398,7 +10398,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:spel">SpEL&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer-core/spel/">SpEL&lt;/a>
 
 
 &lt;/li>
@@ -10420,7 +10420,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:server_security">Server Security&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/server-security/">Server Security&lt;/a>
 
 
 &lt;/li>
@@ -10442,7 +10442,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:ptl:internationalization">Internationalization(국제화)&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/presentation-layer/internationalization/">Internationalization(국제화)&lt;/a>
 
 
 &lt;/li>
@@ -10464,7 +10464,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:psl:data_access">Data Access&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/">Data Access&lt;/a>
 
 
 &lt;/li>
@@ -10486,7 +10486,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:id_generation">ID Generation&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/id-generated/">ID Generation&lt;/a>
 
 
 &lt;/li>
@@ -10508,7 +10508,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:property">Property&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/foundation-layer/property/property-service/">Property&lt;/a>
 
 
 &lt;/li>
