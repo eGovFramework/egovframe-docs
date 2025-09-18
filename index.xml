@@ -10229,7 +10229,188 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 그룹목록 : 시스템을 사용하는 목적별 사용자 그룹정보목록을 조회한다.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="설명-1">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>그룹관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 권한관리, 부서권한관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>날짜 지역화 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/dateformat/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/dateformat/</guid><description>&lt;h1 id="요소기술---날짜-지역화-처리">요소기술 - 날짜 지역화 처리&lt;/h1>
+&lt;p>그룹관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 권한관리, 부서권한관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>기업 회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/company-member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/company-member-management/</guid><description>&lt;h1 id="기업-회원-관리">기업 회원 관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>기업회원관리는 회원목록 조회기능과 신규등록기능, 상세조회기능, 회원정보수정기능, 회원암호수정기능, 회원정보삭제기능, 가입신청기능을 제공한다.&lt;/p>
+&lt;p>&lt;strong>기능흐름&lt;/strong>&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>기능명&lt;/th>
+ &lt;th>기능 흐름&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>기업회원 등록 및 시스템 사용&lt;/td>
+ &lt;td>①기업회원가입신청 → ②관리자에 의한 가입승인 → ③기업회원 아이디를 통한 시스템 로그인&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/company-manage1.png" alt="기능 흐름도" >
+&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>사용자, 기업회원, 회원 패키지는 요소기술의 공통 패키지(cmm)와 직접적인 함수적 참조 관계를 가진다.&lt;/p>
+&lt;ul>
+&lt;li>패키지 간 참조 관계 : 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework%3Acom%3Av2%3Ainit_pkg_dependency">사용자지원 Package Dependency&lt;/a>
+
+
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.umt.web.EgovEntrprsManageController.java&lt;/td>
+ &lt;td>기업회원 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.umt.service.EgovEntrprsManageService.java&lt;/td>
+ &lt;td>기업회원 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.umt.service.impl.EgovEntrprsManageServiceImpl.java&lt;/td>
+ &lt;td>기업회원 관리를 위한 서비스 구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.umt.service.EntrprsManageVO.java&lt;/td>
+ &lt;td>기업회원 관리를 위한 모델 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.umt.service.UserDefaultVO.java&lt;/td>
+ &lt;td>기업회원 관리를 위한 검색조건용 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.umt.service.impl.EntrprsManageDAO.java&lt;/td>
+ &lt;td>기업회원 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberInsert.jsp&lt;/td>
+ &lt;td>기업회원 등록을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberSelectUpdt.jsp&lt;/td>
+ &lt;td>기업회원 상세조회 및 수정을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsPasswordUpdt.jsp&lt;/td>
+ &lt;td>기업회원 암호수정을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberManage.jsp&lt;/td>
+ &lt;td>기업회원 목록조회를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/umt/EgovIdDplctCnfirm.jsp&lt;/td>
+ &lt;td>중복아이디 확인을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberSbscrb.jsp&lt;/td>
+ &lt;td>기업회원 가입신청을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_altibase.xml&lt;/td>
+ &lt;td>Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_maria.xml&lt;/td>
+ &lt;td>MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_mysql.xml&lt;/td>
+ &lt;td>MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_oracle.xml&lt;/td>
+ &lt;td>Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_postgres.xml&lt;/td>
+ &lt;td>PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_tibero.xml&lt;/td>
+ &lt;td>Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Validator XML&lt;/td>
+ &lt;td>resources/egovframework/validator/com/uss/umt/EgovEntrprsManage.xml&lt;/td>
+ &lt;td>validator 룰 설정파일&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-UsrCnfrm.xml&lt;/td>
+ &lt;td>기업회원 관리 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/umt/message_ko.properties&lt;/td>
+ &lt;td>한글 메시지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/umt/message_en.properties&lt;/td>
+ &lt;td>영문 메시지&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/company-manage2.jpg" alt="클래스 다이어그램" >
+&lt;/p></description></item><item><title>날짜 지역화 처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/dateformat/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/dateformat/</guid><description>&lt;h1 id="요소기술---날짜-지역화-처리">요소기술 - 날짜 지역화 처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>다국어 지원을 위한 국가간 날짜 표시 변환 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -12307,7 +12488,7 @@ artifact의 배포까지의 생명 주기를 정의하고 있다.&lt;/p>
 &lt;li>
 &lt;p>Maven 리모트 repository
 Maven에서 제공하는 central respositoty와 각 기업 또는 organization에서 제공하고 있는 리모트 repository들이 있으며&lt;br>
-개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/p></description></item><item><title>사용자 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/user_statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/user_statistics/</guid><description>&lt;h1 id="사용자-통계">사용자 통계&lt;/h1>
+개발자는 환경 설정을 통해 하나 이상의 외부 repository에서 필요로 하는 artifact들을 다운로드 받아 사용할 수 있다.&lt;/p></description></item><item><title>사용자 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/member-management-detail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/member-management-detail/</guid><description>&lt;h1 id="사용자-관리">사용자 관리&lt;/h1></description></item><item><title>사용자 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/user_statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/user_statistics/</guid><description>&lt;h1 id="사용자-통계">사용자 통계&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자통계 기능은 각종 사용자 현황에 대한 통계자료를 회원유형, 회원상태, 성별에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
 &lt;ul>
@@ -16391,7 +16572,7 @@ Log4j 2가 초기화될 때 자동으로 위 설정 파일을 읽어들인다.&l
 &lt;/ul>
 &lt;h3 id="인증권한방식-설정">인증/권한방식 설정&lt;/h3>
 &lt;p>표준프레임워크 3.5 이하 버전에서 개발자가 수동으로 관련 XML 설정하던 불편한 점을
-표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있다.&lt;/p></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/member/</guid><description>&lt;h1 id="회원관리">회원관리&lt;/h1>
+표준프레임워크 3.6 이상 버전에서는 globals.properties 설정만으로 인증/권한방식을 설정할 수 있다.&lt;/p></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/member-management/user-management/</guid><description>&lt;h1 id="회원-관리">회원 관리&lt;/h1></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/runtime-example/integrated-example/usage/member/</guid><description>&lt;h1 id="회원관리">회원관리&lt;/h1>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>사용자의 등급에 따라 사용할 수 있는 메뉴가 달라진다. 회원관리에서는 회원의 등록과 수정, 탈퇴가 가능하며 사용자 등급을 관리자와 일반 사용자로 구분하였다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>1. 메인페이지에서 회원가입을 클릭한다.
