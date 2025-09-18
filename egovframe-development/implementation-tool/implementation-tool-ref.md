@@ -12,4 +12,5 @@ menu:
 # 참조 문서 목록
 
 ## 개요
-[jsp-api.jar import 가이드](/egovframe-development/implementation-tool/implementation-tool-ref/importjspapi-guide/): 모바일 사이트 템플릿 생성 후 `EgovComCrossSiteHndlr.java`의 `javax.servlet.jsp.*` import 오류를 해결하기 위해 Tomcat `lib`의 `jsp-api.jar`를 프로젝트 Build Path에 추가하는 방법을 설명합니다.
+ 
+jsp-api.jar import 가이드: 모바일 사이트 템플릿 생성 후 `EgovComCrossSiteHndlr.java`의 `javax.servlet.jsp.*` import 오류를 해결하기 위해 Tomcat `lib`의 `jsp-api.jar`를 프로젝트 Build Path에 추가하는 방법을 설명합니다.
