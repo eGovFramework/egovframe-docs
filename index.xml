@@ -10260,6 +10260,8 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  
 
 
+ 
+
 
 
 
@@ -10271,7 +10273,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework%3Acom%3Av2%3Ainit_pkg_dependency">사용자지원 Package Dependency&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/common-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90">사용자지원 Package Dependency&lt;/a>
 
 
 &lt;/li>
