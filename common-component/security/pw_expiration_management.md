@@ -186,6 +186,6 @@ public String noticeExpirePwd(@RequestParam Map<String, Object> commandMap, Mode
 
 ## 참고자료
 
-- [기업회원관리](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:uss:%EA%B8%B0%EC%97%85%ED%9A%8C%EC%9B%90%EA%B4%80%EB%A6%AC)
+- [기업회원관리](../user-support/company-member-manage.md)
 - [사용자관리](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:uss:%EC%82%AC%EC%9A%A9%EC%9E%90%EA%B4%80%EB%A6%AC)
 - [회원관리](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:uss:%ED%9A%8C%EC%9B%90%EA%B4%80%EB%A6%AC)

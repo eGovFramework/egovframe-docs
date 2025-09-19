@@ -133,5 +133,5 @@ public class EgovSyncDelegatingJobFunctionalTests {
 
 ## 참고자료
 
-- [동기/비동기 예제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte:batch_example:sync_async)
+- [동기/비동기 예제](/runtime-example/individual-example/batch-layer/batch-example-sync_async.md)
 - [JobLauncher](./batch-execution-job_launcher.md)
