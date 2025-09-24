@@ -178,15 +178,7 @@
 /runtime-example                          실행환경 예제
 ├── /integrated-example                      실행환경 통합 예제
 │   └── /intro                                   개요
-│       └── /integrated-example-intro.md           통합예제 개요
-│       └── /installation.md                       설치법
 |   └── /usage                                   사용법
-│       └── /member.md                             회원 관리
-│       └── /board.md                              게시판 관리
-│       └── /category.md                           카테고리 관리
-│       └── /product.md                            품목 관리
-│       └── /bid.md                                입찰 관리
-│       └── /delivery.md                           납품 관리
 └── /individual-example                      실행환경 개별 예제
     ├── /batch-layer                             배치처리 예제
     ├── /business-logic-layer                    업무처리 예제
