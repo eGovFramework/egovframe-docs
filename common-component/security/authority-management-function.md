@@ -3,10 +3,9 @@ title: "권한관리 기능"
 linkTitle: "권한관리 기능"
 description: "시스템 사용자에게 사용권한을 부여하기 위해 권한을 정의하고, 관리한다."
 url: "/common-component/security/authority-management/authority-management-function/"
-alias: "/common-component/security/authority-management-function/"
 menu:
   depth:
-    name: "authority-management-function"
+    name: "권한관리 기능"
     weight: 1
     parent: "authority-management"
 ---
