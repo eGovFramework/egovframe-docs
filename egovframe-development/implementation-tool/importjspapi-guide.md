@@ -1,7 +1,7 @@
 ---
 title: jsp-api.jar import 가이드 
 linkTitle: jsp-api.jar import 가이드
-description: "jsp-api.jar 파일을 import하는 방법을 설명한다."
+description: "모바일 사이트 템플릿 생성 후 `EgovComCrossSiteHndlr.java`의 `javax.servlet.jsp.*` import 오류를 해결하기 위해 Tomcat `lib`의 `jsp-api.jar`를 프로젝트 Build Path에 추가하는 방법을 설명합니다."
 url: /egovframe-development/implementation-tool/implementation-tool-ref/importjspapi-guide/
 menu:
   depth:
