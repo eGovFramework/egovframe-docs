@@ -3,10 +3,9 @@ title: "권한별 롤관리"
 linkTitle: "권한별 롤관리"
 description: "롤(Role)은 접근대상이 되는 자원을 의미한다. 롤관리 컴포넌트를 통하여 시스템 내에서 접근하고자 하는 자원을 정의하고 관리할 수 있다. 본 컴포넌트에서 사용가능한 자원은 URL, method, aop 세 가지 유형이 있다. 권한별롤관리는 시스템 사용을 위해 사용자의 특성에 따라 정의된 권한에 특정 자원에 접근할 수 있는 롤을 부여할 수 있는 관리기능을 제공한다."
 url: "/common-component/security/authority-management/authority-role-management/"
-alias: "/common-component/security/authority-role-management/"
 menu:
   depth:
-    name: "authority-role-management"
+    name: "권한별 롤관리"
     weight: 2
     parent: "authority-management"
 ---
