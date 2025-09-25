@@ -1,0 +1,29 @@
+name: Markdown Lint
+
+on:
+  pull_request:
+  push:
+    branches: [ contribution, main ]
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v13
+        with:
+          globs: |
+            **/*.md
+            !**/node_modules/**
+          config: '.markdownlint.json'
+          continue-on-error: true
+
+      - name: Generate markdown lint report
+        if: failure()
+        run: |
+          echo "## 마크다운 린트 실패" >> $GITHUB_STEP_SUMMARY
+          echo "문서 형식 가이드라인을 준수하지 않는 파일이 발견되었습니다." >> $GITHUB_STEP_SUMMARY
+          echo "상세 내용은 위의 로그를 확인해주세요." >> $GITHUB_STEP_SUMMARY
