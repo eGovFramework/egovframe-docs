@@ -8,6 +8,7 @@ menu:
         name: Annotation
         weight: 9
         parent: "ioc-container"
+        identifier: "ioc-container-annotation"
 ---
 # Annotation-based configuration
 

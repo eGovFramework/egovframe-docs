@@ -8,6 +8,7 @@ menu:
         name: Annotation
         weight: 6
         parent: "web-servlet"
+        identifier: "web-servlet-annotation"
 ---
 # Annotation-based Controller
 

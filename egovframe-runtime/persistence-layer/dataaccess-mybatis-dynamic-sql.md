@@ -8,6 +8,7 @@ menu:
         name: Dynamic SQL
         weight: 5
         parent: mybatis
+        identifier: mybatis-dynamic-sql
 ---
 # Dynamic SQL
 

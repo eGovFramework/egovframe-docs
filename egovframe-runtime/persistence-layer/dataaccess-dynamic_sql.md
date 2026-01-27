@@ -8,6 +8,7 @@ menu:
         name: Dynamic SQL
         weight: 7
         parent: dataaccess-ibatis
+        identifier: ibatis-dynamic-sql
 ---
 # Dynamic SQL
 
