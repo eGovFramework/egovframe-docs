@@ -1,11 +1,11 @@
 ---
-linkTitle: "메인"
-title: "전자정부 표준프레임워크 가이드"
-description: "본 GitHub 저장소는 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 문서로 변환하여 기여받기 위해 생성되었습니다. 이 프로젝트의 목적은 보다 쉽게 접근할 수 있는 문서 형식을 통해 사용자와 개발자들이 표준프레임워크를 더욱 효과적으로 활용할 수 있도록 돕는 것입니다."
+linkTitle: 메인
+title: Contribution 전용 페이지
+description: 본 GitHub 저장소는 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 문서로 변환하여 기여받기 위해 생성되었습니다. 이 프로젝트의 목적은 보다 쉽게 접근할 수 있는 문서 형식을 통해 사용자와 개발자들이 표준프레임워크를 더욱 효과적으로 활용할 수 있도록 돕는 것입니다.
 ---
 
 <div class="versionInfo" style="text-align:center; font-size:20px;">
-    <strong>5.0</strong> 버전 컨트리뷰션 가이드 페이지 입니다.
+    <strong>전자정부 표준프레임워크 v5.0 가이드</strong>에 대하여 <strong>컨트리뷰션</strong>이 진행되는 페이지입니다.
 </div>
 
 # 공지사항
