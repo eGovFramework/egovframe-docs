@@ -13,15 +13,15 @@ ordered = false # 순서 없는 목록(ul)으로 표시
 github_repo = 'https://github.com/eGovFramework/egovframe-docs'
 github_project_repo = 'https://github.com/eGovFramework/egovframe-docs'
 github_branch = 'main'
-
-[params.docsVersion]
-  "5.0" = "https://www.egovframe.go.kr/docs/5.0/"
-  Archive = "https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index"
   
+[[params.version]]
+  name= "Contribution"
+  value = "https://egovframework.github.io/egovframe-docs/"
+  weight = 1
 [[params.version]]
   name = "5.0"
   value = "https://www.egovframe.go.kr/docs/5.0/"
-  weight = 1
+  weight = 10
 [[params.version]]
   name= "Archive"
   value = "https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index"

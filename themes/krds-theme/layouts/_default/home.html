@@ -3,12 +3,11 @@
   {{ $linkReplacement := `<a class="krds-btn medium text" target="_blank" ${1}>${2}<i class="svg-icon ico-go"></i></a>` }}
   {{ $finalContent := .Content | replaceRE $linkPattern $linkReplacement }}
   <div class="mainLayout">
-    <div class ="title" style="width: 100%; background-color:#eef2f7; border-radius:16px; padding: 16px; margin:32px auto">
+    <div class ="title" style="width: 100%; background-color:#063A74; color:white; border-radius:16px; padding: 16px; margin:32px auto">
       <div class="title_main">
         <h1>{{.Title}}</h1>
       </div>
-      <p>전자정부 표준프레임워크 5.0 버전을 기반으로하는 가이드를 제공합니다.</p>
-      <p>5.0 버전 미만 가이드 - <a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index" style="color:blue; font-style:italic;" target="_blank">Archiving</a></p>
+      <p>전자정부 표준프레임워크 v5.0 컨트리뷰션용 가이드 페이지 입니다. </p>
       {{/*  <ul>
         {{ range .Site.Menus.depth}}
           <li>
