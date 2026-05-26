@@ -8,7 +8,7 @@ menu:
     name: "공통컴포넌트 시작하기"
     weight: 1
     parent: "common-intro"
-    identifier: "getting-started"
+    identifier: "common-component_getting-started"
 ---
 # 공통컴포넌트 시작하기
 
