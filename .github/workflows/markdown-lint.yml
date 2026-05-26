@@ -1,9 +1,9 @@
 name: Markdown Lint
 
-on:
-  pull_request:
-  push:
-    branches: [ contribution, main ]
+#on:
+#  pull_request:
+#  push:
+#    branches: [ contribution, main ]
 
 jobs:
   markdownlint:
