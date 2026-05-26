@@ -1,7 +1,7 @@
 ---
 title: Spring Web Flow와 Spring MVC 연동
 linkTitle: "MVC 연동"
-description: Spring Web Flow는 Spring MVC와 연동해 웹 애플리케이션을 개발할 수 있으며, 이를 위해 web.xml에 DispatcherServlet 설정이 필요하다. DispatcherServlet은 웹 애플리케이션별로 등록되며, 요청 경로와 초기화 파라미터(contextConfigLocation)를 설정한다.
+description: Spring Web Flow는 Spring MVC와 연동해 웹 애플리케이션을 개발할 수 있으며, Spring Framework 6.2의 DispatcherServlet 기반 요청 처리와 핸들러 매핑 위에 Flow를 등록한다.
 url: /egovframe-runtime/business-logic-layer/spring-web-flow/swf-configuration-with-spring-mvc/
 menu:
     depth:
@@ -11,12 +11,12 @@ menu:
 ---
 ## Spring Web Flow 와 MVC 연동
 
-Spring Web Flow를 사용하여 웹을 개발할 때 Spring MVC와 연동하여 개발할 수 있다. 이를 위해 Spring MVC 연동 모듈 등을 설정해야 한다.
-여기서는 booking-mvc sample( 실행데모(faces이지만 시나리오는 같음) )을 기준으로 설정하겠다.
+Spring Web Flow를 사용하여 웹을 개발할 때 [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)와 연동하여 개발할 수 있다. [DispatcherServlet](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/dispatcher-servlet.html)이 요청을 받아 핸들러 매핑·뷰 해석을 담당하며, SWF는 FlowHandlerAdapter 등을 통해 Flow를 핸들러로 등록한다. 이를 위해 Spring MVC 연동 모듈 등을 설정해야 한다.
+여기서는 booking-mvc sample(실행 데모, faces이지만 시나리오는 같음)을 기준으로 설정하겠다.
 
 ## 설명
 
-Spring MVC 와의 연동을 위해 우리는 web.xml 안에 있는 DispatcherServlet 설정을 보도록 하겠다.
+Spring MVC 와의 연동을 위해 web.xml 안에 있는 **DispatcherServlet** 설정을 보도록 하겠다. Spring Framework 6.2에서 DispatcherServlet은 프론트 컨트롤러로서 애플리케이션 자원에 대한 요청과 핸들러를 매핑한다.
 
 ### web.xml 환경 구성
 
@@ -174,7 +174,7 @@ Booking Hotels 샘플에서는 아래와 같이 설정되어 있다(tilesViewRes
 </bean>
 ```
 
-또한 useSpringBinding의 값을 true로 설정하면 Spring MVC의 고유한 BeanWrapper를 이용하여 데이터 바인딩을 할 수 있다.
+또한 useSpringBinding의 값을 true로 설정하면 Spring MVC의 고유한 [DataBinder](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/ann-requestbody.html)(BeanWrapper 기반)를 이용하여 데이터 바인딩을 할 수 있다.
 
 ### 뷰에서 이벤트 보내기
 
@@ -212,7 +212,10 @@ form이 submit될 때 proceed 이벤트가 발생하려면 다음처럼 하자.
 
 **매개변수 식별 순서는 “eventId” ⇒ “_eventId” ⇒ 없음 이다.**
 
-## 참고 자료
+## 참고 문서
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): FlowHandlerAdapter·FlowExecutor 등 Bean 정의
+- [Spring Framework 6.2 - DispatcherServlet](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/dispatcher-servlet.html): 요청 처리, 컨텍스트 계층, 핸들러 매핑
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html): Web on Servlet Stack
+- [Spring Web Flow reference 2.3.x](https://docs.spring.io/spring-webflow/docs/2.3.x/reference/html/index.html)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)

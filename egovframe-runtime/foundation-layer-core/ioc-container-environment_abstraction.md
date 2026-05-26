@@ -137,6 +137,8 @@ public class AppConfig {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 1.13 Environment Abstraction](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-environment)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Environment Abstraction](https://docs.spring.io/spring-framework/reference/6.2/core/beans/environment.html)
+- [Spring Framework 6.2 - Core](https://docs.spring.io/spring-framework/reference/6.2/core.html)

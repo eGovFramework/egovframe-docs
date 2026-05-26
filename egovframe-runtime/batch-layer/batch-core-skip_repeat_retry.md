@@ -436,6 +436,6 @@ public interface RepeatListener {
 
 ## 참고자료
 
- Skip : [http://static.springsource.org/spring-batch/reference/html/configureStep.html#configuringSkip](http://static.springsource.org/spring-batch/reference/html/configureStep.html#configuringSkip)  
-Retry : [http://static.springsource.org/spring-batch/reference/html/configureStep.html#retryLogic](http://static.springsource.org/spring-batch/reference/html/configureStep.html#retryLogic) [http://static.springsource.org/spring-batch/reference/html/retry.html](http://static.springsource.org/spring-batch/reference/html/retry.html)  
-Repeat : [http://static.springsource.org/spring-batch/reference/html/repeat.html](http://static.springsource.org/spring-batch/reference/html/repeat.html)
+ Skip : [Configuring Skip](https://docs.spring.io/spring-batch/reference/5.2/step.html#configuringSkip)  
+Retry : [Retry Logic](https://docs.spring.io/spring-batch/reference/5.2/step.html#retryLogic), [Retry](https://docs.spring.io/spring-batch/reference/5.2/retry.html)  
+Repeat : [Repeat](https://docs.spring.io/spring-batch/reference/5.2/repeat.html)

@@ -49,7 +49,7 @@ Nexus는 **Maven repository manager**로 프로젝트 또는 기업에서 필요
 
 ### Nexus 다운로드 및 설치
 
-[서버 개발환경 4.3.0 설치가이드](../install-guide/server-environment-install-guide.md)의 Nexus 관련 내용을 참고한다.
+[서버 개발환경 설치가이드](../install-guide/server-environment-install-guide.md)의 Nexus 관련 내용을 참고한다.
 
 ### Maven 로컬 리포지토리 settings.xml 파일 수정
 

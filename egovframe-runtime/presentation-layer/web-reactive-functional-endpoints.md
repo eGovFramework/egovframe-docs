@@ -282,4 +282,6 @@ RouterFunction<ServerResponse> route = route()
 함수형 엔드포인트에서 CORS는 CorsWebFilter로 지원한다.
 ```
 ## 참고자료
-- [The Spring Framework - Web Reactive - Functional Endpoints](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/web-reactive.html#webflux-fn)
+
+- [Spring Framework 6.2 - Web on Reactive Stack](https://docs.spring.io/spring-framework/reference/6.2/web/reactive.html)
+- [Functional Endpoints](https://docs.spring.io/spring-framework/reference/6.2/web/reactive/webflux.html#webflux-fn)

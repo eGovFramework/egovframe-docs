@@ -633,6 +633,7 @@ public abstract class CommandManager {
 
  동적 서브클래스 생성이 동작하려면 classpath에 CGLIB가 추가되어 있어야 한다. 그리고 원본 class는 final이면 안되며, 덮어쓸(override) 메소드 역시 final이면 안된다.
 
-## 참고자료
+## 참고 문서
 
-*   [Spring Framework - Reference Document / 1.4 Dependencies](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-dependencies)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Dependencies](https://docs.spring.io/spring-framework/reference/6.2/core/beans/dependencies.html)

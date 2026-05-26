@@ -6,7 +6,7 @@ url: /egovframe-development/individual-install-guide/
 menu:
   depth:
     name: "구성 가이드"
-    weight: 7
+    weight: 8
     parent: "egovframe-development"
     identifier: "individual-install-guide"
 ---

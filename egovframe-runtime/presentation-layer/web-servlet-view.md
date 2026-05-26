@@ -139,8 +139,8 @@ package com.easycompany.view;
 import java.io.PrintWriter;
 import java.util.Map;
  
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
  
 import org.springframework.web.servlet.view.AbstractView;
  
@@ -380,8 +380,8 @@ type 속성은 빈 설정시에 rendererType 프로퍼티의 entry key값을 적
 
 ## 참고자료
 
-- The Spring Framework - Reference Documentation 2.5.6
-- Spring Framework API Documentation 2.5.6
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [View Resolution](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/views.html): View Technologies, View Resolvers
 
 
 

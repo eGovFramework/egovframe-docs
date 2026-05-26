@@ -429,6 +429,7 @@ public void testInstantiateParamConstructor() throws Exception {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
+- [Spring Framework 6.2 - Core](https://docs.spring.io/spring-framework/reference/6.2/core.html): Resources, Validation, SpEL
 - [Jakarta Regexp](http://jakarta.apache.org/regexp/)

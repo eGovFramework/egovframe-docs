@@ -72,8 +72,8 @@ public class LoginController {
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
  
         <context:component-scan base-package="com.easycompany.controller.annotation" />
  
@@ -822,6 +822,6 @@ public class UpdateDepartmentController {
 
 ## 참고자료
 
-- [The Spring Framework - Reference Documentation 2.5.6](https://docs.spring.io/spring-framework/docs/2.5.x/reference/index.html)
-- [Spring Framework API Documentation 2.5.6](https://docs.spring.io/spring-framework/docs/2.5.6/javadoc-api/)
-- [SpringSource Team Blog,Annotated Web MVC Controllers in Spring 2.5, Juergen Hoeller](https://spring.io/blog/2007/11/14/annotated-web-mvc-controllers-in-spring-2-5)
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Annotated Controllers](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods.html): @Controller, @RequestMapping, Handler Methods
+- [Spring Framework 6.2 Javadoc](https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/)

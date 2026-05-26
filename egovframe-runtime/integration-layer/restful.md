@@ -164,7 +164,7 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
 <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
     <property name="defaultViews">
         <list>
-            <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+            <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
                 <property name="prefixJson" value="false"/>
             </bean>
         </list>
@@ -200,9 +200,9 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
     </oxm:jaxb2-marshaller>
     ```
 
-- MappingJacksonJsonView
+- MappingJackson2JsonView
 
-    JSON으로 응답을 전달할 수 있는 View.
+    JSON으로 응답을 전달할 수 있는 View. (Spring Framework 6.2 [HTTP Message Conversion](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/ann-requestbody.html) 및 View 기술 참조)
 
     ```xml
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
@@ -218,7 +218,7 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
     </beans>
     
     <bean name="cgr/egovCategoryList" 
-    class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+    class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
     ```
 
 ### 실제 사용 예
@@ -277,4 +277,6 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
 
 ## 참고자료
 
-- [RESTful 예제](../../runtime-example/individual-example/integration-layer/restful-example/)
+- [Spring MVC - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)
+- [Annotated Controllers](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/ann-requestmapping.html)
+

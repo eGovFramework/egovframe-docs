@@ -424,7 +424,9 @@ SWF가 클라이언트 요청을 팝업으로 재전송(redirect)해준다.
 <transition on="confirm" to="bookingConfirmed" history="invalidate">
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): ViewResolver 등 Bean
+- [Spring Framework 6.2 - View Technologies](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/view.html)
+- [Spring Web Flow reference 2.3.x](https://docs.spring.io/spring-webflow/docs/2.3.x/reference/html/)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)

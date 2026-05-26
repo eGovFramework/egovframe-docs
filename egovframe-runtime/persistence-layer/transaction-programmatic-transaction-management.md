@@ -132,3 +132,6 @@ public void testInsertRollback() throws Exception {
 Transaction 서비스를 직접 얻어온 후에 위와 같이 try~catch 구문 내에서 Transaction 서비스를 이용하여, 적절히 begin, commit, rollback을 수행한다. 이 때, TransactionDefinition와 TransactionStatus 객체를 적절히 이용하면 된다.
 
 ## 참고자료
+
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html)
+- [Programmatic Transaction Management](https://docs.spring.io/spring-framework/reference/6.2/data-access/transaction/programmatic.html): TransactionTemplate, PlatformTransactionManager

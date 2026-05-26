@@ -46,9 +46,9 @@ Spring MVC(Model-View-Controller)의 핵심 Component는 아래와 같다.
 4. ViewResolver는 view name을 받아 해당하는 View 객체를 return한다.
 5. View는 Model 객체를 받아 rendering한다.
 
-이 가이드문서는 Spring 2.5.6 버젼을 기준으로 작성되었다.
+이 가이드문서는 Spring Framework 6.2 Web MVC를 참고하여 작성되었다.
 
 ## 참고자료
 
-- The Spring Framework - Reference Documentation 2.5.6
-- Spring Framework API Documentation 2.5.6
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Spring Web MVC](https://docs.spring.io/spring-framework/reference/6.2/web/servlet.html): DispatcherServlet, HandlerMapping, View Resolution

@@ -18,14 +18,14 @@ menu:
 
 ## Step 1. pom.xml 변경
 
-표준프레임워크 dataaccess artifact version을 다음과 같이 2.7.0으로 변경한다.
+표준프레임워크 dataaccess artifact version을 다음과 같이 변경한다.
 
 ```xml
 <!-- 실행환경 라이브러리 -->
 <dependency>
-	<groupId>egovframework.rte</groupId>
-	<artifactId>egovframework.rte.psl.dataaccess</artifactId>
-	<version>2.7.0</version>
+	<groupId>org.egovframe.rte</groupId>
+	<artifactId>egovframe-rte-psl-dataaccess</artifactId>
+	<version>5.0.0</version>
 </dependency>
 ```
 
@@ -47,7 +47,7 @@ Ex) context-mapper.xml
 
 ### Step 2.2 mapper xml 작성
 
-MyBatis 가이드에 따라 query xml을 작성한다. (2.1의 예제 상 지정된 mapperLocations 위치)
+MyBatis 가이드에 따라 query xml을 작성한다.
 
 ## Step 3. DAO 작성
 
@@ -56,7 +56,7 @@ DAO의 경우는 다음과 같이 3가지 방식이 가능하다.
 | 방식 | 설명 | 비고 |
 | --- | --- | --- |
 | 기존 DAO 클래스 방식 | @Repository 지정 및 EgovAbstractMapper extends 활용 | 기존 iBatis와 같은 방식 |
-| Mapper interface 방식 | Mapper 인터페이스 작성 및 @Mapper annotation 지정 | @Mapper는 marker annotation(표준프레임워크 제공) |
+| Mapper interface 방식 | Mapper 인터페이스 작성 및 @EgovMapper annotation 지정 | @EgovMapper는 표준프레임워크에서 제공 |
 | Annotation 방식 | query xml 없이 mapper 인터페이스 상 @Select, @Insert 등을 활용 | Dynamic SQL 등의 사용에 제약이 있음 |
 
 ### 3.1 기존 DAO 형태로 사용하는 경우
@@ -92,12 +92,12 @@ public class DeptMapper extends EgovAbstractMapper {
 
 ### 3.2 Mapper interface 사용 방식
 
-Mapper 인터페이스 작성 시 다음과 같이 @Mapper annotation을 사용한다.
+Mapper 인터페이스 작성 시 다음과 같이 @EgovMapper annotation을 사용한다.
 
 (패키지를 포함하는 클래스명 부분이 mapper xml 상의 namespace로 선택되고 인터페이스 메서드가 query id로 호출되는 방식)
 
 ```java
-@Mapper("employerMapper")
+@EgovMapper("employerMapper")
 public interface EmployerMapper  {
 
     public List<EmpVO> selectEmployerList(EmpVO vo);
@@ -123,9 +123,9 @@ Ex: context-mapper.xml
 </bean>
 ```
 
-basePackage에 지정된 패키지 안에서 @Mapper annotation을 스캔하는 설정이다.
+basePackage에 지정된 패키지 안에서 @EgovMapper annotation을 스캔하는 설정이다.
 
-⇒ @Mapper로 지정된 인터페이스를 @Service에서 injection 하여 사용한다.
+⇒ @EgovMapper로 지정된 인터페이스를 @Service에서 injection 하여 사용한다.
 
 ```java
 public class EmployerMapperTest {
@@ -154,7 +154,7 @@ public class EmployerMapperTest {
 mapper xml 작성 없이 Mapper 인터페이스 상에 @Select, @Insert, @Update, @Delete 등의 annotation을 통해 query가 지정되어 사용된다.
 
 ```java
-@Mapper("departmentMapper")
+@EgovMapper("departmentMapper")
 public interface DepartmentMapper  {
 
     @Select("select DEPT_NO as deptNo, DEPT_NAME as deptName, LOC as loc from DEPT where DEPT_NO = #{deptNo}")
@@ -173,3 +173,8 @@ public interface DepartmentMapper  {
 ```
 
 ⇒ 이 경우는 별도의 mapper xml을 만들 필요는 없지만, dynamic query를 사용하지 못하는 등의 제약사항이 따른다.
+
+## 참고자료
+
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html)
+- [Data Access with JDBC](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc.html): DataSource, 트랜잭션 연동

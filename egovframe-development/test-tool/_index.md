@@ -5,7 +5,7 @@ description: "테스트 도구"
 url: /egovframe-development/test-tool/
 menu:
   depth:
-    weight: 4
+    weight: 5
     parent: "egovframe-development"
     identifier: "test-tool"
 ---

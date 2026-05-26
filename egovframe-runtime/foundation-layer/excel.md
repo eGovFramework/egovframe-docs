@@ -656,5 +656,3 @@ public class EgovExcelTestMapping extends EgovExcelMapping {
 </sqlMap>
 ```
 
-## 예제
-- [엑셀 예제](../../runtime-example/individual-example/foundation-layer/excel-example.md)

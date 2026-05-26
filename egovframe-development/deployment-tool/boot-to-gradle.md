@@ -86,59 +86,60 @@ menu:
 ```groovy
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.7.18'
-    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.springframework.boot' version '3.5.6'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
- 
+
 configurations {
-	all {
-		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-		exclude group: 'org.springframework.boot', module: 'org.springframework.boot:spring-boot-starter-logging'
-	}
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
 }
- 
-group = 'egovframework'
+
+group = 'egovframe'
 version = '1.0.0'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
- 
+java.sourceCompatibility = JavaVersion.VERSION_17
+
 repositories {
     mavenCentral()
     maven {
         url 'https://maven.egovframe.go.kr/maven'
     }
 }
- 
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.egovframe.boot:egovframe-boot-starter-parent:5.0.0'
+    }
+}
+
 dependencies {
+    implementation 'org.egovframe.rte:egovframe-rte-ptl-mvc'
+    implementation 'org.egovframe.rte:egovframe-rte-psl-dataaccess'
+    implementation 'org.egovframe.rte:egovframe-rte-fdl-idgnr'
+    implementation 'org.egovframe.rte:egovframe-rte-fdl-property'
+    implementation 'org.egovframe.rte:egovframe-rte-ptl-reactive'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
- 
-    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
- 
-    implementation ('org.egovframe.rte:org.egovframe.rte.ptl.mvc:4.3.0') {
-        exclude group: 'commons-logging', module: 'commons-logging'
-    }
-    implementation 'org.egovframe.rte:org.egovframe.rte.psl.dataaccess:4.3.0'
-    implementation 'org.egovframe.rte:org.egovframe.rte.fdl.idgnr:4.3.0'
-    implementation 'org.egovframe.rte:org.egovframe.rte.fdl.property:4.3.0'
- 
-    implementation 'org.hsqldb:hsqldb:2.7.3:jdk8'
- 
-    implementation 'org.projectlombok:lombok:1.18.34'
-    annotationProcessor 'org.projectlombok:lombok:1.18.34'
-    testImplementation 'org.projectlombok:lombok:1.18.34'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
- 
-    implementation 'org.hibernate:hibernate-entitymanager:5.6.15.Final'
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.13.0'
+
+    implementation 'org.apache.commons:commons-dbcp2'
+    implementation 'org.hsqldb:hsqldb'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.seleniumhq.selenium:selenium-java'
 }
- 
+
 bootJar {
     exclude('org/projectlombok/lombok')
 }
- 
+
 test {
     useJUnitPlatform()
 }

@@ -1,7 +1,7 @@
 ---
 title: Property Source
 linkTitle: "Property Source"
-description: Property Source는 Spring에서 properties 파일이나 DB 테이블에서 key-value 형식의 설정 값을 가져올 수 있도록 하는 기능이다. **Property-placeholder**는 XML 설정 파일에서 `${}`를 사용해 외부 설정 값을 참조하며, Spring 3.1 이후에는 **PropertySourcesPlaceholderConfigurer**가 사용된다. **DB PropertySource**는 DB 테이블에서 설정 값을 가져오는 기능을 제공하며, `DBPropertySourceInitializer`를 통해 WAS 기동 시 설정 값을 로드할 수 있다.
+description: Property Source는 Spring에서 properties 파일이나 DB 테이블에서 key-value 형식의 설정 값을 가져올 수 있도록 하는 기능이다. **Property-placeholder**는 XML 설정 파일에서 `${}`를 사용해 외부 설정 값을 참조하며, Spring Framework 6.2에서는 **PropertySourcesPlaceholderConfigurer** 및 [Environment Abstraction](https://docs.spring.io/spring-framework/reference/6.2/core/environment.html)과 연동된다. **DB PropertySource**는 DB 테이블에서 설정 값을 가져오는 기능을 제공하며, `DBPropertySourceInitializer`를 통해 WAS 기동 시 설정 값을 로드할 수 있다.
 url: /egovframe-runtime/foundation-layer/property/property-source/
 menu:
     depth:
@@ -35,12 +35,11 @@ bean을 정의할 때 `${…}`의 내용을 property placeholder를 이용하여
 </bean>
 ```
 
-Spring 3.1이전에는 `<context:property-placeholder>`를 정의하면 PropertyPlaceholderConfigurer를 사용하였다. 그러나 Spring 3.1이후부터 PropertySourcesPlaceholderConfigurer를 내부에서 사용하고 있으며 위에서 ${database.*}값을 datasource.properties에서 찾지 못하면 Environment의 Property를 사용하도록 하고 있다.
-PropertySource는 Environment를 통해 접근 가능하다. 즉, 사용자가 정의한 PropertySource 또한 Spring 3.1부터 property-placeholder를 통해 사용할 수 있는 것이다.
+Spring Framework 6.2에서는 `<context:property-placeholder>` 또는 Java 설정 시 PropertySourcesPlaceholderConfigurer를 사용하며, `${database.*}` 값을 지정한 properties에서 찾지 못하면 [Environment](https://docs.spring.io/spring-framework/reference/6.2/core/environment.html)의 Property를 사용한다. PropertySource는 Environment를 통해 접근 가능하다.
 
 ### 사용자 정의 PropertySource
 
-Spring 3.1에서는 사용자가 직접 PropertySource를 정의할 수 있는 방법을 제시한다.
+Spring Framework 6.2에서는 [ApplicationContextInitializer](https://docs.spring.io/spring-framework/reference/6.2/core/beans/context-introduction.html) 및 Environment를 이용해 사용자 정의 PropertySource를 등록할 수 있다.
 ApplicationContextInitializer인터페이스와 web.xml에 contextInitializerClasses서블릿 컨텍스트 파라미터, Environment를 이용하여 정의가 가능하다.
 
 ApplicationContextInitializer인터페이스를 구현하여 ApplicationContext초기화 로직을 직접 등록할 수 있으며 이 때 contextInitializerClasses 서블릿 컨텍스트 파라미터에 이 구현클래스를 등록한다.
@@ -115,8 +114,8 @@ commit;
 		xmlns:p="http://www.springframework.org/schema/p"
 		xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 		xmlns:context="http://www.springframework.org/schema/context"
-		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd">
+		xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/jdbc https://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
  
 	<jdbc:embedded-database id="dataSource" type="HSQL">
 		<jdbc:script location="classpath:db/ddl.sql" />
@@ -168,9 +167,10 @@ xml에서 정의된 PropertySource를 사용하기 위해서 property-placeholde
 
 코드상에서 PropertySource에 접근하기 위해서는 egov 3.0부터 제공하는 Environment abstraction을 이용한다. 자세한 내용은 Environment를 참조하도록 한다.
 
-## 참고자료
+## 참고 문서
 
-[Spring 3.1 M1: Unified Property Management](http://spring.io/blog/2011/02/15/spring-3-1-m1-unified-property-management/)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): Bean 정의, property-placeholder
+- [Spring Framework 6.2 - Environment Abstraction](https://docs.spring.io/spring-framework/reference/6.2/core/environment.html): PropertySource, Environment, 프로퍼티 관리
 
 
 

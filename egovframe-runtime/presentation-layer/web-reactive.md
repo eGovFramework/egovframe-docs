@@ -119,4 +119,5 @@ Reactor와 RxJava에서는 연산자를 통해 로직을 선언한다. 런타임
 
 ## 참고 자료
 
-- [The Spring Framework - Web Reactive](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/web-reactive.html#spring-webflux)
+- [Spring Framework 6.2 - Web on Reactive Stack](https://docs.spring.io/spring-framework/reference/6.2/web/reactive.html)
+- [Spring WebFlux](https://docs.spring.io/spring-framework/reference/6.2/web/reactive/webflux.html)

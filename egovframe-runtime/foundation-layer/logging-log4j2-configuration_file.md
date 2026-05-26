@@ -420,6 +420,7 @@ PatternLayout은 Appender 요소의 하위 요소로 정의한다.
 [Log4j 2 Layouts](http://logging.apache.org/log4j/2.x/manual/layouts.html)  
 [PatternLayout](http://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout)
 
-## 참고자료
+## 참고 문서
 
-[Apache Logging Services Project](http://logging.apache.org/index.html)
+- [Spring Framework 6.2 - Logging](https://docs.spring.io/spring-framework/reference/6.2/core/logging.html)
+- [Apache Logging Services Project](https://logging.apache.org/)

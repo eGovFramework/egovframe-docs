@@ -29,4 +29,8 @@ Spring Data는 데이터베이스 관련 많은 하위 프로젝트를 포함하
 | Common Infrastructure | Commons         | Provides shared infrastructure for use across various data access projects. General support for cross-database persistence is located here                                                                                                                    |
 
 ## 참고자료
-- [http://projects.spring.io/spring-data](http://projects.spring.io/spring-data)
+
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html)
+- [Object Relational Mapping (ORM) Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm.html)
+- [JPA](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm/jpa.html)
+- [Spring Data Project](https://spring.io/projects/spring-data)

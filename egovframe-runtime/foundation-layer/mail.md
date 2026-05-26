@@ -211,9 +211,10 @@ src 폴더 아래에 Index.jsp를 선택하여 마우스 오른쪽 클릭하여 
 
 ![mail-sample-browser-sceenshot](./images/mail-service-browser-screenshot.png)
 
-## 참고 자료
+## 참고 문서
 
-[Apache Commons-Email UserGuide](https://commons.apache.org/proper/commons-email/userguide.html)
+- [Spring Framework 6.2 - Email](https://docs.spring.io/spring-framework/reference/6.2/integration/email.html): JavaMailSender, 메일 발송
+- [Apache Commons Email User Guide](https://commons.apache.org/proper/commons-email/userguide.html)
 
 ## 예제
 [mail-example](../../runtime-example/individual-example/foundation-layer/mail-example.md)

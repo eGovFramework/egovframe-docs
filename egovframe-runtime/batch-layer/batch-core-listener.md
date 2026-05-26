@@ -408,11 +408,7 @@ public class EgovChunkPostProcessor extends ChunkListenerSupport {
 <bean id="chunkListener" class="사용자가 정의한 Chunk Processor 클래스" />
 ```
 
-#### 사용예시
-
- [작업 전후처리 예제](./batch-example-pre-post-process-mgmt.md)
-
 ## 참고자료
 
- [http://static.springsource.org/spring-batch/reference/html/configureJob.html#interceptingJobExecution](http://static.springsource.org/spring-batch/reference/html/configureJob.html#interceptingJobExecution)  
-[http://static.springsource.org/spring-batch/reference/html/configureStep.html#interceptingStepExecution](http://static.springsource.org/spring-batch/reference/html/configureStep.html#interceptingStepExecution)
+ [Intercepting Job Execution](https://docs.spring.io/spring-batch/reference/5.2/job.html#interceptingJobExecution)  
+[Intercepting Step Execution](https://docs.spring.io/spring-batch/reference/5.2/step.html#interceptingStepExecution)

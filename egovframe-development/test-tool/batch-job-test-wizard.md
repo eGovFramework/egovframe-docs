@@ -45,7 +45,7 @@ menu:
        
        ![배치마법사 사용법 5](./images/how-to-use-batch-wizard-5.png)
 
-     * (3) 배치 테스트시 Parameters를 추가할 경우 Job Parameters 우측의 **Add**를 클릭한다.
+     * (3) 배치 테스트시 Parameters를 추가할 경우 [Job Parameters](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:tst:batch_job_test_wizard:job_parameter_mgmt#배치_테스트_구성시_job_parameters_적용) 우측의 **Add**를 클릭한다.
        ✔ 기본 timestamp를 Parameter로 사용할 경우 Job Parameters에 항목을 추가하지 않아도 된다.
      * (4) 기 등록한 Job Parameters 중 사용할 **Parameter**를 선택하고 **OK**를 클릭한다.
        

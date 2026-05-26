@@ -137,7 +137,8 @@ public class ExceptionTransfer {
 - txAdvice는 메소드에서 예외 발생시 트랜잭션 롤백을 수행한다.
 - requiredTx는 egovframework.rte.sample 패키지 하위 impl 패키지에서 Impl로 끝나는 모든 클래스의 메소드를 포인트컷으로 지정한다.
 
-## 참고자료
+## 참고 문서
 
+- [Spring Framework 6.2 - Aspect-Oriented Programming with Spring](https://docs.spring.io/spring-framework/reference/6.2/core/aop.html)
 - [실행환경 Exception Handling 서비스](../business-logic-layer/exception-handling.md)
 - [실행환경 Transaction 서비스](../persistence-layer/transaction.md)

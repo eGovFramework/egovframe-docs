@@ -116,7 +116,7 @@ private Integer money;
 
  ![image](./images/egovframework-rte2-ptl-spel1.jpg)![image](./images/egovframework-rte2-ptl-spel3.jpg)
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 4. Spring Expression Language (SpEL)](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#expressions)
-- [SpEL예제](../../runtime-example/individual-example/foundation-layer-core/spel-example.md)
+- [Spring Framework 6.2 - Spring Expression Language (SpEL)](https://docs.spring.io/spring-framework/reference/6.2/core/expressions.html)
+- [Spring Framework 6.2 - Core Technologies](https://docs.spring.io/spring-framework/reference/6.2/core.html)

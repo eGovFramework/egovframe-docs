@@ -26,11 +26,11 @@ Servlet 3.0에서 제공하는 비동기 요청 처리는 쓰레드가 대기상
 ### Servlet 3.0을 위한 pom dependency변경
 
 ```xml
-<!-- Servlet -->
+<!-- Servlet (Jakarta EE 9+, Spring Framework 6.x) -->
 <dependency>
-   <groupId>javax.servlet</groupId>
-   <artifactId>javax.servlet-api</artifactId>
-   <version>3.0.1</version>
+   <groupId>jakarta.servlet</groupId>
+   <artifactId>jakarta.servlet-api</artifactId>
+   <version>5.0.0</version>
    <scope>provided</scope>
 </dependency>
 ```
@@ -155,6 +155,6 @@ public WebAsyncTask<String> facebooklink() {
 
 ### 참고자료
 
-- [Spring Framework - Reference Document / 4.1 Support for Servlet 3 based asynchronous request processing](http://docs.spring.io/spring/docs/3.2.6.RELEASE/spring-framework-reference/htmlsingle/#new-in-3.2-webmvc-async)
-- [Spring Framework - Reference Document / 17.3.4 Asynchronous Request Processing](http://docs.spring.io/spring/docs/3.2.6.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-async)
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Asynchronous Requests](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-async.html): Servlet 3+ 비동기 요청 처리
 

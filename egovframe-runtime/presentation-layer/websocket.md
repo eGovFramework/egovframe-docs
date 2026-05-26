@@ -123,7 +123,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
-        http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:handlers>
         <websocket:mapping path="/myHandler" handler="myHandler"/>
@@ -161,7 +161,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
-        http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:handlers>
         <websocket:mapping path="/myHandler" handler="myHandler"/>
@@ -290,4 +290,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 </beans>
 ```
 
+## 참고자료
 
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [WebSockets](https://docs.spring.io/spring-framework/reference/6.2/web/websocket.html): WebSocket API, SockJS Fallback, STOMP

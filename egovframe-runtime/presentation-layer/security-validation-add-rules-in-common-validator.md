@@ -378,4 +378,6 @@ JSP(/easycompany/webapp/jsp/modifyemployee.jsp)에 주민등록번호 입력 필
 
 ## 참고자료
 
-- Spring Modules Reference Documentation v 0.9, Chapter 17.Validation, P133~13
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Annotated Controllers - Validation](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods/validation.html)
+- Spring Modules Reference Documentation v 0.9, Chapter 17.Validation, P133~136

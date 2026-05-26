@@ -11,6 +11,8 @@ menu:
 ---
 # Scheduling 서비스
 
+본 문서는 [Spring Framework 6.2 - Task Execution and Scheduling](https://docs.spring.io/spring-framework/reference/6.2/integration/scheduling.html)과 정합성을 유지한다. Spring Framework 6.2에서는 `TaskExecutor`, `TaskScheduler`, `@Scheduled` 어노테이션, Quartz 스케줄러 통합 등을 Integration 장의 Task Execution and Scheduling에서 다룬다.
+
 ## 개요
 
 Scheduling 서비스는 어플리케이션 서버 내에서 주기적으로 발생하거나 반복적으로 발생하는 작업을 지원하는 기능으로서 유닉스의 크론(Cron) 명령어와 유사한 기능을 제공한다.  
@@ -209,10 +211,10 @@ Spring에서 주로 사용되는 Trigger타입은 SimpleTriggerBean과 CronTrigg
 
 - SchedulerFactoryBean 을 이용하여 SimpleTriggerBean 과 CronTriggerBean 기반의 각 Trigger 작업을 시작한다.
 
-## 참고자료
+## 참고 문서
 
-- [Quartz 매뉴얼](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/quick-start.html)
-- [Spring Scheduling 매뉴얼](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/integration.html#scheduling)
-- [Quartz API](http://www.quartz-scheduler.org/api/2.3.0/index.html)
-- [Spring API](https://docs.spring.io/spring-framework/docs/5.3.27/javadoc-api)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): JobDetailBean, Trigger, SchedulerFactoryBean 등 Bean 정의
+- [Spring Framework 6.2 - Task Execution and Scheduling](https://docs.spring.io/spring-framework/reference/6.2/integration/scheduling.html): TaskExecutor, TaskScheduler, @Scheduled, Quartz 통합
+- [Spring Framework 6.2 - Integration](https://docs.spring.io/spring-framework/reference/6.2/integration.html): REST Clients, JMS, JMX, Email, Tasks, Scheduling, Caching
+- [Quartz Scheduler](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/quick-start.html)
 - [Quartz Cron 표현식](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html)

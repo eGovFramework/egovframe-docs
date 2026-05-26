@@ -208,7 +208,7 @@ Flow 출력 속성은 output 구성 요소를 사용한다. output 속성은 end
 #### 변수들
 
 Flow에는 하나 이상의 인스턴스 변수 선언이 가능하다. 이 변수들은 flow가 시작할 때 할당되며,
-변수를 유지하게 되는 모든 @Autowired transient 참조는 Flow가 재시작될 때 다시 값이 할당(rewired) 되게 된다.
+변수를 유지하게 되는 모든 @Autowired transient 참조는 Flow가 재시작될 때 다시 값이 할당(rewired) 되게 된다. ([Annotation-based Container Configuration - Spring 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans/annotation-config.html) 참조)
 var 구성 요소를 사용해서 Flow 변수를 선언하자.
 
 ```xml
@@ -303,7 +303,9 @@ input 구성요소를 사용하면 하위 Flow에 입력값을 건낼 수 있다
 </flow>
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료됨)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): Flow 변수, Bean 참조
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)
+- [Spring Web Flow reference 2.3.x](https://docs.spring.io/spring-webflow/docs/2.3.x/reference/html/)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)

@@ -116,7 +116,7 @@ public class UdDTO implements Serializable {
 **설정정보(CustomRiaArgumentResolver)**
 
 ```xml
-<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
     <property name="webBindingInitializer">
         <bean class="egovframework.rte.fdl.web.common.EgovBindingInitializer" />
     </property>
@@ -333,4 +333,6 @@ public class RiaView extends AbstractView {
 
 # 참고자료
 
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Annotated Controllers](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods.html), [View Resolution](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/views.html)
 

@@ -21,18 +21,14 @@ menu:
 ### Code Base Exception 데이터베이스 설정
 
 ```bash
-C REATE TABLE BATCH_EXCEPTION_MESSAGE  (
+CREATE TABLE BATCH_EXCEPTION_MESSAGE  (
 	EX_ID BIGINT NOT NULL PRIMARY KEY,
 	EX_KEY VARCHAR(255) NOT NULL,
 	EX_MESSAGE VARCHAR(2500) NOT NULL
 );
-I NSERT INTO BATCH_EXCEPTION_MESSAGE VALUES(1,'EGOVBATCH000001','배치실행 중 업무 관련 에러가 발생 하였습니다.');
-I NSERT INTO BATCH_EXCEPTION_MESSAGE VALUES(2,'EGOVBATCH000002','배치실행 중 알수 없는 오류가 발생 하였습니다.');
+INSERT INTO BATCH_EXCEPTION_MESSAGE VALUES(1,'EGOVBATCH000001','배치실행 중 업무 관련 에러가 발생 하였습니다.');
+INSERT INTO BATCH_EXCEPTION_MESSAGE VALUES(2,'EGOVBATCH000002','배치실행 중 알수 없는 오류가 발생 하였습니다.');
 ```
-
-- 방화벽 정책상 [C REATE] 문자를 space 처리 하였습니다. space 문자를 제거 하시면 됩니다.
-- 방화벽 정책상 [I NSERT] 문자를 space 처리 하였습니다. space 문자를 제거 하시면 됩니다.
-- 방화벽 정책상 [I NTO] 문자를 space 처리 하였습니다. space 문자를 제거 하시면 됩니다.
 
 ### Code Base Exception 사용
 

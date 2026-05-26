@@ -36,7 +36,7 @@ menu:
 </bean>
 ```
 
- 위의 설정에서”egovframework-message” 로 지정한 파일은 실제로는 egovframework-message.properties 로 정의되어 있다. 파일의 위치를 지정하는 방법이 여러가지가 가능한데 그 설정에 대한 것은 [4.참고자료](#참고자료) 참조.
+ 위의 설정에서”egovframework-message” 로 지정한 파일은 실제로는 egovframework-message.properties 로 정의되어 있다. 파일의 위치를 지정하는 방법이 여러 가지가 가능한데, 그 설정에 대한 것은 [참고 문서](#참고-문서)를 참조한다.
 
 #### Sample Source
 
@@ -125,6 +125,7 @@ assertEquals("Get Message Success!", getMsg , "message 1 2");
 
  위에서 parameter에 1과 2를 지정하여 getMessage의 두번째 인자에 넣고 호출하면 리턴 메시지로 “message 1 2”를 얻는 것을 확인 할 수 있다.
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 2. Spring Resource](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#resources)
+- [Spring Framework 6.2 - Resources](https://docs.spring.io/spring-framework/reference/6.2/core/resources.html)
+- [Spring Framework 6.2 - Core Technologies](https://docs.spring.io/spring-framework/reference/6.2/core.html)

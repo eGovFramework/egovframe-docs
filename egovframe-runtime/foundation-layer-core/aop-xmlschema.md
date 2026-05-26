@@ -273,6 +273,7 @@ java.lang.ArithmeticException: / by zero
 
  예외가 발생하더라도 after 로 정의한 충고(Advice)는 수행되는 것을 확인할 수 있다. After Throwing 충고(Advice)는 에러 메시지를 재설정하고 새로운 예외를 생성하여 전달할 수 있다.
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 5.5 Schema-based AOP support](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#aop-schema)
+- [Spring Framework 6.2 - Schema-based AOP Support](https://docs.spring.io/spring-framework/reference/6.2/core/aop/schema.html)
+- [Spring Framework 6.2 - Aspect-Oriented Programming with Spring](https://docs.spring.io/spring-framework/reference/6.2/core/aop.html)

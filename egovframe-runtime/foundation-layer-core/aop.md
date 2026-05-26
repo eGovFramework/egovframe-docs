@@ -96,6 +96,8 @@ menu:
 
  \* [실행환경 AOP 가이드라인](./aop-guide.md)
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 5. Aspect Oriented Programming with Spring](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#aop)
+- [Spring Framework 6.2 - Aspect-Oriented Programming with Spring](https://docs.spring.io/spring-framework/reference/6.2/core/aop.html)
+- [Spring Framework 6.2 - AOP Concepts](https://docs.spring.io/spring-framework/reference/6.2/core/aop/concepts.html)
+- [Spring Framework 6.2 - Core Technologies](https://docs.spring.io/spring-framework/reference/6.2/core.html)

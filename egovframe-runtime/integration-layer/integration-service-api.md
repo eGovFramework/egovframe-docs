@@ -43,7 +43,7 @@ EgovIntegrationContext는 연계 서비스에 대한 설정 및 [EgovIntegration
 ```java
 package itl.sample;
  
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
  
 import egovframework.rte.itl.integration.EgovIntegrationContext;
 import egovframework.rte.itl.integration.EgovIntegrationService;
@@ -507,7 +507,7 @@ public class VefiryNameServiceCallback
 ### EgovIntegrationServiceProvider
 
 EgovIntegrationServiceProvider interface는 연계 서비스를 제공하기 위한 interface로 연계 서비스를 제공하는 모듈은 본 interface를 implements 해야 한다.<br/>
-아래 예제는 이름과 주민등록번호는 이용하여 실명확인을 수행하는 서비스를 제공하는 업무 모듈과 Spring Framework Configuration XML 파일이다. (Metadata는 [EgovIntegrationContext](#egovintegrationcontext) 예제의 설정과 같다.)
+아래 예제는 이름과 주민등록번호를 이용하여 실명확인을 수행하는 서비스를 제공하는 업무 모듈과 Spring Framework 6.2 기반 설정 예제이다. Bean 정의는 [The IoC Container](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html) 및 [Java-based Container Configuration](https://docs.spring.io/spring-framework/reference/6.2/core/beans/java.html)을 참조한다. (Metadata는 [EgovIntegrationContext](#egovintegrationcontext) 예제의 설정과 같다.)
 
 ```java
 package itl.sample;
@@ -532,8 +532,14 @@ public class ServiceVerifyName implements EgovIntegrationServiceProvider
 
 ```xml
     ...
- 
+
     <bean id="serviceVerifyName" class="itl.sample.ServiceVerifyName"/>
- 
+
     ...
 ```
+
+## 참고자료
+
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Annotation-based Container Configuration](https://docs.spring.io/spring-framework/reference/6.2/core/beans/annotation-config.html)
+- [Dependency Injection](https://docs.spring.io/spring-framework/reference/6.2/core/beans/dependencies.html)

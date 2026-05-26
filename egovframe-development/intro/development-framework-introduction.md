@@ -60,7 +60,7 @@ menu:
 
 전자정부 표준프레임워크에서는 서버 개발환경 역시 프로젝트에서 필수적으로 사용하는 기능과 선택적으로 사용하는 기능으로 구분하였다.
 
-프로젝트 상황에 따라 Deployment Tool과 Conf. & Change Mgt. Tool 중 일부 기능을 선택적으로 사용할 수 있다.
+프로젝트 상황에 따라 Deployment Tool과 Conf. & Change Mgt. Tool 중 일부 기능을 선택적으로 사용할 수 있다.([서버 개발환경](./server-environment-introduction))
 
 ### 개발 프로세스
 
@@ -68,18 +68,26 @@ menu:
 
 개발 프로세스는 아래의 4개 영역으로 분류되며 각 영역에서 수행하는 상세 프로세스는 그림에서 확인할 수 있다.
 
-![개발 프로세스](./images/development-process.jpg)
-
 - 개발자 PC
 - 형상관리 서버
 - CI 서버
 - 어플리케이션 서버
 
+![개발 프로세스](./images/development-process.jpg)
+
 ## 환경 설정
 
 ### 기본 환경
 
-**개발환경 4.3.0**
+#### 개발환경 5.0.0
+
+| 항목 | 권장버전 | 비고 |
+| --- | ----- | --- |
+| Java Development Kit | 21 이상 |  |
+| Servlet | 5.0 이상 |  |
+| Eclipse IDE for Enterprise Java and Web Developers | 4.35.0 (2025-03) - Windows/Linux<br />4.38.0 (2025-12) - MacOS | [Windows/Linux 다운로드](https://www.eclipse.org/downloads/packages/release/2025-03/r)<br />[MacOS 다운로드](https://www.eclipse.org/downloads/packages/release/2025-12/r) |
+
+#### 개발환경 4.3.0
 
 | 항목                                               | 권장버전                                                       | 비고                                                                                                                                                                 |
 | -------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -87,7 +95,7 @@ menu:
 | Servlet                                            | 3.1 이상                                                       |                                                                                                                                                                      |
 | Eclipse IDE for Enterprise Java and Web Developers | 4.31.0 (2024-03) - Windows/Linux<br />4.33.0 (2024-09) - MacOS | [Windows/Linux 다운로드](https://www.eclipse.org/downloads/packages/release/2024-03/r)<br />[MacOS 다운로드](https://www.eclipse.org/downloads/packages/release/2024-09/r) |
 
-**개발환경 4.2.0**
+#### 개발환경 4.2.0
 
 | 항목                               | 권장버전         | 비고                                                                  |
 | ---------------------------------- | ---------------- | --------------------------------------------------------------------- |
@@ -95,7 +103,7 @@ menu:
 | Servlet                            | 3.1 이상         |                                                                       |
 | Eclipse IDE for Java EE Developers | 4.26.0 (2022-12) | [다운로드](https://www.eclipse.org/downloads/packages/release/2022-12/r) |
 
-**개발환경 4.1.0**
+#### 개발환경 4.1.0
 
 | 항목                               | 권장버전         | 비고                                                                  |
 | ---------------------------------- | ---------------- | --------------------------------------------------------------------- |
@@ -103,7 +111,7 @@ menu:
 | Servlet                            | 3.1 이상         |                                                                       |
 | Eclipse IDE for Java EE Developers | 4.23.0 (2022-03) | [다운로드](https://www.eclipse.org/downloads/packages/release/2022-03/r) |
 
-**개발환경 4.0.0**
+#### 개발환경 4.0.0
 
 | 항목                               | 권장버전         | 비고                                                                  |
 | ---------------------------------- | ---------------- | --------------------------------------------------------------------- |

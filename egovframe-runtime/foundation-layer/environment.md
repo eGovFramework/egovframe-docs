@@ -11,9 +11,11 @@ menu:
 ---
 # Environment
 
+본 문서는 [Spring Framework 6.2 - Environment Abstraction](https://docs.spring.io/spring-framework/reference/6.2/core/environment.html)과 정합성을 유지한다.
+
 ## 개요
 
-표준프레임워크 3.0부터는 (Spring 3.1부터) Environment interface를 제공한다.
+표준프레임워크 3.0부터는 (Spring 3.1부터) **Environment** 인터페이스를 제공한다. Spring Framework 6.2에서는 Profile, PropertySource, PropertyResolver 등이 Core의 Environment Abstraction에서 다뤄진다.
 
 Environment는 다음 기능의 접근을 제공한다.
 
@@ -95,5 +97,9 @@ MutablePropertySources sources = ctx.getEnvironment().getPropertySources();
 sources.addFirst(new MyPropertySource());
 ```
 
-위의 코드에서 MyPropertySource는 가장 높은 우선순위로 Environment에 추가된다.
-만약 이전 코드와 같이 “foo”의 Property값을 가져오는 경우, MyPropertySource에 값이 있다면 그 값이 반환될 것이다.
+위의 코드에서 MyPropertySource는 가장 높은 우선순위로 Environment에 추가된다. 만약 "foo"의 Property값을 가져오는 경우, MyPropertySource에 값이 있다면 그 값이 반환될 것이다.
+
+## 참고 문서
+
+- [Spring Framework 6.2 - Environment Abstraction](https://docs.spring.io/spring-framework/reference/6.2/core/environment.html): Profile, PropertySource, PropertyResolver
+- [Spring Framework 6.2 - Core](https://docs.spring.io/spring-framework/reference/6.2/core.html)

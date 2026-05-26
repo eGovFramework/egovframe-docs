@@ -62,7 +62,7 @@ public class DataStreamConfig {
     }
  
     @Bean
-    pubilc Consumer<String> basicConsumer() {
+    public Consumer<String> basicConsumer() {
     	return message -> log.info("message = {}", message);
     }
 }

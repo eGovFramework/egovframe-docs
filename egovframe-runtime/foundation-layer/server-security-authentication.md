@@ -355,4 +355,7 @@ assertNull(EgovUserDetailsHelper.getAuthenticatedUser());
 - max-sessions : 최대 허용 세션 수
 - exception-if-maximum-exceeded : true ⇒ 최대 세션 수 초과할 경우 Exception 발생 , false ⇒ 최대 세션 수 초과할 경우 강제 로그아웃
 
-## 참고자료
+## 참고 문서
+
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)
+- [Spring Security Reference](https://docs.spring.io/spring-security/reference/index.html): 인증·권한

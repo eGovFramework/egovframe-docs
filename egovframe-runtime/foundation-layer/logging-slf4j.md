@@ -221,7 +221,8 @@ log4j 환경설정 파일은 SLF4J가 인식할 수 없기 때문에, 기존 환
 </configuration>
 ```
 
-## 참고 자료
+## 참고 문서
 
+- [Spring Framework 6.2 - Logging](https://docs.spring.io/spring-framework/reference/6.2/core/logging.html): Spring의 로깅 의존성(Commons Logging, Log4j, Logback 등)
 - [SLF4J](http://www.slf4j.org/)
 - [Logback](http://logback.qos.ch/)

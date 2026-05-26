@@ -48,10 +48,11 @@ Spring MVC에 대한 설명은 아래 상세 페이지를 참고하라.
 - [Declarative Validation](./web-servlet-declarative-validation.md)
 - [View](./web-servlet-view.md)
 
-### 예제 실행
-- [easycompany 설치 가이드](../../runtime-example/individual-example/presentation-layer/easycompany-example.md) : MVC와 Ajax Support, Security의 예제 코드인 easycompany 설치와 실행 방법을 가이드 한다.
 
 ## 참고 자료
+
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Spring Web MVC](https://docs.spring.io/spring-framework/reference/6.2/web/servlet.html): DispatcherServlet, Annotated Controllers, View
 - 🌏 [SUN Java BluePrints, Model-View-Controller](https://web.archive.org/web/20090227080302/http://java.sun.com/blueprints/patterns/MVC-detailed.html)
 
 ## 서블릿 개발과 동작과정.png

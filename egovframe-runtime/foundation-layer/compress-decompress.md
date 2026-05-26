@@ -130,11 +130,9 @@ public void testZipUnarchive() throws Exception {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Apache Commons Compress](http://commons.apache.org/compress/index.html)
-- [Commons Compress API](http://commons.apache.org/compress/apidocs/index.html)
+- [Spring Framework 6.2 - Resources](https://docs.spring.io/spring-framework/reference/6.2/core/resources.html): 리소스 추상화
+- [Apache Commons Compress](https://commons.apache.org/compress/)
+- [Commons Compress API](https://commons.apache.org/compress/apidocs/index.html)
 
-## 예제
-
-- [Compress/Decompress 예제](../../runtime-example/individual-example/foundation-layer/compress-decompress-example.md)

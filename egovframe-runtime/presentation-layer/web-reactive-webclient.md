@@ -465,5 +465,7 @@ Map<String, Object> data = Mono.zip(personMono, hobbiesMono, (person, hobbies) -
 ```
 스프링 MVC나 WebFlux 컨트롤러에서 Flux나 Mono를 사용한다면 블로킹할 필요가 없다. 단순히 컨트롤러 메소드에서 리액티브 타입을 리턴하기만 하면 된다. 코틀린 코루틴과 스프링 WebFlux에서도 마찬가지다. 컨트롤러 메소드에서 suspend 함수를 사용하거라 Flow를 리턴하면 된다.
 ```
-참고자료
-- [TThe Spring Framework - Web Reactive - WebClient](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/web-reactive.html#webflux-client)
+## 참고자료
+
+- [Spring Framework 6.2 - Web on Reactive Stack](https://docs.spring.io/spring-framework/reference/6.2/web/reactive.html)
+- [WebClient](https://docs.spring.io/spring-framework/reference/6.2/web/reactive/webclient.html)

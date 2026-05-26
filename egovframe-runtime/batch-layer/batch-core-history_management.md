@@ -89,4 +89,4 @@ menu:
 
 ## 참고자료
 
-- Meta-Data Schema :[http://static.springsource.org/spring-batch/reference/html/metaDataSchema.html](http://static.springsource.org/spring-batch/reference/html/metaDataSchema.html)
+- [Meta-Data Schema](https://docs.spring.io/spring-batch/reference/5.2/schema-appendix.html)

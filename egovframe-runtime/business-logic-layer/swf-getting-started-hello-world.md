@@ -89,9 +89,9 @@ Spring MVC와 Spring Web Flow를 위한 설정 파일은 아래와 같다.
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           https://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+           https://www.springframework.org/schema/context/spring-context.xsd">
  
 	<!-- 어플리케이션 소스를 스캔하여 로딩 하도록 한다. -->
 	<context:component-scan base-package="org.egovframe.swf.sample.service" />
@@ -114,7 +114,7 @@ Spring MVC를 위한 설정 파일
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
            http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
  
 	<!--
 	  flowRegistry에 등록된 flow와 요청되는 path와 매핑해주는 역할을 수행한다. 
@@ -156,8 +156,8 @@ Spring MVC를 위한 설정 파일
 	</bean>
  
  
-	<!-- Dispatches requests mapped to POJO @Controllers implementations-->
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	<!-- Spring 6.2에서는 RequestMappingHandlerAdapter가 기본 등록되므로 @Controller 매핑 시 생략 가능. 레거시 예제 호환 시 참고. -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
  
 	<!--
 		Dispatches requests mapped to
@@ -189,7 +189,7 @@ Web Flow 관련된 설정 파일
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 	xsi:schemaLocation="
            http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           https://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/webflow-config
            http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd">
  
@@ -544,4 +544,12 @@ say 버튼을 누르면,
 ![hello1-1page.jpg](./images/hello1-1page.jpg)
 
 Hello , 뒤에 넣었던 문장이 붙어서 나오게 된다.
+
+## 참고 문서
+
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): Bean 정의, component-scan
+- [Classpath Scanning and Managed Components](https://docs.spring.io/spring-framework/reference/6.2/core/beans/classpath-scanning.html)
+- [Spring Framework 6.2 - DispatcherServlet](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/dispatcher-servlet.html): 요청 처리, servlet 설정
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)
+- [Spring Web Flow reference 2.3.x](https://docs.spring.io/spring-webflow/docs/2.3.x/reference/html/)
 

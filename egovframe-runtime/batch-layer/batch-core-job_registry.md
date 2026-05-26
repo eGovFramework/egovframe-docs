@@ -54,4 +54,4 @@ JobRegistry에 Job을 자동으로 등록하는 방법은 두 가지가 있다.
 ```
 
 ## 참고자료
-* [http://static.springsource.org/spring-batch/reference/html/configureJob.html#d0e2232](http://static.springsource.org/spring-batch/reference/html/configureJob.html#d0e2232)
+* [Job Registry](https://docs.spring.io/spring-batch/reference/5.2/job.html#configuringJob)

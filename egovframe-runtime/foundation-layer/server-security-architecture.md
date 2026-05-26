@@ -208,4 +208,7 @@ CREATE TABLE SECURED_RESOURCES_ROLE (
 
 ```
 
-## 참고자료
+## 참고 문서
+
+- [Spring Framework 6.2 - Web Security](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/web-security.html)
+- [Spring Security Reference](https://docs.spring.io/spring-security/reference/index.html)

@@ -1,8 +1,9 @@
 ---
+draft: true
 title: 개발환경 운영 가이드
 linkTitle: "개발환경 운영 가이드"
 description: "개발환경 운영 가이드를 설명한다."
-url: /egovframe-development/operation-guide/operation-guide/
+url: /egovframe-development/operation-guide/eclipse-operation-guide/
 menu:
   depth:
     name: "운영 가이드"
@@ -28,8 +29,7 @@ menu:
 
 아래는 다음과 같은 과정을 자세히 기술한다.
 
-**참고 : (플러그인 개발용) 이클립스 RCP 환경 구축**
-[https://github.com/eGovFramework/egovframe-development/blob/main/README.md](https://github.com/eGovFramework/egovframe-development/blob/main/README.md)
+**참고 : (플러그인 개발용) 이클립스 RCP 환경 구축** : https://github.com/eGovFramework/egovframe-development/ > `README`.`md`
 
 ## 배포 방법
 

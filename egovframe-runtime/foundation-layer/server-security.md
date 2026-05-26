@@ -65,13 +65,15 @@ Server Security의 주요기능은 다음과 같다.
 - [architecture](./server-security-architecture.md/)
 - [Authentication](./server-security-authentication.md/)
 - [Authorization](./server-security-authorization.md/)
-- [설정 간소화](./server-security-simplifying-settings.md/)
+- [설정 간소화](./server-security-simplification.md)
 
 ### Server Security 업그레이드 가이드
 
 - [업그레이드](./server-security-upgrade.md/)
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework-Spring Security](https://spring.io/projects/spring-security)
-- [Spring Framework-Spring Security Reference Documentation](https://docs.spring.io/spring-security/reference/5.8/index.html)
+- [Spring Framework 6.2 - Web Security](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/web-security.html): Spring MVC 기반 웹 보안
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html): DispatcherServlet, 필터, 뷰
+- [Spring Security](https://spring.io/projects/spring-security): 인증·권한 처리(별도 프로젝트)
+- [Spring Security Reference Documentation](https://docs.spring.io/spring-security/reference/index.html)

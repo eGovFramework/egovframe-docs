@@ -662,5 +662,7 @@ $(function() {
 위의 경우 첫번째 탭 지정시 simpleCombo.do가 호출되어 panel안에 simpleCombo.do를 통해 호출된 화면이 보여진다.
 
 ## 참고자료
+
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
 - [jQuery Web Site](https://jquery.com/)
 - [jQuery UI Web Site](https://jqueryui.com/index.html)

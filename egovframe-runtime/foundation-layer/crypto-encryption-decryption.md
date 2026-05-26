@@ -448,6 +448,7 @@ pom.xml에 아래 내용을 추가한다.
 </dependency>
 ```
 
-## 참고자료
+## 참고 문서
 
-[ARIA 블록암호 알고리즘](https://seed.kisa.or.kr/kisa/algorithm/EgovAriaInfo.do)
+- [Spring Framework 6.2 - Core](https://docs.spring.io/spring-framework/reference/6.2/core.html)
+- [ARIA 블록암호 알고리즘](https://seed.kisa.or.kr/kisa/algorithm/EgovAriaInfo.do)

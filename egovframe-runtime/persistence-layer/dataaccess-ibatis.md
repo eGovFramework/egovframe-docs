@@ -410,4 +410,4 @@ public class BasicDataAccessTest {
 - [http://ibatis.apache.org](http://ibatis.apache.org)
 - [iBATIS-SqlMaps-2 Developer Guide](https://ibatis.apache.org/docs/java/pdf/iBATIS-SqlMaps-2_en.pdf)
 - [iBATIS-SqlMaps-2 개발자 가이드 (이동국님 번역)](https://ibatis.apache.org/docs/java/pdf/iBATIS-SqlMaps-2_ko.pdf)
-- [Spring Framework - Reference Documentation](http://static.springframework.org/spring/docs/2.5.6/reference/orm.html#orm-ibatis)
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html) (iBatis 연동은 레거시이며, 신규는 MyBatis + Spring 권장)

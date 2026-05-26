@@ -6,7 +6,7 @@ url: /egovframe-development/development-etcdevtool-guide/
 menu:
   depth:
     name: "활용 가이드"
-    weight: 8
+    weight: 9
     parent: "egovframe-development"
     identifier: "development-etcdevtool-guide"
 ---

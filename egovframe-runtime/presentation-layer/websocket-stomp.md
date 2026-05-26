@@ -121,7 +121,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
-        http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:message-broker application-destination-prefix="/app">
         <websocket:stomp-endpoint path="/portfolio">
@@ -303,7 +303,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
-        http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:message-broker application-destination-prefix="/app">
         <websocket:stomp-endpoint path="/portfolio" />
@@ -315,7 +315,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 </beans>
 ```
 
-위의 설정에서 “STOMP broker relay” 는 Spring [MessageHandler](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/messaging/MessageHandler.html) 인데 이것은 외부 broker 에 메시지들을 forwarding 함으로써 메시지들을 처리한다. 그렇게 하기 위해 broker 에 TCP 연결을 맺고 모든 메시지를 broker 에 forwarding 하고 broker 로 부터 수신된 메시지를 WebSocket session 을 통해 client 에 역 forwarding (되돌려준다.) 한다. 본질적으로 그것은 마치 양방향으로 message 를 forwarding 하는 “relay” 처럼 동작한다.
+위의 설정에서 “STOMP broker relay” 는 Spring [MessageHandler](https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/messaging/MessageHandler.html) 인데 이것은 외부 broker 에 메시지들을 forwarding 함으로써 메시지들을 처리한다. 그렇게 하기 위해 broker 에 TCP 연결을 맺고 모든 메시지를 broker 에 forwarding 하고 broker 로 부터 수신된 메시지를 WebSocket session 을 통해 client 에 역 forwarding (되돌려준다.) 한다. 본질적으로 그것은 마치 양방향으로 message 를 forwarding 하는 “relay” 처럼 동작한다.
 
 org.projectreactor:reactor-net 의존성을 추가하여 TCP connection 관리를 할 수 있다.
 
@@ -341,7 +341,7 @@ WebSocket-style application 에서 누가 메시지를 보냈는지 아는것은
 
 Web application 은 이미 HTTP 기반의 인증을 사용한다. 예를 들어, Spring Security 는 보통 application 의 HTTP URL 을 보호할 수 있다. WebSocket session 이 HTTP handshake 로 시작하기 때문에 STOMP/WebSocket 에 매핑된 URL 은 이미 보호되고 인증을 요구한다는 것을 의미한다. 게다가 WebSocket 연결을 시작하는 page 는 그 스스로 거의 보호되는 것이고 실제 handshake 시까지 그 사용자는 인증되어져야 한다.
 
-WebSocket hanshake 가 형성되고 새로운 WebSocket session 이 생성될 때 Spring WebSocket 지원은 자동적으로 HTTP request 로 부터 WebSocket session 으로 java.security.Principal 을 전달한다. 이후 WebSocket session 상의 application 을 통한 모든 message flow 는 사용자 정보가 포함되어진다. 그것은 message 의 header 에 존재한다. Controller 메소드는 javax.security.Principal 타입의 메소드 인자를 추가함으로 현재 사용자에 접근할 수 있다.
+WebSocket hanshake 가 형성되고 새로운 WebSocket session 이 생성될 때 Spring WebSocket 지원은 자동적으로 HTTP request 로 부터 WebSocket session 으로 java.security.Principal 을 전달한다. 이후 WebSocket session 상의 application 을 통한 모든 message flow 는 사용자 정보가 포함되어진다. 그것은 message 의 header 에 존재한다. Controller 메소드는 java.security.Principal 타입의 메소드 인자를 추가함으로써 현재 사용자에 접근할 수 있다.
 
 비록 STOMP CONNECT frame 이 인증을 위한 “login” 과 “passcode” 헤더를 가지고 있다하더라도, Spring 의 STOMP WebSocket 지원은 그것들을 무시하고 사용자가 HTTP 를 통해 기 인증되었기를 기대한다.
 
@@ -409,7 +409,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
-        http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:message-broker>
         <websocket:transport send-timeout="15000" send-buffer-size="524288" />
@@ -445,7 +445,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
-        http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:message-broker>
         <websocket:transport message-size="131072" />
@@ -470,7 +470,8 @@ Spring TestContext framework 의 도움으로 실제 Spring configuration 로드
 
 두번째 접근은 end-to-end integration tests 를 만드는 것이다. 이를 위해 WebSocket server 를 embedded mode 로 구동할 필요가 있고 STOMP frame 을 포함하는 메시지를 전송하는 WebSocket client 로서 서버에 접속한다. stock portfolio sample application 에 대한 test 는 embedded WebSocket 서버로서 Tomcat 을 사용하고 test 목적의 간단한 STOMP client 를 사용하는 접근을 보여준다.
 
+## 참고자료
 
-
-
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [WebSockets - STOMP](https://docs.spring.io/spring-framework/reference/6.2/web/websocket.html#websocket-stomp)
 

@@ -14,7 +14,7 @@ menu:
 
 ## 개요
 
-[화면처리: validation](web-servlet-validation.md)을 통해 검증방법을 알아보았다. 이전과는 다르게 JSR-303(Bean Validation) 스펙은 자동 검증 방식을 제공한다. @javax.validation.Valid애노테이션을 사용하여 내부적으로(자동으로) 검증이 수행된다.
+[화면처리: validation](web-servlet-validation.md)을 통해 검증방법을 알아보았다. 이전과는 다르게 JSR-303(Bean Validation) 스펙은 자동 검증 방식을 제공한다. @jakarta.validation.Valid 애노테이션을 사용하여 내부적으로(자동으로) 검증이 수행된다.
 
 또한, 최근에 표준 스펙으로 인증받은 JSR-303 빈 검증방식을 이용하여 모델 오브젝트 필드에서 애노테이션을 이용해 검증을 진행할 수 있다.
 
@@ -51,14 +51,14 @@ public class ExampleController {
 
 ```xml
 <dependency>
-	<groupId>javax.validation</groupId>
-	<artifactId>validation-api</artifactId>
-	<version>1.0.0.GA</version>
+	<groupId>jakarta.validation</groupId>
+	<artifactId>jakarta.validation-api</artifactId>
+	<version>3.0.2</version>
 </dependency>
 <dependency>
-	<groupId>org.hibernate</groupId>
+	<groupId>org.hibernate.validator</groupId>
 	<artifactId>hibernate-validator</artifactId>
-	<version>4.0.0.GA</version>
+	<version>8.0.1.Final</version>
 </dependency>
 ```
 
@@ -111,4 +111,6 @@ public class ExampleController {
 
 ## 참고자료
 
-- [Validator 예제](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.10:rex:validation_%EC%98%88%EC%A0%9C)
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Annotated Controllers - Validation](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods/validation.html): @Valid, Java Bean Validation
+

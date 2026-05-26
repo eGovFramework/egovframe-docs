@@ -104,6 +104,7 @@ public class ActionMovieCatalog implements MovieCatalog {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 1.10 Classpath scanning and managed components](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-classpath-scanning)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Classpath Scanning and Managed Components](https://docs.spring.io/spring-framework/reference/6.2/core/beans/classpath-scanning.html)

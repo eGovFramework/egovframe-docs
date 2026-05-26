@@ -169,6 +169,7 @@ beanName.property=value
 
  Container에게 FactoryBean이 생성한 객체가 아닌 FactoryBean 그 자체를 요구하는 경우도 있다. 이런 경우, BeanFactory의 getBean 메소드를 호출할 때 bean id 앞에 '&'를 붙이면 된다.
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 1.8 Container Extension Points](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-factory-extension)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Container Extension Points](https://docs.spring.io/spring-framework/reference/6.2/core/beans/factory-extension.html)

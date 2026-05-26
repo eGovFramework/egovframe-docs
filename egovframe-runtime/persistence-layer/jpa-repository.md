@@ -69,4 +69,7 @@ Page<User> users = repository.findAll(new PageRequest(1, 20));
 ```
 
 ## 참고자료
-- [http://static.springsource.org/spring-data/data-jpa/docs/current/reference/html/](http://static.springsource.org/spring-data/data-jpa/docs/current/reference/html/)
+
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html)
+- [JPA](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm/jpa.html)
+- [Spring Data JPA - Reference Documentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)

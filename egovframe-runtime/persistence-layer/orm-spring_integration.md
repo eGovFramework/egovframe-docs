@@ -11,7 +11,7 @@ menu:
 ---
 # Spring Integration
 
- Spring에서는 JPA 기반에서 DAO 클래스를 쉽게 구현할 수 있도록 하기 위해 JdbcTemplate,HibernateTemplate등처럼 **JpaTemplate**을 제공한다. 하지만 JPA에 있어서는 Entity Manager의 Method를 직접 이용하는 것(**plain JPA**)에 대한 것도 가이드한다. 이에 두가지 방법에 대한 설정 및 사용방법에 대해서 설명하고자 한다. [Spring JPA](http://static.springframework.org/spring/docs/2.5.x/reference/orm.html#orm-jpa)
+ Spring에서는 JPA 기반에서 DAO 클래스를 쉽게 구현할 수 있도록 하기 위해 JdbcTemplate,HibernateTemplate등처럼 **JpaTemplate**을 제공한다. 하지만 JPA에 있어서는 Entity Manager의 Method를 직접 이용하는 것(**plain JPA**)에 대한 것도 가이드한다. 이에 두가지 방법에 대한 설정 및 사용방법에 대해서 설명하고자 한다. [Spring Framework 6.2 - JPA](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm/jpa.html)
 
 ## 기본 설정
 
@@ -87,7 +87,7 @@ menu:
 ```java
 public class UserDAO extends JpaDaoSupport {
    // Application Context 에서 설정한 Entity Manager Factory 명을 지정하여 부모의 EntityManagerFactory를 설정한다.
-   @Resource(name="entityManagerFactory")
+   @jakarta.annotation.Resource(name="entityManagerFactory")
    public void setEMF(EntityManagerFactory entityManagerFactory) {
       super.setEntityManagerFactory(entityManagerFactory);
    }
@@ -210,3 +210,9 @@ public class Role implements Serializable {
 ```
 
  위의 예제는 DAO 클래스에서 쓰인 Role Entity Class 소스의 일부이다.
+
+## 참고자료
+
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html)
+- [Object Relational Mapping (ORM) Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm.html): Spring ORM 개요
+- [JPA](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm/jpa.html): JPA 통합, LocalContainerEntityManagerFactoryBean, JpaTransactionManager

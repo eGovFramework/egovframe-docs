@@ -116,8 +116,9 @@ Flow와 State 식별자는 #로 구분한다.
 - set
 - var
 
-## 참고자료
+## 참고 문서
 
-- [Spring Web Flow reference 2.0.x](http://static.springframework.org/spring-webflow/docs/2.0.x/reference/html/index.html) (링크 만료)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): bean-import 등 Bean 정의
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)
+- [Spring Web Flow reference 2.3.x](https://docs.spring.io/spring-webflow/docs/2.3.x/reference/html/)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
-- [Whiteship's Note](http://whiteship.me/2146) (링크 만료)

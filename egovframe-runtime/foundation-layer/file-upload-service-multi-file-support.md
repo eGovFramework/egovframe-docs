@@ -1,7 +1,7 @@
 ---
 title: Spring mvc Multipart Multi file upload 지원 문제
 linkTitle: "Multipart"
-description: Spring MVC 2.5.5에서 동일한 이름의 여러 파일을 업로드할 때 발생하는 MultipartResolver 오류 문제를 설명한다.
+description: Spring MVC에서 동일한 이름의 여러 파일을 업로드할 때 발생할 수 있는 MultipartResolver 관련 이슈를 설명한다.
 url: /egovframe-runtime/foundation-layer/file-upload-download-service/file-upload/file-upload-service-multi-file-support/
 menu:
     depth:
@@ -13,7 +13,7 @@ menu:
 
 ## 개요
 
-Spring mvc 2.5.5 Multipart Multi file upload 지원부분에서 동일한 이름의 여러개의 파일을 올리려고 할 때 에러가 발생한다. 본 가이드에서는 이러한 문제가 발생하여 아직 Spring쪽에서 답변이 없는 상황이다. 이부분에 대하여 개발시 참고 하기바란다.
+Spring MVC Multipart Multi file upload 지원 부분에서 동일한 이름의 여러개의 파일을 올리려고 할 때 에러가 발생한다. 본 가이드에서는 이러한 문제가 발생하여 아직 Spring쪽에서 답변이 없는 상황이다. 이부분에 대하여 개발시 참고 하기바란다.
 
 ## 설명
 
@@ -35,8 +35,7 @@ javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
 
 이러한 문제에 대해서 아래의 참고 자료를 참고하기 바란다.
 
-## 참고자료
+## 참고 문서
 
-- (deplicated) Implementing single and multiple file multipart uploads using Spring 2.5
-- (deplicated) 동일한 form name upload 문제
-- (deplicated) spring mvc 2.5.5 multipart multi file upload 지원
+- [Spring Framework 6.2 - Multipart Resolver](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/multipart.html): 파일 업로드(Multipart) 지원
+- [파일 업로드/다운로드 서비스](./file-upload-download-service.md): 다중 파일 업로드 관련 안내

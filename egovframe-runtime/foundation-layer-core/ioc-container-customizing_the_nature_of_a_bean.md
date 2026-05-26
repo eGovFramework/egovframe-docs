@@ -174,6 +174,7 @@ public interface LifecycleProcessor extends Lifecycle {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
-*   [Spring Framework - Reference Document / 1.6 Customizing the nature of a bean](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-factory-nature)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Customizing the Nature of a Bean](https://docs.spring.io/spring-framework/reference/6.2/core/beans/factory-nature.html)

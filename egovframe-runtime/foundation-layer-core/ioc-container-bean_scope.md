@@ -72,7 +72,7 @@ Spring은 prototype bean의 전체 생명주기를 관리하지 않는데 Contai
 
  request, session, application, websocket scope을 사용하기 위해서는 추가적인 설정이 필요하다. 추가 설정은 사용할 Servlet 환경에 따라 달라진다.  
 만약 Spring Web MVC 안에서 bean에 접근할 경우, 즉 Spring DispatcherServlet 또는 DispatcherPortlet에서 처리되는 요청인 경우, 별도의 추가 설정은 필요없다.( DispatcherServlet과 DispatcherPortlet은 이미 모든 관련있는 상태를 제공한다.)  
-만약 Servlet 2.4+ web Container를 사용하고, JSF나 Struts 등과 같이 Spring의 DispatcherServlet의 외부에서 요청을 처리하는 경우, 다음 javax.servlet.ServletRequestListener를 'web.xml' 파일에 추가해야 한다.
+만약 Servlet 2.4+ web Container를 사용하고, JSF나 Struts 등과 같이 Spring의 DispatcherServlet의 외부에서 요청을 처리하는 경우, 다음 jakarta.servlet.ServletRequestListener를 'web.xml' 파일에 추가해야 한다.
 
  ```xml
 <web-app>
@@ -84,7 +84,7 @@ Spring은 prototype bean의 전체 생명주기를 관리하지 않는데 Contai
 </web-app>
 ```
 
- 만약 다른 오래된 web Container(Servlet 2.3)를 사용한다면, 제공되는 javax.servlet.Filter 구현체를 사용해야 한다.(filter mapping은 web 어플리케이션 설정에 따라 달라질 수 있으므로, 적절히 수정해야 한다.)
+ 만약 다른 오래된 web Container(Servlet 2.3)를 사용한다면, 제공되는 jakarta.servlet.Filter 구현체를 사용해야 한다.(filter mapping은 web 어플리케이션 설정에 따라 달라질 수 있으므로, 적절히 수정해야 한다.)
 
  ```xml
 <web-app>
@@ -163,6 +163,8 @@ Spring은 prototype bean의 전체 생명주기를 관리하지 않는데 Contai
 
  Proxy를 생성하기 위해서 &lt;aop:scoped-proxy/&gt; element를 scoped bean 정의에 추가해야 한다(CGLIB 라이브러리도 classpath에 추가해야 한다).
 
-## 참고자료
+## 참고 문서
 
-*   [Spring Framework - Reference Document / 1.5 Bean scopes](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-factory-scopes)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Bean Scopes](https://docs.spring.io/spring-framework/reference/6.2/core/beans/factory-scopes.html)
+- [Spring Framework 6.2 - Core](https://docs.spring.io/spring-framework/reference/6.2/core.html)

@@ -205,6 +205,3 @@ public void testDepartment() throws Exception {
 1. [Fetch Strategy](./orm-fetch_strategy./md)
 1. [Spring Integration](./orm-spring_integration.md)
 1. [JPA Configuration](./orm-jpa_configuration.md)
-
-## 예제
-[ORM 예제](../../runtime-example/individual-example/persistence-layer/orm-example.md)

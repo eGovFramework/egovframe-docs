@@ -659,5 +659,5 @@ URL http://localhost:8080/easycompany/login.do로 요청이 들어올때, /easyc
 
 ## 참고자료
 
-- The Spring Framework - Reference Documentation 2.5.6
-- Spring Framework API Documentation 2.5.6
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Annotated Controllers](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods.html): Handler Methods, Model, View

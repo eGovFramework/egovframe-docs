@@ -295,6 +295,8 @@ public class CachingMovieLister {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 1.9. Annotation-based Container Configuration](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/core.html#beans-annotation-config)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Annotation-based Container Configuration](https://docs.spring.io/spring-framework/reference/6.2/core/beans/annotation-config.html)
+- [Spring Framework 6.2 - Using @Autowired](https://docs.spring.io/spring-framework/reference/6.2/core/beans/annotation-config/autowired.html)

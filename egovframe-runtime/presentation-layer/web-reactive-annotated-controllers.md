@@ -132,4 +132,6 @@ public class ExampleAdvice3 {}
 ```
 
 ## 참고자료
-- [The Spring Framework - Web Reactive - Annotated Controllers](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/web-reactive.html#webflux-controller)
+
+- [Spring Framework 6.2 - Web on Reactive Stack](https://docs.spring.io/spring-framework/reference/6.2/web/reactive.html)
+- [Annotated Controllers](https://docs.spring.io/spring-framework/reference/6.2/web/reactive/webflux.html#webflux-controller)

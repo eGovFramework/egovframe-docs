@@ -5,7 +5,7 @@ description: "형상 관리 도구"
 url: /egovframe-development/configuration-management-tool/
 menu:
   depth:
-    weight: 6
+    weight: 7
     parent: "egovframe-development"
     identifier: "configuration-management-tool"
 ---

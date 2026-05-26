@@ -268,8 +268,9 @@ public class SpringAnnotationProfileTest {
 }
 ```
 
-## 참고자료
+## 참고 문서
 
-- [Spring Framework - Reference Document / 3.2 Bean Definition Profiles](http://docs.spring.io/spring/docs/3.2.6.RELEASE/spring-framework-reference/htmlsingle/#new-in-3.1-bean-definition-profiles)
-- [Spring team blog - XML profiles](http://spring.io/blog/2011/02/11/spring-framework-3-1-m1-released/)
-- [Spring team blog - introducing @Profile](http://spring.io/blog/2011/02/14/spring-3-1-m1-introducing-profile/)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Spring Framework 6.2 - Bean Definition Profiles](https://docs.spring.io/spring-framework/reference/6.2/core/beans/definition-profiles.html)
+- [Spring Framework 6.2 - Environment Abstraction](https://docs.spring.io/spring-framework/reference/6.2/core/environment.html)
+- [Spring Framework 6.2 - Core](https://docs.spring.io/spring-framework/reference/6.2/core.html)

@@ -6,9 +6,9 @@ url: /egovframe-development/
 menu:
   main:
     name: "개발환경"
-    weight: 1
+    weight: 3
   depth:
-    weight: 1
+    weight: 3
     identifier: "egovframe-development"
 ---
 # 개발환경

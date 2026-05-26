@@ -219,7 +219,7 @@ SessionLocaleResolver 를 이용하여 위와 같이 하였을 경우 Locale 결
 으로 표현한다.
 
 ```html
-<%@ taglib prefix="spring" uri=http://www.springframework.org/tags %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
  
 <form:form commandName="message" >
 ....
@@ -270,4 +270,7 @@ String msg = messageSource.getMessage(messageKey, messageParameters,	defaultMess
 ```
 
 ## 참고자료
+
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Locale](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/localeresolver.html): LocaleResolver, LocaleChangeInterceptor
 

@@ -47,6 +47,8 @@ menu:
 ##### Sample Source
 
 ```java
+import jakarta.annotation.Resource;
+
 @Resource(name = "dataSource")
 DataSource dataSource;
  
@@ -120,6 +122,8 @@ public void testJdbcDataSource() throws Exception {
 ##### Sample Source
 
 ```java
+import jakarta.annotation.Resource;
+
 @Resource(name = "dataSource")
 DataSource dataSource;
  
@@ -201,6 +205,8 @@ public void testDbcpDataSource() throws Exception
 ##### Sample Source
 
 ```java
+import jakarta.annotation.Resource;
+
 @Resource(name = "dataSource")
 DataSource dataSource;
  
@@ -243,7 +249,7 @@ public void testC3p0DataSource() throws Exception
  jee tag를 사용하기 위해서는 Spring XML Configuration 파일의 머릿말에 namespace와 schemaLocation를 추가해야 한다.
 
 - namespace : xmlns:jee="http://www.springframework.org/schema/jee"
-- schemaLocation : http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+- schemaLocation : http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -251,8 +257,8 @@ public void testC3p0DataSource() throws Exception
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:jee="http://www.springframework.org/schema/jee"
        xsi:schemaLocation="
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
  
     <!-- <bean/> definitions here -->
  
@@ -292,6 +298,8 @@ http://www.springframework.org/schema/jee http://www.springframework.org/schema/
 ##### Sample Source
 
 ```java
+import jakarta.annotation.Resource;
+
 @Resource(name = "dataSource")
 DataSource dataSource;
  
@@ -329,6 +337,8 @@ public void testJndiJeusDataSource() throws Exception
 - Jeus6.0 datasource : jeus.jdbc.connectionpool.DataSourceWrapper
 
 ```java
+import jakarta.annotation.Resource;
+
 @Resource(name = "dataSource")
 DataSource dataSource;
  
@@ -365,3 +375,8 @@ public void testJndiDataSource() throws Exception
 - Weblogic datasource
 
 ## 참고자료
+
+- [Spring Framework 6.2 - Data Access](https://docs.spring.io/spring-framework/reference/6.2/data-access.html)
+- [Data Access with JDBC](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc.html): JDBC 접근 방식, DataSource
+- [Controlling Database Connections](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/connections.html): DataSource 설정
+- [Initializing a DataSource](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/init.html): DataSource 초기화

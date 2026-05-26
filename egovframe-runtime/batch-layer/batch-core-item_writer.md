@@ -40,41 +40,41 @@ FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 �
 
 아래 Delimited(구분자), Fixed Length(고정길이) 방식으로 설정한 FlatFileItemWriter의 예시를 통해 FlatFileItemWriter, LineAggregator, FieldExtractor의 의존 관계를 볼 수 있다.
 
-<table class="inline">
-	<tbody><tr class="row0">
-		<th class="col0 centeralign">  Aggregate 방식  </th><th class="col1 centeralign">  설정  </th>
-	</tr>
-	<tr class="row1">
-		<th class="col0"> Delimited (구분자) </th><td class="col1"> <pre class="code xml"><span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.FlatFileItemWriter"</span> <span class="re0">scope</span>=<span class="st0">"step"</span><span class="re2">&gt;</span></span>
-    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"resource"</span> <span class="re0">value</span>=<span class="st0">"#{jobParameters[outputFile]}"</span> <span class="re2">/&gt;</span></span>
-    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"lineAggregator"</span><span class="re2">&gt;</span></span>
-	<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.DelimitedLineAggregator"</span><span class="re2">&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"delimiter"</span> <span class="re0">value</span>=<span class="st0">","</span><span class="re2">/&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldExtractor"</span><span class="re2">&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor"</span><span class="re2">&gt;</span></span>
-		    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"names"</span> <span class="re0">value</span>=<span class="st0">"name,credit"</span><span class="re2">/&gt;</span></span>					
-		<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-	    <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-	<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-    <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-	<tr class="row2">
-		<th class="col0"> Fixed Length (고정길이) </th><td class="col1"> <pre class="code xml"><span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.FlatFileItemWriter"</span> <span class="re0">scope</span>=<span class="st0">"step"</span><span class="re2">&gt;</span></span>
-    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"resource"</span> <span class="re0">value</span>=<span class="st0">"#{jobParameters[outputFile]}"</span> <span class="re2">/&gt;</span></span>
-    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"lineAggregator"</span><span class="re2">&gt;</span></span>
-	<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.FormatterLineAggregator"</span><span class="re2">&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"format"</span> <span class="re0">value</span>=<span class="st0">"%-9s%-2s"</span> <span class="re2">/&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldExtractor"</span><span class="re2">&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor"</span><span class="re2">&gt;</span></span>
-		    <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"names"</span> <span class="re0">value</span>=<span class="st0">"name,credit"</span><span class="re2">/&gt;</span></span>					
-		<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-	    <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-	<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-    <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-</tbody></table>
+#### Delimited (구분자)
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+    <property name="resource" value="#{jobParameters[outputFile]}" />
+    <property name="lineAggregator">
+	<bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+	    <property name="delimiter" value=","/>
+	    <property name="fieldExtractor">
+		<bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+		    <property name="names" value="name,credit"/>
+		</bean>
+	    </property>
+	</bean>
+    </property>
+</bean>
+```
+
+#### Fixed Length (고정길이)
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+    <property name="resource" value="#{jobParameters[outputFile]}" />
+    <property name="lineAggregator">
+	<bean class="org.springframework.batch.item.file.transform.FormatterLineAggregator">
+	    <property name="format" value="%-9s%-2s" />
+	    <property name="fieldExtractor">
+		<bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+		    <property name="names" value="name,credit"/>
+		</bean>
+	    </property>
+	</bean>
+    </property>
+</bean>
+```
 
 BeanWrapperFieldExtractor에 아래와 같은 항목을 설정해야한다.
 
@@ -179,41 +179,42 @@ sqlMapClient의 참조는 아래와 같다. configLocation 속성에 iBatis를 �
 BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)를 사용한 설정과 EgovFieldExtractor, EgovFixedLineAggregator(or DelimitedLineAggregator)를 사용한 FlatFileItemWriter 설정 비교는 아래와 같다.
 
 #### Fixed Length(고정길이) 방식 설정
-<table class="inline">
-	<tbody><tr class="row0">
-		<th class="col0 centeralign">  구분  </th><th class="col1 centeralign">  설정  </th>
-	</tr>
-	<tr class="row1">
-		<th class="col0"> 스프링 FlatFileItemWriter </th><td class="col1"> <pre class="code xml"><span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.FlatFileItemWriter"</span> <span class="re0">scope</span>=<span class="st0">"step"</span><span class="re2">&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"resource"</span> <span class="re0">value</span>=<span class="st0">"#{jobParameters[outputFile]}"</span> <span class="re2">/&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"lineAggregator"</span><span class="re2">&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.FormatterLineAggregator"</span><span class="re2">&gt;</span></span>
-         <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldExtractor"</span><span class="re2">&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor"</span><span class="re2">&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"names"</span> <span class="re0">value</span>=<span class="st0">"name,credit"</span> <span class="re2">/&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-	 <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-	 <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"format"</span> <span class="re0">value</span>=<span class="st0">"%-9s%-2s"</span> <span class="re2">/&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-   <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-	<tr class="row2">
-		<th class="col0"> 전자정부 EgovFlatFileItemWriter </th><td class="col1"> <pre class="code xml"><span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.FlatFileItemWriter"</span> <span class="re0">scope</span>=<span class="st0">"step"</span><span class="re2">&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"resource"</span> <span class="re0">value</span>=<span class="st0">"#{jobParameters[outputFile]}"</span> <span class="re2">/&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"lineAggregator"</span><span class="re2">&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"egovframework.brte.core.item.file.transform.EgovFixedLengthLineAggregator"</span><span class="re2">&gt;</span></span>
-         <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldExtractor"</span><span class="re2">&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"egovframework.brte.core.item.file.transform.EgovFieldExtractor"</span><span class="re2">&gt;</span></span>
-	       <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"names"</span> <span class="re0">value</span>=<span class="st0">"name,credit"</span> <span class="re2">/&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-	 <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-	 <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldRanges"</span> <span class="re0">value</span>=<span class="st0">"9,2"</span> <span class="re2">/&gt;</span></span>						
-      <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-   <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-</tbody></table>
+
+**스프링 FlatFileItemWriter**
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+   <property name="resource" value="#{jobParameters[outputFile]}" />
+   <property name="lineAggregator">
+      <bean class="org.springframework.batch.item.file.transform.FormatterLineAggregator">
+         <property name="fieldExtractor">
+	    <bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+		<property name="names" value="name,credit" />
+	    </bean>
+	 </property>
+	 <property name="format" value="%-9s%-2s" />
+      </bean>
+   </property>
+</bean>
+```
+
+**전자정부 EgovFlatFileItemWriter**
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+   <property name="resource" value="#{jobParameters[outputFile]}" />
+   <property name="lineAggregator">
+      <bean class="egovframework.brte.core.item.file.transform.EgovFixedLengthLineAggregator">
+         <property name="fieldExtractor">
+	    <bean class="egovframework.brte.core.item.file.transform.EgovFieldExtractor">
+	       <property name="names" value="name,credit" />
+	    </bean>
+	 </property>
+	 <property name="fieldRanges" value="9,2" />						
+      </bean>
+   </property>
+</bean>
+```
 
 | EgovFlatFileItemWriter 설정항목 | 설명                                                  |
 | --------------------------- | --------------------------------------------------- |
@@ -222,41 +223,42 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
 | padding                     | 공백 패턴 설정                                            |
 
 #### Delimited(구분자) 방식 설정
-<table class="inline">
-	<tbody><tr class="row0">
-		<th class="col0 centeralign">  구분  </th><th class="col1 centeralign">  설정  </th>
-	</tr>
-	<tr class="row1">
-		<th class="col0"> 스프링 FlatFileItemWriter </th><td class="col1"> <pre class="code xml"><span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.FlatFileItemWriter"</span> <span class="re0">scope</span>=<span class="st0">"step"</span><span class="re2">&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"resource"</span> <span class="re0">value</span>=<span class="st0">"#{jobParameters[outputFile]}"</span> <span class="re2">/&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"lineAggregator"</span><span class="re2">&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.DelimitedLineAggregator"</span><span class="re2">&gt;</span></span>
-	 <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldExtractor"</span><span class="re2">&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor"</span><span class="re2">&gt;</span></span>
-	       <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"names"</span> <span class="re0">value</span>=<span class="st0">"name,credit"</span><span class="re2">/&gt;</span></span>					
-	    <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-	 <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-         <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"delimiter"</span> <span class="re0">value</span>=<span class="st0">","</span><span class="re2">/&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-    <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-	<tr class="row2">
-		<th class="col0"> 전자정부 EgovFlatFileItemWriter </th><td class="col1"> <pre class="code xml"><span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.FlatFileItemWriter"</span> <span class="re0">scope</span>=<span class="st0">"step"</span><span class="re2">&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"resource"</span> <span class="re0">value</span>=<span class="st0">"#{jobParameters[outputFile]}"</span> <span class="re2">/&gt;</span></span>
-   <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"lineAggregator"</span><span class="re2">&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.file.transform.DelimitedLineAggregator"</span><span class="re2">&gt;</span></span>
-	 <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"fieldExtractor"</span><span class="re2">&gt;</span></span>
-	    <span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"egovframework.brte.core.item.file.transform.EgovFieldExtractor"</span><span class="re2">&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"names"</span> <span class="re0">value</span>=<span class="st0">"name,credit"</span><span class="re2">/&gt;</span></span>					
-	    <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-	 <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-         <span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"delimiter"</span> <span class="re0">value</span>=<span class="st0">","</span><span class="re2">/&gt;</span></span>
-      <span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span>
-   <span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-</tbody></table>
+
+**스프링 FlatFileItemWriter**
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+   <property name="resource" value="#{jobParameters[outputFile]}" />
+   <property name="lineAggregator">
+      <bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+	 <property name="fieldExtractor">
+	    <bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+	       <property name="names" value="name,credit"/>
+	    </bean>
+	 </property>
+         <property name="delimiter" value=","/>
+      </bean>
+    </property>
+</bean>
+```
+
+**전자정부 EgovFlatFileItemWriter**
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+   <property name="resource" value="#{jobParameters[outputFile]}" />
+   <property name="lineAggregator">
+      <bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+	 <property name="fieldExtractor">
+	    <bean class="egovframework.brte.core.item.file.transform.EgovFieldExtractor">
+		<property name="names" value="name,credit"/>
+	    </bean>
+	 </property>
+         <property name="delimiter" value=","/>
+      </bean>
+   </property>
+</bean>
+```
 
 | EgovFlatFileItemWriter 설정항목 | 설명              |
 | --------------------------- | ------------------------------------------------ |
@@ -280,32 +282,32 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
 
 자동으로 PreparedStatement를 setter 할 경우 JdbcBatchItemWriter는 BeanPropertyItemSqlParameterSourceProvider클래스를 사용하고 EgovJdbcBatchItemWriter는 EgovMethodMapItemPreparedStatementSetter클래스를 사용한다. 설정은 아래와 같다.
 
-<table class="inline">
-	<tbody><tr class="row0">
-		<th class="col0 centeralign">  구분  </th><th class="col1 centeralign">  설정  </th>
-	</tr>
-	<tr class="row1">
-		<th class="col0">JdbcBatchItemWriter</th><td class="col1"><pre class="code xml">	<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.database.JdbcBatchItemWriter"</span><span class="re2">&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"assertUpdates"</span> <span class="re0">value</span>=<span class="st0">"true"</span> <span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"itemSqlParameterSourceProvider"</span><span class="re2">&gt;</span></span>
-			<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider"</span> <span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"sql"</span> <span class="re0">value</span>=<span class="st0">"UPDATE CUSTOMER set credit = :credit where id = :id"</span> <span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"dataSource"</span> <span class="re0">ref</span>=<span class="st0">"dataSource"</span> <span class="re2">/&gt;</span></span>
-	<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-	<tr class="row2">
-		<th class="col0">EgovJdbcBatchItemWriter</th><td class="col1"><pre class="code xml">	<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">id</span>=<span class="st0">"itemWriter"</span> <span class="re0">class</span>=<span class="st0">"egovframework.brte.core.item.database.EgovJdbcBatchItemWriter"</span><span class="re2">&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"assertUpdates"</span> <span class="re0">value</span>=<span class="st0">"true"</span> <span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"itemPreparedStatementSetter"</span><span class="re2">&gt;</span></span>
-			<span class="sc3"><span class="re1">&lt;bean</span> <span class="re0">class</span>=<span class="st0">"egovframework.brte.core.item.database.support.EgovMethodMapItemPreparedStatementSetter"</span> <span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;/property<span class="re2">&gt;</span></span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"sql"</span> <span class="re0">value</span>=<span class="st0">"UPDATE CUSTOMER set credit =? where id =?"</span><span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"params"</span> <span class="re0">value</span>=<span class="st0">"credit,id"</span><span class="re2">/&gt;</span></span>
-		<span class="sc3"><span class="re1">&lt;property</span> <span class="re0">name</span>=<span class="st0">"dataSource"</span> <span class="re0">ref</span>=<span class="st0">"dataSource"</span> <span class="re2">/&gt;</span></span>
-	<span class="sc3"><span class="re1">&lt;/bean<span class="re2">&gt;</span></span></span></pre></td>
-	</tr>
-</tbody></table>
+**JdbcBatchItemWriter**
+
+```xml
+<bean id="itemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+	<property name="assertUpdates" value="true" />
+	<property name="itemSqlParameterSourceProvider">
+		<bean class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+	</property>
+	<property name="sql" value="UPDATE CUSTOMER set credit = :credit where id = :id" />
+	<property name="dataSource" ref="dataSource" />
+</bean>
+```
+
+**EgovJdbcBatchItemWriter**
+
+```xml
+<bean id="itemWriter" class="egovframework.brte.core.item.database.EgovJdbcBatchItemWriter">
+	<property name="assertUpdates" value="true" />
+	<property name="itemPreparedStatementSetter">
+		<bean class="egovframework.brte.core.item.database.support.EgovMethodMapItemPreparedStatementSetter" />
+	</property>
+	<property name="sql" value="UPDATE CUSTOMER set credit =? where id =?"/>
+	<property name="params" value="credit,id"/>
+	<property name="dataSource" ref="dataSource" />
+</bean>
+```
 
 ✔ EgovMethodMapItemPreparedStatementSetter에는 파라미터의 값둘을 params의 value 값으로 설정한다.
 
@@ -408,5 +410,5 @@ Index Reader을 통해 읽어드린 파일을 NDX파일 설정에 따라 동적�
 ```
 
 ## 참고자료
-- http://static.springsource.org/spring-batch/reference/html/readersAndWriters.html
+- [Readers and Writers](https://docs.spring.io/spring-batch/reference/5.2/readersAndWriters.html)
 - http://www.mybatis.org/spring/ko/batch.html

@@ -2,13 +2,15 @@
 title: SourceCode Editor 
 linkTitle: SourceCode Editor
 description: "Source Editor"
-url: /egovframe-development/implementation-tool/editor/sourcecode-editor/
+url: /egovframe-development/implementation-tool/sourcecode-editor/
 menu:
   depth:
-    weight: 1
-    parent: "editor"
+    weight: 2
+    parent: "implementation-tool"
     identifier: "sourcecode-editor"
 ---
+# SourceCode Editor
+
 ## 개요
 
 Source Editor는 전자정부 표준프레임워크 개발 도구 통합을 위한 개방형 플랫폼으로, IDE(Integrated Development Environment) 기반으로 Edit 기능을 제공한다.

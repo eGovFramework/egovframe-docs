@@ -1,7 +1,7 @@
 ---
 title: Crypto 간소화 서비스
 linkTitle: "Crypto 간소화"
-description: 표준프레임워크 3.8부터 ARIA 알고리즘을 기반으로 XML Schema와 properties 파일을 통해 간편하게 암/복호화 설정과 중요한 정보 보호를 지원한다.
+description: 전자정부 표준프레임워크의 Crypto 간소화서비스를 사용한 ARIA 블록암호 기반 암/복호화 설정 및 사용법을 제공한다.
 url: /egovframe-runtime/foundation-layer/crypto/crypto-simplification/
 menu:
     depth:
@@ -9,237 +9,224 @@ menu:
         weight: 2
         parent: "crypto"
 ---
-# Crypto 간소화 서비스
+# Crypto 간소화서비스 설정
+
+전자정부 표준프레임워크 실행환경 구성요소인 Crypto 간소화서비스를 사용한 암호화 설정 및 사용법을 정리한 문서입니다.
 
 ## 개요
 
-표준프레임워크 3.8 부터 ARIA 블록암호 알고리즘 기반 암/복호화 설정을 간소화 할 수 있는 방법을 제공한다.
-내부적으로 필요한 설정을 가지고 있고, <acronym title="Extensible Markup Language">XML</acronym> Schema를 통해 필요한 설정만을 추가할 수 있도록 제공한다.
-또한 globals.properties 설정 파일의 중요 정보 Url, UserName, Password 항목을 암/복호화 처리 할 수 있도록 제공한다.
-그외에 정보는 properties 파일에 암호화 데이터 설정후 #{egovEnvCryptoService.decrypt('…')} 복호화 기능을 제공한다.
+Crypto 간소화서비스는 ARIA 블록암호 알고리즘 기반 암/복호화 기능을 제공합니다. globals.properties의 DB 연결 정보(Url, UserName, Password) 및 기타 민감 정보를 암호화하여 보호할 수 있습니다.
 
-## XML namespace 및 schema 설정
+## 라이브러리 적용
 
-설정 간소화 기능을 사용하기 위해서는 다음과 같은 xml 선언이 필요하다.
+### pom.xml 의존성 추가
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:egov-crypto="http://maven.egovframe.go.kr/schema/egov-crypto"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://maven.egovframe.go.kr/schema/egov-crypto http://maven.egovframe.go.kr/schema/egov-crypto/egov-crypto-4.2.0.xsd">
+<dependency>
+    <groupId>org.egovframe.rte</groupId>
+    <artifactId>egovframe-rte-fdl-crypto</artifactId>
+</dependency>
 ```
 
-## Crypto Config 설정
+- 전자정부 Maven 저장소(`https://maven.egovframe.go.kr/maven/`)에서 의존성 해결
+- parent POM의 `egovframe.rte.version`에 따라 버전 관리
 
-Security에 대한 기본 설정 정보를 제공한다.
-**algorithmKey**, **algorithmKeyHash** 값을 하단 <b>[Crypto algorithmKey, algorithmKeyHash 생성]에 의해 생성된 값을 입력</b>한다.
-algorithmKey, algorithmKeyHash 키의 노출을 피하고 싶다면 설정 파일에서 해당 항목 삭제 후
-하단 [WAS VM arguments 환경 변수 등록(옵션)]을 참고하여 진행한다.
+## 설정 방법
 
-예:
+### 1. globals.properties
 
-```xml
-<egov-crypto:config id="egovCryptoConfig"
-	initial="true"
-	crypto="true"
-	algorithm="SHA-256"
-	algorithmKey="(생성값)"
-	algorithmKeyHash="(생성값)"
-	cryptoBlockSize="1024"
-/>
-```
-
-### 속성 설명
-
-|    속성                        |     설명                                                               |     필수여부      |     비고                                                            |
-|------------------------------|----------------------------------------------------------------------|---------------|-------------------------------------------------------------------|
-|    initial                   |  globals.properties 연계 Url, UserName, Password 값 로드 여부(true, false)  |   필수          |                                                                   |
-|    crypto                    |  계정 암호화 여부(true, false)                                              |   필수          |                                                                   |
-|    algorithm                 |  계정 암호화 알고리즘                                                         |   필수          |                                                                   |
-|    algorithmKey              |  계정 암호화키 키                                                           |   필수          |                                                                   |
-|    algorithmKeyHash          |  계정 암호화 키 해쉬값                                                        |   필수          |                                                                   |
-|    cryptoBlockSize           |  계정 암호화키 블록사이즈                                                       |   필수          |                                                                   |
-|    cryptoPropertyLocation    |  설정파일 암복호화 경로                                                        |   선택          |  default=“classpath:/egovframework/egovProps/globals.properties”  |
-
-## Crypto algorithmKey, algorithmKeyHash 생성
-
-Crypto Config 설정에 algorithmKey, algorithmKeyHash 인코딩 키 생성 방법을 제공한다.
-**하단 코드에서 계정암호화키 키 값을 원하는 값으로 설정한다.**
-
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.egovframe.rte.fdl.cryptography.EgovPasswordEncoder;
- 
-public class EgovEnvCryptoAlgorithmCreateTest {
- 
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovEnvCryptoAlgorithmCreateTest.class);
- 
-	//계정암호화키 키
-	public String algorithmKey = "(사용자정의 값)";
- 
-	//계정암호화 알고리즘(MD5, SHA-1, SHA-256)
-	public String algorithm = "SHA-256";
- 
-	//계정암호화키 블럭사이즈
-	public int algorithmBlockSize = 1024;
- 
-	public static void main(String[] args) {
-		EgovEnvCryptoAlgorithmCreateTest cryptoTest = new EgovEnvCryptoAlgorithmCreateTest();
- 
-		EgovPasswordEncoder egovPasswordEncoder = new EgovPasswordEncoder();
-		egovPasswordEncoder.setAlgorithm(cryptoTest.algorithm);
- 
-		LOGGER.info("------------------------------------------------------");
-		LOGGER.info("알고리즘(algorithm) : "+cryptoTest.algorithm);
-		LOGGER.info("알고리즘 키(algorithmKey) : "+cryptoTest.algorithmKey);
-		LOGGER.info("알고리즘 키 Hash(algorithmKeyHash) : "+egovPasswordEncoder.encryptPassword(cryptoTest.algorithmKey));
-		LOGGER.info("알고리즘 블럭사이즈(algorithmBlockSize)  :"+cryptoTest.algorithmBlockSize);
-	}
-}
-```
-
-## 환경설정 파일(globals.properties) 암호화
-
-### 환경설정 파일(globals.properties)의 데이터베이스 연결 항목(Url, UserName, Password) 인코딩 값 생성
-
-환경설정 파일에서 데이터베이스 연결 항목(Url, UserName, Password) 인코딩 키 생성 방법을 제공한다.
-
-```xml
-<!-- EgovEnvCryptoUserTest.java 설정 파일 -->
-<!-- context-crypto-test.xml -->
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:egov-crypto="http://maven.egovframe.go.kr/schema/egov-crypto"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://maven.egovframe.go.kr/schema/egov-crypto http://maven.egovframe.go.kr/schema/egov-crypto/egov-crypto-4.1.0.xsd">
- 
-<bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-	<property name="useCodeAsDefaultMessage">
-		<value>true</value>
-	</property>
-	<property name="basenames">
-		<list>
-			<value>classpath:/egovframework/egovProps/globals</value>
-		</list>
-	</property>
-</bean>
- 
-<egov-crypto:config id="egovCryptoConfig"
-	initial="false"
-	crypto="true"
-	algorithm="SHA-256"
-	algorithmKey="(사용자정의 값)"
-	algorithmKeyHash="(생성값)"
-	cryptoBlockSize="1024"
-/>
-</beans>
-```
-
-```java
-// 데이터베이스 연결 항목(Url, UserName, Password) 인코딩 값 생성 JAVA
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
- 
-import org.egovframe.rte.fdl.cryptography.EgovEnvCryptoService;
-import org.egovframe.rte.fdl.cryptography.impl.EgovEnvCryptoServiceImpl;
- 
-public class EgovEnvCryptoUserTest {
- 
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovEnvCryptoUserTest.class);
- 
-	public static void main(String[] args) {
- 
-		String[] arrCryptoString = { 
-			"userId",         //데이터베이스 접속 계정 설정
-			"userPassword",   //데이터베이스 접속 패드워드 설정
-			"url",            //데이터베이스 접속 주소 설정
-			"databaseDriver"  //데이터베이스 드라이버
-		};
- 
-		LOGGER.info("------------------------------------------------------");		
-		ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath:/context-crypto-test.xml"});
-		EgovEnvCryptoService cryptoService = context.getBean(EgovEnvCryptoServiceImpl.class);
-		LOGGER.info("------------------------------------------------------");
- 
-		String label = "";
-		try {
-			for(int i=0; i < arrCryptoString.length; i++) {		
-				if(i==0)label = "사용자 아이디";
-				if(i==1)label = "사용자 비밀번호";
-				if(i==2)label = "접속 주소";
-				if(i==3)label = "데이터 베이스 드라이버";
-				LOGGER.info(label+" 원본(orignal):" + arrCryptoString[i]);
-				LOGGER.info(label+" 인코딩(encrypted):" + cryptoService.encrypt(arrCryptoString[i]));
-				LOGGER.info("------------------------------------------------------");
-			}
-		} catch (IllegalArgumentException e) {
-			LOGGER.error("["+e.getClass()+"] IllegalArgumentException : " + e.getMessage());
-		} catch (Exception e) {
-			LOGGER.error("["+e.getClass()+"] Exception : " + e.getMessage());
-		}
- 
-	}
- 
-}
-```
-
-### 환경설정 파일(globals.properties) 인코딩 값 설정
-
-* 앞에서 생성된 데이터베이스 연결 항목(Url, UserName, Password)을 (생성값)에 입력
+**경로:** `src/main/resources/egovframework/egovProps/globals.properties`
 
 ```properties
-......
- 
-#mysql
-Globals.mysql.DriverClassName = (생성값)
-Globals.mysql.Url = (생성값)
-Globals.mysql.UserName = (생성값)
-Globals.mysql.Password = (생성값)
- 
-......
+# 접근제어 설정 파일 경로 (egov-crypto 모듈이 참조)
+Globals.CryptoConfigPath = egovframework/egovProps/conf/egov-crypto-config.properties
+
+# File ID 암호화 키 (반드시 기본값 "egovframe"을 다른 값으로 변경하여 사용)
+Globals.File.algorithmKey = egovframe
 ```
 
-### context-datasource.xml 파일의 데이터베이스 연결 항목(Url, UserName, Password) 디코딩 연결 설정
+### 2. egov-crypto-config.properties
 
-데이터베이스 설정 파일에서 데이터베이스 연결 항목을 디코딩 하는 설정 방법을 제공한다.
+**경로:** `src/main/resources/egovframework/egovProps/conf/egov-crypto-config.properties`
+
+| 항목 | 필수 | 설명 |
+|------|------|------|
+| `id` | O | 암호화 설정 빈 식별자 |
+| `initial` | O | globals.properties의 Url, UserName, Password 로드 여부 (`true`, `false`) |
+| `crypto` | O | 계정 암호화 여부 (`true`: 암호화 사용, `false`: 평문 사용) |
+| `algorithm` | O | 계정 암호화 알고리즘 (MD5, SHA-1, SHA-256) |
+| `algorithmKey` | O | 계정 암호화 키 |
+| `algorithmKeyHash` | O | algorithmKey의 해시값 |
+| `cryptoBlockSize` | O | 계정 암호화 블록 사이즈 |
+| `cryptoPropertyLocation` | O | 암복호화 대상 설정 파일 경로 |
+| `plainDigest` | O | 평문 다이제스트 사용 여부 (`true`, `false`) |
+
+**예시 설정:**
+
+```properties
+id = egovCryptoConfig
+initial = true
+crypto = true
+algorithm = SHA-256
+algorithmKey = egovframe
+algorithmKeyHash = gdyYs/IZqY86VcWhT8emCYfqY1ahw2vtLG+/FzNqtrQ=
+cryptoBlockSize = 1024
+cryptoPropertyLocation = classpath:/egovframework/egovProps/globals.properties
+plainDigest = false
+```
+
+> **보안 주의:** `algorithmKey`, `algorithmKeyHash` 값은 반드시 기본값에서 변경하여 사용하세요. 노출을 피하려면 `egov-crypto-config.properties`에서 해당 항목을 삭제하고 WAS VM arguments에 `-Degov.crypto.algorithmKey="(사용자정의 값)"`, `-Degov.crypto.algorithmKeyHash="(생성값)"`으로 등록할 수 있습니다.
+
+## Spring 설정
+
+### context-crypto.xml
+
+**경로:** `src/main/resources/egovframework/spring/com/context-crypto.xml`
+
+egovframe-rte-fdl-crypto의 `@Configuration` 클래스를 스캔하여 `egovEnvCryptoService`, `egovEnvPasswordEncoderService` 등 빈을 자동 등록합니다.
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans 
-	xmlns="http://www.springframework.org/schema/beans" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:util="http://www.springframework.org/schema/util" 
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
-	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
- 
-......
- 
-	<!-- MySQL -->
-	<beans profile="mysql">  
-	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="#{egovEnvCryptoService.decrypt('${Globals.mysql.DriverClassName}')}"/>
-		<property name="url" value="#{egovEnvCryptoService.getUrl()}" />
-		<property name="username" value="#{egovEnvCryptoService.getUsername()}" />
-		<property name="password" value="#{egovEnvCryptoService.getPassword()}" />
-	</bean>
-	</beans>
- 
-......
+<context:component-scan base-package="org.egovframe.rte.fdl.crypto">
+    <context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
+    <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+    <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+</context:component-scan>
 ```
 
-### WAS VM arguments 환경 변수 등록(옵션)
+### context-datasource.xml - DB 암호화 복호화
 
-- 간소화 설정 파일에서 algorithmKey, algorithmKeyHash 키의 노출을 피하고 싶다면
-  - 간소화 설정 파일에서 algorithmKey, algorithmKeyHash 키를 삭제 하고 WAS VM arguments 환경 변수를 등록 한다.
-  - globals.properties 설정 파일의 중요 정보 Url, UserName, Password 항목에 대해 암/복호화 처리 할 수 있도록 제공한다.
+DataSource의 password는 `egovPasswordResolver.resolvePassword()`로 복호화합니다.
 
-
+```xml
+<property name="password" value="#{egovPasswordResolver.resolvePassword('Globals.mysql.Password')}"/>
 ```
--Degov.crypto.algorithmKey="(사용자정의 값)" -Degov.crypto.algorithmKeyHash="(생성값)"
+
+- `EgovPasswordResolver`: `EgovEnvCryptoService`의 `crypto` 설정에 따라 암호화된 값 복호화 또는 평문 반환
+
+## algorithmKey, algorithmKeyHash 생성
+
+`egov-crypto-config.properties`에 사용할 `algorithmKeyHash` 생성 방법:
+
+```java
+import org.egovframe.rte.fdl.crypto.EgovPasswordEncoder;
+
+EgovPasswordEncoder egovPasswordEncoder = new EgovPasswordEncoder();
+egovPasswordEncoder.setAlgorithm("SHA-256");
+
+String algorithmKey = "(사용자정의 값)";
+String algorithmKeyHash = egovPasswordEncoder.encryptPassword(algorithmKey);
+
+// algorithmKeyHash 출력 후 egov-crypto-config.properties에 설정
 ```
+
+## globals.properties DB 암호화 값 생성
+
+DB 연결 정보(Url, UserName, Password)를 암호화하는 방법:
+
+```java
+import org.egovframe.rte.fdl.crypto.EgovEnvCryptoService;
+
+EgovEnvCryptoService cryptoService = context.getBean(EgovEnvCryptoService.class);
+String plainText = "데이터베이스_접속_비밀번호";
+String encrypted = cryptoService.encrypt(plainText);
+
+// encrypted 값을 globals.properties의 Globals.mysql.Password 등에 설정
+```
+
+## 평문 사용 (crypto=false)
+
+개발/테스트 시 평문을 사용하려면:
+
+1. **egov-crypto-config.properties** 수정:
+   ```properties
+   initial = false
+   crypto = false
+   ```
+
+2. **context-datasource.xml**에서 `egovPasswordResolver.resolvePassword()`로 조회 시 평문 그대로 반환됨
+
+## 사용법
+
+### EgovEnvCryptoService - 암호화/복호화
+
+```java
+import org.egovframe.rte.fdl.crypto.EgovEnvCryptoService;
+
+@Resource(name = "egovEnvCryptoService")
+EgovEnvCryptoService cryptoService;
+
+// 암호화 (URL 인코딩 처리)
+String encrypted = cryptoService.encrypt(plainText);
+
+// 암호화 (URL 인코딩 미처리)
+String encrypted = cryptoService.encryptNone(plainText);
+
+// 복호화 (URL 디코딩 처리)
+String decrypted = cryptoService.decrypt(encrypted);
+
+// 복호화 (URL 디코딩 미처리)
+String decrypted = cryptoService.decryptNone(encrypted);
+```
+
+### EgovPasswordEncoder - 비밀번호 해시
+
+```java
+import org.egovframe.rte.fdl.crypto.EgovPasswordEncoder;
+
+@Resource(name = "egovEnvPasswordEncoderService")
+EgovPasswordEncoder egovPasswordEncoder;
+
+// 비밀번호 해시 생성
+String hashedPassword = egovPasswordEncoder.encryptPassword(plainPassword);
+
+// 비밀번호 검증
+boolean matches = egovPasswordEncoder.checkPassword(plainPassword, hashedPassword);
+```
+
+### EgovComUtlController - ID 암호화/복호화
+
+```java
+// 문자열 암호화 (Base64, URL 인코딩)
+String encrypted = EgovComUtlController.encryptId(plainText);
+
+// 암호화 문자열 복호화
+String decrypted = EgovComUtlController.decryptId(encrypted);
+```
+
+### EgovFileMngController - 파일 ID 암호화
+
+```java
+// 파일 ID 암호화
+String encrypted = EgovFileMngController.encrypt(atchFileId);
+
+// 세션 ID 포함 파일 ID 암호화 (URL 노출 시 세션 검증용)
+String encrypted = EgovFileMngController.encryptSession(atchFileId, sessionId);
+
+// 암호화된 파일 ID 복호화
+String decrypted = EgovFileMngController.decrypt(base64CipherId);
+```
+
+### JSP에서 사용 (egovc TLD)
+
+```jsp
+<%@ taglib prefix="egovc" uri="/WEB-INF/tlds/egovc.tld" %>
+
+<!-- 문자열 암호화 -->
+${egovc:encrypt(atchFileId)}
+
+<!-- 세션 ID 포함 암호화 (파일 다운로드 링크 등) -->
+${egovc:encryptSession(fileVO.atchFileId, pageContext.session.id)}
+
+<!-- ID 암호화 (URL 인코딩 미처리) -->
+${egovc:encryptId(plainId)}
+```
+
+## 적용 사례
+
+| 용도 | 사용처 |
+|------|--------|
+| DB 연결 비밀번호 | context-datasource.xml, EgovPasswordResolver |
+| 첨부파일 ID | EgovFileMngController, EgovFileDownloadController, getImage.do |
+| 파일 다운로드 URL | egovc:encryptSession (세션 검증 포함) |
+| ID 파라미터 암호화 | EgovComUtlController.encryptId/decryptId, EgovCipherIdPropertyEditor |
+| 암호화/복호화 테스트 UI | EgovCryptoController (/sec/pki/EgovCryptoInfo.do) |

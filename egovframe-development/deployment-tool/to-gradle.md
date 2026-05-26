@@ -49,26 +49,32 @@ menu:
      
      ![Compile 오류 정리](./images/gradle-sample-7-1.png)
 
-6. pom.xml 삭제
+6. Dynamic Web Module 퍼셋 버전 변경
+   * Maven Nature 제거 시 Dynamic Web Module 버전이 기본값(2.4)으로 초기화되므로, 수동으로 변경이 필요하다.
+   * Project Properties > Project Facets > Dynamic Web Module을 `5.0`으로 변경
 
-7. Gradle 설정 확인
+     ![Project Facets 설정](./images/gradle-sample-facet-1.png)
+
+7. pom.xml 삭제
+
+8. Gradle 설정 확인
    * Gradle > Refresh Gradle Project
 
      ![Task 재구성](./images/gradle-sample-8.png)
 
-8. Gradle Tasks View 열기
+9. Gradle Tasks View 열기
    * Window > Show View > Gradle > Gradle Tasks
 
      ![Gradle Tasks View](./images/gradle-sample-9.png)
 
-9. Gradle Tasks View에 표시된 프로젝트 Build
-   * 프로젝트에 구성된 Task를 시작메뉴를 이용하여 빌드실행
+10. Gradle Tasks View에 표시된 프로젝트 Build
+    * 프로젝트에 구성된 Task를 시작메뉴를 이용하여 빌드실행
 
-     ![기본 Task 실행](./images/gradle-sample-10.png)
+      ![기본 Task 실행](./images/gradle-sample-10.png)
 
-     ![Task 실행결과](./images/gradle-sample-11.png)
+      ![Task 실행결과](./images/gradle-sample-11.png)
 
-10. Gradle 프로젝트 실행
+11. Gradle 프로젝트 실행
     * Run As > Run On Server
 
 ![Gradle 프로젝트 실행](./images/gradle-sample-12.png)
@@ -82,44 +88,51 @@ plugins {
     id 'war'
     id 'project-report'
 }
- 
+
 repositories {
     mavenCentral()
     maven {
         url 'https://maven.egovframe.go.kr/maven'
     }
 }
- 
+
 dependencies {
-    implementation 'org.egovframe.rte:org.egovframe.rte.ptl.mvc:4.3.0'
-    implementation 'org.egovframe.rte:org.egovframe.rte.psl.dataaccess:4.3.0'
-    implementation 'org.egovframe.rte:org.egovframe.rte.fdl.idgnr:4.3.0'
-    implementation 'org.egovframe.rte:org.egovframe.rte.fdl.property:4.3.0'
- 
-    implementation 'javax.servlet.jsp.jstl:jstl-api:1.2'
-    implementation 'org.apache.taglibs:taglibs-standard-impl:1.2.5'
- 
-    implementation 'org.antlr:antlr:3.5'
-    implementation 'org.hsqldb:hsqldb:2.7.3'
-    implementation 'org.eclipse:yasson:1.0.2'
-    implementation 'org.glassfish:javax.json:1.1.4'
- 
-    compileOnly 'org.projectlombok:lombok:1.18.34'
-    annotationProcessor 'org.projectlombok:lombok:1.18.34'
- 
-    compileOnly  'javax.servlet:javax.servlet-api:4.0.1'
- 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.0'
+    implementation('org.egovframe.rte:egovframe-rte-ptl-mvc:5.0.0') {
+        exclude(module: 'commons-logging')
+    }
+    implementation 'org.egovframe.rte:egovframe-rte-psl-dataaccess:5.0.0'
+    implementation 'org.egovframe.rte:egovframe-rte-fdl-idgnr:5.0.0'
+    implementation 'org.egovframe.rte:egovframe-rte-fdl-property:5.0.0'
+    implementation 'org.egovframe.rte:egovframe-rte-ptl-reactive:5.0.0'
+
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:4.0.0'
+
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+
+    implementation 'jakarta.validation:jakarta.validation-api:3.1.1'
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.2.Final'
+
+    implementation 'org.hsqldb:hsqldb:2.7.4'
+    implementation 'org.antlr:antlr4:4.13.2'
+    implementation 'org.eclipse:yasson:3.0.4'
+    implementation 'org.glassfish:jakarta.json:2.0.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.12.1'
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.13.0'
-    testImplementation 'org.springframework:spring-test:5.3.37'
+    testImplementation 'org.springframework:spring-test:6.2.11'
 }
- 
+
 group = 'egovframe'
 version = '1.0.0'
 description = 'maven2gradle'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
- 
+java.sourceCompatibility = JavaVersion.VERSION_17
+
 publishing {
     publications {
         maven(MavenPublication) {
@@ -135,29 +148,21 @@ publishing {
 
 ```groovy
 def libDir='src/main/webapp/WEB-INF/lib/project'
- 
+
 repositories {
     flatDir {
         dirs libDir
     }
 }
- 
+
 dependencies {
- 
+
 // 3rd party 라이브러리로 별도의 설치 필요
-    implementation files("${libDir}/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar")
-    implementation files("${libDir}/altibase/7.1.0/altibase-7.1.0.jar")
-    implementation files("${libDir}/tibero5/5.0.0/tibero5-5.0.0.jar")
-    implementation files("${libDir}/cubrid/10.2.0/cubrid-10.2.0.jar")
-    implementation files("${libDir}/goldilocks8/8.0.0/goldilocks8-8.0.0.jar")
     implementation files("${libDir}/smeapi/2.7.0/smeapi-2.7.0.jar")
-    implementation files("${libDir}/gpkisecureweb/1.0.4.9/gpkisecureweb-1.0.4.9.jar")
-    implementation files("${libDir}/libgpkiapi/1.4.0/libgpkiapi-1.4.0.jar")
-    implementation files("${libDir}/onepass/2.0.0/onepass-2.0.0.jar")
-    implementation files("${libDir}/OmniEntSDKCore/1.0.3.5/OmniEntSDKCore-1.0.3.5.jar")
-    implementation files("${libDir}/OmniEntSDKServerCore/1.0.3.5/OmniEntSDKServerCore-1.0.3.5.jar")
-    implementation files("${libDir}/OmniEntSDKVerifier/1.0.3.6/OmniEntSDKVerifier-1.0.3.6.jar")
-    implementation files("${libDir}/RSLicenseSDK/1.0.4/RSLicenseSDK-1.0.4.jar")
- 
+    implementation files("${libDir}/OmniEnt-SDK-Core/1.0.3.18/OmniEnt-SDK-Core-1.0.3.18.jar")
+    implementation files("${libDir}/OmniEnt-SDK-ServerCore/1.0.3.22/OmniEnt-SDK-ServerCore-1.0.3.22.jar")
+    implementation files("${libDir}/OmniEnt-SDK-Verifier/1.0.3.21/OmniEnt-SDK-Verifier-1.0.3.21.jar")
+    implementation files("${libDir}/RSLicenseSDK/1.0.4/RSLicenseSDK_jdk16-1.0.4.jar")
+
 }
 ```

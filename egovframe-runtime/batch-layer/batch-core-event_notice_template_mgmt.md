@@ -9,7 +9,7 @@ menu:
         weight: 21
         parent: "batch-layer"
 ---
-# 이벤트알림 템플릿 관리
+# 이벤트 알림 템플릿 관리
 
 ## 개요
 전자정부 표준프레임워크의 배치 수행중 특정시점에 이벤트가 발생하는 경우 EventNoticeTrigger 인터페이스를 활용하여 SMS, Email 등을 통해 정보를 전달할 수 있는 추상화된 외부알림 access 관리기능이다.
@@ -52,7 +52,7 @@ EgovEventNoticeTrigger 클래스는 EventNoticeTrigger 인터페이스를 상속
 	</step>
 </job>
  
-<bean id="EventNoticeCallListener" class="egovframework.brte.sample.example.listener.EgovEventNoticeCallProcessor" />
+<bean id="EventNoticeCallListener" class="your.package.listener.EventNoticeCallProcessor" />
 ```
 
 2. 위에서 설정한 프로세서를 구현한다. [작업 전후처리 관리](./batch-core-listener.md#작업-전후처리-관리-egovprepostprocessor)의 프로세서를 상속받아 사용자가 원하는 시점 (아래 예시는 Step수행 후에 호출되는 메소드)에서 invoke 메소드를 호출하도록 구현한다. 
@@ -101,7 +101,4 @@ public class EgovEmailEventNoticeTrigger extends EgovEventNoticeTrigger {
  	class="egovframework.brte.sample.example.event.EgovEmailEventNoticeTrigger" />
 ```
 
-위 기능을 활용하여 실제 Email을 전송하는 예제를 제공하므로 아래를 참고한다.
 
-#### 사용예시
-- [이벤트알림 템플릿(Template) 예제](../../runtime-example/individual-example/batch-layer/batch-example-event_notice_template_mgmt.md)

@@ -148,4 +148,5 @@ WebHandler API에서는 WebFilter 체인과 WebHandler에서 발생한 예외를
 
 ## 참고자료
 
-- [The Spring Framework - Web Reactive - Reactive Core](https://docs.spring.io/spring-framework/docs/5.3.27/reference/html/web-reactive.html#webflux-reactive-spring-web)
+- [Spring Framework 6.2 - Web on Reactive Stack](https://docs.spring.io/spring-framework/reference/6.2/web/reactive.html)
+- [Reactive Core](https://docs.spring.io/spring-framework/reference/6.2/web/reactive/webflux.html#webflux-reactive-spring-web)

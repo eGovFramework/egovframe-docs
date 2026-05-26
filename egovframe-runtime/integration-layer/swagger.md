@@ -149,3 +149,11 @@ public class SwaggerConfig {
     }
 }
 ```
+
+(위 설정은 Spring Framework 6.2 [Java-based Container Configuration](https://docs.spring.io/spring-framework/reference/6.2/core/beans/java.html) 및 [Classpath Scanning](https://docs.spring.io/spring-framework/reference/6.2/core/beans/classpath-scanning.html)과 호환된다.)
+
+## 참고자료
+
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html)
+- [Java-based Container Configuration](https://docs.spring.io/spring-framework/reference/6.2/core/beans/java.html) (`@Configuration`, `@Bean`)
+- [Classpath Scanning and Managed Components](https://docs.spring.io/spring-framework/reference/6.2/core/beans/classpath-scanning.html)

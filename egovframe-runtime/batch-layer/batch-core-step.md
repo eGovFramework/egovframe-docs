@@ -1,7 +1,7 @@
 ---
 title: Step
 linkTitle: "Step"
-description: Step은 Job 내에서 배치 작업을 정의하고 제어하는 독립적이고 순차적인 단계를 캡슐화하는 도메인 객체이다. 모든 Job은 최소 하나 이상의 Step으로 구성되며, 각 Step은 입력, 처리, 출력 자원 설정을 포함하여 작업을 처리한다. StepExecution은 JobExecution과 대응되며, 각 Step은 순차적으로 실행된다.
+description: Step은 Job 내에서 배치 작업을 정의하고 제어하는 독립적이고 순차적인 단계를 캡슐화하는 도메인 객체이다. 모든 Job은 최소 하나 이상의 Step으로 구성되며, 각 Step은 입력, 처리, 출력 자원 설정을 포함하여 작업을 처리한다. Spring Batch 5.2 Step 설정 및 Chunk/Tasklet과 정합성을 유지한다.
 url: /egovframe-runtime/batch-layer/batch-core-step/
 menu:
     depth:
@@ -12,9 +12,11 @@ menu:
 ---
 # Step
 
+본 문서는 [Spring Batch 5.2 - Configuring a Step](https://docs.spring.io/spring-batch/reference/5.2/step.html) 및 [The Domain Language of Batch (Step)](https://docs.spring.io/spring-batch/reference/5.2/domain.html#step)와 정합성을 유지한다.
+
 ## 개요
 
-Step은 Job 내부에 구성되어 실제 배치작업 수행을 위해 작업을 정의하고 제어한다. 즉, Step에서는 입력 자원을 설정하고 어떤 방법으로 어떤 과정을 통해 처리할지 그리고 어떻게 출력 자원을 만들 것인지에 대한 모든 설정을 포함한다.
+Step은 Job 내부에 구성되어 실제 배치작업 수행을 위해 작업을 정의하고 제어한다. 즉, Step에서는 입력 자원을 설정하고 어떤 방법으로 어떤 과정을 통해 처리할지 그리고 어떻게 출력 자원을 만들 것인지에 대한 모든 설정을 포함한다. Spring Batch 5.2에서 Step은 **배치 Job의 독립적·순차적 단계**를 캡슐화하는 도메인 객체이며, 개발자가 원하는 만큼 단순하거나 복잡하게 구성할 수 있다. 단순한 Step은 파일에서 DB로 데이터를 적재하는 수준일 수 있고, 복잡한 Step은 비즈니스 규칙을 적용하는 처리 로직을 포함할 수 있다.
 
 ## 설명
 
@@ -101,9 +103,6 @@ Tasklet 인터페이스를 구현한 SystemCommandTasklet 클래스를 이용해
 </bean>
 ```
 
-##### 관련 예제
-
-[단순처리(Tasklet) 예제](./batch-example-tasklet_mgmt.md)
 
 ### StepExecution
 
@@ -132,14 +131,36 @@ StepExecution ID	Step Name	JobExecution ID	Status
 
 Step 구성은 개발자에 따라 간단하거나 아주 복잡하게 구성할 수 있다. 다만 구성을 쉽게하기 위해 스프링 배치 네임스페이스를 사용할 수 있다.
 
-#### Chunk 기반 Step 필수 설정
+#### Java 설정(Chunk 기반 Step)
+
+Chunk 기반 Step은 `StepBuilderFactory`(또는 `StepBuilder`)와 `chunk()`를 사용하여 정의한다.
+
+```java
+@Configuration
+@EnableBatchProcessing
+public class BatchStepConfig {
+
+	@Bean
+	public Step step1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+		return new StepBuilder("step1", jobRepository)
+				.<InputType, OutputType>chunk(10, transactionManager)
+				.reader(itemReader())
+				.writer(itemWriter())
+				.build();
+	}
+}
+```
+
+`ItemProcessor`가 있는 경우 `.processor(itemProcessor())`를 추가한다.
+
+#### XML 설정(Chunk 기반 Step 필수 요소)
 
 ```xml
 <job id="sampleJob" job-repository="jobRepository">
 	<step id="step1">
 		<tasklet transaction-manager="transactionManager">
 			<chunk reader="itemReader" writer="itemWriter" commit-interval="10"/>
-		<tasklet>
+		</tasklet>
 	</step>
 </job>
 ```
@@ -241,19 +262,21 @@ Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정
 
 ##### Retry
 
-[Retry 설정 자세히 보기](./batch-core-skip-repeat-retry.md)
+[Retry 설정 자세히 보기](./batch-core-skip_repeat_retry.md)
 
-#### Step 흐름제어
+#### Step 흐름 제어
 
-[Step 흐름제어(Flow Control) 자세히 보기](./batch-core-flow_control.md) 
+[Step 흐름 제어(Flow Control) 자세히 보기](./batch-core-flow_control.md)
 
-#### Step 흐름제어
+#### Step Variable
 
-변수 선언 후 Listeners를 통해서 모든 Setp에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
+변수 선언 후 Listeners를 통해서 모든 Step에서 사용자 정의 변수를 사용할 수 있도록 EgovStepVariableListener를 통해서 지원한다.
 
 [Step Variable 설정 자세히 보기](./batch-core-step_variable.md) 
 
 
-## 참고자료
-* http://static.springsource.org/spring-batch/reference/html/domain.html#domainStep
-* http://static.springsource.org/spring-batch/reference/html/configureStep.html
+## 참고 문서
+
+- [Spring Batch 5.2 - The Domain Language of Batch (Step)](https://docs.spring.io/spring-batch/reference/5.2/domain.html#step)
+- [Spring Batch 5.2 - Configuring a Step](https://docs.spring.io/spring-batch/reference/5.2/step.html)
+- [Step - Late Binding, Flow Control, TaskletStep, Chunk-oriented Processing](https://docs.spring.io/spring-batch/reference/5.2/step.html#section-summary)

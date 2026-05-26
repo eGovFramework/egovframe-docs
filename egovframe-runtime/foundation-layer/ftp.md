@@ -275,6 +275,7 @@ Version 3.0의 binary는 호환이 보장 되지만 소스코드는 아래와 �
 - TelnetClient#addOptionHandler(TelnetOptionHandler)
 - TelnetClient#deleteOptionHandler(int)
 
-## 참고자료
+## 참고 문서
 
-[Jakarta Commons Net](http://commons.apache.org/net/)
+- [Spring Framework 6.2 - Integration](https://docs.spring.io/spring-framework/reference/6.2/integration.html)
+- [Apache Commons Net](https://commons.apache.org/net/)

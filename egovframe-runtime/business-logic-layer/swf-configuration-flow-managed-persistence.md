@@ -74,8 +74,9 @@ Flow가 종료되는 시점에 커밋이 일어나게 하려면, end-state의 co
 Flow 내에서 스프링 기반 데이터 접근 객체를 사용해서 발생하는 데이터 접근 시에는 항상 이 EntityManager를 자동으로 사용하게 된다.
 이러한 데이터 접근 연산은 중간 수정 내용의 고립성 유지를 위해 항상 트랜잭션 처리 대상이 되지 않고, 읽기 전용 트랜잭션에서만 실행되어야 한다.
 
-## 참고자료
+## 참고 문서
 
-- [Spring Web Flow reference](https://docs.spring.io/spring-webflow/docs/2.3.3.RELEASE/reference/html/)
+- [The IoC Container - Spring Framework 6.2](https://docs.spring.io/spring-framework/reference/6.2/core/beans.html): JpaFlowExecutionListener 등 Bean 정의
+- [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html)
+- [Spring Web Flow reference 2.3.x](https://docs.spring.io/spring-webflow/docs/2.3.x/reference/html/)
 - Spring Web-Flow Framework Reference beta with Korean (by 박찬욱)
-- ~~[Whiteship's Note](http://whiteship.me/2146)~~ (만료됨)

@@ -165,4 +165,5 @@ key:rb1   value:on
 
 ## 참고자료
 
-- [new handler method controller processing](http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.1.html#new-in-3.1-handler-method-controller-processing)
+- [Spring Framework 6.2 - Web on Servlet Stack](https://docs.spring.io/spring-framework/reference/6.2/web.html)
+- [Handler Methods - Method Arguments](https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods.html#mvc-ann-arguments): HandlerMethodArgumentResolver

@@ -1,14 +1,16 @@
 ---
 title: Debug
 linkTitle: Debug
-description: "디버깅"
+description: "Implentation Tool에는 로컬 또는 원격으로 실행 중인 프로그램에서 오류를 발견하고 진단할 수 있는 디버거가 포함되어 있다."
 url: /egovframe-development/implementation-tool/debug/
 menu:
   depth:
-    weight: 2
+    weight: 14
     parent: "implementation-tool"
     identifier: "debug"
 ---
+# Debug
+
 ## 개요
 
 Implentation Tool에는 로컬 또는 원격으로 실행 중인 프로그램에서 오류를 발견하고 진단할 수 있는 디버거가 포함되어 있다.
