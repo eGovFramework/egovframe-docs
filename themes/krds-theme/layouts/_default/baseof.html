@@ -6,15 +6,13 @@
 <body>
   <header id="krds-header">
     {{ partial "header.html" . }}
-    {{ if not .IsHome }}
     {{ partial "mobileNav.html" . }}
-    {{ end }}
   </header>
   <main id="wrap">
     
       <div id="container" class="krds-in-page-navigation-type">
-          <div class="inner in-between layout">
-            {{ if not .IsHome }}
+          <div class="inner layout {{ if and (not .IsHome) (not (eq .Params.menu.depth.identifier "getting-started")) }} in-between {{ end }}">              
+            {{ if and (not .IsHome) (not (eq .Params.menu.depth.identifier "getting-started")) }}
               {{ partial "side-menu.html" . }}
             <div class="contents">
                 {{ block "main" . }}{{ end }}

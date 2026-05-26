@@ -6,13 +6,26 @@ port = 8888
 
 [markup.tableOfContents]
 startLevel = 2  # h2부터 시작
-endLevel = 3    # h3까지 포함
+endLevel = 2
 ordered = false # 순서 없는 목록(ul)으로 표시
 
 [params]
 github_repo = 'https://github.com/eGovFramework/egovframe-docs'
 github_project_repo = 'https://github.com/eGovFramework/egovframe-docs'
 github_branch = 'main'
+
+[params.docsVersion]
+  "5.0" = "https://www.egovframe.go.kr/docs/5.0/"
+  Archive = "https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index"
+  
+[[params.version]]
+  name = "5.0"
+  value = "https://www.egovframe.go.kr/docs/5.0/"
+  weight = 1
+[[params.version]]
+  name= "Archive"
+  value = "https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index"
+  weight = 99
 
 #프린트 이용시 설정
 [outputFormats.Print]

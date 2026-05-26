@@ -23,13 +23,15 @@
           {{ end }}
         {{ end }}
         
-        {{/*  <li>
+{{/*
+		<li>
           {{- if lt (add $index 1) (sub (len $urlParts) 1)  -}} <!-- 마지막 항목이 아니면 링크 생성 -->
             <a href="{{ $currentPath | absURL }}" class="txt">{{ $partName }}</a>
           {{- else -}} <!-- 마지막 항목은 링크 없이 텍스트로 표시 -->
             <span>{{ $name }}</span>
           {{- end -}}
-        </li>  */}}
+        </li>
+*/}}
       {{- end -}}
     {{- end -}}
   </ol>

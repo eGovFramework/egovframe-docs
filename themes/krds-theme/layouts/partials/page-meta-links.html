@@ -11,7 +11,7 @@
   {{ $gh_subdir := $.Param "github_subdir" | default "" -}}
   {{ $gh_project_repo := $.Param "github_project_repo" -}}
   {{ $gh_branch := $.Param "github_branch" | default "main" -}}
-{{/*  <div class="krds-in-page-navigation-type">  */}}
+<!-- <div class="krds-in-page-navigation-type"> -->
   
     {{/* Adjust $path based on path_base_for_github_subdir */ -}}
     {{/*  {{ $ghs_base := $.Param "path_base_for_github_subdir" -}}
@@ -31,7 +31,7 @@
     <!-- url에서 "content/"를 지우기 위해 아래 한 줄 추가 -->
     {{ $gh_repo_path = replace $gh_repo_path "content/" "" -}}
 
-    {{ $viewURL := printf "%s/blob/%s" $gh_repo $gh_repo_path -}}
+    {{ $viewURL := printf "%s/tree/%s" $gh_repo $gh_repo_path -}}
     {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
   
     {{ $issuesURL := printf "%s/issues/new?title=%s" $gh_repo (safeURL $.Title ) -}}
@@ -50,6 +50,6 @@
       </nav>
       {{ partial "toc.html" . }}
     </div>
-{{/*  </div>  */}}
+<!-- </div> -->
 
 {{ end -}}

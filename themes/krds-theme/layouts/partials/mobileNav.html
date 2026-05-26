@@ -1,4 +1,5 @@
 {{$link := .RelPermalink}}
+{{ $isHomeLink := .IsHome }}
 <nav id="mobile-nav" class="krds-main-menu-mobile" style="display:none">
   <div class="gnb-wrap" style="width:80%">
     <!-- gnb-header -->
@@ -24,7 +25,7 @@
       <div class="gnb-menu">
         <div class="menu-wrap">
           {{ range sort .Site.Menus.depth "Weight"}}
-            {{ if hasPrefix $link .URL}}
+            {{ if or $isHomeLink (hasPrefix $link .URL)}}
             <ul>
               {{ range $index, $page := sort .Children "Weight" }}
                   {{ $isActive := eq $link .URL }}
@@ -38,7 +39,7 @@
         </div>
         <div class="submenu-wrap">
           {{ range sort .Site.Menus.depth "Weight"}}
-            {{ if hasPrefix $link .URL}}
+            {{ if or $isHomeLink (hasPrefix $link .URL)}}
               {{ range $index, $page := sort .Children "Weight" }}
               <div class="gnb-sub-list" id="mGnb-anchor{{$index}}">
                 <a href="{{.URL}}" class="sub-title" data-url="{{.URL}}">{{.Name}}</a>

@@ -3,6 +3,29 @@
     <!-- 헤더 상단 기타메뉴 -->
     <div class="header-container">
         <div class="inner" style="padding-bottom:0">
+            <div class="header-utility">
+                <ul class="utility-list">
+                <li>
+                    <div class="krds-drop-wrap">
+                    <button type="button" class="krds-btn small text drop-btn">
+                        버전 <i class="svg-icon ico-toggle"></i>
+                    </button>
+                    <div class="drop-menu">
+                        <div class="drop-in">
+                        <ul class="drop-list">
+                            {{/*  {{ range $key, $value := .Site.Params.docsVersion }}
+                            <li><a href="{{ $value }}" class="item-link">{{ $key }}</a></li>
+                            {{ end}}  */}}
+                             {{ range sort site.Params.version "weight" "asc"}}
+                                <li><a href="{{ .value }}" class="item-link" {{if eq .name "Archive" }}target="_blank"{{end}}>{{ .name }}</a></li>
+                             {{ end }}
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                </ul>
+            </div>
             <div class="header-branding">
                 <h2 class="logo">
                     <a href="{{ $.Site.BaseURL }}"></a>
@@ -10,9 +33,7 @@
                 <div class="header-actions">
                     {{/*  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}  */}}
                     {{ partial "menu.html" . }}
-                    {{ if not .IsHome }}
                     <button type="button" class="btn-navi all" aria-controls="mobile-nav"></button>
-                    {{ end }}
                 </div>
             </div>
         </div>
