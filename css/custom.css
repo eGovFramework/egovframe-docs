@@ -13976,6 +13976,18 @@ label {
     font-weight: 700;
 }
 
+.mainContent > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+.mainContent > ol li{
+    border: 1px solid #e3e3e3;
+    padding: 16px;
+}
+
+
 /* Home */
 .mainLayout{
     margin: auto;
@@ -14116,10 +14128,11 @@ h3,h4,h5,h6 {
     width:24px;
     height:24px;
 }
-.section-link code{
-    text-wrap: wrap;
-    white-space: pre-wrap; /* 줄바꿈 허용 */
-    word-break: break-word; /* 단어가 너무 길 경우 줄바꿈 */
+.section-link code {
+  font-size: 15px;
+  text-wrap: wrap;
+  white-space: pre-wrap; /* 줄바꿈 허용 */
+  word-break: break-word; /* 단어가 너무 길 경우 줄바꿈 */
 }
 .section-link :not(.highlight) > pre{
     background: snow;
@@ -14133,11 +14146,20 @@ h3,h4,h5,h6 {
     border-radius: 0.5rem;
     color:var(--krds-color-light-point-50)
 }
-.section-link code span > span{
+/* .section-link code span > span{
     display:flex;
     flex-wrap:wrap;
     word-break: break-all;
     gap:0.5rem;
+} */
+/* 코드 블럭 들여쓰기 보존: 인라인 display:flex 를 덮어쓰고, 줄바꿈은 허용 */
+.section-link .highlight code span > span {
+  display: inline !important;
+}
+.section-link .highlight pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-x: auto;
 }
 
 .krds-side-navigation .lnb-list .lnb-item.active .lnb-btn:not(.lnb-toggle-popup)::after{

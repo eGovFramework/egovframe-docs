@@ -302,11 +302,19 @@ const krds_mainMenuMobile = {
   },
   setupAriaAttributes(mobileGnb) {
     const tabList = mobileGnb.querySelector(".menu-wrap");
+    const tabListUl = tabList ? tabList.querySelector("ul") : null;
+    const tabs = mobileGnb.querySelectorAll(".menu-wrap .gnb-main-trigger");
+    const tabPanels = mobileGnb.querySelectorAll(".submenu-wrap .gnb-sub-list");
+
+    // 260526 추가 : depth 메뉴가 없는 경우 접근성 탭 속성 설정을 생략
+    if (!tabList || !tabListUl || !tabs.length || !tabPanels.length) {
+      return;
+    }
+
     if (tabList) {
-      tabList.querySelector(".menu-wrap ul").setAttribute("role", "tablist");
+      tabListUl.setAttribute("role", "tablist");
       tabList.querySelectorAll(".menu-wrap li").forEach((li) => li.setAttribute("role", "none"));
 
-      const tabs = document.querySelectorAll(".menu-wrap .gnb-main-trigger");
       tabs.forEach((item, idx) => {
         item.setAttribute("role", "tab");
         item.setAttribute("aria-selected", "false");
@@ -327,7 +335,6 @@ const krds_mainMenuMobile = {
         })
       });
 
-      const tabPanels = document.querySelectorAll(".submenu-wrap .gnb-sub-list");
       tabPanels.forEach((item, idx) => {
         item.setAttribute("role", "tabpanel");
         item.setAttribute("aria-labelledby", `tab-${idx}`);
@@ -363,14 +370,16 @@ const krds_mainMenuMobile = {
 
     /* 모바일 active 이동 (추가)*/
     const activeTrigger = document.querySelector("#mobile-nav .gnb-main-trigger.active");
-    const href = activeTrigger.getAttribute("href");
-    if(activeTrigger){
-      const subtrigger = document.getElementById(href.slice(1));
-      const subBtn = subtrigger.querySelector(".gnb-sub-trigger.active") || subtrigger.querySelector(".gnb-sub-trigger.selected");
-      if(subBtn){
-        document.location="#"+subBtn.getAttribute("id")
-      }else{
-        document.location=href;
+    if (activeTrigger) {
+      const href = activeTrigger.getAttribute("href");
+      const subtrigger = href ? document.getElementById(href.slice(1)) : null;
+      const subBtn = subtrigger
+        ? subtrigger.querySelector(".gnb-sub-trigger.active") || subtrigger.querySelector(".gnb-sub-trigger.selected")
+        : null;
+      if (subBtn) {
+        document.location = "#" + subBtn.getAttribute("id");
+      } else if (href) {
+        document.location = href;
       }
       
     }
@@ -493,6 +502,11 @@ const krds_mainMenuMobile = {
   setupAnchorLinks(mobileGnb) {
     const menuItems = mobileGnb.querySelectorAll(".menu-wrap .gnb-main-trigger");
     const navItems = mobileGnb.querySelectorAll(".submenu-wrap .gnb-sub-list");
+
+    // 260526 추가 - 하위메뉴가 없는 페이지의 mobileGnb 에러 해결
+    if (!menuItems.length || !navItems.length) {
+      return;
+    }
 
     if (!document.querySelector(".menu-wrap .gnb-main-trigger.active")) {
       menuItems[0].classList.add("active");
