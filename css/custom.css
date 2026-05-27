@@ -14019,6 +14019,54 @@ label {
     font-size: var(--krds-pc-font-size-navigation-depth-small);
 }
 
+/* LNB lv2 전체 펼침 오버라이드 (desktop) */
+@media (min-width: 1025px) {
+    /* 기존 컴포넌트 동작(불필요: 일부 항목 잘림)
+    .krds-side-navigation .lnb-list .lnb-item .lnb-submenu-lv2 {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+    }
+    .krds-side-navigation {
+        overflow: hidden;
+    }
+    */
+
+    /* 아래 방식은 lv2를 lnb-subitem 아래로 배치해서 overlay 동작이 깨짐
+    .krds-side-navigation .lnb-list .lnb-item .lnb-submenu-lv2.active {
+        position: relative;
+        top: auto;
+        left: 0;
+    }
+    */
+
+    /* lv2는 기존처럼 overlay(같은 자리) 유지 */
+    .krds-side-navigation .lnb-list .lnb-item .lnb-submenu-lv2 {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 활성 시 같은 자리로 슬라이드 */
+    .krds-side-navigation .lnb-list .lnb-item .lnb-submenu-lv2.active {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 항목이 많을 때 패널 내부 스크롤 */
+    .krds-side-navigation .lnb-list .lnb-item .lnb-submenu-lv2 > ul {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+    }
+}
+
 /* Contents */
 .page-title-wrap {
     display: flex;
@@ -14305,4 +14353,10 @@ h3,h4,h5,h6 {
 /* 250626 수정 krds reset 제거 */
 em{
     font-style: italic;
+}
+
+.krds-side-navigation .lnb-list .lnb-item .lnb-submenu .lnb-subitem.active .lnb-btn, .krds-side-navigation .lnb-list .lnb-item .lnb-submenu .lnb-subitem.active .lnb-submenu-lv2 ul li .lnb-submenu-lv3 li.active a{
+    color: var(--krds-side-navigation--color-text-selected);
+    font-weight: var(--krds-font-weight-bold);
+    background-color: var(--krds-side-navigation--color-action-selected);
 }

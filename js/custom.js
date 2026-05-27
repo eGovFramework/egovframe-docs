@@ -728,6 +728,31 @@ const krds_sideNavigation = {
       });
     });
   },
+  /** lv3가 선택된 경우 같은 팝업 내 lv2(ul > li) active 제거 */
+  syncLv3MenuActive(popupSubmenu) {
+    const hasActiveLv3 = popupSubmenu.querySelector(".lnb-submenu-lv3 li.active");
+    if (!hasActiveLv3) return;
+
+    popupSubmenu.querySelectorAll(":scope > ul > li").forEach((lv2Li) => {
+      if (lv2Li.querySelector(".lnb-submenu-lv3 li.active")) {
+        lv2Li.classList.remove("active");
+      }
+    });
+  },
+  setLv3MenuActive(popupSubmenu, targetItem) {
+    if (!targetItem) return;
+
+    popupSubmenu.querySelectorAll(":scope > ul > li").forEach((li) => {
+      li.classList.remove("active");
+    });
+    popupSubmenu.querySelectorAll(".lnb-submenu-lv3 li").forEach((li) => {
+      li.classList.remove("active");
+    });
+
+    targetItem.classList.add("active");
+    const parentLv2Li = targetItem.closest(".lnb-submenu-lv3")?.closest("li");
+    parentLv2Li?.classList.remove("active");
+  },
   toggleMenu(toggleButton, expand) {
     const parentListItem = toggleButton.closest("li");
     toggleButton.setAttribute("aria-expanded", expand);
