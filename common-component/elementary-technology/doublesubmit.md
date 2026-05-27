@@ -2,7 +2,7 @@
   title: 이중등록(Double Submit) 방지
   linkTitle: 이중등록(Double Submit) 방지
   description: 새로고침 등의 중복 request 호출 시 등록 처리 등에 대한 이중 등록을 방지하는 기능을 제공한다.
-  url: /common-component/elementary-technology/doublesubmit/
+  url: /common-component/elementary-technology/new-components-v3.2/doublesubmit/
   menu:
     depth:
       name: 이중등록(Double Submit) 방지

@@ -2,7 +2,7 @@
   title: 날짜 지역화 처리
   linkTitle: 날짜 지역화 처리
   description: "다국어 지원을 위한 국가간 날짜 표시 변환 기능을 제공한다."
-  url: /common-component/elementary-technology/dateformat/
+  url: /common-component/elementary-technology/new-components-v3.2/dateformat/
   menu:
     depth:
       name: 날짜 지역화 처리

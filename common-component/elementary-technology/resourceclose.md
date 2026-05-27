@@ -2,7 +2,7 @@
   title: Resource close 처리
   linkTitle: Resource close 처리
   description: "자원(Stream, DB 관련 Object, Socket 관련 Object)에 대한 해제 처리 기능을 제공한다."
-  url: /common-component/elementary-technology/resourceclose/
+  url: /common-component/elementary-technology/new-components-v3.2/resourceclose/
   menu:
     depth:
       name: Resource close 처리

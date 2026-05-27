@@ -2,10 +2,11 @@
 title: "WYSIWYG Editor(v3.2 신규)"
 linkTitle: "WYSIWYG Editor(v3.2 신규)"
 description: "게시판, 자료실의 메모장에서 사용자가 자유롭게 컨텐츠를 편집할 수 있는 기능의 컴포넌트을 제공한다."
-url: /common-component/elementary-technology/webeditor/
+url: /common-component/elementary-technology/webeditor/wysiwygEditorV3_2/
 menu:
   depth:
-    weight: 1
+    name: "WYSIWYG Editor(v3.2 신규)"
+    weight: 2
     parent: "webeditor"
     identifier: "wysiwygEditor"
 ---

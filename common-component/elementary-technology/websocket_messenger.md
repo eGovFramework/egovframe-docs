@@ -2,7 +2,7 @@
   title: 웹소켓메신저(v3.2 신규)
   linkTitle: 웹소켓메신저(v3.2 신규)
   description: "웹소켓 메신저는 HTML5 WebSocket와 Java Websocket을 이용하여 메신저 기능을 제공한다."
-  url: /common-component/elementary-technology/웹소켓메신저/
+  url: /common-component/elementary-technology/external-components/websocket_messenger/
   menu:
     depth:
       name: 웹소켓메신저(v3.2 신규)

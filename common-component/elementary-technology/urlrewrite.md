@@ -2,7 +2,7 @@
   title: HTTPS UrlRewrite filter
   linkTitle: HTTPS UrlRewrite filter
   description: "서버내의 특정 URL의 경우 HTTP로 호출 되더라도 HTTPS로 전환 하여 Redirect 하고, 그 외의 URL의 경우는 HTTP로 연결한다."
-  url: /common-component/elementary-technology/urlrewrite/
+  url: /common-component/elementary-technology/new-components-v3.2/urlrewrite/
   menu:
     depth:
       name: HTTPS UrlRewrite filter

@@ -2,7 +2,7 @@
   title: LDAP조직도관리(v3.2 신규)
   linkTitle: LDAP조직도관리(v3.2 신규)
   description: "LDAP조직도관리는 조직과 사용자 정보를 효율적으로 관리하기 위한 컴포넌트로, LDAP과의 연계를 통해 조회 성능을 향상시키고, 차트형태와 같이 다양한 방식으로 조직도를 표현할 수 있는 기능을 제공한다."
-  url: /common-component/elementary-technology/ldap/
+  url: /common-component/elementary-technology/external-components/ldap/
   menu:
     depth:
       name: LDAP조직도관리(v3.2 신규)

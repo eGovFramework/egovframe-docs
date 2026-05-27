@@ -2,7 +2,7 @@
   title: Social Login(Naver, Google, KAKAO)
   linkTitle: Social Login(Naver, Google, KAKAO)
   description: "Social Login은 네이버, 구글, 카카오의 로그인API를 이용해 로그인을 진행하는 연계로그인 기능을 제공합니다."
-  url: /common-component/elementary-technology/social_login_naver_google_kakao/
+  url: /common-component/elementary-technology/external-components/social_login_naver_google_kakao/
   menu:
     depth:
       name: Social Login(Naver, Google, KAKAO)

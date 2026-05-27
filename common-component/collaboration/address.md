@@ -5,7 +5,7 @@ description: "주소록/명함록"
 url: /common-component/collaboration/address/
 menu:
   depth:
-    weight: 5
+    weight: 6
     parent: "collaboration"
     identifier: "address"
 ---

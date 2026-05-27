@@ -2,7 +2,7 @@
   title: 세션처리
   linkTitle: 세션처리
   description: "세션 처리와 관련된 다양한 공통기능을 제공한다."
-  url: /common-component/elementary-technology/handling_session/
+  url: /common-component/elementary-technology/cookie-session/handling_session/
   menu:
     depth:
       name: 세션처리

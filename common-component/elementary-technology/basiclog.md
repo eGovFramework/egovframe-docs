@@ -2,7 +2,7 @@
   title: Basic 로그
   linkTitle: Basic 로그
   description: "JDK에서 제공하는 Logger 클래스를 이용하여 3가지 레벨로 로그를 남길 수 있는 기능을 제공한다."
-  url: /common-component/elementary-technology/basiclog/
+  url: /common-component/elementary-technology/new-components-v3.2/basiclog/
   menu:
     depth:
       name: Basic 로그

@@ -2,7 +2,7 @@
   title: 출퇴근 관리
   linkTitle: 출퇴근 관리
   description: "출퇴근 관리는 출근, 퇴근 정보를 관리하는 기능을 제공한다."
-  url: /common-component/elementary-technology/cmtmanage/
+  url: /common-component/elementary-technology/new-components-v3.2/cmtmanage/
   menu:
     depth:
       name: 출퇴근 관리

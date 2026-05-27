@@ -2,7 +2,7 @@
   title: 중복 로그인 방지 기능
   linkTitle: 중복 로그인 방지 기능
   description: "spring security 없이 중복 로그인을 방지하기 위한 기능이다."
-  url: /common-component/elementary-technology/multilogin/
+  url: /common-component/elementary-technology/new-components-v3.2/multilogin/
   menu:
     depth:
       name: 중복 로그인 방지 기능

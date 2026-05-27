@@ -2,7 +2,7 @@
   title: 정보메시지
   linkTitle: 정보메시지
   description: "정보에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다."
-  url: /common-component/elementary-technology/info_message/
+  url: /common-component/elementary-technology/message-process/info_message/
   menu:
     depth:
       name: 정보메시지

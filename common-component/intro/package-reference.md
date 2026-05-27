@@ -2,12 +2,12 @@
 title: "패키지 간 참조 관계"
 linkTitle: "패키지 참조"
 description: "공통컴포넌트 간의 의존성 관계에 대해 설명합니다."
-url: /common-component/common-intro/package-reference/
+url: /common-component/cc-intro/package-reference/
 menu:
   depth:
     name: "패키지 간 참조 관계"
     weight: 5
-    parent: "common-intro"
+    parent: "cc-intro"
     identifier: "package-reference"
 ---
 

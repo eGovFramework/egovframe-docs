@@ -2,9 +2,10 @@
 title: "웹에디터(공통컴포넌트 2.0 매뉴얼 참조)"
 linkTitle: "웹에디터(공통컴포넌트 2.0 매뉴얼 참조)"
 description: "게시판, 자료실의 메모장에서 사용자가 자유롭게 컨텐츠를 편집할 수 있는 기능의 컴포넌트을 제공한다. "
-url: /common-component/elementary-technology/webeditor/
+url: /common-component/elementary-technology/webeditor/webeditor_20/
 menu:
   depth:
+    name: "웹에디터(공통컴포넌트 2.0 매뉴얼 참조)"
     weight: 1
     parent: "webeditor"
     identifier: "webeditor2"

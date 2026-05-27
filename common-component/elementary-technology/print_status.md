@@ -2,7 +2,7 @@
   title: 프린터상태확인
   linkTitle: 프린터상태확인
   description: "인터넷 웹 브라우저에서 인쇄/출력 시 프린터 상태 확인 팝업 창을 자동으로 보여주는 기능을 제공한다."
-  url: /common-component/elementary-technology/print_status/
+  url: /common-component/elementary-technology/print/print_status/
   menu:
     depth:
       name: 프린터상태확인

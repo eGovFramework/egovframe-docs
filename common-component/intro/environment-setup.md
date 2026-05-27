@@ -2,12 +2,12 @@
 title: "공통컴포넌트 환경설정"
 linkTitle: "환경설정"
 description: "공통컴포넌트의 개발 및 운영 환경 설정 방법에 대해 설명합니다."
-url: /common-component/common-intro/environment-setup/
+url: /common-component/cc-intro/environment-setup/
 menu:
   depth:
     name: "공통컴포넌트 환경설정"
     weight: 2
-    parent: "common-intro"
+    parent: "cc-intro"
     identifier: "environment-setup"
 ---
 # 공통컴포넌트 환경설정

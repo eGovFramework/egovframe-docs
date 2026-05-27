@@ -2,7 +2,7 @@
   title: 화면인쇄
   linkTitle: 화면인쇄
   description: "화면인쇄 서비스는 화면을 인쇄 할수 있는 기능과 인쇄 설정할수있는 기능을 제공한다."
-  url: /common-component/elementary-technology/print_scrin/
+  url: /common-component/elementary-technology/print/print_scrin/
   menu:
     depth:
       name: 화면인쇄

@@ -5,7 +5,7 @@ description: "전자결재"
 url: /common-component/collaboration/edsm/
 menu:
   depth:
-    weight: 5
+    weight: 7
     parent: "collaboration"
     identifier: "edsm"
 ---

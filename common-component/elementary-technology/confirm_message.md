@@ -2,7 +2,7 @@
   title: 확인메시지
   linkTitle: 확인메시지
   description: "확인에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다."
-  url: /common-component/elementary-technology/confirm_message/
+  url: /common-component/elementary-technology/message-process/confirm_message/
   menu:
     depth:
       name: 확인메시지

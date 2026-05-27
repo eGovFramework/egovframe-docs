@@ -2,7 +2,7 @@
   title: EasyBatch(v3.2 신규)
   linkTitle: EasyBatch(v3.2 신규)
   description: "복잡한 Batch 업무 설정을 간소화하는 기능을 제공한다."
-  url: /common-component/elementary-technology/easybatch/
+  url: /common-component/elementary-technology/external-components/easybatch/
   menu:
     depth:
       name: EasyBatch(v3.2 신규)

@@ -5,7 +5,7 @@ description: "지식맵"
 url: /common-component/digital-asset-management/knowledge-map/
 menu:
   depth:
-    weight: 1
+    weight: 2
     parent: "digital-asset-management"
     identifier: "knowledge-map"
 ---

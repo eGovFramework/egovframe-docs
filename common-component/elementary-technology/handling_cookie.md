@@ -2,7 +2,7 @@
   title: 쿠키처리
   linkTitle: 쿠키처리
   description: "쿠키 처리와 관련된 다양한 공통기능을 제공한다."
-  url: /common-component/elementary-technology/handling_cookie/
+  url: /common-component/elementary-technology/cookie-session/handling_cookie/
   menu:
     depth:
       name: 쿠키처리

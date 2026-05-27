@@ -2,13 +2,13 @@
 title: "공통컴포넌트 시작하기"
 linkTitle: "시작하기"
 description: "공통컴포넌트의 기본 개념과 사용 방법에 대해 설명합니다."
-url: /common-component/common-intro/getting-started/
+url: /common-component/cc-intro/cc-getting-started/
 menu:
   depth:
     name: "공통컴포넌트 시작하기"
     weight: 1
-    parent: "common-intro"
-    identifier: "common-component_getting-started"
+    parent: "cc-intro"
+    identifier: "cc-getting-started"
 ---
 # 공통컴포넌트 시작하기
 

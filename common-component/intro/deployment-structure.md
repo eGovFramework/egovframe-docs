@@ -2,12 +2,12 @@
 title: "공통컴포넌트 배포 파일의 구성"
 linkTitle: "배포 파일 구성"
 description: "공통컴포넌트의 배포 파일 구조와 설명에 대해 설명합니다."
-url: /common-component/common-intro/deployment-structure/
+url: /common-component/cc-intro/deployment-structure/
 menu:
   depth:
     name: "공통컴포넌트 배포 파일의 구성"
     weight: 3
-    parent: "common-intro"
+    parent: "cc-intro"
     identifier: "deployment-structure"
 ---
 

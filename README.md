@@ -11,7 +11,7 @@
 
 ## 프론트매터(Frontmatter) 작성 방법
 
-[프론트매터 작성 방법](./how-to-write-Frontmatter.md)을 참고해 주시기 바랍니다.
+[프론트매터 작성 방법](./docs/how-to-write-Frontmatter.md)을 참고해 주시기 바랍니다.
 
 ## PR 방법
 
@@ -85,16 +85,22 @@
 
 - 현재 개발가이드와 유사하게 구성되어 있습니다.
 
-  - [공통컴포넌트 가이드-개요](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init)
-  - [공통컴포넌트 가이드-상세](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v4.3:init_guide)
-  - [개발환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev4.3)
-    - [실행환경 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte4.3)
-  - [실행환경 예제 개발가이드](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte:ex:개발프레임워크_실행환경_예제)
+  - [공통컴포넌트 가이드-개요](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v5.0:init)
+  - [공통컴포넌트 가이드-상세](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v5.0:init_guide)
+  - [개발환경 개발가이드](https://www.egovframe.go.kr/docs/5.0/egovframe-development/)
+  - [실행환경 개발가이드](https://www.egovframe.go.kr/docs/5.0/egovframe-runtime/)
 - 문서 파일과 관련 리소스는 다음과 같은 디렉토리 구조를 따릅니다.
 - 모든 `_index.md` 파일과 아래 코드블럭에서 표시된 MD파일은 identifier 값을 갖고 있습니다(egovframe-runtime 제외). 프론트매터의 url, parent 등을 작성할 때 아래 디렉토리 구조를 참고 부탁드립니다.
-
+- common-component(공통컴포넌트)의 전체 디렉토리 구조는 [directory-structure 문서](./docs/directory-structure.md)를 확인해 주시기 바랍니다.
 ```
 /common-component                           공통컴포넌트
+├── /intro                                     개요
+├── /user-authentication                       사용자디렉토리/통합인증
+│   ├── /login.md                                  일반 로그인
+├── /security                                  보안
+│   ├── /authority-management.md                   권한관리
+│   └── /pw_expiration_management.md               비밀번호 만료기간 관리
+├── /statistics-reporting                      통계/리포팅
 ├── /collaboration                             협업
 │   ├── /address.md                                주소록/명함록
 │   ├── /board.md                                  게시판
@@ -115,9 +121,6 @@
 │   ├── /print.md                                  인쇄/출력
 │   ├── /system.md                                 시스템
 │   └── /webeditor.md                              웹에디터
-├── /intro                                     개요
-├── /security                                  보안
-│   └── /authority-management.md                   권한관리
 ├── /statistics-reporting                      통계/리포팅
 ├── /system-management                         시스템관리
 │   ├── /batch-manage.md                           배치관리
@@ -128,8 +131,6 @@
 │   ├── /program-manage.md                         프로그램관리
 │   └── /system-manage.md                          시스템관리
 ├── /system-service-linkage                    시스템/서비스연계
-├── /user-authentication                       사용자디렉토리/통합인증
-│   └── /login.md                                  일반 로그인
 └── /user-support                              사용자지원
     ├── /information-provided.md                   정보제공/알림
     ├── /member-manage.md                          사용자관리

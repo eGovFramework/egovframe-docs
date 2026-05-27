@@ -2,7 +2,7 @@
   title: 전자관인출력
   linkTitle: 전자관인출력
   description: "기관코드, 관인구분을 받아 해당 관인이미지를 출력하는 기능을 제공한다."
-  url: /common-component/elementary-technology/print_digital_seal/
+  url: /common-component/elementary-technology/print/print_digital_seal/
   menu:
     depth:
       name: 전자관인출력

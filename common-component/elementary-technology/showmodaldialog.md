@@ -2,7 +2,7 @@
   title: showModalDialog 대체 기능
   linkTitle: showModalDialog 대체 기능
   description: "다국어 지원을 위한 국가간 날짜 표시 변환 기능을 제공한다."
-  url: /common-component/elementary-technology/showmodaldialog/
+  url: /common-component/elementary-technology/new-components-v3.2/showmodaldialog/
   menu:
     depth:
       name: showModalDialog 대체 기능
