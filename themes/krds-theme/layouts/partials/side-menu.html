@@ -21,12 +21,12 @@
                                 <button type="button" class="lnb-btn-tit"  data-url="{{ .URL | replaceRE `[^/]+/$` `` }}">{{.Name}}</button>
                                 <ul>
                                   {{ range sort .Children "Weight" }}
-                                      <li class="{{ if or (eq $link .URL) (hasPrefix $link .URL) }}active {{ end }}" role="none">
+                                      <li class="{{ if .HasChildren }}{{ if eq $link .URL }}active {{ end }}{{ else }}{{ if or (eq $link .URL) (hasPrefix $link .URL) }}active {{ end }}{{ end }}" role="none">
                                       <a class="lnb-btn" role="menuitem" href="{{ .URL }}">{{.Name}}</a>
                                       {{ if .HasChildren}}
                                         <ul class="lnb-submenu-lv3">
                                         {{ range sort .Children "Weight"}}
-                                          <li class="{{ if or (eq $link .URL) (hasPrefix $link .URL) }}active {{ end }}" role="none">
+                                          <li class="{{ if eq $link .URL }}active {{ end }}" role="none">
                                             <a href="{{ .URL }}">{{ .Name }}</a>
                                           </li>
                                         {{ end }}
