@@ -1,0 +1,300 @@
+<!doctype html><html lang=kr dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>| 표준프레임워크 개발가이드</title><link rel=stylesheet href=https://eGovFramework.github.io/egovframe-docs/css/custom.css integrity crossorigin=anonymous><script src=https://eGovFramework.github.io/egovframe-docs/js/custom.js integrity crossorigin=anonymous defer></script><style>.mainContent>ol{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}.mainContent>ol li{border:1px solid #e3e3e3;padding:16px}</style></head><body><header id=krds-header><div class=header-in><div class=header-container><div class=inner style=padding-bottom:0><div class=header-utility><ul class=utility-list><li><div class=krds-drop-wrap><button type=button class="krds-btn small text drop-btn">
+버전 <i class="svg-icon ico-toggle"></i></button><div class=drop-menu><div class=drop-in><ul class=drop-list><li><a href=https://egovframework.github.io/egovframe-docs/ class=item-link>Contribution</a></li><li><a href=https://www.egovframe.go.kr/docs/5.0/ class=item-link target=_blank>5.0</a></li><li><a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index" class=item-link target=_blank>Archive</a></li></ul></div></div></div></li></ul></div><div class=header-branding><h2 class=logo><a href=https://eGovFramework.github.io/egovframe-docs/></a></h2><div class=header-actions><nav class=krds-main-menu style=border:none><div class=inner><ul class=gnb-menu><li><a href=/egovframe-docs/getting-started/ class="gnb-main-trigger is-link">시작하기</a></li><li><a href=/egovframe-docs/egovframe-runtime/ class="gnb-main-trigger is-link">실행환경</a></li><li><a href=/egovframe-docs/egovframe-development/ class="gnb-main-trigger is-link">개발환경</a></li><li><a href=/egovframe-docs/common-component/ class="gnb-main-trigger is-link">공통컴포넌트</a></li></ul></div></nav><button type=button class="btn-navi all" aria-controls=mobile-nav></button></div></div></div></div></div><nav id=mobile-nav class=krds-main-menu-mobile style=display:none><div class=gnb-wrap style=width:80%><div class=gnb-header><div class=gnb-utils style=margin-bottom:30px></div><div class=gnb-service-menu style=flex-direction:column><a href=/egovframe-docs/getting-started/ class=link style=width:auto;flex-direction:row;height:auto>시작하기</a>
+<a href=/egovframe-docs/egovframe-runtime/ class=link style=width:auto;flex-direction:row;height:auto>실행환경</a>
+<a href=/egovframe-docs/egovframe-development/ class=link style=width:auto;flex-direction:row;height:auto>개발환경</a>
+<a href=/egovframe-docs/common-component/ class=link style=width:auto;flex-direction:row;height:auto>공통컴포넌트</a></div></div><div class=gnb-body><div class=gnb-menu><div class=menu-wrap></div><div class=submenu-wrap></div></div><div class=gnb-bottom><a href=https://github.com/eGovFramework/egovframe-docs/blob/main/docs/directory-structure.md class="krds-btn medium text">페이지보기 <i class="svg-icon ico-angle right"></i></a>
+<a href=https://github.com/eGovFramework/egovframe-docs/edit/main/docs/directory-structure.md class="krds-btn medium text">페이지편집 <i class="svg-icon ico-angle right"></i></a>
+<a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=" class="krds-btn medium text">문서에 이슈 생성 <i class="svg-icon ico-angle right"></i></a>
+<a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn medium text">프로젝트에 이슈 생성 <i class="svg-icon ico-angle right"></i></a></div></div><button type=button class="krds-btn medium icon" id=close-nav>
+<span class=sr-only>전체메뉴 닫기</span>
+<i class="svg-icon ico-popup-close"></i></button></div></nav></header><main id=wrap><div id=container class=krds-in-page-navigation-type><div class="inner layout in-between"><nav class=krds-side-navigation></ul></ul></ul></ul></nav><div class=contents><nav class=krds-breadcrumb-wrap aria-label=브레드크럼><ol class=breadcrumb><li class=home><a href=https://eGovFramework.github.io/egovframe-docs/ class=txt>Home</a></li></ol></nav><div class=conts-area><div class=krds-in-page-navigation-area><nav class=in-page-navigation-action><ul><li><a href=https://github.com/eGovFramework/egovframe-docs/tree/main/docs/directory-structure.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_view"></i> 페이지 보기</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/edit/main/docs/directory-structure.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_edit"></i> 페이지 편집</a></li><li><a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=" class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 문서에 이슈 생성</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 프로젝트에 이슈 생성</a></li></ul></nav><div class=in-page-navigation-header><p class=quick-caption>이 페이지의 구성</p><p class=quick-title></p></div><nav class=in-page-navigation-list><ul><li><a href=#공통컴포넌트-디렉토리-구조>공통컴포넌트 디렉토리 구조</a></li></ul></nav></div><div class="conts-wrap scroll-check"><h1 class=h-tit id=heading></h1><div class="conts-wrap section-link" id=section_01><h2 class=sec-tit id=공통컴포넌트-디렉토리-구조>공통컴포넌트 디렉토리 구조</h2><pre tabindex=0><code>/common-component                           공통컴포넌트
+├── /intro                                     개요
+│   ├── /getting-started                        공통컴포넌트 시작하기
+│   ├── /environment-setup                      공통컴포넌트 환경설정
+│   ├── /deployment-structure                   공통컴포넌트 배포 파일의 구성
+│   ├── /table-structure                        공통컴포넌트 테이블 구성 정보
+│   └── /package-reference                      패키지 간 참조 관계
+├── /user-authentication                       사용자디렉토리/통합인증
+│   ├── /login                                  일반 로그인
+│   │   └── /sso-service                            SSO 연계 서비스
+│   ├── /certificate-login                      인증서 로그인
+│   └── /login-ploicy-management                로그인정책관리
+├── /security                                  보안
+│   ├── /authority-management                   권한관리
+│   │   ├── /authority-management-function          권한관리 기능
+│   │   └── /authority-role-management              권한별 롤관리
+│   ├── /authority-group-management             권한그룹관리
+│   ├── /group-management                       그룹관리
+│   ├── /role-management                        롤관리
+│   ├── /department-role-management             부서권한관리
+│   ├── /encrypt_decrypt                        암호화/복호화
+│   ├── /login_session_management               로그인 시간관리
+│   └── /pw_expiration_management               비밀번호 만료기간 관리
+├── /statistics-reporting                      통계/리포팅
+│   ├── /post-statistics                        게시물 통계
+│   ├── /user-statistics                        사용자 통계
+│   ├── /connection-statistics                  접속 통계
+│   ├── /screen-statistics                      화면 통계
+│   ├── /report-statistics                      보고서 통계
+│   └── /data-use-statistics                    자료이용현황 통계
+├── /collaboration                             협업
+│   ├── /board                                  게시판
+│   │   ├── /blog-management                        블로그관리
+│   │   ├── /board-management                       게시판관리
+│   │   ├── /board-guestbook                        게시판(방명록)
+│   │   ├── /board-integrated                       게시판(통합게시판)
+│   │   ├── /template-management                    템플릿관리
+│   │   ├── /comment-management                     댓글관리
+│   │   ├── /scrap-management                       스크랩관리
+│   │   └── /satisfaction-survey                    만족도조사
+│   ├── /community                              커뮤니티
+│   │   ├── /community-creation                     커뮤니티생성관리
+│   │   ├── /community-use                          커뮤니티사용관리
+│   │   └── /community-member                       커뮤니티회원관리
+│   ├── /sms                                    문자메세지
+│   │   └── /sms-service                            문자메시지서비스
+│   ├── /schedule-manage                        일정관리
+│   │   ├── /department-schedule                    부서일정관리
+│   │   ├── /schedule-management                    일정관리
+│   │   ├── /journal-management                     일지관리
+│   │   ├── /all-schedule                           전체일정
+│   │   ├── /executive-schedule                     간부일정관리
+│   │   ├── /department-task-box                    부서업무함관리
+│   │   ├── /weekly-monthly-report                  주간/월간보고관리
+│   │   ├── /memo-todo                              메모할일관리
+│   │   └── /memo-report                            메모보고
+│   ├── /email                                  전자우편
+│   │   └── /mail-solution-interface                메일솔루션 연동 인터페이스
+│   ├── /address                                주소록/명함록
+│   │   ├── /business-card-management               명함관리
+│   │   └── /address-book                           주소록관리
+│   └── /edsm                                   전자결재
+│       └── /brief-approval                         약식결재
+├── /user-support                              사용자지원
+│   ├── /user-manage                            사용자관리
+│   │   ├── /company-member-management              기업 회원 관리
+│   │   ├── /user-management                        사용자 관리
+│   │   └── /member-management                      회원 관리
+│   ├── /personalization                        개인화
+│   │   └── /mypage                                 마이페이지
+│   ├── /terms-manage                           약관관리
+│   │   ├── /terms-management                       약관관리
+│   │   ├── /copyright-policy                       저작권보호정책
+│   │   └── /privacy-policy                         개인정보보호정책확인
+│   ├── /online-help                            온라인헬프
+│   │   ├── /help                                   도움말
+│   │   ├── /glossary                               용어사전
+│   │   ├── /faq-management                         FAQ관리
+│   │   ├── /qna-management                         Q&amp;A관리
+│   │   ├── /admin-terminology                      행정전문용어사전관리
+│   │   └── /online-manual                          온라인매뉴얼
+│   ├── /online-participate                     온라인참여
+│   │   ├── /counseling-management                  상담관리
+│   │   ├── /survey-management                      설문관리
+│   │   ├── /survey                                 설문조사
+│   │   ├── /survey-template                        설문템플릿관리
+│   │   ├── /survey-respondent                      설문응답자관리
+│   │   ├── /survey-question                        설문질문관리
+│   │   ├── /survey-item                            설문항목관리
+│   │   ├── /meeting-management                     회의관리
+│   │   └── /online-poll                            온라인POLL관리
+│   └── /information-provided                   정보제공/알림
+│       ├── /news-management                        뉴스관리
+│       ├── /site-management                        사이트관리
+│       ├── /sitemap                                사이트맵
+│       ├── /recommended-site                       추천사이트관리
+│       ├── /event-campaign                         행사/이벤트/캠페인
+│       ├── /popup-management                       팝업창관리
+│       ├── /info-notifier                          정보알림이
+│       ├── /banner-management                      배너관리
+│       ├── /login-image                            로그인화면이미지관리
+│       ├── /recent-keyword                         최근검색어조회
+│       ├── /main-image                             메인이미지관리
+│       ├── /integrated-link                        통합링크관리
+│       ├── /user-absence                           사용자부재관리
+│       ├── /internet-service-guide                 인터넷서비스안내및관리
+│       ├── /meeting-room                           회의실관리
+│       ├── /meeting-room-reservation               회의실예약관리
+│       ├── /wiki                                   Wiki기능
+│       ├── /rss-tag                                RSS태그관리
+│       ├── /twitter-integration                    Twitter연동
+│       ├── /message-management                     쪽지관리
+│       ├── /received-message                       받은쪽지함관리
+│       ├── /sent-message                           보낸쪽지함관리
+│       ├── /staff-event                            직원경조사관리
+│       ├── /vacation-management                    휴가관리
+│       ├── /duty-management                        당직관리
+│       ├── /award-management                       포상관리
+│       ├── /anniversary                            기념일관리
+│       ├── /event-application                      행사신청관리
+│       ├── /event-reception                        행사접수관리
+│       ├── /map-management                         약도관리
+│       ├── /personal-annual-leave                  개인연차관리
+│       └── /facebook-integration                   Facebook 연동
+├── /system-management                         시스템관리
+│   ├── /common-code-manage                     공통코드관리
+│   │   ├── /common-class-code                      공통분류코드
+│   │   ├── /common-detail-code                     공통상세코드
+│   │   ├── /common-code                            공통코드
+│   │   ├── /zipcode-management                     우편번호관리
+│   │   ├── /admin-code-management                  행정코드관리
+│   │   ├── /org-code-receive                       기관코드수신
+│   │   ├── /org-code                               기관코드
+│   │   ├── /legal-dong-code                        법정동코드
+│   │   └── /road-name-address                      도로명주소연계
+│   ├── /log-manage                             로그관리
+│   │   ├── /log-management                         로그관리
+│   │   ├── /use-log-management                     사용로그관리
+│   │   ├── /send-receive-log-management            송/수신 로그관리
+│   │   ├── /system-history-management              시스템 이력관리
+│   │   ├── /web-log-management                     웹로그관리
+│   │   ├── /access-log-management                  접속로그관리
+│   │   └── /privacy-log-management                 개인정보조회로그관리
+│   ├── /menu-manage                            메뉴관리
+│   │   ├── /menu-management                        메뉴관리
+│   │   ├── /menu-creation                          메뉴생성관리
+│   │   └── /shortcut-menu                          바로가기메뉴관리
+│   ├── /program-manage                         프로그램관리
+│   │   └── /program-management                     프로그램관리
+│   ├── /batch-manage                           배치관리
+│   │   ├── /batch-job-management                   배치작업관리
+│   │   ├── /batch-result-management                배치결과관리
+│   │   └── /schedule-processing                    스케줄처리
+│   ├── /system-manage                          시스템관리
+│   │   ├── /backup-management                      백업관리
+│   │   ├── /network-management                     네트워크관리
+│   │   └── /server-info-management                 서버정보관리
+│   └── /error-manage                           장애관리
+│       ├── /error-application                      장애신청관리
+│       └── /error-result                           장애처리결과관리
+├── /system-service-linkage                    시스템/서비스연계
+│   ├── /system-linkage-manage                  시스템연계관리
+│   ├── /linkage-status-manage                  연계현황관리
+│   ├── /linkage-message-manage                 연계메시지관리
+│   └── /linkage-org-manage                     연계기관관리
+├── /digital-asset-management                  디지털 자산관리
+│   ├── /personal-knowledge-manage              개인지식관리
+│   ├── /knowledge-map                          지식맵
+│   │   ├── /org-knowledge-map-management           지식맵관리(조직)
+│   │   ├── /type-knowledge-map-management          지식맵관리(유형)
+│   │   └── /knowledge-info-provision               지식정보제공
+│   ├── /knowledge-expert-manage                지식전문가관리
+│   ├── /knowledge-info-manage                  지식정보관리
+│   └── /knowledge-evaluation-manage            지식평가관리
+└── /elementary-technology                     요소기술
+    ├── /new-components-v3.2                    신규 컴포넌트(v3.2)
+    │   ├── /doublesubmit                           이중등록(Double Submit) 방지
+    │   ├── /httprequesthelper                      Http Request 정보 취득
+    │   ├── /numberformat                           숫자 지역화 처리
+    │   ├── /dateformat                             날짜 지역화 처리
+    │   ├── /showmodaldialog                        showModalDialog 대체 기능
+    │   ├── /urlrewrite                             HTTPS UrlRewrite filter
+    │   ├── /multilogin                             중복 로그인 방지 기능
+    │   ├── /cmtmanage                              출퇴근 관리
+    │   ├── /resourceclose                          Resource close 처리
+    │   └── /basiclog                               Basic 로그
+    ├── /external-components                    외부 추가 컴포넌트
+    │   ├── /easybatch                              EasyBatch(v3.2 신규)
+    │   ├── /social_login_naver_google_kakao        Social Login(Naver, Google, KAKAO)
+    │   ├── /ldap                                   LDAP조직도관리(v3.2 신규)
+    │   └── /websocket_messenger                    웹소켓메신저(v3.2 신규)
+    ├── /message-process                        메시지 처리
+    │   ├── /warning_message                        경고메시지
+    │   ├── /error_message                          에러메시지
+    │   ├── /info_message                           정보메시지
+    │   └── /confirm_message                        확인메시지
+    ├── /print                                  인쇄/출력
+    │   ├── /print_scrin                            화면인쇄
+    │   ├── /print_status                           프린터상태확인
+    │   └── /print_digital_seal                     전자관인출력
+    ├── /cookie-session                         쿠키/세션
+    │   ├── /handling_session                       세션처리
+    │   └── /handling_cookie                        쿠키처리
+    ├── /calendar                               달력
+    │   └── /holiday-management                     공휴일관리(달력)
+    ├── /interface                              인터페이스/화면
+    │   ├── /main-menu                              메인메뉴
+    │   └── /tree-menu                              트리메뉴
+    ├── /webeditor                              웹에디터
+    │   ├── /webeditor_20                           웹에디터(공통컴포넌트 2.0 매뉴얼 참조)
+    │   └── /wysiwygEditorV3_2                      WYSIWYG Editor(v3.2 신규)
+    ├── /formatter-util                         포맷/계산/변환
+    │   ├── /date-time-day-calculation              날짜/시간/요일 계산
+    │   ├── /date-time-day-conversion               날짜/시간/요일 변환
+    │   ├── /date-time-day-validation               날짜/시간/요일 유효성체크
+    │   ├── /date-time-day-format                   날짜/시간/요일 포맷변경
+    │   ├── /random-date                            랜덤날짜구하기
+    │   ├── /random-string                          랜덤문자열구하기
+    │   ├── /random-number                          랜덤숫자구하기
+    │   ├── /string-search                          문자열검색
+    │   ├── /string-conversion                      문자열변환
+    │   ├── /string-validation                      문자열유효성체크
+    │   ├── /string-replacement                     문자열치환
+    │   ├── /id-number-validation                   번호유효성체크
+    │   ├── /unit-calculation                       단위계산
+    │   ├── /number-search                          숫자검색
+    │   ├── /number-conversion                      숫자변환
+    │   ├── /number-validation                      숫자유효성체크
+    │   ├── /number-replacement                     숫자치환
+    │   ├── /format-validation                      포멧유효성체크
+    │   ├── /real-int-negative-check                실수/정수/음수체크
+    │   ├── /solar-lunar-conversion                 양력/음력변환
+    │   ├── /encoding-decoding                      인코딩/디코딩
+    │   ├── /special-string-processing              특수문자열처리
+    │   ├── /exchange-rate-calculation              환율계산
+    │   └── /timestamp-value                        TIMESTAMP값구하기
+    └── /system                                 시스템
+        ├── /network-status-check                   네트워크상태체크
+        ├── /network-info-check                     네트워크정보확인
+        ├── /directory-watch                        디렉토리감시
+        ├── /directory-permission-check             디렉토리권한체크
+        ├── /directory-copy                         디렉토리복사
+        ├── /directory-delete                       디렉토리삭제
+        ├── /directory-create                       디렉토리생성
+        ├── /directory-attribute-check              디렉토리속성정보체크
+        ├── /directory-compress-extract             디렉토리 압축/해제
+        ├── /directory-move                         디렉토리이동
+        ├── /send-receive-monitoring                송수신모니터링
+        ├── /db-service-monitoring                  DB서비스모니터링
+        ├── /log-pattern-check                      로그패턴검사
+        ├── /directory-date-check                   디렉토리일자체크
+        ├── /directory-exist-check                  디렉토리존재체크
+        ├── /disk-attribute-check                   디스크속성정보체크
+        ├── /disk-capacity-check                    디스크유효용량체크
+        ├── /disk-exist-check                       디스크존재체크
+        ├── /server-info-check                      서버정보확인
+        ├── /system-info-check                      시스템정보확인
+        ├── /valid-memory-check                     유효메모리체크
+        ├── /client-info-check                      클라이언트정보확인
+        ├── /file-permission-check                  파일권한체크
+        ├── /process-monitoring                     프로세스모니터링
+        ├── /network-service-monitoring             네트워크서비스모니터링
+        ├── /file-system-monitoring                 파일시스템모니터링
+        ├── /file-download                          파일다운로드
+        ├── /file-conversion                        파일변환
+        ├── /file-security                          파일보안
+        ├── /file-copy                              파일복사
+        ├── /file-compare                           파일비교
+        ├── /file-delete                            파일삭제
+        ├── /file-create                            파일생성
+        ├── /file-attribute-check                   파일속성정보체크
+        ├── /file-send-receive                      파일송/수신
+        ├── /file-compress-extract                  파일압축/해제
+        ├── /proxy-service                          프록시서비스
+        ├── /file-sync                              파일동기화
+        ├── /login-session-check                    로그인세션정보체크
+        ├── /file-upload                            파일업로드
+        ├── /file-move                              파일이동
+        ├── /file-date-check                        파일일자체크
+        ├── /file-exist-check                       파일존재체크
+        ├── /file-parsing                           파일파싱
+        ├── /process-id-check                       프로세스ID확인
+        ├── /property                               프로퍼티
+        ├── /xml-data-assembly                      XML 데이터조립
+        ├── /xml-data-parsing                       XML 데이터파싱
+        ├── /server-resource-monitoring             서버자원모니터링
+        ├── /web-standard-check                     웹표준검사
+        └── /http-service-monitoring                HTTP서비스모니터링
+</code></pre></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
+<a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
+<a href="https://www.egovframe.go.kr/home/sub.do?menuNo=23" class="krds-btn small text">라이센스</a></div><p class=f-copy>COPYRIGHT (C) 2024 eGovFramework. ALL RIGHTS RESERVED.</p></div></div></div></footer></body></html>
