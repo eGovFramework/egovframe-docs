@@ -1,0 +1,14 @@
+{{- $id := .id -}}
+{{- $menus := .menus -}}
+{{- $result := false -}}
+{{- range $menus -}}
+  {{- if eq .Identifier $id -}}
+    {{- $result = . -}}
+  {{- else if .HasChildren -}}
+    {{- $child := partial "find-menu-by-identifier.html" (dict "id" $id "menus" .Children) -}}
+    {{- if $child -}}
+      {{- $result = $child -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}
