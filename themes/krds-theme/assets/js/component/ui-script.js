@@ -676,8 +676,29 @@ const krds_sideNavigation = {
       });
     });
 
+    // const popupLastMenu = document.querySelector(".lnb-submenu-lv2.active .lnb-submenu-lv3");
+    // const popupLastItem = document.querySelectorAll(".lnb-submenu-lv2.active .lnb-submenu-lv3 li");
+    // popupLastItem.forEach((button) => {
+    //   button.addEventListener("click", () => {
+    //     button.classList.add("active");
+    //     popupLastMenu.parent.classList.remove("active");
+    //     if (button.classList.contains("active")) {
+    //       button.parentElement.classList.add("active");
+    //     }
+    //   });
+    // });
+
     // 서브 메뉴가 포커스를 잃으면 비활성화
     popupSubmenus.forEach((popupSubmenu) => {
+      this.syncLv3MenuActive(popupSubmenu);
+
+      // 3depth 메뉴 클릭: lv2(2depth) li active 제거, 클릭한 lv3만 active
+      popupSubmenu.querySelectorAll(".lnb-submenu-lv3 a").forEach((link) => {
+        link.addEventListener("click", () => {
+          this.setLv3MenuActive(popupSubmenu, link.closest("li"));
+        });
+      });
+
       popupSubmenu.addEventListener("focusout", (event) => {
         // 포커스가 서브메뉴 밖으로 나갔는지 확인
         if (!popupSubmenu.contains(event.relatedTarget)) {
