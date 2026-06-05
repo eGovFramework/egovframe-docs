@@ -11,9 +11,9 @@
 {{ $replacement := `<h${1} class="sec-tit"${2}>` }}
 {{ $updatedContent := $titleContent | replaceRE $pattern $replacement }}
 
-<!-- 링크 스타일 -->
+<!-- 링크 스타일 (아이콘은 render-link.html에서 내부 링크만 추가) -->
 {{ $linkPattern := `<a([^>]*)>(.*?)</a>` }}
-{{ $linkReplacement := `<a class="krds-btn medium text"${1}>${2}<i class="svg-icon ico-go"></i></a>` }}
+{{ $linkReplacement := `<a class="krds-btn medium text"${1}>${2}</a>` }}
 {{ $finalContent := $updatedContent | replaceRE $linkPattern $linkReplacement }}
 
 <!-- Table 클래스 추가 -->

@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ $linkPattern := `<a([^>]*)>(.*?)</a>` }}
-  {{ $linkReplacement := `<a class="krds-btn medium text" target="_blank" ${1}>${2}<i class="svg-icon ico-go"></i></a>` }}
+  {{ $linkReplacement := `<a class="krds-btn medium text" target="_blank" ${1}>${2}</a>` }}
   {{ $finalContent := .Content | replaceRE $linkPattern $linkReplacement }}
   <div class="mainLayout">
     <div class ="title" style="width: 100%; background-color:#063A74; color:white; border-radius:16px; padding: 16px; margin:32px auto">

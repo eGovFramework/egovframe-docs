@@ -1,45 +1,57 @@
-{{/*  {{ $link := .Destination }}
-{{ $parts := split $link "#" }}
-{{ $path := index $parts 0 }} <!-- 앵커를 제외한 경로 -->
-{{ $anchor := "" }}
-{{ if gt (len $parts) 1 }}
-    {{ $anchor = printf "#%s" (index $parts 1) }} <!-- 앵커 부분 -->
-{{ end }}
-
-<!-- $page 찾기 -->
-{{ $page := .Page.GetPage $path }}
-{{ if $page }}
-    {{ $path = $page.RelPermalink }}
-{{ end }}
-
-<!-- 최종 링크 생성 -->
-{{$link}}
-<a href="{{ $path }}{{ $anchor }}">{{ .Text }}</a>  */}}
-
+{{/* ── GetPage로 경로 resolve만 하는 방식 ──
 {{ $link := .Destination }}
 {{ $parts := split $link "#" }}
-{{ $path := index $parts 0 }} <!-- 앵커를 제외한 경로 -->
+{{ $path := index $parts 0 }}
 {{ $anchor := "" }}
 {{ if gt (len $parts) 1 }}
-    {{ $anchor = printf "#%s" (index $parts 1) }} <!-- 앵커 부분 -->
+    {{ $anchor = printf "#%s" (index $parts 1) }}
 {{ end }}
 
-<!-- 앵커만 있는 경우 -->
-{{ if eq $path "" }}
-    {{ $path = .Page.RelPermalink }} <!-- 현재 페이지의 경로 -->
-{{ end }}
-
-<!-- $page 찾기 -->
 {{ $page := .Page.GetPage $path }}
 {{ if $page }}
     {{ $path = $page.RelPermalink }}
-{{ else }}
-    {{ if strings.HasPrefix $path "./" }}
-        {{ $path = replaceRE "^\\.\\/" (.Page.RelPermalink | path.Dir | replaceRE "/$" "") $path }}
+{{ end }}
+
+<a href="{{ $path }}{{ $anchor }}">{{ .Text }}</a>
+── */}}
+
+{{/* ── 같은 페이지는 #앵커만, 다른 페이지는 RelPermalink + anchorize 적용 ── */}}
+{{ $link := .Destination }}
+{{ $parts := split $link "#" }}
+{{ $path := index $parts 0 }}
+{{ $anchor := "" }}
+{{ if gt (len $parts) 1 }}
+    {{ $anchor = printf "#%s" ((index $parts 1) | anchorize) }}
+{{ end }}
+
+{{ $isExternal := or (strings.HasPrefix $path "http://") (strings.HasPrefix $path "https://") (strings.HasPrefix $path "mailto:") }}
+{{ $href := $link }}
+
+{{ if not $isExternal }}
+    {{ if eq $path "" }}
+        {{ $href = $anchor }}
+    {{ else }}
+        {{ $page := .Page.GetPage $path }}
+        {{ if $page }}
+            {{ $href = $page.RelPermalink }}
+            {{ if $anchor }}
+                {{ $href = printf "%s%s" $href $anchor }}
+            {{ end }}
+        {{ else }}
+            {{ if strings.HasPrefix $path "./" }}
+                {{ $path = replaceRE "^\\.\\/" (.Page.RelPermalink | path.Dir) $path }}
+            {{ end }}
+            {{ if $anchor }}
+                {{ $href = printf "%s%s" $path $anchor }}
+            {{ else }}
+                {{ $href = $path }}
+            {{ end }}
+        {{ end }}
     {{ end }}
 {{ end }}
 
-<!-- 최종 링크 생성 -->
-<a href="{{ $path }}{{ $anchor }}">{{ .Text }}</a>
-
-
+{{ if $isExternal }}
+<a href="{{ $href | safeURL }}" target="_blank" rel="noopener noreferrer" class="externalLink">{{ .Text }}<i class="svg-icon ico-go"></i></a>
+{{ else }}
+<a href="{{ $href | safeURL }}" class="innerLink">{{ .Text }}</a>
+{{ end }}

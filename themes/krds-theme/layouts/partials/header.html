@@ -17,7 +17,7 @@
                             <li><a href="{{ $value }}" class="item-link">{{ $key }}</a></li>
                             {{ end}}  */}}
                              {{ range sort site.Params.version "weight" "asc"}}
-                                <li><a href="{{ .value }}" class="item-link" {{if ne .name "Contribution"}} target="_blank"{{end}}>{{ .name }}</a></li>
+                                <li><a href="{{ .value }}" class="item-link" {{if ne .name "Contribution"}} target="_blank"{{end}}>{{ .name }}{{if ne .name "Contribution"}} <i class="svg-icon ico-go"></i>{{end}}</a></li>
                              {{ end }}
                         </ul>
                         </div>
