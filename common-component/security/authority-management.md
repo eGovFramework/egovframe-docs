@@ -100,7 +100,7 @@ SELECT A.CHILD_ROLE CHILD,
 
 ### Session 방식 접근제어 Configuration
 
-- [Session 방식 접근제어 권한설정](/egovframe-runtime/foundation-layer/session-based-access-control-permission-settings.md)
+- [Session 방식 접근제어 권한설정](/egovframe-runtime/foundation-layer/session-simplification.md)
 
 ## 관련기능
 
