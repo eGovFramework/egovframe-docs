@@ -14,7 +14,7 @@
 │   ├── /login.md                                  일반 로그인
 │   │   └── /sso-service.md                            SSO 연계 서비스
 │   ├── /certificate-login.md                      인증서 로그인
-│   └── /login-ploicy-management.md                로그인정책관리
+│   └── /login-policy-management.md                로그인정책관리
 ├── /security                                  보안
 │   ├── /authority-management.md                   권한관리
 │   │   ├── /authority-management-function.md          권한관리 기능

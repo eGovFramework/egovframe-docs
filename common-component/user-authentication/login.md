@@ -90,7 +90,7 @@ Globals.MainPage = /EgovContent.do
    \- beans의 profile속성은 Spring f/w ver 3.1부터 추가되었으며, Spring Container에서 bean적용이 달리 적용되도록 하는데 쓰인다.
    Bean Definition Profiles - [bean_definition_profiles](/egovframe-runtime/foundation-layer-core/ioc-container-bean-definition-profiles.md)
    \- 그리고 globals.properties에서 `Globals.Auth = session` 이나 `Globals.Auth = security` 를 통해서 사용자의 로그인시 인증방식을 세션방식 또는 Spring security 방식으로 결정할 수 있다.
-   Server Security 설정 간소화 - [xmlschema](/egovframe-runtime/foundation-layer/server-security-simplifying-settings.md)
+   Server Security 설정 간소화 - [설정 간소화](/egovframe-runtime/foundation-layer/server-security-simplification.md)
 
 ```xml
 <beans profile="session">  
