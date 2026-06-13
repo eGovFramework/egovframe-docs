@@ -92,7 +92,7 @@ public class EgovUserStatsScheduling {
 }
 ```
 
-- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sts-ust.xml)
+- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sts-ust.xml)
 
 ```xml
 <bean id="userStats" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -102,10 +102,10 @@ public class EgovUserStatsScheduling {
 </bean>
 ```
 
-- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sts-ust.xml)
+- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sts-ust.xml)
 
 ```xml
-<bean id="userStatsTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="userStatsTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="userStats" />
     <!-- 시작하고 2분후에 실행한다. (milisecond) -->
     <property name="startDelay" value="120000" />
@@ -114,10 +114,10 @@ public class EgovUserStatsScheduling {
 </bean>
 ```
 
-- 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sts-ust.xml)
+- 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sts-ust.xml)
 
 ```xml
-<bean id="statsSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+<bean id="userStatsSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
         <list>
             <ref bean="userStatsTrigger" />

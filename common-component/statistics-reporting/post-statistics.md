@@ -92,7 +92,7 @@ public class EgovBbsStatsScheduling {
 }
 ```
 
-- 작업 수행 Bean 설정(ssrc/main/resources/egovframework/spring/com/context-scheduling-sts-bst.xml)
+- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sts-bst.xml)
 
 ```xml
 <bean id="bbsStats" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -102,22 +102,22 @@ public class EgovBbsStatsScheduling {
 </bean>
 ```
 
-- 트리거 Bean 설정(ssrc/main/resources/egovframework/spring/com/context-scheduling-sts-bst.xml)
+- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sts-bst.xml)
 
 ```xml
-<bean id="bbsStatsTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="bbsStatsTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="bbsStats" />
     <!-- 시작하고 2분후에 실행한다. (milisecond) -->
     <property name="startDelay" value="120000" />
-    <!-- 매 12시간마다 실행한다. (milisecond) -->
-    <property name="repeatInterval" value="43200000" />
+    <!-- 매 24시간마다 실행한다. (milisecond) -->
+    <property name="repeatInterval" value="86400000" />
 </bean>
 ```
 
-- 스케줄러 Bean 설정 (ssrc/main/resources/egovframework/spring/com/context-scheduling-sts-bst.xml)
+- 스케줄러 Bean 설정 (src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sts-bst.xml)
 
 ```xml
-<bean id="statsSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+<bean id="bbsStatsSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
         <list>
             <ref bean="bbsStatsTrigger" />
