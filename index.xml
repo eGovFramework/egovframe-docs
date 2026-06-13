@@ -17551,7 +17551,97 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Layout&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">PatternLayout&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pattern&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>위 Logger 객체를 org.apache.logging.log4j.core.Logger로 캐스팅하면, Log Level, Appender, Layout 등 설정을 변경할 수 있다.&lt;br>
-예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description/></item><item><title>쿠키처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/handling_cookie/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/handling_cookie/</guid><description>&lt;h1 id="요소기술---쿠키처리">요소기술 - 쿠키처리&lt;/h1>
+예시에서 사용된 설정 관련 메서드는 다음과 같다. 더 자세한 정보는 Log4j 2 API를 참조하도록 한다.&lt;/p></description></item><item><title>쿠키/세션</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>쿠키(Cookie) 및 세션(Session) 처리와 관련된 다양한 공통기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="쿠키-처리">쿠키 처리&lt;/h3>
+&lt;p>쿠키에 객체 정보를 저장, 취득, 제거하는 기능으로 구성되어 있다.&lt;/p>
+&lt;h4 id="쿠키-관련-소스">쿠키 관련 소스&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>&lt;code>EgovSessionCookieUtil.java&lt;/code>&lt;/td>
+ &lt;td>세션/쿠키 처리 관련 유틸리티&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>&lt;code>EgovComUtlController.java&lt;/code>&lt;/td>
+ &lt;td>테스트용 controller&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>&lt;code>EgovCookieProcess.jsp&lt;/code>&lt;/td>
+ &lt;td>쿠키처리 테스트 페이지&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="쿠키-메소드">쿠키 메소드&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>void&lt;/code>&lt;/td>
+ &lt;td>&lt;code>setCookie(response, cookieNm, cookieVal, minute)&lt;/code>&lt;/td>
+ &lt;td>쿠키 정보 생성&lt;/td>
+ &lt;td>입력받은 분만큼 쿠키를 유지되도록 세팅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>String&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getCookie(request, cookieNm)&lt;/code>&lt;/td>
+ &lt;td>쿠키정보 취득&lt;/td>
+ &lt;td>쿠키값을 읽어들인다&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>void&lt;/code>&lt;/td>
+ &lt;td>&lt;code>setCookie(response, cookieNm)&lt;/code>&lt;/td>
+ &lt;td>쿠키정보 삭제&lt;/td>
+ &lt;td>쿠키의 유효시간을 0으로 설정&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="쿠키-사용방법">쿠키 사용방법&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.cas.service.EgovSessionCookieUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 쿠키정보 생성&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String cookieNm &lt;span style="color:#f92672">=&lt;/span> safeGetParameter(request, &lt;span style="color:#e6db74">&amp;#34;NAME&amp;#34;&lt;/span>); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String cookieVal &lt;span style="color:#f92672">=&lt;/span> safeGetParameter(request, &lt;span style="color:#e6db74">&amp;#34;김기수&amp;#34;&lt;/span>); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EgovSessionCookieUtil.&lt;span style="color:#a6e22e">setCookie&lt;/span>(response, cookieNm, cookieVal); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 쿠키정보 얻기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String cookieNm &lt;span style="color:#f92672">=&lt;/span> safeGetParameter(request, &lt;span style="color:#e6db74">&amp;#34;NAME&amp;#34;&lt;/span>); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String resultStr &lt;span style="color:#f92672">=&lt;/span> EgovSessionCookieUtil.&lt;span style="color:#a6e22e">getCookie&lt;/span>(request, cookieNm); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 쿠키정보 삭제&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String cookieNm &lt;span style="color:#f92672">=&lt;/span> safeGetParameter(request, &lt;span style="color:#e6db74">&amp;#34;NAME&amp;#34;&lt;/span>); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EgovSessionCookieUtil.&lt;span style="color:#a6e22e">setCookie&lt;/span>(response, cookieNm); 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// safeGetParameter : null 처리 및 보안 문제 처리 등을 포함 (example)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String &lt;span style="color:#a6e22e">safeGetParameter&lt;/span>(HttpServletRequest request, String name) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String value &lt;span style="color:#f92672">=&lt;/span> request.&lt;span style="color:#a6e22e">getParameter&lt;/span>(name);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (value &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> value.&lt;span style="color:#a6e22e">replaceAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\r&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">replaceAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="세션-처리">세션 처리&lt;/h3>
+&lt;p>세션에 객체 정보를 저장, 취득, 제거하는 기능을 갖으며 &lt;code>HttpServletRequest&lt;/code> 객체의 &lt;code>HttpSession&lt;/code> 정보를 사용하여 처리된다.&lt;/p></description></item><item><title>쿠키처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/handling_cookie/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/cookie-session/handling_cookie/</guid><description>&lt;h1 id="요소기술---쿠키처리">요소기술 - 쿠키처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>쿠키 처리와 관련된 다양한 공통기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
