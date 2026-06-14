@@ -1,12 +1,29 @@
 ---
-  title: 보고서 통계
-  linkTitle: 보고서 통계
-  description: "각종 보고서현황에 대한 통계자료를 특정 조건에 맞게 제공한다."
-  url: /common-component/statistics-reporting/report-statistics/
-  menu:
-    depth:
-      name: 보고서 통계
-      weight: 5
-      parent: "statistics-reporting"
-      identifier: "report-statistics"
+title: "보고서통계"
+linkTitle: "보고서통계"
+description: "보고서통계"
+url: /common-component/statistics-reporting/report-statistics/
+menu:
+  depth:
+    name: "보고서통계"
+    weight: 4
+    parent: "statistics-reporting"
 ---
+
+## 개요
+
+시스템 운영 현황(접속 통계, 데이터 이용 통계, 메뉴 사용 통계 등)의 다양한 요약 수치를 취합하여 정기적인(주간/월간) 운영 성과 보고서 형태로 출력하고 배포하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **통계 종합 대시보드**: 개별 통계 지표들을 한 화면에 종합적으로 렌더링하여 시스템의 전반적인 건강 상태와 사용 추이를 한눈에 파악합니다.
+* **보고서 출력 및 추출**: 조회된 종합 통계 데이터를 문서 뷰어 도구를 사용해 엑셀(Excel), PDF, 혹은 한글(HWP) 파일 형태로 변환하여 다운로드합니다.
+* **정기 메일 발송**: 매월 초 등 정해진 날짜에 스케줄러가 통계 보고서를 자동 생성하여 최고 관리자나 유관 부서 담당자들에게 이메일로 발송합니다.
+
+## 데이터 구조 (테이블)
+
+* 접속통계, 이용통계, 화면통계 등의 집계 마트 테이블들을 조인하여 뷰(View) 형태로 활용하거나, 리포팅 솔루션의 소스 데이터로 활용합니다.
+
+## 활용 방안
+
+IT 운영 부서가 매월 정기적으로 작성해야 하는 '시스템 운영 성과 보고서'의 수작업 통계 산출 업무를 자동화하여 리소스 낭비를 줄이고 보고의 정확성을 높이는 데 기여합니다.

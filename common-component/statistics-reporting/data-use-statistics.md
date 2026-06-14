@@ -1,12 +1,29 @@
 ---
-  title: 자료이용현황 통계
-  linkTitle: 자료이용현황 통계
-  description: "각종 보고서현황에 대한 통계자료를 특정 조건에 맞게 제공한다."
-  url: /common-component/statistics-reporting/data-use-statistics/
-  menu:
-    depth:
-      name: 자료이용현황 통계
-      weight: 6
-      parent: "statistics-reporting"
-      identifier: "data-use-statistics"
+title: "데이터이용통계"
+linkTitle: "데이터이용통계"
+description: "데이터이용통계"
+url: /common-component/statistics-reporting/data-use-statistics/
+menu:
+  depth:
+    name: "데이터이용통계"
+    weight: 2
+    parent: "statistics-reporting"
 ---
+
+## 개요
+
+게시판의 첨부파일, 공개된 데이터셋, 또는 멀티미디어 자료(영상/오디오) 등 시스템 내의 디지털 자산이 얼마나 조회되고 다운로드되었는지를 산출하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **첨부파일 다운로드 통계**: 특정 자료실 게시물의 첨부파일이 얼마나 많이 다운로드되었는지 기간별, 자료별로 건수를 집계합니다.
+* **콘텐츠 조회수 분석**: 시스템에서 제공하는 메뉴얼, 정책 문서 등의 열람(조회) 횟수를 랭킹화하여 사용자들의 관심사를 파악합니다.
+* **이용자 속성별 분석**: (필요시) 다운로드한 사용자의 소속, 연령대 등 속성 정보를 교차 분석하여 타겟 맞춤형 콘텐츠 기획을 돕습니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNDATAUSESTATS`: 파일 다운로드 이력 또는 콘텐츠 조회 로그를 기반으로 정기적으로 요약 집계된 데이터를 저장하는 테이블
+
+## 활용 방안
+
+공공기관의 대민 정보 공개 포털에서 어떤 공공데이터가 국민들에게 가장 수요가 높은지 파악하거나, 사내 지식 관리 시스템에서 가장 많이 활용되는 업무 문서를 발굴하여 보상하는 데 쓰입니다.
