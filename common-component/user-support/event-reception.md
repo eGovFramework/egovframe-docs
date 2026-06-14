@@ -1,11 +1,29 @@
 ---
-title: "행사접수관리"
-linkTitle: "행사접수관리"
-description: "행사접수관리"
-url: /common-component/user-support/information-provided/event-reception/
+title: "행사접수"
+linkTitle: "행사접수"
+description: "행사접수"
+url: /common-component/user-support/online-participation/event-reception/
 menu:
   depth:
-    name: "행사접수관리"
-    weight: 29
-    parent: "information-provided"
+    name: "행사접수"
+    weight: 10
+    parent: "online-participation"
 ---
+
+## 개요
+
+`행사참여` 컴포넌트를 통해 온라인으로 들어온 사용자의 행사 신청 내역을 관리자가 확인하고, 승인/반려 처리를 수행할 수 있는 관리자 화면 컴포넌트입니다.
+
+## 주요 기능
+
+* **신청자 명단 조회**: 특정 이벤트에 신청한 사용자 목록과 신청 일시 등을 조회합니다.
+* **승인 및 상태 처리**: 인원 제한 등을 고려하여 관리자가 사용자의 참여 신청을 최종적으로 '승인'하거나 '반려' 처리합니다.
+* **엑셀 다운로드**: 행사 진행을 위한 참석자 명부 작성을 위해 신청자 명단을 엑셀 파일로 추출합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNEVENTREQSTINFO`: (행사참여 컴포넌트와 동일 테이블) 관리자가 해당 테이블의 `승인상태코드` 값을 업데이트하여 접수를 처리합니다.
+
+## 활용 방안
+
+신청 인원 검증, 선착순 마감 처리, 혹은 자격 요건 검토가 필요한 오프라인 행사/교육의 백오피스 참석자 관리 및 출석부 생성 기능으로 활용됩니다.

@@ -2,10 +2,27 @@
 title: "저작권보호정책"
 linkTitle: "저작권보호정책"
 description: "저작권보호정책"
-url: /common-component/user-support/terms-manage/copyright-policy/
+url: /common-component/user-support/information-provided/copyright-policy/
 menu:
   depth:
     name: "저작권보호정책"
-    weight: 2
-    parent: "terms-manage"
+    weight: 5
+    parent: "information-provided"
 ---
+
+## 개요
+
+웹사이트가 제공하는 정보와 콘텐츠에 대한 저작권 소유 명시, 이용 허락 조건, 무단 복제 및 배포 금지 조항 등의 보호 정책 내용을 웹 페이지로 제공하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **정책 내용 관리**: 관리자가 시스템 화면 하단(Footer) 등에 링크되는 저작권 보호 정책의 본문을 에디터 등을 통해 작성하고 관리합니다.
+* **사용자 제공**: 사용자가 사이트 이용 전 저작권 관련 준수 사항을 확인할 수 있도록 조회 화면을 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNCOPYRIGHTPOLICY`: 정책의 버전, 적용 일자, 본문 내용 등을 저장하는 테이블 (또는 약관 테이블과 통합 사용 가능)
+
+## 활용 방안
+
+콘텐츠 저작권 분쟁을 예방하고 기관의 공식적인 콘텐츠 이용 가이드라인을 시스템 차원에서 명확히 고지할 수 있습니다. 주로 사이트 Footer 영역의 약관 링크와 연결하여 사용합니다.
