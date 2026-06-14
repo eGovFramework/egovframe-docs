@@ -2,10 +2,28 @@
 title: "우편번호관리"
 linkTitle: "우편번호관리"
 description: "우편번호관리"
-url: /common-component/system-management/common-code-manage/zipcode-management/
+url: /common-component/system-management/system-manage/zipcode-management/
 menu:
   depth:
     name: "우편번호관리"
-    weight: 4
-    parent: "common-code-manage"
+    weight: 6
+    parent: "system-manage"
 ---
+
+## 개요
+
+회원 가입이나 배송지 입력 시 사용되는 과거 6자리 우편번호(지번 주소 기반) 또는 현행 5자리 국가기초구역번호 체계의 주소 마스터 데이터를 파일(엑셀, TXT)로 일괄 업로드하여 데이터베이스화하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **우편번호 데이터 업로드**: 우정사업본부에서 배포하는 우편번호 데이터 파일을 관리자가 시스템에 일괄 등록(Bulk Insert)합니다.
+* **주소 검색 연계**: 업로드된 데이터를 기반으로, 사용자 화면에서 동/읍/면 또는 도로명으로 우편번호를 검색할 수 있는 팝업 기능을 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNZIP`: 구 우편번호, 시도, 시군구, 읍면동, 리, 번지 등의 상세 주소 정보를 저장하는 테이블
+
+## 활용 방안
+
+Open API 기반의 주소 검색 연계가 불가능한 내부 폐쇄망(Intranet) 환경이거나, 과거 지번 주소 체계와의 호환성을
+위해 시스템 내부 DB에 직접 우편번호 데이터를 적재하여 오프라인으로 검색 서비스를 제공해야 할 때 사용됩니다.
