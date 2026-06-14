@@ -1,11 +1,28 @@
 ---
-title: "설문항목관리"
-linkTitle: "설문항목관리"
-description: "설문항목관리"
-url: /common-component/user-support/online-participate/survey-item/
+title: "설문항목"
+linkTitle: "설문항목"
+description: "설문항목"
+url: /common-component/user-support/online-participation/survey-item/
 menu:
   depth:
-    name: "설문항목관리"
-    weight: 7
-    parent: "online-participate"
+    name: "설문항목"
+    weight: 41
+    parent: "online-participation"
 ---
+
+## 개요
+
+설문조사를 구성하는 개별 질문(문항)에 딸린 구체적인 선택지(객관식 보기 항목) 데이터를 등록하고 관리하는 하위 컴포넌트입니다.
+
+## 주요 기능
+
+* **객관식 보기 등록**: 특정 설문 문항에 대해 사용자가 선택할 수 있는 보기 항목(예: 매우 그렇다, 그렇다, 보통이다 등)을 텍스트로 등록합니다.
+* **정렬 순서 지정**: 설문 화면에 노출될 보기 항목들의 순서를 지정하여 논리적인 순서대로 나열합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNQUSTNRIEM`: 설문 문항에 종속된 객관식 항목의 번호, 내용, 정렬 순서 등을 저장하는 테이블
+
+## 활용 방안
+
+`설문관리` 및 `설문문항` 컴포넌트와 함께 연계되어 작동하며, 5점 척도, 7점 척도 등 다양한 형태의 객관식 설문 폼을 유연하게 구성하는 데 사용됩니다.
