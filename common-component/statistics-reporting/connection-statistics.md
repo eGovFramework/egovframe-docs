@@ -1,12 +1,30 @@
 ---
-  title: 접속 통계
-  linkTitle: 접속 통계
-  description: "사용자가 접속한 현황에 대한 통계자료를 서비스, 개인별에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다."
-  url: /common-component/statistics-reporting/connection-statistics/
-  menu:
-    depth:
-      name: 접속 통계
-      weight: 3
-      parent: "statistics-reporting"
-      identifier: "connection-statistics"
+title: "접속통계"
+linkTitle: "접속통계"
+description: "접속통계"
+url: /common-component/statistics-reporting/connection-statistics/
+menu:
+  depth:
+    name: "접속통계"
+    weight: 1
+    parent: "statistics-reporting"
 ---
+
+## 개요
+
+시스템에 방문하는 사용자들의 로그인 이력 및 접근 로그를 바탕으로, 시간대별, 일별, 월별 누적 접속자 수와 활성 사용자 수를 집계하여 그래프와 표로 제공하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **기간별 방문자 통계**: 일간, 주간, 월간 단위로 순 방문자(UV) 수와 총 방문 횟수를 집계하여 트래픽 추이를 분석합니다.
+* **시간대별 접속 현황**: 하루 24시간 중 어느 시간대에 사용자가 가장 많이 몰리는지(Peak Time)를 분석하여 인프라 확장 계획의 근거를 마련합니다.
+* **사용자 환경 분석**: PC/모바일 접속 비율, 접속 브라우저(크롬, 엣지 등) 및 운영체제(OS)의 통계를 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNLOGINLOG`: 사용자의 로그인 이력을 저장하는 테이블 (통계 추출의 원천 데이터)
+* `COMTNCONECTSTATS`: 스케줄러에 의해 일별, 월별로 요약 집계된 접속 통계 데이터를 저장하는 마트(Mart) 테이블
+
+## 활용 방안
+
+대국민 서비스 사이트의 운영 성과(트래픽 증가율)를 경영진에 보고하거나, 트래픽 폭주가 예상되는 시점(명절, 수강신청 등)을 대비한 서버 증설(Scale-out) 시기를 결정하는 기초 자료로 활용됩니다.
