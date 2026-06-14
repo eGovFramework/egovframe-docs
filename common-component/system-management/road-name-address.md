@@ -2,10 +2,28 @@
 title: "도로명주소연계"
 linkTitle: "도로명주소연계"
 description: "도로명주소연계"
-url: /common-component/system-management/common-code-manage/road-name-address/
+url: /common-component/system-management/system-manage/road-name-address/
 menu:
   depth:
     name: "도로명주소연계"
-    weight: 9
-    parent: "common-code-manage"
+    weight: 5
+    parent: "system-manage"
 ---
+
+## 개요
+
+우정사업본부 또는 행정안전부(도로명주소 안내시스템)에서 제공하는 최신 도로명 주소(우편번호) 데이터를 시스템에 연계하여 수신 및 반영하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **주소 데이터 파일 수신**: 정기적으로 제공되는 도로명주소/지번주소 매핑 데이터 파일(텍스트, DB 등)을 서버로 수신(다운로드)합니다.
+* **주소 DB 갱신**: 수신된 대용량 주소 데이터를 기존 내부 시스템의 우편번호 테이블에 반영(Insert/Update/Delete)하여 최신 상태로 동기화합니다.
+* **주소 검색 API 제공**: 업데이트된 DB를 바탕으로 화면에서 우편번호 검색 기능을 수행할 수 있는 인터페이스를 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNROADDR`: 우편번호, 시도명, 시군구명, 읍면동명, 도로명, 지하여부, 건물본번/부번 등을 저장하는 거대한 주소 마스터 테이블
+
+## 활용 방안
+
+쇼핑몰 배송지 입력, 회원 가입, 행정 민원 신청 등 주소 입력이 필수적인 거의 모든 시스템에서 사용자에게 정확한 최신 우편번호 체계를 제공하기 위해 배치 작업과 연계하여 사용됩니다.
