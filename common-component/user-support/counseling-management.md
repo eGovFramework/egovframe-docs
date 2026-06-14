@@ -2,10 +2,28 @@
 title: "상담관리"
 linkTitle: "상담관리"
 description: "상담관리"
-url: /common-component/user-support/online-participate/counseling-management/
+url: /common-component/user-support/online-participation/counseling-management/
 menu:
   depth:
     name: "상담관리"
-    weight: 1
-    parent: "online-participate"
+    weight: 6
+    parent: "online-participation"
 ---
+
+## 개요
+
+일반 사용자 또는 고객이 시스템을 통해 문의하거나 상담을 요청한 내역을 접수하고, 관리자(또는 상담원)가 이에 대한 답변을 처리할 수 있는 양방향 소통 컴포넌트입니다.
+
+## 주요 기능
+
+* **상담 내용 접수**: 사용자가 상담 제목, 내용, 연락처 등을 입력하여 온라인으로 상담을 신청합니다.
+* **상담 답변 처리**: 관리자가 접수된 상담 내역을 확인하고, 답변을 등록 및 상태(접수/답변완료)를 변경합니다.
+* **상담 이력 조회**: 사용자는 본인이 신청한 상담의 진행 상태와 답변 내용을 확인할 수 있습니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNCOUNSELINGINFO`: 상담 신청 내용, 신청자 정보, 답변 내용, 답변 일자 및 처리 상태 등을 관리하는 테이블
+
+## 활용 방안
+
+민원 처리, IT 헬프데스크, 고객 지원(CS) 창구 등 사용자의 질문이나 요청 사항을 관리하고 추적해야 하는 온라인 서비스 기능으로 널리 활용됩니다.
