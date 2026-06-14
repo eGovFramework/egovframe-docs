@@ -1,11 +1,29 @@
 ---
-title: "Twitter연동"
-linkTitle: "Twitter연동"
-description: "Twitter연동"
+title: "트위터연동"
+linkTitle: "트위터연동"
+description: "트위터연동"
 url: /common-component/user-support/information-provided/twitter-integration/
 menu:
   depth:
-    name: "Twitter연동"
-    weight: 19
+    name: "트위터연동"
+    weight: 49
     parent: "information-provided"
 ---
+
+## 개요
+
+웹사이트의 게시글이나 공지, 이벤트 내용 등을 트위터(Twitter, X)로 내보내기(공유) 하거나, 공식 트위터 계정의 최근 타임라인 피드를 메인 화면에 연동하여 노출하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **소셜 공유 기능**: 시스템 콘텐츠 URL과 제목을 조합하여 사용자가 본인의 트위터 계정으로 손쉽게 리트윗/공유할 수 있는 소셜 위젯 기능을 제공합니다.
+* **API 연동 인증**: Twitter API 연동에 필요한 OAuth 기반 인증 및 토큰 처리 로직을 포함합니다.
+* **타임라인 조회**: 기관/기업 공식 트위터 계정의 최신 트윗 목록을 가져와서 시스템 내 화면(포털 메인 등)에 렌더링합니다.
+
+## 데이터 구조 (테이블)
+
+(일반적으로 별도의 데이터를 적재하기보다는 Twitter 연동 API 설정값 및 토큰을 속성이나 환경변수로 관리합니다)
+
+## 활용 방안
+
+기관의 신속한 정책 홍보, 국민과의 실시간 소통 채널로 활용되며, 사이트 방문자에게 생동감 있는 외부 소셜 피드를 제공하여 정보의 도달률을 높입니다.

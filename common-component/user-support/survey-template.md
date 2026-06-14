@@ -1,11 +1,28 @@
 ---
-title: "설문템플릿관리"
-linkTitle: "설문템플릿관리"
-description: "설문템플릿관리"
-url: /common-component/user-support/online-participate/survey-template/
+title: "설문템플릿"
+linkTitle: "설문템플릿"
+description: "설문템플릿"
+url: /common-component/user-support/online-participation/survey-template/
 menu:
   depth:
-    name: "설문템플릿관리"
-    weight: 4
-    parent: "online-participate"
+    name: "설문템플릿"
+    weight: 45
+    parent: "online-participation"
 ---
+
+## 개요
+
+설문조사 화면이 사용자에게 노출될 때 적용될 디자인 양식(UI 레이아웃, 컬러셋 등)을 사전에 템플릿 형태로 등록해 두고 선택하여 사용할 수 있게 하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **템플릿 파일 매핑**: JSP 파일이나 HTML 템플릿 경로를 DB에 등록하여, 설문 폼 화면을 렌더링할 때 참고할 기준 파일로 삼습니다.
+* **템플릿 정보 관리**: 템플릿 명칭, 설명, 템플릿의 미리보기 이미지 등을 등록하여 관리자가 설문 생성 시 디자인을 직관적으로 선택할 수 있게 돕습니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNQUSTNRTMPLAT`: 템플릿 ID, 템플릿 명칭, 화면 렌더링을 위한 물리적 파일 경로 등을 저장하는 테이블
+
+## 활용 방안
+
+사용자 친화적인 디자인이 중요한 마케팅 설문, 엄숙한 분위기의 사내 평가 설문 등 조사 목적에 따라 최적화된 설문 화면 디자인을 유연하게 교체하는 데 사용됩니다.

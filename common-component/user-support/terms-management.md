@@ -1,11 +1,29 @@
 ---
-title: "약관관리"
-linkTitle: "약관관리"
-description: "약관관리"
-url: /common-component/user-support/terms-manage/terms-management/
+title: "약관동의관리"
+linkTitle: "약관동의관리"
+description: "약관동의관리"
+url: /common-component/user-support/information-provided/terms-management/
 menu:
   depth:
-    name: "약관관리"
-    weight: 1
-    parent: "terms-manage"
+    name: "약관동의관리"
+    weight: 48
+    parent: "information-provided"
 ---
+
+## 개요
+
+회원 가입이나 특정 서비스 신청 시 제공되는 이용약관, 개인정보 취급방침 등 여러 가지 규정에 대해 사용자가 필수적/선택적으로 동의한 내역을 기록하고 조회하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **동의 내역 기록**: 사용자가 어느 버전의 약관에 언제 동의(또는 거부)했는지 이력을 타임스탬프와 함께 저장합니다.
+* **동의 철회/변경**: 선택형 약관(예: 마케팅 수신 동의 등)에 대해 사용자가 추후에 마이페이지에서 동의 여부를 변경할 수 있도록 처리합니다.
+* **약관 갱신 알림**: 새로운 버전의 필수 약관이 적용되었을 때, 기존 사용자에게 재동의를 받기 위한 식별 데이터를 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNEMPLYRINFO` (또는 별도 동의 이력 테이블): 회원 정보 테이블의 특정 플래그 값이나, 약관 동의 이력 테이블을 통해 사용자의 동의 여부와 시간을 관리합니다.
+
+## 활용 방안
+
+개인정보보호법 등 관련 법률 준수를 위해 회원들의 마케팅 수신 동의, 제3자 정보 제공 동의 이력을 명확한 데이터로 남겨 관리할 때 필수적으로 쓰이는 기능입니다.
