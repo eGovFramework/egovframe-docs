@@ -1,11 +1,29 @@
 ---
-title: "커뮤니티"
-linkTitle: "커뮤니티"
-description: "커뮤니티"
-url: /common-component/collaboration/community/
+title: "커뮤니티관리"
+linkTitle: "커뮤니티관리"
+description: "커뮤니티관리"
+url: /common-component/collaboration/community/community/
 menu:
   depth:
+    name: "커뮤니티관리"
     weight: 2
-    parent: "collaboration"
-    identifier: "community"
+    parent: "community"
 ---
+
+## 개요
+
+일반 사용자(프론트엔드)가 개설된 커뮤니티 목록을 탐색하고, 본인이 가입한 커뮤니티의 메인 화면에 접속하여 최신 글과 공지사항 등을 한눈에 확인하는 포털 역할을 하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **커뮤니티 메인 화면**: 특정 커뮤니티에 입장 시, 해당 커뮤니티의 소개글, 최신 게시물 목록(공지사항, 자료실 등), 회원 현황 등을 포털 대시보드 형태로 제공합니다.
+* **커뮤니티 목록 검색**: 사용자가 관심 있는 주제나 카테고리를 검색하여 가입할 만한 새로운 커뮤니티를 찾을 수 있는 디렉토리 뷰를 제공합니다.
+* **내 커뮤니티 관리**: 사용자가 현재 가입하여 활동 중인 커뮤니티 목록(바로가기)을 보여주어 빠른 접근을 돕습니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNCMMNTY`: 시스템 전체 커뮤니티 정보의 뷰(목록)를 구성합니다.
+
+## 활용 방안
+
+사내 포털이나 대형 커뮤니티 사이트에서 카페(Cafe) 서비스나 밴드(Band) 서비스의 메인 허브 역할을 하며, 사용자 간의 소규모 그룹 협업을 촉진하는 창구로 쓰입니다.
