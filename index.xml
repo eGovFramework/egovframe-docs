@@ -13128,7 +13128,20 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;li>&lt;code>COMTNPRIVACYLOG&lt;/code>: 개인정보 열람자 ID, 조회 대상 정보, 접근 일시, 접근 사유 등을 저장하는 테이블&lt;/li>
 &lt;/ul>
 &lt;h2 id="활용-방안">활용 방안&lt;/h2>
-&lt;p>정기적인 정보보호 관리체계(ISMS) 인증 심사나 개인정보 유출 사고 발생 시, 책임 소재를 명확히 하고 법적 소명을 하기 위한 필수적인 감사(Audit) 데이터로 쓰입니다.&lt;/p></description></item><item><title>개인지식관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/personal-knowledge-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/personal-knowledge-manage/</guid><description/></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시물 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post-statistics/</guid><description>&lt;h1 id="게시물-통계">게시물 통계&lt;/h1>
+&lt;p>정기적인 정보보호 관리체계(ISMS) 인증 심사나 개인정보 유출 사고 발생 시, 책임 소재를 명확히 하고 법적 소명을 하기 위한 필수적인 감사(Audit) 데이터로 쓰입니다.&lt;/p></description></item><item><title>개인지식관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/personal-knowledge-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/personal-knowledge-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>임직원 개인이 업무 중 터득한 노하우나 업무 참조용 자료를 사내 포털의 개인 작업 공간(My Workspace)에 등록하여, 공식 지식으로 배포하기 전 초안 형태로 관리하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>개인 지식함 운영&lt;/strong>: 나만 볼 수 있는 비공개 지식이나 외부에서 스크랩한 유용한 웹 문서 등을 임시 저장하고 관리합니다.&lt;/li>
+&lt;li>&lt;strong>전사 지식으로 승격(공유)&lt;/strong>: 개인 지식함에서 일정 수준 완성된 자료를 선별하여, 클릭 한 번으로 공식적인 &amp;lsquo;전사 지식정보&amp;rsquo;로 이관(공개) 신청할 수 있습니다.&lt;/li>
+&lt;li>&lt;strong>나의 지식 활동 요약&lt;/strong>: 내가 등록한 지식, 내가 받은 추천 수, 나의 지식 마일리지 현황 등을 마이페이지 형태로 통합 조회합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNKNOWLEDGEINFO&lt;/code>: 지식 등록 시 공개 여부(비공개/공개) 플래그를 통해 개인 지식을 별도로 분리하여 저장하고 조회합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>공식적인 문서(결재 등)로 올리기엔 부담스러운 가벼운 아이디어나 참고 자료를 임시로 축적하게 함으로써, 조직 내 암묵지가 사장되지 않고 최종적으로 공통 지식 자산으로 발전할 수 있는 인큐베이터 역할을 합니다.&lt;/p></description></item><item><title>개인화</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/personalization/</guid><description/></item><item><title>게시물 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/post-statistics/</guid><description>&lt;h1 id="게시물-통계">게시물 통계&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>게시물 통계 기능은 각종 게시물 현황에 대한 통계자료를 게시판 유형, 게시판 템플릿, 게시판 속성에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
 &lt;ul>
@@ -19962,7 +19975,48 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code> Maven clean 기능을 사용하고자 할 때, 다음과 같이 사용한다.
 &amp;gt;mvn clean:clean
-&lt;/code>&lt;/pre>&lt;p>기본적으로 Maven에서 빌드 Lifecycle을 호출하여 기능을 수행하고자 할 때, Full Name으로 호출을 해야 한다. 그러나, 그것이 너무 번거로운 관계로 몇 가지 조건을 만족하는 경우 간단한 방식으로 호출할 수 있다. 그 조건은 다음과 같다.&lt;/p></description></item><item><title>연계기관관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</guid><description/></item><item><title>연계메시지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</guid><description/></item><item><title>연계현황관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</guid><description/></item><item><title>온라인매뉴얼</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;/code>&lt;/pre>&lt;p>기본적으로 Maven에서 빌드 Lifecycle을 호출하여 기능을 수행하고자 할 때, Full Name으로 호출을 해야 한다. 그러나, 그것이 너무 번거로운 관계로 몇 가지 조건을 만족하는 경우 간단한 방식으로 호출할 수 있다. 그 조건은 다음과 같다.&lt;/p></description></item><item><title>연계기관관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템과 데이터를 주고받는 외부 연계 대상 기관(예: 행정안전부, 국세청, 신용평가사 등) 또는 내부 타 시스템의 정보, 담당자 연락처, 접속 권한 등을 마스터로 등록하여 관리하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>연계 기관 정보 등록&lt;/strong>: 데이터를 송신하거나 수신할 대상 기관의 공식 명칭, 기관 코드, 시스템명, 사용 프로토콜(HTTP, TCP/IP) 등을 등록합니다.&lt;/li>
+&lt;li>&lt;strong>담당자 및 인증 정보 관리&lt;/strong>: 해당 연계 시스템을 담당하는 양측 담당자의 연락처와, API 호출 시 필요한 API Key, 인증서, IP 접근 제어(ACL) 목록 등을 관리합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNCNTCSYSTEM&lt;/code>: 연계 대상 기관(시스템) 고유 ID, 기관명, 시스템명, IP 주소, 담당자명, 연락처 등을 저장하는 마스터 테이블&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>대규모 공공 시스템이나 금융 시스템과 같이 수십 개의 이기종 시스템과 복잡하게 얽혀 있는 환경에서,
+연계 장애 발생 시 신속하게 타겟 시스템의 담당자를 파악하고 인증 키 만료 등을 사전에 관리하기 위한 인프라 대장 역할을 수행합니다.&lt;/p></description></item><item><title>연계메시지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>내부 시스템과 외부 기관(또는 타 시스템) 간에 데이터를 주고받기 위해 사용되는 전문(메시지)의 레이아웃 구조, 전문 코드, 헤더 및 바디 항목 등을 마스터로 정의하고 관리하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>전문(Message) 레이아웃 정의&lt;/strong>: 송수신할 데이터 전문의 총 길이, 각 필드의 명칭, 타입(String, Number), 길이(Byte), 필수 여부 등 상세 스펙을 등록합니다.&lt;/li>
+&lt;li>&lt;strong>연계 코드 매핑&lt;/strong>: 내부 시스템에서 사용하는 공통 코드와 외부 시스템에서 요구하는 코드가 다를 경우, 이를 자동으로 변환(Mapping)해주기 위한 변환 규칙을 설정합니다.&lt;/li>
+&lt;li>&lt;strong>전문 이력 관리&lt;/strong>: 시스템 고도화 등에 따라 전문 레이아웃이 변경되었을 때, 이전 버전과 최신 버전의 전문 규격을 이력으로 관리합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNCNTCMSGE&lt;/code>: 연계 메시지 고유 ID, 메시지 명칭, 메시지 설명 등을 저장하는 마스터 테이블&lt;/li>
+&lt;li>&lt;code>COMTNCNTCMSGEIEM&lt;/code>: 해당 메시지를 구성하는 개별 필드(항목)의 명칭, 길이, 타입 등 상세 구조를 저장하는 테이블&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>EAI(Enterprise Application Integration)나 ESB(Enterprise Service Bus) 솔루션을 도입하지 않은 환경에서도
+전문 파싱(Parsing) 및 생성 로직을 하드코딩하지 않고 DB 메타데이터 기반으로 유연하게 처리하기 위한 표준 모델로 사용됩니다.&lt;/p></description></item><item><title>연계현황관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>외부 시스템과의 데이터 연계(API 호출, 전문 송수신) 작업이 정상적으로 수행되고 있는지 종합적으로 모니터링하고, 발생한 트랜잭션의 송수신 상태와 통계 정보를 실시간으로 조회하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>송수신 상태 모니터링&lt;/strong>: 개별 연계 작업의 처리 상태(대기, 송신 중, 정상 완료, 오류 발생)를 조회하여 인터페이스의 정상 동작 여부를 확인합니다.&lt;/li>
+&lt;li>&lt;strong>오류 메시지 추적&lt;/strong>: 연계 실패 시 상대 기관 시스템에서 반환한 에러 코드(예: 타임아웃, 데이터 형식 오류)와 실패한 원본 메시지를 확인하여 장애 조치를 지원합니다.&lt;/li>
+&lt;li>&lt;strong>연계 통계 제공&lt;/strong>: 일별, 월별, 기관별 연계 발생 건수와 성공률 통계를 차트나 리스트 형태로 제공합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNSYSTEMCNTC&lt;/code>: 연계 ID별 실시간 통신 상태 및 누적 송수신 건수를 관리하는 현황 테이블 (송수신 이력 로그 테이블과 조인하여 활용)&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>시스템 관제실이나 IT 운영 부서에서 대외 연계망의 상태를 실시간으로 파악하는 대시보드의 기초 데이터로 활용되며, 잦은 타임아웃이 발생하는 연계 구간을 식별하여 시스템 성능을 튜닝하는 데 쓰입니다.&lt;/p></description></item><item><title>온라인매뉴얼</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자가 시스템 기능이나 서비스를 원활하게 이용할 수 있도록, 화면이나 업무별로 상세한 사용 설명서(Manual)를 온라인 책자 형태로 제공하는 컴포넌트입니다.&lt;/p>
 &lt;h2 id="주요-기능">주요 기능&lt;/h2>
 &lt;ul>
@@ -20286,7 +20340,20 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable MD013 -->
-&lt;p>웹표준검사는 총 9개의 URL을 입력하여 다중 호환성 검사 기능을 제공하며, 상세검사를 통하여 Validation Output를 제공한다.&lt;/p></description></item><item><title>유효메모리체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>웹표준검사는 총 9개의 URL을 입력하여 다중 호환성 검사 기능을 제공하며, 상세검사를 통하여 Validation Output를 제공한다.&lt;/p></description></item><item><title>유형별지식맵관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/type-knowledge-map-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/type-knowledge-map-management/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>지식 문서를 조직(부서) 기준이 아닌 업무 프로세스, 기술 요소, 산업 분야 등 지식 내용 자체의 카테고리(유형)를 기준으로 분류 체계(Taxonomy)를 정의하고 매핑하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>지식 분류 체계 정의&lt;/strong>: &amp;lsquo;IT &amp;gt; 개발 &amp;gt; 프론트엔드&amp;rsquo;, &amp;lsquo;마케팅 &amp;gt; 온라인광고&amp;rsquo;와 같이 다단계 계층(Depth) 구조로 지식 분류 트리를 관리자가 생성하고 수정합니다.&lt;/li>
+&lt;li>&lt;strong>유형별 탐색 (디렉토리 뷰)&lt;/strong>: 사용자가 포털 사이트의 카테고리를 탐색하듯이 최상위 분류부터 하위 분류로 파고들며 관련된 지식 문서를 찾아볼 수 있습니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNKNWLDGECATG&lt;/code>: 지식 유형(카테고리)의 마스터 정보, 상/하위 노드 관계를 저장하는 테이블&lt;/li>
+&lt;li>&lt;code>COMTNKNOWLEDGEINFO&lt;/code>: 각 지식이 어느 카테고리 노드에 속해 있는지 카테고리 ID를 외래키(FK)로 가집니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>조직 개편으로 인해 부서가 통폐합되더라도 지식 자산이 유실되지 않도록 업무 속성 중심으로 지식을 영구적으로 분류·보관하며, 사용자가 특정 주제에 대한 심도 있는 레퍼런스를 원할 때 효과적인 네비게이션을 제공합니다.&lt;/p></description></item><item><title>유효메모리체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>현재 Java 애플리케이션(JVM)에 할당된 전체 메모리와 가용 메모리를 비교하여, 특정 작업(대용량 파일 처리 등)을 수행하기 위한 유효 메모리가 충분한지 사전에 검사하는 기능이다.&lt;/p>
 &lt;h2 id="주요-기능">주요 기능&lt;/h2>
 &lt;ul>
@@ -20967,7 +21034,19 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;li>&lt;code>COMTNINFOALRM&lt;/code>: 알림 메시지 내용, 적용 기간, 노출 여부 상태값 등을 저장하는 테이블&lt;/li>
 &lt;/ul>
 &lt;h2 id="활용-방안">활용 방안&lt;/h2>
-&lt;p>긴급 공지, 시스템 점검 시간 안내, 중요 업데이트 내역 등을 사용자가 시스템에 접속하자마자 즉각적으로 인지할 수 있도록 메인 화면 전면에 정보를 전달하는 기능으로 사용됩니다.&lt;/p></description></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description/></item><item><title>조직코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/org-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/org-code/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>긴급 공지, 시스템 점검 시간 안내, 중요 업데이트 내역 등을 사용자가 시스템에 접속하자마자 즉각적으로 인지할 수 있도록 메인 화면 전면에 정보를 전달하는 기능으로 사용됩니다.&lt;/p></description></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description/></item><item><title>조직지식맵관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/org-knowledge-map-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/org-knowledge-map-management/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전사 조직도(본부-실-팀 등)를 기반으로 하여, 각 부서별로 어떤 지식 자산을 얼마나 보유하고 있는지 조직 단위로 지식을 매핑하고 탐색할 수 있도록 시각화하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>조직 기반 지식 탐색&lt;/strong>: 좌측의 조직도 트리를 클릭하면 해당 부서의 소속원들이 생산하고 등록한 지식 문서의 목록이 필터링되어 나타납니다.&lt;/li>
+&lt;li>&lt;strong>부서별 지식 통계&lt;/strong>: 각 조직별 지식 등록 건수, 평균 조회수, 우수 지식 보유 현황 등을 통계 내어 조직 간의 지식 공유 활동을 비교 분석합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNORGNZTINFO&lt;/code> (조직 테이블) + &lt;code>COMTNKNOWLEDGEINFO&lt;/code> (지식 테이블): 등록자의 소속 조직 ID를 기준으로 지식 데이터를 그루핑(Grouping)하여 뷰를 생성합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>인사 이동이 발생했을 때 전임자의 부서 지식을 후임자가 쉽게 승계받을 수 있으며, 조직 단위의 지식 마일리지 포상이나 성과 평가(KPI)에 활용하여 부서 차원의 지식 경영 참여를 독려합니다.&lt;/p></description></item><item><title>조직코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/org-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/org-code/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>시스템 내부에서 사용될 기관, 본부, 팀 단위의 부서(조직) 마스터 코드 및 계층 구조를 등록하고 관리하는 컴포넌트입니다.&lt;/p>
 &lt;h2 id="주요-기능">주요 기능&lt;/h2>
 &lt;ul>
@@ -21117,7 +21196,59 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 이전 세션 ID로는 더이상 서비스를 이용할 수 없게 되며, 가장 마지막에 로그인한 세션만 유효하다.&lt;/p>
 &lt;p>본 기능은 &lt;strong>HttpSessionBindingListener 인터페이스의 valueBound()와 valueUnBound() 메소드를 구현한 EgovHttpSessionBindingListener&lt;/strong>를 통해 동작한다.&lt;br>
 &lt;em>&lt;strong>valueBound()&lt;/strong>&lt;/em> 는 HttpSessionBindingListener 구현체가 HttpSession 객체에 setAttribute() 될 때 자동 호출되고,&lt;br>
-&lt;em>&lt;strong>valueUnBound()&lt;/strong>&lt;/em> 는 HttpSession 객체에서 invalidate() 될 때 자동 호출된다.&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description/></item><item><title>지식맵관리(유형)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/type-knowledge-map-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/type-knowledge-map-management/</guid><description/></item><item><title>지식맵관리(조직)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/org-knowledge-map-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/org-knowledge-map-management/</guid><description/></item><item><title>지식전문가관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-expert-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-expert-manage/</guid><description/></item><item><title>지식정보관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-info-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-info-manage/</guid><description/></item><item><title>지식정보제공</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/knowledge-info-provision/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/knowledge-info-provision/</guid><description/></item><item><title>지식평가관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-evaluation-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-evaluation-manage/</guid><description/></item><item><title>쪽지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/collaboration/message-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/collaboration/message-management/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;em>&lt;strong>valueUnBound()&lt;/strong>&lt;/em> 는 HttpSession 객체에서 invalidate() 될 때 자동 호출된다.&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description/></item><item><title>지식전문가관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-expert-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-expert-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>특정 업무 분야나 기술 영역에서 뛰어난 전문성을 보유한 사내 임직원을 &amp;lsquo;지식 전문가&amp;rsquo;로 지정하고, 이들의 프로필과 주요 활동 내역을 관리하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>전문가 풀(Pool) 등록&lt;/strong>: 인사 부서나 시스템 관리자가 IT, 영업, 법무 등 분야별로 사내 전문가를 발굴하여 전문가 목록에 등록합니다.&lt;/li>
+&lt;li>&lt;strong>전문가 프로필 제공&lt;/strong>: 지정된 전문가의 소속, 직급, 주요 전문 분야, 연락처, 그리고 해당 전문가가 작성한 지식 문서 목록을 포트폴리오 형태로 제공합니다.&lt;/li>
+&lt;li>&lt;strong>Q&amp;amp;A 연계 (전문가 상담)&lt;/strong>: 일반 직원이 업무 중 막히는 부분이 있을 때, 해당 분야의 지식 전문가를 지정하여 질문을 던지고 답변을 받을 수 있습니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNEXPERTINFO&lt;/code>: 전문가로 지정된 임직원의 정보(전문 분야 코드, 이력 등)를 저장하는 테이블&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>규모가 큰 조직에서 암묵지(Tacit Knowledge)를 보유한 핵심 인재를 가시화하고, 부서 간 장벽을 넘어 필요한 기술이나 노하우를 빠르게 자문받을 수 있는 사내 지식 네트워크를 구축하는 데 쓰입니다.&lt;/p></description></item><item><title>지식정보관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-info-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-info-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>조직의 자산이 될 수 있는 업무 편람, 매뉴얼, 프로젝트 산출물 등의 공식적인 지식 정보를 중앙에서 체계적으로 등록, 수정, 폐기(관리)하는 가장 기본적인 지식 자산 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>지식 등록 및 분류&lt;/strong>: 지식 문서를 작성하고 첨부파일을 업로드한 뒤, 사전에 정의된 지식 분류 체계(Category)에 맞게 맵핑하여 등록합니다.&lt;/li>
+&lt;li>&lt;strong>지식 검색 및 조회&lt;/strong>: 제목, 본문, 등록자, 등록일, 키워드 등의 조건으로 축적된 지식을 검색하여 열람합니다.&lt;/li>
+&lt;li>&lt;strong>버전 관리&lt;/strong>: 수정이 빈번한 지식 문서의 경우 이전 내용을 덮어쓰지 않고 버전(Version)을 부여하여 과거 이력을 보존할 수 있습니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNKNOWLEDGEINFO&lt;/code>: 지식 고유 ID, 제목, 내용, 분류 코드, 등록자 ID, 첨부파일 ID 등을 저장하는 지식 마스터 테이블&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>파편화되어 있는 개인 PC의 파일이나 부서별 공유 폴더의 문서를 웹 기반의 중앙 저장소(Repository)로 모아 지식의 자산화를 이루고 검색 효율성을 극대화하기 위한 기반 저장소입니다.&lt;/p></description></item><item><title>지식정보제공</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-info-provision/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-info-provision/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>사용자의 직무, 관심사, 최근 검색 이력 등 개인화된 프로필을 바탕으로, 시스템 내에 축적된 지식 콘텐츠를 선별하여 맞춤형으로 큐레이션(추천) 및 제공하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>맞춤형 지식 추천&lt;/strong>: 사용자가 로그인했을 때, 해당 사용자의 소속 부서나 설정된 관심 키워드와 연관성이 높은 신규/인기 지식을 메인 대시보드에 노출합니다.&lt;/li>
+&lt;li>&lt;strong>지식 구독(RSS/메일)&lt;/strong>: 특정 분야의 지식 분류를 구독 신청해 두면, 새로운 지식이 등록될 때마다 알림이나 이메일로 요약본을 제공받습니다.&lt;/li>
+&lt;li>&lt;strong>최신/인기 지식 랭킹&lt;/strong>: 기간별로 조회수나 추천수가 가장 높은 &amp;lsquo;Hot 지식&amp;rsquo;을 랭킹 형태로 보여주어 사내 트렌드를 공유합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNKNOWLEDGEINFO&lt;/code> 및 사용자 프로필 연계 뷰: 지식 정보와 개인 관심사 정보를 조인하여 추천 목록을 추출하는 데 사용됩니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>사용자가 방대한 지식 창고에서 필요한 정보를 일일이 검색하는 수고를 덜어주고, 조직 내 핵심 노하우나 필수 정책 지침이 관련 담당자들에게 신속하게 전파되도록 돕는 푸시(Push)형 서비스입니다.&lt;/p></description></item><item><title>지식평가관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-evaluation-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-evaluation-manage/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템 내에 등록된 다양한 지식 정보(문서, 노하우 등)에 대해 사용자(또는 전문가)가 평가를 내리고, 그 결과를 집계하여 지식의 품질과 신뢰도를 관리하는 컴포넌트입니다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>지식 평가 등록&lt;/strong>: 조회한 지식 콘텐츠의 유용성, 정확성 등을 별점이나 점수 형태로 평가하고 간단한 한 줄 평(코멘트)을 남깁니다.&lt;/li>
+&lt;li>&lt;strong>우수 지식 선정&lt;/strong>: 평가 점수와 조회수가 높은 지식을 &amp;lsquo;우수 지식&amp;rsquo;이나 &amp;lsquo;베스트 지식&amp;rsquo;으로 자동 또는 수동 선정하여 메인 화면에 노출합니다.&lt;/li>
+&lt;li>&lt;strong>지식 마일리지 부여&lt;/strong>: 타인에게 높은 평가를 받은 지식을 등록한 사용자(지식 제공자)에게 포상 개념의 지식 마일리지나 포인트를 지급합니다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="데이터-구조-테이블">데이터 구조 (테이블)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>COMTNKNOWLEDGEOVAL&lt;/code>: 개별 지식에 대한 사용자의 평가 점수, 평가 일시, 평가자 ID 등을 저장하는 평가 내역 테이블&lt;/li>
+&lt;/ul>
+&lt;h2 id="활용-방안">활용 방안&lt;/h2>
+&lt;p>지식 관리 시스템(KMS)에서 쓰레기 데이터(Garbage Data)가 쌓이는 것을 방지하고, 임직원들이 자발적으로 양질의 지식을 공유하도록 유도하는 보상 체계(Gamification)의 핵심 모듈로 활용됩니다.&lt;/p></description></item><item><title>쪽지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/collaboration/message-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/collaboration/message-management/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>시스템 내에 등록된 사용자(회원 또는 임직원) 간에 간단한 텍스트 메시지를 온라인으로 주고받을 수 있는 사내 메신저 역할의 컴포넌트입니다.&lt;/p>
 &lt;h2 id="주요-기능">주요 기능&lt;/h2>
 &lt;ul>
