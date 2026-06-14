@@ -2,10 +2,28 @@
 title: "개인연차관리"
 linkTitle: "개인연차관리"
 description: "개인연차관리"
-url: /common-component/user-support/information-provided/personal-annual-leave/
+url: /common-component/user-support/personalization/personal-annual-leave/
 menu:
   depth:
     name: "개인연차관리"
-    weight: 31
-    parent: "information-provided"
+    weight: 29
+    parent: "personalization"
 ---
+
+## 개요
+
+조직 내 임직원 개인에게 부여된 연차(휴가) 일수를 기준으로, 휴가 신청, 승인 현황 조회 및 잔여 연차를 관리할 수 있는 기능을 제공하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **연차 현황 조회**: 본인에게 부여된 총 연차 일수, 사용 일수, 잔여 일수를 한눈에 확인합니다.
+* **휴가 신청 연동**: 휴가 신청 컴포넌트(결재 시스템 등)와 연계하여 연차를 소진하면 실시간으로 잔여 일수가 차감됩니다.
+* **연차 사용 이력**: 과거에 사용한 연차(반차, 정기 휴가 등)의 세부 사용 날짜와 목적 등 상세 내역을 조회합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNANNUALLEAVE`: 임직원별 부여 연차, 사용 연차, 잔여 연차 정보를 집계하는 테이블
+
+## 활용 방안
+
+사내 그룹웨어 및 HR(인사관리) 시스템의 임직원 개인 포털(마이페이지) 영역에 필수적으로 포함되는 근태 관리 기능으로 널리 사용됩니다.

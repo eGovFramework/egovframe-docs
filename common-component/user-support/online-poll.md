@@ -1,11 +1,31 @@
 ---
-title: "온라인POLL관리"
-linkTitle: "온라인POLL관리"
-description: "온라인POLL관리"
-url: /common-component/user-support/online-participate/online-poll/
+title: "온라인설문"
+linkTitle: "온라인설문"
+description: "온라인설문"
+url: /common-component/user-support/online-participation/online-poll/
 menu:
   depth:
-    name: "온라인POLL관리"
-    weight: 9
-    parent: "online-participate"
+    name: "온라인설문"
+    weight: 28
+    parent: "online-participation"
 ---
+
+## 개요
+
+시스템 이용자들을 대상으로 의견 수렴이나 만족도 조사를 진행하기 위해 온라인 설문조사 폼(단일 문항 위주)을 생성하고 투표를 진행하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **설문(투표) 항목 등록**: 하나의 질문에 대해 여러 개의 선택지(보기)를 제공하는 간단한 형태의 투표를 등록합니다.
+* **설문 참여**: 사용자는 목록에서 진행 중인 설문을 선택하여 투표에 참여할 수 있습니다.
+* **결과 집계**: 투표가 마감되거나 진행 중일 때, 각 문항별 득표수와 비율을 막대그래프 등의 통계 화면으로 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNONLINEPOLLMANAGE`: 설문 제목, 시작/종료일 등을 관리하는 마스터 테이블
+* `COMTNONLINEPOLLITEM`: 설문 항목(선택지) 정보를 관리하는 테이블
+* `COMTNONLINEPOLLRESULT`: 사용자의 투표 참여 내역을 기록하는 테이블
+
+## 활용 방안
+
+홈페이지 메인 화면 한 켠에 배치되는 '오늘의 설문', '간단 투표'와 같은 단발성 의견 수렴 위젯을 구성하는 데 적합합니다. (보다 복잡한 다문항 설문은 `설문관리(Survey)` 컴포넌트를 사용합니다)
