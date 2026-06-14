@@ -1,11 +1,28 @@
 ---
-title: "개인정보보호정책확인"
-linkTitle: "개인정보보호정책확인"
-description: "개인정보보호정책확인"
-url: /common-component/user-support/terms-manage/privacy-policy/
+title: "개인정보보호정책"
+linkTitle: "개인정보보호정책"
+description: "개인정보보호정책"
+url: /common-component/user-support/information-provided/privacy-policy/
 menu:
   depth:
-    name: "개인정보보호정책확인"
-    weight: 3
-    parent: "terms-manage"
+    name: "개인정보보호정책"
+    weight: 31
+    parent: "information-provided"
 ---
+
+## 개요
+
+웹사이트에서 사용자의 개인정보를 수집, 이용, 제공, 파기하는 기준과 방침을 명시한 개인정보처리방침(보호정책) 본문을 등록하고 사용자에게 제공하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **보호정책 내용 등록**: 에디터를 사용하여 개인정보보호정책의 상세 내용(수집 항목, 이용 목적, 보유 기간 등)을 작성하고 등록합니다.
+* **사용자 제공**: 사이트 하단(Footer)의 링크 등을 통해 사용자가 언제든지 현재 적용 중인 개인정보처리방침을 열람할 수 있도록 팝업 또는 상세 페이지를 제공합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNPRIVACYPOLICY`: 개인정보보호정책의 버전, 시행일자, 본문 내용 등을 저장하는 테이블 (또는 약관 테이블을 확장하여 사용)
+
+## 활용 방안
+
+관련 법령에 따라 웹사이트에 의무적으로 게시해야 하는 개인정보처리방침을 DB화하여 관리함으로써, 개정 이력을 체계적으로 보존하고 관리를 용이하게 합니다.
