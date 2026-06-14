@@ -2,10 +2,28 @@
 title: "쪽지관리"
 linkTitle: "쪽지관리"
 description: "쪽지관리"
-url: /common-component/user-support/information-provided/message-management/
+url: /common-component/user-support/collaboration/message-management/
 menu:
   depth:
     name: "쪽지관리"
-    weight: 20
-    parent: "information-provided"
+    weight: 24
+    parent: "user-support"
 ---
+
+## 개요
+
+시스템 내에 등록된 사용자(회원 또는 임직원) 간에 간단한 텍스트 메시지를 온라인으로 주고받을 수 있는 사내 메신저 역할의 컴포넌트입니다.
+
+## 주요 기능
+
+* **쪽지 발송**: 수신자를 지정(다중 지정 가능)하여 제목과 내용이 포함된 쪽지를 발송합니다.
+* **수신/발신함 조회**: 내가 받은 쪽지와 보낸 쪽지의 목록을 조회합니다.
+* **수신 확인 (읽음 처리)**: 수신자가 쪽지를 읽었는지 여부를 발신자가 확인할 수 있도록 수신 상태(읽음/안읽음)를 추적합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNEMPMESSAGE`: 쪽지 발송 및 수신 이력, 내용, 읽음 상태 등을 저장하는 테이블
+
+## 활용 방안
+
+메일 서버 연동 없이도 시스템 내부 사용자 간의 신속한 의사소통 수단을 제공할 수 있어 인트라넷, 협업 시스템 등에 널리 쓰입니다.
