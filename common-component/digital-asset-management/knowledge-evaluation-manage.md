@@ -5,7 +5,25 @@ description: "지식평가관리"
 url: /common-component/digital-asset-management/knowledge-evaluation-manage/
 menu:
   depth:
-    weight: 5
+    name: "지식평가관리"
+    weight: 2
     parent: "digital-asset-management"
-    identifier: "knowledge-evaluation-manage"
 ---
+
+## 개요
+
+시스템 내에 등록된 다양한 지식 정보(문서, 노하우 등)에 대해 사용자(또는 전문가)가 평가를 내리고, 그 결과를 집계하여 지식의 품질과 신뢰도를 관리하는 컴포넌트입니다.
+
+## 주요 기능
+
+* **지식 평가 등록**: 조회한 지식 콘텐츠의 유용성, 정확성 등을 별점이나 점수 형태로 평가하고 간단한 한 줄 평(코멘트)을 남깁니다.
+* **우수 지식 선정**: 평가 점수와 조회수가 높은 지식을 '우수 지식'이나 '베스트 지식'으로 자동 또는 수동 선정하여 메인 화면에 노출합니다.
+* **지식 마일리지 부여**: 타인에게 높은 평가를 받은 지식을 등록한 사용자(지식 제공자)에게 포상 개념의 지식 마일리지나 포인트를 지급합니다.
+
+## 데이터 구조 (테이블)
+
+* `COMTNKNOWLEDGEOVAL`: 개별 지식에 대한 사용자의 평가 점수, 평가 일시, 평가자 ID 등을 저장하는 평가 내역 테이블
+
+## 활용 방안
+
+지식 관리 시스템(KMS)에서 쓰레기 데이터(Garbage Data)가 쌓이는 것을 방지하고, 임직원들이 자발적으로 양질의 지식을 공유하도록 유도하는 보상 체계(Gamification)의 핵심 모듈로 활용됩니다.
