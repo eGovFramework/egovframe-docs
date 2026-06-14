@@ -5124,7 +5124,47 @@ HTTP Request 정보 취득을 사용하면 파미리터를 통하지 않고 Http
 &lt;h2 id="환경설정">환경설정&lt;/h2>
 &lt;p>&lt;strong>해당없음&lt;/strong>&lt;/p>
 &lt;h2 id="사용방법">사용방법&lt;/h2>
-&lt;p>web.xml 파일에 다음과 같은 filter를 설정한다.&lt;/p></description></item><item><title>HTTP서비스모니터링</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/http-service-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/http-service-monitoring/</guid><description/></item><item><title>iBATIS Configuration</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-ibatis_configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-ibatis_configuration/</guid><description>&lt;h1 id="ibatis-configuration">iBATIS Configuration&lt;/h1>
+&lt;p>web.xml 파일에 다음과 같은 filter를 설정한다.&lt;/p></description></item><item><title>HTTP서비스모니터링</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/http-service-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/http-service-monitoring/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>특정 HTTP(웹) 서비스의 정상 동작 여부를 확인하기 위해 주기적으로 서비스 호출을 수행하고 응답 상태 코드를 확인하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>서비스 가용성 점검&lt;/strong>: 대상 URL로 HTTP 요청을 전송하여 정상적인 HTTP 응답(200 OK 등)이 오는지 확인한다.&lt;/li>
+&lt;li>&lt;strong>에러 식별&lt;/strong>: 서비스 불가(503), 페이지 없음(404) 등의 에러 상태 코드를 반환하여 장애 상황을 감지한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getHttpMonitorStatus(String url)&lt;/code>&lt;/td>
+ &lt;td>입력된 URL의 HTTP 서비스 상태를 점검하여 정상 동작 여부를 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.sys.htm.service.EgovHttpMonitorUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HttpServiceMonitoringExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">monitorHttpService&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String targetUrl &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;http://www.egovframe.go.kr&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// HTTP 서비스 모니터링 수행&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isUp &lt;span style="color:#f92672">=&lt;/span> EgovHttpMonitorUtil.&lt;span style="color:#a6e22e">getHttpMonitorStatus&lt;/span>(targetUrl);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (isUp) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;HTTP Service is UP and running.&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;HTTP Service is DOWN.&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>iBATIS Configuration</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-ibatis_configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-ibatis_configuration/</guid><description>&lt;h1 id="ibatis-configuration">iBATIS Configuration&lt;/h1>
 &lt;p>iBATIS 의 메인 설정 파일인 SQL Map XML Configuration 파일(이하 sql-map-config.xml 설정 파일) 작성과 상세한 옵션 설정에 대해 알아본다.&lt;/p>
 &lt;h2 id="sql-map-configxml">sql-map-config.xml&lt;/h2>
 &lt;p>SqlMapClient 설정관련 상세 내역을 제어할 수 있는 메인 설정 파일로 주로 transaction 관리 관련 설정 및 다양한 옵션 설정, Sql Mapping 파일들에 대한 path 설정 등을 포함한다.&lt;/p>
@@ -13025,7 +13065,7 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;li>String : 해당 key 지정된 속성 정보로 해당 속성이 없으면 null 리턴&lt;/li>
 &lt;/ul>
 &lt;h2 id="환경설정">환경설정&lt;/h2>
-&lt;p>메시지 처리를 위해서는 &lt;em>&lt;strong>User home&lt;/strong>&lt;/em> 디렉토리밑에 egovProps/conf/warnmessage.properties 파일에 메시지가 정의되어 있어야 한다. 해당 메시지 정의는 일반 property 정의 방식과 같다.&lt;/p></description></item><item><title>공통분류코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-class-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-class-code/</guid><description/></item><item><title>공통상세코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</guid><description/></item><item><title>공통코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>공휴일관리(달력)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/holiday-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/calendar/holiday-management/</guid><description/></item><item><title>구현도구 플러그인(Buildship)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</guid><description>&lt;h1 id="구현도구-플러그인buildship">구현도구 플러그인(Buildship)&lt;/h1>
+&lt;p>메시지 처리를 위해서는 &lt;em>&lt;strong>User home&lt;/strong>&lt;/em> 디렉토리밑에 egovProps/conf/warnmessage.properties 파일에 메시지가 정의되어 있어야 한다. 해당 메시지 정의는 일반 property 정의 방식과 같다.&lt;/p></description></item><item><title>공통분류코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-class-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-class-code/</guid><description/></item><item><title>공통상세코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</guid><description/></item><item><title>공통코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description/></item><item><title>구현도구 플러그인(Buildship)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/gradle-buildship/</guid><description>&lt;h1 id="구현도구-플러그인buildship">구현도구 플러그인(Buildship)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 개발 프레임워크의 개발환경 IDE에서는 Gradle 빌드 플러그인으로 Buildship을 사용하고 있다.
 Buildship 플러그인은 Eclipse에서 제공하는 플러그인으로서 Gradle 프로젝트 개발의 편의성을 제공하고 있다.&lt;/p>
@@ -13904,7 +13944,51 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;li>&lt;strong>포맷 스트링 (&lt;code>sFormatStr&lt;/code>)&lt;/strong>: String 타입의 Date 포맷 스트링 (예: &lt;code>yyyy년 MM월 dd일 HH시 mm분 ss초&lt;/code>)&lt;/li>
 &lt;/ul>
 &lt;h3 id="사용법">사용법&lt;/h3>
-&lt;p>&lt;code>EgovDateUtil&lt;/code> 클래스를 이용하여 다음과 같이 날짜/시간 포맷을 변환할 수 있다.&lt;/p></description></item><item><title>네트워크관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/network-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/network-management/</guid><description/></item><item><title>네트워크상태체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-status-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-status-check/</guid><description/></item><item><title>네트워크서비스모니터링</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-service-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-service-monitoring/</guid><description>&lt;!-- markdownlint-disable MD025 MD013 -->
+&lt;p>&lt;code>EgovDateUtil&lt;/code> 클래스를 이용하여 다음과 같이 날짜/시간 포맷을 변환할 수 있다.&lt;/p></description></item><item><title>네트워크관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/network-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/network-management/</guid><description/></item><item><title>네트워크상태조회</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-status-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-status-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>지정된 원격 서버 또는 IP 주소와의 네트워크 통신 가능 여부를 확인하기 위해 Ping 테스트나 포트 상태 확인 등을 수행하는 기능이다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Ping 테스트 수행&lt;/strong>: 대상 호스트로 ICMP 에코 요청을 보내 응답이 오는지 확인하여 네트워크 접근성을 점검한다.&lt;/li>
+&lt;li>&lt;strong>포트 스캔 기능&lt;/strong>: 특정 IP의 특정 포트가 열려있는지 소켓 연결을 시도하여 서비스 가용성을 판별한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getPingResult(String ip)&lt;/code>&lt;/td>
+ &lt;td>대상 IP로 Ping 명령을 실행하여 정상 응답 여부를 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkPortState(String ip, int port)&lt;/code>&lt;/td>
+ &lt;td>대상 IP의 특정 포트가 연결 가능한지 확인한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.sys.nwg.service.EgovNetworkState;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">NetworkStatusCheckExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">checkNetwork&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String targetIp &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;192.168.0.1&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// Ping 결과 확인&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isPingOk &lt;span style="color:#f92672">=&lt;/span> EgovNetworkState.&lt;span style="color:#a6e22e">getPingResult&lt;/span>(targetIp);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Ping to &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> targetIp &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; : &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> (isPingOk &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Success&amp;#34;&lt;/span> : &lt;span style="color:#e6db74">&amp;#34;Fail&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 특정 포트(예: 80) 상태 확인&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isPortOpen &lt;span style="color:#f92672">=&lt;/span> EgovNetworkState.&lt;span style="color:#a6e22e">checkPortState&lt;/span>(targetIp, 80);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Port 80 Open : &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> isPortOpen);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>네트워크서비스모니터링</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-service-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-service-monitoring/</guid><description>&lt;!-- markdownlint-disable MD025 MD013 -->
 &lt;h1 id="네트워크서비스모니터링">네트워크서비스모니터링&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>네트워크서비스모니터링&lt;/strong>은 네트워크서비스 상태를 주기적으로 모니터링하는 기능을 제공한다.
@@ -14044,7 +14128,49 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
 &lt;p>&lt;img src="images/network-service-monitoring-cdd.png" alt="네트워크서비스모니터링 클래스 다이어그램" >
-&lt;/p></description></item><item><title>네트워크정보확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-info-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-info-check/</guid><description/></item><item><title>뉴스관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</guid><description/></item><item><title>단위계산</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/unit-calculation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/unit-calculation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;/p></description></item><item><title>네트워크정보조회</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-info-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/network-info-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>현재 서버나 시스템이 연결되어 있는 네트워크 인터페이스의 다양한 속성 및 주소 정보를 조회하여 시스템 환경 구성이나 모니터링에 활용할 수 있도록 지원하는 기능이다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>IP 주소 확인&lt;/strong>: 로컬 머신에 할당된 IP 주소(IPv4 등)를 조회한다.&lt;/li>
+&lt;li>&lt;strong>MAC 주소 조회&lt;/strong>: 물리적 네트워크 카드의 고유 식별자인 MAC 주소를 확인한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>String&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getMyIPaddress()&lt;/code>&lt;/td>
+ &lt;td>현재 시스템의 IP 주소를 문자열로 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>String&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getMyMACAddress()&lt;/code>&lt;/td>
+ &lt;td>현재 시스템의 MAC 주소를 문자열로 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.sys.nwg.service.EgovNetworkState;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">NetworkInfoCheckExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">getNetworkInfo&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// IP 주소 확인&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String myIp &lt;span style="color:#f92672">=&lt;/span> EgovNetworkState.&lt;span style="color:#a6e22e">getMyIPaddress&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;System IP: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> myIp);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// MAC 주소 확인&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String myMac &lt;span style="color:#f92672">=&lt;/span> EgovNetworkState.&lt;span style="color:#a6e22e">getMyMACAddress&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;System MAC: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> myMac);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>뉴스관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</guid><description/></item><item><title>단위계산</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/unit-calculation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/unit-calculation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>단위계산 컴포넌트는 제곱미터를 평으로, 평을 제곱미터로 환산하는 등 넓이, 길이, 무게, 부피 등에 대한 단위를 환산하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>해당 컴포넌트는 다음과 같이 다양한 단위의 환산 기능을 제공한다.&lt;/p>
@@ -15411,7 +15537,46 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/ul>
 &lt;h2 id="환경설정">환경설정&lt;/h2>
 &lt;p>세션 만료 시간을 적절하게 설정하여야 한다.&lt;br>
-너무 짧으면 사용시 불편을 초래할수 있고, 너무 길면 보안상 좋지 않으며 서버에 세션정보가 누적되어 성능저하나 오동작을 유발할수 있다.&lt;/p></description></item><item><title>로그인세션정보체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/login-session-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/login-session-check/</guid><description/></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login-policy-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login-policy-management/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
+너무 짧으면 사용시 불편을 초래할수 있고, 너무 길면 보안상 좋지 않으며 서버에 세션정보가 누적되어 성능저하나 오동작을 유발할수 있다.&lt;/p></description></item><item><title>로그인세션체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/login-session-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/login-session-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>현재 시스템에 접근하는 사용자의 세션 정보가 유효한지 검증하고 인증된 사용자의 로그인 상태를 확인하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>세션 유효성 검증&lt;/strong>: 요청된 HttpServletRequest에서 세션 존재 여부를 확인한다.&lt;/li>
+&lt;li>&lt;strong>사용자 인증 정보 확인&lt;/strong>: 세션 내에 저장된 로그인 인증 객체(LoginVO 등)가 존재하는지 체크한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkLoginSession(HttpServletRequest request)&lt;/code>&lt;/td>
+ &lt;td>현재 요청의 세션이 유효하고 로그인된 상태인지 확인한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovLoginSessionCheckUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> javax.servlet.http.HttpServletRequest;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">LoginSessionCheckExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">verifySession&lt;/span>(HttpServletRequest request) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 로그인 세션 유효성 검사&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isValid &lt;span style="color:#f92672">=&lt;/span> EgovLoginSessionCheckUtil.&lt;span style="color:#a6e22e">checkLoginSession&lt;/span>(request);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (isValid) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;로그인 세션이 유효합니다.&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;세션이 만료되었거나 비정상적인 접근입니다.&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>로그인정책관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login-policy-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/login-policy-management/</guid><description>&lt;h1 id="로그인정책-관리">로그인정책 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>로그인정책관리&lt;/strong>는 특정 IP에 대한 로그인 제한과 같은 사용자 로그인 정책을 정의하고, 정의된 정책에 맞게 로그인을 제한하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -15423,7 +15588,47 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 로그인정책반영결과조회 : 등록된 사용자 로그인 정책을 운영시스템에 반영하고 그 결과를 조회한다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>로그인정책관리 패키지는 요소기술의 공통(cmm) 패키지와 로그인 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>로그인화면이미지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/login-image/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/login-image/</guid><description/></item><item><title>로그패턴검사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</guid><description/></item><item><title>롤관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/role-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/role-management/</guid><description>&lt;h1 id="롤-관리">롤 관리&lt;/h1>
+&lt;p>로그인정책관리 패키지는 요소기술의 공통(cmm) 패키지와 로그인 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 패키지와 포맷/날짜/계산, 메일연동 인터페이스, 시스템 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>로그인화면이미지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/login-image/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/login-image/</guid><description/></item><item><title>로그패턴검사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템 로그 파일의 내용 중에서 특정 문자열이나 정규표현식 패턴과 일치하는 로그 항목을 추출하여 분석할 수 있는 기능을 제공한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>로그 파일 분석&lt;/strong>: 지정된 로그 파일을 라인 단위로 읽어 패턴을 검사한다.&lt;/li>
+&lt;li>&lt;strong>에러 감지&lt;/strong>: NullPointerException, OOM 등 시스템의 치명적인 에러 로그를 특정 패턴으로 스캔하여 확인한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>List&amp;lt;String&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkLogPattern(String filePath, String pattern)&lt;/code>&lt;/td>
+ &lt;td>지정된 로그 파일에서 주어진 정규표현식 패턴과 일치하는 라인들을 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.sys.log.service.EgovLogPatternUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.util.List;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">LogPatternCheckExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">checkLog&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String logFilePath &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/logs/system/catalina.out&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String searchPattern &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.*NullPointerException.*&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 로그 패턴 검사&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> matchedLogs &lt;span style="color:#f92672">=&lt;/span> EgovLogPatternUtil.&lt;span style="color:#a6e22e">checkLogPattern&lt;/span>(logFilePath, searchPattern);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (String logLine : matchedLogs) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Detected Error Log: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> logLine);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>롤관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/role-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/role-management/</guid><description>&lt;h1 id="롤-관리">롤 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>롤관리&lt;/strong>는 시스템을 사용하는 사용자 혹은 사용자 그룹별로 부여된 권한정보에 준하여 시스템에 접근할 수 있는 권한을 제어하는 기능을 제공하고, 그와 관련한 롤 정보를 관리할 수 있는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -15545,7 +15750,47 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/ul>
 &lt;h2 id="환경설정">환경설정&lt;/h2>
 &lt;p>메시지 처리를 위해서는 &lt;strong>User home&lt;/strong> 디렉터리 하위의 &lt;code>egovProps/conf/&lt;/code> 경로에
-각 유형별 Property 파일이 정의되어 있어야 한다. 메시지 정의는 일반적인 Property 파일 정의 방식과 동일하다.&lt;/p></description></item><item><title>메인메뉴</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/main-menu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/main-menu/</guid><description/></item><item><title>메인이미지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/main-image/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/main-image/</guid><description/></item><item><title>메일솔루션 연동 인터페이스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</guid><description/></item><item><title>명함관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/business-card-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/business-card-management/</guid><description/></item><item><title>모델 기반 Code Generation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/model-based-code-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/model-based-code-generation/</guid><description>&lt;h1 id="모델-기반-code-generation">모델 기반 Code Generation&lt;/h1>
+각 유형별 Property 파일이 정의되어 있어야 한다. 메시지 정의는 일반적인 Property 파일 정의 방식과 동일하다.&lt;/p></description></item><item><title>메인메뉴</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/main-menu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/main-menu/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템의 상단 또는 메인 화면에 출력되는 주요 메뉴(GNB: Global Navigation Bar) 정보를 계층형 데이터 구조로 구성하여 제공하는 기능을 수행한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>메뉴 구조화&lt;/strong>: 데이터베이스나 설정 파일에 저장된 메뉴 정보를 상위/하위 트리 형태로 재구성한다.&lt;/li>
+&lt;li>&lt;strong>권한별 메뉴 필터링&lt;/strong>: 현재 로그인한 사용자의 권한 등급에 따라 접근 가능한 메뉴 목록만 추출하여 반환한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>List&amp;lt;MenuManageVO&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>selectMainMenu(String authCode)&lt;/code>&lt;/td>
+ &lt;td>주어진 사용자 권한 코드에 해당하는 메인 메뉴 목록을 조회하여 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovMainMenuUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> java.util.List;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MainMenuExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">getMenu&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String userAuthCode &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ROLE_ADMIN&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 메인 메뉴 목록 조회&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>MenuManageVO&lt;span style="color:#f92672">&amp;gt;&lt;/span> menuList &lt;span style="color:#f92672">=&lt;/span> EgovMainMenuUtil.&lt;span style="color:#a6e22e">selectMainMenu&lt;/span>(userAuthCode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (MenuManageVO menu : menuList) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Menu Name: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> menu.&lt;span style="color:#a6e22e">getMenuNm&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Menu URL: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> menu.&lt;span style="color:#a6e22e">getChkURL&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>메인이미지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/main-image/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/main-image/</guid><description/></item><item><title>메일솔루션 연동 인터페이스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</guid><description/></item><item><title>명함관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/business-card-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/address/business-card-management/</guid><description/></item><item><title>모델 기반 Code Generation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/model-based-code-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/model-based-code-generation/</guid><description>&lt;h1 id="모델-기반-code-generation">모델 기반 Code Generation&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>분석/설계 단계의 개념 모델을 UML 2.0의 Execute Model 기법을 통해 소스 코드로 변환 생성하는 기능으로 구현도구의 UML Editor를 통해 Class Diagram을 설계하고 이를 Code Gen. 기능을 통해 eGovFrame 실행 환경 기반 소스코드를 생성한다.
 eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기반 Code Generation 기능을 제공한다.&lt;/p>
@@ -17855,7 +18100,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">append&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\n Percent : &amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">append&lt;/span>(EgovNumberFormat.&lt;span style="color:#a6e22e">formatPercent&lt;/span>(locale, percent));
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(buffer.&lt;span style="color:#a6e22e">toString&lt;/span>());
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>출력 예&lt;/p></description></item><item><title>숫자검색</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-search/</guid><description/></item><item><title>숫자변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-conversion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-conversion/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>출력 예&lt;/p></description></item><item><title>숫자변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-conversion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-conversion/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>숫자 타입을 문자열이나 데이터 타입으로 변환하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>숫자 타입을 문자열로 변환하는 기능 및 숫자 타입을 데이터 타입으로 변환하는 기능으로 구성되어 있다.&lt;/p>
@@ -17948,7 +18193,48 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 변환 숫자(&lt;code>cnvrTrgtNumber&lt;/code>)로 모두 치환하여 결과값을 반환한다. 내부적으로는 입력받은 숫자를
 문자열로 변환한 후 치환 처리를 수행하고 다시 정수형으로 반환하는 방식으로 동작한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>&lt;code>egovframework.com.utl.fcc.service.EgovNumberUtil&lt;/code> 클래스의 &lt;code>getNumberCnvr&lt;/code> 메서드를 활용하여 숫자 변환을 수행할 수 있다.&lt;/p></description></item><item><title>스케줄처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/schedule-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/schedule-processing/</guid><description/></item><item><title>스크랩관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/scrap-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/scrap-management/</guid><description/></item><item><title>스페이스관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-space-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-space-management/</guid><description>&lt;h1 id="스페이스관리">스페이스관리&lt;/h1>
+&lt;p>&lt;code>egovframework.com.utl.fcc.service.EgovNumberUtil&lt;/code> 클래스의 &lt;code>getNumberCnvr&lt;/code> 메서드를 활용하여 숫자 변환을 수행할 수 있다.&lt;/p></description></item><item><title>숫자치환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/number-search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/number-search/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>문자열 또는 데이터 내에서 지정된 숫자(패턴)를 찾아내거나 이를 다른 숫자로 치환(Replace) 및 조작하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>숫자 검색&lt;/strong>: 문자열 내에서 특정 숫자 문자가 존재하는지 찾는다.&lt;/li>
+&lt;li>&lt;strong>문자열 내 숫자 치환&lt;/strong>: 지정한 숫자 패턴을 찾아 새로운 숫자로 일괄 변경한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>String&lt;/code>&lt;/td>
+ &lt;td>&lt;code>replaceNumber(String source, int targetStr, int replaceStr)&lt;/code>&lt;/td>
+ &lt;td>원본 문자열에서 대상 숫자를 찾아 변경할 숫자로 치환하여 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>int&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkNumber(String source, int searchNum)&lt;/code>&lt;/td>
+ &lt;td>문자열 안에서 특정 숫자가 처음 나타나는 위치 인덱스를 반환한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovNumberCheckUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">NumberSearchExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">searchAndReplace&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String data &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello123World123&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 숫자 치환 (123 -&amp;gt; 999)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 실제 유틸리티의 파라미터 타입이나 이름에 따라 구현 방식은 달라질 수 있습니다.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String replaced &lt;span style="color:#f92672">=&lt;/span> EgovNumberCheckUtil.&lt;span style="color:#a6e22e">replaceNumber&lt;/span>(data, 123, 999);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Replaced Data: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> replaced);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>스케줄처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/schedule-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/schedule-processing/</guid><description/></item><item><title>스크랩관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/scrap-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/board/scrap-management/</guid><description/></item><item><title>스페이스관리</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-space-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-space-management/</guid><description>&lt;h1 id="스페이스관리">스페이스관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>스페이스 관리는 이슈가 등록될 수 있도록 스페이스 및 롤, 상태, 필드 등 이슈가 관리될 수 있는 범위를 관리하는 기능으로 관리자만 접근할 수 있다.
 스페이스 관리는 프로젝트 구분을 의미하는 스페이스, 사용자 권한을 의미하는 롤, 이슈 처리상태를 의미하는 상태, 이슈관리항목을 의미하는 필드로 구성된다.&lt;/p>
@@ -21913,7 +22199,46 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="환경-설정">환경 설정&lt;/h3>
-&lt;p>별도의 환경 설정은 필요하지 않다.&lt;/p></description></item><item><title>파일업로드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-upload/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-upload/</guid><description/></item><item><title>파일이동</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-move/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>별도의 환경 설정은 필요하지 않다.&lt;/p></description></item><item><title>파일업로드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-upload/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-upload/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>지정된 디렉토리에 파일을 업로드하는 기능을 제공하는 요소기술이다. 멀티 파트 파일을 파싱하여 서버의 로컬 저장소에 저장하고 파일 사이즈, 확장자 등의 제한을 처리한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>다중 파일 업로드&lt;/strong>: 여러 개의 파일을 동시에 업로드 처리한다.&lt;/li>
+&lt;li>&lt;strong>파일 확장자 제한&lt;/strong>: 보안에 취약한 파일(JSP, EXE 등)의 업로드를 차단한다.&lt;/li>
+&lt;li>&lt;strong>파일 사이즈 제한&lt;/strong>: 업로드 파일의 최대 크기를 검증한다.&lt;/li>
+&lt;li>&lt;strong>중복 파일명 처리&lt;/strong>: 동일한 파일명이 존재할 경우 고유한 파일명으로 변환하여 저장한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>List&amp;lt;EgovFormBasedFileVo&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>uploadFiles(request, where, maxFileSize)&lt;/code>&lt;/td>
+ &lt;td>HTTP 요청을 파싱하여 첨부파일들을 지정 경로에 업로드한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovFormBasedFileUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">FileUploadExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">uploadFileExample&lt;/span>(HttpServletRequest request) &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String storePath &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/user/local/uploads&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">long&lt;/span> maxFileSize &lt;span style="color:#f92672">=&lt;/span> 1024 &lt;span style="color:#f92672">*&lt;/span> 1024 &lt;span style="color:#f92672">*&lt;/span> 10; &lt;span style="color:#75715e">// 10MB&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>EgovFormBasedFileVo&lt;span style="color:#f92672">&amp;gt;&lt;/span> list &lt;span style="color:#f92672">=&lt;/span> EgovFormBasedFileUtil.&lt;span style="color:#a6e22e">uploadFiles&lt;/span>(request, storePath, maxFileSize);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (EgovFormBasedFileVo vo : list) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Uploaded File : &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> vo.&lt;span style="color:#a6e22e">getPhysicalName&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>파일이동</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-move/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>지정한 경로의 파일을 다른 경로로 이동하는 기능을 제공한다. 대상 경로에 동일한 파일이 존재할 경우
 이동이 실패 처리된다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -22165,7 +22490,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;li>&lt;strong>랜덤 값 생성&lt;/strong>: 무작위적인 날짜, 문자열, 난수를 생성한다.&lt;/li>
 &lt;/ul>
 &lt;h2 id="관련-클래스-및-패키지-구조">관련 클래스 및 패키지 구조&lt;/h2>
-&lt;p>해당 모듈은 &lt;code>egovframework.com.utl.fcc&lt;/code> (Format/Calc/Convert) 패키지에 구현되어 있으며, 주요 핵심 유틸리티 클래스는 다음과 같다.&lt;/p></description></item><item><title>포멧유효성체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/format-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/format-validation/</guid><description/></item><item><title>포상관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/award-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/award-management/</guid><description/></item><item><title>표준프레임워크 Boot Sample 프로젝트를 Gradle로 빌드환경 전환</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/boot-to-gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/boot-to-gradle/</guid><description>&lt;h2 id="표준프레임워크-boot-sample-프로젝트를-gradle로-빌드환경-전환">표준프레임워크 Boot Sample 프로젝트를 Gradle로 빌드환경 전환&lt;/h2>
+&lt;p>해당 모듈은 &lt;code>egovframework.com.utl.fcc&lt;/code> (Format/Calc/Convert) 패키지에 구현되어 있으며, 주요 핵심 유틸리티 클래스는 다음과 같다.&lt;/p></description></item><item><title>포상관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/award-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/award-management/</guid><description/></item><item><title>표준프레임워크 Boot Sample 프로젝트를 Gradle로 빌드환경 전환</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/boot-to-gradle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/deployment-tool/build-tool/gradle/boot-to-gradle/</guid><description>&lt;h2 id="표준프레임워크-boot-sample-프로젝트를-gradle로-빌드환경-전환">표준프레임워크 Boot Sample 프로젝트를 Gradle로 빌드환경 전환&lt;/h2>
 &lt;h3 id="빌드-환경-전환">빌드 환경 전환&lt;/h3>
 &lt;ol>
 &lt;li>
@@ -22521,7 +22846,50 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">build&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String answer &lt;span style="color:#f92672">=&lt;/span> assistant.&lt;span style="color:#a6e22e">chat&lt;/span>(userQuery); &lt;span style="color:#75715e">// 깔끔한 비즈니스 로직&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>AiServices의 주요 기능:&lt;/strong>&lt;/p></description></item><item><title>행사/이벤트/캠페인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-campaign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-campaign/</guid><description/></item><item><title>행사신청관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-application/</guid><description/></item><item><title>행사접수관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-reception/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-reception/</guid><description/></item><item><title>행정전문용어사전관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</guid><description/></item><item><title>행정코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/admin-code-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/admin-code-management/</guid><description/></item><item><title>화면 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</guid><description/></item><item><title>화면인쇄</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_scrin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_scrin/</guid><description>&lt;h1 id="요소기술---화면인쇄">요소기술 - 화면인쇄&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>AiServices의 주요 기능:&lt;/strong>&lt;/p></description></item><item><title>행사/이벤트/캠페인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-campaign/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-campaign/</guid><description/></item><item><title>행사신청관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-application/</guid><description/></item><item><title>행사접수관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-reception/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/event-reception/</guid><description/></item><item><title>행정전문용어사전관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</guid><description/></item><item><title>행정코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/admin-code-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/admin-code-management/</guid><description/></item><item><title>형식유효성검사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/format-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/format-validation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>문자열 데이터가 사전에 정의된 특정 형식(전화번호, 주민등록번호, 이메일 등)에 일치하는지 유효성을 검증하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>전화번호 검증&lt;/strong>: 휴대폰 번호 및 일반 전화번호 형식을 확인한다.&lt;/li>
+&lt;li>&lt;strong>이메일 검증&lt;/strong>: 이메일 주소의 문자열 포맷이 올바른지 확인한다.&lt;/li>
+&lt;li>&lt;strong>날짜 검증&lt;/strong>: 문자열이 유효한 날짜 형식(YYYYMMDD 등)인지 확인한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkFormatEmail(String email)&lt;/code>&lt;/td>
+ &lt;td>입력된 문자열이 이메일 형식에 부합하는지 검사한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkFormatPhone(String phone)&lt;/code>&lt;/td>
+ &lt;td>입력된 문자열이 전화번호 형식에 부합하는지 검사한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovFormatCheckUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">FormatValidationExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">validateFormat&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String email &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;test@egovframe.go.kr&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isValidEmail &lt;span style="color:#f92672">=&lt;/span> EgovFormatCheckUtil.&lt;span style="color:#a6e22e">checkFormatEmail&lt;/span>(email);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Valid Email? &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> isValidEmail);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String phone &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;010-1234-5678&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isValidPhone &lt;span style="color:#f92672">=&lt;/span> EgovFormatCheckUtil.&lt;span style="color:#a6e22e">checkFormatPhone&lt;/span>(phone);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Valid Phone? &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> isValidPhone);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>화면 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</guid><description/></item><item><title>화면인쇄</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_scrin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_scrin/</guid><description>&lt;h1 id="요소기술---화면인쇄">요소기술 - 화면인쇄&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>화면인쇄 서비스는 화면을 인쇄 할수 있는 기능과 인쇄 설정할수있는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -22760,4 +23128,40 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;p>이 기능은 &lt;code>egovframework.com.utl.fcc.service.EgovEhgtCalcUtil&lt;/code> 클래스 내에 구현되어 있으며, 금액과 대상 통화를 지정하여 환전된 금액을 문자열 형태로 반환받을 수 있다.&lt;/p>
 &lt;h4 id="환경-설정">환경 설정&lt;/h4>
 &lt;p>환율계산 기능을 사용하기 위해서는 &lt;code>globals.properties&lt;/code> 파일에 한국수출입은행 현재환율 API 인증키를 설정해야 한다.
-API 인증키는 한국수출입은행 홈페이지의 &amp;lsquo;수출입은행 환율 API&amp;rsquo; 관련 페이지에서 발급받을 수 있다.&lt;/p></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/member-management/</guid><description>&lt;h1 id="회원-관리">회원 관리&lt;/h1></description></item><item><title>회의관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/meeting-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/meeting-management/</guid><description/></item><item><title>회의실관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room/</guid><description/></item><item><title>회의실예약관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room-reservation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room-reservation/</guid><description/></item><item><title>휴가관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/vacation-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/vacation-management/</guid><description/></item></channel></rss>
+API 인증키는 한국수출입은행 홈페이지의 &amp;lsquo;수출입은행 환율 API&amp;rsquo; 관련 페이지에서 발급받을 수 있다.&lt;/p></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/member-management/</guid><description>&lt;h1 id="회원-관리">회원 관리&lt;/h1></description></item><item><title>회의관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/meeting-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/meeting-management/</guid><description/></item><item><title>회의실관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room/</guid><description/></item><item><title>회의실예약관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room-reservation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/meeting-room-reservation/</guid><description/></item><item><title>휴가관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/vacation-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/vacation-management/</guid><description/></item><item><title>휴일관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/holiday-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/holiday-management/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>특정 날짜가 법정 공휴일이나 휴일로 지정된 날인지 확인하고, 시스템에 등록된 휴일 정보를 기준으로 날짜 계산을 수행하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="주요-기능">주요 기능&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>휴일 여부 확인&lt;/strong>: 입력된 날짜가 휴일인지 여부를 boolean 값으로 리턴한다.&lt;/li>
+&lt;li>&lt;strong>공휴일 정보 제공&lt;/strong>: 설날, 추석, 국경일 등 법정 공휴일에 대한 정보를 체크한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="사용법">사용법&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>리턴타입&lt;/th>
+ &lt;th>메서드명&lt;/th>
+ &lt;th>기능 설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
+ &lt;td>&lt;code>isHoliday(String date)&lt;/code>&lt;/td>
+ &lt;td>지정된 날짜(YYYYMMDD)가 휴일인지 확인한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> egovframework.com.utl.fcc.service.EgovDateUtil;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HolidayManagementExample&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">checkHoliday&lt;/span>() &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 2026년 3월 1일 (삼일절)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String date &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;20260301&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 해당 일자가 휴일인지 확인&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">boolean&lt;/span> isHoliday &lt;span style="color:#f92672">=&lt;/span> EgovDateUtil.&lt;span style="color:#a6e22e">isHoliday&lt;/span>(date);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Is &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> date &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; a holiday? &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> isHoliday);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
