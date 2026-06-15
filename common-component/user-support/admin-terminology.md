@@ -1,29 +1,11 @@
 ---
-title: "관리자용어사전"
-linkTitle: "관리자용어사전"
-description: "관리자용어사전"
-url: /common-component/user-support/information-provided/admin-terminology/
+title: "행정전문용어사전관리"
+linkTitle: "행정전문용어사전관리"
+description: "행정전문용어사전관리"
+url: /common-component/user-support/online-help/admin-terminology/
 menu:
   depth:
-    name: "관리자용어사전"
-    weight: 1
-    parent: "information-provided"
+    name: "행정전문용어사전관리"
+    weight: 5
+    parent: "online-help"
 ---
-
-## 개요
-
-시스템 운영에 사용되는 관리자용 전문 용어, 기술 용어, 업무 용어 등을 체계적으로 등록하고 관리하여 관리자 간의 업무 의사소통 및 시스템 이해도를 높이는 컴포넌트입니다.
-
-## 주요 기능
-
-* **용어 등록/수정/삭제**: 관리자 환경에서 사용되는 전문 용어와 그에 대한 정의, 영문명, 약어 등을 등록 및 관리합니다.
-* **용어 검색**: 등록된 용어를 용어명, 영문명 등으로 검색하여 뜻과 설명을 빠르게 확인할 수 있습니다.
-* **목록 조회**: 시스템에 등록된 전체 관리자 용어 목록을 페이징 처리하여 제공합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNADMINDICT`: 관리자 용어사전 정보를 저장하는 테이블
-
-## 활용 방안
-
-업무 인수인계 또는 신규 관리자 투입 시, 시스템 운영 환경의 도메인 지식을 쉽게 습득할 수 있는 자체 위키 또는 지식 베이스로 활용될 수 있습니다.

@@ -1,30 +1,11 @@
 ---
-title: "부서업무함"
-linkTitle: "부서업무함"
-description: "부서업무함"
-url: /common-component/collaboration/edsm/department-task-box/
+title: "부서업무함관리"
+linkTitle: "부서업무함관리"
+description: "부서업무함관리"
+url: /common-component/collaboration/schedule-manage/department-task-box/
 menu:
   depth:
-    name: "부서업무함"
-    weight: 2
-    parent: "edsm"
+    name: "부서업무함관리"
+    weight: 6
+    parent: "schedule-manage"
 ---
-
-## 개요
-
-조직(부서) 단위로 할당된 업무 문서나 결재가 완료된 공문 등을 수신하여 부서원들이 공동으로 열람하고 보관하는 전자문서 캐비닛(함) 역할을 하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **수신 문서 보관**: 타 부서로부터 수신되거나 전사적으로 하달된 공문, 협조전 등을 부서의 고유 문서함에 적재합니다.
-* **문서 분류 및 검색**: 부서업무함 내의 문서들을 프로젝트별 혹은 연도별 폴더로 분류하고, 제목/발신처 등으로 빠르게 검색합니다.
-* **열람 권한 관리**: 부서장 및 부서원 등 해당 조직에 속한 사용자만 문서를 열람할 수 있도록 접근을 통제합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNDEPTJOBBX`: 부서별로 생성된 업무함(폴더) 마스터 정보를 관리하는 테이블
-* `COMTNDEPTJOB`: 해당 업무함에 보관된 개별 문서(업무)의 상세 내용을 저장하는 테이블
-
-## 활용 방안
-
-사내 결재 시스템이나 공문 수발신 시스템과 연계되어, 종이 기반의 부서별 수발신 대장 및 문서 보관 철을 디지털화하여 페이퍼리스(Paperless) 업무 환경을 구현합니다.

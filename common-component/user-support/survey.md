@@ -2,24 +2,10 @@
 title: "설문조사"
 linkTitle: "설문조사"
 description: "설문조사"
-url: /common-component/user-support/online-participation/survey/
+url: /common-component/user-support/online-participate/survey/
 menu:
   depth:
     name: "설문조사"
-    weight: 46
-    parent: "online-participation"
+    weight: 3
+    parent: "online-participate"
 ---
-
-## 개요
-
-일반 사용자(Front-end)가 진행 중인 설문조사 목록을 확인하고, 템플릿 기반으로 렌더링된 다문항 설문 폼 화면에 접근하여 답변을 제출할 수 있는 진입점 컴포넌트입니다.
-
-## 주요 기능
-
-* **진행 중인 설문 조회**: 현재 참여 가능한 설문조사 목록과 안내(설문 목적, 기간 등)를 제공합니다.
-* **설문 응답 제출**: 사용자가 객관식, 주관식 문항에 응답을 기입하고 최종 제출하여 데이터를 서버로 전송합니다.
-* **설문 결과 공개**: 관리자가 결과 공개를 허용한 설문의 경우, 종료 후 사용자에게도 통계 결과를 보여줍니다.
-
-## 활용 방안
-
-웹사이트 메뉴 중 '참여마당', '설문조사' 등의 공개된 메뉴로 구성되며, 앞서 구성한 설문 마스터, 문항, 항목 데이터를 기반으로 실제 응답 트랜잭션을 처리하는 창구 역할을 합니다.

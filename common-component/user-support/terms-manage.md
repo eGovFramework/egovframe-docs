@@ -1,29 +1,11 @@
 ---
-title: "이용약관관리"
-linkTitle: "이용약관관리"
-description: "이용약관관리"
-url: /common-component/user-support/information-provided/terms-manage/
+title: "약관관리"
+linkTitle: "약관관리"
+description: "약관관리"
+url: /common-component/user-support/terms-manage/
 menu:
   depth:
-    name: "이용약관관리"
-    weight: 47
-    parent: "information-provided"
+    weight: 3
+    parent: "user-support"
+    identifier: "terms-manage"
 ---
-
-## 개요
-
-시스템 회원이 서비스 이용 전 필수적으로 동의해야 하는 '서비스 이용 약관'의 제정 및 개정 이력을 관리하고, 약관 본문을 에디터로 작성하여 제공하는 관리자 컴포넌트입니다.
-
-## 주요 기능
-
-* **약관 내용 등록 및 수정**: 텍스트 에디터를 통해 서비스 이용약관 조항, 목적, 이용 규정 등의 본문을 등록합니다.
-* **버전 관리**: 관련 법령 개정 등으로 인해 약관이 변경될 경우, 기존 버전을 남겨두고 새로운 버전의 약관을 추가하여 적용 일자를 관리합니다.
-* **이용자 고지**: 프론트 화면의 약관 팝업이나 회원가입 폼과 연동하여 현재 유효한 최신 버전의 약관을 노출합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNSTPLATINFO`: 약관 종류, 적용 일자, 약관 본문(HTML 등)을 저장하는 테이블
-
-## 활용 방안
-
-B2C 또는 대국민 서비스 구축 시, 법적인 분쟁을 방지하기 위해 사용자의 동의를 구하는 법적 고지 문서(Terms of Service)를 DB화하여 체계적으로 운영하는 데 활용됩니다.

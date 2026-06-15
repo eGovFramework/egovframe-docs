@@ -2,28 +2,10 @@
 title: "메모보고"
 linkTitle: "메모보고"
 description: "메모보고"
-url: /common-component/collaboration/edsm/memo-report/
+url: /common-component/collaboration/schedule-manage/memo-report/
 menu:
   depth:
     name: "메모보고"
-    weight: 4
-    parent: "edsm"
+    weight: 9
+    parent: "schedule-manage"
 ---
-
-## 개요
-
-공식적인 기안문이나 전자결재를 거칠 필요 없이, 상급자에게 신속하게 상황을 전파하거나 간단한 의사결정을 받기 위해 작성하는 비정형(메모 형식) 보고 컴포넌트입니다.
-
-## 주요 기능
-
-* **메모 보고서 작성**: 복잡한 문서 양식 없이 보고 제목, 수신자(상급자), 보고 본문(간단한 텍스트 및 첨부파일)만을 기입하여 전송합니다.
-* **수신 확인 및 지시**: 수신자(상급자)는 메모 보고를 열람하고, 하단에 코멘트 형태로 간략한 지시사항이나 피드백을 즉시 회신할 수 있습니다.
-* **보고 알림**: 메모 보고가 상신되거나 지시사항이 회신되었을 때 당사자들에게 메신저나 쪽지로 실시간 알림을 제공합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNMEMOREPRT`: 보고자, 수신자, 보고 일시, 보고 제목 및 내용, 상급자 의견 등을 저장하는 간이 보고 테이블
-
-## 활용 방안
-
-조직의 의사결정 속도를 높이고 불필요한 문서 작업(Red Tape)을 줄이기 위한 스마트 워크(Smart Work) 환경에서, 애자일(Agile)한 소통과 신속한 상황 보고를 위해 사용됩니다.

@@ -2,28 +2,10 @@
 title: "사용자부재관리"
 linkTitle: "사용자부재관리"
 description: "사용자부재관리"
-url: /common-component/user-support/collaboration/user-absence/
+url: /common-component/user-support/information-provided/user-absence/
 menu:
   depth:
     name: "사용자부재관리"
-    weight: 50
-    parent: "user-support"
+    weight: 13
+    parent: "information-provided"
 ---
-
-## 개요
-
-사내 임직원이 휴가, 외근, 출장 등으로 인해 자리를 비우는 부재(Absence) 상태를 시스템에 등록하여, 다른 동료들이 부재 현황과 연락처 등을 확인할 수 있도록 돕는 컴포넌트입니다.
-
-## 주요 기능
-
-* **부재 정보 등록**: 부재 기간(시작일시~종료일시), 부재 사유(연차, 출장 등), 대리 업무자 지정, 비상 연락처 정보를 등록합니다.
-* **업무 대행자 연계**: 결재 시스템(전자결재)이나 쪽지 시스템과 연동하여, 부재 기간 동안 들어오는 업무를 대행자에게 자동으로 위임하거나 알림을 보냅니다.
-* **부재 현황 공유**: 그룹웨어 메신저 조직도나 사내 게시판에서 해당 임직원의 이름 옆에 부재 중 표시(아이콘 등)를 노출합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNUSERABSNCE`: 사용자 ID, 부재 시작/종료일시, 부재 유형, 대행자 ID 등을 저장하는 테이블
-
-## 활용 방안
-
-협업 환경에서 담당자 부재로 인한 업무 지연을 방지하고, 조직원 간 원활한 커뮤니케이션과 신속한 업무 대체 처리를 지원하기 위해 필수적인 사내 기능입니다.

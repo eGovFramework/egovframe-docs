@@ -5,25 +5,7 @@ description: "지식정보관리"
 url: /common-component/digital-asset-management/knowledge-info-manage/
 menu:
   depth:
-    name: "지식정보관리"
-    weight: 1
+    weight: 4
     parent: "digital-asset-management"
+    identifier: "knowledge-info-manage"
 ---
-
-## 개요
-
-조직의 자산이 될 수 있는 업무 편람, 매뉴얼, 프로젝트 산출물 등의 공식적인 지식 정보를 중앙에서 체계적으로 등록, 수정, 폐기(관리)하는 가장 기본적인 지식 자산 컴포넌트입니다.
-
-## 주요 기능
-
-* **지식 등록 및 분류**: 지식 문서를 작성하고 첨부파일을 업로드한 뒤, 사전에 정의된 지식 분류 체계(Category)에 맞게 맵핑하여 등록합니다.
-* **지식 검색 및 조회**: 제목, 본문, 등록자, 등록일, 키워드 등의 조건으로 축적된 지식을 검색하여 열람합니다.
-* **버전 관리**: 수정이 빈번한 지식 문서의 경우 이전 내용을 덮어쓰지 않고 버전(Version)을 부여하여 과거 이력을 보존할 수 있습니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNKNOWLEDGEINFO`: 지식 고유 ID, 제목, 내용, 분류 코드, 등록자 ID, 첨부파일 ID 등을 저장하는 지식 마스터 테이블
-
-## 활용 방안
-
-파편화되어 있는 개인 PC의 파일이나 부서별 공유 폴더의 문서를 웹 기반의 중앙 저장소(Repository)로 모아 지식의 자산화를 이루고 검색 효율성을 극대화하기 위한 기반 저장소입니다.

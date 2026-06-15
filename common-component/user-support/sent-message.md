@@ -1,29 +1,11 @@
 ---
-title: "보낸쪽지함"
-linkTitle: "보낸쪽지함"
-description: "보낸쪽지함"
-url: /common-component/user-support/collaboration/sent-message/
+title: "보낸쪽지함관리"
+linkTitle: "보낸쪽지함관리"
+description: "보낸쪽지함관리"
+url: /common-component/user-support/information-provided/sent-message/
 menu:
   depth:
-    name: "보낸쪽지함"
-    weight: 37
-    parent: "user-support"
+    name: "보낸쪽지함관리"
+    weight: 22
+    parent: "information-provided"
 ---
-
-## 개요
-
-`쪽지관리` 컴포넌트의 하위 기능으로, 본인이 다른 사용자들에게 발송한 쪽지의 목록을 조회하고 상대방의 수신(읽음) 여부를 확인할 수 있는 기능입니다.
-
-## 주요 기능
-
-* **보낸 쪽지 목록 조회**: 내가 발송한 쪽지의 수신자, 제목, 발송 일시 목록을 최신순으로 제공합니다.
-* **수신 확인 기능**: 내가 보낸 쪽지를 수신자가 읽었는지(읽은 날짜 및 시간 포함) 여부를 확인하여 의사소통 완료 여부를 점검합니다.
-* **발송 취소 (선택적)**: 상대방이 아직 쪽지를 읽지 않았을 경우 발송을 취소하여 상대방의 받은 쪽지함에서 삭제하는 기능을 지원할 수 있습니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNEMPMESSAGE`: (쪽지관리와 동일) 발신자 아이디가 본인인 데이터를 필터링하여 조회합니다.
-
-## 활용 방안
-
-사내 업무 지시나 알림 발송 시, 대상자가 해당 내용을 정확히 인지했는지 여부를 추적해야 할 때 '수신 확인' 용도로 유용하게 활용됩니다.

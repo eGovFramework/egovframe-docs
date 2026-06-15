@@ -2,28 +2,10 @@
 title: "설문관리"
 linkTitle: "설문관리"
 description: "설문관리"
-url: /common-component/user-support/online-participation/survey-management/
+url: /common-component/user-support/online-participate/survey-management/
 menu:
   depth:
     name: "설문관리"
-    weight: 42
-    parent: "online-participation"
+    weight: 2
+    parent: "online-participate"
 ---
-
-## 개요
-
-특정 목적을 가진 설문조사(Survey)의 전체적인 기본 정보(마스터 정보)를 관리자가 생성하고, 진행 상태 및 기간을 통제하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **설문조사 생성**: 설문 제목, 설문 목적, 안내 문구, 시작일 및 종료일 등 설문의 기본 정보를 등록합니다.
-* **템플릿 지정**: 설문 폼의 화면 디자인이나 구조를 결정하는 UI 템플릿을 선택하여 매핑합니다.
-* **통계 결과 조회**: 설문이 종료된 후, 전체 응답자 수 및 각 문항/항목별 통계 결과(그래프 등)를 집계하여 관리자 화면에 제공합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNQUSTNRINFO`: 설문조사의 최상위 마스터 정보를 저장하는 테이블
-
-## 활용 방안
-
-정책 만족도 조사, 신규 서비스 수요 조사 등 여러 문항으로 구성된 복합적인 설문을 기획하고 배포할 때 사용하는 백오피스의 핵심 모듈입니다.

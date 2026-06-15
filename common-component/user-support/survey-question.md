@@ -1,29 +1,11 @@
 ---
-title: "설문문항"
-linkTitle: "설문문항"
-description: "설문문항"
-url: /common-component/user-support/online-participation/survey-question/
+title: "설문질문관리"
+linkTitle: "설문질문관리"
+description: "설문질문관리"
+url: /common-component/user-support/online-participate/survey-question/
 menu:
   depth:
-    name: "설문문항"
-    weight: 43
-    parent: "online-participation"
+    name: "설문질문관리"
+    weight: 6
+    parent: "online-participate"
 ---
-
-## 개요
-
-생성된 설문조사(마스터) 하위에 포함될 구체적인 개별 질문(문항)들을 등록하고, 답변 방식(객관식, 주관식 등)을 설정하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **문항 등록**: 설문 참여자에게 물어볼 질문 내용(Q)을 등록합니다.
-* **답변 유형 설정**: 해당 문항에 대한 답변 방식을 객관식(단일 선택, 다중 선택) 혹은 주관식(서술형)으로 지정합니다.
-* **필수 응답 여부**: 문항별로 응답을 필수로 받을지, 선택 사항으로 둘지 설정합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNQUSTNRQESITM`: 설문 마스터에 종속되는 개별 문항의 질문 내용, 질문 유형, 노출 순서 등을 저장하는 테이블
-
-## 활용 방안
-
-단순한 투표를 넘어, 여러 섹션과 복합적인 질문들로 이루어진 체계적인 설문지를 구성할 때 `설문관리` 및 `설문항목` 데이터와 결합되어 사용됩니다.

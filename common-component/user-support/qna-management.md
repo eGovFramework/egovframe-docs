@@ -1,29 +1,11 @@
 ---
-title: "QnA관리"
-linkTitle: "QnA관리"
-description: "QnA관리"
+title: "Q&A관리"
+linkTitle: "Q&A관리"
+description: "Q&A관리"
 url: /common-component/user-support/online-help/qna-management/
 menu:
   depth:
-    name: "QnA관리"
-    weight: 32
+    name: "Q&A관리"
+    weight: 4
     parent: "online-help"
 ---
-
-## 개요
-
-사용자가 시스템이나 서비스에 대해 궁금한 점을 질문(Question)하고, 관리자나 담당자가 그에 대한 답변(Answer)을 등록하여 소통할 수 있는 게시판 형태의 컴포넌트입니다.
-
-## 주요 기능
-
-* **질문 등록**: 사용자가 문의 유형을 선택하고 제목과 내용을 작성하여 질문을 등록합니다. (비밀글 설정 가능)
-* **답변 처리**: 관리자가 등록된 질문에 대해 답변을 작성하고 처리 상태를 '답변완료'로 변경합니다.
-* **이메일/SMS 알림**: (연동 시) 답변이 등록되면 질문자에게 이메일이나 SMS로 처리 결과를 알립니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNQNAINFO`: 질문 내용, 질문자 정보, 답변 내용, 진행 상태(접수/답변완료) 등을 저장하는 테이블
-
-## 활용 방안
-
-고객센터의 1:1 문의하기 기능이나 시스템 헬프데스크의 질의응답(Q&A) 창구로 사용되어 사용자의 서비스 만족도를 높이는 데 기여합니다.

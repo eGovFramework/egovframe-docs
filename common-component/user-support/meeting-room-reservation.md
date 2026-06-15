@@ -1,29 +1,11 @@
 ---
-title: "회의실예약"
-linkTitle: "회의실예약"
-description: "회의실예약"
-url: /common-component/user-support/collaboration/meeting-room-reservation/
+title: "회의실예약관리"
+linkTitle: "회의실예약관리"
+description: "회의실예약관리"
+url: /common-component/user-support/information-provided/meeting-room-reservation/
 menu:
   depth:
-    name: "회의실예약"
-    weight: 22
-    parent: "user-support"
+    name: "회의실예약관리"
+    weight: 16
+    parent: "information-provided"
 ---
-
-## 개요
-
-사내에 구비된 회의실을 임직원들이 원하는 날짜와 시간대에 사용하기 위해 온라인으로 예약하고, 예약 현황을 조회할 수 있도록 지원하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **회의실 예약 신청**: 사용 가능한 회의실을 확인하고, 사용 목적과 참석 인원, 시간대를 지정하여 예약합니다.
-* **중복 예약 방지**: 동일한 회의실의 동일한 시간대에는 중복 예약이 되지 않도록 검증 로직을 제공합니다.
-* **예약 현황 조회**: 달력(Calendar) 형태의 UI를 통해 회의실별 일일/주간/월간 예약 현황을 한눈에 파악할 수 있습니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNMTGPLACERESVE`: 회의실 예약 내역, 예약자 정보, 예약 시간 등을 관리하는 테이블
-
-## 활용 방안
-
-조직 내 공용 자원(회의실, 교육장 등)의 효율적인 스케줄링을 위해 필수적으로 사용되며, 주로 `회의실관리` 컴포넌트와 한 쌍으로 동작합니다.

@@ -2,27 +2,10 @@
 title: "회의실관리"
 linkTitle: "회의실관리"
 description: "회의실관리"
-url: /common-component/user-support/collaboration/meeting-room/
+url: /common-component/user-support/information-provided/meeting-room/
 menu:
   depth:
     name: "회의실관리"
-    weight: 23
-    parent: "user-support"
+    weight: 15
+    parent: "information-provided"
 ---
-
-## 개요
-
-예약 가능한 회의실이나 교육장 등의 공용 공간 자원에 대한 마스터 정보를 관리자가 등록하고 관리하는 백오피스 컴포넌트입니다.
-
-## 주요 기능
-
-* **회의실 정보 등록**: 회의실 명칭, 위치(호실), 수용 인원, 구비 비품(빔프로젝터, 화이트보드 등) 정보를 등록합니다.
-* **사용 상태 제어**: 수리나 점검 등의 이유로 특정 회의실을 일시적으로 '사용 불가' 상태로 변경하여 예약을 차단할 수 있습니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNMTGPLACEINFO`: 회의실 마스터 정보(명칭, 수용인원, 위치, 개방 여부 등)를 저장하는 테이블
-
-## 활용 방안
-
-`회의실예약` 컴포넌트의 기준 정보가 되며, 회의실뿐만 아니라 강당, 법인 차량 등 일반적인 공용 자산 예약 시스템의 마스터 데이터 관리 목적으로 확장할 수 있습니다.

@@ -1,30 +1,11 @@
 ---
-title: "설문응답자"
-linkTitle: "설문응답자"
-description: "설문응답자"
-url: /common-component/user-support/online-participation/survey-respondent/
+title: "설문응답자관리"
+linkTitle: "설문응답자관리"
+description: "설문응답자관리"
+url: /common-component/user-support/online-participate/survey-respondent/
 menu:
   depth:
-    name: "설문응답자"
-    weight: 44
-    parent: "online-participation"
+    name: "설문응답자관리"
+    weight: 5
+    parent: "online-participate"
 ---
-
-## 개요
-
-설문에 참여한 개별 사용자(응답자)의 인적 정보나 익명 식별 정보를 기록하고, 문항별 실제 응답 데이터와 매핑하여 관리하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **응답자 정보 기록**: 설문에 참여한 사용자의 성별, 연령대, 직업 등 인구통계학적 정보를 기록합니다. (익명 설문의 경우 식별값만 기록)
-* **응답 내역 저장**: 해당 응답자가 각 문항(객관식/주관식)에 대해 어떠한 답변을 제출했는지 상세 이력을 저장합니다.
-* **중복 참여 방지**: 세션 또는 계정 정보를 활용하여 동일한 사용자가 중복으로 설문에 응답하지 못하도록 통제합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNQUSTNRRESPONDINFO`: 설문 응답자의 기본 식별 정보 및 참여 일시를 저장하는 테이블
-* `COMTNQUSTNRRSPNSRESULT`: 각 문항에 대한 실제 답변 내용(객관식 번호 또는 서술형 텍스트)을 저장하는 테이블
-
-## 활용 방안
-
-설문 결과의 신뢰성을 확보하고, 성별/연령대별 교차 분석 등 고도화된 설문 통계를 추출하기 위한 원천 데이터 저장소로 기능합니다.

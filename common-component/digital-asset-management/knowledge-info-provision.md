@@ -2,28 +2,10 @@
 title: "지식정보제공"
 linkTitle: "지식정보제공"
 description: "지식정보제공"
-url: /common-component/digital-asset-management/knowledge-info-provision/
+url: /common-component/digital-asset-management/knowledge-map/knowledge-info-provision/
 menu:
   depth:
     name: "지식정보제공"
-    weight: 4
-    parent: "digital-asset-management"
+    weight: 3
+    parent: "knowledge-map"
 ---
-
-## 개요
-
-사용자의 직무, 관심사, 최근 검색 이력 등 개인화된 프로필을 바탕으로, 시스템 내에 축적된 지식 콘텐츠를 선별하여 맞춤형으로 큐레이션(추천) 및 제공하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **맞춤형 지식 추천**: 사용자가 로그인했을 때, 해당 사용자의 소속 부서나 설정된 관심 키워드와 연관성이 높은 신규/인기 지식을 메인 대시보드에 노출합니다.
-* **지식 구독(RSS/메일)**: 특정 분야의 지식 분류를 구독 신청해 두면, 새로운 지식이 등록될 때마다 알림이나 이메일로 요약본을 제공받습니다.
-* **최신/인기 지식 랭킹**: 기간별로 조회수나 추천수가 가장 높은 'Hot 지식'을 랭킹 형태로 보여주어 사내 트렌드를 공유합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNKNOWLEDGEINFO` 및 사용자 프로필 연계 뷰: 지식 정보와 개인 관심사 정보를 조인하여 추천 목록을 추출하는 데 사용됩니다.
-
-## 활용 방안
-
-사용자가 방대한 지식 창고에서 필요한 정보를 일일이 검색하는 수고를 덜어주고, 조직 내 핵심 노하우나 필수 정책 지침이 관련 담당자들에게 신속하게 전파되도록 돕는 푸시(Push)형 서비스입니다.

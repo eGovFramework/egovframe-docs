@@ -1,29 +1,11 @@
 ---
-title: "행사참여"
-linkTitle: "행사참여"
-description: "행사참여"
-url: /common-component/user-support/online-participation/event-application/
+title: "행사신청관리"
+linkTitle: "행사신청관리"
+description: "행사신청관리"
+url: /common-component/user-support/information-provided/event-application/
 menu:
   depth:
-    name: "행사참여"
-    weight: 8
-    parent: "online-participation"
+    name: "행사신청관리"
+    weight: 28
+    parent: "information-provided"
 ---
-
-## 개요
-
-기관이나 단체에서 주최하는 행사에 대해 일반 사용자나 회원이 온라인으로 참여 신청을 할 수 있는 기능(Front-end)을 제공하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **진행 중인 행사 조회**: 현재 참여 신청이 가능한 행사 목록과 상세 정보(행사일시, 장소, 정원 등)를 제공합니다.
-* **참여 신청 등록**: 사용자가 본인의 정보와 동반자 수 등을 입력하여 행사 참여를 온라인으로 신청합니다.
-* **참여 취소**: 신청한 행사에 대해 신청을 철회하거나 취소할 수 있습니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNEVENTREQSTINFO`: 행사별로 신청한 사용자의 정보, 신청 상태, 신청 일시 등을 기록하는 테이블
-
-## 활용 방안
-
-공공기관의 시민 참여 행사, 기업의 세미나 예약, 사내 교육 수강 신청 등 사전 인원 파악 및 등록이 필요한 이벤트의 온라인 예약 시스템으로 활용됩니다.

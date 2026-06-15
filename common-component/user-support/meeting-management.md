@@ -2,28 +2,10 @@
 title: "회의관리"
 linkTitle: "회의관리"
 description: "회의관리"
-url: /common-component/user-support/collaboration/meeting-management/
+url: /common-component/user-support/online-participate/meeting-management/
 menu:
   depth:
     name: "회의관리"
-    weight: 21
-    parent: "user-support"
+    weight: 8
+    parent: "online-participate"
 ---
-
-## 개요
-
-조직 내부에서 진행되는 각종 회의 일정, 안건, 참석자 명단 및 회의록(결과)을 체계적으로 등록하고 관리하는 컴포넌트입니다.
-
-## 주요 기능
-
-* **회의 등록 및 관리**: 회의명, 일시, 장소(회의실 연동 가능), 회의 안건 등을 등록합니다.
-* **참석자 지정**: 해당 회의에 참석해야 하는 대상자(임직원)를 선택하여 지정합니다.
-* **회의록 관리**: 회의가 종료된 후, 회의 결과 및 회의록 파일을 첨부하여 참석자들과 공유합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNMTGINFO`: 회의 기본 정보, 일시, 장소, 안건, 회의록 내용 등을 저장하는 테이블
-
-## 활용 방안
-
-사내 그룹웨어나 인트라넷 환경에서 부서 간 협업 및 소통을 위해 사용되며, `회의실예약` 컴포넌트와 연계하여 효과적인 자원 관리를 지원합니다.

@@ -1,29 +1,11 @@
 ---
-title: "받은쪽지함"
-linkTitle: "받은쪽지함"
-description: "받은쪽지함"
-url: /common-component/user-support/collaboration/received-message/
+title: "받은쪽지함관리"
+linkTitle: "받은쪽지함관리"
+description: "받은쪽지함관리"
+url: /common-component/user-support/information-provided/received-message/
 menu:
   depth:
-    name: "받은쪽지함"
-    weight: 33
-    parent: "user-support"
+    name: "받은쪽지함관리"
+    weight: 21
+    parent: "information-provided"
 ---
-
-## 개요
-
-`쪽지관리` 컴포넌트의 하위 기능으로, 다른 사용자가 본인에게 발송한 쪽지 목록을 조회하고 읽음 처리 및 삭제를 수행할 수 있는 사용자용 화면 컴포넌트입니다.
-
-## 주요 기능
-
-* **받은 쪽지 목록 조회**: 나에게 도착한 쪽지들의 발신자, 제목, 발송 일시, 읽음 상태 등을 목록 형태로 확인합니다.
-* **쪽지 읽기**: 쪽지의 상세 내용을 열람하며, 열람과 동시에 상태가 '읽음'으로 변경됩니다.
-* **보관 및 삭제**: 중요한 쪽지를 별도로 보관하거나 불필요한 쪽지를 삭제 처리합니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNEMPMESSAGE`: (쪽지관리와 동일) 수신자 아이디가 본인인 데이터를 필터링하여 조회합니다.
-
-## 활용 방안
-
-사내 메신저나 커뮤니티 시스템에서 로그인한 사용자의 개인 알림 및 커뮤니케이션 도구로써, 마이페이지의 '새 쪽지 알림' 영역 등과 연동되어 사용됩니다.

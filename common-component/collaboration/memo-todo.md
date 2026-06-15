@@ -1,29 +1,11 @@
 ---
-title: "할일관리"
-linkTitle: "할일관리"
-description: "할일관리"
-url: /common-component/collaboration/edsm/memo-todo/
+title: "메모할일관리"
+linkTitle: "메모할일관리"
+description: "메모할일관리"
+url: /common-component/collaboration/schedule-manage/memo-todo/
 menu:
   depth:
-    name: "할일관리"
-    weight: 5
-    parent: "edsm"
+    name: "메모할일관리"
+    weight: 8
+    parent: "schedule-manage"
 ---
-
-## 개요
-
-임직원 개인이 업무 중 발생한 아이디어나 향후 처리해야 할 작업(To-Do List)을 간편하게 메모 형태로 기록하고 진행 상태를 체크할 수 있는 개인 업무 도구 컴포넌트입니다.
-
-## 주요 기능
-
-* **할 일(To-Do) 등록**: 처리해야 할 작업명, 마감 일시(Due Date), 중요도 등을 간단히 입력하여 목록에 추가합니다.
-* **진행 상태 체크**: 미결(진행 중), 완료 상태를 체크박스로 쉽게 변경하여 오늘 남은 업무량을 한눈에 파악합니다.
-* **메모 보관**: 단편적인 생각이나 회의 중 나온 키워드 등을 포스트잇(Post-it) 형태로 저장하고 나중에 검색하여 활용할 수 있습니다.
-
-## 데이터 구조 (테이블)
-
-* `COMTNMEMOTODO`: 작성자 ID, 할 일 제목 및 내용, 등록 일시, 마감 일시, 완료 여부 플래그를 저장하는 테이블
-
-## 활용 단점
-
-개인 생산성을 높이기 위한 마이페이지(My Page) 내 위젯이나 시스템 포털의 우측 사이드바 등에 배치되어, 개인의 일정관리(Calendar)와 상호 보완적인 메모장으로 널리 사용됩니다.
