@@ -86,5 +86,5 @@ Globals.ldap.password = {ldap_password}
 
 ## 참고자료
 
-- [소셜 로그인 (네이버/구글/카카오)](../social_login_naver_google_kakao/)
-- [LDAP](../ldap/)
+- [소셜 로그인 (네이버/구글/카카오)](./social_login_naver_google_kakao.md)
+- [LDAP](./ldap.md)

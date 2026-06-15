@@ -70,7 +70,7 @@ boolean resultWeek = EgovDateUtil.validDate(sDate, iWeek);
 
 ## 관련 문서
 
-- [포맷터/유틸리티 개요](../_index.md)
+- [포맷터/유틸리티 개요](./formatter-util.md)
 - [날짜/시간/요일 계산](./date-time-day-calculation.md)
 - [날짜/시간/요일 변환](./date-time-day-conversion.md)
 - [날짜/시간/요일 포맷변경](./date-time-day-format.md)

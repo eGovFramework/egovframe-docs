@@ -53,7 +53,7 @@ menu:
 
 > [!NOTE]
 > 메소드의 입력 항목 중에서 `fromDate`, `toDate` 항목은 Validation 체크가 적용된다
-> ([요소기술 validation 체크](/common-component/elementary-technology/validation-check/) 참조).
+> (요소기술 validation 체크 참조).
 
 ## 환경설정
 
