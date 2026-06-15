@@ -39,6 +39,7 @@ concurrency:
 # GitHub_Token에 write 권한 부여
 permissions:
   contents: write
+  pull-requests: write   # 자동 머지 차단 시 PR에 사유 코멘트를 남기기 위함
 
 jobs:
   merge:
@@ -62,7 +63,74 @@ jobs:
         run: |
           git fetch origin pull/${{ github.event.pull_request.number }}/merge:pr_merge
 
-      # Step 3. merge-commit을 받아 놓은 pr_merge 브랜치를 main 브랜치로 푸시 (=자동 머지)
+      # Step 3. 변경된 .md 파일의 frontmatter 변경 여부 검사
+      #   - 기존 .md frontmatter 수정/추가/삭제 시 자동 머지 차단
+      #   - 신규 추가/삭제된 .md 파일은 검사 대상에서 제외(자동 머지 허용)
+      #   - frontmatter = 파일 첫 줄 '---' ~ 두 번째 '---' 사이의 영역을 확인
+      #   - base(main)와 PR 머지 결과(pr_merge) 양쪽에 모두 존재하는 .md(=기존 파일 수정)만 비교
+      #   - frontmatter가 변경된 파일이 하나라도 있으면 PR에 코멘트를 남기고 자동 머지를 중단(exit 1)
+      #   - PR 코드를 실행하지 않고 git show/diff만 사용하므로 pull_request_target 보안 모델 유지
+      #   - 로직
+      #        변경된 .md 목록 구함 (HEAD vs pr_merge)
+      #        └─ 각 파일마다:
+      #              ├─ base에 없다 : 신규 → 건너뜀(허용)
+      #              ├─ head에 없다 : 삭제 → 건너뜀(허용)
+      #              └─ 양쪽 다 있다 : 수정 → frontmatter 추출·비교 → 다르면 blocked 목록에 추가
+      #        blocked 비어있음? → 정상 종료 → Step4 push(머지 진행)
+      #        blocked 있음?    → 에러주석 + PR코멘트 + exit 1 → Step4 안 돔(머지 차단)
+      - name: Block auto-merge on frontmatter changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # set -o pipefail : 파이프 중 실패한 명령의 종료 코드를 파이프의 종료 코드로 설정(기본값은 파이프 마지막 명령의 종료 코드)
+          #   -u : 정의 안 된 변수를 참조하면 에러로 중단(오타로 인한 빈 값 버그 방지)
+          set -uo pipefail
+
+          # frontmatter만 뽑아내기
+          #   - git show "$1:$2" : 특정 커밋 시점의 파일 내용을 출력
+          #     - $1 : ref → 커밋 참조(HEAD, pr_merge 등)
+          #     - $2 : path → 파일 경로
+          #   - 2>/dev/null : 파일이 없을 때 나오는 에러 메시지를 버림(빈 출력만 남김)
+          #   - awk '...' : awk 스크립트를 사용하여 파일 내용을 필터링
+          extract_fm() {
+            git show "$1:$2" 2>/dev/null | awk '
+              { sub(/\r$/, "") }                   # 모든 줄에서 끝의 \r(윈도우 CRLF) 제거 → CRLF/LF 차이를 frontmatter 변경으로 오탐하지 않게 함
+              NR==1 && $0 != "---" { exit }        # 첫 줄이 "---"가 아니면(frontmatter 없음) 종료(빈 출력)
+              NR==1 { next }                       # 첫 줄("---")은 건너뜀
+              $0 == "---" { exit }                 # 닫는 "---"를 만나면 종료
+              { print }                            # 그 사이의 나머지 줄(frontmatter)을 출력
+            '
+          }
+
+          # 변경된 .md 순회 — while 루프
+          #   - blocked : 차단 대상 파일 경로를 쌓아둘 누적 변수
+          #   - IFS= read -r f : 파일명을 원문 그대로 안전하게 처리한 후 변수 f에 담음
+          #     - HEAD = 현재 main(base), pr_merge = PR이 main에 머지된 결과
+          blocked=""
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            # 기존 파일 수정만 차단 → base/head 양쪽에 모두 존재할 때만 비교
+            git cat-file -e "HEAD:$f"     2>/dev/null || continue   # base에 없음(신규 추가) → 허용
+            git cat-file -e "pr_merge:$f" 2>/dev/null || continue   # head에 없음(삭제)     → 허용
+            base_fm="$(extract_fm HEAD "$f")"
+            head_fm="$(extract_fm pr_merge "$f")"
+            if [ "$base_fm" != "$head_fm" ]; then
+              blocked="${blocked}- ${f}"$'\n'
+            fi
+          done < <(git diff --name-only HEAD pr_merge -- '*.md')
+
+          # 차단 처리 — 에러·코멘트·종료
+          if [ -n "$blocked" ]; then
+            echo "::error::frontmatter 변경이 감지되어 자동 머지를 중단합니다."
+            printf '%s\n' "$blocked"
+            body="$(printf '**자동 머지가 중단되었습니다.**\n\n다음 Markdown 파일의 frontmatter(상단 `---` ~ `---` 영역)가 변경되었습니다. frontmatter 변경은 메인테이너의 수동 검토가 필요합니다.\n\n%s\n본문만 수정했거나 frontmatter 변경이 의도된 것이라면 메인테이너에게 검토를 요청해 주세요.' "$blocked")"
+            gh pr comment "$PR_NUMBER" --body "$body" || echo "::warning::PR 코멘트 등록 실패 (pull-requests 권한 확인 필요)"
+            exit 1
+          fi
+          echo "frontmatter 변경 없음 — 자동 머지를 진행합니다."
+
+      # Step 4. merge-commit을 받아 놓은 pr_merge 브랜치를 main 브랜치로 푸시 (=자동 머지)
       - name: Push merge commit to main
         run: |
           git push origin pr_merge:main
