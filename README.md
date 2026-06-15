@@ -13,6 +13,13 @@
 
 [프론트매터 작성 방법](./docs/how-to-write-Frontmatter.md)을 참고해 주시기 바랍니다.
 
+### 🚨 주의사항
+
+- 모든 문서의 Frontmatter는 이미 작성되어 있으므로, **Frontmatter 수정은 특이사항이 없다면 지양해주시기 바랍니다.**
+- 개발환경, 실행환경, 공통컴포넌트 이외의 **대메뉴 추가는 기여받지 않습니다**(PR 시 Revert).
+- **PR 후 반드시 [가이드 문서 보기](https://egovframework.github.io/egovframe-docs/)로 들어가서 기여 내용을 확인 부탁드립니다.**
+  - 문제가 있을 경우 PR에 Comment를 남겨주시기 바랍니다.
+
 ## PR 방법
 
 ### 최초 준비
@@ -175,20 +182,6 @@
 ├── /intro                                   실행환경 소개
 ├── /persistence-layer                       데이터처리
 └── /presentation-layer                      화면처리
-
-/runtime-example                          실행환경 예제
-├── /integrated-example                      실행환경 통합 예제
-│   └── /intro                                   개요
-|   └── /usage                                   사용법
-└── /individual-example                      실행환경 개별 예제
-    ├── /batch-layer                             배치처리 예제
-    ├── /business-logic-layer                    업무처리 예제
-    ├── /foundation-layer                        공통기반 예제
-    ├── /foundation-layer-core                   공통기반 핵심 예제
-    ├── /integration-layer                       연계통합 예제
-    │   └── /cloud-data-stream.md                    Cloud Data Stream
-    ├── /persistence-layer                       데이터처리 예제
-    └── /presentation-layer                      화면처리 예제
 ```
 
 ## 문서 구조
