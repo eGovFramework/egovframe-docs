@@ -60,7 +60,7 @@ menu:
 
 ### 클래스 다이어그램
 
-![네트워크서비스모니터링 클래스 다이어그램](images/network-service-monitoring-cdd.png)
+![네트워크서비스모니터링 클래스 다이어그램](./images/network-service-monitoring-cdd.png)
 
 ### 관련 테이블
 
@@ -148,7 +148,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 네트워크서비스모니터링 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 시스템명, 시스템IP, 관리자명, 상태에 대해서 수행된다.
 
-![네트워크서비스모니터링 목록조회](images/network-service-monitoring-list.png)
+![네트워크서비스모니터링 목록조회](./images/network-service-monitoring-list.png)
 
 - **조회** : 기 등록된 네트워크서비스모니터링의 목록을 조회한다.
 - **등록** : 신규 네트워크서비스모니터링를 등록하기 위해서는 상단의 등록 버튼을 통해서 **네트워크서비스모니터링 등록** 화면으로 이동한다.
@@ -158,7 +158,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 네트워크서비스모니터링의 속성정보를 입력한 뒤 등록한다.
 
-![네트워크서비스모니터링 등록](images/network-service-monitoring-insert.png)
+![네트워크서비스모니터링 등록](./images/network-service-monitoring-insert.png)
 
 - **저장** : 신규 네트워크서비스모니터링를 등록하기 위해서는 네트워크서비스모니터링 속성을 입력한 뒤 하단의 **저장 버튼**을 통해서 네트워크서비스모니터링를 등록한다.
 - **목록** : 네트워크서비스모니터링 목록조회 화면으로 이동한다.
@@ -167,7 +167,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 네트워크서비스모니터링의 속성정보를 변경한 후 저장한다.
 
-![네트워크서비스모니터링 수정](images/network-service-monitoring-update.png)
+![네트워크서비스모니터링 수정](./images/network-service-monitoring-update.png)
 
 - **저장** : 기 등록된 네트워크서비스모니터링 속성을 수정한 뒤 하단의 **저장 버튼**을 통해서 네트워크서비스모니터링정보를 수정한다.
 - **목록** : 네트워크서비스모니터링 목록조회 화면으로 이동한다.
@@ -176,7 +176,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 네트워크서비스모니터링의 속성정보를 조회한다.
 
-![네트워크서비스모니터링 상세조회](images/network-service-monitoring-detail.png)
+![네트워크서비스모니터링 상세조회](./images/network-service-monitoring-detail.png)
 
 - **수정** : 기 등록된 네트워크서비스모니터링 속성을 수정한 뒤 하단의 **수정 버튼**을 통해서 네트워크서비스모니터링수정화면으로 이동한다.
 - **삭제** : 기 등록된 네트워크서비스모니터링정보를 삭제한다.
@@ -186,7 +186,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 네트워크서비스모니터링로그 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 시스템명, 시스템IP, 관리자명, 상태, 모니터링시각에 대해서 수행된다.
 
-![네트워크서비스모니터링로그 목록조회](images/network-service-monitoring-log-list.png)
+![네트워크서비스모니터링로그 목록조회](./images/network-service-monitoring-log-list.png)
 
 - **조회** : 기 등록된 네트워크서비스모니터링로그의 목록을 조회한다.
 - **시스템명클릭** : 해당 **네트워크서비스모니터링로그 상세조회** 화면으로 이동한다.
@@ -195,6 +195,6 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 네트워크서비스모니터링로그의 속성정보를 조회한다.
 
-![네트워크서비스모니터링로그 상세조회](images/network-service-monitoring-log-detail.png)
+![네트워크서비스모니터링로그 상세조회](./images/network-service-monitoring-log-detail.png)
 
 - **목록** : 네트워크서비스모니터링로그 목록조회 화면으로 이동한다.

@@ -31,7 +31,7 @@ menu:
 
 ### 클래스 다이어그램
 
-![단위계산 클래스 다이어그램](images/unit-calculation-class-diagram.jpg)
+![단위계산 클래스 다이어그램](./images/unit-calculation-class-diagram.jpg)
 
 ## 관련 화면 및 수행 매뉴얼
 
@@ -43,6 +43,6 @@ menu:
 
 넓이, 길이, 무게, 부피 탭으로 이동하여 각 입력 단위를 입력 후 환산 단위를 선택하여 단위계산을 수행한다.
 
-![단위계산 화면](images/unit-calculation-screen.jpg)
+![단위계산 화면](./images/unit-calculation-screen.jpg)
 
 * **변환**: 입력 단위를 환산 단위로 변환한다.
