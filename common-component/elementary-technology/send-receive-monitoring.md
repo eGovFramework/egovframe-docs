@@ -51,7 +51,7 @@ menu:
 
 ### 클래스 다이어그램
 
-![송수신모니터링 클래스 다이어그램](images/send-receive-monitoring-class.png)
+![송수신모니터링 클래스 다이어그램](./images/send-receive-monitoring-class.png)
 
 ### 관련테이블
 
@@ -112,7 +112,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 송수신모니터링 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 연계명, 관리자명에 대해서 수행된다.
 
-![송수신모니터링 목록조회](images/send-receive-monitoring-list.png)
+![송수신모니터링 목록조회](./images/send-receive-monitoring-list.png)
 
 - **조회**: 기 등록된 송수신모니터링의 목록을 조회한다.
 - **등록**: 신규 송수신모니터링을 등록하기 위해서는 상단의 등록 버튼을 통해서 **송수신모니터링 등록** 화면으로 이동한다.
@@ -125,7 +125,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 송수신모니터링의 속성정보를 입력한 뒤 등록한다.
 
-![송수신모니터링 등록](images/send-receive-monitoring-create.png)
+![송수신모니터링 등록](./images/send-receive-monitoring-create.png)
 
 - **저장**: 신규 송수신모니터링을 등록하기 위해서는 송수신모니터링 속성을 입력한 뒤 상단의 **저장 버튼**을 통해서 송수신모니터링을 등록한다.
 - **목록**: 송수신모니터링 목록조회 화면으로 이동한다.
@@ -138,7 +138,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 송수신모니터링의 속성정보를 변경한 후 저장한다.
 
-![송수신모니터링 수정](images/send-receive-monitoring-update.png)
+![송수신모니터링 수정](./images/send-receive-monitoring-update.png)
 
 - **저장**: 기 등록된 송수신모니터링 속성을 수정한 뒤 상단의 **저장 버튼**을 통해서 송수신모니터링정보를 수정한다.
 - **목록**: 송수신모니터링 목록조회 화면으로 이동한다.
@@ -152,7 +152,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 송수신모니터링의 속성정보를 조회한다.
 
-![송수신모니터링 상세조회](images/send-receive-monitoring-detail.png)
+![송수신모니터링 상세조회](./images/send-receive-monitoring-detail.png)
 
 - **수정**: 기 등록된 송수신모니터링 속성을 수정한 뒤 상단의 **수정 버튼**을 통해서 송수신모니터링수정화면으로 이동한다.
 - **삭제**: 기 등록된 송수신모니터링정보를 삭제한다.
@@ -166,7 +166,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 송수신모니터링로그 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 연계명, 관리자명, 모니터링시각에 대해서 수행된다.
 
-![송수신모니터링로그 목록조회](images/send-receive-monitoring-log-list.png)
+![송수신모니터링로그 목록조회](./images/send-receive-monitoring-log-list.png)
 
 - **조회**: 기 등록된 송수신모니터링로그의 목록을 조회한다.
 
@@ -178,6 +178,6 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 송수신모니터링로그의 속성정보를 조회한다.
 
-![송수신모니터링로그 상세조회](images/send-receive-monitoring-log-detail.png)
+![송수신모니터링로그 상세조회](./images/send-receive-monitoring-log-detail.png)
 
 - **목록**: 송수신모니터링로그 목록조회 화면으로 이동한다.

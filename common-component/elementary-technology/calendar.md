@@ -153,7 +153,7 @@ INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
 날짜를 사용할 폼에 받기위해 위 샘플 소스처럼 호출하여 사용한다.  
 `sDate`는 일자 연월일 8자리를 받고, `vDate`는 `-`를 포함하여 받는다.
 
-![일반달력](images/normalcalendar.png)
+![일반달력](./images/normalcalendar.png)
 
 #### 달력 팝업 DB 없이 사용하기
 
@@ -282,7 +282,7 @@ for(int i=0; i<42;i++) {
 날짜를 사용할 폼에 받기위해 위 샘플 소스처럼 호출하여 사용한다.  
 `sDate`는 일자 연월일 8자리를 받고, `vDate`는 `-`를 포함하여 받는다.
 
-![행정달력](images/administcalendar.jpg)
+![행정달력](./images/administcalendar.jpg)
 
 ### 행정달력 일간/주간/월간/연간 조회
 
@@ -309,7 +309,7 @@ for(int i=0; i<42;i++) {
 검색조건은 휴일일자, 휴일명에 대해서 수행된다.  
 페이지 당 검색 범위를 변경하고자 하는 경우 `context-properties.xml` 파일의 `pageUnit`, `pageSize`를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
 
-![휴일목록 화면](images/restdelist.png)
+![휴일목록 화면](./images/restdelist.png)
 
 ### 휴일 등록
 
@@ -324,7 +324,7 @@ for(int i=0; i<42;i++) {
 휴일에 대한 상세내용을 등록한다.  
 등록이 성공하면 휴일 목록 화면으로 이동한다.
 
-![휴일등록 화면](images/restderegist.png)
+![휴일등록 화면](./images/restderegist.png)
 
 ### 휴일 수정
 
@@ -338,7 +338,7 @@ for(int i=0; i<42;i++) {
 
 수정이 성공하면 휴일 목록 화면으로 이동한다.
 
-![휴일수정 화면](images/restdemodify.png)
+![휴일수정 화면](./images/restdemodify.png)
 
 ### 휴일 상세 조회
 
@@ -352,4 +352,4 @@ for(int i=0; i<42;i++) {
 
 상세조회 화면에서는 삭제, 수정, 목록 버튼을 제공한다.
 
-![휴일상세조회 화면](images/restdedetail.png)
+![휴일상세조회 화면](./images/restdedetail.png)
