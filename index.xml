@@ -18818,7 +18818,34 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>%@page import=&amp;#34;egovframework.com.utl.pao.service.EgovPrntngOutpt&amp;#34; %&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">img&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/utl/pao/EgovErncsl.do?sOrgCode=&amp;lt;%=sOrgCode%&amp;gt;&amp;amp;sErncslSe=&amp;lt;%=sErncslSe%&amp;gt;&amp;#34;&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>관인정보에 확인에 필요한 sOrgCode : 기관코드, sErncslSe : 관인구분으로 해당관인을 직접 출력한다.&lt;/p></description></item><item><title>전자우편</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/</guid><description/></item><item><title>전체일정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/all-schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/all-schedule/</guid><description/></item><item><title>접속 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/connection-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/connection-statistics/</guid><description/></item><item><title>접속로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/access-log-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/access-log-management/</guid><description/></item><item><title>정보메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/info_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/info_message/</guid><description>&lt;h1 id="요소기술---정보메시지">요소기술 - 정보메시지&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>관인정보에 확인에 필요한 sOrgCode : 기관코드, sErncslSe : 관인구분으로 해당관인을 직접 출력한다.&lt;/p></description></item><item><title>전자우편</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/</guid><description/></item><item><title>전체일정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/all-schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/all-schedule/</guid><description/></item><item><title>접속 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/connection-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/connection-statistics/</guid><description>&lt;h1 id="접속-통계">접속 통계&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>사용자가 접속한 현황에 대한 통계자료를 서비스, 개인별에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
+&lt;ul>
+&lt;li>기능흐름&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>기능명&lt;/th>
+ &lt;th>기능 흐름&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>접속통계 집계&lt;/td>
+ &lt;td>&lt;em>&lt;strong>&lt;strong>시스템접속정보 요약 배치수행&lt;/strong>&lt;/strong>&lt;/em> → &lt;em>&lt;strong>&lt;strong>시스템접속요약정보 집계&lt;/strong>&lt;/strong>&lt;/em>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>접속통계 검색&lt;/td>
+ &lt;td>검색조건 입력 → 조건별 접속 통계 검색&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>시스템 접속 통계 수치를 특정 검색 조건에 따라 정보를 조회하는 기능이다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>접속통계 패키지는 요소기술의 공통(cmm) 패키지와 리포팅 공통(sts.com) 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>접속로그관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/access-log-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/access-log-management/</guid><description/></item><item><title>정보메시지</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/info_message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/message-process/info_message/</guid><description>&lt;h1 id="요소기술---정보메시지">요소기술 - 정보메시지&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>정보에 해당되는 메시지 정보를 확인할 수 있는 공통기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
