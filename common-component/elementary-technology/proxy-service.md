@@ -59,7 +59,7 @@ menu:
 
 ### 클래스 다이어그램
 
-![클래스 다이어그램](images/proxy-service-class-diagram.png)
+![클래스 다이어그램](./images/proxy-service-class-diagram.png)
 
 ### 관련테이블
 
@@ -128,7 +128,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 
 프록시설정 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 프록시명에 대해서 수행된다.
 
-![프록시설정 목록조회](images/proxy-service-list.png)
+![프록시설정 목록조회](./images/proxy-service-list.png)
 
 - **조회**: 기 등록된 프록시설정 목록을 조회한다.
 - **등록**: 프록시설정정보를 등록하기 위해서는 **등록 버튼**을 선택하여 **프록시설정 등록** 화면으로 이동한다.
@@ -143,7 +143,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 
 프록시설정 속성정보를 입력한 뒤 등록한다.
 
-![프록시설정 등록](images/proxy-service-insert.png)
+![프록시설정 등록](./images/proxy-service-insert.png)
 
 - **저장**: 신규 프록시설정정보를 등록하기 위해서는 프록시설정정보 속성을 입력한 뒤 하단의 **저장 버튼**을 통해서 프록시설정정보를 등록한다. **프록시ID**는 등록시 자동으로 부여된다.
 - **목록**: 프록시설정 목록조회 화면으로 이동한다.
@@ -158,7 +158,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 프록시설정 속성정보를 변경한 후 저장한다.
 **서비스상태**정보는 **정상**일 경우 프록시서비스가 클라이언트 접속에 대한 모니터링 로그기록 동작을 수행하고, **중지**일 경우 그 동작을 멈춘다.
 
-![프록시설정 수정](images/proxy-service-update.png)
+![프록시설정 수정](./images/proxy-service-update.png)
 
 - **저장**: 프록시설정정보를 수정하기 위해서는 프록시설정정보 속성을 변경한 뒤 하단의 **저장 버튼**을 통해서 프록시설정정보를 수정한다.
 - **삭제**: 기 등록된 프록시설정정보를 삭제하기 위해서는 하단의 **삭제 버튼**을 통해서 프록시설정정보를 삭제한다.
@@ -172,7 +172,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 
 프록시설정 목록에서 선택한 프록시설정 상세정보를 보여준다.
 
-![프록시설정 상세조회](images/proxy-service-detail.png)
+![프록시설정 상세조회](./images/proxy-service-detail.png)
 
 - **수정**: 프록시설정정보를 수정하기 위해서는 하단의 **수정 버튼**을 선택한 뒤 프록시설정 수정 화면으로 이동한다.
 - **삭제**: 기 등록된 프록시설정정보를 삭제하기 위해서는 하단의 **삭제 버튼**을 통해서 프록시설정정보를 삭제한다.
@@ -187,6 +187,6 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 
 클라이언트는 프록시서비스의 ip, port 접속하면 해당 로그가 생성되고, 그 로그를 조회할 수 있다.
 
-![프록시로그 조회](images/proxy-service-log-list.png)
+![프록시로그 조회](./images/proxy-service-log-list.png)
 
 - **조회**: 기 등록된 프록시로그 목록을 조회한다.
