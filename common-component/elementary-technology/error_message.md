@@ -79,6 +79,6 @@ message = EgovMessageUtil.getErrorMsg("param.message", new String[2] {"오류", 
 
 ## 참고자료
 
-- 경고메시지 참조: [경고메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/)
-- 정보메시지 참조: [정보메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/info_message/)
-- 확인메시지 참조: [확인메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/confirm_message/)
+- 경고메시지 참조: [경고메시지](./warning_message.md)
+- 정보메시지 참조: [정보메시지](./info_message.md)
+- 확인메시지 참조: [확인메시지](./confirm_message.md)

@@ -208,5 +208,5 @@ public String oauthLoginCallback(@PathVariable String oauthService, Model model,
 
 ## 참고자료
 
- [Spring Social](https://projects.spring.io/spring-social/)
+ [Spring Social](https://docs.spring.io/spring-social/docs/current/reference/htmlsingle/)
 

@@ -79,6 +79,6 @@ message = EgovMessageUtil.getConfirmMsg("param.message", new String[2] {"확인"
 
 ## 참고자료
 
-- 경고메시지 참조: [경고메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/warning_message/)
-- 에러메시지 참조: [에러메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/error_message/)
-- 정보메시지 참조: [정보메시지](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/info_message/)
+- 경고메시지 참조: [경고메시지](./warning_message.md)
+- 에러메시지 참조: [에러메시지](./error_message.md)
+- 정보메시지 참조: [정보메시지](./info_message.md)
