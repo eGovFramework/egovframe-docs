@@ -80,4 +80,4 @@ EgovSessionCookieUtil.removeSessionAttribute(request, "USER_NAME");
 ```
 
 ## 참고자료
-- 쿠키처리 참조: [쿠키처리](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/handling_cookie/)
+- 쿠키처리 참조: [쿠키처리](./handling_cookie.md)

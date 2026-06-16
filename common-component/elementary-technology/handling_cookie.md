@@ -81,4 +81,4 @@ String safeGetParameter(HttpServletRequest request, String name) {
 ```
 
 ## 참고자료
-- 세션처리 참조: [세션처리](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/handling_session/)
+- 세션처리 참조: [세션처리](./handling_session.md)
