@@ -22,3 +22,5 @@ menu:
 * 제공기능
   * [SVN Repositories View](./server-connection-management-svn.md)
   * [Nexus](./server-connection-management-nexus.md)
+
+> Git 기반 저장소는 표준프레임워크 전용 `SVN Repositories View`가 아니라 Eclipse EGit, Git CLI 또는 GitLab/Gitea/GitHub Enterprise 웹 UI를 통해 연동한다. 운영 절차는 [Git 기반 소스관리도구 운영](../configuration-management-tool/git-based-scm.md)을 참고한다.
