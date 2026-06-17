@@ -5922,14 +5922,10 @@ Spring에서는 Spring Modules 프로젝트에서 연계 모듈을 제공한다.
  
  
  
- 
- 
- 
- 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/batch-execution-job_launcherbatch-execution-job-repository.md" class="innerLink">jobRepository&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/batch-execution-job_repository/" class="innerLink">jobRepository&lt;/a>
 
 의 설정이 필수이다.&lt;/p></description></item><item><title>JobOperator</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job_operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job_operator/</guid><description>&lt;h1 id="joboperator">JobOperator&lt;/h1>
 &lt;p>본 문서는 
