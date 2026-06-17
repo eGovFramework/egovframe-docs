@@ -1,0 +1,231 @@
+=== egovframework:화면인쇄 ===
+목차
+
+
+요소기술 - 화면인쇄
+
+개요
+설명
+환경설정
+사용방법
+참고자료
+
+
+
+
+요소기술 - 화면인쇄
+
+
+개요
+
+
+화면인쇄 서비스는 화면을 인쇄 할수 있는 기능과 인쇄 설정할수있는 기능을 제공한다.
+
+
+설명
+
+
+화면인쇄 서비스는 인쇄미리보기, 인쇄바로하기, 페이지설정 기능으로 구분한다.
+
+
+관련소스
+
+
+
+유형대상소스설명비고
+
+
+Controlleregovframework.com.utl.fcc.web.EgovComUtlTestController.java테스트용 controller 
+
+
+JSP/WEB-INF/jsp/egovframework/cmm/utl/EgovPrint.jsp화면인쇄  테스트 페이지 
+
+
+
+관련테이블
+
+
+ N/A 
+
+
+환경설정
+
+
+해당없음
+
+
+사용방법
+
+
+익스플로러의경우 인터넷옵션→보완→사용자정의수준→ActiveX관련 항목을 사용을 선택한다.
+
+<SCRIPT Language="Javascript">
+<!--
+var NS = 1;
+if( document.all) NS = 0;
+function PrintOption(type1,type2){
+//네스케이프일 경우
+        if (NS) {
+                window.print();
+//익스플로러일 경우
+        } else {
+                var active = '<OBJECT ID="active1" WIDTH=0 HEIGHT=0 CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>';
+                document.body.insertAdjacentHTML('beforeEnd', active);
+                active1.ExecWB(type1,type2); 
+                active1.outerHTML ="";
+        }
+}
+//-->
+</SCRIPT>
+<input type=button value="인쇄 미리 보기" onclick="PrintOption(7,1)">  
+<input type=button value="인쇄 바로 하기" onclick="PrintOption(6,-1)">
+<input type=button value="페이지 설정" onclick="PrintOption(8,1)">
+
+참고자료
+
+
+
+ N/A
+=== egovframework:전자관인출력 ===
+목차
+
+
+요소기술 - 전자관인 출력
+
+개요
+설명
+사용방법
+
+
+
+
+요소기술 - 전자관인 출력
+
+
+개요
+
+
+기관코드, 관인구분을 받아 해당 관인이미지를 출력하는 기능을 제공한다.
+
+
+설명
+
+
+입력된 URL의 해당 관인이미지를 출력한다.
+
+
+관련소스
+
+
+
+유형대상소스설명비고
+
+
+Controlleregovframework.com.utl.pao.web.EgovErncslController.java전자관인 출력 controller 
+
+
+VOegovframework.com.utl.pao.service.PrntngOutptVO.java전자관인 VO 
+
+
+Controlleregovframework.com.utl.pao.web.EgovPrntngOutptController.java테스트용 controller 
+
+
+Serviceegovframework.com.utl.pao.service.EgovPrntngOutpt.java테스트용 인터페이스 
+
+
+ServiceImplegovframework.com.utl.pao.service.impl.EgovPrntngOutptImpl.java테스트용 구현 
+
+
+DAOegovframework.com.utl.pao.service.impl.PrntngOutptDAO.java테스트용 데이터 처리 
+
+
+JSP/WEB-INF/jsp/egovframework/cmm/utl/EgovErncslOutpt.jsp테스트 페이지 
+
+
+
+사용방법
+
+<%@page import="egovframework.com.utl.pao.service.EgovPrntngOutpt"  %>
+ 
+<img src="/utl/pao/EgovErncsl.do?sOrgCode=<%=sOrgCode%>&sErncslSe=<%=sErncslSe%>">
+
+관인정보에 확인에 필요한 sOrgCode : 기관코드, sErncslSe : 관인구분으로 해당관인을 직접 출력한다.
+=== egovframework:프린터상태확인 ===
+목차
+
+
+요소기술 - 프린터상태확인
+
+개요
+설명
+환경설정
+사용방법
+참고자료
+
+
+
+
+요소기술 - 프린터상태확인
+
+
+개요
+
+
+인터넷 웹 브라우저에서 인쇄/출력 시 프린터 상태 확인 팝업 창을 자동으로 보여주는 기능을 제공한다.
+
+
+설명
+
+
+사용자가 프린터상태확인 클릭시 프린터상태확인 창이 열려, 프린터 상태를 볼수 있으며, 프린터 설정도 가능하다.
+
+
+관련소스
+
+
+
+유형대상소스설명비고
+
+
+Controlleregovframework.com.utl.fcc.web.EgovComUtlTestController.java테스트용 controller 
+
+
+JSP/WEB-INF/jsp/egovframework/cmm/utl/EgovPrintStatus.jsp프린터상태확인 테스트 페이지 
+
+
+
+관련테이블
+
+
+ N/A 
+
+
+환경설정
+
+
+해당없음
+
+
+사용방법
+
+
+1. 프린터상태확인
+
+
+ 
+ 
+프린터상태확인 버튼: 프린터상태확인 팝업 창이 열린다. 
+<input type=button value="프린터상태확인" onclick="window.print();">
+
+
+2. 프린터상태확인 팝업
+
+
+
+
+
+참고자료
+
+
+
+ N/A

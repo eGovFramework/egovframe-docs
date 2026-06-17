@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"$(git rev-parse --show-toplevel)\\\"/common-component/elementary-technology\\necho \\\"######## #571: external-components.md 참고자료/링크 섹션 ########\\\"\\ngrep -nE '\\\\]\\\\(' external-components.md...",
+  "error": "Exit code 1\n######## #571: external-components.md 참고자료/링크 섹션 ########\n89:- [소셜 로그인 (네이버/구글/카카오)](../social_login_naver_google_kakao/)\n90:- [LDAP](../ldap/)\n\n######## 대상 파일 존재 여부 ########\n- validation-check.md 존재?:\nls: validation-check.md: No such file or directory\n- formatter-util.md 존재?:\nformatter-util.md\n- _index.md 존재?:\n_index.md\n- formatter-util 디렉터리?:\nls: formatter-util: No such file or directory",
+  "timestamp": "2026-06-15T12:33:51.782Z",
+  "retry_count": 1
+}
