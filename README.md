@@ -9,16 +9,54 @@
 
 - https://egovframework.github.io/egovframe-docs/
 
-## 프론트매터(Frontmatter) 작성 방법
+## 🚨 주의사항
+
+1. 모든 문서의 MD파일과 Frontmatter는 이미 작성되어 있으므로, **Frontmatter 수정은 피해주시기 바랍니다.**
+    - 신규 파일을 추가하는 경우, Frontmatter 없이 MD파일을 원하시는 경로에 넣은 후 PR 템플릿의 '추가 참고 사항'에 해당 문서의 메뉴 위치를 작성해 주시기 바랍니다.
+2. PR 직후 자동 검증이 실행되고 통과 시 Merge 및 빌드되므로, PR 후 GitHub Actions가 완료되면 **반드시 [가이드 문서 보기](https://egovframework.github.io/egovframe-docs/) 링크로 들어가서 자신의 기여 내용이 잘 반영되었는지 확인**해주시기 바랍니다.
+3. 2026년 컨트리뷰션의 **주된 대상은 공통컴포넌트**이며, 이와 더불어 개발환경과 실행환경에 대한 기여도 가능합니다. 새로운 대메뉴를 추가하는 PR은 받지 않습니다.
+
+### 1. 프론트매터(Frontmatter) 주의사항
+
+> 모든 문서의 MD파일과 Frontmatter는 이미 작성되어 있으므로, **Frontmatter 수정은 피해주시기 바랍니다.**
+>  - 신규 파일을 추가하는 경우, Frontmatter 없이 MD파일을 원하시는 경로에 넣은 후 PR 템플릿의 '추가 참고 사항'에 해당 문서의 메뉴 위치를 작성해 주시기 바랍니다.
 
 [프론트매터 작성 방법](./docs/how-to-write-Frontmatter.md)을 참고해 주시기 바랍니다.
 
-### 🚨 주의사항
+센터에서는 기여자 분들의 편의를 위해 2026년 egovframe-docs 주요 기여 대상인 **"공통컴포넌트(common-component)" 메뉴에 대해서 생성 가능한 모든 문서들에 대해 Frontmatter만 완성되어 있고 내용은 비어 있는 문서들을 미리 생성해 두었습니다.** 즉, 공통컴포넌트 메뉴에 대해 skeleton-structure를 미리 구성해 두었습니다. 따라서 대부분의 경우 기여자 분들께서는 Frontmatter에 대한 고민 없이 MD 문서의 내용만 채우거나 수정하시면 됩니다.
 
-- 모든 문서의 Frontmatter는 이미 작성되어 있으므로, **Frontmatter 수정은 특이사항이 없다면 지양해주시기 바랍니다.**
-- 개발환경, 실행환경, 공통컴포넌트 이외의 **대메뉴 추가는 기여받지 않습니다**(PR 시 Revert).
-- **PR 후 반드시 [가이드 문서 보기](https://egovframework.github.io/egovframe-docs/)로 들어가서 기여 내용을 확인 부탁드립니다.**
-  - 문제가 있을 경우 PR에 Comment를 남겨주시기 바랍니다.
+신규 파일을 추가하는 경우, Frontmatter 없이 MD파일을 원하시는 경로에 넣은 후 PR 템플릿의 '추가 참고 사항'에 해당 문서의 메뉴 위치를 작성해 주시기 바랍니다. 센터에서 그 MD파일의 Frontmatter를 직접 작성해 드리겠습니다.
+
+정상적인 화면 예시
+![정상적인 Frontmatter 구성 시 화면](./images/view-right-frontmatter.png)
+
+Frontmatter 수정 오류 발생 시 화면 예시
+![비정상적인 Frontmatter 구성 시 화면](./images/view-error-frontmatter.png)
+
+### 2. 자동 Merge 및 빌드
+
+> PR 후 GitHub Actions가 완료되면 **반드시 [가이드 문서 보기](https://egovframework.github.io/egovframe-docs/) 링크로 들어가서 자신의 기여 내용이 잘 반영되었는지 확인**해주시기 바랍니다.
+
+PR 직후 GitHub Actions를 통해 자동 검증이 실행됩니다. 검증 내용은 다음과 같습니다.
+- main과 충돌 여부
+- `.github/` 디렉터리 변경 여부
+- 허용된 확장자 이외의 파일 변경 여부
+- 기존에 존재하는 문서에 대한 Frontmatter 변경 여부 등
+
+위 검증을 통과하면 GitHub Actions를 통해 Merge 및 빌드됩니다.
+
+### 3. 주된 기여 대상: 공통컴포넌트
+
+> 2026년 컨트리뷰션의 주된 대상은 공통컴포넌트이며, 이와 더불어 개발환경과 실행환경에 대한 기여도 가능합니다. 새로운 대메뉴를 추가하는 PR은 받지 않습니다.
+
+표준프레임워크 MD 가이드에는 현재 3개의 대메뉴가 있습니다. 각각 개발환경, 실행환경, 공통컴포넌트입니다.
+
+이번 egovframe-docs 2026년 컨트리뷰션 **주 대상은 공통컴포넌트**입니다. 공통컴포넌트에 대한 문서들을 우선적으로 기여해주시기 바랍니다.
+이와 더불어 여전히 개발환경과 실행환경에 대한 문서도 기여받고 있습니다.
+
+현재 egovframe-docs Repository의 다른 두 대메뉴(개발환경, 실행환경)는 [포털 공식 가이드](https://www.egovframe.go.kr/docs/5.0/)와 동일한 내용으로 구성되어 있습니다.
+
+개발환경, 실행환경, 공통컴포넌트 외에 새로운 대메뉴 추가에 대한 PR은 받지 않습니다. **새로운 대메뉴 추가에 대한 논의는 Issues에 남겨주시기 바랍니다.**
 
 ## PR 방법
 
