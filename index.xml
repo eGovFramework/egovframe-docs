@@ -347,8 +347,14 @@
 
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="프론트매터frontmatter-작성-방법">프론트매터(Frontmatter) 작성 방법&lt;/h2>
-&lt;p>
+&lt;h2 id="-주의사항">🚨 주의사항&lt;/h2>
+&lt;ol>
+&lt;li>모든 문서의 MD파일과 Frontmatter는 이미 작성되어 있으므로, &lt;strong>Frontmatter 수정은 피해주시기 바랍니다.&lt;/strong>
+&lt;ul>
+&lt;li>신규 파일을 추가하는 경우, Frontmatter 없이 MD파일을 원하시는 경로에 넣은 후 PR 템플릿의 &amp;lsquo;추가 참고 사항&amp;rsquo;에 해당 문서의 메뉴 위치를 작성해 주시기 바랍니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PR 직후 자동 검증이 실행되고 통과 시 Merge 및 빌드되므로, PR 후 GitHub Actions가 완료되면 &lt;strong>반드시 
 
 
 
@@ -361,19 +367,16 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
+&lt;a href="https://egovframework.github.io/egovframe-docs/" target="_blank" rel="noopener noreferrer" class="externalLink">가이드 문서 보기&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/docs/how-to-write-frontmatter/" class="innerLink">프론트매터 작성 방법&lt;/a>
-
-을 참고해 주시기 바랍니다.&lt;/p></description></item><item><title>Authorization</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</guid><description>&lt;h1 id="authorization">Authorization&lt;/h1>
+ 링크로 들어가서 자신의 기여 내용이 잘 반영되었는지 확인&lt;/strong>해주시기 바랍니다.&lt;/li>
+&lt;li>2026년 컨트리뷰션의 &lt;strong>주된 대상은 공통컴포넌트&lt;/strong>이며, 이와 더불어 개발환경과 실행환경에 대한 기여도 가능합니다. 새로운 대메뉴를 추가하는 PR은 받지 않습니다.&lt;/li>
+&lt;/ol>
+&lt;h3 id="1-프론트매터frontmatter-주의사항">1. 프론트매터(Frontmatter) 주의사항&lt;/h3>
+&lt;blockquote>
+&lt;p>모든 문서의 MD파일과 Frontmatter는 이미 작성되어 있으므로, &lt;strong>Frontmatter 수정은 피해주시기 바랍니다.&lt;/strong>&lt;/p></description></item><item><title>Authorization</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-authorization/</guid><description>&lt;h1 id="authorization">Authorization&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>웹 사이트에 존재하는 모든 사용자들은 사이트 정책에 따라 그 부류 별로 컨텐츠에 대한 접근이 제한 되는데 이것을 권한 부여(authorization)라 한다.
 즉, 권한은 특정 사용자가 웹 사이트에서 제공하는 컨텐츠(정보 또는 기능)에 접근 가능한지를 판단하는 과정을 의미한다.&lt;/p>
