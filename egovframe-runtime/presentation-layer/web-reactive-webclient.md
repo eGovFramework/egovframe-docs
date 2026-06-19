@@ -89,7 +89,7 @@ public ReactorResourceFactory reactorResourceFactory() {
 return new ReactorResourceFactory();
 }
 ```
-원한다면 글로벌 Reactor Netty 리소스를 사용하지 않게 만들수도 있다. 하지만 아래 예제처럼 직접 모든 Reactor Netty 클라이언트와 서버 인스턴스가 공유 자원을 사용하게 만들어야 한다.
+원한다면 글로벌 Reactor Netty 리소스를 사용하지 않게 만들 수도 있다. 하지만 아래 예제처럼 직접 모든 Reactor Netty 클라이언트와 서버 인스턴스가 공유 자원을 사용하게 만들어야 한다.
 ```java
 @Bean
 public ReactorResourceFactory resourceFactory() {

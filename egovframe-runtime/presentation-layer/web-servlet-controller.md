@@ -626,7 +626,7 @@ PropertiesMethodNameResolver는 URL과 메소드의 매핑 관계를 “mappings
 ### UrlFilenameViewController
 UrlFilenameViewController는 Controller에서 처리 로직이 없이 바로 view로 이동하는 경우에 사용하는 Controller이다.
 DispatcherServlet을 거쳐야 하지만, html 위주의 static한 페이지를 보여줄 때 사용한다.
-아래와 같이 URL path가 곧 뷰이름이 되며, prefix와 suffix를 지정할수도 있다.
+아래와 같이 URL path가 곧 뷰이름이 되며, prefix와 suffix를 지정할 수도 있다.
 
 ```
 "/index" -> "index" 

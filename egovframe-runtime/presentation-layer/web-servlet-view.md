@@ -122,7 +122,7 @@ public class HelloController {
 ### View
 
 Spring이 제공하는 View 클래스를 사용할 수도 있지만, UI Tool 등과의 연동등으로 인해 View 클래스를 직접 작성해야 하는 경우도 발생한다.
-인터페이스 View를 직접 구현해서 View 클래스를 만들수도 있지만, AbstractView를 확장하여 구현해보자.
+인터페이스 View를 직접 구현해서 View 클래스를 만들 수도 있지만, AbstractView를 확장하여 구현해보자.
 renderMergedOutputModel 메소드를 구현하면 되는데, 아래와 같은 메소드 시그니쳐를 가지고 있다.
 
 ```java
