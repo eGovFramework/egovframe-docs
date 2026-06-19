@@ -33,7 +33,7 @@ private Department addDepartment() throws Exception {
 위의 예를 보면 EntityManager의 persist() 메소드에 department라는 Entity를 입력인자로 전달하여 처리하였다.
 
 ## 수정
-수정을 하고자 할때는 두가지 방법으로 가능한데 우선 EntityManager의 merge()메소드를 호출하여 DB에 단건의 데이터를 수정할 수 있고, 특정 객체가 Persistent 상태이고, 동일한 트랜잭션 내에서 해당 객체의 속성 값에 변경이 발생한 경우 merge() 메소드를 직접적으로 호출하지 않아도 트랜잭션 종료 시점에 변경 여부가 체크되어 변경 사항이 DB에 반영된다.
+수정을 하고자 할 때는 두가지 방법으로 가능한데 우선 EntityManager의 merge()메소드를 호출하여 DB에 단건의 데이터를 수정할 수 있고, 특정 객체가 Persistent 상태이고, 동일한 트랜잭션 내에서 해당 객체의 속성 값에 변경이 발생한 경우 merge() 메소드를 직접적으로 호출하지 않아도 트랜잭션 종료 시점에 변경 여부가 체크되어 변경 사항이 DB에 반영된다.
 
 ### merge 호출 Sample Source
 ```java
@@ -94,7 +94,7 @@ public void testDeleteDepartment() throws Exception {
  
 }
 ```
-위의 예를 보면 EntityManager의 remove() 메소드에 department라는 Entity를 입력인자로 전달하여 처리하였다. 그러나 주의할 점은 위의 예에서는 department 객체는 DB에 등록처리한 객체와 동일 객체이기에 그대로 remove를 쓸 수 있지만 키만 동일하게 신규로 객체를 만든경우에는 remove를 바로 쓸수 없다. 그럴 경우에는 아래와 같은 방법으로 처리해야 한다.
+위의 예를 보면 EntityManager의 remove() 메소드에 department라는 Entity를 입력인자로 전달하여 처리하였다. 그러나 주의할 점은 위의 예에서는 department 객체는 DB에 등록처리한 객체와 동일 객체이기에 그대로 remove를 쓸 수 있지만 키만 동일하게 신규로 객체를 만든경우에는 remove를 바로 쓸 수 없다. 그럴 경우에는 아래와 같은 방법으로 처리해야 한다.
 
 ### Sample Source
 ```java

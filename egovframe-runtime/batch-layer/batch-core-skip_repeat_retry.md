@@ -178,7 +178,7 @@ public interface RetryCallback<T> {
 }
 ```
 
- 콜백이 실행되고 예외가 발생해서 실패하는 경우, 성공할때까지 재시도 하게 된다. 또는 구현 여부에 따라 취소 여부를 결정한다.  
+ 콜백이 실행되고 예외가 발생해서 실패하는 경우, 성공할 때까지 재시도 하게 된다. 또는 구현 여부에 따라 취소 여부를 결정한다.  
 가장 간단한 일반적으로 목적의 RetryOperations의 구현은 RetryTemplate이다.
 
 ```java
@@ -222,7 +222,7 @@ Foo foo = template.execute(new RetryCallback<Foo>() {
 
 ##### Stateless Retry
 
- 단순한 Retry 방법은 RetryTemplate이 성공이나 실패를 할때까지 계속 시도하는 루프이다. RetryContext는 재시도 할건지 취소할 건지를 결정하는데 사용하는 상태를 포함하지만, 이 상태는 스택에 저장되고, 어디서나 접근하도록 글로벌하게 저장할 필요는 없다. 그러므로 우리는 이 방법을 무상태 재시도(Stateless Retry)라고 부른다. 무상태 재시도와 상태 유지 재시도 사이의 차이는RetryPolicy의 구현여부이다. (RetryTemplate은 둘 다 제어할 수 있다.) 무상태 재시도에서 Retry가 실패될 때, 콜백은 항상 동일한 쓰레드에서 수행된다.
+ 단순한 Retry 방법은 RetryTemplate이 성공이나 실패를 할 때까지 계속 시도하는 루프이다. RetryContext는 재시도 할건지 취소할 건지를 결정하는데 사용하는 상태를 포함하지만, 이 상태는 스택에 저장되고, 어디서나 접근하도록 글로벌하게 저장할 필요는 없다. 그러므로 우리는 이 방법을 무상태 재시도(Stateless Retry)라고 부른다. 무상태 재시도와 상태 유지 재시도 사이의 차이는RetryPolicy의 구현여부이다. (RetryTemplate은 둘 다 제어할 수 있다.) 무상태 재시도에서 Retry가 실패될 때, 콜백은 항상 동일한 쓰레드에서 수행된다.
 
 ##### Stateful Retry
 
@@ -392,7 +392,7 @@ public interface ExceptionHandler {
 }
 ```
 
- 일반적인 사용방법은 주어진 타입의 예외발생 횟수를 세고, 한도에 도달했을때 실패한다. 이러한 목적에 맞게 스프링 배치는 SimpleLimitExceptionHandler와 조금 더 유연한 RethrowOnThresholdExceptionHandler를 제공한다. SimpleLimitExceptionHandler는 limit 프로퍼티와 현재 예외를 비교하는 예외 타입을 가지고 있다. 이 때 제공된 타입의 모든 하위 클래스들도 처리에 포함시킨다. 주어진 타입의 예외는 한계에 도달할 때까지는 무시되었다가 다시 던져지게 된다. 이러한 다른 예외 타입들도 항상 다시 던진다.  
+ 일반적인 사용방법은 주어진 타입의 예외발생 횟수를 세고, 한도에 도달했을 때 실패한다. 이러한 목적에 맞게 스프링 배치는 SimpleLimitExceptionHandler와 조금 더 유연한 RethrowOnThresholdExceptionHandler를 제공한다. SimpleLimitExceptionHandler는 limit 프로퍼티와 현재 예외를 비교하는 예외 타입을 가지고 있다. 이 때 제공된 타입의 모든 하위 클래스들도 처리에 포함시킨다. 주어진 타입의 예외는 한계에 도달할 때까지는 무시되었다가 다시 던져지게 된다. 이러한 다른 예외 타입들도 항상 다시 던진다.  
 SimpleLimitExceptionHandler의 선택 가능한 중요한 프로퍼티는 useParent boolean 표시다. 기본값은 false기 때문에, 한계는 현재 RepeatContext에서만 설명된다. true로 설정되었을 때 한계는 내제된 반복(nested iteration)에서 형제context에 걸쳐 유지된다.
 
 #### 리스너(Listeners)

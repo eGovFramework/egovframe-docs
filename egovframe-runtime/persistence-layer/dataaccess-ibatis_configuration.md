@@ -154,7 +154,7 @@ menu:
 ```
 
 - 위 statement 요소 위치에는 sql 문 유형에 따라 insert, update, delete, select, procedure 가 올 수 있다. 위에서 대괄호\[\] 내에 있는 속성은 선택 사항이다.
-- parameterClass 나 resultClass 속성으로 In/Out 에 대한 객체를 직접 지정할 수 있다. 이는 일반적으로 표준 JavaBeans 객체 또는 Map (result 인 경우에는 Map 구현체 명시할 것) 이 될수 있으며, 단일 변수인 경우에는 primitive 래퍼 클래스로 지정할 수도 있다.
+- parameterClass 나 resultClass 속성으로 In/Out 에 대한 객체를 직접 지정할 수 있다. 이는 일반적으로 표준 JavaBeans 객체 또는 Map (result 인 경우에는 Map 구현체 명시할 것) 이 될 수 있으며, 단일 변수인 경우에는 primitive 래퍼 클래스로 지정할 수도 있다.
 - prepared statement 에 대한 바인드 변수 맵핑을 위한 맵핑 정의를 별도의 parameterMap 태그로 따로 지정한 경우 위의 parameterMap 속성으로 해당 id 를 지정한다. parameterMap 을 지정한 경우 sql 문의 바인드 변수 영역은 ? 로 작성하며 parameterMap 매핑 설정의 순서와 갯수가 맞아야 함에 유의한다.
 - parameterMap 을 쓰지 않고 Inline Parameter 로 쓰는 것을 더 선호하며 #속성명# 과 같은 형태로 간략히 기술할 수 있다.
 - resultSet 에 대한 결과 객체 매핑을 위해 별도의 resultMap 태그로 따로 지정한 경우 위의 resultMap 속성으로 해당 id 를 지정한다. resultMap 의 사용은 성능상, 상세 옵션의 적용 기능성 측면에서 추천하는 바이다.

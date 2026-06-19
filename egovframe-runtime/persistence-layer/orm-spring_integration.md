@@ -76,7 +76,7 @@ menu:
    <tx:annotation-driven />
 ```
 
- 위의 예를 살펴보면 1.Transation Manager 설정, 2.Entity Manager Factory 설정, 3.DataSource 설정, 4.JPA Annotation 사용 설정, 5.Annotation 사용 설정, 6.Annotation 기반의 Transaction 활성화 설정 으로 구분되어 설정되어 있고 1~4까지가 JPA를 위한 설정이다. 각자 쓰고자 할때 변경이 필요한 부분은 2,3,5 내역으로 2번 항목은 persistence.xml 파일 위치와 persistenceUnitName 설정, 3번 항목은 DBMS연결을 위한 DataSource 설정, 5번 항목은 package 설정이다.
+ 위의 예를 살펴보면 1.Transation Manager 설정, 2.Entity Manager Factory 설정, 3.DataSource 설정, 4.JPA Annotation 사용 설정, 5.Annotation 사용 설정, 6.Annotation 기반의 Transaction 활성화 설정 으로 구분되어 설정되어 있고 1~4까지가 JPA를 위한 설정이다. 각자 쓰고자 할 때 변경이 필요한 부분은 2,3,5 내역으로 2번 항목은 persistence.xml 파일 위치와 persistenceUnitName 설정, 3번 항목은 DBMS연결을 위한 DataSource 설정, 5번 항목은 package 설정이다.
 
 ## JpaTemplate 이용
 

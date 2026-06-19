@@ -120,7 +120,7 @@ public interface ItemReadListener<T> extends StepListener {
 ```
 
  beforeRead 메소드는 ItemReader에서 read 수행 전에 호출된다.  
-afterRead 메소드는 read 수행이 성공했을때 호출되고, 읽은 item을 전달한다.  
+afterRead 메소드는 read 수행이 성공했을 때 호출되고, 읽은 item을 전달한다.  
 Read 수행중 오류가 발생하는 경우 onReadError 메서드가 호출된다. 기록을 위해 발생한 예외정보가 전달된다.
 
  ✔ ItemReadListener인터페이스에 해당하는 Annotations
@@ -168,7 +168,7 @@ public interface ItemWriteListener<S> extends StepListener {
 ```
 
  beforeWrite 메소드는 ItemWriter에서 write 수행 전에 호출되고 쓰여진 item을 전달한다.  
-afterWrite 메소드는 write 수행이 성공했을때 호출되고, 읽은 아이템을 전달한다.  
+afterWrite 메소드는 write 수행이 성공했을 때 호출되고, 읽은 아이템을 전달한다.  
 write 수행중 오류가 발생하는 경우 onWriteError 메소드가 호출된다. 기록을 위해 발생한 예외정보와 item들이 리스트형식으로 전달된다.
 
  ✔ ItemWriteListener 인터페이스에 해당하는 Annotations

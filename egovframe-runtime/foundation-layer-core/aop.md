@@ -60,7 +60,7 @@ menu:
 
 - Before advice: joinpoint 전에 수행되는 advice
 - After returning advice: joinpoint가 성공적으로 리턴된 후에 동작하는 advice
-- After throwing advice: 예외가 발생하여 joinpoint가 빠져나갈때 수행되는 advice
+- After throwing advice: 예외가 발생하여 joinpoint가 빠져나갈 때 수행되는 advice
 - After (finally) advice: join point를 빠져나가는(정상적이거나 예외적인 반환) 방법에 상관없이 수행되는 advice
 - Around advice: joinpoint 전, 후에 수행되는 advice
 

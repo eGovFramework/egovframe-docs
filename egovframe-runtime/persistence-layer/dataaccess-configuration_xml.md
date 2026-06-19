@@ -66,7 +66,7 @@ menu:
 | --- | --- | --- | --- |
 | cacheEnabled | 설정에서 각 mapper 에 설정된 캐시를 전역적으로 사용할지 말지에 대한 여부 | true / false | TRUE |
 | lazyLoadingEnabled | 늦은 로딩을 사용할지에 대한 여부. 사용하지 않는다면 모두 즉시 로딩할 것이다. | true / false | TRUE |
-| aggressiveLazyLoading | 활성화 상태로 두게 되면 늦은(lazy) 로딩 프로퍼티를 가진 객체는 호출에 따라 로드될 것이다. 반면에 개별 프로퍼티는 요청할때 로드된다. | true / false | TRUE |
+| aggressiveLazyLoading | 활성화 상태로 두게 되면 늦은(lazy) 로딩 프로퍼티를 가진 객체는 호출에 따라 로드될 것이다. 반면에 개별 프로퍼티는 요청할 때 로드된다. | true / false | TRUE |
 | multipleResultSetsEnabled | 한개의 구문에서 여러개의 ResultSet 을 허용할지의 여부(드라이버가 해당 기능을 지원해야 함) | true / false | TRUE |
 | useColumnLabel | 칼럼명 대신에 칼럼라벨을 사용. 드라이버마다 조금 다르게 작동한다. 문서와 간단한 테스트를 통해 실제 기대하는 것처럼 작동하는지 확인해야 한다. | true / false | TRUE |
 | useGeneratedKeys | 생성키에 대한 JDBC 지원을 허용. 지원하는 드라이버가 필요하다. true 로 설정하면 생성키를 강제로 생성한다. 일부 드라이버(예를들면, Derby)에서는 이 설정을 무시한다. | true / false | FALSE |
@@ -86,7 +86,7 @@ menu:
 
 - typeAliases : 타입 별칭을 통해 자바 타입에 대한 좀더 짧은 이름을 사용할 수 있다. 오직 XML 설정에서만 사용되며, 타이핑을 줄이기 위해 사용된다.
 
-- typeHandler : MyBatis 가 PreparedStatement 에 파라미터를 셋팅하고 ResultSet 에서 값을 가져올때마다, TypeHandler 는 적절한 자바 타입의 값을 가져오기 위해 사용된다. typeHandler 구현체를 등록하여 사용할 수 있다.
+- typeHandler : MyBatis 가 PreparedStatement 에 파라미터를 셋팅하고 ResultSet 에서 값을 가져올 때마다, TypeHandler 는 적절한 자바 타입의 값을 가져오기 위해 사용된다. typeHandler 구현체를 등록하여 사용할 수 있다.
 
 - objectFactory : MyBatis 는 결과 객체의 인스턴스를 만들기 위해 ObjectFactory를 사용한다.
 

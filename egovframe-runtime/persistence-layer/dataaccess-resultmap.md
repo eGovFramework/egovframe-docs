@@ -75,7 +75,7 @@ menu:
 	</resultMap>
 ```
 
- 위에서 resultMap 태그의 extends 속성을 명시하면 외부에 정의한 다른 resultMap 을 상속(관련 property - column 매핑을 현재 resultMap 에 정의하지 않고도)할 수 있으며, groupBy 속성을 사용하여 nested resultMap 에서의 N+1 쿼리 문제를 풀수 있도록 해당 속성을 통해 명시한 property 리스트의 값이 같은 row 들에 대해 하나의 결과 객체로 생성해 주게 된다.
+ 위에서 resultMap 태그의 extends 속성을 명시하면 외부에 정의한 다른 resultMap 을 상속(관련 property - column 매핑을 현재 resultMap 에 정의하지 않고도)할 수 있으며, groupBy 속성을 사용하여 nested resultMap 에서의 N+1 쿼리 문제를 풀 수 있도록 해당 속성을 통해 명시한 property 리스트의 값이 같은 row 들에 대해 하나의 결과 객체로 생성해 주게 된다.
 
 ### Sample TestCase
 

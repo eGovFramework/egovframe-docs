@@ -46,7 +46,7 @@ menu:
 - Spring Security에서 생성한 정보 - SecurityContextHoler를 이용하여 SecurityContext 얻음
 - 응용프로그램이 분산되어 있는 경우 등 다양한 환경에서 사용 가능토록 SecurityContext를 SecurityContextHolder 내부에 생성한 ThreadLocal 객체를 이용하여 저장하고 있음.
 - ThreadLocal 객체는 현재 쓰레드에서 필요한 상태 정보만 담을 수 있음.
-- 웹 환경에서 요청이 있을때 마다 동일한 역할을 하는 SecurityContext를 다시 생성하는 것은 맞지 않음 → httpSessionContextIntegrationFilter 를 사용하여 SecurityContext 정보를 ThreadLocal에 기록하고 가져오는 작업을 수행함. (Session 에 저장)
+- 웹 환경에서 요청이 있을 때마다 동일한 역할을 하는 SecurityContext를 다시 생성하는 것은 맞지 않음 → httpSessionContextIntegrationFilter 를 사용하여 SecurityContext 정보를 ThreadLocal에 기록하고 가져오는 작업을 수행함. (Session 에 저장)
 
 ### Security Configuration
 

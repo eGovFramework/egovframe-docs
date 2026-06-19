@@ -46,7 +46,7 @@ public class Department {
 - boolean supports(Class clazz) : 주어진 객체(clazz)에 대해 Validator가 지원 가능한가?
 - void validate(Object target, Errors errors) : 주어진 객체(target)에 대해서 유효성 체크를 수행하고, 유효성 에러 발생시 주어진 Errors객체에 관련 정보가 저장된다.
 
-구현 Validator 클래스를 만들때는 위 두 메소드를 구현해야 한다.
+구현 Validator 클래스를 만들 때는 위 두 메소드를 구현해야 한다.
 
 Department를 유효성 검증 하기 위한 DepartmentValidator를 만들어 보자.
 Validation 조건은 부서이름(deptname) 프로퍼티는 반드시 값이 존재해야 하며, 부서설명(description) 프로퍼티는 입력값의 길이가 10 이상이어야 한다.

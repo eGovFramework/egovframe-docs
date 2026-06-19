@@ -12,7 +12,7 @@ menu:
 # Annotated Controllers
 
 ## 설명
-스프링 WebFlux는 어노테이션 기반 프로그램밍 모델을 지원하기 때문에 @Controller, @RestController 컴포넌트로 요청을 매핑하고, 입력을 받고, 예외처리를 할수 있다. 컨트롤러는 메소드를 여러가지로 활용할 수 있어서 클래스를 상속하거나 인터페이스를 구현하지 않아도 된다.
+스프링 WebFlux는 어노테이션 기반 프로그램밍 모델을 지원하기 때문에 @Controller, @RestController 컴포넌트로 요청을 매핑하고, 입력을 받고, 예외처리를 할 수 있다. 컨트롤러는 메소드를 여러가지로 활용할 수 있어서 클래스를 상속하거나 인터페이스를 구현하지 않아도 된다.
 ```java
 @RestController
 public class HelloController {

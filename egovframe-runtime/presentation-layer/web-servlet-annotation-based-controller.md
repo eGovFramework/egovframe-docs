@@ -139,7 +139,7 @@ public class HelloController {
 ```
 
 **type + method level**
-둘 다 설정할 수도 있는데, 이 경우엔 type level에 설정한 @RequestMapping의 value(URL)를 method level에서 재정의 할수 없다.
+둘 다 설정할 수도 있는데, 이 경우엔 type level에 설정한 @RequestMapping의 value(URL)를 method level에서 재정의 할 수 없다.
 
 /hello.do 요청시에 GET 방식이면 helloGet 메소드, POST 방식이면 helloPost 메소드가 수행된다.
 
@@ -162,7 +162,7 @@ public class HelloController {
 
 AbstractController 상속받아 구현한 예제 코드 LoginController를 어노테이션 기반의 Controller로 구현해 보겠다.
 
-기존의 LoginController는 URL /loginProcess.do로 오는 요청의 HTTP 메소드가 POST일때 handleRequestInternal 메소드가 실행되는 Controller였는데,
+기존의 LoginController는 URL /loginProcess.do로 오는 요청의 HTTP 메소드가 POST일 때 handleRequestInternal 메소드가 실행되는 Controller였는데,
 
 다음과 같이 구현할 수 있겠다.
 
@@ -246,7 +246,7 @@ public String view(@PathVariable("id") int id) {
 | required | boolean | 해당 파라미터가 반드시 필수 인지 여부. 기본값은 true이다. |
 
 아래 코드와 같은 방법으로 사용되는데,
-해당 파라미터가 Request 객체 안에 없을때 그냥 null값을 바인드 하고 싶다면, pageNo 파라미터 처럼 required=false로 명시해야 한다.
+해당 파라미터가 Request 객체 안에 없을 때 그냥 null값을 바인드 하고 싶다면, pageNo 파라미터 처럼 required=false로 명시해야 한다.
 
 name 파라미터는 required가 true이므로, 만일 name 파라미터가 null이면 org.springframework.web.bind.MissingServletRequestParameterException이 발생한다.
 
@@ -264,7 +264,7 @@ public class HelloController {
 
 위에서 작성한 LoginController의 login 메소드를 보면 파라미터 아이디와 패스워드를 Http Request 객체에서 getParameter 메소드를 이용해 구하는데,
 
-@RequestParam을 사용하면 아래와 같이 변경할수 있다.
+@RequestParam을 사용하면 아래와 같이 변경할 수 있다.
 
 ```java
 package com.easycompany.controller.annotation;
@@ -319,10 +319,10 @@ public class LoginController {
 ```
 
 @ModelAttribute를 메소드에 선언하면 해당 메소드의 리턴 데이터가 ModelMap 객체에 저장된다.
-위 코드를 아래와 같이 변경할수 있는데, 사용자로 부터 GET방식의 /updateDepartment.do 호출이 들어오면,
+위 코드를 아래와 같이 변경할 수 있는데, 사용자로 부터 GET방식의 /updateDepartment.do 호출이 들어오면,
 formBackingObject 메소드가 실행 되기 전에 DefaultAnnotationHandlerMapping이 org.springframework.web.bind.annotation.support.HandlerMethodInvoker을 이용해서
 (@ModelAttribute가 선언된)getEmployeeInfo를 실행하고, 결과를 ModelMap객체에 저장한다.
-결과적으로 getEmployeeInfo 메소드는 ModelMap.addAttribute(“department”, departmentService.getDepartmentInfoById(…)) 작업을 하게 되는것이다.
+결과적으로 getEmployeeInfo 메소드는 ModelMap.addAttribute(“department”, departmentService.getDepartmentInfoById(…)) 작업을 하게 되는 것이다.
 
 ```java
 ...
@@ -344,7 +344,7 @@ formBackingObject 메소드가 실행 되기 전에 DefaultAnnotationHandlerMapp
 
 **2.메소드 파라미터와 Model 속성(attribute)의 바인딩**
 
-@ModelAttribute는 ModelMap 객체의 특정 속성(attribute) 메소드의 파라미터와 바인딩 할때도 사용될수 있다.
+@ModelAttribute는 ModelMap 객체의 특정 속성(attribute) 메소드의 파라미터와 바인딩 할 때도 사용될 수 있다.
 아래와 같이 메소드의 파라미터에 ”**@ModelAttribute(“department”) Department department**” 선언하면 department에는 **(Department)ModelMap.get(“department”)** 값이 바인딩된다.
 따라서, 아래와 같은 코드라면 formBackingObject 메소드 파라미터 department에는 getDepartmentInfo 메소드가 ModelMap 객체에 저장한 Department 데이터가 들어 있다.
 
@@ -536,7 +536,7 @@ public class GlobalControllerAdvice {
 
 ### 유연해진 메소드 시그니쳐
 
-@RequestMapping을 적용한 Controller의 메소드는 아래와 같은 메소드 파라미터와 리턴 타입을 사용할수 있다.
+@RequestMapping을 적용한 Controller의 메소드는 아래와 같은 메소드 파라미터와 리턴 타입을 사용할 수 있다.
 
 특정 클래스를 확장하거나 인터페이스를 구현해야 하는 제약이 없기 때문에 계층형 Controller 비해 유연한 메소드 시그니쳐를 갖는다.
 
@@ -556,13 +556,13 @@ public class GlobalControllerAdvice {
 - java.util.Map / org.springframework.ui.Model / org.springframework.ui.ModelMap
   - 뷰에 전달할 모델데이터들
  - Command/form 객체
-   - HTTP Request로 전달된 parameter를 바인딩한 커맨드 객체, @ModelAttribute을 사용하면 alias를 줄수 있다.
+   - HTTP Request로 전달된 parameter를 바인딩한 커맨드 객체, @ModelAttribute을 사용하면 alias를 줄 수 있다.
  - Errors, BindingResult
    - org.springframework.validation.Errors / org.springframework.validation.BindingResult 유효성 검사후 결과 데이터를 저장한 객체
  - SessionStatus
    - org.springframework.web.bind.support.SessionStatus 세션폼 처리시에 해당 세션을 제거하기 위해 사용된다.
 
-메소드는 임의의 순서대로 파라미터를 사용할수 있다. 단, BindingResult가 메소드의 argument로 사용될 때는 바인딩 할 커맨드 객체가 바로 앞에 와야 한다.
+메소드는 임의의 순서대로 파라미터를 사용할 수 있다. 단, BindingResult가 메소드의 argument로 사용될 때는 바인딩 할 커맨드 객체가 바로 앞에 와야 한다.
 
 ```java
 public String updateEmployee(...,@ModelAttribute("employee") Employee employee,			
@@ -705,7 +705,7 @@ JSP 소스는 동일한 것을 사용한다. [이곳](web-servlet-controller.md#
 - referenceData
   - 입력폼에 필요한 참조데이터인 상위부서정보를 가져와서 Map 객체에 저장한다. 이후에 이 Map 객체는 스프링 내부 로직에 의해 ModelMap 객체에 저장된다.
 - formBackingObject
-  - GET 방식 호출일때 초기 입력폼에 들어갈 부서 데이터를 리턴한다. 이 데이터 역시 ModelMap 객체에 저장된다.
+  - GET 방식 호출일 때 초기 입력폼에 들어갈 부서 데이터를 리턴한다. 이 데이터 역시 ModelMap 객체에 저장된다.
 - onSubmit
   - POST 전송시에 호출되며 폼 전송을 처리한다.
 
@@ -768,7 +768,7 @@ public class UpdateDepartmentController extends SimpleFormController{
 - referenceData
   - 입력폼에 필요한 참조데이터인 상위부서정보를 가져와서 ModelMap에 저장한다.(by @ModelAttribute)
 - formBackingObject
-  - GET 방식 호출일때 처리를 담당한다. 초기 입력폼 구성을 위한 부서데이터를 가져와서 ModelMap에 저장한다.
+  - GET 방식 호출일 때 처리를 담당한다. 초기 입력폼 구성을 위한 부서데이터를 가져와서 ModelMap에 저장한다.
 - onSubmit
   - POST 전송시에 호출되며 폼 전송을 처리한다.
 

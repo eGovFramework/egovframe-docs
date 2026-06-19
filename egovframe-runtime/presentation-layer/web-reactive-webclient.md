@@ -89,7 +89,7 @@ public ReactorResourceFactory reactorResourceFactory() {
 return new ReactorResourceFactory();
 }
 ```
-원한다면 글로벌 Reactor Netty 리소스를 사용하지 않게 만들수도 있다. 하지만 아래 예제처럼 직접 모든 Reactor Netty 클라이언트와 서버 인스턴스가 공유 자원을 사용하게 만들어야 한다.
+원한다면 글로벌 Reactor Netty 리소스를 사용하지 않게 만들 수도 있다. 하지만 아래 예제처럼 직접 모든 Reactor Netty 클라이언트와 서버 인스턴스가 공유 자원을 사용하게 만들어야 한다.
 ```java
 @Bean
 public ReactorResourceFactory resourceFactory() {
@@ -318,7 +318,7 @@ builder.part("myPart", part); // Part from a server request
 
 MultiValueMap<String, HttpEntity<?>> parts = builder.build();
 ```
-일반적으로는 part별로 content-type을 명시하지 않아도 된다. Content Type은 직렬화할때 쓰는 HttpMessageWriter나 Resource의 경우 파일 확장자에 따라 자동으로 결정한다. 필요하다면 빌더 part 메소드 중 MediaType을 받는 메소드를 사용하면 된다.
+일반적으로는 part별로 content-type을 명시하지 않아도 된다. Content Type은 직렬화할 때 쓰는 HttpMessageWriter나 Resource의 경우 파일 확장자에 따라 자동으로 결정한다. 필요하다면 빌더 part 메소드 중 MediaType을 받는 메소드를 사용하면 된다.
 MultiValueMap을 만들었다면 가장 간단하게는 다음 예제처럼 body 메소드로 WebClient에 넘길 수 있다.
 ```java
 MultipartBodyBuilder builder = ...;
@@ -461,7 +461,7 @@ Map<String, Object> data = Mono.zip(personMono, hobbiesMono, (person, hobbies) -
     })
     .block();
 ```
-위 코드는 단지 한 가지 예시일 뿐이다. 요청이 끝날때까지 블로킹 하지 않고 리액티브 파이프라인을 구축해서 상호독립적으로 원격 호출을 여러번 실행하는 다른 패턴과 연산자도 많다.
+위 코드는 단지 한 가지 예시일 뿐이다. 요청이 끝날 때까지 블로킹 하지 않고 리액티브 파이프라인을 구축해서 상호독립적으로 원격 호출을 여러번 실행하는 다른 패턴과 연산자도 많다.
 ```
 스프링 MVC나 WebFlux 컨트롤러에서 Flux나 Mono를 사용한다면 블로킹할 필요가 없다. 단순히 컨트롤러 메소드에서 리액티브 타입을 리턴하기만 하면 된다. 코틀린 코루틴과 스프링 WebFlux에서도 마찬가지다. 컨트롤러 메소드에서 suspend 함수를 사용하거라 Flow를 리턴하면 된다.
 ```

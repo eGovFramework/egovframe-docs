@@ -305,7 +305,7 @@ SqlPagingQueryProviderFactoryBean는 환경 설정을 간단히 해주며 추천
 | 개선사항                       | 설명                                                                                                                  |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | EgovDefaultLineMapper      | EgovLineTokenizer와 EgovObjectMapper가 변경됨에 따라 LineMapper 총 과정을 제어하는 DefaultLineMapper를 변경하여 EgovDefaultLineMapper 제공 |
-| EgovLineTokenizer          | 전자정부에서는 FieldSet을 사용하지 않기때문에 FieldSet을 반환하는 LineTokenizer 인터페이스를 변경하여 EgovLineTokenizer 제공                          |
+| EgovLineTokenizer          | 전자정부에서는 FieldSet을 사용하지 않기 때문에 FieldSet을 반환하는 LineTokenizer 인터페이스를 변경하여 EgovLineTokenizer 제공                          |
 | EgovAbstractLineTokenizer  | LineTokenizer 인터페이스가 EgovLineTokenizer로 변경됨에 따라 토크나이징만 관여하는 추상 클래스 EgovAbstractLineTokenizer 제공                     |
 | EgovDelimitedLineTokenizer | 스프링에서 제공하는 DelimitedLineTokenizer의 성능을 개선한 EgovDelimitedLineTokenizer 제공                                            |
 | EgovObjectMapper           | 전자정부에서는 FieldSet을 사용하지 않고 토크나이징 된 값들을 직접 Object에 맵핑하는 EgovObjectMapper를 제공                                          |
