@@ -40,7 +40,7 @@ public class Customer {
 
 #### Autowire의 문제점
 
- 다음과 같은경우 Person에 Autowire로 주입될수 없다.
+ 다음과 같은경우 Person에 Autowire로 주입될 수 없다.
 
  ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -74,7 +74,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException:
 
 #### Qualifier 사용
 
- Qualifier 어노테이션에 personA를 특정하여 처리 할수 있으나 개별적으로 하나하나 지정해야 하는 문제가 있다.
+ Qualifier 어노테이션에 personA를 특정하여 처리 할 수 있으나 개별적으로 하나하나 지정해야 하는 문제가 있다.
 
  ```java
 package com.egovframe.common;

@@ -29,7 +29,7 @@ public class TravelProfile {
     private Employee employee;
 }
 ```
-위의 예를 보면 Employee 와 TravelProfile가 각각 OneToOne이라는 Annotation을 기재하여 매핑처리한 것을 알수 있다.
+위의 예를 보면 Employee 와 TravelProfile가 각각 OneToOne이라는 Annotation을 기재하여 매핑처리한 것을 알 수 있다.
 
 ## One To Many Mapping
 테이블간 1:N 매핑이 있을 경우에 각각의 Entity 클래스를 정의하고 한쪽에는 OneToMany, 다른쪽에는 ManyToOne 이라는 Annotation을 기재하여 관계를 나타낸다.
@@ -219,7 +219,7 @@ em.persist(department);
 ```
 
 #### mappedBy: Ⅹ, cascade: Ⅹ
-모두 정의하지 않을때는 부모 Entity에서 관계 연결 처리를 하고 부모,자식 각자 CUD처리한다.
+모두 정의하지 않을 때는 부모 Entity에서 관계 연결 처리를 하고 부모,자식 각자 CUD처리한다.
 
 ##### Define Source
 ```java

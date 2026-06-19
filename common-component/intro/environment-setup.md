@@ -126,7 +126,7 @@ Globals.mysql.Password =
 
 ### 2. 인증/권한방식 설정
 
-Servlet 3.1 도입으로 web.xml을 dynamic하게 설정 가능하여 간소화가 가능해 졌다. WebApplicationInitializer를 통해 egovframework.com.cmm.config.EgovWebApplicationInitializer 클래스에 의하여 설정 파일이 동적으로 설정된다. security 모드일때 DelegatingFilterProxy, EgovSpringSecurityLoginFilter, EgovSpringSecurityLogoutFilter의 설정내역이 FilterRegistration 빈에 등록된다. Spring Profile 기능으로 인증/권한방식에 따라서 egovUserDetailsHelper 빈을 동적으로 생성한다.
+Servlet 3.1 도입으로 web.xml을 dynamic하게 설정 가능하여 간소화가 가능해 졌다. WebApplicationInitializer를 통해 egovframework.com.cmm.config.EgovWebApplicationInitializer 클래스에 의하여 설정 파일이 동적으로 설정된다. security 모드일 때 DelegatingFilterProxy, EgovSpringSecurityLoginFilter, EgovSpringSecurityLogoutFilter의 설정내역이 FilterRegistration 빈에 등록된다. Spring Profile 기능으로 인증/권한방식에 따라서 egovUserDetailsHelper 빈을 동적으로 생성한다.
 
 globals.properties 파일에 다음과 같이 설정한다.
 

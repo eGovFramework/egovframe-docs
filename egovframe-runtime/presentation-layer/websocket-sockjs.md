@@ -99,7 +99,7 @@ SockJS 는 Ajax/XHR Streaming 을 Microsoft 의 [XDomainRequest](http://blogs.ms
 
 SockJS 클라이언트로 부터의 최초 요청인 '/info' 는 클라이언트의 전송 타입 선택을 위한 정보를 위한 요청이다. 상세한 내용 중 하나는 서버 application 이 cookie 에 의존 (authentication 목적이나 session clustering with stick mode 등) 하는지 여부이다. Spring 의 SockJS 지원은 sessionCookieNeeded 라는 속성을 포함한다. 이것은 Java application 이 JSESSIONID cookie 에 의존하기 때문에 기본적으로 활성화 된다. 만약 이 기능을 OFF 한다면 비로서 SockJS 클라이언트는 xdr-streaming 을 IE 8/9 에서 사용토록 선택되어 진다.
 
-iframe 기반의 전송을 사용한다면 browser 가 HTTP 응답헤더인 X-Frame-Option 이 DENY, SAMEORIGIN, ALLOW-FROM `<origin>` 로 설정됨에 따라 iframe 사용을 블락시킬수 있음을 염두에 두어야 한다. 이러한 헤더는 clickjacking 이라 알려진 공격을 방어하기 위한 목적으로 주로 사용된다.
+iframe 기반의 전송을 사용한다면 browser 가 HTTP 응답헤더인 X-Frame-Option 이 DENY, SAMEORIGIN, ALLOW-FROM `<origin>` 로 설정됨에 따라 iframe 사용을 블락시킬 수 있음을 염두에 두어야 한다. 이러한 헤더는 clickjacking 이라 알려진 공격을 방어하기 위한 목적으로 주로 사용된다.
 
 Spring Security 3.2+ 에서 X-Frame-Options 헤더를 모든 응답에 설정하도록 지원하고 있다. 즉 Spring Security Java Config 에서 이 값을 DENY 로 기본설정한다. Spring Security XML 설정에서는 이 헤더를 설정하지 않지만 차후에 기본값으로 설정될 여지가 있다.
 

@@ -27,7 +27,7 @@ menu:
 
 <img src="../images/conceptua_architecture.jpg" align="left"/>
 
-옆의 그림에서 보는것과 같이 DBMS 기반의 어플리케이션 수행을 하기 위해 필요한 주요 구성 요소는 Entity, Persistence.xml 이며, 각각은 다음과 같은 역할을 수행한다.
+옆의 그림에서 보는 것과 같이 DBMS 기반의 어플리케이션 수행을 하기 위해 필요한 주요 구성 요소는 Entity, Persistence.xml 이며, 각각은 다음과 같은 역할을 수행한다.
 - [Entity](orm-entities.md): 어플리케이션 실행 여부와 상관없이 물리적으로 존재하는 데이터들을 다룬다. 일반적으로 DBMS 데이터를 이용하는 어플리케이션을 개발할 경우 어플리케이션의 비즈니스 레이어에서 특정 DBMS에 맞는 SQL을 통해 어플리케이션의 데이터를 처리하게 된다. 그러나 JPA 기반의 어플리케이션에서는 Entity를 중심으로 하여 어플리케이션의 데이터와 DBMS 연동이 가능해진다. annotation 기반으로 매핑관련 사항도 Entity 클래스에서 정의할 수 있어서 별도의 파일없이 테이블과의 관계를 표현할 수 있다.
 - [Persistence.xml](orm-jpa_configuration.md): 구현체에 대한 선언 및 대상 엔티티 클래스 지정 구현체별 프로퍼티 지정등을 할 수 있는 설정 파일로 JPA를 이용해서 어플리케이션을 구동할 경우 필수적으로 작성을 해야하는 파일이다.
 - [JPA(Hibernate)](https://hibernate.org/) : JPA 구현체로의 Hibernate의 요소는 Hibernate Core , Hibernate Annotations , Hibernate EntityManager 로 되어 있으며 JPA 구성에 필요한 Entity Manager등 구현 클래스를 포함하고 있다.

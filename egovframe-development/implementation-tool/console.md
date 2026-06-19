@@ -96,7 +96,7 @@ Style 정보를 등록 한다.
    * `[ ]` 안 클래스명의 풀패키지형식.
    * => egovframework로 시작하는 풀패키지명 캡쳐
 2. Quick Expression : `.*(\QINFO\E).*`
-   * => INFO의 TEXT들어간것
+   * => INFO의 TEXT들어간 것
    * ==> INFO라는 TEXT 가 들어간 로그중 패키지명이 egovframework.으로 시작하는 클래스명 탐지
 3. Style : `(egovframework\.\S+)` 캡쳐한 그룹 만 스타일 적용
 

@@ -431,7 +431,7 @@ success : function(data) {
     }
 ```
 
-이 때, 자동완성 리스트로 나타나는 값은 label이며, value를 설정해주었을때는 자동완성 리스트에서 값 선택 시 input값에 label값이 아닌 value값이 대입된다.
+이 때, 자동완성 리스트로 나타나는 값은 label이며, value를 설정해주었을 때는 자동완성 리스트에서 값 선택 시 input값에 label값이 아닌 value값이 대입된다.
 
 ## Select box
 ### selectbox(combobox) 제어

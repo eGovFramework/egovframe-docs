@@ -156,7 +156,7 @@ public void testMarshalling()
 3. FileOutputSream을 Caster_Book.xml를 매개변수로 하여 Stream를 생성한다.
 4. Result을 생성한 FileOutputStream을 매개변수로 하여 StreamResult를 생성한다.
 5. marshaller.marshal를 사용하여 marshalling을 하는데 매개변수로는 bookMg와 StreamResult로 한다.
-6. 실행후 JavaObject bookMg에 저장한 값이 CasterBook.xml로 Binding 된것을 확인한다. (아래 CasterBook.xml 코드 참조)
+6. 실행후 JavaObject bookMg에 저장한 값이 CasterBook.xml로 Binding 된 것을 확인한다. (아래 CasterBook.xml 코드 참조)
 
 Writer.java
 ```java

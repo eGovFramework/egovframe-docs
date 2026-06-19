@@ -70,7 +70,7 @@ public class DataStreamConfig {
 
 ### StreamBridge
 
-불규칙하게 발행되는 경우 StreamBridge를 활용 할수 있다.
+불규칙하게 발행되는 경우 StreamBridge를 활용 할 수 있다.
 
 ```java
     private void processChangeHistory(long elapsedTimeMills, String className, String methodName, Sample content) {

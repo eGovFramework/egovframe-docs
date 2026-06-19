@@ -51,7 +51,7 @@ JSP페이지에서 링크를 생성할 때, 한글이 됐든 공백이나 특수
 
 Web Container에 따라 URLEncoding을 안하고 넘겨도 작동하는 경우가 있는데, 동일한 웹 컨테이너라도 버전에 따라 한글을 제대로 인식하지 못하는 경우도 있고, 또 다른 컨테이너에서는 URLEncoding이 안된 한글을 전혀 인식하지 못할 수도 있다.
 
-그러므로 무조건 표준을 따라서 java.net.URLEncoder.encode()메 소드를 사용해 인코딩해서 넘기도록 한다. 디코드 작업은 request.setCharacterEncoding()에 의해서 자동으로 이뤄지므로 해줄것이 없다. (Tomcat 3.x대- JSP Spec 1.1 -에서는 request.setCharacterEncoding()이 없으므로 String.getBytes()를 이용해 직접 디코딩을 해줘야만 했다)
+그러므로 무조건 표준을 따라서 java.net.URLEncoder.encode()메 소드를 사용해 인코딩해서 넘기도록 한다. 디코드 작업은 request.setCharacterEncoding()에 의해서 자동으로 이뤄지므로 해줄 것이 없다. (Tomcat 3.x대- JSP Spec 1.1 -에서는 request.setCharacterEncoding()이 없으므로 String.getBytes()를 이용해 직접 디코딩을 해줘야만 했다)
 
 #### <%@ include file="test.jspf"%> 에서의 한글 
 

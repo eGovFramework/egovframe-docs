@@ -88,7 +88,7 @@ private String deptName;
 private Set<Role> roles = new HashSet(0);
 ```
 ### @Transient
-테이블의 컬럼과 매핑되지 않고 쓰이는 Attribute를 정의하고자 할때 Attribute위에 기재한다.
+테이블의 컬럼과 매핑되지 않고 쓰이는 Attribute를 정의하고자 할 때 Attribute위에 기재한다.
 ```java
 @Transient
 private String roleName;

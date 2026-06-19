@@ -53,7 +53,7 @@ menu:
 | ContextClosedEvent | ApplicationContext가 닫혔을 때 발생한다(닫기 위해서 ConfigurableApplicationContext interface의 close() 메소드를 사용한다). “닫힘(Closed)“란 단어는, 모든 singleton bean이 파괴되었음을 의미한다. 닫힌 context는 생명주기의 끝에 도달한 것으로, refresh 되거나 재시작될 수 없다. |
 | RequestHandledEvent | 웹에 특화된 event로서, HTTP request가 처리되었음을 알린다(request가 종료된 후에 발송된다). Spring의 DispatcherServlet를 사용하는 웹 어플리케이션인 경우에만 사용할 수 있다. |
 
- 새로운 event를 구현하는 것도 어렵지 않다. ApplicationContext interface를 구현한 새로운 event 객체를 ApplicationContext의 publishEvent() 메소드를 통해 발행하면 된다. publishEvent() 메소드는 모든 listener가 event 처리를 마칠때까지 block 상태로 있게 된다. 게다가 transaction context가 가능하다면, listener가 event를 받았을 때, 발행모듈의 transaction context 내에서 event를 처리한다.
+ 새로운 event를 구현하는 것도 어렵지 않다. ApplicationContext interface를 구현한 새로운 event 객체를 ApplicationContext의 publishEvent() 메소드를 통해 발행하면 된다. publishEvent() 메소드는 모든 listener가 event 처리를 마칠 때까지 block 상태로 있게 된다. 게다가 transaction context가 가능하다면, listener가 event를 받았을 때, 발행모듈의 transaction context 내에서 event를 처리한다.
 
  아래는 예제이다.
 
