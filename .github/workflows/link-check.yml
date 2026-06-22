@@ -1,34 +1,34 @@
-name: Link Checker
+#name: Link Checker
 
-on:
-  pull_request:
+#on:
+#  pull_request:
 #  push:
 #    branches: [ contribution, main ]
-  schedule:
-    # Run weekly on Sundays at 23 AM UTC (KST: 08:00)
-    - cron: '0 23 * * 0'
+#  schedule:
+#    # Run weekly on Sundays at 23 AM UTC (KST: 08:00)
+#    - cron: '0 23 * * 0'
 
-jobs:
-  linkChecker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#jobs:
+#  linkChecker:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
 
-      - name: Run Lychee link checker
-        uses: lycheeverse/lychee-action@v2.8.0
-        with:
-          args: --verbose --no-progress --exclude-all-private --exclude 'localhost' --exclude '127.0.0.1' .
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Run Lychee link checker
+#        uses: lycheeverse/lychee-action@v2.8.0
+#        with:
+#          args: --verbose --no-progress --exclude-all-private --exclude 'localhost' --exclude '127.0.0.1' .
+#          fail: true
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Issue From File (if links are broken)
-        if: failure()
-        uses: peter-evans/create-issue-from-file@v4
-        with:
-          title: 'Link Check Failed'
-          content-filepath: ./lychee/out.md
-          labels: |
-            bug
-            documentation
+#      - name: Create Issue From File (if links are broken)
+#        if: failure()
+#        uses: peter-evans/create-issue-from-file@v4
+#        with:
+#          title: 'Link Check Failed'
+#          content-filepath: ./lychee/out.md
+#          labels: |
+#            bug
+#            documentation
