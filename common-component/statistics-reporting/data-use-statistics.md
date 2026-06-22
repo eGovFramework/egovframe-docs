@@ -52,10 +52,10 @@
 | Query XML | resources/egovframework/mapper/com/sts/dst/EgovDtaUseStats\_SQL\_altibase.xml | 자료이용현황통계 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/dst/EgovDtaUseStats\_SQL\_maria.xml | 자료이용현황통계 Maria용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/dst/EgovDtaUseStats\_SQL\_postgres.xml | 자료이용현황통계 PostgreSQL용 Query XML |
-| XML | /WEB-INF/config/egovframework/springmvc/egov-com-stsaop.xml | 자료이용현황통계 통계정보를 등록하기 위한 AOP Config XML |
-| Message properties | resources/egovframework/message/com/dst/ust/message\_ko.properties | 자료이용현황통계 Message properties(한글) |
-| Message properties | resources/egovframework/message/com/dst/ust/message\_en.properties | 자료이용현황통계 Message properties(영문) |
-| Idgen XML | resources/egovframework/spring/com/context-idgen.xml | 자료이용현황통계 Id생성 Idgen XML |
+| XML | resources/egovframework/spring/com/context-dtauseaop.xml | 자료이용현황통계 통계정보를 등록하기 위한 AOP Config XML |
+| Message properties | resources/egovframework/message/com/sts/dst/message\_ko.properties | 자료이용현황통계 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/sts/dst/message\_en.properties | 자료이용현황통계 Message properties(영문) |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-DtaUseStats.xml | 자료이용현황통계 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
 
@@ -73,7 +73,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 INSERT INTO COMTECOPSEQ VALUES('DUS_ID','0');
 ```
 
-#### ID Generation 환경설정(context-idgen.xml)
+#### ID Generation 환경설정(context-idgn-DtaUseStats.xml)
 
 ```xml
 <bean name="egovDtaUseStatsIdGnrService"

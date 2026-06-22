@@ -97,7 +97,7 @@ public class EgovWebLogScheduling {
 }
 ```
 
-- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-wlg.xml)
+- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-wlg.xml)
 
 ```xml
 <bean id="webLogging" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -107,7 +107,7 @@ public class EgovWebLogScheduling {
 </bean>
 ```
 
-- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-wlg.xml)
+- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-wlg.xml)
 
 ```xml
 <bean id="webLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
@@ -117,7 +117,7 @@ public class EgovWebLogScheduling {
 </bean>
 ```
 
-- 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-wlg.xml)
+- 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-wlg.xml)
 
 ```xml
 <bean id="logSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">

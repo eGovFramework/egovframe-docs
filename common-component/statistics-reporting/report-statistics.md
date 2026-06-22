@@ -53,11 +53,9 @@
 | Query XML | resources/egovframework/mapper/com/sts/rst/EgovReprtStats\_SQL\_altibase.xml | 보고서통계를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/rst/EgovReprtStats\_SQL\_maria.xml | 보고서통계를 위한 Maria용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/rst/EgovReprtStats\_SQL\_postgres.xml | 보고서통계를 위한 PostgreSQL용 Query XML |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
-| Validator XML | resources/egovframework/validator/com/sts/rst/EgovReprtStats.xml | 보고서통계 Validator XML |
 | Message properties | resources/egovframework/message/com/sts/rst/message\_ko.properties | 보고서통계 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sts/rst/message\_en.properties | 보고서통계 Message properties(영문) |
-| Idgen XML | resources/egovframework/spring/com/context-idgen.xml | 보고서통계 Id생성 Idgen XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-ReprtStats.xml | 보고서통계 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
 
@@ -75,7 +73,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 INSERT INTO COMTECOPSEQ VALUES('RS_ID','0');
 ```
 
-#### ID Generation 환경설정(context-idgen.xml)
+#### ID Generation 환경설정(context-idgn-ReprtStats.xml)
 
 ```xml
 <bean name="egovReprtStatsIdGnrService"
