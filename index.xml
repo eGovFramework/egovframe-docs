@@ -17928,7 +17928,165 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="기본적인-설정">기본적인 설정&lt;/h3>
 &lt;p>Spring Web Flow를 사용하려면 FlowRegistry FlowExecutor를 설정해야 한다.&lt;/p>
 &lt;p>FlowRegistry는 등록될 시나리오에 따라 작성된 flow xml 을 가져오는 역할[1]을 수행한다.
-FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템이 실행되는 부분에 대해 다루겠다.&lt;/p></description></item><item><title>시스템 이력관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/system-history-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/system-history-management/</guid><description/></item><item><title>시스템관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</guid><description/></item><item><title>시스템연계관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/system-linkage-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/system-linkage-manage/</guid><description/></item><item><title>시스템정보확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/system-info-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/system-info-check/</guid><description/></item><item><title>공통컴포넌트 시작하기</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-getting-started/</guid><description>&lt;h1 id="공통컴포넌트-시작하기">공통컴포넌트 시작하기&lt;/h1>
+FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 와 결합하여 Web Flow 시스템이 실행되는 부분에 대해 다루겠다.&lt;/p></description></item><item><title>시스템 이력관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/system-history-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/log-manage/system-history-management/</guid><description/></item><item><title>시스템관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/system-manage/</guid><description/></item><item><title>시스템연계관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/system-linkage-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/system-linkage-manage/</guid><description>&lt;h1 id="시스템연계관리">시스템연계관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>시스템의 연계에 관한 정보를 등록하고 관리하는 기능을 수행한다.
+기능흐름&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-service-linkage/images/ssi-system-cntc-function-flow.png" alt="image" >
+&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>시스템연계관리 패키지는 요소기술의 공통(cmm) 패키지에만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 연계기관관리, 연계메시지관리, 연계현황관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b4%80%eb%a6%ac" class="innerLink">시스템관리 Package Dependency&lt;/a>
+
+&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim.web.EgovSystemCntcController.java&lt;/td>
+ &lt;td>시스템연계 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim.service.EgovSystemCntcService.java&lt;/td>
+ &lt;td>시스템연계 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim.service.impl.EgovSystemCntcServiceImpl.java&lt;/td>
+ &lt;td>시스템연계 관리를 위한 서비스구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim.service.SystemCntc.java&lt;/td>
+ &lt;td>시스템연계 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim.service.SystemCntcVO.java&lt;/td>
+ &lt;td>시스템연계 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.sim.service.impl.SystemCntcDAO.java&lt;/td>
+ &lt;td>시스템연계 정보 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/sim/EgovSystemCntcList.jsp&lt;/td>
+ &lt;td>시스템연계 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/sim/EgovSystemCntcRegist.jsp&lt;/td>
+ &lt;td>시스템연계 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/sim/EgovSystemCntcUpdt.jsp&lt;/td>
+ &lt;td>시스템연계 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/sim/EgovSystemCntcDetail.jsp&lt;/td>
+ &lt;td>시스템연계 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_altibase.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_cubrid.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_maria.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_mysql.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_oracle.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_postgres.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_tibero.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/sim/EgovSystemCntc_SQL_goldilocks.xml&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/sim/message_en.properties&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/sim/message_ko.properties&lt;/td>
+ &lt;td>시스템연계 관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-SystemCntc.xml&lt;/td>
+ &lt;td>시스템연계 관리 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-service-linkage/images/ssi-system-cntc-cdd.png" alt="image" >
+&lt;/p></description></item><item><title>시스템정보확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/system-info-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/system-info-check/</guid><description/></item><item><title>공통컴포넌트 시작하기</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-getting-started/</guid><description>&lt;h1 id="공통컴포넌트-시작하기">공통컴포넌트 시작하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>개발자의 편의성을 위하여 eGovFrame 기반의 웹 공통컴포넌트 254종의 설치를 돕는 생성 마법사를 제공한다.&lt;/p>
 &lt;h2 id="주요-개념">주요 개념&lt;/h2>
@@ -18277,7 +18435,519 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code> Maven clean 기능을 사용하고자 할 때, 다음과 같이 사용한다.
 &amp;gt;mvn clean:clean
-&lt;/code>&lt;/pre>&lt;p>기본적으로 Maven에서 빌드 Lifecycle을 호출하여 기능을 수행하고자 할 때, Full Name으로 호출을 해야 한다. 그러나, 그것이 너무 번거로운 관계로 몇 가지 조건을 만족하는 경우 간단한 방식으로 호출할 수 있다. 그 조건은 다음과 같다.&lt;/p></description></item><item><title>연계기관관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</guid><description/></item><item><title>연계메시지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</guid><description/></item><item><title>연계현황관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</guid><description/></item><item><title>온라인POLL관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/online-poll/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/online-poll/</guid><description/></item><item><title>온라인매뉴얼</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</guid><description/></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;/code>&lt;/pre>&lt;p>기본적으로 Maven에서 빌드 Lifecycle을 호출하여 기능을 수행하고자 할 때, Full Name으로 호출을 해야 한다. 그러나, 그것이 너무 번거로운 관계로 몇 가지 조건을 만족하는 경우 간단한 방식으로 호출할 수 있다. 그 조건은 다음과 같다.&lt;/p></description></item><item><title>연계기관관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-org-manage/</guid><description>&lt;h1 id="연계기관관리">연계기관관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>연계기관, 연계시스템, 연계서비스에 관한 정보를 등록하고 관리하는 기능을 수행한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>연계기관관리 패키지는 요소기술의 공통(cmm) 패키지에만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 연계메시지관리, 시스템연계관리, 연계현황관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b4%80%eb%a6%ac" class="innerLink">시스템관리 Package Dependency&lt;/a>
+
+&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.web.EgovCntcInsttController.java&lt;/td>
+ &lt;td>연계기관 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.EgovCntcInsttService.java&lt;/td>
+ &lt;td>연계기관 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.impl.EgovCntcInsttServiceImpl.java&lt;/td>
+ &lt;td>연계기관 관리를 위한 서비스구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.CntcInstt.java&lt;/td>
+ &lt;td>연계기관 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.CntcSystem.java&lt;/td>
+ &lt;td>연계시스템 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.CntcService.java&lt;/td>
+ &lt;td>연계서비스 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.CntcInsttVO.java&lt;/td>
+ &lt;td>연계기관 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.CntcSystemVO.java&lt;/td>
+ &lt;td>연계시스템 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.CntcServiceVO.java&lt;/td>
+ &lt;td>연계서비스 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.iis.service.impl.CntcInsttDAO.java&lt;/td>
+ &lt;td>연계기관 정보 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcInsttList.jsp&lt;/td>
+ &lt;td>연계기관 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcInsttRegist.jsp&lt;/td>
+ &lt;td>연계기관 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcSystemRegist.jsp&lt;/td>
+ &lt;td>연계시스템 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcServiceRegist.jsp&lt;/td>
+ &lt;td>연계서비스 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcInsttUpdt.jsp&lt;/td>
+ &lt;td>연계기관 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcSystemUpdt.jsp&lt;/td>
+ &lt;td>연계시스템 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcServiceUpdt.jsp&lt;/td>
+ &lt;td>연계서비스 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/iis/EgovCntcInsttDetail.jsp&lt;/td>
+ &lt;td>연계기관 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_altibase.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_cubrid.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_maria.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_mysql.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_oracle.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_postgres.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_tibero.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/iis/EgovCntcInstt_SQL_goldilocks.xml&lt;/td>
+ &lt;td>연계기관 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/iis/message_en.properties&lt;/td>
+ &lt;td>연계기관 관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/iis/message_ko.properties&lt;/td>
+ &lt;td>연계기관 관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-CntcInstt.xml&lt;/td>
+ &lt;td>연계기관 관리 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-service-linkage/images/ssi-cntc-instt-cdd.png" alt="image" >
+&lt;/p></description></item><item><title>연계메시지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-message-manage/</guid><description>&lt;h1 id="연계메시지관리">연계메시지관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>연계메시지, 연계메시지항목, 연계서비스에 관한 정보를 등록하고 관리하는 기능을 수행한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>연계메시지관리 패키지는 요소기술의 공통(cmm) 패키지에만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 연계기관관리, 시스템연계관리, 연계현황관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b4%80%eb%a6%ac" class="innerLink">시스템관리 Package Dependency&lt;/a>
+
+&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.web.EgovCntcMessageController.java&lt;/td>
+ &lt;td>연계메시지 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.EgovCntcMessageService.java&lt;/td>
+ &lt;td>연계메시지 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.impl.EgovCntcMessageServiceImpl.java&lt;/td>
+ &lt;td>연계메시지 관리를 위한 서비스구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.CntcMessage.java&lt;/td>
+ &lt;td>연계메시지 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.CntcMessageItem.java&lt;/td>
+ &lt;td>연계메시지항목 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.CntcMessageVO.java&lt;/td>
+ &lt;td>연계메시지 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.CntcMessageItemVO.java&lt;/td>
+ &lt;td>연계메시지항목 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ims.service.impl.CntcMessageDAO.java&lt;/td>
+ &lt;td>연계메시지 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ims/EgovCntcMessageList.jsp&lt;/td>
+ &lt;td>연계메시지 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ims/EgovCntcMessageRegist.jsp&lt;/td>
+ &lt;td>연계메시지 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ims/EgovCntcMessageItemRegist.jsp&lt;/td>
+ &lt;td>연계메시지항목 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ims/EgovCntcMessageUpdt.jsp&lt;/td>
+ &lt;td>연계메시지 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ims/EgovCntcMessageItemUpdt.jsp&lt;/td>
+ &lt;td>연계메시지항목 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ims/EgovCntcMessageDetail.jsp&lt;/td>
+ &lt;td>연계메시지 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_altibase.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_cubrid.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_maria.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_mysql.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_oracle.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_postgres.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_tibero.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ims/EgovCntcMessage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/ims/message_en.properties&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/ims/message_ko.properties&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-CntcMessage.xml&lt;/td>
+ &lt;td>연계메시지 관리를 위한 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-service-linkage/images/ssi-cntc-message-cdd.png" alt="image" >
+&lt;/p></description></item><item><title>연계현황관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-service-linkage/linkage-status-manage/</guid><description>&lt;h1 id="연계현황관리">연계현황관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>연계현황, 연계시스템, 연계서비스에 관한 정보를 등록하고 관리하는 기능을 수행한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>연계현황관리 패키지는 어떤 패키지와도 직접적인 함수적 참조 관계를 갖진 않지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 요소기술의 공통(cmm), 연계메시지관리, 연계기관관리, 시스템연계관리, 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p>
+&lt;ul>
+&lt;li>패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b4%80%eb%a6%ac" class="innerLink">시스템관리 Package Dependency&lt;/a>
+
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist.web.EgovCntcSttusController.java&lt;/td>
+ &lt;td>연계현황 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist.service.EgovCntcSttusService.java&lt;/td>
+ &lt;td>연계현황 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist.service.impl.EgovCntcSttusServiceImpl.java&lt;/td>
+ &lt;td>연계현황 관리를 위한 서비스구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist.service.CntcSttus.java&lt;/td>
+ &lt;td>연계현황 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist.service.CntcSttusVO.java&lt;/td>
+ &lt;td>연계현황 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.ssi.syi.ist.service.impl.CntcSttusDAO.java&lt;/td>
+ &lt;td>연계현황 정보 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ist/EgovCntcSttusList.jsp&lt;/td>
+ &lt;td>연계현황 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/ssi/syi/ist/EgovCntcSttusDetail.jsp&lt;/td>
+ &lt;td>연계현황 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_altibase.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_cubrid.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_maria.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_mysql.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_oracle.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_postgres.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_tibero.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/ssi/syi/ist/EgovCntcSttus_SQL_goldilocks.xml&lt;/td>
+ &lt;td>연계현황 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/ist/message_en.properties&lt;/td>
+ &lt;td>연계현황 관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/ssi/syi/ist/message_ko.properties&lt;/td>
+ &lt;td>연계현황 관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-service-linkage/images/ssi-cntc-sttus-cdd.png" alt="image" >
+&lt;/p></description></item><item><title>온라인POLL관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/online-poll/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/online-poll/</guid><description/></item><item><title>온라인매뉴얼</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/online-manual/</guid><description/></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description/></item><item><title>온라인헬프</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/</guid><description/></item><item><title>외부 추가 컴포넌트</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>전자정부 표준프레임워크 공통컴포넌트의 기본 제공 범위를 넘어, 외부 시스템 연동 및 특수 목적의 기능을 추가로
 제공하는 컴포넌트 집합이다. 소셜 로그인(OAuth), LDAP 조직도 연동 등 외부 서비스 및 표준과 연계하는 기능을
 포함한다.&lt;/p>
