@@ -9,3 +9,179 @@ menu:
     weight: 1
     parent: "board"
 ---
+
+
+# 블로그생성관리
+
+## 개요
+
+블로그생성관리 컴포넌트는 블로그게시판을 생성하고 등록된 게시판들에 대하여 관련된 속성정보를 관리할 수 있는 기능을 제공한다.
+
+## 설명
+
+블로그게시판은 하나의 계정과 일대일 매칭되어 관리 되어 진다. 즉, 한 계정당 하나의 블로그게시판을 생성 할 수 있다. 블로그게시판의 관리자는 카테고리, 카테고리의 내용등을 입력 할 수 있으며 답글에 대한 댓글 및 삭제가 가능하다. 관리자가 카테고리 등록시 게시판ID와 연결되어 관리되어 진다.
+
+### 패키지 참조 관계
+
+블로그 게시판 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 협업의 공통기능(com), 디자인템플릿과 함께 배포 파일을 구성한다.
+
+- 패키지 간 참조 관계 : [게시판 Package Dependency](../intro/package-reference.md)
+
+### 관련소스
+
+| 유형 | 대상소스 | 비고 |
+| --- | --- | --- |
+| Controller | egovframework.com.cop.bbs.EgovBBSMasterController.java | 블로그 관리를 위한 컨트롤러 클래스 |
+| Service | egovframework.com.cop.bbs.service.EgovBBSMasterService.java | 블로그 관리를 위한 서비스 인터페이스 |
+| ServiceImpl | egovframework.com.cop.bbs.service.impl.EgovBBSMasterServiceImpl.java | 블로그 관리를 위한 서비스 구현 클래스 |
+| Model | egovframework.com.cop.bbs.service.BoardMaster.java | 블로그 관리를 위한 모델 클래스 |
+| Model | egovframework.com.cop.bbs.service.Blog.java | 블로그 관리를 위한 모델 클래스 |
+| Model | egovframework.com.cop.bbs.service.BlogUser.java | 블로그 유저관리를 위한 모델 클래스 |
+| VO | egovframework.com.cop.bbs.service.BlogVO.java | 블로그게시판 관리를 위한 VO 클래스 |
+| VO | egovframework.com.cop.bbs.service.BlogUserVO.java | 블로그 유저관리를 위한 VO 클래스 |
+| DAO | egovframework.com.cop.bbs.service.impl.EgovBBSMasterDAO.java | 블로그 관리를 위한 데이터처리 클래스 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogRegist.jsp | 블로그 생성을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogUpdt.jsp | 블로그 수정을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogList.jsp | 생성된 블로그 조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogList.jsp | 계정에 생성된 블로그게시판 조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogListManager.jsp | 개인 블로그관리를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogReply.jsp | 블로그 답변 등록을 위한 jsp페이지 |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_mysql.xml | 블로그 관리를 위한 MySQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_cubrid.xml | 블로그 관리를 위한 Cubrid용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_oracle.xml | 블로그 관리를 위한 Oracle용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_tibero.xml | 블로그 관리를 위한 Tibero용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_altibase.xml | 블로그 관리를 위한 Altibase용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_maria.xml | 블로그 관리를 위한 MariaDB용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_postgres.xml | 블로그 관리를 위한 PostgreSQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_goldilocks.xml | 블로그 관리를 위한 Goldilocks용 Query XML |
+| Message properties | resources/egovframework/message/com/cop/bbs/message_ko.properties | 블로그 관리를 위한 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/cop/bbs/message_en.properties | 블로그 관리를 위한 Message properties(영문) |
+| Validator XML | resources/egovframework/validator/com/cop/bbs/EgovBBSMasterRegist.xml | 블로그 관리를위한 Validator XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-bbs.xml | 블로그 관리를 위한 Id생성 Idgen XML |
+
+### ID Generation
+
+#### ID Generation 관련 DDL 및 DML
+
+ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 BLOG_ID 항목을 추가해야 한다.
+
+```sql
+CREATE TABLE COMTECOPSEQ(
+  TABLE_NAME            VARCHAR(20) NOT NULL,
+  NEXT_ID               NUMERIC(30) NULL,
+  PRIMARY KEY (TABLE_NAME));
+ 
+INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('BLOG_ID', 1);
+```
+
+#### ID Generation 환경설정(context-idgn-bbs.xml)
+
+```xml
+<bean name="egovBlogIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" 
+    destroy-method="destroy">
+    <property name="dataSource" ref="egov.dataSource" />
+    <property name="strategy"   ref="blogIdStrategy" />
+    <property name="blockSize"  value="10"/>
+    <property name="table"      value="COMTECOPSEQ"/>
+    <property name="tableName"  value="BLOG_ID"/>
+</bean>
+<bean name="blogIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <property name="prefix"   value="BLOG_" />
+    <property name="cipers"   value="15" />
+    <property name="fillChar" value="0" />
+</bean>
+```
+
+### 관련테이블
+
+| 테이블명 | 테이블명(영문) | 비고 |
+| --- | --- | --- |
+| 게시판속성 | COMTNBBSMASTER | 게시판의 속성정보를 관리한다. |
+| 코드정보 | COMTCCMMNDETAILCODE | 코드 정보를 관리한다. |
+| 블로그게시판속성 | COMTNBLOG | 블로그게시판 속성정보를 관리한다. |
+| 블로그유저관리 | COMTNBLOGUSER | 블로그게시판 개설자의 정보를 관리한다. |
+
+### 블로그 카테고리 관련코드
+
+| 코드분류 | 코드분류명 | 코드ID | 코드명 |
+| --- | --- | --- | --- | --- |
+| COM101 | 게시판유형 | BBST01 | 통합게시판 |
+| COM101 | 게시판유형 | BBST02 | 블로그형게시판 |
+| COM101 | 게시판유형 | BBST03 | 방명록 |
+
+### 블로그게시판 목록조회
+
+#### 비즈니스 규칙
+
+신규 블로그 게시판을 생성하기 위해서는 상단의 등록 버튼을 통해서 블로그게시판 생성 화면으로 이동하고 기존 블로그의 속성정보를 수정하고자 하는 경우 해당 블로그 명을 클릭하여 상세 조회 및 수정기능을 제공하는 블로그게시판 수정 화면으로 이동한다.
+
+#### 관련코드
+
+N/A
+
+#### 관련화면 및 수행매뉴얼
+
+| Action | URL | Controller method | SQL Namespace | SQL QueryID |
+| --- | --- | --- | --- | --- |
+| 목록조회 | /cop/bbs/selectBlogList.do | selectBlogMasterList | “BBSMaster” | “selectBlogMasterList” |
+| | | | “BBSMaster” | “selectBlogMasterListTotCnt” |
+
+블로그 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+
+검색조건은 블로그명 유형에 대해서 수행된다. 페이지 당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
+
+![블로그게시판 목록조회](./images/board-management-list.jpg)
+
+조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
+
+등록: 등록하기 위해서는 상단의 등록 버튼을 통해서 블로그게시판 생성 화면으로 이동한다.(단, 하나의 계정에 하나의 블로그만 생성 가능)
+
+목록클릭: 블로그게시판 상세조회 상세조회 화면으로 이동한다.
+
+### 블로그게시판 생성
+
+#### 비즈니스 규칙
+
+블로그게시판의 속성정보를 입력한 뒤 블로그를 생성한다. 생성이 성공적으로 종료되면 블로그게시판 목록조회 화면으로 이동한다.
+
+#### 관련코드
+
+N/A
+
+#### 관련화면 및 수행매뉴얼
+
+| Action | URL | Controller method | SQL Namespace | SQL QueryID |
+| --- | --- | --- | --- | --- |
+| 등록화면 | /cop/bbs/insertBlogMasterView.do | insertBlogMasterView | | |
+| 등록 | /cop/bbs/insertBlogMaster.do | insertBlogMaster | “BBSMaster” | “insertBlogMaster” |
+
+![블로그게시판 생성](./images/board-management-insert.jpg)
+
+등록: 입력한 게시판 정보들이 저장 처리된다.
+
+목록: 게시판 목록 화면으로 이동한다.
+
+### 블로그게시판 카테고리 수정
+
+#### 비즈니스 규칙
+
+블로그게시판의 카테고리 속성정보중 변경이 가능한 정보를 입력한 뒤 수정 버튼을 누르면 블로그게시판의 카테고리 속성정보를 변경할 수 있다.
+
+블로그 자체의 수정은 게시판관리(블로그 게시판은 일반 게시판에 종속적임)에서 가능하다.
+
+#### 관련코드
+
+N/A
+
+#### 관련화면 및 수행매뉴얼
+
+| Action | URL | Controller method | SQL Namespace | SQL QueryID |
+| --- | --- | --- | --- | --- |
+| 수정화면 | /cop/bbs/updateBBSMasterView.do | updateBBSMasterView | “BBSMaster” | “selectBBSMasterDetail” |
+| 수정 | /cop/bbs/updateBBSMaster.do | updateBBSMaster | “BBSMaster” | “updateBBSMaster” |
+
+![블로그게시판 카테고리 수정](./images/board-management-update.jpg)
+
+수정: 수정된 정보들이 저장 처리된다.
+
+목록: 게시판 목록 화면으로 이동한다.
