@@ -2,6 +2,7 @@
 
 ## 표준프레임워크 실행환경
 * [표준프레임워크 실행환경 소개](./intro/overview.md)
+* [클라우드 최적화 참조 아키텍처](./intro/cloud-native-reference-architecture.md)
 
 ### 공통기반 핵심
 * [IoC Container](./foundation-layer-core/ioc-container.md)
