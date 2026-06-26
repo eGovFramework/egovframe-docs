@@ -319,7 +319,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;현재 파일의 id(자식 파일이 있을 때 필요)&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>
-&lt;p>&lt;strong>title&lt;/strong>&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
+&lt;p>&lt;strong>title&lt;/strong>&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/intro/cloud-native-reference-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/intro/cloud-native-reference-architecture/</guid><description>&lt;h1 id="클라우드-최적화-참조-아키텍처">클라우드 최적화 참조 아키텍처&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>표준프레임워크 실행환경은 화면처리, 업무처리, 데이터처리, 연계통합, 배치처리, 공통기반으로 구성된 레이어드 아키텍처를 제공한다. 이 구조는 단일 업무시스템, 내부망 중심 시스템, 전통적인 WAS/DB 기반 시스템에서 여전히 유효한 선택지이다.&lt;/p>
+&lt;p>최근에는 공공 정보시스템도 클라우드 전환, 컨테이너 배포, 프론트엔드 분리, 마이크로서비스 아키텍처(MSA), 이벤트 기반 연계, 관찰가능성 적용을 함께 고려하는 경우가 늘고 있다. 따라서 기존 구조를 유지할 수 있는 경우와 클라우드 환경에 맞는 구조를 검토해야 하는 경우를 구분해 이해할 필요가 있다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
 &lt;ul>
 &lt;li>본 GitHub 저장소 생성 목적은 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 형식의 문서로 변환하여 기여받는 것입니다.&lt;/li>
 &lt;li>이 프로젝트의 목적은 쉽게 접근 가능한 Markdown 형식의 문서를 통해 사용자와 개발자들이 표준프레임워크를 더욱 편리하게 활용할 수 있도록 돕는 것입니다.&lt;/li>
