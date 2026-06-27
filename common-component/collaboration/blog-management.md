@@ -130,7 +130,7 @@ N/A
 
 검색조건은 블로그명 유형에 대해서 수행된다. 페이지 당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
 
-![블로그게시판 목록조회](./images/board-management-list.jpg)
+![블로그게시판 목록조회](./images/blog-management-list.jpg)
 
 조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
 
@@ -155,7 +155,7 @@ N/A
 | 등록화면 | /cop/bbs/insertBlogMasterView.do | insertBlogMasterView | | |
 | 등록 | /cop/bbs/insertBlogMaster.do | insertBlogMaster | “BBSMaster” | “insertBlogMaster” |
 
-![블로그게시판 생성](./images/board-management-insert.jpg)
+![블로그게시판 생성](./images/blog-management-insert.jpg)
 
 등록: 입력한 게시판 정보들이 저장 처리된다.
 
@@ -180,7 +180,7 @@ N/A
 | 수정화면 | /cop/bbs/updateBBSMasterView.do | updateBBSMasterView | “BBSMaster” | “selectBBSMasterDetail” |
 | 수정 | /cop/bbs/updateBBSMaster.do | updateBBSMaster | “BBSMaster” | “updateBBSMaster” |
 
-![블로그게시판 카테고리 수정](./images/board-management-update.jpg)
+![블로그게시판 카테고리 수정](./images/blog-management-update.jpg)
 
 수정: 수정된 정보들이 저장 처리된다.
 
