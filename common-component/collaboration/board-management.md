@@ -65,7 +65,6 @@ menu:
 
 ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 BBS_ID 항목을 추가해야 한다.
 
-
 ```sql
 CREATE TABLE COMTECOPSEQ(
 	      TABLE_NAME            VARCHAR(20) NOT NULL,
@@ -73,7 +72,6 @@ CREATE TABLE COMTECOPSEQ(
 	      PRIMARY KEY (TABLE_NAME));
  
 INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('BBS_ID', 1);
-
 ```
 
 #### ID Generation 환경설정(context-idgn-bbs.xml)
