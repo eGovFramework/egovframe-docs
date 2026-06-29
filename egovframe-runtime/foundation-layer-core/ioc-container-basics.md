@@ -105,7 +105,7 @@ BeanFactory factory = context;
 | Feature | Explained in… |
 | --- | --- |
 | class | [Bean 객체화(Instantiation beans)](#bean-객체화instantiation-beans) |
-| name | [Bean 이름(Naming beans)](#bean-이름naming-beans) |e
+| name | [Bean 이름(Naming beans)](#bean-이름naming-beans) |
 | scope | [Bean scope](./ioc-container-bean_scope.md) |
 | constructor arguments | [종속성 삽입(Injecting dependencies)](./ioc-container-dependencies.md#종속성-삽입injecting-dependencies) |
 | properties | [종속성 삽입(Injecting dependencies)](./ioc-container-dependencies.md#종속성-삽입injecting-dependencies) |
