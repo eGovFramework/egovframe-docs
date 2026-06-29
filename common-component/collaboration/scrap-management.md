@@ -19,7 +19,7 @@ menu:
 
 - 기능흐름
 
-![기능흐름](./images/scrap-management-outline.jpg)
+  ![기능흐름](./images/scrap-management-outline.jpg)
 
 ## 설명
 

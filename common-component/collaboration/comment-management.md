@@ -17,7 +17,9 @@ menu:
 
 게시판에 등록된 글에 대하여 댓글을 작성할 수 있는 기능을 제공한다. 댓글관리는 게시판생성관리 기능을 기반으로 운영된다.
 
-![기능흐름](./images/comment-management-outline.jpg)
+- 기능흐름
+
+  ![기능흐름](./images/comment-management-outline.jpg)
 
 ## 설명
 
