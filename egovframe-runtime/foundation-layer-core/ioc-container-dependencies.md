@@ -225,7 +225,7 @@ public class ExampleBean {
 </bean>
 ```
 
- Inner bean의 'scope' flag와 'id', 'name'은 무시된다. Inner bean의 scope은 항상 prototype이다. 따라서 inner bean을 다른 bean에 주입하는 것은 불가능한다.
+ Inner bean의 'scope' flag와 'id', 'name'은 무시된다. Inner bean의 scope은 항상 prototype이다. 따라서 inner bean을 다른 bean에 주입하는 것은 불가능하다.
 
 #### Collections
 
@@ -305,7 +305,7 @@ bean | ref | idref | list | set | map | props | value | null
         </props>
     </property>
 </bean>
-<beans>
+</beans>
 ```
 
  위 설정에 따라 생성된 child bean 객체의 adminEmails는 아래와 같은 값을 가진다.
@@ -428,7 +428,7 @@ support=support@example.co.uk
         http://www.springframework.org/schema/beans/spring-beans.xsd">
  
     <bean name="classic" class="com.example.ExampleBean">
-        <property name="email" value="foo@bar.com/>
+        <property name="email" value="foo@bar.com"/>
     </bean>
  
     <bean name="p-namespace"
@@ -497,9 +497,9 @@ support=support@example.co.uk
 
 ### 늦은 객체화(Lazily-instantiated beans)
 
- ApplicationContext는 시작시에 모든 singleton bean을 선객체화(pre-instantiate)한다. 선객체화(pre-instantiate)는 초기화 과정에서 모든 singleton baen을 생성하고 설정한다는 것을 의미한다. 일반적으로 선객체화가 좋은 방식인데, 왜냐하면 잘못된 설정이 있는 경우, 즉시 발견할 수 있기 때문이다.
+ ApplicationContext는 시작시에 모든 singleton bean을 선객체화(pre-instantiate)한다. 선객체화(pre-instantiate)는 초기화 과정에서 모든 singleton bean을 생성하고 설정한다는 것을 의미한다. 일반적으로 선객체화가 좋은 방식인데, 왜냐하면 잘못된 설정이 있는 경우, 즉시 발견할 수 있기 때문이다.
 
- 어쨌거나, 이런 방식을 원하지 않을 경우도 있다. 만약 ApplicationContext에 의해 선 객체화 되는 singleton bean을 원하지 않을 경우, 선택적으로 bean 정의에 늦은 객체화(lazy-initailized)를 설정할 수 있다. 늦은 객체화(lazy-initailized)로 설정된 bean은 시작 시에 생성되는 것이 아니라, 처음으로 필요로 했을 때 생성된다.
+ 어쨌거나, 이런 방식을 원하지 않을 경우도 있다. 만약 ApplicationContext에 의해 선 객체화 되는 singleton bean을 원하지 않을 경우, 선택적으로 bean 정의에 늦은 객체화(lazy-initialized)를 설정할 수 있다. 늦은 객체화(lazy-initialized)로 설정된 bean은 시작 시에 생성되는 것이 아니라, 처음으로 필요로 했을 때 생성된다.
 
  XML 설정에서는 ''&lt;bean/&gt;'' element의 'lazy-init' attribute를 사용한다.
 
@@ -521,7 +521,7 @@ support=support@example.co.uk
 
 ### 자동엮기(Autowiring collaborators)
 
- Spring Container는 서로 관계된 bean들을 자동으로 엮어(***autowire***)줄 수 있다. 자동엮기(autowiring)는 각각의 bean 단위로 설정된다. 자동엮기(autowiring) 기능을 사용하면 property나 생성자 argument를 지정할 필요가 없어지므로, 타이핑일 줄일 수 있다. 자동엮기(autowiring)에는 5가지 모드가 있으며, XML 기반 설정에서는 &lt;bean/&gt; element의 'autowire' attribute를 사용하여 설정할 수 있다.
+ Spring Container는 서로 관계된 bean들을 자동으로 엮어(***autowire***)줄 수 있다. 자동엮기(autowiring)는 각각의 bean 단위로 설정된다. 자동엮기(autowiring) 기능을 사용하면 property나 생성자 argument를 지정할 필요가 없어지므로, 타이핑을 줄일 수 있다. 자동엮기(autowiring)에는 5가지 모드가 있으며, XML 기반 설정에서는 &lt;bean/&gt; element의 'autowire' attribute를 사용하여 설정할 수 있다.
 
 | Mode | 설명 |
 | --- | --- |
@@ -533,13 +533,13 @@ support=support@example.co.uk
 
  만약 종속성을 property나 constructor-arg를 사용하여 명시적으로 설정한 경우, 자동엮기(autowiring) 설정은 무시된다.
 
-#### Bean을 자동엮기 대상에서 제외하는 방법(Excluding a bean from being available from autowiring
+#### Bean을 자동엮기 대상에서 제외하는 방법(Excluding a bean from being available from autowiring)
 
  &lt;bean/&gt; element의 'autowire-candidate' attribute 값을 'false'로 설정함으로써, 대상 bean이 다른 bean에 의해 자동엮임을 당하는 것을 방지할 수 있다.
 
 ### 종속성 검사(Checking for dependencies)
 
- Spring IoC Container는 bean의 미해결 종속성의 존재를 검사할 수 있다. 이 기능은 bean의 모든 property가 지정되었는지는 확인하고 싶을 때 유용하다. 종속성 검자(Dependency checking) 기능은 자동엮기(autowiring) 기능과 마찬가지로 각각의 bean마다 설정할 수 있다. 종속성 검사에는 4가지 모드가 있으며, XML 기반 설정에서는 &lt;bean/&gt; element의 'dependency-check' attribute를 사용하여 설정할 수 있다.
+ Spring IoC Container는 bean의 미해결 종속성의 존재를 검사할 수 있다. 이 기능은 bean의 모든 property가 지정되었는지는 확인하고 싶을 때 유용하다. 종속성 검사(Dependency checking) 기능은 자동엮기(autowiring) 기능과 마찬가지로 각각의 bean마다 설정할 수 있다. 종속성 검사에는 4가지 모드가 있으며, XML 기반 설정에서는 &lt;bean/&gt; element의 'dependency-check' attribute를 사용하여 설정할 수 있다.
 
 | Mode | 설명 |
 | --- | --- |
