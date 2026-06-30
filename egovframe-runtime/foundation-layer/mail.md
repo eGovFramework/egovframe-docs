@@ -168,10 +168,10 @@ public class EgovHtmlEmailSend {
 		URL url = new URL("http://www.apache.org/images/asf_logo_wide.gif");
 		String cid = email.embed(url, "Apache logo");
  
-		// HTML 메세지를 설정합니다
+		// HTML 메시지를 설정합니다
 		email.setHtmlMsg("<html>The apache logo - <img src=\"cid:"+cid+"\"></html>");
  
-		// HTML 이메일을 지원하지 않는 클라이언트라면 다음 메세지를 뿌려웁니다
+		// HTML 이메일을 지원하지 않는 클라이언트라면 다음 메시지를 뿌려웁니다
 		email.setTextMsg("Your email client does not support HTML messages");
  
 		// 메일을 전송합니다
@@ -207,7 +207,7 @@ email.setAuthentication("madvirus", "password");
 src 폴더 아래에 Index.jsp를 선택하여 마우스 오른쪽 클릭하여 Run As > Run On Server를 실행한다.
 4. Console 창에서 정상적으로 Tomcat이 실행된 것을 확인한다.
 
-##### 샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우져에서 실행되는 화면
+##### 샘플 utilappSample의 Index.jsp 실행하였을 경우 브라우저에서 실행되는 화면
 
 ![mail-sample-browser-sceenshot](./images/mail-service-browser-screenshot.png)
 

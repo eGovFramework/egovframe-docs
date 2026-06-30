@@ -122,4 +122,4 @@ cryptoService.decryptNone(decrypt); // 복호화전에 URLDecoding 처리 안함
 
  ![암복호화 테스트화면](./images/sec-ariatest.jpg)
 
- 테스트는 전달된 평문에 대한 암호화 데이타를 BASE64로 표시하여주고 암호화 데이타를 복호화 하여 문자열로 출력한다.
+ 테스트는 전달된 평문에 대한 암호화 데이터를 BASE64로 표시하여주고 암호화 데이터를 복호화 하여 문자열로 출력한다.

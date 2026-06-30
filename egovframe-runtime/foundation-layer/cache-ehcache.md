@@ -293,7 +293,7 @@ Ehcache는 Distributed Cache를 지원하는 방법으로 RMI, JGROUP, JMS등을
 
 ### Using JGroups
 
-JGroups는 multicast 기반의 커뮤니케이션 툴킷으로 그룹을 생성하고 그룹멤버간에 메세지를 주고 받을 수 있도록 지원한다. 관련한 자세한 정보는 [사이트](http://www.jgroups.org/) 참고
+JGroups는 multicast 기반의 커뮤니케이션 툴킷으로 그룹을 생성하고 그룹멤버간에 메시지를 주고 받을 수 있도록 지원한다. 관련한 자세한 정보는 [사이트](http://www.jgroups.org/) 참고
 
 #### Configuration
 

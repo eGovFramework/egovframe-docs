@@ -76,7 +76,7 @@ public void testUpdateDepartmentWithOptimisticLocking() throws Exception {
    Department scdDepartment = (Department) em.find(Department.class,"Dept1");
    closeTransaction();
  
-   // 3. 두번째 조회한 Department 정보에 다른 deptName을 셋팅하여 DB에 반영
+   // 3. 두번째 조회한 Department 정보에 다른 deptName을 세팅하여 DB에 반영
    fstDepartment.setDeptName("First : Dept.");
  
    // 4. 첫번째 조회한 Department 정보에 대해 merge() 메소드를 호출

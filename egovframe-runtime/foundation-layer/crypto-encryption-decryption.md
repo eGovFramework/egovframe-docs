@@ -83,7 +83,7 @@ PBE(Password Based Encryption) operations인 **org.jasypt.encryption.pbe.Standar
 
 #### Encrypting passwords
 
-Jasypt는 외부로 부터 공격받을 수 있는 데이타베이스 암호나 시스템 암호를 암호화할 수 있도록 지원한다.
+Jasypt는 외부로 부터 공격받을 수 있는 데이터베이스 암호나 시스템 암호를 암호화할 수 있도록 지원한다.
 
 ##### Jasypt's Standard[Byte|String]Digester를 사용한 Digest 생성 절차
 

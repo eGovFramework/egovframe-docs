@@ -74,7 +74,7 @@ menu:
 
 ![오픈SW 설치 3](./images/opensource-install-3.png)
 
-4. 메세지 확인 후 설치한다.
+4. 메시지 확인 후 설치한다.
 5. 설치가 완료된 후 프로그램을 재시작 한다.
 
 > **참고**: 위의 과정과 동일하게 [개발환경 구성 가이드](../individual-install-guide/individual-install-guide.md)를 참고하여 필요한 플러그인을 설치한다.

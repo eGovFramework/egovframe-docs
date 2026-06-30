@@ -347,13 +347,13 @@ public class BookingAction {
 
 ','로 구분해서 다수의 fragment를 지정할 수도 있다.
 
-### 메세지 사용하기
+### 메시지 사용하기
 
-MessageContext는 플로우 실행 동안에 메세지를 저장하는 데 사용되는 API다.
-일반 메세지나 국제화가 지원된 메세지 모두 사용 가능하다.
-메세지 수준도 지정 가능하며, 지원되는 수준은 info, warning, error이 있다. 메세지를 추가할 때는 MessageBuilder를 사용하자.
+MessageContext는 플로우 실행 동안에 메시지를 저장하는 데 사용되는 API다.
+일반 메시지나 국제화가 지원된 메시지 모두 사용 가능하다.
+메시지 수준도 지정 가능하며, 지원되는 수준은 info, warning, error이 있다. 메시지를 추가할 때는 MessageBuilder를 사용하자.
 
-- 일반 메세지 추가
+- 일반 메시지 추가
 
 ```java
 MessageContext context = ...
@@ -363,7 +363,7 @@ context.addMessage(builder.warn().source("smoking").defaultText("Smoking is bad 
 context.addMessage(builder.info().defaultText("We have processed your reservation - thank you and enjoy your stay").build());
 ```
 
-- 국제화가 지원되는 메세지 추가
+- 국제화가 지원되는 메시지 추가
 
 ```java
 MessageContext context = ...
@@ -372,9 +372,9 @@ context.addMessage(builder.error().source("checkinDate").code("checkinDate.notFu
 context.addMessage(builder.warn().source("smoking").code("notHealthy").resolvableArg("smoking").build());
 ```
 
-#### 메세지 번들 사용하기
+#### 메시지 번들 사용하기
 
-스프링의 MessageSource를 사용해서 메세지 번들 정의가 가능하다. 간단히 프로퍼티 파일로 관리하면 된다.
+스프링의 MessageSource를 사용해서 메시지 번들 정의가 가능하다. 간단히 프로퍼티 파일로 관리하면 된다.
 
 ```
 #messages.properties
@@ -389,9 +389,9 @@ reservationConfirmation=We have processed your reservation - thank you and enjoy
 <h:outputText value="#{resourceBundle.reservationConfirmation}" />
 ```
 
-#### 시스템 생성 메세지 이해하기
+#### 시스템 생성 메시지 이해하기
 
-시스템에서 발생한 예외에 대해 메세지 지정할 수 있다. 예를 들어 타입 변환 시 예외가 발생하면 typeMismatch를 통해서 메세지 지정할 수 있다.
+시스템에서 발생한 예외에 대해 메시지 지정할 수 있다. 예를 들어 타입 변환 시 예외가 발생하면 typeMismatch를 통해서 메시지 지정할 수 있다.
 
 ```
 booking.checkinDate.typeMismatch=The check in date must be in the format yyyy-mm-dd.

@@ -417,7 +417,7 @@ public interface RepeatListener {
 
 #### 선언적 반복(Declarative Iteration)
 
- 때때로 발생할 때마다 반복하고 싶은 비즈니스 처리과정이 있다. 고전적인 예제로 메세지 파이프라인의 최적화가 있다.메세지를 자주 받게 되는 경우, 매세지 마다 개별적인 트랜잭션으로 처리하는 비용을 참기 보다는 메세지를 배치로 처리 하는게 좀더 효율적이다. 스프링 배치는 이 목적에 맞게 RepeatOperations에서 메소드 호출을 감싸는 AOP 인터셉터를 제공한다. RepeatOperationsInterceptor는 가로챈 메소드를 실행해여 제공된 RepeatTemplate의 CompetionPolicy에 따라서 반복하게 된다.  
+ 때때로 발생할 때마다 반복하고 싶은 비즈니스 처리과정이 있다. 고전적인 예제로 메시지 파이프라인의 최적화가 있다.메시지를 자주 받게 되는 경우, 매세지 마다 개별적인 트랜잭션으로 처리하는 비용을 참기 보다는 메시지를 배치로 처리 하는게 좀더 효율적이다. 스프링 배치는 이 목적에 맞게 RepeatOperations에서 메소드 호출을 감싸는 AOP 인터셉터를 제공한다. RepeatOperationsInterceptor는 가로챈 메소드를 실행해여 제공된 RepeatTemplate의 CompetionPolicy에 따라서 반복하게 된다.  
 여기서는 스프링 AOP 네임스페이스를 사용해서 호출되는 processMessage 메소드를 호출하는 서비스를 반복하는데 선언적인 반복의 예를 보자.
 
 ```xml

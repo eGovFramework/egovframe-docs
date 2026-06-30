@@ -65,7 +65,7 @@ Log4j 2는 trace(), debug(), info() 등과 같은 로깅 메서드 뿐 아니라
 | catching() | 예외을 catch했을 때, 해당 예외정보를 출력 | catch문 | logger.catching(e); |  
 
 이러한 메서드들이 만드는 로깅 이벤트가 기본적인 로깅 이벤트와 분리될 수 있도록 디폴트 Log Level와 Marker가 설정되어 있다.  
-이에 따라 entry와 exit 메서드는 TRACE 레벨에서만 출력되며 FLOW Marker를 통해 다른 로그 메세지로부터 분리(필터링)할 수 있고,  
+이에 따라 entry와 exit 메서드는 TRACE 레벨에서만 출력되며 FLOW Marker를 통해 다른 로그 메시지로부터 분리(필터링)할 수 있고,  
 throwing과 catching 메서드는 ERROR 레벨에서만 출력되며 EXCEPTION Marker를 통해 필터링할 수 있다.
 
 | 메서드 | Log Level | Marker |

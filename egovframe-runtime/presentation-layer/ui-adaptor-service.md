@@ -53,7 +53,7 @@ UI 솔루션 업체별 상세 가이드 (업체명 가나다순)
 ## 설명
 
 중점적으로 우리가 살펴볼 내용은 Controller 앞단에서 UI 솔루션으로부터 넘어온 데이터를 DTO 로 변환하는 과정이다.
-데이타 변환을 위해 우리는 ArgumentResolver 를 이용한 방법을 살펴보도록 하겠다.
+데이터 변환을 위해 우리는 ArgumentResolver 를 이용한 방법을 살펴보도록 하겠다.
 UI 솔루션으로 넘어오는 데이터 객체는 request 객체에 포함되어 넘어온다. 우리가 필요한 것은 업무용 DTO 클래스이다.
 업무용 DTO 클래스는 URI(@RequestMapping)와 매핑 된 Controller 메소드의 파라미터로 존재하게 된다.
 Controller 메소드의 파라미터에 설정된 클래스(여기서는 DTO)를 AnnotationMethodHandlerAdapter 에서
@@ -108,7 +108,7 @@ public class UdDTO implements Serializable {
 ...
 ```
 
-### UI솔루션데이타에서 DTO로 변환
+### UI솔루션데이터에서 DTO로 변환
 
 다음은 UTO 를 가져와 UI 솔루션에 의해 들어오는 객체로부터 UTO 로 변환하는 부분을 설명한다.
 변환을 담당하는 UIAdaptorImpl 객체는 AnnotationMethodHandlerAdapter 의 **CustomRiaArgumentResolver** 에 설정된다.
@@ -157,7 +157,7 @@ public class CustomRiaArgumentResolver implements WebArgumentResolver {
 		//설정한 UIAdaptro 구현체에 등록되어 있는 UTO 와 비교한다.
 		if (type.equals(uiA.getModelName())) {
 			HttpServletRequest request = (HttpServletRequest) webRequest.getNativeRequest();
-			// 여기서 데이타 만들어 넘긴다.
+			// 여기서 데이터 만들어 넘긴다.
 			uiObject = (UdDTO) uiA.convert(request);
 			return uiObject;
 		}
@@ -257,7 +257,7 @@ UdDTO 클래스는 CustomRiaArgumentResolver 에서 만들어져 Controller 의 
 
 RiaView 의 코드는 아래와 같다. DTO 를 업체에 맞춰 다시 가져 나가기 위해 convert 하는 모듈이다.
 여기서는 Miplatform 객체로 변환한다. egovDs 라는 DataSet 으로 객체화 한후 stream 형태로 보내는 로직이다.
-따라서 업체별 데이타 형태로 변환하여 보내도록 수정하면 된다.
+따라서 업체별 데이터 형태로 변환하여 보내도록 수정하면 된다.
 
 **RiaView.java(DTO ⇒ MiPlatform)**
 

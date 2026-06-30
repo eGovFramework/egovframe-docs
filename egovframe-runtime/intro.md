@@ -141,7 +141,7 @@
     * [Flow Definition](./business-logic-layer/swf-elements-flow-definiton.md)  
       Flow 의 필수적인 언어 구성요소와 sub flow 에 대해 설명한다.
     * [Expression Language](./business-logic-layer/swf-elements-expression-language.md)  
-      Web Flow 설계시 데이타 모델 및 action 실행을 위한 EL을 설명한다.
+      Web Flow 설계시 데이터 모델 및 action 실행을 위한 EL을 설명한다.
     * [Rendering Views](./business-logic-layer/swf-elements-rendering-views.md)  
       flow 내에서 화면을 생성하는 요소에 대해 설명한다.
     * [Executing actions](./business-logic-layer/swf-elements-executing-actions.md)  

@@ -32,7 +32,7 @@ TransactionTemplate를 정의하고 callback 메소드 정의를 이용하여 Tr
 | PROPERTIES         | 설 명     |
 | ------------------ | ------- |
 | transactionManager | 트랜잭션매니저 |
-| dataSource         | 데이타소스   |
+| dataSource         | 데이터소스   |
 
 위의 설정에서 transactionTemplate를 정의하고 property로 transactionManager을 정의한다. Templeate를 이용한 샘플은 아래와 같다.
 
@@ -94,7 +94,7 @@ Transaction Manager를 직접 이용하는 방법이다.
 
 | PROPERTIES | 설 명      |
 | ---------- | -------- |
-| dataSource | 데이타소스 |
+| dataSource | 데이터소스 |
 
 위의 설정에서 transactionManager을 정의한다.
 

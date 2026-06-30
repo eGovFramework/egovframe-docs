@@ -22,7 +22,7 @@ menu:
 
 1. **관리자 로그인**  
    WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므로 관리자 로그인이 선행되어야 한다.  
-   시스템 초기 배포시 admin/admin123으로 셋팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.
+   시스템 초기 배포시 admin/admin123으로 세팅되어 있으며 로그인 후 비밀번호 변경으로 변경하여야 한다.
 
 2. 서버 정보 등록  
    프로젝트에서 관리할 서버 정보(IP)를 등록한다.
@@ -82,7 +82,7 @@ menu:
 
 5. DB 접속정보 변경  
    Deployment Tool을 해당 WAS에 Deploy한 후 배포위치 하위의 WEB-INF/config/context-datasource.xml파일을 해당 프로젝트에 맞게 변경한다.  
-   배포시 mysql 데이터베이스의 dev유저에 대해 default 셋팅되어 있다.
+   배포시 mysql 데이터베이스의 dev유저에 대해 default 세팅되어 있다.
 
 6. WAS 작업유저 환경설정  
    * FTP 환경구성 : 배포서버에서 해당 WAS로의 FTP 작업을 위한 환경구성을 한다.

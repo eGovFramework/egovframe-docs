@@ -65,7 +65,7 @@ eGovFrame기반으로 생성한 프로젝트에 공통컴포넌트 관련 파일
 
    ![DB Connection Test](./images/commngt-db-connection-test.png)
 
-9. DB의 Connection Test가 정상적으로 종료되면 아래와 같은 메세지 창이 뜬다.
+9. DB의 Connection Test가 정상적으로 종료되면 아래와 같은 메시지 창이 뜬다.
 
    ![DB Connection Test Succeded Message](./images/commngt-db-connection-test-succeded.png)
 

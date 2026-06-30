@@ -11,7 +11,7 @@ menu:
 ---
 # MyBatis Configuration XML File
 
- MyBatis XML 설정파일은 다양한 셋팅과 프로퍼티를 가진다 해당 파일의 작성과 상세한 옵션 설정에 대해 알아본다.
+ MyBatis XML 설정파일은 다양한 세팅과 프로퍼티를 가진다 해당 파일의 작성과 상세한 옵션 설정에 대해 알아본다.
 
 ## Configuration XML
 
@@ -60,9 +60,9 @@ menu:
 
 - properties : 표준 java properties (key=value 형태)파일에 대한 연결을 지원하며 설정 파일내에서 ${key} 와 같은 형태로 properties 형태로 외부화해놓은 실제 값(여기서는 DB 접속 관련 driver, url, id/pw)을 참조할 수 있다. resource 속성으로 classpath, url 속성으로 유효한 URL 상에 있는 자원을 지정 가능하다.
 
-- settings : 런타임시 MyBatis의 행위를 조정하기 위한 옵션 설정을 통해 최적화할 수 있도록 지원한다. 다음표는 셋팅과 그 의미 그리고 디폴트 값을 설명한다.
+- settings : 런타임시 MyBatis의 행위를 조정하기 위한 옵션 설정을 통해 최적화할 수 있도록 지원한다. 다음표는 세팅과 그 의미 그리고 디폴트 값을 설명한다.
 
-| 셋팅 | 설명 | 사용가능한 값들 | 디폴트 |
+| 세팅 | 설명 | 사용가능한 값들 | 디폴트 |
 | --- | --- | --- | --- |
 | cacheEnabled | 설정에서 각 mapper 에 설정된 캐시를 전역적으로 사용할지 말지에 대한 여부 | true / false | TRUE |
 | lazyLoadingEnabled | 늦은 로딩을 사용할지에 대한 여부. 사용하지 않는다면 모두 즉시 로딩할 것이다. | true / false | TRUE |
@@ -72,7 +72,7 @@ menu:
 | useGeneratedKeys | 생성키에 대한 JDBC 지원을 허용. 지원하는 드라이버가 필요하다. true 로 설정하면 생성키를 강제로 생성한다. 일부 드라이버(예를들면, Derby)에서는 이 설정을 무시한다. | true / false | FALSE |
 | autoMappingBehavior | MyBatis 가 칼럼을 필드/프로퍼티에 자동으로 매핑할지와 방법에 대해 명시. PARTIAL 은 간단한 자동매핑만 할뿐, 내포된 결과에 대해서는 처리하지 않는다. FULL 은 처리가능한 모든 자동매핑을 처리한다. | NONE, PARTIAL, FULL | PARTIAL |
 | defaultExecutorType | 디폴트 실행자(executor) 설정. SIMPLE 실행자는 특별히 하는 것이 없다. REUSE 실행자는 PreparedStatement 를 재사용한다. BATCH 실행자는 구문을 재사용하고 수정을 배치처리한다. | SIMPLE REUSE BATCH | SIMPLE |
-| defaultStatementTimeout | 데이터베이스로의 응답을 얼마나 오래 기다릴지를 판단하는 타임아웃을 셋팅 | 양수 | 셋팅되지 않음(null) |
+| defaultStatementTimeout | 데이터베이스로의 응답을 얼마나 오래 기다릴지를 판단하는 타임아웃을 세팅 | 양수 | 세팅되지 않음(null) |
 | safeRowBoundsEnabled | 중첩구문내 RowBound 사용을 허용 | true / false | FALSE |
 | mapUnderscoreToCamelCase | 전통적인 데이터베이스 칼럼명 형태인 A\_COLUMN을 CamelCase형태의 자바 프로퍼티명 형태인 aColumn으로 자동으로 매핑하도록 함 | true / false | FALSE |
 | localCacheScope | MyBatis uses local cache to prevent circular references and speed up repeated nested queries. By default (SESSION) all queries executed during a session are cached. If localCacheScope=STATEMENT local session will be used just for statement execution, no data will be shared between two different calls to the same SqlSession. | SESSION / STATEMENT | SESSION |
@@ -86,7 +86,7 @@ menu:
 
 - typeAliases : 타입 별칭을 통해 자바 타입에 대한 좀더 짧은 이름을 사용할 수 있다. 오직 XML 설정에서만 사용되며, 타이핑을 줄이기 위해 사용된다.
 
-- typeHandler : MyBatis 가 PreparedStatement 에 파라미터를 셋팅하고 ResultSet 에서 값을 가져올 때마다, TypeHandler 는 적절한 자바 타입의 값을 가져오기 위해 사용된다. typeHandler 구현체를 등록하여 사용할 수 있다.
+- typeHandler : MyBatis 가 PreparedStatement 에 파라미터를 세팅하고 ResultSet 에서 값을 가져올 때마다, TypeHandler 는 적절한 자바 타입의 값을 가져오기 위해 사용된다. typeHandler 구현체를 등록하여 사용할 수 있다.
 
 - objectFactory : MyBatis 는 결과 객체의 인스턴스를 만들기 위해 ObjectFactory를 사용한다.
 
