@@ -74,7 +74,7 @@ Spring에서 제공하는 ViewResolver 구현 클래스는 아래와 같다.
 
 #### InternalResourceViewResolver/UrlBasedViewResolver
 
-비지니스 로직 처리가 끝난 후 ”/jsp/main/abc.jsp” 경로의 JSP 파일로 forwarding하는 Controller가 있다고 하면, InternalResourceViewResolver/UrlBasedViewResolver를 사용해서 아래와 같이 Controller를 작성하고, 빈 정의 파일에 설정할 수 있다.
+비즈니스 로직 처리가 끝난 후 ”/jsp/main/abc.jsp” 경로의 JSP 파일로 forwarding하는 Controller가 있다고 하면, InternalResourceViewResolver/UrlBasedViewResolver를 사용해서 아래와 같이 Controller를 작성하고, 빈 정의 파일에 설정할 수 있다.
 
 ```xml
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
@@ -89,7 +89,7 @@ Spring에서 제공하는 ViewResolver 구현 클래스는 아래와 같다.
 public class HelloController {
 	@RequestMapping("...")
 	public String hello(){
-		... //비지니스 로직 처리.
+		... //비즈니스 로직 처리.
 		return "/jsp/main/abc.jsp"; //뷰이름이 곧 JSP 파일의 경로.
 	}	
 }
