@@ -730,7 +730,7 @@ where EMP_NO in ( ? , ? , ? )
 	</select>
 ```
 
- collection 이란 속성이 포함됬는지 여부에 따라 iterate 대상이 파라메터 객체의 속성(위에서는 파라메터 객체 내에 collection 이라는 property 로 전달된 리스트) 또는 파라메터 객체 자신(파라메터 객체 자신이 리스트 형태인 경우) 에 대한 iterate 처리 예이다. $property명$ 로 작성된 영역은 #property명# 와 같이 prepared statement 의 바인드 변수로 처리되는 것이 아니라 SQL 문 자체에 텍스트가 replace 되어 처리됨에 유의한다.
+ collection 이란 속성이 포함됐는지 여부에 따라 iterate 대상이 파라메터 객체의 속성(위에서는 파라메터 객체 내에 collection 이라는 property 로 전달된 리스트) 또는 파라메터 객체 자신(파라메터 객체 자신이 리스트 형태인 경우) 에 대한 iterate 처리 예이다. $property명$ 로 작성된 영역은 #property명# 와 같이 prepared statement 의 바인드 변수로 처리되는 것이 아니라 SQL 문 자체에 텍스트가 replace 되어 처리됨에 유의한다.
 
 ### Sample TestCase
 
