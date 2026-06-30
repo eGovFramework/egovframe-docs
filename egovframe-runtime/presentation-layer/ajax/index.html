@@ -108,7 +108,7 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 &lt;link type=&#34;text/css&#34; rel=&#34;stylesheet&#34; href=&#34;&lt;%=request.getContextPath()%&gt;/ajaxtags/css/displaytag.css&#34; /&gt;
 </code></pre><h4 id=controller>Controller</h4><p>AjaxTags를 사용하기 위해서는 결과 데이터가 AjaxTags에서 데이터 형식(XML style)을 갖추어야 한다.
 이를 위해 AjaxTags는 AjaxXmlBuilder라는 데이터 가공을 위한 API를 제공한다.
-결과 데이터를 AjaxXmlBuilder를 이용해서 변환하는 작업을 View에서 할 수도 있지만, View의 갯수가 기능 단위로 추가될 수도 있으므로,
+결과 데이터를 AjaxXmlBuilder를 이용해서 변환하는 작업을 View에서 할 수도 있지만, View의 개수가 기능 단위로 추가될 수도 있으므로,
 Controller에서 변환한 후에 Model 객체에 담아서 View로 보내고 View는 공통으로 하나를 사용하기를 권한다.</p><p><strong>org.ajaxtags.helpers.AjaxXmlBuilder</strong></p><p>ajaxXml model에 추가하기</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>Department<span style=color:#f92672>&gt;</span> deptList <span style=color:#f92672>=</span> departmentService.<span style=color:#a6e22e>getDepartmentList</span>(param);
 </span></span><span style=display:flex><span>AjaxXmlBuilder ajaxXmlBuilder <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> AjaxXmlBuilder();
 </span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (Iterator iter <span style=color:#f92672>=</span> deptList.<span style=color:#a6e22e>iterator</span>(); iter.<span style=color:#a6e22e>hasNext</span>();) {
