@@ -305,7 +305,7 @@ public class LoginController {
 
 **1.메소드 리턴 데이터와 Model 속성(attribute)의 바인딩**
 
-메소드에서 비지니스 로직(DB 처리같은)을 처리한 후 결과 데이터를 ModelMap 객체에 저장하는 로직은 일반적으로 자주 발생한다.
+메소드에서 비즈니스 로직(DB 처리같은)을 처리한 후 결과 데이터를 ModelMap 객체에 저장하는 로직은 일반적으로 자주 발생한다.
 
 ```java
 ...
@@ -772,7 +772,7 @@ public class UpdateDepartmentController extends SimpleFormController{
 - onSubmit
   - POST 전송시에 호출되며 폼 전송을 처리한다.
 
-(POJO에 가까운) 프레임워크 코드들은 감춰졌고, 보다 직관적으로 비지니스 내용을 표현할 수 있게 되었다고 생각한다.
+(POJO에 가까운) 프레임워크 코드들은 감춰졌고, 보다 직관적으로 비즈니스 내용을 표현할 수 있게 되었다고 생각한다.
 
 ```java
 package com.easycompany.controller.annotation;
