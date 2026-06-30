@@ -232,7 +232,7 @@
     │   ├── /number-conversion.md                      숫자변환
     │   ├── /number-validation.md                      숫자유효성체크
     │   ├── /number-replacement.md                     숫자치환
-    │   ├── /format-validation.md                      포멧유효성체크
+    │   ├── /format-validation.md                      포맷유효성체크
     │   ├── /real-int-negative-check.md                실수/정수/음수체크
     │   ├── /solar-lunar-conversion.md                 양력/음력변환
     │   ├── /encoding-decoding.md                      인코딩/디코딩

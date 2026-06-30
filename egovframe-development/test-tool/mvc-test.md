@@ -60,7 +60,7 @@ public class ExampleTests {
 }
 ```
 
-위의 코드에서 MockMvc의 perform함수를 통해 "/accounts/1" url로 request를 수행하고 응답받은 response를 통해 상태값(status:200), 컨텐트 타입("application/json"), JSON으로 받은 값들을 확인할 수 있다.
+위의 코드에서 MockMvc의 perform함수를 통해 "/accounts/1" url로 request를 수행하고 응답받은 response를 통해 상태값(status:200), 콘텐트 타입("application/json"), JSON으로 받은 값들을 확인할 수 있다.
 
 #### Setup Option
 

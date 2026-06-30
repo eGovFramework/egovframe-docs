@@ -100,7 +100,7 @@ public Callable<String> callableWithView(final Model model) {
 
 ### DefferedResult
 
-Servlet 스레드는 반환하고 Spring MVC가 제어하지 않는 쓰레드를 통해 비동기를 처리한다. DefferedResult는 JMS, AMQP, 스케쥴러, Redis, 다른 HTTP요청에서 사용된다.
+Servlet 스레드는 반환하고 Spring MVC가 제어하지 않는 쓰레드를 통해 비동기를 처리한다. DefferedResult는 JMS, AMQP, 스케줄러, Redis, 다른 HTTP요청에서 사용된다.
 
 DefferedResult의 처리과정은 다음과 같다.
 
