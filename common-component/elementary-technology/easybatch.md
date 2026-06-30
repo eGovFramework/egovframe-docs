@@ -15,7 +15,7 @@
 
 ## 개요
 
- Batch 개발은 업무 특성으로 일반 개발과 달라, 학습과 설정이 필요하다. **Easy Batch**는 는 이 부분을 간소화 할 수 있는 기능을 제공한다. Batch 업무 특성 상 그 구조가 정형화 되어있으므로, 기본 구조의 Job 개발일 경우 본 모듈을 사용하면, 많은 설정부분들에 대한 내용없이 개발이 가능하다.  
+ Batch 개발은 업무 특성으로 일반 개발과 달라, 학습과 설정이 필요하다. **Easy Batch**는 이 부분을 간소화 할 수 있는 기능을 제공한다. Batch 업무 특성 상 그 구조가 정형화 되어있으므로, 기본 구조의 Job 개발일 경우 본 모듈을 사용하면, 많은 설정부분들에 대한 내용없이 개발이 가능하다.  
 기본적인 형태(ItemReader - ItemProcessor - ItemWriter)의 Job인 경우 ItemReader, ItemWriter 설정에 Easy Batch 가 제공하는 Reader, Writer를 설정하면, XML 설정을 간략화해서 사용가능하다.
 
 ## 설명
@@ -25,14 +25,14 @@
 
  ![image](./images/egovframework-batchprocess.jpg)
 
- 위의 그림에서 보이는 것처럼, 배치 업무는 ItemReder, ItermProcessor, ItermWriter로 처리되며, 이를 위해 제공되는 다양한 ItemReader, ItermWriter 중에 업무 목적에 맞게 선택을 하고, 설정이 필요하다. Easy Batch에서는 이러한 설정을 간소화하여 설정할 수 있는 기능을 제공한다.
+ 위의 그림에서 보이는 것처럼, 배치 업무는 ItemReader, ItemProcessor, ItemWriter로 처리되며, 이를 위해 제공되는 다양한 ItemReader, ItemWriter 중에 업무 목적에 맞게 선택을 하고, 설정이 필요하다. Easy Batch에서는 이러한 설정을 간소화하여 설정할 수 있는 기능을 제공한다.
 
 ##### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Util | egovframework.com.ext.easybatch.item.DefaultItemReader | DefalutItemReader 필요한 Resource를 read |  |
-| Util | egovframework.com.ext.easybatch.item.DefaultItemWriter | DefalutItemWriter 처리결과를 지정된 타겟에 write |  |
+| Util | egovframework.com.ext.easybatch.item.DefaultItemReader | DefaultItemReader 필요한 Resource를 read |  |
+| Util | egovframework.com.ext.easybatch.item.DefaultItemWriter | DefaultItemWriter 처리결과를 지정된 타겟에 write |  |
 
 ##### DefaultReader, DefaultWriter 구조
 

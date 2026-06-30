@@ -67,7 +67,7 @@ public class DuplicateMemberLocalVariableNameRule extends AbstractRule {
 
 위의 코드에서 visit() 메소드는 소스에 해당하는 AST Node가 존재하면 호출된다.(Visit Pattern적용)
 
-`public Object visit(ASTFieldDeclaration node, Object data)` 메소드는 클래스의 Member변수를 의미하는 ASTNode인 ASTFieldDeclaration이 선언되어있으므로 소스상에서 Member변수의 갯수만큼 호출될 것이다.
+`public Object visit(ASTFieldDeclaration node, Object data)` 메소드는 클래스의 Member변수를 의미하는 ASTNode인 ASTFieldDeclaration이 선언되어있으므로 소스상에서 Member변수의 개수만큼 호출될 것이다.
 
 `public Object visit(ASTLocalVariableDeclaration node, Object data)` 메소드는 메소드의 Local변수를 의미하는 ASTNode인 ASTLocalVariableDeclaration이 선언되어있으므로 소스상에서 메소드의 Local변수가 파싱될 때 호출될 것이다.
 

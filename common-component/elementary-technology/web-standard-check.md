@@ -29,7 +29,7 @@ menu:
 
 ## 참고자료
 
-### 웹표준검사 관련화면 및 수행메뉴얼
+### 웹표준검사 관련화면 및 수행매뉴얼
 
 <!-- markdownlint-disable MD013 -->
 | Action | URL | Controller method | QueryID |

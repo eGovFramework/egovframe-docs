@@ -117,7 +117,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 
 ## 참고자료
 
-### 관련화면 및 수행메뉴얼
+### 관련화면 및 수행매뉴얼
 
 #### 프록시설정 목록조회
 

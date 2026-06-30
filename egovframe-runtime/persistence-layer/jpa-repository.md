@@ -45,7 +45,7 @@ public interface CrudRepository<T, ID extends Serializable> extends Repository<T
 
 ❸ 모든 엔터티를 리턴한다.
 
-❹ 엔터티의 갯수를 리턴한다.
+❹ 엔터티의 개수를 리턴한다.
 
 ❺ 전달받은 엔터티를 삭제한다.
 

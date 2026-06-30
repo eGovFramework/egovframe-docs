@@ -62,14 +62,14 @@ menu:
 | endTime | Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.Util.Data로 저장 |
 | exitStatus | ExitStatus는 실행의 결과를 나타낸다. 호출자에게 반환될 exit code를 포함한다. |
 | executionContext | execution간 지속돼야 할 모든 데이터를 포함하는 '프로퍼티 백' |
-| readCount | 성공적으로 읽은 item 갯수 |
-| writeCount | 성공적으로 쓰인 item 갯수 |
+| readCount | 성공적으로 읽은 item 개수 |
+| writeCount | 성공적으로 쓰인 item 개수 |
 | commitCount | 해당 execution에서 커밋된 트랜젝션 횟수 |
-| rollbackCount | 롤백된 Step에 의해서 제어된 비즈니스 트랜젝션의 갯수 |
-| readSkipCount | 읽기 과정에서 실패 후, 스킵된 item 갯수 |
-| processSkipCount | 프로세스 과정에서 실패 후, 스킵된 item 갯수 |
-| filterCount | ItemProcessor에 의해 필터링 된 item 갯수 |
-| writeSkipCount | 쓰기 과정에서 실패 후, 스킵된 item 갯수 |
+| rollbackCount | 롤백된 Step에 의해서 제어된 비즈니스 트랜젝션의 개수 |
+| readSkipCount | 읽기 과정에서 실패 후, 스킵된 item 개수 |
+| processSkipCount | 프로세스 과정에서 실패 후, 스킵된 item 개수 |
+| filterCount | ItemProcessor에 의해 필터링 된 item 개수 |
+| writeSkipCount | 쓰기 과정에서 실패 후, 스킵된 item 개수 |
 
 ### BATCH_JOB_EXECUTION_CONTEXT
 

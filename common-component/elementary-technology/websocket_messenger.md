@@ -55,7 +55,7 @@
 | css | /css/egovframework/com/ext/msg/bubbleChat.css | 대화상자를 나타내는 css |
 | css | /css/egovframework/com/ext/msg/table.css | 대화상대 리스트를 나타내는 css |
 
-## 관련화면 및 수행메뉴얼
+## 관련화면 및 수행매뉴얼
 
 #### 1. 대화가능한 사용자 리스트 조회하기
 

@@ -115,7 +115,7 @@ INSERT INTO COMTECOPSEQ VALUES('RS_ID','0');
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -136,7 +136,7 @@ INSERT INTO COMTECOPSEQ VALUES('RS_ID','0');
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -156,7 +156,7 @@ INSERT INTO COMTECOPSEQ VALUES('RS_ID','0');
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |

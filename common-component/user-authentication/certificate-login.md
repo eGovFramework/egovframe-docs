@@ -208,7 +208,7 @@ GPKISecureWeb.PrivateKeyPasswd = test
 GPKISecureWeb.gpkiapi.ConfFilePath=/product/jeus/egovProps/gpkisecureweb/conf
 GPKISecureWeb.CheckChallenge = yes
 
-# ROOTCA 인증서의 갯수
+# ROOTCA 인증서의 개수
 GPKISecureWeb.TrustedROOTCACert.count=2
 
 # ROOTCA 인증서 위치
@@ -219,7 +219,7 @@ GPKISecureWeb.TrustedROOTCACert.count=2
 # GPKI 의 경우 ldap://152.99.56.86:389 에서 CN=Root CA,OU=GPKI,O=Government of Korea,C=KR 을,
 # NPKI 의 경우 ldap://dir.signkorea.com:389 에서 CN=KISA RootCA 1,OU=Korea Certification Authority Central,O=KISA,C=KR 에
 # 대한 LDAP 의 cACertificate;binary 엔트리에서 다운로드 받는다.
-# ROOTCA 인증서 위치는 ROOTCA 인증서의 갯수 만큼 생성해야 한다.
+# ROOTCA 인증서 위치는 ROOTCA 인증서의 개수 만큼 생성해야 한다.
 GPKISecureWeb.TrustedROOTCACert.FilePathName.1 = /product/jeus/egovProps/gpkisecureweb/certs/NPKIRootCA1.der
 GPKISecureWeb.TrustedROOTCACert.FilePathName.2 = /product/jeus/egovProps/gpkisecureweb/certs/GPKIRootCA1.der
 ```
