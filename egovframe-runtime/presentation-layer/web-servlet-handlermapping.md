@@ -298,7 +298,7 @@ SimpleUrlAnnotationHandlerMapping은 @Controller 사용시에 url 단위로 Inte
 Spring 3부터 `<mvc:interceptors>`를 이용하여 동일한 기능을 제공하므로 현재 SimpleUrlAnnotationHandlerMapping은 deprecated되었다.
 그러나 이전 버전은 해당기능을 제공하지 않는다.
 
-SimpleUrlAnnotationHandlerMapping은 아래와 같은 3가지 사항이 고려됬다.
+SimpleUrlAnnotationHandlerMapping은 아래와 같은 3가지 사항이 고려됐다.
 
 - HandlerMapping:Interceptors 관계의 스프링 구조를 깨뜨리지 말자. (ex. Controller:Interceptor (X))
 - 쉬운 사용을 위해 기존의 HandlerMapping과 비슷한 방식의 사용법을 선택하자. (ex.SimpleUrlHandlerMapping)
