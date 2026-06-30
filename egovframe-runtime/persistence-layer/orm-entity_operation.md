@@ -138,7 +138,7 @@ public void testMultiSave() throws Exception {
 ```
 
 ## Callback Methods
-엔티티 클래스에 정의하거나 EntityListener를 지정하여 콜백함수를 정의하여 실제 엔티티 Operation 직전 직후에 비지니스 로직 체크등의 로직을 별도 분리하여 처리하도록 지원한다.
+엔티티 클래스에 정의하거나 EntityListener를 지정하여 콜백함수를 정의하여 실제 엔티티 Operation 직전 직후에 비즈니스 로직 체크등의 로직을 별도 분리하여 처리하도록 지원한다.
 
 ### Callback Methods
 | 메소드명        | 설 명              | 관련 Operation                                                                                                                                                          |
