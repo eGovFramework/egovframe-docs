@@ -20896,7 +20896,307 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/cmm-%ec%b6%9c%ed%87%b4%ea%b7%bc%ea%b4%80%eb%a6%ac_%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.png" alt="image" >
-&lt;/p></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description/></item><item><title>커뮤니티사용관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</guid><description/></item><item><title>커뮤니티생성관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-creation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-creation/</guid><description/></item><item><title>커뮤니티회원관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-member/</guid><description/></item><item><title>Log4j 2 환경설정 (코드 내에서 직접 설정 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</guid><description>&lt;h1 id="log4j-2-환경설정-코드-내에서-직접-설정-시">Log4j 2 환경설정 (코드 내에서 직접 설정 시)&lt;/h1>
+&lt;/p></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description/></item><item><title>커뮤니티사용관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</guid><description>&lt;h1 id="커뮤니티사용관리">커뮤니티사용관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>커뮤니티 메인화면 구성과 커뮤니티 게시판 관리 기능을 통해 커뮤니티 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>커뮤니티 컴포넌트는 협업의 게시판기능과 메인화면 구성을 통해 커뮤니티 서비스를 제공한다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>커뮤니티 패키지는 요소기술의 공통 패키지(cmm)와 포맷/계산/변환 패키지, 협업의 공통기능(com) 패키지, 게시판 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 디자인템플릿, 시스템(sim), 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p>
+&lt;ul>
+&lt;li>패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/" class="innerLink">게시판, 커뮤니티(동호회), 블로그 Package Dependency&lt;/a>
+
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;h4 id="커뮤니티-게시판-사용">커뮤니티 게시판 사용&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.web.EgovCommuManageController.java&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.EgovCommuMasterService.java&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.impl.EgovCommuMasterServiceImpl.java&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 서비스 구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.Community.java&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 모델 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.CommunityVO.java&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.impl.EgovCommuMasterDAO.java&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/cop/cmy/EgovCommuMain.jsp&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/cop/cmy/EgovCmmntyBaseTmplContents.jsp&lt;/td>
+ &lt;td>커뮤니티 메인에서 대표 게시판 표시를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_mysql.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 MySQL용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Cubrid용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_oracle.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Oracle용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_tibero.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Tibero용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_altibase.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Altibase용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_postgres.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Postgres용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_maria.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Maria용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>커뮤니티 메인을 위한 Goldilocks용 Query&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Validator XML&lt;/td>
+ &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>커뮤니티 관리를위한 Validator XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/cop/cmy/message_ko.properties&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/cop/cmy/message_en.properties&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-Cmmnty.xml&lt;/td>
+ &lt;td>커뮤니티 관리를 위한 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="커뮤니티-게시판-관리">커뮤니티 게시판 관리&lt;/h4>
+&lt;p>커뮤니티 게시판 관리기능은 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/board/board-management/" class="innerLink">게시판 관리&lt;/a>
+
+ 기능을 통해 제공되며 해당 기능을 참조한다.&lt;/p></description></item><item><title>커뮤니티생성관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-creation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-creation/</guid><description>&lt;h1 id="커뮤니티생성관리">커뮤니티생성관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>커뮤니티의 관리 컴포넌트는 커뮤니티를 생성하고 등록된 커뮤니티들에 대하여 관련된 속성정보를 관리할 수 있는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>커뮤니티에 대한 관리 부분은 별도의 관리 메뉴를 통해 제공된다. 일부 기능은 해당 관리 메뉴를 통해서만 제공되지만, 커뮤니티 자체 관리 기능은 커뮤니티 내에 제공되는 관리 메뉴들로 가능하다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>커뮤니티 패키지는 요소기술의 공통 패키지(cmm), 협업의 공통기능(com) 패키지, 게시판 패키지, 블로그 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 배포 파일을 구성한다.&lt;/p></description></item><item><title>커뮤니티회원관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-member/</guid><description>&lt;h1 id="커뮤니티회원관리">커뮤니티회원관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>커뮤니티의 회원관리는 커뮤니티 사용자의 신청, 승인, 탈퇴 등 커뮤니티 회원을 관리할 수 있는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>커뮤니티 패키지는 요소기술의 공통 패키지(cmm)와 포맷/계산/변환 패키지, 협업의 공통기능(com) 패키지, 게시판 패키지, 블로그 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 디자인템플릿, 시스템(sim), 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p>
+&lt;ul>
+&lt;li>패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/" class="innerLink">게시판, 커뮤니티, 블로그 Package Dependency&lt;/a>
+
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;h4 id="커뮤니티-사용자관리-및-승인관리">커뮤니티 사용자관리 및 승인관리&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.EgovCommuManageController.java&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.EgovCommuManageService.java&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보를 관리하기 위한 서비스 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.impl.EgovCommuManageServiceImpl.java&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보를 관리하기 위한 서비스 구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.CommunityUserVO.java&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보를 관리하기 위한 모델 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.cop.cmy.service.impl.EgovCommuManageDAO.java&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 데이터 접근 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/cop/com/EgovCommuUserList.jsp&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인 목록 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_mysql.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_oracle.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_tibero.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_altibase.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_maria.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Maria용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_postgres.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Postgres용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>커뮤니티 사용자 및 승인정보 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;h4 id="커뮤니티-사용자관리">커뮤니티 사용자관리&lt;/h4>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/community-member-class-diagram.jpg" alt="클래스 다이어그램" >
+&lt;/p></description></item><item><title>Log4j 2 환경설정 (코드 내에서 직접 설정 시)</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/logging/logging-log4j2/logging-log4j2-configuration_code/</guid><description>&lt;h1 id="log4j-2-환경설정-코드-내에서-직접-설정-시">Log4j 2 환경설정 (코드 내에서 직접 설정 시)&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Log4j 2 환경 설정(Appender, Layout, Log Level 등)을 코드 내에서 직접 제어할 수 있다.&lt;br>
 아래는 별도의 외부 설정파일 없이도 로깅할 수 있는 방법을 설명한다.&lt;/p>
