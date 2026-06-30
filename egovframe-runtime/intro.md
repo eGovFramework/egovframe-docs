@@ -84,7 +84,7 @@
   * [DispatcherServlet](./presentation-layer/web-servlet-dispatcherservlet.md)  
     스프링 MVC의 핵심 컴포넌트인 DispatcherServlet의 기능과 등록방법에 대해 설명한다.
   * [HandlerMapping](./presentation-layer/web-servlet-handlermapping.md)  
-    요청과 Controller간의 연결고리 역활을 하는 컴포넌트인 HandlerMapping에 대해서 설명한다.
+    요청과 Controller간의 연결고리 역할을 하는 컴포넌트인 HandlerMapping에 대해서 설명한다.
   * [Spring MVC tag configuration](./presentation-layer/web-servlet-spring-mvc-tag-configuration.md)  
     Spring에서 제공하는 MVC태그를 통해 간단하게 설정하는 방법에 대하여 설명한다.
   * [Controller](./presentation-layer/web-servlet-controller.md)  
