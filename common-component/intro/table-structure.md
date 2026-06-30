@@ -89,7 +89,7 @@ menu:
 | 62 | 사용자지원 | COMTNFAQINFO | FAQ정보 |
 | 63 | 사용자지원 | COMTNQAINFO | QA정보 |
 | 64 | 사용자지원 | COMTNADMINISTRATIONWORD | 행정용어사전관리 |
-| 65 | 사용자지원 | COMTNONLINEMANUAL | 온라인메뉴얼 |
+| 65 | 사용자지원 | COMTNONLINEMANUAL | 온라인매뉴얼 |
 | 66 | 사용자지원 | COMTNCNSLTLIST | 상담내역 |
 | 67 | 사용자지원 | COMTNQUSTNRTMPLAT | 설문템플릿 |
 | 68 | 사용자지원 | COMTNQESTNRINFO | 설문지정보 |

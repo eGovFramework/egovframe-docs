@@ -106,9 +106,9 @@ public void testJdbcDataSource() throws Exception {
 | defaultAutoCommit | datasource로부터 리턴된 connection에 대한 auto-commit 여부를 설정 |
 | poolPreparedStatements | PreparedStatement 사용여부 |
 | initialSize | Connection pool에 생성될 초기 connection size 설정 |
-| maxTotal  <br/> (1.x에서는 maxActive) | 동시에 할당할 수 있는 active connection 최대 갯수를 설정 |
-| maxIdle | pool에 남겨놓을 수 있는 idle connection 최대 갯수를 설정 |
-| minIdle | 최소한으로 유지할 connection 갯수를 설정 |
+| maxTotal  <br/> (1.x에서는 maxActive) | 동시에 할당할 수 있는 active connection 최대 개수를 설정 |
+| maxIdle | pool에 남겨놓을 수 있는 idle connection 최대 개수를 설정 |
+| minIdle | 최소한으로 유지할 connection 개수를 설정 |
 | maxWaitMillis  <br/> (1.x에서는 maxWait) | 모든 Connection이 사용중일 경우 최대 대기 시간을 설정 |
 | defaultReadOnly | Connection Pool에 의해 생성된 Connection에 read-only 속성 부여 |
 | defaultTransactionIsolation | 리턴된 connection에 대한 transaction isolation 속성 부여 |

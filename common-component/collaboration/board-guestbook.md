@@ -107,7 +107,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('NTT_ID', 1);
 
 N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -134,7 +134,7 @@ N/A
 
 N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -154,7 +154,7 @@ N/A
 
 N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |

@@ -68,7 +68,7 @@ RemoteJobLauncher의 구현체는 Template의 BatchRunController의 batchRun을 
 ```
 
 **Step 3** RemoteJobLaucher 작성
-RemoteJobLauncher는 웹서비스에 호출할 수 있는 인터페이스이며 이를 통하여 작성된 배치를 실행하고, 또한 필요한 경우 결과값을 넘겨주는 역활을 한다.
+RemoteJobLauncher는 웹서비스에 호출할 수 있는 인터페이스이며 이를 통하여 작성된 배치를 실행하고, 또한 필요한 경우 결과값을 넘겨주는 역할을 한다.
 작성된 RemoteJobLauncher를 HessianServiceExporter에 등록하기 위하여 인터페이스 클래스와 구현체(Implement)클래스를 작성하여야 한다.
 
 ```java

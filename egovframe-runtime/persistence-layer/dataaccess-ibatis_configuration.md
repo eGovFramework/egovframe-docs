@@ -67,9 +67,9 @@ menu:
 
 | 속성 | 설명 | Example, Default |
 | --- | --- | --- |
-| maxRequests | 같은 시간대에 SQL 문을 실행한 수 있는 thread 의 최대 갯수 지정. | maxRequests=“256”, 512 |
+| maxRequests | 같은 시간대에 SQL 문을 실행한 수 있는 thread 의 최대 개수 지정. | maxRequests=“256”, 512 |
 | maxSessions | 주어진 시간에 활성화될 수 있는 session(또는 client) 수 지정. | maxSessions=“64”, 128 |
-| maxTransactions | 같은 시간대에 SqlMapClient.startTransaction() 에 들어갈 수 있는 최대 갯수 지정. | maxTransactions=“16”, 32 |
+| maxTransactions | 같은 시간대에 SqlMapClient.startTransaction() 에 들어갈 수 있는 최대 개수 지정. | maxTransactions=“16”, 32 |
 | cacheModelsEnabled | SqlMapClient 에 대한 모든 cacheModel 에 대한 사용 여부를 global 하게 지정. | cacheModelsEnabled=“true”, true (enabled) |
 | lazyLoadingEnabled | SqlMapClient 에 대한 모든 lazy loading 에 대한 사용 여부를 global 하게 지정. | lazyLoadingEnabled=“true”, true (enabled) |
 | enhancementEnabled | runtime bytecode enhancement 기술 사용 여부 지정. | enhancementEnabled=“true”, false (disabled) |
@@ -155,7 +155,7 @@ menu:
 
 - 위 statement 요소 위치에는 sql 문 유형에 따라 insert, update, delete, select, procedure 가 올 수 있다. 위에서 대괄호\[\] 내에 있는 속성은 선택 사항이다.
 - parameterClass 나 resultClass 속성으로 In/Out 에 대한 객체를 직접 지정할 수 있다. 이는 일반적으로 표준 JavaBeans 객체 또는 Map (result 인 경우에는 Map 구현체 명시할 것) 이 될 수 있으며, 단일 변수인 경우에는 primitive 래퍼 클래스로 지정할 수도 있다.
-- prepared statement 에 대한 바인드 변수 맵핑을 위한 맵핑 정의를 별도의 parameterMap 태그로 따로 지정한 경우 위의 parameterMap 속성으로 해당 id 를 지정한다. parameterMap 을 지정한 경우 sql 문의 바인드 변수 영역은 ? 로 작성하며 parameterMap 매핑 설정의 순서와 갯수가 맞아야 함에 유의한다.
+- prepared statement 에 대한 바인드 변수 맵핑을 위한 맵핑 정의를 별도의 parameterMap 태그로 따로 지정한 경우 위의 parameterMap 속성으로 해당 id 를 지정한다. parameterMap 을 지정한 경우 sql 문의 바인드 변수 영역은 ? 로 작성하며 parameterMap 매핑 설정의 순서와 개수가 맞아야 함에 유의한다.
 - parameterMap 을 쓰지 않고 Inline Parameter 로 쓰는 것을 더 선호하며 #속성명# 과 같은 형태로 간략히 기술할 수 있다.
 - resultSet 에 대한 결과 객체 매핑을 위해 별도의 resultMap 태그로 따로 지정한 경우 위의 resultMap 속성으로 해당 id 를 지정한다. resultMap 의 사용은 성능상, 상세 옵션의 적용 기능성 측면에서 추천하는 바이다.
 - 한번 조회 한 결과를 캐슁하기 위해 별도의 cacheModel 태그로 관련 설정을 한 경우, 대상 statement 에 해당 cacheModel id 를 위의 cacheModel 속성과 같이 지시한다. DB 데이터의 변경 시 cache 를 갱신할 수 있도록 cacheModel 설정의 flush 관련 설정에 유의해야 한다.

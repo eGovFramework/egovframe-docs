@@ -102,7 +102,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 </bean>
 ```
 
-## 관련화면 및 수행메뉴얼
+## 관련화면 및 수행매뉴얼
 
 ### 송수신모니터링 목록조회
 
