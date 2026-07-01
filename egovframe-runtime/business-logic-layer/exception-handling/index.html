@@ -83,7 +83,7 @@ LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 </span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
 </span></span><span style=display:flex><span>    ....
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// 넘어온 resultVO가 null 인 경우 EgovBizException 발생 (result.nodata.msg는 메세지 키에 해당됨)</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 넘어온 resultVO가 null 인 경우 EgovBizException 발생 (result.nodata.msg는 메시지 키에 해당됨)</span>
 </span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (resultVO <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>)
 </span></span><span style=display:flex><span>			<span style=color:#66d9ef>throw</span> processException(<span style=color:#e6db74>&#34;result.nodata.msg&#34;</span>); 
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 또는 throw processException(&#34;result.nodata.msg&#34;, 발생한 Exception );</span>
@@ -240,7 +240,7 @@ LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span> 
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h5 id=leaveatrace-코드상-발생-sample>leaveaTrace 코드상 발생 Sample</h5><p>사용 방법을 다시 상기해보면 아래와 같다.<br>메세지 키(message.trace.msg)를 이용하여 메세지 정보를 넘겨 Handler를 실행한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>	<span style=color:#66d9ef>public</span> CategoryVO <span style=color:#a6e22e>selectCategory</span>(CategoryVO vo) <span style=color:#66d9ef>throws</span> Exception {
+</span></span></code></pre></div><h5 id=leaveatrace-코드상-발생-sample>leaveaTrace 코드상 발생 Sample</h5><p>사용 방법을 다시 상기해보면 아래와 같다.<br>메시지 키(message.trace.msg)를 이용하여 메시지 정보를 넘겨 Handler를 실행한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>	<span style=color:#66d9ef>public</span> CategoryVO <span style=color:#a6e22e>selectCategory</span>(CategoryVO vo) <span style=color:#66d9ef>throws</span> Exception {
 </span></span><span style=display:flex><span>		CategoryVO resultVO <span style=color:#f92672>=</span> categoryDAO.<span style=color:#a6e22e>selectCategory</span>(vo);
 </span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
 </span></span><span style=display:flex><span>		  <span style=color:#75715e>//강제로 발생한 ArithmeticException  </span>
