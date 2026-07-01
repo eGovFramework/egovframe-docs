@@ -16,24 +16,24 @@ menu:
 ## 개요
 
 Scheduling 서비스는 어플리케이션 서버 내에서 주기적으로 발생하거나 반복적으로 발생하는 작업을 지원하는 기능으로서 유닉스의 크론(Cron) 명령어와 유사한 기능을 제공한다.  
-실행환경 Scheduling 서비스는 오픈소스 소프트웨어로 Quartz 스케쥴러를 사용한다. 본 장에서는 Quartz 스케쥴러의 기본 개념을 살펴본 후, IoC 서비스를 제공하는 Spring과 Quartz 스케쥴러를 통합하여 사용하는 방법을 살펴본다.
+실행환경 Scheduling 서비스는 오픈소스 소프트웨어로 Quartz 스케줄러를 사용한다. 본 장에서는 Quartz 스케줄러의 기본 개념을 살펴본 후, IoC 서비스를 제공하는 Spring과 Quartz 스케줄러를 통합하여 사용하는 방법을 살펴본다.
 
 ## 설명
 
-### Quartz 스케쥴러
+### Quartz 스케줄러
 
-Quartz 스케쥴러 실행과 관계된 주요 요소는 Scheduler, Job, JobDetail, Trigger 가 있다.
+Quartz 스케줄러 실행과 관계된 주요 요소는 Scheduler, Job, JobDetail, Trigger 가 있다.
 
 - **Scheduler** 는 Quartz 실행 환경을 관리하는 핵심 개체이다.
-- **Job** 은 사용자가 수행할 작업을 정의하는 인터페이스로서 Trigger 개체를 이용하여 스케쥴할 수 있다.
+- **Job** 은 사용자가 수행할 작업을 정의하는 인터페이스로서 Trigger 개체를 이용하여 스케줄할 수 있다.
 - **JobDetail** 는 작업명과 작업그룹과 같은 수행할 Job에 대한 상세 정보를 정의하는 개체이다.
-- **Trigger** 는 정의한 Job 개체의 실행 스케쥴을 정의하는 개체로서 Scheduler 개체에게 Job 수행시점을 알려주는 개체이다.
+- **Trigger** 는 정의한 Job 개체의 실행 스케줄을 정의하는 개체로서 Scheduler 개체에게 Job 수행시점을 알려주는 개체이다.
 
-Quartz 스케쥴러는 수행 작업을 정의하는 Job과 실행 스케쥴을 정의하는 Trigger를 분리함으로써 유연성을 제공한다. Job 과 실행 스케쥴을 정의한 경우, Job은 그대로 두고 실행 스케쥴만을 변경할 수 있다. 또한 하나의 Job에 여러 개의 실행 스케쥴을 정의할 수 있다.
+Quartz 스케줄러는 수행 작업을 정의하는 Job과 실행 스케줄을 정의하는 Trigger를 분리함으로써 유연성을 제공한다. Job 과 실행 스케줄을 정의한 경우, Job은 그대로 두고 실행 스케줄만을 변경할 수 있다. 또한 하나의 Job에 여러 개의 실행 스케줄을 정의할 수 있다.
 
-#### Quartz 스케쥴러 사용 예제
+#### Quartz 스케줄러 사용 예제
 
-Quartz 스케쥴러의 이해를 돕기 위해 간단한 예제를 살펴본다. 다음 예는 Quartz 매뉴얼에서 참조한 것으로 Quartz를 사용하는 방법과 사용자 Job을 설정하는 방법을 보여준다.
+Quartz 스케줄러의 이해를 돕기 위해 간단한 예제를 살펴본다. 다음 예는 Quartz 매뉴얼에서 참조한 것으로 Quartz를 사용하는 방법과 사용자 Job을 설정하는 방법을 보여준다.
 
 ##### 사용자 정의 Job
 
@@ -71,8 +71,8 @@ public class DumbJob implements Job {
 
 ### Spring 과 Quartz 통합
 
-Spring은 Scheduling 지원을 위한 통합 클래스를 제공한다. Spring Framework는 JDK 1.3 버전부터 포함된 Timer 와 오픈소스 소프트웨어인 Quartz 스케쥴러를 지원한다. 여기서는 Quartz 스케쥴러와 Spring을 통합하여 사용하는 방법을 살펴본다.  
-Quartz 스케쥴러와의 통합을 위해 Spring은 Spring 컨텍스트 내에서 Quart Scheduler와 JobDetail, Trigger 를 빈으로 설정할 수 있도록 지원한다. 다음은 예제를 중심으로 Quartz 작업 생성과 작업 스케쥴링, 작업 시작 방법을 살펴본다.
+Spring은 Scheduling 지원을 위한 통합 클래스를 제공한다. Spring Framework는 JDK 1.3 버전부터 포함된 Timer 와 오픈소스 소프트웨어인 Quartz 스케줄러를 지원한다. 여기서는 Quartz 스케줄러와 Spring을 통합하여 사용하는 방법을 살펴본다.  
+Quartz 스케줄러와의 통합을 위해 Spring은 Spring 컨텍스트 내에서 Quart Scheduler와 JobDetail, Trigger 를 빈으로 설정할 수 있도록 지원한다. 다음은 예제를 중심으로 Quartz 작업 생성과 작업 스케줄링, 작업 시작 방법을 살펴본다.
 
 #### 작업 생성
 
@@ -162,9 +162,9 @@ public class SayHelloService {
 
 - 정의한 Bean 객체의 메소드를 직접 호출하는 작업을 생성하기 위해 MethodInvokingJobDetailFactoryBean을 정의한다.
 
-#### 작업 스케쥴링
+#### 작업 스케줄링
 
-Spring에서 주로 사용되는 Trigger타입은 SimpleTriggerBean과 CronTriggerBean 이 있다. SimpleTrigger 는 특정 시간, 반복 회수, 대기 시간과 같은 단순 스케쥴링에 사용된다. CronTrigger 는 유닉스의 Cron 명령어와 유사하며, 복잡한 스케쥴링에 사용된다. CronTrigger 는 달력을 이용하듯 특정 시간, 요일, 월에 Job 을 수행하도록 설정할 수 있다. 다음은 SimpleTriggerBean과 CronTriggerBean을 이용하여 앞서 생성한 작업을 스케쥴링하는 방법을 살펴본다.
+Spring에서 주로 사용되는 Trigger타입은 SimpleTriggerBean과 CronTriggerBean 이 있다. SimpleTrigger 는 특정 시간, 반복 회수, 대기 시간과 같은 단순 스케줄링에 사용된다. CronTrigger 는 유닉스의 Cron 명령어와 유사하며, 복잡한 스케줄링에 사용된다. CronTrigger 는 달력을 이용하듯 특정 시간, 요일, 월에 Job 을 수행하도록 설정할 수 있다. 다음은 SimpleTriggerBean과 CronTriggerBean을 이용하여 앞서 생성한 작업을 스케줄링하는 방법을 살펴본다.
 
 ##### SimpleTriggerBean을 이용한 설정
 
@@ -178,7 +178,7 @@ Spring에서 주로 사용되는 Trigger타입은 SimpleTriggerBean과 CronTrigg
 </bean>
 ```
 
-- 앞서 JobDetailBean 을 이용하여 생성한 작업을 스케쥴링을 위한 Trigger 에 등록한다. SimpleTriggerBean은 즉시 시작하고 매 10초마다 실행하도록 설정하였다.
+- 앞서 JobDetailBean 을 이용하여 생성한 작업을 스케줄링을 위한 Trigger 에 등록한다. SimpleTriggerBean은 즉시 시작하고 매 10초마다 실행하도록 설정하였다.
 
 ##### CronTriggerBean을 이용한 설정
 
@@ -190,11 +190,11 @@ Spring에서 주로 사용되는 Trigger타입은 SimpleTriggerBean과 CronTrigg
 </bean>
 ```
 
-- 앞서 MethodInvokingJobDetailFactoryBean 을 이용하여 생성한 작업을 스케쥴링을 위한 Trigger 에 등록한다. CronTriggerBean은 매 10초마다 실행하도록 설정하였다. 크론 표현식에 대한 자세한 설명은 [Quartz Cron 표현식](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html)를 참조한다.
+- 앞서 MethodInvokingJobDetailFactoryBean 을 이용하여 생성한 작업을 스케줄링을 위한 Trigger 에 등록한다. CronTriggerBean은 매 10초마다 실행하도록 설정하였다. 크론 표현식에 대한 자세한 설명은 [Quartz Cron 표현식](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html)를 참조한다.
 
 #### 작업 시작하기
 
-스케쥴링한 작업의 시작을 위해 Spring 은 SchedulerFactoryBean을 제공한다.
+스케줄링한 작업의 시작을 위해 Spring 은 SchedulerFactoryBean을 제공한다.
 
 ##### 설정
 

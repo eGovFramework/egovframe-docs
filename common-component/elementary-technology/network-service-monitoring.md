@@ -43,8 +43,8 @@ menu:
 | Model | `egovframework.com.utl.sys.nsm.service.NtwrkSvcMntrngLog.java` | 네트워크서비스모니터링로그정보를 위한 Model 클래스 |
 | VO | `egovframework.com.utl.sys.nsm.service.NtwrkSvcMntrngVO.java` | 네트워크서비스모니터링을 위한 VO 클래스 |
 | VO | `egovframework.com.utl.sys.nsm.service.NtwrkSvcMntrngLogVO.java` | 네트워크서비스모니터링로그정보를 위한 VO 클래스 |
-| 스케쥴링 | `egovframework/com/utl/sys/nsm/service/EgovNtwrkSvcMntrngScheduling.java` | 네트워크서비스모니터링을 위한 스케쥴링 클래스 |
-| 스케쥴링 | `egovframework/com/utl/sys/nsm/service/NtwrkSvcMntrngChecker.java` | 네트워크서비스모니터링을 위한 스케쥴링 클래스 |
+| 스케줄링 | `egovframework/com/utl/sys/nsm/service/EgovNtwrkSvcMntrngScheduling.java` | 네트워크서비스모니터링을 위한 스케줄링 클래스 |
+| 스케줄링 | `egovframework/com/utl/sys/nsm/service/NtwrkSvcMntrngChecker.java` | 네트워크서비스모니터링을 위한 스케줄링 클래스 |
 | 기타 | `egovframework/com/utl/sys/nsm/service/NtwrkSvcMntrngResult.java` | 네트워크서비스 모니터링에 대한 결과를 처리하기 위한 클래스 |
 | JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngList.jsp` | 네트워크서비스모니터링목록조회를 위한 jsp페이지 |
 | JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngRegist.jsp` | 네트워크서비스모니터링 등록을 위한 jsp페이지 |
