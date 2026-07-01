@@ -47,7 +47,7 @@
 │   │   ├── /community-creation.md                     커뮤니티생성관리
 │   │   ├── /community-use.md                          커뮤니티사용관리
 │   │   └── /community-member.md                       커뮤니티회원관리
-│   ├── /sms.md                                    문자메세지
+│   ├── /sms.md                                    문자메시지
 │   │   └── /sms-service.md                            문자메시지서비스
 │   ├── /schedule-manage.md                        일정관리
 │   │   ├── /department-schedule.md                    부서일정관리

@@ -64,7 +64,7 @@ Query에 사용될 Parameter, Result를 작성한다. Parameter나 Result는 둘
 
 ##### Query
 
-Query ID를 변경하거나, Query 내용을 편집하고, Query Test에 필요한 데이타베이스 접속 정보를 선택할 수 있다.
+Query ID를 변경하거나, Query 내용을 편집하고, Query Test에 필요한 데이터베이스 접속 정보를 선택할 수 있다.
 
 ##### Test
 
@@ -128,14 +128,14 @@ Package Explorer에서 해당 Mapper File을 선택하고 더블클릭하거나 
    ![QueryMap의 In/Out 설정](./images/mappereditor-inout.png)
 
 5. Select Query의 경우 In/Out 탭에 Result 항목이 추가되어 나타나므로 Parameter 항목과 동일한 방법으로 Result 항목을 입력한다.
-6. Query 탭에서 Query ID를 수정하거나, 쿼리를 작성할 수 있다. Query 작성이 어려운 경우에는 Query Builder를 사용하면 보다 쉽게 Query를 작성할 수 있다. 단, Query Builder를 사용하려면 먼저 적절한 데이타베이스 연결을 선택해야 하는데, 데이타베이스 연결을 미리 설정하지 않은 경우 데이타베이스 연결을 선택할 수 없다. 데이타베이스 연결 설정은 Data source explorer를 사용하여 설정할 수 있다.
+6. Query 탭에서 Query ID를 수정하거나, 쿼리를 작성할 수 있다. Query 작성이 어려운 경우에는 Query Builder를 사용하면 보다 쉽게 Query를 작성할 수 있다. 단, Query Builder를 사용하려면 먼저 적절한 데이터베이스 연결을 선택해야 하는데, 데이터베이스 연결을 미리 설정하지 않은 경우 데이터베이스 연결을 선택할 수 없다. 데이터베이스 연결 설정은 Data source explorer를 사용하여 설정할 수 있다.
 
    ![Mapper Editor의 기본 Query 편집화면](./images/mappereditor-querytab.png)
 
 ### Query Builder 사용하기
 
 1. Mapper Editor의 Query 편집화면에서 Query 탭에는 Query Builder 기능을 내장하고 있다.
-2. Query Builder를 사용하기 위해 먼저 "DB Info*:" 항목에서 적절한 데이타베이스 연결을 선택한다. 항목이 보이지 않는 경우 데이타베이스 연결을 미리 설정하지 않은 경우이다.
+2. Query Builder를 사용하기 위해 먼저 "DB Info*:" 항목에서 적절한 데이터베이스 연결을 선택한다. 항목이 보이지 않는 경우 데이터베이스 연결을 미리 설정하지 않은 경우이다.
 3. "DB Info*:" 항목 우측에 있는 "Open Query Builder"를 클릭하면 SQL Query Builder 화면이 오픈된다. Query Builder의 세부 사용법은 다음과 같다.
 
 #### Query Builder
@@ -195,7 +195,7 @@ Package Explorer에서 해당 Mapper File을 선택하고 더블클릭하거나 
 ### 작성한 쿼리 테스트하기
 
 1. 작성한 쿼리를 테스트하기 위해서는 Database 연결 설정이 먼저 요구된다. Database 연결 설정은 "DBIO: Database 연결 설정" 도움말을 참고한다.
-2. 쿼리를 작성한 후 Mapper Editor의 Query 탭 상단에 있는 "DB Info*:" 항목에서 적절한 데이타베이스 연결이 선택되었는지 확인한다.
+2. 쿼리를 작성한 후 Mapper Editor의 Query 탭 상단에 있는 "DB Info*:" 항목에서 적절한 데이터베이스 연결이 선택되었는지 확인한다.
 3. 쿼리 내에 variable을 사용한 경우 Mapper Editor의 Test 탭에서 Binding Variables 값을 입력해 주어야 한다. 쿼리 내의 variable은 `#{ }`을 사용하여 지정할 수 있다. (컬럼명=#{변수명})
 4. Mapper Editor의 Test 탭에서 "Binding Variables" 목록 우측에 있는 "Set Param" 버튼을 누르면 쿼리에서 사용한 변수명이 자동으로 Parameter 항목에 추가된다.
 5. "Binding Variables" 목록에 나열된 Parameter별로 적절한 테스트 value 값을 입력한다.

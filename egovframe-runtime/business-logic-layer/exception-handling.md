@@ -29,7 +29,7 @@ Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직
 		try {
     ....
  
-    // 넘어온 resultVO가 null 인 경우 EgovBizException 발생 (result.nodata.msg는 메세지 키에 해당됨)
+    // 넘어온 resultVO가 null 인 경우 EgovBizException 발생 (result.nodata.msg는 메시지 키에 해당됨)
 		if (resultVO == null)
 			throw processException("result.nodata.msg"); 
             // 또는 throw processException("result.nodata.msg", 발생한 Exception );
@@ -271,7 +271,7 @@ public class DefaultTraceHandler implements TraceHandler {
 ##### leaveaTrace 코드상 발생 Sample
 
 사용 방법을 다시 상기해보면 아래와 같다.<br/>
-메세지 키(message.trace.msg)를 이용하여 메세지 정보를 넘겨 Handler를 실행한다.
+메시지 키(message.trace.msg)를 이용하여 메시지 정보를 넘겨 Handler를 실행한다.
 
 ```java
 	public CategoryVO selectCategory(CategoryVO vo) throws Exception {

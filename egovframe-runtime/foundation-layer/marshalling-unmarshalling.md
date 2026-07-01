@@ -122,7 +122,7 @@ Castor XML mapping은 XML Binding 오픈소스 프레임워크이다. Castor는 
 
 ##### Sample Source
 
-**Java Object의 데이타를 XML문서로 DataBinding Sample Source**
+**Java Object의 데이터를 XML문서로 DataBinding Sample Source**
 
 ```java
 import jakarta.annotation.Resource;

@@ -238,7 +238,7 @@ Java의 Abstract 클래스와 동일한 개념으로 때로는 완전한 Step을
 
 ##### start-limit
 
-각 Step 실행 횟수를 설정한다. default는 SimpleStepFactoryBean 클래스에서 셋팅 되며 Integer.MAX_VALUE로 설정 되있다.
+각 Step 실행 횟수를 설정한다. default는 SimpleStepFactoryBean 클래스에서 세팅 되며 Integer.MAX_VALUE로 설정 되있다.
 
 ##### allow-start-if-complete
 

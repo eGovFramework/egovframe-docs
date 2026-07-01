@@ -316,7 +316,7 @@ errors.email=유효하지 않은 이메일 주소입니다.
 ```
 
 /validator.do로 호출하도록 Controller에서 메소드를 추가하고 requestmapping 한다.  
-validator.jsp를 http://localhost:8080/easycompany/validator.do 브라우져에서 호출해보면, validator-rules.xml에서 정의한 javascript 함수들이 다운로드 되거나 화면에 print 되는 걸 확인할 수 있을 것이다.  
+validator.jsp를 http://localhost:8080/easycompany/validator.do 브라우저에서 호출해보면, validator-rules.xml에서 정의한 javascript 함수들이 다운로드 되거나 화면에 print 되는 걸 확인할 수 있을 것이다.  
 validator.jsp는 client-validation을 위해 validator-rules.xml에서 정의한 javascript 함수들을 로딩한다.  
 따라서 client-validation을 할 페이지에서는 이 validator.jsp을
 

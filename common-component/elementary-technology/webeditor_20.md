@@ -84,7 +84,7 @@ URL : /html/egovframework/com/cmm/utl/htmlarea3.0/examples/index.html
 
 ## 키보드 단축키
 
-브라우져에 따라 일부 기능이 제한 될 수 있다.
+브라우저에 따라 일부 기능이 제한 될 수 있다.
 ```bash
   CTRL-A -- 전체 선택
   CTRL-B -- 굵게

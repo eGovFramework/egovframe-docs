@@ -132,8 +132,8 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 | `timeout`         | 예외가 던져지기 전에 데이터베이스의 요청 결과를 기다리는 최대 시간 (드라이버에 따라 다소 지원되지 않을 수 있음) |
 | `statementType`   | STATEMENT / PREPARED / CALLABLE 중 선택, MyBatis에게 Statement, PreparedStatement 또는 CallableStatement를 사용하게 함 (default: PREPARED) |
 | `useGeneratedKeys`| DB 내부에서 생성한 키를 받는 JDBC `getGeneratedKeys` 메서드를 사용하도록 설정 (default: false)       |
-| `keyProperty`     | `getGeneratedKeys` 메서드나 INSERT 구문의 `selectKey` 하위 요소에 의해 리턴된 키를 셋팅할 프로퍼티를 지정 |
-| `keyColumn`       | 생성키를 가진 테이블의 칼럼명을 셋팅 (키 칼럼이 테이블의 첫번째 칼럼이 아닐 경우 필요)                   |
+| `keyProperty`     | `getGeneratedKeys` 메서드나 INSERT 구문의 `selectKey` 하위 요소에 의해 리턴된 키를 세팅할 프로퍼티를 지정 |
+| `keyColumn`       | 생성키를 가진 테이블의 칼럼명을 세팅 (키 칼럼이 테이블의 첫번째 칼럼이 아닐 경우 필요)                   |
 
 - 기본 예제
 
