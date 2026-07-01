@@ -86,7 +86,7 @@ VS Code 활용 가이드<span class=sr-only>열기</span></button><div class=lnb
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>위의 코드에서 MockMvc의 perform함수를 통해 &ldquo;/accounts/1&rdquo; url로 request를 수행하고 응답받은 response를 통해 상태값(status:200), 컨텐트 타입(&ldquo;application/json&rdquo;), JSON으로 받은 값들을 확인할 수 있다.</p><h4 id=setup-option>Setup Option</h4><p>MVC Test의 TestContext는 WebApplicationcontext로 동작한다.
+</span></span></code></pre></div><p>위의 코드에서 MockMvc의 perform함수를 통해 &ldquo;/accounts/1&rdquo; url로 request를 수행하고 응답받은 response를 통해 상태값(status:200), 콘텐트 타입(&ldquo;application/json&rdquo;), JSON으로 받은 값들을 확인할 수 있다.</p><h4 id=setup-option>Setup Option</h4><p>MVC Test의 TestContext는 WebApplicationcontext로 동작한다.
 Test이전의 setup에서는 Spring mvc test에 필요한 MockMvc의 객체를 가져와야한다. setup option에는 다음 두가지 방법이 있다.</p><h5 id=1-contextconfiguration로-설정을-읽어들여-setup하는-방법>1. @ContextConfiguration로 설정을 읽어들여 SetUp하는 방법</h5><p>@ContextConfiguration의 xml에서 설정을 읽어들이고 WebApplicationContext를 주입하여 mockMvc를 생성한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RunWith</span>(SpringJUnit4ClassRunner.<span style=color:#a6e22e>class</span>)
 </span></span><span style=display:flex><span><span style=color:#a6e22e>@WebAppConfiguration</span>
 </span></span><span style=display:flex><span><span style=color:#a6e22e>@ContextConfiguration</span>(<span style=color:#e6db74>&#34;my-servlet-context.xml&#34;</span>)
