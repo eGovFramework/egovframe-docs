@@ -11,11 +11,11 @@ menu:
 ---
 
 
-# 블로그관리
+# 블로그 관리
 
 ## 개요
 
-블로그생성관리 컴포넌트는 블로그 게시판을 생성하고 등록된 게시판들에 대하여 관련된 속성정보를 관리할 수 있는 기능을 제공한다.
+블로그 생성 관리 컴포넌트는 블로그 게시판을 생성하고 등록된 게시판들에 대하여 관련된 속성 정보를 관리할 수 있는 기능을 제공한다.
 
 ## 설명
 
@@ -23,11 +23,11 @@ menu:
 
 ### 패키지 참조 관계
 
-블로그 게시판 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 협업의 공통기능(com), 디자인템플릿과 함께 배포 파일을 구성한다.
+블로그 게시판 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조 관계에 따라 협업의 공통기능(com), 디자인 템플릿과 함께 배포 파일을 구성한다.
 
 - 패키지 간 참조 관계 : [게시판 Package Dependency](../intro/package-reference.md)
 
-### 관련소스
+### 관련 소스
 
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
@@ -39,13 +39,13 @@ menu:
 | Model | egovframework.com.cop.bbs.service.BlogUser.java | 블로그 유저 관리를 위한 모델 클래스 |
 | VO | egovframework.com.cop.bbs.service.BlogVO.java | 블로그 게시판 관리를 위한 VO 클래스 |
 | VO | egovframework.com.cop.bbs.service.BlogUserVO.java | 블로그 유저 관리를 위한 VO 클래스 |
-| DAO | egovframework.com.cop.bbs.service.impl.EgovBBSMasterDAO.java | 블로그 관리를 위한 데이터처리 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogRegist.jsp | 블로그 생성을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogUpdt.jsp | 블로그 수정을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogList.jsp | 생성된 블로그 조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogList.jsp | 계정에 생성된 블로그 게시판 조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogListManager.jsp | 개인 블로그 관리를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogReply.jsp | 블로그 답변 등록을 위한 jsp페이지 |
+| DAO | egovframework.com.cop.bbs.service.impl.EgovBBSMasterDAO.java | 블로그 관리를 위한 데이터 처리 클래스 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogRegist.jsp | 블로그 생성을 위한 jsp 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogUpdt.jsp | 블로그 수정을 위한 jsp 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogList.jsp | 생성된 블로그 조회를 위한 jsp 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogList.jsp | 계정에 생성된 블로그 게시판 조회를 위한 jsp 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovBlogListManager.jsp | 개인 블로그 관리를 위한 jsp 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleBlogReply.jsp | 블로그 답변 등록을 위한 jsp 페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_mysql.xml | 블로그 관리를 위한 MySQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_cubrid.xml | 블로그 관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_oracle.xml | 블로그 관리를 위한 Oracle용 Query XML |
@@ -56,14 +56,14 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_goldilocks.xml | 블로그 관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_ko.properties | 블로그 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_en.properties | 블로그 관리를 위한 Message properties(영문) |
-| Validator XML | resources/egovframework/validator/com/cop/bbs/EgovBBSMasterRegist.xml | 블로그 관리를위한 Validator XML |
-| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-bbs.xml | 블로그 관리를 위한 Id생성 Idgen XML |
+| Validator XML | resources/egovframework/validator/com/cop/bbs/EgovBBSMasterRegist.xml | 블로그 관리를 위한 Validator XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-bbs.xml | 블로그 관리를 위한 Id 생성 Idgen XML |
 
 ### ID Generation
 
 #### ID Generation 관련 DDL 및 DML
 
-ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 BLOG_ID 항목을 추가해야 한다.
+ID Generation Service를 활용하기 위해서 Sequence 저장 테이블인 COMTECOPSEQ에 BLOG_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ(
@@ -74,7 +74,7 @@ CREATE TABLE COMTECOPSEQ(
 INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('BLOG_ID', 1);
 ```
 
-#### ID Generation 환경설정(context-idgn-bbs.xml)
+#### ID Generation 환경 설정(context-idgn-bbs.xml)
 
 ```xml
 <bean name="egovBlogIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" 
@@ -173,7 +173,7 @@ N/A
 
 N/A
 
-#### 관련화면 및 수행매뉴얼
+#### 관련 화면 및 수행 매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
