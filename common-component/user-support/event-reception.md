@@ -39,21 +39,20 @@ menu:
 | VO | egovframework.com.uss.ion.evt.service.EventManageVO.java | 행사 관리를 위한 VO 클래스 |
 | VO | egovframework.com.uss.ion.evt.service.EventAtdrnVO.java | 행사 예약 관리를 위한 VO 클래스 |
 | Model | egovframework.com.uss.ion.evt.service.EventAtdrn.java | 행사 예약 관리를 위한 Model 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/uss/ion/evt/EgovEventRceptManageList.jsp | 행사접수 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/uss/ion/evt/EgovEventRceptRegist.jsp | 행사접수 신청을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/uss/ion/evt/EgovEventRceptDetail.jsp | 신청된 행사접수에 대한 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/uss/ion/evt/EgovEventRceptConfm.jsp | 행사접수 승인처리를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/uss/ion/evt/EgovEventReqstDetailPop.jsp | 행사접수목록에서 행사상세 내역 조회  팝업 jsp페이지 |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_altibase.xml | 행사 관리 Altibase XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_cubrid.xml | 행사 관리 Cubrid XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_mysql.xml | 행사 관리 MySQL XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_maria.xml | 행사 관리 MariaDB XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_tibero.xml | 행사 관리 Tibero XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_postgres.xml | 행사 관리 PostgreSQL XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_oracle.xml | 행사 관리 Oracle XML |
-| Query XML | /egovframework/sqlmap/com/uss/ion/evt/EgovEventManage\_SQL\_goldilocks.xml | 행사 관리 Goldilocks XML |
-| Message properties | resources/egovframework/messager/com/uss/ion/evt/message\_ko.properties | 행사 관리  Message properties |
-| Message properties | resources/egovframework/messager/com/uss/ion/evt/message\_en.properties | 행사 관리  Message properties |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventRceptManageList.jsp | 행사접수 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventRceptRegist.jsp | 행사접수 신청을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventRceptDetail.jsp | 신청된 행사접수에 대한 상세조회/반영하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventRceptConfm.jsp | 행사접수 승인처리를 위한 jsp페이지 |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_altibase.xml | 행사 관리 Altibase XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_cubrid.xml | 행사 관리 Cubrid XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_mysql.xml | 행사 관리 MySQL XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_maria.xml | 행사 관리 MariaDB XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_tibero.xml | 행사 관리 Tibero XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_postgres.xml | 행사 관리 PostgreSQL XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_oracle.xml | 행사 관리 Oracle XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_goldilocks.xml | 행사 관리 Goldilocks XML |
+| Message properties | resources/egovframework/message/com/uss/ion/evt/message\_ko.properties | 행사 관리  Message properties |
+| Message properties | resources/egovframework/message/com/uss/ion/evt/message\_en.properties | 행사 관리  Message properties |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-EventAtdrn.xml | 행사관리를 위한 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
