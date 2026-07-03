@@ -1,0 +1,21 @@
+# ==========================================================================
+# 줄바꿈(EOL) 정규화 — issue #649
+#   저장소 저장 = LF, 체크아웃 = LF (모든 OS 동일)
+#   .editorconfig(end_of_line = lf)와 동일한 정책을 Git 차원에서 강제해
+#   OS(특히 Windows)와 무관하게 일관된 diff를 보장.
+# ==========================================================================
+
+# 기본값: 텍스트는 자동 감지 후 LF로 정규화, 바이너리는 그대로 둠
+* text=auto eol=lf
+
+# --- 텍스트 파일 (명시적으로 LF 고정) ---
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.json   text eol=lf
+
+# --- 바이너리 파일 (줄바꿈·diff 변환 금지) ---
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
