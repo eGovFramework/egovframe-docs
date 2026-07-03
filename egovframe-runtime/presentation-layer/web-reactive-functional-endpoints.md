@@ -106,7 +106,7 @@ HandlerFunction<ServerResponse> helloWorld =
 request -> ServerResponse.ok().bodyValue("Hello World");
 ```
 편리한 방식이긴 하지만 펑션을 여러 개 사용해야 한다면 인라인 람다로 만들기는 부담스럽다. 이럴 때는 핸들러 클래스로 관련 핸들러 펑션을 묶을 수 있다.
-핸들러 클래스는 어노테이션 기반 애플리케이션의 @Controller와 비슷하다. 다음 예제는 리액티브 Person 레퍼지토리와 관련된 요청을 처리한다.
+핸들러 클래스는 어노테이션 기반 애플리케이션의 @Controller와 비슷하다. 다음 예제는 리액티브 Person 리포지토리와 관련된 요청을 처리한다.
 ```java
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;

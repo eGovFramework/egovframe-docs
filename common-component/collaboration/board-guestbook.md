@@ -23,7 +23,7 @@ menu:
 
 ### 패키지 참조 관계
 
-게시판 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 협업의 공통기능(com), 디자인템플릿과 함께 배포 파일을 구성한다.
+게시판 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조 관계에 따라 협업의 공통 기능(com), 디자인 템플릿과 함께 배포 파일을 구성한다.
 
 - 패키지 간 참조 관계 : [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md/#협업)
 
@@ -39,7 +39,7 @@ menu:
 | VO | egovframework.com.cop.bbs.service.BoardVO.java | 방명록 관리를 위한 VO 클래스 |
 | VO | egovframework.com.cop.bbs.service.BoardMasterVO.java | 방명록 속성 정보를 관리하기 위한 VO 클래스 |
 | DAO | egovframework.com.cop.bbs.service.impl.EgovArticleDAO.java | 방명록 관리를 위한 데이터처리 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovGuestArticleList.jsp | 방명록 생성,수정,조회,삭제를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovGuestArticleList.jsp | 방명록 생성,수정,조회,삭제를 위한 jsp 페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_mysql.xml | 방명록 관리를 위한 MySQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_oracle.xml | 방명록 관리를 위한 Oracle용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_tibero.xml | 방명록 관리를 위한 Tibero용 Query XML |
@@ -61,7 +61,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
-ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 NTT_ID 항목을 추가해야 한다.
+ID Generation Service를 활용하기 위해서 Sequence 저장 테이블인 COMTECOPSEQ에 NTT_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL, 
@@ -71,7 +71,7 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('NTT_ID', 1);
 ```
 
-#### ID Generation 환경설정(context-idgn-bbs.xml)
+#### ID Generation 환경 설정(context-idgn-bbs.xml)
 
 ```xml
 <bean name="egovNttIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
@@ -86,28 +86,28 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('NTT_ID', 1);
 </bean>
 ```
 
-### 관련테이블
+### 관련 테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
 | 게시물 정보 | COMTNBBS | 게시물 정보를 관리한다. |
 
-## 관련기능
+## 관련 기능
 
 게시판 사용을 위한 방법은 시스템에 활용되는 게시판, 커뮤니티에서 활용되는 게시판, 동호회에서 활용되는 게시판 3가지로 구분된다.
 방명록관리는 목록 확인, 등록, 수정, 삭제 기능으로 구분되어 있다.
 
-### 방명록 목록조회
+### 방명록 목록 조회
 
 #### 비즈니스 규칙
 
 방명록을 확인할 수 있는 화면을 제공한다. 방명록에 대한 확인 화면은 접근은 URL 링크(시스템 사용 게시판), 커뮤니티를 통한 접근, 동호회를 통한 접근 3가지 방식이 존재한다.
 
-#### 관련코드
+#### 관련 코드
 
 N/A
 
-#### 관련화면 및 수행매뉴얼
+#### 관련 화면 및 수행 매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -130,11 +130,11 @@ N/A
 
 방명록 폼에서 내용을 입력한 뒤 등록 버튼을 선택하면 방명록이 등록된다.등록이 성공적으로 처리되면 방명록 화면에서 게시글을 확인할 수 있다.
 
-#### 관련코드
+#### 관련 코드
 
 N/A
 
-#### 관련화면 및 수행매뉴얼
+#### 관련 화면 및 수행 매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -148,13 +148,13 @@ N/A
 
 #### 비즈니스 규칙
 
-방명록 게시물을 수정할 수 있는 화면을 제공하고 입력된 방명록 수정정보를 저장처리한다.
+방명록 게시물을 수정할 수 있는 화면을 제공하고 입력된 방명록 수정 정보를 저장 처리한다.
 
-#### 관련코드
+#### 관련 코드
 
 N/A
 
-#### 관련화면 및 수행매뉴얼
+#### 관련 화면 및 수행 매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
