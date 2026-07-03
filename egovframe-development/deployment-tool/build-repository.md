@@ -8,7 +8,7 @@ menu:
     weight: 2
     parent: "maven"
 ---
-# 빌드 레퍼지토리
+# 빌드 리포지토리
 
 ## 개요
 
