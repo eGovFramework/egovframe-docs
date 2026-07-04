@@ -19130,7 +19130,548 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;ul>
 &lt;li>서버 환경: Subversion 1.4.6&lt;/li>
 &lt;/ul>
-&lt;p>명시된 Subversion의 버전은 지속적인 전자정부 표준프레임워크 개발환경의 개선작업으로 인하여 향후 변경되어 배포될 수 있다&lt;/p></description></item><item><title>설문관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-management/</guid><description/></item><item><title>설문응답자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-respondent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-respondent/</guid><description/></item><item><title>설문조사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey/</guid><description/></item><item><title>설문질문관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-question/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-question/</guid><description/></item><item><title>설문템플릿관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-template/</guid><description/></item><item><title>설문항목관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-item/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-item/</guid><description/></item><item><title>설정 간소화</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</guid><description>&lt;h1 id="spring-security-설정-간소화서비스">Spring Security 설정 간소화서비스&lt;/h1>
+&lt;p>명시된 Subversion의 버전은 지속적인 전자정부 표준프레임워크 개발환경의 개선작업으로 인하여 향후 변경되어 배포될 수 있다&lt;/p></description></item><item><title>설문관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-management/</guid><description>&lt;h1 id="설문관리">설문관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>설문관리 시스템 구축시 사용되는 관리 기능과 조사 기능으로 기본적인 관리와 조사 PROCESS는 다음과 같다.
+기능흐름&lt;/p>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qmc-%ec%84%a4%eb%ac%b8%ea%b4%80%eb%a6%ac_%ea%b8%b0%eb%8a%a5%ed%9d%90%eb%a6%84%eb%8f%84.jpg" alt="image" >
+&lt;/p>
+&lt;h3 id="1-설문템플릿등록">1. 설문템플릿등록&lt;/h3>
+&lt;p>설문템플릿 기본정보 입력후 등록한다. / 설문참여 양식 결정
+설문템플릿관리&lt;/p>
+&lt;h3 id="2-설문지등록설문등록">2. 설문지등록(설문등록)&lt;/h3>
+&lt;p>설문템플릿선택하고 설문지 기본정보 입력후 등록한다.
+설문관리&lt;/p>
+&lt;h3 id="3-설문문항등록">3. 설문문항등록&lt;/h3>
+&lt;p>설문지정보를 선택하고 설문문항 기본정보 입력후 등록한다.
+설문질문관리&lt;/p>
+&lt;h3 id="4-설문항목등록">4. 설문항목등록&lt;/h3>
+&lt;p>설문지정보, 설문문항정보 선택하고 설문항목 입력후 등록한다.
+설문항목관리&lt;/p>
+&lt;h3 id="5-설문참여">5. 설문참여&lt;/h3>
+&lt;p>설문참여 등록에서 설문조사에 응한다.
+설문참여 통계를 이용하여 설문참여결과를 확인한다.
+설문참여&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qmc.web.EgovQustnrManageController.java&lt;/td>
+ &lt;td>설문관리 Controller Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qmc.service.EgovQustnrManageService.java&lt;/td>
+ &lt;td>설문관리 Service Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qmc.service.impl.EgovQustnrManageServiceImpl.java&lt;/td>
+ &lt;td>설문관리 ServiceImpl Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qmc.service.QustnrManageVO.java&lt;/td>
+ &lt;td>설문관리 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.cmm.ComDefaultVO.java&lt;/td>
+ &lt;td>검색 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qmc.service.impl.QustnrManageDao.java&lt;/td>
+ &lt;td>설문관리 Dao Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qmc/EgovQustnrManageList.jsp&lt;/td>
+ &lt;td>설문관리 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qmc/EgovQustnrManageListPopup.jsp&lt;/td>
+ &lt;td>설문관리 목록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qmc/EgovQustnrManageRegist.jsp&lt;/td>
+ &lt;td>설문관리 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qmc/EgovQustnrManageModify.jsp&lt;/td>
+ &lt;td>설문관리 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qmc/EgovQustnrManageDetail.jsp&lt;/td>
+ &lt;td>설문관리 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_mysql.xml&lt;/td>
+ &lt;td>설문관리 MySQL용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_oracle.xml&lt;/td>
+ &lt;td>설문관리 Oracle용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_tibero.xml&lt;/td>
+ &lt;td>설문관리 Tibero용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_altibase.xml&lt;/td>
+ &lt;td>설문관리 Altibase용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>설문관리 Cubrid용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_maria.xml&lt;/td>
+ &lt;td>설문관리 MariaDB용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_postgres.xml&lt;/td>
+ &lt;td>설문관리 PostgreSQL용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qmc/EgovQustnrManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>설문관리 Goldilocks용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/olp/qmc/message_ko.properties&lt;/td>
+ &lt;td>설문관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/olp/qmc/message_en.properties&lt;/td>
+ &lt;td>설문관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-QustnrManage.xml&lt;/td>
+ &lt;td>설문관리 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qmc-%ec%84%a4%eb%ac%b8%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
+&lt;/p></description></item><item><title>설문응답자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-respondent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-respondent/</guid><description>&lt;h1 id="설문응답자관리">설문응답자관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>설문관리 시스템 구축시 사용되는 응답자정보 기능을 제공하며, 설문참여자 가 설문참여 시 응답자정보를 기본으로 입력하게 되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>설문응답자관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문관리, 설문템플릿관리, 설문질문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
+
+&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qrm.web.EgovQustnrRespondManageController.java&lt;/td>
+ &lt;td>응답자정보 Controller Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qrm.service.EgovQustnrRespondManageService.java&lt;/td>
+ &lt;td>응답자정보 Service Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qrm.service.impl.EgovQustnrRespondManageServiceImpl.java&lt;/td>
+ &lt;td>응답자정보 ServiceImpl Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qrm.service.QustnrRespondManageVO.java&lt;/td>
+ &lt;td>응답자정보 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.cmm.ComDefaultVO.java&lt;/td>
+ &lt;td>검색 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qrm.service.impl.QustnrRespondManageDao.java&lt;/td>
+ &lt;td>응답자정보 Dao Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qrm/EgovQustnrRespondManageList.jsp&lt;/td>
+ &lt;td>응답자정보 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qrm/EgovQustnrRespondManageRegist.jsp&lt;/td>
+ &lt;td>응답자정보 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qrm/EgovQustnrRespondManageModify.jsp&lt;/td>
+ &lt;td>응답자정보 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qrm/EgovQustnrRespondManageDetail.jsp&lt;/td>
+ &lt;td>응답자정보 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_mysql.xml&lt;/td>
+ &lt;td>응답자정보 MySQL용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_oracle.xml&lt;/td>
+ &lt;td>응답자정보 Oracle용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_tibero.xml&lt;/td>
+ &lt;td>응답자정보 Tibero용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_altibase.xml&lt;/td>
+ &lt;td>응답자정보 Altibase용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>응답자정보 Cubrid용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_maria.xml&lt;/td>
+ &lt;td>응답자정보 MariaDB용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_postgres.xml&lt;/td>
+ &lt;td>응답자정보 PostgreSQL용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qrm/EgovQustnrRespondManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>응답자정보 Goldilocks용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/olp/qrm/message_ko.properties&lt;/td>
+ &lt;td>설문응답자관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/olp/qrm/message_en.properties&lt;/td>
+ &lt;td>설문응답자관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-qustnrRespondManage.xml&lt;/td>
+ &lt;td>응답자정보 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qrm-%ec%9d%91%eb%8b%b5%ec%9e%90%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
+&lt;/p></description></item><item><title>설문조사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey/</guid><description>&lt;h1 id="설문조사">설문조사&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>설문관리 시스템 구축시 사용되는 설문조사 기능을 제공하며, 기본으로 관리자가 설문조사를 관리 할수 있으며, 설문참여자가 설문참여 시 설문조사(설문응답결과)를 자동으로 등록 되로록 설계 되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>설문조사 패키지는 요소기술의 공통 패키지(cmm)와 설문응답자관리 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문관리, 설문템플릿관리, 설문질문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
+
+&lt;/p></description></item><item><title>설문질문관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-question/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-question/</guid><description>&lt;h1 id="설문질문관리">설문질문관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>설문질문관리 시스템 구축시 사용되는 설문질문관리 기능을 제공하며 설문조사 참여자가 설문 참여 시 설문질문관리정보를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>설문질문관리는 설문지를 관리하기 위한 목적으로 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>설문질문관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문응답자관리, 설문템플릿관리, 설문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
+
+&lt;/p></description></item><item><title>설문템플릿관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-template/</guid><description>&lt;h1 id="설문템플릿관리">설문템플릿관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>설문관리 시스템 구축시 사용되는 설문템플릿관리 기능을 제공하며 설문템플릿관리기능은 설문참여에서 사용되는 디자인 템플릿을 관리를 담당한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>설문템플릿관리는 설문 템플릿을 관리하기 위한 목적으로 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
+&lt;p>① 설문템플릿관리 목록 : 기(記) 등록된 설문템플릿관리 정보를 리스트 형태로 조회한다..
+② 설문템플릿관리 등록 : 설문템플릿관리 등록 화면에서 입력하여 입력항목의 정합성을 체크하고 데이터베이스에 기(記) 등록한다.
+③ 설문템플릿관리 수정 : 화면에 조회된 사용자 설문템플릿관리를 수정하여 항목의 정당(正當)한지 체크하고 수정된 데이터를 데이터베이스에 반영한다.
+④ 설문템플릿관리 상세조회 : 기(記) 등록된 설문템플릿관리 정보를 조회한다.
+⑤ 설문템플릿관리 삭제: 기(記) 등록된 설문템플릿관리 정보를 화면에 조회하여 데이터베이스에서 삭제한다.&lt;/p></description></item><item><title>설문항목관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-item/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-item/</guid><description>&lt;h1 id="설문항목관리">설문항목관리&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>설문항목관리 시스템 구축시 사용되는 설문항목관리 기능을 제공하며 설문조사 참여자가 설문 참여 시 설문항목관리정보를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>설문항목관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문응답자관리, 설문템플릿관리, 설문질문관리, 설문관리, 달력 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
+
+&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qim.web.EgovQustnrItemManageController.java&lt;/td>
+ &lt;td>설문항목관리 Controller Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qim.service.EgovQustnrItemManageService.java&lt;/td>
+ &lt;td>설문항목관리 Service Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qim.service.impl.EgovQustnrItemManageServiceImpl.java&lt;/td>
+ &lt;td>설문항목관리 ServiceImpl Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qim.service.QustnrItemManageVO.java&lt;/td>
+ &lt;td>설문항목관리 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.cmm.ComDefaultVO.java&lt;/td>
+ &lt;td>검색 VO Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.olp.qim.service.impl.QustnrItemManageDao.java&lt;/td>
+ &lt;td>설문항목관리 Dao Class&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageList.jsp&lt;/td>
+ &lt;td>설문항목관리 목록조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageRegist.jsp&lt;/td>
+ &lt;td>설문항목관리 등록 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageModify.jsp&lt;/td>
+ &lt;td>설문항목관리 수정 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageDetail.jsp&lt;/td>
+ &lt;td>설문항목관리 상세조회 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageListPopup.jsp&lt;/td>
+ &lt;td>설문항목관리 목록 팝업 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_mysql.xml&lt;/td>
+ &lt;td>설문항목관리 MySQL용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_oracle.xml&lt;/td>
+ &lt;td>설문항목관리 Oracle용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_tibero.xml&lt;/td>
+ &lt;td>설문항목관리 Tibero용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_altibase.xml&lt;/td>
+ &lt;td>설문항목관리 Altibase용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>설문항목관리 Cubrid용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_maria.xml&lt;/td>
+ &lt;td>설문항목관리 MariaDB용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_postgres.xml&lt;/td>
+ &lt;td>설문항목관리 PostgreSQL용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>QUERY XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>설문항목관리 Goldilocks용 QUERY XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/olp/qim/message_ko.properties&lt;/td>
+ &lt;td>설문항목관리를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/olp/qim/message_en.properties&lt;/td>
+ &lt;td>설문항목관리를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-QustnrItemManage.xml&lt;/td>
+ &lt;td>설문항목관리 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qim-%ec%84%a4%eb%ac%b8%ed%95%ad%eb%aa%a9%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
+&lt;/p></description></item><item><title>설정 간소화</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</guid><description>&lt;h1 id="spring-security-설정-간소화서비스">Spring Security 설정 간소화서비스&lt;/h1>
 &lt;p>전자정부 표준프레임워크 실행환경 구성요소인 Spring Security 설정 간소화서비스를 사용한 Spring Security 기반 접근제어 설정 및 사용법을 정리한 문서입니다.&lt;/p>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring Security 설정 간소화서비스를 이용한 인증 및 URL 패턴별 접근제어를 제공합니다. JDBC 기반 사용자 인증과 DB의 역할(Role)-URL 매핑을 통해 요청에 대한 권한을 검사합니다.&lt;/p>
