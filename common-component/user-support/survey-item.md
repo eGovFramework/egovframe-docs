@@ -9,3 +9,205 @@ menu:
     weight: 7
     parent: "online-participate"
 ---
+
+
+# 설문항목관리
+
+## 개요
+
+ 설문항목관리 시스템 구축시 사용되는 설문항목관리 기능을 제공하며 설문조사 참여자가 설문 참여 시 설문항목관리정보를 제공한다.
+
+## 설명
+
+### 패키지 참조 관계
+
+ 설문항목관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문응답자관리, 설문템플릿관리, 설문질문관리, 설문관리, 달력 패키지와 함께 배포 파일을 구성한다.
+ 패키지 간 참조 관계 : [사용자지원 Package Dependency](../intro/package-reference.md/#사용자지원)
+
+### 관련소스
+
+| 유형 | 대상소스명 | 비고 |
+| --- | --- | --- |
+| Controller | egovframework.com.uss.olp.qim.web.EgovQustnrItemManageController.java | 설문항목관리 Controller Class |
+| Service | egovframework.com.uss.olp.qim.service.EgovQustnrItemManageService.java | 설문항목관리 Service Class |
+| ServiceImpl | egovframework.com.uss.olp.qim.service.impl.EgovQustnrItemManageServiceImpl.java | 설문항목관리 ServiceImpl Class |
+| VO | egovframework.com.uss.olp.qim.service.QustnrItemManageVO.java | 설문항목관리  VO Class |
+| VO | egovframework.com.cmm.ComDefaultVO.java | 검색 VO Class |
+| DAO | egovframework.com.uss.olp.qim.service.impl.QustnrItemManageDao.java | 설문항목관리 Dao Class |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageList.jsp | 설문항목관리 목록조회 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageRegist.jsp | 설문항목관리 등록 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageModify.jsp | 설문항목관리 수정 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageDetail.jsp | 설문항목관리 상세조회 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageListPopup.jsp | 설문항목관리 목록 팝업 페이지 |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_mysql.xml | 설문항목관리 MySQL용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_oracle.xml | 설문항목관리 Oracle용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_tibero.xml | 설문항목관리 Tibero용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_altibase.xml | 설문항목관리 Altibase용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_cubrid.xml | 설문항목관리 Cubrid용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_maria.xml | 설문항목관리 MariaDB용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_postgres.xml | 설문항목관리 PostgreSQL용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage\_SQL\_goldilocks.xml | 설문항목관리 Goldilocks용 QUERY XML |
+| Message properties | resources/egovframework/message/com/uss/olp/qim/message\_ko.properties | 설문항목관리를 위한 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/uss/olp/qim/message\_en.properties | 설문항목관리를 위한 Message properties(영문) |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-QustnrItemManage.xml | 설문항목관리 Id생성 Idgen XML |
+
+### 클래스 다이어그램
+
+ ![image](./images/svy-qim-설문항목관리_클래스다이어그램.jpg)
+
+### ID Generation
+
+#### ID Generation 관련 DDL 및 DML
+
+ ID Generation Service를 활용하기 위해서 Sequence 저장 테이블인 COMTECOPSEQ에  QESTNR_QESITM_ID  항목을 추가해야 한다.
+
+```sql
+CREATE TABLE COMTECOPSEQ ( 
+  		   TABLE_NAME VARCHAR(20) NOT NULL, 
+  		   NEXT_ID NUMERIC(30) NULL,
+  		   PRIMARY KEY (TABLE_NAME));
+ 
+  INSERT INTO COMTECOPSEQ VALUES('QESTNR_QESITM_ID', 1);
+```
+
+#### ID Generation 환경설정(context-idgn-QustnrItemManage.xml)
+
+```xml
+<bean name="egovQustnrItemManageIdGnrService"
+		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+		destroy-method="destroy">
+		<property name="dataSource" ref="egov.dataSource" />
+		<property name="strategy" ref="QustnrItemManageInfotrategy" />
+		<property name="blockSize" 	value="10"/>
+		<property name="table"	   	value="COMTECOPSEQ"/>
+		<property name="tableName"	value="QESTNR_QESITM_ID"/>
+	</bean>
+	<bean name="QustnrItemManageInfotrategy"
+		class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		<property name="prefix" value="QESITM_" />
+		<property name="cipers" value="13" />
+		<property name="fillChar" value="0" />
+	</bean>
+```
+
+### 관련테이블
+
+| 테이블명 | 테이블명(영문) | 비고 |
+| --- | --- | --- |
+| 설문관리 | COMTNQESTNRINFO | 설문관리를(을) 조회 한다. |
+| 설문문항 | COMTNQUSTNRQESITM | 설문문항을(를)) 조회 한다. |
+| 설문항목관리 | COMTNQUSTNRIEM | 설문지 항목을(를) 관리 한다. |
+
+## 관련기능
+
+ 설문항목관리는 설문항목관리 목록, 설문항목관리 등록, 설문항목관리 수정, 설문항목관리 상세조회 기능으로 구분된다.
+
+### 설문항목관리 목록
+
+#### 비즈니스 규칙
+
+ 관리자가 기(記) 등록된 설문항목 정보를 리스트 형태로 조회 할 수 있고, 등록버튼을 클릭하여 등록화면으로 이동할수있다.
+
+#### 관련코드
+
+ N/A
+
+#### 관련화면 및 수행매뉴얼
+
+| Action | URL | Controller method | QueryID |
+| --- | --- | --- | --- |
+| 목록조회 | /uss/olp/qim/EgovQustnrItemManageList.do | egovQustnrItemManageList | "QustnrItemManage.selectQustnrItemManage", |
+|  |  |  | "QustnrItemManage.selectQustnrItemManageCnt" |
+
+ 설문항목 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+ 검색조건은 질문내용, 최대선택건수에 대해서 수행된다.
+ 페이지 당 검색 범위를 변경하고자 하는 경우
+ context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
+
+ ![image](./images/svy-qim-4qustnritemlist.png)
+
+ 조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
+ 등록: 등록하기 위해서는 상단의 등록 버튼을 통해서 설문항목 등록 화면으로 이동한다.
+ 목록클릭: 설문항목 상세조회 화면으로 이동한다.
+
+### 설문항목관리 등록
+
+#### 비즈니스 규칙
+
+ 설문항목에 관한 기본정보를 입력 저장처리한다. 입력명 우측의 빨간* 표시는 반드시 입력해야할 항목을 표시한다.
+
+#### 관련코드
+
+ N/A
+
+#### 관련화면 및 수행매뉴얼
+
+##### 1. 설문항목 등록
+
+| Action | URL | Controller method | QueryID |
+| --- | --- | --- | --- |
+| 등록 | /uss/olp/qim/EgovQustnrItemManageRegist.do | qustnrItemManageRegist | "QustnrItemManage.insertQustnrItemManage" |
+
+ ![image](./images/svy-qim-7qustnritemregist.png)
+
+ 목록: 설문항목 목록 화면으로 이동한다.
+ 등록: 입력한 설문항목 정보들이 등록 처리된다.
+ 설문지정보: 설문지정보 팝업창 열린다.
+ 설문문항정보: 설문문항정보 팝업창 열린다.
+
+##### 2. 설문정보 등록 팝업
+
+ ![image](./images/svy-qim-8qustnritemmanageinfopopup.png)
+
+ 선택: 선택한 설문지 정보 가 자동입력된다.
+
+##### 3. 설문문항정보 등록 팝업
+
+ ![image](./images/svy-qim-9qustnritemquestionpopup.png)
+
+ 선택: 선택한 설문문항정보 정보 가 자동입력된다.
+
+### 설문항목관리 수정
+
+#### 비즈니스 규칙
+
+ 입력한 설문항목 정보를(을) 저장 처리한다. 입력명 우측의 빨간* 표시는 수정 시 반드시 입력해야 할 항목을 표시한다.
+
+#### 관련코드
+
+ N/A
+
+#### 관련화면 및 수행매뉴얼
+
+| Action | URL | Controller method | QueryID |
+| --- | --- | --- | --- |
+| 수정 | /uss/olp/qim/EgovQustnrItemManageModify.do | qustnrItemManageModify | "QustnrItemManage.updateQustnrItemManage" |
+
+ ![image](./images/svy-qim-5qustnritemmodify.png)
+
+ 저장: 수정된 정보들이 저장 처리된다.
+ 목록: 설문항목 목록 화면으로 이동한다.
+
+### 설문항목관리 상세조회
+
+#### 비즈니스 규칙
+
+ 설문항목 목록에서 목록 클릭 시 이동되는 화면으로 설문항목에 대한 상세정보를 보여준다.
+
+#### 관련코드
+
+ N/A
+
+#### 관련화면 및 수행매뉴얼
+
+| Action | URL | Controller method | QueryID |
+| --- | --- | --- | --- |
+| 상세조회 | /uss/olp/qim/EgovQustnrItemManageDetail.do | egovQustnrItemManageDetail | "QustnrItemManage.selectQustnrItemManageDetail" |
+| 설문조사 삭제 | /uss/olp/qim/EgovQustnrItemManageDetail.do | egovQustnrItemManageDetail | "QustnrItemManage.deleteQustnrRespondInfo" |
+| 설문항목 삭제 | /uss/olp/qim/EgovQustnrItemManageDetail.do | egovQustnrItemManageDetail | "QustnrItemManage.deleteQustnrItemManage" |
+
+ ![image](./images/svy-qim-6qustnritemdetail.png)
+
+ 수정: 수정버튼 클릭 시 설문항목 수정 화면으로 이동한다.
+ 삭제: 삭제버튼 클릭 시 삭제여부를 확인하는 메시지를 보여주고 삭제처리를 할 수 있다.
+ 목록: 설문항목 목록 화면으로 이동한다.
