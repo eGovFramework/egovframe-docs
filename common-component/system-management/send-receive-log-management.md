@@ -142,22 +142,24 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  송수신로그 삭제, 요약 기능구현을 위하여 Scheduling을 설정한다.
  송수신로그 삭제, 요약 기능구현을 위하여 EgovTrsmrcvLogScheduling클래스를 생성한다.
 
- @Service("egovTrsmrcvLogScheduling")
- public class EgovTrsmrcvLogScheduling {
- @Resource(name="EgovTrsmrcvLogService")
- private EgovTrsmrcvLogService trsmrcvLogService;
- /**
- * 송수신 로그정보를 요약한다.
- * 전날의 로그를 요약하여 입력하고, 일주일전의 로그를 삭제한다.
- *
- * @param
- * @return
- * @throws Exception
- */
- public void trsmrcvLogSummary() throws Exception {
- trsmrcvLogService.logInsertTrsmrcvLogSummary();
- }
- }
+```java
+@Service("egovTrsmrcvLogScheduling")
+public class EgovTrsmrcvLogScheduling {
+@Resource(name="EgovTrsmrcvLogService")
+private EgovTrsmrcvLogService trsmrcvLogService;
+/**
+* 송수신 로그정보를 요약한다.
+* 전날의 로그를 요약하여 입력하고, 일주일전의 로그를 삭제한다.
+*
+* @param
+* @return
+* @throws Exception
+*/
+public void trsmrcvLogSummary() throws Exception {
+trsmrcvLogService.logInsertTrsmrcvLogSummary();
+}
+}
+```
 
 ## 관련기능
 

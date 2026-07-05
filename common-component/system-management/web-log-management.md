@@ -118,44 +118,47 @@ CREATE TABLE COMTECOPSEQ(TABLE_NAME VARCHAR(20) NOT NULL,
  웹로그 등록 기능구현을 위하여 Interceptor를 설정한다.
  웹로그 등록 기능구현을 위하여 EgovWebLogInterceptor 클래스를 생성한다.
 
- package egovframework.com.sym.log.wlg.web;
- import egovframework.com.cmm.LoginVO;
- import egovframework.com.cmm.util.EgovUserDetailsHelper;
- import egovframework.com.sym.log.wlg.service.EgovWebLogService;
- import egovframework.com.sym.log.wlg.service.WebLog;
- import javax.annotation.Resource;
- import javax.servlet.http.HttpServletRequest;
- import javax.servlet.http.HttpServletResponse;
- import org.springframework.web.servlet.ModelAndView;
- import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
- public class EgovWebLogInterceptor extends HandlerInterceptorAdapter {
- @Resource(name="EgovWebLogService")
- private EgovWebLogService webLogService;
- /**
- * 웹 로그정보를 생성한다.
- *
- * @param HttpServletRequest request, HttpServletResponse response, Object handler
- * @return
- * @throws Exception
- */
- @Override
- public void postHandle(HttpServletRequest request,
- HttpServletResponse response, Object handler, ModelAndView modeAndView) throws Exception {
- WebLog webLog = new WebLog();
- String reqURL = request.getRequestURI();
- String uniqId = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- }
- webLog.setUrl(reqURL);
- webLog.setRqesterId(uniqId);
- webLog.setRqesterIp(request.getRemoteAddr());
- webLogService.logInsertWebLog(webLog);
- }
- }
+```java
+package egovframework.com.sym.log.wlg.web;
+import egovframework.com.cmm.LoginVO;
+import egovframework.com.cmm.util.EgovUserDetailsHelper;
+import egovframework.com.sym.log.wlg.service.EgovWebLogService;
+import egovframework.com.sym.log.wlg.service.WebLog;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+public class EgovWebLogInterceptor extends HandlerInterceptorAdapter {
+@Resource(name="EgovWebLogService")
+private EgovWebLogService webLogService;
+/**
+* 웹 로그정보를 생성한다.
+*
+* @param HttpServletRequest request, HttpServletResponse response, Object handler
+* @return
+* @throws Exception
+*/
+@Override
+public void postHandle(HttpServletRequest request,
+HttpServletResponse response, Object handler, ModelAndView modeAndView) throws Exception {
+WebLog webLog = new WebLog();
+String reqURL = request.getRequestURI();
+String uniqId = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+}
+webLog.setUrl(reqURL);
+webLog.setRqesterId(uniqId);
+webLog.setRqesterIp(request.getRemoteAddr());
+webLogService.logInsertWebLog(webLog);
+}
+}
+```
+
 
 ### Scheduling
 
@@ -189,22 +192,24 @@ CREATE TABLE COMTECOPSEQ(TABLE_NAME VARCHAR(20) NOT NULL,
  웹로그 삭제, 요약 기능구현을 위하여 Scheduling을 설정한다.
  웹로그 삭제, 요약 기능구현을 위하여 EgovWebLogScheduling 클래스를 생성한다.
 
- @Service("egovWebLogScheduling")
- public class EgovWebLogScheduling extends EgovAbstractServiceImpl {
- @Resource(name="EgovWebLogService")
- private EgovWebLogService webLogService;
- /**
- * 웹 로그정보를 요약한다.
- * 전날의 로그를 요약하여 입력하고, 6개월전의 로그를 삭제한다.
- *
- * @param
- * @return
- * @throws Exception
- */
- public void webLogSummary() throws Exception {
- webLogService.logInsertWebLogSummary();
- }
- }
+```java
+@Service("egovWebLogScheduling")
+public class EgovWebLogScheduling extends EgovAbstractServiceImpl {
+@Resource(name="EgovWebLogService")
+private EgovWebLogService webLogService;
+/**
+* 웹 로그정보를 요약한다.
+* 전날의 로그를 요약하여 입력하고, 6개월전의 로그를 삭제한다.
+*
+* @param
+* @return
+* @throws Exception
+*/
+public void webLogSummary() throws Exception {
+webLogService.logInsertWebLogSummary();
+}
+}
+```
 
 ## 관련기능
 
