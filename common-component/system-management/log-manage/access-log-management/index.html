@@ -74,54 +74,67 @@
 </span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/aop:aspect&gt;</span>
 </span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/aop:config&gt;</span>
 </span></span></code></pre></div><p>접속로그 등록 기능구현을 위하여 AOP를 설정한다.
-접속로그 등록 기능구현을 위하여 EgovLoginLogAspect 클래스를 생성한다.</p><p>package egovframework.com.sym.log.clg.service;
-import egovframework.com.cmm.LoginVO;
-import egovframework.com.cmm.util.EgovUserDetailsHelper;
-import javax.annotation.Resource;
-public class EgovLoginLogAspect {
-@Resource(name=&ldquo;EgovLoginLogService&rdquo;)
-private EgovLoginLogService loginLogService;
-/**</p><ul><li>로그인 로그정보를 생성한다.</li><li>EgovLoginController.actionMain Method</li><li></li><li>@param</li><li>@return void</li><li>@throws Exception
-<em>/
-public void logLogin() throws Throwable {
-String uniqId = &ldquo;;
-String ip = &ldquo;;
-/</em> Authenticated <em>/
-Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
-if(isAuthenticated.booleanValue()) {
-LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
-uniqId = user.getUniqId();
-ip = user.getIp();
-}
-LoginLog loginLog = new LoginLog();
-loginLog.setLoginId(uniqId);
-loginLog.setLoginIp(ip);
-loginLog.setLoginMthd(&ldquo;I&rdquo;); // 로그인:I, 로그아웃:O
-loginLog.setErrOccrrAt(&ldquo;N&rdquo;);
-loginLog.setErrorCode(&rdquo;);
-loginLogService.logInsertLoginLog(loginLog);
-}
-/</em>*</li><li>로그아웃 로그정보를 생성한다.</li><li>EgovLoginController.actionLogout Method</li><li></li><li>@param</li><li>@return void</li><li>@throws Exception
-<em>/
-public void logLogout() throws Throwable {
-String uniqId = &ldquo;;
-String ip = &ldquo;;
-/</em> Authenticated */
-Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
-if(isAuthenticated.booleanValue()) {
-LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
-uniqId = user.getUniqId();
-ip = user.getIp();
-}
-LoginLog loginLog = new LoginLog();
-loginLog.setLoginId(uniqId);
-loginLog.setLoginIp(ip);
-loginLog.setLoginMthd(&ldquo;O&rdquo;); // 로그인:I, 로그아웃:O
-loginLog.setErrOccrrAt(&ldquo;N&rdquo;);
-loginLog.setErrorCode(&rdquo;);
-loginLogService.logInsertLoginLog(loginLog);
-}
-}</li></ul></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련기능>관련기능</h2><p>접속로그관리는 접속로그 목록조회, 접속로그 상세조회 기능으로 구분된다.</p><h3 class=sec-tit id=접속로그-목록조회>접속로그 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>로그인로그 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 발생일자와 로그유형에 대해서 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class=krds-table-wrap><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>SQL Namespace</th><th>SQL QueryID</th></tr></thead><tbody><tr><td>목록조회</td><td>/sym/log/clg/SelectLoginLogList.do</td><td>selectLoginLogInf</td><td>&ldquo;LoginLog&rdquo;</td><td>&ldquo;selectLoginLogInf&rdquo;</td></tr><tr><td></td><td></td><td></td><td></td><td>&ldquo;selectLoginLogInfCnt&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-conectlog-%eb%aa%a9%eb%a1%9d.jpg alt=image></p><p>로그인로그 상세조회 기능을 수행하기 위해서는 상세보기 버튼을 클릭한다.</p><h3 class=sec-tit id=접속로그-상세조회>접속로그 상세조회</h3><h4 id=비즈니스-규칙-1>비즈니스 규칙</h4><p>로그인로그 상세조회는 팝업창으로 구성되며, 닫기 버튼을 클릭하면 창을 닫는다.</p><h4 id=관련코드-1>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행메뉴얼>관련화면 및 수행메뉴얼</h4><div class=krds-table-wrap><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>SQL Namespace</th><th>SQL QueryID</th></tr></thead><tbody><tr><td>상세조회</td><td>/sym/log/clg/SelectLoginLogDetail.do</td><td>selectLoginLog</td><td>&ldquo;LoginLog&rdquo;</td><td>&ldquo;selectLoginLog&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-conectlog-%ec%83%81%ec%84%b8.jpg alt=image></p></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=참고자료>참고자료</h2><p>실행환경 참조 : AOP
+접속로그 등록 기능구현을 위하여 EgovLoginLogAspect 클래스를 생성한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> egovframework.com.sym.log.clg.service;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> egovframework.com.cmm.LoginVO;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> egovframework.com.cmm.util.EgovUserDetailsHelper;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.annotation.Resource;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EgovLoginLogAspect</span> {
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Resource</span>(name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;EgovLoginLogService&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> EgovLoginLogService loginLogService;
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>* 로그인 로그정보를 생성한다.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>* EgovLoginController.actionMain Method
+</span></span></span><span style=display:flex><span><span style=color:#75715e>*
+</span></span></span><span style=display:flex><span><span style=color:#75715e>* @param
+</span></span></span><span style=display:flex><span><span style=color:#75715e>* @return void
+</span></span></span><span style=display:flex><span><span style=color:#75715e>* @throws Exception
+</span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>logLogin</span>() <span style=color:#66d9ef>throws</span> Throwable {
+</span></span><span style=display:flex><span>String uniqId <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>String ip <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>/* Authenticated  */</span>
+</span></span><span style=display:flex><span>Boolean isAuthenticated <span style=color:#f92672>=</span> EgovUserDetailsHelper.<span style=color:#a6e22e>isAuthenticated</span>();
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span>(isAuthenticated.<span style=color:#a6e22e>booleanValue</span>()) {
+</span></span><span style=display:flex><span>LoginVO user <span style=color:#f92672>=</span> (LoginVO)EgovUserDetailsHelper.<span style=color:#a6e22e>getAuthenticatedUser</span>();
+</span></span><span style=display:flex><span>uniqId <span style=color:#f92672>=</span> user.<span style=color:#a6e22e>getUniqId</span>();
+</span></span><span style=display:flex><span>ip <span style=color:#f92672>=</span> user.<span style=color:#a6e22e>getIp</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>LoginLog loginLog <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> LoginLog();
+</span></span><span style=display:flex><span>loginLog.<span style=color:#a6e22e>setLoginId</span>(uniqId);
+</span></span><span style=display:flex><span>loginLog.<span style=color:#a6e22e>setLoginIp</span>(ip);
+</span></span><span style=display:flex><span>loginLog.<span style=color:#a6e22e>setLoginMthd</span>(<span style=color:#e6db74>&#34;I&#34;</span>); <span style=color:#75715e>// 로그인:I, 로그아웃:O</span>
+</span></span><span style=display:flex><span>loginLog.<span style=color:#a6e22e>setErrOccrrAt</span>(<span style=color:#e6db74>&#34;N&#34;</span>);
+</span></span><span style=display:flex><span>loginLog.<span style=color:#a6e22e>setErrorCode</span>(<span style=color:#e6db74>&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>loginLogService.logInsertLoginLog(loginLog);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>/**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>* 로그아웃 로그정보를 생성한다.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>* EgovLoginController.actionLogout Method
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>* @param
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>* @return void
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>* @throws Exception
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>*/
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>public void logLogout() throws Throwable {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>String uniqId = &#34;&#34;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>String ip = &#34;&#34;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>/* Authenticated  */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>if(isAuthenticated.booleanValue()) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>uniqId = user.getUniqId();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>ip = user.getIp();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>LoginLog loginLog = new LoginLog();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>loginLog.setLoginId(uniqId);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>loginLog.setLoginIp(ip);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>loginLog.setLoginMthd(&#34;</span>O<span style=color:#e6db74>&#34;); // 로그인:I, 로그아웃:O
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>loginLog.setErrOccrrAt(&#34;</span>N<span style=color:#e6db74>&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>loginLog.setErrorCode(&#34;</span>);
+</span></span><span style=display:flex><span>loginLogService.<span style=color:#a6e22e>logInsertLoginLog</span>(loginLog);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련기능>관련기능</h2><p>접속로그관리는 접속로그 목록조회, 접속로그 상세조회 기능으로 구분된다.</p><h3 class=sec-tit id=접속로그-목록조회>접속로그 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>로그인로그 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 발생일자와 로그유형에 대해서 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class=krds-table-wrap><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>SQL Namespace</th><th>SQL QueryID</th></tr></thead><tbody><tr><td>목록조회</td><td>/sym/log/clg/SelectLoginLogList.do</td><td>selectLoginLogInf</td><td>&ldquo;LoginLog&rdquo;</td><td>&ldquo;selectLoginLogInf&rdquo;</td></tr><tr><td></td><td></td><td></td><td></td><td>&ldquo;selectLoginLogInfCnt&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-conectlog-%eb%aa%a9%eb%a1%9d.jpg alt=image></p><p>로그인로그 상세조회 기능을 수행하기 위해서는 상세보기 버튼을 클릭한다.</p><h3 class=sec-tit id=접속로그-상세조회>접속로그 상세조회</h3><h4 id=비즈니스-규칙-1>비즈니스 규칙</h4><p>로그인로그 상세조회는 팝업창으로 구성되며, 닫기 버튼을 클릭하면 창을 닫는다.</p><h4 id=관련코드-1>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행메뉴얼>관련화면 및 수행메뉴얼</h4><div class=krds-table-wrap><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>SQL Namespace</th><th>SQL QueryID</th></tr></thead><tbody><tr><td>상세조회</td><td>/sym/log/clg/SelectLoginLogDetail.do</td><td>selectLoginLog</td><td>&ldquo;LoginLog&rdquo;</td><td>&ldquo;selectLoginLog&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-conectlog-%ec%83%81%ec%84%b8.jpg alt=image></p></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=참고자료>참고자료</h2><p>실행환경 참조 : AOP
 실행환경 참조 : ID Generation</p></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
 <a href="https://www.egovframe.go.kr/home/sub.do?menuNo=23" class="krds-btn small text">라이센스</a></div><p class=f-copy>COPYRIGHT (C) 2024 eGovFramework. ALL RIGHTS RESERVED.</p></div></div></div></footer></body></html>
