@@ -99,20 +99,22 @@ menu:
  사용로그 등록 기능구현을 위하여 Scheduling을 설정한다.
  사용로그 등록 기능구현을 위하여 EgovUserLogScheduling 클래스를 생성한다.
 
- @Service("egovUserLogScheduling")
- public class EgovUserLogScheduling extends EgovAbstractServiceImpl {
- @Resource(name="EgovUserLogService")
- private EgovUserLogService userLogService;
- /**
- * 사용자 로그정보를 생성한다.
- *
- * @param
- * @return
- * @throws Exception
- */
- public void userLogInsert() throws Exception {
- userLogService.logInsertUserLog();
- }
+```java
+@Service("egovUserLogScheduling")
+public class EgovUserLogScheduling extends EgovAbstractServiceImpl {
+@Resource(name="EgovUserLogService")
+private EgovUserLogService userLogService;
+/**
+* 사용자 로그정보를 생성한다.
+*
+* @param
+* @return
+* @throws Exception
+*/
+public void userLogInsert() throws Exception {
+userLogService.logInsertUserLog();
+}
+```
 
 ## 관련기능
 

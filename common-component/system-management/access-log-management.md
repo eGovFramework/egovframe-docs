@@ -118,66 +118,69 @@ CREATE TABLE COMTECOPSEQ(TABLE_NAME VARCHAR(20) NOT NULL,
  접속로그 등록 기능구현을 위하여 AOP를 설정한다.
  접속로그 등록 기능구현을 위하여 EgovLoginLogAspect 클래스를 생성한다.
 
- package egovframework.com.sym.log.clg.service;
- import egovframework.com.cmm.LoginVO;
- import egovframework.com.cmm.util.EgovUserDetailsHelper;
- import javax.annotation.Resource;
- public class EgovLoginLogAspect {
- @Resource(name="EgovLoginLogService")
- private EgovLoginLogService loginLogService;
- /**
- * 로그인 로그정보를 생성한다.
- * EgovLoginController.actionMain Method
- *
- * @param
- * @return void
- * @throws Exception
- */
- public void logLogin() throws Throwable {
- String uniqId = ";
- String ip = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- ip = user.getIp();
- }
- LoginLog loginLog = new LoginLog();
- loginLog.setLoginId(uniqId);
- loginLog.setLoginIp(ip);
- loginLog.setLoginMthd("I"); // 로그인:I, 로그아웃:O
- loginLog.setErrOccrrAt("N");
- loginLog.setErrorCode(");
- loginLogService.logInsertLoginLog(loginLog);
- }
- /**
- * 로그아웃 로그정보를 생성한다.
- * EgovLoginController.actionLogout Method
- *
- * @param
- * @return void
- * @throws Exception
- */
- public void logLogout() throws Throwable {
- String uniqId = ";
- String ip = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- ip = user.getIp();
- }
- LoginLog loginLog = new LoginLog();
- loginLog.setLoginId(uniqId);
- loginLog.setLoginIp(ip);
- loginLog.setLoginMthd("O"); // 로그인:I, 로그아웃:O
- loginLog.setErrOccrrAt("N");
- loginLog.setErrorCode(");
- loginLogService.logInsertLoginLog(loginLog);
- }
- }
+```java
+package egovframework.com.sym.log.clg.service;
+import egovframework.com.cmm.LoginVO;
+import egovframework.com.cmm.util.EgovUserDetailsHelper;
+import javax.annotation.Resource;
+public class EgovLoginLogAspect {
+@Resource(name="EgovLoginLogService")
+private EgovLoginLogService loginLogService;
+/**
+* 로그인 로그정보를 생성한다.
+* EgovLoginController.actionMain Method
+*
+* @param
+* @return void
+* @throws Exception
+*/
+public void logLogin() throws Throwable {
+String uniqId = "";
+String ip = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+ip = user.getIp();
+}
+LoginLog loginLog = new LoginLog();
+loginLog.setLoginId(uniqId);
+loginLog.setLoginIp(ip);
+loginLog.setLoginMthd("I"); // 로그인:I, 로그아웃:O
+loginLog.setErrOccrrAt("N");
+loginLog.setErrorCode(");
+loginLogService.logInsertLoginLog(loginLog);
+}
+/**
+* 로그아웃 로그정보를 생성한다.
+* EgovLoginController.actionLogout Method
+*
+* @param
+* @return void
+* @throws Exception
+*/
+public void logLogout() throws Throwable {
+String uniqId = "";
+String ip = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+ip = user.getIp();
+}
+LoginLog loginLog = new LoginLog();
+loginLog.setLoginId(uniqId);
+loginLog.setLoginIp(ip);
+loginLog.setLoginMthd("O"); // 로그인:I, 로그아웃:O
+loginLog.setErrOccrrAt("N");
+loginLog.setErrorCode(");
+loginLogService.logInsertLoginLog(loginLog);
+}
+}
+```
+
 
 ## 관련기능
 

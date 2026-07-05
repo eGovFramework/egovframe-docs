@@ -37,6 +37,7 @@ menu:
 | Controller | egovframework.com.sym.log.plg.web.EgovPrivacyLogController.java | 개인정보조회 로그 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.log.plg.service.EgovPrivacyLogService.java | 개인정보조회 로그 관리를 위한  서비스 인터페이스 |
 | ServiceImpl | egovframework.com.sym.log.plg.service.impl.EgovPrivacyLogServiceImpl.java | 개인정보조회 로그 관리를 위한 서비스 구현 클래스 |
+| Config | egovframework.com.sym.log.plg.service.EgovPrivacyConfig.java | 개인정보조회 로그 관련 JavaConfig (ID Generation 설정 포함) |
 | Model | egovframework.com.sym.log.plg.service.PrivacyLog.java | 개인정보조회 로그 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.sym.log.plg.service.impl.PrivacyLogDAO.java | 개인정보조회 로그 관리를 위한 데이터처리 클래스 |
 | Aspect | egovframework.com.sym.log.plg.service.EgovPrivacyLogAspect.java | 개인정보조회 로그 등록을 위한 Aspect 클래스 |
@@ -71,25 +72,27 @@ INSERT INTO COMTECOPSEQ VALUES('PRIVACYLOG_ID','1');
 
  JavaConfig 방식으로 EgovPrivacyConfig 상에 다음과 같은 설정을 적용(변경)한다.
 
- @Configuration
- public class EgovPrivacyConfig {
- @Resource(name = "egov.dataSource")
- DataSource dataSource;
- @Bean(destroyMethod = "destroy")
- public EgovIdGnrService egovPrivacyLogIdGnrService() {
- EgovIdGnrStrategyImpl strategy = new EgovIdGnrStrategyImpl();
- strategy.setPrefix("PRVCY_");
- strategy.setCipers(14);
- strategy.setFillChar('0');
- EgovTableIdGnrServiceImpl idGnrService = new EgovTableIdGnrServiceImpl();
- idGnrService.setDataSource(dataSource);
- idGnrService.setStrategy(strategy);
- idGnrService.setBlockSize(10);
- idGnrService.setTable("COMTECOPSEQ");
- idGnrService.setTableName("PRIVACYLOG_ID");
- return idGnrService;
- }
- }
+```java
+@Configuration
+public class EgovPrivacyConfig {
+@Resource(name = "egov.dataSource")
+DataSource dataSource;
+@Bean(destroyMethod = "destroy")
+public EgovIdGnrService egovPrivacyLogIdGnrService() {
+EgovIdGnrStrategyImpl strategy = new EgovIdGnrStrategyImpl();
+strategy.setPrefix("PRVCY_");
+strategy.setCipers(14);
+strategy.setFillChar('0');
+EgovTableIdGnrServiceImpl idGnrService = new EgovTableIdGnrServiceImpl();
+idGnrService.setDataSource(dataSource);
+idGnrService.setStrategy(strategy);
+idGnrService.setBlockSize(10);
+idGnrService.setTable("COMTECOPSEQ");
+idGnrService.setTableName("PRIVACYLOG_ID");
+return idGnrService;
+}
+}
+```
 
 #### ID Generation 환경설정(context-idgen.xml)
 

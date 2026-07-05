@@ -129,180 +129,183 @@ CREATE TABLE COMTECOPSEQ( TABLE_NAME VARCHAR(20) NOT NULL,
  시스템로그 등록 기능구현을 위하여 AOP를 설정한다.
  시스템로그 등록 기능구현을 위하여 EgovSysLogAspect 클래스를 생성한다.
 
- package egovframework.com.sym.log.lgm.service;
- import javax.annotation.Resource;
- import org.aspectj.lang.ProceedingJoinPoint;
- import org.springframework.util.StopWatch;
- import egovframework.com.cmm.LoginVO;
- import egovframework.com.cmm.util.EgovUserDetailsHelper;
- public class EgovSysLogAspect {
- @Resource(name="EgovSysLogService")
- private EgovSysLogService sysLogService;
- /**
- * 시스템 로그정보를 생성한다.
- * sevice Class의 insert로 시작되는 Method
- *
- * @param ProceedingJoinPoint
- * @return Object
- * @throws Exception
- */
- public Object logInsert(ProceedingJoinPoint joinPoint) throws Throwable {
- StopWatch stopWatch = new StopWatch();
- try {
- stopWatch.start();
- Object retValue = joinPoint.proceed();
- return retValue;
- } catch (Throwable e) {
- throw e;
- } finally {
- stopWatch.stop();
- SysLog sysLog = new SysLog();
- String className = joinPoint.getTarget().getClass().getName();
- String methodName = joinPoint.getSignature().getName();
- String processSeCode = "C";
- String processTime = Long.toString(stopWatch.getTotalTimeMillis());
- String uniqId = ";
- String ip = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- ip = user.getIp();
- }
- sysLog.setSrvcNm(className);
- sysLog.setMethodNm(methodName);
- sysLog.setProcessSeCode(processSeCode);
- sysLog.setProcessTime(processTime);
- sysLog.setRqesterId(uniqId);
- sysLog.setRqesterIp(ip);
- sysLogService.logInsertSysLog(sysLog);
- }
- }
- /**
- * 시스템 로그정보를 생성한다.
- * sevice Class의 update로 시작되는 Method
- *
- * @param ProceedingJoinPoint
- * @return Object
- * @throws Exception
- */
- public Object logUpdate(ProceedingJoinPoint joinPoint) throws Throwable {
- StopWatch stopWatch = new StopWatch();
- try {
- stopWatch.start();
- Object retValue = joinPoint.proceed();
- return retValue;
- } catch (Throwable e) {
- throw e;
- } finally {
- stopWatch.stop();
- SysLog sysLog = new SysLog();
- String className = joinPoint.getTarget().getClass().getName();
- String methodName = joinPoint.getSignature().getName();
- String processSeCode = "U";
- String processTime = Long.toString(stopWatch.getTotalTimeMillis());
- String uniqId = ";
- String ip = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- ip = user.getIp();
- }
- sysLog.setSrvcNm(className);
- sysLog.setMethodNm(methodName);
- sysLog.setProcessSeCode(processSeCode);
- sysLog.setProcessTime(processTime);
- sysLog.setRqesterId(uniqId);
- sysLog.setRqesterIp(ip);
- sysLogService.logInsertSysLog(sysLog);
- }
- }
- /**
- * 시스템 로그정보를 생성한다.
- * sevice Class의 delete로 시작되는 Method
- *
- * @param ProceedingJoinPoint
- * @return Object
- * @throws Exception
- */
- public Object logDelete(ProceedingJoinPoint joinPoint) throws Throwable {
- StopWatch stopWatch = new StopWatch();
- try {
- stopWatch.start();
- Object retValue = joinPoint.proceed();
- return retValue;
- } catch (Throwable e) {
- throw e;
- } finally {
- stopWatch.stop();
- SysLog sysLog = new SysLog();
- String className = joinPoint.getTarget().getClass().getName();
- String methodName = joinPoint.getSignature().getName();
- String processSeCode = "D";
- String processTime = Long.toString(stopWatch.getTotalTimeMillis());
- String uniqId = ";
- String ip = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- ip = user.getIp();
- }
- sysLog.setSrvcNm(className);
- sysLog.setMethodNm(methodName);
- sysLog.setProcessSeCode(processSeCode);
- sysLog.setProcessTime(processTime);
- sysLog.setRqesterId(uniqId);
- sysLog.setRqesterIp(ip);
- sysLogService.logInsertSysLog(sysLog);
- }
- }
- /**
- * 시스템 로그정보를 생성한다.
- * sevice Class의 select로 시작되는 Method
- *
- * @param ProceedingJoinPoint
- * @return Object
- * @throws Exception
- */
- public Object logSelect(ProceedingJoinPoint joinPoint) throws Throwable {
- StopWatch stopWatch = new StopWatch();
- try {
- stopWatch.start();
- Object retValue = joinPoint.proceed();
- return retValue;
- } catch (Throwable e) {
- throw e;
- } finally {
- stopWatch.stop();
- SysLog sysLog = new SysLog();
- String className = joinPoint.getTarget().getClass().getName();
- String methodName = joinPoint.getSignature().getName();
- String processSeCode = "R";
- String processTime = Long.toString(stopWatch.getTotalTimeMillis());
- String uniqId = ";
- String ip = ";
- /* Authenticated  */
- Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
- if(isAuthenticated.booleanValue()) {
- LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
- uniqId = user.getUniqId();
- ip = user.getIp();
- }
- sysLog.setSrvcNm(className);
- sysLog.setMethodNm(methodName);
- sysLog.setProcessSeCode(processSeCode);
- sysLog.setProcessTime(processTime);
- sysLog.setRqesterId(uniqId);
- sysLog.setRqesterIp(ip);
- sysLogService.logInsertSysLog(sysLog);
- }
- }
- }
+```java
+package egovframework.com.sym.log.lgm.service;
+import javax.annotation.Resource;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.springframework.util.StopWatch;
+import egovframework.com.cmm.LoginVO;
+import egovframework.com.cmm.util.EgovUserDetailsHelper;
+public class EgovSysLogAspect {
+@Resource(name="EgovSysLogService")
+private EgovSysLogService sysLogService;
+/**
+* 시스템 로그정보를 생성한다.
+* sevice Class의 insert로 시작되는 Method
+*
+* @param ProceedingJoinPoint
+* @return Object
+* @throws Exception
+*/
+public Object logInsert(ProceedingJoinPoint joinPoint) throws Throwable {
+StopWatch stopWatch = new StopWatch();
+try {
+stopWatch.start();
+Object retValue = joinPoint.proceed();
+return retValue;
+} catch (Throwable e) {
+throw e;
+} finally {
+stopWatch.stop();
+SysLog sysLog = new SysLog();
+String className = joinPoint.getTarget().getClass().getName();
+String methodName = joinPoint.getSignature().getName();
+String processSeCode = "C";
+String processTime = Long.toString(stopWatch.getTotalTimeMillis());
+String uniqId = "";
+String ip = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+ip = user.getIp();
+}
+sysLog.setSrvcNm(className);
+sysLog.setMethodNm(methodName);
+sysLog.setProcessSeCode(processSeCode);
+sysLog.setProcessTime(processTime);
+sysLog.setRqesterId(uniqId);
+sysLog.setRqesterIp(ip);
+sysLogService.logInsertSysLog(sysLog);
+}
+}
+/**
+* 시스템 로그정보를 생성한다.
+* sevice Class의 update로 시작되는 Method
+*
+* @param ProceedingJoinPoint
+* @return Object
+* @throws Exception
+*/
+public Object logUpdate(ProceedingJoinPoint joinPoint) throws Throwable {
+StopWatch stopWatch = new StopWatch();
+try {
+stopWatch.start();
+Object retValue = joinPoint.proceed();
+return retValue;
+} catch (Throwable e) {
+throw e;
+} finally {
+stopWatch.stop();
+SysLog sysLog = new SysLog();
+String className = joinPoint.getTarget().getClass().getName();
+String methodName = joinPoint.getSignature().getName();
+String processSeCode = "U";
+String processTime = Long.toString(stopWatch.getTotalTimeMillis());
+String uniqId = "";
+String ip = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+ip = user.getIp();
+}
+sysLog.setSrvcNm(className);
+sysLog.setMethodNm(methodName);
+sysLog.setProcessSeCode(processSeCode);
+sysLog.setProcessTime(processTime);
+sysLog.setRqesterId(uniqId);
+sysLog.setRqesterIp(ip);
+sysLogService.logInsertSysLog(sysLog);
+}
+}
+/**
+* 시스템 로그정보를 생성한다.
+* sevice Class의 delete로 시작되는 Method
+*
+* @param ProceedingJoinPoint
+* @return Object
+* @throws Exception
+*/
+public Object logDelete(ProceedingJoinPoint joinPoint) throws Throwable {
+StopWatch stopWatch = new StopWatch();
+try {
+stopWatch.start();
+Object retValue = joinPoint.proceed();
+return retValue;
+} catch (Throwable e) {
+throw e;
+} finally {
+stopWatch.stop();
+SysLog sysLog = new SysLog();
+String className = joinPoint.getTarget().getClass().getName();
+String methodName = joinPoint.getSignature().getName();
+String processSeCode = "D";
+String processTime = Long.toString(stopWatch.getTotalTimeMillis());
+String uniqId = "";
+String ip = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+ip = user.getIp();
+}
+sysLog.setSrvcNm(className);
+sysLog.setMethodNm(methodName);
+sysLog.setProcessSeCode(processSeCode);
+sysLog.setProcessTime(processTime);
+sysLog.setRqesterId(uniqId);
+sysLog.setRqesterIp(ip);
+sysLogService.logInsertSysLog(sysLog);
+}
+}
+/**
+* 시스템 로그정보를 생성한다.
+* sevice Class의 select로 시작되는 Method
+*
+* @param ProceedingJoinPoint
+* @return Object
+* @throws Exception
+*/
+public Object logSelect(ProceedingJoinPoint joinPoint) throws Throwable {
+StopWatch stopWatch = new StopWatch();
+try {
+stopWatch.start();
+Object retValue = joinPoint.proceed();
+return retValue;
+} catch (Throwable e) {
+throw e;
+} finally {
+stopWatch.stop();
+SysLog sysLog = new SysLog();
+String className = joinPoint.getTarget().getClass().getName();
+String methodName = joinPoint.getSignature().getName();
+String processSeCode = "R";
+String processTime = Long.toString(stopWatch.getTotalTimeMillis());
+String uniqId = "";
+String ip = "";
+/* Authenticated  */
+Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+if(isAuthenticated.booleanValue()) {
+LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+uniqId = user.getUniqId();
+ip = user.getIp();
+}
+sysLog.setSrvcNm(className);
+sysLog.setMethodNm(methodName);
+sysLog.setProcessSeCode(processSeCode);
+sysLog.setProcessTime(processTime);
+sysLog.setRqesterId(uniqId);
+sysLog.setRqesterIp(ip);
+sysLogService.logInsertSysLog(sysLog);
+}
+}
+}
+```
+
 
 ### Scheduling
 
@@ -338,22 +341,24 @@ CREATE TABLE COMTECOPSEQ( TABLE_NAME VARCHAR(20) NOT NULL,
  시스템로그 삭제, 요약 기능구현을 위하여 Scheduling을 설정한다.
  시스템로그 삭제, 요약 기능구현을 위하여 EgovLogManageScheduling 클래스를 생성한다.
 
- @Service("egovSysLogScheduling")
- public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
- @Resource(name="EgovSysLogService")
- private EgovSysLogService sysLogService;
- /**
- * 시스템 로그정보를 요약한다.
- * 전날의 로그를 요약하여 입력하고, 6개월전의 로그를 삭제한다.
- *
- * @param
- * @return
- * @throws Exception
- */
- public void sysLogSummary() throws Exception {
- sysLogService.logInsertSysLogSummary();
- }
- }
+```java
+@Service("egovSysLogScheduling")
+public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
+@Resource(name="EgovSysLogService")
+private EgovSysLogService sysLogService;
+/**
+* 시스템 로그정보를 요약한다.
+* 전날의 로그를 요약하여 입력하고, 6개월전의 로그를 삭제한다.
+*
+* @param
+* @return
+* @throws Exception
+*/
+public void sysLogSummary() throws Exception {
+sysLogService.logInsertSysLogSummary();
+}
+}
+```
 
 ## 관련기능
 
