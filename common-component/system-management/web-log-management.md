@@ -260,5 +260,5 @@ webLogService.logInsertWebLogSummary();
 ## 참고자료
 
  실행환경 참조 : Interceptor
- 실행환경 참조 : Scheduling
- 실행환경 참조 : ID Generation
+ 실행환경 참조 : [Scheduling](/egovframe-runtime/foundation-layer/scheduling.md)
+ 실행환경 참조 : [ID Generation](/egovframe-runtime/foundation-layer/id-generation.md)
