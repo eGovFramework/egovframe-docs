@@ -161,4 +161,4 @@ userLogService.logInsertUserLog();
 
 ## 참고자료
 
- 실행환경 참조 : Scheduling
+ 실행환경 참조 : [Scheduling](/egovframe-runtime/foundation-layer/scheduling.md)

@@ -408,6 +408,6 @@ sysLogService.logInsertSysLogSummary();
 
 ## 참고자료
 
- 실행환경 참조 : AOP
- 실행환경 참조 : Scheduling
- 실행환경 참조 : ID Generation
+ 실행환경 참조 : [AOP](/egovframe-runtime/foundation-layer-core/aop.md)
+ 실행환경 참조 : [Scheduling](/egovframe-runtime/foundation-layer/scheduling.md)
+ 실행환경 참조 : [ID Generation](/egovframe-runtime/foundation-layer/id-generation.md)
