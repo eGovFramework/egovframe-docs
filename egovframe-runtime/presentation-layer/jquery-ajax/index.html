@@ -83,7 +83,7 @@ example01.do로 호출을 하며 sampleInput이란 데이터명으로 “sampleD
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>sampleInput</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;sampleData&#34;</span>
 </span></span><span style=display:flex><span>   },
 </span></span><span style=display:flex><span>   <span style=color:#a6e22e>success</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>data</span>, <span style=color:#a6e22e>textStatus</span>, <span style=color:#a6e22e>jqXHR</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//Sucess시, 처리
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Success시, 처리
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>   },
 </span></span><span style=display:flex><span>   <span style=color:#a6e22e>error</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>jqXHR</span>, <span style=color:#a6e22e>textStatus</span>, <span style=color:#a6e22e>errorThrown</span>){
 </span></span><span style=display:flex><span>    <span style=color:#75715e>//Error시, 처리
@@ -117,7 +117,7 @@ example02.do을 호출하며 name, location을 요청데이터로 전달한다. 
 </span></span><span style=display:flex><span><span style=color:#a6e22e>jqxhr</span>.<span style=color:#a6e22e>always</span>(<span style=color:#66d9ef>function</span>() {
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>alert</span>( <span style=color:#e6db74>&#34;second complete&#34;</span> );
 </span></span><span style=display:flex><span>});
-</span></span></code></pre></div><h3 class=sec-tit id=jqueryget>jQuery.get()</h3><p>jQuery 1.5부터 sucess콜백함수는 jqXHR(XMLHttpRequest의 상위집합 객체)를 받을 수 있게 되었다. 그러나 JSONP와 같은 cross-domain request의 GET요청 시에는 jqXHR을 사용하여도 XHR인자는 success함수 안에서 undefined로 인식된다.</p><p>jQuery.get()은 ajax를 GET요청하는 함수이며 jqXHR을 반환받는다. 따라서 $.ajax()와 동일하게 done, fail, always콜백함수를 쓸 수 있다.
+</span></span></code></pre></div><h3 class=sec-tit id=jqueryget>jQuery.get()</h3><p>jQuery 1.5부터 success 콜백함수는 jqXHR(XMLHttpRequest의 상위집합 객체)를 받을 수 있게 되었다. 그러나 JSONP와 같은 cross-domain request의 GET요청 시에는 jqXHR을 사용하여도 XHR인자는 success함수 안에서 undefined로 인식된다.</p><p>jQuery.get()은 ajax를 GET요청하는 함수이며 jqXHR을 반환받는다. 따라서 $.ajax()와 동일하게 done, fail, always콜백함수를 쓸 수 있다.
 get함수는 ajax함수로 나타내면 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>$</span>.<span style=color:#a6e22e>ajax</span>({
 </span></span><span style=display:flex><span>   <span style=color:#a6e22e>url</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>url</span>,
 </span></span><span style=display:flex><span>   <span style=color:#a6e22e>data</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>data</span>,

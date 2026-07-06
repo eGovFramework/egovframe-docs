@@ -2174,7 +2174,7 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ajaxtags-tag-reference">AjaxTags Tag Reference&lt;/h3>
 &lt;p>&lt;strong>ajax:autocomplete&lt;/strong>&lt;/p></description></item><item><title>스프링 WebFlux에서 어노테이션 기반 컨트롤러 활용 방법</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-reactive/web-reactive-annotated-controllers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-reactive/web-reactive-annotated-controllers/</guid><description>&lt;h1 id="annotated-controllers">Annotated Controllers&lt;/h1>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>스프링 WebFlux는 어노테이션 기반 프로그램밍 모델을 지원하기 때문에 @Controller, @RestController 컴포넌트로 요청을 매핑하고, 입력을 받고, 예외처리를 할 수 있다. 컨트롤러는 메소드를 여러가지로 활용할 수 있어서 클래스를 상속하거나 인터페이스를 구현하지 않아도 된다.&lt;/p>
+&lt;p>스프링 WebFlux는 어노테이션 기반 프로그래밍 모델을 지원하기 때문에 @Controller, @RestController 컴포넌트로 요청을 매핑하고, 입력을 받고, 예외처리를 할 수 있다. 컨트롤러는 메소드를 여러가지로 활용할 수 있어서 클래스를 상속하거나 인터페이스를 구현하지 않아도 된다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HelloController&lt;/span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
