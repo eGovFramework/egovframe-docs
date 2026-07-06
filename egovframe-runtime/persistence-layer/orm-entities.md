@@ -76,7 +76,7 @@ private String userId;
 ```
 
 ### @Column
-해당 Attribute와 매핑되는 컬럼정보를 입력하기 위한 것으로 Attribue위에 기재한다. 컬럼명과 Attribute명이 일치할 경우는 기재하지 않아도 됨
+해당 Attribute와 매핑되는 컬럼정보를 입력하기 위한 것으로 Attribute 위에 기재한다. 컬럼명과 Attribute명이 일치할 경우는 기재하지 않아도 됨
 ```java
 @Column(name = "DEPT_NAME", length = 30)
 private String deptName;

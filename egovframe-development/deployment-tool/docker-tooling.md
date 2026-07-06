@@ -325,7 +325,7 @@ Docker Explorer에서 New connection…을 클릭한다.
 
 1. Docker Preference에서 설정할 수 있다. (Window > Preferences > Docker)
 2. Docker-compose의 위치를 지정한다.
-   (defalut - Linux and Mac : /usr/local/bin Win : C:\Program Files\Docker\Docker\resources\bin)
+   (default - Linux and Mac : /usr/local/bin Win : C:\Program Files\Docker\Docker\resources\bin)
 
    ![Docker Compose 설정](./images/docker-compose-1.png)
 3. docker-compose.yml 파일을 선택하고 Run > Docker Compose를 실행한다.
