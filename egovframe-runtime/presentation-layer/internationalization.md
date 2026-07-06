@@ -56,7 +56,7 @@ samlple-servlet.xml
 
 #### SessionLocaleResolver
 
-requst가 가지고 있는 session으로 부터 locale 정보를 가져온다.
+request가 가지고 있는 session으로 부터 locale 정보를 가져온다.
 samlple-servlet.xml
 
 ```xml

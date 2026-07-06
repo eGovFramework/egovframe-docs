@@ -71,7 +71,7 @@ $.ajax({
     sampleInput : "sampleData"
    },
    success : function(data, textStatus, jqXHR) {
-    //Sucess시, 처리
+    //Success시, 처리
    },
    error : function(jqXHR, textStatus, errorThrown){
     //Error시, 처리
@@ -134,7 +134,7 @@ jqxhr.always(function() {
 ```
 
 ### jQuery.get()
-jQuery 1.5부터 sucess콜백함수는 jqXHR(XMLHttpRequest의 상위집합 객체)를 받을 수 있게 되었다. 그러나 JSONP와 같은 cross-domain request의 GET요청 시에는 jqXHR을 사용하여도 XHR인자는 success함수 안에서 undefined로 인식된다.
+jQuery 1.5부터 success 콜백함수는 jqXHR(XMLHttpRequest의 상위집합 객체)를 받을 수 있게 되었다. 그러나 JSONP와 같은 cross-domain request의 GET요청 시에는 jqXHR을 사용하여도 XHR인자는 success함수 안에서 undefined로 인식된다.
 
 jQuery.get()은 ajax를 GET요청하는 함수이며 jqXHR을 반환받는다. 따라서 $.ajax()와 동일하게 done, fail, always콜백함수를 쓸 수 있다.
 get함수는 ajax함수로 나타내면 다음과 같다.
