@@ -116,7 +116,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -138,7 +138,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -161,7 +161,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -183,7 +183,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |

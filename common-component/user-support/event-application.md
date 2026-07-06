@@ -95,7 +95,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
     </bean>
 ```
 
-## 관련화면 및 수행메뉴얼
+## 관련화면 및 수행매뉴얼
 
 ### 행사관리 목록조회
 

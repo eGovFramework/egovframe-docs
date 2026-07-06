@@ -66,7 +66,7 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_TRNSMIT_ID',0);
 INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 ```
 
-## 관련화면 및 수행메뉴얼
+## 관련화면 및 수행매뉴얼
 
 ### 보낸쪽지함관리 목록조회
 
