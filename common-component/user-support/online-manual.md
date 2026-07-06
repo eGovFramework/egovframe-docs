@@ -15,7 +15,7 @@ menu:
 
 ## 개요
 
- 응용 프로그램의 온라인 메뉴얼을 등록하고 조회 할수 있는 기능을 제공한다.
+ 응용 프로그램의 온라인 매뉴얼을 등록하고 조회 할수 있는 기능을 제공한다.
  컴포넌트 구성
 
  ![image](./images/uss-manual-온라인메뉴얼_컴포넌트_구성도.jpg)
@@ -123,7 +123,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -145,7 +145,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -168,7 +168,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -190,7 +190,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |

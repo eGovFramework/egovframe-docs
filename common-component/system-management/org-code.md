@@ -106,7 +106,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 #### 기관코드수신 scheduler 등록
 
- 기관코드수신 및 반영은 스케쥴러를 통해 반영된다. 해당 스케쥴러를 등록하기 위해서는 …/spring/context-scheduling.xml(예시)에 다음과 같은 스케쥴러를 등록한다.
+ 기관코드수신 및 반영은 스케줄러를 통해 반영된다. 해당 스케줄러를 등록하기 위해서는 …/spring/context-scheduling.xml(예시)에 다음과 같은 스케줄러를 등록한다.
 
 ```xml
 <!-- 기관코드수신 처리 -->

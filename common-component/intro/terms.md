@@ -28,7 +28,7 @@
 |         |             | ems         |         | email system                  | 전자우편            |
 |         |             | ncm         |         | namecard management           | 명함관리            |
 |         |             | scp         |         | scrap                         | 스크랩관리           |
-|         |             | sms         |         | sms info                      | 문자메세지           |
+|         |             | sms         |         | sms info                      | 문자메시지           |
 |         |             | smt         |         | schedule management           | 일정관리            |
 |         |             |             | djm     | department job management     | 부서업무함관리         |
 |         |             |             | dsm     | diary management              | 일지관리            |
@@ -62,7 +62,7 @@
 |         |             | security    |         |                               | 보안              |
 |         | ssi.syi     |             |         |                               | 시스템/서비스연계       |
 |         |             | iis         |         | integration institute         | 연계기관관리          |
-|         |             | ims         |         | integration message           | 연계메세지관리         |
+|         |             | ims         |         | integration message           | 연계메시지관리         |
 |         |             | ist         |         | integration status            | 연계현황관리          |
 |         |             | sim         |         | system integration management | 시스템연계관리         |
 |         | sts         |             |         |                               | 통계/리포팅          |
@@ -74,7 +74,7 @@
 |         |             | sst         |         | screen statistics             | 화면통계            |
 |         |             | ust         |         | user statitstics              | 사용자통계           |
 |         | sym         |             |         | system management             | 시스템 관리          |
-|         |             | bat         |         | batch                         | 배치작업/결과/스케쥴관리   |
+|         |             | bat         |         | batch                         | 배치작업/결과/스케줄관리   |
 |         |             | cal         |         | calendar                      | 휴일관리/일반달력/행정달력  |
 |         |             | ccm         |         | common code management        | 공통코드관리          |
 |         |             |             | acr     | administrator code reception  | 법정동코드수신         |
@@ -165,7 +165,7 @@
 |         |             |             | stp     | stipulation                   | 약관관리            |
 |         |             | umt         |         | user management               | 기업회원/사용자/회원관리   |
 |         | utl         |             |         | utility                       | 요소기술            |
-|         |             | cas         |         | cookie and session            | 메세지/세션/쿠키처리     |
+|         |             | cas         |         | cookie and session            | 메시지/세션/쿠키처리     |
 |         |             | fcc         |         |                               | 인쇄/출력           |
 |         |             | fda.ucc     |         |                               |                 |
 |         |             | pao         |         |                               | 전자관인출력          |
