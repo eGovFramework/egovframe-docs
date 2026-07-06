@@ -141,7 +141,7 @@ public class EgovSysLogAspect {
 private EgovSysLogService sysLogService;
 /**
 * 시스템 로그정보를 생성한다.
-* sevice Class의 insert로 시작되는 Method
+* service Class의 insert로 시작되는 Method
 *
 * @param ProceedingJoinPoint
 * @return Object
@@ -182,7 +182,7 @@ sysLogService.logInsertSysLog(sysLog);
 }
 /**
 * 시스템 로그정보를 생성한다.
-* sevice Class의 update로 시작되는 Method
+* service Class의 update로 시작되는 Method
 *
 * @param ProceedingJoinPoint
 * @return Object
@@ -223,7 +223,7 @@ sysLogService.logInsertSysLog(sysLog);
 }
 /**
 * 시스템 로그정보를 생성한다.
-* sevice Class의 delete로 시작되는 Method
+* service Class의 delete로 시작되는 Method
 *
 * @param ProceedingJoinPoint
 * @return Object
@@ -264,7 +264,7 @@ sysLogService.logInsertSysLog(sysLog);
 }
 /**
 * 시스템 로그정보를 생성한다.
-* sevice Class의 select로 시작되는 Method
+* service Class의 select로 시작되는 Method
 *
 * @param ProceedingJoinPoint
 * @return Object
