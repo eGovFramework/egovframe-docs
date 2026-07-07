@@ -1,0 +1,49 @@
+# 전자정부 표준프레임워크 가이드 (eGovFrame Guide)
+
+> 대한민국 전자정부 표준프레임워크(eGovFrame) v5.0의 공식 가이드 문서입니다. 실행환경(egovframe-runtime), 개발환경(egovframe-development), 공통컴포넌트(common-component) 세 영역의 개발 가이드를 Markdown으로 제공합니다. 원문 저장소는 GitHub(eGovFramework/egovframe-docs)이며, 포털(https://www.egovframe.go.kr)에서도 동일한 내용을 제공합니다.
+
+이 파일은 LLM·AI 에이전트가 표준프레임워크 문서를 정확히 탐색·인용할 수 있도록 llmstxt.org 규격으로 작성한 인덱스입니다. 아래 URL의 각 섹션 페이지에서 세부 가이드 목록을 확인할 수 있습니다.
+
+## 실행환경 (egovframe-runtime)
+
+- [실행환경 소개](https://egovframework.github.io/egovframe-docs/egovframe-runtime/intro/): 실행환경 개요와 구성
+- [공통기반](https://egovframework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/): IoC 컨테이너, AOP, 암복호화, 프로퍼티 등 Foundation Layer
+- [공통기반 핵심](https://egovframework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/): Foundation Layer 핵심 모듈
+- [화면처리](https://egovframework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/): Spring MVC, Ajax, 국제화, Web Reactive 등 Presentation Layer
+- [업무처리](https://egovframework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/): 트랜잭션, 예외 처리 등 Business Logic Layer
+- [데이터처리](https://egovframework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/): MyBatis/JPA 기반 Persistence Layer
+- [연계통합](https://egovframework.github.io/egovframe-docs/egovframe-runtime/integration-layer/): 웹서비스 등 Integration Layer
+- [배치처리](https://egovframework.github.io/egovframe-docs/egovframe-runtime/batch-layer/): 배치 실행환경 Batch Layer
+- [AI 통합](https://egovframework.github.io/egovframe-docs/egovframe-runtime/ai-layer/): AI 연계 실행환경
+
+## 개발환경 (egovframe-development)
+
+- [개발환경 소개](https://egovframework.github.io/egovframe-docs/egovframe-development/development-intro/): 개발환경 개요
+- [개발환경 설치 가이드](https://egovframework.github.io/egovframe-docs/egovframe-development/install-guide/): 통합 설치 안내
+- [개발환경 구성 가이드](https://egovframework.github.io/egovframe-docs/egovframe-development/individual-install-guide/): 개별 구성 안내
+- [구현 도구](https://egovframework.github.io/egovframe-docs/egovframe-development/implementation-tool/): eGovFrame IDE(Eclipse) 기반 구현 도구
+- [구현 도구(VS Code)](https://egovframework.github.io/egovframe-docs/egovframe-development/vscode-implementation-tool/): VS Code 확장 기반 구현 도구
+- [테스트 도구](https://egovframework.github.io/egovframe-docs/egovframe-development/test-tool/): 단위테스트 등 테스트 도구
+- [배포 도구](https://egovframework.github.io/egovframe-docs/egovframe-development/deployment-tool/): Maven, Docker 등 배포 도구
+- [형상 관리 도구](https://egovframework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/): 버전/이슈 관리 도구
+- [개발환경 활용 가이드](https://egovframework.github.io/egovframe-docs/egovframe-development/development-etcdevtool-guide/): 기타 개발 도구 활용
+
+## 공통컴포넌트 (common-component)
+
+- [공통컴포넌트 개요](https://egovframework.github.io/egovframe-docs/common-component/cc-intro/): 공통컴포넌트 정의·구성·용어사전
+- [보안](https://egovframework.github.io/egovframe-docs/common-component/security/): 인증·권한(RBAC)·세션 관리 컴포넌트
+- [사용자디렉토리/통합인증](https://egovframework.github.io/egovframe-docs/common-component/user-authentication/): 로그인, SSO 컴포넌트
+- [사용자지원](https://egovframework.github.io/egovframe-docs/common-component/user-support/): 설문, 민원, 알림, 온라인매뉴얼 등
+- [협업](https://egovframework.github.io/egovframe-docs/common-component/collaboration/): 게시판, 커뮤니티, 일정관리, SMS 등
+- [시스템관리](https://egovframework.github.io/egovframe-docs/common-component/system-management/): 메뉴·코드·배치·로그 관리
+- [시스템/서비스연계](https://egovframework.github.io/egovframe-docs/common-component/system-service-linkage/): 연계 컴포넌트
+- [통계/리포팅](https://egovframework.github.io/egovframe-docs/common-component/statistics-reporting/): 통계 컴포넌트
+- [디지털 자산관리](https://egovframework.github.io/egovframe-docs/common-component/digital-asset-management/): 지식·자산 관리
+- [요소기술](https://egovframework.github.io/egovframe-docs/common-component/elementary-technology/): 유틸리티성 요소기술
+
+## Optional
+
+- [시작하기](https://egovframework.github.io/egovframe-docs/getting-started/): HelloWorld 실습 기반 입문 가이드
+- [기여 안내(README)](https://github.com/eGovFramework/egovframe-docs/blob/main/README.md): 문서 기여 방법
+- [표준프레임워크 포털](https://www.egovframe.go.kr): 공식 포털 (다운로드·공지·커뮤니티)
+- [소스 저장소 목록](https://github.com/eGovFramework): 공통컴포넌트 등 GitHub 조직
