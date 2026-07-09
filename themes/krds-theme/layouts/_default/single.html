@@ -17,7 +17,7 @@
 {{ $finalContent := $updatedContent | replaceRE $linkPattern $linkReplacement }}
 
 <!-- Table 클래스 추가 -->
-{{ $wrappedContent := $finalContent | replaceRE `<table([^>]*)>` `<div class="krds-table-wrap"><table class="tbl col data"$1>` | replaceRE `</table>` `</table></div>` }}
+{{ $wrappedContent := $finalContent | replaceRE `<table([^>]*)>` `<div class="krds-table-wrap scroll"><table class="tbl col data"$1>` | replaceRE `</table>` `</table></div>` }}
 
 <!-- 링크의 md파일 제거 -->
 {{- $mdContent := $wrappedContent | replaceRE "\\.md" "" -}}
