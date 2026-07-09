@@ -221,13 +221,21 @@ h3,h4,h5,h6 {
 /* click to copy */
 .code-box{
     background-color: #272822;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 2rem;
     margin: 1rem 0;
-    /* flex-direction: column-reverse; */
-    width:100%;
-    /* position:relative; */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.code-box pre {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
 }
 .toolbar{
     height: 50px;
@@ -267,20 +275,27 @@ h3,h4,h5,h6 {
     border-radius: 0.5rem;
     color:var(--krds-color-light-point-50)
 }
-/* .section-link code span > span{
-    display:flex;
-    flex-wrap:wrap;
-    word-break: break-all;
-    gap:0.5rem;
-} */
-/* 코드 블럭 들여쓰기 보존: 인라인 display:flex 를 덮어쓰고, 줄바꿈은 허용 */
-.section-link .highlight code span > span {
-  display: inline !important;
+/* Chroma가 줄마다 display:flex 인라인 스타일을 넣어 가로로 넘침 → block으로 덮어씀 */
+.highlight {
+  max-width: 100%;
+  min-width: 0;
 }
-.section-link .highlight pre {
+.highlight code > span {
+  display: block !important;
+}
+.highlight pre,
+.code-box pre {
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: break-word;
   overflow-x: auto;
+  max-width: 100%;
+}
+.highlight code {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 15px;
+  max-width: 100%;
 }
 
 .krds-side-navigation .lnb-list .lnb-item.active .lnb-btn:not(.lnb-toggle-popup)::after{
