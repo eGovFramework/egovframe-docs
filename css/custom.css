@@ -13945,6 +13945,7 @@ label {
 }
 .contents{
     width:100%;
+    min-width: 0;
 }
 @media(max-width:460px){
     .conts-wrap > *{
@@ -14099,9 +14100,13 @@ label {
     flex-direction: column;
     gap: var(--krds-gap-9);
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
 }
 .conts-wrap{
     margin-bottom:var(--krds-number-9);
+    min-width: 0;
+    max-width: 100%;
 }
 
 .conts-wrap.section-link > p:not(:last-child){
@@ -14359,4 +14364,31 @@ em{
     color: var(--krds-side-navigation--color-text-selected);
     font-weight: var(--krds-font-weight-bold);
     background-color: var(--krds-side-navigation--color-action-selected);
+}
+
+/* 260709 수정 : 테이블 가로 스크롤, 셀 내용은 레이아웃 밖으로 넘치지 않게 */
+.krds-table-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+/* .scroll .tbl { width: 100% }(KRDS 기본)보다 우선 — 넓은 테이블은 래퍼 안에서 스크롤 */
+.krds-table-wrap .tbl,
+.krds-table-wrap.scroll .tbl {
+  table-layout: auto;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+}
+.krds-table-wrap .tbl th,
+.krds-table-wrap .tbl td {
+  height: auto;
+  vertical-align: top;      /* 행 내 다른 셀이 커져도 내용은 위부터 표시 */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;      /* <br>·줄바꿈 시 높이 자동 증가 */
+  overflow: visible;
 }
