@@ -91,8 +91,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  이를 지정하기 위해서는 globals.properties 속성 파일에 추가 속성을 설정하여야 한다.
  globals.properties에 관련된 내용은 요소기술 프로퍼티 및 명령어 쉘스크립트 부분을 참조한다.
 
- ...
- # 기관코드수신용
+ ```text
+ // 기관코드수신용
  CNTC.INSTTCODE.DIR.rcv       = /home/gccedi/rcv/
  CNTC.INSTTCODE.DIR.rcvold    = /home/gccedi/rcvold/
  CNTC.INSTTCODE.DIR.bin       = /home/gccedi/bin/
@@ -100,7 +100,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  CNTC.INSTTCODE.CMD.edircvmsg = gcc_edircvmsg
  CNTC.INSTTCODE.INFO.userid   = 서버인증서아이디
  CNTC.INSTTCODE.INFO.userpw   = 서버인증서패스워드
- ...
+ ```
 
  EDI 모듈에 따라 cmd file 이 실행바이너리 파일이거나 쉘스크립트 파일이 올 수 있음.
 
@@ -142,37 +142,36 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ### 기관코드수신
 
  기관코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.
- ServiceImpl 예시
-
- ...
- // 실제 연계 항목 Mapping 작업
- insttCodeRecptn.setChangeSeCode     (strTmp       );    // 명령                              :: 변경구분코드
- insttCodeRecptn.setOccrrDe          (tokenData[ 1]);    // 날짜                              :: 발생일자
- insttCodeRecptn.setEtcCode          (tokenData[ 2]);    // 2자리코드 <적용:기타코드>         :: 기타코드
- insttCodeRecptn.setInsttCode        (tokenData[ 3]);    // 기관코드                          :: 기관코드
- insttCodeRecptn.setAllInsttNm       (tokenData[ 4]);    // 기관명(전체)                      :: 전체기관명
- insttCodeRecptn.setLowestInsttNm    (tokenData[ 5]);    // 기관명(최하위)                    :: 최하위기관명
- insttCodeRecptn.setInsttAbrvNm      (tokenData[ 6]);    // 기관명(약어)                      :: 기관약칭명
- insttCodeRecptn.setOdr              (tokenData[ 7]);    // 차수                              :: 차수
- insttCodeRecptn.setOrd              (tokenData[ 8]);    // 서열                              :: 서열
- insttCodeRecptn.setInsttOdr         (tokenData[ 9]);    // 소속기관차수                      :: 기관차수
- insttCodeRecptn.setUpperInsttCode   (tokenData[10]);    // 차상위기관코드                    :: 상위기관코드
- insttCodeRecptn.setBestInsttCode    (tokenData[11]);    // 최상위기관코드                    :: 최상위기관코드
- insttCodeRecptn.setReprsntInsttCode (tokenData[12]);    // 대표기관코드                      :: 대표기관코드
- insttCodeRecptn.setInsttTyLclas     (tokenData[13]);    // 기관유형(대)                      :: 기관유형대분류
- insttCodeRecptn.setInsttTyMclas     (tokenData[14]);    // 기관유형(중)                      :: 기관유형중분류
- insttCodeRecptn.setInsttTySclas     (tokenData[15]);    // 기관유형(소)                      :: 기관유형소분류
- insttCodeRecptn.setTelno            (tokenData[16]);    // 전화번호                          :: 전화번호
- insttCodeRecptn.setFxnum            (tokenData[17]);    // 팩스번호                          :: 팩스번호
- insttCodeRecptn.setCreatDe          (tokenData[18]);    // 생성일자                          :: 생성일자
- insttCodeRecptn.setAblDe            (tokenData[19]);    // 폐지일자                          :: 폐지일자
- insttCodeRecptn.setAblEnnc          (tokenData[20]);    // 폐지구분                          :: 폐지유무
- insttCodeRecptn.setChangede         (tokenData[21]);    // 변경일자                          :: 변경일자
- insttCodeRecptn.setChangeTime       (tokenData[22]);    // 변경시간                          :: 변경시간
- insttCodeRecptn.setBsisDe           (tokenData[23]);    // 기초날짜                          :: 기초일자
- insttCodeRecptn.setSortOrdr         (Integer.parseInt(tokenData[24]));
- // 트리순서(트리서열) <적용:정렬순서>:: 정렬순서
- ...
+ - ServiceImpl 예시
+    ```
+    // 실제 연계 항목 Mapping 작업
+    insttCodeRecptn.setChangeSeCode     (strTmp       );    // 명령                       :: 변경구분코드
+    insttCodeRecptn.setOccrrDe          (tokenData[ 1]);    // 날짜                       :: 발생일자
+    insttCodeRecptn.setEtcCode          (tokenData[ 2]);    // 2자리코드 <적용:기타코드>     :: 기타코드
+    insttCodeRecptn.setInsttCode        (tokenData[ 3]);    // 기관코드                    :: 기관코드
+    insttCodeRecptn.setAllInsttNm       (tokenData[ 4]);    // 기관명(전체)                :: 전체기관명
+    insttCodeRecptn.setLowestInsttNm    (tokenData[ 5]);    // 기관명(최하위)              :: 최하위기관명
+    insttCodeRecptn.setInsttAbrvNm      (tokenData[ 6]);    // 기관명(약어)                :: 기관약칭명
+    insttCodeRecptn.setOdr              (tokenData[ 7]);    // 차수                       :: 차수
+    insttCodeRecptn.setOrd              (tokenData[ 8]);    // 서열                       :: 서열
+    insttCodeRecptn.setInsttOdr         (tokenData[ 9]);    // 소속기관차수                :: 기관차수
+    insttCodeRecptn.setUpperInsttCode   (tokenData[10]);    // 차상위기관코드               :: 상위기관코드
+    insttCodeRecptn.setBestInsttCode    (tokenData[11]);    // 최상위기관코드               :: 최상위기관코드
+    insttCodeRecptn.setReprsntInsttCode (tokenData[12]);    // 대표기관코드                :: 대표기관코드
+    insttCodeRecptn.setInsttTyLclas     (tokenData[13]);    // 기관유형(대)                :: 기관유형대분류
+    insttCodeRecptn.setInsttTyMclas     (tokenData[14]);    // 기관유형(중)                :: 기관유형중분류
+    insttCodeRecptn.setInsttTySclas     (tokenData[15]);    // 기관유형(소)                :: 기관유형소분류
+    insttCodeRecptn.setTelno            (tokenData[16]);    // 전화번호                    :: 전화번호
+    insttCodeRecptn.setFxnum            (tokenData[17]);    // 팩스번호                    :: 팩스번호
+    insttCodeRecptn.setCreatDe          (tokenData[18]);    // 생성일자                    :: 생성일자
+    insttCodeRecptn.setAblDe            (tokenData[19]);    // 폐지일자                    :: 폐지일자
+    insttCodeRecptn.setAblEnnc          (tokenData[20]);    // 폐지구분                    :: 폐지유무
+    insttCodeRecptn.setChangede         (tokenData[21]);    // 변경일자                    :: 변경일자
+    insttCodeRecptn.setChangeTime       (tokenData[22]);    // 변경시간                    :: 변경시간
+    insttCodeRecptn.setBsisDe           (tokenData[23]);    // 기초날짜                    :: 기초일자
+    insttCodeRecptn.setSortOrdr         (Integer.parseInt(tokenData[24]));
+    // 트리순서(트리서열) <적용:정렬순서>:: 정렬순서
+    ```
 
 ### 기관코드수신 목록조회
 
