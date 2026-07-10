@@ -18,9 +18,23 @@ menu:
 
 ## 설명
 
-① 클라이언트(Client)의 IP 주소를 가지고 오는 기능.
-② 클라이언트(Client)의 운영체제 종류 및 버전을 가지고 오는 기능
-③ 클라이언트(Client)의 웹 브라우저 종류 및 버전을 가지고 오는 기능
+클라이언트 정보 확인 기능은 `HttpServletRequest` 객체를 기반으로 요청을 보낸 클라이언트의 정보를 조회하는 기능을 제공한다.
+
+제공하는 주요 기능은 다음과 같다.
+
+- 클라이언트(Client)의 IP 주소 조회
+- 클라이언트(Client)의 운영체제(OS) 종류 및 버전 조회
+- 클라이언트(Client)의 웹 브라우저 종류 및 버전 조회
+
+### 활용 예시
+
+클라이언트 정보 확인 기능은 다음과 같은 상황에서 활용할 수 있다.
+
+- 접속 사용자의 IP 주소를 기록하는 경우
+- 운영체제(OS)에 따라 기능을 분기하는 경우
+- 브라우저 종류에 따라 화면을 최적화하는 경우
+- 접속 환경 분석 및 통계 정보를 수집하는 경우
+- 보안 로그 및 접속 이력을 관리하는 경우
 
 ### 관련소스
 
@@ -33,10 +47,10 @@ menu:
 
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| String | `getClntIP(HttpServletRequest request)` | IP주소조회 | 요청 정보를 통해 클라이언트 IP주소 리턴 |
-| String | `getClntOsInfo(HttpServletRequest request)` | OS정보조회 | 요청 정보를 통해 클라이언트 OS정보 리턴 |
-| String | `getClntWebKind(HttpServletRequest request)` | 브라우저종류조회 | 요청 정보를 통해 클라이언트 브라우저 종류 리턴 |
-| String | `getClntWebVer(HttpServletRequest request)` | 브라우저버전조회 | 요청 정보를 통해 클라이언트 브라우저 버전 리턴 |
+| String | `getClntIP(HttpServletRequest request)` | 클라이언트 IP 주소 조회 | 요청 정보를 기반으로 클라이언트의 IP 주소를 반환한다. |
+| String | `getClntOsInfo(HttpServletRequest request)` | 운영체제 정보 조회 | 요청 정보를 기반으로 클라이언트의 운영체제 정보를 반환한다. |
+| String | `getClntWebKind(HttpServletRequest request)` | 브라우저 종류 조회 | 요청 정보를 기반으로 클라이언트의 브라우저 종류를 반환한다. |
+| String | `getClntWebVer(HttpServletRequest request)` | 브라우저 버전 조회 | 요청 정보를 기반으로 클라이언트의 브라우저 버전을 반환한다. |
 
 ## 환경설정
 
