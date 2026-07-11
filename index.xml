@@ -13393,7 +13393,123 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;p>공통분류코드는 코드 체계의 최상위 구분 정보를 관리한다. 분류를 식별하고 설명하는
 정보를 기준으로 코드 그룹을 구성한다.&lt;/p>
 &lt;p>공통분류코드를 등록한 후에는 해당 분류에 속하는 공통코드를 등록하고, 공통코드 아래에
-공통상세코드를 등록하여 실제 업무 화면이나 기능에서 사용할 코드 값을 구성한다.&lt;/p></description></item><item><title>공통상세코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</guid><description/></item><item><title>공통컴포넌트 축약어 모음</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-abbreviation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-abbreviation/</guid><description>&lt;h1 id="전자정부-표준프레임워크-축약어abbreviation">전자정부 표준프레임워크 축약어(abbreviation)&lt;/h1>
+공통상세코드를 등록하여 실제 업무 화면이나 기능에서 사용할 코드 값을 구성한다.&lt;/p></description></item><item><title>공통상세코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-detail-code/</guid><description>&lt;h1 id="공통상세코드">공통상세코드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>공통상세코드 관리는 공통상세코드를 등록, 수정, 목록조회, 상세조회를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>공통상세코드관리 패키지는 요소기술의 공통 패키지(cmm)와 공통코드 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 공통분류코드관리 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 시스템관리 Package Dependency&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cde.web.EgovCcmCmmnDetailCodeManageController.java&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cde.service.EgovCcmCmmnDetailCodeManageService.java&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cde.service.impl.EgovCcmCmmnDetailCodeManageServiceImpl.java&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 위한 서비스구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO.java&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cde.service.impl.CmmnDetailCodeManageDAO.java&lt;/td>
+ &lt;td>공통상세코드 정보 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeDetail.jsp&lt;/td>
+ &lt;td>공통상세코드 상세보기를 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeList.jsp&lt;/td>
+ &lt;td>공통상세코드 목록을 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeUpdt.jsp&lt;/td>
+ &lt;td>공통상세코드 수정을 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeRegist.jsp&lt;/td>
+ &lt;td>공통상세코드 등록을 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_altibase.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_maria.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_mysql.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_oracle.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_postgres.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_tibero.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>공통상세코드 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/sym/ccm/cde/message_ko.properties&lt;/td>
+ &lt;td>공통상세코드를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/sym/ccm/cde/message_en.properties&lt;/td>
+ &lt;td>공통상세코드를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-management/images/sym-comdetail-%ea%b3%b5%ed%86%b5%ec%83%81%ec%84%b8%ec%bd%94%eb%93%9c_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
+&lt;/p></description></item><item><title>공통컴포넌트 축약어 모음</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-abbreviation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/cc-intro/cc-abbreviation/</guid><description>&lt;h1 id="전자정부-표준프레임워크-축약어abbreviation">전자정부 표준프레임워크 축약어(abbreviation)&lt;/h1>
 &lt;br>
 &lt;h2 id="1-실행환경">1. 실행환경&lt;/h2>
 &lt;table>
@@ -14864,7 +14980,128 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
  &lt;td>웹에디터&lt;/td>
  &lt;/tr>
  &lt;/tbody>
-&lt;/table></description></item><item><title>공통코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</guid><description/></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description>&lt;h1 id="공통코드관리">공통코드관리&lt;/h1>
+&lt;/table></description></item><item><title>공통코드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/common-code/</guid><description>&lt;h1 id="공통코드">공통코드&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>공통코드 관리는 공통코드를 등록, 수정, 목록조회, 상세조회를 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;p>공통코드 패키지는 요소기술의 공통 패키지(cmm)와 공통분류코드관리 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 공통상세코드관리 패키지와 함께 배포 파일을 구성한다.
+패키지 간 참조 관계 : 시스템관리 Package Dependency&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cca.web.EgovCcmCmmnCodeManageController.java&lt;/td>
+ &lt;td>공통코드 관리를 위한 컨트롤러 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cca.service.EgovCcmCmmnCodeManageService.java&lt;/td>
+ &lt;td>공통코드 관리를 위한 서비스 인터페이스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cca.service.impl.EgovCcmCmmnCodeManageServiceImpl.java&lt;/td>
+ &lt;td>공통코드 관리를 위한 위한 서비스구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cca.service.CmmnCode.java&lt;/td>
+ &lt;td>공통코드 정보 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cca.service.CmmnCodeVO.java&lt;/td>
+ &lt;td>공통코드 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.sym.ccm.cca.service.impl.CmmnCodeManageDAO.java&lt;/td>
+ &lt;td>공통코드 정보 관리를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cca/EgovCcmCmmnCodeDetail.jsp&lt;/td>
+ &lt;td>공통코드 상세보기를 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cca/EgovCcmCmmnCodeList.jsp&lt;/td>
+ &lt;td>공통코드 목록을 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cca/EgovCcmCmmnCodeUpdt.jsp&lt;/td>
+ &lt;td>공통코드 수정을 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/cca/EgovCcmCmmnCodeRegist.jsp&lt;/td>
+ &lt;td>공통코드 등록을 위한 JSP 페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_altibase.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 Altibase용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 Cubrid용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_maria.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 MariaDB용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_mysql.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 MySQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_oracle.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 Oracle용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_postgres.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 PostgreSQL용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_tibero.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 Tibero용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/sym/ccm/cca/EgovCmmnCodeManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>공통코드 관리를 위한 Goldilocks용 Query XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/sym/ccm/cca/message_ko.properties&lt;/td>
+ &lt;td>공통코드를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/sym/ccm/cca/message_en.properties&lt;/td>
+ &lt;td>공통코드를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-management/images/sym-comcode-%ea%b3%b5%ed%86%b5%ec%bd%94%eb%93%9c_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
+&lt;/p></description></item><item><title>공통코드관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/common-code-manage/</guid><description>&lt;h1 id="공통코드관리">공통코드관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>공통코드관리는 시스템관리 영역에서 공통으로 사용하는 코드 정보를 관리하는 기능이다.
 이 문서는 공통코드관리 하위 기능의 위치와 역할을 안내한다.&lt;/p>
