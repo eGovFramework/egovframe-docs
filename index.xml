@@ -25678,7 +25678,36 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/cmm-%ec%b6%9c%ed%87%b4%ea%b7%bc%ea%b4%80%eb%a6%ac_%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.png" alt="image" >
-&lt;/p></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description/></item><item><title>커뮤니티사용관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</guid><description>&lt;h1 id="커뮤니티사용관리">커뮤니티사용관리&lt;/h1>
+&lt;/p></description></item><item><title>커뮤니티</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/</guid><description>&lt;h1 id="커뮤니티">커뮤니티&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>커뮤니티 컴포넌트는 공통의 관심사를 가진 사용자들이 정보를 공유할 수 있는 커뮤니티 공간을 제공하는 협업 서비스 컴포넌트이다. 커뮤니티의 생성과 속성 관리, 회원의 신청·승인·탈퇴 관리, 커뮤니티 메인화면 구성과 커뮤니티 게시판 운영 기능을 제공한다.&lt;/p>
+&lt;p>본 문서는 커뮤니티 컴포넌트 전체의 구조와 공통 개념을 설명하는 개요 문서이다. 기능별 상세 내용은 관련 문서의 하위 문서를 참조한다.&lt;/p>
+&lt;h2 id="주요-개념">주요 개념&lt;/h2>
+&lt;h3 id="기능-구성">기능 구성&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>기능&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>커뮤니티생성관리&lt;/td>
+ &lt;td>커뮤니티를 생성하고 등록된 커뮤니티의 속성 정보를 관리한다. 관리 기능은 별도의 관리 메뉴와 커뮤니티 내 관리 메뉴로 제공된다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>커뮤니티회원관리&lt;/td>
+ &lt;td>커뮤니티 사용자의 신청, 승인, 탈퇴 등 커뮤니티 회원을 관리한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>커뮤니티사용관리&lt;/td>
+ &lt;td>커뮤니티 메인화면 구성과 커뮤니티 게시판 관리 기능을 제공한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="게시판과의-연계">게시판과의 연계&lt;/h3>
+&lt;p>커뮤니티 컴포넌트는 협업의 게시판 기능과 메인화면 구성을 통해 커뮤니티 서비스를 제공한다. 커뮤니티에서 생성한 게시판은 커뮤니티ID가 연결되어 해당 커뮤니티에서만 사용할 수 있다.&lt;/p></description></item><item><title>커뮤니티사용관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-use/</guid><description>&lt;h1 id="커뮤니티사용관리">커뮤니티사용관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>커뮤니티 메인화면 구성과 커뮤니티 게시판 관리 기능을 통해 커뮤니티 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
