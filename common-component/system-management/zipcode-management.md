@@ -22,7 +22,7 @@ menu:
 ### 패키지 참조 관계
 
  우편번호 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
- 패키지 간 참조 관계 : 시스템관리 Package Dependency
+- 패키지 간 참조 관계 : [시스템관리 Package Dependency](../intro/package-reference.md/#시스템관리)
 
 ### 관련소스
 
@@ -234,15 +234,15 @@ function goAddSearch() {
 
 | 구분 | 샘플 업로드 양식파일 다운로드 |
 | --- | --- |
-| 우편번호 엑셀양식 | 우편번호 엑셀양식 다운로드 |
-| 도로명주소 엑셀양식 | 도로명주소 엑셀양식 다운로드 |
+| 우편번호 엑셀양식 | [우편번호 엑셀양식 다운로드](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:com:v2:sym:zipcode.xls) |
+| 도로명주소 엑셀양식 | [도로명주소 엑셀양식 다운로드](https://www.egovframe.go.kr/wiki/lib/exe/fetch.php?media=egovframework:com:v2:sym:rdmnzipcode.xls) |
 
 ##### 우편번호 및 주소 참고사이트
 
 | 구분 | 참고사이트 |
 | --- | --- |
-| 우편번호 DB 다운로드 | https://www.epost.go.kr/search/zipcode/jibunAddressDown.jsp |
-| 도로명 주소 | https://www.juso.go.kr |
+| 우편번호 DB 다운로드 | [https://www.epost.go.kr/search/zipcode/jibunAddressDown.jsp](https://www.epost.go.kr/search/zipcode/jibunAddressDown.jsp) |
+| 도로명 주소 | [https://www.juso.go.kr](https://www.juso.go.kr) |
 
 #### 도로명코드 엑셀양식 참조자료
 
