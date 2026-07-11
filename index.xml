@@ -23197,7 +23197,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.comuss.olh.wor.service.impl.EgovWordDicaryServiceImpl.java&lt;/td>
+ &lt;td>egovframework.com.uss.olh.wor.service.impl.EgovWordDicaryServiceImpl.java&lt;/td>
  &lt;td>용어사전관리를 위한 서비스 구현 클래스&lt;/td>
  &lt;/tr>
  &lt;tr>
