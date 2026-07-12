@@ -77,18 +77,18 @@ menu:
 
 #### context-excel.xml
 
-```
-     id="excelZipService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
-        name="propertyPath" value="excelInfo.xml" />
-        name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelZipMapping" />
-        name="sqlMapClient" ref="egov.sqlMapClient" />
-    >
+```xml
+    <bean id="excelZipService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
+       <property name="propertyPath" value="excelInfo.xml" />
+       <property name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelZipMapping" />
+       <property name="sqlMapClient" ref="egov.sqlMapClient" />
+    </bean>
  
-     id="excelRdnmadZipService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
-         name="propertyPath" value="excelInfo.xml" />
-         name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelRdnmadZipMapping" />
-         name="sqlMapClient" ref="egov.sqlMapClient" />
-    >
+    <bean id="excelRdnmadZipService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
+        <property name="propertyPath" value="excelInfo.xml" />
+        <property name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelRdnmadZipMapping" />
+        <property name="sqlMapClient" ref="egov.sqlMapClient" />
+    </bean>
 ```
 
  우편번호 엑셀 파일을 등록하기 위하여 실행환경의 엑셀서비스 구현 클래스를 등록하여 사용한다.
@@ -96,16 +96,16 @@ menu:
 
 #### context-common.xml
 
-```
-    
- id="local.MultiCommonsMultipartResolver"
+```xml
+<!-- custom multi file resolver -->    
+<bean id="local.MultiCommonsMultipartResolver"
   class="egovframework.com.cmm.web.EgovMultipartResolver">
-     name="maxUploadSize" value="100000000" />
-     name="maxInMemorySize" value="100000000" />
->
+    <property name="maxUploadSize" value="100000000" />
+    <property name="maxInMemorySize" value="100000000" />
+</bean>
  
-
- name="local.MultiCommonsMultipartResolver" alias="multipartResolver" />
+<!-- choose one from above and alias it to the name Spring expects -->
+<alias name="local.MultiCommonsMultipartResolver" alias="multipartResolver" />
 ```
 
  우편번호 엑셀 파일을 등록하기 위하여 파일 등록 처리를 사용한다.
@@ -129,9 +129,9 @@ menu:
 
  도로명 주소연계 서비스의 우편번호/도로명 찾기 팝업 호출을 위하여 EgovAdressPop.jsp 를 해당 페이지(EgovCcmZipRegist.jsp)에서 호출 한다.
 
-```
+```javascript
 function goAddSearch() {
-    var pop = window.open("value='/sym/ccm/zip/EgovAdressPop.do' />","pop","width=570,height=420, 
+    var pop = window.open("<c:url value='/sym/ccm/zip/EgovAdressPop.do' />","pop","width=570,height=420, 
     scrollbars=yes, resizable=yes"); 
 }
 ```
@@ -162,8 +162,8 @@ function goAddSearch() {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /sym/ccm/zip/EgovCcmZipList.do | selectZipList | “ZipManageDAO.selectZipList” |
-|  |  |  | “ZipManageDAO.selectZipListTotCnt” |
+| 목록조회 | /sym/ccm/zip/EgovCcmZipList.do | selectZipList | "ZipManageDAO.selectZipList" |
+|  |  |  | "ZipManageDAO.selectZipListTotCnt" |
 
  페이지 당 검색 범위를 변경하고자 하는 경우
  context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
@@ -200,7 +200,7 @@ function goAddSearch() {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/ccm/zip/EgovCcmZipRegist.do | insertZip | “ZipManageDAO.insertZip” |
+| 등록 | /sym/ccm/zip/EgovCcmZipRegist.do | insertZip | "ZipManageDAO.insertZip" |
 
  ![image](./images/sym-zipcode-addr5.jpg)
 
@@ -226,7 +226,7 @@ function goAddSearch() {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/ccm/zip/EgovCcmExcelZipRegist.do | insertExcelZip | “ZipManageDAO.deleteAllZip” |
+| 등록 | /sym/ccm/zip/EgovCcmExcelZipRegist.do | insertExcelZip | "ZipManageDAO.deleteAllZip" |
 
  다음의 우편번호 엑셀 파일의 양식을 이용하여 우편번호를 등록한다.
 
@@ -286,7 +286,7 @@ function goAddSearch() {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/ccm/zip/EgovCcmZipModify.do | updateZip | “ZipManageDAO.updateZip” |
+| 수정 | /sym/ccm/zip/EgovCcmZipModify.do | updateZip | "ZipManageDAO.updateZip" |
 
  ![image](./images/sym-zipcode-addr9.jpg)
 
@@ -312,8 +312,8 @@ function goAddSearch() {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/zip/EgovCcmZipDetail.do | selectZipDetail | “ZipManageDAO.selectZipDetail” |
-| 삭제 | /sym/ccm/zip/EgovCcmZipRemove.do | deleteZip | “ZipManageDAO.deleteZip” |
+| 상세조회 | /sym/ccm/zip/EgovCcmZipDetail.do | selectZipDetail | "ZipManageDAO.selectZipDetail" |
+| 삭제 | /sym/ccm/zip/EgovCcmZipRemove.do | deleteZip | "ZipManageDAO.deleteZip" |
 
  ![image](./images/sym-zipcode-addr11.jpg)
 

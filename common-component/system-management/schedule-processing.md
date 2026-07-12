@@ -21,7 +21,7 @@ menu:
 
  배치스케줄처리는 배치스케줄을 등록하기 위한 목적으로 배치스케줄의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
-```
+```text
   ① 배치스케줄목록조회 : 배치스케줄으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
   ② 배치스케줄등록 : 배치스케줄정보를 등록하고, 등록 결과를 조회한다.
   ③ 배치스케줄수정 : 기 등록된 배치스케줄정보의 항목들을 수정한다.
@@ -70,7 +70,7 @@ menu:
 
  ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 BATCH_SCHDUL_ID 항목을 추가해야 한다.
 
-```
+```sql
     CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
                                next_id DECIMAL(30) NOT NULL,
                                PRIMARY KEY (table_name)
@@ -81,19 +81,19 @@ menu:
 
 #### ID Generation 환경설정(context-idgn-BatchOpert.xml)
 
-```
-     name="egovBatchSchdulIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
-         name="dataSource" ref="egov.dataSource" />
-         name="strategy"   ref="batchSchdulIdStrategy" />
-         name="blockSize"  value="10"/>
-         name="table"      value="COMTECOPSEQ"/>
-         name="tableName"  value="BATCH_SCHDUL_ID"/>
-    >
-     name="batchSchdulIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-         name="prefix"     value="BSC" />
-         name="cipers"     value="17" />
-         name="fillChar"   value="0" />
-    >
+```xml
+    <bean name="egovBatchSchdulIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+        <property name="dataSource" ref="egov.dataSource" />
+        <property name="strategy"   ref="batchSchdulIdStrategy" />
+        <property name="blockSize"  value="10"/>
+        <property name="table"      value="COMTECOPSEQ"/>
+        <property name="tableName"  value="BATCH_SCHDUL_ID"/>
+    </bean>
+    <bean name="batchSchdulIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix"     value="BSC" />
+        <property name="cipers"     value="17" />
+        <property name="fillChar"   value="0" />
+    </bean>
 ```
 
 ## 관련화면 및 수행메뉴얼
@@ -102,8 +102,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | “BatchSchdulDAO.selectBatchSchdulList” |
-| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | “BatchSchdulDAO.selectBatchSchdulListCnt” |
+| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | "BatchSchdulDAO.selectBatchSchdulList" |
+| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | "BatchSchdulDAO.selectBatchSchdulListCnt" |
 
  배치스케줄 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 배치작업명,배치프로그램에 대해서 수행된다.
@@ -117,7 +117,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/bat/addBatchSchdul.do | insertBatchSchdul | “BatchSchdulDAO.insertBatchSchdul” |
+| 등록 | /sym/bat/addBatchSchdul.do | insertBatchSchdul | "BatchSchdulDAO.insertBatchSchdul" |
 
  배치스케줄의 속성정보를 입력한 뒤 등록한다.
 
@@ -130,7 +130,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/bat/updateBatchSchdul | updateBatchSchdul | “BatchSchdulDAO.updateBatchSchdul” |
+| 수정 | /sym/bat/updateBatchSchdul | updateBatchSchdul | "BatchSchdulDAO.updateBatchSchdul" |
 
  배치스케줄의 속성정보를 변경한 후 저장한다.
 
@@ -143,8 +143,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/bat/getBatchSchdul.do | selectBatchSchdul | “BatchSchdulDAO.selectBatchSchdul” |
-| 삭제 | /sym/bat/deleteBatchSchdul.do | deleteBatchSchdul | “BatchSchdulDAO.deleteBatchSchdul” |
+| 상세조회 | /sym/bat/getBatchSchdul.do | selectBatchSchdul | "BatchSchdulDAO.selectBatchSchdul" |
+| 삭제 | /sym/bat/deleteBatchSchdul.do | deleteBatchSchdul | "BatchSchdulDAO.deleteBatchSchdul" |
 
  배치스케줄의 속성정보를 조회한다.
 

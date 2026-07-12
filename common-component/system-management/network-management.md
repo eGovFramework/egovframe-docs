@@ -21,7 +21,7 @@ menu:
 
  네트워크관리는 네트워크 정보를 관리하기 위한 목적으로 네트워크 정보의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
-```
+```text
   ① 네트워크목록조회 : 배치작업으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
   ② 네트워크등록 : 배치작업정보를 등록하고, 등록 결과를 조회한다.
   ③ 네트워크수정 : 기 등록된 배치작업정보의 항목들을 수정한다.
@@ -70,7 +70,7 @@ menu:
 
  ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 NTWRK_ID 항목을 추가해야 한다.
 
-```
+```sql
     CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
                                next_id DECIMAL(30) NOT NULL,
                                PRIMARY KEY (table_name)
@@ -81,19 +81,19 @@ menu:
 
 #### ID Generation 환경설정(context-idgn-Ntwrk.xml)
 
-```
-     name="egovNtwrkIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
-         name="dataSource" ref="egov.dataSource" />
-         name="strategy"   ref="ntwrkIdStrategy" />
-         name="blockSize"  value="10"/>
-         name="table"      value="COMTECOPSEQ"/>
-         name="tableName"  value="NTWRK_ID"/>
-    >
-     name="ntwrkIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-         name="prefix"     value="NID_" />
-         name="cipers"     value="16" />
-         name="fillChar"   value="0" />
-    >
+```xml
+    <bean name="egovNtwrkIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+        <property name="dataSource" ref="egov.dataSource" />
+        <property name="strategy"   ref="ntwrkIdStrategy" />
+        <property name="blockSize"  value="10"/>
+        <property name="table"      value="COMTECOPSEQ"/>
+        <property name="tableName"  value="NTWRK_ID"/>
+    </bean>
+    <bean name="ntwrkIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix"     value="NID_" />
+        <property name="cipers"     value="16" />
+        <property name="fillChar"   value="0" />
+    </bean>
 ```
 
 ## 관련화면 및 수행메뉴얼
@@ -102,8 +102,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/sym/nwk/selectNtwrkList.do | selectNtwrkList | “ntwrkDAO.selectNtwrkList” |
-|  |  |  | “ntwrkDAO.selectNtwrkListTotCnt” |
+| 조회 | /sym/sym/nwk/selectNtwrkList.do | selectNtwrkList | "ntwrkDAO.selectNtwrkList" |
+|  |  |  | "ntwrkDAO.selectNtwrkListTotCnt" |
 
  네트워크 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 관리항목, 사용자 명에 대해서 수행된다.
@@ -118,7 +118,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/sym/nwk/addNtwrk.do | insertNtwrk | “ntwrkDAO.insertNtwrk” |
+| 등록 | /sym/sym/nwk/addNtwrk.do | insertNtwrk | "ntwrkDAO.insertNtwrk" |
 
  네트워크의 속성정보를 입력한 뒤 등록한다.
 
@@ -131,7 +131,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/sym/nwk/updtNtwrk.do | updateNtwrk | “ntwrkDAO.updateNtwrk” |
+| 수정 | /sym/sym/nwk/updtNtwrk.do | updateNtwrk | "ntwrkDAO.updateNtwrk" |
 
  네트워크의 속성정보를 변경한 후 저장한다.
 
@@ -144,8 +144,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/sym/nwk/getNtwrk.do | selectNtwrk | “ntwrkDAO.selectNtwrk” |
-| 삭제 | /sym/sym/nwk/removeNtwrk.do | deleteNtwrk | “ntwrkDAO.deleteNtwrk” |
+| 상세조회 | /sym/sym/nwk/getNtwrk.do | selectNtwrk | "ntwrkDAO.selectNtwrk" |
+| 삭제 | /sym/sym/nwk/removeNtwrk.do | deleteNtwrk | "ntwrkDAO.deleteNtwrk" |
 
  네트워크의 속성정보를 조회한다.
 

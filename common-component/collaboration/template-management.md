@@ -142,7 +142,7 @@ N/A
 
 게시판 템플릿 등록 시 해당 템플릿(CSS 파일)의 경로를 ”/css/egovframework/com/cop/tpl/” 아래로 지정한다.
 
-```
+```text
 동호회 기본템플릿 경로: "egovframework/com/cop/tpl/EgovClbBaseTmpl" 
 커뮤니티 기본템플릿 경로: "egovframework/com/cop/tpl/EgovCmmntyBaseTmpl" 
 게시판 기본템플릿 경로: "/css/egovframework/com/cop/tpl/egovbbsTemplate.css"
@@ -195,7 +195,7 @@ N/A
 
 기본적으로 제공되는 게시판 템플릿 경로는 다음과 같다.
 
-```
+```text
 /css/egovframework/com/cop/tpl/egovbbsTemplate.css
 ```
 

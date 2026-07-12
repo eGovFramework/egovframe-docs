@@ -100,7 +100,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  CNTC.INSTTCODE.CMD.edircvmsg = gcc_edircvmsg
  CNTC.INSTTCODE.INFO.userid   = 서버인증서아이디
  CNTC.INSTTCODE.INFO.userpw   = 서버인증서패스워드
- ```
+```
 
  EDI 모듈에 따라 cmd file 이 실행바이너리 파일이거나 쉘스크립트 파일이 올 수 있음.
 
@@ -143,7 +143,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  기관코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.
  - ServiceImpl 예시
-    ```
+    ```text
     // 실제 연계 항목 Mapping 작업
     insttCodeRecptn.setChangeSeCode     (strTmp       );    // 명령                       :: 변경구분코드
     insttCodeRecptn.setOccrrDe          (tokenData[ 1]);    // 날짜                       :: 발생일자
@@ -171,7 +171,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
     insttCodeRecptn.setBsisDe           (tokenData[23]);    // 기초날짜                    :: 기초일자
     insttCodeRecptn.setSortOrdr         (Integer.parseInt(tokenData[24]));
     // 트리순서(트리서열) <적용:정렬순서>:: 정렬순서
-    ```
+```
 
 ### 기관코드수신 목록조회
 

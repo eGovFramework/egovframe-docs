@@ -78,8 +78,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /sym/ccm/cca/SelectCcmCmmnCodeList.do | selectCmmnCodeList | “CmmnCodeManage” | “selectCmmnCodeList” |
-|  |  |  |  | “selectCmmnCodeListTotCnt” |
+| 목록조회 | /sym/ccm/cca/SelectCcmCmmnCodeList.do | selectCmmnCodeList | "CmmnCodeManage" | "selectCmmnCodeList" |
+|  |  |  |  | "selectCmmnCodeListTotCnt" |
 
  페이지 당 검색 범위를 변경하고자 하는 경우
  context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
@@ -104,8 +104,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록화면 | /sym/ccm/cca/RegistCcmCmmnCodeView.do | insertCmmnCodeView | “CmmnClCodeManage” | “selectCmmnClCodeList” |
-| 등록 | /sym/ccm/cca/RegistCcmCmmnCode.do | insertCmmnCode | “CmmnCodeManage” | “insertCmmnCode” |
+| 등록화면 | /sym/ccm/cca/RegistCcmCmmnCodeView.do | insertCmmnCodeView | "CmmnClCodeManage" | "selectCmmnClCodeList" |
+| 등록 | /sym/ccm/cca/RegistCcmCmmnCode.do | insertCmmnCode | "CmmnCodeManage" | "insertCmmnCode" |
 
  ![image](./images/sym-comcode-등록.jpg)
 
@@ -126,8 +126,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /sym/ccm/cca/UpdateCcmCmmnCodeView.do | updateCmmnCodeView | “CmmnCodeManage” | “selectCmmnCodeDetail” |
-| 수정 | /sym/ccm/cca/UpdateCcmCmmnCode.do | updateCmmnCode | “CmmnCodeManage” | “updateCmmnCode” |
+| 수정화면 | /sym/ccm/cca/UpdateCcmCmmnCodeView.do | updateCmmnCodeView | "CmmnCodeManage" | "selectCmmnCodeDetail" |
+| 수정 | /sym/ccm/cca/UpdateCcmCmmnCode.do | updateCmmnCode | "CmmnCodeManage" | "updateCmmnCode" |
 
  ![image](./images/sym-comcode-수정.jpg)
 
@@ -148,8 +148,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/cca/SelectCcmCmmnCodeDetail.do | selectCmmnCodeDetail | “CmmnCodeManage” | “selectCmmnCodeDetail” |
-| 삭제 | /sym/ccm/cca/RemoveCcmCmmnCode.do | deleteCmmnCode | “CmmnCodeManage” | “deleteCmmnCode” |
+| 상세조회 | /sym/ccm/cca/SelectCcmCmmnCodeDetail.do | selectCmmnCodeDetail | "CmmnCodeManage" | "selectCmmnCodeDetail" |
+| 삭제 | /sym/ccm/cca/RemoveCcmCmmnCode.do | deleteCmmnCode | "CmmnCodeManage" | "deleteCmmnCode" |
 
  ![image](./images/sym-comcode-상세.jpg)
 

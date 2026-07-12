@@ -77,8 +77,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /sym/ccm/adc/EgovCcmAdministCodeList.do | selectAdministCodeList | “AdministCodeManageDAO.selectAdministCodeList”, |
-|  |  |  | “AdministCodeManageDAO.selectAdministCodeListTotCnt” |
+| 목록조회 | /sym/ccm/adc/EgovCcmAdministCodeList.do | selectAdministCodeList | "AdministCodeManageDAO.selectAdministCodeList", |
+|  |  |  | "AdministCodeManageDAO.selectAdministCodeListTotCnt" |
 
  페이지 당 검색 범위를 변경하고자 하는 경우
  context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
@@ -103,7 +103,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/ccm/adc/EgovCcmAdministCodeRegist.do | insertAdministCode | “AdministCodeManageDAO.insertAdministCode” |
+| 등록 | /sym/ccm/adc/EgovCcmAdministCodeRegist.do | insertAdministCode | "AdministCodeManageDAO.insertAdministCode" |
 
  ![image](./images/sym-admincode-administcoderegist3.png)
 
@@ -124,7 +124,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/ccm/adc/EgovCcmAdministCodeModify.do | updateAdministCode | “AdministCodeManageDAO.updateAdministCode” |
+| 수정 | /sym/ccm/adc/EgovCcmAdministCodeModify.do | updateAdministCode | "AdministCodeManageDAO.updateAdministCode" |
 
  ![image](./images/sym-admincode-administcodemodify3.png)
 
@@ -145,8 +145,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/adc/EgovCcmAdministCodeDetail.do | selectAdministCodeDetail | “AdministCodeManageDAO.selectAdministCodeDetail” |
-| 삭제 | /sym/ccm/adc/EgovCcmAdministCodeRemove.do | deleteAdministCode | “AdministCodeManageDAO.deleteAdministCode” |
+| 상세조회 | /sym/ccm/adc/EgovCcmAdministCodeDetail.do | selectAdministCodeDetail | "AdministCodeManageDAO.selectAdministCodeDetail" |
+| 삭제 | /sym/ccm/adc/EgovCcmAdministCodeRemove.do | deleteAdministCode | "AdministCodeManageDAO.deleteAdministCode" |
 
  ![image](./images/sym-admincode-administcodedetail3.png)
 
