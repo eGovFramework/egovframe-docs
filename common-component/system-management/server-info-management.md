@@ -21,7 +21,7 @@ menu:
 
  서버정보관리는 서버 정보를 관리하기 위한 목적으로 서버정보 및 서버장비정보의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
-```
+```text
   ① 서버장비목록조회 : 서버장비로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
   ② 서버장비등록 : 서버장비정보를 등록하고, 등록 결과를 조회한다.
   ③ 서버장비수정 : 기 등록된 서버장비정보의 항목들을 수정한다.
@@ -87,7 +87,7 @@ menu:
 
  ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 SERVER_ID, SEVEQ_ID 항목을 추가해야 한다.
 
-```
+```sql
     CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
                                next_id DECIMAL(30) NOT NULL,
                                PRIMARY KEY (table_name)
@@ -99,34 +99,34 @@ menu:
 
 #### ID Generation 환경설정(context-idgn-Server.xml)
 
-```
-    
-     name="egovServerIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
-         name="dataSource" ref="egov.dataSource" />
-         name="strategy"   ref="ServerIdStrategy" />
-         name="blockSize"  value="10"/>
-         name="table"      value="COMTECOPSEQ"/>
-         name="tableName"  value="SERVER_ID"/>
-    >
-     name="ServerIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-         name="prefix"     value="SRV_" />
-         name="cipers"     value="16" />
-         name="fillChar"   value="0" />
-    > 
+```xml
+    <!-- 서버 ID -->
+    <bean name="egovServerIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+        <property name="dataSource" ref="egov.dataSource" />
+        <property name="strategy"   ref="ServerIdStrategy" />
+        <property name="blockSize"  value="10"/>
+        <property name="table"      value="COMTECOPSEQ"/>
+        <property name="tableName"  value="SERVER_ID"/>
+    </bean>
+    <bean name="ServerIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix"     value="SRV_" />
+        <property name="cipers"     value="16" />
+        <property name="fillChar"   value="0" />
+    </bean> 
  
-    
-     name="egovServerEqpmnIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
-         name="dataSource" ref="egov.dataSource" />
-         name="strategy"   ref="ServerEqpmnIdStrategy" />
-         name="blockSize"  value="10"/>
-         name="table"      value="COMTECOPSEQ"/>
-         name="tableName"  value="SEVEQ_ID"/>
-    >
-     name="ServerEqpmnIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-         name="prefix"     value="SVE_" />
-         name="cipers"     value="16" />
-         name="fillChar"   value="0" />
-    >
+    <!-- 서버장비 ID -->
+    <bean name="egovServerEqpmnIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+        <property name="dataSource" ref="egov.dataSource" />
+        <property name="strategy"   ref="ServerEqpmnIdStrategy" />
+        <property name="blockSize"  value="10"/>
+        <property name="table"      value="COMTECOPSEQ"/>
+        <property name="tableName"  value="SEVEQ_ID"/>
+    </bean>
+    <bean name="ServerEqpmnIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix"     value="SVE_" />
+        <property name="cipers"     value="16" />
+        <property name="fillChar"   value="0" />
+    </bean>
 ```
 
 ## 관련화면 및 수행메뉴얼
@@ -135,8 +135,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/sym/srv/selectServerEqpmnList.do | selectServerEqpmnList | “serverDAO.selectServerEqpmnList” |
-|  |  |  | “serverDAO.selectServerEqpmnListTotCnt” |
+| 조회 | /sym/sym/srv/selectServerEqpmnList.do | selectServerEqpmnList | "serverDAO.selectServerEqpmnList" |
+|  |  |  | "serverDAO.selectServerEqpmnListTotCnt" |
 
  서버H/W 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 서버H/W 명에 대해서 수행된다.
@@ -151,7 +151,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/sym/srv/addServerEqpmn.do | insertServerEqpmn | “serverDAO.insertServerEqpmn” |
+| 등록 | /sym/sym/srv/addServerEqpmn.do | insertServerEqpmn | "serverDAO.insertServerEqpmn" |
 
  서버H/W의 속성정보를 입력한 뒤 등록한다.
 
@@ -164,7 +164,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/sym/srv/updtServerEqpmn.do | updateServerEqpmn | “serverDAO.updateServerEqpmn” |
+| 수정 | /sym/sym/srv/updtServerEqpmn.do | updateServerEqpmn | "serverDAO.updateServerEqpmn" |
 
  서버H/W의 속성정보를 변경한 후 저장한다.
 
@@ -177,8 +177,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/sym/srv/getServerEqpmn.do | selectServerEqpmn | “serverDAO.selectServerEqpmn” |
-| 삭제 | /sym/sym/srv/removeServerEqpmn.do | deleteServerEqpmn | “serverDAO.deleteServerEqpmn” |
+| 상세조회 | /sym/sym/srv/getServerEqpmn.do | selectServerEqpmn | "serverDAO.selectServerEqpmn" |
+| 삭제 | /sym/sym/srv/removeServerEqpmn.do | deleteServerEqpmn | "serverDAO.deleteServerEqpmn" |
 
  서버H/W의 속성정보를 조회한다.
 
@@ -192,8 +192,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/sym/srv/selectServerEqpmnList.do | selectServerList | “serverDAO.selectServerList” |
-|  |  |  | “serverDAO.selectServerListTotCnt” |
+| 조회 | /sym/sym/srv/selectServerEqpmnList.do | selectServerList | "serverDAO.selectServerList" |
+|  |  |  | "serverDAO.selectServerListTotCnt" |
 
  서버S/W 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 서버S/W 명에 대해서 수행된다.
@@ -208,7 +208,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/sym/srv/addServer.do | insertServer | “serverDAO.insertServer” |
+| 등록 | /sym/sym/srv/addServer.do | insertServer | "serverDAO.insertServer" |
 
  서버S/W의 속성정보를 입력한 뒤 등록한다.
 
@@ -221,7 +221,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/sym/srv/updtServer.do | updateServer | “serverDAO.updateServer” |
+| 수정 | /sym/sym/srv/updtServer.do | updateServer | "serverDAO.updateServer" |
 
  서버S/W의 속성정보를 변경한 후 저장한다.
 
@@ -234,8 +234,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/sym/srv/getServer.do | selectServer | “serverDAO.selectServer” |
-| 삭제 | /sym/sym/srv/removeServer.do | deleteServer | “serverDAO.deleteServer” |
+| 상세조회 | /sym/sym/srv/getServer.do | selectServer | "serverDAO.selectServer" |
+| 삭제 | /sym/sym/srv/removeServer.do | deleteServer | "serverDAO.deleteServer" |
 
  서버S/W의 속성정보를 조회한다.
 
@@ -249,10 +249,10 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/sym/srv/selectServerEqpmnRelateList.do | selectServerEqpmnRelateList | “serverDAO.selectServerEqpmnRelateList” |
-|  |  |  | “serverDAO.selectServerEqpmnRelateListTotCnt” |
-| 등록 | /sym/sym/srv/saveServerEqpmnRelate.do | saveServerEqpmnRelate | “serverDAO.insertServerEqpmnRelate” |
-| 미등록 |  |  | “serverDAO.deleteServerEqpmnRelate” |
+| 조회 | /sym/sym/srv/selectServerEqpmnRelateList.do | selectServerEqpmnRelateList | "serverDAO.selectServerEqpmnRelateList" |
+|  |  |  | "serverDAO.selectServerEqpmnRelateListTotCnt" |
+| 등록 | /sym/sym/srv/saveServerEqpmnRelate.do | saveServerEqpmnRelate | "serverDAO.insertServerEqpmnRelate" |
+| 미등록 |  |  | "serverDAO.deleteServerEqpmnRelate" |
 
  조회조건상의 서버S/W(명)에 해당하는 서버H/W를 등록(미등록) 처리를 한다.
 

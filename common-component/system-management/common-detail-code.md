@@ -78,8 +78,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /sym/ccm/cde/SelectCcmCmmnDetailCodeList.do | selectCmmnDetailCodeList | “CmmnDetailCodeManage” | “selectCmmnDetailCodeList” |
-|  |  |  |  | “selectCmmnDetailCodeListTotCnt” |
+| 목록조회 | /sym/ccm/cde/SelectCcmCmmnDetailCodeList.do | selectCmmnDetailCodeList | "CmmnDetailCodeManage" | "selectCmmnDetailCodeList" |
+|  |  |  |  | "selectCmmnDetailCodeListTotCnt" |
 
  페이지 당 검색 범위를 변경하고자 하는 경우
  context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
@@ -105,9 +105,9 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록화면 | /sym/ccm/cde/RegistCcmCmmnDetailCodeView.do | insertCmmnDetailCodeView | “CmmnClCodeManage” | “selectCmmnClCodeList” |
-|  |  |  | “CmmnDetailCodeManage” | “selectCmmnCodeList” |
-| 등록 | /sym/ccm/cde/RegistCcmCmmnDetailCode.do | insertCmmnCode | “CmmnDetailCodeManage” | “insertCmmnDetailCode” |
+| 등록화면 | /sym/ccm/cde/RegistCcmCmmnDetailCodeView.do | insertCmmnDetailCodeView | "CmmnClCodeManage" | "selectCmmnClCodeList" |
+|  |  |  | "CmmnDetailCodeManage" | "selectCmmnCodeList" |
+| 등록 | /sym/ccm/cde/RegistCcmCmmnDetailCode.do | insertCmmnCode | "CmmnDetailCodeManage" | "insertCmmnDetailCode" |
 
  ![image](./images/sym-comdetail-등록.jpg)
 
@@ -128,8 +128,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /sym/ccm/cde/UpdateCcmCmmnDetailCodeView.do | updateCmmnDetailCodeView | “CmmnDetailCodeManage” | “selectCmmnDetailCodeDetail” |
-| 수정 | /sym/ccm/cde/UpdateCcmCmmnDetailCode.do | updateCmmnDetailCode | “CmmnDetailCodeManage” | “updateCmmnDetailCode” |
+| 수정화면 | /sym/ccm/cde/UpdateCcmCmmnDetailCodeView.do | updateCmmnDetailCodeView | "CmmnDetailCodeManage" | "selectCmmnDetailCodeDetail" |
+| 수정 | /sym/ccm/cde/UpdateCcmCmmnDetailCode.do | updateCmmnDetailCode | "CmmnDetailCodeManage" | "updateCmmnDetailCode" |
 
  ![image](./images/sym-comdetail-수정.jpg)
 
@@ -150,8 +150,8 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/cde/SelectCcmCmmnDetailCodeDetail.do | selectCmmnDetailCodeDetail | “CmmnDetailCodeManage” | “selectCmmnDetailCodeDetail” |
-| 삭제 | /sym/ccm/cde/RemoveCcmCmmnDetailCode.do | deleteCmmnDetailCode | “CmmnDetailCodeManage” | “deleteCmmnDetailCode” |
+| 상세조회 | /sym/ccm/cde/SelectCcmCmmnDetailCodeDetail.do | selectCmmnDetailCodeDetail | "CmmnDetailCodeManage" | "selectCmmnDetailCodeDetail" |
+| 삭제 | /sym/ccm/cde/RemoveCcmCmmnDetailCode.do | deleteCmmnDetailCode | "CmmnDetailCodeManage" | "deleteCmmnDetailCode" |
 
  ![image](./images/sym-comdetail-상세.jpg)
 
