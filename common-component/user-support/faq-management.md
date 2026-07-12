@@ -20,7 +20,7 @@ menu:
 ### 패키지 참조 관계
 FAQ 관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 
 
-- 패키지 간 참조 관계 : [사용자지원 Package Dependency](../../intro/package-reference.md#사용자지원)
+- 패키지 간 참조 관계 : [사용자지원 Package Dependency](../intro/package-reference.md#사용자지원)
 
 ### 관련 소스
 
@@ -61,7 +61,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
            next_id DECIMAL(30) NOT NULL,
            PRIMARY KEY (table_name));
  
-INSERT INTO COMTECOPSEQ VALUES('FAQ_ID','0');
+INSERT INTO COMTECOPSEQ VALUES('FAQ_ID', 1);
 ```
 
 #### ID Generation 환경설정(context-idgn-FaqManage.xml)
@@ -105,11 +105,11 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/faq/selectFaqList.do | selectFaqList | "FaqManage" | "selectFaqList" |
+| 목록조회 | /uss/olh/faq/selectFaqList.do | selectFaqList | "FaqManage" | "selectFaqList" |
 | | | | "FaqManage" | "selectFaqListCnt" |
 
 FAQ 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 
-검색조건은 용어명, 영문명에 대해서 수행된다.
+검색조건은 질문제목에 대해서 수행된다.
 페이지 당 검색 범위를 변경하고자 하는 경우 
 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
 
@@ -131,7 +131,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /uss/ion/faq/selectFaqDetail.do | selectFaqDetail | "FaqManage" | "selectFaqDetail" |
+| 상세조회 | /uss/olh/faq/selectFaqDetail.do | selectFaqDetail | "FaqManage" | "selectFaqDetail" |
 | 삭제 | /uss/olh/faq/deleteFaq.do | deleteFaq | "FaqManage" | "deleteFaq" |
 
 FAQ 상세조회 화면에서는 FAQ 내용수정, FAQ 내용삭제, FAQ 목록조회를 수행할 수 있다.
@@ -154,7 +154,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록화면 | /uss/ion/faq/insertFaqView.do | insertFaqView | | |
+| 등록화면 | /uss/olh/faq/insertFaqView.do | insertFaqView | | |
 | 등록 | /uss/olh/faq/insertFaq.do | insertFaq | "FaqManage" | "insertFaq" |
 
 ![FAQ 등록](./images/faq-management-regist.png)
@@ -178,7 +178,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /uss/ion/faq/updateFaqView.do | updateFaqView | "FaqManage" | "selectFaqDetail" |
+| 수정화면 | /uss/olh/faq/updateFaqView.do | updateFaqView | "FaqManage" | "selectFaqDetail" |
 | 수정 | /uss/olh/faq/updateFaq.do | updateFaq | "FaqManage" | "updateFaq" |
 
 ![FAQ 수정](./images/faq-management-update.png)

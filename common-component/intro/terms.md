@@ -1,5 +1,21 @@
-# 전자정부 표준프레임워크 축약어(abbreviation)
+---
+title: "공통컴포넌트 축약어 모음"
+linkTitle: "공통컴포넌트 축약어"
+description: "공통컴포넌트의 축약어 정리 모음"
+url: /common-component/cc-intro/cc-abbreviation/
+menu:
+  depth:
+    name: "공통컴포넌트 축약어"
+    weight: 6
+    parent: "cc-intro"
+    identifier: "cc-abbreviation"
+---
 
+
+# 전자정부 표준프레임워크 축약어(abbreviation)
+<br>
+
+##  1. 실행환경
 | **1st** | **2nd**     | **3rd**     | **4th** | **영문**                        | **국문**          |
 | ------- | ----------- | ----------- | ------- | ----------------------------- | --------------- |
 | rte     |             |             |         | Runtime Environment           |                 |
@@ -9,9 +25,13 @@
 |         | ptl         |             |         | Presentation Layer            |                 |
 |         | psl         |             |         | Persistence Layer             |                 |
 |         | itl         |             |         | Integration Layer             |                 |
-|         |             |             |         |                               |                 |
-| com     |             |             |         | common component              |                 |
-|         | cmm         |             |         | common                        |                 |
+
+
+## 2. 공통컴포넌트
+| **1st** | **2nd**     | **3rd**     | **4th** | **영문**                        | **국문**          |
+| ------- | ----------- | ----------- | ------- | ----------------------------- | --------------- |
+| com     |             |             |         | common component              | 공통컴포넌트      |
+|         | cmm         |             |         | common                        | 공통             |
 |         |             | annotation  |         |                               |                 |
 |         |             | filter      |         |                               |                 |
 |         |             | interceptor |         |                               |                 |

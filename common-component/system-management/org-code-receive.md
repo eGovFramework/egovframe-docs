@@ -33,8 +33,8 @@ menu:
 
 ## 관련기능
 
- 기관코드
+ [기관코드](./org-code.md)
 
 ## 참고자료
 
- 실행환경 참조 : ID Generation Service 및 Scheduling 서비스
+ 실행환경 참조 : [ID Generation Service](/egovframe-runtime/foundation-layer/id-generation.md) 및 [Scheduling](/egovframe-runtime/foundation-layer/scheduling.md) 서비스

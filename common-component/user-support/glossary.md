@@ -30,7 +30,7 @@ menu:
 | --- | --- | --- |
 | Controller | egovframework.com.uss.olh.wor.web.EgovWordDicaryController.java | 용어사전관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.uss.olh.wor.service.EgovWordDicaryService.java | 용어사전관리를 위한 서비스 인터페이스 |
-| ServiceImpl | egovframework.comuss.olh.wor.service.impl.EgovWordDicaryServiceImpl.java | 용어사전관리를 위한 서비스 구현 클래스 |
+| ServiceImpl | egovframework.com.uss.olh.wor.service.impl.EgovWordDicaryServiceImpl.java | 용어사전관리를 위한 서비스 구현 클래스 |
 | VO | egovframework.com.uss.olh.wor.service.WordDicaryVO.java | 용어사전관리를 위한 VO 클래스 |
 | VO | egovframework.com.uss.olh.wor.service.WordDicaryDefaultVO.java | 용어사전관리를 위한 SearchVO 클래스 |
 | DAO | egovframework.com.uss.olh.wor.service.impl.EgovWordDicaryDAO.java | 용어사전 관리를 위한 데이터처리 클래스 |
@@ -65,14 +65,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
   		   next_id DECIMAL(30) NOT NULL,
   		   PRIMARY KEY (table_name));
  
-  INSERT INTO COMTECOPSEQ VALUES('WORD_ID','0');
+  INSERT INTO COMTECOPSEQ VALUES('WORD_ID', 1);
 ```
 
 #### ID Generation 환경설정(context-idgn-WordDicary.xml)
 
 ```xml
 <bean name="egovWordDicaryIdGnrService"
-		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+		class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 		destroy-method="destroy">
 		<property name="dataSource" ref="egov.dataSource" />
 		<property name="strategy"   ref="wordDicaryStrategy" />
@@ -82,7 +82,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 	</bean>
  
 	<bean name="wordDicaryStrategy"
-		class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 		<property name="prefix" value="WORDDICARY_" />
 		<property name="cipers" value="9" />
 		<property name="fillChar" value="0" />
@@ -113,7 +113,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/wor/selectWordDicaryList.do | selectWordDicaryList | "WordDicary" | "selectWordDicaryList" |
+| 목록조회 | /uss/olh/wor/selectWordDicaryList.do | selectWordDicaryList | "WordDicary" | "selectWordDicaryList" |
 |  |  |  | "WordDicary" | "selectWordDicaryListCnt" |
 
  용어사전 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
@@ -131,7 +131,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 #### 비즈니스 규칙
 
- 일반사용자가 아닌 관리자가 사용하는 화면으로 용어사전조회에서 목록 클릭 시 이동되는 화면으로 사이트에 대한 상세정보를 보여준다.
+ 일반사용자가 아닌 관리자가 사용하는 화면으로 용어사전조회에서 목록 클릭 시 이동되는 화면으로 용어에 대한 상세정보를 보여준다.
 
 #### 관련코드
 
@@ -141,7 +141,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/wor/selectWordDicaryDetail.do | selectWordDicaryDetail | "WordDicary" | "selectWordDicaryDetail" |
+| 상세조회 | /uss/olh/wor/selectWordDicaryDetail.do | selectWordDicaryDetail | "WordDicary" | "selectWordDicaryDetail" |
 | 삭제 | /uss/olh/wor/deleteWordDicary.do | deleteWordDicary | "WordDicary" | "deleteWordDicary" |
 
  용어사전 상세조회화면은 용어사전목록조회에서 목록클릭 시 상세조회화면으로 이동된다.
@@ -166,7 +166,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록화면 | /uss/ion/wor/insertWordDicaryView.do | insertWordDicaryView |  |  |
+| 등록화면 | /uss/olh/wor/insertWordDicaryView.do | insertWordDicaryView |  |  |
 | 등록 | /uss/olh/wor/insertWordDicary.do | insertWordDicary | "WordDicary" | "insertWordDicary" |
 
  ![image](./images/uss-glossary-worddicary_regist.png)
@@ -188,7 +188,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /uss/ion/wor/updateWordDicaryView.do | updateWordDicaryView | "WordDicary" | "selectWordDicaryDetail" |
+| 수정화면 | /uss/olh/wor/updateWordDicaryView.do | updateWordDicaryView | "WordDicary" | "selectWordDicaryDetail" |
 | 수정 | /uss/olh/wor/updateWordDicary.do | updateWordDicary | "WordDicary" | "updateWordDicary" |
 
  ![image](./images/uss-glossary-worddicary_updt.png)

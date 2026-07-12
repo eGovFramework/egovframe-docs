@@ -249,7 +249,7 @@ Package Explorer에서 해당 Mapper File을 선택하고 더블클릭하거나 
 
 ### Mapper.XML 소스 직접 수정하기
 
-1. Mapper Editor 하단에 있는 "Mapper" 탭 오른쪽에 있는 "화일명.XML" 탭을 클릭하면 사용자가 XML 소스를 직접 수정할 수 있다.
+1. Mapper Editor 하단에 있는 "Mapper" 탭 오른쪽에 있는 "파일명.XML" 탭을 클릭하면 사용자가 XML 소스를 직접 수정할 수 있다.
 2. 이 경우 Mapper Outline이 자동으로 Open되면서 현재 작성중인 Mapper Tree를 보여주어 사용자의 XML 작성을 도와준다.
 
    ![Mapper Editor의 XML Source 편집](./images/mappereditor-xmlsource.png)
