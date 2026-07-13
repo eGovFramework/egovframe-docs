@@ -29,7 +29,7 @@ Wiki기능은 외부 위키 서비스 페이지를 북마크로 등록·조회·
 | DAO | egovframework.com.uss.ion.wik.bmk.service.impl.WikiBookmarkDao.java |  |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/wik/bmk/EgovWikiBookmarkList.jsp |  |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/wik/bmk/EgovWikiBookmarkRegist.jsp |  |
-| Query XML | resources/egovframework/mapper/com/uss/ion/wik/EgovWikiBookmark_SQL_*.xml | DB별 Query XML |
+| Query XML | resources/egovframework/mapper/com/uss/ion/wik/bmk/EgovWikiBookmark_SQL_*.xml | DB별 Query XML |
 
 ### 주요 메서드 (EgovWikiBookmarkService)
 

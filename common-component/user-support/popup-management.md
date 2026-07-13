@@ -40,7 +40,7 @@ menu:
 | ServiceImpl | egovframework.com.uss.ion.pwm.service.impl.EgovPopupManageServiceImpl.java | 팝업창관리 ServiceImpl Class |
 | VO | egovframework.com.uss.ion.pwm.service.PopupManageVO.java | 팝업창관리 VO Class |
 | VO | egovframework.com.cmm.ComDefaultVO.java | 검색 VO Class |
-| DAO | egovframework.com.uss.ion.pwm.service.impl.PopupManageDao.java | 팝업창관리 Dao Class |
+| DAO | egovframework.com.uss.ion.pwm.service.impl.PopupManageDAO.java | 팝업창관리 Dao Class |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/pwm/EgovPopupList.jsp | 팝업창관리 목록조회 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/pwm/EgovPopupRegist.jsp | 팝업창관리 등록 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/pwm/EgovPopupUpdt.jsp | 팝업창관리 수정 페이지 |
