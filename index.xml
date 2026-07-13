@@ -29578,7 +29578,151 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-map-cdd.png" alt="image" >
-&lt;/p></description></item><item><title>약식결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/brief-approval/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/brief-approval/</guid><description/></item><item><title>양력/음력변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</guid><description>&lt;h1 id="양음력변환">양음력변환&lt;/h1>
+&lt;/p></description></item><item><title>약식결재</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/brief-approval/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/edsm/brief-approval/</guid><description>&lt;h1 id="약식결재">약식결재&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>약식결재는 약식결재 정보를 관리하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;p>약식결재는 약식결재 정보를 관리하기 위한 목적으로 약식결재 정보의 등록, 삭제, 조회, 승인, 반려의 기능을 수반한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 약식결재등록 : 약식결재정보를 지정하고, 등록 결과를 조회한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 약식결재삭제 : 기 등록된 약식결재정보를 삭제한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 약식결재상세조회 : 등록된 약식결재정보를 조회한다. 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 약식결재승인 : 등록된 약식결재정보를 승인한다. 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 약식결재반려 : 등록된 약식결재정보를 반려한다.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="관련소스">관련소스&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Controller&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.web.EgovInfrmlSanctnController.java&lt;/td>
+ &lt;td>약식결재를 위한 controller 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.service.EgovInfrmlSanctnService.java&lt;/td>
+ &lt;td>약식결재를 위한 Service Interface&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ServiceImpl&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.service.impl.EgovInfrmlSanctnServiceImpl.java&lt;/td>
+ &lt;td>약식결재를 위한 서비스 구현 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DAO&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.service.impl.InfrmlSanctnDAO.java&lt;/td>
+ &lt;td>약식결재를 위한 데이터처리 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.service.Sanctner.java&lt;/td>
+ &lt;td>결재자 관리를 위한 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.service.InfrmlSanctn.java&lt;/td>
+ &lt;td>약식결재를 위한 Model 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VO&lt;/td>
+ &lt;td>egovframework.com.uss.ion.ism.service.SanctnerVO.java&lt;/td>
+ &lt;td>보고자 관리를 위한 VO 클래스&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovSanctnerList.jsp&lt;/td>
+ &lt;td>결재자 목록조회를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovSanctnerListPopup.jsp&lt;/td>
+ &lt;td>결재자 팝업 목록조회를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovConfmPopup.jsp&lt;/td>
+ &lt;td>약식결재 승인을 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovReturnPopup.jsp&lt;/td>
+ &lt;td>약식결재 반려를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovInfrmlSanctnRegist.jsp&lt;/td>
+ &lt;td>약식결재 지정를 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JSP&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovInfrmlSanctnDetail.jsp&lt;/td>
+ &lt;td>등록된 약식결재를 조회하기 위한 jsp페이지&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_altibase.xml&lt;/td>
+ &lt;td>약식결재 Altibase XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_cubrid.xml&lt;/td>
+ &lt;td>약식결재 Cubrid XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_mysql.xml&lt;/td>
+ &lt;td>약식결재 MySQL XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_maria.xml&lt;/td>
+ &lt;td>약식결재 MariaDB XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_tibero.xml&lt;/td>
+ &lt;td>약식결재 Tibero XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_postgres.xml&lt;/td>
+ &lt;td>약식결재 PostgreSQL XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_oracle.xml&lt;/td>
+ &lt;td>약식결재 Oracle XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Query XML&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn_SQL_goldilocks.xml&lt;/td>
+ &lt;td>약식결재 Goldilocks XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Idgen XML&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-InfrmlSanctn.xml&lt;/td>
+ &lt;td>약식결재를 위한 Id생성 Idgen XML&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/ion/ism/message_en.properties&lt;/td>
+ &lt;td>약식결재를 위한 Message properties(영문)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Message properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/ion/ism/message_ko.properties&lt;/td>
+ &lt;td>약식결재를 위한 Message properties(한글)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="클래스-다이어그램">클래스 다이어그램&lt;/h4>
+&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/cop-smplcfm-cdd_%ec%95%bd%ec%8b%9d%ea%b2%b0%ec%9e%ac%ea%b4%80%eb%a6%ac.png" alt="image" >
+&lt;/p></description></item><item><title>양력/음력변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</guid><description>&lt;h1 id="양음력변환">양음력변환&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>양음력변환은 양력 일자를 음력 일자로 변환하는 요소기술이다. 명절·기념일 등 음력 기반 일자 처리에 활용한다.&lt;/p>
 &lt;h2 id="관련-소스">관련 소스&lt;/h2>
