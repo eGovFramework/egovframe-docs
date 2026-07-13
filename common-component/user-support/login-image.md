@@ -52,7 +52,7 @@ menu:
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_mysql.xml | 로그인화면이미지 MySQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_oracle.xml | 로그인화면이미지 Oracle용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_postgres.xml | 로그인화면이미지 Postgres용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_Tibero.xml | 로그인화면이미지 Tibero용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_tibero.xml | 로그인화면이미지 Tibero용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_goldilocks.xml | 로그인화면이미지 Goldilocks용 QUERY XML |
 | Message properties | resources/egovframework/message/com/uss/ion/lsi/message\_ko.properties | 로그인화면이미지관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/uss/ion/lsi/message\_en.properties | 로그인화면이미지관리를 위한 Message properties(영문) |

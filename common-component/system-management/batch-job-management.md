@@ -34,7 +34,7 @@ menu:
 | Controller | egovframework.com.sym.bat.web.EgovBatchOpertController.java | 배치작업 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.bat.service.EgovBatchOpertService.java | 배치작업 관리를 위한  서비스 인터페이스 |
 | ServiceImpl | egovframework.com.sym.bat.service.impl.EgovBatchOpertServiceImpl.java | 배치작업 관리를 위한 서비스 구현 클래스 |
-| DAO | egovframework.com.sym.bat.service.impl.BatchOpertDAO.java | 배치작업 관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.sym.bat.service.impl.BatchOpertDao.java | 배치작업 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.sym.bat.service.BatchOpert.java | 배치작업 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/bat/EgovBatchOpertList.jsp | 배치작업 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/bat/EgovBatchOpertRegist.jsp | 배치작업 등록을 위한 jsp페이지 |

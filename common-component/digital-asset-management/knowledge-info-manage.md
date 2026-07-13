@@ -35,9 +35,9 @@ menu:
 | DAO | egovframework.com.dam.mgm.service.impl.KnoManagementDAO.java | 지식정보 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.dam.mgm.service.KnoManagement.java | 지식정보 관리를 위한 Model 클래스 |
 | VO | egovframework.com.dam.mgm.service.KnoManagementVO.java | 지식정보 관리를 위한 VO 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/dam/mgm/EgovComDamManagementList.jsp | 지식정보 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/mgm/EgovComDamManagementModify.jsp | 지식정보 수정를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/mgm/EgovComDamManagementDetail.jsp | 등록된 지식정보을 조회하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/mgm/EgovComDamManagementList.jsp | 지식정보 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/mgm/EgovComDamManagementModify.jsp | 지식정보 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/mgm/EgovComDamManagementDetail.jsp | 등록된 지식정보을 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/dam/mgm/EgovKnoManagement\_SQL\_altibase.xml | 지식정보 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/mgm/EgovKnoManagement\_SQL\_cubrid.xml | 지식정보 관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/mgm/EgovKnoManagement\_SQL\_maria.xml | 지식정보 관리를 위한 MariaDB용 Query XML |

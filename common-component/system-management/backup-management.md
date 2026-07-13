@@ -47,8 +47,8 @@ menu:
 | Service | egovframework.com.sym.sym.bak.service.EgovBackupResultService.java | 백업결과 관리를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.sym.sym.bak.service.impl.EgovBackupOpertServiceImpl.java | 백업작업 관리를 위한 서비스 구현 클래스 |
 | ServiceImpl | egovframework.com.sym.sym.bak.service.impl.EgovBackupResultServiceImpl.java | 백업결과 관리를 위한 서비스 구현 클래스 |
-| DAO | egovframework.com.sym.sym.bak.service.impl.BackupOpertDAO.java | 백업작업 관리를 위한 데이터처리 클래스 |
-| DAO | egovframework.com.sym.sym.bak.service.impl.BackupResultDAO.java | 백업결과 관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.sym.sym.bak.service.impl.BackupOpertDao.java | 백업작업 관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.sym.sym.bak.service.impl.BackupResultDao.java | 백업결과 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.sym.sym.bak.service.BackupOpert.java | 백업작업 관리를 위한 Model 클래스 |
 | Model | egovframework.com.sym.sym.bak.service.BackupResult.java | 백업결과 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertList.jsp | 백업작업 목록조회를 위한 jsp페이지 |
