@@ -32,7 +32,7 @@ menu:
 | Controller | egovframework.com.sym.bat.web.EgovBatchResultController.java | 배치결과 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.bat.service.EgovBatchResultService.java | 배치결과 관리를 위한  서비스 인터페이스 |
 | ServiceImpl | egovframework.com.sym.bat.service.impl.EgovBatchResultServiceImpl.java | 배치결과 관리를 위한 서비스 구현 클래스 |
-| DAO | egovframework.com.sym.bat.service.impl.BatchResultDAO.java | 배치결과 관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.sym.bat.service.impl.BatchResultDao.java | 배치결과 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.sym.bat.service.BatchResult.java | 배치결과 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/bat/EgovBatchResultList.jsp | 배치결과 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/bat/EgovBatchResultDetail.jsp | 등록된 배치결과를 조회하기 위한 jsp페이지 |

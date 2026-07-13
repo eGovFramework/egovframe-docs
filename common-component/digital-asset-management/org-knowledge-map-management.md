@@ -37,10 +37,10 @@ menu:
 | DAO | egovframework.com.dam.map.tea.service.impl.MapTeamDAO.java | 지식맵(조직별) 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.dam.map.tea.service.MapTeam.java | 지식맵(조직별) 관리를 위한 Model 클래스 |
 | VO | egovframework.com.dam.map.tea.service.MapTeamVO.java | 지식맵(조직별) 관리를 위한 VO 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/dam/map/tea/EgovComDamMapTeamList.jsp | 지식맵(조직별) 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/map/tea/EgovComDamMapTeamRegist.jsp | 지식맵(조직별) 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/map/tea/EgovComDamMapTeamModify.jsp | 지식맵(조직별) 수정를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/map/tea/EgovComDamMapTeamDetail.jsp | 등록된 지식맵(조직별)을 조회하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamList.jsp | 지식맵(조직별) 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamRegist.jsp | 지식맵(조직별) 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamModify.jsp | 지식맵(조직별) 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamDetail.jsp | 등록된 지식맵(조직별)을 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_altibase.xml | 지식맵(조직별) 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_cubrid.xml | 지식맵(조직별) 관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_maria.xml | 지식맵(조직별) 관리를 위한 MariaDB용 Query XML |

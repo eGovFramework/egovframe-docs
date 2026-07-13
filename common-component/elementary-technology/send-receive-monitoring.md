@@ -38,7 +38,7 @@ menu:
 | Controller | `egovframework.com.utl.sys.trm.web.EgovTrsmrcvMntrngController.java` | 송수신모니터링을 위한 컨트롤러 클래스 |
 | Service | `egovframework.com.utl.sys.trm.service.EgovTrsmrcvMntrngService.java` | 송수신모니터링을 위한 서비스 인터페이스 |
 | ServiceImpl | `egovframework.com.utl.sys.trm.service.impl.EgovTrsmrcvMntrngServiceImpl.java` | 송수신모니터링을 위한 서비스 구현 클래스 |
-| DAO | `egovframework.com.utl.sys.trm.service.impl.TrsmrcvMntrngDAO.java` | 송수신모니터링을 위한 데이터처리 클래스 |
+| DAO | `egovframework.com.utl.sys.trm.service.impl.TrsmrcvMntrngDao.java` | 송수신모니터링을 위한 데이터처리 클래스 |
 | Model | `egovframework.com.utl.sys.trm.service.TrsmrcvMntrng.java` | 송수신모니터링을 위한 Model 클래스 |
 | Model | `egovframework.com.utl.sys.trm.service.TrsmrcvMntrngLog.java` | 송수신모니터링로그정보를 위한 Model 클래스 |
 | JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngList.jsp` | 송수신모니터링목록조회를 위한 JSP 페이지 |

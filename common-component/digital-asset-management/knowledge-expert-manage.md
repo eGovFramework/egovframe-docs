@@ -37,10 +37,10 @@ menu:
 | DAO | egovframework.com.dam.spe.spe.service.impl.KnoSpecialistDAO.java | 지식전문가 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.dam.spe.spe.service.KnoSpecialist.java | 지식전문가 관리를 위한 Model 클래스 |
 | VO | egovframework.com.dam.spe.spe.service.KnoSpecialistVO.java | 지식전문가 관리를 위한 VO 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/dam/spe/spe/EgovComDamSpecialistList.jsp | 지식전문가 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/spe/spe/EgovComDamSpecialistRegist.jsp | 지식전문가 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/spe/spe/EgovComDamSpecialistModify.jsp | 지식전문가 수정를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/dam/spe/spe/EgovComDamSpecialistDetail.jsp | 등록된 지식전문가을 조회하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/spe/spe/EgovComDamSpecialistList.jsp | 지식전문가 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/spe/spe/EgovComDamSpecialistRegist.jsp | 지식전문가 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/spe/spe/EgovComDamSpecialistModify.jsp | 지식전문가 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/spe/spe/EgovComDamSpecialistDetail.jsp | 등록된 지식전문가을 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/dam/spe/spe/EgovDamKnoSpecialistList\_SQL\_altibase.xml | 지식전문가 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/spe/spe/EgovDamKnoSpecialistList\_SQL\_cubrid.xml | 지식전문가 관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/spe/spe/EgovDamKnoSpecialistList\_SQL\_maria.xml | 지식전문가 관리를 위한 MariaDB용 Query XML |

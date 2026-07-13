@@ -72,10 +72,8 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/sms/EgovSms_SQL_mysql.xml | 문자메시지서비스를 위한 Mysql용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/sms/EgovSms_SQL_oracle.xml | 문자메시지서비스를 위한 Oracle용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/sms/EgovSms_SQL_postgres.xml | 문자메시지서비스를 위한 Postgres용 Query 파일 |
-| Query XML | resources/egovframework/mapper/com/cop/sms/EgovSms_SQL_Tibero.xml | 문자메시지서비스를 위한 Tibero용 Query 파일 |
+| Query XML | resources/egovframework/mapper/com/cop/sms/EgovSms_SQL_tibero.xml | 문자메시지서비스를 위한 Tibero용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/sms/EgovSms_SQL_goldilocks.xml | 문자메시지서비스를 위한 Goldilocks용 Query 파일 |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
-| Validator XML | resources/egovframework/validator/com/uss/olp/cns/EgovCnsltManage.xml | 문자메시지서비스를 위한 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/sms/message_ko.properties | 문자메시지서비스를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/sms/message_en.properties | 문자메시지서비스를 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Sms.xml | 문자메시지서비스를 위한 Id생성 Idgen XML |

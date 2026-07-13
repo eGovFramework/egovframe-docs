@@ -36,7 +36,7 @@ menu:
 | Controller | egovframework.com.sym.bat.web.EgovBatchSchdulController.java | 배치스케줄 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.bat.service.EgovBatchSchdulService.java | 배치스케줄 관리를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.sym.bat.service.impl.EgovBatchSchdulServiceImpl.java | 배치스케줄 관리를 위한 서비스 구현 클래스 |
-| DAO | egovframework.com.sym.bat.service.impl.BatchSchdulDAO.java | 배치스케줄 관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.sym.bat.service.impl.BatchSchdulDao.java | 배치스케줄 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.sym.bat.service.BatchSchdul.java | 배치스케줄 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/bat/EgovBatchSchdulList.jsp | 배치스케줄 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/bat/EgovBatchSchdulRegist.jsp | 배치스케줄 등록을 위한 jsp페이지 |
