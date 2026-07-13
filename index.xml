@@ -36096,48 +36096,43 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_mysql.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_mysql.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 MySQL용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_cubrid.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_cubrid.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Cubrid용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_oracle.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_oracle.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Oracle용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_tibero.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_tibero.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Tibero용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_altibase.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_altibase.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Altibase용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_postgres.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_postgres.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Postgres용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_maria.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_maria.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Maria용 Query&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml&lt;/td>
  &lt;td>커뮤니티 메인을 위한 Goldilocks용 Query&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Validator XML&lt;/td>
- &lt;td>resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml&lt;/td>
- &lt;td>커뮤니티 관리를위한 Validator XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Message properties&lt;/td>
@@ -39998,14 +39993,14 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
  &lt;td>로그관리 모델&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.ProxySvcVO.java&lt;/td>
- &lt;td>정보관리 VO&lt;/td>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.utl.sys.pxy.service.ProxySvc.java&lt;/td>
+ &lt;td>정보관리 Model&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.ProxyLogVO.java&lt;/td>
- &lt;td>로그관리 VO&lt;/td>
+ &lt;td>Model&lt;/td>
+ &lt;td>egovframework.com.utl.sys.pxy.service.ProxyLog.java&lt;/td>
+ &lt;td>로그관리 Model&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
@@ -40034,67 +40029,57 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_altibase.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_altibase.xml&lt;/td>
  &lt;td>Altibase용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_cubrid.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_cubrid.xml&lt;/td>
  &lt;td>Cubrid용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_maria.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_maria.xml&lt;/td>
  &lt;td>MariaDB용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_mysql.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_mysql.xml&lt;/td>
  &lt;td>MySQL용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_oracle.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_oracle.xml&lt;/td>
  &lt;td>Oracle용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_postgres.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_postgres.xml&lt;/td>
  &lt;td>PostgreSQL용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_tibero.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_tibero.xml&lt;/td>
  &lt;td>Tibero용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Query XML&lt;/td>
- &lt;td>resources/&amp;hellip;/EgovProxySvc_SQL_goldilocks.xml&lt;/td>
+ &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_goldilocks.xml&lt;/td>
  &lt;td>Goldilocks용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>Validator Rule&lt;/td>
- &lt;td>resources/egovframework/validator/validator-rules.xml&lt;/td>
- &lt;td>Validator Rule XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Validator XML&lt;/td>
- &lt;td>resources/&amp;hellip;/validator/com/utl/sys/pxy/EgovProxySvc.xml&lt;/td>
- &lt;td>Validator XML&lt;/td>
- &lt;/tr>
- &lt;tr>
  &lt;td>Message prop&lt;/td>
- &lt;td>resources/&amp;hellip;/message/com/utl/sys/pxy/message_en.properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/utl/sys/pxy/message_en.properties&lt;/td>
  &lt;td>영문 Message&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Message prop&lt;/td>
- &lt;td>resources/&amp;hellip;/message/com/utl/sys/pxy/message_ko.properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/utl/sys/pxy/message_ko.properties&lt;/td>
  &lt;td>한글 Message&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/&amp;hellip;/spring/com/idgn/context-idgn-ProxySvc.xml&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-ProxySvc.xml&lt;/td>
  &lt;td>Idgen XML&lt;/td>
  &lt;/tr>
  &lt;/tbody>
