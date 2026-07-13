@@ -95,7 +95,7 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 |  |  |  | "NoteRecptn.deleteNoteManage" |
 
  받은쪽지함 목록에서 선택한 받은쪽지함 정보를 상세조회 한다.
- 답장 버튼 클릭시 답장을 보낼수 있는 페이지로 이동하고 보낸사람의 쪽지내용이 자동 입력된다.
+ 답장 버튼 클릭시 답장을 보낼 수 있는 페이지로 이동하고 보낸사람의 쪽지내용이 자동 입력된다.
 
  ![image](./images/uss-note-recptn-받쪽함상조.jpg)
 
