@@ -53,7 +53,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/tpl/EgovTemplate_SQL_goldilocks.xml | 템플릿 관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/cop/tpl/message_ko.properties | 템플릿 관리 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/tpl/message_en.properties | 템플릿 관리 Message properties(영문) |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Tmplat.xml | 템플릿 관리를위한 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
@@ -118,9 +117,9 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/tpl/selectTemplateInfs.do | selectTemplateInfs | “TemplateManageDAO.selectTemplateInfs”, |
-| | | | “TemplateManageDAO.selectTemplateInfsCnt” |
-| 팝업 목록조회 | /cop/tpl/selectTemplateInfsPop.do | selectTemplateInfsPop | “TemplateManageDAO.selectTemplateInfs” |
+| 목록조회 | /cop/tpl/selectTemplateInfs.do | selectTemplateInfs | "TemplateManageDAO.selectTemplateInfs", |
+| | | | "TemplateManageDAO.selectTemplateInfsCnt" |
+| 팝업 목록조회 | /cop/tpl/selectTemplateInfsPop.do | selectTemplateInfsPop | "TemplateManageDAO.selectTemplateInfs" |
 
 ![템플릿 목록조회](./images/template-management-list.png)
 
@@ -138,9 +137,9 @@ N/A
 
 #### 템플릿 경로설정
 
-동호회 및 커뮤니티 템플릿 등록 시 해당 템플릿(JSP 파일)의 경로를 “egovframework/com/cop/tpl/” 아래로 지정한다.
+동호회 및 커뮤니티 템플릿 등록 시 해당 템플릿(JSP 파일)의 경로를 "egovframework/com/cop/tpl/" 아래로 지정한다.
 
-게시판 템플릿 등록 시 해당 템플릿(CSS 파일)의 경로를 ”/css/egovframework/com/cop/tpl/” 아래로 지정한다.
+게시판 템플릿 등록 시 해당 템플릿(CSS 파일)의 경로를 "/css/egovframework/com/cop/tpl/" 아래로 지정한다.
 
 ```text
 동호회 기본템플릿 경로: "egovframework/com/cop/tpl/EgovClbBaseTmpl" 
@@ -157,7 +156,7 @@ N/A
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 등록화면 | /cop/tpl/addTemplateInf.do | addTemplateInf | |
-| 등록 | /cop/tpl/insertTemplateInf.do | insertTemplateInf | “TemplateManageDAO.insertTemplateInf” |
+| 등록 | /cop/tpl/insertTemplateInf.do | insertTemplateInf | "TemplateManageDAO.insertTemplateInf" |
 
 ![템플릿 등록](./images/template-management-insert.png)
 
@@ -181,7 +180,7 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /cop/tpl/updateTemplateInf.do | updateTemplateInf | “TemplateManageDAO.updateTemplateInf” |
+| 수정 | /cop/tpl/updateTemplateInf.do | updateTemplateInf | "TemplateManageDAO.updateTemplateInf" |
 
 ![템플릿 수정](./images/template-management-update.png)
 

@@ -36,26 +36,24 @@ menu:
 | DAO | egovframework.com.utl.sys.pxy.service.impl.ProxySvcDAO.java | 정보관리 DAO |
 | Model | egovframework.com.utl.sys.pxy.service.ProxySvc.java | 정보관리 모델 |
 | Model | egovframework.com.utl.sys.pxy.service.ProxyLog.java | 로그관리 모델 |
-| VO | egovframework.com.utl.sys.pxy.service.ProxySvcVO.java | 정보관리 VO |
-| VO | egovframework.com.utl.sys.pxy.service.ProxyLogVO.java | 로그관리 VO |
+| Model | egovframework.com.utl.sys.pxy.service.ProxySvc.java | 정보관리 Model |
+| Model | egovframework.com.utl.sys.pxy.service.ProxyLog.java | 로그관리 Model |
 | JSP | /WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxyLogList.jsp | 로그조회 화면 |
 | JSP | /WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcList.jsp | 목록조회 화면 |
 | JSP | /WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcDetail.jsp | 상세조회 화면 |
 | JSP | /WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcRegist.jsp | 등록 화면 |
 | JSP | /WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcUpdt.jsp | 수정 화면 |
-| Query XML | resources/.../EgovProxySvc_SQL_altibase.xml | Altibase용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_cubrid.xml | Cubrid용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_maria.xml | MariaDB용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_mysql.xml | MySQL용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_oracle.xml | Oracle용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_postgres.xml | PostgreSQL용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_tibero.xml | Tibero용 Query XML |
-| Query XML | resources/.../EgovProxySvc_SQL_goldilocks.xml | Goldilocks용 Query XML |
-| Validator Rule | resources/egovframework/validator/validator-rules.xml | Validator Rule XML |
-| Validator XML | resources/.../validator/com/utl/sys/pxy/EgovProxySvc.xml | Validator XML |
-| Message prop | resources/.../message/com/utl/sys/pxy/message_en.properties | 영문 Message |
-| Message prop | resources/.../message/com/utl/sys/pxy/message_ko.properties | 한글 Message |
-| Idgen XML | resources/.../spring/com/idgn/context-idgn-ProxySvc.xml | Idgen XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_altibase.xml | Altibase용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_cubrid.xml | Cubrid용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_maria.xml | MariaDB용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_mysql.xml | MySQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_oracle.xml | Oracle용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_postgres.xml | PostgreSQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_tibero.xml | Tibero용 Query XML |
+| Query XML | resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_goldilocks.xml | Goldilocks용 Query XML |
+| Message prop | resources/egovframework/message/com/utl/sys/pxy/message_en.properties | 영문 Message |
+| Message prop | resources/egovframework/message/com/utl/sys/pxy/message_ko.properties | 한글 Message |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-ProxySvc.xml | Idgen XML |
 
 ### 클래스 다이어그램
 
