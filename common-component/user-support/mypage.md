@@ -41,8 +41,6 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/uss/mpe/EgovIndvdlPgeRegist.jsp | 마이페이지 컨텐츠 등록 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/mpe/EgovIndvdlPgeUpdt.jsp | 마이페이지 컨텐츠 수정 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/mpe/EgovIndvdlPgeDetail.jsp | 마이페이지 컨텐츠 상세조회 페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/mpe/EgovIndvdlpgeList.jsp | 마이페이지 컨텐츠 추가 페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/mpe/EgovIndvdlpgeDetail.jsp | 마이페이지 조회 페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/mpe/EgovIndvdlPge\_SQL\_altibase.xml | 마이페이지 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/mpe/EgovIndvdlPge\_SQL\_cubrid.xml | 마이페이지 관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/mpe/EgovIndvdlPge\_SQL\_maria.xml | 마이페이지 관리를 위한 MariaDB용 Query XML |

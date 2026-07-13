@@ -43,12 +43,12 @@ menu:
 | VO | egovframework.com.uss.umt.service.EntrprsManageVO.java | 기업회원 관리를 위한 모델 클래스 |
 | VO | egovframework.com.uss.umt.service.UserDefaultVO.java | 기업회원 관리를 위한 검색조건용 VO 클래스 |
 | DAO | egovframework.com.uss.umt.service.impl.EntrprsManageDAO.java | 기업회원 관리를 위한 데이터처리 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberInsert.jsp | 기업회원 등록을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberSelectUpdt.jsp | 기업회원 상세조회 및 수정을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsInsert.jsp | 기업회원 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsSelectUpdt.jsp | 기업회원 상세조회 및 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsPasswordUpdt.jsp | 기업회원 암호수정을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberManage.jsp | 기업회원 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsManage.jsp | 기업회원 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovIdDplctCnfirm.jsp | 중복아이디 확인을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsMberSbscrb.jsp | 기업회원 가입신청을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/umt/EgovEntrprsSbscrb.jsp | 기업회원 가입신청을 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_altibase.xml | Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_cubrid.xml | Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_maria.xml | MariaDB용 Query XML |
