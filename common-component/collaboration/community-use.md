@@ -41,15 +41,14 @@ menu:
 | DAO | egovframework.com.cop.cmy.service.impl.EgovCommuMasterDAO.java | 커뮤니티 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/cmy/EgovCommuMain.jsp | 커뮤니티 메인을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/cmy/EgovCmmntyBaseTmplContents.jsp | 커뮤니티 메인에서 대표 게시판 표시를 위한 jsp페이지 |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_mysql.xml | 커뮤니티 메인을 위한 MySQL용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_cubrid.xml | 커뮤니티 메인을 위한 Cubrid용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_oracle.xml | 커뮤니티 메인을 위한 Oracle용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_tibero.xml | 커뮤니티 메인을 위한 Tibero용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_altibase.xml | 커뮤니티 메인을 위한 Altibase용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_postgres.xml | 커뮤니티 메인을 위한 Postgres용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_maria.xml | 커뮤니티 메인을 위한 Maria용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml | 커뮤니티 메인을 위한 Goldilocks용 Query |
-| Validator XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml | 커뮤니티 관리를위한 Validator XML |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_mysql.xml | 커뮤니티 메인을 위한 MySQL용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_cubrid.xml | 커뮤니티 메인을 위한 Cubrid용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_oracle.xml | 커뮤니티 메인을 위한 Oracle용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_tibero.xml | 커뮤니티 메인을 위한 Tibero용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_altibase.xml | 커뮤니티 메인을 위한 Altibase용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_postgres.xml | 커뮤니티 메인을 위한 Postgres용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_maria.xml | 커뮤니티 메인을 위한 Maria용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_goldilocks.xml | 커뮤니티 메인을 위한 Goldilocks용 Query |
 | Message properties | resources/egovframework/message/com/cop/cmy/message_ko.properties | 커뮤니티 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/cmy/message_en.properties | 커뮤니티 관리를 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Cmmnty.xml | 커뮤니티 관리를 위한 Id생성 Idgen XML |
@@ -111,8 +110,8 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBdMstrListByTrget | “BBSAttributeManageDAO.selectBdMstrListByTrget”, |
-| | | | “BBSAttributeManageDAO.selectBdMstrListCntByTrget” |
+| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | "EgovBBSMasterDAO.selectBBSMasterList", |
+| | | | "EgovBBSMasterDAO.selectBBSMasterListTotCnt" |
 
 게시판관리 목록은 기본적인 페이징 처리가 되며 다음과 같은 정보를 제공한다.
 
@@ -137,7 +136,7 @@ N/A
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 등록화면 | /cop/bbs/insertBBSMasterView.do | insertBBSMasterView | |
-| 등록 | /cop/bbs/insertBBSMaster.do | insertBBSMaster | “BBSMaster.insertBBSMaster” |
+| 등록 | /cop/bbs/insertBBSMaster.do | insertBBSMaster | "BBSMaster.insertBBSMaster" |
 
 게시판관리 목록조회 화면에서 상단의 등록 버튼을 선택하면 다음과 같은 등록화면으로 이동한다.
 
@@ -161,7 +160,7 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세보기화면 | /cop/bbs/selectBBSMasterDetail.do | selectBBSMasterDetail | “BBSMaster.selectBBSMasterDetail” |
+| 상세보기화면 | /cop/bbs/selectBBSMasterDetail.do | selectBBSMasterDetail | "BBSMaster.selectBBSMasterDetail" |
 
 게시판관리 목록에서 게시판명을 선택하면 게시판에 대한 속성정보를 수정할 수 있는 수정화면으로 이동한다.
 
@@ -181,8 +180,8 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정화면 | /cop/bbs/updateBBSMasterView.do | updateBBSMasterView | “BBSMaster.selectBBSMasterDetail” |
-| 수정 | /cop/bbs/updateBBSMaster.do | updateBBSMaster | “BBSMaster.updateBBSMaster” |
+| 수정화면 | /cop/bbs/updateBBSMasterView.do | updateBBSMasterView | "BBSMaster.selectBBSMasterDetail" |
+| 수정 | /cop/bbs/updateBBSMaster.do | updateBBSMaster | "BBSMaster.updateBBSMaster" |
 
 게시판관리 목록에서 게시판명을 선택하면 게시판에 대한 속성정보를 수정할 수 있는 수정화면으로 이동한다.
 

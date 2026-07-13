@@ -68,9 +68,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/lsm/EgovLeaderSchdul_SQL_postgres.xml | 간부일정관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/lsm/EgovLeaderSchdul_SQL_tibero.xml | 간부일정관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/lsm/EgovLeaderSchdul_SQL_goldilocks.xml | 간부일정관리를 위한 Goldilocks용 Query XML |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
-| Validator XML | resources/egovframework/validator/com/cop/smt/lsm/EgovLeaderSchdul.xml | 간부일정관리를 위한 Validator XML |
-| Validator XML | resources/egovframework/validator/com/cop/smt/lsm/EgovLeaderSttus.xml | 간부일정관리를 위한 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/smt/lsm/message_en.properties | 간부일정관리를 위한 Message properties(영문) |
 | Message properties | resources/egovframework/message/com/cop/smt/lsm/message_ko.properties | 간부일정관리를 위한 Message properties(한글) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-LeaderSchdu.xml | 간부일정관리를 위한 Id생성 Idgen XML |
@@ -135,7 +132,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 월별 목록조회 | /cop/smt/lsm/usr/selectLeaderSchdulMonthList.do | selectLeaderSchdulMonthList | “LeaderSchdulDAO” | “selectLeaderSchdulList” |
+| 월별 목록조회 | /cop/smt/lsm/usr/selectLeaderSchdulMonthList.do | selectLeaderSchdulMonthList | "LeaderSchdulDAO" | "selectLeaderSchdulList" |
 
 ![월별 간부일정 목록조회](./images/executive-schedule-month-list.png)
 
@@ -159,7 +156,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 주별 목록조회 | /cop/smt/lsm/usr/selectLeaderSchdulWeekList.do | selectLeaderSchdulWeekList | “LeaderSchdulDAO” | “selectLeaderSchdulList” |
+| 주별 목록조회 | /cop/smt/lsm/usr/selectLeaderSchdulWeekList.do | selectLeaderSchdulWeekList | "LeaderSchdulDAO" | "selectLeaderSchdulList" |
 
 ![주별 간부일정 목록조회](./images/executive-schedule-week-list.png)
 
@@ -183,7 +180,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 일별 목록조회 | /cop/smt/lsm/usr/selectLeaderSchdulDailyList.do | selectLeaderSchdulDailyList | “LeaderSchdulDAO” | “selectLeaderSchdulList” |
+| 일별 목록조회 | /cop/smt/lsm/usr/selectLeaderSchdulDailyList.do | selectLeaderSchdulDailyList | "LeaderSchdulDAO" | "selectLeaderSchdulList" |
 
 ![일별 간부일정 목록조회](./images/executive-schedule-daily-list.png)
 
@@ -206,7 +203,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/smt/lsm/mng/addLeaderSchdul.do | addLeaderSchdul | | |
-| 등록 | /cop/smt/lsm/mng/insertLeaderSchdul.do | insertLeaderSchdul | “LeaderSchdulDAO” | “insertLeaderSchdul” |
+| 등록 | /cop/smt/lsm/mng/insertLeaderSchdul.do | insertLeaderSchdul | "LeaderSchdulDAO" | "insertLeaderSchdul" |
 
 ![간부일정 등록](./images/executive-schedule-insert.png)
 
@@ -236,7 +233,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정 | /cop/smt/lsm/mng/updateLeaderSchdul.do | updateLeaderSchdul | “LeaderSchdulDAO” | “updateLeaderSchdul” |
+| 수정 | /cop/smt/lsm/mng/updateLeaderSchdul.do | updateLeaderSchdul | "LeaderSchdulDAO" | "updateLeaderSchdul" |
 
 ![간부일정 수정](./images/executive-schedule-update.png)
 
@@ -258,8 +255,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/smt/lsm/usr/selectLeaderSchdul.do | selectLeaderSchdul | “LeaderSchdulDAO” | “selectLeaderSchdul” |
-| 삭제 | /cop/smt/lsm/mng/deleteLeaderSchdul.do | deleteLeaderSchdul | “LeaderSchdulDAO” | “deleteLeaderSchdul” |
+| 상세조회 | /cop/smt/lsm/usr/selectLeaderSchdul.do | selectLeaderSchdul | "LeaderSchdulDAO" | "selectLeaderSchdul" |
+| 삭제 | /cop/smt/lsm/mng/deleteLeaderSchdul.do | deleteLeaderSchdul | "LeaderSchdulDAO" | "deleteLeaderSchdul" |
 
 ![간부일정 상세조회](./images/executive-schedule-detail.png)
 
