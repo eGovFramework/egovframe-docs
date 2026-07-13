@@ -40836,7 +40836,6 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
 &lt;h4 id="환경-설정">환경 설정&lt;/h4>
 &lt;p>환율계산 기능을 사용하기 위해서는 &lt;code>globals.properties&lt;/code> 파일에 한국수출입은행 현재환율 API 인증키를 설정해야 한다.
 API 인증키는 한국수출입은행 홈페이지의 &amp;lsquo;수출입은행 환율 API&amp;rsquo; 관련 페이지에서 발급받을 수 있다.&lt;/p></description></item><item><title>회원 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/member-management/</guid><description>&lt;h1 id="회원-관리">회원 관리&lt;/h1>
-&lt;h1 id="회원-관리-1">회원 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>회원 관리는 일반회원과 기업회원의 가입·조회·수정·탈퇴(삭제), 아이디 중복확인, 비밀번호 관리, 회원 상태 변경 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 사용자지원(사용자관리) 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
