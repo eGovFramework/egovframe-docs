@@ -244,7 +244,7 @@ public Boolean isAuthenticated() {
 | Action     | URL                      | Controller method | SQL Namespace | SQL QueryID           |
 | ---------- | ------------------------ | ----------------- | ------------- | --------------------- |
 | 로그인화면 | /uat/uia/egovLoginUsr.do | loginUsrView      |               |                       |
-| 일반로그인 | /uat/uia/actionLogin.do  | actionLogin       | “LoginUsr”  | “actionCrtfctLogin” |
+| 일반로그인 | /uat/uia/actionLogin.do  | actionLogin       | "LoginUsr"  | "actionCrtfctLogin" |
 
  ![image](./images/uat-egovloginusr.jpg)
 

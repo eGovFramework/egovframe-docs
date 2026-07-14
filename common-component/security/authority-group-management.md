@@ -93,8 +93,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /sec/rgm/EgovAuthorGroupList.do | selectAuthorGroupList | “authorGroupDAO” | “selectAuthorGroupList” |
-|  |  |  | “authorGroupDAO” | “selectAuthorGroupListTotCnt” |
+| 목록조회 | /sec/rgm/EgovAuthorGroupList.do | selectAuthorGroupList | "authorGroupDAO" | "selectAuthorGroupList" |
+|  |  |  | "authorGroupDAO" | "selectAuthorGroupListTotCnt" |
 
  ![권한그룹목록 조회](./images/rgm-author_group_manage.png)
 
@@ -116,8 +116,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | /sec/rgm/EgovAuthorGroupInsert.do | insertAuthorGroup | “authorGroupDAO” | “insertAuthorGroup” |
-| 수정 | /sec/rgm/EgovAuthorGroupInsert.do | insertAuthorGroup | “authorGroupDAO” | “updateAuthorGroup” |
+| 등록 | /sec/rgm/EgovAuthorGroupInsert.do | insertAuthorGroup | "authorGroupDAO" | "insertAuthorGroup" |
+| 수정 | /sec/rgm/EgovAuthorGroupInsert.do | insertAuthorGroup | "authorGroupDAO" | "updateAuthorGroup" |
 
  ![권한그룹 등록 및 수정](./images/rgm-author_group_insert_update.png)
 
@@ -138,7 +138,7 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 삭제 | /sec/rgm/EgovAuthorGroupDelete.do | deleteAuthorGroup | “authorGroupDAO” | “deleteAuthorGroup” |
+| 삭제 | /sec/rgm/EgovAuthorGroupDelete.do | deleteAuthorGroup | "authorGroupDAO" | "deleteAuthorGroup" |
 
  ![권한그룹 삭제](./images/rgm-author_group_delete.png)
 
@@ -159,8 +159,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /sec/gmt/EgovGroupSearchList.do | selectGroupSearchList | “groupManageDAO” | “selectGroupList” |
-|  |  |  | “groupManageDAO” | “selectGroupListTotCnt” |
+| 조회 | /sec/gmt/EgovGroupSearchList.do | selectGroupSearchList | "groupManageDAO" | "selectGroupList" |
+|  |  |  | "groupManageDAO" | "selectGroupListTotCnt" |
 
  ![그룹목록 조회 팝업](./images/rgm-author_group_popup.png)
 

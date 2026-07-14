@@ -91,8 +91,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /sec/drm/EgovDeptAuthorList.do | selectDeptAuthorList | “deptAuthorDAO” | “selectDeptAuthorList” |
-|  |  |  | “deptAuthorDAO” | “selectDeptAuthorListTotCnt” |
+| 조회 | /sec/drm/EgovDeptAuthorList.do | selectDeptAuthorList | "deptAuthorDAO" | "selectDeptAuthorList" |
+|  |  |  | "deptAuthorDAO" | "selectDeptAuthorListTotCnt" |
 
  ![부서권한목록 조회](./images/drm-dept_author_manage.png)
 
@@ -113,8 +113,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | /sec/drm/EgovDeptAuthorInsert.do | insertDeptAuthor | “deptAuthorDAO” | “insertDeptAuthor” |
-| 수정 | /sec/drm/EgovDeptAuthorInsert.do | insertDeptAuthor | “deptAuthorDAO” | “updateDeptAuthor” |
+| 등록 | /sec/drm/EgovDeptAuthorInsert.do | insertDeptAuthor | "deptAuthorDAO" | "insertDeptAuthor" |
+| 수정 | /sec/drm/EgovDeptAuthorInsert.do | insertDeptAuthor | "deptAuthorDAO" | "updateDeptAuthor" |
 
  ![부서권한 등록 및 수정](./images/drm-dept_author_insert.png)
 
@@ -135,7 +135,7 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 삭제 | /sec/drm/EgovDeptAuthorDelete.do | deleteDeptAuthor | “deptAuthorDAO” | “deleteDeptAuthor” |
+| 삭제 | /sec/drm/EgovDeptAuthorDelete.do | deleteDeptAuthor | "deptAuthorDAO" | "deleteDeptAuthor" |
 
  ![부서권한 삭제](./images/drm-dept_author_delete.png)
 
@@ -156,8 +156,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /sec/drm/EgovDeptSearchList.do | selectDeptList | “deptAuthorDAO” | “selectDeptList” |
-|  |  |  | “deptAuthorDAO” | “selectDeptListTotCnt” |
+| 조회 | /sec/drm/EgovDeptSearchList.do | selectDeptList | "deptAuthorDAO" | "selectDeptList" |
+|  |  |  | "deptAuthorDAO" | "selectDeptListTotCnt" |
 
  ![부서목록 조회 팝업](./images/drm-dept_author_popup.png)
 

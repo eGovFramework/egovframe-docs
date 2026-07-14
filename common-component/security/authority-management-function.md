@@ -47,7 +47,6 @@ menu:
 | Query XML          | resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_maria.xml      | 권한 관리를 위한 Maria용 Query XML       |
 | Query XML          | resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_postgres.xml   | 권한 관리를 위한 Postgres용 Query XML    |
 | Query XML          | resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_goldilocks.xml | 권한 관리를 위한 Goldilocks용 Query XML  |
-| Validator XML      | resources/egovframework/validator/com/sec/ram/SecurityManage.xml               | 권한 관리를 위한 Validator XML          |
 | Message properties | resources/egovframework/message/com/sec/ram/message_ko.properties              | 권한 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sec/ram/message_en.properties              | 권한 관리를 위한 Message properties(영문) |
 
