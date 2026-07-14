@@ -10,3 +10,17 @@ menu:
     parent: "egovframe-development"
     identifier: "individual-install-guide"
 ---
+
+# 개발환경 구성 가이드
+
+## 개요
+
+개발환경 구성 가이드는 개별 환경에 맞추어 표준프레임워크 개발환경을 구성하는 방법을 안내한다.
+
+## 관련 문서
+
+- [개발환경 구성 가이드](./individual-install-guide.md) — 개별 개발환경 구성 절차
+
+## 참고자료
+
+- [개발환경 설치 가이드](../install-guide/_index.md)
