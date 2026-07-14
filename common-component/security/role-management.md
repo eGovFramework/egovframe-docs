@@ -151,8 +151,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /sec/rmt/EgovRoleList.do | selectRoleList | “roleManageDAO” | “selectRoleList” |
-|  |  |  | “roleManageDAO” | “selectAuthorListTotCnt” |
+| 조회 | /sec/rmt/EgovRoleList.do | selectRoleList | "roleManageDAO" | "selectRoleList" |
+|  |  |  | "roleManageDAO" | "selectAuthorListTotCnt" |
 
  ![롤목록 조회](./images/rmt-role_manage_list.png)
 
@@ -175,7 +175,7 @@
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /sec/rmt/EgovRoleInsertView.do | insertRoleView |  |  |
-| 등록 | /sec/rmt/EgovRoleInsert.do | insertRole | “roleManageDAO” | “insertRole” |
+| 등록 | /sec/rmt/EgovRoleInsert.do | insertRole | "roleManageDAO" | "insertRole" |
 
  ![롤목록 등록](./images/rmt-role_manage_insert.png)
 
@@ -196,9 +196,9 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /sec/rmt/EgovRole.do | selectRole | “roleManageDAO” | “selectRoleList” |
-| 수정 | /sec/rmt/EgovRoleUpdate.do | updateRole | “roleManageDAO” | “updateRole” |
-| 삭제 | /sec/rmt/EgovRoleDelete.do | deleteRole | “roleManageDAO” | “deleteRole” |
+| 수정화면 | /sec/rmt/EgovRole.do | selectRole | "roleManageDAO" | "selectRoleList" |
+| 수정 | /sec/rmt/EgovRoleUpdate.do | updateRole | "roleManageDAO" | "updateRole" |
+| 삭제 | /sec/rmt/EgovRoleDelete.do | deleteRole | "roleManageDAO" | "deleteRole" |
 
  ![롤 수정](./images/rmt-role_manage_updt.png)
 
@@ -220,7 +220,7 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 삭제 | /sec/rmt/EgovRoleListDelete.do | deleteRoleList | “roleManageDAO” | “deleteRole” |
+| 삭제 | /sec/rmt/EgovRoleListDelete.do | deleteRoleList | "roleManageDAO" | "deleteRole" |
 
  ![롤 삭제](./images/rmt-role_manage_delete.png)
 

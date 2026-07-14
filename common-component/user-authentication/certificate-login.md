@@ -45,7 +45,7 @@ menu:
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_maria.xml | 일반 로그인, 인증서 로그인을 위한 Maria용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_postgres.xml | 일반 로그인, 인증서 로그인을 위한 Postgres용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_goldilocks.xml | 일반 로그인, 인증서 로그인을 위한 Goldilocks용 Query XML |
-| Message properties | resources/egovframework/message/com/message-common\_ko\_KR.properties | 일반 로그인, 인증서 로그인을 위한 Message properties |
+| Message properties | resources/egovframework/message/com/message-common\_ko.properties | 일반 로그인, 인증서 로그인을 위한 Message properties |
 
  위의 클래스 중 Controller의 경우는 전자정부 표준프레임워크에서의 테스트 수행을 위한 컨트롤러 클래스로서 실제 적용시에는 해당 기능들을 적용 Web MVC 프레임워크 기반으로 전환하면 된다. 혹 MVC 프레임워크가 적용되어 있지 않더라고 servlet 기반 또는 해당되는 JSP로 쉽게 전환할 수 있다.
 
@@ -155,7 +155,7 @@ export PATH=$PATH:/product/jeus/egovProps/libgpkiapi/gpkiapi
 
 #### 프로퍼티 파일 설정
 
- 다음의 dsjdf.properties 파일의 경우는 사용자 홈 디렉토리에 위치시킨다. Windows의 경우는 보통 “C:\\Documents and Settings\\\[사용자계정\]“가, Unix 계정은 로그인 시 들어가는 디렉토리(보통 ”/home/\[사용자계정\]”)가 홈 디렉토리가 된다.
+ 다음의 dsjdf.properties 파일의 경우는 사용자 홈 디렉토리에 위치시킨다. Windows의 경우는 보통 "C:\\Documents and Settings\\\[사용자계정\]"가, Unix 계정은 로그인 시 들어가는 디렉토리(보통 "/home/\[사용자계정\]")가 홈 디렉토리가 된다.
 
  또는 WAS 기동 스크립트 상에 다음과 같이 특정 위치의 dsjdf.properties 파일을 지정할 수 있다.
 
@@ -242,8 +242,8 @@ GPKISecureWeb.TrustedROOTCACert.FilePathName.2 = /product/jeus/egovProps/gpkisec
 
 | Action | URL | Controller method | JSP |
 | --- | --- | --- | --- |
-| 로그인화면 | /uat/uia/egovLoginUsr.do | loginUsrView | “egovframework/com/uat/uia/EgovLoginUsr.jsp” |
-| 인증서로그인 | /uat/uia/actionCrtfctLogin.do | actionCrtfctLogin | “egovframework/com/uat/uia/EgovLoginUsr.jsp” |
-| 인증서안내화면 | /uat/uia/egovGpkiIssu.do | gpkiIssuView | “egovframework/com/uat/uia/EgovGpkiIssu.jsp” |
+| 로그인화면 | /uat/uia/egovLoginUsr.do | loginUsrView | "egovframework/com/uat/uia/EgovLoginUsr.jsp" |
+| 인증서로그인 | /uat/uia/actionCrtfctLogin.do | actionCrtfctLogin | "egovframework/com/uat/uia/EgovLoginUsr.jsp" |
+| 인증서안내화면 | /uat/uia/egovGpkiIssu.do | gpkiIssuView | "egovframework/com/uat/uia/EgovGpkiIssu.jsp" |
 
  ![인증서로그인 화면](./images/utl-cert.jpg)

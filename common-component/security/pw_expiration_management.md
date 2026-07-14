@@ -30,10 +30,10 @@
 | Controller | egovframework.com.cmm.web.EgovComIndexController.java | 초기 컨텐츠표시 Controller | 시간관리 표시 |
 | Service | egovframework.com.uat.uia.service.EgovLoginService | 비밀번호 만료 및 로그인 관련 서비스 인터페이스 |  |
 | ServiceImpl | egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl | 비밀번호 만료 및 로그인 관련 서비스 구현 클래스 |  |
-| DAO | egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl | 비밀번호 만료 및 로그인위한 데이터처리 클래스 |  |
+| DAO | egovframework.com.uat.uia.service.impl.LoginDAO | 비밀번호 만료 및 로그인을 위한 데이터처리 클래스 |  |
 | JSP | /WEB-INF/jsp/egovframework/com/cmm/EgovUnitContent.jsp | 초기 컨텐츠표시 페이지 | 시간관리 표시 팝업호출 |
 | JSP | /WEB-INF/jsp/egovframework/com/uat/uia/EgovExpirePwd.jsp | 비밀번호 만료 안내 페이지 | 시간관리 표시 팝업 |
-| Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_mysql.xml | 비밀번호 만료 및 로그인을위한 MySQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_mysql.xml | 비밀번호 만료 및 로그인을 위한 MySQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_oracle.xml | 비밀번호 만료 및 로그인을 위한 Oracle용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_tibero.xml | 비밀번호 만료 및 로그인을 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_altibase.xml | 비밀번호 만료 및 로그인을 위한 Altibase용 Query XML |
@@ -122,7 +122,7 @@ public String setContent(ModelMap model) throws Exception {
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 초기 컨텐츠 화면 | /EgovContent.do | setContent | “LoginUsr” | “selectPassedDayChangePWD” |
+| 초기 컨텐츠 화면 | /EgovContent.do | setContent | "LoginUsr" | "selectPassedDayChangePWD" |
 
 ## 관련화면
 
@@ -177,7 +177,7 @@ public String noticeExpirePwd(@RequestParam Map<String, Object> commandMap, Mode
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 비밀번호 만료 팝업 | /uat/uia/noticeExpirePwd.do | noticeExpirePwd | “LoginUsr” | “selectPassedDayChangePWD” |
+| 비밀번호 만료 팝업 | /uat/uia/noticeExpirePwd.do | noticeExpirePwd | "LoginUsr" | "selectPassedDayChangePWD" |
 
  ![image](./images/sec-pw_expiration_management_01.png)
 

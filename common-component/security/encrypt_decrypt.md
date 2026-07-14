@@ -40,8 +40,6 @@
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
 | Controller | egovframework.com.sec.pki.web.EgovCryptoController.java | 암호화/복호화 테스트를 위한 컨트롤러 클래스 |
-| Service | egovframework.com.sec.pki.service.EgovGPKIService.java | 암호화/복호화를 위한 서비스 인터페이스 |
-| ServiceImpl | egovframework.com.sec.pki.service.impl.EgovGPKIServiceImpl.java | 암호화/복호화를 위한 서비스 구현 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sec/pki/EgovCryptoInfo.jsp | 암호화/복호화 테스트를 위한 jsp페이지 |
 | Message properties | resources/egovframework/message/com/sec/pki/message\_ko.properties | 암호화/복호화를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sec/pki/message\_en.properties | 암호화/복호화를 위한 Message properties(영문) |
@@ -118,7 +116,7 @@ cryptoService.decryptNone(decrypt); // 복호화전에 URLDecoding 처리 안함
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 테스트조회 | /sec/pki/EgovCryptoInfo.do | displayCryptoInfo | ”“ | ”“ |
+| 테스트조회 | /sec/pki/EgovCryptoInfo.do | displayCryptoInfo | "" | "" |
 
  ![암복호화 테스트화면](./images/sec-ariatest.jpg)
 

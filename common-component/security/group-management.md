@@ -53,14 +53,14 @@
 | JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupInsert.jsp | 그룹 등록를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupUpdate.jsp | 그룹 수정를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupSearch.jsp | 그룹 조회를 위한 jsp페이지 |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_mysql.xml | 그룹 관리를 위한 MySQL용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_cubrid.xml | 그룹 관리를 위한 Cubrid용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_oracle.xml | 그룹 관리를 위한 Oracle용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_tibero.xml | 그룹 관리를 위한 Tibero용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_altibase.xml | 그룹 관리를 위한 Altibase용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_maria.xml | 그룹 관리를 위한 Maria용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_postgres.xml | 그룹 관리를 위한 Postgres용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sec/gmt/GroupManage\_SQL\_goldilocks.xml | 그룹 관리를 위한 Goldilocks용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_mysql.xml | 그룹 관리를 위한 MySQL용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_cubrid.xml | 그룹 관리를 위한 Cubrid용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_oracle.xml | 그룹 관리를 위한 Oracle용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_tibero.xml | 그룹 관리를 위한 Tibero용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_altibase.xml | 그룹 관리를 위한 Altibase용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_maria.xml | 그룹 관리를 위한 Maria용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_postgres.xml | 그룹 관리를 위한 Postgres용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_goldilocks.xml | 그룹 관리를 위한 Goldilocks용 QUERY XML |
 | Message properties | resources/egovframework/message/com/sec/gmt/message\_ko.properties | 그룹 관리 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sec/gmt/message\_en.properties | 그룹 관리 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Group.xml | 그룹 관리 Id생성 Idgen XML |
@@ -128,8 +128,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /sec/gmt/EgovGroupList.do | selectGroupList | “groupManageDAO” | “selectGroupList” |
-|  |  |  | “groupManageDAO” | “selectGroupListTotCnt” |
+| 조회 | /sec/gmt/EgovGroupList.do | selectGroupList | "groupManageDAO" | "selectGroupList" |
+|  |  |  | "groupManageDAO" | "selectGroupListTotCnt" |
 
  ![그룹 목록조회](./images/gmt-group_manage_list.png)
 
@@ -152,7 +152,7 @@
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /sec/gmt/EgovGroupInsertView.do | insertGroupView |  |  |
-| 등록 | /sec/gmt/EgovGroupInsert.do | insertGroup | “groupManageDAO” | “insertGroup” |
+| 등록 | /sec/gmt/EgovGroupInsert.do | insertGroup | "groupManageDAO" | "insertGroup" |
 
  ![그룹 등록](./images/gmt-group_manage_regist.png)
 
@@ -173,8 +173,8 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /sec/gmt/EgovGroup.do | selectGroup | “groupManageDAO” | “selectGroup” |
-| 수정 | /sec/gmt/EgovGroupUpdate.do | updateGroup | “groupManageDAO” | “updateGroup” |
+| 수정화면 | /sec/gmt/EgovGroup.do | selectGroup | "groupManageDAO" | "selectGroup" |
+| 수정 | /sec/gmt/EgovGroupUpdate.do | updateGroup | "groupManageDAO" | "updateGroup" |
 
  ![그룹 속성정보 수정](./images/gmt-group_manage_update.png)
 
@@ -196,7 +196,7 @@
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 삭제 | /sec/gmt/EgovGroupDelete.do | deleteGroup | “groupManageDAO” | “deleteGroup” |
+| 삭제 | /sec/gmt/EgovGroupDelete.do | deleteGroup | "groupManageDAO" | "deleteGroup" |
 
  ![그룹삭제](./images/gmt-group_manage_delete.png)
 

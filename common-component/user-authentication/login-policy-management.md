@@ -56,8 +56,6 @@ menu:
 | QUERY XML | resources/egovframework/mapper/com/uat/uap/EgovLoginPolicy\_SQL\_maria.xml | 로그인정책 Maria용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uat/uap/EgovLoginPolicy\_SQL\_postgres.xml | 로그인정책 Postgres용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uat/uap/EgovLoginPolicy\_SQL\_goldilocks.xml | 로그인정책 Goldilocks용 QUERY XML |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
-| Validator XML | resources/egovframework/validator/com/uat/uap/EgovLoginPolicy.xml | 로그인정책 Validator XML |
 | Message properties | resources/egovframework/message/com/uat/uap/message\_ko.properties | 로그인정책을 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/uat/uap/message\_en.properties | 로그인정책을 위한 Message properties(영문) |
 
@@ -105,7 +103,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /uat/uap/selectLoginPolicyList.do | selectLoginPolicyList | “loginPolicyDAO.selectLoginPolicyList”, <br> “loginPolicyDAO.selectLoginPolicyListTotCnt” |
+| 목록조회 | /uat/uap/selectLoginPolicyList.do | selectLoginPolicyList | "loginPolicyDAO.selectLoginPolicyList", <br> "loginPolicyDAO.selectLoginPolicyListTotCnt" |
 
  ![로그인정책 목록조회](./images/uia-loginpolicyimg1.jpg)
 
@@ -127,9 +125,9 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /uat/uap/getLoginPolicy.do | selectLoginPolicy | “loginPolicyDAO.selectLoginPolicy” |
-| 수정 | /uat/uap/updtLoginPolicy.do | updateLoginPolicy | “loginPolicyDAO.updateLoginPolicy” |
-| 삭제 | /uat/uap/removeLoginPolicy.do | deleteLoginPolicy | “loginPolicyDAO.deleteLoginPolicy” |
+| 상세조회 | /uat/uap/getLoginPolicy.do | selectLoginPolicy | "loginPolicyDAO.selectLoginPolicy" |
+| 수정 | /uat/uap/updtLoginPolicy.do | updateLoginPolicy | "loginPolicyDAO.updateLoginPolicy" |
+| 삭제 | /uat/uap/removeLoginPolicy.do | deleteLoginPolicy | "loginPolicyDAO.deleteLoginPolicy" |
 
  ![로그인정책 수정](./images/uia-loginpolicyimg3.jpg)
 

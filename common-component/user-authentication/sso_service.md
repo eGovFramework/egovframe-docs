@@ -31,9 +31,9 @@
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
-| Service | egovframework.com.uat.uia.sso.service.EgovSSOService.java | SSO연계 서비스 인터페이스를 정의하는 클래스 |
-| Filter | egovframework.com.uat.uia.sso.filter.EgovSSOLoginFilter.java | SSO서버와 연계를 통해 SSO 인증을 실행하는 필터 클래스 |
-| Filter | egovframework.com.uat.uia.sso.filter.EgovSSOLogoutFilter.java | 로그아웃 요청시 SSO서버의 글로벌 로그아웃을 처리해 주는 필터 클래스 |
+| Service | egovframework.com.uat.sso.service.EgovSSOService.java | SSO연계 서비스 인터페이스를 정의하는 클래스 |
+| Filter | egovframework.com.uat.sso.filter.EgovSSOLoginFilter.java | SSO서버와 연계를 통해 SSO 인증을 실행하는 필터 클래스 |
+| Filter | egovframework.com.uat.sso.filter.EgovSSOLogoutFilter.java | 로그아웃 요청시 SSO서버의 글로벌 로그아웃을 처리해 주는 필터 클래스 |
 
 ### 클래스다이어그램
 
