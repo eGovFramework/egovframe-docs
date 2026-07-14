@@ -46,8 +46,8 @@ menu:
 | VO | egovframework.com.uat.uap.service.LoginPolicyVO.java | 로그인정책 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.uat.uap.service.impl.LoginPolicyDAO.java | 로그인정책 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uat/uap/EgovLoginPolicyList.jsp | 로그인정책 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uat/uap/EgovLoginPolicyRegist.jsp | 로그인정책 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uat/uap/EgovLoginPolicyUpdt.jsp | 로그인정책 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uat/uap/EgovLoginPolicyRegist.jsp | 로그인정책 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uat/uap/EgovLoginPolicyUpdt.jsp | 로그인정책 수정을 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uat/uap/EgovLoginPolicy\_SQL\_mysql.xml | 로그인정책 MySQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uat/uap/EgovLoginPolicy\_SQL\_cubrid.xml | 로그인정책 Cubrid용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uat/uap/EgovLoginPolicy\_SQL\_oracle.xml | 로그인정책 Oracle용 QUERY XML |
@@ -73,7 +73,7 @@ menu:
 
 ### 환경설정
 
- 로그인정책관리 기능의 구현하기 위해서는 web.xml 파일에 아래와 같이 filter가 정의되어 있어야 한다. 초기 제공되는 web.xml 파일은 해당 영역이 주석처리되어 있으므로 로그인정책관리 컴포넌트를 사용하는 경우에는 주석을 풀어주어야 한다.
+ 로그인정책관리 기능을 구현하기 위해서는 web.xml 파일에 아래와 같이 filter가 정의되어 있어야 한다. 초기 제공되는 web.xml 파일은 해당 영역이 주석처리되어 있으므로 로그인정책관리 컴포넌트를 사용하는 경우에는 주석을 풀어주어야 한다.
 
 ```xml
 <!-- 0. 로그인 정책 컴포넌트용 필터 -->
@@ -95,7 +95,7 @@ menu:
 
 #### 비즈니스 규칙
 
- 검색조건은 사용자명 대해서 수행된다. 로그인정책 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+ 검색조건은 사용자명에 대해서 수행된다. 로그인정책 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 
 #### 관련코드
 
@@ -110,7 +110,7 @@ menu:
  ![로그인정책 목록조회](./images/uia-loginpolicyimg1.jpg)
 
  조회 : 기 등록된 로그인정책 목록을 조회한다.  
-등록 : 신규 로그인정책를 등록하기 위해서는 IP 정보가 없는 사용자ID를 선택하여 **로그인정책 등록** 화면으로 이동한다.  
+등록 : 신규 로그인정책을 등록하기 위해서는 IP 정보가 없는 사용자ID를 선택하여 **로그인정책 등록** 화면으로 이동한다.  
 목록클릭 : **로그인정책 상세조회** 화면으로 이동한다.
 
 ### 로그인정책 상세조회 및 수정
