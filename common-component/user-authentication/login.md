@@ -48,7 +48,7 @@ menu:
 | JSP                | WEB\_INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp                      | Login 인증 JSP 페이지                             |
 | JSP                | WEB\_INF/jsp/egovframework/com/uat/uia/EgovIdPasswordSearch.jsp              | 아이디/비밀번호 찾기를 위한 JSP 페이지            |
 | JSP                | WEB\_INF/jsp/egovframework/com/uat/uia/EgovIdPasswordResult.jsp              | 아이디/비밀번호 찾기 결과 JSP 페이지              |
-| Query XML          | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_mysql.xml      | 일반 로그인을위한 MySQL용 Query XML               |
+| Query XML          | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_mysql.xml      | 일반 로그인을 위한 MySQL용 Query XML               |
 | Query XML          | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_oracle.xml     | 일반 로그인을 위한 Oracle용 Query XML             |
 | Query XML          | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_tibero.xml     | 일반 로그인을 위한 Tibero용 Query XML             |
 | Query XML          | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_altibase.xml   | 일반 로그인을 위한 Altibase용 Query XML           |
@@ -136,7 +136,7 @@ Globals.MainPage = /EgovContent.do
 </beans>
 ```
 
-2) web.xml 수정 : 아래 설정 부분의 주석을 해제 하면 된다. `EgovSpringSecurityLoginFilter` 필터의 경우 로그인 인증이 실패할 경우 사용자에게 되돌려지 화면을 파라미터로 입력받고 있다. `loginURL` 파라미터값에 로그인 실패시에 리턴될 url경로를 입력하면 된다.
+2) web.xml 수정 : 아래 설정 부분의 주석을 해제 하면 된다. `EgovSpringSecurityLoginFilter` 필터의 경우 로그인 인증이 실패할 경우 사용자에게 되돌려질 화면을 파라미터로 입력받고 있다. `loginURL` 파라미터값에 로그인 실패시에 리턴될 url경로를 입력하면 된다.
 
 ### 인증방식 변경 및 확장
 
