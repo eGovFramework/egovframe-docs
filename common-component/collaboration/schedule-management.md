@@ -38,7 +38,7 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageMainList.jsp | 일정관리 조회 메인페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageList.jsp | 일정관리 목록조회 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageMonthList.jsp | 일정관리 월간 목록 페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageWeetList.jsp | 일정관리 주간 목록 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageWeekList.jsp | 일정관리 주간 목록 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageDailyList.jsp | 일정관리 일간 목록 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageRegist.jsp | 일정관리 등록 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageModify.jsp | 일정관리 수정 페이지 |

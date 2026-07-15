@@ -65,7 +65,7 @@ ID Generation Service를 활용하기 위해서 Sequence 저장 테이블인 COM
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL, 
-                NEXT_ID NEMERIC(30) NULL,
+                NEXT_ID NUMERIC(30) NULL,
                   PRIMARY KEY (TABLE_NAME));
  
 INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('NTT_ID', 1);

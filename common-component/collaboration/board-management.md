@@ -47,7 +47,7 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_oracle.xml | 게시판 관리를 위한 Oracle용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_tibero.xml | 게시판 관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_altibase.xml | 게시판 관리를 위한 Altibase용 Query XML |
-| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_maria.xml | 게시판 관리를 위한 MaridDB용 Query XML |
+| Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_maria.xml | 게시판 관리를 위한 MariaDB용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_postgres.xml | 게시판 관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_goldilocks.xml | 게시판 관리를 위한 Goldilocks용 Query XML |
 | Validator XML | resources/egovframework/validator/com/cop/bbs/EgovBBSMasterRegist.xml | 게시판 관리를위한 Validator XML |
