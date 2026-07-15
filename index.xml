@@ -32745,7 +32745,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageWeetList.jsp&lt;/td>
+ &lt;td>/WEB-INF/jsp/egovframework/com/cop/smt/sim/EgovIndvdlSchdulManageWeekList.jsp&lt;/td>
  &lt;td>일정관리 주간 목록 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
