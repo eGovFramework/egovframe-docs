@@ -81,7 +81,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SCRAP_ID', 1);
 
 ```xml
 <bean name="egovScrapIdGnrService"
-      class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+      class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
       destroy-method="destroy">
       <property name="dataSource" ref="egov.dataSource" />
       <property name="strategy" ref="scrapStrategy" />
@@ -90,7 +90,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SCRAP_ID', 1);
       <property name="tableName"	value="SCRAP_ID"/>
 </bean>
 <bean name="scrapStrategy"
-      class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+      class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
       <property name="prefix" value="SCRIP_" />
       <property name="cipers" value="14" />
       <property name="fillChar" value="0" />

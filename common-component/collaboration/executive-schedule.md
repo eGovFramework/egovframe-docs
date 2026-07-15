@@ -100,14 +100,14 @@ INSERT INTO COMTECOPSEQ (TABLE_NAME, NEXT_ID ) VALUES ('LEADER_SCHDUL_ID','1');
 #### ID Generation 환경설정(context-idgn-LeaderSchdu.xml)
 
 ```xml
- <bean name="egovLeaderSchdulIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService" destroy-method="destroy">
+ <bean name="egovLeaderSchdulIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="LeaderSchdulStrategy" />
     <property name="blockSize"  value="10" />
     <property name="table"      value="COMTECOPSEQ" />
     <property name="tableName"  value="LEADER_SCHDUL_ID" />
 </bean>
-<bean name="LeaderSchdulStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="LeaderSchdulStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"     value="LDSCHDUL_" />
     <property name="cipers"     value="11" />
     <property name="fillChar"   value="0" />
