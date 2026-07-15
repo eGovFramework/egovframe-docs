@@ -26,7 +26,7 @@ menu:
   ② 장애처리결과등록 : 장애처리결과정보를 등록하고, 등록 결과를 조회한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -49,11 +49,11 @@ menu:
 | Message properties | resources/egovframework/message/com/sym/tbm/tbp/message\_en.properties | 장애처리결과정보 관리를 위한 Message properties(영문) |
 | Message properties | resources/egovframework/message/com/sym/tbm/tbp/message\_ko.properties | 장애처리결과정보 관리를 위한 Message properties(한글) |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/sym-troblresult-troblprocess.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

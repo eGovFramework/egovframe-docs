@@ -23,14 +23,14 @@
 
  화면인쇄 서비스는 인쇄미리보기, 인쇄바로하기, 페이지설정 기능으로 구분한다.
 
-##### 관련소스
+### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 controller |  |
 | JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovPrint.jsp | 화면인쇄 테스트 페이지 |  |
 
-##### 관련테이블
+### 관련테이블
 
 **N/A**
 

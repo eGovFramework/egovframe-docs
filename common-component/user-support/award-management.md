@@ -31,7 +31,7 @@ menu:
   ⑦ 포상승인 : 등록된 포상정보를 승인/반려 처리를 한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -59,11 +59,11 @@ menu:
 | Message properties | resources/egovframework/message/com/uss/ion/rwd/message\_en.properties | 포상관리 Message properties |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-RwardManage.xml | 포상관리를 위한 Id생성 Idgen XML |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/uss-award-포상관리클래스이미지.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

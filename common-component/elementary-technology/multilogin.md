@@ -33,7 +33,7 @@
 EgovHttpSessionBindingListener 객체는 로그인과 로그아웃 시점에 세션에 바인딩되고 제거되면서 HttpSessionBindingEvent를 발생시키고,  
 HttpSessionBindingEvent에 저장된 로그인 ID와 세션 정보를 이용하여 중복 로그인 방지 기능을 제공한다.
 
-##### 관련소스
+### 관련소스
 
 | 패키지 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |

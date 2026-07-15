@@ -29,7 +29,7 @@ menu:
   ⑤ 약식결재반려 : 등록된 약식결재정보를 반려한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -58,11 +58,11 @@ menu:
 | Message properties | resources/egovframework/message/com/uss/ion/ism/message\_en.properties | 약식결재를 위한 Message properties(영문) |
 | Message properties | resources/egovframework/message/com/uss/ion/ism/message\_ko.properties | 약식결재를 위한 Message properties(한글) |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/cop-smplcfm-cdd_약식결재관리.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
