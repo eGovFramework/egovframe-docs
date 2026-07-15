@@ -35,10 +35,10 @@ menu:
 
 ## 관련 문서
 
-- [포맷터/유틸리티 개요](./formatter-util.md)
-- [날짜/시간/요일 변환](./date-time-day-conversion.md)
-- [날짜/시간/요일 포맷변경](./date-time-day-format.md)
-- [날짜/시간/요일 유효성체크](./date-time-day-validation.md)
+- [포맷터/유틸리티 개요](./formatter-util.md) — 포맷/계산/변환(Format/Calc/Convert) 요소기술 패키지는 공통컴포넌트 내에서 데이터의 형식을 조정하거나, 날짜, 숫자, 문자열 등에 대…
+- [날짜/시간/요일 변환](./date-time-day-conversion.md) — 날짜/시간/요일 변환은 주어진 날짜와 시간 정보를 원하는 포맷의 문자열로 변환하거나, 날짜/시간 문자열을 정수(int)형으로 변환하는 등의 편의 기능…
+- [날짜/시간/요일 포맷변경](./date-time-day-format.md) — 날짜/시간/요일 포맷변경 기능은 입력받은 일자와 시간을 특정 포맷의 문자열로 변환하거나 정수(int) 형태로 변환하여 제공하는 기능이다.
+- [날짜/시간/요일 유효성체크](./date-time-day-validation.md) — 주어진 일자, 시간, 요일이 유효한 형식 및 값인지 확인하는 기능을 제공한다.
 
 ## 설명
 
