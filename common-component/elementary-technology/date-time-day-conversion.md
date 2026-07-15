@@ -46,10 +46,10 @@ menu:
 
 ## 관련 문서
 
-- [날짜/시간/요일 계산](./date-time-day-calculation.md)
-- [날짜/시간/요일 검증](./date-time-day-validation.md)
-- [날짜/시간/요일 포맷](./date-time-day-format.md)
-- [랜덤날짜 구하기](./random-date.md)
+- [날짜/시간/요일 계산](./date-time-day-calculation.md) — 주어진 일자, 시간을 계산하는 기능을 제공한다.
+- [날짜/시간/요일 검증](./date-time-day-validation.md) — 주어진 일자, 시간, 요일이 유효한 형식 및 값인지 확인하는 기능을 제공한다.
+- [날짜/시간/요일 포맷](./date-time-day-format.md) — 날짜/시간/요일 포맷변경 기능은 입력받은 일자와 시간을 특정 포맷의 문자열로 변환하거나 정수(int) 형태로 변환하여 제공하는 기능이다.
+- [랜덤날짜 구하기](./random-date.md) — 랜덤 날짜는 지정한 두 일자 사이의 임의의 일자를 생성하는 요소기술이다. 테스트 데이터 생성 등에 활용할 수 있다.
 
 ## 설명
 

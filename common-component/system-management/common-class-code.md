@@ -40,9 +40,9 @@ menu:
 
 ## 관련 문서
 
-- [공통코드관리](./common-code-manage.md)
-- [공통코드](./common-code.md)
-- [공통상세코드](./common-detail-code.md)
+- [공통코드관리](./common-code-manage.md) — 공통코드관리는 시스템관리 영역에서 공통으로 사용하는 코드 정보를 관리하는 기능이다. 이 문서는 공통코드관리 하위 기능의 위치와 역할을 안내한다.
+- [공통코드](./common-code.md) — 공통코드 관리는 공통코드를 등록, 수정, 목록조회, 상세조회를 제공한다.
+- [공통상세코드](./common-detail-code.md) — 공통상세코드 관리는 공통상세코드를 등록, 수정, 목록조회, 상세조회를 제공한다.
 - [공통컴포넌트 배포 파일의 구성](../intro/deployment-structure.md)
 - [공통컴포넌트 테이블 구성 정보](../intro/table-structure.md)
 
