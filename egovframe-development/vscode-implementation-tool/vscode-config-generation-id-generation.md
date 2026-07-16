@@ -25,7 +25,7 @@ ID Generation 카테고리는 다음 3가지 설정 유형을 제공한다.
 | New Table ID Generation | DB 테이블 기반 ID 생성 서비스 설정 파일 생성 |
 | New UUID Generation | UUID 기반 ID 생성 서비스 설정 파일 생성 |
 
-공통 입력 항목(Generation Type, File Name, Package Name 등)은 [Common Configuration](./vscode-config-generation-common)을 참고한다.
+공통 입력 항목(Generation Type, File Name, Package Name 등)은 [Common Configuration](./vscode-config-generation-common.md)을 참고한다.
 
 ---
 

@@ -23,7 +23,7 @@ Transaction 카테고리는 다음 3가지 설정 유형을 제공한다.
 | New JPA Transaction | JPA 환경 트랜잭션 관리 설정 |
 | New JTA Transaction | 분산 트랜잭션(JTA) 관리 설정 |
 
-공통 입력 항목(Generation Type, File Name, Package Name 등)은 [Common Configuration](./vscode-config-generation-common)을 참고한다.
+공통 입력 항목(Generation Type, File Name, Package Name 등)은 [Common Configuration](./vscode-config-generation-common.md)을 참고한다.
 
 ---
 

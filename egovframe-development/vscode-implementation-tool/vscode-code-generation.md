@@ -121,6 +121,6 @@ DDL 검증에 성공하면 에디터 아래에 **파싱된 테이블 정보**가
 
 | 버튼 | 설명 | 상세 안내 문서 |
 |---|---|---|
-| **Generate CRUD Code** | 기본 eGovFrame CRUD 코드 생성 | [Generate CRUD Code](./vscode-code-generation-generate-crud-code) |
-| **Generate with Custom Templates** | 사용자 정의 Handlebars 템플릿으로 코드 생성 | [Generate with Custom Templates](./vscode-code-generation-custom-templates) |
-| **Download Template Context** | 템플릿 작성에 사용할 컨텍스트 JSON 다운로드 | [Download Template Context](./vscode-code-generation-template-context) |
+| **Generate CRUD Code** | 기본 eGovFrame CRUD 코드 생성 | [Generate CRUD Code](./vscode-code-generation-generate-crud-code.md) |
+| **Generate with Custom Templates** | 사용자 정의 Handlebars 템플릿으로 코드 생성 | [Generate with Custom Templates](./vscode-code-generation-custom-templates.md) |
+| **Download Template Context** | 템플릿 작성에 사용할 컨텍스트 JSON 다운로드 | [Download Template Context](./vscode-code-generation-template-context.md) |
