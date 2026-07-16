@@ -274,7 +274,7 @@ Docker Explorer에서 New connection…을 클릭한다.
 * Copy to Container : 호스트에서 컨테이너로 파일 복사
 * Execute Shell : 실행 중인 컨테이너에서 셸을 실행
 
-##### 로그 보기
+#### 로그 보기
 
 * 컨테이너 선택 > 마우스 오른쪽 버튼 > Display Log
 * TTY 플래그 설정 여부에 따라 Terminal View 또는 Console View에 로그가 표시된다.
