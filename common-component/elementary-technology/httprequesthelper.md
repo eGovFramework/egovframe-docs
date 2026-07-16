@@ -24,7 +24,7 @@
  Controller의 경우는 Http request에 대한 정보를 얻기 위해서 각 메소드에 파라미터에 HttpServerRequest를 추가하면 된다. 그러나 Service 부분이나 Repository 부분에서 Http request 정보를 얻으려면 파라미터화하여야 한다.  
 HTTP Request 정보 취득을 사용하면 파미리터를 통하지 않고 Http request 정보를 얻을 수 있다.
 
-##### 관련소스
+### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |

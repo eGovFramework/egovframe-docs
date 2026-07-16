@@ -31,7 +31,7 @@ menu:
   ⑦ 경조사승인 : 승인권한자가 등록된 경조사정보의 승인을 처리한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -58,11 +58,11 @@ menu:
 | Message properties | resources/egovframework/message/com/uss/ion/ctn/message\_en.properties | 경조사 관리 Message properties |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-CtsnnManage.xml | 경조사관리를 위한 Id생성 Idgen XML |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/uss-fmly-경조관리클래스이미지.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

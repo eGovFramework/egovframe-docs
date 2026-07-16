@@ -35,7 +35,7 @@ menu:
   ⑪ 서버장비관계등록(삭제) : 선택된 서버에 해당하는 서버의 장비를 등록(삭제)한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -71,11 +71,11 @@ menu:
 | Message properties | resources/egovframework/message/com/sym/sym/srv/message\_en.properties | 서버정보관리를 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Server.xml | 서버정보관리를 위한 Id생성 Idgen XML |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/sym-serverinfo-egovserver.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

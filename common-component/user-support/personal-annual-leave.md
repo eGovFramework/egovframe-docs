@@ -28,7 +28,7 @@ menu:
   ④ 연차삭제 : 기 등록된 연차정보를 삭제한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -50,11 +50,11 @@ menu:
 | Message properties | resources/egovframework/message/com/uss/ion/yrc/message\_ko.properties | 연차관리 Message properties |
 | Message properties | resources/egovframework/message/com/uss/ion/yrc/message\_en.properties | 연차관리 Message properties |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/uss-yryc-cdd.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

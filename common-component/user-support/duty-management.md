@@ -35,7 +35,7 @@ menu:
   ⑨ 당직일지삭제 : 기 등록된 당직일지정보를 삭제한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -69,11 +69,11 @@ menu:
 | Message properties | resources/egovframework/message/com/uss/ion/bnt/message\_ko.properties | 당직 관리 Message properties |
 | Message properties | resources/egovframework/message/com/uss/ion/bnt/message\_en.properties | 당직 관리 Message properties |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/uss-duty-당직관리클래스이미지.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

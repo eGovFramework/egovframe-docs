@@ -23,7 +23,7 @@
 
  쿠키에 객체 정보 저장, 취득, 제거의 기능으로 구성되어 있다.
 
-##### 관련소스
+### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@
 | String | getCookie(HttpServletRequest request, String cookieNm) | 쿠키정보 취득 | 쿠키값을 읽어들인다 |
 | void | setCookie(HttpServletResponse response, String cookieNm) | 쿠키정보 삭제 | 쿠키의 유효시간을 0으로 설정 |
 
-##### 관련테이블
+### 관련테이블
 
  **N/A**
 

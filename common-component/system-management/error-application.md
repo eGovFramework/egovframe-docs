@@ -29,7 +29,7 @@ menu:
   ⑤ 장애신청상세조회 : 등록된 장애신청정보를 조회한다.
 ```
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -55,11 +55,11 @@ menu:
 | Message properties | resources/egovframework/message/com/sym/tbm/tbr/message\_ko.properties | 장애신청정보 관리를 위한 Message properties(한글) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Trobl.xml | 장애신청정보 관리를 위한 Id생성 Idgen XML |
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/sym-troblreq-troblreqst.png)
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |

@@ -23,14 +23,14 @@
 
  사용자가 프린터상태확인 클릭시 프린터상태확인 창이 열려, 프린터 상태를 볼 수 있으며, 프린터 설정도 가능하다.
 
-##### 관련소스
+### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 controller |  |
 | JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovPrintStatus.jsp | 프린터상태확인 테스트 페이지 |  |
 
-##### 관련테이블
+### 관련테이블
 
  **N/A**
 
