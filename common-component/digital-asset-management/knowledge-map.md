@@ -18,7 +18,7 @@ menu:
 
 ## 관련 문서
 
-- [지식정보제공](./knowledge-info-provision.md) — 지식정보제공은 지식전문가에게 지식정보를 요청하고, 요청된 지식정보를 제공(답변)하는 기능이다. 소스는 디지털자산관리(`egovframework.com…
+- [지식정보제공](./knowledge-info-provision.md) — 지식정보제공은 지식전문가에게 지식정보를 요청하고, 요청된 지식정보를 제공(답변)하는 기능이다.
 - [지식맵관리(조직)](./org-knowledge-map-management.md) — 지식맵(조직별)관리는 지식에 대한 분류를 조직별로 분류하고 활용할 수 있는 기능을 제공한다.
 - [지식맵관리(유형)](./type-knowledge-map-management.md) — 지식맵(유형별)관리는 지식에 대한 분류를 유형별로 분류하고 활용할 수 있는 기능을 제공한다.
 
