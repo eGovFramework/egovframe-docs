@@ -69,40 +69,40 @@ JUnit4에서는 TestSuite 클래스를 더이상 지원하지 않으며, 단지 
 <a class="krds-btn medium text" href=#maven%ec%97%90%ec%84%9c-test-suite-%ec%9e%91%ec%84%b1-%ec%83%98%ed%94%8c class=innerLink>Maven에서 Test Suite 작성 샘플</a>
 참조</li><li>Ant - build.xml :
 <a class="krds-btn medium text" href=#ant%ec%97%90%ec%84%9c-test-suite-%ec%9e%91%ec%84%b1-%ec%83%98%ed%94%8c class=innerLink>Ant에서 Test Suite 작성 샘플</a>
-과 같이 junit task에 <code>&lt;batchtest/></code>를 이용하여 테스트 대상을 그룹핑할 수 있다.</li></ul></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><h3 class=sec-tit id=testsuite-class-작성-샘플>TestSuite class 작성 샘플</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RunWith</span>(Suite.<span style=color:#a6e22e>class</span>)
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@SuiteClasses</span>( { HttpRequestMockTest.<span style=color:#a6e22e>class</span>, SessionMockTest.<span style=color:#a6e22e>class</span>, 
-</span></span><span style=display:flex><span>        FileUploadMockTest.<span style=color:#a6e22e>class</span>, EmailMockTest.<span style=color:#a6e22e>class</span>, JDBCMockTest.<span style=color:#a6e22e>class</span> })
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MockTestSuite</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=maven에서-test-suite-작성-샘플>Maven에서 Test Suite 작성 샘플</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;build&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e>&lt;!-- test --&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;artifactId&gt;</span>maven-surefire-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;configuration&gt;</span>
+과 같이 junit task에 <code>&lt;batchtest/></code>를 이용하여 테스트 대상을 그룹핑할 수 있다.</li></ul></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><h3 class=sec-tit id=testsuite-class-작성-샘플>TestSuite class 작성 샘플</h3><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@RunWith</span>(Suite.<span style=color:teal>class</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@SuiteClasses</span>(<span style=color:#bbb> </span>{<span style=color:#bbb> </span>HttpRequestMockTest.<span style=color:teal>class</span>,<span style=color:#bbb> </span>SessionMockTest.<span style=color:teal>class</span>,<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>FileUploadMockTest.<span style=color:teal>class</span>,<span style=color:#bbb> </span>EmailMockTest.<span style=color:teal>class</span>,<span style=color:#bbb> </span>JDBCMockTest.<span style=color:teal>class</span><span style=color:#bbb> </span>})<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>MockTestSuite</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=maven에서-test-suite-작성-샘플>Maven에서 Test Suite 작성 샘플</h3><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;build&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#998;font-style:italic>&lt;!-- test --&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;artifactId&gt;</span>maven-surefire-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;configuration&gt;</span>
 </span></span><span style=display:flex><span>            . . .
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;excludes&gt;</span>
-</span></span><span style=display:flex><span>                    <span style=color:#f92672>&lt;exclude&gt;</span>**/Abstract*.java<span style=color:#f92672>&lt;/exclude&gt;</span>
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;/excludes&gt;</span>
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;includes&gt;</span>
-</span></span><span style=display:flex><span>                    <span style=color:#f92672>&lt;include&gt;</span>**/*Test.java<span style=color:#f92672>&lt;/include&gt;</span>
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;/includes&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/build&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=ant에서-test-suite-작성-샘플>Ant에서 Test Suite 작성 샘플</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;junit</span> <span style=color:#960050;background-color:#1e0010>...</span> <span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;excludes&gt;</span>
+</span></span><span style=display:flex><span>                    <span style=color:navy>&lt;exclude&gt;</span>**/Abstract*.java<span style=color:navy>&lt;/exclude&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;/excludes&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;includes&gt;</span>
+</span></span><span style=display:flex><span>                    <span style=color:navy>&lt;include&gt;</span>**/*Test.java<span style=color:navy>&lt;/include&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;/includes&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/build&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=ant에서-test-suite-작성-샘플>Ant에서 Test Suite 작성 샘플</h3><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;junit</span> <span style=color:#a61717;background-color:#e3d2d2>...</span> <span style=color:navy>&gt;</span>
 </span></span><span style=display:flex><span>    . . . 중략 . . .
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;batchtest</span> <span style=color:#a6e22e>fork=</span><span style=color:#e6db74>&#34;yes&#34;</span> <span style=color:#a6e22e>todir=</span><span style=color:#e6db74>&#34;${testreports.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;fileset</span> <span style=color:#a6e22e>dir=</span><span style=color:#e6db74>&#34;${testbuild.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>             <span style=color:#f92672>&lt;include</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;**/*Test.class&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>             <span style=color:#f92672>&lt;exclude</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;**/Abstract*Test.class&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>             <span style=color:#f92672>&lt;exclude</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;**/*SuiteTest.class&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/fileset&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/batchtest&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/junit&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;batchtest</span> <span style=color:teal>fork=</span><span style=color:#d14>&#34;yes&#34;</span> <span style=color:teal>todir=</span><span style=color:#d14>&#34;${testreports.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;fileset</span> <span style=color:teal>dir=</span><span style=color:#d14>&#34;${testbuild.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>             <span style=color:navy>&lt;include</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;**/*Test.class&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>             <span style=color:navy>&lt;exclude</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;**/Abstract*Test.class&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>             <span style=color:navy>&lt;exclude</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;**/*SuiteTest.class&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/fileset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/batchtest&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/junit&gt;</span>
 </span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_06><h2 class=sec-tit id=참고자료>참고자료</h2><ul><li>JUnit Home :
 <a class="krds-btn medium text" href=http://junit.org/ target=_blank rel="noopener noreferrer" class=externalLink>http://junit.org/<i class="svg-icon ico-go"></i></a></li><li>JUnit FAQ :
 <a class="krds-btn medium text" href=http://junit.sourceforge.net/doc/faq/faq.html target=_blank rel="noopener noreferrer" class=externalLink>http://junit.sourceforge.net/doc/faq/faq.html<i class="svg-icon ico-go"></i></a></li><li>Maven Surefire Plugin :

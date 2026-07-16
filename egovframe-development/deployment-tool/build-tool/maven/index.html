@@ -75,336 +75,336 @@ Gradle은 groovy 언어로 개발된 <strong>프로젝트 관리 도구</strong>
 <a class="krds-btn medium text" href=http://maven.apache.org/guides/introduction/introduction-to-profiles.html target=_blank rel="noopener noreferrer" class=externalLink>Maven 빌드 profile 소개<i class="svg-icon ico-go"></i></a></li><li>Properties - 프로젝트 property를 설정한다.</li></ul><h3 class=sec-tit id=maven-디렉터리-구조>Maven 디렉터리 구조</h3><p>메이븐은 Best practices을 기반으로 정규화된 디렉터리 구조를 제공하고 있으며 모든 소스 파일들은 /src 디렉터리 밑에, 빌드 된 output은 /target 디렉터리 밑에 위치한다.
 Maven 프로젝트는 개발자에 의한 특정한 source/resource path 설정 없이 정규화된 디렉토리 구조를 기반으로 프로젝트 자원에 대한 접근 메커니즘을 제공한다. Maven은 소스 또는 리소스에 대한 path 설정이 필요하지 않다.</p><p><img src=/egovframe-docs/egovframe-development/deployment-tool/images/maven-directory-tree.gif alt="Maven 디렉터리 구조"></p><h3 class=sec-tit id=dependency-management>Dependency Management</h3><p>메이븐은 POM에서 선언적인 dependency 설정으로 빌드 및 배포 시에 필요한 라이브러리들을 관리하고 로컬 및 원격
 <a class="krds-btn medium text" href class=innerLink>저장소</a>
-에서 선언된 라이브러리들을 다운로드 받아 사용한다.</p><h4 id=설명-2>설명</h4><p>메이븐의 가장 큰 장점 중의 하나로 라이브러리 의존성 관리를 들 수 있다. 일반적인 프로젝트 수행 시 개발자들은 라이브러리 설정을 위해 프로젝트 내부 디렉터리에 직접 라이브러리를 받아와 위치 시키고 path 설정을 통해 이를 이용한다. 이럴 경우 개발자들이 직접 라이브러리를 찾고 설정하는 번거로움과 프로젝트 내부에서 사용하는 라이브러리 종류와 버전을 컨트롤 하는데 문제가 발생할 수 있다. 특히 통합 빌드 과정에서 라이브러리 관련 문제들이 빈번히 발생할 수 있다. 메이븐은 이를 효과적으로 처리하기 위해 의존성 관리 메커니즘을 제공하고 있으며 메이븐 개발자들은 프로젝트의 pom.xml에 dependency 선언만으로 필요한 라이브러리들을 받아와 편하게 사용할 수 있다. 프로젝트 관리자의 경우 사용되고 있는 라이브러리와 버전을 효과적으로 컨트롤할 수 있으며 개발자들에게 검증되고 통일된 버전의 라이브러리를 제공할 수 있다.</p><p>예) 아래와 같이 선언하여 junit 테스트를 위한 라이브러리를 사용할 수 있다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:#f92672>&lt;project&gt;</span>
+에서 선언된 라이브러리들을 다운로드 받아 사용한다.</p><h4 id=설명-2>설명</h4><p>메이븐의 가장 큰 장점 중의 하나로 라이브러리 의존성 관리를 들 수 있다. 일반적인 프로젝트 수행 시 개발자들은 라이브러리 설정을 위해 프로젝트 내부 디렉터리에 직접 라이브러리를 받아와 위치 시키고 path 설정을 통해 이를 이용한다. 이럴 경우 개발자들이 직접 라이브러리를 찾고 설정하는 번거로움과 프로젝트 내부에서 사용하는 라이브러리 종류와 버전을 컨트롤 하는데 문제가 발생할 수 있다. 특히 통합 빌드 과정에서 라이브러리 관련 문제들이 빈번히 발생할 수 있다. 메이븐은 이를 효과적으로 처리하기 위해 의존성 관리 메커니즘을 제공하고 있으며 메이븐 개발자들은 프로젝트의 pom.xml에 dependency 선언만으로 필요한 라이브러리들을 받아와 편하게 사용할 수 있다. 프로젝트 관리자의 경우 사용되고 있는 라이브러리와 버전을 효과적으로 컨트롤할 수 있으며 개발자들에게 검증되고 통일된 버전의 라이브러리를 제공할 수 있다.</p><p>예) 아래와 같이 선언하여 junit 테스트를 위한 라이브러리를 사용할 수 있다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:navy>&lt;project&gt;</span>
 </span></span><span style=display:flex><span>    ......
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;groupId&gt;</span>junit<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;artifactId&gt;</span>junit<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;version&gt;</span>4.4<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;scope&gt;</span>test<span style=color:#f92672>&lt;/scope&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependencies&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>&lt;</span>/project
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;groupId&gt;</span>junit<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;artifactId&gt;</span>junit<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;version&gt;</span>4.4<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;scope&gt;</span>test<span style=color:navy>&lt;/scope&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a61717;background-color:#e3d2d2>&lt;</span>/project
 </span></span></code></pre></div><h4 id=의존성-분석-순서>의존성 분석 순서</h4><ol><li>로컬 저장소에서 의존성 확인</li><li>원격 저장소 리스트에서 의존성 확인</li><li>1과 2가 실패하면 의존성 에러 보고</li></ol><h4 id=의존성-필수-선언-항목>의존성 필수 선언 항목</h4><ol><li><code>&lt;groupId></code>: 부분적인 프로젝트나 조직에서의 라이브러리 집합을 식별하기 위해 제공한다.</li><li><code>&lt;artifactId></code>: 프로젝트의 실제 이름으로 groupId와 합쳐져 프로젝트 식별에 쓰인다.</li><li><code>&lt;version></code>: 선언한 의존성 artifact의 버전으로 프로젝트 내에서 사용하는artifact의 일관성을 추구할 수 있다.</li></ol><h4 id=의존성-scope>의존성 SCOPE</h4><ol><li>compile: 기본값으로 모든 클래스 패스에서 사용 가능하다.</li><li>provided: 컴파일과 유사하나 패키지에는 포함되지 않는다. 컨테이너나 JDK에서 제공한다. 예) Servlet API for web apps</li><li>runtime: 컴파일러가 아닌 런타임 시에 사용된다. 예) JDBC drivers</li><li>test: 테스트 단계에서만 사용된다. 예)Junit</li><li>system: provided와 유사하나 개발자가 직접 JAR 파일을 제공해야 하고 저장소에서 지정한 dependency를 찾지 않는다.</li></ol><p>의존성 SCOPE은 선언이 안되어 있을 경우 기본값으로 compile이 적용된다. JDK나 WAS에서 제공하는 라이브러리와 dependency에서 선언한 라이브러리 간의 충돌이 일어나는 경우가 발생할 수 있으므로 사용하고자 하는 라이브러리의 SCOPE을 잘 명시해야 한다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=사용법>사용법</h2><p><a class="krds-btn medium text" href=#pom class=innerLink>pom.xml</a>
-파일에 프로젝트 이름, 패키징 방법, 버전 정보, 프로젝트 설명 등의 파일을 기술하며 프로젝트에서 사용하는 환경 설정, 빌드 방법, 사용하는 라이브러리 정보 등을 기술하여 빌드 및 프로젝트 관리 환경을 조성한다.</p><h3 class=sec-tit id=프로젝트-정보-생성>프로젝트 정보 생성</h3><p>프로젝트 groupId, artifactId, 패키징 타입, 버전 정보 및 프로젝트 설명을 기술한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;project</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xsi:schemaLocation=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;modelVersion&gt;</span>4.0.0<span style=color:#f92672>&lt;/modelVersion&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;groupId&gt;</span>egovframework.guideprogram<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;artifactId&gt;</span>egovframework.guideprogram.basicsample<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;packaging&gt;</span>war<span style=color:#f92672>&lt;/packaging&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;version&gt;</span>1.0.0-SNAPSHOT<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;name&gt;</span>egovframework.guideprogram.basicsample<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;url&gt;</span>http://maven.apache.org<span style=color:#f92672>&lt;/url&gt;</span>
+파일에 프로젝트 이름, 패키징 방법, 버전 정보, 프로젝트 설명 등의 파일을 기술하며 프로젝트에서 사용하는 환경 설정, 빌드 방법, 사용하는 라이브러리 정보 등을 기술하여 빌드 및 프로젝트 관리 환경을 조성한다.</p><h3 class=sec-tit id=프로젝트-정보-생성>프로젝트 정보 생성</h3><p>프로젝트 groupId, artifactId, 패키징 타입, 버전 정보 및 프로젝트 설명을 기술한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;project</span> <span style=color:teal>xmlns=</span><span style=color:#d14>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:teal>xmlns:xsi=</span><span style=color:#d14>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:teal>xsi:schemaLocation=</span><span style=color:#d14>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;modelVersion&gt;</span>4.0.0<span style=color:navy>&lt;/modelVersion&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;groupId&gt;</span>egovframework.guideprogram<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;artifactId&gt;</span>egovframework.guideprogram.basicsample<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;packaging&gt;</span>war<span style=color:navy>&lt;/packaging&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;version&gt;</span>1.0.0-SNAPSHOT<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;name&gt;</span>egovframework.guideprogram.basicsample<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;url&gt;</span>http://maven.apache.org<span style=color:navy>&lt;/url&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;properties&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>&lt;!-- Spring version --&gt;</span>   
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;spring.maven.artifact.version&gt;</span>2.5.6<span style=color:#f92672>&lt;/spring.maven.artifact.version&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;compileSource&gt;</span>1.5<span style=color:#f92672>&lt;/compileSource&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;encoding&gt;</span>UTF-8<span style=color:#f92672>&lt;/encoding&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/properties&gt;</span>  
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;properties&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#998;font-style:italic>&lt;!-- Spring version --&gt;</span>   
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;spring.maven.artifact.version&gt;</span>2.5.6<span style=color:navy>&lt;/spring.maven.artifact.version&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;compileSource&gt;</span>1.5<span style=color:navy>&lt;/compileSource&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;encoding&gt;</span>UTF-8<span style=color:navy>&lt;/encoding&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/properties&gt;</span>  
 </span></span><span style=display:flex><span>  ...................
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>&lt;!-- Spring Framework --&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.springframework<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>spring-aop<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>${spring.maven.artifact.version}<span style=color:#f92672>&lt;/version&gt;</span>  
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>     
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.springframework<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>spring-beans<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>${spring.maven.artifact.version}<span style=color:#f92672>&lt;/version&gt;</span>   
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>   
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#998;font-style:italic>&lt;!-- Spring Framework --&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.springframework<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>spring-aop<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>${spring.maven.artifact.version}<span style=color:navy>&lt;/version&gt;</span>  
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>     
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.springframework<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>spring-beans<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>${spring.maven.artifact.version}<span style=color:navy>&lt;/version&gt;</span>   
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>   
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/dependencies&gt;</span>
 </span></span><span style=display:flex><span>  ...................
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/project&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/project&gt;</span>
 </span></span></code></pre></div><h3 class=sec-tit id=repository-설정>Repository 설정</h3><p>사용할 리포지토리 정보를 설정한다. 주로 프로젝트에서 Nexus와 같은 로컬 리포지토리를 사용할 경우
-접속 정보를 설정해서 Nexus에 접속하여 artifact들을 다운로드 받을 수 있다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:#f92672>&lt;repositories&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;repository&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;id&gt;</span>central<span style=color:#f92672>&lt;/id&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;releases&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;enabled&gt;</span>true<span style=color:#f92672>&lt;/enabled&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/releases&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;url&gt;</span>http://192.168.100.15:8081/nexus/content/groups/public<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/repository&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;repository&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;id&gt;</span>snapshots<span style=color:#f92672>&lt;/id&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;snapshots&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;enabled&gt;</span>true<span style=color:#f92672>&lt;/enabled&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/snapshots&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;url&gt;</span>http://192.168.100.15:8081/nexus/content/groups/public-snapshots<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/repository&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/repositories&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=dependency의존성-설정>Dependency(의존성) 설정</h3><p>프로젝트에서 사용할 라이브러리(Maven에서는 artifact라 함)을 선언한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.springframework<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>spring<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>${spring.maven.artifact.version}<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.springframework<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>spring-webmvc<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>2.5<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;type&gt;</span>jar<span style=color:#f92672>&lt;/type&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/dependencies&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=system-dependency의존성-설정>System Dependency(의존성) 설정</h3><p>system scope을 가지는 dependency는 다른 scope과 달리 리포지토리에서 찾지 않는 artifact로 항상 사용 가능해야 한다. 주로 JDK 또는 VM에서 제공하는 dependency들을 제공한다. 전형적인 예로 JDBC standard extensions나 Java Authentication and Authorization Service(JAAS)를 들 수 있다.</p><h4 id=jdbc-standard-extension-예>jdbc standard extension 예</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;project&gt;</span>
+접속 정보를 설정해서 Nexus에 접속하여 artifact들을 다운로드 받을 수 있다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:navy>&lt;repositories&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;repository&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;id&gt;</span>central<span style=color:navy>&lt;/id&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;releases&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;enabled&gt;</span>true<span style=color:navy>&lt;/enabled&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/releases&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;url&gt;</span>http://192.168.100.15:8081/nexus/content/groups/public<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/repository&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;repository&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;id&gt;</span>snapshots<span style=color:navy>&lt;/id&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;snapshots&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;enabled&gt;</span>true<span style=color:navy>&lt;/enabled&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/snapshots&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;url&gt;</span>http://192.168.100.15:8081/nexus/content/groups/public-snapshots<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/repository&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/repositories&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=dependency의존성-설정>Dependency(의존성) 설정</h3><p>프로젝트에서 사용할 라이브러리(Maven에서는 artifact라 함)을 선언한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.springframework<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>spring<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>${spring.maven.artifact.version}<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.springframework<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>spring-webmvc<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>2.5<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;type&gt;</span>jar<span style=color:navy>&lt;/type&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=system-dependency의존성-설정>System Dependency(의존성) 설정</h3><p>system scope을 가지는 dependency는 다른 scope과 달리 리포지토리에서 찾지 않는 artifact로 항상 사용 가능해야 한다. 주로 JDK 또는 VM에서 제공하는 dependency들을 제공한다. 전형적인 예로 JDBC standard extensions나 Java Authentication and Authorization Service(JAAS)를 들 수 있다.</p><h4 id=jdbc-standard-extension-예>jdbc standard extension 예</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;project&gt;</span>
 </span></span><span style=display:flex><span>  ...
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>javax.sql<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>jdbc-stdext<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>2.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;scope&gt;</span>system<span style=color:#f92672>&lt;/scope&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;systemPath&gt;</span>${java.home}/lib/rt.jar<span style=color:#f92672>&lt;/systemPath&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>javax.sql<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>jdbc-stdext<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>2.0<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;scope&gt;</span>system<span style=color:navy>&lt;/scope&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;systemPath&gt;</span>${java.home}/lib/rt.jar<span style=color:navy>&lt;/systemPath&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/dependencies&gt;</span>
 </span></span><span style=display:flex><span>  ...
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/project&gt;</span>
-</span></span></code></pre></div><h4 id=jdks-toolsjar-선언-예>JDK&rsquo;s tools.jar 선언 예</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;project&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/project&gt;</span>
+</span></span></code></pre></div><h4 id=jdks-toolsjar-선언-예>JDK&rsquo;s tools.jar 선언 예</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;project&gt;</span>
 </span></span><span style=display:flex><span>  ...
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>sun.jdk<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>tools<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>1.5.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;scope&gt;</span>system<span style=color:#f92672>&lt;/scope&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;systemPath&gt;</span>${java.home}/../lib/tools.jar<span style=color:#f92672>&lt;/systemPath&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>sun.jdk<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>tools<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>1.5.0<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;scope&gt;</span>system<span style=color:navy>&lt;/scope&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;systemPath&gt;</span>${java.home}/../lib/tools.jar<span style=color:navy>&lt;/systemPath&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/dependencies&gt;</span>
 </span></span><span style=display:flex><span>  ...
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/project&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=reporting-설정>Reporting 설정</h3><p>메이븐은 프로젝트 정보에 대한 기본 report 뿐만 아니라 플러그인 설정을 통해 emma, JavaDoc 등의 문서 생성 기능을 제공한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:#f92672>&lt;reporting&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;outputDirectory&gt;</span>${basedir}/target/site<span style=color:#f92672>&lt;/outputDirectory&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;artifactId&gt;</span>maven-project-info-reports-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;version&gt;</span>2.0.1<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#75715e>&lt;!-- JUnit Test Results &amp; EMMA Coverage Reporting --&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;groupId&gt;</span>org.codehaus.mojo<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;artifactId&gt;</span>emma-maven-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;inherited&gt;</span>true<span style=color:#f92672>&lt;/inherited&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;groupId&gt;</span>org.codehaus.mojo<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;artifactId&gt;</span>surefire-report-maven-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;inherited&gt;</span>true<span style=color:#f92672>&lt;/inherited&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#75715e>&lt;!-- Generating JavaDoc Report --&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;artifactId&gt;</span>maven-javadoc-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>	  <span style=color:#f92672>&lt;minmemory&gt;</span>128m<span style=color:#f92672>&lt;/minmemory&gt;</span>
-</span></span><span style=display:flex><span>	  <span style=color:#f92672>&lt;maxmemory&gt;</span>512m<span style=color:#f92672>&lt;/maxmemory&gt;</span>
-</span></span><span style=display:flex><span>	  <span style=color:#f92672>&lt;encoding&gt;</span>UTF-8<span style=color:#f92672>&lt;/encoding&gt;</span>
-</span></span><span style=display:flex><span>	  <span style=color:#f92672>&lt;docencoding&gt;</span>UTF-8<span style=color:#f92672>&lt;/docencoding&gt;</span>
-</span></span><span style=display:flex><span>	  <span style=color:#f92672>&lt;charset&gt;</span>UTF-8<span style=color:#f92672>&lt;/charset&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/reporting&gt;</span>
-</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=샘플>샘플</h2><h3 class=sec-tit id=pomxml-예제>pom.xml 예제</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;project</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>xsi:schemaLocation=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;modelVersion&gt;</span>4.0.0<span style=color:#f92672>&lt;/modelVersion&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;groupId&gt;</span>egovframework.dev.com<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;artifactId&gt;</span>egovframework-dev-com<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;version&gt;</span>1.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;packaging&gt;</span>war<span style=color:#f92672>&lt;/packaging&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;name&gt;</span>egovframework-dev-com Maven Webapp<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>junit<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>junit<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>4.4<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;scope&gt;</span>test<span style=color:#f92672>&lt;/scope&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/dependencies&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>maven-compiler-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;source&gt;</span>1.5<span style=color:#f92672>&lt;/source&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;target&gt;</span>1.5<span style=color:#f92672>&lt;/target&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/configuration&gt;</span>  
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/project&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=pomxml-예제-hudson에서의-사용-예>pom.xml 예제 (Hudson에서의 사용 예)</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;project</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xsi:schemaLocation=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;modelVersion&gt;</span>4.0.0<span style=color:#f92672>&lt;/modelVersion&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;parent&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;groupId&gt;</span>org.jvnet.hudson<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;artifactId&gt;</span>hudson<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;version&gt;</span>1.6<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;relativePath&gt;</span>../pom.xml<span style=color:#f92672>&lt;/relativePath&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/parent&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/project&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=reporting-설정>Reporting 설정</h3><p>메이븐은 프로젝트 정보에 대한 기본 report 뿐만 아니라 플러그인 설정을 통해 emma, JavaDoc 등의 문서 생성 기능을 제공한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>  <span style=color:navy>&lt;reporting&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;outputDirectory&gt;</span>${basedir}/target/site<span style=color:navy>&lt;/outputDirectory&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;artifactId&gt;</span>maven-project-info-reports-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;version&gt;</span>2.0.1<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#998;font-style:italic>&lt;!-- JUnit Test Results &amp; EMMA Coverage Reporting --&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;groupId&gt;</span>org.codehaus.mojo<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;artifactId&gt;</span>emma-maven-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;inherited&gt;</span>true<span style=color:navy>&lt;/inherited&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;groupId&gt;</span>org.codehaus.mojo<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;artifactId&gt;</span>surefire-report-maven-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;inherited&gt;</span>true<span style=color:navy>&lt;/inherited&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#998;font-style:italic>&lt;!-- Generating JavaDoc Report --&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;artifactId&gt;</span>maven-javadoc-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>	  <span style=color:navy>&lt;minmemory&gt;</span>128m<span style=color:navy>&lt;/minmemory&gt;</span>
+</span></span><span style=display:flex><span>	  <span style=color:navy>&lt;maxmemory&gt;</span>512m<span style=color:navy>&lt;/maxmemory&gt;</span>
+</span></span><span style=display:flex><span>	  <span style=color:navy>&lt;encoding&gt;</span>UTF-8<span style=color:navy>&lt;/encoding&gt;</span>
+</span></span><span style=display:flex><span>	  <span style=color:navy>&lt;docencoding&gt;</span>UTF-8<span style=color:navy>&lt;/docencoding&gt;</span>
+</span></span><span style=display:flex><span>	  <span style=color:navy>&lt;charset&gt;</span>UTF-8<span style=color:navy>&lt;/charset&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/reporting&gt;</span>
+</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=샘플>샘플</h2><h3 class=sec-tit id=pomxml-예제>pom.xml 예제</h3><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;project</span> <span style=color:teal>xmlns=</span><span style=color:#d14>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:teal>xmlns:xsi=</span><span style=color:#d14>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style=display:flex><span><span style=color:teal>xsi:schemaLocation=</span><span style=color:#d14>&#34;http://maven.apache.org/POM/4.0.0http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;modelVersion&gt;</span>4.0.0<span style=color:navy>&lt;/modelVersion&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;groupId&gt;</span>egovframework.dev.com<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;artifactId&gt;</span>egovframework-dev-com<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;version&gt;</span>1.0<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;packaging&gt;</span>war<span style=color:navy>&lt;/packaging&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;name&gt;</span>egovframework-dev-com Maven Webapp<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>junit<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>junit<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>4.4<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;scope&gt;</span>test<span style=color:navy>&lt;/scope&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>maven-compiler-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;source&gt;</span>1.5<span style=color:navy>&lt;/source&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;target&gt;</span>1.5<span style=color:navy>&lt;/target&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/configuration&gt;</span>  
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/project&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=pomxml-예제-hudson에서의-사용-예>pom.xml 예제 (Hudson에서의 사용 예)</h3><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;project</span> <span style=color:teal>xmlns=</span><span style=color:#d14>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:teal>xmlns:xsi=</span><span style=color:#d14>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
+</span></span><span style=display:flex><span>  <span style=color:teal>xsi:schemaLocation=</span><span style=color:#d14>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;modelVersion&gt;</span>4.0.0<span style=color:navy>&lt;/modelVersion&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;parent&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;groupId&gt;</span>org.jvnet.hudson<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;artifactId&gt;</span>hudson<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;version&gt;</span>1.6<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;relativePath&gt;</span>../pom.xml<span style=color:navy>&lt;/relativePath&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/parent&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;groupId&gt;</span>org.jvnet.hudson.main<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;artifactId&gt;</span>pom<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;version&gt;</span>1.274<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;packaging&gt;</span>pom<span style=color:#f92672>&lt;/packaging&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;groupId&gt;</span>org.jvnet.hudson.main<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;artifactId&gt;</span>pom<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;version&gt;</span>1.274<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;packaging&gt;</span>pom<span style=color:navy>&lt;/packaging&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;name&gt;</span>Hudson main module<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;description&gt;</span>The module that constitutes the main hudson.war<span style=color:#f92672>&lt;/description&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;name&gt;</span>Hudson main module<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;description&gt;</span>The module that constitutes the main hudson.war<span style=color:navy>&lt;/description&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;modules&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;module&gt;</span>remoting<span style=color:#f92672>&lt;/module&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;module&gt;</span>core<span style=color:#f92672>&lt;/module&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;module&gt;</span>maven-agent<span style=color:#f92672>&lt;/module&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;module&gt;</span>maven-interceptor<span style=color:#f92672>&lt;/module&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;module&gt;</span>war<span style=color:#f92672>&lt;/module&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;module&gt;</span>test<span style=color:#f92672>&lt;/module&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/modules&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;modules&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;module&gt;</span>remoting<span style=color:navy>&lt;/module&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;module&gt;</span>core<span style=color:navy>&lt;/module&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;module&gt;</span>maven-agent<span style=color:navy>&lt;/module&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;module&gt;</span>maven-interceptor<span style=color:navy>&lt;/module&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;module&gt;</span>war<span style=color:navy>&lt;/module&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;module&gt;</span>test<span style=color:navy>&lt;/module&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/modules&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;scm&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;connection&gt;</span>scm:svn:https://svn.dev.java.net/svn/hudson/tags/hudson-1_274<span style=color:#f92672>&lt;/connection&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;developerConnection&gt;</span>scm:svn:https://svn.dev.java.net/svn/hudson/tags/hudson-1_274<span style=color:#f92672>&lt;/developerConnection&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;url&gt;</span>https://hudson.dev.java.net/source/browse/hudson/tags/hudson-1_274<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/scm&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;scm&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;connection&gt;</span>scm:svn:https://svn.dev.java.net/svn/hudson/tags/hudson-1_274<span style=color:navy>&lt;/connection&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;developerConnection&gt;</span>scm:svn:https://svn.dev.java.net/svn/hudson/tags/hudson-1_274<span style=color:navy>&lt;/developerConnection&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;url&gt;</span>https://hudson.dev.java.net/source/browse/hudson/tags/hudson-1_274<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/scm&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;build&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;defaultGoal&gt;</span>install<span style=color:#f92672>&lt;/defaultGoal&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;artifactId&gt;</span>maven-release-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;version&gt;</span>2.0-beta-8<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#75715e>&lt;!-- enable release profile during the release, create IPS package, and sign bits. --&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;prepareVerifyArgs&gt;</span>-P release,ips,sign<span style=color:#f92672>&lt;/prepareVerifyArgs&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#75715e>&lt;!--
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            also run assembly during the release.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            http://www.nabble.com/Release-Plugin%3A-Include-assemblies-for-deploying-tf2642295s177.html#a7377938
-</span></span></span><span style=display:flex><span><span style=color:#75715e>           --&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;goals&gt;</span>install javadoc:javadoc animal-sniffer:check assembly:attached deploy<span style=color:#f92672>&lt;/goals&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;artifactId&gt;</span>maven-assembly-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;inherited&gt;</span>false<span style=color:#f92672>&lt;/inherited&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;finalName&gt;</span>hudson-${version}<span style=color:#f92672>&lt;/finalName&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;descriptors&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;descriptor&gt;</span>assembly-src.xml<span style=color:#f92672>&lt;/descriptor&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;/descriptors&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;artifactId&gt;</span>maven-remote-resources-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;executions&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;execution&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;goals&gt;</span>
-</span></span><span style=display:flex><span>              <span style=color:#f92672>&lt;goal&gt;</span>process<span style=color:#f92672>&lt;/goal&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/goals&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>              <span style=color:#f92672>&lt;resourceBundles&gt;</span>
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;resourceBundle&gt;</span>org.jvnet.hudson:license:1.0<span style=color:#f92672>&lt;/resourceBundle&gt;</span>
-</span></span><span style=display:flex><span>              <span style=color:#f92672>&lt;/resourceBundles&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;/execution&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/executions&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e>&lt;!-- make sure our code doesn&#39;t have 1.6 dependencies except where we know it --&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;groupId&gt;</span>org.jvnet<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;artifactId&gt;</span>animal-sniffer<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;version&gt;</span>1.2<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;signature&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;groupId&gt;</span>org.jvnet.animal-sniffer<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;artifactId&gt;</span>java1.5<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;version&gt;</span>1.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;/signature&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;build&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;defaultGoal&gt;</span>install<span style=color:navy>&lt;/defaultGoal&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;artifactId&gt;</span>maven-release-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;version&gt;</span>2.0-beta-8<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:#998;font-style:italic>&lt;!-- enable release profile during the release, create IPS package, and sign bits. --&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;prepareVerifyArgs&gt;</span>-P release,ips,sign<span style=color:navy>&lt;/prepareVerifyArgs&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:#998;font-style:italic>&lt;!--
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>            also run assembly during the release.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>            http://www.nabble.com/Release-Plugin%3A-Include-assemblies-for-deploying-tf2642295s177.html#a7377938
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>           --&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;goals&gt;</span>install javadoc:javadoc animal-sniffer:check assembly:attached deploy<span style=color:navy>&lt;/goals&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;artifactId&gt;</span>maven-assembly-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;inherited&gt;</span>false<span style=color:navy>&lt;/inherited&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;finalName&gt;</span>hudson-${version}<span style=color:navy>&lt;/finalName&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;descriptors&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;descriptor&gt;</span>assembly-src.xml<span style=color:navy>&lt;/descriptor&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;/descriptors&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;artifactId&gt;</span>maven-remote-resources-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;executions&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;execution&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;goals&gt;</span>
+</span></span><span style=display:flex><span>              <span style=color:navy>&lt;goal&gt;</span>process<span style=color:navy>&lt;/goal&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;/goals&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>              <span style=color:navy>&lt;resourceBundles&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;resourceBundle&gt;</span>org.jvnet.hudson:license:1.0<span style=color:navy>&lt;/resourceBundle&gt;</span>
+</span></span><span style=display:flex><span>              <span style=color:navy>&lt;/resourceBundles&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;/execution&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/executions&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#998;font-style:italic>&lt;!-- make sure our code doesn&#39;t have 1.6 dependencies except where we know it --&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;groupId&gt;</span>org.jvnet<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;artifactId&gt;</span>animal-sniffer<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;version&gt;</span>1.2<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;signature&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;groupId&gt;</span>org.jvnet.animal-sniffer<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;artifactId&gt;</span>java1.5<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;version&gt;</span>1.0<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;/signature&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>      <span style=color:#75715e>&lt;!--&lt;plugin&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>        &lt;groupId&gt;org.jvnet.fix1600&lt;/groupId&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>        &lt;artifactId&gt;fix1600&lt;/artifactId&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>        &lt;executions&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>          &lt;execution&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            &lt;goals&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>              &lt;goal&gt;fix&lt;/goal&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            &lt;/goals&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>          &lt;/execution&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>        &lt;/executions&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>      &lt;/plugin&gt;--&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/build&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#998;font-style:italic>&lt;!--&lt;plugin&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>        &lt;groupId&gt;org.jvnet.fix1600&lt;/groupId&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>        &lt;artifactId&gt;fix1600&lt;/artifactId&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>        &lt;executions&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>          &lt;execution&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>            &lt;goals&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>              &lt;goal&gt;fix&lt;/goal&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>            &lt;/goals&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>          &lt;/execution&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>        &lt;/executions&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>      &lt;/plugin&gt;--&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/build&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#75715e>&lt;!-- for JRE requirement check annotation --&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.jvnet<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>animal-sniffer-annotation<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>1.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;optional&gt;</span>true<span style=color:#f92672>&lt;/optional&gt;</span><span style=color:#75715e>&lt;!-- no need to have this at runtime --&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#998;font-style:italic>&lt;!-- for JRE requirement check annotation --&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.jvnet<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>animal-sniffer-annotation<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>1.0<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;optional&gt;</span>true<span style=color:navy>&lt;/optional&gt;</span><span style=color:#998;font-style:italic>&lt;!-- no need to have this at runtime --&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/dependencies&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;properties&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;maven.version&gt;</span>2.0.4<span style=color:#f92672>&lt;/maven.version&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/properties&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;properties&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;maven.version&gt;</span>2.0.4<span style=color:navy>&lt;/maven.version&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/properties&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;profiles&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;profile&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;id&gt;</span>debug<span style=color:#f92672>&lt;/id&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;activation&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;activeByDefault&gt;</span>true<span style=color:#f92672>&lt;/activeByDefault&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/activation&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;properties&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;hudson.sign.alias&gt;</span>hudson<span style=color:#f92672>&lt;/hudson.sign.alias&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;hudson.sign.keystore&gt;</span>../dummy.keystore<span style=color:#f92672>&lt;/hudson.sign.keystore&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;hudson.sign.storepass&gt;</span>hudson<span style=color:#f92672>&lt;/hudson.sign.storepass&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/properties&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/profile&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/profiles&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;profiles&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;profile&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;id&gt;</span>debug<span style=color:navy>&lt;/id&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;activation&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;activeByDefault&gt;</span>true<span style=color:navy>&lt;/activeByDefault&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/activation&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;properties&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;hudson.sign.alias&gt;</span>hudson<span style=color:navy>&lt;/hudson.sign.alias&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;hudson.sign.keystore&gt;</span>../dummy.keystore<span style=color:navy>&lt;/hudson.sign.keystore&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;hudson.sign.storepass&gt;</span>hudson<span style=color:navy>&lt;/hudson.sign.storepass&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/properties&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/profile&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/profiles&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;repositories&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;repository&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;id&gt;</span>m.g.o-public<span style=color:#f92672>&lt;/id&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;url&gt;</span>http://maven.glassfish.org/content/groups/public/<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;releases&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;enabled&gt;</span>true<span style=color:#f92672>&lt;/enabled&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/releases&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;snapshots&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;enabled&gt;</span>false<span style=color:#f92672>&lt;/enabled&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/snapshots&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/repository&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/repositories&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;repositories&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;repository&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;id&gt;</span>m.g.o-public<span style=color:navy>&lt;/id&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;url&gt;</span>http://maven.glassfish.org/content/groups/public/<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;releases&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;enabled&gt;</span>true<span style=color:navy>&lt;/enabled&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/releases&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;snapshots&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;enabled&gt;</span>false<span style=color:navy>&lt;/enabled&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/snapshots&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/repository&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/repositories&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;pluginRepositories&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;pluginRepository&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;id&gt;</span>m.g.o-public<span style=color:#f92672>&lt;/id&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;url&gt;</span>http://maven.glassfish.org/content/groups/public/<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;releases&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;enabled&gt;</span>true<span style=color:#f92672>&lt;/enabled&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/releases&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;snapshots&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;enabled&gt;</span>false<span style=color:#f92672>&lt;/enabled&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/snapshots&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/pluginRepository&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/pluginRepositories&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;pluginRepositories&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;pluginRepository&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;id&gt;</span>m.g.o-public<span style=color:navy>&lt;/id&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;url&gt;</span>http://maven.glassfish.org/content/groups/public/<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;releases&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;enabled&gt;</span>true<span style=color:navy>&lt;/enabled&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/releases&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;snapshots&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;enabled&gt;</span>false<span style=color:navy>&lt;/enabled&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/snapshots&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/pluginRepository&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/pluginRepositories&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;licenses&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;license&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;name&gt;</span>The MIT license<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;url&gt;</span>http://www.opensource.org/licenses/mit-license.php<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;distribution&gt;</span>repo<span style=color:#f92672>&lt;/distribution&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/license&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/licenses&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;licenses&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;license&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;name&gt;</span>The MIT license<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;url&gt;</span>http://www.opensource.org/licenses/mit-license.php<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;distribution&gt;</span>repo<span style=color:navy>&lt;/distribution&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/license&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/licenses&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;distributionManagement&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;site&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;id&gt;</span>hudson-www<span style=color:#f92672>&lt;/id&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;url&gt;</span>java-net:/hudson/trunk/www/maven-site/<span style=color:#f92672>&lt;/url&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/site&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/distributionManagement&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/project&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;distributionManagement&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;site&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;id&gt;</span>hudson-www<span style=color:navy>&lt;/id&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;url&gt;</span>java-net:/hudson/trunk/www/maven-site/<span style=color:navy>&lt;/url&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/site&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/distributionManagement&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/project&gt;</span>
 </span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=참고자료>참고자료</h2><p><a class="krds-btn medium text" href=http://maven.apache.org/ target=_blank rel="noopener noreferrer" class=externalLink>아파치 메이븐 프로젝트<i class="svg-icon ico-go"></i></a></p></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
 <a href="https://www.egovframe.go.kr/home/sub.do?menuNo=23" class="krds-btn small text">라이센스</a></div><p class=f-copy>COPYRIGHT (C) 2024 eGovFramework. ALL RIGHTS RESERVED.</p></div></div></div></footer></body></html>

@@ -76,497 +76,497 @@ LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 Excel 서비스는 <strong>Apache POI</strong> 오픈소스를 사용하여 구현하였으며 <strong>주요 Excel 접근</strong> 기능 외에 <strong>Excel 다운로드</strong>, <strong>Excel 파일 업로드</strong> 등의 기능이 있다.
 Excel 서비스 3.0 버전에서는 기존 버전을 refactoring 하였다.
 기존의 메소드(xls, xlsx)를 지원하는 메소드들의 이름을 하나로 하여 Parameter 방식으로 구분자를 추가하였다.
-또한, 기존의 iBatis 뿐만 아니라 MyBatis도 지원하는 클래스를 추가하였다.</p></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><h3 class=sec-tit id=주요기능>주요기능</h3><h4 id=excel-파일-생성>Excel 파일 생성</h4><p>엑셀 파일을 생성하여 지정된 위치에 저장하는 기능을 제공한다.</p><p>Workbook 인스턴스를 생성하여 Excel sheet를 추가 생성할 수 있다.</p><p>엑셀 버전에 따라 엑셀 97~2003버전(xls)인 HSSFWorkbook, 엑셀 2007이상(xlsx)의 XSSFWorkbook 클래스를 사용할 수 있으며, 각 클래스별 사용 법(method)는 동일하다.</p><h5 id=sample-source>Sample Source</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>String sheetName1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;first sheet&#34;</span>;
-</span></span><span style=display:flex><span>String sheetName2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;second sheet&#34;</span>;
-</span></span><span style=display:flex><span>StringBuffer sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer();
-</span></span><span style=display:flex><span><span style=color:#75715e>// 엑셀 필요버전에 맞는 확장자를 선택하면 됨</span>
-</span></span><span style=display:flex><span>sb.<span style=color:#a6e22e>append</span>(fileLocation).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34;/&#34;</span>).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34;testWriteExcelFile.xls&#34;</span>);
-</span></span><span style=display:flex><span>sb.<span style=color:#a6e22e>append</span>(fileLocation).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34;/&#34;</span>).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34;testWriteExcelFile.xlsx&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// Workbook을 필요버전에 맞는 클래스를 선택하면 됨</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HSSFWorkbook(); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SXSSFWorkbook(); <span style=color:#75715e>//xlsx 버전</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>wb.<span style=color:#a6e22e>createSheet</span>(sheetName1);
-</span></span><span style=display:flex><span>wb.<span style=color:#a6e22e>createSheet</span>(sheetName2);
-</span></span><span style=display:flex><span>wb.<span style=color:#a6e22e>createSheet</span>();
-</span></span></code></pre></div><h4 id=excel-파일-수정>Excel 파일 수정</h4><p>엑셀 파일 내 셀의 내용을 변경하고 저장한다.</p><p>저장된 엑셀파일을 로드할 수 있으며 지정한 sheet에 row와 cell 객체를 생성하여 텍스트를 저장하고 수정할 수 있다.</p><h5 id=sample-source-1>Sample Source</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// xls엑셀 파일 로드</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// xlsx엑셀 파일 로드</span>
-</span></span><span style=display:flex><span>XSSFWorkbook wb <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span>wb <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(sb.<span style=color:#a6e22e>toString</span>(), wb);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>log.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;testModifyCellContents after loadWorkbook....&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>Sheet sheet <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>getSheetAt</span>(0);
-</span></span><span style=display:flex><span>Font f2 <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createFont</span>();
-</span></span><span style=display:flex><span>CellStyle cs <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createCellStyle</span>();
-</span></span><span style=display:flex><span>cs <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createCellStyle</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>cs.<span style=color:#a6e22e>setFont</span>(f2);
-</span></span><span style=display:flex><span>cs.<span style=color:#a6e22e>setWrapText</span>(<span style=color:#66d9ef>true</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>Row row <span style=color:#f92672>=</span> sheet.<span style=color:#a6e22e>createRow</span>(rownum);
-</span></span><span style=display:flex><span>row.<span style=color:#a6e22e>setHeight</span>((<span style=color:#66d9ef>short</span>) 0x349);
-</span></span><span style=display:flex><span>Cell cell <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>createCell</span>(cellnum);
-</span></span><span style=display:flex><span><span style=color:#75715e>// xls 엑셀방식일 경우</span>
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellType</span>(Cell.<span style=color:#a6e22e>CELL_TYPE_STRING</span>);  
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> HSSFRichTextString(content));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// xlsx 엑셀방식일 경우</span>
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellType</span>(XSSFCell.<span style=color:#a6e22e>CELL_TYPE_STRING</span>);
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> XSSFRichTextString(content));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellStyle</span>(cs);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>sheet.<span style=color:#a6e22e>setColumnWidth</span>(20, (<span style=color:#66d9ef>int</span>) ((50 <span style=color:#f92672>*</span> 8) <span style=color:#f92672>/</span> ((<span style=color:#66d9ef>double</span>) 1 <span style=color:#f92672>/</span> 20)));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>FileOutputStream out <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream(filename);
-</span></span><span style=display:flex><span>wb.<span style=color:#a6e22e>write</span>(out);
-</span></span><span style=display:flex><span>out.<span style=color:#a6e22e>close</span>();
-</span></span></code></pre></div><h4 id=excel-문서-속성-수정>Excel 문서 속성 수정</h4><p>엑셀 파일 문서의 속성(Header, Footer)을 수정한다.</p><p>Header 및 Footer 클래스로 엑셀문서의 Header와 Footer의 값과 속성을 설정할 수 있다.</p><h5 id=sample-source-2>Sample Source</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// 엑셀 파일 로드</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename, <span style=color:#66d9ef>new</span> XSSFWorkbook()); <span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span>LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;testModifyCellContents after loadWorkbook....&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>Sheet sheet <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createSheet</span>(<span style=color:#e6db74>&#34;doc test sheet&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>Row row <span style=color:#f92672>=</span> sheet.<span style=color:#a6e22e>createRow</span>(1);
-</span></span><span style=display:flex><span>Cell cell <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>createCell</span>(1);
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> HSSFRichTextString(<span style=color:#e6db74>&#34;Header/Footer Test&#34;</span>)); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> XSSFRichTextString(<span style=color:#e6db74>&#34;Header/Footer Test&#34;</span>)); <span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// Header</span>
-</span></span><span style=display:flex><span>Header header <span style=color:#f92672>=</span> sheet.<span style=color:#a6e22e>getHeader</span>();
-</span></span><span style=display:flex><span>header.<span style=color:#a6e22e>setCenter</span>(<span style=color:#e6db74>&#34;Center Header&#34;</span>);
-</span></span><span style=display:flex><span>header.<span style=color:#a6e22e>setLeft</span>(<span style=color:#e6db74>&#34;Left Header&#34;</span>);
-</span></span><span style=display:flex><span>header.<span style=color:#a6e22e>setRight</span>(HSSFHeader.<span style=color:#a6e22e>font</span>(<span style=color:#e6db74>&#34;Stencil-Normal&#34;</span>, <span style=color:#e6db74>&#34;Italic&#34;</span>) <span style=color:#f92672>+</span> HSSFHeader.<span style=color:#a6e22e>fontSize</span>((<span style=color:#66d9ef>short</span>) 16) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;Right Stencil-Normal Italic font and size 16&#34;</span>); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>header.<span style=color:#a6e22e>setRight</span>(XSSFOddHeader.<span style=color:#a6e22e>stripFields</span>(<span style=color:#e6db74>&#34;&amp;IRight Stencil-Normal Italic font and size 16&#34;</span>)); <span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// Footer</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>Footer footer <span style=color:#f92672>=</span> sheet.<span style=color:#a6e22e>getFooter</span>();
-</span></span><span style=display:flex><span>footer.<span style=color:#a6e22e>setCenter</span>(HSSFHeader.<span style=color:#a6e22e>font</span>(<span style=color:#e6db74>&#34;Fixedsys&#34;</span>, <span style=color:#e6db74>&#34;Normal&#34;</span>) <span style=color:#f92672>+</span> HSSFHeader.<span style=color:#a6e22e>fontSize</span>((<span style=color:#66d9ef>short</span>) 12) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;- 1 -&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span>Footer footer <span style=color:#f92672>=</span> (XSSFOddFooter) sheet.<span style=color:#a6e22e>getFooter</span>();
-</span></span><span style=display:flex><span>footer.<span style=color:#a6e22e>setCenter</span>(XSSFOddHeader.<span style=color:#a6e22e>stripFields</span>(<span style=color:#e6db74>&#34;Fixedsys&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>footer.<span style=color:#a6e22e>setLeft</span>(<span style=color:#e6db74>&#34;Left Footer&#34;</span>);
-</span></span><span style=display:flex><span>footer.<span style=color:#a6e22e>setRight</span>(<span style=color:#e6db74>&#34;Right Footer&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// 엑셀 파일 저장</span>
-</span></span><span style=display:flex><span>FileOutputStream out <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream(filename);
-</span></span><span style=display:flex><span>wb.<span style=color:#a6e22e>write</span>(out);
-</span></span><span style=display:flex><span>out.<span style=color:#a6e22e>close</span>();
-</span></span></code></pre></div><h4 id=셀-내용-추출>셀 내용 추출</h4><p>엑셀 파일을 읽어 특정 셀의 값을 얻어온다.</p><p>HSSFCell 클래스의 getRichStringCellValue, getNumericCellValue, getStringCellValue 등 다양한 type의 Cell 내용을 추출할 수 있다.</p><h5 id=sample-source-3>Sample Source</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>Workbook wbT <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>Workbook wbT <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename, <span style=color:#66d9ef>new</span> XSSFWorkbook()); <span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span>Sheet sheetT <span style=color:#f92672>=</span> wbT.<span style=color:#a6e22e>getSheet</span>(<span style=color:#e6db74>&#34;cell test sheet&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> 100; i<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span>	Row row <span style=color:#f92672>=</span> sheet.<span style=color:#a6e22e>createRow</span>(i);
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> 0; j <span style=color:#f92672>&lt;</span> 5; j<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span>		Cell cell <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>createCell</span>(j);
-</span></span><span style=display:flex><span>		cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> HSSFRichTextString(<span style=color:#e6db74>&#34;row &#34;</span> <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, cell &#34;</span> <span style=color:#f92672>+</span> j)); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>		cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> XSSFRichTextString(<span style=color:#e6db74>&#34;row &#34;</span> <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, cell &#34;</span> <span style=color:#f92672>+</span> j)); <span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span>		cell.<span style=color:#a6e22e>setCellStyle</span>(cs);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h4 id=셀-속성-추출>셀 속성 추출</h4><p>특정 셀의 속성(폰트, 사이즈 등)을 수정한다.</p><p>HSSFFont, HSSFCellStyle 등의 클래스를 이용하여 셀의 폰트, 사이즈 등의 셀 속성을 수정할 수 있다.</p><h5 id=sample-source-4>Sample Source</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// 엑셀 파일 로드</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>Workbook wb <span style=color:#f92672>=</span> excelService.<span style=color:#a6e22e>loadWorkbook</span>(filename, <span style=color:#66d9ef>new</span> XSSFWorkbook()); <span style=color:#75715e>//xlsx 버전</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>Sheet sheet <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createSheet</span>(<span style=color:#e6db74>&#34;cell test sheet2&#34;</span>);
-</span></span><span style=display:flex><span>sheet.<span style=color:#a6e22e>setColumnWidth</span>((<span style=color:#66d9ef>short</span>) 3, (<span style=color:#66d9ef>short</span>) 200);	<span style=color:#75715e>// column Width</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>CellStyle cs <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createCellStyle</span>();
-</span></span><span style=display:flex><span>Font font <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createFont</span>();
-</span></span><span style=display:flex><span>font.<span style=color:#a6e22e>setFontHeight</span>((<span style=color:#66d9ef>short</span>) 16);
-</span></span><span style=display:flex><span>font.<span style=color:#a6e22e>setBoldweight</span>((<span style=color:#66d9ef>short</span>) 3);
-</span></span><span style=display:flex><span>font.<span style=color:#a6e22e>setFontName</span>(<span style=color:#e6db74>&#34;fixedsys&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>cs.<span style=color:#a6e22e>setFont</span>(font);
-</span></span><span style=display:flex><span>cs.<span style=color:#a6e22e>setAlignment</span>(CellStyle.<span style=color:#a6e22e>ALIGN_RIGHT</span>);	<span style=color:#75715e>// cell 정렬</span>
-</span></span><span style=display:flex><span>cs.<span style=color:#a6e22e>setWrapText</span>( <span style=color:#66d9ef>true</span> );
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> 100; i<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span>	HSSFRow row <span style=color:#f92672>=</span> sheet.<span style=color:#a6e22e>createRow</span>(i);
-</span></span><span style=display:flex><span>	row.<span style=color:#a6e22e>setHeight</span>((<span style=color:#66d9ef>short</span>)300); <span style=color:#75715e>// row의 height 설정</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> 0; j <span style=color:#f92672>&lt;</span> 5; j<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span>		HSSFCell cell <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>createCell</span>((<span style=color:#66d9ef>short</span>) j);
-</span></span><span style=display:flex><span>		cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> HSSFRichTextString(<span style=color:#e6db74>&#34;row &#34;</span> <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, cell &#34;</span> <span style=color:#f92672>+</span> j)); <span style=color:#75715e>// xls 버전</span>
-</span></span><span style=display:flex><span>		cell.<span style=color:#a6e22e>setCellValue</span>(<span style=color:#66d9ef>new</span> XSSFRichTextString(<span style=color:#e6db74>&#34;row &#34;</span> <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, cell &#34;</span> <span style=color:#f92672>+</span> j)); <span style=color:#75715e>// xlsx 버전</span>
-</span></span><span style=display:flex><span>		cell.<span style=color:#a6e22e>setCellStyle</span>( cs );
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>// 엑셀 파일 저장</span>
-</span></span><span style=display:flex><span>FileOutputStream out <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream(filename);
-</span></span><span style=display:flex><span>wb.<span style=color:#a6e22e>write</span>(out);
-</span></span><span style=display:flex><span>out.<span style=color:#a6e22e>close</span>();
-</span></span></code></pre></div><h4 id=공통-템플릿-사용>공통 템플릿 사용</h4><p>공통 템플릿을 사용하여 일관성을 유지한다. jXLS 오픈소스를 사용하여 작성된 템플릿에 지정된 값을 저장한다.</p><h5 id=sample-source-5>Sample Source</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>PersonHourVO<span style=color:#f92672>&gt;</span> persons <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>PersonHourVO<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>PersonHourVO person <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PersonHourVO();
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setName</span>(<span style=color:#e6db74>&#34;Yegor Kozlov&#34;</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setId</span>(<span style=color:#e6db74>&#34;YK&#34;</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setMon</span>(5.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setTue</span>(8.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setWed</span>(10.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setThu</span>(5.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setFri</span>(5.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setSat</span>(7.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person.<span style=color:#a6e22e>setSun</span>(6.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>persons.<span style=color:#a6e22e>add</span>(person); 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>PersonHourVO person1 <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PersonHourVO();
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setName</span>(<span style=color:#e6db74>&#34;Gisella Bronzetti&#34;</span>);
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setId</span>(<span style=color:#e6db74>&#34;GB&#34;</span>);
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setMon</span>(4.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setTue</span>(3.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setWed</span>(1.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setThu</span>(3.<span style=color:#a6e22e>5</span>);
-</span></span><span style=display:flex><span>person1.<span style=color:#a6e22e>setSun</span>(4.<span style=color:#a6e22e>0</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>persons.<span style=color:#a6e22e>add</span>(person1); 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> beans <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>beans.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;persons&#34;</span>, persons);
-</span></span><span style=display:flex><span>XLSTransformer transformer <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XLSTransformer();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>transformer.<span style=color:#a6e22e>transformXLS</span>(filename, beans, sbResult.<span style=color:#a6e22e>toString</span>());
-</span></span></code></pre></div><h5 id=excel-template>Excel Template</h5><pre tabindex=0><code class=language-jsp data-lang=jsp>&lt;jx:forEach var=&#34;persons&#34; items=&#34;${persons}&#34;&gt;
+또한, 기존의 iBatis 뿐만 아니라 MyBatis도 지원하는 클래스를 추가하였다.</p></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><h3 class=sec-tit id=주요기능>주요기능</h3><h4 id=excel-파일-생성>Excel 파일 생성</h4><p>엑셀 파일을 생성하여 지정된 위치에 저장하는 기능을 제공한다.</p><p>Workbook 인스턴스를 생성하여 Excel sheet를 추가 생성할 수 있다.</p><p>엑셀 버전에 따라 엑셀 97~2003버전(xls)인 HSSFWorkbook, 엑셀 2007이상(xlsx)의 XSSFWorkbook 클래스를 사용할 수 있으며, 각 클래스별 사용 법(method)는 동일하다.</p><h5 id=sample-source>Sample Source</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>String<span style=color:#bbb> </span>sheetName1<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;first sheet&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>String<span style=color:#bbb> </span>sheetName2<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;second sheet&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>StringBuffer<span style=color:#bbb> </span>sb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>StringBuffer();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// 엑셀 필요버전에 맞는 확장자를 선택하면 됨</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>sb.<span style=color:teal>append</span>(fileLocation).<span style=color:teal>append</span>(<span style=color:#d14>&#34;/&#34;</span>).<span style=color:teal>append</span>(<span style=color:#d14>&#34;testWriteExcelFile.xls&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>sb.<span style=color:teal>append</span>(fileLocation).<span style=color:teal>append</span>(<span style=color:#d14>&#34;/&#34;</span>).<span style=color:teal>append</span>(<span style=color:#d14>&#34;testWriteExcelFile.xlsx&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// Workbook을 필요버전에 맞는 클래스를 선택하면 됨</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HSSFWorkbook();<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>SXSSFWorkbook();<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb.<span style=color:teal>createSheet</span>(sheetName1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb.<span style=color:teal>createSheet</span>(sheetName2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb.<span style=color:teal>createSheet</span>();<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=excel-파일-수정>Excel 파일 수정</h4><p>엑셀 파일 내 셀의 내용을 변경하고 저장한다.</p><p>저장된 엑셀파일을 로드할 수 있으며 지정한 sheet에 row와 cell 객체를 생성하여 텍스트를 저장하고 수정할 수 있다.</p><h5 id=sample-source-1>Sample Source</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#998;font-style:italic>// xls엑셀 파일 로드</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// xlsx엑셀 파일 로드</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>XSSFWorkbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(sb.<span style=color:teal>toString</span>(),<span style=color:#bbb> </span>wb);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>log.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;testModifyCellContents after loadWorkbook....&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Sheet<span style=color:#bbb> </span>sheet<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>getSheetAt</span>(0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Font<span style=color:#bbb> </span>f2<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createFont</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>CellStyle<span style=color:#bbb> </span>cs<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createCellStyle</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cs<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createCellStyle</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cs.<span style=color:teal>setFont</span>(f2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cs.<span style=color:teal>setWrapText</span>(<span style=color:#000;font-weight:700>true</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Row<span style=color:#bbb> </span>row<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>sheet.<span style=color:teal>createRow</span>(rownum);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>row.<span style=color:teal>setHeight</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>0x349);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Cell<span style=color:#bbb> </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>createCell</span>(cellnum);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// xls 엑셀방식일 경우</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellType</span>(Cell.<span style=color:teal>CELL_TYPE_STRING</span>);<span style=color:#bbb>  
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HSSFRichTextString(content));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// xlsx 엑셀방식일 경우</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellType</span>(XSSFCell.<span style=color:teal>CELL_TYPE_STRING</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFRichTextString(content));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellStyle</span>(cs);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>sheet.<span style=color:teal>setColumnWidth</span>(20,<span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span>)<span style=color:#bbb> </span>((50<span style=color:#bbb> </span><span style=color:#000;font-weight:700>*</span><span style=color:#bbb> </span>8)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>/</span><span style=color:#bbb> </span>((<span style=color:#458;font-weight:700>double</span>)<span style=color:#bbb> </span>1<span style=color:#bbb> </span><span style=color:#000;font-weight:700>/</span><span style=color:#bbb> </span>20)));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>FileOutputStream<span style=color:#bbb> </span>out<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileOutputStream(filename);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb.<span style=color:teal>write</span>(out);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>out.<span style=color:teal>close</span>();<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=excel-문서-속성-수정>Excel 문서 속성 수정</h4><p>엑셀 파일 문서의 속성(Header, Footer)을 수정한다.</p><p>Header 및 Footer 클래스로 엑셀문서의 Header와 Footer의 값과 속성을 설정할 수 있다.</p><h5 id=sample-source-2>Sample Source</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#998;font-style:italic>// 엑셀 파일 로드</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFWorkbook());<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;testModifyCellContents after loadWorkbook....&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Sheet<span style=color:#bbb> </span>sheet<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createSheet</span>(<span style=color:#d14>&#34;doc test sheet&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Row<span style=color:#bbb> </span>row<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>sheet.<span style=color:teal>createRow</span>(1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Cell<span style=color:#bbb> </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>createCell</span>(1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HSSFRichTextString(<span style=color:#d14>&#34;Header/Footer Test&#34;</span>));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFRichTextString(<span style=color:#d14>&#34;Header/Footer Test&#34;</span>));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// Header</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Header<span style=color:#bbb> </span>header<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>sheet.<span style=color:teal>getHeader</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>header.<span style=color:teal>setCenter</span>(<span style=color:#d14>&#34;Center Header&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>header.<span style=color:teal>setLeft</span>(<span style=color:#d14>&#34;Left Header&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>header.<span style=color:teal>setRight</span>(HSSFHeader.<span style=color:teal>font</span>(<span style=color:#d14>&#34;Stencil-Normal&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;Italic&#34;</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>HSSFHeader.<span style=color:teal>fontSize</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>16)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;Right Stencil-Normal Italic font and size 16&#34;</span>);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>header.<span style=color:teal>setRight</span>(XSSFOddHeader.<span style=color:teal>stripFields</span>(<span style=color:#d14>&#34;&amp;IRight Stencil-Normal Italic font and size 16&#34;</span>));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// Footer</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Footer<span style=color:#bbb> </span>footer<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>sheet.<span style=color:teal>getFooter</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>footer.<span style=color:teal>setCenter</span>(HSSFHeader.<span style=color:teal>font</span>(<span style=color:#d14>&#34;Fixedsys&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;Normal&#34;</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>HSSFHeader.<span style=color:teal>fontSize</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>12)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;- 1 -&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Footer<span style=color:#bbb> </span>footer<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(XSSFOddFooter)<span style=color:#bbb> </span>sheet.<span style=color:teal>getFooter</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>footer.<span style=color:teal>setCenter</span>(XSSFOddHeader.<span style=color:teal>stripFields</span>(<span style=color:#d14>&#34;Fixedsys&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>footer.<span style=color:teal>setLeft</span>(<span style=color:#d14>&#34;Left Footer&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>footer.<span style=color:teal>setRight</span>(<span style=color:#d14>&#34;Right Footer&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// 엑셀 파일 저장</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>FileOutputStream<span style=color:#bbb> </span>out<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileOutputStream(filename);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb.<span style=color:teal>write</span>(out);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>out.<span style=color:teal>close</span>();<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=셀-내용-추출>셀 내용 추출</h4><p>엑셀 파일을 읽어 특정 셀의 값을 얻어온다.</p><p>HSSFCell 클래스의 getRichStringCellValue, getNumericCellValue, getStringCellValue 등 다양한 type의 Cell 내용을 추출할 수 있다.</p><h5 id=sample-source-3>Sample Source</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>Workbook<span style=color:#bbb> </span>wbT<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wbT<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFWorkbook());<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Sheet<span style=color:#bbb> </span>sheetT<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wbT.<span style=color:teal>getSheet</span>(<span style=color:#d14>&#34;cell test sheet&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>100;<span style=color:#bbb> </span>i<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>Row<span style=color:#bbb> </span>row<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>sheet.<span style=color:teal>createRow</span>(i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>j<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>j<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>5;<span style=color:#bbb> </span>j<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Cell<span style=color:#bbb> </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>createCell</span>(j);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HSSFRichTextString(<span style=color:#d14>&#34;row &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;, cell &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>j));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFRichTextString(<span style=color:#d14>&#34;row &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;, cell &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>j));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>cell.<span style=color:teal>setCellStyle</span>(cs);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=셀-속성-추출>셀 속성 추출</h4><p>특정 셀의 속성(폰트, 사이즈 등)을 수정한다.</p><p>HSSFFont, HSSFCellStyle 등의 클래스를 이용하여 셀의 폰트, 사이즈 등의 셀 속성을 수정할 수 있다.</p><h5 id=sample-source-4>Sample Source</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#998;font-style:italic>// 엑셀 파일 로드</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Workbook<span style=color:#bbb> </span>wb<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>excelService.<span style=color:teal>loadWorkbook</span>(filename,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFWorkbook());<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Sheet<span style=color:#bbb> </span>sheet<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createSheet</span>(<span style=color:#d14>&#34;cell test sheet2&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>sheet.<span style=color:teal>setColumnWidth</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>3,<span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>200);<span style=color:#bbb>	</span><span style=color:#998;font-style:italic>// column Width</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>CellStyle<span style=color:#bbb> </span>cs<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createCellStyle</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Font<span style=color:#bbb> </span>font<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createFont</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>font.<span style=color:teal>setFontHeight</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>16);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>font.<span style=color:teal>setBoldweight</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>3);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>font.<span style=color:teal>setFontName</span>(<span style=color:#d14>&#34;fixedsys&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cs.<span style=color:teal>setFont</span>(font);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cs.<span style=color:teal>setAlignment</span>(CellStyle.<span style=color:teal>ALIGN_RIGHT</span>);<span style=color:#bbb>	</span><span style=color:#998;font-style:italic>// cell 정렬</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>cs.<span style=color:teal>setWrapText</span>(<span style=color:#bbb> </span><span style=color:#000;font-weight:700>true</span><span style=color:#bbb> </span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>100;<span style=color:#bbb> </span>i<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>HSSFRow<span style=color:#bbb> </span>row<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>sheet.<span style=color:teal>createRow</span>(i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>row.<span style=color:teal>setHeight</span>((<span style=color:#458;font-weight:700>short</span>)300);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// row의 height 설정</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>j<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>j<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>5;<span style=color:#bbb> </span>j<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>HSSFCell<span style=color:#bbb> </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>createCell</span>((<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>j);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HSSFRichTextString(<span style=color:#d14>&#34;row &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;, cell &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>j));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xls 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>cell.<span style=color:teal>setCellValue</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XSSFRichTextString(<span style=color:#d14>&#34;row &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;, cell &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>j));<span style=color:#bbb> </span><span style=color:#998;font-style:italic>// xlsx 버전</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>cell.<span style=color:teal>setCellStyle</span>(<span style=color:#bbb> </span>cs<span style=color:#bbb> </span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#998;font-style:italic>// 엑셀 파일 저장</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>FileOutputStream<span style=color:#bbb> </span>out<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileOutputStream(filename);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>wb.<span style=color:teal>write</span>(out);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>out.<span style=color:teal>close</span>();<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=공통-템플릿-사용>공통 템플릿 사용</h4><p>공통 템플릿을 사용하여 일관성을 유지한다. jXLS 오픈소스를 사용하여 작성된 템플릿에 지정된 값을 저장한다.</p><h5 id=sample-source-5>Sample Source</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>List<span style=color:#000;font-weight:700>&lt;</span>PersonHourVO<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>persons<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ArrayList<span style=color:#000;font-weight:700>&lt;</span>PersonHourVO<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>PersonHourVO<span style=color:#bbb> </span>person<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>PersonHourVO();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setName</span>(<span style=color:#d14>&#34;Yegor Kozlov&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setId</span>(<span style=color:#d14>&#34;YK&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setMon</span>(5.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setTue</span>(8.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setWed</span>(10.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setThu</span>(5.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setFri</span>(5.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setSat</span>(7.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person.<span style=color:teal>setSun</span>(6.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>persons.<span style=color:teal>add</span>(person);<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>PersonHourVO<span style=color:#bbb> </span>person1<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>PersonHourVO();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setName</span>(<span style=color:#d14>&#34;Gisella Bronzetti&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setId</span>(<span style=color:#d14>&#34;GB&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setMon</span>(4.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setTue</span>(3.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setWed</span>(1.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setThu</span>(3.<span style=color:teal>5</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>person1.<span style=color:teal>setSun</span>(4.<span style=color:teal>0</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>persons.<span style=color:teal>add</span>(person1);<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>beans<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HashMap<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>beans.<span style=color:teal>put</span>(<span style=color:#d14>&#34;persons&#34;</span>,<span style=color:#bbb> </span>persons);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>XLSTransformer<span style=color:#bbb> </span>transformer<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XLSTransformer();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>transformer.<span style=color:teal>transformXLS</span>(filename,<span style=color:#bbb> </span>beans,<span style=color:#bbb> </span>sbResult.<span style=color:teal>toString</span>());<span style=color:#bbb>
+</span></span></span></code></pre></div><h5 id=excel-template>Excel Template</h5><pre tabindex=0><code class=language-jsp data-lang=jsp>&lt;jx:forEach var=&#34;persons&#34; items=&#34;${persons}&#34;&gt;
 ${persons.name}	${persons.id}	${persons.mon}	${persons.tue}	${persons.wed}	${persons.thu}	${persons.fri}	${persons.sat}	${persons.sun}	$[C4+D4+E4+F4+G4+H4+I4]
 &lt;/jx:forEach&gt;
 		Total Hrs:	$[SUM(C4)]	$[SUM(D4)]	$[SUM(E4)]	$[SUM(F4)]	$[SUM(G4)]	$[SUM(H4)]	$[SUM(I4)]	$[SUM(J4)]
-</code></pre><p><img src=/egovframe-docs/egovframe-runtime/foundation-layer/images/excel-service-template.png alt=excel-service-template></p><h5 id=template-적용결과>Template 적용결과</h5><p><img src=/egovframe-docs/egovframe-runtime/foundation-layer/images/excel-service-template-result.png alt=excel-service-template-result></p><h3 class=sec-tit id=excel-다운로드>Excel 다운로드</h3><h5 id=configuration>Configuration</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;categoryExcelView&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.download.CategoryExcelView&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!--
-</span></span></span><span style=display:flex><span><span style=color:#75715e>XSSF 형태의 다운로드의 경우 다음의 View를 등록하여 사용한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>&lt;bean id=&#34;CategoryPOIExcelView&#34; class=&#34;egovframework.rte.fdl.excel.download.CategoryPOIExcelView&#34; /&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>--&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.web.servlet.view.BeanNameViewResolver&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;order&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;0&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span></code></pre></div><h5 id=sample-source-6>Sample Source</h5><p>Controller 클래스 작성 Map 사용</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RequestMapping</span>(<span style=color:#e6db74>&#34;/sale/listExcelCategory.do&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> ModelAndView <span style=color:#a6e22e>selectCategoryList</span>() <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	List<span style=color:#f92672>&lt;</span>Map<span style=color:#f92672>&gt;</span> lists <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>Map<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	Map<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span> mapCategory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;id&#34;</span>, <span style=color:#e6db74>&#34;0000000001&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;name&#34;</span>, <span style=color:#e6db74>&#34;Sample Test&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;description&#34;</span>, <span style=color:#e6db74>&#34;This is initial test data.&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;useyn&#34;</span>, <span style=color:#e6db74>&#34;Y&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;reguser&#34;</span>, <span style=color:#e6db74>&#34;test&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	lists.<span style=color:#a6e22e>add</span>(mapCategory);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;id&#34;</span>, <span style=color:#e6db74>&#34;0000000002&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;name&#34;</span>, <span style=color:#e6db74>&#34;test Name&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;description&#34;</span>, <span style=color:#e6db74>&#34;test Deso1111&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;useyn&#34;</span>, <span style=color:#e6db74>&#34;Y&#34;</span>);
-</span></span><span style=display:flex><span>	mapCategory.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;reguser&#34;</span>, <span style=color:#e6db74>&#34;test&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	lists.<span style=color:#a6e22e>add</span>(mapCategory);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> map <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>	map.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;category&#34;</span>, lists);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> ModelAndView(<span style=color:#e6db74>&#34;categoryExcelView&#34;</span>, <span style=color:#e6db74>&#34;categoryMap&#34;</span>, map);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>VO 사용</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RequestMapping</span>(<span style=color:#e6db74>&#34;/sale/listExcelVOCategory.do&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> ModelAndView <span style=color:#a6e22e>selectCategoryVOList</span>() <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	List<span style=color:#f92672>&lt;</span>UsersVO<span style=color:#f92672>&gt;</span> lists <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>UsersVO<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	UsersVO users <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> UsersVO();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>//Map&lt;String, String&gt; mapCategory = new HashMap&lt;String, String&gt;();</span>
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setId</span>(<span style=color:#e6db74>&#34;0000000001&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setName</span>(<span style=color:#e6db74>&#34;Sample Test&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setDescription</span>(<span style=color:#e6db74>&#34;This is initial test data.&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setUseYn</span>(<span style=color:#e6db74>&#34;Y&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setRegUser</span>(<span style=color:#e6db74>&#34;test&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	lists.<span style=color:#a6e22e>add</span>(users);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setId</span>(<span style=color:#e6db74>&#34;0000000002&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setName</span>(<span style=color:#e6db74>&#34;test Name&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setDescription</span>(<span style=color:#e6db74>&#34;test Deso1111&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setUseYn</span>(<span style=color:#e6db74>&#34;Y&#34;</span>);
-</span></span><span style=display:flex><span>	users.<span style=color:#a6e22e>setRegUser</span>(<span style=color:#e6db74>&#34;test&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	lists.<span style=color:#a6e22e>add</span>(users);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> map <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>	map.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;category&#34;</span>, lists);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> ModelAndView(<span style=color:#e6db74>&#34;categoryExcelView&#34;</span>, <span style=color:#e6db74>&#34;categoryMap&#34;</span>, map);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>View 클래스 작성(xls 버전)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CategoryExcelView</span> <span style=color:#66d9ef>extends</span> AbstractExcelView {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Logger LOGGER  <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(CategoryExcelView.<span style=color:#a6e22e>class</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Override</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>buildExcelDocument</span>(Map model, HSSFWorkbook wb, HttpServletRequest req, HttpServletResponse resp) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span>        HSSFCell cell <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument start !!!&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        HSSFSheet sheet <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createSheet</span>(<span style=color:#e6db74>&#34;User List&#34;</span>);
-</span></span><span style=display:flex><span>        sheet.<span style=color:#a6e22e>setDefaultColumnWidth</span>(12);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// put text in first cell</span>
-</span></span><span style=display:flex><span>        cell <span style=color:#f92672>=</span> getCell(sheet, 0, 0);
-</span></span><span style=display:flex><span>        setText(cell, <span style=color:#e6db74>&#34;User List&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// set header information</span>
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 0), <span style=color:#e6db74>&#34;id&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 1), <span style=color:#e6db74>&#34;name&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 2), <span style=color:#e6db74>&#34;description&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 3), <span style=color:#e6db74>&#34;use_yn&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 4), <span style=color:#e6db74>&#34;reg_user&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument cast&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> map<span style=color:#f92672>=</span> (Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span>) model.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;categoryMap&#34;</span>);
-</span></span><span style=display:flex><span>        List<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> categories <span style=color:#f92672>=</span> (List<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span>) map.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;category&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>boolean</span> isVO <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (categories.<span style=color:#a6e22e>size</span>() <span style=color:#f92672>&gt;</span> 0) {
-</span></span><span style=display:flex><span>        	Object obj <span style=color:#f92672>=</span> categories.<span style=color:#a6e22e>get</span>(0);
-</span></span><span style=display:flex><span>        	isVO <span style=color:#f92672>=</span> obj <span style=color:#66d9ef>instanceof</span> UsersVO;
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> categories.<span style=color:#a6e22e>size</span>(); i<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        	<span style=color:#66d9ef>if</span> (isVO) {	<span style=color:#75715e>// VO</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument VO : {} started!!&#34;</span>, i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		UsersVO category <span style=color:#f92672>=</span> (UsersVO) categories.<span style=color:#a6e22e>get</span>(i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 0);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getId</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 1);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getName</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 2);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getDescription</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 3);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getUseYn</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 4);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getRegUser</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument VO : {} end!!&#34;</span>, i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        	 } <span style=color:#66d9ef>else</span> {	<span style=color:#75715e>// Map</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument Map : {} started!!&#34;</span>, i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		Map<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span> category <span style=color:#f92672>=</span> (Map<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span>) categories.<span style=color:#a6e22e>get</span>(i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 0);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;id&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 1);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;name&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 2);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;description&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 3);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;useyn&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 4);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;reguser&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument Map : {} end!!&#34;</span>, i);
-</span></span><span style=display:flex><span>        	 }
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>View 클래스 작성(xlsx 버전)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CategoryPOIExcelView</span> <span style=color:#66d9ef>extends</span> AbstractPOIExcelView {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Logger LOGGER  <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(CategoryPOIExcelView.<span style=color:#a6e22e>class</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Override</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>buildExcelDocument</span>(Map model, XSSFWorkbook wb, HttpServletRequest req, HttpServletResponse resp) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span>        XSSFCell cell <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument start !!!&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        XSSFSheet sheet <span style=color:#f92672>=</span> wb.<span style=color:#a6e22e>createSheet</span>(<span style=color:#e6db74>&#34;User List&#34;</span>);
-</span></span><span style=display:flex><span>        sheet.<span style=color:#a6e22e>setDefaultColumnWidth</span>(12);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// put text in first cell</span>
-</span></span><span style=display:flex><span>        cell <span style=color:#f92672>=</span> getCell(sheet, 0, 0);
-</span></span><span style=display:flex><span>        setText(cell, <span style=color:#e6db74>&#34;User List&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// set header information</span>
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 0), <span style=color:#e6db74>&#34;id&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 1), <span style=color:#e6db74>&#34;name&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 2), <span style=color:#e6db74>&#34;description&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 3), <span style=color:#e6db74>&#34;use_yn&#34;</span>);
-</span></span><span style=display:flex><span>        setText(getCell(sheet, 2, 4), <span style=color:#e6db74>&#34;reg_user&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument cast&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> map<span style=color:#f92672>=</span> (Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span>) model.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;categoryMap&#34;</span>);
-</span></span><span style=display:flex><span>        List<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> categories <span style=color:#f92672>=</span> (List<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span>) map.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;category&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>boolean</span> isVO <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (categories.<span style=color:#a6e22e>size</span>() <span style=color:#f92672>&gt;</span> 0) {
-</span></span><span style=display:flex><span>        	Object obj <span style=color:#f92672>=</span> categories.<span style=color:#a6e22e>get</span>(0);
-</span></span><span style=display:flex><span>        	isVO <span style=color:#f92672>=</span> obj <span style=color:#66d9ef>instanceof</span> UsersVO;
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> categories.<span style=color:#a6e22e>size</span>(); i<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        	<span style=color:#66d9ef>if</span> (isVO) {	<span style=color:#75715e>// VO</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument VO : {} started!!&#34;</span>, i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		UsersVO category <span style=color:#f92672>=</span> (UsersVO) categories.<span style=color:#a6e22e>get</span>(i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 0);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getId</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 1);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getName</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 2);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getDescription</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 3);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getUseYn</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 4);
-</span></span><span style=display:flex><span>	            setText(cell, category.<span style=color:#a6e22e>getRegUser</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	            LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument VO : {} end!!&#34;</span>, i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        	 } <span style=color:#66d9ef>else</span> {	<span style=color:#75715e>// Map</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument Map : {} started!!&#34;</span>, i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>        		Map<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span> category <span style=color:#f92672>=</span> (Map<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span>) categories.<span style=color:#a6e22e>get</span>(i);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 0);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;id&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 1);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;name&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 2);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;description&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 3);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;useyn&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            cell <span style=color:#f92672>=</span> getCell(sheet, 3 <span style=color:#f92672>+</span> i, 4);
-</span></span><span style=display:flex><span> 	            setText(cell, category.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;reguser&#34;</span>));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 	            LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;### buildExcelDocument Map : {} end!!&#34;</span>, i);
-</span></span><span style=display:flex><span>        	 }
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=excel-업로드>Excel 업로드</h3><h5 id=configuration-1>Configuration</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;excelService&#34;</span>	<span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;mapClass&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.upload.EgovExcelTestMapping&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;sqlSessionTemplate&#34;</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;sqlSessionTemplate&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;excelBigService&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;mapClass&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.upload.EgovExcelTestMapping&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;mapBeanName&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;mappingBean&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;sqlMapClient&#34;</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;sqlMapClient&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;mappingBean&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.upload.EgovExcelBigTestMapping&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span></code></pre></div><ul><li>class : egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl</li><li>propertyPath : xml형식의 엑셀 형식정보 위치</li><li>mapClass : 개발자가 작성한 VO와 Query의 mapping을 위한 클래스</li><li>mapBeanName : Excel Cell과 VO를 mapping 구현 Bean name (mapClass보다 우선함)</li><li>sqlMapClient : ibatis의 sqlMapClient(ibatis 사용시 적용)</li><li>sqlSessionTemplate : mybatis의 sqlSessionTemplate(mybatis 사용시 적용)</li></ul><h5 id=sample-source-7>Sample Source</h5><p>VO 클래스 작성</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EmpVO</span> <span style=color:#66d9ef>implements</span> Serializable {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> BigDecimal empNo;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String empName;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String job;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> BigDecimal <span style=color:#a6e22e>getEmpNo</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> empNo;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setEmpNo</span>(BigDecimal empNo) {
-</span></span><span style=display:flex><span>  	<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>empNo</span> <span style=color:#f92672>=</span> empNo;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getEmpName</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> empName;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setEmpName</span>(String empName) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>empName</span> <span style=color:#f92672>=</span> empName;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getJob</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> job;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setJob</span>(String job) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>job</span> <span style=color:#f92672>=</span> job;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ul><li>엑셀과 Query의 mapping을 위한 VO클래스</li></ul><p>Mapping 클래스 작성</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EgovExcelTestMapping</span> <span style=color:#66d9ef>extends</span> EgovExcelMapping {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Logger LOGGER <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(EgovExcelTestMapping.<span style=color:#a6e22e>class</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Override</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> EmpVO <span style=color:#a6e22e>mappingColumn</span>(Row row) {
-</span></span><span style=display:flex><span>		Cell cell0 <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>getCell</span>(0);
-</span></span><span style=display:flex><span>    	        Cell cell1 <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>getCell</span>(1);
-</span></span><span style=display:flex><span>    	        Cell cell2 <span style=color:#f92672>=</span> row.<span style=color:#a6e22e>getCell</span>(2);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		EmpVO vo <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> EmpVO();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		vo.<span style=color:#a6e22e>setEmpNo</span>(<span style=color:#66d9ef>new</span> BigDecimal(cell0.<span style=color:#a6e22e>getNumericCellValue</span>()));
-</span></span><span style=display:flex><span>		vo.<span style=color:#a6e22e>setEmpName</span>(EgovExcelUtil.<span style=color:#a6e22e>getValue</span>(cell1));
-</span></span><span style=display:flex><span>		vo.<span style=color:#a6e22e>setJob</span>(EgovExcelUtil.<span style=color:#a6e22e>getValue</span>(cell2));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;########### vo is {}&#34;</span>, vo.<span style=color:#a6e22e>getEmpNo</span>());
-</span></span><span style=display:flex><span>		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;########### vo is {}&#34;</span>, vo.<span style=color:#a6e22e>getEmpName</span>());
-</span></span><span style=display:flex><span>		LOGGER.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;########### vo is {}&#34;</span>, vo.<span style=color:#a6e22e>getJob</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> vo;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ul><li>엑셀과 VO의 mapping을 위한 mapping클래스</li><li><strong>EgovExcelMapping</strong> 클래스를 상속받아서 <strong>mappingColumn</strong> 메소드를 오버라이드하여 구현</li><li><strong>HSSFCell</strong> 클래스에서 엑셀 값을 추출하여 Query를 실행시키기 위한 VO와 mapping</li></ul><h5 id=query>Query</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;sqlMap</span> <span style=color:#a6e22e>namespace=</span><span style=color:#e6db74>&#34;EmpBatchInsert&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;typeAlias</span> <span style=color:#a6e22e>alias=</span><span style=color:#e6db74>&#34;empVO&#34;</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.excel.vo.EmpVO&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;insert</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;insertEmpUsingBatch&#34;</span> <span style=color:#a6e22e>parameterClass=</span><span style=color:#e6db74>&#34;empVO&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#75715e>&lt;![CDATA[
-</span></span></span><span style=display:flex><span><span style=color:#75715e>			insert into EMP (
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				EMP_NO,
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				EMP_NAME,
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				JOB
-</span></span></span><span style=display:flex><span><span style=color:#75715e>			) values (
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				#empNo#,
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				#empName#,
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				#job#
-</span></span></span><span style=display:flex><span><span style=color:#75715e>			)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>		]]&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/insert&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/sqlMap&gt;</span>
+</code></pre><p><img src=/egovframe-docs/egovframe-runtime/foundation-layer/images/excel-service-template.png alt=excel-service-template></p><h5 id=template-적용결과>Template 적용결과</h5><p><img src=/egovframe-docs/egovframe-runtime/foundation-layer/images/excel-service-template-result.png alt=excel-service-template-result></p><h3 class=sec-tit id=excel-다운로드>Excel 다운로드</h3><h5 id=configuration>Configuration</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;categoryExcelView&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.download.CategoryExcelView&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>&lt;!--
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>XSSF 형태의 다운로드의 경우 다음의 View를 등록하여 사용한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>&lt;bean id=&#34;CategoryPOIExcelView&#34; class=&#34;egovframework.rte.fdl.excel.download.CategoryPOIExcelView&#34; /&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>--&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.web.servlet.view.BeanNameViewResolver&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;order&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;0&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/bean&gt;</span>
+</span></span></code></pre></div><h5 id=sample-source-6>Sample Source</h5><p>Controller 클래스 작성 Map 사용</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@RequestMapping</span>(<span style=color:#d14>&#34;/sale/listExcelCategory.do&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>ModelAndView<span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectCategoryList</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>List<span style=color:#000;font-weight:700>&lt;</span>Map<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>lists<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ArrayList<span style=color:#000;font-weight:700>&lt;</span>Map<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>mapCategory<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HashMap<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;id&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;0000000001&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;name&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;Sample Test&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;description&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;This is initial test data.&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;useyn&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;Y&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;reguser&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;test&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>lists.<span style=color:teal>add</span>(mapCategory);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;id&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;0000000002&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;name&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;test Name&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;description&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;test Deso1111&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;useyn&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;Y&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>mapCategory.<span style=color:teal>put</span>(<span style=color:#d14>&#34;reguser&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;test&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>lists.<span style=color:teal>add</span>(mapCategory);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>map<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HashMap<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>map.<span style=color:teal>put</span>(<span style=color:#d14>&#34;category&#34;</span>,<span style=color:#bbb> </span>lists);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ModelAndView(<span style=color:#d14>&#34;categoryExcelView&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;categoryMap&#34;</span>,<span style=color:#bbb> </span>map);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>VO 사용</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@RequestMapping</span>(<span style=color:#d14>&#34;/sale/listExcelVOCategory.do&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>ModelAndView<span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectCategoryVOList</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>List<span style=color:#000;font-weight:700>&lt;</span>UsersVO<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>lists<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ArrayList<span style=color:#000;font-weight:700>&lt;</span>UsersVO<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>UsersVO<span style=color:#bbb> </span>users<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>UsersVO();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>//Map&lt;String, String&gt; mapCategory = new HashMap&lt;String, String&gt;();</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setId</span>(<span style=color:#d14>&#34;0000000001&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setName</span>(<span style=color:#d14>&#34;Sample Test&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setDescription</span>(<span style=color:#d14>&#34;This is initial test data.&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setUseYn</span>(<span style=color:#d14>&#34;Y&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setRegUser</span>(<span style=color:#d14>&#34;test&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>lists.<span style=color:teal>add</span>(users);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setId</span>(<span style=color:#d14>&#34;0000000002&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setName</span>(<span style=color:#d14>&#34;test Name&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setDescription</span>(<span style=color:#d14>&#34;test Deso1111&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setUseYn</span>(<span style=color:#d14>&#34;Y&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>users.<span style=color:teal>setRegUser</span>(<span style=color:#d14>&#34;test&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>lists.<span style=color:teal>add</span>(users);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>map<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HashMap<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>map.<span style=color:teal>put</span>(<span style=color:#d14>&#34;category&#34;</span>,<span style=color:#bbb> </span>lists);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ModelAndView(<span style=color:#d14>&#34;categoryExcelView&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;categoryMap&#34;</span>,<span style=color:#bbb> </span>map);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>View 클래스 작성(xls 버전)</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>CategoryExcelView</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>AbstractExcelView<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>static</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>final</span><span style=color:#bbb> </span>Logger<span style=color:#bbb> </span>LOGGER<span style=color:#bbb>  </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>LoggerFactory.<span style=color:teal>getLogger</span>(CategoryExcelView.<span style=color:teal>class</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Override</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>protected</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>buildExcelDocument</span>(Map<span style=color:#bbb> </span>model,<span style=color:#bbb> </span>HSSFWorkbook<span style=color:#bbb> </span>wb,<span style=color:#bbb> </span>HttpServletRequest<span style=color:#bbb> </span>req,<span style=color:#bbb> </span>HttpServletResponse<span style=color:#bbb> </span>resp)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>HSSFCell<span style=color:#bbb> </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument start !!!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>HSSFSheet<span style=color:#bbb> </span>sheet<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createSheet</span>(<span style=color:#d14>&#34;User List&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>sheet.<span style=color:teal>setDefaultColumnWidth</span>(12);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#998;font-style:italic>// put text in first cell</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>0,<span style=color:#bbb> </span>0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(cell,<span style=color:#bbb> </span><span style=color:#d14>&#34;User List&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#998;font-style:italic>// set header information</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>0),<span style=color:#bbb> </span><span style=color:#d14>&#34;id&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>1),<span style=color:#bbb> </span><span style=color:#d14>&#34;name&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>2),<span style=color:#bbb> </span><span style=color:#d14>&#34;description&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>3),<span style=color:#bbb> </span><span style=color:#d14>&#34;use_yn&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>4),<span style=color:#bbb> </span><span style=color:#d14>&#34;reg_user&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument cast&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>map<span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span>)<span style=color:#bbb> </span>model.<span style=color:teal>get</span>(<span style=color:#d14>&#34;categoryMap&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>List<span style=color:#000;font-weight:700>&lt;</span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>categories<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(List<span style=color:#000;font-weight:700>&lt;</span>Object<span style=color:#000;font-weight:700>&gt;</span>)<span style=color:#bbb> </span>map.<span style=color:teal>get</span>(<span style=color:#d14>&#34;category&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span>isVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(categories.<span style=color:teal>size</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>0)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	</span>Object<span style=color:#bbb> </span>obj<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>categories.<span style=color:teal>get</span>(0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	</span>isVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>obj<span style=color:#bbb> </span><span style=color:#000;font-weight:700>instanceof</span><span style=color:#bbb> </span>UsersVO;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>categories.<span style=color:teal>size</span>();<span style=color:#bbb> </span>i<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(isVO)<span style=color:#bbb> </span>{<span style=color:#bbb>	</span><span style=color:#998;font-style:italic>// VO</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument VO : {} started!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>UsersVO<span style=color:#bbb> </span>category<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(UsersVO)<span style=color:#bbb> </span>categories.<span style=color:teal>get</span>(i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getId</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getName</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getDescription</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>3);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getUseYn</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>4);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getRegUser</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument VO : {} end!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	 </span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>else</span><span style=color:#bbb> </span>{<span style=color:#bbb>	</span><span style=color:#998;font-style:italic>// Map</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument Map : {} started!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>category<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span>)<span style=color:#bbb> </span>categories.<span style=color:teal>get</span>(i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;id&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;name&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;description&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>3);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;useyn&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>4);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;reguser&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument Map : {} end!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	 </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>View 클래스 작성(xlsx 버전)</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>CategoryPOIExcelView</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>AbstractPOIExcelView<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>static</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>final</span><span style=color:#bbb> </span>Logger<span style=color:#bbb> </span>LOGGER<span style=color:#bbb>  </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>LoggerFactory.<span style=color:teal>getLogger</span>(CategoryPOIExcelView.<span style=color:teal>class</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Override</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>protected</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>buildExcelDocument</span>(Map<span style=color:#bbb> </span>model,<span style=color:#bbb> </span>XSSFWorkbook<span style=color:#bbb> </span>wb,<span style=color:#bbb> </span>HttpServletRequest<span style=color:#bbb> </span>req,<span style=color:#bbb> </span>HttpServletResponse<span style=color:#bbb> </span>resp)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>XSSFCell<span style=color:#bbb> </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument start !!!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>XSSFSheet<span style=color:#bbb> </span>sheet<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>wb.<span style=color:teal>createSheet</span>(<span style=color:#d14>&#34;User List&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>sheet.<span style=color:teal>setDefaultColumnWidth</span>(12);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#998;font-style:italic>// put text in first cell</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>0,<span style=color:#bbb> </span>0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(cell,<span style=color:#bbb> </span><span style=color:#d14>&#34;User List&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#998;font-style:italic>// set header information</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>0),<span style=color:#bbb> </span><span style=color:#d14>&#34;id&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>1),<span style=color:#bbb> </span><span style=color:#d14>&#34;name&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>2),<span style=color:#bbb> </span><span style=color:#d14>&#34;description&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>3),<span style=color:#bbb> </span><span style=color:#d14>&#34;use_yn&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>setText(getCell(sheet,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>4),<span style=color:#bbb> </span><span style=color:#d14>&#34;reg_user&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument cast&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>map<span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span>)<span style=color:#bbb> </span>model.<span style=color:teal>get</span>(<span style=color:#d14>&#34;categoryMap&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>List<span style=color:#000;font-weight:700>&lt;</span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>categories<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(List<span style=color:#000;font-weight:700>&lt;</span>Object<span style=color:#000;font-weight:700>&gt;</span>)<span style=color:#bbb> </span>map.<span style=color:teal>get</span>(<span style=color:#d14>&#34;category&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span>isVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(categories.<span style=color:teal>size</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>0)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	</span>Object<span style=color:#bbb> </span>obj<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>categories.<span style=color:teal>get</span>(0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	</span>isVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>obj<span style=color:#bbb> </span><span style=color:#000;font-weight:700>instanceof</span><span style=color:#bbb> </span>UsersVO;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>categories.<span style=color:teal>size</span>();<span style=color:#bbb> </span>i<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(isVO)<span style=color:#bbb> </span>{<span style=color:#bbb>	</span><span style=color:#998;font-style:italic>// VO</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument VO : {} started!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>UsersVO<span style=color:#bbb> </span>category<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(UsersVO)<span style=color:#bbb> </span>categories.<span style=color:teal>get</span>(i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getId</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getName</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getDescription</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>3);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getUseYn</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>4);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>getRegUser</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	            </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument VO : {} end!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	 </span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>else</span><span style=color:#bbb> </span>{<span style=color:#bbb>	</span><span style=color:#998;font-style:italic>// Map</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument Map : {} started!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        		</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>category<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span>)<span style=color:#bbb> </span>categories.<span style=color:teal>get</span>(i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;id&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;name&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;description&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>3);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;useyn&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>cell<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>getCell(sheet,<span style=color:#bbb> </span>3<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>i,<span style=color:#bbb> </span>4);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>setText(cell,<span style=color:#bbb> </span>category.<span style=color:teal>get</span>(<span style=color:#d14>&#34;reguser&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 	            </span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;### buildExcelDocument Map : {} end!!&#34;</span>,<span style=color:#bbb> </span>i);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        	 </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=excel-업로드>Excel 업로드</h3><h5 id=configuration-1>Configuration</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;excelService&#34;</span>	<span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;mapClass&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.upload.EgovExcelTestMapping&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;sqlSessionTemplate&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;sqlSessionTemplate&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;excelBigService&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;mapClass&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.upload.EgovExcelTestMapping&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;mapBeanName&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;mappingBean&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;sqlMapClient&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;sqlMapClient&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;mappingBean&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.upload.EgovExcelBigTestMapping&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span></code></pre></div><ul><li>class : egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl</li><li>propertyPath : xml형식의 엑셀 형식정보 위치</li><li>mapClass : 개발자가 작성한 VO와 Query의 mapping을 위한 클래스</li><li>mapBeanName : Excel Cell과 VO를 mapping 구현 Bean name (mapClass보다 우선함)</li><li>sqlMapClient : ibatis의 sqlMapClient(ibatis 사용시 적용)</li><li>sqlSessionTemplate : mybatis의 sqlSessionTemplate(mybatis 사용시 적용)</li></ul><h5 id=sample-source-7>Sample Source</h5><p>VO 클래스 작성</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>EmpVO</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>Serializable<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>BigDecimal<span style=color:#bbb> </span>empNo;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>empName;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>job;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>BigDecimal<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getEmpNo</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>empNo;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setEmpNo</span>(BigDecimal<span style=color:#bbb> </span>empNo)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  	</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>empNo</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>empNo;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getEmpName</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>empName;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setEmpName</span>(String<span style=color:#bbb> </span>empName)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>empName</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>empName;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getJob</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>job;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setJob</span>(String<span style=color:#bbb> </span>job)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>job</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>job;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><ul><li>엑셀과 Query의 mapping을 위한 VO클래스</li></ul><p>Mapping 클래스 작성</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>EgovExcelTestMapping</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>EgovExcelMapping<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>static</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>final</span><span style=color:#bbb> </span>Logger<span style=color:#bbb> </span>LOGGER<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>LoggerFactory.<span style=color:teal>getLogger</span>(EgovExcelTestMapping.<span style=color:teal>class</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Override</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>EmpVO<span style=color:#bbb> </span><span style=color:#900;font-weight:700>mappingColumn</span>(Row<span style=color:#bbb> </span>row)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Cell<span style=color:#bbb> </span>cell0<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>getCell</span>(0);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    	        </span>Cell<span style=color:#bbb> </span>cell1<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>getCell</span>(1);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    	        </span>Cell<span style=color:#bbb> </span>cell2<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>row.<span style=color:teal>getCell</span>(2);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>EmpVO<span style=color:#bbb> </span>vo<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>EmpVO();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>vo.<span style=color:teal>setEmpNo</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>BigDecimal(cell0.<span style=color:teal>getNumericCellValue</span>()));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>vo.<span style=color:teal>setEmpName</span>(EgovExcelUtil.<span style=color:teal>getValue</span>(cell1));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>vo.<span style=color:teal>setJob</span>(EgovExcelUtil.<span style=color:teal>getValue</span>(cell2));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;########### vo is {}&#34;</span>,<span style=color:#bbb> </span>vo.<span style=color:teal>getEmpNo</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;########### vo is {}&#34;</span>,<span style=color:#bbb> </span>vo.<span style=color:teal>getEmpName</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>LOGGER.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;########### vo is {}&#34;</span>,<span style=color:#bbb> </span>vo.<span style=color:teal>getJob</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>vo;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><ul><li>엑셀과 VO의 mapping을 위한 mapping클래스</li><li><strong>EgovExcelMapping</strong> 클래스를 상속받아서 <strong>mappingColumn</strong> 메소드를 오버라이드하여 구현</li><li><strong>HSSFCell</strong> 클래스에서 엑셀 값을 추출하여 Query를 실행시키기 위한 VO와 mapping</li></ul><h5 id=query>Query</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;sqlMap</span> <span style=color:teal>namespace=</span><span style=color:#d14>&#34;EmpBatchInsert&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;typeAlias</span> <span style=color:teal>alias=</span><span style=color:#d14>&#34;empVO&#34;</span> <span style=color:teal>type=</span><span style=color:#d14>&#34;egovframework.rte.fdl.excel.vo.EmpVO&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;insert</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;insertEmpUsingBatch&#34;</span> <span style=color:teal>parameterClass=</span><span style=color:#d14>&#34;empVO&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:#999;font-weight:700;font-style:italic>&lt;![CDATA[
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>			insert into EMP (
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				EMP_NO,
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				EMP_NAME,
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				JOB
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>			) values (
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				#empNo#,
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				#empName#,
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				#job#
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>			)
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>		]]&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/insert&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/sqlMap&gt;</span>
 </span></span></code></pre></div></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
 <a href="https://www.egovframe.go.kr/home/sub.do?menuNo=23" class="krds-btn small text">라이센스</a></div><p class=f-copy>COPYRIGHT (C) 2024 eGovFramework. ALL RIGHTS RESERVED.</p></div></div></div></footer></body></html>

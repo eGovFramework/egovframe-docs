@@ -76,23 +76,23 @@ LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 </code></pre><p>WS는 Server와 Client 두 대상 간의 데이터를 주고받는 기술 중 하나이다. 정보를 요청하는쪽이 Client이다.(Client는 Server가 될 수도 있고 일반 사용자가 될 수도 있다.) 요청한 정보를 받아서 알맞게 처리 후 결과값을 리턴하는 쪽이 Server이다.</p><pre tabindex=0><code>Client(OXM) &lt;------ XML(WSDL) ------&gt; (OXM)Server
 </code></pre><p>WS는 XML(WSDL)형식으로 데이터를 주고받는다. 따라서 이 XML를 객체화 하거나 객체를 XML화 해야 한다. 그것이 Marshalling,Unmarshalling이다. OXM Utill은 JAXB,Castor,XMLBeans,JiBX,XStream..등 여러 가지가 있다.</p><h3 class=sec-tit id=marshalling>Marshalling</h3><p>Spring의 모든 marshalling 추상 클래스들은
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/Marshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.Marshaller<i class="svg-icon ico-go"></i></a>
-interface를 구현한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>Marshaller</span> {
-</span></span><span style=display:flex><span>  <span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>   * Marshals the object graph with the given root into the provided Result.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>   */</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>marshal</span>(Object graph, Result result)
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>throws</span> XmlMappingException, IOException;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PARAMETER</th><th>설 명</th></tr></thead><tbody><tr><td>Object</td><td>XML문서구조와 같은 Java 객체</td></tr><tr><td>javax.xml.transform.Result</td><td>XML 출력과 관련된 객체들이 반드시 구현해야 할 Interface</td></tr></tbody></table></div><ul><li>java.xml.transform.Result는 XML 출력과 관련된 객체들이 반드시 구현해야 할 Interface다.</li><li>구현 객체와 XML표현은 다음과 같이 매칭된다.</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>javax.xml.transform.Result</th><th>XML표현</th></tr></thead><tbody><tr><td>javax.xml.transform.dom.DOMResult</td><td>org.w3c.dom.Node</td></tr><tr><td>javax.xml.transform.sax.SAXResult</td><td>org.xml.sax.ContentHandler</td></tr><tr><td>javax.xml.transform.stream.StreamResult</td><td>java.io.OutputStream java.io.File 또는 java.io.Writer</td></tr></tbody></table></div><h3 class=sec-tit id=unmarshalling>Unmarshalling</h3><p>Spring의 모든 Unmarshalling 추상 클래스들은
+interface를 구현한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>interface</span> <span style=color:#458;font-weight:700>Marshaller</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>   * Marshals the object graph with the given root into the provided Result.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>   */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>marshal</span>(Object<span style=color:#bbb> </span>graph,<span style=color:#bbb> </span>Result<span style=color:#bbb> </span>result)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>XmlMappingException,<span style=color:#bbb> </span>IOException;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PARAMETER</th><th>설 명</th></tr></thead><tbody><tr><td>Object</td><td>XML문서구조와 같은 Java 객체</td></tr><tr><td>javax.xml.transform.Result</td><td>XML 출력과 관련된 객체들이 반드시 구현해야 할 Interface</td></tr></tbody></table></div><ul><li>java.xml.transform.Result는 XML 출력과 관련된 객체들이 반드시 구현해야 할 Interface다.</li><li>구현 객체와 XML표현은 다음과 같이 매칭된다.</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>javax.xml.transform.Result</th><th>XML표현</th></tr></thead><tbody><tr><td>javax.xml.transform.dom.DOMResult</td><td>org.w3c.dom.Node</td></tr><tr><td>javax.xml.transform.sax.SAXResult</td><td>org.xml.sax.ContentHandler</td></tr><tr><td>javax.xml.transform.stream.StreamResult</td><td>java.io.OutputStream java.io.File 또는 java.io.Writer</td></tr></tbody></table></div><h3 class=sec-tit id=unmarshalling>Unmarshalling</h3><p>Spring의 모든 Unmarshalling 추상 클래스들은
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/Unmarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.Unmarshaller<i class="svg-icon ico-go"></i></a>
-interface를 구현한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>Unmarshaller</span> {
-</span></span><span style=display:flex><span>  <span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>   * Unmarshals the given provided Source into an object graph.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>   */</span>
-</span></span><span style=display:flex><span>  Object <span style=color:#a6e22e>unmarshal</span>(Source source)
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>throws</span> XmlMappingException, IOException;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PARAMETER</th><th>설 명</th></tr></thead><tbody><tr><td>javax.xml.transform.Source</td><td>XML source or transformation instructions 등을 매개변수로 받는 StreamSource 객체</td></tr></tbody></table></div><ul><li>java.xml.transform.Source는 XML 입력과 관련된 객체들이 반드시 구현해야 할 Interface다.</li><li>구현 객체와 XML표현은 다음과 같이 매칭된다.</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>javax.xml.transform.Source</th><th>XML표현</th></tr></thead><tbody><tr><td>javax.xml.transform.dom.DOMSource</td><td>org.w3c.dom.Node</td></tr><tr><td>javax.xml.transform.sax.SAXSource</td><td>org.xml.sax.InputSource org.xml.sax.XMLReader</td></tr><tr><td>javax.xml.transform.stream.StreamSource</td><td>java.io.File java.io.InputStream 또는 java.io.Reader</td></tr></tbody></table></div><h3 class=sec-tit id=marshaller-와-unmarshaller-사용하기>Marshaller 와 Unmarshaller 사용하기</h3><p><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/data-access/oxm.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework OXM<i class="svg-icon ico-go"></i></a>
+interface를 구현한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>interface</span> <span style=color:#458;font-weight:700>Unmarshaller</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>   * Unmarshals the given provided Source into an object graph.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>   */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>Object<span style=color:#bbb> </span><span style=color:#900;font-weight:700>unmarshal</span>(Source<span style=color:#bbb> </span>source)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>XmlMappingException,<span style=color:#bbb> </span>IOException;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PARAMETER</th><th>설 명</th></tr></thead><tbody><tr><td>javax.xml.transform.Source</td><td>XML source or transformation instructions 등을 매개변수로 받는 StreamSource 객체</td></tr></tbody></table></div><ul><li>java.xml.transform.Source는 XML 입력과 관련된 객체들이 반드시 구현해야 할 Interface다.</li><li>구현 객체와 XML표현은 다음과 같이 매칭된다.</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>javax.xml.transform.Source</th><th>XML표현</th></tr></thead><tbody><tr><td>javax.xml.transform.dom.DOMSource</td><td>org.w3c.dom.Node</td></tr><tr><td>javax.xml.transform.sax.SAXSource</td><td>org.xml.sax.InputSource org.xml.sax.XMLReader</td></tr><tr><td>javax.xml.transform.stream.StreamSource</td><td>java.io.File java.io.InputStream 또는 java.io.Reader</td></tr></tbody></table></div><h3 class=sec-tit id=marshaller-와-unmarshaller-사용하기>Marshaller 와 Unmarshaller 사용하기</h3><p><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/data-access/oxm.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework OXM<i class="svg-icon ico-go"></i></a>
 은 다양한 Java-XML Binding 오픈소스를 지원한다. 여기서는 오픈소스
 <a class="krds-btn medium text" href=http://www.castor.org/ target=_blank rel="noopener noreferrer" class=externalLink>Castor<i class="svg-icon ico-go"></i></a>
 와
@@ -101,262 +101,262 @@ interface를 구현한다.</p><div class=highlight><pre tabindex=0 style=color:#
 <a class="krds-btn medium text" href=http://www.castor.org/ target=_blank rel="noopener noreferrer" class=externalLink>Castor web site<i class="svg-icon ico-go"></i></a>
 와
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/castor/package-summary.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.castor<i class="svg-icon ico-go"></i></a>
-패키지를 참조하면 된다.</p><h5 id=create-binding-classes>Create binding classes</h5><ul><li>XML Schemas를 작성한다.(text.xsd)</li><li>다음을 실행하면 스키마에 따라 -package에 지정된 패키지로 클래스들이 생성된다.</li><li>java org.exolab.castor.builder.SourceGenerator -i text.xsd -package gen.xyz</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>ARGS</th><th>설 명</th></tr></thead><tbody><tr><td>text.xsd</td><td>참조할 xml 스키마</td></tr><tr><td>gen.xyz</td><td>xml 스키마를 사용하여 Generation한 Java class package</td></tr></tbody></table></div><h5 id=configuration>Configuration</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;divertcastor&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.divert.DivertCastor&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;marshaller&#34;</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;castorMarshaller&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;unmarshaller&#34;</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;castorMarshaller&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;castorMarshaller&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.oxm.castor.CastorMarshaller&#34;</span><span style=color:#f92672>/&gt;</span>
-</span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PROPERTIES</th><th>설 명</th></tr></thead><tbody><tr><td>marshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/castor/CastorMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.castor.CastorMarshaller<i class="svg-icon ico-go"></i></a></td></tr><tr><td>unmarshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/castor/CastorMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.castor.CastorMarshaller<i class="svg-icon ico-go"></i></a></td></tr></tbody></table></div><h5 id=sample-source>Sample Source</h5><p><strong>Java Object의 데이터를 XML문서로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.annotation.Resource;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Resource</span>(name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;castorMarshaller&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> Marshaller marshaller;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testMarshalling</span>() 
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span> <span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>       FileOutputStream os <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span>       List<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span> book2Writers <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>       book2Writers.<span style=color:#a6e22e>add</span>(<span style=color:#66d9ef>new</span> Writer(<span style=color:#e6db74>&#34;J,J.R 툴킨&#34;</span>));
-</span></span><span style=display:flex><span>       book2Writers.<span style=color:#a6e22e>add</span>(<span style=color:#66d9ef>new</span> Writer(<span style=color:#e6db74>&#34;J.J.T 툴킨&#34;</span>));
-</span></span><span style=display:flex><span>       BookMg bookMg2 <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BookMg(<span style=color:#e6db74>&#34;9780446618502&#34;</span>, <span style=color:#e6db74>&#34;반지의 제왕&#34;</span>, book2Writers);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>       os <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream(<span style=color:#e6db74>&#34;CasterBook.xml&#34;</span>);
-</span></span><span style=display:flex><span>       marshaller.<span style=color:#a6e22e>marshal</span>(bookMg2, <span style=color:#66d9ef>new</span> StreamResult(os));
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>     } <span style=color:#66d9ef>catch</span> (Exception e) 
-</span></span><span style=display:flex><span>     {
-</span></span><span style=display:flex><span>	logger.<span style=color:#a6e22e>debug</span>(e.<span style=color:#a6e22e>getMessage</span>());
-</span></span><span style=display:flex><span>	e.<span style=color:#a6e22e>printStackTrace</span>(System.<span style=color:#a6e22e>err</span>);
-</span></span><span style=display:flex><span>	fail(<span style=color:#e6db74>&#34;testMarshalling failed!&#34;</span>);
-</span></span><span style=display:flex><span>     }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ol><li>writer를 작가명을 매개변수로 하여 생성한다. (아래 Writer.java 코드 참조)</li><li>bookMg를 ISDN,책명,writer를 매개변수로 하여 생성한다. (아래 BookMg.java 코드 참조)</li><li>FileOutputSream을 Caster_Book.xml를 매개변수로 하여 Stream를 생성한다.</li><li>Result을 생성한 FileOutputStream을 매개변수로 하여 StreamResult를 생성한다.</li><li>marshaller.marshal를 사용하여 marshalling을 하는데 매개변수로는 bookMg와 StreamResult로 한다.</li><li>실행후 JavaObject bookMg에 저장한 값이 CasterBook.xml로 Binding 된 것을 확인한다. (아래 CasterBook.xml 코드 참조)</li></ol><p>Writer.java</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Writer</span> 
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> String Name;
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 생성자</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Writer</span>() { }
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 작가명</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Writer</span>(String Name) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>Name</span> <span style=color:#f92672>=</span> Name;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 작가명 수정</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setName</span>(String Name) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>Name</span> <span style=color:#f92672>=</span> Name;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 작가명 리턴 </span>
-</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getName</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> Name;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>BookMg.java</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>BookMg</span> 
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> String isbn;
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> String title;
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span> writers;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>BookMg</span>() { }
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 생성자</span>
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>@</span> isbn 책번호
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>@</span> title 책제목
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>@</span> writers 작가리스트
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>BookMg</span>(String isbn, String title, List<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span> writers) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isbn</span> <span style=color:#f92672>=</span> isbn;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>title</span> <span style=color:#f92672>=</span> title;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>writers</span> <span style=color:#f92672>=</span> writers;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>   <span style=color:#75715e>// 생성자</span>
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>@</span> isbn 책번호
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>@</span> title 책제목
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>@</span> writer 작가
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>BookMg</span>(String isbn, String title, Writer writer) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isbn</span> <span style=color:#f92672>=</span> isbn;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>title</span> <span style=color:#f92672>=</span> title;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>writers</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> LinkedList<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>    writers.<span style=color:#a6e22e>add</span>(writer);
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 책번호 설정</span>
-</span></span><span style=display:flex><span> <span style=color:#960050;background-color:#1e0010>@</span> isbn 책번호
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setIsbn</span>(String isbn) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isbn</span> <span style=color:#f92672>=</span> isbn;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 책번호 리턴 </span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getIsbn</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> isbn;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 책제목 설정</span>
-</span></span><span style=display:flex><span> <span style=color:#960050;background-color:#1e0010>@</span> title 책제목
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setTitle</span>(String title) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>title</span> <span style=color:#f92672>=</span> title;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 책제목 리턴</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getTitle</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> title;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 작가리스트 설정</span>
-</span></span><span style=display:flex><span> <span style=color:#960050;background-color:#1e0010>@</span> writers 작가리스트
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setWriters</span>(List<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span> writers) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>writers</span> <span style=color:#f92672>=</span> writers;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 작가리스트 리턴 </span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>Writer<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>getWriters</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> writers;
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span> <span style=color:#75715e>// 작가리스트에 작가 추가</span>
-</span></span><span style=display:flex><span> <span style=color:#960050;background-color:#1e0010>@</span> writer 작가
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>addWriter</span>(Writer writer) {
-</span></span><span style=display:flex><span>    writers.<span style=color:#a6e22e>add</span>(writer);
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>CasterBook.xml</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;book-mg&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;isbn&gt;</span>9780446618502<span style=color:#f92672>&lt;/isbn&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;writers</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  <span style=color:#a6e22e>xsi:type=</span><span style=color:#e6db74>&#34;java:egovframework.rte.fdl.divert.Writer&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;name&gt;</span>J,J.R 툴킨<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/writers&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;writers</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  <span style=color:#a6e22e>xsi:type=</span><span style=color:#e6db74>&#34;java:egovframework.rte.fdl.divert.Writer&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;name&gt;</span>J.J.T 툴킨<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/writers&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;title&gt;</span>반지의 제왕2<span style=color:#f92672>&lt;/title&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/book-mg&gt;</span>
-</span></span></code></pre></div><p>**##### <strong>XML문서를 JavaObject로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.annotation.Resource;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Resource</span>(name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;castorMarshaller&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> Unmarshaller unmarshaller;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testUnmarshalling</span>() 
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>   FileInputStream is <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> 
-</span></span><span style=display:flex><span>  {
-</span></span><span style=display:flex><span>    is <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileInputStream(<span style=color:#e6db74>&#34;CasterBook.xml&#34;</span>);
-</span></span><span style=display:flex><span>    bookMg <span style=color:#f92672>=</span> (BookMg) unmarshaller.<span style=color:#a6e22e>unmarshal</span>(<span style=color:#66d9ef>new</span> StreamSource(is));
-</span></span><span style=display:flex><span>    writers <span style=color:#f92672>=</span> bookMg.<span style=color:#a6e22e>getWriters</span>();
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (Iterator i <span style=color:#f92672>=</span> writers.<span style=color:#a6e22e>iterator</span>(); i.<span style=color:#a6e22e>hasNext</span>(); ) 
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>      Writer writer <span style=color:#f92672>=</span> (Writer)i.<span style=color:#a6e22e>next</span>();
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>catch</span>(FileNotFoundException fnde)
-</span></span><span style=display:flex><span>  {
-</span></span><span style=display:flex><span>	fnde.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>catch</span>(IOException ioe)
-</span></span><span style=display:flex><span> {
-</span></span><span style=display:flex><span>	ioe.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span> }
-</span></span><span style=display:flex><span> <span style=color:#66d9ef>finally</span> 
-</span></span><span style=display:flex><span> {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (is <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) 
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>     <span style=color:#66d9ef>try</span>
-</span></span><span style=display:flex><span>     {
-</span></span><span style=display:flex><span>	is.<span style=color:#a6e22e>close</span>();
-</span></span><span style=display:flex><span>     }<span style=color:#66d9ef>catch</span>(IOException ioe)
-</span></span><span style=display:flex><span>     {
-</span></span><span style=display:flex><span>	ioe.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>     }
-</span></span><span style=display:flex><span>   }
-</span></span><span style=display:flex><span> }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ol><li>FileInputSream을 CasterBook.xml를 매개변수로 하여 Stream를 생성한다. (위 CasterBook.xml 코드 참조)</li><li>생성한 FileInputSream을 매개변수로 하여 StreamSource를 생성한다.</li><li>marshaller.marshal를 사용하여 unmarshalling을 하는데 매개변수로는 StreamSource로 한다.</li><li>unmarshalling한 결과 bookMg를 얻어 작가 리스트를 얻는다.</li></ol><h4 id=xmlbeans>XMLBeans</h4><p>XMLBeans는 스키마 기반으로 XML 인포셋 전체에 커서 기반으로 접근할 수 있도록 하는 XML-Java binding tool이다. BEA Systems에 의해 개발되었으며 2003년에 아파치 프로젝트에 기증 되었다. 좀 더 많은 정보는
+패키지를 참조하면 된다.</p><h5 id=create-binding-classes>Create binding classes</h5><ul><li>XML Schemas를 작성한다.(text.xsd)</li><li>다음을 실행하면 스키마에 따라 -package에 지정된 패키지로 클래스들이 생성된다.</li><li>java org.exolab.castor.builder.SourceGenerator -i text.xsd -package gen.xyz</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>ARGS</th><th>설 명</th></tr></thead><tbody><tr><td>text.xsd</td><td>참조할 xml 스키마</td></tr><tr><td>gen.xyz</td><td>xml 스키마를 사용하여 Generation한 Java class package</td></tr></tbody></table></div><h5 id=configuration>Configuration</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;divertcastor&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.divert.DivertCastor&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;marshaller&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;castorMarshaller&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;unmarshaller&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;castorMarshaller&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;castorMarshaller&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.oxm.castor.CastorMarshaller&#34;</span><span style=color:navy>/&gt;</span>
+</span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PROPERTIES</th><th>설 명</th></tr></thead><tbody><tr><td>marshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/castor/CastorMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.castor.CastorMarshaller<i class="svg-icon ico-go"></i></a></td></tr><tr><td>unmarshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/castor/CastorMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.castor.CastorMarshaller<i class="svg-icon ico-go"></i></a></td></tr></tbody></table></div><h5 id=sample-source>Sample Source</h5><p><strong>Java Object의 데이터를 XML문서로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>jakarta.annotation.Resource</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Resource</span>(name<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;castorMarshaller&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Marshaller<span style=color:#bbb> </span>marshaller;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testMarshalling</span>()<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>FileOutputStream<span style=color:#bbb> </span>os<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>List<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>book2Writers<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ArrayList<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>book2Writers.<span style=color:teal>add</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>Writer(<span style=color:#d14>&#34;J,J.R 툴킨&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>book2Writers.<span style=color:teal>add</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>Writer(<span style=color:#d14>&#34;J.J.T 툴킨&#34;</span>));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>BookMg<span style=color:#bbb> </span>bookMg2<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>BookMg(<span style=color:#d14>&#34;9780446618502&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;반지의 제왕&#34;</span>,<span style=color:#bbb> </span>book2Writers);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>os<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileOutputStream(<span style=color:#d14>&#34;CasterBook.xml&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>marshaller.<span style=color:teal>marshal</span>(bookMg2,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>StreamResult(os));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(Exception<span style=color:#bbb> </span>e)<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>logger.<span style=color:teal>debug</span>(e.<span style=color:teal>getMessage</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>e.<span style=color:teal>printStackTrace</span>(System.<span style=color:teal>err</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>fail(<span style=color:#d14>&#34;testMarshalling failed!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><ol><li>writer를 작가명을 매개변수로 하여 생성한다. (아래 Writer.java 코드 참조)</li><li>bookMg를 ISDN,책명,writer를 매개변수로 하여 생성한다. (아래 BookMg.java 코드 참조)</li><li>FileOutputSream을 Caster_Book.xml를 매개변수로 하여 Stream를 생성한다.</li><li>Result을 생성한 FileOutputStream을 매개변수로 하여 StreamResult를 생성한다.</li><li>marshaller.marshal를 사용하여 marshalling을 하는데 매개변수로는 bookMg와 StreamResult로 한다.</li><li>실행후 JavaObject bookMg에 저장한 값이 CasterBook.xml로 Binding 된 것을 확인한다. (아래 CasterBook.xml 코드 참조)</li></ol><p>Writer.java</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>Writer</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>Name;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>// 생성자</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>Writer</span>()<span style=color:#bbb> </span>{<span style=color:#bbb> </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>// 작가명</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>Writer</span>(String<span style=color:#bbb> </span>Name)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>Name</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>Name;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>// 작가명 수정</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setName</span>(String<span style=color:#bbb> </span>Name)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>Name</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>Name;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>// 작가명 리턴 </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>   </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getName</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>Name;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>BookMg.java</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>BookMg</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>isbn;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>List<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>writers;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>BookMg</span>()<span style=color:#bbb> </span>{<span style=color:#bbb> </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>// 생성자</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>isbn<span style=color:#bbb> </span>책번호<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>title<span style=color:#bbb> </span>책제목<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>writers<span style=color:#bbb> </span>작가리스트<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>BookMg</span>(String<span style=color:#bbb> </span>isbn,<span style=color:#bbb> </span>String<span style=color:#bbb> </span>title,<span style=color:#bbb> </span>List<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>writers)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>isbn</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>isbn;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>title</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>writers</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>writers;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>   </span><span style=color:#998;font-style:italic>// 생성자</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>isbn<span style=color:#bbb> </span>책번호<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>title<span style=color:#bbb> </span>책제목<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>writer<span style=color:#bbb> </span>작가<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>BookMg</span>(String<span style=color:#bbb> </span>isbn,<span style=color:#bbb> </span>String<span style=color:#bbb> </span>title,<span style=color:#bbb> </span>Writer<span style=color:#bbb> </span>writer)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>isbn</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>isbn;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>title</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>writers</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>LinkedList<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>writers.<span style=color:teal>add</span>(writer);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 책번호 설정</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>isbn<span style=color:#bbb> </span>책번호<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setIsbn</span>(String<span style=color:#bbb> </span>isbn)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>isbn</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>isbn;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 책번호 리턴 </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getIsbn</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>isbn;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 책제목 설정</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>title<span style=color:#bbb> </span>책제목<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setTitle</span>(String<span style=color:#bbb> </span>title)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>title</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 책제목 리턴</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getTitle</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 작가리스트 설정</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>writers<span style=color:#bbb> </span>작가리스트<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setWriters</span>(List<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>writers)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>writers</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>writers;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 작가리스트 리턴 </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>List<span style=color:#000;font-weight:700>&lt;</span>Writer<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>getWriters</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>writers;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#998;font-style:italic>// 작가리스트에 작가 추가</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#a61717;background-color:#e3d2d2>@</span><span style=color:#bbb> </span>writer<span style=color:#bbb> </span>작가<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>addWriter</span>(Writer<span style=color:#bbb> </span>writer)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>writers.<span style=color:teal>add</span>(writer);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>CasterBook.xml</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;book-mg&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;isbn&gt;</span>9780446618502<span style=color:navy>&lt;/isbn&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;writers</span> <span style=color:teal>xmlns:xsi=</span><span style=color:#d14>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  <span style=color:teal>xsi:type=</span><span style=color:#d14>&#34;java:egovframework.rte.fdl.divert.Writer&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;name&gt;</span>J,J.R 툴킨<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/writers&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;writers</span> <span style=color:teal>xmlns:xsi=</span><span style=color:#d14>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  <span style=color:teal>xsi:type=</span><span style=color:#d14>&#34;java:egovframework.rte.fdl.divert.Writer&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;name&gt;</span>J.J.T 툴킨<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/writers&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;title&gt;</span>반지의 제왕2<span style=color:navy>&lt;/title&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/book-mg&gt;</span>
+</span></span></code></pre></div><p>**##### <strong>XML문서를 JavaObject로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>jakarta.annotation.Resource</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Resource</span>(name<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;castorMarshaller&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Unmarshaller<span style=color:#bbb> </span>unmarshaller;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testUnmarshalling</span>()<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>   </span>FileInputStream<span style=color:#bbb> </span>is<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>is<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileInputStream(<span style=color:#d14>&#34;CasterBook.xml&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>bookMg<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(BookMg)<span style=color:#bbb> </span>unmarshaller.<span style=color:teal>unmarshal</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>StreamSource(is));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>writers<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>bookMg.<span style=color:teal>getWriters</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(Iterator<span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>writers.<span style=color:teal>iterator</span>();<span style=color:#bbb> </span>i.<span style=color:teal>hasNext</span>();<span style=color:#bbb> </span>)<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span>Writer<span style=color:#bbb> </span>writer<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Writer)i.<span style=color:teal>next</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#000;font-weight:700>catch</span>(FileNotFoundException<span style=color:#bbb> </span>fnde)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>fnde.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>catch</span>(IOException<span style=color:#bbb> </span>ioe)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>ioe.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>finally</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(is<span style=color:#bbb> </span><span style=color:#000;font-weight:700>!=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>)<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>is.<span style=color:teal>close</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>}<span style=color:#000;font-weight:700>catch</span>(IOException<span style=color:#bbb> </span>ioe)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>ioe.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>   </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><ol><li>FileInputSream을 CasterBook.xml를 매개변수로 하여 Stream를 생성한다. (위 CasterBook.xml 코드 참조)</li><li>생성한 FileInputSream을 매개변수로 하여 StreamSource를 생성한다.</li><li>marshaller.marshal를 사용하여 unmarshalling을 하는데 매개변수로는 StreamSource로 한다.</li><li>unmarshalling한 결과 bookMg를 얻어 작가 리스트를 얻는다.</li></ol><h4 id=xmlbeans>XMLBeans</h4><p>XMLBeans는 스키마 기반으로 XML 인포셋 전체에 커서 기반으로 접근할 수 있도록 하는 XML-Java binding tool이다. BEA Systems에 의해 개발되었으며 2003년에 아파치 프로젝트에 기증 되었다. 좀 더 많은 정보는
 <a class="krds-btn medium text" href=http://xmlbeans.apache.org/ target=_blank rel="noopener noreferrer" class=externalLink>XMLBeans web site<i class="svg-icon ico-go"></i></a>
 와
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/xmlbeans/package-summary.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.xmlbeans<i class="svg-icon ico-go"></i></a>
-패키지를 참조하면 된다.</p><h5 id=create-binding-jar>Create binding jar</h5><ul><li>XML Schemas를 작성한다.(text.xsd)</li><li>다음을 실행하면 스키마에 따라 jar 파일이 생성된다.</li><li>scomp -out text.jar text.xsd</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>ARGS</th><th>설 명</th></tr></thead><tbody><tr><td>text.jar</td><td>binding classes jar</td></tr><tr><td>text.xsd</td><td>참조할 xml 스키마</td></tr></tbody></table></div><h5 id=configuration-1>Configuration</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;divertxmlbeans&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.divert.DivertXMLBeans&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;marshaller&#34;</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;xmlBeansMarshaller&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;unmarshaller&#34;</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;xmlBeansMarshaller&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;xmlBeansMarshaller&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.oxm.xmlbeans.XmlBeansMarshaller&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PROPERTIES</th><th>설 명</th></tr></thead><tbody><tr><td>marshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/xmlbeans/XmlBeansMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.xmlbeans.XmlBeansMarshaller<i class="svg-icon ico-go"></i></a></td></tr><tr><td>unmarshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/xmlbeans/XmlBeansMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.xmlbeans.XmlBeansMarshaller<i class="svg-icon ico-go"></i></a></td></tr></tbody></table></div><h5 id=sample-source-1>Sample Source</h5><p><strong>Java Object의 데이터를 XML문서로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.annotation.Resource;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Resource</span>(name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;xmlBeansMarshaller&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> Marshaller marshaller;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testMarshalling</span>() 
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  FileOutputStream os <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>; 
-</span></span><span style=display:flex><span>  userDoc <span style=color:#f92672>=</span> UserinfoDocument.<span style=color:#a6e22e>Factory</span>.<span style=color:#a6e22e>newInstance</span>();
-</span></span><span style=display:flex><span>  userElement <span style=color:#f92672>=</span> userDoc.<span style=color:#a6e22e>addNewUserinfo</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  userElement.<span style=color:#a6e22e>setName</span>(<span style=color:#e6db74>&#34;홍길동&#34;</span>);
-</span></span><span style=display:flex><span>  userElement.<span style=color:#a6e22e>setAge</span>(31);
-</span></span><span style=display:flex><span>  userElement.<span style=color:#a6e22e>setPhone</span>(022770918);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  xmlOptions <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XmlOptions();
-</span></span><span style=display:flex><span>  xmlOptions.<span style=color:#a6e22e>setSavePrettyPrint</span>();
-</span></span><span style=display:flex><span>  xmlOptions.<span style=color:#a6e22e>setSavePrettyPrintIndent</span>(4);
-</span></span><span style=display:flex><span>  xmlOptions.<span style=color:#a6e22e>setCharacterEncoding</span>(<span style=color:#e6db74>&#34;euc-kr&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> <span style=color:#66d9ef>try</span> 
-</span></span><span style=display:flex><span> {
-</span></span><span style=display:flex><span>    os <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream(<span style=color:#e6db74>&#34;XMLBeanGen.xml&#34;</span>);
-</span></span><span style=display:flex><span>    marshaller.<span style=color:#a6e22e>marshal</span>(userDoc, <span style=color:#66d9ef>new</span> StreamResult(os));
-</span></span><span style=display:flex><span> }<span style=color:#66d9ef>catch</span>(Exception ee)
-</span></span><span style=display:flex><span> {
-</span></span><span style=display:flex><span>   ee.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>   fail(<span style=color:#e6db74>&#34;testMarshalling failed!&#34;</span>);
-</span></span><span style=display:flex><span> }
-</span></span><span style=display:flex><span> <span style=color:#66d9ef>finally</span> 
-</span></span><span style=display:flex><span> {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (os <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) 
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>try</span>
-</span></span><span style=display:flex><span>      {
-</span></span><span style=display:flex><span>	 os.<span style=color:#a6e22e>close</span>();
-</span></span><span style=display:flex><span>       }<span style=color:#66d9ef>catch</span>(IOException e3)
-</span></span><span style=display:flex><span>       {
-</span></span><span style=display:flex><span>  	 e3.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>	 fail(<span style=color:#e6db74>&#34;testMarshalling failed!&#34;</span>);
-</span></span><span style=display:flex><span>       }
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ol><li>UserDoc 인스턴스를 생성한다.</li><li>사용자정보를 저장할 userElement를 추가한다.</li><li>setName을 사용하여 사용자명을 저장한다.</li><li>setAge를 사용하여 나이를 저장한다.</li><li>setPhone를 사용하여 전화번호를 저장한다.</li><li>FileOutputSream을 XMLBeanGen.xml을 매개변수로 하여 생성한다. (아래 XMLBeanGen.xml 코드 참조)</li><li>marshaller.marshal를 Document객체와 StreamResult를 매개변수로 하여한다.</li></ol><p>XMLBeanGen.xml</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;userinfo&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;name&gt;</span>홍길동<span style=color:#f92672>&lt;/name&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;age&gt;</span>31<span style=color:#f92672>&lt;/age&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;phone&gt;</span>022770918<span style=color:#f92672>&lt;/phone&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/userinfo&gt;</span>
-</span></span></code></pre></div><p><strong>XML문서를 JavaObject로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>import</span> jakarta.annotation.Resource;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Resource</span>(name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;xmlBeansMarshaller&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> Unmarshaller unmarshaller;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testUnmarshalling</span>() 
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    FileInputStream is <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> 
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>	is <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileInputStream(<span style=color:#e6db74>&#34;XMLBeanGen.xml&#34;</span>);
-</span></span><span style=display:flex><span>	userDoc <span style=color:#f92672>=</span> (UserinfoDocument) unmarshaller.<span style=color:#a6e22e>unmarshal</span>(<span style=color:#66d9ef>new</span> StreamSource(is));
-</span></span><span style=display:flex><span>	userElement <span style=color:#f92672>=</span>  userDoc.<span style=color:#a6e22e>getUserinfo</span>();
-</span></span><span style=display:flex><span>     }<span style=color:#66d9ef>catch</span>(FileNotFoundException fnde)
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>	fnde.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>	fail(<span style=color:#e6db74>&#34;testUnmarshalling failed!&#34;</span>);
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>catch</span>(IOException ioe)
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>	ioe.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>finally</span> 
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (is <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>)
-</span></span><span style=display:flex><span>      {
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>try</span>
-</span></span><span style=display:flex><span>	{
-</span></span><span style=display:flex><span>	   is.<span style=color:#a6e22e>close</span>();
-</span></span><span style=display:flex><span>	}<span style=color:#66d9ef>catch</span>(IOException ioe)
-</span></span><span style=display:flex><span>	{
-</span></span><span style=display:flex><span>	  ioe.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>	  fail(<span style=color:#e6db74>&#34;testUnmarshalling failed!&#34;</span>);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>      }
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><ol><li>FileInputStream를 XMLBeanGen.xml을 매개변수로 하여 생성한다. (위 XMLBeanGen.xml 코드 참조)</li><li>생성한 FileInputStream를 매개변수로 하여 StreamSource생성한다.</li><li>unmarshaller.unmarshal를 생성한 StreamSource를 매개변수로 unmashalling을 하여 document객체를 얻는다.</li><li>document객체에서 사용자정보를 얻는다.</li></ol></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=참고-문서>참고 문서</h2><ul><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans.html target=_blank rel="noopener noreferrer" class=externalLink>The IoC Container - Spring Framework 6.2<i class="svg-icon ico-go"></i></a>
+패키지를 참조하면 된다.</p><h5 id=create-binding-jar>Create binding jar</h5><ul><li>XML Schemas를 작성한다.(text.xsd)</li><li>다음을 실행하면 스키마에 따라 jar 파일이 생성된다.</li><li>scomp -out text.jar text.xsd</li></ul><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>ARGS</th><th>설 명</th></tr></thead><tbody><tr><td>text.jar</td><td>binding classes jar</td></tr><tr><td>text.xsd</td><td>참조할 xml 스키마</td></tr></tbody></table></div><h5 id=configuration-1>Configuration</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;divertxmlbeans&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.divert.DivertXMLBeans&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;marshaller&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;xmlBeansMarshaller&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;unmarshaller&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;xmlBeansMarshaller&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;xmlBeansMarshaller&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.oxm.xmlbeans.XmlBeansMarshaller&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span></code></pre></div><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>PROPERTIES</th><th>설 명</th></tr></thead><tbody><tr><td>marshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/xmlbeans/XmlBeansMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.xmlbeans.XmlBeansMarshaller<i class="svg-icon ico-go"></i></a></td></tr><tr><td>unmarshaller</td><td><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/oxm/xmlbeans/XmlBeansMarshaller.html target=_blank rel="noopener noreferrer" class=externalLink>org.springframework.oxm.xmlbeans.XmlBeansMarshaller<i class="svg-icon ico-go"></i></a></td></tr></tbody></table></div><h5 id=sample-source-1>Sample Source</h5><p><strong>Java Object의 데이터를 XML문서로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>jakarta.annotation.Resource</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Resource</span>(name<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;xmlBeansMarshaller&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Marshaller<span style=color:#bbb> </span>marshaller;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testMarshalling</span>()<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>FileOutputStream<span style=color:#bbb> </span>os<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>userDoc<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>UserinfoDocument.<span style=color:teal>Factory</span>.<span style=color:teal>newInstance</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>userElement<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>userDoc.<span style=color:teal>addNewUserinfo</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>userElement.<span style=color:teal>setName</span>(<span style=color:#d14>&#34;홍길동&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>userElement.<span style=color:teal>setAge</span>(31);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>userElement.<span style=color:teal>setPhone</span>(022770918);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>xmlOptions<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>XmlOptions();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>xmlOptions.<span style=color:teal>setSavePrettyPrint</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>xmlOptions.<span style=color:teal>setSavePrettyPrintIndent</span>(4);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>xmlOptions.<span style=color:teal>setCharacterEncoding</span>(<span style=color:#d14>&#34;euc-kr&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>os<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileOutputStream(<span style=color:#d14>&#34;XMLBeanGen.xml&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>marshaller.<span style=color:teal>marshal</span>(userDoc,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>StreamResult(os));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>}<span style=color:#000;font-weight:700>catch</span>(Exception<span style=color:#bbb> </span>ee)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>   </span>ee.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>   </span>fail(<span style=color:#d14>&#34;testMarshalling failed!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>finally</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(os<span style=color:#bbb> </span><span style=color:#000;font-weight:700>!=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>)<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	 </span>os.<span style=color:teal>close</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>}<span style=color:#000;font-weight:700>catch</span>(IOException<span style=color:#bbb> </span>e3)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  	 </span>e3.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	 </span>fail(<span style=color:#d14>&#34;testMarshalling failed!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>       </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><ol><li>UserDoc 인스턴스를 생성한다.</li><li>사용자정보를 저장할 userElement를 추가한다.</li><li>setName을 사용하여 사용자명을 저장한다.</li><li>setAge를 사용하여 나이를 저장한다.</li><li>setPhone를 사용하여 전화번호를 저장한다.</li><li>FileOutputSream을 XMLBeanGen.xml을 매개변수로 하여 생성한다. (아래 XMLBeanGen.xml 코드 참조)</li><li>marshaller.marshal를 Document객체와 StreamResult를 매개변수로 하여한다.</li></ol><p>XMLBeanGen.xml</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;userinfo&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;name&gt;</span>홍길동<span style=color:navy>&lt;/name&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;age&gt;</span>31<span style=color:navy>&lt;/age&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;phone&gt;</span>022770918<span style=color:navy>&lt;/phone&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/userinfo&gt;</span>
+</span></span></code></pre></div><p><strong>XML문서를 JavaObject로 DataBinding Sample Source</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>jakarta.annotation.Resource</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Resource</span>(name<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;xmlBeansMarshaller&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Unmarshaller<span style=color:#bbb> </span>unmarshaller;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testUnmarshalling</span>()<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>FileInputStream<span style=color:#bbb> </span>is<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>is<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>FileInputStream(<span style=color:#d14>&#34;XMLBeanGen.xml&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>userDoc<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(UserinfoDocument)<span style=color:#bbb> </span>unmarshaller.<span style=color:teal>unmarshal</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>StreamSource(is));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>userElement<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb>  </span>userDoc.<span style=color:teal>getUserinfo</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>     </span>}<span style=color:#000;font-weight:700>catch</span>(FileNotFoundException<span style=color:#bbb> </span>fnde)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>fnde.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>fail(<span style=color:#d14>&#34;testUnmarshalling failed!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>catch</span>(IOException<span style=color:#bbb> </span>ioe)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>ioe.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>finally</span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(is<span style=color:#bbb> </span><span style=color:#000;font-weight:700>!=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	   </span>is.<span style=color:teal>close</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#000;font-weight:700>catch</span>(IOException<span style=color:#bbb> </span>ioe)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	  </span>ioe.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	  </span>fail(<span style=color:#d14>&#34;testUnmarshalling failed!&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>      </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><ol><li>FileInputStream를 XMLBeanGen.xml을 매개변수로 하여 생성한다. (위 XMLBeanGen.xml 코드 참조)</li><li>생성한 FileInputStream를 매개변수로 하여 StreamSource생성한다.</li><li>unmarshaller.unmarshal를 생성한 StreamSource를 매개변수로 unmashalling을 하여 document객체를 얻는다.</li><li>document객체에서 사용자정보를 얻는다.</li></ol></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=참고-문서>참고 문서</h2><ul><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans.html target=_blank rel="noopener noreferrer" class=externalLink>The IoC Container - Spring Framework 6.2<i class="svg-icon ico-go"></i></a>
 : CastorMarshaller·XmlBeansMarshaller 등 Bean 정의</li><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/data-access/oxm.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework 6.2 - Marshalling XML by Using Object-XML Mappers<i class="svg-icon ico-go"></i></a>
 : Marshaller/Unmarshaller 추상화</li><li><a class="krds-btn medium text" href=http://castor.codehaus.org/ target=_blank rel="noopener noreferrer" class=externalLink>Castor<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://xmlbeans.apache.org/documentation/tutorial_getstarted.html target=_blank rel="noopener noreferrer" class=externalLink>Apache XMLBeans<i class="svg-icon ico-go"></i></a></li></ul></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=예제>예제</h2><ul><li><a class="krds-btn medium text" href=../../runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example class=innerLink>marshalling/unmarshalling 예제</a></li></ul></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>

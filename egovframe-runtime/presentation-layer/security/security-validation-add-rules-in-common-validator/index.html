@@ -74,243 +74,243 @@ JobLauncher<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 Spring AI<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 id=lnbmenu-8 role=menu><button type=button class=lnb-btn-tit data-url=/egovframe-docs/egovframe-runtime/ai-layer/>Spring AI</button><ul><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-core-apis/>핵심 API</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-rag-architecture/>RAG 아키텍처</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-etl-guide/>ETL Pipeline</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-advisor-guide/>Advisor 패턴</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-sample-project/>샘플 프로젝트</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-sample-etl/>ETL 구현</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-sample-rag/>RAG 구현</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-sample-session/>세션 관리</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/springai-layer/springai-setup-guide/>환경 설정</a></li></ul></div></li><li class=lnb-subitem role=none><button type=button class="lnb-btn lnb-toggle-popup" role=menuitem aria-controls=lnbmenu-8 aria-expanded=false aria-haspopup=true data-url=/egovframe-docs/egovframe-runtime/ai-layer/langchain4j-layer/>
 LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 id=lnbmenu-8 role=menu><button type=button class=lnb-btn-tit data-url=/egovframe-docs/egovframe-runtime/ai-layer/>LangChain4j</button><ul><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/langchain4j-layer/langchain4j-sample-project/>샘플 프로젝트</a></li><li role=none><a class=lnb-btn role=menuitem href=/egovframe-docs/egovframe-runtime/ai-layer/langchain4j-layer/langchain4j-sample-implementation/>핵심 구현</a></li></ul></div></li></ul></div></li></ul></ul></ul></nav><div class=contents><nav class=krds-breadcrumb-wrap aria-label=브레드크럼><ol class=breadcrumb><li class=home><a href=https://eGovFramework.github.io/egovframe-docs/ class=txt>Home</a></li><li><a href=/egovframe-docs/egovframe-runtime/ class=txt>실행환경</a></li><li><a href=/egovframe-docs/egovframe-runtime/presentation-layer/ class=txt>화면처리</a></li><li><a href=/egovframe-docs/egovframe-runtime/presentation-layer/security/ class=txt>Security</a></li></ol></nav><div class=conts-area><div class=krds-in-page-navigation-area><nav class=in-page-navigation-action><ul><li><a href=https://github.com/eGovFramework/egovframe-docs/tree/main/egovframe-runtime/presentation-layer/security-validation-add-rules-in-common-validator.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_view"></i> 페이지 보기</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/edit/main/egovframe-runtime/presentation-layer/security-validation-add-rules-in-common-validator.md class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_page_edit"></i> 페이지 편집</a></li><li><a href="https://github.com/eGovFramework/egovframe-docs/issues/new?title=Commons%20Validator%ec%97%90%20validation%20rule%20%ec%b6%94%ea%b0%80%ed%95%98%ea%b8%b0" class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 문서에 이슈 생성</a></li><li><a href=https://github.com/eGovFramework/egovframe-docs/issues/new class="krds-btn text small" target=_blank rel=noopener><i class="svg-icon ico_issue"></i> 프로젝트에 이슈 생성</a></li></ul></nav><div class=in-page-navigation-header><p class=quick-caption>이 페이지의 구성</p><p class=quick-title>Commons Validator에 validation rule 추가하기</p></div><nav class=in-page-navigation-list><ul><li><a href=#개요>개요</a></li><li><a href=#설명>설명</a></li><li><a href=#참고자료>참고자료</a></li></ul></nav></div><div class="conts-wrap scroll-check"><h1 class=h-tit id=commons-validator에-validation-rule-추가하기>Commons Validator에 validation rule 추가하기</h1><div class="conts-wrap section-link" id=section_01><h2 class=sec-tit id=개요>개요</h2><p>Commons Validator는 primitive type, 필수값, 이메일등 흔히 사용되는 유형에 대한 validation rule을 template으로 제공하지만,
 프로젝트의 특성에 따라 공통으로 사용되는 validation rule이 발생되고 이를 추가해야할 필요가 생길 수 있다.
-공공프로젝트에서 흔히 사용되는 주민등록번호 validator를 추가해 봄으로써, validation rule을 추가하는 방법을 알아보고자 한다.<br>예제는 easycompany를 이용했다.</p></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><p>Spring Module을 이용해서 Commons Validator를 사용한다면 아래와 같은 내용을 validation rule 정의 파일(validator-rules.xml 같은)에서 보았을 것이다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>    <span style=color:#75715e>&lt;!--필수값 체크 validation rule--&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;validator</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;required&#34;</span>
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>classname=</span><span style=color:#e6db74>&#34;org.springmodules.validation.commons.FieldChecks&#34;</span>
-</span></span><span style=display:flex><span>             <span style=color:#a6e22e>method=</span><span style=color:#e6db74>&#34;validateRequired&#34;</span>
-</span></span><span style=display:flex><span>       <span style=color:#a6e22e>methodParams=</span><span style=color:#e6db74>&#34;java.lang.Object,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                     org.apache.commons.validator.ValidatorAction,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                     org.apache.commons.validator.Field,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                     org.springframework.validation.Errors&#34;</span>
-</span></span><span style=display:flex><span>                <span style=color:#a6e22e>msg=</span><span style=color:#e6db74>&#34;errors.required&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>       <span style=color:#f92672>&lt;javascript&gt;</span><span style=color:#75715e>&lt;![CDATA[
-</span></span></span><span style=display:flex><span><span style=color:#75715e>          ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e>          ]]&gt;</span>
-</span></span><span style=display:flex><span>       <span style=color:#f92672>&lt;/javascript&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/validator&gt;</span>
-</span></span></code></pre></div><p>validator 태그의 각각의 attribute는 다음과 같은 의미를 같는다.</p><div class="krds-table-wrap scroll"><table class="tbl col data"><tr><th>name</th><td>validation rule(required,mask,integer,email…)</td></tr><tr><th>classname</th><td>validation check를 수행하는 클래스명</td></tr><tr><th>method</th><td>validation check를 수행하는 클래스의 메소드명</td></tr><tr><th>methodParams</th><td>validation check를 수행하는 클래스의 메소드의 파라미터</td></tr><tr><th>msg</th><td>에러 메시지 key</td></tr><tr><th>javascript</th><td>client-side validation을 위한 자바스크립트 코드</td></tr></table></div><p>주민등록번호 rule을 아래와 같이 추가한다고 하면,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>    <span style=color:#f92672>&lt;validator</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;ihidnum&#34;</span>
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>classname=</span><span style=color:#e6db74>&#34;egovframework.rte.ptl.mvc.validation.RteFieldChecks&#34;</span>
-</span></span><span style=display:flex><span>             <span style=color:#a6e22e>method=</span><span style=color:#e6db74>&#34;validateIhIdNum&#34;</span>
-</span></span><span style=display:flex><span>       <span style=color:#a6e22e>methodParams=</span><span style=color:#e6db74>&#34;java.lang.Object,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                     org.apache.commons.validator.ValidatorAction,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                     org.apache.commons.validator.Field,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                     org.springframework.validation.Errors&#34;</span>                       
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>depends=</span><span style=color:#e6db74>&#34;&#34;</span>
-</span></span><span style=display:flex><span>                <span style=color:#a6e22e>msg=</span><span style=color:#e6db74>&#34;errors.ihidnum&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>         <span style=color:#f92672>&lt;javascript&gt;</span><span style=color:#75715e>&lt;![CDATA[
-</span></span></span><span style=display:flex><span><span style=color:#75715e>          ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e>          ]]&gt;</span>
-</span></span><span style=display:flex><span>       <span style=color:#f92672>&lt;/javascript&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/validator&gt;</span>
+공공프로젝트에서 흔히 사용되는 주민등록번호 validator를 추가해 봄으로써, validation rule을 추가하는 방법을 알아보고자 한다.<br>예제는 easycompany를 이용했다.</p></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><p>Spring Module을 이용해서 Commons Validator를 사용한다면 아래와 같은 내용을 validation rule 정의 파일(validator-rules.xml 같은)에서 보았을 것이다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>    <span style=color:#998;font-style:italic>&lt;!--필수값 체크 validation rule--&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;validator</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;required&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:teal>classname=</span><span style=color:#d14>&#34;org.springmodules.validation.commons.FieldChecks&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:teal>method=</span><span style=color:#d14>&#34;validateRequired&#34;</span>
+</span></span><span style=display:flex><span>       <span style=color:teal>methodParams=</span><span style=color:#d14>&#34;java.lang.Object,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                     org.apache.commons.validator.ValidatorAction,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                     org.apache.commons.validator.Field,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                     org.springframework.validation.Errors&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:teal>msg=</span><span style=color:#d14>&#34;errors.required&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>       <span style=color:navy>&lt;javascript&gt;</span><span style=color:#999;font-weight:700;font-style:italic>&lt;![CDATA[
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>          ...
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>          ]]&gt;</span>
+</span></span><span style=display:flex><span>       <span style=color:navy>&lt;/javascript&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/validator&gt;</span>
+</span></span></code></pre></div><p>validator 태그의 각각의 attribute는 다음과 같은 의미를 같는다.</p><div class="krds-table-wrap scroll"><table class="tbl col data"><tr><th>name</th><td>validation rule(required,mask,integer,email…)</td></tr><tr><th>classname</th><td>validation check를 수행하는 클래스명</td></tr><tr><th>method</th><td>validation check를 수행하는 클래스의 메소드명</td></tr><tr><th>methodParams</th><td>validation check를 수행하는 클래스의 메소드의 파라미터</td></tr><tr><th>msg</th><td>에러 메시지 key</td></tr><tr><th>javascript</th><td>client-side validation을 위한 자바스크립트 코드</td></tr></table></div><p>주민등록번호 rule을 아래와 같이 추가한다고 하면,</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>    <span style=color:navy>&lt;validator</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;ihidnum&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:teal>classname=</span><span style=color:#d14>&#34;egovframework.rte.ptl.mvc.validation.RteFieldChecks&#34;</span>
+</span></span><span style=display:flex><span>             <span style=color:teal>method=</span><span style=color:#d14>&#34;validateIhIdNum&#34;</span>
+</span></span><span style=display:flex><span>       <span style=color:teal>methodParams=</span><span style=color:#d14>&#34;java.lang.Object,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                     org.apache.commons.validator.ValidatorAction,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                     org.apache.commons.validator.Field,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                     org.springframework.validation.Errors&#34;</span>                       
+</span></span><span style=display:flex><span>            <span style=color:teal>depends=</span><span style=color:#d14>&#34;&#34;</span>
+</span></span><span style=display:flex><span>                <span style=color:teal>msg=</span><span style=color:#d14>&#34;errors.ihidnum&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>         <span style=color:navy>&lt;javascript&gt;</span><span style=color:#999;font-weight:700;font-style:italic>&lt;![CDATA[
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>          ...
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>          ]]&gt;</span>
+</span></span><span style=display:flex><span>       <span style=color:navy>&lt;/javascript&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/validator&gt;</span>
 </span></span></code></pre></div><p>필요한 작업은 아래와 같다.</p><ol><li>FieldCheck class(RteFieldChecks) 작성</li><li>Validator class(RteGenericValidator) 작성</li><li>validator-rules.xml 설정</li><li>validator.xml 설정</li><li>에러메시지 설정</li><li>TEST</li></ol><h3 class=sec-tit id=fieldcheck-class-작성>FieldCheck class 작성</h3><p>org.springmodules.validation.commons.FieldChecks를 상속 받는 RteFieldChecks 클래스를 생성한다.
 그리고 주민등록번호 validation을 담당할 validateIhIdNum 메소드를 추가한다.
-주민등록번호 validation 로직이 RteFieldChecks.validateIhIdNum() 안에 있어도 되지만, org.springmodules.validation.commons.FieldChecks와 같은 방식으로 다른 Validator에 위임했다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> egovframework.rte.ptl.mvc.validation;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.apache.commons.validator.Field;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.apache.commons.validator.ValidatorAction;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.Errors;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springmodules.validation.commons.FieldChecks;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>RteFieldChecks</span> <span style=color:#66d9ef>extends</span> FieldChecks{
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>validateIhIdNum</span>(Object bean, ValidatorAction va,
-</span></span><span style=display:flex><span>            Field field, Errors errors){
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//bean에서 해당 field 값을 추출</span>
-</span></span><span style=display:flex><span>		String ihidnum <span style=color:#f92672>=</span> FieldChecks.<span style=color:#a6e22e>extractValue</span>(bean, field); 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>                <span style=color:#75715e>//주민등록번호 유효성 검사 알고리즘은 RteGenericValidator가 가지고 있다.</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span>RteGenericValidator.<span style=color:#a6e22e>isValidIdIhNum</span>(ihidnum)){ <span style=color:#75715e>//유효한 주민등록번호가 아니면</span>
-</span></span><span style=display:flex><span>			FieldChecks.<span style=color:#a6e22e>rejectValue</span>(errors, field, va); <span style=color:#75715e>//에러 처리</span>
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span>		}<span style=color:#66d9ef>else</span>{
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=validator-class-작성>Validator class 작성</h3><p>주민등록번호 유효성체크 로직이 있는 RteGenericValidator 클래스를 작성해 보자.
-유효성 체크 기준은</p><ol><li>값의 길이가 13자리이며, 7번째 자리가 1,2,3,4 중에 하나인가?</li><li>앞 6자리의 값이 유효한 날짜인가?</li><li>주민등록번호 마지막 자리를 이용한 check</li></ol><p>로 했다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> egovframework.rte.ptl.mvc.validation;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.Serializable;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.apache.commons.validator.GenericTypeValidator;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>RteGenericValidator</span> <span style=color:#66d9ef>implements</span> Serializable {	
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isValidIdIhNum</span>(String value) {		
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//값의 길이가 13자리이며, 7번째 자리가 1,2,3,4 중에 하나인지 check.</span>
-</span></span><span style=display:flex><span>		String regex <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;\\d{6}[1234]\\d{6}&#34;</span>;
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>value.<span style=color:#a6e22e>matches</span>(regex)) {
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//앞 6자리의 값이 유효한 날짜인지 check.</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>			String strDate <span style=color:#f92672>=</span> value.<span style=color:#a6e22e>substring</span>(0, 6);
-</span></span><span style=display:flex><span>			strDate <span style=color:#f92672>=</span> ((value.<span style=color:#a6e22e>charAt</span>(6) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;1&#39;</span> <span style=color:#f92672>||</span> value.<span style=color:#a6e22e>charAt</span>(6) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;2&#39;</span>) <span style=color:#f92672>?</span> <span style=color:#e6db74>&#34;19&#34;</span>:<span style=color:#e6db74>&#34;20&#34;</span>) <span style=color:#f92672>+</span> strDate;
-</span></span><span style=display:flex><span>			strDate <span style=color:#f92672>=</span> strDate.<span style=color:#a6e22e>substring</span>(0, 4) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;/&#34;</span> <span style=color:#f92672>+</span> strDate.<span style=color:#a6e22e>substring</span>(4, 6)
-</span></span><span style=display:flex><span>					<span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;/&#34;</span> <span style=color:#f92672>+</span> strDate.<span style=color:#a6e22e>substring</span>(6, 8);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			SimpleDateFormat dateformat <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat(<span style=color:#e6db74>&#34;yyyy/MM/dd&#34;</span>);
-</span></span><span style=display:flex><span>			Date date <span style=color:#f92672>=</span> dateformat.<span style=color:#a6e22e>parse</span>(strDate);
-</span></span><span style=display:flex><span>			String resultStr <span style=color:#f92672>=</span> dateformat.<span style=color:#a6e22e>format</span>(date);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>resultStr.<span style=color:#a6e22e>equalsIgnoreCase</span>(strDate)) {
-</span></span><span style=display:flex><span>				<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span>			}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (ParseException e) {
-</span></span><span style=display:flex><span>			<span style=color:#75715e>// TODO Auto-generated catch block</span>
-</span></span><span style=display:flex><span>			e.<span style=color:#a6e22e>printStackTrace</span>();
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//주민등록번호 마지막 자리를 이용한 check.</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>char</span><span style=color:#f92672>[]</span> charArray <span style=color:#f92672>=</span> value.<span style=color:#a6e22e>toCharArray</span>();
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>long</span> sum <span style=color:#f92672>=</span> 0;
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arrDivide <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> { 2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5 };
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> charArray.<span style=color:#a6e22e>length</span> <span style=color:#f92672>-</span> 1; i<span style=color:#f92672>++</span>) {
-</span></span><span style=display:flex><span>			sum <span style=color:#f92672>+=</span> Integer.<span style=color:#a6e22e>parseInt</span>(String.<span style=color:#a6e22e>valueOf</span>(charArray<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span>))
-</span></span><span style=display:flex><span>					<span style=color:#f92672>*</span> arrDivide<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>int</span> checkdigit <span style=color:#f92672>=</span> (<span style=color:#66d9ef>int</span>) ((<span style=color:#66d9ef>int</span>) (11 <span style=color:#f92672>-</span> sum <span style=color:#f92672>%</span> 11)) <span style=color:#f92672>%</span> 10;
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> (checkdigit <span style=color:#f92672>==</span> Integer.<span style=color:#a6e22e>parseInt</span>(String.<span style=color:#a6e22e>valueOf</span>(charArray<span style=color:#f92672>[</span>12<span style=color:#f92672>]</span>))) <span style=color:#f92672>?</span> <span style=color:#66d9ef>true</span>
-</span></span><span style=display:flex><span>				: <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=validator-rulesxml-설정>validator-rules.xml 설정</h3><p>이제 주민등록번호 validation rule을 추가해 보자.
+주민등록번호 validation 로직이 RteFieldChecks.validateIhIdNum() 안에 있어도 되지만, org.springmodules.validation.commons.FieldChecks와 같은 방식으로 다른 Validator에 위임했다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>egovframework.rte.ptl.mvc.validation</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.apache.commons.validator.Field</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.apache.commons.validator.ValidatorAction</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.Errors</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springmodules.validation.commons.FieldChecks</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>RteFieldChecks</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>FieldChecks{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>static</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>validateIhIdNum</span>(Object<span style=color:#bbb> </span>bean,<span style=color:#bbb> </span>ValidatorAction<span style=color:#bbb> </span>va,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>            </span>Field<span style=color:#bbb> </span>field,<span style=color:#bbb> </span>Errors<span style=color:#bbb> </span>errors){<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//bean에서 해당 field 값을 추출</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>String<span style=color:#bbb> </span>ihidnum<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>FieldChecks.<span style=color:teal>extractValue</span>(bean,<span style=color:#bbb> </span>field);<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>                </span><span style=color:#998;font-style:italic>//주민등록번호 유효성 검사 알고리즘은 RteGenericValidator가 가지고 있다.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span>(<span style=color:#000;font-weight:700>!</span>RteGenericValidator.<span style=color:teal>isValidIdIhNum</span>(ihidnum)){<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//유효한 주민등록번호가 아니면</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>FieldChecks.<span style=color:teal>rejectValue</span>(errors,<span style=color:#bbb> </span>field,<span style=color:#bbb> </span>va);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//에러 처리</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#000;font-weight:700>else</span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>true</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=validator-class-작성>Validator class 작성</h3><p>주민등록번호 유효성체크 로직이 있는 RteGenericValidator 클래스를 작성해 보자.
+유효성 체크 기준은</p><ol><li>값의 길이가 13자리이며, 7번째 자리가 1,2,3,4 중에 하나인가?</li><li>앞 6자리의 값이 유효한 날짜인가?</li><li>주민등록번호 마지막 자리를 이용한 check</li></ol><p>로 했다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>egovframework.rte.ptl.mvc.validation</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>java.io.Serializable</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.apache.commons.validator.GenericTypeValidator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>RteGenericValidator</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>Serializable<span style=color:#bbb> </span>{<span style=color:#bbb>	
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>static</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>isValidIdIhNum</span>(String<span style=color:#bbb> </span>value)<span style=color:#bbb> </span>{<span style=color:#bbb>		
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//값의 길이가 13자리이며, 7번째 자리가 1,2,3,4 중에 하나인지 check.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>String<span style=color:#bbb> </span>regex<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;\\d{6}[1234]\\d{6}&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(<span style=color:#000;font-weight:700>!</span>value.<span style=color:teal>matches</span>(regex))<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//앞 6자리의 값이 유효한 날짜인지 check.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>String<span style=color:#bbb> </span>strDate<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>value.<span style=color:teal>substring</span>(0,<span style=color:#bbb> </span>6);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>strDate<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>((value.<span style=color:teal>charAt</span>(6)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#d14>&#39;1&#39;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>||</span><span style=color:#bbb> </span>value.<span style=color:teal>charAt</span>(6)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#d14>&#39;2&#39;</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>?</span><span style=color:#bbb> </span><span style=color:#d14>&#34;19&#34;</span>:<span style=color:#d14>&#34;20&#34;</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>strDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>strDate<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>strDate.<span style=color:teal>substring</span>(0,<span style=color:#bbb> </span>4)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;/&#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>strDate.<span style=color:teal>substring</span>(4,<span style=color:#bbb> </span>6)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>					</span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;/&#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>strDate.<span style=color:teal>substring</span>(6,<span style=color:#bbb> </span>8);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>SimpleDateFormat<span style=color:#bbb> </span>dateformat<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>SimpleDateFormat(<span style=color:#d14>&#34;yyyy/MM/dd&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>Date<span style=color:#bbb> </span>date<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>dateformat.<span style=color:teal>parse</span>(strDate);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>String<span style=color:#bbb> </span>resultStr<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>dateformat.<span style=color:teal>format</span>(date);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(<span style=color:#000;font-weight:700>!</span>resultStr.<span style=color:teal>equalsIgnoreCase</span>(strDate))<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(ParseException<span style=color:#bbb> </span>e)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>// TODO Auto-generated catch block</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>e.<span style=color:teal>printStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//주민등록번호 마지막 자리를 이용한 check.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>char</span><span style=color:#000;font-weight:700>[]</span><span style=color:#bbb> </span>charArray<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>value.<span style=color:teal>toCharArray</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>long</span><span style=color:#bbb> </span>sum<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>int</span><span style=color:#000;font-weight:700>[]</span><span style=color:#bbb> </span>arrDivide<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#000;font-weight:700>[]</span><span style=color:#bbb> </span>{<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>3,<span style=color:#bbb> </span>4,<span style=color:#bbb> </span>5,<span style=color:#bbb> </span>6,<span style=color:#bbb> </span>7,<span style=color:#bbb> </span>8,<span style=color:#bbb> </span>9,<span style=color:#bbb> </span>2,<span style=color:#bbb> </span>3,<span style=color:#bbb> </span>4,<span style=color:#bbb> </span>5<span style=color:#bbb> </span>};<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>0;<span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>charArray.<span style=color:teal>length</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>-</span><span style=color:#bbb> </span>1;<span style=color:#bbb> </span>i<span style=color:#000;font-weight:700>++</span>)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>sum<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+=</span><span style=color:#bbb> </span>Integer.<span style=color:teal>parseInt</span>(String.<span style=color:teal>valueOf</span>(charArray<span style=color:#000;font-weight:700>[</span>i<span style=color:#000;font-weight:700>]</span>))<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>					</span><span style=color:#000;font-weight:700>*</span><span style=color:#bbb> </span>arrDivide<span style=color:#000;font-weight:700>[</span>i<span style=color:#000;font-weight:700>]</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>checkdigit<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>int</span>)<span style=color:#bbb> </span>((<span style=color:#458;font-weight:700>int</span>)<span style=color:#bbb> </span>(11<span style=color:#bbb> </span><span style=color:#000;font-weight:700>-</span><span style=color:#bbb> </span>sum<span style=color:#bbb> </span><span style=color:#000;font-weight:700>%</span><span style=color:#bbb> </span>11))<span style=color:#bbb> </span><span style=color:#000;font-weight:700>%</span><span style=color:#bbb> </span>10;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>(checkdigit<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span>Integer.<span style=color:teal>parseInt</span>(String.<span style=color:teal>valueOf</span>(charArray<span style=color:#000;font-weight:700>[</span>12<span style=color:#000;font-weight:700>]</span>)))<span style=color:#bbb> </span><span style=color:#000;font-weight:700>?</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>true</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>:<span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=validator-rulesxml-설정>validator-rules.xml 설정</h3><p>이제 주민등록번호 validation rule을 추가해 보자.
 rule 이름은 ihidnum으로 하고 위에서 작성한 코드를 바탕으로 설정하면, (이미 위 개요에 나온 대로) 아래와 같다.
-client-validation을 위해서 자바스크립트 코드도 추가했다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>      <span style=color:#f92672>&lt;validator</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;ihidnum&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>classname=</span><span style=color:#e6db74>&#34;egovframework.rte.ptl.mvc.validation.RteFieldChecks&#34;</span>
-</span></span><span style=display:flex><span>               <span style=color:#a6e22e>method=</span><span style=color:#e6db74>&#34;validateIhIdNum&#34;</span>
-</span></span><span style=display:flex><span>         <span style=color:#a6e22e>methodParams=</span><span style=color:#e6db74>&#34;java.lang.Object,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                       org.apache.commons.validator.ValidatorAction,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                       org.apache.commons.validator.Field,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                       org.springframework.validation.Errors&#34;</span>                       
-</span></span><span style=display:flex><span>              <span style=color:#a6e22e>depends=</span><span style=color:#e6db74>&#34;&#34;</span>
-</span></span><span style=display:flex><span>                  <span style=color:#a6e22e>msg=</span><span style=color:#e6db74>&#34;errors.ihidnum&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>           <span style=color:#f92672>&lt;javascript&gt;</span><span style=color:#75715e>&lt;![CDATA[
-</span></span></span><span style=display:flex><span><span style=color:#75715e>           function validateIhIdNum(form) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                var bValid = true;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                var focusField = null;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                var i = 0;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                var fields = new Array();
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                oIhidnum = new ihidnum();                
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                for (x in oIhidnum) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                	var field = form[oIhidnum[x][0]];
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                	if (field.type == &#39;text&#39; ||
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                    	field.type == &#39;hidden&#39; ||
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                        field.type == &#39;textarea&#39;) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                        if (trim(field.value).length==0 || !checkIhIdNum(field.value)) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                            if (i == 0) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                                focusField = field;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                            }
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                            fields[i++] = oIhidnum[x][1];
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                            bValid = false;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                        }
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                    }
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                }
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                if (fields.length &gt; 0) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                    alert(fields.join(&#39;\n&#39;));
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                }
-</span></span></span><span style=display:flex><span><span style=color:#75715e>                return bValid;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            }
-</span></span></span><span style=display:flex><span><span style=color:#75715e> 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            /**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>             * Reference: JS Guide
-</span></span></span><span style=display:flex><span><span style=color:#75715e>             * http://jsguide.net/ver2/articles/frame.php?artnum=002
-</span></span></span><span style=display:flex><span><span style=color:#75715e>             */             
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            function checkIhIdNum(ihidnum){
-</span></span></span><span style=display:flex><span><span style=color:#75715e> 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	fmt = /^\d{6}[1234]\d{6}$/;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	if(!fmt.test(ihidnum)){
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            		return false;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	birthYear = (ihidnum.charAt(7) &lt;= &#34;2&#34;) ? &#34;19&#34; : &#34;20&#34;;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				birthYear += ihidnum.substr(0, 2);
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				birthMonth = ihidnum.substr(2, 2) - 1;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				birthDate = ihidnum.substr(4, 2);
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				birth = new Date(birthYear, birthMonth, birthDate);
-</span></span></span><span style=display:flex><span><span style=color:#75715e> 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				if( birth.getYear() % 100 != ihidnum.substr(0, 2) ||
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				    birth.getMonth() != birthMonth ||
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				    birth.getDate() != birthDate) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				    return false;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>				}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	var arrDivide = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5];            	
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	var checkdigit = 0;            	
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	for(var i=0;i&lt;ihidnum.length-1;i++){
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            		checkdigit += parseInt(ihidnum.charAt(i)) * parseInt(arrDivide[i]);
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	}
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	checkdigit = (11 - (checkdigit%11))%10;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	if(checkdigit != ihidnum.charAt(12)){
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            		return false;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	}else{
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            		return true;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            	}
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            }
-</span></span></span><span style=display:flex><span><span style=color:#75715e>            ]]&gt;</span>
-</span></span><span style=display:flex><span>         <span style=color:#f92672>&lt;/javascript&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/validator&gt;</span>
+client-validation을 위해서 자바스크립트 코드도 추가했다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>      <span style=color:navy>&lt;validator</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;ihidnum&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>classname=</span><span style=color:#d14>&#34;egovframework.rte.ptl.mvc.validation.RteFieldChecks&#34;</span>
+</span></span><span style=display:flex><span>               <span style=color:teal>method=</span><span style=color:#d14>&#34;validateIhIdNum&#34;</span>
+</span></span><span style=display:flex><span>         <span style=color:teal>methodParams=</span><span style=color:#d14>&#34;java.lang.Object,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                       org.apache.commons.validator.ValidatorAction,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                       org.apache.commons.validator.Field,
+</span></span></span><span style=display:flex><span><span style=color:#d14>                       org.springframework.validation.Errors&#34;</span>                       
+</span></span><span style=display:flex><span>              <span style=color:teal>depends=</span><span style=color:#d14>&#34;&#34;</span>
+</span></span><span style=display:flex><span>                  <span style=color:teal>msg=</span><span style=color:#d14>&#34;errors.ihidnum&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>           <span style=color:navy>&lt;javascript&gt;</span><span style=color:#999;font-weight:700;font-style:italic>&lt;![CDATA[
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>           function validateIhIdNum(form) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                var bValid = true;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                var focusField = null;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                var i = 0;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                var fields = new Array();
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                oIhidnum = new ihidnum();                
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                for (x in oIhidnum) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                	var field = form[oIhidnum[x][0]];
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                	if (field.type == &#39;text&#39; ||
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                    	field.type == &#39;hidden&#39; ||
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                        field.type == &#39;textarea&#39;) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                        if (trim(field.value).length==0 || !checkIhIdNum(field.value)) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                            if (i == 0) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                                focusField = field;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                            }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                            fields[i++] = oIhidnum[x][1];
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                            bValid = false;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                        }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                    }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                if (fields.length &gt; 0) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                    alert(fields.join(&#39;\n&#39;));
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>                return bValid;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic> 
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            /**
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>             * Reference: JS Guide
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>             * http://jsguide.net/ver2/articles/frame.php?artnum=002
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>             */             
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            function checkIhIdNum(ihidnum){
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic> 
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	fmt = /^\d{6}[1234]\d{6}$/;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	if(!fmt.test(ihidnum)){
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            		return false;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	}
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic> 
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	birthYear = (ihidnum.charAt(7) &lt;= &#34;2&#34;) ? &#34;19&#34; : &#34;20&#34;;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				birthYear += ihidnum.substr(0, 2);
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				birthMonth = ihidnum.substr(2, 2) - 1;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				birthDate = ihidnum.substr(4, 2);
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				birth = new Date(birthYear, birthMonth, birthDate);
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic> 
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				if( birth.getYear() % 100 != ihidnum.substr(0, 2) ||
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				    birth.getMonth() != birthMonth ||
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				    birth.getDate() != birthDate) {
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				    return false;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>				}
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic> 
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	var arrDivide = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5];            	
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	var checkdigit = 0;            	
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	for(var i=0;i&lt;ihidnum.length-1;i++){
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            		checkdigit += parseInt(ihidnum.charAt(i)) * parseInt(arrDivide[i]);
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	}
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	checkdigit = (11 - (checkdigit%11))%10;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	if(checkdigit != ihidnum.charAt(12)){
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            		return false;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	}else{
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            		return true;
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            	}
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            }
+</span></span></span><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>            ]]&gt;</span>
+</span></span><span style=display:flex><span>         <span style=color:navy>&lt;/javascript&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/validator&gt;</span>
 </span></span></code></pre></div><h3 class=sec-tit id=validatorxml-설정>validator.xml 설정</h3><p>ihidnum이란 필드에 주민등록번호 validation 체크를 해보자.
-validator.xml에 필요한 내용을 추가하고.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;form-validation&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;formset&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;form</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;employee&#34;</span><span style=color:#f92672>&gt;</span>
+validator.xml에 필요한 내용을 추가하고.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;form-validation&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;formset&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;form</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;employee&#34;</span><span style=color:navy>&gt;</span>
 </span></span><span style=display:flex><span>        	...
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;field</span> <span style=color:#a6e22e>property=</span><span style=color:#e6db74>&#34;ihidnum&#34;</span> <span style=color:#a6e22e>depends=</span><span style=color:#e6db74>&#34;ihidnum&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;field</span> <span style=color:teal>property=</span><span style=color:#d14>&#34;ihidnum&#34;</span> <span style=color:teal>depends=</span><span style=color:#d14>&#34;ihidnum&#34;</span><span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>                ... 
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/form&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/formset&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/form-validation&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=에러메시지-설정>에러메시지 설정</h3><p>messages 프로퍼티에 에러메시지를 추가하자.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#a6e22e>errors.ihidnum</span><span style=color:#f92672>=</span><span style=color:#e6db74>유효하지 않은 주민등록번호입니다.</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/form&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/formset&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/form-validation&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=에러메시지-설정>에러메시지 설정</h3><p>messages 프로퍼티에 에러메시지를 추가하자.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:teal>errors.ihidnum</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>유효하지 않은 주민등록번호입니다.</span>
 </span></span></code></pre></div><h3 class=sec-tit id=test>TEST</h3><p>주민등록번호 server-side,client-side validatin을 위한 환경은 다 갖추어졌다.
-이제 EmployeeController에 validation을 추가하고,(이미 추가되어 있다면 pass)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.easycompany.controller.annotation;
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springmodules.validation.commons.DefaultBeanValidator;
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Controller</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EmployeeController</span> {	
-</span></span><span style=display:flex><span>	...
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Autowired</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> DefaultBeanValidator beanValidator;
-</span></span><span style=display:flex><span>        ...
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@RequestMapping</span>(value <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/updateEmployee.do&#34;</span>, method <span style=color:#f92672>=</span> RequestMethod.<span style=color:#a6e22e>POST</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>updateEmployee</span>(<span style=color:#a6e22e>@ModelAttribute</span>(<span style=color:#e6db74>&#34;employee&#34;</span>) Employee employee,			
-</span></span><span style=display:flex><span>			BindingResult bindingResult, Model model) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		beanValidator.<span style=color:#a6e22e>validate</span>(employee, bindingResult); <span style=color:#75715e>//validation 수행</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (bindingResult.<span style=color:#a6e22e>hasErrors</span>()) { <span style=color:#75715e>//만일 validation 에러가 있으면...</span>
-</span></span><span style=display:flex><span>			.....
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;modifyemployee&#34;</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>		employeeManageService.<span style=color:#a6e22e>updateEmployee</span>(employee);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;changenotify&#34;</span>;
-</span></span><span style=display:flex><span>	}        
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>VO Class(com.easycompany.model.Employee.java)에 주민등록번호 필드를 추가하고,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.easycompany.model;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Employee</span> {
-</span></span><span style=display:flex><span>        ....
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String ihidnum;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String ihidnum1;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String ihidnum2;
-</span></span><span style=display:flex><span>        ...
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getIhidnum</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> ihidnum1<span style=color:#f92672>+</span>ihidnum2;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getIhidnum1</span>() {		
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> ihidnum1;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setIhidnum1</span>(String ihidnum1) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>ihidnum1</span> <span style=color:#f92672>=</span> ihidnum1;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getIhidnum2</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> ihidnum2;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setIhidnum2</span>(String ihidnum2) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>ihidnum2</span> <span style=color:#f92672>=</span> ihidnum2;
-</span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>JSP(/easycompany/webapp/jsp/modifyemployee.jsp)에 주민등록번호 입력 필드를 추가하자.</p><pre tabindex=0><code class=language-jsp data-lang=jsp>...
+이제 EmployeeController에 validation을 추가하고,(이미 추가되어 있다면 pass)</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.controller.annotation</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springmodules.validation.commons.DefaultBeanValidator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Controller</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>EmployeeController</span><span style=color:#bbb> </span>{<span style=color:#bbb>	
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Autowired</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>DefaultBeanValidator<span style=color:#bbb> </span>beanValidator;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@RequestMapping</span>(value<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;/updateEmployee.do&#34;</span>,<span style=color:#bbb> </span>method<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>RequestMethod.<span style=color:teal>POST</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>updateEmployee</span>(<span style=color:#3c5d5d;font-weight:700>@ModelAttribute</span>(<span style=color:#d14>&#34;employee&#34;</span>)<span style=color:#bbb> </span>Employee<span style=color:#bbb> </span>employee,<span style=color:#bbb>			
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>BindingResult<span style=color:#bbb> </span>bindingResult,<span style=color:#bbb> </span>Model<span style=color:#bbb> </span>model)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>beanValidator.<span style=color:teal>validate</span>(employee,<span style=color:#bbb> </span>bindingResult);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//validation 수행</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(bindingResult.<span style=color:teal>hasErrors</span>())<span style=color:#bbb> </span>{<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//만일 validation 에러가 있으면...</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>.....<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#d14>&#34;modifyemployee&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>employeeManageService.<span style=color:teal>updateEmployee</span>(employee);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#d14>&#34;changenotify&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>        
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>VO Class(com.easycompany.model.Employee.java)에 주민등록번호 필드를 추가하고,</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.model</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>Employee</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>....<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>ihidnum;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>ihidnum1;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>ihidnum2;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getIhidnum</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>ihidnum1<span style=color:#000;font-weight:700>+</span>ihidnum2;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getIhidnum1</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>		
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>ihidnum1;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setIhidnum1</span>(String<span style=color:#bbb> </span>ihidnum1)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>ihidnum1</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>ihidnum1;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getIhidnum2</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>ihidnum2;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setIhidnum2</span>(String<span style=color:#bbb> </span>ihidnum2)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>ihidnum2</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>ihidnum2;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>JSP(/easycompany/webapp/jsp/modifyemployee.jsp)에 주민등록번호 입력 필드를 추가하자.</p><pre tabindex=0><code class=language-jsp data-lang=jsp>...
 	&lt;tr&gt;
 		&lt;th&gt;주민번호&lt;/th&gt;
 		&lt;td&gt;

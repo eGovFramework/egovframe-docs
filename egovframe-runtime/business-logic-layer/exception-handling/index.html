@@ -78,181 +78,181 @@ LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/ann-advice.html target=_blank rel="noopener noreferrer" class=externalLink>Controller Advice<i class="svg-icon ico-go"></i></a>
 와의 관계를 고려하여 작성하였다. Spring MVC 기반 애플리케이션에서는 <strong>@ControllerAdvice</strong>와 <strong>@ExceptionHandler</strong>를 사용해 컨트롤러 전역 예외 처리를 할 수 있으며, 표준프레임워크의 Exception Handling은 <strong>서비스 계층</strong>에서 AOP After-throwing 방식으로 후처리 로직을 적용하는 보완적 접근이다.</p><div class="conts-wrap section-link" id=section_01><h2 class=sec-tit id=개요>개요</h2><p>전자정부 표준프레임워크 기반의 시스템 개발 시 Exception 처리, 정확히는 Exception별 특정 로직(후처리 로직이라고 부르기도 함)이 흐를 수 있도록 하여 Exception에 따른 적절한 대응이 가능하도록 하고자 하는데 목적이 있다.<br>AOP의 도움을 받아 비즈니스 POJO와 분리되어 <strong>After throwing advice</strong>로 정의하였다. Spring Framework 6.2에서 AOP는 <strong>schema 기반</strong> 또는 <strong>@AspectJ</strong> 스타일로 작성할 수 있으며, 횡단 관심사(예: 예외 후처리)의 모듈화에 사용된다.<br>AOP 관련 내용은
 <a class="krds-btn medium text" href=/egovframe-docs/egovframe-runtime/foundation-layer-core/aop/ class=innerLink>AOP 모듈</a>
-을 참조하길 바란다.</p><p>Exception에 대해 이야기 하겠다.<br>Exception 발생 시 Exception 발생 클래스 정보와 Exception 종류가 중요하다.<br>Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직의 대상일지 아닐지를 결정하는 데 사용된다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>	<span style=color:#66d9ef>public</span> CategoryVO <span style=color:#a6e22e>selectCategory</span>(CategoryVO vo) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span>		CategoryVO resultVO <span style=color:#f92672>=</span> categoryDAO.<span style=color:#a6e22e>selectCategory</span>(vo);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>    ....
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#75715e>// 넘어온 resultVO가 null 인 경우 EgovBizException 발생 (result.nodata.msg는 메시지 키에 해당됨)</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (resultVO <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>)
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>throw</span> processException(<span style=color:#e6db74>&#34;result.nodata.msg&#34;</span>); 
-</span></span><span style=display:flex><span>            <span style=color:#75715e>// 또는 throw processException(&#34;result.nodata.msg&#34;, 발생한 Exception );</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> resultVO;
-</span></span><span style=display:flex><span>	}
-</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><p>앞에서 언급했던 Exception 후처리 방식과 Exception은 아니지만 후처리 로직(leaveaTrace)을 실행할 하는 방식에 대해 설명하도록 하겠다.<br>간략하게 보면 Exception 후처리 방식은 <strong>AOP(pointCut ⇒ after-throw) ⇒ ExceptionTransfer.transfer() ⇒ ExceptionHandlerService ⇒ Handler</strong> 순으로 실행된다.</p><p>LeavaTrace는 AOP를 이용하는 구조가 아니고 Exception을 발생하지도 않는다. 단지 후처리 로직을 실행하도록 하고자 함에 목적이 있다.<br>실행 순서는 <strong>LeavaTrace ⇒ TraceHandlerService ⇒ Handler</strong> 순으로 실행한다.</p><p>먼저 Exception Handling에 대해 알아보도록 하자.</p><h3 class=sec-tit id=aop-config-exceptiontransfer-설정-및-설명>Aop Config, ExceptionTransfer 설정 및 설명</h3><h4 id=bean-설정>Bean 설정</h4><p>Exception 후처리와 leaveaTrace 설정을 위해서 샘플에서는 두 개의 xml 파일을 이용한다. (context-aspect.xml, context-common.xml)<br>Bean 정의 방식은
+을 참조하길 바란다.</p><p>Exception에 대해 이야기 하겠다.<br>Exception 발생 시 Exception 발생 클래스 정보와 Exception 종류가 중요하다.<br>Exception 발생 클래스 정보와 Exception 종류는 모두 후처리 로직의 대상일지 아닐지를 결정하는 데 사용된다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>CategoryVO<span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectCategory</span>(CategoryVO<span style=color:#bbb> </span>vo)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>CategoryVO<span style=color:#bbb> </span>resultVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>categoryDAO.<span style=color:teal>selectCategory</span>(vo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>....<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#998;font-style:italic>// 넘어온 resultVO가 null 인 경우 EgovBizException 발생 (result.nodata.msg는 메시지 키에 해당됨)</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(resultVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>throw</span><span style=color:#bbb> </span>processException(<span style=color:#d14>&#34;result.nodata.msg&#34;</span>);<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>            </span><span style=color:#998;font-style:italic>// 또는 throw processException(&#34;result.nodata.msg&#34;, 발생한 Exception );</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>resultVO;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><p>앞에서 언급했던 Exception 후처리 방식과 Exception은 아니지만 후처리 로직(leaveaTrace)을 실행할 하는 방식에 대해 설명하도록 하겠다.<br>간략하게 보면 Exception 후처리 방식은 <strong>AOP(pointCut ⇒ after-throw) ⇒ ExceptionTransfer.transfer() ⇒ ExceptionHandlerService ⇒ Handler</strong> 순으로 실행된다.</p><p>LeavaTrace는 AOP를 이용하는 구조가 아니고 Exception을 발생하지도 않는다. 단지 후처리 로직을 실행하도록 하고자 함에 목적이 있다.<br>실행 순서는 <strong>LeavaTrace ⇒ TraceHandlerService ⇒ Handler</strong> 순으로 실행한다.</p><p>먼저 Exception Handling에 대해 알아보도록 하자.</p><h3 class=sec-tit id=aop-config-exceptiontransfer-설정-및-설명>Aop Config, ExceptionTransfer 설정 및 설명</h3><h4 id=bean-설정>Bean 설정</h4><p>Exception 후처리와 leaveaTrace 설정을 위해서 샘플에서는 두 개의 xml 파일을 이용한다. (context-aspect.xml, context-common.xml)<br>Bean 정의 방식은
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans.html target=_blank rel="noopener noreferrer" class=externalLink>The IoC Container - Spring Framework 6.2<i class="svg-icon ico-go"></i></a>
 및
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans/dependencies.html target=_blank rel="noopener noreferrer" class=externalLink>Dependencies<i class="svg-icon ico-go"></i></a>
-를 참조한다.</p><p>먼저 Exception 후처리를 위한 부분을 보겠다.<br>Exception Handling을 위한 AOP 설정은 아래와 같다.<br>비즈니스 개발 시 패키지 구조는 바뀌기 때문에 Pointcut은 egov.sample.service.*Impl.*(..))을 수정하여 적용할 수 있다.<br>ExceptionTransfer의 property로 존재하는 exceptionHandlerService는 다수의 HandleManager를 등록 가능하도록 되어 있다.<br>여기서는 defaultExceptionHandleManager을 등록한 것을 볼 수 있다.</p><h5 id=context-aspectxml>context-aspect.xml</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>...
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;aop:config&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;aop:pointcut</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;serviceMethod&#34;</span>
-</span></span><span style=display:flex><span>			<span style=color:#a6e22e>expression=</span><span style=color:#e6db74>&#34;execution(* egov.sample.service.*Impl.*(..))&#34;</span> <span style=color:#f92672>/&gt;</span>
+를 참조한다.</p><p>먼저 Exception 후처리를 위한 부분을 보겠다.<br>Exception Handling을 위한 AOP 설정은 아래와 같다.<br>비즈니스 개발 시 패키지 구조는 바뀌기 때문에 Pointcut은 egov.sample.service.*Impl.*(..))을 수정하여 적용할 수 있다.<br>ExceptionTransfer의 property로 존재하는 exceptionHandlerService는 다수의 HandleManager를 등록 가능하도록 되어 있다.<br>여기서는 defaultExceptionHandleManager을 등록한 것을 볼 수 있다.</p><h5 id=context-aspectxml>context-aspect.xml</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>...
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;aop:config&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;aop:pointcut</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;serviceMethod&#34;</span>
+</span></span><span style=display:flex><span>			<span style=color:teal>expression=</span><span style=color:#d14>&#34;execution(* egov.sample.service.*Impl.*(..))&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;aop:aspect</span> <span style=color:#a6e22e>ref=</span><span style=color:#e6db74>&#34;exceptionTransfer&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;aop:after-throwing</span> <span style=color:#a6e22e>throwing=</span><span style=color:#e6db74>&#34;exception&#34;</span>
-</span></span><span style=display:flex><span>				<span style=color:#a6e22e>pointcut-ref=</span><span style=color:#e6db74>&#34;serviceMethod&#34;</span> <span style=color:#a6e22e>method=</span><span style=color:#e6db74>&#34;transfer&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/aop:aspect&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/aop:config&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;aop:aspect</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;exceptionTransfer&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;aop:after-throwing</span> <span style=color:teal>throwing=</span><span style=color:#d14>&#34;exception&#34;</span>
+</span></span><span style=display:flex><span>				<span style=color:teal>pointcut-ref=</span><span style=color:#d14>&#34;serviceMethod&#34;</span> <span style=color:teal>method=</span><span style=color:#d14>&#34;transfer&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/aop:aspect&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/aop:config&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;exceptionTransfer&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;exceptionHandlerService&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;defaultExceptionHandleManager&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;exceptionTransfer&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;exceptionHandlerService&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;defaultExceptionHandleManager&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;defaultExceptionHandleManager&#34;</span>
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;patterns&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;value&gt;</span>**service.*Impl<span style=color:#f92672>&lt;/value&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;handlers&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;egovHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;defaultExceptionHandleManager&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;patterns&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;value&gt;</span>**service.*Impl<span style=color:navy>&lt;/value&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;handlers&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;egovHandler&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;egovHandler&#34;</span>
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.exception.handler.EgovServiceExceptionHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;egovHandler&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.exception.handler.EgovServiceExceptionHandler&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>...
-</span></span></code></pre></div><p>defaultExceptionHandleManager는 setPatterns(), setHandlers() 메소드를 가지고 있다. 상단과 같이 등록된 pattern 정보를 이용하여 Exception 발생 클래스와의 비교하여 ture인 경우 handlers에 등록된 handler를 실행한다.<br>패턴 검사 시 사용되는 pathMatcher는 AntPathMatcher를 이용하고 있다.</p><p>특정 pattern 그룹군을 만든후 patterns에 등록하고 그에 해당하는 후처리 로직을 정의하여 등록할 수 있는 구조이다.</p><h4 id=handler-구현체>Handler 구현체</h4><p>먼저 클래스에 대한 이해가 필요하다.<br>앞단에서 간단하게 설명했지만 다시 정리 하자면 Exception 발생 시 AOP pointcut “After-throwing”에 걸려 ExceptionTransfer 클래스의 transfer가 실행된다.<br>transfer 메소드는 ExceptionHandlerManager의 run 메소드를 실행한다.<br>아래는 구현 예로 DefaultExceptionHandleManager 코드이다.<br><strong>(구현 시 필수사항) 상위클래스는 AbsExceptionHandleManager 이고 인터페이스는 ExceptionHandlerService 이다.</strong><br>구현되는 메소드는 run(Exception exception)인 것을 확인할 수 있다.</p><h5 id=defaultexceptionhandlemanagerjava>DefaultExceptionHandleManager.java</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DefaultExceptionHandleManager</span> <span style=color:#66d9ef>extends</span> AbsExceptionHandleManager <span style=color:#66d9ef>implements</span> ExceptionHandlerService {
+</span></span></code></pre></div><p>defaultExceptionHandleManager는 setPatterns(), setHandlers() 메소드를 가지고 있다. 상단과 같이 등록된 pattern 정보를 이용하여 Exception 발생 클래스와의 비교하여 ture인 경우 handlers에 등록된 handler를 실행한다.<br>패턴 검사 시 사용되는 pathMatcher는 AntPathMatcher를 이용하고 있다.</p><p>특정 pattern 그룹군을 만든후 patterns에 등록하고 그에 해당하는 후처리 로직을 정의하여 등록할 수 있는 구조이다.</p><h4 id=handler-구현체>Handler 구현체</h4><p>먼저 클래스에 대한 이해가 필요하다.<br>앞단에서 간단하게 설명했지만 다시 정리 하자면 Exception 발생 시 AOP pointcut “After-throwing”에 걸려 ExceptionTransfer 클래스의 transfer가 실행된다.<br>transfer 메소드는 ExceptionHandlerManager의 run 메소드를 실행한다.<br>아래는 구현 예로 DefaultExceptionHandleManager 코드이다.<br><strong>(구현 시 필수사항) 상위클래스는 AbsExceptionHandleManager 이고 인터페이스는 ExceptionHandlerService 이다.</strong><br>구현되는 메소드는 run(Exception exception)인 것을 확인할 수 있다.</p><h5 id=defaultexceptionhandlemanagerjava>DefaultExceptionHandleManager.java</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>DefaultExceptionHandleManager</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>AbsExceptionHandleManager<span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>ExceptionHandlerService<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Override</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>run</span>(Exception<span style=color:#bbb> </span>exception)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>log.<span style=color:teal>debug</span>(<span style=color:#d14>&#34; DefaultExceptionHandleManager.run() &#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>// 매칭조건이 false 인 경우</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(<span style=color:#000;font-weight:700>!</span>enableMatcher())<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(String<span style=color:#bbb> </span>pattern<span style=color:#bbb> </span>:<span style=color:#bbb> </span>patterns)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>log.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;pattern = &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>pattern<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34;, thisPackageName = &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>thisPackageName);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>log.<span style=color:teal>debug</span>(<span style=color:#d14>&#34;pm.match(pattern, thisPackageName) =&#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>pm.<span style=color:teal>match</span>(pattern,<span style=color:#bbb> </span>thisPackageName));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(pm.<span style=color:teal>match</span>(pattern,<span style=color:#bbb> </span>thisPackageName))<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span><span style=color:#000;font-weight:700>for</span><span style=color:#bbb> </span>(ExceptionHandler<span style=color:#bbb> </span>eh<span style=color:#bbb> </span>:<span style=color:#bbb> </span>handlers)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>					</span>eh.<span style=color:teal>occur</span>(exception,<span style=color:#bbb> </span>getPackageName());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span><span style=color:#000;font-weight:700>break</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>true</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=customizable-handler-등록>Customizable Handler 등록</h4><p>시나리오 : CustomizableHandler 클래스를 만들어 보고 sample 패키지에 있는 Helloworld 클래스 Exception 시에 CustomizableHandler를 실행한다.<br>먼저 CustomHandler 클래스를 아래와 같이 만든다.<br>ExceptionHandleManager 에서는 occur 메소드를 실행한다.<br><strong>Handler 구현체는 반드시 (필수사항) ExceptionHandler 인터페이스를 구현해야 한다.</strong></p><h5 id=customizablehandlerjava>CustomizableHandler.java</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>CustomizableHandler</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>ExceptionHandler<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>protected</span><span style=color:#bbb> </span>Log<span style=color:#bbb> </span>log<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>LogFactory.<span style=color:teal>getLog</span>(<span style=color:#000;font-weight:700>this</span>.<span style=color:teal>getClass</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>occur</span>(Exception<span style=color:#bbb> </span>ex,<span style=color:#bbb> </span>String<span style=color:#bbb> </span>packageName)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>log.<span style=color:teal>debug</span>(<span style=color:#d14>&#34; CustomHandler run...............&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>log.<span style=color:teal>debug</span>(<span style=color:#d14>&#34; CustomHandler 실행 ...  &#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(Exception<span style=color:#bbb> </span>e)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>e.<span style=color:teal>printStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>CustomizableHandler의 등록을 해보도록 하겠다.<br>여기서 주의해야 하는 부분은 patterns에 sample 패키지에 있는 Helloworld 클래스를 지정해주어야 한다는 것이다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;exceptionTransfer&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;exceptionHandlerService&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;customizableExceptionHandleManager&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Override</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>run</span>(Exception exception) <span style=color:#66d9ef>throws</span> Exception {
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;customizableExceptionHandleManager&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;patterns&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;value&gt;</span>**sample.Helloworld<span style=color:navy>&lt;/value&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;handlers&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;customizableHandler1&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;customizableHandler2&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;customizableHandler3&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		log.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34; DefaultExceptionHandleManager.run() &#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#75715e>// 매칭조건이 false 인 경우</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>enableMatcher())
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (String pattern : patterns) {
-</span></span><span style=display:flex><span>			log.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;pattern = &#34;</span> <span style=color:#f92672>+</span> pattern <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, thisPackageName = &#34;</span> <span style=color:#f92672>+</span> thisPackageName);
-</span></span><span style=display:flex><span>			log.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34;pm.match(pattern, thisPackageName) =&#34;</span> <span style=color:#f92672>+</span> pm.<span style=color:#a6e22e>match</span>(pattern, thisPackageName));
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (pm.<span style=color:#a6e22e>match</span>(pattern, thisPackageName)) {
-</span></span><span style=display:flex><span>				<span style=color:#66d9ef>for</span> (ExceptionHandler eh : handlers) {
-</span></span><span style=display:flex><span>					eh.<span style=color:#a6e22e>occur</span>(exception, getPackageName());
-</span></span><span style=display:flex><span>				}
-</span></span><span style=display:flex><span>				<span style=color:#66d9ef>break</span>;
-</span></span><span style=display:flex><span>			}
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h4 id=customizable-handler-등록>Customizable Handler 등록</h4><p>시나리오 : CustomizableHandler 클래스를 만들어 보고 sample 패키지에 있는 Helloworld 클래스 Exception 시에 CustomizableHandler를 실행한다.<br>먼저 CustomHandler 클래스를 아래와 같이 만든다.<br>ExceptionHandleManager 에서는 occur 메소드를 실행한다.<br><strong>Handler 구현체는 반드시 (필수사항) ExceptionHandler 인터페이스를 구현해야 한다.</strong></p><h5 id=customizablehandlerjava>CustomizableHandler.java</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CustomizableHandler</span> <span style=color:#66d9ef>implements</span> ExceptionHandler {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> Log log <span style=color:#f92672>=</span> LogFactory.<span style=color:#a6e22e>getLog</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getClass</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>occur</span>(Exception ex, String packageName) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		log.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34; CustomHandler run...............&#34;</span>);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>			log.<span style=color:#a6e22e>debug</span>(<span style=color:#e6db74>&#34; CustomHandler 실행 ...  &#34;</span>);
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (Exception e) {
-</span></span><span style=display:flex><span>			e.<span style=color:#a6e22e>printStackTrace</span>();
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>CustomizableHandler의 등록을 해보도록 하겠다.<br>여기서 주의해야 하는 부분은 patterns에 sample 패키지에 있는 Helloworld 클래스를 지정해주어야 한다는 것이다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;exceptionTransfer&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;exceptionHandlerService&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;customizableExceptionHandleManager&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;customizableExceptionHandleManager&#34;</span>
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;patterns&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;value&gt;</span>**sample.Helloworld<span style=color:#f92672>&lt;/value&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;handlers&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;customizableHandler1&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;customizableHandler2&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;customizableHandler3&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;customizableHandler1&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;sample.CustomizableHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;customizableHandler2&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;sample.CustomizableHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;customizableHandler3&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;sample.CustomizableHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;customizableHandler1&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;sample.CustomizableHandler&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;customizableHandler2&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;sample.CustomizableHandler&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;customizableHandler3&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;sample.CustomizableHandler&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span></code></pre></div><p>이런식으로 여러개의 Handler를 등록해줄 수 있다.</p><h3 class=sec-tit id=leaveatrace-설정-및-설명>leaveaTrace 설정 및 설명</h3><p>Exception이거나 Exception이 아닌 경우에 Trace 후처리 로직을 실행시키고자 할 때 사용한다.<br>설정하는 기본적인 구조는 Exception 후처리하는 방식과 같다. 설정 파일은 context-common.xml 이다.<br>DefaultTraceHandleManager에 TraceHandler를 등록하는 형태로 설정된다.</p><h4 id=bean-설정-1>Bean 설정</h4><p>leaveaTrace·TraceHandler 관련 Bean 정의는
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans.html target=_blank rel="noopener noreferrer" class=externalLink>The IoC Container<i class="svg-icon ico-go"></i></a>
-를 참조한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>...
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;leaveaTrace&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.trace.LeaveaTrace&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;traceHandlerServices&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;traceHandlerService&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/bean&gt;</span>
+를 참조한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>...
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;leaveaTrace&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.trace.LeaveaTrace&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;traceHandlerServices&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;traceHandlerService&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;traceHandlerService&#34;</span> 	<span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;patterns&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;value&gt;</span>*<span style=color:#f92672>&lt;/value&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;handlers&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;defaultTraceHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;traceHandlerService&#34;</span> 	<span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;patterns&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;value&gt;</span>*<span style=color:navy>&lt;/value&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;handlers&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;defaultTraceHandler&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;antPathMatcher&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.util.AntPathMatcher&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;antPathMatcher&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.util.AntPathMatcher&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;defaultTraceHandler&#34;</span>
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.cmmn.trace.handler.DefaultTraceHandler&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;defaultTraceHandler&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.cmmn.trace.handler.DefaultTraceHandler&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>...
-</span></span></code></pre></div><h4 id=tracehandler-확장-개발-sample>TraceHandler 확장 개발 Sample</h4><h5 id=interface-tracehandler를-아래와-같이-implements-한다>Interface TraceHandler를 아래와 같이 implements 한다.</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> egovframework.rte.fdl.cmmn.trace.handler;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.apache.commons.logging.Log;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.apache.commons.logging.LogFactory;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DefaultTraceHandler</span> <span style=color:#66d9ef>implements</span> TraceHandler {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>todo</span>(Class clazz, String message) {
-</span></span><span style=display:flex><span>	<span style=color:#75715e>//수행하고자 하는 처리로직을 넣는 부분...</span>
-</span></span><span style=display:flex><span>	System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34; log ==&gt; DefaultTraceHandler run...............&#34;</span>);
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h5 id=leaveatrace-코드상-발생-sample>leaveaTrace 코드상 발생 Sample</h5><p>사용 방법을 다시 상기해보면 아래와 같다.<br>메시지 키(message.trace.msg)를 이용하여 메시지 정보를 넘겨 Handler를 실행한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>	<span style=color:#66d9ef>public</span> CategoryVO <span style=color:#a6e22e>selectCategory</span>(CategoryVO vo) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span>		CategoryVO resultVO <span style=color:#f92672>=</span> categoryDAO.<span style=color:#a6e22e>selectCategory</span>(vo);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>		  <span style=color:#75715e>//강제로 발생한 ArithmeticException  </span>
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 1 <span style=color:#f92672>/</span> 0;
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (ArithmeticException athex) {
-</span></span><span style=display:flex><span>		  <span style=color:#75715e>//Exception을 발생하지 않고 후처리 로직 실행.</span>
-</span></span><span style=display:flex><span>			leaveaTrace(<span style=color:#e6db74>&#34;message.trace.msg&#34;</span>);
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> resultVO;
-</span></span><span style=display:flex><span>	}
-</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=참고-문서>참고 문서</h2><ul><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans.html target=_blank rel="noopener noreferrer" class=externalLink>The IoC Container - Spring Framework 6.2<i class="svg-icon ico-go"></i></a>
+</span></span></code></pre></div><h4 id=tracehandler-확장-개발-sample>TraceHandler 확장 개발 Sample</h4><h5 id=interface-tracehandler를-아래와-같이-implements-한다>Interface TraceHandler를 아래와 같이 implements 한다.</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>egovframework.rte.fdl.cmmn.trace.handler</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.apache.commons.logging.Log</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.apache.commons.logging.LogFactory</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>DefaultTraceHandler</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>TraceHandler<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>todo</span>(Class<span style=color:#bbb> </span>clazz,<span style=color:#bbb> </span>String<span style=color:#bbb> </span>message)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>//수행하고자 하는 처리로직을 넣는 부분...</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>System.<span style=color:teal>out</span>.<span style=color:teal>println</span>(<span style=color:#d14>&#34; log ==&gt; DefaultTraceHandler run...............&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h5 id=leaveatrace-코드상-발생-sample>leaveaTrace 코드상 발생 Sample</h5><p>사용 방법을 다시 상기해보면 아래와 같다.<br>메시지 키(message.trace.msg)를 이용하여 메시지 정보를 넘겨 Handler를 실행한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>CategoryVO<span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectCategory</span>(CategoryVO<span style=color:#bbb> </span>vo)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>CategoryVO<span style=color:#bbb> </span>resultVO<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>categoryDAO.<span style=color:teal>selectCategory</span>(vo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		  </span><span style=color:#998;font-style:italic>//강제로 발생한 ArithmeticException  </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>i<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>1<span style=color:#bbb> </span><span style=color:#000;font-weight:700>/</span><span style=color:#bbb> </span>0;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(ArithmeticException<span style=color:#bbb> </span>athex)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		  </span><span style=color:#998;font-style:italic>//Exception을 발생하지 않고 후처리 로직 실행.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>leaveaTrace(<span style=color:#d14>&#34;message.trace.msg&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>resultVO;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=참고-문서>참고 문서</h2><ul><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/beans.html target=_blank rel="noopener noreferrer" class=externalLink>The IoC Container - Spring Framework 6.2<i class="svg-icon ico-go"></i></a>
 : Bean 정의, XML/Java 설정</li><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/core/aop.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework 6.2 - Aspect-Oriented Programming with Spring<i class="svg-icon ico-go"></i></a>
 : AOP 개념, schema 기반·@AspectJ 지원, 선언적 서비스</li><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/ann-advice.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework 6.2 - Controller Advice<i class="svg-icon ico-go"></i></a>
 : @ControllerAdvice, @ExceptionHandler를 이용한 전역 예외 처리</li><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/data-access/transaction/declarative.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework 6.2 - Declarative Transaction Management<i class="svg-icon ico-go"></i></a>

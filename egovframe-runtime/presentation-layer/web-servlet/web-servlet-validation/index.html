@@ -76,114 +76,114 @@ LangChain4j<span class=sr-only>열기</span></button><div class=lnb-submenu-lv2 
 Validator는 특정 계층에 종속적인 구조가 아니라서, web이나 data-access등 어떤 계층의 객체라도 유효성 검증이 가능하게 한다.
 Jakarta Commons Validator나 Valang 같은 외부 Validator들도 Spring 프레임워크에서 사용할 수 있다.
 Spring Modules를 이용한 Jakarta Commons Validator 사용 방법에 대해서는 Spring Framework에서 Commons Validator 사용 을 참고하라.</p></div><div class="conts-wrap section-link" id=section_02><h2 class=sec-tit id=설명>설명</h2><p>부서 정보를 수정하는 페이지에서 커맨드 객체인 부서 정보 클래스를 유효성 검증하는 코드를 작성해 보자.
-부서 클래스인 Department 클래스는 아래와 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.easycompany.domain;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Department</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String deptid;   <span style=color:#75715e>//부서아이디</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String deptname;  <span style=color:#75715e>//부서이름</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String superdeptid;  <span style=color:#75715e>//상위부서아이디</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String superdeptname; <span style=color:#75715e>//상위부서이름</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String depth;  <span style=color:#75715e>//부서레벨</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String description;  <span style=color:#75715e>//부서설명</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>//위 프로퍼티들의 setter/getter</span>
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=validator-구현>Validator 구현</h3><p>인터페이스 org.springframework.validation.Validator의 메소드는 다음과 같다.</p><ul><li>boolean supports(Class clazz) : 주어진 객체(clazz)에 대해 Validator가 지원 가능한가?</li><li>void validate(Object target, Errors errors) : 주어진 객체(target)에 대해서 유효성 체크를 수행하고, 유효성 에러 발생시 주어진 Errors객체에 관련 정보가 저장된다.</li></ul><p>구현 Validator 클래스를 만들 때는 위 두 메소드를 구현해야 한다.</p><p>Department를 유효성 검증 하기 위한 DepartmentValidator를 만들어 보자.
-Validation 조건은 부서이름(deptname) 프로퍼티는 반드시 값이 존재해야 하며, 부서설명(description) 프로퍼티는 입력값의 길이가 10 이상이어야 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.easycompany.validator;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.Errors;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.Validator;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.easycompany.domain.Department;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DepartmentValidator</span> <span style=color:#66d9ef>implements</span> Validator {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>supports</span>(Class clazz) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> Department.<span style=color:#a6e22e>class</span>.<span style=color:#a6e22e>isAssignableFrom</span>(clazz);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>validate</span>(Object target, Errors errors) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		Department department <span style=color:#f92672>=</span> (Department)target;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (isEmptyOrWhitespace(department.<span style=color:#a6e22e>getDeptname</span>())) { <span style=color:#75715e>//부서 이름 프로퍼티 값이 존재하는가? </span>
-</span></span><span style=display:flex><span>			errors.<span style=color:#a6e22e>rejectValue</span>(<span style=color:#e6db74>&#34;deptname&#34;</span>, <span style=color:#e6db74>&#34;required&#34;</span>);
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (department.<span style=color:#a6e22e>getDescription</span>() <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> department.<span style=color:#a6e22e>getDescription</span>().<span style=color:#a6e22e>length</span>() <span style=color:#f92672>&lt;</span> 10) { <span style=color:#75715e>//부서설명 프로퍼티는 값의 길이가 10 이상인가?</span>
-</span></span><span style=display:flex><span>			errors.<span style=color:#a6e22e>rejectValue</span>(<span style=color:#e6db74>&#34;description&#34;</span>, <span style=color:#e6db74>&#34;lengthsize&#34;</span>, <span style=color:#66d9ef>new</span> Object<span style=color:#f92672>[]</span>{10}, <span style=color:#e6db74>&#34;description&#39;s length must be larger than 10.&#34;</span>);
-</span></span><span style=display:flex><span>		}		
-</span></span><span style=display:flex><span>	}	
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isEmptyOrWhitespace</span>(String value){
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (value <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> value.<span style=color:#a6e22e>trim</span>().<span style=color:#a6e22e>length</span>() <span style=color:#f92672>==</span> 0) {
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>else</span> {
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>위 코드에서 처럼 유효성 검증이 실패한 경우 Errors 인터페이스의 rejectValue 메소드를 실행하는데, Errors 인터페이스에 대한 자세한 설명은
+부서 클래스인 Department 클래스는 아래와 같다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.domain</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>Department</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>deptid;<span style=color:#bbb>   </span><span style=color:#998;font-style:italic>//부서아이디</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>deptname;<span style=color:#bbb>  </span><span style=color:#998;font-style:italic>//부서이름</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>superdeptid;<span style=color:#bbb>  </span><span style=color:#998;font-style:italic>//상위부서아이디</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>superdeptname;<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//상위부서이름</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>depth;<span style=color:#bbb>  </span><span style=color:#998;font-style:italic>//부서레벨</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>description;<span style=color:#bbb>  </span><span style=color:#998;font-style:italic>//부서설명</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>//위 프로퍼티들의 setter/getter</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=validator-구현>Validator 구현</h3><p>인터페이스 org.springframework.validation.Validator의 메소드는 다음과 같다.</p><ul><li>boolean supports(Class clazz) : 주어진 객체(clazz)에 대해 Validator가 지원 가능한가?</li><li>void validate(Object target, Errors errors) : 주어진 객체(target)에 대해서 유효성 체크를 수행하고, 유효성 에러 발생시 주어진 Errors객체에 관련 정보가 저장된다.</li></ul><p>구현 Validator 클래스를 만들 때는 위 두 메소드를 구현해야 한다.</p><p>Department를 유효성 검증 하기 위한 DepartmentValidator를 만들어 보자.
+Validation 조건은 부서이름(deptname) 프로퍼티는 반드시 값이 존재해야 하며, 부서설명(description) 프로퍼티는 입력값의 길이가 10 이상이어야 한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.validator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.Errors</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.Validator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.domain.Department</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>DepartmentValidator</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>Validator<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>supports</span>(Class<span style=color:#bbb> </span>clazz)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>Department.<span style=color:teal>class</span>.<span style=color:teal>isAssignableFrom</span>(clazz);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>validate</span>(Object<span style=color:#bbb> </span>target,<span style=color:#bbb> </span>Errors<span style=color:#bbb> </span>errors)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Department<span style=color:#bbb> </span>department<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Department)target;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(isEmptyOrWhitespace(department.<span style=color:teal>getDeptname</span>()))<span style=color:#bbb> </span>{<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//부서 이름 프로퍼티 값이 존재하는가? </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>errors.<span style=color:teal>rejectValue</span>(<span style=color:#d14>&#34;deptname&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;required&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(department.<span style=color:teal>getDescription</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>||</span><span style=color:#bbb> </span>department.<span style=color:teal>getDescription</span>().<span style=color:teal>length</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>&lt;</span><span style=color:#bbb> </span>10)<span style=color:#bbb> </span>{<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//부서설명 프로퍼티는 값의 길이가 10 이상인가?</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>errors.<span style=color:teal>rejectValue</span>(<span style=color:#d14>&#34;description&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;lengthsize&#34;</span>,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>[]</span>{10},<span style=color:#bbb> </span><span style=color:#d14>&#34;description&#39;s length must be larger than 10.&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>		
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>	
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>isEmptyOrWhitespace</span>(String<span style=color:#bbb> </span>value){<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(value<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>||</span><span style=color:#bbb> </span>value.<span style=color:teal>trim</span>().<span style=color:teal>length</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span>0)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>true</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>else</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>false</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><p>위 코드에서 처럼 유효성 검증이 실패한 경우 Errors 인터페이스의 rejectValue 메소드를 실행하는데, Errors 인터페이스에 대한 자세한 설명은
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/docs/6.2.x/javadoc-api/org/springframework/validation/Errors.html target=_blank rel="noopener noreferrer" class=externalLink>여기<i class="svg-icon ico-go"></i></a>
 를 참고하라.</p><p><strong>errors.rejectValue(“deptname”, “required”);</strong></p><ul><li>deptname 프로퍼티에 대해서 유효성 검증시 에러가 발생했고, 관련 메시지 key는 “required”란 의미이다.</li></ul><p><strong>errors.rejectValue(“description”, “lengthsize”, new Object[]{10}, “description&rsquo;s length must be larger than 10.”);</strong></p><ul><li>description 프로퍼티에 대해서 유효성 검증시 에러가 발생했고, 관련 메시지 key는 “lengthsize” 이며 메시지에 전달될 argument는 10이며,
 해당 메시지 key가 존재 하지 않으면 “description&rsquo;s length must be larger than 10.”란 메시지를 사용한다는 의미이다.</li></ul><p>스프링에서는 유효성 검증을 위한 ValidationUtils라는 유틸 클래스를 제공한다.
-부서 이름 프로퍼티(deptname) 값이 null또는 white space인지 체크하는 부분은 ValidationUtils의 rejectIfEmptyOrWhitespace 메소드를 사용해서 작성할 수 있다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.easycompany.validator;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.Errors;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.Validator;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.ValidationUtils;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.easycompany.domain.Department;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DepartmentValidator</span> <span style=color:#66d9ef>implements</span> Validator {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>supports</span>(Class clazz) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> Department.<span style=color:#a6e22e>class</span>.<span style=color:#a6e22e>isAssignableFrom</span>(clazz);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>validate</span>(Object target, Errors errors) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		Department department <span style=color:#f92672>=</span> (Department)target;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		ValidationUtils.<span style=color:#a6e22e>rejectIfEmptyOrWhitespace</span>(errors, <span style=color:#e6db74>&#34;deptname&#34;</span>, <span style=color:#e6db74>&#34;required&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (department.<span style=color:#a6e22e>getDescription</span>() <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> department.<span style=color:#a6e22e>getDescription</span>().<span style=color:#a6e22e>length</span>()<span style=color:#f92672>&lt;</span>10) { <span style=color:#75715e>//부서설명 프로퍼티는 입력값의 길이가 10 이상인가?</span>
-</span></span><span style=display:flex><span>			errors.<span style=color:#a6e22e>rejectValue</span>(<span style=color:#e6db74>&#34;description&#34;</span>, <span style=color:#e6db74>&#34;lengthsize&#34;</span>, <span style=color:#66d9ef>new</span> Object<span style=color:#f92672>[]</span>{10}, <span style=color:#e6db74>&#34;description&#39;s length must be larger than 10.&#34;</span>);
-</span></span><span style=display:flex><span>		}		
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=에러-메시지-설정>에러 메시지 설정</h3><p>message 프로퍼티 파일에서 메시지 key인 “required”, “lengthsize”에 대한 메시지 설정을 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#a6e22e>required</span><span style=color:#f92672>=</span><span style=color:#e6db74>필수 입력값입니다.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>lengthsize</span><span style=color:#f92672>=</span><span style=color:#e6db74>{0}자 이상 입력해야 합니다.</span>
+부서 이름 프로퍼티(deptname) 값이 null또는 white space인지 체크하는 부분은 ValidationUtils의 rejectIfEmptyOrWhitespace 메소드를 사용해서 작성할 수 있다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.validator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.Errors</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.Validator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.ValidationUtils</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.domain.Department</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>DepartmentValidator</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>Validator<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>boolean</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>supports</span>(Class<span style=color:#bbb> </span>clazz)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>Department.<span style=color:teal>class</span>.<span style=color:teal>isAssignableFrom</span>(clazz);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>validate</span>(Object<span style=color:#bbb> </span>target,<span style=color:#bbb> </span>Errors<span style=color:#bbb> </span>errors)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Department<span style=color:#bbb> </span>department<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(Department)target;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>ValidationUtils.<span style=color:teal>rejectIfEmptyOrWhitespace</span>(errors,<span style=color:#bbb> </span><span style=color:#d14>&#34;deptname&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;required&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(department.<span style=color:teal>getDescription</span>()<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>||</span><span style=color:#bbb> </span>department.<span style=color:teal>getDescription</span>().<span style=color:teal>length</span>()<span style=color:#000;font-weight:700>&lt;</span>10)<span style=color:#bbb> </span>{<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//부서설명 프로퍼티는 입력값의 길이가 10 이상인가?</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>errors.<span style=color:teal>rejectValue</span>(<span style=color:#d14>&#34;description&#34;</span>,<span style=color:#bbb> </span><span style=color:#d14>&#34;lengthsize&#34;</span>,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>[]</span>{10},<span style=color:#bbb> </span><span style=color:#d14>&#34;description&#39;s length must be larger than 10.&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>		
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=에러-메시지-설정>에러 메시지 설정</h3><p>message 프로퍼티 파일에서 메시지 key인 “required”, “lengthsize”에 대한 메시지 설정을 한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:teal>required</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>필수 입력값입니다.</span>
+</span></span><span style=display:flex><span><span style=color:teal>lengthsize</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>{0}자 이상 입력해야 합니다.</span>
 </span></span></code></pre></div><h3 class=sec-tit id=controller에서-validation>Controller에서 validation</h3><p>Controller에서 validation을 수행하는 코드를 적용해 보자.
 폼을 전송하는 순간에 유효성 검증을 하기 원한다면,
-com.easycompany.controller.annotation.UpdateDepartmentController 에서 onSubmit 메소드에 validation 코드를 추가한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>package</span> com.easycompany.controller.annotation;
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> org.springframework.validation.BindingResult;
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> com.easycompany.validator.DepartmentValidator;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Controller</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UpdateDepartmentController</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>//사용자가 데이터 수정을 끝내고 저장 버튼을 누르면 수정 데이터로 저장을 담당하는 서비스(DB)를 호출한다.</span>
-</span></span><span style=display:flex><span>	<span style=color:#75715e>//저장이 성공하면 부서리스트 페이지로 이동하고 에러가 있으면 다시 입력폼페이지로 이동한다.</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@RequestMapping</span>(value <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/updateDepartment.do&#34;</span>, method <span style=color:#f92672>=</span> RequestMethod.<span style=color:#a6e22e>POST</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>onSubmit</span>(<span style=color:#a6e22e>@ModelAttribute</span>(<span style=color:#e6db74>&#34;department&#34;</span>) Department department, BindingResult bindingResult) {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//validation code</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>new</span> DepartmentValidator().<span style=color:#a6e22e>validate</span>(department, bindingResult); <span style=color:#75715e>//validation을 수행한다.</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(bindingResult.<span style=color:#a6e22e>hasErrors</span>()){ <span style=color:#75715e>//validation 에러가 있으면,</span>
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;modifydepartment&#34;</span>;  <span style=color:#75715e>//이 페이지로 이동.</span>
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>			departmentService.<span style=color:#a6e22e>updateDepartment</span>(department);
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;redirect:/departmentList.do?depth=1&#34;</span>;
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (Exception e) {
-</span></span><span style=display:flex><span>			e.<span style=color:#a6e22e>printStackTrace</span>();
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;modifydepartment&#34;</span>;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=jsp>JSP</h3><p>손쉬운 에러 메시지 표기를 위해 Spring 폼태그 <code>&lt;form:errors/></code>를 사용할 것을 권장한다.
+com.easycompany.controller.annotation.UpdateDepartmentController 에서 onSubmit 메소드에 validation 코드를 추가한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>package</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.controller.annotation</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>org.springframework.validation.BindingResult</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>import</span><span style=color:#bbb> </span><span style=color:#555>com.easycompany.validator.DepartmentValidator</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Controller</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>UpdateDepartmentController</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>//사용자가 데이터 수정을 끝내고 저장 버튼을 누르면 수정 데이터로 저장을 담당하는 서비스(DB)를 호출한다.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>//저장이 성공하면 부서리스트 페이지로 이동하고 에러가 있으면 다시 입력폼페이지로 이동한다.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@RequestMapping</span>(value<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;/updateDepartment.do&#34;</span>,<span style=color:#bbb> </span>method<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>RequestMethod.<span style=color:teal>POST</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>onSubmit</span>(<span style=color:#3c5d5d;font-weight:700>@ModelAttribute</span>(<span style=color:#d14>&#34;department&#34;</span>)<span style=color:#bbb> </span>Department<span style=color:#bbb> </span>department,<span style=color:#bbb> </span>BindingResult<span style=color:#bbb> </span>bindingResult)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//validation code</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>DepartmentValidator().<span style=color:teal>validate</span>(department,<span style=color:#bbb> </span>bindingResult);<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//validation을 수행한다.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span>(bindingResult.<span style=color:teal>hasErrors</span>()){<span style=color:#bbb> </span><span style=color:#998;font-style:italic>//validation 에러가 있으면,</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#d14>&#34;modifydepartment&#34;</span>;<span style=color:#bbb>  </span><span style=color:#998;font-style:italic>//이 페이지로 이동.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>departmentService.<span style=color:teal>updateDepartment</span>(department);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#d14>&#34;redirect:/departmentList.do?depth=1&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(Exception<span style=color:#bbb> </span>e)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>e.<span style=color:teal>printStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span><span style=color:#d14>&#34;modifydepartment&#34;</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=jsp>JSP</h3><p>손쉬운 에러 메시지 표기를 위해 Spring 폼태그 <code>&lt;form:errors/></code>를 사용할 것을 권장한다.
 /easycompany/webapp/jsp/annotation/modifydepartment.jsp</p><pre tabindex=0><code class=language-jsp data-lang=jsp>&lt;%@ taglib prefix=&#34;form&#34; uri=&#34;http://www.springframework.org/tags/form&#34; %&gt;
 ...
 &lt;form:form commandName=&#34;department&#34;&gt;

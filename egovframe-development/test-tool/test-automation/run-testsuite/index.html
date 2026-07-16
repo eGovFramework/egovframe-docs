@@ -68,43 +68,43 @@ VS Code 활용 가이드<span class=sr-only>열기</span></button><div class=lnb
 : test와 같이 작성한다.</li><li>m2eclipse로 테스트 수행 : Run As > Maven test 선택하여 실행한 뒤, Console View에서 <strong>BUILD SUCCESSFUL</strong>을 확인한다.</li></ol><p><img src=/egovframe-docs/egovframe-development/test-tool/images/maven-automation-1.jpg alt="Maven 테스트 자동화 1"></p><ol start=3><li>XML 리포트 확인 : <strong><code>&lt;reportFormat></code>xml<code>&lt;/reportFormat></code></strong> 항목에 xml, txt를 명시할 수 있으며, <strong>TEST-{TestcaseFullName}.xml</strong> 식의 파일이 생성된다.</li></ol><p><img src=/egovframe-docs/egovframe-development/test-tool/images/maven-automation-2.png alt="Maven 테스트 자동화 2"></p><h3 class=sec-tit id=ant를-사용한-테스트-자동화>Ant를 사용한 테스트 자동화</h3><p>Ant를 사용하여 개인빌드를 하는 경우, 다음과 같이 테스트를 자동화할 수 있다.</p><ol><li><p>build.xml 작성 :
 <a class="krds-btn medium text" href=#test-automation%ec%9d%84-%ec%9c%84%ed%95%9c-buildxml-%ec%84%a4%ec%a0%95-%ec%83%98%ed%94%8c--junit class=innerLink>Test Automation을 위한 build.xml 설정 샘플 : junit</a>
 과 같이 작성한다.</p></li><li><p>이클립스에서 테스트 수행</p><ol><li><a class="krds-btn medium text" href=/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/ class=innerLink>이클립스에서 Ant를 이용하여 target</a>
-을 수행한다.</li><li>Console View에서 실행 결과를 확인한다.</li></ol><p><img src=/egovframe-docs/egovframe-development/test-tool/images/ant-automation-1.png alt="Ant 테스트 자동화 1"></p></li><li><p>XML 리포트 확인 : junit task에서 <strong><code>&lt;formatter type="xml"/></code></strong> 항목에 xml, txt, brief를 설정할 수 있으며, 위의 예에서는 build/junit-reports 디렉토리 밑에 TEST-{TestcaseFullName}.xml 식의 파일이 생성된다.</p></li></ol><p><img src=/egovframe-docs/egovframe-development/test-tool/images/ant-automation-2.png alt="Ant 테스트 자동화 2"></p></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><p>Maven과 Ant의 Script의 작성 예는 다음과 같다.</p><h3 class=sec-tit id=test-automation을-위한-pomxml-설정-샘플--test>Test Automation을 위한 pom.xml 설정 샘플 : test</h3><p>test 수행을 위한 pom.xml 설정 샘플은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;build&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#75715e>&lt;!-- 테스트를 수행하려면 goal이 &#39;test&#39;이다. --&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#75715e>&lt;!-- test --&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;artifactId&gt;</span>maven-surefire-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;skipTests&gt;</span>false<span style=color:#f92672>&lt;/skipTests&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;forkMode&gt;</span>always<span style=color:#f92672>&lt;/forkMode&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;reportFormat&gt;</span>xml<span style=color:#f92672>&lt;/reportFormat&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;excludes&gt;</span>
-</span></span><span style=display:flex><span>					<span style=color:#f92672>&lt;exclude&gt;</span>**/Abstract*.java<span style=color:#f92672>&lt;/exclude&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;/excludes&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;includes&gt;</span>
-</span></span><span style=display:flex><span>					<span style=color:#f92672>&lt;include&gt;</span>**/*Test.java<span style=color:#f92672>&lt;/include&gt;</span>
-</span></span><span style=display:flex><span>				<span style=color:#f92672>&lt;/includes&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/build&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=test-automation을-위한-buildxml-설정-샘플--junit>Test Automation을 위한 build.xml 설정 샘플 : junit</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;testreports.dir&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;build/junit-reports&#34;</span> <span style=color:#f92672>/&gt;</span>
+을 수행한다.</li><li>Console View에서 실행 결과를 확인한다.</li></ol><p><img src=/egovframe-docs/egovframe-development/test-tool/images/ant-automation-1.png alt="Ant 테스트 자동화 1"></p></li><li><p>XML 리포트 확인 : junit task에서 <strong><code>&lt;formatter type="xml"/></code></strong> 항목에 xml, txt, brief를 설정할 수 있으며, 위의 예에서는 build/junit-reports 디렉토리 밑에 TEST-{TestcaseFullName}.xml 식의 파일이 생성된다.</p></li></ol><p><img src=/egovframe-docs/egovframe-development/test-tool/images/ant-automation-2.png alt="Ant 테스트 자동화 2"></p></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><p>Maven과 Ant의 Script의 작성 예는 다음과 같다.</p><h3 class=sec-tit id=test-automation을-위한-pomxml-설정-샘플--test>Test Automation을 위한 pom.xml 설정 샘플 : test</h3><p>test 수행을 위한 pom.xml 설정 샘플은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;build&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:#998;font-style:italic>&lt;!-- 테스트를 수행하려면 goal이 &#39;test&#39;이다. --&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:#998;font-style:italic>&lt;!-- test --&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;artifactId&gt;</span>maven-surefire-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;skipTests&gt;</span>false<span style=color:navy>&lt;/skipTests&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;forkMode&gt;</span>always<span style=color:navy>&lt;/forkMode&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;reportFormat&gt;</span>xml<span style=color:navy>&lt;/reportFormat&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;excludes&gt;</span>
+</span></span><span style=display:flex><span>					<span style=color:navy>&lt;exclude&gt;</span>**/Abstract*.java<span style=color:navy>&lt;/exclude&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;/excludes&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;includes&gt;</span>
+</span></span><span style=display:flex><span>					<span style=color:navy>&lt;include&gt;</span>**/*Test.java<span style=color:navy>&lt;/include&gt;</span>
+</span></span><span style=display:flex><span>				<span style=color:navy>&lt;/includes&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/build&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=test-automation을-위한-buildxml-설정-샘플--junit>Test Automation을 위한 build.xml 설정 샘플 : junit</h3><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;testreports.dir&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;build/junit-reports&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>. . . 중략 . . .
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;junit</span> <span style=color:#a6e22e>forkmode=</span><span style=color:#e6db74>&#34;perBatch&#34;</span> <span style=color:#a6e22e>printsummary=</span><span style=color:#e6db74>&#34;true&#34;</span> <span style=color:#a6e22e>haltonfailure=</span><span style=color:#e6db74>&#34;yes&#34;</span> <span style=color:#a6e22e>haltonerror=</span><span style=color:#e6db74>&#34;yes&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;classpath</span> <span style=color:#a6e22e>refid=</span><span style=color:#e6db74>&#34;master-classpath&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;classpath</span> <span style=color:#a6e22e>refid=</span><span style=color:#e6db74>&#34;test-classpath&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;classpath</span> <span style=color:#a6e22e>path=</span><span style=color:#e6db74>&#34;${testbuild.dir}&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;junit</span> <span style=color:teal>forkmode=</span><span style=color:#d14>&#34;perBatch&#34;</span> <span style=color:teal>printsummary=</span><span style=color:#d14>&#34;true&#34;</span> <span style=color:teal>haltonfailure=</span><span style=color:#d14>&#34;yes&#34;</span> <span style=color:teal>haltonerror=</span><span style=color:#d14>&#34;yes&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;classpath</span> <span style=color:teal>refid=</span><span style=color:#d14>&#34;master-classpath&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;classpath</span> <span style=color:teal>refid=</span><span style=color:#d14>&#34;test-classpath&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;classpath</span> <span style=color:teal>path=</span><span style=color:#d14>&#34;${testbuild.dir}&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;formatter</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;xml&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;formatter</span> <span style=color:teal>type=</span><span style=color:#d14>&#34;xml&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;batchtest</span> <span style=color:#a6e22e>fork=</span><span style=color:#e6db74>&#34;yes&#34;</span> <span style=color:#a6e22e>todir=</span><span style=color:#e6db74>&#34;${testreports.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;fileset</span> <span style=color:#a6e22e>dir=</span><span style=color:#e6db74>&#34;${testbuild.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;include</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;**/*Test.class&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;exclude</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;**/Abstract*Test.class&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/fileset&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/batchtest&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/junit&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;batchtest</span> <span style=color:teal>fork=</span><span style=color:#d14>&#34;yes&#34;</span> <span style=color:teal>todir=</span><span style=color:#d14>&#34;${testreports.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;fileset</span> <span style=color:teal>dir=</span><span style=color:#d14>&#34;${testbuild.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;include</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;**/*Test.class&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;exclude</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;**/Abstract*Test.class&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/fileset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/batchtest&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/junit&gt;</span>
 </span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_06><h2 class=sec-tit id=참고자료>참고자료</h2><ul><li>Maven Surefire Plugin Home :
 <a class="krds-btn medium text" href=http://maven.apache.org/plugins/maven-surefire-plugin/ target=_blank rel="noopener noreferrer" class=externalLink>http://maven.apache.org/plugins/maven-surefire-plugin/<i class="svg-icon ico-go"></i></a></li><li>Maven Surefire Report Plugin Home :
 <a class="krds-btn medium text" href=http://maven.apache.org/plugins/maven-surefire-report-plugin/ target=_blank rel="noopener noreferrer" class=externalLink>http://maven.apache.org/plugins/maven-surefire-report-plugin/<i class="svg-icon ico-go"></i></a></li><li>Ant JUnit Task :

@@ -63,516 +63,516 @@ VS Code 활용 가이드<span class=sr-only>열기</span></button><div class=lnb
 과 동일하다.</p></div><div class="conts-wrap section-link" id=section_04><h2 class=sec-tit id=사용법>사용법</h2><h3 class=sec-tit id=데이터베이스-연결>데이터베이스 연결</h3><p>먼저, 데이터베이스 준비(기동, DataSource 생성)에 대해 알아보자.
 테스트를 위해 사용할 수 있는 Database 가 준비되어 있고 이를 위한 접근 방법에 대한 안내까지 받았다면 고민할 필요는 없다.
 만약 이러한 상황이 아니라면, apache dbcp datasource 를 이용하여 생성하면 되고, springframework 를 사용하고 있다면 더더욱 간단히 해결될 수 있다.
-사실, egovframework 의 개발환경에서 제공하고 있는 CI Server 를 이용해 반복적으로 테스트를 수행하기 위해서는 테스트만을 위한 전용 DBMS 를 준비하는 것이 이상적이지만, 테스트 수행 후 깔끔하게 rollback 을 수행한다면 테스트 용 전용 DBMS 가 없어도 큰 무리는 없다.</p><h4 id=프로퍼티-설정>프로퍼티 설정</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># Properties for the PropertiesDataSourceFactory</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.driverClassName</span><span style=color:#f92672>=</span><span style=color:#e6db74>org.hsqldb.jdbcDriver</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.url</span><span style=color:#f92672>=</span><span style=color:#e6db74>jdbc:hsqldb:sampledb</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.userName</span><span style=color:#f92672>=</span><span style=color:#e6db74>sa</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.password</span><span style=color:#f92672>=</span>
+사실, egovframework 의 개발환경에서 제공하고 있는 CI Server 를 이용해 반복적으로 테스트를 수행하기 위해서는 테스트만을 위한 전용 DBMS 를 준비하는 것이 이상적이지만, 테스트 수행 후 깔끔하게 rollback 을 수행한다면 테스트 용 전용 DBMS 가 없어도 큰 무리는 없다.</p><h4 id=프로퍼티-설정>프로퍼티 설정</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># Properties for the PropertiesDataSourceFactory</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.driverClassName</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>org.hsqldb.jdbcDriver</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.url</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>jdbc:hsqldb:sampledb</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.userName</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>sa</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.password</span><span style=color:#000;font-weight:700>=</span>
 </span></span></code></pre></div><h4 id=test-case-작성>Test Case 작성</h4><p>Test Case 작성 시 <strong><code>@RunWith(UnitilsJUnit4TestClassRunner.class)</code></strong> 을 선언하면 된다.</p><p>Unitils 는 springframework 와 달리 DataSource 가 아닌 TestDataSource 라는 것을 사용한다.
 이 TestDataSource 는 Unitils 설정에 따라 선언과 동시에 DataSource 를 Getting 하는 것 뿐 아니라 dbmaintain 과 같은 별도의 작업을 동시에 수행할 수 있다.
-이는 다음에 설명하기로 하고, 여기서는 단순히 unitils 를 이용하여 TestDataSource 를 Getting 하는 예제만을 이해하도록 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RunWith</span>(UnitilsJUnit4TestClassRunner.<span style=color:#a6e22e>class</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DataSourceGetTest_unitilsDataSource</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#75715e>/*
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * unitils.properties 에 설정 된 database 접근 정보를 기반으로 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 테스트 용 DataSource 를 만든 후 자동으로 injection 해 준다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * (unitils.properties 파일의 위치와 이름은 변경할 수 없다.)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @see  unitils.properties
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@TestDataSource</span>  
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> DataSource dataSource;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>checkTestDataSource</span>() {
-</span></span><span style=display:flex><span>        assertNotNull(<span style=color:#e6db74>&#34;dataSource를 정상적으로 get 했는지를 확인한다.&#34;</span>, dataSource);
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=테이블-생성-및-초기-데이터-입력>테이블 생성 및 초기 데이터 입력</h3><p>Unitils 를 이용하면 위처럼 TestDataSource 를 생성하거나, spring+unitils 조합의 DataSource 를 생성함과 동시에 테스트에 필요한 테이블을 생성하고 초기 데이터를 입력할 수 있다.</p><p>이 기능은 다음의 단계로 활용할 수 있다.</p><ul><li>단위 테스트에 필요한 테이블을 생성하는 DML 스크립트 작성</li><li>이 DML 스크립트 실행 여부를 설정하고, 해당 디렉토리를 설정</li><li>테스트 케이스 수행 시 해당 기능 호출</li></ul><p>현재는 &lsquo;oracle&rsquo;, &lsquo;db2&rsquo;, &lsquo;mysql&rsquo;, &lsquo;hsqldb&rsquo; and &lsquo;postgresql&rsquo; 의 DBMS 만 지원한다.</p><h4 id=프로퍼티-설정-1>프로퍼티 설정</h4><h5 id=dbms-의-종류-스키마-정보-등을-설정>DBMS 의 종류, 스키마 정보 등을 설정</h5><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># This property specifies the underlying DBMS implementation. Supported values are &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39; and &#39;postgresql&#39;.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.dialect</span><span style=color:#f92672>=</span><span style=color:#e6db74>hsqldb</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># A comma-separated list of all used database schemas. The first schema name is the default one, if no schema name is</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># specified in for example a dbunit data set, this default one is used.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># A schema name is case sensitive.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.schemaNames</span><span style=color:#f92672>=</span><span style=color:#e6db74>PUBLIC</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Type of transaction manager that should be created:</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># simple: a simple transaction manager that wraps the datasource to control transactions</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># spring: a transaction manager that delegates actions to the transaction manager that is configured in the current spring context</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># auto: this will first try to load the spring transaction manager. if spring is not available, it will load the simple transaction manager</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>transactionManager.type</span><span style=color:#f92672>=</span><span style=color:#e6db74>auto</span>
+이는 다음에 설명하기로 하고, 여기서는 단순히 unitils 를 이용하여 TestDataSource 를 Getting 하는 예제만을 이해하도록 한다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@RunWith</span>(UnitilsJUnit4TestClassRunner.<span style=color:teal>class</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>DataSourceGetTest_unitilsDataSource</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#998;font-style:italic>/*
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * unitils.properties 에 설정 된 database 접근 정보를 기반으로 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * 테스트 용 DataSource 를 만든 후 자동으로 injection 해 준다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * (unitils.properties 파일의 위치와 이름은 변경할 수 없다.)
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * @see  unitils.properties
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#3c5d5d;font-weight:700>@TestDataSource</span><span style=color:#bbb>  
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>DataSource<span style=color:#bbb> </span>dataSource;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>checkTestDataSource</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>assertNotNull(<span style=color:#d14>&#34;dataSource를 정상적으로 get 했는지를 확인한다.&#34;</span>,<span style=color:#bbb> </span>dataSource);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=테이블-생성-및-초기-데이터-입력>테이블 생성 및 초기 데이터 입력</h3><p>Unitils 를 이용하면 위처럼 TestDataSource 를 생성하거나, spring+unitils 조합의 DataSource 를 생성함과 동시에 테스트에 필요한 테이블을 생성하고 초기 데이터를 입력할 수 있다.</p><p>이 기능은 다음의 단계로 활용할 수 있다.</p><ul><li>단위 테스트에 필요한 테이블을 생성하는 DML 스크립트 작성</li><li>이 DML 스크립트 실행 여부를 설정하고, 해당 디렉토리를 설정</li><li>테스트 케이스 수행 시 해당 기능 호출</li></ul><p>현재는 &lsquo;oracle&rsquo;, &lsquo;db2&rsquo;, &lsquo;mysql&rsquo;, &lsquo;hsqldb&rsquo; and &lsquo;postgresql&rsquo; 의 DBMS 만 지원한다.</p><h4 id=프로퍼티-설정-1>프로퍼티 설정</h4><h5 id=dbms-의-종류-스키마-정보-등을-설정>DBMS 의 종류, 스키마 정보 등을 설정</h5><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># This property specifies the underlying DBMS implementation. Supported values are &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39; and &#39;postgresql&#39;.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.dialect</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>hsqldb</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># A comma-separated list of all used database schemas. The first schema name is the default one, if no schema name is</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># specified in for example a dbunit data set, this default one is used.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># A schema name is case sensitive.</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.schemaNames</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>PUBLIC</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># Type of transaction manager that should be created:</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># simple: a simple transaction manager that wraps the datasource to control transactions</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># spring: a transaction manager that delegates actions to the transaction manager that is configured in the current spring context</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># auto: this will first try to load the spring transaction manager. if spring is not available, it will load the simple transaction manager</span>
+</span></span><span style=display:flex><span><span style=color:teal>transactionManager.type</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>auto</span>
 </span></span></code></pre></div><h5 id=데이터베이스-스키마-정보를-자동으로-update-할지를-설정>데이터베이스 스키마 정보를 자동으로 update 할지를 설정</h5><p>이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.
-dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># test run, when creating the DataSource that provides access to the unit test database.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>updateDataBaseSchema.enabled</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Comma separated list of directories and files in which the database update scripts are located. Directories in this</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># list are recursively searched for files.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>dbMaintainer.script.locations</span><span style=color:#f92672>=</span><span style=color:#e6db74>src/test/resources/META-INF/persistence/maintenance/hsqldb</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># If set to true, an implementation of org.unitils.dbmaintainer.constraints.ConstraintsDisabler will be used to disable</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># the foreign key and not null constraints of the unit test database schema.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># The ConstraintsDisabler is configured using the properties specified below. The property with key &#39;database.dialect&#39;</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># specifies which implementation is used.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>dbMaintainer.disableConstraints.enabled</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># test run, when creating the DataSource that provides access to the unit test database.</span>
+</span></span><span style=display:flex><span><span style=color:teal>updateDataBaseSchema.enabled</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>true</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># Comma separated list of directories and files in which the database update scripts are located. Directories in this</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># list are recursively searched for files.</span>
+</span></span><span style=display:flex><span><span style=color:teal>dbMaintainer.script.locations</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>src/test/resources/META-INF/persistence/maintenance/hsqldb</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># If set to true, an implementation of org.unitils.dbmaintainer.constraints.ConstraintsDisabler will be used to disable</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># the foreign key and not null constraints of the unit test database schema.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># The ConstraintsDisabler is configured using the properties specified below. The property with key &#39;database.dialect&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># specifies which implementation is used.</span>
+</span></span><span style=display:flex><span><span style=color:teal>dbMaintainer.disableConstraints.enabled</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>true</span>
 </span></span></code></pre></div><h3 class=sec-tit id=dao-클래스-실행-시-필요한-테스트-데이터-관리>DAO 클래스 실행 시 필요한 테스트 데이터 관리</h3><p>데이터베이스 관련 CRUD 단위 테스트 수행 시, 테스트 수행 전에 데이터베이스에 필요한 데이터를 미리 저장해 두고 테스트 종료 후 이를 삭제하는 등의 작업을 좀 더 편리하게 수행할 수 있는 방법을 가이드한다.</p><p>Dbunit 은 이런 문제를 DBUnit 을 사용할 경우 유용한 기본적인 기능은 다음과 같다.</p><ul><li>XML 로 필요한 데이터를 선언 해 두면 단위 테스트 수행 시 이 데이터가 데이터베이스에 자동 저장된다.</li><li>데이터베이스 관련 테스트를 수행하고 그 결과값이 미리 XML 로 저장해 놓은 데이터와 자동으로 비교된다.</li><li>테스트 수행 후 트랜잭션 commit/rollback을 지정할 수 있다.</li></ul><p>그러나, DBUnit 을 직접 테스트 코드에서 사용하기 위해서는 별도의 이 XML 파일을 Load 하는 등의 별도 프로그램 로직이 필요하여 사용하기에 불편함이 따른다.
 이의 해소를 위해서 Unitils 는 DBUnit 관련한 기능을 Annotation만으로도 간단하게 사용할 수 있는 기능을 제공하므로, 이를 활용하는 방법을 안내한다.</p><h4 id=프로퍼티-설정-2>프로퍼티 설정</h4><h5 id=dbunit-이용할-경우-트랜잭션-처리-방법-설정>DBUnit 이용할 경우 트랜잭션 처리 방법 설정</h5><p>DBUnit 을 이용해 데이터를 저장 혹은 삭제한 경우 commit/rollback 할런지를 설정하는 부분이다.
 이 부분은 Test Case 를 작성할 때 동적으로 변경할 수 있으므로 우선은 disabled 로 선언 해 둔다.
-(CI 등을 활용하여 주기적으로 반복 테스트를 수행할 경우에는 rollback으로 설정하는 것을 권장한다.)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># Default behavior concerning execution of tests in a transaction. Supported values are &#39;disabled&#39;, &#39;commit&#39; and &#39;rollback&#39;.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># If set to disabled, test are not executed in a transaction by default. If set to commit, each test is run in a transaction,</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># which is committed. If set to rollback, each test is run in a transaction, which is rolled back.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>DatabaseModule.Transactional.value.default</span><span style=color:#f92672>=</span><span style=color:#e6db74>disabled</span>
-</span></span></code></pre></div><h5 id=사용하는-dbms-의-종류-스키마-정보-등을-설정>사용하는 DBMS 의 종류, 스키마 정보 등을 설정</h5><p>Unitils 는 여기서 언급된 종류의 DBMS를 지원하며 여기에 없는 DBMS 는 unitils 의 기능을 제한적으로 사용할 수 밖에 없으므로 설정하지 않는다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># This property specifies the underlying DBMS implementation. Supported values are &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39; and &#39;postgresql&#39;.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.dialect</span><span style=color:#f92672>=</span><span style=color:#e6db74>hsqldb</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># A comma-separated list of all used database schemas. The first schema name is the default one, if no schema name is</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># specified in for example a dbunit data set, this default one is used.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># A schema name is case sensitive.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.schemaNames</span><span style=color:#f92672>=</span><span style=color:#e6db74>PUBLIC</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Type of transaction manager that should be created:</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># simple: a simple transaction manager that wraps the datasource to control transactions</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># spring: a transaction manager that delegates actions to the transaction manager that is configured in the current spring context</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># auto: this will first try to load the spring transaction manager. if spring is not available, it will load the simple transaction manager</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>transactionManager.type</span><span style=color:#f92672>=</span><span style=color:#e6db74>auto</span>
+(CI 등을 활용하여 주기적으로 반복 테스트를 수행할 경우에는 rollback으로 설정하는 것을 권장한다.)</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># Default behavior concerning execution of tests in a transaction. Supported values are &#39;disabled&#39;, &#39;commit&#39; and &#39;rollback&#39;.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># If set to disabled, test are not executed in a transaction by default. If set to commit, each test is run in a transaction,</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># which is committed. If set to rollback, each test is run in a transaction, which is rolled back.</span>
+</span></span><span style=display:flex><span><span style=color:teal>DatabaseModule.Transactional.value.default</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>disabled</span>
+</span></span></code></pre></div><h5 id=사용하는-dbms-의-종류-스키마-정보-등을-설정>사용하는 DBMS 의 종류, 스키마 정보 등을 설정</h5><p>Unitils 는 여기서 언급된 종류의 DBMS를 지원하며 여기에 없는 DBMS 는 unitils 의 기능을 제한적으로 사용할 수 밖에 없으므로 설정하지 않는다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># This property specifies the underlying DBMS implementation. Supported values are &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39; and &#39;postgresql&#39;.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># The value of this property defines which vendor specific implementations of DbSupport and ConstraintsDisabler are chosen.</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.dialect</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>hsqldb</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># A comma-separated list of all used database schemas. The first schema name is the default one, if no schema name is</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># specified in for example a dbunit data set, this default one is used.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># A schema name is case sensitive.</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.schemaNames</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>PUBLIC</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># Type of transaction manager that should be created:</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># simple: a simple transaction manager that wraps the datasource to control transactions</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># spring: a transaction manager that delegates actions to the transaction manager that is configured in the current spring context</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># auto: this will first try to load the spring transaction manager. if spring is not available, it will load the simple transaction manager</span>
+</span></span><span style=display:flex><span><span style=color:teal>transactionManager.type</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>auto</span>
 </span></span></code></pre></div><h5 id=데이터베이스-스키마-정보를-자동으로-update-할지를-설정-1>데이터베이스 스키마 정보를 자동으로 update 할지를 설정</h5><p>이 때 사용하는 sql 문을 저장해 둔 디렉토리 경로를 설정한다.
-dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># test run, when creating the DataSource that provides access to the unit test database.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>updateDataBaseSchema.enabled</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Comma separated list of directories and files in which the database update scripts are located. Directories in this</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># list are recursively searched for files.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>dbMaintainer.script.locations</span><span style=color:#f92672>=</span><span style=color:#e6db74>src/test/resources/META-INF/persistence/maintenance/hsqldb</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010> </span>
-</span></span><span style=display:flex><span><span style=color:#75715e># If set to true, an implementation of org.unitils.dbmaintainer.constraints.ConstraintsDisabler will be used to disable</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># the foreign key and not null constraints of the unit test database schema.</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># The ConstraintsDisabler is configured using the properties specified below. The property with key &#39;database.dialect&#39;</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># specifies which implementation is used.</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>dbMaintainer.disableConstraints.enabled</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+dbMaintainer.disableConstraints.enabled 는 단위 테스트 수행 시 테이블간의 제약 조건을 제외한다는 것으로 true 로 지정하면 이 관계를 임시적으로 끊는 등의 별도 작업없이 진행이 되므로 유용하다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># If set to true, the DBMaintainer will be used to update the unit test database schema. This is done once for each</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># test run, when creating the DataSource that provides access to the unit test database.</span>
+</span></span><span style=display:flex><span><span style=color:teal>updateDataBaseSchema.enabled</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>true</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># Comma separated list of directories and files in which the database update scripts are located. Directories in this</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># list are recursively searched for files.</span>
+</span></span><span style=display:flex><span><span style=color:teal>dbMaintainer.script.locations</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>src/test/resources/META-INF/persistence/maintenance/hsqldb</span>
+</span></span><span style=display:flex><span><span style=color:#a61717;background-color:#e3d2d2> </span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># If set to true, an implementation of org.unitils.dbmaintainer.constraints.ConstraintsDisabler will be used to disable</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># the foreign key and not null constraints of the unit test database schema.</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># The ConstraintsDisabler is configured using the properties specified below. The property with key &#39;database.dialect&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># specifies which implementation is used.</span>
+</span></span><span style=display:flex><span><span style=color:teal>dbMaintainer.disableConstraints.enabled</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>true</span>
 </span></span></code></pre></div><h5 id=테스트-수행-전-자동으로-입력할-데이터-정의>테스트 수행 전 자동으로 입력할 데이터 정의</h5><p>테스트 클래스 혹은 테스트 메소드 선언부에 <strong>@DataSet (파일의 경로)</strong> 와 같은 방법으로 호출한다.
-XML 포맷의 데이터로서 작성 법은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;테이블이름</span> <span style=color:#a6e22e>컬럼이름1=</span><span style=color:#e6db74>&#34;값&#34;</span> <span style=color:#a6e22e>컬럼이름2=</span><span style=color:#e6db74>&#34;값&#34;</span>  <span style=color:#960050;background-color:#1e0010>......</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
+XML 포맷의 데이터로서 작성 법은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:navy>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;테이블이름</span> <span style=color:teal>컬럼이름1=</span><span style=color:#d14>&#34;값&#34;</span> <span style=color:teal>컬럼이름2=</span><span style=color:#d14>&#34;값&#34;</span>  <span style=color:#a61717;background-color:#e3d2d2>......</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/dataset&gt;</span>
 </span></span></code></pre></div><h5 id=테스트-수행-결과를-자동으로-비교할-데이터-정의>테스트 수행 결과를 자동으로 비교할 데이터 정의</h5><p>테스트 클래스 혹은 테스트 메소드 선언부에 <strong>@ExpectedDataSet (파일의 경로)</strong> 와 같은 방법으로 호출한다.
-XML 포맷의 데이터로서 작성 법은 위와 동일하다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;테이블이름</span> <span style=color:#a6e22e>컬럼이름1=</span><span style=color:#e6db74>&#34;값&#34;</span> <span style=color:#a6e22e>컬럼이름2=</span><span style=color:#e6db74>&#34;값&#34;</span>  <span style=color:#960050;background-color:#1e0010>......</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
+XML 포맷의 데이터로서 작성 법은 위와 동일하다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:navy>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;테이블이름</span> <span style=color:teal>컬럼이름1=</span><span style=color:#d14>&#34;값&#34;</span> <span style=color:teal>컬럼이름2=</span><span style=color:#d14>&#34;값&#34;</span>  <span style=color:#a61717;background-color:#e3d2d2>......</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/dataset&gt;</span>
 </span></span></code></pre></div><h3 class=sec-tit id=dao-테스트-후-트랜잭션-rollback-혹은-commit-처리>DAO 테스트 후 트랜잭션 Rollback 혹은 Commit 처리</h3><p>전체 Test Case 에 모두 적용시킬 수 있는 설정을 수행할 수도 있지만, 프로그램에서 선언하여 설정하는 것을 권장한다. 또한, springframework 을 이용하는 경우 해당 springframework 의 txManager 를 Test Case 클래스 선언부에 설정할 수도 있다. 자세한 방법은 샘플 프로그램을 보고 확인하도록 한다.</p></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><p>아래는 이클립스 메이븐 프로젝트의 예제이다.</p><p><img src=/egovframe-docs/egovframe-development/test-tool/images/eclipse-maven-example.jpg alt="프로젝트 예제">
-예제는 다음의 내용으로 구성되어 있다.</p><ul><li>테스트 대상</li><li>테스트 시나리오</li><li>환경 구성 정보</li><li>테스트 프로그램</li><li>테스트에 필요한 데이터</li><li>테스트 수행 결과</li></ul><h3 class=sec-tit id=테스트-대상>테스트 대상</h3><h4 id=dao-구현-클래스--noticedaojava>DAO 구현 클래스 : NoticeDao.java</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Repository</span>(<span style=color:#e6db74>&#34;noticeDao&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NoticeDao</span> <span style=color:#66d9ef>extends</span> SqlMapClientDaoSupport {
+예제는 다음의 내용으로 구성되어 있다.</p><ul><li>테스트 대상</li><li>테스트 시나리오</li><li>환경 구성 정보</li><li>테스트 프로그램</li><li>테스트에 필요한 데이터</li><li>테스트 수행 결과</li></ul><h3 class=sec-tit id=테스트-대상>테스트 대상</h3><h4 id=dao-구현-클래스--noticedaojava>DAO 구현 클래스 : NoticeDao.java</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@Repository</span>(<span style=color:#d14>&#34;noticeDao&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>NoticeDao</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>SqlMapClientDaoSupport<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * iBatis SqlMap 정보를 읽기 위한 sqlMapClient 세팅
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>     * @param sqlMapClient - 설정파일로부터 읽어온 정보 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>    */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#3c5d5d;font-weight:700>@Resource</span>(name<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#d14>&#34;sqlMapClient&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setSuperSqlMapClient</span>(SqlMapClient<span style=color:#bbb> </span>sqlMapClient)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>super</span>.<span style=color:teal>setSqlMapClient</span>(sqlMapClient);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 등록된 글의 수를 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return	등록된 글의 수
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectCount</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>(Integer)<span style=color:#bbb> </span>getSqlMapClientTemplate().<span style=color:teal>queryForObject</span>(<span style=color:#d14>&#34;selectCount&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * id 에 해당하는 글을 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param id - 등록된 글의 아이디
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return 등록된 글의 정보가 담긴 NoticeVo
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>NoticeVo<span style=color:#bbb> </span><span style=color:#900;font-weight:700>select</span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>id)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>(NoticeVo)<span style=color:#bbb> </span>getSqlMapClientTemplate().<span style=color:teal>queryForObject</span>(<span style=color:#d14>&#34;select&#34;</span>,<span style=color:#bbb> </span>id);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 등록된 모든 글을 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return	등록된 글의 목록을 담고 있는 NoticeVo 의 리스트
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@SuppressWarnings</span>(<span style=color:#d14>&#34;unchecked&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>List<span style=color:#000;font-weight:700>&lt;</span>NoticeVo<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectList</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>getSqlMapClientTemplate().<span style=color:teal>queryForList</span>(<span style=color:#d14>&#34;selectList&#34;</span>,<span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>NoticeVo());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 조회 조건에 해당하는 글을 조회한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param   searchNoticeVo  조회 조건을 담고 있는 NoticeVo 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return	등록된 글의 목록을 담고 있는 NoticeVo 의 리스트
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@SuppressWarnings</span>(<span style=color:#d14>&#34;unchecked&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>List<span style=color:#000;font-weight:700>&lt;</span>NoticeVo<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectList</span>(NoticeVo<span style=color:#bbb> </span>searchNoticeVo)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>getSqlMapClientTemplate().<span style=color:teal>queryForList</span>(<span style=color:#d14>&#34;selectList&#34;</span>,<span style=color:#bbb> </span>searchNoticeVo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 글을 등록한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param 등록할 글의 정보를 담고 있는 noticeVo
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>insert</span>(NoticeVo<span style=color:#bbb> </span>noticeVo)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>getSqlMapClientTemplate().<span style=color:teal>insert</span>(<span style=color:#d14>&#34;insert&#34;</span>,<span style=color:#bbb> </span>noticeVo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 글을 삭제한다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param id - 등록된 글의 아이디
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>delete</span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>id)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>getSqlMapClientTemplate().<span style=color:teal>delete</span>(<span style=color:#d14>&#34;delete&#34;</span>,<span style=color:#bbb> </span>id);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=dao-참조-클래스--noticevojava>DAO 참조 클래스 : NoticeVo.java</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@Repository</span>(<span style=color:#d14>&#34;noticeVo&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>NoticeVo</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>Serializable<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>static</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>final</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>long</span><span style=color:#bbb> </span>serialVersionUID<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>1L;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** id */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>id;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** title */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** contents */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>contents;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** registrationDate */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Date<span style=color:#bbb> </span>registrationDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** lastModifier */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span>lastModifier;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** lastModifiedDate */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Date<span style=color:#bbb> </span>lastModifiedDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** fileCnt */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>fileCnt;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** retrievedCnt */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>retrievedCnt;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getId
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>getId</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>id;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getTitle
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getTitle</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getContents
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getContents</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>contents;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getRegistrationDate
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Date<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getRegistrationDate</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>registrationDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getLastModifier
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>String<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getLastModifier</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>lastModifier;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getLastModifiedDate
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Date<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getLastModifiedDate</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>lastModifiedDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getFileCnt
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>getFileCnt</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>fileCnt;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * getRetrievedCnt
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @return
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>getRetrievedCnt</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>retrievedCnt;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setId
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param id
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setId</span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>id)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>id</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>id;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setTitle
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param title
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setTitle</span>(String<span style=color:#bbb> </span>title)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>title</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>title;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setContents
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param contents
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setContents</span>(String<span style=color:#bbb> </span>contents)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>contents</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>contents;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setRegistrationDate
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param registrationDate
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setRegistrationDate</span>(Date<span style=color:#bbb> </span>registrationDate)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>registrationDate</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>registrationDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setLastModifier
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param lastModifier
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setLastModifier</span>(String<span style=color:#bbb> </span>lastModifier)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>lastModifier</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>lastModifier;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setLastModifiedDate
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param lastModifiedDate
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setLastModifiedDate</span>(Date<span style=color:#bbb> </span>lastModifiedDate)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>lastModifiedDate</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>lastModifiedDate;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setFileCnt
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param fileCnt
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setFileCnt</span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>fileCnt)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>fileCnt</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>fileCnt;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * setRetrievedCnt
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @param retrievedCnt
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setRetrievedCnt</span>(<span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>retrievedCnt)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>retrievedCnt</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>retrievedCnt;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=테스트-시나리오>테스트 시나리오</h3><ol><li>HSQLDB 를 이용 해 Notice 업무 수행을 위한 테이블을 생성(변경 시 업데이트만 수행)한다.</li><li>selectList, selectCount 등의 메소드 실행을 위해 외부의 XML 로 정의해 둔 기초 데이터 3건을 자동 입력한다.</li><li>insert / update / delete 메소드 실행을 위해 기초 데이터인 noticeVo 객체를 테스트 수행 전에 생성한다.</li><li>selectList 의 select 결과에 대해 예상하는 값을 외부의 XML 파일로 저장해 두고 자동으로 비교해 본다.</li><li>중복 insert 가 발생 한 경우 예상 한 Exception 이 발생하는 지 확인한다.</li></ol><p>unitils.properties 파일로, 여러 개의 unitils 관련 파일을 관리하고 싶을 경우 아래와 같이 해당 위치를 선언해두면 된다. 물론 동시에는 하나의 설정 값만 인식된다.</p><h3 class=sec-tit id=환경-구성>환경 구성</h3><h4 id=unitilsproperties>unitils.properties</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:teal>unitils.configuration.localFileName</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>META-INF/persistence/unitils-local-hsqldb.properties</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-oracle.properties</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-mysql.properties</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-altibase.properties</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-tibero.properties</span>
+</span></span></code></pre></div><p>위에서 DBMS 별로 설정 파일을 구성해 놓은 이유는 DMBS 별로 설정해야 하는 값이 다르기 때문이다. 먼저 HSQLDB 를 사용하는 경우를 살펴보자.</p><h4 id=unitils-local-hsqldbproperties>unitils-local-hsqldb.properties</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#998;font-style:italic># HSQLDB 연결 정보 설정</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.driverClassName</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>org.hsqldb.jdbcDriver</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.url</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>jdbc:hsqldb:hsql://localhost/sampledb</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.userName</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>sa</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.password</span><span style=color:#000;font-weight:700>=</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># 트랜잭션 처리 설정 ( &#39;disabled&#39;, &#39;commit&#39;, &#39;rollback&#39; )</span>
+</span></span><span style=display:flex><span><span style=color:teal>DatabaseModule.Transactional.value.default</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>disabled</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># DataSet, ExpectedDataSet 사용을 위한 dms 정보 설정 ( &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39;, &#39;postgresql&#39; )</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.dialect</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>hsqldb</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># 스키마 이름 설정</span>
+</span></span><span style=display:flex><span><span style=color:teal>database.schemaNames</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>PUBLIC</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># 트랜잭션 매니저 설정 ( &#39;auto&#39;, &#39;spring&#39;, &#39;simple&#39; )</span>
+</span></span><span style=display:flex><span><span style=color:teal>transactionManager.type</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>auto</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic># 테이블 자동 생성 등의 스키마 관리 기능 사용 여부 및 DML 위치 설정</span>
+</span></span><span style=display:flex><span><span style=color:teal>updateDataBaseSchema.enabled</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>true</span>
+</span></span><span style=display:flex><span><span style=color:teal>dbMaintainer.script.locations</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>src/test/resources/META-INF/persistence/maintenance/hsqldb</span>
+</span></span><span style=display:flex><span><span style=color:teal>dbMaintainer.disableConstraints.enabled</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>true</span>
+</span></span></code></pre></div><h3 class=sec-tit id=테스트-데이터>테스트 데이터</h3><h4 id=테이블-자동-생성을-위한-dml--001_initialsql>테이블 자동 생성을 위한 DML : 001_initial.sql</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#000;font-weight:700>CREATE</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>TABLE</span><span style=color:#bbb> </span>NOTICE<span style=color:#bbb> </span>(<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_ID<span style=color:#bbb>                   </span><span style=color:#0086b3>INTEGER</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>PRIMARY</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>KEY</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_TITLE<span style=color:#bbb>                </span><span style=color:#0086b3>VARCHAR</span>(<span style=color:#099>500</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>NOT</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>NULL</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_CONTENTS<span style=color:#bbb>             </span><span style=color:#0086b3>VARCHAR</span>(<span style=color:#099>4000</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>NOT</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>NULL</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_REGISTRATION_DATE<span style=color:#bbb>    </span><span style=color:#0086b3>VARCHAR</span>(<span style=color:#099>10</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>NOT</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>NULL</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_LAST_MODIFIER<span style=color:#bbb>        </span><span style=color:#0086b3>VARCHAR</span>(<span style=color:#099>100</span>)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>NOT</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>NULL</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_LAST_MODIFIED_DATE<span style=color:#bbb>   </span><span style=color:#0086b3>DATE</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_FILE_CNT<span style=color:#bbb>             </span><span style=color:#0086b3>INTEGER</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span>NOTICE_RETRIEVED_CNT<span style=color:#bbb>        </span><span style=color:#0086b3>INTEGER</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>);<span style=color:#bbb>
+</span></span></span></code></pre></div><h4 id=데이터-자동-입력을-위한-xml--autoinsertiontestdatatest_datasetxml>데이터 자동 입력을 위한 XML : AutoInsertionTestDataTest_DataSet.xml</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * iBatis SqlMap 정보를 읽기 위한 sqlMapClient 세팅
-</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param sqlMapClient - 설정파일로부터 읽어온 정보 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>    */</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>(name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;sqlMapClient&#34;</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setSuperSqlMapClient</span>(SqlMapClient sqlMapClient) {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>super</span>.<span style=color:#a6e22e>setSqlMapClient</span>(sqlMapClient);
-</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span><span style=color:navy>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;NOTICE</span> <span style=color:teal>NOTICE_ID=</span><span style=color:#d14>&#34;101&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_TITLE=</span><span style=color:#d14>&#34;101번 공지&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_CONTENTS=</span><span style=color:#d14>&#34;테스트용으로 자동 입력된 공지사항 101번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_REGISTRATION_DATE=</span><span style=color:#d14>&#34;2009-03-18&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIER=</span><span style=color:#d14>&#34;OracleDataSetTest.xml&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#d14>&#34;2009-03-17&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_FILE_CNT=</span><span style=color:#d14>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_RETRIEVED_CNT=</span><span style=color:#d14>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;NOTICE</span> <span style=color:teal>NOTICE_ID=</span><span style=color:#d14>&#34;102&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_TITLE=</span><span style=color:#d14>&#34;102번 공지&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_CONTENTS=</span><span style=color:#d14>&#34;테스트용으로 자동 입력된 공지사항 102번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_REGISTRATION_DATE=</span><span style=color:#d14>&#34;2009-03-18&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIER=</span><span style=color:#d14>&#34;OracleDataSetTest.xml&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#d14>&#34;2009-03-17&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_FILE_CNT=</span><span style=color:#d14>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_RETRIEVED_CNT=</span><span style=color:#d14>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;NOTICE</span> <span style=color:teal>NOTICE_ID=</span><span style=color:#d14>&#34;103&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_TITLE=</span><span style=color:#d14>&#34;103번 공지&#34;</span>  
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_CONTENTS=</span><span style=color:#d14>&#34;테스트용으로 자동 입력된 공지사항 103번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_REGISTRATION_DATE=</span><span style=color:#d14>&#34;2009-03-18&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIER=</span><span style=color:#d14>&#34;OracleDataSetTest.xml&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#d14>&#34;2009-03-17&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_FILE_CNT=</span><span style=color:#d14>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_RETRIEVED_CNT=</span><span style=color:#d14>&#34;0&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/dataset&gt;</span>
+</span></span></code></pre></div><h4 id=조회-결과와-자동으로-비교할-xml--autoverifytestresultstest_expecteddatasetxml>조회 결과와 자동으로 비교할 XML : AutoVerifyTestResultsTest_ExpectedDataSet.xml</h4><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#999;font-weight:700;font-style:italic>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 등록된 글의 수를 조회한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return	등록된 글의 수
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>selectCount</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> (Integer) getSqlMapClientTemplate().<span style=color:#a6e22e>queryForObject</span>(<span style=color:#e6db74>&#34;selectCount&#34;</span>);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * id 에 해당하는 글을 조회한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param id - 등록된 글의 아이디
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return 등록된 글의 정보가 담긴 NoticeVo
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> NoticeVo <span style=color:#a6e22e>select</span>(<span style=color:#66d9ef>int</span> id) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> (NoticeVo) getSqlMapClientTemplate().<span style=color:#a6e22e>queryForObject</span>(<span style=color:#e6db74>&#34;select&#34;</span>, id);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 등록된 모든 글을 조회한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return	등록된 글의 목록을 담고 있는 NoticeVo 의 리스트
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@SuppressWarnings</span>(<span style=color:#e6db74>&#34;unchecked&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>NoticeVo<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>selectList</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> getSqlMapClientTemplate().<span style=color:#a6e22e>queryForList</span>(<span style=color:#e6db74>&#34;selectList&#34;</span>, <span style=color:#66d9ef>new</span> NoticeVo());
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 조회 조건에 해당하는 글을 조회한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param   searchNoticeVo  조회 조건을 담고 있는 NoticeVo 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return	등록된 글의 목록을 담고 있는 NoticeVo 의 리스트
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@SuppressWarnings</span>(<span style=color:#e6db74>&#34;unchecked&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>NoticeVo<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>selectList</span>(NoticeVo searchNoticeVo) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> getSqlMapClientTemplate().<span style=color:#a6e22e>queryForList</span>(<span style=color:#e6db74>&#34;selectList&#34;</span>, searchNoticeVo);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 글을 등록한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param 등록할 글의 정보를 담고 있는 noticeVo
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>insert</span>(NoticeVo noticeVo) {
-</span></span><span style=display:flex><span>		getSqlMapClientTemplate().<span style=color:#a6e22e>insert</span>(<span style=color:#e6db74>&#34;insert&#34;</span>, noticeVo);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 글을 삭제한다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param id - 등록된 글의 아이디
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>delete</span>(<span style=color:#66d9ef>int</span> id) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> getSqlMapClientTemplate().<span style=color:#a6e22e>delete</span>(<span style=color:#e6db74>&#34;delete&#34;</span>, id);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h4 id=dao-참조-클래스--noticevojava>DAO 참조 클래스 : NoticeVo.java</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Repository</span>(<span style=color:#e6db74>&#34;noticeVo&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NoticeVo</span> <span style=color:#66d9ef>implements</span> Serializable {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> 1L;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** id */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> id;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** title */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String title;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** contents */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String contents;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** registrationDate */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> Date registrationDate;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** lastModifier */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String lastModifier;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** lastModifiedDate */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> Date lastModifiedDate;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** fileCnt */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> fileCnt;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** retrievedCnt */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> retrievedCnt;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getId
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getId</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> id;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getTitle
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getTitle</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> title;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getContents
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getContents</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> contents;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getRegistrationDate
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Date <span style=color:#a6e22e>getRegistrationDate</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> registrationDate;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getLastModifier
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getLastModifier</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> lastModifier;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getLastModifiedDate
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Date <span style=color:#a6e22e>getLastModifiedDate</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> lastModifiedDate;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getFileCnt
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getFileCnt</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> fileCnt;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * getRetrievedCnt
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getRetrievedCnt</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> retrievedCnt;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setId
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param id
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setId</span>(<span style=color:#66d9ef>int</span> id) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>id</span> <span style=color:#f92672>=</span> id;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setTitle
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param title
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setTitle</span>(String title) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>title</span> <span style=color:#f92672>=</span> title;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setContents
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param contents
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setContents</span>(String contents) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>contents</span> <span style=color:#f92672>=</span> contents;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setRegistrationDate
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param registrationDate
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setRegistrationDate</span>(Date registrationDate) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>registrationDate</span> <span style=color:#f92672>=</span> registrationDate;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setLastModifier
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param lastModifier
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setLastModifier</span>(String lastModifier) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>lastModifier</span> <span style=color:#f92672>=</span> lastModifier;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setLastModifiedDate
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param lastModifiedDate
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setLastModifiedDate</span>(Date lastModifiedDate) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>lastModifiedDate</span> <span style=color:#f92672>=</span> lastModifiedDate;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setFileCnt
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param fileCnt
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setFileCnt</span>(<span style=color:#66d9ef>int</span> fileCnt) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>fileCnt</span> <span style=color:#f92672>=</span> fileCnt;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * setRetrievedCnt
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param retrievedCnt
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setRetrievedCnt</span>(<span style=color:#66d9ef>int</span> retrievedCnt) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>retrievedCnt</span> <span style=color:#f92672>=</span> retrievedCnt;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=테스트-시나리오>테스트 시나리오</h3><ol><li>HSQLDB 를 이용 해 Notice 업무 수행을 위한 테이블을 생성(변경 시 업데이트만 수행)한다.</li><li>selectList, selectCount 등의 메소드 실행을 위해 외부의 XML 로 정의해 둔 기초 데이터 3건을 자동 입력한다.</li><li>insert / update / delete 메소드 실행을 위해 기초 데이터인 noticeVo 객체를 테스트 수행 전에 생성한다.</li><li>selectList 의 select 결과에 대해 예상하는 값을 외부의 XML 파일로 저장해 두고 자동으로 비교해 본다.</li><li>중복 insert 가 발생 한 경우 예상 한 Exception 이 발생하는 지 확인한다.</li></ol><p>unitils.properties 파일로, 여러 개의 unitils 관련 파일을 관리하고 싶을 경우 아래와 같이 해당 위치를 선언해두면 된다. 물론 동시에는 하나의 설정 값만 인식된다.</p><h3 class=sec-tit id=환경-구성>환경 구성</h3><h4 id=unitilsproperties>unitils.properties</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#a6e22e>unitils.configuration.localFileName</span><span style=color:#f92672>=</span><span style=color:#e6db74>META-INF/persistence/unitils-local-hsqldb.properties</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-oracle.properties</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-mysql.properties</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-altibase.properties</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>#unitils.configuration.localFileName=META-INF/persistence/unitils-local-tibero.properties</span>
-</span></span></code></pre></div><p>위에서 DBMS 별로 설정 파일을 구성해 놓은 이유는 DMBS 별로 설정해야 하는 값이 다르기 때문이다. 먼저 HSQLDB 를 사용하는 경우를 살펴보자.</p><h4 id=unitils-local-hsqldbproperties>unitils-local-hsqldb.properties</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#75715e># HSQLDB 연결 정보 설정</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.driverClassName</span><span style=color:#f92672>=</span><span style=color:#e6db74>org.hsqldb.jdbcDriver</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.url</span><span style=color:#f92672>=</span><span style=color:#e6db74>jdbc:hsqldb:hsql://localhost/sampledb</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.userName</span><span style=color:#f92672>=</span><span style=color:#e6db74>sa</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.password</span><span style=color:#f92672>=</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 트랜잭션 처리 설정 ( &#39;disabled&#39;, &#39;commit&#39;, &#39;rollback&#39; )</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>DatabaseModule.Transactional.value.default</span><span style=color:#f92672>=</span><span style=color:#e6db74>disabled</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># DataSet, ExpectedDataSet 사용을 위한 dms 정보 설정 ( &#39;oracle&#39;, &#39;db2&#39;, &#39;mysql&#39;, &#39;hsqldb&#39;, &#39;postgresql&#39; )</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.dialect</span><span style=color:#f92672>=</span><span style=color:#e6db74>hsqldb</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 스키마 이름 설정</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>database.schemaNames</span><span style=color:#f92672>=</span><span style=color:#e6db74>PUBLIC</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 트랜잭션 매니저 설정 ( &#39;auto&#39;, &#39;spring&#39;, &#39;simple&#39; )</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>transactionManager.type</span><span style=color:#f92672>=</span><span style=color:#e6db74>auto</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 테이블 자동 생성 등의 스키마 관리 기능 사용 여부 및 DML 위치 설정</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>updateDataBaseSchema.enabled</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>dbMaintainer.script.locations</span><span style=color:#f92672>=</span><span style=color:#e6db74>src/test/resources/META-INF/persistence/maintenance/hsqldb</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>dbMaintainer.disableConstraints.enabled</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
-</span></span></code></pre></div><h3 class=sec-tit id=테스트-데이터>테스트 데이터</h3><h4 id=테이블-자동-생성을-위한-dml--001_initialsql>테이블 자동 생성을 위한 DML : 001_initial.sql</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> NOTICE (
-</span></span><span style=display:flex><span>        NOTICE_ID                   INTEGER <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span>,
-</span></span><span style=display:flex><span>        NOTICE_TITLE                VARCHAR(<span style=color:#ae81ff>500</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>        NOTICE_CONTENTS             VARCHAR(<span style=color:#ae81ff>4000</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>        NOTICE_REGISTRATION_DATE    VARCHAR(<span style=color:#ae81ff>10</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>        NOTICE_LAST_MODIFIER        VARCHAR(<span style=color:#ae81ff>100</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span>,
-</span></span><span style=display:flex><span>        NOTICE_LAST_MODIFIED_DATE   DATE,
-</span></span><span style=display:flex><span>        NOTICE_FILE_CNT             INTEGER,
-</span></span><span style=display:flex><span>        NOTICE_RETRIEVED_CNT        INTEGER
-</span></span><span style=display:flex><span>    );
-</span></span></code></pre></div><h4 id=데이터-자동-입력을-위한-xml--autoinsertiontestdatatest_datasetxml>데이터 자동 입력을 위한 XML : AutoInsertionTestDataTest_DataSet.xml</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;101&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;101번 공지&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 101번입니다.&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_REGISTRATION_DATE=</span><span style=color:#e6db74>&#34;2009-03-18&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.xml&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#e6db74>&#34;2009-03-17&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_FILE_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_RETRIEVED_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;102&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;102번 공지&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 102번입니다.&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_REGISTRATION_DATE=</span><span style=color:#e6db74>&#34;2009-03-18&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.xml&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#e6db74>&#34;2009-03-17&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_FILE_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_RETRIEVED_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;103&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;103번 공지&#34;</span>  
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 103번입니다.&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_REGISTRATION_DATE=</span><span style=color:#e6db74>&#34;2009-03-18&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.xml&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIED_DATE=</span><span style=color:#e6db74>&#34;2009-03-17&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_FILE_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_RETRIEVED_CNT=</span><span style=color:#e6db74>&#34;0&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
-</span></span></code></pre></div><h4 id=조회-결과와-자동으로-비교할-xml--autoverifytestresultstest_expecteddatasetxml>조회 결과와 자동으로 비교할 XML : AutoVerifyTestResultsTest_ExpectedDataSet.xml</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-XML data-lang=XML><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;dataset&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;NOTICE</span> <span style=color:#a6e22e>NOTICE_ID=</span><span style=color:#e6db74>&#34;201&#34;</span> 
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_TITLE=</span><span style=color:#e6db74>&#34;201번 공지&#34;</span>  
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_CONTENTS=</span><span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 201번입니다.&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>NOTICE_LAST_MODIFIER=</span><span style=color:#e6db74>&#34;OracleDataSetTest.class&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dataset&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=테스트-프로그램>테스트 프로그램</h3><p>NoticeDao.java 에 대한 단위 테스트 프로그램</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RunWith</span>(UnitilsJUnit4TestClassRunner.<span style=color:#a6e22e>class</span>)
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Transactional</span>(TransactionMode.<span style=color:#a6e22e>ROLLBACK</span>)
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@SpringApplicationContext</span>({<span style=color:#e6db74>&#34;/META-INF/persistence/connection/datasource-spring-with-unitils.xml&#34;</span>,
-</span></span><span style=display:flex><span>	                   <span style=color:#e6db74>&#34;/META-INF/spring/context-common.xml&#34;</span>, 
-</span></span><span style=display:flex><span>	                   <span style=color:#e6db74>&#34;/META-INF/spring/context-sqlmap.xml&#34;</span>})
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DaoOperationTest_noticeDao</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * unitils.properties 에 설정 된 database 접근 정보를 기반으로 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트 용 DataSource 를 만든 후 자동으로 injection 해 준다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * (unitils.properties 파일의 위치와 이름은 변경할 수 없다.)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * updateDataBaseSchema.enabled=true 로 설정되어 있으면
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * dbMaintainer.script.locations 에서 지정한 위치의 sql 문을 실행시켜준다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 주의) 생성 시점은 test 메소드가 실행되기 전이다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 *        따라서, 단순히 TestDataSource 만 선언하는 것이 아니라,
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 *        하나 이상의 test 메소드라도 있어야 결과 확인이 가능하다.
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @see		unitils.properties
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @see      dbMaintainer.script.locations 에서 지정한 위치의 sql 문
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@TestDataSource</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> DataSource dataSource;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** 테스트를 위해 만든 타겟 클래스로서 공지사항 비즈니스 구현을 위한 Dao */</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@SpringBean</span>(<span style=color:#e6db74>&#34;noticeDao&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> NoticeDao noticeDao;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/** 테스트를 위해 만든 타겟 클래스로서 공지사항 비즈니스 구현을 위한 Value Object */</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> NoticeVo noticeVo;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 공지사항 등록을 위한 Value Object 를 만들어내는 메소드로서 테스트 수행 직전에 수행
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Before</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>makeNoticeVo</span>() {
-</span></span><span style=display:flex><span>		noticeVo <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> NoticeVo();
-</span></span><span style=display:flex><span>		noticeVo.<span style=color:#a6e22e>setId</span>(201);
-</span></span><span style=display:flex><span>    	        noticeVo.<span style=color:#a6e22e>setTitle</span>(<span style=color:#e6db74>&#34;201번 공지&#34;</span>);
-</span></span><span style=display:flex><span>    	        noticeVo.<span style=color:#a6e22e>setContents</span>(<span style=color:#e6db74>&#34;테스트용으로 자동 입력된 공지사항 201번입니다.&#34;</span>);
-</span></span><span style=display:flex><span>    	        noticeVo.<span style=color:#a6e22e>setLastModifier</span>(<span style=color:#e6db74>&#34;OracleDataSetTest.class&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>long</span> currentTime <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> java.<span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>Date</span>().<span style=color:#a6e22e>getTime</span>();
-</span></span><span style=display:flex><span>		noticeVo.<span style=color:#a6e22e>setRegistrationDate</span>(<span style=color:#66d9ef>new</span> java.<span style=color:#a6e22e>sql</span>.<span style=color:#a6e22e>Date</span>(currentTime));
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 자동으로 생성된 Test 용 DataSource 를 정상적으로 Get 했는지를 확인
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>checkTestDataSource</span>() {
-</span></span><span style=display:flex><span>		assertNotNull(<span style=color:#e6db74>&#34;Test DataSource 를 정상적으로 get 했는지를 확인한다.&#34;</span>, dataSource);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 자동으로 생성된 Test 용 Dao 를 정상적으로 Get 했는지를 확인
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>checkTestDao</span>()  {
-</span></span><span style=display:flex><span>		assertNotNull(<span style=color:#e6db74>&#34;Test 대상 Dao 를 정상적으로 get 했는지를 확인한다.&#34;</span>, noticeDao);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * Dao 의 selectCount 메소드에 대한 테스트
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트용 데이터) 클래스에 선언한 DataSet 에 정의 된 데이터
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트 결과) DataSet 에 3건을 정의했으므로 selectCount 의 결과는 3건이면 성공
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@DataSet</span>(<span style=color:#e6db74>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testSelectCount</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> noticeDao.<span style=color:#a6e22e>selectCount</span>();
-</span></span><span style=display:flex><span>		assertEquals(<span style=color:#e6db74>&#34;테스트용 데이터셋 3건을 입력한 뒤 전체 목록을 조회하면 3건임을 확인&#34;</span>, 3, count);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * Dao 의 selectList 메소드에 대한 테스트
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트용 데이터) 클래스에 선언한 DataSet 에 정의 된 데이터
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트 결과) 전체 목록을 조회하여 각각의 내용을 담은 Value Object 가 Null 이 아니면 성공
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@DataSet</span>(<span style=color:#e6db74>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testSelectList</span>() {
-</span></span><span style=display:flex><span>		List<span style=color:#f92672>&lt;</span>NoticeVo<span style=color:#f92672>&gt;</span> noticeList <span style=color:#f92672>=</span> noticeDao.<span style=color:#a6e22e>selectList</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span>(NoticeVo noticeVo:noticeList) {
-</span></span><span style=display:flex><span>			assertNotNull(<span style=color:#e6db74>&#34;조회한 noticeVo 객체가 null 이 아님을 확인&#34;</span>, noticeVo);
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * Dao 의 Insert 메소드에 대한 테스트
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트용 데이터 ) 테스트 프로그램 수행 중 만들어낸 noticeVo
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트 결과) 테스트용 데이터셋 1건을 추가 입력한 뒤 목록조회하면 4건이면 성공
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@DataSet</span>(<span style=color:#e6db74>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@ExpectedDataSet</span>(<span style=color:#e6db74>&#34;/META-INF/persistence/testdata/AutoVerifyTestResultsTest_ExpectedDataSet.xml&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testInsert</span>() {
-</span></span><span style=display:flex><span>		assertNotNull(noticeVo);
-</span></span><span style=display:flex><span>    	noticeDao.<span style=color:#a6e22e>insert</span>(noticeVo);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> noticeDao.<span style=color:#a6e22e>selectCount</span>();
-</span></span><span style=display:flex><span>		assertEquals(<span style=color:#e6db74>&#34;테스트용 데이터셋 1건을 추가 입력한 뒤 목록조회하면 4건임을 확인&#34;</span>, 4, count);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * Dao 의 Delete 메소드에 대한 테스트
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트용 데이터 ) DataSet 에 선언한 항목 중 2건에 해당하는 Id 값(101, 102)
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 테스트 결과) 테스트용 데이터셋 3건을 입력한 뒤2건을 삭제 후 목록조회하면 1건이면 성공
-</span></span></span><span style=display:flex><span><span style=color:#75715e>	*/</span>
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Test</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@DataSet</span>(<span style=color:#e6db74>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testDelete</span>() {
-</span></span><span style=display:flex><span>		noticeDao.<span style=color:#a6e22e>delete</span>(101);
-</span></span><span style=display:flex><span>		noticeDao.<span style=color:#a6e22e>delete</span>(102);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> noticeDao.<span style=color:#a6e22e>selectCount</span>();
-</span></span><span style=display:flex><span>		assertEquals(<span style=color:#e6db74>&#34;테스트용 데이터셋 3건을 입력한 뒤2건을 삭제 후 목록조회하면 1건임을 확인&#34;</span>, 1, count);
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=테스트-수행결과>테스트 수행결과</h3><h4 id=콘솔-로그>콘솔 로그</h4><p><strong>데이터 소스 생성하는 모습</strong></p><pre tabindex=0><code>2009. 4. 28 오후 2:29:33 org.unitils.database.config.PropertiesDataSourceFactory createDataSource
+</span></span><span style=display:flex><span><span style=color:navy>&lt;dataset&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;NOTICE</span> <span style=color:teal>NOTICE_ID=</span><span style=color:#d14>&#34;201&#34;</span> 
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_TITLE=</span><span style=color:#d14>&#34;201번 공지&#34;</span>  
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_CONTENTS=</span><span style=color:#d14>&#34;테스트용으로 자동 입력된 공지사항 201번입니다.&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:teal>NOTICE_LAST_MODIFIER=</span><span style=color:#d14>&#34;OracleDataSetTest.class&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/dataset&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=테스트-프로그램>테스트 프로그램</h3><p>NoticeDao.java 에 대한 단위 테스트 프로그램</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#3c5d5d;font-weight:700>@RunWith</span>(UnitilsJUnit4TestClassRunner.<span style=color:teal>class</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@Transactional</span>(TransactionMode.<span style=color:teal>ROLLBACK</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#3c5d5d;font-weight:700>@SpringApplicationContext</span>({<span style=color:#d14>&#34;/META-INF/persistence/connection/datasource-spring-with-unitils.xml&#34;</span>,<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	                   </span><span style=color:#d14>&#34;/META-INF/spring/context-common.xml&#34;</span>,<span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	                   </span><span style=color:#d14>&#34;/META-INF/spring/context-sqlmap.xml&#34;</span>})<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>DaoOperationTest_noticeDao</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * unitils.properties 에 설정 된 database 접근 정보를 기반으로 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트 용 DataSource 를 만든 후 자동으로 injection 해 준다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * (unitils.properties 파일의 위치와 이름은 변경할 수 없다.)
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * updateDataBaseSchema.enabled=true 로 설정되어 있으면
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * dbMaintainer.script.locations 에서 지정한 위치의 sql 문을 실행시켜준다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 주의) 생성 시점은 test 메소드가 실행되기 전이다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 *        따라서, 단순히 TestDataSource 만 선언하는 것이 아니라,
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 *        하나 이상의 test 메소드라도 있어야 결과 확인이 가능하다.
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @see		unitils.properties
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * @see      dbMaintainer.script.locations 에서 지정한 위치의 sql 문
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@TestDataSource</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>DataSource<span style=color:#bbb> </span>dataSource;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** 테스트를 위해 만든 타겟 클래스로서 공지사항 비즈니스 구현을 위한 Dao */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@SpringBean</span>(<span style=color:#d14>&#34;noticeDao&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>NoticeDao<span style=color:#bbb> </span>noticeDao;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/** 테스트를 위해 만든 타겟 클래스로서 공지사항 비즈니스 구현을 위한 Value Object */</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>NoticeVo<span style=color:#bbb> </span>noticeVo;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 공지사항 등록을 위한 Value Object 를 만들어내는 메소드로서 테스트 수행 직전에 수행
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Before</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>makeNoticeVo</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>noticeVo<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>NoticeVo();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>noticeVo.<span style=color:teal>setId</span>(201);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    	        </span>noticeVo.<span style=color:teal>setTitle</span>(<span style=color:#d14>&#34;201번 공지&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    	        </span>noticeVo.<span style=color:teal>setContents</span>(<span style=color:#d14>&#34;테스트용으로 자동 입력된 공지사항 201번입니다.&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    	        </span>noticeVo.<span style=color:teal>setLastModifier</span>(<span style=color:#d14>&#34;OracleDataSetTest.class&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>                </span><span style=color:#458;font-weight:700>long</span><span style=color:#bbb> </span>currentTime<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>java.<span style=color:teal>util</span>.<span style=color:teal>Date</span>().<span style=color:teal>getTime</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>noticeVo.<span style=color:teal>setRegistrationDate</span>(<span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>java.<span style=color:teal>sql</span>.<span style=color:teal>Date</span>(currentTime));<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 자동으로 생성된 Test 용 DataSource 를 정상적으로 Get 했는지를 확인
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>checkTestDataSource</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>assertNotNull(<span style=color:#d14>&#34;Test DataSource 를 정상적으로 get 했는지를 확인한다.&#34;</span>,<span style=color:#bbb> </span>dataSource);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 자동으로 생성된 Test 용 Dao 를 정상적으로 Get 했는지를 확인
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>checkTestDao</span>()<span style=color:#bbb>  </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>assertNotNull(<span style=color:#d14>&#34;Test 대상 Dao 를 정상적으로 get 했는지를 확인한다.&#34;</span>,<span style=color:#bbb> </span>noticeDao);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * Dao 의 selectCount 메소드에 대한 테스트
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트용 데이터) 클래스에 선언한 DataSet 에 정의 된 데이터
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트 결과) DataSet 에 3건을 정의했으므로 selectCount 의 결과는 3건이면 성공
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#3c5d5d;font-weight:700>@DataSet</span>(<span style=color:#d14>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testSelectCount</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>count<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>noticeDao.<span style=color:teal>selectCount</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>assertEquals(<span style=color:#d14>&#34;테스트용 데이터셋 3건을 입력한 뒤 전체 목록을 조회하면 3건임을 확인&#34;</span>,<span style=color:#bbb> </span>3,<span style=color:#bbb> </span>count);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * Dao 의 selectList 메소드에 대한 테스트
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트용 데이터) 클래스에 선언한 DataSet 에 정의 된 데이터
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트 결과) 전체 목록을 조회하여 각각의 내용을 담은 Value Object 가 Null 이 아니면 성공
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#3c5d5d;font-weight:700>@DataSet</span>(<span style=color:#d14>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testSelectList</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>List<span style=color:#000;font-weight:700>&lt;</span>NoticeVo<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>noticeList<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>noticeDao.<span style=color:teal>selectList</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>for</span>(NoticeVo<span style=color:#bbb> </span>noticeVo:noticeList)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>assertNotNull(<span style=color:#d14>&#34;조회한 noticeVo 객체가 null 이 아님을 확인&#34;</span>,<span style=color:#bbb> </span>noticeVo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * Dao 의 Insert 메소드에 대한 테스트
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트용 데이터 ) 테스트 프로그램 수행 중 만들어낸 noticeVo
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트 결과) 테스트용 데이터셋 1건을 추가 입력한 뒤 목록조회하면 4건이면 성공
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#3c5d5d;font-weight:700>@DataSet</span>(<span style=color:#d14>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@ExpectedDataSet</span>(<span style=color:#d14>&#34;/META-INF/persistence/testdata/AutoVerifyTestResultsTest_ExpectedDataSet.xml&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testInsert</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>assertNotNull(noticeVo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    	</span>noticeDao.<span style=color:teal>insert</span>(noticeVo);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>count<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>noticeDao.<span style=color:teal>selectCount</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>assertEquals(<span style=color:#d14>&#34;테스트용 데이터셋 1건을 추가 입력한 뒤 목록조회하면 4건임을 확인&#34;</span>,<span style=color:#bbb> </span>4,<span style=color:#bbb> </span>count);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#998;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * Dao 의 Delete 메소드에 대한 테스트
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트용 데이터 ) DataSet 에 선언한 항목 중 2건에 해당하는 Id 값(101, 102)
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	 * 테스트 결과) 테스트용 데이터셋 3건을 입력한 뒤2건을 삭제 후 목록조회하면 1건이면 성공
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>	*/</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Test</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#3c5d5d;font-weight:700>@DataSet</span>(<span style=color:#d14>&#34;/META-INF/persistence/testdata/AutoInsertionTestDataTest_DataSet.xml&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>testDelete</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>noticeDao.<span style=color:teal>delete</span>(101);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>noticeDao.<span style=color:teal>delete</span>(102);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>count<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>noticeDao.<span style=color:teal>selectCount</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>assertEquals(<span style=color:#d14>&#34;테스트용 데이터셋 3건을 입력한 뒤2건을 삭제 후 목록조회하면 1건임을 확인&#34;</span>,<span style=color:#bbb> </span>1,<span style=color:#bbb> </span>count);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=테스트-수행결과>테스트 수행결과</h3><h4 id=콘솔-로그>콘솔 로그</h4><p><strong>데이터 소스 생성하는 모습</strong></p><pre tabindex=0><code>2009. 4. 28 오후 2:29:33 org.unitils.database.config.PropertiesDataSourceFactory createDataSource
 정보: Creating data source. Driver: org.hsqldb.jdbcDriver, url: jdbc:hsqldb:sampledb, user: sa, password: &lt;not shown&gt;
 </code></pre><p><strong>데이터베이스 스키마 업데이트 모습</strong></p><pre tabindex=0><code>2009. 4. 28 오후 2:29:33 org.unitils.database.DatabaseModule updateDatabase
 정보: Checking if database has to be updated.

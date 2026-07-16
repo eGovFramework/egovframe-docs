@@ -101,103 +101,103 @@ VS Code 활용 가이드<span class=sr-only>열기</span></button><div class=lnb
 <a class="krds-btn medium text" href=/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/ class=innerLink>이클립스에서 Ant 실행하기</a>
 를 참고하여 해당 target을 실행하고, Console View에서 <strong>BUILD SUCCESSFUL</strong>을 확인한다.</li><li>엑셀 리포트 확인 : build.xml의 <code>todir="${testxls.dir}"(&lt;egov-junitreport todir="${testxls.dir}">)</code>에서 설정하며, 디폴트 예의 설정대로라면 testxls.dir에 설정된 디렉토리에 egovtest-junit.xls이 생성되므로 더블클릭하여 리포트를 확인한다. 그 모양은
 <a class="krds-btn medium text" href=/egovframe-docs/egovframe-development/test-tool/test-tool-ref/excel-test-report/ class=innerLink>테스트 결과 Excel 리포트</a>
-리포트와 같다. template-junit.xls 파일은 디폴트 템플릿 엑셀 파일이다.</li></ol></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><h3 class=sec-tit id=html-리포트-생성-샘플>HTML 리포트 생성 샘플</h3><ul><li><strong>Maven - pom.xml</strong></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;reporting&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;artifactId&gt;</span>maven-surefire-report-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;version&gt;</span>2.4.2<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/reporting&gt;</span>
-</span></span></code></pre></div><ul><li><strong>Ant - build.xml</strong></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;!-- Junit Test Result Report  --&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;target</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;junitreport&#34;</span> <span style=color:#a6e22e>depends=</span><span style=color:#e6db74>&#34;tests&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;junitreport</span> <span style=color:#a6e22e>todir=</span><span style=color:#e6db74>&#34;${testhtml.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;fileset</span> <span style=color:#a6e22e>dir=</span><span style=color:#e6db74>&#34;${testreports.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;include</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;TEST-*.xml&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/fileset&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;report</span> <span style=color:#a6e22e>format=</span><span style=color:#e6db74>&#34;frames&#34;</span> <span style=color:#a6e22e>todir=</span><span style=color:#e6db74>&#34;${testhtml.dir}&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/junitreport&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/target&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=엑셀-리포트-생성-샘플>엑셀 리포트 생성 샘플</h3><ul><li><p><strong>Maven - pom.xml</strong></p><ol><li>디폴트 설정</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;build&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;defaultGoal&gt;</span>egovtest:junit-xls<span style=color:#f92672>&lt;/defaultGoal&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;plugins&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#75715e>&lt;!-- Egovframework JUnit Excel Reporting --&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;groupId&gt;</span>egovframework.dev<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;artifactId&gt;</span>egovtest-maven-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/build&gt;</span>
-</span></span></code></pre></div><ol start=2><li>전체 설정 예</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>	<span style=color:#f92672>&lt;plugin&gt;</span>
-</span></span><span style=display:flex><span>               <span style=color:#f92672>&lt;groupId&gt;</span>egovframework.dev<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;artifactId&gt;</span>egovtest-maven-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;version&gt;</span>2.0.1<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;configuration&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;outputDirectory&gt;</span>${project.build.directory}/egovtest<span style=color:#f92672>&lt;/outputDirectory&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;reportsDirectory&gt;</span>${project.build.directory}/site/egovtest<span style=color:#f92672>&lt;/reportsDirectory&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;outputName&gt;</span>egovtest-report.xls<span style=color:#f92672>&lt;/outputName&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;templatePath&gt;</span>${basedir}/src/test/resources/template-kr.xls<span style=color:#f92672>&lt;/templatePath&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;headerPosition&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#75715e>&lt;!-- &lt;summary&gt;0,A,4&lt;/summary&gt;
-</span></span></span><span style=display:flex><span><span style=color:#75715e>			&lt;package&gt;0,A,8&lt;/package&gt; --&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;summary&gt;</span>0,B,6<span style=color:#f92672>&lt;/summary&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;package&gt;</span>0,B,11<span style=color:#f92672>&lt;/package&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;lists&gt;</span>1,A,4<span style=color:#f92672>&lt;/lists&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/headerPosition&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/configuration&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;dependencies&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#75715e>&lt;!-- Dependencies for developing functions of reporting --&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>			 <span style=color:#f92672>&lt;groupId&gt;</span>egovframework.dev<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>			 <span style=color:#f92672>&lt;artifactId&gt;</span>egovframework-dev-tst<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>			 <span style=color:#f92672>&lt;version&gt;</span>2.0.1<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;groupId&gt;</span>org.apache.poi<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;artifactId&gt;</span>poi<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;version&gt;</span>3.6<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;groupId&gt;</span>commons-io<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;artifactId&gt;</span>commons-io<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;version&gt;</span>1.4<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span>			<span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/dependencies&gt;</span>
-</span></span><span style=display:flex><span>		<span style=color:#f92672>&lt;/plugin&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/plugins&gt;</span>
-</span></span></code></pre></div><ul><li><strong>Ant - build.xml</strong><ul><li>디폴트 설정</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;path</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;egov.lib&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;path</span> <span style=color:#a6e22e>refid=</span><span style=color:#e6db74>&#34;master-classpath&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;path</span> <span style=color:#a6e22e>location=</span><span style=color:#e6db74>&#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/path&gt;</span>
+리포트와 같다. template-junit.xls 파일은 디폴트 템플릿 엑셀 파일이다.</li></ol></div><div class="conts-wrap section-link" id=section_05><h2 class=sec-tit id=샘플>샘플</h2><h3 class=sec-tit id=html-리포트-생성-샘플>HTML 리포트 생성 샘플</h3><ul><li><strong>Maven - pom.xml</strong></li></ul><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;reporting&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;groupId&gt;</span>org.apache.maven.plugins<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;artifactId&gt;</span>maven-surefire-report-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;version&gt;</span>2.4.2<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/reporting&gt;</span>
+</span></span></code></pre></div><ul><li><strong>Ant - build.xml</strong></li></ul><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#998;font-style:italic>&lt;!-- Junit Test Result Report  --&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;target</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;junitreport&#34;</span> <span style=color:teal>depends=</span><span style=color:#d14>&#34;tests&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;junitreport</span> <span style=color:teal>todir=</span><span style=color:#d14>&#34;${testhtml.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;fileset</span> <span style=color:teal>dir=</span><span style=color:#d14>&#34;${testreports.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;include</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;TEST-*.xml&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/fileset&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;report</span> <span style=color:teal>format=</span><span style=color:#d14>&#34;frames&#34;</span> <span style=color:teal>todir=</span><span style=color:#d14>&#34;${testhtml.dir}&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/junitreport&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/target&gt;</span>
+</span></span></code></pre></div><h3 class=sec-tit id=엑셀-리포트-생성-샘플>엑셀 리포트 생성 샘플</h3><ul><li><p><strong>Maven - pom.xml</strong></p><ol><li>디폴트 설정</li></ol><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;build&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;defaultGoal&gt;</span>egovtest:junit-xls<span style=color:navy>&lt;/defaultGoal&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;plugins&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#998;font-style:italic>&lt;!-- Egovframework JUnit Excel Reporting --&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;groupId&gt;</span>egovframework.dev<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:navy>&lt;artifactId&gt;</span>egovtest-maven-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/build&gt;</span>
+</span></span></code></pre></div><ol start=2><li>전체 설정 예</li></ol><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>	<span style=color:navy>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>               <span style=color:navy>&lt;groupId&gt;</span>egovframework.dev<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;artifactId&gt;</span>egovtest-maven-plugin<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;version&gt;</span>2.0.1<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;outputDirectory&gt;</span>${project.build.directory}/egovtest<span style=color:navy>&lt;/outputDirectory&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;reportsDirectory&gt;</span>${project.build.directory}/site/egovtest<span style=color:navy>&lt;/reportsDirectory&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;outputName&gt;</span>egovtest-report.xls<span style=color:navy>&lt;/outputName&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;templatePath&gt;</span>${basedir}/src/test/resources/template-kr.xls<span style=color:navy>&lt;/templatePath&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;headerPosition&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:#998;font-style:italic>&lt;!-- &lt;summary&gt;0,A,4&lt;/summary&gt;
+</span></span></span><span style=display:flex><span><span style=color:#998;font-style:italic>			&lt;package&gt;0,A,8&lt;/package&gt; --&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;summary&gt;</span>0,B,6<span style=color:navy>&lt;/summary&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;package&gt;</span>0,B,11<span style=color:navy>&lt;/package&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;lists&gt;</span>1,A,4<span style=color:navy>&lt;/lists&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/headerPosition&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;dependencies&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:#998;font-style:italic>&lt;!-- Dependencies for developing functions of reporting --&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>			 <span style=color:navy>&lt;groupId&gt;</span>egovframework.dev<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>			 <span style=color:navy>&lt;artifactId&gt;</span>egovframework-dev-tst<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>			 <span style=color:navy>&lt;version&gt;</span>2.0.1<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;groupId&gt;</span>org.apache.poi<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;artifactId&gt;</span>poi<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;version&gt;</span>3.6<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;groupId&gt;</span>commons-io<span style=color:navy>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;artifactId&gt;</span>commons-io<span style=color:navy>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;version&gt;</span>1.4<span style=color:navy>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>			<span style=color:navy>&lt;/dependency&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/dependencies&gt;</span>
+</span></span><span style=display:flex><span>		<span style=color:navy>&lt;/plugin&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;/plugins&gt;</span>
+</span></span></code></pre></div><ul><li><strong>Ant - build.xml</strong><ul><li>디폴트 설정</li></ul></li></ul><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;path</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;egov.lib&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;path</span> <span style=color:teal>refid=</span><span style=color:#d14>&#34;master-classpath&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;path</span> <span style=color:teal>location=</span><span style=color:#d14>&#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/path&gt;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;taskdef</span> <span style=color:#a6e22e>resource=</span><span style=color:#e6db74>&#34;egovtest.properties&#34;</span> <span style=color:#a6e22e>classpathref=</span><span style=color:#e6db74>&#34;egov.lib&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;taskdef</span> <span style=color:teal>resource=</span><span style=color:#d14>&#34;egovtest.properties&#34;</span> <span style=color:teal>classpathref=</span><span style=color:#d14>&#34;egov.lib&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- JUnit Excel Report --&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;target</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;egovtest&#34;</span> <span style=color:#a6e22e>depends=</span><span style=color:#e6db74>&#34;tests&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;egov-junitreport</span> <span style=color:#a6e22e>todir=</span><span style=color:#e6db74>&#34;${testxls.dir}&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;fileset</span> <span style=color:#a6e22e>dir=</span><span style=color:#e6db74>&#34;${testreports.dir}&#34;</span> <span style=color:#a6e22e>includes=</span><span style=color:#e6db74>&#34;**/TEST-*.xml&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/egov-junitreport&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/target&gt;</span>
-</span></span></code></pre></div><ol start=3><li>전체 설정 예</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;path</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;egov.lib&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;path</span> <span style=color:#a6e22e>refid=</span><span style=color:#e6db74>&#34;master-classpath&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;path</span> <span style=color:#a6e22e>location=</span><span style=color:#e6db74>&#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/path&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>&lt;!-- JUnit Excel Report --&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;target</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;egovtest&#34;</span> <span style=color:teal>depends=</span><span style=color:#d14>&#34;tests&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;egov-junitreport</span> <span style=color:teal>todir=</span><span style=color:#d14>&#34;${testxls.dir}&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;fileset</span> <span style=color:teal>dir=</span><span style=color:#d14>&#34;${testreports.dir}&#34;</span> <span style=color:teal>includes=</span><span style=color:#d14>&#34;**/TEST-*.xml&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/egov-junitreport&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/target&gt;</span>
+</span></span></code></pre></div><ol start=3><li>전체 설정 예</li></ol><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;path</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;egov.lib&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;path</span> <span style=color:teal>refid=</span><span style=color:#d14>&#34;master-classpath&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;path</span> <span style=color:teal>location=</span><span style=color:#d14>&#34;${antlib.dir}/egovtest/egovframework-dev-tst-ant.jar&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/path&gt;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;taskdef</span> <span style=color:#a6e22e>resource=</span><span style=color:#e6db74>&#34;egovtest.properties&#34;</span> <span style=color:#a6e22e>classpathref=</span><span style=color:#e6db74>&#34;egov.lib&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;taskdef</span> <span style=color:teal>resource=</span><span style=color:#d14>&#34;egovtest.properties&#34;</span> <span style=color:teal>classpathref=</span><span style=color:#d14>&#34;egov.lib&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- JUnit Excel Report --&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;target</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;egovtest-full&#34;</span> <span style=color:#a6e22e>depends=</span><span style=color:#e6db74>&#34;tests&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;egov-junitreport</span> <span style=color:#a6e22e>todir=</span><span style=color:#e6db74>&#34;${testxls.dir}&#34;</span>
-</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>outputname=</span><span style=color:#e6db74>&#34;egovtest-junit-full.xls&#34;</span>
-</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>templatepath=</span><span style=color:#e6db74>&#34;${basedir}/build/template-kr.xls&#34;</span>
-</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>summary=</span><span style=color:#e6db74>&#34;0,B,6&#34;</span>
-</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>packages=</span><span style=color:#e6db74>&#34;0,B,11&#34;</span>
-</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>lists=</span><span style=color:#e6db74>&#34;1,A,5&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;fileset</span> <span style=color:#a6e22e>dir=</span><span style=color:#e6db74>&#34;${testreports.dir}&#34;</span>
-</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>includes=</span><span style=color:#e6db74>&#34;**/TEST-*.xml&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/egov-junitreport&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/target&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#998;font-style:italic>&lt;!-- JUnit Excel Report --&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;target</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;egovtest-full&#34;</span> <span style=color:teal>depends=</span><span style=color:#d14>&#34;tests&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;egov-junitreport</span> <span style=color:teal>todir=</span><span style=color:#d14>&#34;${testxls.dir}&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:teal>outputname=</span><span style=color:#d14>&#34;egovtest-junit-full.xls&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:teal>templatepath=</span><span style=color:#d14>&#34;${basedir}/build/template-kr.xls&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:teal>summary=</span><span style=color:#d14>&#34;0,B,6&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:teal>packages=</span><span style=color:#d14>&#34;0,B,11&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:teal>lists=</span><span style=color:#d14>&#34;1,A,5&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;fileset</span> <span style=color:teal>dir=</span><span style=color:#d14>&#34;${testreports.dir}&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:teal>includes=</span><span style=color:#d14>&#34;**/TEST-*.xml&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/egov-junitreport&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/target&gt;</span>
 </span></span></code></pre></div></li></ul></div><div class="conts-wrap section-link" id=section_06><h2 class=sec-tit id=참고자료>참고자료</h2><ul><li>Maven Surefire Plugin Home :
 <a class="krds-btn medium text" href=http://maven.apache.org/plugins/maven-surefire-plugin/ target=_blank rel="noopener noreferrer" class=externalLink>http://maven.apache.org/plugins/maven-surefire-plugin/<i class="svg-icon ico-go"></i></a></li><li>Maven Surefire Report Plugin Home :
 <a class="krds-btn medium text" href=http://maven.apache.org/plugins/maven-surefire-report-plugin/ target=_blank rel="noopener noreferrer" class=externalLink>http://maven.apache.org/plugins/maven-surefire-report-plugin/<i class="svg-icon ico-go"></i></a></li><li>Ant JUnit Task :

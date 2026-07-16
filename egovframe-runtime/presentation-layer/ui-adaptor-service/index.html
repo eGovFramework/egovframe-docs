@@ -91,214 +91,214 @@ Controller 메소드의 파라미터에 설정된 클래스(여기서는 DTO)를
 그에 해당하는 ArgumentResolvers(customArgumentResolvers포함) 를 호출해준다.
 따라서 우리는 ArgumentResolver를 확장하여 CustomRiaArgumentResolver 개발하여 AnnotationMethodHandlerAdapter에 등록한다.
 CustomRiaArgumentResolver 에서 리턴되는 객체는 Contorller 단의 메소드의 파라미터로 이용된다.</p><ul><li>참고 : AnnotationMethodHandlerAdapter 는 URI 와 매핑되는 Contorller 의 메소드를 실행 시 파라미터로 존재하는 객체타입에대한 ArgumentResolver를 실행하여 가져온다.</li></ul><p>그리고 Controller단의 실행 결과는 ViewResovler를 통해 RiaView 로 전송되며 RiaVeiw는 결과물인 DTO 를 UI 솔루션 데이터 타입으로 변환하여 response로 보내어 진다.
-다시 핵심적인 내용을 정리하자면 다음과 같다.</p><ol><li>AnnotationMethodHandlerAdapter 의 CustomRiaArgumentResolver 등록 ⇒ CustomRiaArgumentResolver</li><li>UIAdaptor 등록 ⇒ UIAdaptorImpl</li><li>RiaView 등록 ⇒ RiaView</li></ol><p>사용되는 DTO 를 아래 클래스로 생각하고 살펴보겠다.</p><p>UdDTO.java(샘플)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>...
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UdDTO</span> <span style=color:#66d9ef>implements</span> Serializable {
+다시 핵심적인 내용을 정리하자면 다음과 같다.</p><ol><li>AnnotationMethodHandlerAdapter 의 CustomRiaArgumentResolver 등록 ⇒ CustomRiaArgumentResolver</li><li>UIAdaptor 등록 ⇒ UIAdaptorImpl</li><li>RiaView 등록 ⇒ RiaView</li></ol><p>사용되는 DTO 를 아래 클래스로 생각하고 살펴보겠다.</p><p>UdDTO.java(샘플)</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>UdDTO</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>Serializable<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Map<span style=color:#bbb> </span>variableList<span style=color:#bbb> </span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Map<span style=color:#bbb> </span>dataSetList<span style=color:#bbb> </span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>Map<span style=color:#bbb> </span>Objects<span style=color:#bbb> </span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setVariableList</span>(Map<span style=color:#bbb> </span>variableList)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>variableList</span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>variableList;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setDataSetList</span>(Map<span style=color:#bbb> </span>dataSetList)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>dataSetList</span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>dataSetList;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Map<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getVariableList</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>variableList;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Map<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getDataSetList</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>        </span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>dataSetList;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setObjects</span>(Map<span style=color:#bbb> </span>objects)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>Objects<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>objects;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Map<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getObjects</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>Objects;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>...<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=ui솔루션데이터에서-dto로-변환>UI솔루션데이터에서 DTO로 변환</h3><p>다음은 UTO 를 가져와 UI 솔루션에 의해 들어오는 객체로부터 UTO 로 변환하는 부분을 설명한다.
+변환을 담당하는 UIAdaptorImpl 객체는 AnnotationMethodHandlerAdapter 의 <strong>CustomRiaArgumentResolver</strong> 에 설정된다.</p><p><strong>설정정보(CustomRiaArgumentResolver)</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;webBindingInitializer&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;bean</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.web.common.EgovBindingInitializer&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;customArgumentResolvers&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;list&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;bean</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.sale.web.CustomRiaArgumentResolver&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;uiAdaptor&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>                    <span style=color:navy>&lt;ref</span> <span style=color:teal>bean=</span><span style=color:#d14>&#34;riaAdaptor&#34;</span> <span style=color:navy>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:navy>&lt;/bean&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:navy>&lt;/list&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:navy>&lt;/property&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;/bean&gt;</span>
+</span></span></code></pre></div><p>WebArgumentResolver의 구현체인 CustomRiaArgumentResolver 는 uiAdaptor 에 세팅된 Adaptor 를 실행해준다.</p><p><strong>CustomRiaArgumentResolver.java</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>CustomRiaArgumentResolver</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>WebArgumentResolver<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>UiAdaptor<span style=color:#bbb> </span>uiA;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>setUiAdaptor</span>(UiAdaptor<span style=color:#bbb> </span>uiA)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>this</span>.<span style=color:teal>uiA</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>uiA;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Object<span style=color:#bbb> </span><span style=color:#900;font-weight:700>resolveArgument</span>(MethodParameter<span style=color:#bbb> </span>methodParameter,<span style=color:#bbb> </span>NativeWebRequest<span style=color:#bbb> </span>webRequest)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Class<span style=color:#000;font-weight:700>&lt;?&gt;</span><span style=color:#bbb> </span>type<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>methodParameter.<span style=color:teal>getParameterType</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Object<span style=color:#bbb> </span>uiObject<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(uiA<span style=color:#bbb> </span><span style=color:#000;font-weight:700>==</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>UNRESOLVED;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//Controller의 실행되는 메소드의 파라미터타입 정보가 MethodParameter를 통해 넘어온다. </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//설정한 UIAdaptro 구현체에 등록되어 있는 UTO 와 비교한다.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(type.<span style=color:teal>equals</span>(uiA.<span style=color:teal>getModelName</span>()))<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>HttpServletRequest<span style=color:#bbb> </span>request<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(HttpServletRequest)<span style=color:#bbb> </span>webRequest.<span style=color:teal>getNativeRequest</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>// 여기서 데이터 만들어 넘긴다.</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>uiObject<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(UdDTO)<span style=color:#bbb> </span>uiA.<span style=color:teal>convert</span>(request);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>uiObject;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>UNRESOLVED;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>...<span style=color:#bbb>
+</span></span></span></code></pre></div><p>UiAdaptor 의 구현체는 아래와 같다. 여기서는 Miplatform 의 예를 들어 코드를 작성하였다.
+UI 솔루션의 객체에서 DTO 로 데이터를 옮기는 역할은 converte4In 메소드에서 수행된다.</p><p><strong>RiaAdaptorImpl.java(MiPlatform ⇒ UdDTO)</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>RiaAdaptorImpl</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>implements</span><span style=color:#bbb> </span>UiAdaptor<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#000;font-weight:700>protected</span><span style=color:#bbb> </span>Log<span style=color:#bbb> </span>log<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>LogFactory.<span style=color:teal>getLog</span>(<span style=color:#000;font-weight:700>this</span>.<span style=color:teal>getClass</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>  </span><span style=color:#998;font-style:italic>//resolveArgument 메소드에서 호출하는 메소드 </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Object<span style=color:#bbb> </span><span style=color:#900;font-weight:700>convert</span>(HttpServletRequest<span style=color:#bbb> </span>request)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>PlatformRequest<span style=color:#bbb> </span>platformRequest<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>null</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>platformRequest<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>PlatformRequest(request,<span style=color:#bbb> </span>PlatformRequest.<span style=color:teal>CHARSET_UTF8</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>platformRequest.<span style=color:teal>receiveData</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(IOException<span style=color:#bbb> </span>ex)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>ex.<span style=color:teal>getStackTrace</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>// throw new IOException(&#34;PlatformRequest error&#34;);</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>    </span><span style=color:#998;font-style:italic>//UI 솔루션 데이터에서 DTO 객체로 변환</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>UdDTO<span style=color:#bbb> </span>dto<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>converte4In(platformRequest);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>dto;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>private</span><span style=color:#bbb> </span>UdDTO<span style=color:#bbb> </span><span style=color:#900;font-weight:700>converte4In</span>(PlatformRequest<span style=color:#bbb> </span>platformRequest)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>UdDTO<span style=color:#bbb> </span>dto<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>UdDTO();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//... DTO 또는 VO 값 채우기 </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>.....<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>dto;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>Class<span style=color:#bbb> </span><span style=color:#900;font-weight:700>getModelName</span>()<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>UdDTO.<span style=color:teal>class</span>;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=controller-메소드-구현>Controller 메소드 구현</h3><p>UdDTO 클래스는 CustomRiaArgumentResolver 에서 만들어져 Controller 의 메소드의 parameter 형태로 가져온다.
+아래 예는 Controller 단의 메소드 이다.</p><p><strong>XXCategoryController.java</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>...<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@RequestMapping</span>(<span style=color:#d14>&#34;/sample/miplatform.do&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span>ModelAndView<span style=color:#bbb> </span><span style=color:#900;font-weight:700>selectCategoryList4Mi</span>(UdDTO<span style=color:#bbb> </span>miDto,<span style=color:#bbb> </span>Model<span style=color:#bbb> </span>model)<span style=color:#bbb> </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>ModelAndView<span style=color:#bbb> </span>mav<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>ModelAndView(<span style=color:#d14>&#34;riaView&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#998;font-style:italic>//조회조건이 있을 경우 사용될 Map</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>smp<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>HashMap<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>String<span style=color:#000;font-weight:700>&gt;</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		  </span><span style=color:#998;font-style:italic>//Biz Layer 를 호출 한다. </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>List<span style=color:#bbb> </span>resultList<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>categoryService.<span style=color:teal>selectCategoryList</span>(smp);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>//결과값을 모델에 저장 </span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>mav.<span style=color:teal>addObject</span>(<span style=color:#d14>&#34;MiDTO&#34;</span>,<span style=color:#bbb> </span>resultList);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(Exception<span style=color:#bbb> </span>ex)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>log.<span style=color:teal>info</span>(ex.<span style=color:teal>getStackTrace</span>(),<span style=color:#bbb> </span>ex);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>return</span><span style=color:#bbb> </span>mav;<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h3 class=sec-tit id=beannameviewresolver-설정>BeanNameViewResolver 설정</h3><p>모델 객체의 이름이 riaView 이다. 이것은 Bean Name을 직접 명시한 것으로 아래와 같은 설정(BeanNameViewResolver)이 필요하다.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.web.servlet.view.BeanNameViewResolver&#34;</span> <span style=color:teal>p:order=</span><span style=color:#d14>&#34;0&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Map variableList ;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Map dataSetList ;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Map Objects ;
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.web.servlet.view.UrlBasedViewResolver&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:teal>p:order=</span><span style=color:#d14>&#34;1&#34;</span> <span style=color:teal>p:viewClass=</span><span style=color:#d14>&#34;org.springframework.web.servlet.view.JstlView&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:teal>p:prefix=</span><span style=color:#d14>&#34;/WEB-INF/jsp/&#34;</span> <span style=color:teal>p:suffix=</span><span style=color:#d14>&#34;.jsp&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setVariableList</span>(Map variableList) {
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>variableList</span><span style=color:#f92672>=</span> variableList;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setDataSetList</span>(Map dataSetList) {
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dataSetList</span><span style=color:#f92672>=</span> dataSetList;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> Map <span style=color:#a6e22e>getVariableList</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> variableList;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> Map <span style=color:#a6e22e>getDataSetList</span>() {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dataSetList;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setObjects</span>(Map objects) {
-</span></span><span style=display:flex><span>	Objects <span style=color:#f92672>=</span> objects;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> Map <span style=color:#a6e22e>getObjects</span>() {
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> Objects;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>...
-</span></span></code></pre></div><h3 class=sec-tit id=ui솔루션데이터에서-dto로-변환>UI솔루션데이터에서 DTO로 변환</h3><p>다음은 UTO 를 가져와 UI 솔루션에 의해 들어오는 객체로부터 UTO 로 변환하는 부분을 설명한다.
-변환을 담당하는 UIAdaptorImpl 객체는 AnnotationMethodHandlerAdapter 의 <strong>CustomRiaArgumentResolver</strong> 에 설정된다.</p><p><strong>설정정보(CustomRiaArgumentResolver)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;webBindingInitializer&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.web.common.EgovBindingInitializer&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;customArgumentResolvers&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;list&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.sale.web.CustomRiaArgumentResolver&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;uiAdaptor&#34;</span><span style=color:#f92672>&gt;</span>
-</span></span><span style=display:flex><span>                    <span style=color:#f92672>&lt;ref</span> <span style=color:#a6e22e>bean=</span><span style=color:#e6db74>&#34;riaAdaptor&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/list&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/property&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/bean&gt;</span>
-</span></span></code></pre></div><p>WebArgumentResolver의 구현체인 CustomRiaArgumentResolver 는 uiAdaptor 에 세팅된 Adaptor 를 실행해준다.</p><p><strong>CustomRiaArgumentResolver.java</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CustomRiaArgumentResolver</span> <span style=color:#66d9ef>implements</span> WebArgumentResolver {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> UiAdaptor uiA;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setUiAdaptor</span>(UiAdaptor uiA) {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>uiA</span> <span style=color:#f92672>=</span> uiA;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Object <span style=color:#a6e22e>resolveArgument</span>(MethodParameter methodParameter, NativeWebRequest webRequest) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		Class<span style=color:#f92672>&lt;?&gt;</span> type <span style=color:#f92672>=</span> methodParameter.<span style=color:#a6e22e>getParameterType</span>();
-</span></span><span style=display:flex><span>		Object uiObject <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (uiA <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>)
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> UNRESOLVED;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//Controller의 실행되는 메소드의 파라미터타입 정보가 MethodParameter를 통해 넘어온다. </span>
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//설정한 UIAdaptro 구현체에 등록되어 있는 UTO 와 비교한다.</span>
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (type.<span style=color:#a6e22e>equals</span>(uiA.<span style=color:#a6e22e>getModelName</span>())) {
-</span></span><span style=display:flex><span>			HttpServletRequest request <span style=color:#f92672>=</span> (HttpServletRequest) webRequest.<span style=color:#a6e22e>getNativeRequest</span>();
-</span></span><span style=display:flex><span>			<span style=color:#75715e>// 여기서 데이터 만들어 넘긴다.</span>
-</span></span><span style=display:flex><span>			uiObject <span style=color:#f92672>=</span> (UdDTO) uiA.<span style=color:#a6e22e>convert</span>(request);
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> uiObject;
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> UNRESOLVED;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>...
-</span></span></code></pre></div><p>UiAdaptor 의 구현체는 아래와 같다. 여기서는 Miplatform 의 예를 들어 코드를 작성하였다.
-UI 솔루션의 객체에서 DTO 로 데이터를 옮기는 역할은 converte4In 메소드에서 수행된다.</p><p><strong>RiaAdaptorImpl.java(MiPlatform ⇒ UdDTO)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>RiaAdaptorImpl</span> <span style=color:#66d9ef>implements</span> UiAdaptor {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>protected</span> Log log <span style=color:#f92672>=</span> LogFactory.<span style=color:#a6e22e>getLog</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getClass</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>  <span style=color:#75715e>//resolveArgument 메소드에서 호출하는 메소드 </span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Object <span style=color:#a6e22e>convert</span>(HttpServletRequest request) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		PlatformRequest platformRequest <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span>			platformRequest <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PlatformRequest(request, PlatformRequest.<span style=color:#a6e22e>CHARSET_UTF8</span>);
-</span></span><span style=display:flex><span>			platformRequest.<span style=color:#a6e22e>receiveData</span>();
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (IOException ex) {
-</span></span><span style=display:flex><span>			ex.<span style=color:#a6e22e>getStackTrace</span>();
-</span></span><span style=display:flex><span>			<span style=color:#75715e>// throw new IOException(&#34;PlatformRequest error&#34;);</span>
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//UI 솔루션 데이터에서 DTO 객체로 변환</span>
-</span></span><span style=display:flex><span>		UdDTO dto <span style=color:#f92672>=</span> converte4In(platformRequest);
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> dto;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> UdDTO <span style=color:#a6e22e>converte4In</span>(PlatformRequest platformRequest) {
-</span></span><span style=display:flex><span>		UdDTO dto <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> UdDTO();
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//... DTO 또는 VO 값 채우기 </span>
-</span></span><span style=display:flex><span>		.....
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> dto;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> Class <span style=color:#a6e22e>getModelName</span>() {
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> UdDTO.<span style=color:#a6e22e>class</span>;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h3 class=sec-tit id=controller-메소드-구현>Controller 메소드 구현</h3><p>UdDTO 클래스는 CustomRiaArgumentResolver 에서 만들어져 Controller 의 메소드의 parameter 형태로 가져온다.
-아래 예는 Controller 단의 메소드 이다.</p><p><strong>XXCategoryController.java</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>...
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@RequestMapping</span>(<span style=color:#e6db74>&#34;/sample/miplatform.do&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> ModelAndView <span style=color:#a6e22e>selectCategoryList4Mi</span>(UdDTO miDto, Model model) <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		ModelAndView mav <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ModelAndView(<span style=color:#e6db74>&#34;riaView&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#75715e>//조회조건이 있을 경우 사용될 Map</span>
-</span></span><span style=display:flex><span>		Map<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span> smp <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>String, String<span style=color:#f92672>&gt;</span>();
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		  <span style=color:#75715e>//Biz Layer 를 호출 한다. </span>
-</span></span><span style=display:flex><span>			List resultList <span style=color:#f92672>=</span> categoryService.<span style=color:#a6e22e>selectCategoryList</span>(smp);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			<span style=color:#75715e>//결과값을 모델에 저장 </span>
-</span></span><span style=display:flex><span>			mav.<span style=color:#a6e22e>addObject</span>(<span style=color:#e6db74>&#34;MiDTO&#34;</span>, resultList);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (Exception ex) {
-</span></span><span style=display:flex><span>			log.<span style=color:#a6e22e>info</span>(ex.<span style=color:#a6e22e>getStackTrace</span>(), ex);
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> mav;
-</span></span><span style=display:flex><span>	}
-</span></span></code></pre></div><h3 class=sec-tit id=beannameviewresolver-설정>BeanNameViewResolver 설정</h3><p>모델 객체의 이름이 riaView 이다. 이것은 Bean Name을 직접 명시한 것으로 아래와 같은 설정(BeanNameViewResolver)이 필요하다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.web.servlet.view.BeanNameViewResolver&#34;</span> <span style=color:#a6e22e>p:order=</span><span style=color:#e6db74>&#34;0&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;org.springframework.web.servlet.view.UrlBasedViewResolver&#34;</span>
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>p:order=</span><span style=color:#e6db74>&#34;1&#34;</span> <span style=color:#a6e22e>p:viewClass=</span><span style=color:#e6db74>&#34;org.springframework.web.servlet.view.JstlView&#34;</span>
-</span></span><span style=display:flex><span>		<span style=color:#a6e22e>p:prefix=</span><span style=color:#e6db74>&#34;/WEB-INF/jsp/&#34;</span> <span style=color:#a6e22e>p:suffix=</span><span style=color:#e6db74>&#34;.jsp&#34;</span> <span style=color:#f92672>/&gt;</span>
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;bean</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;riaView&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;egovframework.rte.fdl.sale.web.RiaView&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;riaView&#34;</span> <span style=color:teal>class=</span><span style=color:#d14>&#34;egovframework.rte.fdl.sale.web.RiaView&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span></code></pre></div><h3 class=sec-tit id=riaview-구현>RiaView 구현</h3><p>RiaView 의 코드는 아래와 같다. DTO 를 업체에 맞춰 다시 가져 나가기 위해 convert 하는 모듈이다.
 여기서는 Miplatform 객체로 변환한다. egovDs 라는 DataSet 으로 객체화 한후 stream 형태로 보내는 로직이다.
-따라서 업체별 데이터 형태로 변환하여 보내도록 수정하면 된다.</p><p><strong>RiaView.java(DTO ⇒ MiPlatform)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>....
-</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>RiaView</span> <span style=color:#66d9ef>extends</span> AbstractView {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> Log log <span style=color:#f92672>=</span> LogFactory.<span style=color:#a6e22e>getLog</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getClass</span>());
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@SuppressWarnings</span>(<span style=color:#e6db74>&#34;unchecked&#34;</span>)
-</span></span><span style=display:flex><span>	<span style=color:#a6e22e>@Override</span>
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>renderMergedOutputModel</span>(Map model, HttpServletRequest request, HttpServletResponse response)
-</span></span><span style=display:flex><span>	        <span style=color:#66d9ef>throws</span> Exception {
-</span></span><span style=display:flex><span>		VariableList miVariableList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> VariableList();
-</span></span><span style=display:flex><span>		DatasetList miDatasetList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DatasetList();
-</span></span><span style=display:flex><span>		PlatformData platformData <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PlatformData(miVariableList, miDatasetList);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		List list <span style=color:#f92672>=</span> (List) model.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;MiDTO&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		Iterator<span style=color:#f92672>&lt;</span>Map<span style=color:#f92672>&gt;</span> iterator <span style=color:#f92672>=</span> list.<span style=color:#a6e22e>iterator</span>();
-</span></span><span style=display:flex><span>		Iterator<span style=color:#f92672>&lt;</span>Map<span style=color:#f92672>&gt;</span> dataIterator <span style=color:#f92672>=</span> list.<span style=color:#a6e22e>iterator</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		Dataset dataset <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Dataset(<span style=color:#e6db74>&#34;egovDs&#34;</span>);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>while</span> (iterator.<span style=color:#a6e22e>hasNext</span>()) {
-</span></span><span style=display:flex><span>			<span style=color:#75715e>// Header 세팅</span>
-</span></span><span style=display:flex><span>			Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> record <span style=color:#f92672>=</span> iterator.<span style=color:#a6e22e>next</span>();
-</span></span><span style=display:flex><span>			Iterator<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> si <span style=color:#f92672>=</span> record.<span style=color:#a6e22e>keySet</span>().<span style=color:#a6e22e>iterator</span>();
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>while</span> (si.<span style=color:#a6e22e>hasNext</span>()) {
-</span></span><span style=display:flex><span>				String key <span style=color:#f92672>=</span> si.<span style=color:#a6e22e>next</span>();
-</span></span><span style=display:flex><span>				dataset.<span style=color:#a6e22e>addColumn</span>(key, ColumnInfo.<span style=color:#a6e22e>COLUMN_TYPE_STRING</span>, (<span style=color:#66d9ef>short</span>) 255);
-</span></span><span style=display:flex><span>			}
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>while</span> (dataIterator.<span style=color:#a6e22e>hasNext</span>()) {
-</span></span><span style=display:flex><span>			Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> record <span style=color:#f92672>=</span> dataIterator.<span style=color:#a6e22e>next</span>();
-</span></span><span style=display:flex><span>			Iterator<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> si <span style=color:#f92672>=</span> record.<span style=color:#a6e22e>keySet</span>().<span style=color:#a6e22e>iterator</span>();
-</span></span><span style=display:flex><span>			<span style=color:#75715e>// Header 세팅</span>
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>while</span> (si.<span style=color:#a6e22e>hasNext</span>()) {
-</span></span><span style=display:flex><span>				String key <span style=color:#f92672>=</span> si.<span style=color:#a6e22e>next</span>();
-</span></span><span style=display:flex><span>				dataset.<span style=color:#a6e22e>addColumn</span>(key, ColumnInfo.<span style=color:#a6e22e>COLUMN_TYPE_STRING</span>, (<span style=color:#66d9ef>short</span>) 255);
-</span></span><span style=display:flex><span>			}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			<span style=color:#75715e>// Value 세팅</span>
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>int</span> row <span style=color:#f92672>=</span> dataset.<span style=color:#a6e22e>appendRow</span>();
-</span></span><span style=display:flex><span>			Iterator<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> si2 <span style=color:#f92672>=</span> record.<span style=color:#a6e22e>keySet</span>().<span style=color:#a6e22e>iterator</span>();
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>while</span> (si2.<span style=color:#a6e22e>hasNext</span>()) {
-</span></span><span style=display:flex><span>				String key <span style=color:#f92672>=</span> si2.<span style=color:#a6e22e>next</span>();
-</span></span><span style=display:flex><span>				String value <span style=color:#f92672>=</span> (String) record.<span style=color:#a6e22e>get</span>(key);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>				System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;key = &#34;</span> <span style=color:#f92672>+</span> key <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; , value = &#34;</span> <span style=color:#f92672>+</span> value);
-</span></span><span style=display:flex><span>				dataset.<span style=color:#a6e22e>setColumn</span>(row, key, value);
-</span></span><span style=display:flex><span>			}
-</span></span><span style=display:flex><span>			miDatasetList.<span style=color:#a6e22e>add</span>(dataset);
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>new</span> PlatformResponse(response, PlatformConstants.<span style=color:#a6e22e>CHARSET_UTF8</span>).<span style=color:#a6e22e>sendData</span>(platformData);
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (IOException ex) {
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (log.<span style=color:#a6e22e>isErrorEnabled</span>()) {
-</span></span><span style=display:flex><span>				log.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Exception occurred while writing xml to MiPlatform Stream.&#34;</span>, ex);
-</span></span><span style=display:flex><span>			}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>			<span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Exception();
-</span></span><span style=display:flex><span>		}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span> 
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h1 class=h-tit id=참고자료>참고자료</h1><ul><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework 6.2 - Web on Servlet Stack<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods.html target=_blank rel="noopener noreferrer" class=externalLink>Annotated Controllers<i class="svg-icon ico-go"></i></a>
+따라서 업체별 데이터 형태로 변환하여 보내도록 수정하면 된다.</p><p><strong>RiaView.java(DTO ⇒ MiPlatform)</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>....<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span><span style=color:#000;font-weight:700>public</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>RiaView</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>extends</span><span style=color:#bbb> </span>AbstractView<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>protected</span><span style=color:#bbb> </span>Log<span style=color:#bbb> </span>log<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>LogFactory.<span style=color:teal>getLog</span>(<span style=color:#000;font-weight:700>this</span>.<span style=color:teal>getClass</span>());<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@SuppressWarnings</span>(<span style=color:#d14>&#34;unchecked&#34;</span>)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#3c5d5d;font-weight:700>@Override</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span><span style=color:#000;font-weight:700>protected</span><span style=color:#bbb> </span><span style=color:#458;font-weight:700>void</span><span style=color:#bbb> </span><span style=color:#900;font-weight:700>renderMergedOutputModel</span>(Map<span style=color:#bbb> </span>model,<span style=color:#bbb> </span>HttpServletRequest<span style=color:#bbb> </span>request,<span style=color:#bbb> </span>HttpServletResponse<span style=color:#bbb> </span>response)<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	        </span><span style=color:#000;font-weight:700>throws</span><span style=color:#bbb> </span>Exception<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>VariableList<span style=color:#bbb> </span>miVariableList<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>VariableList();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>DatasetList<span style=color:#bbb> </span>miDatasetList<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>DatasetList();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>PlatformData<span style=color:#bbb> </span>platformData<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>PlatformData(miVariableList,<span style=color:#bbb> </span>miDatasetList);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>List<span style=color:#bbb> </span>list<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(List)<span style=color:#bbb> </span>model.<span style=color:teal>get</span>(<span style=color:#d14>&#34;MiDTO&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Iterator<span style=color:#000;font-weight:700>&lt;</span>Map<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>iterator<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>list.<span style=color:teal>iterator</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Iterator<span style=color:#000;font-weight:700>&lt;</span>Map<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>dataIterator<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>list.<span style=color:teal>iterator</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>Dataset<span style=color:#bbb> </span>dataset<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>Dataset(<span style=color:#d14>&#34;egovDs&#34;</span>);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>while</span><span style=color:#bbb> </span>(iterator.<span style=color:teal>hasNext</span>())<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>// Header 세팅</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>record<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>iterator.<span style=color:teal>next</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>Iterator<span style=color:#000;font-weight:700>&lt;</span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>si<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>record.<span style=color:teal>keySet</span>().<span style=color:teal>iterator</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>while</span><span style=color:#bbb> </span>(si.<span style=color:teal>hasNext</span>())<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>String<span style=color:#bbb> </span>key<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>si.<span style=color:teal>next</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>dataset.<span style=color:teal>addColumn</span>(key,<span style=color:#bbb> </span>ColumnInfo.<span style=color:teal>COLUMN_TYPE_STRING</span>,<span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>255);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>while</span><span style=color:#bbb> </span>(dataIterator.<span style=color:teal>hasNext</span>())<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>Map<span style=color:#000;font-weight:700>&lt;</span>String,<span style=color:#bbb> </span>Object<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>record<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>dataIterator.<span style=color:teal>next</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>Iterator<span style=color:#000;font-weight:700>&lt;</span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>si<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>record.<span style=color:teal>keySet</span>().<span style=color:teal>iterator</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>// Header 세팅</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>while</span><span style=color:#bbb> </span>(si.<span style=color:teal>hasNext</span>())<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>String<span style=color:#bbb> </span>key<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>si.<span style=color:teal>next</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>dataset.<span style=color:teal>addColumn</span>(key,<span style=color:#bbb> </span>ColumnInfo.<span style=color:teal>COLUMN_TYPE_STRING</span>,<span style=color:#bbb> </span>(<span style=color:#458;font-weight:700>short</span>)<span style=color:#bbb> </span>255);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#998;font-style:italic>// Value 세팅</span><span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#458;font-weight:700>int</span><span style=color:#bbb> </span>row<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>dataset.<span style=color:teal>appendRow</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>Iterator<span style=color:#000;font-weight:700>&lt;</span>String<span style=color:#000;font-weight:700>&gt;</span><span style=color:#bbb> </span>si2<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>record.<span style=color:teal>keySet</span>().<span style=color:teal>iterator</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>while</span><span style=color:#bbb> </span>(si2.<span style=color:teal>hasNext</span>())<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>String<span style=color:#bbb> </span>key<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>si2.<span style=color:teal>next</span>();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>String<span style=color:#bbb> </span>value<span style=color:#bbb> </span><span style=color:#000;font-weight:700>=</span><span style=color:#bbb> </span>(String)<span style=color:#bbb> </span>record.<span style=color:teal>get</span>(key);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>System.<span style=color:teal>out</span>.<span style=color:teal>println</span>(<span style=color:#d14>&#34;key = &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>key<span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span><span style=color:#d14>&#34; , value = &#34;</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>+</span><span style=color:#bbb> </span>value);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>dataset.<span style=color:teal>setColumn</span>(row,<span style=color:#bbb> </span>key,<span style=color:#bbb> </span>value);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>miDatasetList.<span style=color:teal>add</span>(dataset);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span><span style=color:#000;font-weight:700>try</span><span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>PlatformResponse(response,<span style=color:#bbb> </span>PlatformConstants.<span style=color:teal>CHARSET_UTF8</span>).<span style=color:teal>sendData</span>(platformData);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb> </span><span style=color:#000;font-weight:700>catch</span><span style=color:#bbb> </span>(IOException<span style=color:#bbb> </span>ex)<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>if</span><span style=color:#bbb> </span>(log.<span style=color:teal>isErrorEnabled</span>())<span style=color:#bbb> </span>{<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>				</span>log.<span style=color:teal>error</span>(<span style=color:#d14>&#34;Exception occurred while writing xml to MiPlatform Stream.&#34;</span>,<span style=color:#bbb> </span>ex);<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>			</span><span style=color:#000;font-weight:700>throw</span><span style=color:#bbb> </span><span style=color:#000;font-weight:700>new</span><span style=color:#bbb> </span>Exception();<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb>		</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb>	</span>}<span style=color:#bbb>
+</span></span></span><span style=display:flex><span><span style=color:#bbb> 
+</span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
+</span></span></span></code></pre></div><h1 class=h-tit id=참고자료>참고자료</h1><ul><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web.html target=_blank rel="noopener noreferrer" class=externalLink>Spring Framework 6.2 - Web on Servlet Stack<i class="svg-icon ico-go"></i></a></li><li><a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/controller/ann-methods.html target=_blank rel="noopener noreferrer" class=externalLink>Annotated Controllers<i class="svg-icon ico-go"></i></a>
 ,
 <a class="krds-btn medium text" href=https://docs.spring.io/spring-framework/reference/6.2/web/servlet/mvc/views.html target=_blank rel="noopener noreferrer" class=externalLink>View Resolution<i class="svg-icon ico-go"></i></a></li></ul></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
