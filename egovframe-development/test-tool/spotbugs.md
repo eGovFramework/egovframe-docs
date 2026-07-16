@@ -67,15 +67,15 @@ SpotBugs는 Philippe Arteau에서 만든 자바 웹 애플리케이션에 대한
 
 ## 설치
 
-#### Spotbugs 설치
+### Spotbugs 설치
 
 (참고 : 표준프레임워크 통합개별환경은 이미 설치되어있음)
 
-##### 1. Help > Eclipse MarketPlace...를 선택한다.
+#### 1. Help > Eclipse MarketPlace...를 선택한다.
 
 ![Spotbugs 설치 1](./images/install-spotbugs-1.png)
 
-##### 2. Find 창에서 Spotbugs를 검색하고 install 한다.
+#### 2. Find 창에서 Spotbugs를 검색하고 install 한다.
 
 ![Spotbugs 설치 2](./images/install-spotbugs-2.png)
 
