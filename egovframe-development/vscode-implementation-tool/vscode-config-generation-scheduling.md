@@ -25,7 +25,7 @@ Quartz 기반의 스케줄링 설정 파일을 생성한다. Quartz 스케줄링
 | New Cron Trigger | Trigger | Cron 표현식 기반 Trigger 설정 |
 | New Scheduler | Scheduler | Job과 Trigger를 등록하는 Scheduler 설정 |
 
-공통 입력 항목(Generation Type, File Name, Package Name 등)은 [Common Configuration](./vscode-config-generation-common)을 참고한다.
+공통 입력 항목(Generation Type, File Name, Package Name 등)은 [Common Configuration](./vscode-config-generation-common.md)을 참고한다.
 
 ---
 

@@ -19,7 +19,7 @@ menu:
 
 ## 사용 방법
 
-1. [DDL 입력](./vscode-code-generation) 과정에서 유효한 `CREATE TABLE` 문을 입력한다. 유효한 DDL이 입력되면 버튼이 활성화된다.
+1. [DDL 입력](./vscode-code-generation.md) 과정에서 유효한 `CREATE TABLE` 문을 입력한다. 유효한 DDL이 입력되면 버튼이 활성화된다.
 2. **Download Template Context** 버튼을 클릭한다.
 3. 파일 저장 대화상자가 열리면 저장 위치를 선택하고 파일을 저장한다.
 4. 다운로드된 JSON 파일을 열어 커스텀 템플릿 작성 시 사용할 수 있는 변수 구조를 확인한다.
@@ -154,4 +154,4 @@ CREATE TABLE BOARD (
 }
 ```
 
-이 JSON을 참고하여 커스텀 Handlebars 템플릿에서 `{{tableName}}`, `{{#each attributes}}`, `{{ccName}}` 등의 변수를 활용할 수 있다. 자세한 내용은 [Generate with Custom Templates](./vscode-code-generation-custom-templates)를 참고한다.
+이 JSON을 참고하여 커스텀 Handlebars 템플릿에서 `{{tableName}}`, `{{#each attributes}}`, `{{ccName}}` 등의 변수를 활용할 수 있다. 자세한 내용은 [Generate with Custom Templates](./vscode-code-generation-custom-templates.md)를 참고한다.

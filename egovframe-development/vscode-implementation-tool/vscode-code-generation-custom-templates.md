@@ -19,12 +19,12 @@ menu:
 
 ## 사용 방법
 
-1. [DDL 입력 및 설정](./vscode-code-generation) 과정을 먼저 완료한다. 유효한 DDL이 입력되면 버튼이 활성화된다.
+1. [DDL 입력 및 설정](./vscode-code-generation.md) 과정을 먼저 완료한다. 유효한 DDL이 입력되면 버튼이 활성화된다.
 2. **Generate with Custom Templates** 버튼을 클릭한다.
 3. 파일 탐색기에서 커스텀 Handlebars 템플릿 파일(`.hbs`)을 선택한다.
 4. 선택한 템플릿을 기반으로 코드가 생성된다.
 
-> 커스텀 템플릿 파일 작성 시 [Download Template Context](./vscode-code-generation-template-context) 기능으로 다운로드한 JSON 파일을 참고하면 사용 가능한 변수 목록을 쉽게 파악할 수 있다.
+> 커스텀 템플릿 파일 작성 시 [Download Template Context](./vscode-code-generation-template-context.md) 기능으로 다운로드한 JSON 파일을 참고하면 사용 가능한 변수 목록을 쉽게 파악할 수 있다.
 
 ## 커스텀 템플릿 파일 형식
 
@@ -48,7 +48,7 @@ menu:
 
 ## 템플릿 컨텍스트 변수
 
-템플릿 내에서 사용할 수 있는 변수는 다음과 같다. 전체 구조는 [Download Template Context](../vscode-code-generation-template-context/) 기능으로 다운로드한 JSON 파일에서 확인할 수 있다.
+템플릿 내에서 사용할 수 있는 변수는 다음과 같다. 전체 구조는 [Download Template Context](./vscode-code-generation-template-context.md) 기능으로 다운로드한 JSON 파일에서 확인할 수 있다.
 
 ### 최상위 변수
 
