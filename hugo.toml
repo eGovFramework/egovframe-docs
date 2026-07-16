@@ -27,6 +27,11 @@ github_branch = 'main'
   value = "https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:all_index"
   weight = 99
 
+# highlight.code-box 테마 설정
+# Chroma Theme : https://xyproto.github.io/splash/docs/all.html#abap
+[markup.highlight]
+style = "github"
+
 #프린트 이용시 설정
 [outputFormats.Print]
   name = "print"
