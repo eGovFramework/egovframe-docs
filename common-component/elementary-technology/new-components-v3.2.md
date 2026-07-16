@@ -22,7 +22,7 @@ menu:
 - [HTTPS UrlRewrite filter](./urlrewrite.md) — 서버내의 특정 URL의 경우 HTTP로 호출 되더라도 HTTPS로 전환 하여 Redirect 하고, 그 외의 URL의 경우는 HTTP로 연결한다.
 - [Http Request 정보 취득](./httprequesthelper.md) — Http Request(HttpServletRequest) 정보를 서비스 코드나 DAO 코드 상에서 취득할 수 있는 기능을 제공한다.
 - [Resource close 처리](./resourceclose.md) — 자원(Stream, DB 관련 Object, Socket 관련 Object)에 대한 해제 처리 기능을 제공한다.
-- [showModalDialog 대체 기능](./showmodaldialog.md) — JavaScript의 Modal 방식의 dialog를 지원하는 windows.showModalDialog의 기능이 chrome 37 버전부터 지원하지…
+- [showModalDialog 대체 기능](./showmodaldialog.md) — JavaScript의 Modal 방식의 dialog를 지원하는 windows.showModalDialog의 기능이 chrome 37 버전부터 지원하지 않음에 따라 대체 기능을 제공한다.
 - [날짜 지역화 처리](./dateformat.md) — 다국어 지원을 위한 국가간 날짜 표시 변환 기능을 제공한다.
 - [숫자 지역화 처리](./numberformat.md) — 다국어 지원을 위한 국가간 숫자 표시 변환 기능을 제공한다.
 - [이중등록(Double Submit) 방지](./doublesubmit.md) — 새로고침 등의 중복 request 호출 시 등록 처리 등에 대한 이중 등록을 방지하는 기능을 제공한다.
