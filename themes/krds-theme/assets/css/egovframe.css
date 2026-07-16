@@ -220,7 +220,10 @@ h3,h4,h5,h6 {
 
 /* click to copy */
 .code-box{
-    background-color: #272822;
+    /* background-color: #272822; */
+    border: 1px solid var(--krds-color-light-gray-20);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -474,4 +477,22 @@ em{
   overflow-wrap: break-word;
   white-space: normal;      /* <br>·줄바꿈 시 높이 자동 증가 */
   overflow: visible;
+}
+
+/* krds page-navigation 위치 조정 */
+@media (max-width: 1680px) {
+    .krds-in-page-navigation-type .krds-in-page-navigation-area {
+        --krds-in-page-navigation--position-right: revert;
+    }
+}
+
+/* 260716 pre 폰트 변경 (D2Coding) - 폰트 로딩 속도를 위해 cvn 사용  */
+/* @import url('themes/krds-theme/assets/fonts/D2Coding-Ver1.3.2-20180524-all.ttc'); */
+@font-face {
+  font-family: D2Coding;
+  font-weight: 500;
+  src: url(../fonts/D2Coding-Ver1.3.2-20180524-all.ttc);
+}
+pre, code, kbd, samp {
+    font-family: 'D2Coding', monospace;
 }
