@@ -59,7 +59,6 @@ menu:
 ### 주요 클래스 및 파일
 
 - **유틸리티 클래스**: `egovframework.com.utl.fcc.service.EgovDateUtil.java`
-- **테스트 컨트롤러**: `egovframework.com.utl.fcc.web.EgovDateUtilController.java`
 - **테스트 JSP 페이지**: `/WEB-INF/jsp/egovframework/com/cmm/utl/EgovDateCnvr.jsp`
 
 ### 메서드 상세 설명
