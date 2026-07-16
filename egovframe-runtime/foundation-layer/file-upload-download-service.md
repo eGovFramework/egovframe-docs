@@ -25,7 +25,7 @@ Spring 에서는 [Commons FileUpload](http://commons.apache.org/fileupload/)를 
 
 ## 설명
 
-#### 데이터 전송방식
+### 데이터 전송방식
 
 데이터를 전송하는 방식에는 GET 방식과 POST 방식, 그리고 ENCTYPE 속성의 "multipart/form-data"이 있다.
 

@@ -42,7 +42,7 @@ menu:
 ```
 또한 해당 컨트롤러의 property로 파일의 업로드 위치를 지정해주고 컨트롤러에서 setter 메소드를 통해 지정된 파일 업로드 위치를 불러올 수 있다. 사용예는 다음과 같다.
 
-#### fileUploadProperties.properties
+### fileUploadProperties.properties
 
 ```properties
 # windows NT일 경우  
