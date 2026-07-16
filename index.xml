@@ -26921,7 +26921,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/db-service-monitoring/" class="innerLink">DB서비스모니터링&lt;/a>
 
- — DB서비스모니터링은 DB 서버의 서비스 상태를 주기적으로 모니터링하는 기능을 제공한다. 모니터링 대상 DB 서버는 DataSource가 전자정부 표준…&lt;/li>
+ — DB서비스모니터링은 DB 서버의 서비스 상태를 주기적으로 모니터링하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -26947,7 +26947,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/http-service-monitoring/" class="innerLink">HTTP서비스모니터링&lt;/a>
 
- — HTTP서비스모니터링은 웹 서비스(웹서버 및 WAS)가 정상적인지 주기적인 점검을 수행하고, 문제 발생 시 해당 정보를 관리자에게 통보하는 기능을 제…&lt;/li>
+ — HTTP서비스모니터링은 웹 서비스(웹서버 및 WAS)가 정상적인지 주기적인 점검을 수행하고, 문제 발생 시 해당 정보를 관리자에게 통보하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -26973,7 +26973,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/xml-data-assembly/" class="innerLink">XML 데이터조립&lt;/a>
 
- — 일반 구조적 형태의 데이터를 XML 데이터로 조립하여 파일로 저장하는 기능을 제공한다. 웹서비스(Web Service), 전자문서, 데이터교환과 같은…&lt;/li>
+ — 일반 구조적 형태의 데이터를 XML 데이터로 조립하여 파일로 저장하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -26999,7 +26999,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/xml-data-parsing/" class="innerLink">XML 데이터파싱&lt;/a>
 
- — XML 파일을 로드한 후 XML 데이터를 파싱하여 구조적인 데이터 형태로 변환하는 기능을 제공한다. 웹서비스(Web Service), 전자문서, 데이…&lt;/li>
+ — XML 파일을 로드한 후 XML 데이터를 파싱하여 구조적인 데이터 형태로 변환하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27025,7 +27025,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/network-status-check/" class="innerLink">네트워크상태체크&lt;/a>
 
- — Ping Test를 통해 네트워크 통신가능 여부를 확인하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있…&lt;/li>
+ — Ping Test를 통해 네트워크 통신가능 여부를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27051,7 +27051,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/network-service-monitoring/" class="innerLink">네트워크서비스모니터링&lt;/a>
 
- — &lt;strong>네트워크서비스모니터링&lt;/strong>은 네트워크서비스 상태를 주기적으로 모니터링하는 기능을 제공한다. 모니터링하고자 하는 네트워크서비스는 네트워크서비스대상목록…&lt;/li>
+ — &lt;strong>네트워크서비스모니터링&lt;/strong>은 네트워크서비스 상태를 주기적으로 모니터링하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27077,7 +27077,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/network-info-check/" class="innerLink">네트워크정보확인&lt;/a>
 
- — 네트워크 정보인 IP ADDRESS, MAC ADDRESS, PortScan 리스트를 확인하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공…&lt;/li>
+ — 네트워크 정보인 IP ADDRESS, MAC ADDRESS, PortScan 리스트를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27129,7 +27129,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-watch/" class="innerLink">디렉토리감시&lt;/a>
 
- — 특정 디렉토리를 대상으로 디렉토리 내의 시스템에 존재하는 파일과 디렉토리의 변동 내역을 모니터링한다. 특정 디렉토리에 대한 모니터링을 시작하게 되면 …&lt;/li>
+ — 특정 디렉토리를 대상으로 디렉토리 내의 시스템에 존재하는 파일과 디렉토리의 변동 내역을 모니터링한다.&lt;/li>
 &lt;li>
 
 
@@ -27155,7 +27155,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-permission-check/" class="innerLink">디렉토리권한체크&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요한 디렉토리의 접근 권한을 확인하기 위한 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요한 디렉토리의 접근 권한을 확인하기 위한 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27181,7 +27181,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-copy/" class="innerLink">디렉토리복사&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요시 디렉토리의 전체 구조와 파일을 복사하는 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요시 디렉토리의 전체 구조와 파일을 복사하는 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27207,7 +27207,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-delete/" class="innerLink">디렉토리삭제&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요 시 특정 디렉토리를 삭제할 수 있는 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요 시 특정 디렉토리를 삭제할 수 있는 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27233,7 +27233,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-create/" class="innerLink">디렉토리생성&lt;/a>
 
- — 디렉토리생성(Directory Create) 기능은 공통컴포넌트의 요소기술 중 하나로, 비즈니스 로직을 처리하면서 필요에 따라 시스템상에 지정된 경로…&lt;/li>
+ — 디렉토리생성(Directory Create) 기능은 공통컴포넌트의 요소기술 중 하나로, 비즈니스 로직을 처리하면서 필요에 따라 시스템상에 지정된 경로로 디렉토리를 생성할 수 있는 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27259,7 +27259,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-attribute-check/" class="innerLink">디렉토리속성정보체크&lt;/a>
 
- — 디렉토리 속성정보인 디렉토리명, 생성일자(최종수정일자), 소유계정, 읽기권한, 쓰기권한, 접근권한, 사이즈 정보를 확인하는 기능을 제공한다. 본 기능…&lt;/li>
+ — 디렉토리 속성정보인 디렉토리명, 생성일자(최종수정일자), 소유계정, 읽기권한, 쓰기권한, 접근권한, 사이즈 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27285,7 +27285,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-move/" class="innerLink">디렉토리이동&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요시 디렉토리를 이동할 수 있는 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요시 디렉토리를 이동할 수 있는 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27311,7 +27311,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-date-check/" class="innerLink">디렉토리일자체크&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요 시 디렉토리의 일자 정보를 확인하기 위해 제공되는 공통컴포넌트 요소기술 중 하나이다. 본 기능은 전자정부 표준프레임워…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요 시 디렉토리의 일자 정보를 확인하기 위해 제공되는 공통컴포넌트 요소기술 중 하나이다.&lt;/li>
 &lt;li>
 
 
@@ -27363,7 +27363,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/disk-attribute-check/" class="innerLink">디스크속성정보체크&lt;/a>
 
- — 특정 파일이 위치한 디스크의 마운트 경로(속성 정보)를 확인하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되…&lt;/li>
+ — 특정 파일이 위치한 디스크의 마운트 경로(속성 정보)를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27389,7 +27389,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/disk-capacity-check/" class="innerLink">디스크유효용량체크&lt;/a>
 
- — 시스템 내 디스크의 전체 용량, 사용 가능한 용량, 사용률 및 마운트 위치 정보를 확인하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴…&lt;/li>
+ — 시스템 내 디스크의 전체 용량, 사용 가능한 용량, 사용률 및 마운트 위치 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27415,7 +27415,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/disk-exist-check/" class="innerLink">디스크존재체크&lt;/a>
 
- — 시스템에 존재하는 디스크(DISK), CD, USB 등에 대한 존재를 확인하는 기능이다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에…&lt;/li>
+ — 시스템에 존재하는 디스크(DISK), CD, USB 등에 대한 존재를 확인하는 기능이다.&lt;/li>
 &lt;li>
 
 
@@ -27493,7 +27493,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/server-resource-monitoring/" class="innerLink">서버자원모니터링&lt;/a>
 
- — 서버자원모니터링은 시스템의 서버 자원(CPU, Memory 등) 상태를 모니터링하고 그 결과를 로그로 등록하여 관리하는 공통컴포넌트이다. 스케줄러를 …&lt;/li>
+ — 서버자원모니터링은 시스템의 서버 자원(CPU, Memory 등) 상태를 모니터링하고 그 결과를 로그로 등록하여 관리하는 공통컴포넌트이다.&lt;/li>
 &lt;li>
 
 
@@ -27519,7 +27519,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/server-info-check/" class="innerLink">서버정보확인&lt;/a>
 
- — 시스템에 설치된 다양한 서버(웹서버, WAS서버, 메일서버)의 정보를 확인하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기…&lt;/li>
+ — 시스템에 설치된 다양한 서버(웹서버, WAS서버, 메일서버)의 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27545,7 +27545,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/send-receive-monitoring/" class="innerLink">송수신모니터링&lt;/a>
 
- — 송수신모니터링은 연계기관과의 송수신 상태를 주기적으로 모니터링하는 기능을 제공한다. 모니터링하고자 하는 연계는 시스템연계관리를 통해 시스템에 등록되어…&lt;/li>
+ — 송수신모니터링은 연계기관과의 송수신 상태를 주기적으로 모니터링하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27571,7 +27571,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/system-info-check/" class="innerLink">시스템정보확인&lt;/a>
 
- — 시스템 고유의 속성정보인 프로세서 ID, 호스트, 운영체제(OS), 메모리(Memory), 디스크(HDD) 정보를 확인하는 기능을 제공한다. 본 기능…&lt;/li>
+ — 시스템 고유의 속성정보인 프로세서 ID, 호스트, 운영체제(OS), 메모리(Memory), 디스크(HDD) 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27623,7 +27623,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/" class="innerLink">유효메모리체크&lt;/a>
 
- — 시스템에서 사용 가능한 유효메모리를 체크하는 기능을 제공한다. 새로운 프로그램을 실행하기 전에 시스템의 유효 메모리를 체크하여 프로그램 실행 여부를 …&lt;/li>
+ — 시스템에서 사용 가능한 유효메모리를 체크하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27675,7 +27675,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-permission-check/" class="innerLink">파일권한체크&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요한 파일의 접근 권한을 확인하기 위한 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요한 파일의 접근 권한을 확인하기 위한 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27701,7 +27701,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-download/" class="innerLink">파일다운로드&lt;/a>
 
- — 서버에 저장된 파일을 사용자가 웹 브라우저를 통해 다운로드할 수 있는 기능을 제공한다. 한글 파일명 처리 및 대용량 파일 스트리밍 다운로드를 지원한다…&lt;/li>
+ — 서버에 저장된 파일을 사용자가 웹 브라우저를 통해 다운로드할 수 있는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27727,7 +27727,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-sync/" class="innerLink">파일동기화&lt;/a>
 
- — 파일동기화는 파일 저장 및 삭제에 대하여 여러 AP 서버에 동기화시키는 기능으로, AP 서버들 간 동기화를 통해 파일 첨부 및 다운로드 기능을 제공한…&lt;/li>
+ — 파일동기화는 파일 저장 및 삭제에 대하여 여러 AP 서버에 동기화시키는 기능으로, AP 서버들 간 동기화를 통해 파일 첨부 및 다운로드 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27753,7 +27753,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-conversion/" class="innerLink">파일변환&lt;/a>
 
- — 문서 파일(Doc, XLS, PPT 등)을 PDF 형식으로 변환하는 기능을 제공한다. OpenOffice와 JODConverter 라이브러리를 활용하…&lt;/li>
+ — 문서 파일(Doc, XLS, PPT 등)을 PDF 형식으로 변환하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27779,7 +27779,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-security/" class="innerLink">파일보안&lt;/a>
 
- — 암호화 알고리즘을 사용하여 파일을 암호화하거나 역으로 복호화하는 기능을 제공한다. 다양한 파일 포맷의 암호화/복호화를 지원하며, 문자열 데이터의 인코…&lt;/li>
+ — 암호화 알고리즘을 사용하여 파일을 암호화하거나 역으로 복호화하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27805,7 +27805,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-copy/" class="innerLink">파일복사&lt;/a>
 
- — 지정한 경로의 파일을 다른 경로로 복사하는 기능을 제공한다. 단일 파일 복사 및 다중 파일 복사를 지원하며, 확장자·수정일자·사이즈·소유자별 조건 복…&lt;/li>
+ — 지정한 경로의 파일을 다른 경로로 복사하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27831,7 +27831,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-compare/" class="innerLink">파일비교&lt;/a>
 
- — 파일비교(File Compare) 기능은 공통컴포넌트의 요소기술 중 하나로, 서버 및 클라이언트 응용 애플리케이션에서 두 파일의 정보를 비교하는 기능…&lt;/li>
+ — 파일비교(File Compare) 기능은 공통컴포넌트의 요소기술 중 하나로, 서버 및 클라이언트 응용 애플리케이션에서 두 파일의 정보를 비교하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27857,7 +27857,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-delete/" class="innerLink">파일삭제&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요시 파일을 삭제할 수 있는 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요시 파일을 삭제할 수 있는 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27883,7 +27883,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-create/" class="innerLink">파일생성&lt;/a>
 
- — 지정한 경로에 새로운 텍스트 파일을 생성하는 기능을 제공한다. 대상 경로에 디렉토리가 존재하지 않을 경우 자동으로 디렉토리를 생성하여 파일을 만든다.…&lt;/li>
+ — 지정한 경로에 새로운 텍스트 파일을 생성하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27909,7 +27909,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-attribute-check/" class="innerLink">파일속성정보체크&lt;/a>
 
- — 파일 속성정보인 파일명, 최종수정일자, 소유계정, 읽기권한, 쓰기권한, 접근권한, 마운트 경로 정보를 확인하는 기능을 제공한다. 본 기능은 전자정부 …&lt;/li>
+ — 파일 속성정보인 파일명, 최종수정일자, 소유계정, 읽기권한, 쓰기권한, 접근권한, 마운트 경로 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27935,7 +27935,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-send-receive/" class="innerLink">파일송/수신&lt;/a>
 
- — FTP 프로토콜을 사용하여 파일을 송수신하는 기능을 제공한다. 서버(Server) 간 파일 송수신 및 서버(Server)와 클라이언트(Client) …&lt;/li>
+ — FTP 프로토콜을 사용하여 파일을 송수신하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27961,7 +27961,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-system-monitoring/" class="innerLink">파일시스템모니터링&lt;/a>
 
- — 파일시스템모니터링은 파일시스템 상태를 주기적으로 모니터링하는 기능을 제공한다. 모니터링하고자 하는 파일시스템은 파일시스템대상목록으로 시스템에 등록되어…&lt;/li>
+ — 파일시스템모니터링은 파일시스템 상태를 주기적으로 모니터링하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27987,7 +27987,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-compress-extract/" class="innerLink">파일압축/해제&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요한 파일 또는 디렉토리의 압축 및 압축 해제를 위한 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요한 파일 또는 디렉토리의 압축 및 압축 해제를 위한 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28013,7 +28013,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-upload/" class="innerLink">파일업로드&lt;/a>
 
- — 첨부파일에 대한 업로드 기능을 제공한다. &lt;code>MultipartHttpServletRequest&lt;/code> 및 &lt;code>MultipartFile&lt;/code>을 통해 첨부된 파일 정…&lt;/li>
+ — 첨부파일에 대한 업로드 기능을 제공한다. &lt;code>MultipartHttpServletRequest&lt;/code> 및 &lt;code>MultipartFile&lt;/code>을 통해 첨부된 파일 정보를 취득하고 서버에 저장하는 기능을 처리한다.&lt;/li>
 &lt;li>
 
 
@@ -28039,7 +28039,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-move/" class="innerLink">파일이동&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요시 파일을 이동할 수 있는 공통 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어…&lt;/li>
+ — 비즈니스 로직을 처리하면서 필요시 파일을 이동할 수 있는 공통 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28065,7 +28065,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-date-check/" class="innerLink">파일일자체크&lt;/a>
 
- — 파일의 최종 수정일자를 확인하거나, 수정일자 조건별로 파일 목록을 조회하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 …&lt;/li>
+ — 파일의 최종 수정일자를 확인하거나, 수정일자 조건별로 파일 목록을 조회하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28091,7 +28091,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-exist-check/" class="innerLink">파일존재체크&lt;/a>
 
- — 디렉토리에 파일이 존재하는지 체크하는 기능을 제공한다. 파일명뿐 아니라 확장자, 수정기간, 사이즈, 생성자(Owner)별 조건으로도 파일의 존재 여부…&lt;/li>
+ — 디렉토리에 파일이 존재하는지 체크하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28117,7 +28117,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-parsing/" class="innerLink">파일파싱&lt;/a>
 
- — 사용자가 업로드한 파일 및 서버(Server)의 텍스트 파일을 특정 구분자(&lt;code>,&lt;/code>, &lt;code>|&lt;/code>, &lt;code>TAB&lt;/code>)로 파싱하여 정보를 추출하는 기능을 제공한다.…&lt;/li>
+ — 사용자가 업로드한 파일 및 서버(Server)의 텍스트 파일을 특정 구분자(&lt;code>,&lt;/code>, &lt;code>|&lt;/code>, &lt;code>TAB&lt;/code>)로 파싱하여 정보를 추출하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28169,7 +28169,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/process-monitoring/" class="innerLink">프로세스모니터링&lt;/a>
 
- — 프로세스모니터링은 특정 프로세스가 기동 중인지 주기적으로 점검을 수행하고, 문제 발생 시 해당 정보를 관리자에게 통보하는 기능을 제공한다. WINDO…&lt;/li>
+ — 프로세스모니터링은 특정 프로세스가 기동 중인지 주기적으로 점검을 수행하고, 문제 발생 시 해당 정보를 관리자에게 통보하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28195,7 +28195,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/property/" class="innerLink">프로퍼티&lt;/a>
 
- — 애플리케이션에서 공통으로 사용할 프로퍼티 정보를 로드하여 파싱 후 메모리에 가지고 있는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌…&lt;/li>
+ — 애플리케이션에서 공통으로 사용할 프로퍼티 정보를 로드하여 파싱 후 메모리에 가지고 있는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28221,7 +28221,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/proxy-service/" class="innerLink">프록시서비스&lt;/a>
 
- — &lt;strong>프록시서비스&lt;/strong>는 네트워크 연결에 대한 프록시 설정을 동적으로 관리하고, 연결에 대한 기본 서비스(telnet, ftp, jdbc 연결)에 대한 …&lt;/li>
+ — &lt;strong>프록시서비스&lt;/strong>는 네트워크 연결에 대한 프록시 설정을 동적으로 관리하고, 연결에 대한 기본 서비스(telnet, ftp, jdbc 연결)에 대한 로깅을 기록할 수 있는 네트워크 서비스 기능을 제공한다.&lt;/li>
 &lt;/ul>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
@@ -28750,7 +28750,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/new-components-v3.2/showmodaldialog/" class="innerLink">showModalDialog 대체 기능&lt;/a>
 
- — JavaScript의 Modal 방식의 dialog를 지원하는 windows.showModalDialog의 기능이 chrome 37 버전부터 지원하지…&lt;/li>
+ — JavaScript의 Modal 방식의 dialog를 지원하는 windows.showModalDialog의 기능이 chrome 37 버전부터 지원하지 않음에 따라 대체 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -30871,7 +30871,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/online-participate/online-poll/" class="innerLink">온라인POLL관리&lt;/a>
 
- — 온라인POLL관리는 온라인 POLL(찬반투표)의 등록·조회·수정·삭제와 항목 관리, 사용자 참여(응답) 처리, 결과 집계·조회 기능을 제공한다. 본 …&lt;/li>
+ — 온라인POLL관리는 온라인 POLL(찬반투표)의 등록·조회·수정·삭제와 항목 관리, 사용자 참여(응답) 처리, 결과 집계·조회 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -31027,7 +31027,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/online-participate/survey/" class="innerLink">설문조사&lt;/a>
 
- — 설문관리 시스템 구축시 사용되는 설문조사 기능을 제공하며, 기본으로 관리자가 설문조사를 관리 할수 있으며, 설문참여자가 설문참여 시 설문조사(설문응답결과)를 …&lt;/li>
+ — 설문관리 시스템 구축시 사용되는 설문조사 기능을 제공하며, 기본으로 관리자가 설문조사를 관리 할 수 있으며, 설문참여자가 설문참여 시 설문조사(설문응답결과)를 자동으로 등록 되도록 설계 되어 있다.&lt;/li>
 &lt;/ul>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
@@ -33529,7 +33529,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/" class="innerLink">협업 카테고리 개요&lt;/a>
 
- — 협업 카테고리는 조직 구성원 간의 정보 공유와 의사소통을 지원하는 공통컴포넌트 모음이다. 게시판, 커뮤니티, 일정관리, 전자우편, 주소록/명함록, 전…&lt;/li>
+ — 협업 카테고리는 조직 구성원 간의 정보 공유와 의사소통을 지원하는 공통컴포넌트 모음이다.&lt;/li>
 &lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-구조">패키지 구조&lt;/h3>
@@ -34279,7 +34279,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/digital-asset-management/knowledge-map/knowledge-info-provision/" class="innerLink">지식정보제공&lt;/a>
 
- — 지식정보제공은 지식전문가에게 지식정보를 요청하고, 요청된 지식정보를 제공(답변)하는 기능이다. 소스는 디지털자산관리(`egovframework.com…&lt;/li>
+ — 지식정보제공은 지식전문가에게 지식정보를 요청하고, 요청된 지식정보를 제공(답변)하는 기능이다.&lt;/li>
 &lt;li>
 
 
