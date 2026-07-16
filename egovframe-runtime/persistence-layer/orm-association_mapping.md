@@ -15,7 +15,7 @@ menu:
 ## One To One Mapping
 테이블간 1:1 매핑이 있을 경우에 각각의 Entity 클래스를 정의하고 클래스간 관계를 OneToOne 매핑으로 처리한다.
 
-##### Sample Source
+### Sample Source
 ```java
 @Entity
 public class Employee {
@@ -34,7 +34,7 @@ public class TravelProfile {
 ## One To Many Mapping
 테이블간 1:N 매핑이 있을 경우에 각각의 Entity 클래스를 정의하고 한쪽에는 OneToMany, 다른쪽에는 ManyToOne 이라는 Annotation을 기재하여 관계를 나타낸다.
 
-##### Sample Source
+### Sample Source
 ```java
 @Entity
 public class Department{
@@ -249,7 +249,7 @@ em.persist(user);
 ### Many To Many Mapping
 테이블간 M:N 매핑이 있을 경우에 각각의 Entity 클래스를 정의하고 양쪽에 ManyToMany이라는 Annotation을 기재하여 관계를 나타낸다.
 
-##### Sample Source
+#### Sample Source
 ```java
 @Entity
 public class Role{

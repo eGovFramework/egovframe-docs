@@ -17,7 +17,7 @@ menu:
 
  SqlMapClient 설정관련 상세 내역을 제어할 수 있는 메인 설정 파일로 주로 transaction 관리 관련 설정 및 다양한 옵션 설정, Sql Mapping 파일들에 대한 path 설정 등을 포함한다.
 
-#### Sample Configuration
+### Sample Configuration
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -89,7 +89,7 @@ menu:
 
  sql 매핑 파일은 iBATIS 의 mapped statement 형태로 처리될 수 있도록 SQL Map 문서 구조에 따라 다양한 옵션 설정 및 매핑 정의, sql 문을 외부화하여 저장하는 파일이다.
 
-#### Sample SQL Map XML
+### Sample SQL Map XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -134,7 +134,7 @@ menu:
 
  이 외에도 parameterMap, resultMap 에 대한 상세 정의, cacheModel 설정, sql 문 재사용을 위한 sql 요소 설정이 나타날 수 있다. 각각에 대한 상세 사항은 관련 가이드를 참고한다.
 
-##### Mapped Statement
+#### Mapped Statement
 
  Data Mapper 사상의 핵심으로 Mapped Statement 는 parameter 매핑(input) 과 result 매핑(output) 을 가질 수 있는 어떤 SQL 문이라도 될 수 있다. 단순하게는 파라메터나 결과에 대한 class 를 직접적으로 설정할 수 있으며(권고하지 않는 방법이지만 아예 설정하지 않고 프레임워크에서 제공하는 자동 맵핑 처리도 가능), in/out 매핑, 결과의 cache 유지 등에 대한 상세한 설정이 가능하다.
 

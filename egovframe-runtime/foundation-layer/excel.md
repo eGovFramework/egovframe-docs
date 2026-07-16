@@ -270,7 +270,7 @@ ${persons.name}	${persons.id}	${persons.mon}	${persons.tue}	${persons.wed}	${per
 
 ### Excel 다운로드
 
-##### Configuration
+#### Configuration
 
 ```xml
 <bean id="categoryExcelView" class="egovframework.rte.fdl.excel.download.CategoryExcelView" />
@@ -285,7 +285,7 @@ XSSF 형태의 다운로드의 경우 다음의 View를 등록하여 사용한�
 </bean>
 ```
 
-##### Sample Source
+#### Sample Source
 
 Controller 클래스 작성 Map 사용
 
@@ -541,7 +541,7 @@ public class CategoryPOIExcelView extends AbstractPOIExcelView {
 
 ### Excel 업로드
 
-##### Configuration
+#### Configuration
 
 ```xml
 <bean id="excelService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
@@ -565,7 +565,7 @@ public class CategoryPOIExcelView extends AbstractPOIExcelView {
 - sqlMapClient : ibatis의 sqlMapClient(ibatis 사용시 적용)
 - sqlSessionTemplate : mybatis의 sqlSessionTemplate(mybatis 사용시 적용)
 
-##### Sample Source
+#### Sample Source
 
 VO 클래스 작성
 
@@ -635,7 +635,7 @@ public class EgovExcelTestMapping extends EgovExcelMapping {
 - **EgovExcelMapping** 클래스를 상속받아서 **mappingColumn** 메소드를 오버라이드하여 구현
 - **HSSFCell** 클래스에서 엑셀 값을 추출하여 Query를 실행시키기 위한 VO와 mapping
 
-##### Query
+#### Query
 
 ```xml
 <sqlMap namespace="EmpBatchInsert">

@@ -79,7 +79,7 @@ Flow 내에서 Action을 취할 수 있는 여러 지점이 존재한다.
   
 SWF에서 Action은 기본적으로 Unified EL이라는 간결한 표현 언어를 사용해서 정의하게 된다.
 
-##### evaluate
+#### evaluate
 
 대부분 evaluate 구성 요소를 사용하게 된다. 이를 통해 Spring Bean에 있는 메소드나 다른 Flow 변수를 호출할 수 있다.
 예를 들면 아래와 같다.

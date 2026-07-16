@@ -31,7 +31,7 @@ UserDetailsService 인터페이스 내 loadUserByUsername 메소드의 리턴된
 
  최소환경설정으로 사용자 인증을 설정하는 예제이다.
 
-##### Configuration
+#### Configuration
 
 ```xml
 <http>
@@ -65,7 +65,7 @@ UserDetailsService 인터페이스 내 loadUserByUsername 메소드의 리턴된
 
  관련된 설정은 다음과 같이 지정한다.
 
-##### Configuration
+#### Configuration
 
 ```xml
 <authentication-manager>
@@ -108,7 +108,7 @@ CAS 인증
 
 ### Sample Configuration
 
-##### WEB Security service
+#### WEB Security service
 
 ```xml
 <http pattern="/css/＊＊" security="none"/>    
@@ -143,7 +143,7 @@ CAS 인증
 - 사용자 정보(사용자 ID, 사용자 암호, 권한 등)를 얻어오는 기능은 jdbcUserService 에서 담당한다.
 - password-encoder : 저장된 패스워드의 암호화 알고리즘은 sha-256를 사용한다.
 
-##### JDBC User Service
+#### JDBC User Service
 
  사용자 정보를 얻어오는 **user service**를 DB에 저장된 사용자 정보를 이용하여 인증할 수 있다.
 
@@ -153,7 +153,7 @@ CAS 인증
 	authorities-by-username-query="SELECT USER_ID,AUTHORITY FROM AUTHORITIES WHERE USER_ID = ?"/>
 ```
 
-##### Sample Source
+#### Sample Source
 
 ```xml
 <form action="<s:url value='/j_spring_security_check'/>" method="POST">

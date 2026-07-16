@@ -42,7 +42,7 @@ menu:
 
  Properties 아래에 정의되는 Vendor별 설정 정보중에 Hibernate의 설정정보에 대해서 설명한다. 좀더 자세한 사항은 [Hibernate사이트](http://www.hibernate.org/hib_docs/reference/en/html/session-configuration.html)를 참조한다.
 
-#### DataSource 속성
+### DataSource 속성
 
  아래의 속성들을 통해 Hibernate는 특정 DB에 접근하여 데이터 액세스 처리가 가능하다.
 
@@ -61,7 +61,7 @@ menu:
    <property name="hibernate.connection.username" value="sa"/>
 ```
 
-#### Generated SQL 속성
+### Generated SQL 속성
 
  아래의 속성들을 통해 Hibernate는 특정 DB에 접근하여 데이터 액세스 처리가 가능하다.
 
@@ -90,7 +90,7 @@ menu:
 | Sybase 11.9.2 | org.hibernate.dialect.Sybase11Dialect |
 | Sybase Anywhere | org.hibernate.dialect.SybaseAnywhereDialect |
 
-#### Cache 속성
+### Cache 속성
 
  아래의 속성들을 통해 Hibernate는 Cache 기능을 지원한다.
 
@@ -108,7 +108,7 @@ menu:
    <property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
 ```
 
-#### Logging 속성
+### Logging 속성
 
  아래의 속성들을 통해 Hibernate는 좀더 자세한 Logging 기능을 지원한다.
 
@@ -125,7 +125,7 @@ menu:
    <property name="hibernate.format_sql" value="true"/>
 ```
 
-#### 기타 속성
+### 기타 속성
 
 | 속 성 명 | 설 명 |
 | --- | --- |

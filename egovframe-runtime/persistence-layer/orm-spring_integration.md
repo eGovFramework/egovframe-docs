@@ -17,7 +17,7 @@ menu:
 
  Spring 기반하에서 JPA를 쓰고자 할 때 필요한 설정은 persistence.xml과 ApplicationContext 파일 설정이 필요하다.
 
-#### persistence.xml 설정
+### persistence.xml 설정
 
 ```xml
 <persistence-unit name="HSQLMUnit" transaction-type="RESOURCE_LOCAL"> 
@@ -42,7 +42,7 @@ menu:
 
  위에서 Entity Class List와 그에 따르는 &lt;exclude-unlisted-classes/&gt;는 프로젝트내에 있는 엔티티 클래스중에 리스트하는 것만을 엔티티로 인식하도록 설정하는 것이고 dialect설정은 DBMS별 별도 설정이다. 위의 예에서는 HSQL 설정.
 
-#### Application Context 설정
+### Application Context 설정
 
 ```xml
    // 1.Transation Manager 설정
@@ -82,7 +82,7 @@ menu:
 
  Spring에서 정의한 JpaDaoSupport를 상속받아 getJpaTemplate()를 통해서 Entity Method 등을 호출 작업할 수 있다.
 
-#### DAO 클래스 Source
+### DAO 클래스 Source
 
 ```java
 public class UserDAO extends JpaDaoSupport {
@@ -122,7 +122,7 @@ public class UserDAO extends JpaDaoSupport {
 
  위의 예를 보면 JpaDaoSupport 를 상속받아서 this.getJpaTemplate().method()를 통해서 기능을 구현하였다.
 
-#### Entity 클래스 Source
+### Entity 클래스 Source
 
 ```java
 @Entity
@@ -150,7 +150,7 @@ public class User implements Serializable {
 
  JPA에서 정의한 Entity Manager의 Entity Method를 호출 작업할 수 있다. Entity Manager를 통해 작업함으로써 Spring 환경하에서 Spring에 대한 의존성을 최소화 할 수 있다.
 
-#### DAO 클래스 Source
+### DAO 클래스 Source
 
 ```java
 public class RoleDAO {
@@ -188,7 +188,7 @@ public class RoleDAO {
 
  위의 예를 보면 Entity Manager의 메소드를 통해서 기능을 구현하였다
 
-#### Entity 클래스 Source
+### Entity 클래스 Source
 
 ```java
 @Entity
