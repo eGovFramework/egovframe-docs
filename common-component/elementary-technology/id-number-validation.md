@@ -23,7 +23,6 @@ menu:
 | 유형 | 대상 소스 | 설명 |
 | --- | --- | --- |
 | Service | `egovframework.com.utl.fcc.service.EgovNumberCheckUtil.java` | 번호 유효성 처리 관련 유틸리티 |
-| Controller | `egovframework.com.utl.fcc.web.EgovNumberCheckUtilController.java` | 테스트용 Controller |
 | JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovNumberCheck.jsp` | 테스트 페이지 |
 
 ### 메소드

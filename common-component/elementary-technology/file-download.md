@@ -30,8 +30,8 @@ menu:
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Controller | `egovframework.com.utl.sim.web.EgovFileDownloadController.java` | 파일다운로드 컨트롤러 | |
-| Util | `egovframework.com.utl.sim.service.EgovFileMngUtil.java` | 파일 처리 유틸리티 클래스 | |
+| Controller | `egovframework.com.cmm.web.EgovFileDownloadController.java` | 파일다운로드 컨트롤러 | |
+| Util | `egovframework.com.cmm.service.EgovFileMngUtil.java` | 파일 처리 유틸리티 클래스 | |
 | JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명

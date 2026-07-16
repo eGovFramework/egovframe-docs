@@ -40,7 +40,7 @@ menu:
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.service.EgovClntInfo.java` | 클라이언트 정보확인 요소기술 클래스 | |
+| Service | `egovframework.com.utl.sim.service.EgovClntInfo.java` | 클라이언트 정보확인 요소기술 클래스 | |
 | JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovClntInfo.jsp` | 테스트 페이지 | |
 
 ### 메소드

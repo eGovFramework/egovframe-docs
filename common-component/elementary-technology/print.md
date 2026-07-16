@@ -41,7 +41,6 @@ menu:
 
 | 유형 | 대상 소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Controller | `egovframework.com.utl.fcc.web.EgovComUtlTestController.java` | 테스트용 Controller | |
 | JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovPrint.jsp` | 화면인쇄 테스트 페이지 | |
 
 #### 화면인쇄 사용 방법
@@ -101,7 +100,6 @@ function printOption(type1, type2) {
 
 | 유형 | 대상 소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Controller | `egovframework.com.utl.fcc.web.EgovComUtlTestController.java` | 테스트용 Controller | |
 | JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovPrintStatus.jsp` | 프린터상태확인 테스트 페이지 | |
 
 #### 프린터상태확인 사용 방법

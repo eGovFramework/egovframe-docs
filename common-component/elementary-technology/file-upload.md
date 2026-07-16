@@ -30,7 +30,6 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.cmm.service.EgovFileMngUtil.java` | 첨부파일 처리 공통 유틸리티 | |
-| Controller | `egovframework.com.utl.fcc.web.EgovFileUploadController.java` | 테스트용 Controller | |
 | JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovFileUpload.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명

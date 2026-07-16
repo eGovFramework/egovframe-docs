@@ -28,8 +28,8 @@ menu:
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.service.EgovFileTool.java` | 시스템 정보 확인 요소기술 클래스 | |
-| Service | `egovframework.com.utl.service.EgovFileMntrg.java` | 디렉토리 감시 요소기술 클래스 | |
+| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 시스템 정보 확인 요소기술 클래스 | |
+| Service | `egovframework.com.utl.sim.service.EgovFileMntrg.java` | 디렉토리 감시 요소기술 클래스 | |
 | JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovDrctryMntrg.jsp` | 테스트 페이지 | |
 
 ### 메소드

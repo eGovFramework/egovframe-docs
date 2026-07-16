@@ -48,7 +48,6 @@ menu:
 | 유형 | 대상 소스 | 설명 |
 | :--- | :--- | :--- |
 | Service | `egovframework.com.utl.fcc.service.EgovDateUtil.java` | Date 처리 관련 유틸리티 클래스 |
-| Controller | `egovframework.com.utl.fcc.web.EgovDateUtilController.java` | 테스트용 Controller |
 | JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovDateCnvr.jsp` | 테스트 페이지 |
 
 ### 주요 메소드
