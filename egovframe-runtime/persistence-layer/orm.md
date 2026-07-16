@@ -202,6 +202,6 @@ public void testDepartment() throws Exception {
 1. [Native SQL](./orm-native_sql.md)
 1. [Concurrency](./orm-concurrency.md)
 1. [Cache Handling](./orm-cache_handling.md)
-1. [Fetch Strategy](./orm-fetch_strategy./md)
+1. [Fetch Strategy](./orm-fetch_strategy.md)
 1. [Spring Integration](./orm-spring_integration.md)
 1. [JPA Configuration](./orm-jpa_configuration.md)
