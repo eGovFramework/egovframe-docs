@@ -31,7 +31,7 @@
 | Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 controller |  |
 | JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovSession.jsp | 테스트 페이지 |  |
 
-##### 메소드
+#### 메소드
 
 | 결과값 | 메소드 | 설명 | 내용 |
 | --- | --- | --- | --- |
@@ -41,14 +41,14 @@
 | String | getSessionValues(HttpServletRequest request) | 세션 객체 리스트 취득 | HttpSession 객체내의 모든 값을 호출하는 기능 |
 | void | removeSessionAttribute(HttpServletRequest request, String key) | 세션 객체 삭제 | HttpSession에 존재하는 세션을 주어진 키 값으로 삭제하는 기능 |
 
-##### Input
+#### Input
 
 - request : JSP 또는 Servlet의 request 객체
 - key : 세션에 사용 키값으로 null이 아닌 문자열 사용 (예, “UserId”)
 - value, obj : 세션에 해당 key 값으로 저장될 객체로 null 가능 (예, “KILDONG”)
 - Validation 체크: [요소기술 Validation 체크](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%9A%94%EC%86%8C%EA%B8%B0%EC%88%A0_validation_%EC%B2%B4%ED%81%AC)
 
-##### Output
+#### Output
 
 - Object, String : 해당 key로 저정된 객체
 

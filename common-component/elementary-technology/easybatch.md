@@ -34,7 +34,7 @@
 | Util | egovframework.com.ext.easybatch.item.DefaultItemReader | DefaultItemReader 필요한 Resource를 read |  |
 | Util | egovframework.com.ext.easybatch.item.DefaultItemWriter | DefaultItemWriter 처리결과를 지정된 타겟에 write |  |
 
-##### DefaultReader, DefaultWriter 구조
+#### DefaultReader, DefaultWriter 구조
 
  ![image](./images/egovframework-easybatch_구조.jpg)
 

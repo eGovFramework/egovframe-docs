@@ -78,7 +78,7 @@ menu:
 
 ## 사용방법
 
-#### ServiceImpl (결재권자 등록/삭제/승인/반려)
+### ServiceImpl (결재권자 등록/삭제/승인/반려)
 
  약식결재의 기본 흐름은 해당업무에서 신청(등록)시 결재자를 동시에 등록한다. 그러므로 UI화면에서 결재자를 등록을 필수로 처리해야 한다,
  비즈니스 등록처리 로직에서 약식결재서비스(EgovInfrmlSanctnService)의 결재자등록을 호출하여야 하며, 해당업무와 약식결재의 model VO의 필드를 매핑시켜줘야한다.
@@ -153,7 +153,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnConfm(converToInfrmlSanctnO
 infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctnObject(ctsnnManage));
 ```
 
-#### JSP/Script
+### JSP/Script
 
  지정화면
  지정화면에 아래코드를 삽입한다.
@@ -215,7 +215,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
 
 ## 관련화면 및 수행메뉴얼
 
-#### 약식결재권자 지정
+### 약식결재권자 지정
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -225,7 +225,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
 
  ![image](./images/cop-smplcfm-결재권자.jpg)
 
-#### 약식결재 상세조회
+### 약식결재 상세조회
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -236,7 +236,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
 
  ![image](./images/cop-smplcfm-결재상세.jpg)
 
-#### 약식결재 승인
+### 약식결재 승인
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -249,7 +249,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
  승인 : 기 등록된 약식결재 속성을 수정한 뒤 상단의 승인 버튼을 통해서 약식결재를 승인한다.
  닫기 : 화면을 닫는다.
 
-#### 약식결재 반려
+### 약식결재 반려
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |

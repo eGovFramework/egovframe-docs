@@ -57,14 +57,14 @@
 
 ## 관련화면 및 수행매뉴얼
 
-#### 1. 대화가능한 사용자 리스트 조회하기
+### 1. 대화가능한 사용자 리스트 조회하기
 
 | Action | URL | 처리 클래스 | 설명 |
 | --- | --- | --- | --- |
 | 이동 | /cop/msg/websocketMessengerMain.do | EgovWebSocketMessengerController.java | 사용자 리스트 조회화면으로 이동 |
 | 조회 | /usersServerEndpoint(ws호출) | UsersServerEndPoint.java | 접속한 사용자를 리스트에 등록하고 사용자리스트를 가져옴 |
 
-##### < 대화가능한 사용자 리스트 화면 >
+#### < 대화가능한 사용자 리스트 화면 >
 
  ![image](./images/cop-chatlist.png)
 
@@ -72,14 +72,14 @@
 
 * * *
 
-#### 2. 다른 사용자와 대화하기
+### 2. 다른 사용자와 대화하기
 
 | Action | URL | 처리 클래스 | 설명 |
 | --- | --- | --- | --- |
 | 이동 | /cop/msg/websocketMessengePopup.do | EgovWebSocketMessengerController.java | 대화창 팝업을 새로 띄움 |
 | Msg전달 | /chat/(random하게 생성된 room Id) | ChatServerEndPoint.java | 선택한 사용자와 대화 가능하도록 메시지를 전달하는 서버역할 |
 
-##### < 대화창 >
+#### < 대화창 >
 
  ![image](./images/cop-chatting_chrome.png) ![image](./images/cop-chatting_firefox.png)
 
