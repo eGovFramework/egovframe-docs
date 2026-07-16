@@ -17,7 +17,7 @@ menu:
 
  MyBatis XML 설정파일의 일반적인 구조 및 구성은 properties, settings, typeAliases, typeHandlers, objectFactory, plugins, environments, databaseIdProvider, mappers 등의 내용으로 구성이 되어 있으며 주요 내용은 아래와 같다.
 
-#### Sample Configuration
+### Sample Configuration
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
