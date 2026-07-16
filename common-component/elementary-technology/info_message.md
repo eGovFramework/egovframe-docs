@@ -31,20 +31,20 @@
 | Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 controller |  |
 | JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovMessage.jsp | 테스트 페이지 |  |
 
-##### 메소드
+#### 메소드
 
 | 결과값 | 메소드 | 설명 | 내용 |
 | --- | --- | --- | --- |
 | String | getInfoMsg(String key) | 정보 메시지 취득 | 메시지키에 해당 에러메시지를 얻는 기능 |
 | String | getInfoMsg(String key, String[] params) | 정보 메시지 파라미터 취득 | 메시지키에 해당 정보메시지를 해당되는 파라미터 값을 대치하여 얻는 기능 |
 
-##### Input
+#### Input
 
 - key : 속성 파일에 기록된 key 정보
 - params : 대치될 문자열 배열 정보
 - Validation 체크: [요소기술 Validation 체크](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:%EC%9A%94%EC%86%8C%EA%B8%B0%EC%88%A0_validation_%EC%B2%B4%ED%81%AC)
 
-##### Output
+#### Output
 
 - String : 해당 key 지정된 속성 정보로 해당 속성이 없으면 null 리턴
 

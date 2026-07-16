@@ -40,7 +40,7 @@
 
 ## 사용방법
 
-##### 1. 프린터상태확인
+### 1. 프린터상태확인
 
  ![image](./images/utl-egovpirntstatus.jpg)  
 프린터상태확인 버튼: 프린터상태확인 팝업 창이 열린다.  
@@ -48,7 +48,7 @@
 <input type=button value="프린터상태확인" onclick="window.print();">
 ```
 
-##### 2. 프린터상태확인 팝업
+### 2. 프린터상태확인 팝업
 
  ![image](./images/utl-egovpirntstatus_1.jpg)
 

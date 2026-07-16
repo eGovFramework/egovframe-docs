@@ -39,7 +39,7 @@
 | --- | --- | --- | --- |
 | Service | egovframework.com.utl.fcc.service.EgovDateFormat | 날짜 및 시간에 대한 출력 형식 변환 |  |
 
-##### 메소드
+#### 메소드
 
 | 결과값 | 메소드 | 설명 | 내용 |
 | --- | --- | --- | --- |
@@ -56,14 +56,14 @@
 | String | formatTime(int style, Date date) | 시간 표시 형식 변환 | 주어진 스타일에 따라 기본 Locale(JVM의 Locale)에 해당하는 형식으로 시간을 변환한다. |
 | String | formatTime(int style, Locale locale, Date date) | 시간 표시 형식 변환 | 주어진 스타일에 따라 Locale에 해당하는 형식으로 시간을 변환한다. |
 
-##### Input
+#### Input
 
 - 날짜 및 시간 : Date 타입
 - Locale : 지역화 처리를 위한 Locale
 - style, dateStyle, timeStyle : 날짜 또는 시간의 스타일.  
 사용 가능한 값은 java.text.DateFormat.FULL, java.text.DateFormat.LONG, java.text.DateFormat.MEDIUM, java.text.DateFormat.SHORT, java.text.DateFormat.DEFAULT 이다.
 
-##### Output
+#### Output
 
 - `String` : Locale에 맞게 변환된 날짜 또는 시간 문자열
 

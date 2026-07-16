@@ -23,7 +23,7 @@
 
 - 네이버(Naver), 구글(Google), 카카오(KaKao) 계정으로 로그인
 
-##### 관련소스
+### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
@@ -178,7 +178,7 @@ public String oauthLoginCallback(@PathVariable String oauthService, Model model,
 
  ![image](./images/ext-sociallogin_main.png)
 
-#### 사용예시
+### 사용예시
 
 - 소셜 로그인을 진행할 계정으로 로그인합니다.
 

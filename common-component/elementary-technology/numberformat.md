@@ -52,14 +52,14 @@
 | String | formatPercent(Number number, boolean groupingUsed, int maxFactionDigits) | 퍼센트 표시 형식 변환 | 기본 Locale(JVM의 Locale)에 해당하는 형식으로 퍼센트를 변환한다. |
 | String | formatPercent(Locale locale, Number number, boolean groupingUsed, int maxFactionDigits) | 퍼센트 표시 형식 변환 | Locale에 해당하는 형식으로 퍼센트를 변환한다. |
 
-##### Input
+#### Input
 
 - 숫자 : Number 타입
 - Locale : 지역화 처리를 위한 Locale
 - groupingUsed : 그룹 분리기호 포함 여부
 - maxFactionDigits : 변환된 문자열에서 출력할 소수점 이하 최대 자리수
 
-##### Output
+#### Output
 
 - String : Locale에 맞게 변환된 숫자, 통화, 퍼센트 문자열
 
