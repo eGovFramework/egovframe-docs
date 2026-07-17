@@ -31,7 +31,7 @@ menu:
 
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
-| Controller | egovframework.com.cop.bbs.EgovBBSMasterController.java | 게시판 관리를 위한 컨트롤러 클래스 |
+| Controller | egovframework.com.cop.bbs.web.EgovBBSMasterController.java | 게시판 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.cop.bbs.service.EgovBBSMasterService.java | 게시판 관리를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.cop.bbs.service.impl.EgovBBSMasterServiceImpl.java | 게시판 관리를 위한 서비스 구현 클래스 |
 | Model | egovframework.com.cop.bbs.service.BoardMaster.java | 게시판 관리를 위한 모델 클래스 |
@@ -50,7 +50,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_maria.xml | 게시판 관리를 위한 MariaDB용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_postgres.xml | 게시판 관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovBBSMaster_SQL_goldilocks.xml | 게시판 관리를 위한 Goldilocks용 Query XML |
-| Validator XML | resources/egovframework/validator/com/cop/bbs/EgovBBSMasterRegist.xml | 게시판 관리를위한 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_ko.properties | 게시판 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_en.properties | 게시판 관리를 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-bbs.xml | 게시판 관리를 위한 Id생성 Idgen XML |
@@ -135,8 +134,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | “BBSMaster” | “selectBBSMasterList” |
-| | | | “BBSMaster” | “selectBBSMasterListTotCnt” |
+| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | "BBSMaster" | "selectBBSMasterList" |
+| | | | "BBSMaster" | "selectBBSMasterListTotCnt" |
 
 게시판 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 
@@ -169,7 +168,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/bbs/insertBBSMasterView.do | insertBBSMasterView | | |
-| 등록 | /cop/bbs/insertBBSMaster.do | insertBBSMaster | “BBSMaster” | “insertBBSMaster” |
+| 등록 | /cop/bbs/insertBBSMaster.do | insertBBSMaster | "BBSMaster" | "insertBBSMaster" |
 
 ![게시판 생성](./images/board-management-insert.png)
 
@@ -193,8 +192,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /cop/bbs/updateBBSMasterView.do | updateBBSMasterView | “BBSMaster” | “selectBBSMasterDetail” |
-| 수정 | /cop/bbs/updateBBSMaster.do | updateBBSMaster | “BBSMaster” | “updateBBSMaster” |
+| 수정화면 | /cop/bbs/updateBBSMasterView.do | updateBBSMasterView | "BBSMaster" | "selectBBSMasterDetail" |
+| 수정 | /cop/bbs/updateBBSMaster.do | updateBBSMaster | "BBSMaster" | "updateBBSMaster" |
 
 ![게시판 수정](./images/board-management-update.png)
 

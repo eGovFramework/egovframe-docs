@@ -48,7 +48,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_maria.xml | 방명록 관리를 위한 MariaDB용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_postgres.xml | 방명록 관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_goldilocks.xml | 방명록 관리를 위한 Goldilocks용 Query XML |
-| Validator XML | resources/egovframework/validator/com/cop/bbs/EgovArticleRegist.xml | 방명록 관리를 위한 Validator XML |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-bbs.xml | 방명록 등록 Id생성 Idgen XML |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_ko.properties | 방명록 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_en.properties | 방명록 관리를 위한 Message properties(영문) |
@@ -111,8 +110,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectGuestArticleList.do | selectGuestArticleList | “BBSArticle” | “selectGuestArticle” |
-| | | | “BBSArticle” | “selectGuestArticleListCnt” |
+| 목록조회 | /cop/bbs/selectGuestArticleList.do | selectGuestArticleList | "BBSArticle" | "selectGuestArticle" |
+| | | | "BBSArticle" | "selectGuestArticleListCnt" |
 
 게시판 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 
@@ -138,7 +137,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | /cop/bbs/insertGuestArticle.do | insertGuestList | “BBSArticle” | “insertArticle” |
+| 등록 | /cop/bbs/insertGuestArticle.do | insertGuestList | "BBSArticle" | "insertArticle" |
 
 ![방명록 등록](./images/board-guestbook-insert.jpg)
 
@@ -159,7 +158,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/bbs/updateGuestArticleView.do | updateGuestArticleView | | |
-| 수정 | /cop/bbs/updateGuestArticle.do | updateGuestArticle | “BBSArticle” | “updateArticle” |
+| 수정 | /cop/bbs/updateGuestArticle.do | updateGuestArticle | "BBSArticle" | "updateArticle" |
 
 ![방명록 수정](./images/board-guestbook-update.jpg)
 

@@ -36,7 +36,7 @@ menu:
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
 | Controller | egovframework.com.cop.stf.web.EgovBBSSatisfactionController.java | 만족도조사를 위한 컨트롤러 클래스 |
-| Service | egovframework.com.cop.stf.service.EgovBBSSatisfactionService.java | 만족도조사를 위한 서비스 인터페이스 |
+| Service | egovframework.com.cop.bbs.service.EgovBBSSatisfactionService.java | 만족도조사를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.cop.stf.service.impl.EgovBBSSatisfactionServiceImpl.java | 만족도조사를 위한 서비스 구현 클래스 |
 | Model | egovframework.com.cop.bbs.service.Satisfaction.java | 만족도조사를 위한 모델 클래스 |
 | VO | egovframework.com.cop.bbs.service.SatisfactionVO.java | 만족도조사를 위한 VO 클래스 |
@@ -50,7 +50,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/stf/EgovBBSSatisfaction_SQL_maria.xml | 만족도조사를 위한 MariaDB용 Query XML 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/stf/EgovBBSSatisfaction_SQL_postgres.xml | 만족도조사를 위한 PostgreSQL용 Query XML 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/stf/EgovBBSSatisfaction_SQL_goldilocks.xml | 만족도조사를 위한 Goldilocks용 Query XML 파일 |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
 | Message properties | resources/egovframework/message/com/cop/stf/message_ko.properties | 만족도조사를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/stf/message_en.properties | 만족도조사를 위한 Message properties(영문) |
 
@@ -82,9 +81,9 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/stf/selectSatisfactionList.do | selectSatisfactionList | “BBSSatisfactionDAO.selectSatisfactionList”, |
-| | | | “BBSSatisfactionDAO.selectSatisfactionListCnt” |
-| 등록 | /cop/stf/insertSatisfaction.do | insertSatisfaction | “BBSSatisfactionDAO.insertSatisfaction” |
+| 목록조회 | /cop/stf/selectSatisfactionList.do | selectSatisfactionList | "BBSSatisfactionDAO.selectSatisfactionList", |
+| | | | "BBSSatisfactionDAO.selectSatisfactionListCnt" |
+| 등록 | /cop/stf/insertSatisfaction.do | insertSatisfaction | "BBSSatisfactionDAO.insertSatisfaction" |
 
 만족도 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 
@@ -111,8 +110,8 @@ N/A
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 수정화면 | /cop/stf/selectSingleSatisfaction.do | selectSingleSatisfaction | |
-| 수정 | /cop/stf/updateSatisfaction.do | updateSatisfaction | “BBSSatisfactionDAO.updateSatisfaction” |
-| 삭제 | /cop/stf/deleteSatisfaction.do | deleteSatisfaction | “BBSSatisfactionDAO.deleteSatisfaction” |
+| 수정 | /cop/stf/updateSatisfaction.do | updateSatisfaction | "BBSSatisfactionDAO.updateSatisfaction" |
+| 삭제 | /cop/stf/deleteSatisfaction.do | deleteSatisfaction | "BBSSatisfactionDAO.deleteSatisfaction" |
 
 ![만족도 수정 및 삭제](./images/satisfaction-survey-update.png)
 

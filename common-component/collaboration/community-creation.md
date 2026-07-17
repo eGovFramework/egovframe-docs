@@ -42,15 +42,14 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/cop/cmy/EgovCommuMasterUpdt.jsp | 커뮤니티 정보 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/cmy/EgovCommuMasterDetail.jsp | 커뮤니티 상세정보 조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/cmy/EgovCommuMasterListPortlet.jsp | 포털(예제) 메인화면 목록 조회를 위한 jsp 페이지 |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_mysql.xml | 커뮤니티 관리를 위한 MySQL용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_cubrid.xml | 커뮤니티 관리를 위한 Cubrid용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_oracle.xml | 커뮤니티 관리를 위한 Oracle용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_tibero.xml | 커뮤니티 관리를 위한 Tibero용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_altibase.xml | 커뮤니티 관리를 위한 Altibase용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_postgres.xml | 커뮤니티 관리를 위한 Postgres용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_maria.xml | 커뮤니티 관리를 위한 Maria용 Query |
-| Query XML | resources/egovframework/sqlmap/com/cop/cmy/EgovCommuMaster_SQL_goldilocks.xml | 커뮤니티 관리를 위한 Goldilocks용 Query |
-| Validator XML | resources/egovframework/validator/com/cop/cmy/EgovCommuMasterRegist.xml | 커뮤니티 관리를위한 Validator XML |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_mysql.xml | 커뮤니티 관리를 위한 MySQL용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_cubrid.xml | 커뮤니티 관리를 위한 Cubrid용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_oracle.xml | 커뮤니티 관리를 위한 Oracle용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_tibero.xml | 커뮤니티 관리를 위한 Tibero용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_altibase.xml | 커뮤니티 관리를 위한 Altibase용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_postgres.xml | 커뮤니티 관리를 위한 Postgres용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_maria.xml | 커뮤니티 관리를 위한 Maria용 Query |
+| Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuMaster_SQL_goldilocks.xml | 커뮤니티 관리를 위한 Goldilocks용 Query |
 | Message properties | resources/egovframework/message/com/cop/cmy/message_ko.properties | 커뮤니티 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/cmy/message_en.properties | 커뮤니티 관리를 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Cmmnty.xml | 커뮤니티 관리를 위한 Id생성 Idgen XML |
@@ -114,8 +113,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/cmy/selectCommuMasterList.do | selectCommuMasterList | “CommuMaster” | “selectCommuMasterList” |
-| | | | “CommuMaster” | “selectCommuMasterListCnt” |
+| 목록조회 | /cop/cmy/selectCommuMasterList.do | selectCommuMasterList | "CommuMaster" | "selectCommuMasterList" |
+| | | | "CommuMaster" | "selectCommuMasterListCnt" |
 
 페이지 당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
 
@@ -142,7 +141,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/cmy/insertCommuMasterView.do | insertCommuMasterView | | |
-| 등록 | /cop/cmy/insertCommuMaster.do | insertCommuMaster | “CommuMaster” | “insertCommuMaster” |
+| 등록 | /cop/cmy/insertCommuMaster.do | insertCommuMaster | "CommuMaster" | "insertCommuMaster" |
 
 ![커뮤니티 목록조회](./images/community-creation-insert.jpg)
 
@@ -164,7 +163,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/cmy/selectCommuMasterDetail.do | selectCommuMasterDetail | “CommuMaster” | “selectCommuMasterDetail” |
+| 상세조회 | /cop/cmy/selectCommuMasterDetail.do | selectCommuMasterDetail | "CommuMaster" | "selectCommuMasterDetail" |
 
 ![커뮤니티 상세조회](./images/community-creation-detail.jpg)
 
@@ -186,8 +185,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /cop/cmy/updateCommuMasterView.do | updateCommuMasterView | “CommuMaster” | “selectCommuMasterDetail” |
-| 수정 | /cop/cmy/updateCommuMaster.do | updateCommuMaster | “CommuMaster” | “updateCommuMaster” |
+| 수정화면 | /cop/cmy/updateCommuMasterView.do | updateCommuMasterView | "CommuMaster" | "selectCommuMasterDetail" |
+| 수정 | /cop/cmy/updateCommuMaster.do | updateCommuMaster | "CommuMaster" | "updateCommuMaster" |
 
 ![커뮤니티 수정](./images/community-creation-update.jpg)
 

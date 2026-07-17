@@ -31,12 +31,12 @@ menu:
 
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
-| Controller | egovframework.com.cop.cmy.EgovCommuManageController.java | 커뮤니티 사용자 및 승인정보 관리를 위한 컨트롤러 클래스 |
+| Controller | egovframework.com.cop.cmy.web.EgovCommuManageController.java | 커뮤니티 사용자 및 승인정보 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.cop.cmy.service.EgovCommuManageService.java | 커뮤니티 사용자 및 승인정보를 관리하기 위한 서비스 클래스 |
 | ServiceImpl | egovframework.com.cop.cmy.service.impl.EgovCommuManageServiceImpl.java | 커뮤니티 사용자 및 승인정보를 관리하기 위한 서비스 구현 클래스 |
 | Model | egovframework.com.cop.cmy.service.CommunityUserVO.java | 커뮤니티 사용자 및 승인정보를 관리하기 위한 모델 클래스 |
 | DAO | egovframework.com.cop.cmy.service.impl.EgovCommuManageDAO.java | 커뮤니티 사용자 및 승인정보 관리를 위한 데이터 접근 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/com/EgovCommuUserList.jsp | 커뮤니티 사용자 및 승인 목록 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/cmy/EgovCommuUserList.jsp | 커뮤니티 사용자 및 승인 목록 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_mysql.xml | 커뮤니티 사용자 및 승인정보 관리를 위한 MySQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_oracle.xml | 커뮤니티 사용자 및 승인정보 관리를 위한 Oracle용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/cmy/EgovCommuManage_SQL_tibero.xml | 커뮤니티 사용자 및 승인정보 관리를 위한 Tibero용 Query XML |
@@ -77,8 +77,8 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/cmy/selectCommuUserList.do | selectCommuUserList | “CommuManage.selectCommuUserList”, |
-| | | | “CommuManage.selectCommuUserListCnt” |
+| 목록조회 | /cop/cmy/selectCommuUserList.do | selectCommuUserList | "CommuManage.selectCommuUserList", |
+| | | | "CommuManage.selectCommuUserListCnt" |
 
 페이지 당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
 

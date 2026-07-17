@@ -47,8 +47,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_postgres.xml | 일지관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_tibero.xml | 일지관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_goldilocks.xml | 일지관리를 위한 Goldilocks용 Query XML |
-| Validator Rule XML | resources/egovframework/validator/validator-rules.xml | Validator Rule을 정의한 XML |
-| Validator XML | resources/egovframework/validator/com/cop/smt/dsm/EgovDiaryManage.xml | 일지관리 Validator XML |
 | Message properties | resources/egovframework/message/com/message-common_ko.properties | 일지관리 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/message-common_en.properties | 일지관리 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-diaryManage.xml | 일지관리 Id생성 Idgen XML |
@@ -112,8 +110,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/smt/dsm/EgovDiaryManageList.do | egovDiaryManageList | “DiaryManage” | “selectDiaryManage” |
-| | | | “DiaryManage” | “selectDiaryManageCnt” |
+| 목록조회 | /cop/smt/dsm/EgovDiaryManageList.do | egovDiaryManageList | "DiaryManage" | "selectDiaryManage" |
+| | | | "DiaryManage" | "selectDiaryManageCnt" |
 
 일지관리 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 등록자, 외부인사명에 대해서 수행된다.
 
@@ -143,8 +141,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/smt/dsm/EgovDiaryManageDetail.do | egovDiaryManageDetail | “DiaryManage” | “selectDiaryManageDetail” |
-| 삭제 | /cop/smt/dsm/EgovDiaryManageDetail.do | egovDiaryManageDetail | “DiaryManage” | “deleteDiaryManage” |
+| 상세조회 | /cop/smt/dsm/EgovDiaryManageDetail.do | egovDiaryManageDetail | "DiaryManage" | "selectDiaryManageDetail" |
+| 삭제 | /cop/smt/dsm/EgovDiaryManageDetail.do | egovDiaryManageDetail | "DiaryManage" | "deleteDiaryManage" |
 
 ![일지관리 상세조회](./images/journal-management-detail.jpg)
 
@@ -169,7 +167,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/smt/dsm/EgovDiaryManageRegist.do | diaryManageRegist | | |
-| 등록 | /cop/smt/dsm/EgovDiaryManageRegistActor.do | diaryManageRegistActor | “DiaryManage” | “insertDiaryManage” |
+| 등록 | /cop/smt/dsm/EgovDiaryManageRegistActor.do | diaryManageRegistActor | "DiaryManage" | "insertDiaryManage" |
 
 ![일지관리 등록](./images/journal-management-regist.jpg)
 
@@ -192,7 +190,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/smt/dsm/EgovDiaryManageModify.do | diaryManageModify | | |
-| 수정 | /cop/smt/dsm/EgovDiaryManageModifyActor.do | diaryManageModifyActor | “DiaryManage” | “updateDiaryManage” |
+| 수정 | /cop/smt/dsm/EgovDiaryManageModifyActor.do | diaryManageModifyActor | "DiaryManage" | "updateDiaryManage" |
 
 ![일지관리 수정](./images/journal-management-modify.jpg)
 

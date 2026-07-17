@@ -81,8 +81,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/smt/sam/EgovAllSchdulManageList.do | egovAllSchdulManageList | “AllSchdulManage” | “selectIndvdlSchdulManage” |
-| | | | “AllSchdulManage” | “selectIndvdlSchdulManageCnt” |
+| 목록조회 | /cop/smt/sam/EgovAllSchdulManageList.do | egovAllSchdulManageList | "AllSchdulManage" | "selectIndvdlSchdulManage" |
+| | | | "AllSchdulManage" | "selectIndvdlSchdulManageCnt" |
 
 전체일정 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 등록자, 일정명, 일정내용에 대해서 수행된다.
 
