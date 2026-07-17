@@ -54,10 +54,9 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/sdm/EgovDeptSchdulManage_SQL_postgres.xml | 부서일정관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sdm/EgovDeptSchdulManage_SQL_tibero.xml | 부서일정관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sdm/EgovDeptSchdulManage_SQL_goldilocks.xml | 부서일정관리를 위한 Goldilocks용 Query XML |
-| Validator XML | resources/egovframework/validator/com/cop/smt/sdm/EgovDeptSchdulManage.xml | 부서일정관리 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/smt/sdm/message_ko.properties | 마이페이지 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/smt/sdm/message_en.properties | 마이페이지 Message properties(영문) |
-| Idgen XML | resources/egovframework/spring/com/idgn/context-idgen-deptSchdulManage.xml | 부서일정관리 Id생성 Idgen XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-deptSchdulManage.xml | 부서일정관리 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
 
@@ -77,7 +76,7 @@ CREATE TABLE COMTECOPSEQ (TABLE_NAME VARCHAR(20) NOT NULL,
 INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
 ```
 
-#### ID Generation 환경설정(context-idgen-deptSchdulManage.xml)
+#### ID Generation 환경설정(context-idgn-deptSchdulManage.xml)
 
 ```xml
 <bean name="deptSchdulManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
@@ -118,7 +117,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 월별목록조회 | /cop/smt/sdm/EgovDeptSchdulManageMonthList.do | egovDeptSchdulManageMonthList | “DeptSchdulManage” | “selectDeptSchdulManageRetrieve” |
+| 월별목록조회 | /cop/smt/sdm/EgovDeptSchdulManageMonthList.do | egovDeptSchdulManageMonthList | "DeptSchdulManage" | "selectDeptSchdulManageRetrieve" |
 
 ![부서일정관리 월별목록](./images/department-schedule-month-list.jpg)
 
@@ -142,7 +141,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 주간별 목록조회 | /cop/smt/sdm/EgovDeptSchdulManageWeekList.do | egovDeptSchdulManageWeekList | “DeptSchdulManage” | “selectDeptSchdulManageRetrieve” |
+| 주간별 목록조회 | /cop/smt/sdm/EgovDeptSchdulManageWeekList.do | egovDeptSchdulManageWeekList | "DeptSchdulManage" | "selectDeptSchdulManageRetrieve" |
 
 ![부서일정관리 주간별목록](./images/department-schedule-week-list.jpg)
 
@@ -162,7 +161,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 일별 목록조회 | /cop/smt/sdm/EgovDeptSchdulManageDailyList.do | egovDeptSchdulManageDailyList | “DeptSchdulManage” | “selectDeptSchdulManageRetrieve” |
+| 일별 목록조회 | /cop/smt/sdm/EgovDeptSchdulManageDailyList.do | egovDeptSchdulManageDailyList | "DeptSchdulManage" | "selectDeptSchdulManageRetrieve" |
 
 ![부서일정관리 일별목록](./images/department-schedule-daily-list.jpg)
 
@@ -182,8 +181,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | “DeptSchdulManage” | “selectDeptSchdulManageDetailVO” |
-| 부서일정 삭제 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | “DeptSchdulManage” | “deleteDeptSchdulManage” |
+| 상세조회 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | "DeptSchdulManage" | "selectDeptSchdulManageDetailVO" |
+| 부서일정 삭제 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | "DeptSchdulManage" | "deleteDeptSchdulManage" |
 
 ![부서일정관리 상세조회 및 삭제](./images/department-schedule-detail.jpg)
 
@@ -210,7 +209,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/smt/sdm/EgovDeptSchdulManageRegist.do | deptSchdulManageRegist | | |
-| 등록 | /cop/smt/sdm/EgovDeptSchdulManageRegistActor.do | deptSchdulManageRegistActor | “DeptSchdulManage” | “insertDeptSchdulManage” |
+| 등록 | /cop/smt/sdm/EgovDeptSchdulManageRegistActor.do | deptSchdulManageRegistActor | "DeptSchdulManage" | "insertDeptSchdulManage" |
 
 ![부서일정관리 등록](./images/department-schedule-regist.jpg)
 
@@ -233,7 +232,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/smt/sdm/EgovDeptSchdulManageModify.do | deptSchdulManageModify | | |
-| 수정 | /cop/smt/sdm/EgovDeptSchdulManageModifyActor.do | deptSchdulManageModifyActor | “DeptSchdulManage” | “updateDeptSchdulManage” |
+| 수정 | /cop/smt/sdm/EgovDeptSchdulManageModifyActor.do | deptSchdulManageModifyActor | "DeptSchdulManage" | "updateDeptSchdulManage" |
 
 ![부서일정관리 수정](./images/department-schedule-modify.jpg)
 

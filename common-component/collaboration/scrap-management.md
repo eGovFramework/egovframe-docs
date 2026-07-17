@@ -38,8 +38,8 @@ menu:
 | Controller | egovframework.com.cop.scp.web.EgovArticleScrapController.java | 스크랩기능을 위한 컨트롤러 클래스 |
 | Service | egovframework.com.cop.scp.service.EgovArticleScrapService.java | 스크랩기능을 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.cop.scp.service.impl.EgovArticleScrapServiceImpl.java | 스크랩기능을 위한 서비스 구현 클래스 |
-| VO | egovframework.com.cop.bbs.service.Scrap.java | 스크랩기능을 위한 모델 클래스 |
-| VO | egovframework.com.cop.bbs.service.ScrapVO.java | 스크랩기능을 위한 VO 클래스 |
+| VO | egovframework.com.cop.scp.service.Scrap.java | 스크랩기능을 위한 모델 클래스 |
+| VO | egovframework.com.cop.scp.service.ScrapVO.java | 스크랩기능을 위한 VO 클래스 |
 | DAO | egovframework.com.cop.scp.service.impl.EgovArticleScrapDAO.java | 스크랩기능을 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/scp/EgovArticleScrapList.jsp | 스크랩기능을 위한 목록조회 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/scp/EgovArticleScrapRegist.jsp | 스크랩기능을 위한 등록 jsp페이지 |
@@ -53,7 +53,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/scp/EgovArticleScrap_SQL_maria.xml | 스크랩기능을 위한 MariaDB용 Query XML 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/scp/EgovArticleScrap_SQL_postgres.xml | 스크랩기능을 위한 PostgreSQL용 Query XML 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/scp/EgovArticleScrap_SQL_goldilocks.xml | 스크랩기능을 위한 Goldilocks용 Query XML 파일 |
-| Validator XML | resources/egovframework/validator/com/cop/scp/EgovArticleScrapRegist.xml | 스크랩기능을 위한 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/scp/message_ko.properties | 스크랩기능을 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/scp/message_en.properties | 스크랩기능을 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Scrap.xml | 스크랩기능을 위한 Id생성 Idgen XML |
@@ -121,8 +120,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록화면 | /cop/scp/insertArticleScrapView.do | insertArticleScrapView | “BBSArticle” | “selectArticleDetail” |
-| 등록 | /cop/scp/insertArticleScrap.do | insertArticleScrap | “ArticleScrap” | “insertArticleScrap” |
+| 등록화면 | /cop/scp/insertArticleScrapView.do | insertArticleScrapView | "BBSArticle" | "selectArticleDetail" |
+| 등록 | /cop/scp/insertArticleScrap.do | insertArticleScrap | "ArticleScrap" | "insertArticleScrap" |
 
 ![스크랩 등록](./images/scrap-management-scrap.png)
 
@@ -148,8 +147,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/scp/selectArticleScrapList.do | selectArticleScrapList | “ArticleScrap” | “selectArticleScrapList” |
-| | | | “ArticleScrap” | “selectArticleScrapListCnt” |
+| 목록조회 | /cop/scp/selectArticleScrapList.do | selectArticleScrapList | "ArticleScrap" | "selectArticleScrapList" |
+| | | | "ArticleScrap" | "selectArticleScrapListCnt" |
 
 스크랩 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 
@@ -175,8 +174,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/scp/selectArticleScrapDetail.do | selectArticleScrapDetail | “ArticleScrap” | “selectArticleScrapDetail” |
-| 삭제 | /cop/scp/deleteArticleScrap.do | deleteArticleScrap | “ArticleScrap” | “deleteArticleScrap” |
+| 상세조회 | /cop/scp/selectArticleScrapDetail.do | selectArticleScrapDetail | "ArticleScrap" | "selectArticleScrapDetail" |
+| 삭제 | /cop/scp/deleteArticleScrap.do | deleteArticleScrap | "ArticleScrap" | "deleteArticleScrap" |
 
 ![스크랩 상세조회](./images/scrap-management-detail.png)
 
@@ -200,8 +199,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /cop/scp/updateArticleScrapView.do | updateArticleScrapView | “ArticleScrap” | “selectArticleScrapDetail” |
-| 수정 | /cop/scp/updateArticleScrap.do | updateArticleScrap | “ArticleScrap” | “updateArticleScrap” |
+| 수정화면 | /cop/scp/updateArticleScrapView.do | updateArticleScrapView | "ArticleScrap" | "selectArticleScrapDetail" |
+| 수정 | /cop/scp/updateArticleScrap.do | updateArticleScrap | "ArticleScrap" | "updateArticleScrap" |
 
 ![스크랩 수정](./images//scrap-management-update.png)
 

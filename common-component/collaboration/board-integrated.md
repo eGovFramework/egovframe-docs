@@ -44,7 +44,7 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleList.jsp | 생성된 게시물 조회를 위한 jsp 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleDetail.jsp | 생성된 게시물 상세 조회를 위한 jsp 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleReply.jsp | 생성된 게시물에 대한 답변을 등록하기 위한 jsp 페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/bbs/EgovArticleCommentList.jsp | 댓글 등록/조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/cmt/EgovArticleCommentList.jsp | 댓글 등록/조회를 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_mysql.xml | 게시물 관리를 위한 MySQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_oracle.xml | 게시물 관리를 위한 Oracle용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_tibero.xml | 게시물 관리를 위한 Tibero용 Query XML |
@@ -53,7 +53,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_maria.xml | 게시물 관리를 위한 MariaDB용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_postgres.xml | 게시물 관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/bbs/EgovArticle_SQL_goldilocks.xml | 게시물 관리를 위한 Goldilocks용 Query XML |
-| Validator XML | resources/egovframework/validator/com/cop/bbs/EgovArticleRegist.xml | 게시물 관리를 위한 Validator XML |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-bbs.xml | 게시물 등록 Id 생성 Idgen XML |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_ko.properties | 게시물 관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/bbs/message_en.properties | 게시물 관리를 위한 Message properties(영문) |
@@ -117,8 +116,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectArticleList.do | selectArticleList | “BBSArticle” | “selectArticleList” |
-| | | | “BBSArticle” | “selectArticleListCnt” |
+| 목록조회 | /cop/bbs/selectArticleList.do | selectArticleList | "BBSArticle" | "selectArticleList" |
+| | | | "BBSArticle" | "selectArticleListCnt" |
 
 ![게시물 목록 조회](./images/board-integrated-list.jpg)
 
@@ -141,7 +140,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/bbs/insertArticleView.do | insertArticleView | | |
-| 등록 | /cop/bbs/insertArticle.do | insertArticle | “BBSArticle” | “insertArticle” |
+| 등록 | /cop/bbs/insertArticle.do | insertArticle | "BBSArticle" | "insertArticle" |
 
 ![게시물 등록](./images/board-integrated-insert.jpg)
 
@@ -163,7 +162,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/bbs/selectArticleDetail.do | selectArticleDetail | “BBSArticle” | “selectArticleDetail” |
+| 상세조회 | /cop/bbs/selectArticleDetail.do | selectArticleDetail | "BBSArticle" | "selectArticleDetail" |
 
 ![게시물 상세 조회](./images/board-integrated-detail.jpg)
 
@@ -186,7 +185,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/bbs/updateArticleView.do | updateArticleView | | |
-| 수정 | /cop/bbs/updateArticle.do | updateArticle | “BBSArticle” | “updateArticle” |
+| 수정 | /cop/bbs/updateArticle.do | updateArticle | "BBSArticle" | "updateArticle" |
 
 ![게시물 수정](./images/board-integrated-update.jpg)
 
@@ -207,7 +206,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 답변 작성 화면 | /cop/bbs/replyArticleView.do | addReplyBoardArticle | | |
-| 답변 | /cop/bbs/replyArticle.do | replyBoardArticle | “BBSArticle” | “replyArticle” |
+| 답변 | /cop/bbs/replyArticle.do | replyBoardArticle | "BBSArticle" | "replyArticle" |
 
 ![답변 작성](./images/board-integrated-reply.jpg)
 

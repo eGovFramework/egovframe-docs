@@ -33,7 +33,7 @@ menu:
 
 ② 이용통보 : 검토 결과를 접수일로부터 15일 이내에 이용신청기관에게 서면으로 통보
 
-③ 서비스준비 : 이용신청기관은 센터에서 제공하는 “M-Gov 연동 API“를 사용하여 연동
+③ 서비스준비 : 이용신청기관은 센터에서 제공하는 "M-Gov 연동 API"를 사용하여 연동
 
 ④ 서비스개통 : 이용신청기관은 승인 후 60일 이내에 서비스 개통을 하지 않을 경우 센터는 이용통보를 취소할 수 있음
 
@@ -41,7 +41,7 @@ menu:
 
 ## 설명
 
-공통컴포넌트에서 제공하는 문자메시지서비스는 “M-Gov 연동 API“를 통해 SMS서비스를 제공할 뿐만 아니라 전송에 대한 이력 관리를 제공한다. (이력 관리가 필요없는 경우를 위해 별도의 메소드를 제공하고 있으나 송신 결과에 대한 내용을 확인할 수 없음)
+공통컴포넌트에서 제공하는 문자메시지서비스는 "M-Gov 연동 API"를 통해 SMS서비스를 제공할 뿐만 아니라 전송에 대한 이력 관리를 제공한다. (이력 관리가 필요없는 경우를 위해 별도의 메소드를 제공하고 있으나 송신 결과에 대한 내용을 확인할 수 없음)
 
 ### 패키지 참조 관계
 
@@ -125,7 +125,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SMS_ID', 1);
 
 ### 환경설정
 
-본 문자메시지서비스를 사용하기 위해서는 “M-Gov 연동 API“에서 제공하는 “SMEConfig.properties” 파일을 지정되어야 한다.
+본 문자메시지서비스를 사용하기 위해서는 "M-Gov 연동 API"에서 제공하는 "SMEConfig.properties" 파일을 지정되어야 한다.
 
 이를 지정하기 위해서는 globals.properties 속성 파일에 추가 속성을 설정하여야 한다.
 
@@ -190,8 +190,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/sms/selectSmsList.do | selectSmsList | “SmsDAO” | “selectSmsInfs”, |
-| | | | “SmsDAO” | “selectSmsInfsCnt” |
+| 목록조회 | /cop/sms/selectSmsList.do | selectSmsList | "SmsDAO" | "selectSmsInfs", |
+| | | | "SmsDAO" | "selectSmsInfsCnt" |
 
 문자메시지 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 페이지당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
 
@@ -215,7 +215,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/sms/selectSms.do | selectSms | “SmsDAO” | “selectSmsInf” |
+| 상세조회 | /cop/sms/selectSms.do | selectSms | "SmsDAO" | "selectSmsInf" |
 
 ![문자메시지 상세조회](./images/sms-service-detail.jpg)
 
@@ -236,7 +236,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/sms/addSms.do | addSms | | |
-| 전송 | /cop/sms/insertSms.do | insertSms | “SmsDAO” | “insertSmsInf” |
+| 전송 | /cop/sms/insertSms.do | insertSms | "SmsDAO" | "insertSmsInf" |
 
 ![문자메시지 전송](./images/sms-service-insert.jpg)
 

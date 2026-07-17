@@ -40,8 +40,8 @@ menu:
 | Controller | egovframework.com.cop.cmt.web.EgovArticleCommentController.java | 댓글관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.cop.cmt.service.EgovArticleCommentService.java | 댓글관리를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.cop.cmt.service.impl.EgovArticleCommentServiceImpl.java | 댓글관리를 위한 서비스 구현 클래스 |
-| Model | egovframework.com.cop.bbs.service.Comment.java | 댓글관리를 위한 모델 클래스 |
-| VO | egovframework.com.cop.bbs.service.CommentVO.java | 댓글관리를 위한 VO 클래스 |
+| Model | egovframework.com.cop.cmt.service.Comment.java | 댓글관리를 위한 모델 클래스 |
+| VO | egovframework.com.cop.cmt.service.CommentVO.java | 댓글관리를 위한 VO 클래스 |
 | DAO | egovframework.com.cop.cmt.service.impl.EgovArticleCommentDAO.java | 댓글관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/cmt/EgovArticleCommentList.jsp | 댓글관리를 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/cmt/EgovArticleComment_SQL_mysql.xml | 댓글관리를 위한 MySQL용 Query XML 파일 |
@@ -52,7 +52,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/cmt/EgovArticleComment_SQL_maria.xml | 댓글관리를 위한 MariaDB용 Query XML 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/cmt/EgovArticleComment_SQL_postgres.xml | 댓글관리를 위한 PostgreSQL용 Query XML 파일 |
 | Query XML | resources/egovframework/mapper/com/cop/cmt/EgovArticleComment_SQL_goldilocks.xml | 댓글관리를 위한 Goldilocks용 Query XML 파일 |
-| Validator XML | resources/egovframework/validator/com/cop/cmt/EgovArticleCommentRegist.xml | 댓글관리를 위한 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/cmt/message_ko.properties | 댓글관리를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/cmt/message_en.properties | 댓글관리를 위한 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-AnswerNo.xml | 댓글관리를 위한 Id생성 Idgen XML |
@@ -115,9 +114,9 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/cmt/selectArticleCommentList.do | selectArticleCommentList | “ArticleComment” | “selectArticleCommentList” |
-| | | | “ArticleComment” | “selectArticleCommentListCnt” |
-| 등록 | /cop/cmt/insertArticleComment.do | insertArticleComment | “ArticleComment” | “insertArticleComment” |
+| 목록조회 | /cop/cmt/selectArticleCommentList.do | selectArticleCommentList | "ArticleComment" | "selectArticleCommentList" |
+| | | | "ArticleComment" | "selectArticleCommentListCnt" |
+| 등록 | /cop/cmt/insertArticleComment.do | insertArticleComment | "ArticleComment" | "insertArticleComment" |
 
 댓글 목록은 페이지당 5건씩 조회되며 페이징은 10페이지씩 이루어진다.
 
@@ -139,9 +138,9 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정화면 | /cop/cmt/updateArticleCommentView.do | updateArticleCommentView | “ArticleComment” | “selectArticleCommentDetail” |
-| 수정 | /cop/cmt/updateArticleComment.do | updateArticleComment | “ArticleComment” | “updateArticleComment” |
-| 삭제 | /cop/cmt/deleteArticleComment.do | deleteArticleComment | “ArticleComment” | “deleteArticleComment” |
+| 수정화면 | /cop/cmt/updateArticleCommentView.do | updateArticleCommentView | "ArticleComment" | "selectArticleCommentDetail" |
+| 수정 | /cop/cmt/updateArticleComment.do | updateArticleComment | "ArticleComment" | "updateArticleComment" |
+| 삭제 | /cop/cmt/deleteArticleComment.do | deleteArticleComment | "ArticleComment" | "deleteArticleComment" |
 
 ![댓글 수정 및 삭제](./images/comment-management-update.png)
 

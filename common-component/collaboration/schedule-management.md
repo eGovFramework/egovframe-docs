@@ -51,7 +51,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_postgres.xml | 일정관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_tibero.xml | 일정관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_goldilocks.xml | 일정관리를 위한 Goldilocks용 Query XML |
-| Validator XML | resources/egovframework/validator/com/cop/smt/sim/EgovIndvdlSchdulManage.xml | 일정관리 Validator XML |
 | Message properties | resources/egovframework/message/com/cop/smt/sim/message_ko.properties | 마이페이지 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/smt/sim/message_en.properties | 마이페이지 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-diaryManage.xml | 일정관리 Id생성 Idgen XML |
@@ -115,7 +114,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 월별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageList.do | egovIndvdlSchdulManageMonthList | “IndvdlSchdulManage” | “selectIndvdlSchdulManageRetrieve” |
+| 월별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageList.do | egovIndvdlSchdulManageMonthList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
 
 ![일정관리 월별목록](./images/schedule-management-month-list.png)
 
@@ -137,7 +136,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 주간별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageWeekList.do | egovIndvdlSchdulManageWeekList | “IndvdlSchdulManage” | “selectIndvdlSchdulManageRetrieve” |
+| 주간별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageWeekList.do | egovIndvdlSchdulManageWeekList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
 
 ![일정관리 주간별목록](./images/schedule-management-week-list.png)
 
@@ -157,7 +156,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 일별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageDailyList.do | egovIndvdlSchdulManageDailyList | “IndvdlSchdulManage” | “selectIndvdlSchdulManageRetrieve” |
+| 일별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageDailyList.do | egovIndvdlSchdulManageDailyList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
 
 ![일정관리 일별목록](./images/schedule-management-daily-list.png)
 
@@ -177,8 +176,8 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | “IndvdlSchdulManage” | “selectIndvdlSchdulManageDetailVO” |
-| 일정삭제 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | “IndvdlSchdulManage” | “deleteIndvdlSchdulManage” |
+| 상세조회 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | "IndvdlSchdulManage" | "selectIndvdlSchdulManageDetailVO" |
+| 일정삭제 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | "IndvdlSchdulManage" | "deleteIndvdlSchdulManage" |
 
 ![일정관리 상세조회 및 삭제](./images/schedule-management-detail.png)
 
@@ -205,7 +204,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /cop/smt/sim/EgovIndvdlSchdulManageRegist.do | indvdlSchdulManageRegist | | |
-| 등록 | /cop/smt/sim/EgovIndvdlSchdulManageRegistActor.do | indvdlSchdulManageRegistActor | “IndvdlSchdulManage” | “insertIndvdlSchdulManage” |
+| 등록 | /cop/smt/sim/EgovIndvdlSchdulManageRegistActor.do | indvdlSchdulManageRegistActor | "IndvdlSchdulManage" | "insertIndvdlSchdulManage" |
 
 ![일정관리 등록](./images/department-schedule-regist.jpg)
 
@@ -228,7 +227,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/smt/sim/EgovIndvdlSchdulManageModify.do | indvdlSchdulManageModify | | |
-| 수정 | /cop/smt/sim/EgovIndvdlSchdulManageModifyActor.do | indvdlSchdulManageModifyActor | “IndvdlSchdulManage” | “updateIndvdlSchdulManage” |
+| 수정 | /cop/smt/sim/EgovIndvdlSchdulManageModifyActor.do | indvdlSchdulManageModifyActor | "IndvdlSchdulManage" | "updateIndvdlSchdulManage" |
 
 ![일정관리 수정](./images/schedule-management-modify.png)
 
