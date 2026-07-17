@@ -60,7 +60,7 @@ menu:
 
 전자정부 표준프레임워크에서는 서버 개발환경 역시 프로젝트에서 필수적으로 사용하는 기능과 선택적으로 사용하는 기능으로 구분하였다.
 
-프로젝트 상황에 따라 Deployment Tool과 Conf. & Change Mgt. Tool 중 일부 기능을 선택적으로 사용할 수 있다.([서버 개발환경](./server-environment-introduction))
+프로젝트 상황에 따라 Deployment Tool과 Conf. & Change Mgt. Tool 중 일부 기능을 선택적으로 사용할 수 있다.([서버 개발환경](./server-environment-introduction.md))
 
 ### 개발 프로세스
 

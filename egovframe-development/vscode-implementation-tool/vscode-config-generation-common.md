@@ -32,7 +32,7 @@ menu:
 | YAML | YAML 설정 파일 | `.yml` |
 | Properties | Properties 설정 파일 | `.properties` |
 
-각 설정 유형에서 지원하는 형식은 [지원 파일 형식 요약](./vscode-config-generation#지원-파일-형식-요약)에서 확인할 수 있다.
+각 설정 유형에서 지원하는 형식은 [지원 파일 형식 요약](./vscode-config-generation.md#지원-파일-형식-요약)에서 확인할 수 있다.
 
 ### 파일 이름 / 클래스 이름
 
