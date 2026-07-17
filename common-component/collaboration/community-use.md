@@ -63,7 +63,7 @@ menu:
 
 ### ID Generation
 
-[게시판 관리](../collaboration/board-management.md/#id-generation) 기능과 동일하게 ID Generation 을 설정한다.
+[게시판 관리](../collaboration/board-management.md#id-generation) 기능과 동일하게 ID Generation 을 설정한다.
 
 ### 관련테이블
 
