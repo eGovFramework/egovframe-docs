@@ -142,7 +142,7 @@ public class EgovUserStatsScheduling {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 사용자 통계검색 | /sts/ust/selectUserStats.do | selectUserStats | “UserStatsDAO.selectUserStats”, |
+| 사용자 통계검색 | /sts/ust/selectUserStats.do | selectUserStats | "UserStatsDAO.selectUserStats", |
 
  ![image](./images/sts-stats2.png)
 

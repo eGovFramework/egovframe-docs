@@ -143,7 +143,7 @@ var config = new HTMLArea.Config();
 HTMLArea.replace('id', config);
 ```
 
-위의 예제에서 아래의 세개의 문자열을 제외하고 툴바 내의 모든 객체(예시>“fontname” )들은 config.btnList에 정의 되어있다.
+위의 예제에서 아래의 세개의 문자열을 제외하고 툴바 내의 모든 객체(예시>"fontname" )들은 config.btnList에 정의 되어있다.
 ```bash
 'space' — 현재 툴바의 위치에 5pixel 공백 입력
 'separator' — 구분선 입력

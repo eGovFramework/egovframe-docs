@@ -39,8 +39,6 @@ Property 파일에 정의된 에러메시지를 조회하여 반환하는 기능
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | egovframework.com.utl.cas.service.EgovMessageUtil.java | 메시지 처리 관련 유틸리티 |  |
-| Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 controller |  |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovMessage.jsp | 테스트 페이지 |  |
 
 #### 메소드
 
@@ -63,7 +61,7 @@ Property 파일에 정의된 에러메시지를 조회하여 반환하는 기능
 
  메시지 처리를 위해서는 ***User home***  디렉토리밑에 egovProps/conf/errormessage.properties 파일에 메시지가 정의되어 있어야 한다. 해당 메시지 정의는 일반 property 정의 방식과 같다.
 
-- User home 디렉토리 : System.getProperty(“user.home”)를 통해 얻는 정보로 Windows 계열의 OS는 보통 “C:\Documents and Settings\사용자계정“이고, Unix계정의 경우는 ”/home/사용자계정“이 된다.
+- User home 디렉토리 : System.getProperty("user.home")를 통해 얻는 정보로 Windows 계열의 OS는 보통 "C:\Documents and Settings\사용자계정"이고, Unix계정의 경우는 "/home/사용자계정"이 된다.
 
 ### 사용 시 주의사항
 

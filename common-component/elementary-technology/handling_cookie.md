@@ -29,7 +29,6 @@
 | --- | --- | --- | --- |
 | Service | egovframework.com.utl.cas.service.EgovSessionCookieUtil.java | 세션/쿠키 처리 관련 유틸리티 |  |
 | Controller | egovframework.com.cmm.web.EgovComUtlController.java | 테스트용 controller |  |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovCookieProcess.jsp | 쿠키처리 테스트 페이지 |  |
 
 #### 메소드
 

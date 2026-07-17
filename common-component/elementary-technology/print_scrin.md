@@ -27,8 +27,6 @@
 
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 controller |  |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovPrint.jsp | 화면인쇄 테스트 페이지 |  |
 
 ### 관련테이블
 
