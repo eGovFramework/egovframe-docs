@@ -150,10 +150,9 @@ menu:
 |------|----------------|------|
 | maven config | /pom.xml | maven project config |
 | Web Application config | /WEB-INF/web.xml | Web Application 단위 config 설정 |
-| servlet context config | /WEB-INF/config/egovframework/springmvc/com/egov-com-servlet.xml | DispatcherServlet application context 설정 |
-| login Log Aspect config | /WEB-INF/config/egovframework/springmvc/com/egov-com-loginaop.xml | Login Log Aspect (로그인 메소드, 로그아웃 메소드) 설정 |
-| login check config | /WEB-INF/config/egovframework/springmvc/com/egov-com-interceptor.xml | IP 정보 기록 및 Login 체크가 필요한 URL과 로그인 여부를 체크해줄 인터셉터 설정 |
-| session 권한 config | /WEB-INF/config/egovframework/springmvc/com/egov-com-access.xml | Globals.Auth = session 인 경우의 세션방식 사용자 권한 설정 |
+| servlet context config | /WEB-INF/config/egovframework/springmvc/egov-com-servlet.xml | DispatcherServlet application context 설정 |
+| login Log Aspect config | /WEB-INF/config/egovframework/springmvc/egov-com-loginaop.xml | Login Log Aspect (로그인 메소드, 로그아웃 메소드) 설정 |
+| login check config | /WEB-INF/config/egovframework/springmvc/egov-com-interceptor.xml | IP 정보 기록 및 Login 체크가 필요한 URL과 로그인 여부를 체크해줄 인터셉터 설정 |
 | context bean 정의 | /resources/egovframework/spring/com/context-*.xml | bean 정의 |
 | 범용 properties 정의 | /resources/egovframework/egovProp/globals.properties | global 상수 정의 |
 | 추가 properties 정의 | /WEB-INF/conf/*.properties | 추가적인 상수 정의 |

@@ -54,7 +54,7 @@
 
 ### 3. 팝업 화면 상에서 "window.dialogArguments" 처리
 
- 팝업 화면 상에서 본 화면에서 넘기는 argument를 “window.dialogArguments”를 통해 가져오는 경우 다음과 같이 수정 필요
+ 팝업 화면 상에서 본 화면에서 넘기는 argument를 "window.dialogArguments"를 통해 가져오는 경우 다음과 같이 수정 필요
 
  * 기존
 
@@ -72,7 +72,7 @@
 
 ### 4. 본 화면 (opener) 상으로 결과를 넘기기 위해 "window.returnValue" 처리
 
- 팝업 화면 상에서 본 화면으로 “window.returnValue = retVal” 형태로 결과를 넘기는 경우 다음과 같이 수정 필요
+ 팝업 화면 상에서 본 화면으로 "window.returnValue = retVal" 형태로 결과를 넘기는 경우 다음과 같이 수정 필요
 
  * 기존
 

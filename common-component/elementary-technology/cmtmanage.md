@@ -36,12 +36,12 @@
 | JSP | /WEB-INF/jsp/egovframework/com/uss/cmt/EgovCmtManageList.jsp | 출퇴근관리 목록조회 페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_altibase.xml | 출퇴근관리 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_cubrid.xml | 출퇴근관리 Cubrid용 QUERY XML |
-| QUERY XML | resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage\_SQL\_maria.xml | 출퇴근관리 Maria용 QUERY XML |
-| QUERY XML | resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage\_SQL\_mysql.xml | 출퇴근관리 Mysql용 QUERY XML |
-| QUERY XML | resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage\_SQL\_oracle.xml | 출퇴근관리 Oracle용 QUERY XML |
-| QUERY XML | resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage\_SQL\_postgres.xml | 출퇴근관리 Postgres용 QUERY XML |
-| QUERY XML | resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage\_SQL\_tibero.xml | 출퇴근관리 Tibero용 QUERY XML |
-| QUERY XML | resources/egovframework/sqlmap/com/uss/cmt/EgovCmtManage\_SQL\_goldilocks.xml | 출퇴근관리 Goldilocks용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_maria.xml | 출퇴근관리 Maria용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_mysql.xml | 출퇴근관리 Mysql용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_oracle.xml | 출퇴근관리 Oracle용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_postgres.xml | 출퇴근관리 Postgres용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_tibero.xml | 출퇴근관리 Tibero용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_goldilocks.xml | 출퇴근관리 Goldilocks용 QUERY XML |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Cmt.xml | 출퇴근관리 Id생성 Idgen XML |
 | Message | resources/egovframework/message/com/uss/cmt/message\_ko.properties | 출퇴근관리 message properties(한글) |
 | Message | resources/egovframework/message/com/uss/cmt/message\_ko.properties | 출퇴근관리 message properties(영문) |
@@ -97,7 +97,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/cmt/EgovCmtManageList.do | selectUserCmtList | cmtManageDAO” | “selectCmtList\_S |
+| 목록조회 | /uss/cmt/EgovCmtManageList.do | selectUserCmtList | cmtManageDAO" | "selectCmtList\_S |
 
  ![image](./images/cmt-출퇴근_조회.jpg)
 
@@ -111,7 +111,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | uss/cmt/EgovCmtWrkStartInsert.do | insertWrkStartCmtInfo | cmtManageDAO” | “insertWrkStartCmtInfo\_S |
+| 등록 | uss/cmt/EgovCmtWrkStartInsert.do | insertWrkStartCmtInfo | cmtManageDAO" | "insertWrkStartCmtInfo\_S |
 
  ![image](./images/cmt-출퇴근_출근.jpg)
 
@@ -125,7 +125,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | uss/cmt/EgovCmtWrkEndInsert.do | insertWrkEndCmtInfo | cmtManageDAO” | “insertWrkEndCmtInfo\_S |
+| 등록 | uss/cmt/EgovCmtWrkEndInsert.do | insertWrkEndCmtInfo | cmtManageDAO" | "insertWrkEndCmtInfo\_S |
 
  ![image](./images/cmt-출퇴근_퇴근.jpg)
 

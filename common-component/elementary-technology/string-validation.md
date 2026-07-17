@@ -22,8 +22,6 @@ menu:
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
 | 유틸리티 | egovframework.com.utl.fcc.service.EgovStringUtil.java | 문자열 처리 유틸리티 클래스 |
-| Controller | egovframework.com.utl.fcc.web.EgovComUtlTestController.java | 테스트용 Controller |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovStringValidation.jsp | 테스트 페이지 |
 
 ## 주요 메서드
 

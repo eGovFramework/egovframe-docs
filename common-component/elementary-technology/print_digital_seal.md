@@ -33,7 +33,6 @@
 | Service | egovframework.com.utl.pao.service.EgovPrntngOutpt.java | 테스트용 인터페이스 |  |
 | ServiceImpl | egovframework.com.utl.pao.service.impl.EgovPrntngOutptImpl.java | 테스트용 구현 |  |
 | DAO | egovframework.com.utl.pao.service.impl.PrntngOutptDAO.java | 테스트용 데이터 처리 |  |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovErncslOutpt.jsp | 테스트 페이지 |  |
 
 ## 사용방법
 

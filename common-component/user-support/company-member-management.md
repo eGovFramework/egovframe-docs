@@ -57,7 +57,6 @@ menu:
 | Query XML | resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_postgres.xml | PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_tibero.xml | Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/umt/EgovEntrprsManage_SQL_goldilocks.xml | Goldilocks용 Query XML |
-| Validator XML | resources/egovframework/validator/com/uss/umt/EgovEntrprsManage.xml | validator 룰 설정파일 |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-UsrCnfrm.xml | 기업회원 관리 Id생성 Idgen XML |
 | Message properties | resources/egovframework/message/com/uss/umt/message_ko.properties | 한글 메시지 |
 | Message properties | resources/egovframework/message/com/uss/umt/message_en.properties | 영문 메시지 |
@@ -149,9 +148,9 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 |---|---|---|---|---|
-| 목록조회 | /uss/umt/EgovEntrprsMberManage.do | selectEntrprsMberList | “entrprsManageDAO” | “selectEntrprsMberList” |
-|  |  |  | “entrprsManageDAO” | “selectEntrprsMberListTotCnt” |
-| 삭제 | /uss/umt/EgovEntrprsMberDelete.do | deleteEntrprsMber | “entrprsManageDAO” | “deleteEntrprs_S” |
+| 목록조회 | /uss/umt/EgovEntrprsMberManage.do | selectEntrprsMberList | "entrprsManageDAO" | "selectEntrprsMberList" |
+|  |  |  | "entrprsManageDAO" | "selectEntrprsMberListTotCnt" |
+| 삭제 | /uss/umt/EgovEntrprsMberDelete.do | deleteEntrprsMber | "entrprsManageDAO" | "deleteEntrprs_S" |
 
 - 기업회원 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.  
 - 페이지 당 검색 범위를 변경하고자 하는 경우 `context-properties.xml` 파일의 `pageUnit`, `pageSize`를 변경한다(전체 공통서비스 기능에 영향).
@@ -178,7 +177,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 |---|---|---|---|---|
 | 등록화면 | /uss/umt/EgovEntrprsMberInsertView.do | insertEntrprsMberView |  |  |
-| 등록 | /uss/umt/EgovEntrprsMberInsert.do | insertEntrprsMber | “entrprsManageDAO” | “insertEntrprs_S” |
+| 등록 | /uss/umt/EgovEntrprsMberInsert.do | insertEntrprsMber | "entrprsManageDAO" | "insertEntrprs_S" |
 
 ![기업회원관리 등록](./images/company-manage4.png)
 
@@ -199,9 +198,9 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 |---|---|---|---|---|
-| 상세조회 | /uss/umt/EgovEntrprsMberSelectUpdtView.do | updateEntrprsMberView | “entrprsManageDAO” | “selectEntrprs_S” |
-| 수정 | /uss/umt/EgovEntrprsMberSelectUpdt.do | updateEntrprsMber | “entrprsManageDAO” | “updateEntrprs_S” |
-| 삭제 | /uss/umt/EgovEntrprsMberDelete.do | deleteEntrprsMber | “entrprsManageDAO” | “deleteEntrprs_S” |
+| 상세조회 | /uss/umt/EgovEntrprsMberSelectUpdtView.do | updateEntrprsMberView | "entrprsManageDAO" | "selectEntrprs_S" |
+| 수정 | /uss/umt/EgovEntrprsMberSelectUpdt.do | updateEntrprsMber | "entrprsManageDAO" | "updateEntrprs_S" |
+| 삭제 | /uss/umt/EgovEntrprsMberDelete.do | deleteEntrprsMber | "entrprsManageDAO" | "deleteEntrprs_S" |
 
 ![기업회원관리 수정](./images/company-manage5.png)
 
@@ -227,7 +226,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 |---|---|---|---|---|
 | 비밀번호수정화면 | /uss/umt/EgovEntrprsPasswordUpdtView.do | updatePasswordView |  |  |
-| 비밀번호수정 | /uss/umt/EgovEntrprsPasswordUpdt.do | updatePassword | “entrprsManageDAO” | “updatePassword_S”, “selectPassword_S” |
+| 비밀번호수정 | /uss/umt/EgovEntrprsPasswordUpdt.do | updatePassword | "entrprsManageDAO" | "updatePassword_S", "selectPassword_S" |
 
 ![비밀번호변경](./images/company-manage6.png)
 
@@ -250,7 +249,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 |---|---|---|---|---|
-| 동의 | /uss/umt/EgovStplatCnfirmEntrprs.do | sbscrbEntrprsMber | “entrprsManageDAO” | “selectStplat_S” |
+| 동의 | /uss/umt/EgovStplatCnfirmEntrprs.do | sbscrbEntrprsMber | "entrprsManageDAO" | "selectStplat_S" |
 
 ![약관확인](./images/company-manage7.png)
 
@@ -271,7 +270,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 |---|---|---|---|---|
 | 가입신청화면 | /uss/umt/EgovEntrprsMberSbscrbView.do | sbscrbEntrprsMberView |  |  |
-| 가입신청 | /uss/umt/EgovEntrprsMberSbscrb.do | sbscrbEntrprsMber | “entrprsManageDAO” | “insertEntrprs_S” |
+| 가입신청 | /uss/umt/EgovEntrprsMberSbscrb.do | sbscrbEntrprsMber | "entrprsManageDAO" | "insertEntrprs_S" |
 
 ![기업회원관리등록](./images/company-manage8.png)
 

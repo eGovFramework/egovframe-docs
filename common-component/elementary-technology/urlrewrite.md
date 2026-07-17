@@ -70,7 +70,7 @@
 
  추가로 HTTP 및 HTTPS 포트 지정을 위하여 &lt;param-name&gt;의 값 중 httpPort 및 httpsPort 를 정의할 수 있다.
 
- targetURI를 지정하는 방법은 param-name이 targetURI로 지정 된 param-value에 전환 할 URI 패턴을 입력하면 되고, ”,” 구분자를 통해 중복 등록이 가능하다.  
+ targetURI를 지정하는 방법은 param-name이 targetURI로 지정 된 param-value에 전환 할 URI 패턴을 입력하면 되고, "," 구분자를 통해 중복 등록이 가능하다.  
 (예시) &lt;param-value&gt;/sample1/, /sample/, /index.do&lt;/param-value&gt; )
 
 ## 참고자료

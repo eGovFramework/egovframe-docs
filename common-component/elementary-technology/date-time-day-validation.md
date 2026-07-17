@@ -27,8 +27,6 @@ menu:
 | 유형 | 대상 소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | egovframework.com.utl.fcc.service.EgovDateUtil.java | 날짜/시간 관련 처리 유틸리티 클래스 | |
-| Controller | egovframework.com.utl.fcc.web.EgovDateUtilController.java | 테스트용 Controller 클래스 | |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovDateValidCeck.jsp | 테스트용 JSP 페이지 | |
 
 ### 메소드
 

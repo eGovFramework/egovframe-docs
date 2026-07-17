@@ -142,12 +142,12 @@ public class EgovBbsStatsScheduling {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 게시물 생성글수 통계검색 | /sts/bst/selectBbsStats.do | selectBbsStats | “BbsStatsDAO.selectBbsCretCntStats” |
-| 게시물 총조회수 통계검색 | /sts/bst/selectBbsStats.do | selectBbsStats | “BbsStatsDAO.selectBbsTotCntStats” |
-| 게시물 평균조회수 통계검색 | /sts/bst/selectBbsStats.do | selectBbsStats | “BbsStatsDAO.selectBbsAvgCntStats” |
-| 게시물 최고조회 게시물 정보검색 | /bst/sts/selectBbsStats.do | selectBbsStats | “BbsStatsDAO.selectBbsMaxCntStats” |
-| 게시물 최소조회 게시물 정보검색 | /bst/sts/selectBbsStats.do | selectBbsStats | “BbsStatsDAO.selectBbsMinCntStats” |
-| 게시물 최고게시자 정보검색 | /sts/bst/selectBbsStats.do | selectBbsStats | “BbsStatsDAO.selectBbsMaxUserStats” |
+| 게시물 생성글수 통계검색 | /sts/bst/selectBbsStats.do | selectBbsStats | "BbsStatsDAO.selectBbsCretCntStats" |
+| 게시물 총조회수 통계검색 | /sts/bst/selectBbsStats.do | selectBbsStats | "BbsStatsDAO.selectBbsTotCntStats" |
+| 게시물 평균조회수 통계검색 | /sts/bst/selectBbsStats.do | selectBbsStats | "BbsStatsDAO.selectBbsAvgCntStats" |
+| 게시물 최고조회 게시물 정보검색 | /bst/sts/selectBbsStats.do | selectBbsStats | "BbsStatsDAO.selectBbsMaxCntStats" |
+| 게시물 최소조회 게시물 정보검색 | /bst/sts/selectBbsStats.do | selectBbsStats | "BbsStatsDAO.selectBbsMinCntStats" |
+| 게시물 최고게시자 정보검색 | /sts/bst/selectBbsStats.do | selectBbsStats | "BbsStatsDAO.selectBbsMaxUserStats" |
 
  ![image](./images/sts-stats1.png)
 

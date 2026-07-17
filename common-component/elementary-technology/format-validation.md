@@ -23,8 +23,6 @@ menu:
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
 | 유틸리티 | egovframework.com.utl.fcc.service.EgovFormatCheckUtil.java | 포맷 유효성 체크 유틸리티 클래스 |
-| Controller | egovframework.com.utl.fcc.web.EgovFormatCheckUtilController.java | 테스트용 Controller |
-| JSP | /WEB-INF/jsp/egovframework/cmm/utl/EgovFormatCheck.jsp | 테스트 페이지 |
 
 ## 주요 메서드
 
