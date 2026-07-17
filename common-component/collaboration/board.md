@@ -55,7 +55,7 @@ menu:
 
 게시판 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조 관계에 따라 협업의 공통기능(com), 디자인 템플릿과 함께 배포 파일을 구성한다.
 
-- 패키지 간 참조 관계 : [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md/#협업)
+- 패키지 간 참조 관계 : [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md#협업)
 
 ### 관련 테이블
 
@@ -72,5 +72,5 @@ menu:
 
 ## 참고자료
 
-- [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md/#협업)
+- [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md#협업)
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

@@ -22,7 +22,7 @@ menu:
 ### 패키지 참조 관계
 
  저작권보호정책 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
-- 패키지 간 참조 관계 : [사용자지원 Package Dependency](../intro/package-reference.md/#사용자지원)
+- 패키지 간 참조 관계 : [사용자지원 Package Dependency](../intro/package-reference.md#사용자지원)
 
 ### 관련소스
 

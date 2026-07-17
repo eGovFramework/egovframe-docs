@@ -32,4 +32,4 @@ menu:
 ## 참고자료
 
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)
-- [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md/#협업)
+- [게시판, 커뮤니티, 동호회 Package Dependency](../intro/package-reference.md#협업)
