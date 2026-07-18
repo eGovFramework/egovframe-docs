@@ -10,11 +10,12 @@ menu:
     parent: "formatter-util"
 ---
 
-# 특수문자처리
+# 특수문자열 처리
 
 ## 개요
 
-특수문자처리는 HTML 등 웹 표시 환경에서 특수문자가 깨지거나 스크립트로 해석되지 않도록 변환·복원하는 기능을 제공하는 요소기술이다. `EgovStringUtil` 유틸리티의 정적 메서드로 사용한다.
+특수문자열 처리는 HTML 등의 웹 환경에서 특수문자를 안전하게 표시하고 처리하기 위한 요소기술이다.
+`EgovStringUtil`에서 제공하는 메서드를 통해 문자열의 특수문자를 변환하거나 HTML 표시를 위한 문자열 처리를 수행할 수 있다.
 
 ## 관련 소스
 
@@ -26,9 +27,18 @@ menu:
 
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
-| `getSpclStrCnvr(String srcString)` | `String` | 특수문자를 웹 브라우저에서 정상적으로 보이기 위해 특수문자를 처리(' & lT)하는 기능이다 |
-| `getHtmlStrCnvr(String srcString)` | `String` | html의 특수문자를 표현하기 위해 |
-| `checkHtmlView(String strString)` | `String` | Html 코드가 들어간 문서를 표시할때 태그에 손상없이 보이기 위한 메서드 |
+| `getSpclStrCnvr(String srcString)` | `String` | 입력된 문자열의 특수문자를 웹 화면에서 표시할 수 있는 형태로 변환한다. |
+| `getHtmlStrCnvr(String srcString)` | `String` | HTML의 특수문자를 처리하여 변환된 문자열을 반환한다. |
+| `checkHtmlView(String strString)` | `String` | HTML 코드가 포함된 문자열을 화면에 표시하기 위한 형태로 처리한다. |
+
+## 입력값 (Input)
+
+- `srcString`: 특수문자를 처리할 문자열
+- `strString`: HTML 표시를 위해 처리할 문자열
+
+## 반환값 (Output)
+
+- `String`: 각 메서드의 처리 결과가 반영된 문자열
 
 ## 사용 예
 
