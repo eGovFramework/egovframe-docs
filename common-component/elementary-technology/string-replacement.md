@@ -26,13 +26,13 @@ menu:
 
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
-| `replace(String source, String subject, String object)` | `String` | 원본 문자열의 포함된 특정 문자열을 새로운 문자열로 변환하는 메서드 |
-| `replaceOnce(String source, String subject, String object)` | `String` | 원본 문자열의 포함된 특정 문자열 첫번째 한개만 새로운 문자열로 변환하는 메서드 |
+| `replace(String source, String subject, String object)` | `String` | 원본 문자열에 포함된 특정 문자열을 새로운 문자열로 치환한다. |
+| `replaceOnce(String source, String subject, String object)` | `String` | 원본 문자열에 포함된 특정 문자열 중 첫 번째 항목만 새로운 문자열로 치환한다. |
 | `replaceChar(String source, String subject, String object)` | `String` | subject에 포함된 각각의 문자를 object로 변환한다 |
 | `remove(String str, char remove)` | `String` | 기준 문자열에 포함된 모든 대상 문자(char)를 제거한다 |
 | `removeCommaChar(String str)` | `String` | 문자열 내부의 콤마 character(,)를 모두 제거한다 |
 | `removeMinusChar(String str)` | `String` | 문자열 내부의 마이너스 character(-)를 모두 제거한다 |
-| `removeWhitespace(String str)` | `String` | 문자열에서 {@link Character#isWhitespace(char)}에 정의된 |
+| `removeWhitespace(String str)` | `String` | 문자열에서 공백 문자를 모두 제거한다. |
 | `strip(String str, String stripChars)` | `String` | 입력된 String의 앞, 뒤에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다 |
 | `stripStart(String str, String stripChars)` | `String` | 입력된 String의 앞쪽에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다 |
 | `stripEnd(String str, String stripChars)` | `String` | 입력된 String의 뒤쪽에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다 |
