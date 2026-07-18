@@ -28476,6 +28476,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>시스템정보확인에서 제공하는 기능은 다음과 같다.&lt;/p>
 &lt;ol>
 &lt;li>시스템의 프로세서(Processor) ID(CPU ID)를 가져오는 기능&lt;/li>
+&lt;li>시스템의 호스트명을 가져오는 기능&lt;/li>
 &lt;li>시스템의 운영체제 정보를 가져오는 기능&lt;/li>
 &lt;li>시스템의 메모리 용량 정보를 가져오는 기능&lt;/li>
 &lt;li>시스템의 디스크 정보를 가져오는 기능&lt;/li>
