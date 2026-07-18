@@ -25944,10 +25944,13 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;/p></description></item><item><title>송수신모니터링</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/send-receive-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/send-receive-monitoring/</guid><description>&lt;!-- markdownlint-disable MD013 MD025 -->
 &lt;h1 id="송수신모니터링">송수신모니터링&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>송수신모니터링은 연계기관과의 송수신 상태를 주기적으로 모니터링하는 기능을 제공한다.
-모니터링하고자 하는 연계는 시스템연계관리를 통해 시스템에 등록되어 있어야 한다. 모니터링 시에 사용되는 송수신상태를 체크하는 테스트 클래스는 &lt;code>egovframework.com.utl.sys.trm.service.TrsmrcvMntrngChecker&lt;/code> 인터페이스를 구현하여 모니터링 대상 등록 시 해당 클래스를 테스트 클래스명으로 등록해야 한다.&lt;/p>
+&lt;p>송수신모니터링은 연계기관과의 송수신 상태를 주기적으로 점검하고 관리하는 기능을 제공한다.&lt;/p>
+&lt;p>모니터링 대상 연계 정보는 시스템연계관리를 통해 사전에 등록되어 있어야 한다.
+송수신 상태를 확인하는 테스트 클래스는 &lt;code>TrsmrcvMntrngChecker&lt;/code> 인터페이스를 구현해야 하며,
+모니터링 대상 등록 시 해당 구현 클래스를 테스트 클래스명으로 등록하여 사용한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>송수신모니터링을 등록하기 위한 목적으로 송수신모니터링의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
+&lt;p>송수신모니터링은 모니터링 대상 정보의 등록, 수정, 삭제, 조회 기능과 모니터링 결과에 대한 로그 조회 기능을 제공한다.&lt;/p>
+&lt;p>주요 기능은 다음과 같다.&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>송수신모니터링목록조회&lt;/strong>: 송수신모니터링으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.&lt;/li>
 &lt;li>&lt;strong>송수신모니터링등록&lt;/strong>: 송수신모니터링정보를 등록하고, 등록 결과를 조회한다.&lt;/li>
@@ -26025,7 +26028,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
  &lt;tr>
  &lt;td>JSP&lt;/td>
  &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp&lt;/code>&lt;/td>
- &lt;td>등록된 송수신모니터링로그을 조회하기 위한 JSP 페이지&lt;/td>
+ &lt;td>등록된 송수신모니터링로그를 조회하기 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>XML&lt;/td>
