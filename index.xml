@@ -9736,11 +9736,14 @@ Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="migration-to-slf4j-from-legacy-apis">Migration to SLF4J from Legacy APIs&lt;/h3>
 &lt;p>기존 Legacy API을 유지한 채 SLF4J를 함께 사용하려면, SLF4J와 레거시 API를 연결할 수 있는 Bridge jar가 필요하다.&lt;br>
 아래에서는 Log4j 1.x와 JCL 레거시를 기준으로 설명한다.&lt;/p></description></item><item><title>Social Login(Naver, Google, KAKAO)</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/social_login_naver_google_kakao/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/external-components/social_login_naver_google_kakao/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>Social Login은 네이버, 구글, 카카오의 로그인API를 이용해 로그인을 진행하는 연계로그인 기능을 제공합니다.&lt;/p>
+&lt;p>Social Login은 네이버(Naver), 구글(Google), 카카오(Kakao)의 로그인 API를 이용하여 사용자를 인증하는 소셜 로그인 기능을 제공한다.&lt;/p>
+&lt;p>사용자는 각 서비스의 계정을 이용하여 별도의 로그인 정보를 입력하지 않고 연계 로그인을 진행할 수 있다.&lt;/p>
 &lt;h2 id="특징">특징&lt;/h2>
-&lt;p>Social Login 연동은 다음과 같은 특징을 제공합니다.&lt;/p>
+&lt;p>Social Login은 다음과 같은 기능을 제공한다.&lt;/p>
 &lt;ul>
-&lt;li>네이버(Naver), 구글(Google), 카카오(KaKao) 계정으로 로그인&lt;/li>
+&lt;li>네이버(Naver), 구글(Google), 카카오(Kakao) 계정을 이용한 로그인&lt;/li>
+&lt;li>OAuth 인증을 통한 사용자 정보 조회&lt;/li>
+&lt;li>서비스별 Client ID, Client Secret 및 Redirect URI 설정 지원&lt;/li>
 &lt;/ul>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
@@ -9817,7 +9820,7 @@ Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.
 &lt;/table>
 &lt;h2 id="설정방법">설정방법&lt;/h2>
 &lt;h3 id="소셜-로그인-api-생성-방법">소셜 로그인 API 생성 방법&lt;/h3>
-&lt;p>각 소셜에서 로그인API를 등록해 ClientID / ClientSecret 를 발급받고 RedirectURl을 지정해야합니다.&lt;/p></description></item><item><title>SockJS Fallback Options</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</guid><description>&lt;h1 id="sockjs-fallback-options">SockJS Fallback Options&lt;/h1>
+&lt;p>각 소셜 로그인 서비스에서 애플리케이션을 등록하고 &lt;code>Client ID&lt;/code>와 &lt;code>Client Secret&lt;/code>을 발급받은 뒤, &lt;code>Redirect URI&lt;/code>를 설정해야 한다.&lt;/p></description></item><item><title>SockJS Fallback Options</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/webSocket/websocket-sockjs/</guid><description>&lt;h1 id="sockjs-fallback-options">SockJS Fallback Options&lt;/h1>
 &lt;p>
 
 
