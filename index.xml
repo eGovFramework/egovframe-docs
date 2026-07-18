@@ -39485,152 +39485,17 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
 &lt;p>프로퍼티 기능은 프로퍼티 파일에 정의된 설정정보를 로드하고, 지정한 Key를 이용하여 필요한 값을 조회하는 기능을 제공한다.
 이를 통해 애플리케이션의 설정정보를 코드와 분리하여 관리하고 공통으로 활용할 수 있다.&lt;/p></description></item><item><title>프록시서비스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/proxy-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/proxy-service/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>프록시서비스&lt;/strong>는 네트워크 연결에 대한 프록시 설정을 동적으로 관리하고, 연결에 대한 기본 서비스(telnet, ftp, jdbc 연결)에 대한 로깅을 기록할 수 있는 네트워크 서비스 기능을 제공한다.&lt;/p>
+&lt;h3 id="활용-예시">활용 예시&lt;/h3>
+&lt;p>프록시서비스는 다음과 같은 상황에서 활용할 수 있다.&lt;/p>
+&lt;ul>
+&lt;li>프록시 서버를 통해 네트워크 연결을 관리하는 경우&lt;/li>
+&lt;li>클라이언트의 프록시 접속 이력을 기록하는 경우&lt;/li>
+&lt;li>서비스별 프록시 설정을 중앙에서 관리하는 경우&lt;/li>
+&lt;li>프록시 접속 로그를 기반으로 운영 현황을 점검하는 경우&lt;/li>
+&lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>&lt;strong>프록시서비스&lt;/strong>는 네트워크 연결에 대한 프록시 설정 정보의 등록, 수정, 삭제, 조회, 목록조회의 기능 및 프록시 로그생성, 로그조회의 기능을 수반한다.&lt;/p>
-&lt;ol>
-&lt;li>프록시설정목록조회: 프록시설정 정보를 최근 등록 순서대로 조회하고, 그 결과를 화면에 반영한다.&lt;/li>
-&lt;li>프록시설정등록: 프록시설정 정보를 등록하고, 등록한 결과를 조회한다.&lt;/li>
-&lt;li>프록시설정수정: 기 등록된 프록시설정 정보를 수정한다.&lt;/li>
-&lt;li>프록시설정삭제: 기 등록된 프록시설정 정보를 삭제한다.&lt;/li>
-&lt;li>프록시설정상세조회: 프록시설정 목록에서 선택한 프록시설정 상세정보를 보여준다.&lt;/li>
-&lt;li>프록시로그생성: 프록시설정을 통해 접속한 클라이언트의 접속 로그를 생성한다.&lt;/li>
-&lt;li>프록시로그조회: 프록시설정을 통해 접속한 클라이언트의 접속 로그를 확인한다.&lt;/li>
-&lt;/ol>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.web.EgovProxySvcController.java&lt;/td>
- &lt;td>정보관리 컨트롤러&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.EgovProxySvcService.java&lt;/td>
- &lt;td>정보관리 인터페이스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.impl.EgovProxySvcServiceImpl.java&lt;/td>
- &lt;td>정보관리 서비스 구현체&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.impl.ProxySvcDAO.java&lt;/td>
- &lt;td>정보관리 DAO&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.ProxySvc.java&lt;/td>
- &lt;td>정보관리 모델&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.ProxyLog.java&lt;/td>
- &lt;td>로그관리 모델&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.ProxySvc.java&lt;/td>
- &lt;td>정보관리 Model&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.utl.sys.pxy.service.ProxyLog.java&lt;/td>
- &lt;td>로그관리 Model&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxyLogList.jsp&lt;/td>
- &lt;td>로그조회 화면&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcList.jsp&lt;/td>
- &lt;td>목록조회 화면&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcDetail.jsp&lt;/td>
- &lt;td>상세조회 화면&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcRegist.jsp&lt;/td>
- &lt;td>등록 화면&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/utl/sys/pxy/EgovProxySvcUpdt.jsp&lt;/td>
- &lt;td>수정 화면&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_altibase.xml&lt;/td>
- &lt;td>Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_cubrid.xml&lt;/td>
- &lt;td>Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_maria.xml&lt;/td>
- &lt;td>MariaDB용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_mysql.xml&lt;/td>
- &lt;td>MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_oracle.xml&lt;/td>
- &lt;td>Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_postgres.xml&lt;/td>
- &lt;td>PostgreSQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_tibero.xml&lt;/td>
- &lt;td>Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/utl/sys/pxy/EgovProxySvc_SQL_goldilocks.xml&lt;/td>
- &lt;td>Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message prop&lt;/td>
- &lt;td>resources/egovframework/message/com/utl/sys/pxy/message_en.properties&lt;/td>
- &lt;td>영문 Message&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message prop&lt;/td>
- &lt;td>resources/egovframework/message/com/utl/sys/pxy/message_ko.properties&lt;/td>
- &lt;td>한글 Message&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-ProxySvc.xml&lt;/td>
- &lt;td>Idgen XML&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/images/proxy-service-class-diagram.png" alt="클래스 다이어그램" >
-&lt;/p></description></item><item><title>프린터상태확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_status/</guid><description>&lt;h1 id="요소기술---프린터상태확인">요소기술 - 프린터상태확인&lt;/h1>
+&lt;p>프록시서비스는 프록시 설정 정보를 등록·관리하고,
+프록시를 통해 발생한 네트워크 연결 로그를 조회하는 기능을 제공한다.&lt;/p></description></item><item><title>프린터상태확인</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/print/print_status/</guid><description>&lt;h1 id="요소기술---프린터상태확인">요소기술 - 프린터상태확인&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>인터넷 웹 브라우저에서 인쇄/출력 시 프린터 상태 확인 팝업 창을 자동으로 보여주는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
