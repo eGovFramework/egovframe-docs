@@ -26,10 +26,10 @@ menu:
 
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
-| `indexOf(String str, String searchStr)` | `int` | str 중 searchStr의 시작(index) 위치를 반환 |
-| `split(String source, String separator)` | `String[]` | 문자열을 지정한 분리자에 의해 배열로 리턴하는 메서드 |
-| `split(String source, String separator, int arraylength)` | `String[]` | 문자열을 지정한 분리자에 의해 지정된 길이의 배열로 리턴하는 메서드 |
-| `isEmpty(String str)` | `boolean` | String이 비었거나("") 혹은 null 인지 검증한다 |
+| `indexOf(String str, String searchStr)` | `int` | 문자열 `str`에서 `searchStr`이 처음 나타나는 위치(index)를 반환한다. |
+| `split(String source, String separator)` | `String[]` | 문자열을 지정한 분리자를 기준으로 분할하여 배열로 반환한다. |
+| `split(String source, String separator, int arraylength)` | `String[]` | 문자열을 지정한 분리자를 기준으로 분할하여 지정된 길이의 배열로 반환한다. |
+| `isEmpty(String str)` | `boolean` | 문자열이 빈 문자열(`""`)이거나 `null`인지 확인한다. |
 
 ## 사용 예
 
