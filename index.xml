@@ -28890,6 +28890,13 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/ul></description></item><item><title>실수/정수/음수체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/real-int-negative-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/real-int-negative-check/</guid><description>&lt;h1 id="실수정수음수-체크">실수/정수/음수 체크&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>실수/정수/음수 체크는 특정 숫자가 실수인지, 정수인지, 음수인지 판별하는 요소기술이다.&lt;/p>
+&lt;h3 id="활용-예시">활용 예시&lt;/h3>
+&lt;p>실수/정수/음수 체크 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p>
+&lt;ul>
+&lt;li>입력된 숫자의 유형을 판별하는 경우&lt;/li>
+&lt;li>숫자 데이터의 특성에 따라 처리 로직을 구분하는 경우&lt;/li>
+&lt;li>수치 데이터를 검증하거나 분류하는 경우&lt;/li>
+&lt;/ul>
 &lt;h2 id="관련-소스">관련 소스&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -28920,12 +28927,23 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>checkRlnoInteger(double srcNumber)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>특정숫자가 실수인지, 정수인지, 음수인지 체크하는 기능 123이 실수인지, 정수인지, 음수인지 체크하는 기능을 제공함&lt;/td>
+ &lt;td>입력된 숫자가 실수, 정수 또는 음수인지 판별하는 기능을 제공한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
+&lt;h3 id="입력값-input">입력값 (Input)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>srcNumber&lt;/code>: 실수, 정수 또는 음수 여부를 판별할 숫자&lt;/li>
+&lt;/ul>
+&lt;h3 id="반환값-output">반환값 (Output)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>int&lt;/code>: 입력된 숫자의 유형을 판별한 결과값&lt;/li>
+&lt;/ul>
 &lt;h2 id="사용-예">사용 예&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#458;font-weight:bold">int&lt;/span>&lt;span style="color:#bbb"> &lt;/span>type&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovNumberUtil.&lt;span style="color:#008080">checkRlnoInteger&lt;/span>(&lt;span style="color:#d14">&amp;#34;123&amp;#34;&lt;/span>);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 실수/정수/음수 판별&lt;/span>&lt;span style="color:#bbb">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.fcc.service.EgovNumberUtil&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">double&lt;/span>&lt;span style="color:#bbb"> &lt;/span>srcNumber&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>123;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">int&lt;/span>&lt;span style="color:#bbb"> &lt;/span>type&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovNumberUtil.&lt;span style="color:#008080">checkRlnoInteger&lt;/span>(srcNumber);&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>
