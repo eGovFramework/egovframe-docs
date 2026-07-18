@@ -15,13 +15,17 @@
 
 ## 개요
 
- Social Login은 네이버, 구글, 카카오의 로그인API를 이용해 로그인을 진행하는 연계로그인 기능을 제공합니다.
+Social Login은 네이버(Naver), 구글(Google), 카카오(Kakao)의 로그인 API를 이용하여 사용자를 인증하는 소셜 로그인 기능을 제공한다.
+
+사용자는 각 서비스의 계정을 이용하여 별도의 로그인 정보를 입력하지 않고 연계 로그인을 진행할 수 있다.
 
 ## 특징
 
- Social Login 연동은 다음과 같은 특징을 제공합니다.  
+Social Login은 다음과 같은 기능을 제공한다.
 
-- 네이버(Naver), 구글(Google), 카카오(KaKao) 계정으로 로그인
+- 네이버(Naver), 구글(Google), 카카오(Kakao) 계정을 이용한 로그인
+- OAuth 인증을 통한 사용자 정보 조회
+- 서비스별 Client ID, Client Secret 및 Redirect URI 설정 지원
 
 ### 관련소스
 
@@ -42,7 +46,7 @@
 
 ### 소셜 로그인 API 생성 방법
 
- 각 소셜에서 로그인API를 등록해 ClientID / ClientSecret 를 발급받고 RedirectURl을 지정해야합니다.
+ 각 소셜 로그인 서비스에서 애플리케이션을 등록하고 `Client ID`와 `Client Secret`을 발급받은 뒤, `Redirect URI`를 설정해야 한다.
 
  <로그인 API 등록 URL>
 
@@ -50,9 +54,9 @@
 - 네이버(Naver) : [https://developers.naver.com/products/login/api/api.md](https://developers.naver.com/products/login/api/api.md)
 - 카카오(Kakao) : [https://developers.kakao.com/docs/latest/ko/kakaologin/common](https://developers.kakao.com/docs/latest/ko/kakaologin/common)
 
-### 소셜 Oauth 인증값 설정(context-oauth.xml)
+### 소셜 OAuth 인증값 설정 (`context-oauth.xml`)
 
- 각 소셜페이지에서 로그인API를 생성하고 받은 ClientID와 ClientSecret을 xml에 설정해야합니다.
+각 소셜 로그인 서비스에서 발급받은 `Client ID`와 `Client Secret`, 인증 완료 후 이동할 `Redirect URI` 등의 정보를 `context-oauth.xml`에 설정한다.
 
 - 구글 로그인 인증 설정
 
@@ -174,7 +178,7 @@ public String oauthLoginCallback(@PathVariable String oauthService, Model model,
 
 ## 사용방법
 
-- {contextPath}/uat/uia/oauthLoginUsr 로 이동하여 소셜로그인을 진행합니다.
+`{contextPath}/uat/uia/oauthLoginUsr`로 이동하여 소셜 로그인을 진행한다.
 
  ![image](./images/ext-sociallogin_main.png)
 
@@ -184,15 +188,16 @@ public String oauthLoginCallback(@PathVariable String oauthService, Model model,
 
  ![image](./images/ext-sociallogin1.png)
 
-- 선택된 계정으로 계정 인증을 시도합니다
+- 선택된 계정으로 사용자 인증을 시도합니다
 
  ![image](./images/ext-sociallogin2.png)
 
-- 소셜 로그인이 성공한 경우 결과창
+- 소셜 로그인이 성공한 경우 결과창을 확인 할 수 있습니다.
 
  ![image](./images/ext-sociallogin_result.png)
 
- ※ 소셜 로그인 인증 성공 시 Console에 로그인 정보가 출력됩니다. (소셜별 상이)
+> [!NOTE]
+> 소셜 로그인 인증에 성공하면 Console에 로그인 정보가 출력된다. 출력되는 정보는 소셜 로그인 서비스에 따라 다를 수 있다.
 
 ```json
 {
