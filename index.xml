@@ -29619,9 +29619,10 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/cop-smplcfm-cdd_%ec%95%bd%ec%8b%9d%ea%b2%b0%ec%9e%ac%ea%b4%80%eb%a6%ac.png" alt="image" >
-&lt;/p></description></item><item><title>양력/음력변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</guid><description>&lt;h1 id="양음력변환">양음력변환&lt;/h1>
+&lt;/p></description></item><item><title>양력/음력변환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/solar-lunar-conversion/</guid><description>&lt;h1 id="양력음력-변환">양력/음력 변환&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>양음력변환은 양력 일자를 음력 일자로 변환하는 요소기술이다. 명절·기념일 등 음력 기반 일자 처리에 활용한다.&lt;/p>
+&lt;p>양력/음력 변환은 양력과 음력 간의 날짜 변환을 지원하는 요소기술이다.
+음력을 기준으로 하는 명절이나 기념일 등의 날짜를 처리하는 데 활용할 수 있다.&lt;/p>
 &lt;h2 id="관련-소스">관련 소스&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -29656,6 +29657,15 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
+&lt;h2 id="입력값-input">입력값 (Input)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>sDate&lt;/code>: 변환할 날짜 문자열&lt;/li>
+&lt;li>&lt;code>iLeapMonth&lt;/code>: 윤달 여부를 나타내는 값&lt;/li>
+&lt;/ul>
+&lt;h2 id="반환값-output">반환값 (Output)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>String&lt;/code>: 변환된 날짜 문자열&lt;/li>
+&lt;/ul>
 &lt;h2 id="사용-예">사용 예&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String&lt;span style="color:#bbb"> &lt;/span>lunar&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovDateUtil.&lt;span style="color:#008080">toSolar&lt;/span>(&lt;span style="color:#d14">&amp;#34;20260711&amp;#34;&lt;/span>,&lt;span style="color:#bbb"> &lt;/span>0);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 양력 → 음력 변환&lt;/span>&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
