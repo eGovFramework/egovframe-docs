@@ -22,9 +22,10 @@ menu:
 시스템정보확인에서 제공하는 기능은 다음과 같다.
 
 1. 시스템의 프로세서(Processor) ID(CPU ID)를 가져오는 기능
-2. 시스템의 운영체제 정보를 가져오는 기능
-3. 시스템의 메모리 용량 정보를 가져오는 기능
-4. 시스템의 디스크 정보를 가져오는 기능
+2. 시스템의 호스트명을 가져오는 기능
+3. 시스템의 운영체제 정보를 가져오는 기능
+4. 시스템의 메모리 용량 정보를 가져오는 기능
+5. 시스템의 디스크 정보를 가져오는 기능
 
 ### 관련 소스
 
@@ -42,18 +43,18 @@ menu:
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| String | `getProcessorID()` | 프로세서ID 조회 | 시스템의 프로세서ID를 리턴 |
-| String | `getHostName()` | 호스트명 조회 | 시스템의 호스트명을 리턴 |
-| String | `getOSName()` | OS이름 조회 | 시스템의 OS 이름을 리턴 |
-| String | `getOSVersion()` | OS버전 조회 | 시스템의 OS 버전을 리턴 |
-| String | `getOSPrductor()` | OS제조사 조회 | 시스템의 OS 제조사를 리턴 |
-| float | `getMoryFullCpcty()` | 메모리 전체용량 조회 | 시스템의 메모리 전체용량 리턴 |
-| float | `getMoryUsedCpcty()` | 메모리 사용용량 조회 | 시스템의 메모리 사용용량 리턴 |
-| float | `getMoryFreeCpcty()` | 메모리 유효용량 조회 | 시스템의 메모리 유효용량 리턴 |
-| ArrayList | `getDiskName()` | 디스크 목록 조회 | 시스템의 디스크목록 리턴 |
-| float | `getDiskFullCpcty()` | 디스크 전체용량 조회 | 시스템의 디스크 전체용량 리턴 |
-| float | `getDiskUsedCpcty()` | 디스크 사용용량 조회 | 시스템의 디스크 사용용량 리턴 |
-| float | `getDiskFreeCpcty()` | 디스크 유효용량 조회 | 시스템의 디스크 유효용량 리턴 |
+| String | `getProcessorID()` | 프로세서ID 조회 | 시스템의 프로세서ID를 반환한다. |
+| String | `getHostName()` | 호스트명 조회 | 시스템의 호스트명을 반환한다. |
+| String | `getOSName()` | OS이름 조회 | 시스템의 OS 이름을 반환한다. |
+| String | `getOSVersion()` | OS버전 조회 | 시스템의 OS 버전을 반환한다. |
+| String | `getOSPrductor()` | OS제조사 조회 | 시스템의 OS 제조사를 반환한다. |
+| float | `getMoryFullCpcty()` | 메모리 전체용량 조회 | 시스템의 메모리 전체용량을 반환한다. |
+| float | `getMoryUsedCpcty()` | 메모리 사용용량 조회 | 시스템의 메모리 사용용량을 반환한다. |
+| float | `getMoryFreeCpcty()` | 메모리 유효용량 조회 | 시스템의 메모리 유효용량을 반환한다. |
+| ArrayList | `getDiskName()` | 디스크 목록 조회 | 시스템의 디스크 목록을 반환한다. |
+| float | `getDiskFullCpcty()` | 디스크 전체용량 조회 | 시스템의 디스크 전체용량을 반환한다. |
+| float | `getDiskUsedCpcty()` | 디스크 사용용량 조회 | 시스템의 디스크 사용용량을 반환한다. |
+| float | `getDiskFreeCpcty()` | 디스크 유효용량 조회 | 시스템의 디스크 유효용량을 반환한다. |
 <!-- markdownlint-restore -->
 
 #### 반환값 정의 (Output)
