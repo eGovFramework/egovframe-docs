@@ -16,12 +16,17 @@ menu:
 
 ## 개요
 
-송수신모니터링은 연계기관과의 송수신 상태를 주기적으로 모니터링하는 기능을 제공한다.
-모니터링하고자 하는 연계는 시스템연계관리를 통해 시스템에 등록되어 있어야 한다. 모니터링 시에 사용되는 송수신상태를 체크하는 테스트 클래스는 `egovframework.com.utl.sys.trm.service.TrsmrcvMntrngChecker` 인터페이스를 구현하여 모니터링 대상 등록 시 해당 클래스를 테스트 클래스명으로 등록해야 한다.
+송수신모니터링은 연계기관과의 송수신 상태를 주기적으로 점검하고 관리하는 기능을 제공한다.
+
+모니터링 대상 연계 정보는 시스템연계관리를 통해 사전에 등록되어 있어야 한다.
+송수신 상태를 확인하는 테스트 클래스는 `TrsmrcvMntrngChecker` 인터페이스를 구현해야 하며,
+모니터링 대상 등록 시 해당 구현 클래스를 테스트 클래스명으로 등록하여 사용한다.
 
 ## 설명
 
-송수신모니터링을 등록하기 위한 목적으로 송수신모니터링의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
+송수신모니터링은 모니터링 대상 정보의 등록, 수정, 삭제, 조회 기능과 모니터링 결과에 대한 로그 조회 기능을 제공한다.
+
+주요 기능은 다음과 같다.
 
 1. **송수신모니터링목록조회**: 송수신모니터링으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
 2. **송수신모니터링등록**: 송수신모니터링정보를 등록하고, 등록 결과를 조회한다.
@@ -46,7 +51,7 @@ menu:
 | JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngUpdt.jsp` | 송수신모니터링 수정을 위한 JSP 페이지 |
 | JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngDetail.jsp` | 등록된 송수신모니터링을 조회하기 위한 JSP 페이지 |
 | JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogList.jsp` | 송수신모니터링로그목록조회를 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp` | 등록된 송수신모니터링로그을 조회하기 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp` | 등록된 송수신모니터링로그를 조회하기 위한 JSP 페이지 |
 | XML | `/egovframework/sqlmap/com/utl/sys/trm/EgovTrsmrcvMntrng_SQL_*.xml` | 송수신모니터링 QUERY XML |
 
 ### 클래스 다이어그램
@@ -88,8 +93,8 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 </bean>
 ```
 
-- `startDelay`는 서버 시작 후 몇 초 뒤에 시작할지를 설정한다. (ms 단위: 현재 1분)
-- `repeatInterval`은 몇 초에 한 번씩 실행될지를 설정한다. (ms 단위: 현재 10분)
+- `startDelay`: 서버 시작 후 모니터링을 시작하기까지의 대기 시간을 설정한다. 단위는 밀리초(ms)이며, 예제의 `60000`은 1분이다.
+- `repeatInterval`: 모니터링 작업의 반복 실행 주기를 설정한다. 단위는 밀리초(ms)이며, 예제의 `600000`은 10분이다.
 
 ```xml
 <!-- 모니터링 스케줄러 -->
