@@ -37,7 +37,7 @@ menu:
 | Model | egovframework.com.sym.tbm.tbp.service.TroblProcess.java | 장애처리결과정보 관리를 위한 Model 클래스 |
 | VO | egovframework.com.sym.tbm.tbp.service.TroblProcessVO.java | 장애처리결과정보 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbp/EgovTroblProcessList.jsp | 장애처리결과정보 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbp/EgovTroblProcessRegist.jsp | 장애처리결과정보 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbp/EgovTroblProcessRegist.jsp | 장애처리결과정보 등록을 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/sym/tbm/tbp/EgovTroblProcess\_SQL\_altibase.xml | 장애처리결과정보 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sym/tbm/tbp/EgovTroblProcess\_SQL\_cubrid.xml | 장애처리결과정보 관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sym/tbm/tbp/EgovTroblProcess\_SQL\_maria.xml | 장애처리결과정보 관리를 위한 MariaDB용 Query XML |

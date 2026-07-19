@@ -40,8 +40,8 @@ menu:
 | Model | egovframework.com.sym.sym.nwk.service.Ntwrk.java | 네트워크관리를 위한 Model 클래스 |
 | VO | egovframework.com.sym.sym.nwk.service.NtwrkVO.java | 네트워크관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/nwk/EgovNtwrkList.jsp | 네트워크 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/nwk/EgovNtwrkRegist.jsp | 네트워크 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/nwk/EgovNtwrkUpdt.jsp | 네트워크 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/nwk/EgovNtwrkRegist.jsp | 네트워크 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/nwk/EgovNtwrkUpdt.jsp | 네트워크 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/nwk/EgovNtwrkDetail.jsp | 등록된 네트워크를 조회하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/nwk/EgovNtwrk\_SQL\_mysql.xml | 네트워크관리 MySQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/nwk/EgovNtwrk\_SQL\_oracle.xml | 네트워크관리 Oracle용 QUERY XML |

@@ -19,7 +19,7 @@ menu:
 
 ## 설명
 
- 휴가관리는 휴가을 등록하기 위한 목적으로 휴가 등록, 수정, 삭제, 조회, 목록조회, 승인처리 기능을 수반한다.
+ 휴가관리는 휴가를 등록하기 위한 목적으로 휴가 등록, 수정, 삭제, 조회, 목록조회, 승인처리 기능을 수반한다.
 ```text
  ① 휴가관리목록 : 휴가관리 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
  ② 휴가등록 : 휴가정보를 등록하고, 등록 결과를 조회한다.
@@ -42,9 +42,9 @@ menu:
 | VO | egovframework.com.uss.ion.vct.service.VcatnManageVO.java | 휴가 관리를 위한 VO 클래스 |
 | Model | egovframework.com.uss.ion.yrc.service.IndvdlYrycManage.java | 연도별 연차 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnManageList.jsp | 휴가 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnRegist.jsp | 휴가 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnRegist.jsp | 휴가 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnDetail.jsp | 등록된 휴가를 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnUpdt.jsp | 휴가 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnUpdt.jsp | 휴가 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnConfmList.jsp | 휴가 승인 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/vct/EgovVcatnConfm.jsp | 휴가 승인/반려처리를 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/vct/EgovVcatnManage\_SQL\_altibase.xml | 휴가관리 Altibase XML |
@@ -84,7 +84,7 @@ menu:
  ![image](./images/uss-vcatn-휴가관리목록.jpg)
 
  조회 : 기 등록된 휴가관리의 목록을 조회한다.
- 등록 : 신규 휴가을 등록하기 위해서는 상단의 등록 버튼을 통해서 휴가 등록 화면으로 이동한다.
+ 등록 : 신규 휴가를 등록하기 위해서는 상단의 등록 버튼을 통해서 휴가 등록 화면으로 이동한다.
  상세조회: 등록된 휴가 목록(휴가사유)을 클릭하면 상세정보 화면으로 이동한다.
 
 ### 휴가 등록
@@ -100,7 +100,7 @@ menu:
 
  ![image](./images/uss-vcatn-휴가신청.jpg)
 
- 등록 : 신규 휴가을 등록하기 위해서는 휴가 속성을 입력한 뒤 하단의 휴가 버튼을 통해서 휴가을 등록한다.
+ 등록 : 신규 휴가를 등록하기 위해서는 휴가 속성을 입력한 뒤 하단의 휴가 버튼을 통해서 휴가를 등록한다.
  목록 : 휴가 목록조회 화면으로 이동한다.
 
 ### 휴가 상세
@@ -110,7 +110,7 @@ menu:
 | 상세조회 | /uss/ion/vct/EgovVcatnManageDetail.do | selectVcatnManage | "vcatnManageDAO.selectVcatnManage" |
 | 삭제 | /uss/ion/vct/deleteVcatnManage.do | deleteVcatnManage | "vcatnManageDAO.deleteVcatnManage" |
 
- 휴가의 상세조회화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 휴가을 삭제한다.
+ 휴가의 상세조회화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 휴가를 삭제한다.
 
  ![image](./images/uss-vcatn-휴가상세.jpg)
 

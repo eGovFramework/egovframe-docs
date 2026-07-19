@@ -61,8 +61,8 @@ menu:
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
-| 메뉴생성내역 | COMTNAUTHORINFO | 메뉴생성 정보을 관리한다. |
-| 사이트맵 | COMTNMENUCREATDTLS | 사이트맵 생성 정보을 관리한다. |
+| 메뉴생성내역 | COMTNAUTHORINFO | 메뉴생성 정보를 관리한다. |
+| 사이트맵 | COMTNMENUCREATDTLS | 사이트맵 생성 정보를 관리한다. |
 
 ## 관련기능
 

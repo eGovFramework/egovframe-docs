@@ -44,8 +44,8 @@ menu:
 | VO | egovframework.com.uss.ion.msi.service.MainImageVO.java | 메인이미지 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.uss.ion.msi.service.impl.MainImageDAO.java | 메인이미지 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/msi/EgovMainImageList.jsp | 메인이미지 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/msi/EgovMainImageRegist.jsp | 메인이미지 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/msi/EgovMainImageUpdt.jsp | 메인이미지 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/msi/EgovMainImageRegist.jsp | 메인이미지 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/msi/EgovMainImageUpdt.jsp | 메인이미지 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/msi/EgovMainImageView.jsp | 등록된 메인이미지를 반영하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/msi/EgovMainImage\_SQL\_altibase.xml | 메인이미지 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/msi/EgovMainImage\_SQL\_cubrid.xml | 메인이미지 Cubrid용 QUERY XML |

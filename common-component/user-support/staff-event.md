@@ -41,9 +41,9 @@ menu:
 | DAO | egovframework.com.uss.ion.ctn.service.impl.CtsnnManageDAO.java | 경조사 관리를 위한 데이터처리 클래스 |
 | VO | egovframework.com.uss.ion.ctn.service.CtsnnManageVO.java | 경조사 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnManageList.jsp | 경조사 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnRegist.jsp | 경조사 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnRegist.jsp | 경조사 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnDetail.jsp | 등록된 경조사를 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnUpdt.jsp | 경조사 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnUpdt.jsp | 경조사 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnConfmList.jsp | 경조사 승인목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ctn/EgovCtsnnConfm.jsp | 경조사 승인처리를 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/ctn/EgovCtsnnManage\_SQL\_altibase.xml | 경조사관리 Altibase XML |
@@ -113,7 +113,7 @@ menu:
  ![image](./images/uss-fmly-경조사_관리_목록.jpg)
 
  조회 : 기 등록된 경조사관리의 목록을 조회한다.
- 등록 : 신규 경조을 등록하기 위해서는 상단의 등록 버튼을 통해서 경조사 등록 화면으로 이동한다.
+ 등록 : 신규 경조를 등록하기 위해서는 상단의 등록 버튼을 통해서 경조사 등록 화면으로 이동한다.
  상세조회: 등록된 경조사 목록(경조명)을 클릭하면 상세정보 화면으로 이동한다.
 
 ### 경조사 등록
@@ -126,7 +126,7 @@ menu:
 
  ![image](./images/uss-fmly-경조사신청.jpg)
 
- 등록 : 신규 경조사을 등록하기 위해서는 경조 속성을 입력한 뒤 상단의 등록 버튼을 통해서 경조사을 등록한다.
+ 등록 : 신규 경조사를 등록하기 위해서는 경조 속성을 입력한 뒤 상단의 등록 버튼을 통해서 경조사를 등록한다.
  목록 : 경조사 목록조회 화면으로 이동한다.
 
 ### 경조사 상세

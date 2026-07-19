@@ -50,12 +50,12 @@ menu:
 | VO | egovframework.com.sym.sym.srv.service.ServerEqpmnVO.java | 서버장비 관리를 위한 VO 클래스 |
 | VO | egovframework.com.sym.sym.srv.service.ServerEqpmnRelateVO.java | 서버장비관계 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerList.jsp | 서버정보 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerRegist.jsp | 서버정보 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerUpdt.jsp | 서버정보 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerRegist.jsp | 서버정보 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerUpdt.jsp | 서버정보 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerDetail.jsp | 등록된 서버정보를 조회하기 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnList.jsp | 서버장비정보 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnRegist.jsp | 서버장비정보 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnUpdt.jsp | 서버장비정보 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnRegist.jsp | 서버장비정보 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnUpdt.jsp | 서버장비정보 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnDetail.jsp | 등록된 서버장비정보를 조회하기 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/srv/EgovServerEqpmnRelateRegist.jsp | 등록된 서버장비관계를 등록하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/srv/EgovServer\_SQL\_mysql.xml | 서버정보관리 MySQL용 QUERY XML |

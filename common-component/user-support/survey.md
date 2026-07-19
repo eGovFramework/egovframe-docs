@@ -163,13 +163,13 @@ CREATE TABLE COMTECOPSEQ (
 
  ![image](./images/svy-olp-12qustnrquestionpopup.png)
 
- 선택: 선택한 설문문항정보 정보 가 자동입력된다.
+ 선택: 선택한 설문문항정보 가 자동입력된다.
 
 ##### 4. 설문항목정보 등록 팝업
 
  ![image](./images/svy-olp-13qutnritempopup.png)
 
- 선택: 선택한 설문항목정보 정보 가 자동입력된다.
+ 선택: 선택한 설문항목정보 가 자동입력된다.
 
 ### 설문조사 수정
 

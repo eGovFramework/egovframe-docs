@@ -50,8 +50,8 @@
 | VO | egovframework.com.sec.gmt.service.GroupManageVO.java | 그룹 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.sec.gmt.service.impl.GroupManageDAO.java | 그룹 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupManage.jsp | 그룹 관리를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupInsert.jsp | 그룹 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupUpdate.jsp | 그룹 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupInsert.jsp | 그룹 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupUpdate.jsp | 그룹 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sec/gmt/EgovGroupSearch.jsp | 그룹 조회를 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_mysql.xml | 그룹 관리를 위한 MySQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sec/gmt/EgovGroupManage\_SQL\_cubrid.xml | 그룹 관리를 위한 Cubrid용 QUERY XML |

@@ -108,7 +108,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  ![image](./images/sym-batchjob-batchopert_list.png)
 
  조회 : 기 등록된 배치작업의 목록을 조회한다.
- 등록 : 신규 배치작업를 등록하기 위해서는 상단의 등록 버튼을 통해서 배치작업 등록 화면으로 이동한다.
+ 등록 : 신규 배치작업을 등록하기 위해서는 상단의 등록 버튼을 통해서 배치작업 등록 화면으로 이동한다.
 
 ### 배치작업 등록
 
@@ -120,7 +120,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  ![image](./images/sym-batchjob-batchopert_regist.png)
 
- 저장 : 신규 배치작업를 등록하기 위해서는 배치작업 속성을 입력한 뒤 상단의 저장 버튼을 통해서 배치작업를 등록한다. 배치프로그램은 서버의 경로명을 포함하여 존재하는 실행파일명이어야 한다.
+ 저장 : 신규 배치작업을 등록하기 위해서는 배치작업 속성을 입력한 뒤 상단의 저장 버튼을 통해서 배치작업을 등록한다. 배치프로그램은 서버의 경로명을 포함하여 존재하는 실행파일명이어야 한다.
  목록 : 배치작업 목록조회 화면으로 이동한다.
 
 ### 배치작업 수정

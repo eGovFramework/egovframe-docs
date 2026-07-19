@@ -38,8 +38,8 @@ menu:
 | Model | egovframework.com.dam.per.service.KnoPersonal.java | 개인지식 관리를 위한 Model 클래스 |
 | VO | egovframework.com.dam.per.service.KnoPersonalVO.java | 개인지식 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/per/EgovComDamPersonalList.jsp | 개인지식 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/dam/per/EgovComDamPersonalRegist.jsp | 개인지식 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/dam/per/EgovComDamPersonalModify.jsp | 개인지식 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/per/EgovComDamPersonalRegist.jsp | 개인지식 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/per/EgovComDamPersonalModify.jsp | 개인지식 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/per/EgovComDamPersonalDetail.jsp | 등록된 개인지식을 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/dam/per/EgovDamKnoPersonal\_SQL\_altibase.xml | 개인지식 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/per/EgovDamKnoPersonal\_SQL\_cubrid.xml | 개인지식 관리를 위한 Cubrid용 Query XML |

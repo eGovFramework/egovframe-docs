@@ -29,7 +29,7 @@ menu:
   ⑤ 백업작업조회 : 등록된 백업작업정보를 조회한다.
 ```
 
- 백업결과관리는 백업결과을 관리하기 위한 목적으로 백업작업의 조회, 삭제, 목록조회의 기능을 수반한다.
+ 백업결과관리는 백업결과를 관리하기 위한 목적으로 백업작업의 조회, 삭제, 목록조회의 기능을 수반한다.
 
 ```text
   ① 백업결과목록조회 : 백업결과으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
@@ -52,9 +52,9 @@ menu:
 | Model | egovframework.com.sym.sym.bak.service.BackupOpert.java | 백업작업 관리를 위한 Model 클래스 |
 | Model | egovframework.com.sym.sym.bak.service.BackupResult.java | 백업결과 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertList.jsp | 백업작업 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertRegist.jsp | 백업작업 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertUpdt.jsp | 백업작업 수정를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertDetail.jsp | 등록된 백업작업를 반영하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertRegist.jsp | 백업작업 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertUpdt.jsp | 백업작업 수정을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupOpertDetail.jsp | 등록된 백업작업을 반영하기 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupResultList.jsp | 백업결과 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/sym/bak/EgovBackupResultDetail.jsp | 등록된 백업결과를 반영하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_mysql.xml | 백업작업관리 MySQL용 QUERY XML |
@@ -162,7 +162,7 @@ menu:
  ![image](./images/sym-backup-백업작업목록조회.png)
 
  조회 : 기 등록된 백업작업의 목록을 조회한다.
- 등록 : 신규 백업작업를 등록하기 위해서는 상단의 등록 버튼을 통해서 백업작업 등록 화면으로 이동한다.
+ 등록 : 신규 백업작업을 등록하기 위해서는 상단의 등록 버튼을 통해서 백업작업 등록 화면으로 이동한다.
 
 ### 백업작업 등록
 
@@ -174,7 +174,7 @@ menu:
 
  ![image](./images/sym-backup-백업작업등록.png)
 
- 저장 : 신규 백업작업를 등록하기 위해서는 백업작업 속성을 입력한 뒤 상단의 저장 버튼을 통해서 백업작업를 등록한다. 백업원본디렉토리, 백업저장디렉토리는 서버 상에 존재하는 디렉토리를 입력하여야 한다.
+ 저장 : 신규 백업작업을 등록하기 위해서는 백업작업 속성을 입력한 뒤 상단의 저장 버튼을 통해서 백업작업을 등록한다. 백업원본디렉토리, 백업저장디렉토리는 서버 상에 존재하는 디렉토리를 입력하여야 한다.
  목록 : 백업작업 목록조회 화면으로 이동한다.
 
 ### 백업작업 수정

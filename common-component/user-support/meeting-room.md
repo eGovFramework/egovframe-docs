@@ -36,8 +36,8 @@ menu:
 | VO | egovframework.com.uss.ion.mtg.service.MtgPlaceManageVO.java | 회의실관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/mtg/EgovMtgPlaceManageList.jsp | 회의실관리 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/mtg/EgovMtgPlaceDetail.jsp | 회의실관리 상세화면을 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/mtg/EgovMtgPlaceRegist.jsp | 회의실관리 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/mtg/EgovMtgPlaceUpdt.jsp | 회의실관리 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/mtg/EgovMtgPlaceRegist.jsp | 회의실관리 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/mtg/EgovMtgPlaceUpdt.jsp | 회의실관리 수정을 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/mtg/EgovMtgPlaceManage\_SQL\_altibase.xml | 회의실관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/ion/mtg/EgovMtgPlaceManage\_SQL\_cubrid.xml | 회의실관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/uss/ion/mtg/EgovMtgPlaceManage\_SQL\_maria.xml | 회의실관리를 위한 MariaDB용 Query XML |

@@ -44,8 +44,8 @@ menu:
 | VO | egovframework.com.uss.ion.lsi.service.LoginScrinImageVO.java | 로그인화면이미지 관리를 위한 VO클래스 |
 | DAO | egovframework.com.uss.ion.lsi.service.impl.LoginScrinImageDAO.java | 로그인화면이미지 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/lsi/EgovLoginScrinImageList.jsp | 로그인화면이미지 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/lsi/EgovLoginScrinImageRegist.jsp | 로그인화면이미지 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/lsi/EgovLoginScrinImageUpdt.jsp | 로그인화면이미지 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/lsi/EgovLoginScrinImageRegist.jsp | 로그인화면이미지 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/lsi/EgovLoginScrinImageUpdt.jsp | 로그인화면이미지 수정을 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_altibase.xml | 로그인화면이미지 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_cubrid.xml | 로그인화면이미지 Cubrid용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/lsi/EgovLoginScrinImage\_SQL\_maria.xml | 로그인화면이미지 Maria용 QUERY XML |

@@ -165,7 +165,7 @@ CREATE TABLE COMTECOPSEQ (
 
  ![image](./images/svy-qim-9qustnritemquestionpopup.png)
 
- 선택: 선택한 설문문항정보 정보 가 자동입력된다.
+ 선택: 선택한 설문문항정보 가 자동입력된다.
 
 ### 설문항목관리 수정
 

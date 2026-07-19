@@ -58,8 +58,8 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulMonthList.jsp | 월별 간부일정 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulWeekList.jsp | 주별 간부일정 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulDailyList.jsp | 일별 간부일정 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulRegist.jsp | 간부일정 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulDetail.jsp | 등록된 간부일정를 조회하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulRegist.jsp | 간부일정 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulDetail.jsp | 등록된 간부일정을 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/smt/lsm/EgovLeaderSchdul_SQL_altibase.xml | 간부일정관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/lsm/EgovLeaderSchdul_SQL_cubrid.xml | 간부일정관리를 위한 Cubrid용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/lsm/EgovLeaderSchdul_SQL_maria.xml | 간부일정관리를 위한 MariaDB용 Query XML |
@@ -138,7 +138,7 @@ N/A
 
 조회 : 기 등록된 간부일정의 목록을 조회한다.
 
-일자클릭 : 신규 간부일정를 등록하기 위해서는 상단의 해당일자를 클릭하여 간부일정 등록 화면으로 이동한다.
+일자클릭 : 신규 간부일정을 등록하기 위해서는 상단의 해당일자를 클릭하여 간부일정 등록 화면으로 이동한다.
 
 내용클릭 : 해당 간부일정 상세조회 화면으로 이동한다.
 
@@ -162,7 +162,7 @@ N/A
 
 조회 : 기 등록된 간부일정의 목록을 조회한다.
 
-일자클릭 : 신규 간부일정를 등록하기 위해서는 상단의 해당일자를 클릭하여 간부일정 등록 화면으로 이동한다.
+일자클릭 : 신규 간부일정을 등록하기 위해서는 상단의 해당일자를 클릭하여 간부일정 등록 화면으로 이동한다.
 
 내용클릭 : 해당 간부일정 상세조회 화면으로 이동한다.
 
@@ -207,7 +207,7 @@ N/A
 
 ![간부일정 등록](./images/executive-schedule-insert.png)
 
-저장 : 신규 간부일정를 등록하기 위해서는 간부일정 속성을 입력한 뒤 하단의 저장 버튼을 통해서 간부일정를 등록한다.
+저장 : 신규 간부일정을 등록하기 위해서는 간부일정 속성을 입력한 뒤 하단의 저장 버튼을 통해서 간부일정을 등록한다.
 
 목록 : 간부일정 목록조회 화면으로 이동한다.
 
@@ -237,7 +237,7 @@ N/A
 
 ![간부일정 수정](./images/executive-schedule-update.png)
 
-저장 : 기 등록된 간부일정 속성을 수정한 뒤 하단의 저장 버튼을 통해서 간부일정를 수정한다.
+저장 : 기 등록된 간부일정 속성을 수정한 뒤 하단의 저장 버튼을 통해서 간부일정을 수정한다.
 
 목록 : 간부일정 목록조회 화면으로 이동한다.
 
@@ -262,7 +262,7 @@ N/A
 
 수정 : 기 등록된 간부일정 속성을 수정한 뒤 하단의 수정 버튼을 통해서 간부일정수정화면으로 이동한다.
 
-삭제 : 기 등록된 간부일정를 삭제한다.
+삭제 : 기 등록된 간부일정을 삭제한다.
 
 목록 : 간부일정 목록조회 화면으로 이동한다.
 

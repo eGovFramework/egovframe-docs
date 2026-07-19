@@ -31,10 +31,10 @@ menu:
 | Controller | egovframework.com.sym.ccm.zip.web.EgovCcmZipManageController.java | 우편번호 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.ccm.zip.service.EgovCcmZipManageService.java | 우편번호 관리를 위한 서비스 인터페이스 |
 | Service | egovframework.com.sym.ccm.zip.service.EgovCcmRdnmadZipManageService.java | 도로명주소 관리를 위한 서비스 인터페이스 |
-| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmZipManageServiceImpl.java | 우편번호 관리를 위한 위한 서비스구현 클래스 |
-| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmRdnmadZipServiceImpl.java | 도로명주소 관리를 위한 위한 서비스구현 클래스 |
-| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelZipMapping.java | 우편번호 엑셀파일의 일괄 등록 처리를 위한 위한 서비스구현 매핑 클래스 |
-| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelRdnmadZipMapping.java | 도로명주소 엑셀파일의 일괄 등록 처리를 위한 위한 서비스구현 매핑 클래스 |
+| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmZipManageServiceImpl.java | 우편번호 관리를 위한 서비스구현 클래스 |
+| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmRdnmadZipServiceImpl.java | 도로명주소 관리를 위한 서비스구현 클래스 |
+| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelZipMapping.java | 우편번호 엑셀파일의 일괄 등록 처리를 위한 서비스구현 매핑 클래스 |
+| ServiceImpl | egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelRdnmadZipMapping.java | 도로명주소 엑셀파일의 일괄 등록 처리를 위한 서비스구현 매핑 클래스 |
 | Model | egovframework.com.sym.ccm.zip.service.Zip.java | 우편번호 정보 Model 클래스 |
 | VO | egovframework.com.sym.ccm.zip.service.ZipVO.java | 우편번호 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.sym.ccm.zip.service.impl.ZipManageDAO.java | 우편번호 정보 관리를 위한 데이터처리 클래스 |

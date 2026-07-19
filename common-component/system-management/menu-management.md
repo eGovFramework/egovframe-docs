@@ -54,8 +54,8 @@ menu:
 | QUERY XML | resources/egovframework/mapper/com/sym/mnu/mpm/EgovMenuManage\_SQL\_postgres.xml | 메뉴관리 Postgres용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/mnu/mpm/EgovMenuManage\_SQL\_goldilocks.xml | 메뉴관리 Goldilocks용 QUERY XML |
 | Message properties | resources/egovframework/message/com/message-common\_ko.properties | 메뉴관리 Message properties |
-| Message properties | resources/egovframework/message/com/sym/mnu/mpm/message\_ko.properties | 메뉴관리 관리 Message properties(한글) |
-| Message properties | resources/egovframework/message/com/sym/mnu/mpm/message\_en.properties | 메뉴관리 관리 Message properties(영문) |
+| Message properties | resources/egovframework/message/com/sym/mnu/mpm/message\_ko.properties | 메뉴관리 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/sym/mnu/mpm/message\_en.properties | 메뉴관리 Message properties(영문) |
 
 ### 클래스 다이어그램
 
@@ -65,7 +65,7 @@ menu:
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
-| 메뉴정보 | COMTNMENUINFO | 메뉴목록 정보을 관리한다. |
+| 메뉴정보 | COMTNMENUINFO | 메뉴목록 정보를 관리한다. |
 
 ## 관련기능
 
@@ -92,9 +92,9 @@ menu:
 
  ![image](./images/sym-menu-egovmenumanage.jpg)
 
- 조회 : 등록된 메뉴관리리스트을 조회한다.
- 등록 : 신규 메뉴정보을 등록하기 위해서는 상단의 등록 버튼을 통해서 메뉴 등록 화면으로 이동한다.
- 조회목록 선택 : 기존 메뉴정보를 수정하고자 하는 경우 해당 메뉴명를 클릭하여 상세 조회 및 수정기능을 제공하는 메뉴상세조회/수정 화면으로 이동한다.
+ 조회 : 등록된 메뉴관리리스트를 조회한다.
+ 등록 : 신규 메뉴정보를 등록하기 위해서는 상단의 등록 버튼을 통해서 메뉴 등록 화면으로 이동한다.
+ 조회목록 선택 : 기존 메뉴정보를 수정하고자 하는 경우 해당 메뉴명을 클릭하여 상세 조회 및 수정기능을 제공하는 메뉴상세조회/수정 화면으로 이동한다.
 
 ### 메뉴정보 등록
 
