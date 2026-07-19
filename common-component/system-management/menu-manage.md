@@ -58,4 +58,4 @@ menu:
 
 ## 참고자료
 
-- [메뉴관리 - eGovFrame 공통컴포넌트 v5.0](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:com:v5.0:sym:메뉴관리)
+- [메뉴관리 - eGovFrame 공통컴포넌트 v5.0](./menu-management.md)

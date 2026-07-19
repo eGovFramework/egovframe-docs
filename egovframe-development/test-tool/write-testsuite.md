@@ -41,7 +41,7 @@ JUnit4에서 TestSuite을 작성하는 방법은 다음과 같다.
 
  ![TestSuite Class 작성1](./images/write-testsuite-class-1.png)
 
-3. 작성이 완료되면 [Test Case 실행 방법](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:tst:test_case#test_case_실행)과 동일하게 테스트한다.
+3. 작성이 완료되면 [Test Case 실행 방법](./test-case.md)과 동일하게 테스트한다.
    다음 그림과 같이 TestSuite을 수행하면, 여러 개의 TestCase가 한꺼번에 순차적으로 수행된다.
 
  ![TestSuite Class 작성2](./images/write-testsuite-class-2.png)

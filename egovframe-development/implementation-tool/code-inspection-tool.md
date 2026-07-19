@@ -1019,7 +1019,7 @@ public String convert(int i) {
 Inspection을 수행한 후 수행결과를 종합하여 리포팅할 수 있다.
 
 * 개인 개발환경: Eclipse IDE의 Violations Overview 뷰에서 바로 확인하거나, 별도의 CSV(Comma Separated Value), HTML, TXT, XML 등의 파일 형태로 리포팅할 수 있다.
-* 서버 개발환경: CI(Continuous integration) 서버인 Hudson에서 Hudson PMD Plugin을 활용하여 리포팅할 수 있다. 서버 개발환경에서의 리포팅 설정 방법은 전자정부 표준프레임워크 개발환경 가이드의 [Hudson - 코드 인스펙션 도구 연동](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:dep:build_tool:통합빌드#hudson_-_코드_인스펙션_도구_연동)을 참고한다.
+* 서버 개발환경: CI(Continuous integration) 서버인 Hudson에서 Hudson PMD Plugin을 활용하여 리포팅할 수 있다. 서버 개발환경에서의 리포팅 설정 방법은 전자정부 표준프레임워크 개발환경 가이드의 [Hudson - 코드 인스펙션 도구 연동](../deployment-tool/integration-build.md)을 참고한다.
 
 ### Violations Overview 뷰에서 바로 확인
 
