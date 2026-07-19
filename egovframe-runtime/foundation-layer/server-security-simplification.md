@@ -270,6 +270,6 @@ public String insertAuthorRole(...) {
 
 ## 참고
 
-- [전자정부 위키 - Server Security Authentication](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3.10:fdl:server_security:authentication)
+- [전자정부 위키 - Server Security Authentication](./server-security-authentication.md)
 - [전자정부 위키 - Server Security XML Schema](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3:fdl:server_security:xmlschema)
 - `hash`: 운영 환경에서는 `sha-256`, `bcrypt` 등 암호화 저장 권장
