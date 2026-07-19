@@ -20,7 +20,7 @@ menu:
 
 ## 설명
 
- 행사신청관리는 행사을 등록하기 위한 목적으로 행사 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
+ 행사신청관리는 행사를 등록하기 위한 목적으로 행사 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
  ① 행사관리목록 : 행사관리 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
  ② 행사등록 : 행사정보를 등록하고, 등록 결과를 조회한다.
@@ -39,9 +39,9 @@ menu:
 | VO | egovframework.com.uss.ion.evt.service.EventManageVO.java | 행사 관리를 위한 VO 클래스 |
 | Model | egovframework.com.uss.ion.evt.service.EventManage.java | 행사 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstManageList.jsp | 행사 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstRegist.jsp | 행사 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstRegist.jsp | 행사 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstDetail.jsp | 등록된 행사를 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstUpdt.jsp | 행사 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstUpdt.jsp | 행사 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/evt/EgovEventReqstAtdrnList.jsp | 행사 참석자 내역조회 팝업 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_altibase.xml | 행사 관리 Altibase XML |
 | Query XML | resources/egovframework/mapper/com/uss/ion/evt/EgovEventManage\_SQL\_cubrid.xml | 행사 관리 Cubrid XML |
@@ -110,7 +110,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  ![image](./images/uss-evt-manage-행사관리목록.jpg)
 
  조회 : 기 등록된 행사관리의 목록을 조회한다.
- 등록 : 신규 행사을 등록하기 위해서는 상단의 등록 버튼을 통해서 행사 등록 화면으로 이동한다.
+ 등록 : 신규 행사를 등록하기 위해서는 상단의 등록 버튼을 통해서 행사 등록 화면으로 이동한다.
  상세조회: 등록된 행사 목록(행사명)을 클릭하면 상세정보 화면으로 이동한다.
  행사참석자목록: 등록된 행사 목록(참여/정원)중 참여인원을 클릭하면 행사참석자목록 팝업화면을 호출한다.
 
@@ -125,7 +125,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  ![image](./images/uss-evt-manage-행사등록.jpg)
 
  초기화 : 입력필드의 내용을 초기상태로 변경한다.
- 등록 : 신규 행사을 등록하기 위해서는 행사 속성을 입력한 뒤 상단의 행사 버튼을 통해서 행사을 등록한다.
+ 등록 : 신규 행사를 등록하기 위해서는 행사 속성을 입력한 뒤 상단의 행사 버튼을 통해서 행사를 등록한다.
  목록 : 행사 목록조회 화면으로 이동한다.
 
 ### 행사 상세
@@ -135,7 +135,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | 상세조회 | /uss/ion/evt/EgovEventReqstDetail.do | selectEventManage | "eventManageDAO.selectEventManage" |
 | 삭제 | /uss/ion/evt/EgovEventReqstDelete.do | deleteEventManage | "eventManageDAO.deleteEventManage" |
 
- 행사의 상세조회화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 행사을 삭제한다.
+ 행사의 상세조회화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 행사를 삭제한다.
  행사접수기간이 도래한 경우엔 수정 버튼과 삭제 버튼이 비활성화되어 화면에서 보이지 않는다.
 
  ![image](./images/uss-evt-manage-행사상세.jpg)

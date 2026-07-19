@@ -47,12 +47,12 @@ menu:
 | VO | egovframework.com.uss.ion.bnt.service.BndtCeckManageVO.java | 당직체크 관리를 위한 VO 클래스 |
 | VO | egovframework.com.uss.ion.bnt.service.BndtDiaryVO.java | 당직일지 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageList.jsp | 당직관리 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageRegist.jsp | 당직 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageDetail.jsp | 등록된 당직를 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageUpdt.jsp | 당직 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageRegist.jsp | 당직 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageDetail.jsp | 등록된 당직을 상세조회/반영하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageUpdt.jsp | 당직 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtManageBndeListPop.jsp | 당직 엑셀파일 사용 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtCeckManageList.jsp | 당직체크관리 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtCeckManageRegist.jsp | 당직체크 등록를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtCeckManageRegist.jsp | 당직체크 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtCeckManageDetail.jsp | 등록된 당직체크 상세조회/반영하기 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtCeckManageUpdt.jsp | 당직체크 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnt/EgovBndtDiaryDetail.jsp | 당직일지 상세 확인을 위한 jsp페이지 |
@@ -96,7 +96,7 @@ menu:
  조회 : 기 등록된 당직관리의 목록을 조회한다.(년월 버튼이동시 조회됨)
  당직 등록  : 신규 당직을 등록하기 위해서는 상단의 등록 버튼을 통해서 당직 등록 화면으로 이동한다.
  당직상세조회: 등록된 당직 달력의 해당일자 당직자명을 클릭하면 당직상세정보 화면으로 이동한다.
- 당직일지 등록 : 등록된 당직자가 당직일지을 등록하기 위해서는 상단의 등록 버튼을 통해서 당직일지 등록 화면으로 이동한다.
+ 당직일지 등록 : 등록된 당직자가 당직일지를 등록하기 위해서는 상단의 등록 버튼을 통해서 당직일지 등록 화면으로 이동한다.
  당직일지 상세조회: 등록된 당직 달력의 해당일자 당직일지 작성완료를 클릭하면 당직일지 상세정보 화면으로 이동한다.
  당직엑셀: 당직정보를 입력형식에 맞춰 엑셀에 등록된 내용으로 일괄등록 처리하는 화면으로 이동한다.
 
@@ -173,7 +173,7 @@ menu:
 
  ![image](./images/uss-duty-당직일지등록.jpg)
 
- 등록 : 신규 당직일지을 등록하기 위해서는 당직일지 속성을 입력한 뒤 상단의 당직일지 버튼을 통해서 당직일지을 등록한다.
+ 등록 : 신규 당직일지를 등록하기 위해서는 당직일지 속성을 입력한 뒤 상단의 당직일지 버튼을 통해서 당직일지를 등록한다.
  목록 : 당직일지 목록조회 화면으로 이동한다.
 
 ### 당직일지 상세
@@ -183,7 +183,7 @@ menu:
 | 상세조회 | /uss/ion/bnt/selectBndtManage.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
 | 삭제 | /uss/ion/bnt/deleteBndtManage.do | deleteBndtManage | "bndtManageDAO.deleteBndtManage" |
 
- 당직일지의 상세조회 화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 당직일지을 삭제한다.
+ 당직일지의 상세조회 화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 당직일지를 삭제한다.
 
  ![image](./images/uss-duty-당직일지상세.jpg)
 

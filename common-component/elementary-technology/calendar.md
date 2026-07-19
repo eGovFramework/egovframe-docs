@@ -32,7 +32,7 @@ menu:
 | Model              | `egovframework.com.sym.cal.service.Restde.java`                                  | 휴일 정보 Model 클래스                         |
 | VO                 | `egovframework.com.sym.cal.service.RestdeVO.java`                                | 달력, 휴일관리를 위한 VO 클래스                |
 | Service            | `egovframework.com.sym.cal.service.EgovCalRestdeManageService.java`              | 달력, 휴일관리를 위한 서비스 인터페이스        |
-| ServiceImpl        | `egovframework.com.sym.cal.service.impl.EgovCalRestdeManageServiceImpl.java`     | 달력, 휴일관리를 위한 위한 서비스구현 클래스   |
+| ServiceImpl        | `egovframework.com.sym.cal.service.impl.EgovCalRestdeManageServiceImpl.java`     | 달력, 휴일관리를 위한 서비스구현 클래스   |
 | DAO                | `egovframework.com.sym.cal.service.impl.RestdeManageDAO.java`                    | 휴일 정보 관리를 위한 데이터처리 클래스        |
 | JS                 | `/webapp/js/egovframework/cmm/sym/cal/EgovCalPopup.js`                           | 일반달력, 행정달력 팝업 호출을 위한 JavaScript |
 | JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministCalPopup.jsp`                | 행정달력 팝업을 위한 JSP 페이지                |

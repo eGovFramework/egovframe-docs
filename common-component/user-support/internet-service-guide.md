@@ -42,8 +42,8 @@ menu:
 | VO | egovframework.com.uss.ion.isg.service.IntnetSvcGuidanceVO.java | 인터넷서비스안내 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.uss.ion.isg.service.impl.IntnetSvcGuidanceDAO.java | 인터넷서비스안내 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/isg/EgovIntnetSvcGuidanceList.jsp | 인터넷서비스안내 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/isg/EgovIntnetSvcGuidanceRegist.jsp | 인터넷서비스안내 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/isg/EgovIntnetSvcGuidanceUpdt.jsp | 인터넷서비스안내 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/isg/EgovIntnetSvcGuidanceRegist.jsp | 인터넷서비스안내 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/isg/EgovIntnetSvcGuidanceUpdt.jsp | 인터넷서비스안내 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/isg/EgovIntnetSvcGuidanceView.jsp | 인터넷서비스안내를 반영하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/isg/EgovIntnetSvcGuidance\_SQL\_altibase.xml | 인터넷서비스안내 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/isg/EgovIntnetSvcGuidance\_SQL\_cubrid.xml | 인터넷서비스안내 Cubrid용 QUERY XML |

@@ -19,7 +19,7 @@ menu:
 
 ## 설명
 
- 행사접수관리는 행사참석자의 온라인 행사접수을 등록하기 위한 목적으로 행사접수 신청, 취소, 상세조회, 목록조회, 승인처리의 기능을 수반한다.
+ 행사접수관리는 행사참석자의 온라인 행사접수를 등록하기 위한 목적으로 행사접수 신청, 취소, 상세조회, 목록조회, 승인처리의 기능을 수반한다.
 
  ① 행사접수관리목록 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
  ② 행사접수신청 : 행사접수정보를 등록하고, 등록 결과를 조회한다.
@@ -117,7 +117,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  ![image](./images/uss-evt-reception-행사접수목록.jpg)
 
  조회 : 기 등록된 행사접수관리의 목록을 조회한다.
- 신청 : 신규 행사접수을 등록하기 위해서는 목록의 신청(상세) 필드의 신청버튼을 통해서 행사접수 신청 화면으로 이동한다.
+ 신청 : 신규 행사접수를 등록하기 위해서는 목록의 신청(상세) 필드의 신청버튼을 통해서 행사접수 신청 화면으로 이동한다.
  상세조회: 등록된 행사접수 목록(신청-상세)을 클릭하면 행사접수 상세정보 화면으로 이동한다.
 
 ### 행사접수 신청
@@ -127,11 +127,11 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | 등록 | /uss/ion/evt/insertEventAtdrn.do | insertEventAtdrn | "eventManageDAO.insertEventAtdrn" |
 
  행사접수의 속성정보를 확인 후 신청한다.
- 정원초과인 경우 등록버튼 클릭시 정원초과 메시지 팝업이 뜬다.
+ 정원초과인 경우 등록버튼 클릭시 정원초와 메시지 팝업이 뜬다.
 
  ![image](./images/uss-evt-reception-행사접수신청.jpg)
 
- 등록 : 신규 행사접수을 신청하기 위해서는 행사접수 결재자정보를 입력한 뒤 상단의 등록 버튼을 통해서 행사접수을 등록한다.
+ 등록 : 신규 행사접수를 신청하기 위해서는 행사접수 결재자정보를 입력한 뒤 상단의 등록 버튼을 통해서 행사접수를 등록한다.
  목록 : 행사접수 목록조회 화면으로 이동한다.
 
 ### 행사접수 상세
@@ -141,7 +141,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | 상세조회 | /uss/ion/evt/EgovEventRcrptDetail.do | selectEventAtdrn | "eventManageDAO.selectEventAtdrn" |
 | 신청취소 | /uss/ion/evt/deleteEventAtdrn.do | deleteEventAtdrn | "eventManageDAO.deleteEventAtdrn" |
 
- 행사접수의 상세조회화면이다.  신청취소  버튼을 통해서 행사접수을 신청을 취소한다.
+ 행사접수의 상세조회화면이다.  신청취소  버튼을 통해서 행사접수를 신청을 취소한다.
 
  ![image](./images/uss-evt-reception-행사접수상세.jpg)
 

@@ -50,8 +50,8 @@
 | DAO | egovframework.com.sec.rmt.service.impl.RoleManageDAO.java | 롤 관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.sec.rmt.service.RoleManage.java | 롤 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sec/rmt/EgovRoleManage.jsp | 롤 관리를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sec/rmt/EgovRoleInsert.jsp | 롤 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sec/rmt/EgovRoleUpdate.jsp | 롤 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sec/rmt/EgovRoleInsert.jsp | 롤 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sec/rmt/EgovRoleUpdate.jsp | 롤 수정을 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/sec/rmt/EgovRoleManage\_SQL\_mysql.xml | 롤 관리를 위한 MySQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sec/rmt/EgovRoleManage\_SQL\_cubrid.xml | 롤 관리를 위한 Cubrid용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sec/rmt/EgovRoleManage\_SQL\_oracle.xml | 롤 관리를 위한 Oracle용 QUERY XML |

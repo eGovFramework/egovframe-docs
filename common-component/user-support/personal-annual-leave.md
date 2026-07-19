@@ -38,7 +38,7 @@ menu:
 | DAO | egovframework.com.uss.ion.yrc.service.impl.IndvdlYrycDAO.java | 연차 관리를 위한 데이터처리 클래스 |
 | VO | egovframework.com.uss.ion.yrc.service.IndvdlYrycManage.java | 연차 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/yrc/EgovIndvdlYrycManageList.jsp | 연차 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/yrc/EgovIndvdlYrycRegist.jsp | 연차 등록/수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/yrc/EgovIndvdlYrycRegist.jsp | 연차 등록/수정을 위한 jsp페이지 |
 | XML | resources/egovframework/mapper/com/uss/ion/yrc/EgovIndvdlYrycManage\_SQL\_altibase.xml | 연차관리 QUERY Altibase XML |
 | XML | resources/egovframework/mapper/com/uss/ion/yrc/EgovIndvdlYrycManage\_SQL\_cubrid.xml | 연차관리 QUERY Cubrid XML |
 | XML | resources/egovframework/mapper/com/uss/ion/yrc/EgovIndvdlYrycManage\_SQL\_maria.xml | 연차관리 QUERY MariaDB XML |
@@ -72,7 +72,7 @@ menu:
  ![image](./images/uss-yryc-개인연차관리목록.jpg)
 
  조회 : 기 등록된 연차관리의 목록을 조회한다.
- 등록 : 신규 연차을 등록하기 위해서는 상단의 등록 버튼을 통해서 연차 등록 화면으로 이동한다.
+ 등록 : 신규 연차를 등록하기 위해서는 상단의 등록 버튼을 통해서 연차 등록 화면으로 이동한다.
  수정 : 등록된 연차가 존재하면 상단의 수정 버튼을 통해서  연차 수정 화면으로 이동한다.
 
 ### 연차 등록
@@ -87,7 +87,7 @@ menu:
 
  ![image](./images/uss-yryc-개인연차관리등록.jpg)
 
- 등록 : 신규 연차을 등록하기 위해서는 휴가 속성을 입력한 뒤 상단의 등록 버튼을 통해서 연차을 등록한다.
+ 등록 : 신규 연차를 등록하기 위해서는 휴가 속성을 입력한 뒤 상단의 등록 버튼을 통해서 연차를 등록한다.
  목록 : 연차 목록조회 화면으로 이동한다.
 
 ### 연차 수정

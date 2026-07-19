@@ -39,9 +39,9 @@ menu:
 | VO | egovframework.com.uss.ion.ans.service.AnnvrsryManageVO.java | 기념일 관리를 위한 VO 클래스 |
 | Model | egovframework.com.uss.ion.ans.service.AnnvrsryManage.java | 기념일 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryManageList.jsp | 기념일 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryRegist.jsp | 기념일 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryDetail.jsp | 등록된 기념일를 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryUpdt.jsp | 기념일 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryRegist.jsp | 기념일 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryDetail.jsp | 등록된 기념일을 상세조회/반영하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryUpdt.jsp | 기념일 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryGdcc.jsp | 기념일 안내페이지를 확인하기 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ans/EgovAnnvrsryMainList.jsp | 기념일 목록 확인을 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/ans/EgovAnnvrsryManage\_SQL\_altibase.xml | 기념일관리 Altibase XML |

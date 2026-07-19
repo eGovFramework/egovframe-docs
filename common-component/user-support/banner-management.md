@@ -44,8 +44,8 @@ menu:
 | VO | egovframework.com.uss.ion.bnr.service.BannerVO.java | 배너 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.uss.ion.bnr.service.impl.BannerDAO.java | 배너 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnr/EgovBannerList.jsp | 배너 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnr/EgovBannerRegist.jsp | 배너 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnr/EgovBannerUpdt.jsp | 배너 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnr/EgovBannerRegist.jsp | 배너 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnr/EgovBannerUpdt.jsp | 배너 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/bnr/EgovBannerView.jsp | 등록된 배너를 반영하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/bnr/EgovBanner\_SQL\_altibase.xml | 배너관리 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/bnr/EgovBanner\_SQL\_cubrid.xml | 배너관리 Cubrid용 QUERY XML |

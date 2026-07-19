@@ -42,9 +42,9 @@ menu:
 | VO | egovframework.com.uss.ion.rwd.service.RwardManageVO.java | 포상 관리를 위한 VO 클래스 |
 | Model | egovframework.com.uss.ion.rwd.service.RwardManage.java | 포상 관리를 위한 Model 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardManageList.jsp | 포상 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardRegist.jsp | 포상 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardDetail.jsp | 등록된 포상를 상세조회/반영하기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardUpdt.jsp | 포상 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardRegist.jsp | 포상 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardDetail.jsp | 등록된 포상을 상세조회/반영하기 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardUpdt.jsp | 포상 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardConfmList.jsp | 포상 승인 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rwd/EgovRwardConfm.jsp | 포상 승인/반려처리를 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/rwd/EgovRwardManage\_SQL\_altibase.xml | 포상관리 Altibase XML |

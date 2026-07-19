@@ -17,7 +17,7 @@ menu:
 
 ## 설명
 
- 인증서로그인를 행정전자서명 인증관리센터([www.gpki.go.kr](https://www.gpki.go.kr))에서 제공하는 GPKISecureWeb 모듈을 통해 인증서로그인 기능을 제공한다. (NPKI 및 GPKI 지원)
+ 인증서로그인을 행정전자서명 인증관리센터([www.gpki.go.kr](https://www.gpki.go.kr))에서 제공하는 GPKISecureWeb 모듈을 통해 인증서로그인 기능을 제공한다. (NPKI 및 GPKI 지원)
 
 ### 패키지 참조 관계
 

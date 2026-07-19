@@ -39,8 +39,8 @@ menu:
 | Model | egovframework.com.dam.map.mat.service.MapMaterial.java | 지식맵(유형별) 관리를 위한 Model 클래스 |
 | VO | egovframework.com.dam.map.mat.service.MapMaterialVO.java | 지식맵(유형별) 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialList.jsp | 지식맵(유형별) 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialRegist.jsp | 지식맵(유형별) 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialModify.jsp | 지식맵(유형별) 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialRegist.jsp | 지식맵(유형별) 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialModify.jsp | 지식맵(유형별) 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialDetail.jsp | 등록된 지식맵(유형별)을 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_altibase.xml | 지식맵(유형별) 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_cubrid.xml | 지식맵(유형별) 관리를 위한 Cubrid용 Query XML |

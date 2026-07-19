@@ -40,8 +40,8 @@ menu:
 | Model | egovframework.com.sym.tbm.tbr.service.TroblReqst.java | 장애신청정보 관리를 위한 Model 클래스 |
 | VO | egovframework.com.sym.tbm.tbr.service.TroblReqstVO.java | 장애신청정보 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbr/EgovTroblReqstList.jsp | 장애신청정보 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbr/EgovTroblReqstRegist.jsp | 장애신청정보 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbr/EgovTroblReqstUpdt.jsp | 장애신청정보 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbr/EgovTroblReqstRegist.jsp | 장애신청정보 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbr/EgovTroblReqstUpdt.jsp | 장애신청정보 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/tbm/tbr/EgovTroblReqstDetail.jsp | 등록된 장애신청정보를 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/sym/tbm/tbr/EgovTroblReqst\_SQL\_altibase.xml | 장애신청정보 관리를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sym/tbm/tbr/EgovTroblReqst\_SQL\_cubrid.xml | 장애신청정보 관리를 위한 Cubrid용 Query XML |
@@ -114,7 +114,7 @@ menu:
  ![image](./images/sym-troblreq-list.png)
 
  조회 : 기 등록된 장애신청의 목록을 조회한다.
- 등록 : 신규 장애신청를 등록하기 위해서는 상단의 등록 버튼을 통해서 장애신청 등록 화면으로 이동한다.
+ 등록 : 신규 장애신청을 등록하기 위해서는 상단의 등록 버튼을 통해서 장애신청 등록 화면으로 이동한다.
  상세조회 : 장애신청의 상세정보를 조회하기 위해 장애ID를 선택하여 장애신청 상세조회 화면으로 이동한다.
 
 ### 장애신청 등록

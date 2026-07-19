@@ -105,7 +105,7 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 
 #### 비즈니스 규칙
 
- 조회조건으로 목록조회를 할 수 있고, 등록버튼을 클릭하여 상담등록 화면으로 이동하여 상담를 등록 처리 할 수 있다.
+ 조회조건으로 목록조회를 할 수 있고, 등록버튼을 클릭하여 상담등록 화면으로 이동하여 상담을 등록 처리 할 수 있다.
 
 #### 관련코드
 
@@ -125,8 +125,8 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 
  ![image](./images/uss-cnslt-cnslt_inquire_list.png)
 
- 조회: 상담를 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
- 등록: 상담를 등록하기 위해서는 상단의 등록 버튼을 통해서 상담등록 화면으로 이동한다.
+ 조회: 상담을 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
+ 등록: 상담을 등록하기 위해서는 상단의 등록 버튼을 통해서 상담등록 화면으로 이동한다.
  목록클릭: 상담상세조회 화면으로 이동한다.
 
 ### 상담상세조회
@@ -154,7 +154,7 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 
  ![image](./images/uss-cnslt-password_confirm.png)
 
- 수정: 수정버튼 클릭 시 상담를 수정할 수 있는 화면으로 이동한다.
+ 수정: 수정버튼 클릭 시 상담을 수정할 수 있는 화면으로 이동한다.
  삭제: 삭제버튼 클릭 시 삭제여부를 확인하는 메시지를 보여주고 삭제처리를 할 수 있다.
  목록: 상담목록조회 화면으로 이동한다.
 
@@ -234,7 +234,7 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 
  ![image](./images/uss-cnslt-cnslt_answer_list.png)
 
- 조회: 상담를 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
+ 조회: 상담을 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
  목록클릭: 상담상세조회 화면으로 이동한다.
 
 ### 상담답변상세조회
@@ -257,7 +257,7 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 
  ![image](./images/uss-cnslt-cnslt_answer_detail.png)
 
- 수정: 수정버튼 클릭 시 상담를 수정할 수 있는 화면으로 이동한다.
+ 수정: 수정버튼 클릭 시 상담을 수정할 수 있는 화면으로 이동한다.
  목록: 상담답변목록조회 화면으로 이동한다.
 
 ### 상담내역답변수정

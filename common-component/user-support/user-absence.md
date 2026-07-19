@@ -45,8 +45,8 @@ menu:
 | VO | egovframework.com.uss.ion.uas.service.UserAbsnceVO.java | 사용자부재 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.uss.ion.uas.service.impl.UserAbsnceDAO.java | 사용자부재 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/uas/EgovUserAbsnceList.jsp | 사용자부재 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/uas/EgovUserAbsnceRegist.jsp | 사용자부재 등록를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/uas/EgovUserAbsnceUpdt.jsp | 사용자부재 수정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/uas/EgovUserAbsnceRegist.jsp | 사용자부재 등록을 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/uas/EgovUserAbsnceUpdt.jsp | 사용자부재 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/uas/EgovUserAbsnceMainList.jsp | 등록된 사용자부재 정보를 반영하기 위한 jsp페이지 |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/uas/EgovUserAbsnce\_SQL\_altibase.xml | 사용자부재 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/uss/ion/uas/EgovUserAbsnce\_SQL\_cubrid.xml | 사용자부재 Cubrid용 QUERY XML |

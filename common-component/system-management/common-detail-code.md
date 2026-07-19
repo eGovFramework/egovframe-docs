@@ -30,7 +30,7 @@ menu:
 | --- | --- | --- |
 | Controller | egovframework.com.sym.ccm.cde.web.EgovCcmCmmnDetailCodeManageController.java | 공통상세코드 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.ccm.cde.service.EgovCcmCmmnDetailCodeManageService.java | 공통상세코드 관리를 위한 서비스 인터페이스 |
-| ServiceImpl | egovframework.com.sym.ccm.cde.service.impl.EgovCcmCmmnDetailCodeManageServiceImpl.java | 공통상세코드 관리를 위한 위한 서비스구현 클래스 |
+| ServiceImpl | egovframework.com.sym.ccm.cde.service.impl.EgovCcmCmmnDetailCodeManageServiceImpl.java | 공통상세코드 관리를 위한 서비스구현 클래스 |
 | VO | egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO.java | 공통상세코드 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.sym.ccm.cde.service.impl.CmmnDetailCodeManageDAO.java | 공통상세코드 정보 관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeDetail.jsp | 공통상세코드 상세보기를 위한 JSP 페이지 |

@@ -30,7 +30,7 @@ menu:
 | --- | --- | --- |
 | Controller | egovframework.com.sym.ccm.adc.web.EgovCcmAdministCodeManageController.java | 행정코드 관리를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sym.ccm.adc.service.EgovCcmAdministCodeManageService.java | 행정코드 관리를 위한 서비스 인터페이스 |
-| ServiceImpl | egovframework.com.sym.ccm.adc.service.impl.EgovCcmAdministCodeManageServiceImpl.java | 행정코드 관리를 위한 위한 서비스구현 클래스 |
+| ServiceImpl | egovframework.com.sym.ccm.adc.service.impl.EgovCcmAdministCodeManageServiceImpl.java | 행정코드 관리를 위한 서비스구현 클래스 |
 | Model | egovframework.com.sym.ccm.adc.service.AdministCode.java | 행정코드 정보 Model 클래스 |
 | VO | egovframework.com.sym.ccm.adc.service.AdministCodeVO.java | 행정코드 관리를 위한 VO 클래스 |
 | DAO | egovframework.com.sym.ccm.adc.service.impl.AdministCodeManageDAO.java | 행정코드 정보 관리를 위한 데이터처리 클래스 |

@@ -44,7 +44,7 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovSanctnerListPopup.jsp | 결재자 팝업 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovConfmPopup.jsp | 약식결재 승인을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovReturnPopup.jsp | 약식결재 반려를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovInfrmlSanctnRegist.jsp | 약식결재 지정를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovInfrmlSanctnRegist.jsp | 약식결재 지정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovInfrmlSanctnDetail.jsp | 등록된 약식결재를 조회하기 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn\_SQL\_altibase.xml | 약식결재 Altibase XML |
 | Query XML | resources/egovframework/mapper/com/uss/ion/ism/EgovInfrmlSanctn\_SQL\_cubrid.xml | 약식결재 Cubrid XML |
