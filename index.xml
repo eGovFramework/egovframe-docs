@@ -1316,9 +1316,17 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:tst:batch_job_test_wizard:job_parameter_mgmt" target="_blank" rel="noopener noreferrer" class="externalLink">Job Parameters 설정&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/batch-job-test-wizard/" class="innerLink">Job Parameters 설정&lt;/a>
 
 &lt;/li>
 &lt;li>
@@ -1334,9 +1342,17 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:create_batch_job_wizard:job_reader_mgmt" target="_blank" rel="noopener noreferrer" class="externalLink">Job Reader 설정&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/batch-ide/batch-job-wizard/" class="innerLink">Job Reader 설정&lt;/a>
 
  / 
 
@@ -1351,9 +1367,17 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:create_batch_job_wizard:job_writer_mgmt" target="_blank" rel="noopener noreferrer" class="externalLink">Job Writer 설정&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/batch-ide/batch-job-wizard/" class="innerLink">Job Writer 설정&lt;/a>
 
 &lt;/li>
 &lt;li>
@@ -1369,9 +1393,17 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:create_batch_job_wizard:listener_mgmt" target="_blank" rel="noopener noreferrer" class="externalLink">Listeners 설정&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/batch-ide/batch-job-wizard/" class="innerLink">Listeners 설정&lt;/a>
 
 &lt;/li>
 &lt;/ul>
@@ -1487,9 +1519,17 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:create_batch_job_wizard:job_info_mgmt" target="_blank" rel="noopener noreferrer" class="externalLink">Job&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job/" class="innerLink">Job&lt;/a>
 
 &lt;/td>
  &lt;td>배치 전반적 프로세스를 포괄하고 있는 객체&lt;/td>
@@ -1528,9 +1568,17 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
-&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:bdev:imp:create_batch_job_wizard:step_info_mgmt" target="_blank" rel="noopener noreferrer" class="externalLink">Step&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/batch-core-step/" class="innerLink">Step&lt;/a>
 
 &lt;/td>
  &lt;td>배치 실행시 Job 내부에서 각 단계별로 분리되어 독립적으로 일어나는 하나의 프로세스&lt;/td>
