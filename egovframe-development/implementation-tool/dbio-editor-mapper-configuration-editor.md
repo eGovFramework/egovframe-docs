@@ -48,16 +48,16 @@ TypeAlias 항목을 모두 초기화한다.
 
 Mapper 목록에서는 사용할 Mapper 맵핑 파일을 지정한다.
 
-##### Add
+#### Add
 
 Mapper 맵핑 파일을 추가한다.
 
-##### Remove
+#### Remove
 
 Mapper 목록 중에서 불필요한 Mapper 맵핑 파일을 선택하여 제거한다.
 단, Mapper 목록에서 제거될 뿐, 실제 파일이 삭제되는 것은 아니다.
 
-##### New
+#### New
 
 Mapper 맵핑 파일을 새로 생성하는 동시에 Mapper 목록 중에 새로 생성된 Mapper 맵핑 파일을 추가한다.
 
