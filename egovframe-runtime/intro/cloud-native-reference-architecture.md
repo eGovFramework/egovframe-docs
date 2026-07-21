@@ -1,3 +1,14 @@
+---
+title: "클라우드 최적화 참조 아키텍처"
+linkTitle: 클라우드 참조 아키텍처
+description: 표준프레임워크 기반 시스템을 설계할 때 참고할 수 있는 아키텍처 선택지와 단계적 전환 방향을 안내한다.
+url: /egovframe-runtime/intro/cloud-native-reference-architecture/
+menu:
+    depth:
+        name: 클라우드 참조 아키텍처
+        weight: 2
+        parent: "runtime_intro"
+---
 # 클라우드 최적화 참조 아키텍처
 
 ## 개요
