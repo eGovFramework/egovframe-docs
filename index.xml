@@ -1414,9 +1414,9 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 &lt;p>eGovFrame기반의 배치 어플리케이션 개발 시 개발자 편의성을 위하여 eclipse기반의 Perspective, Menu, 배치 템플릿 생성 마법사 등을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>기본 eGovFrame Batch IDE 기반에 배치 어플리케이션 개발을 위한 메뉴, 배치 템플릿 생성 마법사 등을 추가하였고, 상세 내용은 다음과 같다.&lt;/p>
-&lt;h5 id="perspective">Perspective&lt;/h5>
+&lt;h3 id="perspective">Perspective&lt;/h3>
 &lt;p>eGovFrame Batch IDE 기반으로 배치 메뉴가 추가되며 배치 어플리케이션 개발을 위한 메뉴를 제공한다.&lt;/p>
-&lt;h5 id="menu">Menu&lt;/h5>
+&lt;h3 id="menu">Menu&lt;/h3>
 &lt;p>eGovFrame Perspective에서만 활성화되는 메뉴로 eclipse내에서 분산되어 있는 플러그인들의 기능(eGovFrame에서 필히 사용되어지는 기능)을 빠르게 접근할 수 있는 통합 메뉴를 제공한다.&lt;/p></description></item><item><title>Batch Job Launcher Wizard</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/batch-ide/batch-job-launcher-wizard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/batch-ide/batch-job-launcher-wizard/</guid><description>&lt;h1 id="batch-job-launcher-wizard">Batch Job Launcher Wizard&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>개발자 편의성을 위하여 사용자 정의에 따라 배치 작업 실행 파일을 자동으로 생성해주는 마법사를 제공한다.&lt;/p>
@@ -1691,7 +1691,7 @@ Bean들과 Bean들간의 종속성은 Container가 사용하는 설정 메타데
 &lt;p>eGovFrame기반의 배치 어플리케이션 개발시 개발자 편의성을 위하여 기본적인 코드등을 포함하고 있는 배치 템플릿 프로젝트 자동 생성 마법사를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>배치 템플릿 입력 리소스 유형과 실행 유형을 선택할 수 있는 eGovFrame기반의 배치 템플릿 프로젝트 자동 생성 마법사를 제공한다.&lt;/p>
-&lt;h4 id="배치-템플릿-마법사-진행-과정">배치 템플릿 마법사 진행 과정&lt;/h4>
+&lt;h3 id="배치-템플릿-마법사-진행-과정">배치 템플릿 마법사 진행 과정&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/images/new-batch-template-select.png" alt="New Batch Template Wizard Process" >
 &lt;/p>
 &lt;ul>
@@ -5857,9 +5857,9 @@ HTTP Request 정보 취득을 사용하면 파미리터를 통하지 않고 Http
 &lt;p>eGovFrame기반의 어플리케이션 개발 시 개발자 편의성을 위하여 eclipse기반의 Perspective, Menu, 프로젝트 생성 마법사 등을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>기본 Eclipse IDE 에 eGovFrame기반의 어플리케이션 개발을 위한 View 초기세트와 LayOut, 메뉴, 프로젝트 생성 마법사 등을 추가하였고 그에 대한 상세내용은 다음과 같다.&lt;/p>
-&lt;h5 id="perspective">Perspective&lt;/h5>
+&lt;h3 id="perspective">Perspective&lt;/h3>
 &lt;p>eGovFrame기반의 어플리케이션 개발을 위한 최적의 View 초기 세트와 레이아웃을 제공한다.&lt;/p>
-&lt;h5 id="menu">Menu&lt;/h5>
+&lt;h3 id="menu">Menu&lt;/h3>
 &lt;p>eGovFrame Perspective에서만 활성화 되는 메뉴로 eclipse내에서 분산되어 있는 플러그인들의 기능(eGovFrame에서 필히 사용되어지는 기능)을 빠르게 접근할 수 있는 통합 메뉴를 제공한다.&lt;/p></description></item><item><title>Bean Definition Inheritance</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer-core/ioc-container/ioc-container-bean_definition_inheritance/</guid><description>&lt;h1 id="bean-definition-inheritance">Bean definition inheritance&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Bean 정의는 많은 양의 설정 정보를 포함하고 있다. 자식 bean 정의는 부모 bean 정의로부터 설정 정보를 상속받은 bean 정의를 의미한다. 자식 bean 정의는 필요에 따라 부모 bean 정의로부터 상속받은 설정 정보를 덮어쓰거나 추가할 수 있다.&lt;/p>
@@ -7276,9 +7276,9 @@ Gradle은 groovy 언어로 개발된 &lt;strong>프로젝트 관리 도구&lt;/s
 &lt;p>eGovFrame기반의 모바일 어플리케이션 개발 시 개발자 편의성을 위하여 eclipse기반의 Perspective, Menu, 모바일 표준 소스 코드 생성 마법사등을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>기본 eGovFrame Mobile IDE 기반에 모바일 어플리케이션 개발을 위한 메뉴, 프로젝트 생성 마법사 등을 추가하였고, 상세 내용은 다음과 같다.&lt;/p>
-&lt;h5 id="perspective">Perspective&lt;/h5>
+&lt;h3 id="perspective">Perspective&lt;/h3>
 &lt;p>eGovFrame Mobile IDE 기반으로 모바일 메뉴가 추가되며 모바일 어플리케이션 개발을 위한 메뉴를 제공한다.&lt;/p>
-&lt;h5 id="menu">Menu&lt;/h5>
+&lt;h3 id="menu">Menu&lt;/h3>
 &lt;p>eGovFrame Perspective에서만 활성화되는 메뉴로 eclipse내에서 분산되어 있는 플러그인들의 기능(eGovFrame에서 필히 사용되어지는 기능)을 빠르게 접근할 수 있는 통합 메뉴를 제공한다.&lt;/p></description></item><item><title>Mobile Template Project Wizard</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/mobile-ide/mobile-template-wizard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/mobile-ide/mobile-template-wizard/</guid><description>&lt;h1 id="mobile-template-project-wizard">Mobile Template Project Wizard&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>eGovFrame기반의 모바일 어플리케이션 개발 시 개발자 편의성을 위하여 모바일 사이트 템플릿 자동 생성 마법사를 제공한다.&lt;/p>
