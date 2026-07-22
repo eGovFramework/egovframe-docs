@@ -31,7 +31,7 @@
 | VO | egovframework.com.cmm.LoginVO.java | 로그인을 위한 VO 클래스 |
 | DAO | egovframework.com.uat.uia.service.impl.LoginDAO.java | 로그인을 위한 데이터 처리 클래스 |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_[DB].xml | 로그인을 위한 Query XML |
-| JSP | WEB_INF/jsp/egovframework/cmm/uat/uia/EgovIdPasswordSearch.jsp | 아이디/비밀번호찾기 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uat/uia/EgovIdPasswordSearch.jsp | 아이디/비밀번호찾기 페이지 |
 
 #### 클래스 다이어그램
 
