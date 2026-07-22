@@ -4381,7 +4381,52 @@ Bean은 XML 또는 주석으로 정의된 프로필에 할당될 수 있다. 프
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="egoveventnoticetrigger">EgovEventNoticeTrigger&lt;/h3>
-&lt;p>EgovEventNoticeTrigger 클래스는 EventNoticeTrigger 인터페이스를 상속받은 형태로, 파라메터 타입별로 이벤트 알림 기능(Email전송, SMS전송)을 호출하기 위한 invoke 메소드를 갖고 있다. 모든 메소드의 리턴타입은 void로 로직수행 후 반환해야 하는 값이 없고, 이는 배치 고유의 수행과정과 별도로 동작하는 부분이다.&lt;/p></description></item><item><title>대용량 처리를 위한 멀티스레드 기반 병행처리 예제</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-example-multi_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-example-multi_process/</guid><description>&lt;h1 id="대용량-처리를-위한-멀티스레드-기반-병행처리-예제">대용량 처리를 위한 멀티스레드 기반 병행처리 예제&lt;/h1>
+&lt;p>EgovEventNoticeTrigger 클래스는 EventNoticeTrigger 인터페이스를 상속받은 형태로, 파라메터 타입별로 이벤트 알림 기능(Email전송, SMS전송)을 호출하기 위한 invoke 메소드를 갖고 있다. 모든 메소드의 리턴타입은 void로 로직수행 후 반환해야 하는 값이 없고, 이는 배치 고유의 수행과정과 별도로 동작하는 부분이다.&lt;/p></description></item><item><title>기존 업무 재사용 예제</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-example-job-reuse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-example-job-reuse/</guid><description>&lt;h1 id="기존-업무-재사용-예제">기존 업무 재사용 예제&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>기존 업무 서비스를 배치의 &lt;code>ItemReader&lt;/code> 또는 &lt;code>ItemWriter&lt;/code>로 재사용하는 예제이다. Spring Batch가 제공하는 어댑터를 이용하면 별도의 배치 전용 클래스를 작성하지 않고 XML 설정만으로 기존 서비스 메서드를 Step에 연결할 수 있다.&lt;/p>
+&lt;p>이 문서는 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;a href="https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:brte:batch_example:job_reuse" target="_blank" rel="noopener noreferrer" class="externalLink">eGovFrame 공식 위키의 기존 업무 재사용 예제&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+를 저장소 문서 형식으로 정리한 것이다.&lt;/p>
+&lt;h2 id="구성">구성&lt;/h2>
+&lt;p>예제는 기존 &lt;code>PersonService&lt;/code>를 다음과 같이 재사용한다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>역할&lt;/th>
+ &lt;th>어댑터&lt;/th>
+ &lt;th>호출 메서드&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>ItemReader&lt;/td>
+ &lt;td>&lt;code>ItemReaderAdapter&lt;/code>&lt;/td>
+ &lt;td>&lt;code>PersonService.getData()&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ItemWriter&lt;/td>
+ &lt;td>&lt;code>PropertyExtractingDelegatingItemWriter&lt;/code>&lt;/td>
+ &lt;td>&lt;code>PersonService.processPerson(...)&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="job-설정">Job 설정&lt;/h2>
+&lt;p>기존 업무 재사용 예제의 Job 설정 파일인 &lt;code>delegatingJob.xml&lt;/code>을 확인한다.&lt;/p></description></item><item><title>대용량 처리를 위한 멀티스레드 기반 병행처리 예제</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-example-multi_process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-example-multi_process/</guid><description>&lt;h1 id="대용량-처리를-위한-멀티스레드-기반-병행처리-예제">대용량 처리를 위한 멀티스레드 기반 병행처리 예제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치 수행 시 대용량 데이터를 빠르게 처리할 수 있도록 Job을 병행처리하는 예제를 설명한다. 실행 유형별로 멀티스레드 방식, Parallel Step 방식, 파티셔닝 방식이 있다.&lt;/p>
 &lt;blockquote>
@@ -4449,14 +4494,10 @@ Bean은 XML 또는 주석으로 정의된 프로필에 할당될 수 있다. 프
  
  
  
- 
- 
- 
- 
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/batch-example-sync_async_v3.7batch-example-job-reuse.md" class="innerLink">기존 업무 재사용 예제&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/batch-example-job-reuse/" class="innerLink">기존 업무 재사용 예제&lt;/a>
 
 의 Job 설정과 같으므로 이를 참고한다.&lt;/p></description></item><item><title>Excel Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/excel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/excel/</guid><description>&lt;h1 id="excel-service">Excel Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
