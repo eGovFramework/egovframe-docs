@@ -26,7 +26,7 @@ description: "표준프레임워크 실행환경은 XML Schema 기반의 AOP 방
 
 #### 관점(Aspect) 정의
 
- 예외 처리를 위한 Spring 설정 파일(resources/egovframework.spring/context-aspect.xml) 내에 관점(Aspect) 클래스를 빈으로 정의한 뒤, 해당 관점(Aspect)에 대한 포인트컷과 충고(Advice)를 정의한다.
+ 예외 처리를 위한 Spring 설정 파일(resources/org.egovframe.spring/context-aspect.xml) 내에 관점(Aspect) 클래스를 빈으로 정의한 뒤, 해당 관점(Aspect)에 대한 포인트컷과 충고(Advice)를 정의한다.
 
 ```xml
 <bean id="exceptionTransfer" class="org.egovframe.rte.fdl.cmmn.aspect.ExceptionTransfer">
@@ -103,7 +103,7 @@ public class ExceptionTransfer {
 
 ### 트랜잭션 처리
 
- 실행환경에서 트랜잭션 설정은 “resources/egovframework.spring/context-transaction.xml” 파일을 참조한다. 다음은 context-transaction.xml 설정 파일을 일부이다.
+ 실행환경에서 트랜잭션 설정은 “resources/org.egovframe.spring/context-transaction.xml” 파일을 참조한다. 다음은 context-transaction.xml 설정 파일을 일부이다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,7 +135,7 @@ public class ExceptionTransfer {
 ```
 
 - txAdvice는 메소드에서 예외 발생시 트랜잭션 롤백을 수행한다.
-- requiredTx는 egovframework.rte.sample 패키지 하위 impl 패키지에서 Impl로 끝나는 모든 클래스의 메소드를 포인트컷으로 지정한다.
+- requiredTx는 org.egovframe.rte.sample 패키지 하위 impl 패키지에서 Impl로 끝나는 모든 클래스의 메소드를 포인트컷으로 지정한다.
 
 ## 참고 문서
 
