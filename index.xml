@@ -32188,9 +32188,8 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;!-- markdownlint-enable MD013 -->
 &lt;p>웹표준검사는 총 9개의 URL을 입력하여 다중 호환성 검사 기능을 제공하며, 상세검사를 통하여 Validation Output를 제공한다.&lt;/p></description></item><item><title>유효메모리체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/valid-memory-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>시스템에서 사용 가능한 유효메모리를 체크하는 기능을 제공한다. 새로운 프로그램을 실행하기 전에 시스템의 유효 메모리를
-체크하여 프로그램 실행 여부를 판단할 때 활용할 수 있다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;p>시스템에서 사용 가능한 유효 메모리를 확인하는 기능을 제공한다.&lt;/p>
+&lt;p>새로운 프로그램을 실행하기 전에 사용 가능한 메모리 용량을 확인하여 프로그램 실행 가능 여부를 판단할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="기능-설명">기능 설명&lt;/h3>
 &lt;p>유효메모리체크에서 제공하는 기능은 다음과 같다.&lt;/p>
@@ -32223,7 +32222,43 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>유효메모리체크 기능은 &lt;code>EgovSysInfo&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>이슈검색</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-search/</guid><description>&lt;h1 id="이슈검색">이슈검색&lt;/h1>
+&lt;p>유효메모리체크 기능은 &lt;code>EgovSysInfo&lt;/code> 클래스의 메서드를 사용하여 제공한다.&lt;/p>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>checkMoryCpcty(long memory)&lt;/code>&lt;/td>
+ &lt;td>유효메모리체크&lt;/td>
+ &lt;td>프로그램 실행에 필요한 메모리 용량이 충분한지 확인한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h4 id="파라미터-정의-input">파라미터 정의 (Input)&lt;/h4>
+&lt;ul>
+&lt;li>&lt;code>memory&lt;/code>: 필요한 메모리 용량(MB 단위)을 지정한다. (예: &lt;code>300&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h4 id="반환값-정의-output">반환값 정의 (Output)&lt;/h4>
+&lt;ul>
+&lt;li>boolean 타입: 메모리 용량이 충분하면 &lt;code>true&lt;/code>, 부족하면 &lt;code>false&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.sim.service.EgovSysInfo&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#998;font-style:italic">// 프로그램 실행 전 유효 메모리 확인&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">long&lt;/span>&lt;span style="color:#bbb"> &lt;/span>memory&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>300L;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>result&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovSysInfo.&lt;span style="color:#008080">checkMoryCpcty&lt;/span>(memory);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>별도의 환경설정은 필요하지 않다.&lt;/p></description></item><item><title>이슈검색</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/issue-search/</guid><description>&lt;h1 id="이슈검색">이슈검색&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>등록된 이슈 및 삭제된 이슈를 검색하는 기능이다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
