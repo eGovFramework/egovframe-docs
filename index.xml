@@ -27079,7 +27079,8 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/configuration-management-tool/images/space-list.jpg" alt="스페이스 목록" >
 &lt;/p></description></item><item><title>시스템</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/</guid><description>&lt;h1 id="시스템">시스템&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>시스템 그룹은 파일·디렉터리 처리(생성·복사·이동·압축·동기화·업로드 등)와 서버·프로세스·네트워크·메모리 등 시스템 자원 점검, 각종 모니터링(HTTP·DB서비스·파일시스템) 기능을 제공하는 요소기술 묶음이다. 소스는 주로 &lt;code>egovframework.com.utl.sim&lt;/code>, &lt;code>egovframework.com.utl.sys&lt;/code> 패키지에 위치한다.&lt;/p>
+&lt;p>시스템(System) 그룹은 파일 및 디렉터리 처리, 서버·프로세스·네트워크 정보 확인, 시스템 자원 점검, 각종 모니터링 기능을 제공하는 요소기술 모음이다.&lt;/p>
+&lt;p>주요 기능은 파일 및 디렉터리 관리, 시스템 정보 조회, 서버 및 네트워크 모니터링, 파일 업로드·다운로드, 파일 변환 및 동기화 등으로 구성되어 있으며, 관련 소스는 &lt;code>egovframework.com.utl.sim&lt;/code>과 &lt;code>egovframework.com.utl.sys&lt;/code> 패키지에서 제공된다.&lt;/p>
 &lt;h2 id="관련-문서">관련 문서&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -27159,7 +27160,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/xml-data-assembly/" class="innerLink">XML 데이터조립&lt;/a>
 
- — 일반 구조적 형태의 데이터를 XML 데이터로 조립하여 파일로 저장하는 기능을 제공한다.&lt;/li>
+ — 구조화된 데이터를 XML 형식으로 조립하여 파일로 저장하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27185,7 +27186,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/xml-data-parsing/" class="innerLink">XML 데이터파싱&lt;/a>
 
- — XML 파일을 로드한 후 XML 데이터를 파싱하여 구조적인 데이터 형태로 변환하는 기능을 제공한다.&lt;/li>
+ — XML 파일을 파싱하여 구조화된 데이터 형태로 변환하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27237,7 +27238,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/network-service-monitoring/" class="innerLink">네트워크서비스모니터링&lt;/a>
 
- — &lt;strong>네트워크서비스모니터링&lt;/strong>은 네트워크서비스 상태를 주기적으로 모니터링하는 기능을 제공한다.&lt;/li>
+ — 네트워크서비스모니터링은 네트워크서비스 상태를 주기적으로 모니터링하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27263,7 +27264,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/network-info-check/" class="innerLink">네트워크정보확인&lt;/a>
 
- — 네트워크 정보인 IP ADDRESS, MAC ADDRESS, PortScan 리스트를 확인하는 기능을 제공한다.&lt;/li>
+ — IP 주소, MAC 주소, PortScan 목록 등 네트워크 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27419,7 +27420,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-create/" class="innerLink">디렉토리생성&lt;/a>
 
- — 디렉토리생성(Directory Create) 기능은 공통컴포넌트의 요소기술 중 하나로, 비즈니스 로직을 처리하면서 필요에 따라 시스템상에 지정된 경로로 디렉토리를 생성할 수 있는 공통 기능을 제공한다.&lt;/li>
+ — 지정한 경로에 디렉토리를 생성하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27497,7 +27498,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-date-check/" class="innerLink">디렉토리일자체크&lt;/a>
 
- — 비즈니스 로직을 처리하면서 필요 시 디렉토리의 일자 정보를 확인하기 위해 제공되는 공통컴포넌트 요소기술 중 하나이다.&lt;/li>
+ — 디렉토리의 일자 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27601,7 +27602,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/disk-exist-check/" class="innerLink">디스크존재체크&lt;/a>
 
- — 시스템에 존재하는 디스크(DISK), CD, USB 등에 대한 존재를 확인하는 기능이다.&lt;/li>
+ — 시스템에 연결된 디스크, CD, USB 등의 존재 여부를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27627,7 +27628,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/login-session-check/" class="innerLink">로그인세션정보체크&lt;/a>
 
- — 로그인세션정보체크는 로그인한 세션정보를 체크하여 정의한 페이지로 이동하게 하는 기능을 제공한다.&lt;/li>
+ — 로그인한 사용자의 세션 정보를 확인하고 지정한 페이지로 이동하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -27653,7 +27654,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/" class="innerLink">로그패턴검사&lt;/a>
 
- — 로그패턴검사(로그패턴분석)는 로그파일을 분석하여 특정 문자열 등 패턴과 일치하는 내용을 추출하는 기능을 제공한다.&lt;/li>
+ — 로그 파일을 분석하여 특정 문자열이나 패턴과 일치하는 내용을 추출하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28017,7 +28018,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-compare/" class="innerLink">파일비교&lt;/a>
 
- — 파일비교(File Compare) 기능은 공통컴포넌트의 요소기술 중 하나로, 서버 및 클라이언트 응용 애플리케이션에서 두 파일의 정보를 비교하는 기능을 제공한다.&lt;/li>
+ — 서버 및 클라이언트 응용 프로그램에서 두 파일의 정보를 비교하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28199,7 +28200,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-upload/" class="innerLink">파일업로드&lt;/a>
 
- — 첨부파일에 대한 업로드 기능을 제공한다. &lt;code>MultipartHttpServletRequest&lt;/code> 및 &lt;code>MultipartFile&lt;/code>을 통해 첨부된 파일 정보를 취득하고 서버에 저장하는 기능을 처리한다.&lt;/li>
+ — 첨부파일을 업로드하고 서버에 저장하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28329,7 +28330,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/process-id-check/" class="innerLink">프로세스ID확인&lt;/a>
 
- — 시스템에서 동작하는 프로세스에 대한 정보를 확인하는 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/li>
+ — 시스템에서 동작하는 프로세스 정보를 확인하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28381,7 +28382,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/property/" class="innerLink">프로퍼티&lt;/a>
 
- — 애플리케이션에서 공통으로 사용할 프로퍼티 정보를 로드하여 파싱 후 메모리에 가지고 있는 기능을 제공한다.&lt;/li>
+ — 애플리케이션에서 공통으로 사용하는 프로퍼티 정보를 로드하여 메모리에 저장하는 기능을 제공한다.&lt;/li>
 &lt;li>
 
 
@@ -28407,7 +28408,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/proxy-service/" class="innerLink">프록시서비스&lt;/a>
 
- — &lt;strong>프록시서비스&lt;/strong>는 네트워크 연결에 대한 프록시 설정을 동적으로 관리하고, 연결에 대한 기본 서비스(telnet, ftp, jdbc 연결)에 대한 로깅을 기록할 수 있는 네트워크 서비스 기능을 제공한다.&lt;/li>
+ — 프록시 설정을 동적으로 관리하고, Telnet, FTP, JDBC 연결 등의 접속 로그를 기록하는 기능을 제공한다.&lt;/li>
 &lt;/ul>
 &lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
