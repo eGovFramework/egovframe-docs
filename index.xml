@@ -11783,9 +11783,9 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 &lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates &amp;gt; Logging &amp;gt; New Time-Based Rolling File Appender 선택&lt;/p></description></item><item><title>TIMESTAMP값구하기</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/timestamp-value/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/timestamp-value/</guid><description>&lt;h1 id="timestamp값">TIMESTAMP값&lt;/h1>
+&lt;p>작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates &amp;gt; Logging &amp;gt; New Time-Based Rolling File Appender 선택&lt;/p></description></item><item><title>TIMESTAMP값구하기</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/timestamp-value/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/timestamp-value/</guid><description>&lt;h1 id="timestamp값구하기">TIMESTAMP값구하기&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>TIMESTAMP값은 응용시스템에서 고유값이 필요할 때 시스템 시각 기반의 17자리 TIMESTAMP 문자열을 생성하는 요소기술이다.&lt;/p>
+&lt;p>TIMESTAMP값은 응용 프로그램에서 고유한 식별값이 필요할 때 시스템 시각을 기반으로 17자리 TIMESTAMP 문자열을 생성하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="관련-소스">관련 소스&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -11816,12 +11816,12 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
  &lt;tr>
  &lt;td>&lt;code>getTimeStamp()&lt;/code>&lt;/td>
  &lt;td>&lt;code>String&lt;/code>&lt;/td>
- &lt;td>응용어플리케이션에서 고유값을 사용하기 위해 시스템에서17자리의TIMESTAMP값을 구하는 기능&lt;/td>
+ &lt;td>시스템 시각을 기반으로 17자리 TIMESTAMP 문자열을 생성하여 반환한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="사용-예">사용 예&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String&lt;span style="color:#bbb"> &lt;/span>ts&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovStringUtil.&lt;span style="color:#008080">getTimeStamp&lt;/span>();&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 예: 20260711153021123 (17자리)&lt;/span>&lt;span style="color:#bbb">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String&lt;span style="color:#bbb"> &lt;/span>ts&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovStringUtil.&lt;span style="color:#008080">getTimeStamp&lt;/span>();&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 예시: 20260711153021123 (17자리)&lt;/span>&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>
