@@ -10,11 +10,11 @@ menu:
     parent: "formatter-util"
 ---
 
-# TIMESTAMP값
+# TIMESTAMP값구하기
 
 ## 개요
 
-TIMESTAMP값은 응용시스템에서 고유값이 필요할 때 시스템 시각 기반의 17자리 TIMESTAMP 문자열을 생성하는 요소기술이다.
+TIMESTAMP값은 응용 프로그램에서 고유한 식별값이 필요할 때 시스템 시각을 기반으로 17자리 TIMESTAMP 문자열을 생성하는 기능을 제공한다.
 
 ## 관련 소스
 
@@ -26,12 +26,12 @@ TIMESTAMP값은 응용시스템에서 고유값이 필요할 때 시스템 시�
 
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
-| `getTimeStamp()` | `String` | 응용어플리케이션에서 고유값을 사용하기 위해 시스템에서17자리의TIMESTAMP값을 구하는 기능 |
+| `getTimeStamp()` | `String` | 시스템 시각을 기반으로 17자리 TIMESTAMP 문자열을 생성하여 반환한다. |
 
 ## 사용 예
 
 ```java
-String ts = EgovStringUtil.getTimeStamp(); // 예: 20260711153021123 (17자리)
+String ts = EgovStringUtil.getTimeStamp(); // 예시: 20260711153021123 (17자리)
 ```
 
 ## 참고자료
