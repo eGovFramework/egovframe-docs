@@ -38025,13 +38025,12 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
 &lt;/li>
 &lt;li>
 &lt;p>특징&lt;/p></description></item><item><title>트리메뉴</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/tree-menu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/interface/tree-menu/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>클라이언트(Client)에서 서버(Server)의 데이터를 받아 트리 형태로 메뉴를 구성하는 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;p>클라이언트에서 서버의 메뉴 데이터를 받아 트리 형태의 메뉴를 구성하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="기능-설명">기능 설명&lt;/h3>
 &lt;p>트리메뉴에서 제공하는 기능은 다음과 같다.&lt;/p>
 &lt;ol>
-&lt;li>서버의 메뉴 데이터(DAT 파일)를 파싱하여 트리 형태로 화면에 표현하는 기능&lt;/li>
+&lt;li>서버의 메뉴 데이터(DAT 파일)를 파싱하여 트리 형태의 메뉴를 생성하는 기능&lt;/li>
 &lt;/ol>
 &lt;h3 id="관련-소스">관련 소스&lt;/h3>
 &lt;table>
@@ -38065,7 +38064,7 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>트리메뉴 기능은 &lt;code>EgovMenuGov&lt;/code> 클래스의 메소드와 트리생성 JavaScript를 활용하여 제공한다.&lt;/p></description></item><item><title>특수문자열처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</guid><description>&lt;h1 id="특수문자열-처리">특수문자열 처리&lt;/h1>
+&lt;p>트리메뉴 기능은 &lt;code>EgovMenuGov&lt;/code> 클래스의 메서드와 트리 생성 JavaScript를 사용하여 제공한다.&lt;/p></description></item><item><title>특수문자열처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</guid><description>&lt;h1 id="특수문자열-처리">특수문자열 처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>특수문자열 처리는 HTML 등의 웹 환경에서 특수문자를 안전하게 표시하고 처리하기 위한 요소기술이다.
 &lt;code>EgovStringUtil&lt;/code>에서 제공하는 메서드를 통해 문자열의 특수문자를 변환하거나 HTML 표시를 위한 문자열 처리를 수행할 수 있다.&lt;/p>
