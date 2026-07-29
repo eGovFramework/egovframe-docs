@@ -12,8 +12,7 @@ menu:
 
 ## 개요
 
-클라이언트(Client)에서 서버(Server)의 데이터를 받아 트리 형태로 메뉴를 구성하는 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.
+클라이언트에서 서버의 메뉴 데이터를 받아 트리 형태의 메뉴를 구성하는 기능을 제공한다.
 
 ## 설명
 
@@ -21,7 +20,7 @@ menu:
 
 트리메뉴에서 제공하는 기능은 다음과 같다.
 
-1. 서버의 메뉴 데이터(DAT 파일)를 파싱하여 트리 형태로 화면에 표현하는 기능
+1. 서버의 메뉴 데이터(DAT 파일)를 파싱하여 트리 형태의 메뉴를 생성하는 기능
 
 ### 관련 소스
 
@@ -33,21 +32,21 @@ menu:
 
 ### 클래스 및 메소드 설명
 
-트리메뉴 기능은 `EgovMenuGov` 클래스의 메소드와 트리생성 JavaScript를 활용하여 제공한다.
+트리메뉴 기능은 `EgovMenuGov` 클래스의 메서드와 트리 생성 JavaScript를 사용하여 제공한다.
 
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| Vector | `parsFileByMenuChar(String parFile, String parChar, int parField)` | 메뉴테이블형태 파싱 | 데이터를 받아 구분값·필드수에 맞추어 메뉴필드 형태로 나눈다 |
+| Vector | `parsFileByMenuChar(String parFile, String parChar, int parField)` | 메뉴테이블형태 파싱 | 입력된 데이터를 구분자와 필드 수를 기준으로 메뉴 필드 형태로 분리한다. |
 <!-- markdownlint-restore -->
 
 #### 파라미터 정의 (Input)
 
-- `parFile`: String 타입의 절대경로를 포함한 메뉴변환파일 (예: `/user/com/test/file1.dat`)
+- `parFile`: 메뉴 변환 파일의 절대 경로(String) (예: `/user/com/test/file1.dat`)
 
 ### 사용 방법
 
-메인메뉴로 생성한 DAT 파일(라인별 `nodeId|parentNodeId|nodeName|nodeUrl`)을 파싱하여 트리메뉴를 표현한다.
+메인메뉴 기능으로 생성한 DAT 파일(라인별 `nodeId|parentNodeId|nodeName|nodeUrl`)을 파싱하여 트리메뉴를 표현한다.
 
 ```jsp
 <%
