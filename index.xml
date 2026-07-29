@@ -18083,14 +18083,14 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;h3 id="클래스다이어그램">클래스다이어그램&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-news-%eb%89%b4%ec%8a%a4%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
 &lt;/p></description></item><item><title>단위계산</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/unit-calculation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/unit-calculation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>단위계산 컴포넌트는 제곱미터를 평으로, 평을 제곱미터로 환산하는 등 넓이, 길이, 무게, 부피 등에 대한 단위를 환산하는 기능을 제공한다.&lt;/p>
+&lt;p>단위계산은 제곱미터와 평 간의 환산을 비롯하여 넓이, 길이, 무게, 부피 등의 단위를 서로 환산하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>해당 컴포넌트는 다음과 같이 다양한 단위의 환산 기능을 제공한다.&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>길이&lt;/strong>: 길이를 다른 길이 단위로 환산하는 기능을 제공한다.&lt;/li>
-&lt;li>&lt;strong>부피&lt;/strong>: 부피를 다른 길이 단위로 환산하는 기능을 제공한다.&lt;/li>
-&lt;li>&lt;strong>넓이&lt;/strong>: 넓이를 다른 길이 단위로 환산하는 기능을 제공한다.&lt;/li>
-&lt;li>&lt;strong>무게&lt;/strong>: 무게를 다른 길이 단위로 환산하는 기능을 제공한다.&lt;/li>
+&lt;li>&lt;strong>부피&lt;/strong>: 부피를 다른 부피 단위로 환산하는 기능을 제공한다.&lt;/li>
+&lt;li>&lt;strong>넓이&lt;/strong>: 넓이를 다른 넓이 단위로 환산하는 기능을 제공한다.&lt;/li>
+&lt;li>&lt;strong>무게&lt;/strong>: 무게를 다른 무게 단위로 환산하는 기능을 제공한다.&lt;/li>
 &lt;/ul>
 &lt;h3 id="관련-소스">관련 소스&lt;/h3>
 &lt;table>
@@ -18105,7 +18105,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;tr>
  &lt;td>Class&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.fda.ucc.service.EgovUnitCalcUtil.java&lt;/code>&lt;/td>
- &lt;td>단위계산을 위한 자바 클래스&lt;/td>
+ &lt;td>단위계산 기능을 제공하는 Java 클래스&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
