@@ -42,7 +42,7 @@ Find 상자에 “Docker”를 입력 Docker Tooling 을 찾아 Install을 클�
 
 설치가 완료되면 Eclipse를 재시작하여 Docker 도구 기능을 활성화한다.
 
-### 2. Docker Desktop 설치
+### 2. Docker Desktop 설치 및 설정
 
 Docker Desktop은 개발자가 컨테이너를 쉽게 만들고 관리할 수 있도록 도와주는 애플리케이션이다.
 
@@ -77,6 +77,39 @@ Docker 데몬은 기본적으로 Unix 소켓을 통해 통신하지만, TCP 포�
 설정 후 반드시 Docker restart를 진행한다.
 
 ![Docker 재시작](./images/docker-restart.png)
+
+### 3. Windows 방화벽 설정
+
+사용하는 OS가 Windows pro 라면 방화벽 설정 과정은 불필요하다.  
+사용하는 OS가 Windows Home 이라면 아래 방화벽 설정 과정을 추가로 진행해야 한다.
+
+Windows Defender 방화벽 → 고급 설정
+
+![Windows Defender 설정](./images/windows-defender-settings.png)
+
+인바운드 규칙  → 새 규칙 추가
+
+![인바운드 규칙 추가](./images/windows-defender-inbound-new-rule.png)
+
+포트 선택
+
+![포트 선택](./images/windows-defender-choose-port.png)
+
+TCP 선택, 특정 로컬 포트로 2375 입력
+
+![포트 선택 및 특정 로컬 포트로 2375 입력](./images/windows-defender-tcp-port-2375.png)
+
+연결 허용
+
+![연결 허용](./images/windows-defender-access-connection.png)
+
+인바운드 규칙 및 설명 입력
+
+![인바운드 규칙 및 설명](./images/windows-defender-write-name-description.png)
+
+시스템 재시작 후 포트 연결 확인: `netstat -an | find "2375"`
+
+![포트 연결 확인](./images/windows-defender-command-find-port.png)
 
 ## 사용법
 
