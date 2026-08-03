@@ -1,3 +1,15 @@
+---
+title: "아이디/비밀번호 찾기"
+linkTitle: "아이디/비밀번호 찾기"
+description: "아이디/비밀번호 찾기는 사용자 분류(일반회원, 기업회원, 업무사용자)에 공통으로 적용할 수 있는 아이디 조회와 임시 비밀번호 발급·메일발송 기능을 제공한다."
+url: /common-component/user-authentication/find-id-password/
+menu:
+  depth:
+    weight: 4
+    parent: "user-authentication"
+    identifier: "find-id-password"
+---
+
 # 아이디/비밀번호 찾기 서비스
 
 ## 개요
@@ -15,7 +27,10 @@
 
 ## 설명
 
- 일반적으로 아이디는 특정 조건으로 바로 확인이 가능하나, 비밀번호는 보편적으로 복호화될 수 없는 암호화 알고리즘으로 인코딩되어 데이터베이스에 저장되는 형태로 구성한다. 때문에 암호화된 비밀번호를 다시 사용하지 못하므로 임시 비밀번호를 생성하고 이를 인코딩한 데이터를 데이터베이스에 저장한 뒤 이메일로 임시 비밀번호를 발송하는 형태를 갖는다. 본 아이디/비밀번호 찾기 서비스에서도 이와같은 방식으로 처리하도록 기능을 제시한다.
+ 일반적으로 아이디는 특정 조건으로 바로 확인이 가능하나, 비밀번호는 보편적으로 복호화될 수 없는 암호화 알고리즘으로 인코딩되어
+ 데이터베이스에 저장되는 형태로 구성한다. 때문에 암호화된 비밀번호를 다시 사용하지 못하므로 임시 비밀번호를 생성하고 이를 인코딩한
+ 데이터를 데이터베이스에 저장한 뒤 이메일로 임시 비밀번호를 발송하는 형태를 갖는다.
+ 본 아이디/비밀번호 찾기 서비스에서도 이와같은 방식으로 처리하도록 기능을 제시한다.
 
 #### 관련소스
 
@@ -29,13 +44,28 @@
 | Service | egovframework.com.utl.fcc.service.EgovNumberUtil.java | 임의 숫자 생성을 위한 요소기술 클래스 |
 | ServiceImpl | egovframework.com.uat.uia.service.impl.EgovLoginServiceImpl.java | 로그인을 위한 서비스 구현 클래스 |
 | VO | egovframework.com.cmm.LoginVO.java | 로그인을 위한 VO 클래스 |
+| VO | egovframework.com.cmm.SearchIdRequestVO.java | 아이디 찾기 요청 VO 클래스 |
+| VO | egovframework.com.cmm.SearchPasswordRequestVO.java | 비밀번호 찾기 요청 VO 클래스 |
+| VO | egovframework.com.cmm.BaseRequestVO.java | 사용자구분(userSe)을 정의한 요청 기본 VO 클래스 |
 | DAO | egovframework.com.uat.uia.service.impl.LoginDAO.java | 로그인을 위한 데이터 처리 클래스 |
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr_SQL_[DB].xml | 로그인을 위한 Query XML |
 | JSP | /WEB-INF/jsp/egovframework/com/uat/uia/EgovIdPasswordSearch.jsp | 아이디/비밀번호찾기 페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uat/uia/EgovIdPasswordResult.jsp | 아이디/비밀번호찾기 결과 페이지 |
+
+#### 입력값 검증
+
+ 아이디/비밀번호 찾기 입력값은 화면에서 직접 `LoginVO`로 바인딩하지 않고 요청 VO(`SearchIdRequestVO`, `SearchPasswordRequestVO`)로 받는다.
+ 요청 VO의 각 항목에는 Bean Validation 어노테이션(`@EgovNullCheck`, `@EgovEmailCheck`)이 선언되어 있어,
+ 컨트롤러에서 `@Valid`와 `BindingResult`로 검증한 뒤 오류가 없을 때만 `LoginVO`로 값을 복사하여 서비스를 호출한다.
 
 #### 클래스 다이어그램
 
  ![image](./images/uat-findidpw-login1.gif)
+
+ 위 다이어그램은 서비스 인터페이스·구현 클래스·DAO의 구조를 나타낸다.
+ 컨트롤러의 아이디/비밀번호 찾기 메서드는 위 요청 VO 도입에 따라
+ `searchId(SearchIdRequestVO, BindingResult, ModelMap)`,
+ `searchPassword(SearchPasswordRequestVO, BindingResult, ModelMap)` 형태로 정의되어 있다.
 
 #### 관련테이블
 
@@ -52,7 +82,7 @@
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 아이디조회 | /uat/uia/searchId.do | searchId | loginDAO.searchId |
+| 아이디조회 | /uat/uia/searchId.do | searchId | LoginUsr.searchId |
 
  업무구분, 이름, 이메일주소 정보를 가지고 사용자 아이디를 조회한다.
 
@@ -60,7 +90,7 @@
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 비밀번호조회 | /uat/uia/searchPassword.do | searchPassword | loginDAO.searchPassword |
+| 비밀번호조회 | /uat/uia/searchPassword.do | searchPassword | LoginUsr.searchPassword |
 | 비밀번호힌트조회 | /uat/uia/egovIdPasswordSearch.do | idPasswordSearchView |  |
 
  아이디, 이름, 이메일, 비밀번호 힌트, 비밀번호 정답 정보를 갖고 사용자 정보를 조회하고 임시 비밀번호를 메일 발송한다.
@@ -82,4 +112,6 @@
 
 ## 참고자료
 
- 비밀번호 메일 발송: 전자우편연계
+- [아이디 찾기](./find-id.md)
+- [비밀번호 찾기](./find-password.md)
+- 비밀번호 메일 발송: [전자우편](../collaboration/email.md)
