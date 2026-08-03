@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Contribution 전용 페이지 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in Contribution 전용 페이지 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>kr</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/validation-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/validation-check/</guid><description>&lt;h1 id="요소기술-validation-체크">요소기술 Validation 체크&lt;/h1>
-&lt;blockquote>
-&lt;p>&lt;strong>참고 (5.0.0)&lt;/strong>: 표준프레임워크 5.0.0부터 유효성 검증은 Jakarta Bean Validation(&lt;code>@Valid&lt;/code>) 기반으로 전환되어, 본 문서의 Commons Validator 방식(validator XML)은 4.x 이하 버전에서 참고할 수 있습니다. (출처: 표준프레임워크 업그레이드 가이드 v5.0, 2026-06)&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>개발된 모든 공통기술에는 기본으로 제공되는 화면(JSP)의 입력항목에 대해 validation 체크 기능이 제공되어 있으나, 요소기술의 경우 그 쓰임새가 개발하고자 하는 애플리케이션의 개발 목적에 따라 재구현되어 사용되며, 개발될 애플리케이션의 화면(JSP)이 각각 상이하므로 아래와 같은 사용 예를 통해 향후 구현될 수 있는 가이드를 제공한다.
-본 기능은 전자정부 표준프레임워크 실행환경에 구현되어 있는 Validator를 활용한다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/find-id-password/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/find-id-password/</guid><description>&lt;h1 id="아이디비밀번호-찾기-서비스">아이디/비밀번호 찾기 서비스&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Contribution 전용 페이지 on 표준프레임워크 개발가이드</title><link>https://eGovFramework.github.io/egovframe-docs/</link><description>Recent content in Contribution 전용 페이지 on 표준프레임워크 개발가이드</description><generator>Hugo</generator><language>kr</language><atom:link href="https://eGovFramework.github.io/egovframe-docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/find-id-password/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-authentication/find-id-password/</guid><description>&lt;h1 id="아이디비밀번호-찾기-서비스">아이디/비밀번호 찾기 서비스&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자의 분류(일반 회원, 기업 회원, 업무 사용자) 공통으로 적용시킬 수 있는 아이디와 비밀번호를 찾기 조건을 도출하여 기능을 제공한다.
 아이디 찾기 : 이름, 이메일주소
@@ -31498,7 +31492,34 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/table>
 &lt;h3 id="소셜-로그인-oauth">소셜 로그인 (OAuth)&lt;/h3>
 &lt;p>네이버, 구글, 카카오 등 외부 OAuth 2.0 인증 서버를 통해 사용자 로그인을 처리한다.
-별도의 회원가입 절차 없이 기존 소셜 계정으로 시스템에 로그인할 수 있다.&lt;/p></description></item><item><title>용어사전</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/glossary/</guid><description>&lt;h1 id="용어사전">용어사전&lt;/h1>
+별도의 회원가입 절차 없이 기존 소셜 계정으로 시스템에 로그인할 수 있다.&lt;/p></description></item><item><title>요소기술 Validation 체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/validation-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/validation-check/</guid><description>&lt;h1 id="요소기술-validation-체크">요소기술 Validation 체크&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>공통컴포넌트에서 기본으로 제공하는 화면(JSP)에는 입력항목에 대한 Validation 체크 기능이 구현되어 있다.
+다만 요소기술은 개발하고자 하는 애플리케이션의 목적에 따라 재구현되어 사용되고 화면 또한 각각 상이하므로,
+본 문서는 공통컴포넌트에 실제 적용된 방식을 사용 예로 제시하여 향후 구현 시 참고할 수 있는 가이드를 제공한다.&lt;/p>
+&lt;p>공통컴포넌트 5.0의 유효성 검증은 다음 두 계층으로 구성된다.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>구분&lt;/th>
+ &lt;th>검증 위치&lt;/th>
+ &lt;th>사용 기술&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>클라이언트측 검증&lt;/td>
+ &lt;td>화면(JSP) 제출 직전&lt;/td>
+ &lt;td>&lt;code>EgovValidation.js&lt;/code> (&lt;code>validate*(form)&lt;/code> 함수)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>서버측 검증&lt;/td>
+ &lt;td>Controller 파라미터 바인딩 시점&lt;/td>
+ &lt;td>Jakarta Bean Validation(&lt;code>@Valid&lt;/code>) + Spring &lt;code>Validator&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>두 계층은 상호 보완 관계이며, 클라이언트측 검증은 사용자 편의를 위한 사전 확인이므로 서버측 검증을 반드시 함께 적용해야 한다.&lt;/p></description></item><item><title>용어사전</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/glossary/</guid><description>&lt;h1 id="용어사전">용어사전&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>업무에 활용되는 전문용어를 등록하고 등록된 용어에 대한 수정, 삭제, 검색등의 관리기능을 수행할 수 있도록 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
