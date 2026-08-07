@@ -28,6 +28,9 @@ menu:
 |--------|------|-----------|
 | **EgovMarkdownReader** | Markdown 파일 읽기 | DocumentReader |
 | **EgovPdfReader** | PDF 파일 읽기 (페이지별 분할) | DocumentReader |
+| **EgovDocxReader** | DOCX 파일 읽기 (Apache POI) | DocumentReader |
+| **EgovHwpReader** | HWP 파일 읽기 (hwplib) | DocumentReader |
+| **EgovHwpxReader** | HWPX 파일 읽기 (hwpxlib) | DocumentReader |
 | **EgovContentFormatTransformer** | HTML 태그 제거, 공백/줄바꿈 정규화, 특수문자 정리 | DocumentTransformer |
 | **EgovEnhancedDocumentTransformer** | 문서 분할, 키워드 추출, 요약 생성 | DocumentTransformer |
 | **EgovVectorStoreWriter** | Vector Store에 적재 (Embedding 포함) | DocumentWriter |
@@ -123,6 +126,100 @@ public class EgovPdfReader implements DocumentReader {
         }
 
         return allDocuments;
+    }
+}
+```
+
+---
+
+## EgovDocxReader
+
+Apache POI의 `XWPFWordExtractor`를 사용하여 DOCX 파일에서 텍스트를 추출한다.
+
+```java
+@Slf4j
+@Component
+public class EgovDocxReader implements DocumentReader {
+
+    @Value("${spring.ai.document.docx-path:#{null}}")
+    private String docxDocumentPath;
+
+    @Override
+    public List<Document> get() {
+        // 경로를 설정하지 않으면 건너뛴다
+        if (docxDocumentPath == null || docxDocumentPath.isBlank()) {
+            log.info("DOCX 문서 경로가 설정되지 않아 건너뜁니다.");
+            return List.of();
+        }
+
+        PathMatchingResourcePatternResolver resolver =
+            new PathMatchingResourcePatternResolver();
+        Resource[] resources = resolver.getResources(docxDocumentPath);
+
+        // XWPFWordExtractor로 본문을 추출하여 Document 생성
+        // ...
+    }
+}
+```
+
+---
+
+## EgovHwpReader
+
+hwplib를 사용하여 HWP(한글) 문서에서 텍스트를 추출한다. 공공기관에서 널리 쓰는 문서 형식을 그대로 색인할 수 있다.
+
+```java
+@Slf4j
+@Component
+public class EgovHwpReader implements DocumentReader {
+
+    @Value("${spring.ai.document.hwp-path:#{null}}")
+    private String hwpDocumentPath;
+
+    @Override
+    public List<Document> get() {
+        if (hwpDocumentPath == null || hwpDocumentPath.isBlank()) {
+            log.info("HWP 문서 경로가 설정되지 않아 건너뜁니다.");
+            return List.of();
+        }
+
+        HWPFile hwpFile = HWPReader.fromInputStream(inputStream);
+        String content = TextExtractor.extract(
+            hwpFile, TextExtractMethod.AppendControlTextAfterParagraphText);
+
+        // file_name·source 메타데이터와 함께 Document 생성
+        // ...
+    }
+}
+```
+
+---
+
+## EgovHwpxReader
+
+hwpxlib를 사용하여 HWPX(개방형 한글 문서) 파일에서 텍스트를 추출한다.
+
+```java
+@Slf4j
+@Component
+public class EgovHwpxReader implements DocumentReader {
+
+    @Value("${spring.ai.document.hwpx-path:#{null}}")
+    private String hwpxDocumentPath;
+
+    @Override
+    public List<Document> get() {
+        if (hwpxDocumentPath == null || hwpxDocumentPath.isBlank()) {
+            log.info("HWPX 문서 경로가 설정되지 않아 건너뜁니다.");
+            return List.of();
+        }
+
+        HWPXFile hwpxFile = HWPXReader.fromInputStream(inputStream);
+        String content = TextExtractor.extract(
+            hwpxFile, TextExtractMethod.InsertControlTextBetweenParagraphText);
+
+        // file_name·source 메타데이터와 함께 Document 생성
+        // ...
     }
 }
 ```
@@ -315,6 +412,9 @@ spring:
       # 문서 경로
       path: file:C:/workspace-test/upload/data/**/*.md
       pdf-path: file:C:/workspace-test/upload/data/**/*.pdf
+      docx-path: file:C:/workspace-test/upload/data/**/*.docx
+      hwp-path: file:C:/workspace-test/upload/data/**/*.hwp
+      hwpx-path: file:C:/workspace-test/upload/data/**/*.hwpx
 
       # 청킹 설정
       chunk-size: 4000              # 청크 크기 (토큰)
