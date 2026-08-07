@@ -4318,6 +4318,21 @@ Bean은 XML 또는 주석으로 정의된 프로필에 할당될 수 있다. 프
  &lt;td>DocumentReader&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td>&lt;strong>EgovDocxReader&lt;/strong>&lt;/td>
+ &lt;td>DOCX 파일 읽기 (Apache POI)&lt;/td>
+ &lt;td>DocumentReader&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>EgovHwpReader&lt;/strong>&lt;/td>
+ &lt;td>HWP 파일 읽기 (hwplib)&lt;/td>
+ &lt;td>DocumentReader&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>EgovHwpxReader&lt;/strong>&lt;/td>
+ &lt;td>HWPX 파일 읽기 (hwpxlib)&lt;/td>
+ &lt;td>DocumentReader&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>&lt;strong>EgovContentFormatTransformer&lt;/strong>&lt;/td>
  &lt;td>HTML 태그 제거, 공백/줄바꿈 정규화, 특수문자 정리&lt;/td>
  &lt;td>DocumentTransformer&lt;/td>
