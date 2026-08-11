@@ -23491,7 +23491,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>부서업무함 패키지는 요소기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다.&lt;/p></description></item><item><title>부서일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/department-schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/department-schedule/</guid><description>&lt;h1 id="부서일정관리">부서일정관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>부서원들의 /세미나/강의/교육/회의/기타 일정에 대한 계획을 쉽고 편하게 관리 할 수 있는 서비스로 월별일정보기, 주간별일정보기, 일별일정보기 기능을 제공한다.&lt;/p>
+&lt;p>부서원들의 /세미나/강의/교육/회의/기타 일정에 대한 계획을 쉽고 편하게 관리할 수 있는 서비스로 월별일정보기, 주간별일정보기, 일별일정보기 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>부서일정관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 개인일정관리, 일지관리, 전체일정 패키지와 함께 배포 파일을 구성한다.&lt;/p>
@@ -25453,7 +25453,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qmc-%ec%84%a4%eb%ac%b8%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
 &lt;/p></description></item><item><title>설문응답자관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-respondent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-respondent/</guid><description>&lt;h1 id="설문응답자관리">설문응답자관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>설문관리 시스템 구축시 사용되는 응답자정보 기능을 제공하며, 설문참여자 가 설문참여 시 응답자정보를 기본으로 입력하게 되어 있다.&lt;/p>
+&lt;p>설문관리 시스템 구축 시 사용되는 응답자정보 기능을 제공하며, 설문참여자가 설문에 참여할 때 응답자정보를 기본으로 입력하도록 되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>설문응답자관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문관리, 설문템플릿관리, 설문질문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -25608,7 +25608,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qrm-%ec%9d%91%eb%8b%b5%ec%9e%90%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >
 &lt;/p></description></item><item><title>설문조사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey/</guid><description>&lt;h1 id="설문조사">설문조사&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>설문관리 시스템 구축시 사용되는 설문조사 기능을 제공하며, 기본으로 관리자가 설문조사를 관리 할 수 있으며, 설문참여자가 설문참여 시 설문조사(설문응답결과)를 자동으로 등록 되도록 설계 되어 있다.&lt;/p>
+&lt;p>설문관리 시스템 구축 시 사용되는 설문조사 기능을 제공하며, 관리자가 설문조사를 관리할 수 있고 설문참여자가 설문에 참여하면 설문조사 결과가 자동으로 등록되도록 설계되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>설문조사 패키지는 요소기술의 공통 패키지(cmm)와 설문응답자관리 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문관리, 설문템플릿관리, 설문질문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -25643,7 +25643,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;/p></description></item><item><title>설문질문관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-question/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-question/</guid><description>&lt;h1 id="설문질문관리">설문질문관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>설문질문관리 시스템 구축시 사용되는 설문질문관리 기능을 제공하며 설문조사 참여자가 설문 참여 시 설문질문관리정보를 제공한다.&lt;/p>
+&lt;p>설문질문관리 시스템 구축 시 사용되는 설문질문관리 기능을 제공하며, 설문조사 참여자가 설문에 참여할 때 설문질문관리 정보를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>설문질문관리는 설문지를 관리하기 위한 목적으로 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
@@ -25688,7 +25688,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 ④ 설문템플릿관리 상세조회 : 기(記) 등록된 설문템플릿관리 정보를 조회한다.
 ⑤ 설문템플릿관리 삭제: 기(記) 등록된 설문템플릿관리 정보를 화면에 조회하여 데이터베이스에서 삭제한다.&lt;/p></description></item><item><title>설문항목관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-item/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/survey-item/</guid><description>&lt;h1 id="설문항목관리">설문항목관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>설문항목관리 시스템 구축시 사용되는 설문항목관리 기능을 제공하며 설문조사 참여자가 설문 참여 시 설문항목관리정보를 제공한다.&lt;/p>
+&lt;p>설문항목관리 시스템 구축 시 사용되는 설문항목관리 기능을 제공하며, 설문조사 참여자가 설문에 참여할 때 설문항목관리 정보를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>설문항목관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문응답자관리, 설문템플릿관리, 설문질문관리, 설문관리, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -32810,7 +32810,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/li>
 &lt;/ul></description></item><item><title>일정관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/schedule-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/schedule-management/</guid><description>&lt;h1 id="일정관리">일정관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>사용자의 /세미나/강의/교육/회의/기타 일정에 대한 계획을 쉽고 편하게 관리 할 수 있는 서비스로 월별일정보기, 주간별일정보기, 일별일정보기 기능을 제공한다.&lt;/p>
+&lt;p>사용자의 /세미나/강의/교육/회의/기타 일정에 대한 계획을 쉽고 편하게 관리할 수 있는 서비스로 월별일정보기, 주간별일정보기, 일별일정보기 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>개인일정관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 부서일정관리, 일지관리, 전체일정 패키지와 함께 배포 파일을 구성한다.&lt;/p>
@@ -32987,7 +32987,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/schedule-management-class-diagram.jpg" alt="클래스 다이어그램" >
 &lt;/p></description></item><item><title>일지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/journal-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/journal-management/</guid><description>&lt;h1 id="일지관리">일지관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>사용자가 일정관리와 부서일정관리를 이용할때 일정에 대한 기록을 남길때 본 서비스를 이용한다.&lt;/p>
+&lt;p>사용자가 일정관리와 부서일정관리를 이용할 때 일정에 대한 기록을 남길 때 본 서비스를 이용한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>일지관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 개인일정관리, 부서일정관리, 전체일정 패키지와 함께 배포 파일을 구성한다.&lt;/p>
@@ -33722,7 +33722,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h3 id="패키지-구조">패키지 구조&lt;/h3>
 &lt;p>전자우편 컴포넌트의 소스는 &lt;code>egovframework.com.cop.ems&lt;/code> 패키지에 위치한다.&lt;/p></description></item><item><title>전체일정</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/all-schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/all-schedule/</guid><description>&lt;h1 id="전체일정">전체일정&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>사용자가 일정관리, 부서일정관리를 조회및 관리 할 수 있는 서비스&lt;/p>
+&lt;p>사용자가 일정관리와 부서일정관리를 조회하고 관리할 수 있는 서비스&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>전체일정 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 개인일정관리, 일지관리, 부서일정관리 패키지와 함께 배포 파일을 구성한다.&lt;/p>
