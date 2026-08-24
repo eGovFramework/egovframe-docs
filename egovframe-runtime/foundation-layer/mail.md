@@ -215,6 +215,3 @@ src 폴더 아래에 Index.jsp를 선택하여 마우스 오른쪽 클릭하여 
 
 - [Spring Framework 6.2 - Email](https://docs.spring.io/spring-framework/reference/6.2/integration/email.html): JavaMailSender, 메일 발송
 - [Apache Commons Email User Guide](https://commons.apache.org/proper/commons-email/userguide.html)
-
-## 예제
-[mail-example](../../runtime-example/individual-example/foundation-layer/mail-example.md)
