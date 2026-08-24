@@ -118,8 +118,6 @@
 * [bootstrap](./presentation-layer/bootstrap.md)
 
 ### UX처리
-* [UX/UI Controller Component](./presentation-layer/uxui-controller-component.md)
-* [HTML5+CSS3.0+JavaScript Module App Framework 기본 활용](./presentation-layer/html5-css3.0-javascript-module-app-framework-basic.md)
 * [UI - bootstrap](./presentation-layer/bootstrap.md)
 
 ### 업무처리
