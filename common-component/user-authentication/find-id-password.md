@@ -18,7 +18,7 @@ menu:
  아이디 찾기 : 이름, 이메일주소
  비밀번호 찾기 : 아이디, 이름, 이메일주소, 비밀번호힌트, 비밀번호정답
 
-#### 기능흐름
+### 기능흐름
 
 | 기능명 | 기능 흐름 |
 | --- | --- |
@@ -32,7 +32,7 @@ menu:
  데이터를 데이터베이스에 저장한 뒤 이메일로 임시 비밀번호를 발송하는 형태를 갖는다.
  본 아이디/비밀번호 찾기 서비스에서도 이와같은 방식으로 처리하도록 기능을 제시한다.
 
-#### 관련소스
+### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
@@ -52,7 +52,7 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/uat/uia/EgovIdPasswordSearch.jsp | 아이디/비밀번호찾기 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uat/uia/EgovIdPasswordResult.jsp | 아이디/비밀번호찾기 결과 페이지 |
 
-#### 입력값 검증
+### 입력값 검증
 
  아이디/비밀번호 찾기 입력값은 화면에서 직접 `LoginVO`로 바인딩하지 않고 요청 VO(`SearchIdRequestVO`, `SearchPasswordRequestVO`)로 받는다.
  요청 VO의 각 항목에는 Bean Validation 어노테이션(`@EgovNullCheck`, `@EgovEmailCheck`)이 선언되어 있어,
