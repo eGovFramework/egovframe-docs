@@ -2128,7 +2128,16 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 &lt;p>Cassandra를 위한 Spring 데이터 프로젝트는 핵심 Spring 개념을 Cassandra 컬럼형 데이터 저장소를 사용하는 솔루션 개발에 적용하여 문서를 저장하고 쿼리하기 위한 높은 수준의 추상화 템플릿을 제공한다. Spring 프레임워크에서 제공하는 JDBC 지원과 유사하다는 것을 알 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="데이터베이스-연동">데이터베이스 연동&lt;/h3>
-&lt;p>Spring Data Cassandra와 Spring WebFlux를 함께 사용하여 Cassandra 데이터베이스와의 비동기적인 상호 작용을 지원하기 위해 Spring Data Cassandra에서 제공하는 DefaultBridgedReactiveSession 클래스를 사용한다. 해당 클래스를 사용하여 Cassandra 클러스터에 대한 연결을 설정하고, 세션을 관리하며 비동기 쿼리를 실행하고 결과를 처리할 수 있다.&lt;/p></description></item><item><title>Change Management</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</guid><description>&lt;h1 id="change-management-개요">Change Management 개요&lt;/h1>
+&lt;p>Spring Data Cassandra와 Spring WebFlux를 함께 사용하여 Cassandra 데이터베이스와의 비동기적인 상호 작용을 지원하기 위해 Spring Data Cassandra에서 제공하는 DefaultBridgedReactiveSession 클래스를 사용한다. 해당 클래스를 사용하여 Cassandra 클러스터에 대한 연결을 설정하고, 세션을 관리하며 비동기 쿼리를 실행하고 결과를 처리할 수 있다.&lt;/p></description></item><item><title>Center Cut</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-centercut-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-centercut-intro/</guid><description>&lt;h1 id="center-cut">Center Cut&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>전자정부 표준프레임워크는 &lt;strong>큐(Queue)를 사용하여 대용량 데이터를 처리&lt;/strong>하기 위한 센터 컷(Center Cut) 방식의 배치 작업 수행 가이드를 제공한다. 데이터를 읽어 큐에 적재하는 단계와 큐에서 데이터를 꺼내 처리하는 단계를 분리함으로써, 대용량 데이터를 안정적으로 나누어 처리할 수 있다.&lt;/p>
+&lt;h2 id="센터-컷-가이드-구조">센터 컷 가이드 구조&lt;/h2>
+&lt;p>센터 컷은 기본적으로 일반 배치 프로그램과 유사하나, 큐 활용이 추가된다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Center-Cut Reading Step&lt;/strong>: ItemReader로 데이터를 읽어 큐에 삽입하는 단계&lt;/li>
+&lt;li>&lt;strong>Center-Cut Process Step&lt;/strong>: 큐에서 데이터를 읽어 처리 모듈(Business Proc)로 데이터를 처리하는 단계&lt;/li>
+&lt;/ul>
+&lt;p>이 과정에서 추가되는 핵심 모듈은 &lt;strong>QueueSender&lt;/strong>와 &lt;strong>QueueReceiver&lt;/strong>이다.&lt;/p></description></item><item><title>Change Management</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/configuration-management-tool/change-management/</guid><description>&lt;h1 id="change-management-개요">Change Management 개요&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Change Management는 프로젝트(또는 복수의 프로젝트)에서 개발자간의 커뮤니케이션을 돕고 체계적인 이슈(버그)를 관리하는 시스템을 의미한다.&lt;/p>
 &lt;h2 id="feature">Feature&lt;/h2>
