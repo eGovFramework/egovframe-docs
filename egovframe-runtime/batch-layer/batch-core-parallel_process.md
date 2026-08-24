@@ -44,10 +44,6 @@ TaskExecutor 예제에서 TaskExecutor 인터페이스를 구현하기 위해 �
 
 ✔ DataSource 처럼 Step에서 사용되는 풀이 리소스들에 의해 대체될 수 있다. 그러므로 Step에서 병행처리 되는 쓰레드 수를 원하는 만큼 최대한 풀을 설정해야 한다.
 
-#### 관련 예제
-
-[멀티쓰레드 예제](./batch-example-multi_process.md)
-
 ### Parallel Steps
 
 병행처리가 필요한 응용프로그램 로직은 서로 다른 책임으로 분할될 뿐만 아니라, 각 단계에서 할당되면 그것이 한 프로세스에서 병행처리가 될 수 있다. Parallel Step 수행은 사용하고 구성하기 쉽다.
@@ -76,10 +72,6 @@ task-executor 속성은 각각의 흐름을 실행하는데 필요한 TaskExecut
 
 
 ![parallelstep1](./images/parallelstep1.png)
-
-#### 관련 예제
-
-[Parallel 예제](./batch-example-multi_process.md)
 
 ### 파티셔닝(Partitioning)
 

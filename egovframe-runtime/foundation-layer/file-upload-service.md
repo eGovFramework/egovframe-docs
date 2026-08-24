@@ -172,6 +172,3 @@ return "success";
 ```
 
 Tomcat에서는 일반적으로 웹 어플리케이션이 GET과 POST 방식으로 파라미터를 넘겨 받을 때 request.setCharacterEncoding()을 통한 문자셋 인코딩이 필요하다.
-
-## 예제
-- [파일업로드 예제](../../runtime-example/individual-example/foundation-layer/file-upload-example.md)

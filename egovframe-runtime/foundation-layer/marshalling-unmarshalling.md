@@ -466,6 +466,3 @@ public void testUnmarshalling()
 - [Spring Framework 6.2 - Marshalling XML by Using Object-XML Mappers](https://docs.spring.io/spring-framework/reference/6.2/data-access/oxm.html): Marshaller/Unmarshaller 추상화
 - [Castor](http://castor.codehaus.org/)
 - [Apache XMLBeans](https://xmlbeans.apache.org/documentation/tutorial_getstarted.html)
-
-## 예제
-- [marshalling/unmarshalling 예제](../../runtime-example/individual-example/foundation-layer/marshalling-unmarshalling-example.md)

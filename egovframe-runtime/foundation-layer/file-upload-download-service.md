@@ -79,6 +79,3 @@ multiple files with a single file(한단 샘플)에서 사용한 JavaScript를 �
 - [Spring Framework 6.2 - Multipart Resolver](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-controller/multipart.html): 파일 업로드(Multipart), CommonsMultipartResolver
 - [Spring Framework 6.2 - Spring MVC](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc.html): DispatcherServlet, Annotated Controllers
 - [Apache Commons FileUpload](https://commons.apache.org/fileupload/)
-
-## 예제
-- [파일업로드 예제](../../runtime-example/individual-example/foundation-layer/file-upload-example.md)

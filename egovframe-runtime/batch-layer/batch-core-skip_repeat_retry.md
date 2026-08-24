@@ -69,10 +69,6 @@ Skip, Retry, Repeat은 효율적인 배치수행을 위해 필요한 기능들�
 </step>
 ```
 
-#### 관련예제
-
- [건너뛰기(Skip) 기능 예제](../../runtime-example/individual-example/batch-layer/batch-example-skip_mgmt.md)
-
 ### Retry
 
  Retry는 데이터를 Processing, Writing 하는 동안 설정된 Exception이 발생했을 경우, 지정한 정책에 따라 데이터 처리를 재시도하는 기능이다. Skip 과 마찬가지로 Retry를 함으로써, 배치수행의 빈번한 실패를 줄일 수 있게 한다.
@@ -315,10 +311,6 @@ public interface RetryListener {
 ```
 
  이 예에서는 인터셉터 내에 있는 기본 RetryTemplate을 사용한다. 리스너나 정책을 변경하기 위해 인터셉터에 RetryTemplate을 적용하는 것이 필요하다.
-
-#### 관련예제
-
- [재시도(Retry) 예제](../../runtime-example/individual-example/batch-layer/batch-example-retry_mgmt.md)
 
 ### Repeat
 
