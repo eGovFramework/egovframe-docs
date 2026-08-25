@@ -4381,7 +4381,7 @@ Bean은 XML 또는 주석으로 정의된 프로필에 할당될 수 있다. 프
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000080">&amp;lt;bean&lt;/span> &lt;span style="color:#008080">id=&lt;/span>&lt;span style="color:#d14">&amp;#34;async&amp;#34;&lt;/span> &lt;span style="color:#008080">class=&lt;/span>&lt;span style="color:#d14">&amp;#34;org.springframework.core.task.SimpleAsyncTaskExecutor&amp;#34;&lt;/span> &lt;span style="color:#000080">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="job-설정">Job 설정&lt;/h4>
 &lt;h5 id="동기비동기-처리-예제의-job-설정-파일인-delegatingjobxml을-확인한다">동기/비동기 처리 예제의 Job 설정 파일인 delegatingJob.xml을 확인한다.&lt;/h5>
-&lt;p>동기/비동기 처리 예제를 위해 특별히 Job을 설정하는 내용은 없다. 이 예제에서 제공하는 Job의 상세 내용은 기존 업무 재사용 예제의 Job 설정과 같으므로 이를 참고한다.&lt;/p></description></item><item><title>Excel Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/excel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/excel/</guid><description>&lt;h1 id="excel-service">Excel Service&lt;/h1>
+&lt;p>동기/비동기 처리 예제를 위해 특별히 Job을 설정하는 내용은 없다.&lt;/p></description></item><item><title>Excel Service</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/excel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/excel/</guid><description>&lt;h1 id="excel-service">Excel Service&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Excel 파일 포맷을 다룰 수 있는 자바 라이브러리를 제공하여, 사용자들이 데이터를 Excel 파일 포맷으로 다운받거나, 대량의 Excel 데이터를 시스템에 올릴 수 있도록 지원하기 위한 서비스이다.
 Excel 서비스는 &lt;strong>Apache POI&lt;/strong> 오픈소스를 사용하여 구현하였으며 &lt;strong>주요 Excel 접근&lt;/strong> 기능 외에 &lt;strong>Excel 다운로드&lt;/strong>, &lt;strong>Excel 파일 업로드&lt;/strong> 등의 기능이 있다.
@@ -21074,12 +21074,10 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  
  
  
- 
- 
 
 
 
-&lt;a href="../string-conversion/" class="innerLink">문자열변환&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/formatter-util/string-conversion/" class="innerLink">문자열변환&lt;/a>
 
 , 
 
@@ -21101,12 +21099,10 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  
  
  
- 
- 
 
 
 
-&lt;a href="../string-replacement/" class="innerLink">문자열치환&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/formatter-util/string-replacement/" class="innerLink">문자열치환&lt;/a>
 
 , 
 
@@ -21128,12 +21124,10 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  
  
  
- 
- 
 
 
 
-&lt;a href="../string-search/" class="innerLink">문자열검색&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/formatter-util/string-search/" class="innerLink">문자열검색&lt;/a>
 
 &lt;/li>
 &lt;li>
