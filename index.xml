@@ -319,7 +319,17 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> identifier: &lt;span style="color:#d14">&amp;#34;현재 파일의 id(자식 파일이 있을 때 필요)&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>
-&lt;p>&lt;strong>title&lt;/strong>&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
+&lt;p>&lt;strong>title&lt;/strong>&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/docs_lint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/docs_lint/</guid><description>&lt;h1 id="가이드-문서-정합성-체크">가이드 문서 정합성 체크&lt;/h1>
+&lt;p>※ 해당 문서는 EricSeokgon님의 contribution 기여본(#767)을 기반으로 작성되었습니다.&lt;/p>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>&lt;code>scripts/docs_lint.py&lt;/code>는 가이드 Markdown 문서의 정합성을 로컬에서 검사하는 스크립트입니다.&lt;br>
+Python 표준 라이브러리만 사용하므로 별도 패키지 설치가 필요하지 않습니다.&lt;br>
+일반 마크다운 린터와 달리, frontmatter·상대링크·제목 계층·목차 요약 등 사이트 렌더링에 영향을 주는 항목을 점검합니다.&lt;br>
+PR 반영 후 가이드가 즉시 배포되므로, 배포 이후 드러나는 오류를 사전에 줄이기 위해 사용합니다.&lt;/p>
+&lt;h2 id="방법">방법&lt;/h2>
+&lt;h3 id="1-파일-생성-및-수정">1. 파일 생성 및 수정&lt;/h3>
+&lt;p>md 파일을 작성하거나 수정합니다.&lt;br>
+*이미 작성된 파일도 확인이 가능합니다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
 &lt;ul>
 &lt;li>본 GitHub 저장소 생성 목적은 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 형식의 문서로 변환하여 기여받는 것입니다.&lt;/li>
 &lt;li>이 프로젝트의 목적은 쉽게 접근 가능한 Markdown 형식의 문서를 통해 사용자와 개발자들이 표준프레임워크를 더욱 편리하게 활용할 수 있도록 돕는 것입니다.&lt;/li>
