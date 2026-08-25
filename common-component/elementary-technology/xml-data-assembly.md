@@ -74,9 +74,9 @@ boolean result = EgovXMLDoc.getClassToXML(mailDoc, "/user/com/test/mail_result.x
 ## 환경설정
 
 XML 스키마 기반 클래스 생성을 위해 Apache XMLBeans 라이브러리를 사용한다. 자세한 스키마 컴파일 절차는
-[XML 데이터파싱](../xml-data-parsing/) 문서의 환경설정을 참조한다.
+[XML 데이터파싱](xml-data-parsing) 문서의 환경설정을 참조한다.
 
 ## 참고자료
 
-- [XML 데이터파싱](../xml-data-parsing/)
+- [XML 데이터파싱](xml-data-parsing)
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

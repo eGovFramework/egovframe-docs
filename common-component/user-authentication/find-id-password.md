@@ -58,7 +58,7 @@ menu:
  요청 VO의 각 항목에는 Bean Validation 어노테이션(`@EgovNullCheck`, `@EgovEmailCheck`)이 선언되어 있어,
  컨트롤러에서 `@Valid`와 `BindingResult`로 검증한 뒤 오류가 없을 때만 `LoginVO`로 값을 복사하여 서비스를 호출한다.
 
-#### 클래스 다이어그램
+### 클래스 다이어그램
 
  ![image](./images/uat-findidpw-login1.gif)
 
@@ -67,7 +67,7 @@ menu:
  `searchId(SearchIdRequestVO, BindingResult, ModelMap)`,
  `searchPassword(SearchPasswordRequestVO, BindingResult, ModelMap)` 형태로 정의되어 있다.
 
-#### 관련테이블
+### 관련테이블
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
@@ -78,7 +78,7 @@ menu:
 
 ## 관련화면 및 수행매뉴얼
 
-#### 아이디 찾기
+### 아이디 찾기
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -86,7 +86,7 @@ menu:
 
  업무구분, 이름, 이메일주소 정보를 가지고 사용자 아이디를 조회한다.
 
-#### 비밀번호 찾기
+### 비밀번호 찾기
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |

@@ -79,5 +79,5 @@ boolean result2 = EgovMenuGov.setDataByDATFile("/user/com/test/file1.dat",
 
 ## 참고자료
 
-- [트리메뉴](../tree-menu/) — 메인메뉴로 생성한 DAT 파일을 활용하여 트리메뉴를 표현
+- [트리메뉴](tree-menu) — 메인메뉴로 생성한 DAT 파일을 활용하여 트리메뉴를 표현
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

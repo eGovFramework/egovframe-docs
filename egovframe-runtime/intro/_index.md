@@ -8,7 +8,6 @@ menu:
         weight: 1
         parent: "egovframe-runtime"
         identifier: "runtime_intro"
-# headless: true
 ---
 
 # 실행환경 소개

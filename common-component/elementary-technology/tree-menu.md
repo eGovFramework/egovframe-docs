@@ -77,5 +77,5 @@ N/A
 
 ## 참고자료
 
-- [메인메뉴](../main-menu/) — 트리메뉴에서 사용하는 DAT 파일의 생성·관리
+- [메인메뉴](main-menu) — 트리메뉴에서 사용하는 DAT 파일의 생성·관리
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

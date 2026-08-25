@@ -45,7 +45,7 @@ Job 수행시, 동기와 비동기 방식으로 데이터를 처리할 수 있�
 
 ##### 동기/비동기 처리 예제의 Job 설정 파일인 delegatingJob.xml을 확인한다.
 
-동기/비동기 처리 예제를 위해 특별히 Job을 설정하는 내용은 없다. 이 예제에서 제공하는 Job의 상세 내용은 기존 업무 재사용 예제의 Job 설정과 같으므로 이를 참고한다.
+동기/비동기 처리 예제를 위해 특별히 Job을 설정하는 내용은 없다.
 
 ```xml
 <job id="delegateJob" xmlns="http://www.springframework.org/schema/batch">
@@ -127,7 +127,3 @@ public class EgovSyncDelegatingJobFunctionalTests {
 #### JunitTest 수행
 
 ##### AsyncItemWriter
-
-## 참고자료
-
-- [JobLauncher](./batch-execution-job_launcher.md)

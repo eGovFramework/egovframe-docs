@@ -48,5 +48,5 @@ System.out.println(EgovStringUtil.decode("하이", "하이  ", "foo", "bar"));
 
 ## 참고자료
 
-- [문자열변환](../string-conversion/), [문자열치환](../string-replacement/), [문자열검색](../string-search/)
+- [문자열변환](string-conversion), [문자열치환](string-replacement), [문자열검색](string-search)
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

@@ -86,5 +86,5 @@ XML 스키마(`.xsd`)로 생성된 JAR를 시스템에 추가한 뒤, 해당 클
 
 ## 참고자료
 
-- [XML 데이터조립](../xml-data-assembly/)
+- [XML 데이터조립](xml-data-assembly)
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

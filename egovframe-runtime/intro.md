@@ -117,9 +117,6 @@
   * [SockJS](./presentation-layer/websocket-sockjs.md)
 * [bootstrap](./presentation-layer/bootstrap.md)
 
-### UX처리
-* [UI - bootstrap](./presentation-layer/bootstrap.md)
-
 ### 업무처리
 * [Exception Handling](./business-logic-layer/exception-handling.md)
 * [Spring Web Flow](./business-logic-layer/spring-web-flow.md)

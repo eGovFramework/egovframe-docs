@@ -25,26 +25,26 @@ UUID Generation Configuration 의 설명은 다음 실행환경 가이드를 참
 
 1. 이클립스 Window > Show View > Other… 를 선택하여 Show View 창을 연다.
 
-   ![Show View 메뉴](./images/config-codegen-menu.png)
+   ![Show View 메뉴](./../images/config-codegen-menu.png)
 
 2. eGovFrame > eGovFrame Templates 를 선택한다.
 
-   ![eGovFrame Templates 메뉴](./images/config-template-menu.png)
+   ![eGovFrame Templates 메뉴](./../images/config-template-menu.png)
 
 3. 작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates > ID Generation > New UUID Generation 선택
 
-   ![New DataSource 선택](./images/config-templates-configurations.png)
+   ![New DataSource 선택](./../images/config-templates-configurations.png)
 
 4. 화면 UI 를 통해 필요한 항목을 입력한 뒤 최종적으로 Finish 버튼을 클릭한다. **XML 방식** 또는 **Java Config 방식** 모두를 지원한다.
 
-   ![상세 정보 입력](./images/config-uuid-gen-input.png)
+   ![상세 정보 입력](./../images/config-uuid-gen-input.png)
 
 5. 생성된 Configuration 파일을 확인한다.
 
    * **XML 방식**
 
-     ![생성된 Configuration 파일 확인 (XML)](./images/config-uuid-gen-result-xml.png)
+     ![생성된 Configuration 파일 확인 (XML)](./../images/config-uuid-gen-result-xml.png)
 
    * **Java Config 방식**
 
-     ![생성된 Configuration 파일 확인 (Java Config)](./images/config-uuid-gen-result-java.png)
+     ![생성된 Configuration 파일 확인 (Java Config)](./../images/config-uuid-gen-result-java.png)

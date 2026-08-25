@@ -90,4 +90,4 @@ Globals.fileStorePath = C:/egovframework/upload/
 ## 참고자료
 
 - [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)
-- 파일다운로드 문서 참조: [파일다운로드](../file-download/)
+- 파일다운로드 문서 참조: [파일다운로드](./file-download.md)
