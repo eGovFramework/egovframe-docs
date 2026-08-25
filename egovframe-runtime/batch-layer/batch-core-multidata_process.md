@@ -281,7 +281,5 @@ public class FileItemProcessor implements ItemProcessor<EgovCompositeDataProvide
 
 ## 참고자료
 
-- [CompositItem 예제](/runtime-example/individual-example/batch-layer/batch-example-composite_item.md)
-- [MultiResource예제](/runtime-example/individual-example/batch-layer/batch-example-multi_resource.md)
 - [MultiItemReader](https://docs.spring.io/spring-batch/reference/5.2/readersAndWriters.html#multiFileInput)
 - [CompositeItemWriter](https://docs.spring.io/spring-batch/reference/5.2/readersAndWriters.html#delegatePatternAndRegistering)
