@@ -35,6 +35,7 @@ Frontmatter 수정 오류 발생 시 화면 예시
 
 ### 2. 자동 Merge 및 빌드
 
+> PR 전 scripts/docs_lint.py를 통해 **가이드 문서 정합성**을 확인할 수 있습니다. (참고: **[가이드 문서 정합성 체크](docs_lint.md)**) <br>
 > PR 후 GitHub Actions가 완료되면 **반드시 [가이드 문서 보기](https://egovframework.github.io/egovframe-docs/) 링크로 들어가서 자신의 기여 내용이 잘 반영되었는지 확인**해주시기 바랍니다.
 
 PR 직후 GitHub Actions를 통해 자동 검증이 실행됩니다. 검증 내용은 다음과 같습니다.
@@ -314,6 +315,6 @@ public class Example {
 - [IoC Container](https://github.com/eGovFramework/egovframe-docs/blob/main/egovframe-runtime/foundation-layer-core/ioc-container.md)
 
 ### 참고자료
-
+- [가이드 문서 정합성 체크](docs_lint.md)
 - [Markdown 기본 문법](https://www.markdownguide.org/basic-syntax/)
 - [Markdown 고급 문법](https://www.markdownguide.org/extended-syntax/)
