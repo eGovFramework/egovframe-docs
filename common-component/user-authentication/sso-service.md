@@ -2,13 +2,13 @@
   title: SSO 연계 서비스
   linkTitle: sso 연계 서비스
   description: "SSO 연계 서비스는 독립된 사이트간의 인증 공유를 위해 3rd party SSO 솔루션을 활용할 수 있는 인터페이스를 제공한다."
-  url: /common-component/user-authentication/login/sso_service/
+  url: /common-component/user-authentication/login/sso-service/
   menu:
     depth:
       name: SSO 연계서비스
       weight: 1
       parent: "login"
-      identifier: "sso_service"
+      identifier: "sso-service"
 ---
 
 
