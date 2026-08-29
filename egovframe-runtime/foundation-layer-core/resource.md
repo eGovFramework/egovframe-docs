@@ -51,7 +51,7 @@ String getMsg = messageSource.getMessage("resource.basic.msg1" , null , Locale.g
 assertEquals("Get Message Success!", getMsg , "message1");
 ```
 
- 위의 소스를 보면 messageSource.getMessage를 이용하여 Massage를 얻는 것을 확인 할 수 있다.
+ 위의 소스를 보면 messageSource.getMessage를 이용하여 Message를 얻는 것을 확인 할 수 있다.
 
 ### Message Locale
 
