@@ -20784,37 +20784,14 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
 &lt;/li>
 &lt;/ul></description></item><item><title>문자메시지서비스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/sms-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/sms/sms-service/</guid><description>&lt;h1 id="문자메시지서비스">문자메시지서비스&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>문자메시지서비스는 전자정부 SMS 서비스(모바일 전자정부 M-Gov)를 이용하기 위한 문자메시지 전송 인터페이스를 제공하며 별도의 M-Gov 신청을 통해 사용할 수 있다.&lt;/p>
+&lt;p>문자메시지서비스는 사용자에게 안내, 알림, 공지 메시지를 전송할 때 활용하는 기능입니다. 전자정부 SMS 서비스(모바일 전자정부 M-Gov)를 연동해 문자메시지를 발송하고, 전송 이력도 함께 관리할 수 있습니다.&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>기능흐름&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/sms-service-outline.jpg" alt="기능흐름" >&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>전자정부 표준프레임워크 등의 프레임워크를 사용하지 않는 경우는 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
- 
- 
-
-
-
-&lt;a href="#" class="innerLink">SMS 서비스&lt;/a>
-
-를 참조하여 적용한다.&lt;/p>
+&lt;p>전자정부 표준프레임워크 등의 프레임워크를 사용하지 않는 경우에는 모바일 전자정부 M-Gov 연동 절차를 참고해 적용할 수 있습니다.&lt;/p>
 &lt;h2 id="전제조건">전제조건&lt;/h2>
 &lt;p>문자메시지서비스를 사용하기 위해서는 별도로 전자정부 SMS 서비스(모바일 전자정부 M-Gov)를 신청하여야 하며, 이는 행정안전부 정보통합전산센터에서 주관하고 있다.&lt;/p>
 &lt;p>서비스 신청 절차는 다음과 같다.&lt;/p>
