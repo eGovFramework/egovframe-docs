@@ -15,13 +15,13 @@ menu:
 
 ## 개요
 
-문자메시지서비스는 전자정부 SMS 서비스(모바일 전자정부 M-Gov)를 이용하기 위한 문자메시지 전송 인터페이스를 제공하며 별도의 M-Gov 신청을 통해 사용할 수 있다.
+문자메시지서비스는 사용자에게 안내, 알림, 공지 메시지를 전송할 때 활용하는 기능입니다. 전자정부 SMS 서비스(모바일 전자정부 M-Gov)를 연동해 문자메시지를 발송하고, 전송 이력도 함께 관리할 수 있습니다.
 
 - 기능흐름
 
   ![기능흐름](./images/sms-service-outline.jpg)
 
-전자정부 표준프레임워크 등의 프레임워크를 사용하지 않는 경우는 [SMS 서비스](#)를 참조하여 적용한다.
+전자정부 표준프레임워크 등의 프레임워크를 사용하지 않는 경우에는 모바일 전자정부 M-Gov 연동 절차를 참고해 적용할 수 있습니다.
 
 ## 전제조건
 
@@ -129,7 +129,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SMS_ID', 1);
 
 이를 지정하기 위해서는 globals.properties 속성 파일에 추가 속성을 설정하여야 한다.
 
-globals.properties에 관련된 내용은 요소기술 [프로퍼티 및 명령어 쉘스크립트](#) 부분을 참조한다.
+globals.properties에 관련된 내용은 요소기술 [프로퍼티 및 명령어 쉘스크립트](../elementary-technology/property.md) 부분을 참조한다.
 
 - Globals.SMEConfigPath 추가
 
