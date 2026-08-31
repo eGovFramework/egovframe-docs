@@ -30,7 +30,7 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovMenuGov.java` | 메인메뉴 요소기술 클래스 | 메뉴파일 생성 |
-| JSP | `WEB_INF/jsp/egovframework/cmm/EgovMenuGov.jsp` | 테스트 페이지 | 직접 생성 (사용방법 참고) |
+| JSP | `WEB-INF/jsp/egovframework/cmm/EgovMenuGov.jsp` | 테스트 페이지 | 직접 생성 (사용방법 참고) |
 
 ### 클래스 및 메소드 설명
 

@@ -41,7 +41,7 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovSysInfo.java` | 시스템 정보 확인 요소기술 클래스 | |
-| JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovProcsInfo.jsp` | 테스트 페이지 | |
+| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovProcsInfo.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 

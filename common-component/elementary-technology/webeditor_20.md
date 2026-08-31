@@ -29,7 +29,7 @@ menu:
 | --- | --- | --- | --- |
 | HTML | /html/egovframework/cmm/utl/htmlarea3.0 | HTMLAREA3.0 웹에디터 |  |
 | JS | /html/egovframework/cmm/utl/htmlarea3.0/htmlarea.js | 웹에디터 동작 스크립트 |  |
-| JSP | WEB_INF/jsp/egovframework/cmm/utl/EgovWebEditor.jsp | 테스트 페이지 |  |
+| JSP | WEB-INF/jsp/egovframework/cmm/utl/EgovWebEditor.jsp | 테스트 페이지 |  |
 
 
 #### 메소드

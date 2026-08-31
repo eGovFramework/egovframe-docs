@@ -28,7 +28,7 @@ Ping Test를 통해 네트워크 통신가능 여부를 확인하는 기능을 �
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovNetworkState.java` | 네트워크 상태 체크 요소기술 클래스 | |
-| JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovNetworkState.jsp` | 테스트 페이지 | |
+| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovNetworkState.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 
