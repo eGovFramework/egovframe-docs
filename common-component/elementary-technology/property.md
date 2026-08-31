@@ -41,7 +41,7 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.cmm.service.EgovProperties.java` | 프로퍼티 요소기술 클래스 | |
-| JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovProperty.jsp` | 테스트 페이지 | |
+| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovProperty.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 

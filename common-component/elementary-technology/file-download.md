@@ -32,7 +32,7 @@ menu:
 | --- | --- | --- | --- |
 | Controller | `egovframework.com.cmm.web.EgovFileDownloadController.java` | 파일다운로드 컨트롤러 | |
 | Util | `egovframework.com.cmm.service.EgovFileMngUtil.java` | 파일 처리 유틸리티 클래스 | |
-| JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp` | 테스트 페이지 | |
+| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 

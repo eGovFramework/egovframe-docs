@@ -37,9 +37,9 @@ Social Login은 다음과 같은 기능을 제공한다.
 | Service | egovframework.com.ext.oauth.service.OAuthLogin.java | 소셜 로그인 인증 및 로그인 정보를 처리하는 서비스 |  |
 | VO | egovframework.com.ext.oauth.service.OAuthUniversalUser.java | 소셜 로그인 계정에 대한 VO |  |
 | VO | egovframework.com.ext.oauth.service.OAuthVO.java | 소셜 로그인 인증을 받기 위한 VO |  |
-| JSP | WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp | 소셜 로그인을 연동하는 페이지 |  |
-| JSP | WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauth.jsp | 소셜 로그인을 처리하는 페이지 |  |
-| JSP | WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauthResult.jsp | 소셜 로그인 결과를 출력하는 페이지 |  |
+| JSP | WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp | 소셜 로그인을 연동하는 페이지 |  |
+| JSP | WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauth.jsp | 소셜 로그인을 처리하는 페이지 |  |
+| JSP | WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauthResult.jsp | 소셜 로그인 결과를 출력하는 페이지 |  |
 | XML | resources/egovframework/spring/com/context-oauth.xml | 소셜 로그인의 ID, Secret 등 인증값을 설정하는 XML |  |
 
 ## 설정방법

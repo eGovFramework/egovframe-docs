@@ -32,7 +32,7 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovSysInfo.java` | 시스템정보 확인 요소기술 클래스 | |
-| JSP | `WEB_INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp` | 테스트 페이지 | |
+| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp` | 테스트 페이지 | |
 
 > ※ 해당 파일은 보안상의 이유로 배포되지 않는다. 필요시 표준프레임워크 지원 이메일(egovframesupport@gmail.com)로 요청하면 관련 파일을 전달받을 수 있다.
 
