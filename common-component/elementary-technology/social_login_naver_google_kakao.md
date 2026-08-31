@@ -32,7 +32,7 @@ Social Login은 다음과 같은 기능을 제공한다.
 | 유형 | 대상소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Controller | egovframework.com.ext.oauth.web.EgovSignupController.java | 소셜 로그인을 처리하는 컨트롤러 클래스 |  |
-| Service | egovframework.com.ext.oauth.service.NAVERAPI20.java | 네이버 로그인을 돕는 서비스 |  |
+| Service | egovframework.com.ext.oauth.service.NaverAPI20.java | 네이버 로그인을 돕는 서비스 |  |
 | Service | egovframework.com.ext.oauth.service.OAuthConfig.java | 소셜 로그인 인증과 토큰 관련 URL이 있는 서비스 |  |
 | Service | egovframework.com.ext.oauth.service.OAuthLogin.java | 소셜 로그인 인증 및 로그인 정보를 처리하는 서비스 |  |
 | VO | egovframework.com.ext.oauth.service.OAuthUniversalUser.java | 소셜 로그인 계정에 대한 VO |  |

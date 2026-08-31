@@ -64,7 +64,7 @@ Globals.fileStorePath = /product/jeus/egovProps/upload/
 #### Controller 구현 예시
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileMngUtil;
+import egovframework.com.cmm.service.EgovFileMngUtil;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
