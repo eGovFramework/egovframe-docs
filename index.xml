@@ -9778,19 +9778,19 @@ Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsr.jsp&lt;/td>
  &lt;td>소셜 로그인을 연동하는 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauth.jsp&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauth.jsp&lt;/td>
  &lt;td>소셜 로그인을 처리하는 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>WEB_INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauthResult.jsp&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/com/uat/uia/EgovLoginUsrOauthResult.jsp&lt;/td>
  &lt;td>소셜 로그인 결과를 출력하는 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -13097,7 +13097,7 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -13134,7 +13134,7 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -17400,7 +17400,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovNetworkState.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovNetworkState.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -17610,7 +17610,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovNetworkInfo.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovNetworkInfo.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -18618,7 +18618,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDrctryMntrg.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMntrg.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -18696,7 +18696,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileAuthor.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileAuthor.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -18929,7 +18929,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDrctryMvmn.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMvmn.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -18992,7 +18992,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDiskAttrCeck.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDiskAttrCeck.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -19060,7 +19060,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDiskCpcty.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDiskCpcty.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -19091,7 +19091,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDiskExst.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDiskExst.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -20485,7 +20485,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/EgovMenuGov.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/EgovMenuGov.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>직접 생성 (사용방법 참고)&lt;/td>
  &lt;/tr>
@@ -25090,7 +25090,7 @@ WAS에 해당 모듈의 Deploy 및 WAS 기동/중지를 수행하여야 하므�
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -28397,7 +28397,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -31840,7 +31840,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>WEB_INF/jsp/egovframework/cmm/utl/EgovWebEditor.jsp&lt;/td>
+ &lt;td>WEB-INF/jsp/egovframework/cmm/utl/EgovWebEditor.jsp&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -31922,7 +31922,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovSysInfo.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -32222,7 +32222,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovEncdDcd.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovEncdDcd.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -37795,7 +37795,7 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/EgovTreeMenu.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/EgovTreeMenu.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>직접 생성 (사용방법 참고)&lt;/td>
  &lt;/tr>
@@ -37911,7 +37911,7 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileAuthor.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileAuthor.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38001,7 +38001,7 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38150,7 +38150,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileCnvr.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCnvr.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38190,7 +38190,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileScrty.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileScrty.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38230,7 +38230,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileCopy.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCopy.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38278,7 +38278,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDrctryFileDelete.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryFileDelete.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38332,7 +38332,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileCre.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCre.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38382,7 +38382,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFtpTool.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFtpTool.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38658,7 +38658,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovDrctryMvmn.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMvmn.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38736,7 +38736,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileDtCeck.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileDtCeck.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38776,7 +38776,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFileExst.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileExst.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38814,7 +38814,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB_INF/jsp/egovframework/cmm/utl/EgovFilePars.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFilePars.jsp&lt;/code>&lt;/td>
  &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
