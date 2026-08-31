@@ -9748,7 +9748,7 @@ Jakarta Commons Logging(JCL), Log4j, Logback 등과 함께 사용할 수 있다.
  &lt;/tr>
  &lt;tr>
  &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.ext.oauth.service.NAVERAPI20.java&lt;/td>
+ &lt;td>egovframework.com.ext.oauth.service.NaverAPI20.java&lt;/td>
  &lt;td>네이버 로그인을 돕는 서비스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
