@@ -85,7 +85,7 @@ Mono<MultiValueMap<String, Part>> map = request.multipartData();
 Flux<Part> parts = request.body(BodyExtractors.toParts());
 ```
 #### ServerResponse
-HTTP 응답은 ServerResponse로 접근할 수 있으며 이 인터페이션은 불변이기 때문에 build 메소드로 생성한다. 빌더로 헤더를 추가하거나 상태코드, body를 설정할 수 있다. 다음은 JSON 컨텐츠로 200(OK) 응답을 만드는 예제이다.
+HTTP 응답은 ServerResponse로 접근할 수 있으며 이 인터페이스는 불변이기 때문에 build 메소드로 생성한다. 빌더로 헤더를 추가하거나 상태코드, body를 설정할 수 있다. 다음은 JSON 컨텐츠로 200(OK) 응답을 만드는 예제이다.
 ```java
 Mono<Person> person = ...
 ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(person, Person.class);
