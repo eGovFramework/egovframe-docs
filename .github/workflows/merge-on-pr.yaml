@@ -48,7 +48,7 @@ jobs:
 
       # Step 1. Base Repository의 main 브랜치를 체크아웃
       - name: Checkout the main branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main                 # 체크아웃 대상 브랜ㅊ; : main
           fetch-depth: 0            # 깊이 0 → 전체 커밋 히스토리 가져오기

@@ -13,7 +13,7 @@ jobs:
     
     # Step 1. Hugo 프로젝트가 있는 hugo-project 브랜치 체크아웃
     - name: Checkout the hugo-project branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: hugo-project  # hugo 프로젝트가 위치한 브랜치
         persist-credentials: false  # GitHub 인증 문제 방지
@@ -21,7 +21,7 @@ jobs:
 
     # Step 2. main 브랜치에서 markdown 파일들만 체크아웃
     - name: Checkout the main branch for markdown files
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: main  # main 브랜치에서 파일 가져오기
         path: main-md  # 임시로 main 브랜치의 markdown 파일을 저장할 위치
@@ -34,7 +34,7 @@ jobs:
     
     # Step 4. Node.js 설치
     - name: Install Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'  # 안정적인 최신 버전의 Node.js 설치
       
