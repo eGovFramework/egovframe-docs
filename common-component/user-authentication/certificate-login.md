@@ -47,7 +47,7 @@ menu:
 | Query XML | resources/egovframework/mapper/com/uat/uia/EgovLoginUsr\_SQL\_goldilocks.xml | 일반 로그인, 인증서 로그인을 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/message-common\_ko.properties | 일반 로그인, 인증서 로그인을 위한 Message properties |
 
- 위의 클래스 중 Controller의 경우는 전자정부 표준프레임워크에서의 테스트 수행을 위한 컨트롤러 클래스로서 실제 적용시에는 해당 기능들을 적용 Web MVC 프레임워크 기반으로 전환하면 된다. 혹 MVC 프레임워크가 적용되어 있지 않더라고 servlet 기반 또는 해당되는 JSP로 쉽게 전환할 수 있다.
+ 위의 클래스 중 Controller의 경우는 전자정부 표준프레임워크에서의 테스트 수행을 위한 컨트롤러 클래스로서 실제 적용시에는 해당 기능들을 적용 Web MVC 프레임워크 기반으로 전환하면 된다. 혹 MVC 프레임워크가 적용되어 있지 않더라도 servlet 기반 또는 해당되는 JSP로 쉽게 전환할 수 있다.
 
 ### 클래스다이어그램
 

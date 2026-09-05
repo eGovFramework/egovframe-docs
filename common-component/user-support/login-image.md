@@ -116,7 +116,7 @@ menu:
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -138,7 +138,7 @@ menu:
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
@@ -160,7 +160,7 @@ menu:
 
  N/A
 
-#### 관련화면 및 수행메뉴얼
+#### 관련화면 및 수행매뉴얼
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |

@@ -170,7 +170,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  ![image](./images/uss-annvrsry-기념일일괄등록.jpg)
 
- 업로더 : 작성된 기념일엑셀파일을 서버에 업로더하여 데이터를 화면에 조회한다.
+ 업로드 : 작성된 기념일 엑셀 파일을 서버에 업로드하여 데이터를 화면에 조회한다.
  등록 : 조회된 데이터를 일괄등록 처리한다.
 
 ### 기념일 안내

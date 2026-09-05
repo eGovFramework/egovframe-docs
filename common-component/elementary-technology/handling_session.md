@@ -21,7 +21,7 @@
 
 ## 설명
 
- 세션에 객체 정보 저장, 취득, 제거의 기능을 갖으며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.
+ 세션에 객체 정보 저장, 취득, 제거의 기능을 가지며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.
 
 ### 관련소스
 
