@@ -19623,7 +19623,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>로그인후 만료시간까지의 남은 시간을 표시한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 갖으며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
+&lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 가지며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -23630,7 +23630,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
+ &lt;td>CHG_PWD_LAST_PNTTM 컬럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
  &lt;td>&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -23650,7 +23650,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
+ &lt;td>CHG_PWD_LAST_PNTTM 컬럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
  &lt;td>&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -23660,7 +23660,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>업무사용자 정보를 관리한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>CHG_PWD_LAST_PNTTM 컴럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
+ &lt;td>CHG_PWD_LAST_PNTTM 컬럼 사용(비밀번호 최초등록 또는 수정 일시 기록)&lt;/td>
  &lt;td>&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -25717,7 +25717,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>세션 처리와 관련된 다양한 공통기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 갖으며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
+&lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 가지며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -40825,7 +40825,7 @@ API 인증키는 한국수출입은행 홈페이지의 &amp;lsquo;수출입은�
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>기관내의 회의실위치, 개방시간, 수용인원, 비치물품 등 회의실에 대한 정보를 관리하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="기능-설명">기능 설명&lt;/h2>
-&lt;p>회의실관리 목록 : 회의실 목록을 리스트으로 보여준다.
+&lt;p>회의실관리 목록 : 회의실 목록을 리스트로 보여준다.
 회의실관리 상세 : 회의실 상세 내용을 보여준다.
 회의실관리 등록 : 회의실 등록 화면으로 이동한다.
 회의실관리 수정 : 회의실 수정 화면으로 이동한다.&lt;/p>
