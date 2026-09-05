@@ -106,7 +106,7 @@ menu:
   ![project_structure_module_web_setting](./images/project_structure_module_web_setting.png)
 
 
-# STEP4. 서버 설정
+## STEP4. 서버 설정
 
 ※ 커뮤니티 버전의 경우 이 기능을 지원하지 않는다. 무료 IDE인 이클립스를 권장합니다.
 
