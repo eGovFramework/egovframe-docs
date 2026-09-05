@@ -126,7 +126,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  ![image](./images/uss-adminterm-administrationword_list.png)
 
  등록: 등록하기 위해서는 상단의 등록 버튼을 통해서 행정전문용어사전관리 등록 화면으로 이동한다.
- 목록 최근검색어명: 행정전문용어사전관리 상세조회 화면으로 이동한다.
+ 목록 최근검색어명: 행정전문용어사전관리 상세조회 화면으로 이동한다
 
 ### 행정전문용어사전관리 상세조회
 
