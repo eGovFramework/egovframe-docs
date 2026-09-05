@@ -19,17 +19,6 @@ menu:
 
 Method Invoking Job Scheduling Configuration 의 설명은 다음 실행환경 가이드를 참조한다.
 
-- [실행환경 Scheduling Configuration Guide]
-# Detail Bean Job Code Generation
-
-## 개요
-
-"JobDetailBean을 이용한 작업 생성"을 Code Generation 기능을 사용하여 쉽게 작성할 수 있다.
-
-## 설명
-
-Detail Bean Job Scheduling Configuration 의 설명은 다음 실행환경 가이드를 참조한다.
-
 - [실행환경 Scheduling Configuration Guide](../../../egovframe-runtime/foundation-layer/scheduling.md)
 
 ## 사용법
