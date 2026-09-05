@@ -125,7 +125,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SMS_ID', 1);
 
 ### 환경설정
 
-본 문자메시지서비스를 사용하기 위해서는 "M-Gov 연동 API"에서 제공하는 "SMEConfig.properties" 파일을 지정되어야 한다.
+본 문자메시지 서비스를 사용하기 위해서는 "M-Gov 연동 API"에서 제공하는 "SMEConfig.properties" 파일이 지정되어야 한다.
 
 이를 지정하기 위해서는 globals.properties 속성 파일에 추가 속성을 설정하여야 한다.
 
