@@ -38144,7 +38144,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;tbody>
  &lt;tr>
  &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileConverter.java&lt;/code>&lt;/td>
+ &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovPdfCnvr.java&lt;/code>&lt;/td>
  &lt;td>파일변환 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -38157,7 +38157,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>파일변환 기능은 &lt;code>EgovFileConverter&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일보안</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-security/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>파일변환 기능은 &lt;code>EgovPdfCnvr&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일보안</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-security/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>암호화 알고리즘을 사용하여 파일을 암호화하거나 역으로 복호화하는 기능을 제공한다. 다양한 파일 포맷의 암호화/복호화를 지원하며,
 문자열 데이터의 인코딩/디코딩과 복호화가 불가능한 비밀번호 암호화 기능도 함께 제공한다.
 서버(Server) 및 클라이언트(Client) 응용 애플리케이션에서 파일 보안 처리 시 활용할 수 있다.
