@@ -16359,12 +16359,12 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
  &lt;/tr>
  &lt;tr>
  &lt;td>JS&lt;/td>
- &lt;td>&lt;code>/js/egovframework/cmm/sym/cal/EgovCalPopup.js&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/js/egovframework/com/sym/cal/EgovCalPopup.js&lt;/code>&lt;/td>
  &lt;td>일반달력·행정달력 팝업 호출 JavaScript&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeList.jsp&lt;/code> 외&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeList.jsp&lt;/code> 외&lt;/td>
  &lt;td>휴일 목록/등록/수정/상세 및 일반·행정달력(팝업/일간/주간/월간/연간) JSP 페이지 일체&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -17846,87 +17846,87 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JS&lt;/td>
- &lt;td>&lt;code>/webapp/js/egovframework/cmm/sym/cal/EgovCalPopup.js&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/webapp/js/egovframework/com/sym/cal/EgovCalPopup.js&lt;/code>&lt;/td>
  &lt;td>일반달력, 행정달력 팝업 호출을 위한 JavaScript&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministCalPopup.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministCalPopup.jsp&lt;/code>&lt;/td>
  &lt;td>행정달력 팝업을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>행정달력 팝업의 내용을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministDayCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministDayCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>행정달력 일간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministMonthCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministMonthCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>행정달력 월간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministWeekCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministWeekCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>행정달력 주간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministYearCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministYearCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>행정달력 연간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalCalPopup.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalCalPopup.jsp&lt;/code>&lt;/td>
  &lt;td>일반달력 팝업을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>일반달력 팝업의 내용을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalDayCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalDayCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>일반달력 일간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalMonthCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalMonthCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>일반달력 월간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalWeekCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalWeekCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>일반달력 주간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalYearCalendar.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalYearCalendar.jsp&lt;/code>&lt;/td>
  &lt;td>일반달력 연간을위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeDetail.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeDetail.jsp&lt;/code>&lt;/td>
  &lt;td>휴일 상세보기를 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeList.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeList.jsp&lt;/code>&lt;/td>
  &lt;td>휴일 목록을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeModify.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeModify.jsp&lt;/code>&lt;/td>
  &lt;td>휴일 수정을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeRegist.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeRegist.jsp&lt;/code>&lt;/td>
  &lt;td>휴일 등록을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
