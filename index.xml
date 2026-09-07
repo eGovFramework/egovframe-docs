@@ -37789,7 +37789,7 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;/tr>
  &lt;tr>
  &lt;td>JS&lt;/td>
- &lt;td>&lt;code>/js/egovframework/cmm/utl/EgovMenuGov.js&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/js/egovframework/com/cmm/utl/EgovMenuGov.js&lt;/code>&lt;/td>
  &lt;td>트리생성 JavaScript&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
