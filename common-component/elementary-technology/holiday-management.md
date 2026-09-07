@@ -31,8 +31,8 @@ menu:
 | DAO | `egovframework.com.sym.cal.service.impl.RestdeManageDAO.java` | 휴일 정보 관리를 위한 데이터처리 클래스 |
 | Model | `egovframework.com.sym.cal.service.Restde.java` | 휴일 정보 Model 클래스 |
 | VO | `egovframework.com.sym.cal.service.RestdeVO.java` | 달력, 휴일관리를 위한 VO 클래스 |
-| JS | `/js/egovframework/cmm/sym/cal/EgovCalPopup.js` | 일반달력·행정달력 팝업 호출 JavaScript |
-| JSP | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeList.jsp` 외 | 휴일 목록/등록/수정/상세 및 일반·행정달력(팝업/일간/주간/월간/연간) JSP 페이지 일체 |
+| JS | `/js/egovframework/com/sym/cal/EgovCalPopup.js` | 일반달력·행정달력 팝업 호출 JavaScript |
+| JSP | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeList.jsp` 외 | 휴일 목록/등록/수정/상세 및 일반·행정달력(팝업/일간/주간/월간/연간) JSP 페이지 일체 |
 
 ### 관련테이블
 
@@ -78,9 +78,9 @@ INSERT INTO COMTECOPSEQ VALUES('RESTDE_ID','0');
 일반달력·행정달력 팝업 호출을 위하여 `EgovCalPopup.js`를 해당 페이지에 등록한다.
 
 ```html
-<script type="text/javascript" src="<c:url value='/js/egovframework/cmm/sym/cal/EgovCalPopup.js' />"></script>
+<script type="text/javascript" src="<c:url value='/js/egovframework/com/sym/cal/EgovCalPopup.js' />"></script>
 
-<form name="Form1" action="<c:url value='/sym/cmm/EgovNormalCalPopup.do'/>" method="post">
+<form name="Form1" action="<c:url value='/sym/cal/EgovNormalCalPopup.do'/>" method="post">
     <input type="hidden" name="sDate" value="" size="8" readonly
         onClick="javascript:fn_egov_NormalCalendar(document.Form1, document.Form1.sDate, document.Form1.vDate);" />
     <input type="text" name="vDate" value="" size="10" readonly

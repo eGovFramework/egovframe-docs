@@ -34,23 +34,23 @@ menu:
 | Service            | `egovframework.com.sym.cal.service.EgovCalRestdeManageService.java`              | 달력, 휴일관리를 위한 서비스 인터페이스        |
 | ServiceImpl        | `egovframework.com.sym.cal.service.impl.EgovCalRestdeManageServiceImpl.java`     | 달력, 휴일관리를 위한 서비스구현 클래스   |
 | DAO                | `egovframework.com.sym.cal.service.impl.RestdeManageDAO.java`                    | 휴일 정보 관리를 위한 데이터처리 클래스        |
-| JS                 | `/webapp/js/egovframework/cmm/sym/cal/EgovCalPopup.js`                           | 일반달력, 행정달력 팝업 호출을 위한 JavaScript |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministCalPopup.jsp`                | 행정달력 팝업을 위한 JSP 페이지                |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministCalendar.jsp`                | 행정달력 팝업의 내용을 위한 JSP 페이지         |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministDayCalendar.jsp`             | 행정달력 일간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministMonthCalendar.jsp`           | 행정달력 월간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministWeekCalendar.jsp`            | 행정달력 주간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovAdministYearCalendar.jsp`            | 행정달력 연간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalCalPopup.jsp`                  | 일반달력 팝업을 위한 JSP 페이지                |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalCalendar.jsp`                  | 일반달력 팝업의 내용을 위한 JSP 페이지         |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalDayCalendar.jsp`               | 일반달력 일간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalMonthCalendar.jsp`             | 일반달력 월간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalWeekCalendar.jsp`              | 일반달력 주간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovNormalYearCalendar.jsp`              | 일반달력 연간을위한 JSP 페이지                 |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeDetail.jsp`                    | 휴일 상세보기를 위한 JSP 페이지                |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeList.jsp`                      | 휴일 목록을 위한 JSP 페이지                    |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeModify.jsp`                    | 휴일 수정을 위한 JSP 페이지                    |
-| JSP                | `/WEB-INF/jsp/egovframework/cmm/sym/cal/EgovRestdeRegist.jsp`                    | 휴일 등록을 위한 JSP 페이지                    |
+| JS                 | `/webapp/js/egovframework/com/sym/cal/EgovCalPopup.js`                           | 일반달력, 행정달력 팝업 호출을 위한 JavaScript |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministCalPopup.jsp`                | 행정달력 팝업을 위한 JSP 페이지                |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministCalendar.jsp`                | 행정달력 팝업의 내용을 위한 JSP 페이지         |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministDayCalendar.jsp`             | 행정달력 일간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministMonthCalendar.jsp`           | 행정달력 월간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministWeekCalendar.jsp`            | 행정달력 주간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovAdministYearCalendar.jsp`            | 행정달력 연간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalCalPopup.jsp`                  | 일반달력 팝업을 위한 JSP 페이지                |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalCalendar.jsp`                  | 일반달력 팝업의 내용을 위한 JSP 페이지         |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalDayCalendar.jsp`               | 일반달력 일간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalMonthCalendar.jsp`             | 일반달력 월간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalWeekCalendar.jsp`              | 일반달력 주간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovNormalYearCalendar.jsp`              | 일반달력 연간을위한 JSP 페이지                 |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeDetail.jsp`                    | 휴일 상세보기를 위한 JSP 페이지                |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeList.jsp`                      | 휴일 목록을 위한 JSP 페이지                    |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeModify.jsp`                    | 휴일 수정을 위한 JSP 페이지                    |
+| JSP                | `/WEB-INF/jsp/egovframework/com/sym/cal/EgovRestdeRegist.jsp`                    | 휴일 등록을 위한 JSP 페이지                    |
 | Query XML          | `resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_altibase.xml`   | 달력, 휴일관리를 위한 Altibase용 Query XML     |
 | Query XML          | `resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_cubrid.xml`     | 달력, 휴일관리를 위한 Cubrid용 Query XML       |
 | Query XML          | `resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_maria.xml`      | 달력, 휴일관리를 위한 MariaDB용 Query XML      |
@@ -115,7 +115,7 @@ INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
 
 <script
     type="text/javascript"
-    src="<c:url value='/js/egovframework/cmm/sym/cal/EgovCalPopup.js' />"
+    src="<c:url value='/js/egovframework/com/sym/cal/EgovCalPopup.js' />"
 ></script>
 ```
 
@@ -124,7 +124,7 @@ INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
 ```html
 <form
     name="Form1"
-    action="<c:url value='/sym/cmm/EgovNormalCalPopup.do'/>"
+    action="<c:url value='/sym/cal/EgovNormalCalPopup.do'/>"
     method="post"
 >
     <input
@@ -144,7 +144,7 @@ INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
         onClick="javascript:fn_egov_NormalCalendar(document.Form1, document.Form1.sDate, document.Form1.vDate);"
     />
     <img
-        src="<c:url value='/images/egovframework/cmm/sym/cal/bu_icon_carlendar.gif' />"
+        src="<c:url value='/images/egovframework/com/sym/cal/bu_icon_carlendar.gif' />"
         onClick="javascript:fn_egov_NormalCalendar(document.Form1, document.Form1.sDate, document.Form1.vDate);"
     />
 </form>
@@ -161,7 +161,7 @@ INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
 
 | URL                                    | Controller                      |
 | -------------------------------------- | ------------------------------- |
-| `/sym/cmm/EgovselectNormalCalendar.do` | `EgovCalRestdeManageController` |
+| `/sym/cal/EgovselectNormalCalendar.do` | `EgovCalRestdeManageController` |
 
 다음 소스코드 부분을
 
@@ -244,7 +244,7 @@ for(int i=0; i<42;i++) {
 
 <script
     type="text/javascript"
-    src="<c:url value='/js/egovframework/cmm/sym/cal/EgovCalPopup.js' />"
+    src="<c:url value='/js/egovframework/com/sym/cal/EgovCalPopup.js' />"
 ></script>
 ```
 
@@ -253,7 +253,7 @@ for(int i=0; i<42;i++) {
 ```html
 <form
     name="Form2"
-    action="<c:url value='/sym/cmm/EgovAdministCalPopup.do'/>"
+    action="<c:url value='/sym/cal/EgovAdministCalPopup.do'/>"
     method="post"
 >
     <input
@@ -273,7 +273,7 @@ for(int i=0; i<42;i++) {
         onClick="javascript:fn_egov_AdministCalendar(document.Form2, document.Form2.sDate, document.Form2.vDate);"
     />
     <img
-        src="<c:url value='/images/egovframework/cmm/sym/cal/bu_icon_carlendar.gif' />"
+        src="<c:url value='/images/egovframework/com/sym/cal/bu_icon_carlendar.gif' />"
         onClick="javascript:fn_egov_AdministCalendar(document.Form2, document.Form2.sDate, document.Form2.vDate);"
     />
 </form>
