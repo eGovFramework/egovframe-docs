@@ -84,7 +84,7 @@ function printOption(type1, type2) {
 | Service | `egovframework.com.utl.pao.service.EgovPrntngOutpt.java` | 테스트용 인터페이스 | |
 | ServiceImpl | `egovframework.com.utl.pao.service.impl.EgovPrntngOutptImpl.java` | 테스트용 구현체 | |
 | DAO | `egovframework.com.utl.pao.service.impl.PrntngOutptDAO.java` | 테스트용 데이터 처리 | |
-| JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovErncslOutpt.jsp` | 테스트 페이지 | |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/pao/EgovErncslOutpt.jsp` | 테스트 페이지 | |
 
 #### 전자관인출력 사용 방법
 
