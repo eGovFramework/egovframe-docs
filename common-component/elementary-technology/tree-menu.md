@@ -27,7 +27,7 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovMenuGov.java` | 메인메뉴 요소기술 클래스 | 메뉴파일 생성 |
-| JS | `/js/egovframework/cmm/utl/EgovMenuGov.js` | 트리생성 JavaScript | |
+| JS | `/js/egovframework/com/cmm/utl/EgovMenuGov.js` | 트리생성 JavaScript | |
 | JSP | `WEB-INF/jsp/egovframework/cmm/EgovTreeMenu.jsp` | 테스트 페이지 | 직접 생성 (사용방법 참고) |
 
 ### 클래스 및 메소드 설명
@@ -37,12 +37,15 @@ menu:
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| Vector | `parsFileByMenuChar(String parFile, String parChar, int parField)` | 메뉴테이블형태 파싱 | 입력된 데이터를 구분자와 필드 수를 기준으로 메뉴 필드 형태로 분리한다. |
+| Vector | `parsFileByMenuChar(String basePath, String parFile, String parChar, int parField)` | 메뉴테이블형태 파싱 | 입력된 데이터를 구분자와 필드 수를 기준으로 메뉴 필드 형태로 분리한다. |
 <!-- markdownlint-restore -->
 
 #### 파라미터 정의 (Input)
 
+- `basePath`: 파일 접근을 허용할 기준 경로(String). 비우면 `Globals.fileStorePath` 를 사용한다
 - `parFile`: 메뉴 변환 파일의 절대 경로(String) (예: `/user/com/test/file1.dat`)
+- `parChar`: 구분자(String)
+- `parField`: 필드 수(int)
 
 ### 사용 방법
 
@@ -51,7 +54,7 @@ menu:
 ```jsp
 <%
 import egovframework.com.utl.sim.service.EgovMenuGov;
-Vector result1 = EgovMenuGov.parsFileByMenuChar(parFile, parChar, parField);
+Vector result1 = EgovMenuGov.parsFileByMenuChar(basePath, parFile, parChar, parField);
 %>
 
 <div class="tree">
