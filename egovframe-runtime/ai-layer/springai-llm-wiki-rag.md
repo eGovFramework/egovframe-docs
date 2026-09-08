@@ -73,7 +73,7 @@ Spring AI의 `DocumentRetriever`는 `Query`를 받아 `List<Document>`를 반환
 아래 예제는 공식 저장소의 [PR #87][sample-review]에 제출되어 검토 중인 코드다.
 병합 전 예제를 이 문서가 설명하는 커밋에 고정하여 확인한다. 공식 저장소 기본 브랜치에 포함된 샘플과는 구분한다.
 
-[실행 예제 코드][sample-source]를 내려받고 이 문서가 참조하는 커밋의 샘플 디렉터리로 이동한다.
+[예제 PR의 변경 파일][sample-source]을 확인하고, 아래 명령으로 이 문서가 참조하는 커밋의 샘플 디렉터리로 이동한다.
 아래 명령의 커밋에는 전체 소스, 설정 예시, 가상 입력 문서와 자동화 테스트가 포함되어 있다.
 
 ```shell
@@ -267,7 +267,7 @@ manifest에는 원문 사본과 해시가 포함되므로 어느 입력으로 �
 - [Spring AI 1.0.1 소스][ref-16]
 - [전자정부 표준프레임워크 RAG 샘플][ref-17]
 
-[sample-source]: https://github.com/eGovFramework/egovframe-ai-rag/tree/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki
+[sample-source]: https://github.com/eGovFramework/egovframe-ai-rag/pull/87/files
 
 [ref-1]: https://arxiv.org/html/2605.07068v1
 [ref-2]: https://github.com/spring-projects/spring-ai/blob/v1.0.1/spring-ai-rag/src/main/java/org/springframework/ai/rag/retrieval/search/DocumentRetriever.java
