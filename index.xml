@@ -6023,7 +6023,7 @@ samlple-servlet.xml&lt;/p></description></item><item><title>Inversion of Control
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>write() 메소드는 ItemWriter의 필수적인 메소드이며 인자로 건넨 객체가 열려 있는 동안 쓰기 작업을 시도한다.&lt;/p>
 &lt;h3 id="flatfile-itemwriter">FlatFile ItemWriter&lt;/h3>
-&lt;p>FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 갖으며, LineAggregator에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 쓸 수 있다.&lt;/p></description></item><item><title>Spring Framework + Jakarta Commons Validator</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-jakarta-commons-validator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-jakarta-commons-validator/</guid><description>&lt;h1 id="spring-framework--jakarta-commons-validator">Spring Framework + Jakarta Commons Validator&lt;/h1>
+&lt;p>FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 가지며, LineAggregator에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 쓸 수 있다.&lt;/p></description></item><item><title>Spring Framework + Jakarta Commons Validator</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-jakarta-commons-validator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/security/security-jakarta-commons-validator/</guid><description>&lt;h1 id="spring-framework--jakarta-commons-validator">Spring Framework + Jakarta Commons Validator&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>입력값 검증을 위한 Validation 기능은 Valang, Jakarta Commons, Spring 등에서 제공한다.&lt;br>
 여기서는 Jakarta Commons Validator를 Spring Framework과 연동하여 사용하는 방법에 대해서 설명하고자 한다.&lt;br>
@@ -7802,7 +7802,7 @@ Spring MVC는 기본요소인 Model, View, Controller 외에도, 아래와 같�
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-entities/" class="innerLink">Entity Class&lt;/a>
 
-에 최소한의 Annotation으로 정의하므로써 작업이 용이하다.&lt;/li>
+에 최소한의 Annotation으로 정의함으로써 작업이 용이하다.&lt;/li>
 &lt;li>Entity Class가 일반 클래스로 정의됨으로써 상속이나 다양성, 캡슐화 같은 것들을 그대로 적용하면서 퍼시스턴스 오브젝트로 사용할 수 있다.&lt;/li>
 &lt;li>자바 표준이므로 많은 벤더들에서 구현체를 지원하고 개발을 편리하게 할 수 있는 
 
@@ -35167,7 +35167,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/" class="innerLink">바로가기&lt;/a>
 
 &lt;/td>
- &lt;td>이클립스에서 Ant 실행하는 방법을을 설명한다.&lt;/td>
+ &lt;td>이클립스에서 Ant 실행하는 방법을 설명한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>8&lt;/td>
@@ -35198,7 +35198,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-maven-on-eclipse/" class="innerLink">바로가기&lt;/a>
 
 &lt;/td>
- &lt;td>이클립스에서 Maven 실행하는 방법을을 설명한다.&lt;/td>
+ &lt;td>이클립스에서 Maven 실행하는 방법을 설명한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>9&lt;/td>
