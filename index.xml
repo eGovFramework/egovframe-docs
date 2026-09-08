@@ -329,7 +329,11 @@ PR 반영 후 가이드가 즉시 배포되므로, 배포 이후 드러나는 �
 &lt;h2 id="방법">방법&lt;/h2>
 &lt;h3 id="1-파일-생성-및-수정">1. 파일 생성 및 수정&lt;/h3>
 &lt;p>md 파일을 작성하거나 수정합니다.&lt;br>
-*이미 작성된 파일도 확인이 가능합니다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
+*이미 작성된 파일도 확인이 가능합니다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/ai-layer/springai-llm-wiki-rag/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/ai-layer/springai-llm-wiki-rag/</guid><description>&lt;h1 id="spring-ai를-활용한-llm-wiki-기반-rag-원리와-구현">Spring AI를 활용한 LLM Wiki 기반 RAG: 원리와 구현&lt;/h1>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>RAG는 외부 지식을 검색하여 생성 모델의 입력에 포함하는 구성이다. 문서를 어떤 형태로 가공하는지, 무엇을 검색 단위로 삼는지, 어떤 검색기를 사용하는지에 따라 다양한 구현이 가능하다. 이 문서는
+원문을 사람이 읽고 관리할 수 있는 위키로 구성한 뒤 Spring AI의 검색 증강 생성 흐름에 연결하는 한 가지 예제를 설명한다.&lt;/p>
+&lt;p>위키와 벡터 검색은 함께 사용할 수 있다. 이 예제는 소규모 문서에서 연결 구조를 이해하기 쉽도록 키워드 검색을 사용한다. 이는 예제의 구현 선택이며 특정 검색 기술의 우열에 관한 주장이 아니다.&lt;/p></description></item><item><title/><link>https://eGovFramework.github.io/egovframe-docs/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/readme/</guid><description>&lt;h1 id="전자정부-표준프레임워크-가이드">전자정부 표준프레임워크 가이드&lt;/h1>
 &lt;ul>
 &lt;li>본 GitHub 저장소 생성 목적은 표준프레임워크 포털에서 제공하고 있는 DokuWiki 가이드 문서를 간단하고 직관적인 Markdown 형식의 문서로 변환하여 기여받는 것입니다.&lt;/li>
 &lt;li>이 프로젝트의 목적은 쉽게 접근 가능한 Markdown 형식의 문서를 통해 사용자와 개발자들이 표준프레임워크를 더욱 편리하게 활용할 수 있도록 돕는 것입니다.&lt;/li>
