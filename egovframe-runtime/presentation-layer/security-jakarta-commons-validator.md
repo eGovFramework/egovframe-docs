@@ -153,7 +153,7 @@ validator.xml은 validation rule과 validation할 Form을 매핑한다.
 form name과 field property의 name-rule은 Server-side와 Client-side인 경우에 따라 다르다.  
 
 **Server-side validation의 경우는,**  
-form name과 field property는 validation할 폼 클래스의 이름, 필드과 각각 매핑된다.(camel case)
+form name과 field property는 validation할 폼 클래스의 이름, 필드와 각각 매핑된다.(camel case)
 폼 클래스가 Employee면 employee, DepartmentForm 이면 departmentForm을 form name으로 지정하라.
 
 **Client-side의 경우는,**  
@@ -232,7 +232,7 @@ public class UpdateEmployeeController {
 #### JSP
 
 Validation을 적용할 JSP를 작성한다.(modifyemployee.jsp)  
-form submit을 하면 이름, 나이, 이메일등의 입력값이 Employee 클래스에 바인딩이 되서 Controller에 전달이 되고,
+form submit을 하면 이름, 나이, 이메일등의 입력값이 Employee 클래스에 바인딩이 돼서 Controller에 전달이 되고,
 Controller에 validation 수행 로직이 있으면 validator.xml 내용에 따라 validation이 이루어 진다.  
 만일 에러가 발생하면 \<form:error…/>에 에러에 해당하는 메시지를 출력한다. 에러 메시지에 관련해서는 아래 에러 메시지 등록을 참고하라.
 

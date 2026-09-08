@@ -17,7 +17,7 @@ menu:
 - 특정 DBMS에 영향을 받지 않으므로 DBMS가 변경되더라도 데이터 액세스 처리 코드에 대한 변경없이 설정 정보의 변경만으로도 동작 가능하다.
 - SQL을 작성하고 <acronym title="Structured Query Language">SQL</acronym> 실행 결과로부터 전달하고자 하는 객체로 변경하는 코드를 작성하는 시간이 줄어든다. 하지만 필요시 [SQL 작업](orm-native_sql.md)도 가능하다.
 - 기본적으로 필요 시점에만 DBMS에 접근하는 Lazy Loading 전략 채택하고 [Cache활용](orm-cache_handling.md)을 통해 DBMS에 대한 접근 횟수를 줄여나가 어플리케이션의 성능 향상을 도모한다.
-- 별도의 <acronym title="Extensible Markup Language">XML</acronym> 파일로 매핑을 관리하지 않고 [Entity Class](./orm-entities.md)에 최소한의 Annotation으로 정의하므로써 작업이 용이하다.
+- 별도의 <acronym title="Extensible Markup Language">XML</acronym> 파일로 매핑을 관리하지 않고 [Entity Class](./orm-entities.md)에 최소한의 Annotation으로 정의함으로써 작업이 용이하다.
 - Entity Class가 일반 클래스로 정의됨으로써 상속이나 다양성, 캡슐화 같은 것들을 그대로 적용하면서 퍼시스턴스 오브젝트로 사용할 수 있다.
 - 자바 표준이므로 많은 벤더들에서 구현체를 지원하고 개발을 편리하게 할 수 있는 [JPA툴(Dali)](https://projects.eclipse.org/projects/webtools.dali)을 지원한다.
 - SQL을 이용하여 처리하는 방식에 익숙한 개발자가 사용하려면 학습이 필요하고 이에 따른 장벽이 존재한다.

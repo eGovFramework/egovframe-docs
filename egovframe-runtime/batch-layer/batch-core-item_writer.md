@@ -29,7 +29,7 @@ public interface ItemWriter<T> {
 write() 메소드는 ItemWriter의 필수적인 메소드이며 인자로 건넨 객체가 열려 있는 동안 쓰기 작업을 시도한다.
 
 ### FlatFile ItemWriter
-FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 갖으며, LineAggregator에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 쓸 수 있다.
+FlatFileItemWriter는 Resource, LineAggregator에 기본적으로 의존성을 가지며, LineAggregator에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 쓸 수 있다.
 
 ![image](./images/flatfileitemwriter_process.png)
 
@@ -93,7 +93,7 @@ BeanWrapperFieldExtractor에 아래와 같은 항목을 설정해야한다.
 
 #### StaxEventItemWriter
 XML 쓰는 과정은 읽기 과정에 대칭적이다. StaxEventItemWriter는 Resource, marshaller, rootTagName가 필요하다.
-Java 객체는 marshaller에 전달되서 OXM 도구에 의해 각 fragment마다 StartDocument와 EndDocument 이벤트를 필터링하고 커스텀 이벤트 writer를 사용해 Resource를 쓰게 된다.
+Java 객체는 marshaller에 전달돼서 OXM 도구에 의해 각 fragment마다 StartDocument와 EndDocument 이벤트를 필터링하고 커스텀 이벤트 writer를 사용해 Resource를 쓰게 된다.
 
 아래 XStreamMarshaller를 사용한 StaxEventItemWriter 설정 예가 있다.
 
@@ -274,7 +274,7 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
 | EgovFixedLengthLineAggregator | fieldRanges | 필드 경계의 범위         | 9,2      |
 
 ### 전자정부에서 제공하는 eGovDBItemWriter
-스프링에서 제공하는 JdbcBatchItemWriter는 사용자가 PreparedStatement를 setter하기 위한 클래스를 직접 작성하지 않고, XML 설정시 쿼리의 파라미터값을 지정만으로 자동으로 PreparedStatement를 setter해주는 기능을 제공한다. 하지만, 이 기능을 이용하면 대용량 데이터 처리 시간이 상용 배치프레임워크과 비교하여 큰 차이가 발생한다. 이러한 차이를 개선하고자 전자정부프레임워크에서는 EgovJdbcBatchItemWriter를 제공한다.
+스프링에서 제공하는 JdbcBatchItemWriter는 사용자가 PreparedStatement를 setter하기 위한 클래스를 직접 작성하지 않고, XML 설정시 쿼리의 파라미터값을 지정만으로 자동으로 PreparedStatement를 setter해주는 기능을 제공한다. 하지만, 이 기능을 이용하면 대용량 데이터 처리 시간이 상용 배치프레임워크와 비교하여 큰 차이가 발생한다. 이러한 차이를 개선하고자 전자정부프레임워크에서는 EgovJdbcBatchItemWriter를 제공한다.
 
 |스프링 JdbcBatchItemWriter구조|전자정부 EgovJdbcBatchItemWriter 구조|
 |---|---|

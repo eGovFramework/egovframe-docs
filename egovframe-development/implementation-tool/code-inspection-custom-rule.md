@@ -88,7 +88,7 @@ Eclipse에서 Rule Designer를 실행하기 위해서는 다음과 같은 순서
 
   ![Rules Configuration 창](./images/customrule-rules-config.png)
 
-* Rules Configuration 속성 창에서 오른쪽 중앙의 **Rule Designer** 버튼를 클릭
+* Rules Configuration 속성 창에서 오른쪽 중앙의 **Rule Designer** 버튼을 클릭
 * 별도의 창으로 PMD Rule Designer가 실행된다.
 
   ![PMD Rule Designer](./images/customrule-designer.png)
