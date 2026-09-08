@@ -222,7 +222,7 @@ Foo foo = template.execute(new RetryCallback<Foo>() {
 
 ##### Stateful Retry
 
- 트랜잭션 처리하는 자원을 무효화 시키는 실패는 몇가지 고려사항이 있다. (일반적으로)트랜잭션 처리가 없기 때문에 간단한 원격호출에 적용될 뿐만아니라 하이버네이트를 사용처럼 데이터베이스 갱신에도 적용된다. 이럴 경우 트랜잭션이 롤백되서, 다시 유효한 트랜잭션으로 시작할 수 있도록 실패가 되자마자 예외를 다시 던지는게 상황에 맞다.
+ 트랜잭션 처리하는 자원을 무효화 시키는 실패는 몇가지 고려사항이 있다. (일반적으로)트랜잭션 처리가 없기 때문에 간단한 원격호출에 적용될 뿐만아니라 하이버네이트를 사용처럼 데이터베이스 갱신에도 적용된다. 이럴 경우 트랜잭션이 롤백돼서, 다시 유효한 트랜잭션으로 시작할 수 있도록 실패가 되자마자 예외를 다시 던지는게 상황에 맞다.
 
    
 예외를 다시 던지고(re-throw) 롤백하는 것은 남겨진 RetryOperations.execute메소드와 잠재적으로 스택에 있는 context를 손실하게 되기 때문에, 이런경우 무상태 재시도는 좋은 방법이 아니다. 이 손실을 피하기 위해서는 스택에서 context를 빼내서, 힙 저장 영역에 넣어두는 저장 전략을 도입해야 한다. 이러한 목적으로 스프링 배치는 RetryContextCache를 제공한다. RetryContextCache의 기본 구현은 단순하게 Map을 사용해서 메모리에 저장한다. (비록 클러스터 환경에서는 지나칠지라도) 클러스터 환경에서 다수의 프로세스를 처리하는 고급 사용법은 여러 종류의 클러스터 캐시를 사용하는 RetryContextCache 구현을 고려하자.
@@ -236,7 +236,7 @@ RetryOperations의 책임의 일부는 새로운 실행 (그리고 일반적으�
 
 #### Retry 정책(Retry Policies)
 
- RetryTemplate에서 execute 메소드의 재시도나 실패를 결정하는건 RetryPolicy에 의해서 결정된다. RetryPolicy는 RetryContext의 팩토리가 되기도 한다. RetryTemplate은 RetryContext를 만들기 위해서 현재 정책을 사용해야 할 책임을 갖으며, 시도마다 RetryCallback에 이를 전달한다. 콜백이 실패한 후에 RetryTemplate은 상태를 갱신하려고 RetryPolicy를 호출하며(RetryContext에 저장된다), 그 다음으로 또 다른 시도를 할 수 있는 경우에 RetryPolicy를 호출해서 정책을 문의하게 된다. (예를 들어, 제한에 걸렸거나 타입아웃이 되버린 것처럼) 또 다른 시도를 하지 못하게 되면, 정책은 다 사용된 상태를 관리하는 책임을 진다. 단순히 구현하자면 RetryExhastedException을 던지게 되고, 관련된 트랜잭션은 롤백된다. 좀 더 정교하게 구현하자면,트랜잭션을 손상하지 않고 유지할 수 있는 경우에 복구 행동을 시도할 수 있다.
+ RetryTemplate에서 execute 메소드의 재시도나 실패를 결정하는건 RetryPolicy에 의해서 결정된다. RetryPolicy는 RetryContext의 팩토리가 되기도 한다. RetryTemplate은 RetryContext를 만들기 위해서 현재 정책을 사용해야 할 책임을 가지며, 시도마다 RetryCallback에 이를 전달한다. 콜백이 실패한 후에 RetryTemplate은 상태를 갱신하려고 RetryPolicy를 호출하며(RetryContext에 저장된다), 그 다음으로 또 다른 시도를 할 수 있는 경우에 RetryPolicy를 호출해서 정책을 문의하게 된다. (예를 들어, 제한에 걸렸거나 타임아웃이 돼버린 것처럼) 또 다른 시도를 하지 못하게 되면, 정책은 다 사용된 상태를 관리하는 책임을 진다. 단순히 구현하자면 RetryExhastedException을 던지게 되고, 관련된 트랜잭션은 롤백된다. 좀 더 정교하게 구현하자면,트랜잭션을 손상하지 않고 유지할 수 있는 경우에 복구 행동을 시도할 수 있다.
 
 ##### ✔ Tip
 
@@ -294,7 +294,7 @@ public interface RetryListener {
 }
 ```
 
- open과 close콜백이 모든 재시도 전후에 호출되며, onError()는 개별적인 RetryCallback 호출에 적용된다. 또한 close메소드는 RetryCallback에 의해서 마지막에 던저진 에러가 있는 경우에 Throwable을 받아올 수 있다. 다수의 리스너를 리스트로 갖으며 이는 순서가 있다. open메소드의 경우 동일한 순서로 호출되며,onError()와 close()는 역순으로 호출된다.
+ open과 close콜백이 모든 재시도 전후에 호출되며, onError()는 개별적인 RetryCallback 호출에 적용된다. 또한 close메소드는 RetryCallback에 의해서 마지막에 던져진 에러가 있는 경우에 Throwable을 받아올 수 있다. 다수의 리스너를 리스트로 가지며 이는 순서가 있다. open메소드의 경우 동일한 순서로 호출되며,onError()와 close()는 역순으로 호출된다.
 
 #### 선언적 Retry(Declarative Retry)
 
@@ -401,7 +401,7 @@ public interface RepeatListener {
 }
 ```
 
- open과 close 콜백은 개별적언 RepeatCallback 호출에 적용되어 before, after, onError 전후에 호출된다. 또한 다수의 리스너를 리스트로 갖으며 이는 순서가 있다. open과 before는 동일한 순서로 호출되며 after(), onError(), close()는 역순으로 호출된다.
+ open과 close 콜백은 개별적인 RepeatCallback 호출에 적용되어 before, after, onError 전후에 호출된다. 또한 다수의 리스너를 리스트로 가지며 이는 순서가 있다. open과 before는 동일한 순서로 호출되며 after(), onError(), close()는 역순으로 호출된다.
 
 #### 병렬처리(Parallel Processing)
 

@@ -83,7 +83,7 @@ Spring 배치는 jobRepository를 데이터베이스가 아닌 메모리로 설�
 </bean>
 ```
 
-메모리는 JVM 인스턴스가 다시 시작하는 것을 허용하지 않으며, 휘발성을 가진 jobRepository이다. 또한 동일한 매개 변수 두 작업 인스턴스가 동시에 실행되는 것을 보장 할 수 없다. multi-threaded 배치작업이나 파티션 작업에 적합하지 않을 수 있다.그러므로 JobRepository는 데이터베이스을 사용하여야 한다.
+메모리는 JVM 인스턴스가 다시 시작하는 것을 허용하지 않으며, 휘발성을 가진 jobRepository이다. 또한 동일한 매개 변수 두 작업 인스턴스가 동시에 실행되는 것을 보장 할 수 없다. multi-threaded 배치작업이나 파티션 작업에 적합하지 않을 수 있다.그러므로 JobRepository는 데이터베이스를 사용하여야 한다.
 
 하지만 repository내에서 rollback이 있으므로 트랜잭션 manager의 설정이 필요하다.그리고 테스트를 위해 많은 사람들이 비즈니스 논리상 여전히 트랜잭션이 있기 때문에 ResourcelessTransactionManager가 유용하다.
 

@@ -36,7 +36,7 @@ item은 플랫 파일에서의 한 라인, 데이터베이스에서의 한 행, 
 플랫파일은 2차원 데이터를 포함하는 유형의 파일이다. 스프링 배치 프레임워크에서는 플랫파일을 읽고 파싱하는 기본적인 기능을 제공하는 FlatFileItemReader 클래스를 통해 플랫파일에 대한 읽기 처리를 한다.
 
 #### FlatFileItemReader
-FlatFileItemReader는 Resource, LineMapper, FieldSetMapper, LineTokenizer에 기본적으로 의존성을 갖으며, LineTokenizer에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 FlatFileItemReader를 사용할 수 있다.
+FlatFileItemReader는 Resource, LineMapper, FieldSetMapper, LineTokenizer에 기본적으로 의존성을 가지며, LineTokenizer에 따라 구분자(Delimited)와 고정길이(Fixed Length) 방식으로 FlatFileItemReader를 사용할 수 있다.
 
 ![image](./images/flatfileitemreader_process.png)
 
@@ -265,7 +265,7 @@ dataSouce 속성으로 DB connection을 넣어올 수 있는 datasource를 지�
 
 ##### JdbcPagingItemReader
 페이징 ItemReader의 구현체 중 하나인 JdbcPagingItemReader는 페이지를 형성하는 행을 반환하는데 사용하는 SQL 쿼리를 제공할 책임을 지고 있는 PagingQueryProvider 인터페이스가 필요하다.
-데이터베이스 유형 별로 지원하는 OraclePagingQueryProvider, HsqlPagingQueryProvider, MySqlPagingQueryProvider ,SqlServerPagingQueryProvider,SybasePagingQueryProvider 등의 구현를 사용하지만 데이터베이스를 자동으로 식별해주고 적절한 PagingQueryProvider 구현체를 적용해주는데 사용하는 SqlPagingQueryProviderFactoryBean이 있다.
+데이터베이스 유형 별로 지원하는 OraclePagingQueryProvider, HsqlPagingQueryProvider, MySqlPagingQueryProvider ,SqlServerPagingQueryProvider,SybasePagingQueryProvider 등의 구현을 사용하지만 데이터베이스를 자동으로 식별해주고 적절한 PagingQueryProvider 구현체를 적용해주는데 사용하는 SqlPagingQueryProviderFactoryBean이 있다.
 SqlPagingQueryProviderFactoryBean는 환경 설정을 간단히 해주며 추천하는 구현체이다.
 
 아래 예제는 위의 JdbcCursorItemReader 설정과 동일한 설정이다.

@@ -314,7 +314,7 @@ Category 별로 작성한 wizard 목록을 기술하며, template 경로는 wiza
 3. "Add Site" 팝업 화면에서 우측에 있는 **Archive…** 버튼을 클릭한다.
 4. 다운로드 받은 파일을 선택하고, **OK** 버튼을 클릭한다.
 5. Available Software 목록에 추가된 "Custom Template"을 선택하고, **Install** 버튼을 클릭한다.
-6. Install이 완료되면 안내에 따라 플러그인을 재시작하고, Template 목록 조회을 조회하여 사용자 템플릿이 추가된 것을 확인한다.
+6. Install이 완료되면 안내에 따라 플러그인을 재시작하고, Template 목록을 조회하여 사용자 템플릿이 추가된 것을 확인한다.
 
 ### 사용자 정의 템플릿 추가에 대한 사용자 팁
 

@@ -80,7 +80,7 @@ FlowHandlerAdapter에 의해 실행/사용되며, 아래와 같은 수행을 한
 - 실행되는 Flow의 id 반환
 - Flow 실행시 입력될 값 생성
 - Flow 실행이 종료되면서 반환하는 결과 처리
-- Flow 실행에서 발생해서 던저진 예외 처리
+- Flow 실행에서 발생해서 던져진 예외 처리
 
 이러한 수행을 위한 메소드는 org.springframework.mvc.servlet.FlowHandler 인터페이스 형태로 되어 있다.
 

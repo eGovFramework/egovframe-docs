@@ -158,4 +158,4 @@ public class ParameterMapTest extends TestBase {
 }
 ```
 
- 위에서 parameterMap 을 이용한 파라메터 객체 바인딩을 처리하는 insertEmpUsingParameterMap 쿼리문에 대해 입력객체를 세팅 후 입력/조회 처리하고 있는 테스트 케이스이다. 실제로 매핑 파일 내에서 parameterMap 을 사용하는 경우와 Inline parameter 또는 parameterClass 를 그대로 쓰는 경우에서도 어플리케이션 영역은 동일한 형태의 입력 객체를 인자로 iBATIS API 를 호출하게 된다. 위의 testParameterMapInsertWithNullValue 테스트 메서드에서는 parameterMap 에 nullValue 속성으로 지정한 특정한 값을 세팅 하므로써 DB 에 null 로 입력이 된 결과를 조회하여 assertNull 로 확인하고 있다.
+ 위에서 parameterMap 을 이용한 파라메터 객체 바인딩을 처리하는 insertEmpUsingParameterMap 쿼리문에 대해 입력객체를 세팅 후 입력/조회 처리하고 있는 테스트 케이스이다. 실제로 매핑 파일 내에서 parameterMap 을 사용하는 경우와 Inline parameter 또는 parameterClass 를 그대로 쓰는 경우에서도 어플리케이션 영역은 동일한 형태의 입력 객체를 인자로 iBATIS API 를 호출하게 된다. 위의 testParameterMapInsertWithNullValue 테스트 메서드에서는 parameterMap 에 nullValue 속성으로 지정한 특정한 값을 세팅 함으로써 DB 에 null 로 입력이 된 결과를 조회하여 assertNull 로 확인하고 있다.
