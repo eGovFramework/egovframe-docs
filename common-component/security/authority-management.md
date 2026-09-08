@@ -22,13 +22,11 @@ menu:
 
  **권한관리**는 사용자별 권한을 관리하기 위한 목적으로 **등록**, **수정**, **삭제**, **조회**, **목록조회**의 기능을 수반한다.
 
-```bash
-  ① 권한등록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 등록한다.
-  ② 권한수정 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 수정한다.
-  ③ 권한삭제 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 삭제한다.
-  ④ 권한조회 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 조회한다.
-  ⑤ 권한목록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보 목록을 조회한다.
-```
+- ① 권한등록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 등록한다.
+- ② 권한수정 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 수정한다.
+- ③ 권한삭제 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 삭제한다.
+- ④ 권한조회 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 조회한다.
+- ⑤ 권한목록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보의 목록을 조회한다.
 
 ### 환경설정
 
@@ -36,35 +34,61 @@ menu:
 
 ##### * 스프링에서 제공하는 기본 권한(Authority)
 
-| AUTHORITI | DESCRIPTION |
-| --- | --- |
-| ROLE\_ANONYMOUS | 모든 사용자 |
-| IS\_AUTHENTICATED\_ANONYMOUSLY | 익명 사용자 |
-| IS\_AUTHENTICATED\_FULLY | 인증된 사용자 |
-| IS\_AUTHENTICATED\_REMEMBERED | REMEMBERED 사용자 |
-| ROLE\_RESTRICTED | 제한된 사용자 |
-| ROLE\_USER | 일반 사용자 |
-| ROLE\_ADMIN | 관리자 |
+| AUTHORITY                     | DESCRIPTION        |
+| ------------------------------ | ------------------- |
+| ROLE\_ANONYMOUS                | 모든 사용자          |
+| IS\_AUTHENTICATED\_ANONYMOUSLY | 익명 사용자          |
+| IS\_AUTHENTICATED\_FULLY       | 인증된 사용자        |
+| IS\_AUTHENTICATED\_REMEMBERED  | REMEMBERED 사용자   |
+| ROLE\_RESTRICTED               | 제한된 사용자        |
+| ROLE\_USER                     | 일반 사용자          |
+| ROLE\_ADMIN                    | 관리자              |
 
 #### 권한 추가 설정
 
 ##### * 업무적으로 필요에 의해 추가한 권한(Authority)
 
-| AUTHORITI | DESCRIPTION |
-| --- | --- |
-| ROLE\_SYM | 시스템 업무 담당자 |
-| ROLE\_COP | 협업 담당자 |
-| ROLE\_USS | 사용자지원 담당자 |
-| ROLE\_USER\_MANAGER | 업무사용자 관리자 |
-| ROLE\_SEC | 보안 업무 담당자 |
-| ROLE\_ENTRPRSMBER\_MANAGER | 기업회원 관리자 |
-| ROLE\_MBER\_MANAGER | 일반회원 관리자 |
+| AUTHORITY                  | DESCRIPTION         |
+| ---------------------------- | --------------------- |
+| ROLE\_SYM                    | 시스템 업무 담당자     |
+| ROLE\_COP                    | 협업 담당자           |
+| ROLE\_USS                    | 사용자지원 담당자      |
+| ROLE\_USER\_MANAGER          | 업무사용자 관리자      |
+| ROLE\_SEC                    | 보안 업무 담당자       |
+| ROLE\_ENTRPRSMBER\_MANAGER   | 기업회원 관리자        |
+| ROLE\_MBER\_MANAGER          | 일반회원 관리자        |
 
 #### 권한(롤) 상속구조 정의(ROLES_HIERARCHY)
 
 ##### * 정의된 하위 권한의 롤을 상속하기 위해 COMTNROLES_HIERARCHY Table에 상속구조를 정의한다.
 
  ROLE\_ANONYMOUS → IS\_AUTHENTICATED\_ANONYMOUSLY → IS\_AUTHENTICATED\_FULLY → IS\_AUTHENTICATED\_REMEMBERED → ROLE\_USER → ROLE\_ADMIN
+
+```mermaid
+flowchart TD
+    subgraph BASE["기본 상속 구조"]
+        direction TB
+        A[ROLE_ANONYMOUS] --> B[IS_AUTHENTICATED_ANONYMOUSLY]
+        B --> C[IS_AUTHENTICATED_FULLY]
+        C --> D[IS_AUTHENTICATED_REMEMBERED]
+        D --> E[ROLE_USER]
+        E --> F[ROLE_ADMIN]
+    end
+
+    subgraph CUSTOM["커스텀 업무 롤 삽입 예시"]
+        direction TB
+        R[ROLE_RESTRICTED] -->|PARENT_ROLE| G[ROLE_COP]
+    end
+
+    G -->|PARENT_ROLE| F
+
+    classDef base fill:#eef3ff,stroke:#3b5bdb,color:#1b1f27,stroke-width:1px;
+    classDef custom fill:#fff4e0,stroke:#e8890c,color:#1b1f27,stroke-width:1px;
+    class A,B,C,D,E,F base;
+    class R,G custom;
+```
+
+ 위 다이어그램과 같이 기본 상속구조(파란색)는 ROLE\_ANONYMOUS 부터 ROLE\_ADMIN 까지 순차적으로 상위 권한을 상속하며, 업무적으로 추가한 커스텀 롤(주황색)인 ROLE\_COP 는 기존 상속구조 사이(ROLE\_RESTRICTED 와 ROLE\_ADMIN 사이)에 삽입되어 상속관계를 확장한다.
 
 ##### * 기초 데이터 생성
 
@@ -77,20 +101,23 @@ menu:
 - 상위 권한 정의
 
 ```sql
+-- ROLE_COP 를 ROLE_ADMIN 의 상위(PARENT) 권한으로 등록한다.
 INSERT INTO COMTNROLES_HIERARCHY (PARENT_ROLE, CHILD_ROLE) VALUES('ROLE_COP','ROLE_ADMIN');
 ```
 
 - 하위 권한 정의
 
 ```sql
+-- ROLE_RESTRICTED 를 ROLE_COP 의 상위(PARENT) 권한으로 등록한다.
 INSERT INTO COMTNROLES_HIERARCHY (PARENT_ROLE, CHILD_ROLE) VALUES('ROLE_RESTRICTED','ROLE_COP');
 ```
 
 - 권한의 HIERARCHY 구조
 
 ```sql
-SELECT A.CHILD_ROLE CHILD, 
-       A.PARENT_ROLE PARENT
+-- COMTNROLES_HIERARCHY Table 을 자기 조인(Self Join)하여 등록된 권한의 상속(계층) 구조를 조회한다.
+SELECT A.CHILD_ROLE  CHILD,   -- 하위 권한
+       A.PARENT_ROLE PARENT  -- 상위 권한
   FROM COMTNROLES_HIERARCHY A LEFT JOIN COMTNROLES_HIERARCHY B ON (A.CHILD_ROLE = B.PARENT_ROLE);
 ```
 
