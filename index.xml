@@ -16476,18 +16476,20 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>시스템 구축시 스프링의 보안 메커니즘을 적용하기 위해 Spring Security 에서 관리하는 &lt;strong>권한(Authority)&lt;/strong> 을 정의하는 컴포넌트이다. 당 컴포넌트를 이용하여 담당자는 시스템 사용자에게 부여하는 권한을 정의하여 관리할 수 있다. 표준프레임워크 3.9부터는 &lt;strong>Session 방식 권한처리&lt;/strong> 기능을 추가하여 Spring Security 를 사용하지 않고도 당 컴포넌트를 이용하여 접근제어가 가능하도록 하였다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>&lt;strong>권한관리&lt;/strong>는 사용자별 권한을 관리하기 위한 목적으로 &lt;strong>등록&lt;/strong>, &lt;strong>수정&lt;/strong>, &lt;strong>삭제&lt;/strong>, &lt;strong>조회&lt;/strong>, &lt;strong>목록조회&lt;/strong>의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> ① 권한등록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 등록한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 권한수정 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 권한삭제 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 권한조회 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 권한목록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위한 정의한 권한정보 목록을 조회한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="환경설정">환경설정&lt;/h3>
+&lt;ul>
+&lt;li>① 권한등록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 등록한다.&lt;/li>
+&lt;li>② 권한수정 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 수정한다.&lt;/li>
+&lt;li>③ 권한삭제 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 삭제한다.&lt;/li>
+&lt;li>④ 권한조회 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보를 조회한다.&lt;/li>
+&lt;li>⑤ 권한목록 : 시스템 담당자는 시스템 사용자에게 권한을 부여하기 위해 정의한 권한정보의 목록을 조회한다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="환경설정">환경설정&lt;/h3>
 &lt;h4 id="권한-기본-설정">권한 기본 설정&lt;/h4>
 &lt;h5 id="-스프링에서-제공하는-기본-권한authority">* 스프링에서 제공하는 기본 권한(Authority)&lt;/h5>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th>AUTHORITI&lt;/th>
+ &lt;th>AUTHORITY&lt;/th>
  &lt;th>DESCRIPTION&lt;/th>
  &lt;/tr>
  &lt;/thead>
@@ -16527,7 +16529,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th>AUTHORITI&lt;/th>
+ &lt;th>AUTHORITY&lt;/th>
  &lt;th>DESCRIPTION&lt;/th>
  &lt;/tr>
  &lt;/thead>
