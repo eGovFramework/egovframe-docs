@@ -14,12 +14,9 @@ RAG는 외부 지식을 검색하여 생성 모델의 입력에 포함하는 구
 업무 안내를 질문에 답할 때만 사용하는 것이 아니라 주제별 지식으로 지속 관리하려는 요구가 있을 수 있다. 담당자가 ‘신청 대상’ 페이지를 열어 설명을 읽고 수정하거나, 관련 ‘신청 예외’ 페이지를
 함께 확인하는 작업이 그 예이다. 이런 경우 원문과 별도로 사람이 열람할 수 있는 파생 지식 산출물을 두는 설계가 가능하다.
 
-Karpathy의 LLM Wiki 제안은 원문 모음과 지속적으로 관리하는 연결된 Markdown 위키를 구분한다. 이 문서는 그 실무 패턴에서 원문 보존과 편집 가능한 지식 페이지라는 관점을 참고한다.
-해당 제안은 학술적 성능 검증 자료가 아니며, 아래 Java 구현이 원 제안의 모든 워크플로를 재현하는 것은 아니다. [LLM Wiki][ref-1]
-
 지식 컴파일은 원문을 다시 표현하는 생성 작업이므로 정보가 누락될 수 있다. WiCER는 위키 컴파일의 정보 손실 문제를 다루는 2026년 사전공개 논문이다. 해당 연구는 전체 문맥·KV 캐시 활용 및
 반복 개선을 다루므로, 여기서 구현하는 페이지 검색 RAG와 실행 방식이 동일하지 않다. 이 문서는 **컴파일된 지식이 원문을 완전히 보존한다고 가정하지 않아야 한다**는 한계를 설명하는 데 인용한다.
-연구의 성능 수치를 이 예제나 한국 공공 문서의 품질로 일반화하지 않는다. [WiCER, §6 및 §7.4][ref-2]
+연구의 성능 수치를 이 예제나 한국 공공 문서의 품질로 일반화하지 않는다. [WiCER, §6 및 §7.4][ref-1]
 
 이에 따라 이 예제는 원문 사본과 해시를 컴파일 산출물에 보관하고, 생성 결과를 초안으로 저장하며, 발행 후에도 이전 버전을 유지한다. 이것은 편집·변경 추적을 위한 설계이다. 해시와 출처 ID가
 답변의 의미적 정확성을 증명하지는 않는다.
@@ -59,33 +56,37 @@ RetrievalAugmentationAdvisor → ChatClient → 답변
 ```
 
 Spring AI의 `DocumentRetriever`는 `Query`를 받아 `List<Document>`를 반환한다. 위키 파일을 읽는 구현도 이 계약을 따를 수 있다. 이 예제는 Spring AI
-1.0.1의 인터페이스와 Advisor를 사용한다. [버전 고정 API 소스][ref-3]
+1.0.1의 인터페이스와 Advisor를 사용한다. [버전 고정 API 소스][ref-2]
 
 | 구성요소 | 역할 | 소스 |
 | --- | --- | --- |
-| WikiCompiler | 원문을 모델에 전달하고 위키 초안 생성 | [WikiCompiler.java][ref-4] |
-| WikiStore | 파일 계약, 초안·발행본 저장, 원문 참조 부착 | [WikiStore.java][ref-5] |
-| WikiDocumentRetriever | 페이지 단위 키워드 검색 | [WikiDocumentRetriever.java][ref-6] |
-| WikiAnswerer | Advisor로 검색 문맥을 구성해 답변 | [WikiAnswerer.java][ref-7] |
-| WikiApplication | CLI 명령과 모델 설정 연결 | [WikiApplication.java][ref-8] |
-| ChatCompletionsConfiguration | 공통 설정으로 Chat Completions 호환 API 연결 | [ChatCompletionsConfiguration.java][ref-9] |
-| ModelConfiguration | 공통 ChatModel을 컴파일용·답변용 ChatClient에 주입 | [ModelConfiguration.java][ref-10] |
+| WikiCompiler | 원문을 모델에 전달하고 위키 초안 생성 | [WikiCompiler.java][ref-3] |
+| WikiStore | 파일 계약, 초안·발행본 저장, 원문 참조 부착 | [WikiStore.java][ref-4] |
+| WikiDocumentRetriever | 페이지 단위 키워드 검색 | [WikiDocumentRetriever.java][ref-5] |
+| WikiAnswerer | Advisor로 검색 문맥을 구성해 답변 | [WikiAnswerer.java][ref-6] |
+| WikiApplication | CLI 명령과 모델 설정 연결 | [WikiApplication.java][ref-7] |
+| ChatCompletionsConfiguration | 공통 설정으로 Chat Completions 호환 API 연결 | [ChatCompletionsConfiguration.java][ref-8] |
+| ModelConfiguration | 공통 ChatModel을 컴파일용·답변용 ChatClient에 주입 | [ModelConfiguration.java][ref-9] |
 
 ## 예제 코드 준비
+
+아래 예제는 공식 저장소의 [PR #87][sample-review]에 제출되어 검토 중인 코드다.
+병합 전 예제를 이 문서가 설명하는 커밋에 고정하여 확인한다. 공식 저장소 기본 브랜치에 포함된 샘플과는 구분한다.
 
 [실행 예제 코드][sample-source]를 내려받고 이 문서가 참조하는 커밋의 샘플 디렉터리로 이동한다.
 아래 명령의 커밋에는 전체 소스, 설정 예시, 가상 입력 문서와 자동화 테스트가 포함되어 있다.
 
 ```shell
-git clone https://github.com/SEOUL-raphael/egovframe-ai-rag.git
+git clone https://github.com/eGovFramework/egovframe-ai-rag.git
 cd egovframe-ai-rag
-git checkout 69a4081b8c364a123fc038ff85ec429c2fcec7f2
+git fetch origin pull/87/head
+git checkout --detach 4e082dad12514828064a5e798255fa3c6927ce71
 cd spring-ai-rag-wiki
 ```
 
 ## 개발 환경
 
-기준은 전자정부 표준프레임워크 공식 RAG 샘플이 사용하는 부모 POM이다. 최신 Spring AI 문서의 API를 그대로 혼용하지 않는다. [공식 샘플 POM][ref-11]
+기준은 전자정부 표준프레임워크 공식 RAG 샘플이 사용하는 부모 POM이다. 최신 Spring AI 문서의 API를 그대로 혼용하지 않는다. [공식 샘플 POM][ref-10]
 
 | 항목 | 예제 설정 |
 | --- | --- |
@@ -99,10 +100,10 @@ cd spring-ai-rag-wiki
 
 공통 실행·RAG 의존성은 `spring-boot-starter`와 `spring-ai-rag`이다. 기본 연결은 `spring-ai-openai` 모듈의 Chat Completions 호환 구현을
 명시적으로 구성하며, 서버 주소·모델 ID는 `LLM_*` 외부 설정에서 받는다. 다른 API 계약을 사용하려면 의존성과 연결 Bean을 해당 계약에 맞게 구성한다. 현재 예제의 전체 의존성은
-[pom.xml][ref-12]에 있다. 이 부모 설정 사용만으로 운영 인증이나 전체 전자정부 실행환경 호환성 검증을 의미하지 않는다.
+[pom.xml][ref-11]에 있다. 이 부모 설정 사용만으로 운영 인증이나 전체 전자정부 실행환경 호환성 검증을 의미하지 않는다.
 
-모델 연결은 [실행 및 배포 구성][ref-13]에 따라 준비한다. 기본 `chat-model` 프로필에 `LLM_BASE_URL`, `LLM_COMPLETIONS_PATH`, `LLM_MODEL`,
-`LLM_API_KEY`를 주입한다. 공통 프로필과 설정 키는 [모델 연결 설정][ref-14]에서 확인한다. 새 모델 연결을 추가할 때는 의존성, `ChatModel` Bean, 컴파일용 출력 옵션을
+모델 연결은 [실행 및 배포 구성][ref-12]에 따라 준비한다. 기본 `chat-model` 프로필에 `LLM_BASE_URL`, `LLM_COMPLETIONS_PATH`, `LLM_MODEL`,
+`LLM_API_KEY`를 주입한다. 공통 프로필과 설정 키는 [모델 연결 설정][ref-13]에서 확인한다. 새 모델 연결을 추가할 때는 의존성, `ChatModel` Bean, 컴파일용 출력 옵션을
 함께 구성한다.
 
 ```powershell
@@ -227,7 +228,7 @@ String answer = client.prompt()
 
 Spring AI 1.0.1의 기본 문서 포매터는 `Document.getText()`를 연결한다. 따라서 출처를 metadata에만 넣으면 모델의 문맥에 전달되지 않는다. 이 예제는 metadata에
 제목·원문 파일명 목록·발행본 ID를 넣고, 본문에는 위키 내용과 원문 파일명·해시를 함께 넣는다. 원문 사본은 manifest에 보관하며 기본 답변 문맥에 자동으로 추가하지 않는다.
-[ContextualQueryAugmenter 1.0.1 소스][ref-15]
+[ContextualQueryAugmenter 1.0.1 소스][ref-14]
 
 ```powershell
 java -jar target/spring-ai-rag-wiki-0.1.0-SNAPSHOT.jar --wiki.action=ask --wiki.query="재신청 예외 조건은 무엇인가요?"
@@ -262,29 +263,28 @@ manifest에는 원문 사본과 해시가 포함되므로 어느 입력으로 �
 
 ## 참고자료
 
-- [LLM Wiki — Andrej Karpathy][ref-16]
-- [WiCER — Juan M. Huerta, arXiv:2605.07068v1][ref-17]
-- [Spring AI 1.0.1 소스][ref-18]
-- [전자정부 표준프레임워크 RAG 샘플][ref-19]
+- [WiCER — Juan M. Huerta, arXiv:2605.07068v1][ref-15]
+- [Spring AI 1.0.1 소스][ref-16]
+- [전자정부 표준프레임워크 RAG 샘플][ref-17]
 
-[sample-source]: https://github.com/SEOUL-raphael/egovframe-ai-rag/tree/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki
+[sample-source]: https://github.com/eGovFramework/egovframe-ai-rag/tree/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki
 
-[ref-1]: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-[ref-2]: https://arxiv.org/html/2605.07068v1
-[ref-3]: https://github.com/spring-projects/spring-ai/blob/v1.0.1/spring-ai-rag/src/main/java/org/springframework/ai/rag/retrieval/search/DocumentRetriever.java
-[ref-4]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiCompiler.java
-[ref-5]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiStore.java
-[ref-6]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiDocumentRetriever.java
-[ref-7]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiAnswerer.java
-[ref-8]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiApplication.java
-[ref-9]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/ChatCompletionsConfiguration.java
-[ref-10]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/src/main/java/com/example/wiki/ModelConfiguration.java
-[ref-11]: https://github.com/eGovFramework/egovframe-ai-rag/blob/main/spring-ai-rag-redis-stack/pom.xml
-[ref-12]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/pom.xml
-[ref-13]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/docs/deployment.md
-[ref-14]: https://github.com/SEOUL-raphael/egovframe-ai-rag/blob/69a4081b8c364a123fc038ff85ec429c2fcec7f2/spring-ai-rag-wiki/docs/MODEL_CONFIGURATION.md
-[ref-15]: https://github.com/spring-projects/spring-ai/blob/v1.0.1/spring-ai-rag/src/main/java/org/springframework/ai/rag/generation/augmentation/ContextualQueryAugmenter.java
-[ref-16]: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-[ref-17]: https://arxiv.org/abs/2605.07068v1
-[ref-18]: https://github.com/spring-projects/spring-ai/tree/v1.0.1
-[ref-19]: https://github.com/eGovFramework/egovframe-ai-rag
+[ref-1]: https://arxiv.org/html/2605.07068v1
+[ref-2]: https://github.com/spring-projects/spring-ai/blob/v1.0.1/spring-ai-rag/src/main/java/org/springframework/ai/rag/retrieval/search/DocumentRetriever.java
+[ref-3]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiCompiler.java
+[ref-4]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiStore.java
+[ref-5]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiDocumentRetriever.java
+[ref-6]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiAnswerer.java
+[ref-7]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/WikiApplication.java
+[ref-8]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/ChatCompletionsConfiguration.java
+[ref-9]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/src/main/java/com/example/wiki/ModelConfiguration.java
+[ref-10]: https://github.com/eGovFramework/egovframe-ai-rag/blob/main/spring-ai-rag-redis-stack/pom.xml
+[ref-11]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/pom.xml
+[ref-12]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/docs/deployment.md
+[ref-13]: https://github.com/eGovFramework/egovframe-ai-rag/blob/4e082dad12514828064a5e798255fa3c6927ce71/spring-ai-rag-wiki/docs/MODEL_CONFIGURATION.md
+[ref-14]: https://github.com/spring-projects/spring-ai/blob/v1.0.1/spring-ai-rag/src/main/java/org/springframework/ai/rag/generation/augmentation/ContextualQueryAugmenter.java
+[ref-15]: https://arxiv.org/abs/2605.07068v1
+[ref-16]: https://github.com/spring-projects/spring-ai/tree/v1.0.1
+[ref-17]: https://github.com/eGovFramework/egovframe-ai-rag
+
+[sample-review]: https://github.com/eGovFramework/egovframe-ai-rag/pull/87
