@@ -64,14 +64,14 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 CNSLT_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 CNSLT_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL, 
   		             NEXT_ID NUMERIC(30) NULL,
   		             PRIMARY KEY (TABLE_NAME));
  
-  INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
+  INSERT INTO COMTECOPSEQ VALUES('CNSLT_ID','1');
 ```
 
 #### ID Generation 환경설정(context-idgn-CnsltManage.xml)
@@ -100,6 +100,23 @@ CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL,
 ## 관련기능
 
  상담관리기능은 크게 일반사용자가 사용하는 상담목록조회, 상담상세조회, 상담내역등록, 상담내역수정 기능 및 관리자가 사용하는 상담답변목록조회, 상담답변상세조회, 상담내역답변수정 기능으로 분류된다.
+
+```mermaid
+flowchart LR
+    subgraph 일반사용자
+    L[상담목록조회] -->|등록| R[상담내역등록]
+    L -->|목록클릭| D[상담상세조회]
+    R --> L
+    D -->|수정| U[상담내역수정]
+    U --> L
+    D -->|삭제| L
+    end
+    subgraph 관리자
+    AL[상담답변목록조회] -->|목록클릭| AD[상담답변상세조회]
+    AD -->|수정| AU[상담내역답변수정]
+    AU --> AL
+    end
+```
 
 ### 상담목록조회
 
