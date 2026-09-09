@@ -29455,7 +29455,14 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 약식결재상세조회 : 등록된 약식결재정보를 조회한다. 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 약식결재승인 : 등록된 약식결재정보를 승인한다. 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 약식결재반려 : 등록된 약식결재정보를 반려한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre class="mermaid">flowchart LR
+ A[약식결재권자 지정] --&amp;gt; B[약식결재 상세조회]
+ B --&amp;gt;|삭제| E((삭제))
+ B --&amp;gt;|승인팝업 호출| C[약식결재 승인]
+ B --&amp;gt;|반려팝업 호출| D[약식결재 반려]
+ C --&amp;gt;|승인 처리| F((해당업무 승인 처리))
+ D --&amp;gt;|반려 처리| G((해당업무 반려 처리))&lt;/pre>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -29498,7 +29505,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>VO&lt;/td>
  &lt;td>egovframework.com.uss.ion.ism.service.SanctnerVO.java&lt;/td>
- &lt;td>보고자 관리를 위한 VO 클래스&lt;/td>
+ &lt;td>결재자 관리를 위한 VO 클래스&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
