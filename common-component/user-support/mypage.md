@@ -61,14 +61,14 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 CNTNTS_ID (컨텐츠 아이디) 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 CNTNTS_ID (컨텐츠 아이디) 항목을 추가해야 한다.
 
 ```sql
   CREATE TABLE COMTECOPSEQ ( TABLE_NAME VARCHAR(20) NOT NULL, 
   		             NEXT_ID NUMERIC(30) NULL,
   		             PRIMARY KEY (TABLE_NAME));
  
-  INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
+  INSERT INTO COMTECOPSEQ VALUES('CNTNTS_ID','1');
 ```
 
 #### ID Generation 환경설정(context-idgn-IndvdlPge.xml)
@@ -100,6 +100,15 @@ menu:
 
  마이페이지관리는 크게 마이페이지 컨텐츠 목록조회, 마이페이지 컨텐츠 상세조회, 마이페이지 컨텐츠 등록, 마이페이지 컨텐츠 수정 기능으로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    L[마이페이지 컨텐츠 목록조회] -->|등록| R[마이페이지 컨텐츠 등록]
+    L -->|목록클릭| D[마이페이지 컨텐츠 상세조회]
+    R --> L
+    D -->|수정| U[마이페이지 컨텐츠 수정]
+    U --> L
+```
+
 ### 마이페이지 컨텐츠 목록조회
 
 #### 비즈니스 규칙
@@ -120,7 +129,7 @@ menu:
  ![image](./images/uss-mypage-mypge_cntnts_list.png)
 
  등록 : 컨텐츠를 등록하기 위해서는 상단의 등록 버튼을 통해서 마이페이지 등록 화면으로 이동한다.
- 목록 : 마이페이지 컨텐츠의 상세조회 화면으로 이동한다.
+ 목록클릭 : 마이페이지 컨텐츠의 상세조회 화면으로 이동한다.
 
 ### 마이페이지 컨텐츠 상세조회
 
