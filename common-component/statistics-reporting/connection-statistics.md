@@ -145,7 +145,7 @@ public class EgovSysLogScheduling {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 접속 통계검색 | /sts/cst/selectConectStats.do | selectUserStats | "ConectStatsDAO.selectConectStats" |
+| 접속 통계검색 | /sts/cst/selectConectStats.do | selectConectStats | "ConectStatsDAO.selectConectStats" |
 
  ![image](./images/sts-stats3.png)
 
