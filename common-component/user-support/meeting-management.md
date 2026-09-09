@@ -61,7 +61,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 MTG_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 MTG_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ
@@ -100,6 +100,16 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('MTG_ID', 1);
 ## 관련기능
 
  회의정보관리기능은 크게 회의정보 목록조회, 회의정보 상세조회, 회의정보 내용등록, 회의정보 내용수정기능으로 구성되어 있다.
+
+```mermaid
+flowchart LR
+    L[회의정보 목록조회] -->|등록| R[회의정보 등록]
+    L -->|목록클릭| D[회의정보 상세조회]
+    R -->|등록| L
+    D -->|수정| U[회의정보 수정]
+    U -->|수정| L
+    D -->|삭제| L
+```
 
 ### 회의정보 목록
 
@@ -195,9 +205,9 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('MTG_ID', 1);
 | --- | --- | --- | --- | --- |
 | 수정 | /uss/olp/mgt/EgovMeetingManageModify.do | meetingManageModify | "MeetingManage" | "updateMeetingManage" |
 
- 입력한 회의정보 정보를(을) 저장 처리한다.
+ 입력한 회의정보 정보를 저장 처리한다.
 
  ![image](./images/uss-meeting-회의실_수정.jpg)
 
- 등록: 수정된 정보들이 저장 처리된다.
+ 수정: 수정된 정보들이 저장 처리된다.
  목록: 회의정보 목록 화면으로 이동한다.
