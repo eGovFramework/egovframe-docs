@@ -68,7 +68,7 @@ menu:
 
 ### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 ANN_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 ANN_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -97,6 +97,18 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ```
 
 ## 관련화면 및 수행매뉴얼
+
+```mermaid
+flowchart LR
+    L[기념일관리 목록조회] -->|등록| R[기념일 등록]
+    L -->|상세조회| D[기념일 상세]
+    L -->|엑셀등록| X[기념일 일괄등록]
+    L -->|안내| N[기념일 안내]
+    R --> L
+    D -->|수정| U[기념일 수정]
+    U --> D
+    D -->|삭제| L
+```
 
 ### 기념일관리 목록조회
 
