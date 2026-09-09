@@ -24,6 +24,13 @@ menu:
  ① 받은쪽지함관리 목록 : 받은쪽지함관리 정보를 최근 등록 순서대로 조회, 삭제 하고, 그 결과 목록을 화면에 반영한다.
  ② 받은쪽지함관리 상세조회 : 등록된 받은쪽지함관리 정보를 상세정보를 조회하고 삭제기능을 제공한다.
 
+```mermaid
+flowchart LR
+    L[받은쪽지함관리 목록] -->|제목 클릭| D[받은쪽지함관리 상세조회]
+    D -->|답장| R[답장 작성]
+    D -->|삭제| L
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -56,7 +63,7 @@ menu:
 
 ### ID Generation
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 NOTE_ID, NOTE_TRNSMIT_ID, NOTE_RECPTN_ID 항목을 추가한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 NOTE_ID, NOTE_TRNSMIT_ID, NOTE_RECPTN_ID 항목을 추가한다.
 
 ```sql
 INSERT INTO COMTECOPSEQ VALUES('NOTE_ID',0);
@@ -82,7 +89,7 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 
  조회 : 보낸날짜, 검색조건, 검색명으로 조회를 요청한다.
  삭제 : 선택된 받은쪽지정보를 삭제한다.
- 목록 제목 클릭 :  받은쪽지함관리 상세조회 화면으로 이동한다.
+ 목록 제목 클릭 : 받은쪽지함관리 상세조회 화면으로 이동한다.
 
 ### 받은쪽지함관리 상세조회
 
@@ -99,6 +106,6 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 
  ![image](./images/uss-note-recptn-받쪽함상조.jpg)
 
- 답장 :  선택된 받은쪽지 정보의 답장을 작성한다.
+ 답장 : 선택된 받은쪽지 정보의 답장을 작성한다.
  삭제 : 선택된 받은쪽지 정보를 삭제 요청한다.
  목록 : 받은쪽지함관리 목록조회 화면으로 이동한다.
