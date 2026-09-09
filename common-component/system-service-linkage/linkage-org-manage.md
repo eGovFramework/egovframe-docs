@@ -66,7 +66,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 INSTT_ID, SYS_ID, SVC_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 INSTT_ID, SYS_ID, SVC_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -136,6 +136,24 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ## 관련기능
 
  연계기관관리는 연계기관관리 목록조회, 연계기관관리 등록, 연계기관관리 수정, 연계기관관리 상세조회, 연계시스템 등록, 연계시스템 수정, 연계서비스 등록, 연계서비스 수정 기능으로 구성되어 있다.
+
+```mermaid
+flowchart TD
+    L[연계기관 목록조회] -->|등록| RI[연계기관 등록]
+    L -->|목록클릭| D[연계기관 상세조회]
+    RI -->|저장| L
+    D -->|수정| U[연계기관 수정]
+    U -->|저장| L
+    D -->|삭제| L
+    D -->|연계시스템 등록| SI[연계시스템 등록]
+    D -->|연계시스템 수정| SU[연계시스템 수정]
+    D -->|연계서비스 등록| VI[연계서비스 등록]
+    D -->|연계서비스 수정| VU[연계서비스 수정]
+    SI -->|저장| D
+    SU -->|저장| D
+    VI -->|저장| D
+    VU -->|저장| D
+```
 
 ### 연계기관 목록조회
 
@@ -230,7 +248,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 ### 연계시스템 등록
 
- 연계시스템 등록 시 선행작업으로 연계시스템, 연계시스템, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
+ 연계시스템 등록 시 선행작업으로 연계기관, 연계시스템, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
 
 #### 비즈니스 규칙
 
@@ -242,9 +260,9 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 #### 관련화면 및 수행매뉴얼
 
-| Action | URL | Controller | Controller method | QueryID |
-| --- | --- | --- | --- | --- |
-| 등록 | /ssi/syi/iis/addCntcSystem.do | EgovCntcInsttController | insertCntcSystem | /ssi/syi/iis/EgovCntcSystemRegist |
+| Action | URL | Controller method | QueryID |
+| --- | --- | --- | --- |
+| 등록 | /ssi/syi/iis/addCntcSystem.do | insertCntcSystem | "CntcInsttDAO.insertCntcSystem" |
 
  연계시스템에 대한 상세내용을 등록한다.
  등록이 성공하면 연계기관상세 화면으로 이동한다.
@@ -266,9 +284,9 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 #### 관련화면 및 수행매뉴얼
 
-| Action | URL | Controller | Controller method | QueryID |
-| --- | --- | --- | --- | --- |
-| 수정 | /ssi/syi/iis/updateCntcSystem.do | EgovCntcInsttController | updateCntcSystem | /ssi/syi/iis/EgovCntcSystemUpdt |
+| Action | URL | Controller method | QueryID |
+| --- | --- | --- | --- |
+| 수정 | /ssi/syi/iis/updateCntcSystem.do | updateCntcSystem | "CntcInsttDAO.updateCntcSystem" |
 
  수정이 성공하면 연계기관상세 화면으로 이동한다.
 
@@ -283,7 +301,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  연계서비스에 대한 상세내용을 등록한다.
  등록이 성공하면 연계기관상세 화면으로 이동한다.
- 연계서비스 등록 시 선행작업으로 연계서비스, 연계서비스, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
+ 연계서비스 등록 시 선행작업으로 연계기관, 연계시스템, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
 
 #### 관련코드
 
