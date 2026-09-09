@@ -53,7 +53,7 @@
 | Query XML | resources/egovframework/mapper/com/sts/ust/EgovUserStats\_SQL\_tibero.xml | 사용자 통계를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/ust/EgovUserStats\_SQL\_altibase.xml | 사용자 통계를 위한 Altibase용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/ust/EgovUserStats\_SQL\_maria.xml | 사용자 통계를 위한 Maria용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sts/ust/EgovUserStats\_SQL\_postgres.xml | 사용자 통계를 위한 PostgresSQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sts/ust/EgovUserStats\_SQL\_postgres.xml | 사용자 통계를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/sts/ust/EgovUserStats\_SQL\_goldilocks.xml | 사용자 통계를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/sts/ust/message\_ko.properties | 사용자 통계 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sts/ust/message\_en.properties | 사용자 통계 Message properties(영문) |
@@ -142,7 +142,7 @@ public class EgovUserStatsScheduling {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 사용자 통계검색 | /sts/ust/selectUserStats.do | selectUserStats | "UserStatsDAO.selectUserStats", |
+| 사용자 통계검색 | /sts/ust/selectUserStats.do | selectUserStats | "UserStatsDAO.selectUserStats" |
 
  ![image](./images/sts-stats2.png)
 
