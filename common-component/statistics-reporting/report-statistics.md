@@ -104,6 +104,13 @@ INSERT INTO COMTECOPSEQ VALUES('RS_ID','0');
 
  보고서통계기능은 크게 보고서통계 목록조회, 보고서통계 상세정보, 보고서 등록 기능으로 분류된다.
 
+```mermaid
+flowchart LR
+    L[보고서통계 목록조회] -->|조회| D[보고서통계 상세정보]
+    L -->|등록| R[보고서 등록]
+    R --> L
+```
+
 ### 보고서통계 목록조회
 
 #### 비즈니스 규칙
@@ -119,7 +126,8 @@ INSERT INTO COMTECOPSEQ VALUES('RS_ID','0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sts/rst/selectReprtStatsList.do | selectReprtStatsList | "reprtStatsDAO.selectReprtStatsList", "reprtStatsDAO.selectReprtStatsListTotCnt" |
+| 조회 | /sts/rst/selectReprtStatsList.do | selectReprtStatsList | "reprtStatsDAO.selectReprtStatsList", |
+|  |  |  | "reprtStatsDAO.selectReprtStatsListTotCnt" |
 
  ![image](./images/sts-보고서통계_목록조회.png)
 
