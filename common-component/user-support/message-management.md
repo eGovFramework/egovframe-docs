@@ -19,10 +19,17 @@ menu:
 
 ## 설명
 
- 쪽지관리는 쪽지를 보내기  위한 목적으로 쪽지관리는 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
+ 쪽지관리는 쪽지를 보내기 위한 목적으로 쪽지관리의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
  ① 쪽지보내기 : 사용자가 작성한 쪽지 정보를 다른 사람에게 전송한다.
  ② 수신자/참조자 선택 : 쪽지를 보내기위해 수신자/참조자를 선택할 수 있는 팝업 창.
+
+```mermaid
+flowchart LR
+    W[쪽지보내기 화면] -->|수신자/참조자 찾기| P[수신자/참조자 선택 팝업]
+    P -->|선택| W
+    W -->|보내기| S([전송 완료])
+```
 
 ### 관련소스
 
@@ -56,7 +63,7 @@ menu:
 
 ### ID Generation
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 NOTE_ID, NOTE_TRNSMIT_ID, NOTE_RECPTN_ID 항목을 추가한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 NOTE_ID, NOTE_TRNSMIT_ID, NOTE_RECPTN_ID 항목을 추가한다.
 
 ```sql
 INSERT INTO COMTECOPSEQ VALUES('NOTE_ID',0);
@@ -87,8 +94,8 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수신자/참조자 선택 | /uss/ion/ntm/listEgovNoteEmpListPopup.do | EgovEgovNoteEmpList | "NoteManage.EovNoteEmpListPopup" |
-|  |  |  | "NoteManage.EovNoteEmpListPopupCnt" |
+| 수신자/참조자 선택 | /uss/ion/ntm/listEgovNoteEmpListPopup.do | EgovEgovNoteEmpList | "NoteManage.EgovNoteEmpListPopup" |
+|  |  |  | "NoteManage.EgovNoteEmpListPopupCnt" |
 
  ![image](./images/uss-note-manage-수신자참조.jpg)
 
