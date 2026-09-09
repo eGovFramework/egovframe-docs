@@ -68,15 +68,22 @@ menu:
 
  메뉴생성관리기능은 크게 메뉴생성 목록조회, 메뉴생성, 사이트맵생성 기능으로 분류된다.
 
+```mermaid
+flowchart LR
+    L[메뉴생성 목록조회] -->|권한별 메뉴생성 버튼| C[메뉴생성]
+    C -->|메뉴생성 완료| S[사이트맵생성]
+    S --> F(["해당권한코드_SiteMap.jsp 생성"])
+```
+
 ### 메뉴생성 목록조회
 
 #### 비즈니스 규칙
 
  메뉴생성 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 권한코드에 대하여 수행된다.
- 신규 메뉴를 생성하기 위해서는 조회된 권한별 메뉴생성 버튼을 통해서  메뉴생성  화면으로 이동한다.
+ 신규 메뉴를 생성하기 위해서는 조회된 권한별 메뉴생성 버튼을 통해서 메뉴생성 화면으로 이동한다.
  조회된 메뉴생성관리 화면의 리스트중 메뉴생성여부를 통하여 권한별 메뉴 생성여부(Y,N)를 확인 할 수 있다.
- 생성된 메뉴는  메뉴생성  화면으로 이동 후 다시 생성 할 수 있다.
+ 생성된 메뉴는 메뉴생성 화면으로 이동 후 다시 생성 할 수 있다.
  보안설정대상ID에 사용자ID를 입력 후 조회 시 해당 사용자ID의 권한코드가 조회된다.
 
 #### 관련코드
@@ -107,7 +114,7 @@ menu:
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 조회 | /sym/mnu/mcm/EgovMenuCreatSelect.do | selectMenuCreatList | "menuManageDAO.selectMenuCreatList\_D" |
-| 등록 | /sym/mnu/mcm/EgovMenuCreatInsert.do | insertMenuCreatList | "menuMamenuManageDAO.insertMenuCreat\_S" |
+| 등록 | /sym/mnu/mcm/EgovMenuCreatInsert.do | insertMenuCreatList | "menuManageDAO.insertMenuCreat\_S" |
 
  ![image](./images/sym-menucreat-egovmenucreat.jpg)
 
