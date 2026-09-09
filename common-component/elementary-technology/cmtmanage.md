@@ -23,6 +23,14 @@
 
  **출퇴근 관리**는 출근, 퇴근 정보를 관리하기 위한 목적으로, 출근, 퇴근, 조회 기능을 수반한다.
 
+```mermaid
+flowchart LR
+    L[출퇴근관리 조회] -->|출근 버튼| S[출근 등록]
+    L -->|퇴근 버튼| E[퇴근 등록]
+    S --> L
+    E --> L
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -89,7 +97,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
-| 연계메시지 | COMTNCOMMUTE | 출, 퇴근 정보를 관리한다 |
+| 출퇴근정보 | COMTNCOMMUTE | 출, 퇴근 정보를 관리한다 |
 
 ## 관련화면 및 수행매뉴얼
 
@@ -97,7 +105,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/cmt/EgovCmtManageList.do | selectUserCmtList | cmtManageDAO" | "selectCmtList\_S |
+| 목록조회 | /uss/cmt/EgovCmtManageList.do | selectUserCmtList | "cmtManageDAO" | "selectCmtList\_S" |
 
  ![image](./images/cmt-출퇴근_조회.jpg)
 
@@ -111,7 +119,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | uss/cmt/EgovCmtWrkStartInsert.do | insertWrkStartCmtInfo | cmtManageDAO" | "insertWrkStartCmtInfo\_S |
+| 등록 | uss/cmt/EgovCmtWrkStartInsert.do | insertWrkStartCmtInfo | "cmtManageDAO" | "insertWrkStartCmtInfo\_S" |
 
  ![image](./images/cmt-출퇴근_출근.jpg)
 
@@ -125,7 +133,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | uss/cmt/EgovCmtWrkEndInsert.do | insertWrkEndCmtInfo | cmtManageDAO" | "insertWrkEndCmtInfo\_S |
+| 등록 | uss/cmt/EgovCmtWrkEndInsert.do | insertWrkEndCmtInfo | "cmtManageDAO" | "insertWrkEndCmtInfo\_S" |
 
  ![image](./images/cmt-출퇴근_퇴근.jpg)
 
