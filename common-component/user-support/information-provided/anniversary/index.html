@@ -64,7 +64,15 @@
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;cipers&#34;</span>     <span style=color:teal>value=</span><span style=color:#d14>&#34;16&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;fillChar&#34;</span>   <span style=color:teal>value=</span><span style=color:#d14>&#34;0&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>    <span style=color:navy>&lt;/bean&gt;</span>
-</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><h3 class=sec-tit id=기념일관리-목록조회>기념일관리 목록조회</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>조회</td><td>/uss/ion/ans/selectAnnvrsryManageList.do</td><td>selectAnnvrsryManageList</td><td>&ldquo;annvrsryManageDAO.selectAnnvrsryManageList&rdquo;</td></tr><tr><td>조회</td><td>/uss/ion/ans/selectAnnvrsryManageList.do</td><td>selectAnnvrsryManageList</td><td>&ldquo;annvrsryManageDAO.selectAnnvrsryManageListTotCnt&rdquo;</td></tr></tbody></table></div><p>기념일관리 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><div class=mermaid>flowchart LR
+L[기념일관리 목록조회] -->|등록| R[기념일 등록]
+L -->|상세조회| D[기념일 상세]
+L -->|엑셀등록| X[기념일 일괄등록]
+L -->|안내| N[기념일 안내]
+R --> L
+D -->|수정| U[기념일 수정]
+U --> D
+D -->|삭제| L</div><h3 class=sec-tit id=기념일관리-목록조회>기념일관리 목록조회</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>조회</td><td>/uss/ion/ans/selectAnnvrsryManageList.do</td><td>selectAnnvrsryManageList</td><td>&ldquo;annvrsryManageDAO.selectAnnvrsryManageList&rdquo;</td></tr><tr><td>조회</td><td>/uss/ion/ans/selectAnnvrsryManageList.do</td><td>selectAnnvrsryManageList</td><td>&ldquo;annvrsryManageDAO.selectAnnvrsryManageListTotCnt&rdquo;</td></tr></tbody></table></div><p>기념일관리 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 검색조건은 년도에 대해서 수행된다.</p><p><img src=/egovframe-docs/common-component/user-support/images/uss-annvrsry-%ea%b8%b0%eb%85%90%ec%9d%bc%eb%aa%a9%eb%a1%9d.jpg alt=image></p><p>조회 : 기 등록된 기념일관리의 목록을 조회한다.
 등록 : 신규 기념일을 등록하기 위해서는 상단의 등록 버튼을 통해서 기념일 등록 화면으로 이동한다.
 상세조회: 등록된 기념일 목록(기념일명)을 클릭하면 상세정보 화면으로 이동한다.</p><h3 class=sec-tit id=기념일-등록>기념일 등록</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>등록</td><td>/uss/ion/ans/insertAnnvrsry.do</td><td>insertAnnvrsryManage</td><td>&ldquo;annvrsryManageDAO.insertAnnvrsryManage&rdquo;</td></tr></tbody></table></div><p>기념일의 속성정보를 입력한 뒤 등록한다.
