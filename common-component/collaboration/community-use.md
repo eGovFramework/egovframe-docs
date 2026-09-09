@@ -96,6 +96,15 @@ menu:
 
 커뮤니티사용관리는 커뮤니티 게시판관리 목록조회, 커뮤니티 게시판관리 등록, 커뮤니티 게시판관리 상세조회, 커뮤니티 게시판관리 수정 기능으로 구분되어 있다.
 
+```mermaid
+flowchart LR
+    L[커뮤니티 게시판관리 목록조회] -->|등록 버튼| R[커뮤니티 게시판관리 등록]
+    L -->|게시판명 클릭| D[커뮤니티 게시판관리 상세보기]
+    R -->|저장| L
+    D -->|수정| U[커뮤니티 게시판관리 수정]
+    U -->|저장| L
+```
+
 ### 커뮤니티 게시판관리 목록조회
 
 #### 비즈니스 규칙
@@ -110,8 +119,8 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | "EgovBBSMasterDAO.selectBBSMasterList", |
-| | | | "EgovBBSMasterDAO.selectBBSMasterListTotCnt" |
+| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | "BBSMaster.selectBBSMasterList", |
+| | | | "BBSMaster.selectBBSMasterListTotCnt" |
 
 게시판관리 목록은 기본적인 페이징 처리가 되며 다음과 같은 정보를 제공한다.
 
