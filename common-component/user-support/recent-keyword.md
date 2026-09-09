@@ -18,6 +18,15 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    S[사용자 검색어 입력] --> M[최근검색어관리 등록]
+    M --> L[최근검색어관리 목록조회]
+    L --> D[최근검색어관리 상세조회/수정/삭제]
+    L --> R[최근검색어결과 목록조회]
+    R -->|건별/관리별| X[결과 삭제]
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -40,17 +49,17 @@ menu:
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
 | `selectRecentSrchwrdList(RecentSrchwrd)` | `List<EgovMap>` | 목록을 조회한다 |
-| `selectRecentSrchwrdListCnt(RecentSrchwrd)` | `int` | 최근검색어관리를(을) 목록 전체 건수를(을) 조회한다. |
-| `selectRecentSrchwrdDetail(RecentSrchwrd)` | `RecentSrchwrd` | 최근검색어관리를(을) 상세조회 한다. |
-| `insertRecentSrchwrd(RecentSrchwrd)` | `void` | 최근검색어관리를(을) 등록한다. |
-| `updateRecentSrchwrd(RecentSrchwrd)` | `void` | 최근검색어관리를(을) 수정한다. |
-| `deleteRecentSrchwrd(RecentSrchwrd)` | `void` | 최근검색어관리를(을) 삭제한다. |
+| `selectRecentSrchwrdListCnt(RecentSrchwrd)` | `int` | 최근검색어관리 목록의 전체 건수를 조회한다. |
+| `selectRecentSrchwrdDetail(RecentSrchwrd)` | `RecentSrchwrd` | 최근검색어관리를 상세조회 한다. |
+| `insertRecentSrchwrd(RecentSrchwrd)` | `void` | 최근검색어관리를 등록한다. |
+| `updateRecentSrchwrd(RecentSrchwrd)` | `void` | 최근검색어관리를 수정한다. |
+| `deleteRecentSrchwrd(RecentSrchwrd)` | `void` | 최근검색어관리를 삭제한다. |
 | `selectRecentSrchwrdResultInquire(RecentSrchwrd)` | `List<EgovMap>` | 최근검색어결과 목록을 조회한다. |
 | `selectRecentSrchwrdResultList(RecentSrchwrd)` | `List<?>` | 최근검색어결과 목록을 조회한다. |
-| `selectRecentSrchwrdResultListCnt(RecentSrchwrd)` | `int` | 최근검색어결과를(을) 목록 전체 건수를(을) 조회한다. |
-| `insertRecentSrchwrdResult(RecentSrchwrd)` | `void` | 최근검색어결과를(을) 등록한다. |
-| `deleteRecentSrchwrdResult(RecentSrchwrd)` | `void` | 최근검색어결과를(을) 건별로 삭제 한다. |
-| `deleteRecentSrchwrdResultAll(RecentSrchwrd)` | `void` | 최근검색어결과를(을) 관리별로 삭제 한다. |
+| `selectRecentSrchwrdResultListCnt(RecentSrchwrd)` | `int` | 최근검색어결과 목록의 전체 건수를 조회한다. |
+| `insertRecentSrchwrdResult(RecentSrchwrd)` | `void` | 최근검색어결과를 등록한다. |
+| `deleteRecentSrchwrdResult(RecentSrchwrd)` | `void` | 최근검색어결과를 건별로 삭제 한다. |
+| `deleteRecentSrchwrdResultAll(RecentSrchwrd)` | `void` | 최근검색어결과를 관리별로 삭제 한다. |
 
 ## 참고자료
 
