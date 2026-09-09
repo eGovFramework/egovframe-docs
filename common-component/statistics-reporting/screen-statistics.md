@@ -145,7 +145,7 @@ public class EgovWebLogScheduling {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 화면 통계검색 | /sts/sst/selectScrinStats.do | selectUserStats | "ScrinStatsDAO.selectScrinStats" |
+| 화면 통계검색 | /sts/sst/selectScrinStats.do | selectScrinStats | "ScrinStatsDAO.selectScrinStats" |
 
  ![image](./images/sts-화면통계_검색화면.png)
 
