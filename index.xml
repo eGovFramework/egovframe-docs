@@ -39893,10 +39893,10 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
 &lt;p>행사접수관리는 행사참석자의 온라인 행사접수를 등록하기 위한 목적으로 행사접수 신청, 취소, 상세조회, 목록조회, 승인처리의 기능을 수반한다.&lt;/p>
 &lt;p>① 행사접수관리목록 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
 ② 행사접수신청 : 행사접수정보를 등록하고, 등록 결과를 조회한다.
-④ 행사접수취소 : 기 등록된 행사접수정보를 삭제한다.
-⑤ 행사접수상세조회 : 등록된 행사접수 상세정보를 조회한다.
-① 행사접수승인 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 해당데이터를 승인/반려 처리한다.
-① 행사상세팝업 : 행사관리 상세정보를 팝업화면 조회한다.&lt;/p></description></item><item><title>행정전문용어사전관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</guid><description>&lt;h1 id="행정전문용어사전관리">행정전문용어사전관리&lt;/h1>
+③ 행사접수취소 : 기 등록된 행사접수정보를 삭제한다.
+④ 행사접수상세조회 : 등록된 행사접수 상세정보를 조회한다.
+⑤ 행사접수승인 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 해당데이터를 승인/반려 처리한다.
+⑥ 행사상세팝업 : 행사관리 상세정보를 팝업화면 조회한다.&lt;/p></description></item><item><title>행정전문용어사전관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-help/admin-terminology/</guid><description>&lt;h1 id="행정전문용어사전관리">행정전문용어사전관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>관리자가 행정전문용어사전 등록,검색 관리 할 수 있는 기능을 제공한다.
 컴포넌트 구성&lt;/p>
