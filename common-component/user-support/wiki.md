@@ -18,6 +18,15 @@ Wiki기능은 외부 위키 서비스 페이지를 북마크로 등록·조회·
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[위키북마크 목록조회] -->|등록 요청| C{중복 확인}
+    C -->|신규| I[위키북마크 등록]
+    I --> L
+    L -->|삭제| D[위키북마크 삭제]
+    D --> L
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -36,10 +45,10 @@ Wiki기능은 외부 위키 서비스 페이지를 북마크로 등록·조회·
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
 | `selectWikiBookmarkList(WikiBookmark)` | `List<?>` | 목록을 조회한다 |
-| `selectWikiBookmarkListCnt(WikiBookmark)` | `int` | 위키북마크를(을) 목록 전체 건수를(을) 조회한다. |
-| `selectWikiBookmarkDuplicationCnt(WikiBookmark)` | `int` | 위키북마크를(을) 중복을 조회한다. |
-| `insertWikiBookmark(WikiBookmark)` | `void` | 위키북마크를(을) 등록한다. |
-| `deleteWikiBookmark(WikiBookmark)` | `void` | 위키북마크를(을) 삭제한다. |
+| `selectWikiBookmarkListCnt(WikiBookmark)` | `int` | 위키북마크 목록의 전체 건수를 조회한다. |
+| `selectWikiBookmarkDuplicationCnt(WikiBookmark)` | `int` | 위키북마크의 중복 건수를 조회한다. |
+| `insertWikiBookmark(WikiBookmark)` | `void` | 위키북마크를 등록한다. |
+| `deleteWikiBookmark(WikiBookmark)` | `void` | 위키북마크를 삭제한다. |
 
 ## 참고자료
 
