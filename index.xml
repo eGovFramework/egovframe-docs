@@ -22946,7 +22946,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 백업작업수정 : 기 등록된 백업작업정보의 항목들을 수정한다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 백업작업삭제 : 기 등록된 백업작업정보를 삭제한다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 백업작업조회 : 등록된 백업작업정보를 조회한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>백업결과관리는 백업결과를 관리하기 위한 목적으로 백업작업의 조회, 삭제, 목록조회의 기능을 수반한다.&lt;/p></description></item><item><title>번호유효성체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>백업결과관리는 백업결과를 관리하기 위한 목적으로 백업결과의 조회, 삭제, 목록조회의 기능을 수반한다.&lt;/p></description></item><item><title>번호유효성체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>주어진 주민등록번호, 법인번호, 사업자등록번호, 외국인등록번호의 유효성을 체크하여 &lt;code>true&lt;/code>, &lt;code>false&lt;/code>를 반환한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>입력에 주민등록번호, 법인번호, 사업자등록번호, 외국인등록번호를 입력받는다. 각 번호마다 하이픈(&lt;code>-&lt;/code>)이 포함된 구분 입력과, 하이픈이 배제된 하나의 입력 등 두 가지 방식을 지원한다.&lt;/p>
