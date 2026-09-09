@@ -34464,6 +34464,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>지식정보제공은 지식전문가에게 지식정보를 요청하고, 요청된 지식정보를 제공(답변)하는 기능이다. 소스는 디지털자산관리(&lt;code>egovframework.com.dam.spe.req&lt;/code>) 패키지에 위치하며, 지식전문가 관리 기능과 연계되어 동작한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[지식정보제공/요청 목록조회] -->|등록| I[지식정보제공/요청 등록]
+ L -->|상세조회| D[지식정보제공/요청 상세조회]
+ D -->|수정| U[지식정보제공/요청 수정]
+ D -->|삭제| L
+ I --> L
+ U --> L
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -34559,27 +34569,27 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>selectRequestOfferListCnt(RequestOfferVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>지식정보제공/지식정보요청를(을) 목록 전체 건수를(을) 조회한다.&lt;/td>
+ &lt;td>지식정보제공/지식정보요청 목록의 전체 건수를 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectRequestOfferDetail(RequestOfferVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>RequestOfferVO&lt;/code>&lt;/td>
- &lt;td>지식정보제공/지식정보요청를(을) 상세조회 한다.&lt;/td>
+ &lt;td>지식정보제공/지식정보요청을 상세조회 한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>insertRequestOffer(RequestOfferVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>지식정보제공/지식정보요청를(을) 등록한다.&lt;/td>
+ &lt;td>지식정보제공/지식정보요청을 등록한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>updateRequestOffer(RequestOfferVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>지식정보제공/지식정보요청를(을) 수정한다.&lt;/td>
+ &lt;td>지식정보제공/지식정보요청을 수정한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteRequestOffer(RequestOfferVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>지식정보제공/지식정보요청를(을) 삭제한다.&lt;/td>
+ &lt;td>지식정보제공/지식정보요청을 삭제한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
