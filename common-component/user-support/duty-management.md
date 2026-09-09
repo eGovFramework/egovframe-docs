@@ -81,6 +81,23 @@ menu:
 
 ## 관련화면 및 수행매뉴얼
 
+```mermaid
+flowchart LR
+    L[당직관리 목록조회] -->|당직 등록| R[당직 등록]
+    L -->|당직상세조회| D[당직 상세]
+    L -->|당직엑셀| X[당직일괄등록]
+    L -->|당직일지 등록| DR[당직일지 등록]
+    L -->|당직일지 상세조회| DD[당직일지 상세]
+    R --> L
+    D -->|수정| U[당직 수정]
+    U --> L
+    D -->|삭제| L
+    DR --> L
+    DD -->|수정| DU[당직일지 수정]
+    DU --> L
+    DD -->|삭제| L
+```
+
 ### 당직관리 목록조회
 
 | Action | URL | Controller method | QueryID |
@@ -105,13 +122,12 @@ menu:
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 등록 | /uss/ion/bnt/insertBndtManage.do | insertBndtManage | "bndtManageDAO.insertBndtManage" |
-| 등록 | /uss/ion/bnt/insertBndtManage.do | insertBndtManage | "bndtManageDAO.insertBndtManage" |
 
  당직의 속성정보를 입력한 뒤 등록한다.
 
  ![image](./images/uss-duty-당직등록.jpg)
 
- 등록 : 신규 당직을 등록하기 위해서는 당직 속성을 입력한 뒤 상단의 당직 버튼을 통해서 당직을 등록한다.
+ 등록 : 신규 당직을 등록하기 위해서는 당직 속성을 입력한 뒤 상단의 등록 버튼을 통해서 당직을 등록한다.
  목록 : 당직 목록조회 화면으로 이동한다.
 
 ### 당직 상세
@@ -167,13 +183,12 @@ menu:
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 등록 | /uss/ion/bnt/insertBndtManage.do | insertBndtManage | "bndtManageDAO.insertBndtManage" |
-| 등록 | /uss/ion/bnt/insertBndtManage.do | insertBndtManage | "bndtManageDAO.insertBndtManage" |
 
  당직체크코드 중 사용여부 필드중 사용으로 정의된 필드를 토대로 당직일지의 정보가 화면에 출력된다.
 
  ![image](./images/uss-duty-당직일지등록.jpg)
 
- 등록 : 신규 당직일지를 등록하기 위해서는 당직일지 속성을 입력한 뒤 상단의 당직일지 버튼을 통해서 당직일지를 등록한다.
+ 등록 : 신규 당직일지를 등록하기 위해서는 당직일지 속성을 입력한 뒤 상단의 등록 버튼을 통해서 당직일지를 등록한다.
  목록 : 당직일지 목록조회 화면으로 이동한다.
 
 ### 당직일지 상세
