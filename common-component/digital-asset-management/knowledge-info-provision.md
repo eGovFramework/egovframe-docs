@@ -18,6 +18,16 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[지식정보제공/요청 목록조회] -->|등록| I[지식정보제공/요청 등록]
+    L -->|상세조회| D[지식정보제공/요청 상세조회]
+    D -->|수정| U[지식정보제공/요청 수정]
+    D -->|삭제| L
+    I --> L
+    U --> L
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -41,11 +51,11 @@ menu:
 | `selectRequestOfferDelCnt(Map<?, ?>)` | `int` | 목록/기본 기능을 처리한다 |
 | `selectRequestOfferSpeCheck(Map<?, ?>)` | `boolean` | 등록된 지식전문가 건수를 조회한다. |
 | `selectRequestOfferList(RequestOfferVO)` | `List<EgovMap>` | 지식정보제공/지식정보요청 목록을 조회한다. |
-| `selectRequestOfferListCnt(RequestOfferVO)` | `int` | 지식정보제공/지식정보요청를(을) 목록 전체 건수를(을) 조회한다. |
-| `selectRequestOfferDetail(RequestOfferVO)` | `RequestOfferVO` | 지식정보제공/지식정보요청를(을) 상세조회 한다. |
-| `insertRequestOffer(RequestOfferVO)` | `void` | 지식정보제공/지식정보요청를(을) 등록한다. |
-| `updateRequestOffer(RequestOfferVO)` | `void` | 지식정보제공/지식정보요청를(을) 수정한다. |
-| `deleteRequestOffer(RequestOfferVO)` | `void` | 지식정보제공/지식정보요청를(을) 삭제한다. |
+| `selectRequestOfferListCnt(RequestOfferVO)` | `int` | 지식정보제공/지식정보요청 목록의 전체 건수를 조회한다. |
+| `selectRequestOfferDetail(RequestOfferVO)` | `RequestOfferVO` | 지식정보제공/지식정보요청을 상세조회 한다. |
+| `insertRequestOffer(RequestOfferVO)` | `void` | 지식정보제공/지식정보요청을 등록한다. |
+| `updateRequestOffer(RequestOfferVO)` | `void` | 지식정보제공/지식정보요청을 수정한다. |
+| `deleteRequestOffer(RequestOfferVO)` | `void` | 지식정보제공/지식정보요청을 삭제한다. |
 
 ## 참고자료
 
