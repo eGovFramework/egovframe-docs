@@ -23,10 +23,10 @@ menu:
 
  ① 행사접수관리목록 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
  ② 행사접수신청 : 행사접수정보를 등록하고, 등록 결과를 조회한다.
- ④ 행사접수취소 : 기 등록된 행사접수정보를 삭제한다.
- ⑤ 행사접수상세조회 : 등록된 행사접수 상세정보를 조회한다.
- ① 행사접수승인 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 해당데이터를 승인/반려 처리한다.
- ① 행사상세팝업 : 행사관리 상세정보를 팝업화면 조회한다.
+ ③ 행사접수취소 : 기 등록된 행사접수정보를 삭제한다.
+ ④ 행사접수상세조회 : 등록된 행사접수 상세정보를 조회한다.
+ ⑤ 행사접수승인 : 행사접수관리 정보를 최근 등록 순서대로 조회하고, 해당데이터를 승인/반려 처리한다.
+ ⑥ 행사상세팝업 : 행사관리 상세정보를 팝업화면 조회한다.
 
 ### 관련소스
 
@@ -68,7 +68,7 @@ menu:
 
 ### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 APPLCNT_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 APPLCNT_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -97,6 +97,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ```
 
 ## 관련화면 및 수행매뉴얼
+
+```mermaid
+flowchart LR
+    L[행사접수관리 목록조회] -->|신청| R[행사접수 신청]
+    L -->|상세조회| D[행사접수 상세]
+    R --> L
+    D -->|신청취소| L
+```
 
 ### 행사접수관리 목록조회
 
@@ -141,7 +149,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | 상세조회 | /uss/ion/evt/EgovEventRcrptDetail.do | selectEventAtdrn | "eventManageDAO.selectEventAtdrn" |
 | 신청취소 | /uss/ion/evt/deleteEventAtdrn.do | deleteEventAtdrn | "eventManageDAO.deleteEventAtdrn" |
 
- 행사접수의 상세조회화면이다.  신청취소  버튼을 통해서 행사접수를 신청을 취소한다.
+ 행사접수의 상세조회화면이다. 신청취소 버튼을 통해서 행사접수를 신청을 취소한다.
 
  ![image](./images/uss-evt-reception-행사접수상세.jpg)
 
