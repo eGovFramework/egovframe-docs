@@ -62,7 +62,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 CNTC_MESSAGE_ID, ITEM_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 CNTC_MESSAGE_ID, ITEM_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -117,6 +117,20 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  연계메시지관리는 연계메시지 목록조회, 연계메시지 등록, 연계메시지 수정, 연계메시지 상세조회, 연계메시지항목 등록, 연계메시지항목 수정 기능으로 구성되어 있다.
 
+```mermaid
+flowchart TD
+    L[연계메시지 목록조회] -->|등록| RI[연계메시지 등록]
+    L -->|목록클릭| D[연계메시지 상세조회]
+    RI -->|저장| L
+    D -->|수정| U[연계메시지 수정]
+    U -->|저장| L
+    D -->|삭제| L
+    D -->|연계메시지항목 등록| II[연계메시지항목 등록]
+    D -->|연계메시지항목 수정| IU[연계메시지항목 수정]
+    II -->|저장| D
+    IU -->|저장| D
+```
+
 ### 연계메시지 목록조회
 
 #### 비즈니스 규칙
@@ -150,7 +164,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  연계메시지에 대한 상세내용을 등록한다.
  등록이 성공하면 연계메시지목록 화면으로 이동한다.
- 연계메시지 등록 시 선행작업으로 연계메시지, 연계메시지항목, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
+ 연계메시지 등록 시 선행작업으로 연계기관, 연계시스템, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
 
 #### 관련코드
 
@@ -220,7 +234,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  연계메시지항목에 대한 상세내용을 등록한다.
  등록이 성공하면 연계메시지상세 화면으로 이동한다.
- 연계메시지항목 등록 시 선행작업으로 연계메시지항목, 연계메시지항목, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
+ 연계메시지항목 등록 시 선행작업으로 연계기관, 연계시스템, 연계서비스, 연계메시지, 연계메시지항목이 등록되어 있어야 한다.
 
 #### 관련코드
 
