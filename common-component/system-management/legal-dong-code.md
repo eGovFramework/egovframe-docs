@@ -154,7 +154,7 @@ flowchart LR
  법정동코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.
  ServiceImpl 예시
 
- ...
+```
  // 실제 연계 항목 Mapping 작업
  administCodeRecptn.setChangeSeCode          (strTmp       );    // 명령                 :: 변경구분코드
  administCodeRecptn.setOccrrDe               (tokenData[ 1]);    // 날짜                 :: 발생일자
@@ -169,7 +169,7 @@ flowchart LR
  administCodeRecptn.setAblDe                 (tokenData[10]);    // 폐지일자             :: 폐지일자
  administCodeRecptn.setAblEnnc               (tokenData[11]);    // 폐지유무             :: 폐지유무
  administCodeRecptn.setUseAt                 (tokenData[11]);    // 폐지유무             :: 사용여부
- ...
+```
 
 ### 법정동코드수신 목록조회
 
