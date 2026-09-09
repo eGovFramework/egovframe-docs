@@ -37,6 +37,19 @@ menu:
   ⑤ 백업결과조회 : 등록된 백업결과정보를 조회한다.
 ```
 
+```mermaid
+flowchart LR
+    L[백업작업 목록조회] -->|등록| R[백업작업 등록]
+    L -->|목록클릭| D[백업작업 상세조회]
+    R --> L
+    D -->|수정| U[백업작업 수정]
+    U --> L
+    D -->|삭제| L
+    D -.배치 실행.-> RL[백업결과 목록조회]
+    RL --> RD[백업결과 상세조회]
+    RD -->|삭제| RL
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -63,8 +76,8 @@ menu:
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_altibase.xml | 백업작업관리 Altibase용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_cubrid.xml | 백업작업관리 Cubrid용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_maria.xml | 백업작업관리 Maria용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_postgres.xml | 백업작업관리 Goldilocks용 QUERY XML |
-| QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_goldilocks.xml | 백업작업관리 Postgres용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_postgres.xml | 백업작업관리 Postgres용 QUERY XML |
+| QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupOpert\_SQL\_goldilocks.xml | 백업작업관리 Goldilocks용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupResult\_SQL\_mysql.xml | 백업결과관리 MySQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupResult\_SQL\_oracle.xml | 백업결과관리 Oracle용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/sym/bak/EgovBackupResult\_SQL\_tibero.xml | 백업결과관리 Tibero용 QUERY XML |
@@ -94,7 +107,7 @@ menu:
 
 #### ID Generation
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 BACKUP_OPERT_ID, BACKUP_RESULT_ID 항목을 추가한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 BACKUP_OPERT_ID, BACKUP_RESULT_ID 항목을 추가한다.
 
 ```sql
   INSERT INTO COMTECOPSEQ VALUES('BACKUP_OPERT_ID','0');
@@ -103,7 +116,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 BACKUP_OPERT_ID, BACKUP_RESULT_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 BACKUP_OPERT_ID, BACKUP_RESULT_ID 항목을 추가해야 한다.
 
 ```sql
     CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -115,33 +128,33 @@ menu:
     INSERT INTO COMTECOPSEQ VALUES('BACKUP_RESULT_ID','0');
 ```
 
-#### ID Generation 환경설정(context-idgn-BatchOpert.xml)
+#### ID Generation 환경설정(context-idgn-BackupOpert.xml)
 
 ```xml
-    <!--  배치작업 ID -->
-    <bean name="egovBatchOpertIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <!--  백업작업 ID -->
+    <bean name="egovBackupOpertIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
-        <property name="strategy"   ref="batchOpertIdStrategy" />
+        <property name="strategy"   ref="backupOpertIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
-        <property name="tableName"  value="BATCH_OPERT_ID"/>
+        <property name="tableName"  value="BACKUP_OPERT_ID"/>
     </bean>
-    <bean name="batchOpertIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-        <property name="prefix"     value="BAT" />
+    <bean name="backupOpertIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix"     value="BACKUP_OPERT_" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />
     </bean>
  
-    <!-- 배치스케줄 ID -->
-    <bean name="egovBatchSchdulIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <!-- 백업결과 ID -->
+    <bean name="egovBackupResultIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
-        <property name="strategy"   ref="batchSchdulIdStrategy" />
+        <property name="strategy"   ref="backupResultIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
-        <property name="tableName"  value="BATCH_SCHDUL_ID"/>
+        <property name="tableName"  value="BACKUP_RESULT_ID"/>
     </bean>
-    <bean name="batchSchdulIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-        <property name="prefix"     value="BSC" />
+    <bean name="backupResultIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        <property name="prefix"     value="BACKUP_RESULT_" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />
     </bean>
