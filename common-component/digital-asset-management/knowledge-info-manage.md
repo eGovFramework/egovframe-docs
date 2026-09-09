@@ -61,6 +61,13 @@ menu:
 
 ## 관련화면 및 수행매뉴얼
 
+```mermaid
+flowchart LR
+    L[지식정보 목록조회] -->|지식명 클릭| D[지식정보 상세조회]
+    D -->|폐기| U[지식정보 수정]
+    U -->|저장| L
+```
+
 ### 지식정보 목록조회
 
 | Action | URL | Controller method | QueryID |
