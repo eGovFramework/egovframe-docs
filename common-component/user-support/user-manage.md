@@ -66,7 +66,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 USRCNFRM_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 USRCNFRM_ID 항목을 추가해야 한다.
  테이블이 생성되어 있는 경우라면 INSERT 구문만을 수행한다.(본시스템의 기능 중에서 회원, 기업회원관리에서도 USRCNFRM_ID항목을 사용하여 고유아이디를 생성한다.)
 
 ```sql
@@ -74,7 +74,7 @@ menu:
   		             NEXT_ID NUMERIC(30) NULL,
   		             PRIMARY KEY (TABLE_NAME));
  
-  INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
+  INSERT INTO COMTECOPSEQ VALUES('USRCNFRM_ID','1');
 ```
 
 #### ID Generation 환경설정(context-idgn-UsrCnfrm.xml)
@@ -123,6 +123,16 @@ menu:
 ## 관련기능
 
  사용자관리는 크게 사용자 목록조회, 사용자 등록, 사용자 상세조회(수정), 사용자 암호변경 기능으로 분류된다.
+
+```mermaid
+flowchart LR
+    L[사용자 목록조회] -->|등록| R[사용자 등록]
+    L -->|아이디 클릭| D[사용자 상세조회/수정]
+    R --> L
+    D -->|비밀번호변경| P[사용자 비밀번호변경]
+    P --> L
+    D --> L
+```
 
 ### 사용자 목록조회
 
