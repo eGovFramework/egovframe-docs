@@ -18,6 +18,12 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    M[관리자: POLL 등록/항목관리] --> P[사용자: POLL 참여/응답]
+    P --> R[결과 집계·조회]
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -57,26 +63,26 @@ menu:
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
 | `selectOnlinePollManageList(ComDefaultVO)` | `List<EgovMap>` | 목록을 조회한다 |
-| `selectOnlinePollManageDetail(OnlinePollManage)` | `OnlinePollManage` | 온라인POLL관리를(을) 상세조회 한다. |
-| `selectOnlinePollManageListCnt(ComDefaultVO)` | `int` | 온라인POLL관리를(을) 목록 전체 건수를(을) 조회한다. |
-| `insertOnlinePollManage(OnlinePollManage)` | `void` | 온라인POLL관리를(을) 등록한다. |
-| `updateOnlinePollManage(OnlinePollManage)` | `void` | 온라인POLL관리를(을) 수정한다. |
-| `deleteOnlinePollManage(OnlinePollManage)` | `void` | 온라인POLL관리를(을) 삭제한다. |
-| `selectOnlinePollManageStatistics(OnlinePollManage)` | `List<?>` | 온라인POLL관리를(을) 통계를 조회 한다. |
-| `selectOnlinePollItemList(OnlinePollItem)` | `List<EgovMap>` | 온라인POLL항목를(을) 조회한다. |
-| `insertOnlinePollItem(OnlinePollItem)` | `void` | 온라인POLL항목를(을) 등록한다. |
-| `updateOnlinePollItem(OnlinePollItem)` | `void` | 온라인POLL항목를(을) 수정한다. |
-| `deleteOnlinePollItem(OnlinePollItem)` | `void` | 온라인POLL항목를(을) 삭제한다. |
+| `selectOnlinePollManageDetail(OnlinePollManage)` | `OnlinePollManage` | 온라인POLL관리를 상세조회 한다. |
+| `selectOnlinePollManageListCnt(ComDefaultVO)` | `int` | 온라인POLL관리 목록의 전체 건수를 조회한다. |
+| `insertOnlinePollManage(OnlinePollManage)` | `void` | 온라인POLL관리를 등록한다. |
+| `updateOnlinePollManage(OnlinePollManage)` | `void` | 온라인POLL관리를 수정한다. |
+| `deleteOnlinePollManage(OnlinePollManage)` | `void` | 온라인POLL관리를 삭제한다. |
+| `selectOnlinePollManageStatistics(OnlinePollManage)` | `List<?>` | 온라인POLL관리의 통계를 조회한다. |
+| `selectOnlinePollItemList(OnlinePollItem)` | `List<EgovMap>` | 온라인POLL항목을 조회한다. |
+| `insertOnlinePollItem(OnlinePollItem)` | `void` | 온라인POLL항목을 등록한다. |
+| `updateOnlinePollItem(OnlinePollItem)` | `void` | 온라인POLL항목을 수정한다. |
+| `deleteOnlinePollItem(OnlinePollItem)` | `void` | 온라인POLL항목을 삭제한다. |
 
 ### 주요 메서드 (EgovOnlinePollPartcptnService (참여))
 
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
 | `selectOnlinePollManageList(ComDefaultVO)` | `List<EgovMap>` | 목록을 조회한다 |
-| `selectOnlinePollManageListCnt(ComDefaultVO)` | `int` | 온라인POLL관리를(을) 목록 전체 건수를(을) 조회한다. |
-| `selectOnlinePollManageDetail(OnlinePollPartcptn)` | `List<EgovMap>` | 온라인POLL관리를(을) 상세조회 한다. |
-| `selectOnlinePollItemDetail(OnlinePollPartcptn)` | `List<EgovMap>` | 온라인POLL항목를(을) 상세조회 한다. |
-| `insertOnlinePollResult(OnlinePollPartcptn)` | `void` | 온라인POLL참여를(을) 등록한다. |
+| `selectOnlinePollManageListCnt(ComDefaultVO)` | `int` | 온라인POLL관리 목록의 전체 건수를 조회한다. |
+| `selectOnlinePollManageDetail(OnlinePollPartcptn)` | `List<EgovMap>` | 온라인POLL관리를 상세조회 한다. |
+| `selectOnlinePollItemDetail(OnlinePollPartcptn)` | `List<EgovMap>` | 온라인POLL항목을 상세조회 한다. |
+| `insertOnlinePollResult(OnlinePollPartcptn)` | `void` | 온라인POLL참여를 등록한다. |
 | `selectOnlinePollManageStatistics(OnlinePollPartcptn)` | `List<EgovMap>` | 온라인POLL참여 통계를 조회한다. |
 | `selectOnlinePollResult(OnlinePollPartcptn)` | `int` | 온라인POLL참여 여부를 조회한다. |
 
@@ -85,7 +91,7 @@ menu:
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
 | `selectOnlinePollResultList(OnlinePollResult)` | `List<?>` | 목록을 조회한다 |
-| `deleteOnlinePollResult(OnlinePollResult)` | `void` | 온라인POLL결과를(을) 삭제 한다. |
+| `deleteOnlinePollResult(OnlinePollResult)` | `void` | 온라인POLL결과를 삭제 한다. |
 
 ## 참고자료
 
