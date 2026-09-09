@@ -67,7 +67,7 @@ menu:
 
 ### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 EVENT_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 EVENT_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -97,6 +97,17 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 ## 관련화면 및 수행매뉴얼
 
+```mermaid
+flowchart LR
+    L[행사관리 목록조회] -->|등록| R[행사 등록]
+    L -->|상세조회| D[행사 상세]
+    L -->|참여인원 클릭| P([행사참석자목록 팝업])
+    R --> L
+    D -->|수정| U[행사 수정]
+    U --> D
+    D -->|삭제| L
+```
+
 ### 행사관리 목록조회
 
 | Action | URL | Controller method | QueryID |
@@ -125,7 +136,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
  ![image](./images/uss-evt-manage-행사등록.jpg)
 
  초기화 : 입력필드의 내용을 초기상태로 변경한다.
- 등록 : 신규 행사를 등록하기 위해서는 행사 속성을 입력한 뒤 상단의 행사 버튼을 통해서 행사를 등록한다.
+ 등록 : 신규 행사를 등록하기 위해서는 행사 속성을 입력한 뒤 상단의 등록 버튼을 통해서 행사를 등록한다.
  목록 : 행사 목록조회 화면으로 이동한다.
 
 ### 행사 상세
