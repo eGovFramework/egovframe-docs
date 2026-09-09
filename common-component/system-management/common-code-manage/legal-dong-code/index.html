@@ -98,22 +98,21 @@ J --> D[(COMTCADMINISTCODE)]
 D --> L[법정동코드수신 목록조회]
 L -->|목록클릭| V[법정동코드 상세조회]
 V -->|삭제| L</div><h3 class=sec-tit id=법정동코드수신>법정동코드수신</h3><p>법정동코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.
-ServiceImpl 예시</p><p>&mldr;
-// 실제 연계 항목 Mapping 작업
-administCodeRecptn.setChangeSeCode (strTmp ); // 명령 :: 변경구분코드
-administCodeRecptn.setOccrrDe (tokenData[ 1]); // 날짜 :: 발생일자
-administCodeRecptn.setAdministZoneCode (tokenData[ 2]); // 행정구역코드 :: 행정구역코드
-administCodeRecptn.setAdministZoneNm (tokenData[ 7]); // 행정구역명 :: 행정구역명
-administCodeRecptn.setLowestAdministZoneNm (tokenData[ 8]); // 최하위행정구역명 :: 최하위행정구역명
-administCodeRecptn.setCtprvnCode (tokenData[ 3]); // 시도코드 :: 시도코드
-administCodeRecptn.setSignguCode (tokenData[ 4]); // 시군구코드 :: 시군구코드
-administCodeRecptn.setEmdCode (tokenData[ 5]); // 읍면동코드 :: 읍면동코드
-administCodeRecptn.setLiCode (tokenData[ 6]); // 리코드 :: 리코드
-administCodeRecptn.setCreatDe (tokenData[ 9]); // 생성일자 :: 생성일자
-administCodeRecptn.setAblDe (tokenData[10]); // 폐지일자 :: 폐지일자
-administCodeRecptn.setAblEnnc (tokenData[11]); // 폐지유무 :: 폐지유무
-administCodeRecptn.setUseAt (tokenData[11]); // 폐지유무 :: 사용여부
-&mldr;</p><h3 class=sec-tit id=법정동코드수신-목록조회>법정동코드수신 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>법정동코드수신 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 법정동코드수신명에 대해서 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>목록조회</td><td>/sym/ccm/acr/getAdministCodeRecptnList.do</td><td>selectAdministCodeRecptnList</td><td>&ldquo;AdministCodeRecptnDAO.selectAdministCodeRecptnList&rdquo;</td></tr><tr><td></td><td></td><td></td><td>&ldquo;AdministCodeRecptnDAO.selectAdministCodeRecptnListTotCnt&rdquo;</td></tr></tbody></table></div><p>페이지 당 검색 범위를 변경하고자 하는 경우
+ServiceImpl 예시</p><pre tabindex=0><code> // 실제 연계 항목 Mapping 작업
+ administCodeRecptn.setChangeSeCode          (strTmp       );    // 명령                 :: 변경구분코드
+ administCodeRecptn.setOccrrDe               (tokenData[ 1]);    // 날짜                 :: 발생일자
+ administCodeRecptn.setAdministZoneCode      (tokenData[ 2]);    // 행정구역코드         :: 행정구역코드
+ administCodeRecptn.setAdministZoneNm        (tokenData[ 7]);    // 행정구역명           :: 행정구역명
+ administCodeRecptn.setLowestAdministZoneNm  (tokenData[ 8]);    // 최하위행정구역명     :: 최하위행정구역명
+ administCodeRecptn.setCtprvnCode            (tokenData[ 3]);    // 시도코드             :: 시도코드
+ administCodeRecptn.setSignguCode            (tokenData[ 4]);    // 시군구코드           :: 시군구코드
+ administCodeRecptn.setEmdCode               (tokenData[ 5]);    // 읍면동코드           :: 읍면동코드
+ administCodeRecptn.setLiCode                (tokenData[ 6]);    // 리코드               :: 리코드
+ administCodeRecptn.setCreatDe               (tokenData[ 9]);    // 생성일자             :: 생성일자
+ administCodeRecptn.setAblDe                 (tokenData[10]);    // 폐지일자             :: 폐지일자
+ administCodeRecptn.setAblEnnc               (tokenData[11]);    // 폐지유무             :: 폐지유무
+ administCodeRecptn.setUseAt                 (tokenData[11]);    // 폐지유무             :: 사용여부
+</code></pre><h3 class=sec-tit id=법정동코드수신-목록조회>법정동코드수신 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>법정동코드수신 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 법정동코드수신명에 대해서 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>목록조회</td><td>/sym/ccm/acr/getAdministCodeRecptnList.do</td><td>selectAdministCodeRecptnList</td><td>&ldquo;AdministCodeRecptnDAO.selectAdministCodeRecptnList&rdquo;</td></tr><tr><td></td><td></td><td></td><td>&ldquo;AdministCodeRecptnDAO.selectAdministCodeRecptnListTotCnt&rdquo;</td></tr></tbody></table></div><p>페이지 당 검색 범위를 변경하고자 하는 경우
 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)</p><p><img src=/egovframe-docs/common-component/system-management/images/sym-legaldong-%eb%b2%95%ec%a0%95%eb%8f%99%ec%bd%94%eb%93%9c%ec%88%98%ec%8b%a0%eb%aa%a9%eb%a1%9d.png alt=image></p><p>조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
 목록클릭: 법정동코드 상세조회 화면으로 이동한다.</p><h3 class=sec-tit id=법정동코드-상세-조회>법정동코드 상세 조회</h3><h4 id=비즈니스-규칙-1>비즈니스 규칙</h4><p>상세조회에는 삭제 처리가 포함되어 있고 삭제가 성공하면 법정동코드수신 목록 화면으로 이동한다.</p><h4 id=관련코드-1>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼-1>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>상세조회</td><td>/sym/ccm/acr/getAdministCodeDetail.do</td><td>selectAdministCodeDetail</td><td>&ldquo;AdministCodeRecptnDAO.selectAdministCodeDetail&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-legaldong-%eb%b2%95%ec%a0%95%eb%8f%99%ec%bd%94%eb%93%9c%ec%83%81%ec%84%b8.png alt=image></p><p>목록: 법정동코드 목록 화면으로 이동한다.</p></div></div></div></div></div><button class="page-top-button krds-tooltip active" type=button data-tooltip="페이지 상단으로 이동" aria-labelledby=tooltip-popover-0aha8scb><i class="svg-icon ico-go-top"></i></button></div></main><footer id=krds-footer><div class=inner><div class=f-logo></div><div class=f-cnt><div class=f-info><ul class=info-cs><li><strong class=strong>대표전화</strong><span class=span>&nbsp; 1566-3598 (070-4448-2678)</span></li><li><strong class=strong>대표문의메일</strong><span class=span>&nbsp; egovframesupport@gmail.com</span></li></ul></div><div class=f-link><div class=link-go><a href=https://www.egovframe.go.kr/ class="krds-btn medium text" target=_blank title="새 창 열림">전자정부 표준프레임워크 <i class="svg-icon ico-go"></i></a>
 <a href=https://github.com/eGovFramework/egovframe-docs class="krds-btn medium text" target=_blank title="새 창 열림">Git <i class="svg-icon ico-go"></i></a></div></div></div><div class=f-btm><div class=f-btm-text><div class=f-menu><a href="https://github.com/eGovFramework/egovframe-docs?tab=readme-ov-file" class="krds-btn small text">이용 안내</a>
