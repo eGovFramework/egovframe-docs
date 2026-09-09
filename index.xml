@@ -29364,7 +29364,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.uss.ion.rmm.service.impl.EgovRoughMapDAO.java&lt;/td>
+ &lt;td>egovframework.com.uss.ion.rmm.service.impl.RoughMapDAO.java&lt;/td>
  &lt;td>약도관리를 위한 데이터처리 클래스&lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -29395,17 +29395,17 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>XML&lt;/td>
  &lt;td>resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap_SQL_cubrid.xml&lt;/td>
- &lt;td>약도관리 QUERY Cubrid XML XML&lt;/td>
+ &lt;td>약도관리 QUERY Cubrid XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>XML&lt;/td>
  &lt;td>resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap_SQL_maria.xml&lt;/td>
- &lt;td>약도관리 QUERY MariaDB XML XML&lt;/td>
+ &lt;td>약도관리 QUERY MariaDB XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>XML&lt;/td>
  &lt;td>resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap_SQL_mysql.xml&lt;/td>
- &lt;td>약도관리 QUERY MySQL XML XML&lt;/td>
+ &lt;td>약도관리 QUERY MySQL XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>XML&lt;/td>
