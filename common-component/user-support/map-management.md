@@ -30,15 +30,15 @@ menu:
 | ServiceImpl | egovframework.com.uss.ion.rmm.service.impl.EgovRoughMapServiceImpl.java | 약도관리를 위한 서비스 구현 클래스 |
 | VO | egovframework.com.uss.ion.rmm.service.RoughMapVO.java | 약도관리를 위한 VO 클래스 |
 | VO | egovframework.com.uss.ion.rmm.service.RoughMapDefaultVO.java | 약도관리를 위한 SearchVO 클래스 |
-| DAO | egovframework.com.uss.ion.rmm.service.impl.EgovRoughMapDAO.java | 약도관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.uss.ion.rmm.service.impl.RoughMapDAO.java | 약도관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapList.jsp | 약도관리를 위한 목록조회 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapDetail.jsp | 약도관리를 위한 상세조회 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapRegist.jsp | 약도관리를 위한 등록 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapUpdt.jsp | 약도관리를 위한 수정 페이지 |
 | XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_altibase.xml | 약도관리 QUERY Altibase XML |
-| XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_cubrid.xml | 약도관리 QUERY Cubrid XML XML |
-| XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_maria.xml | 약도관리 QUERY MariaDB XML XML |
-| XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_mysql.xml | 약도관리 QUERY MySQL XML XML |
+| XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_cubrid.xml | 약도관리 QUERY Cubrid XML |
+| XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_maria.xml | 약도관리 QUERY MariaDB XML |
+| XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_mysql.xml | 약도관리 QUERY MySQL XML |
 | XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_oracle.xml | 약도관리 QUERY Oracle XML |
 | XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_postgres.xml | 약도관리 QUERY PostgreSQL XML |
 | XML | resources/egovframework/mapper/com/uss/ion/rmm/EgovRoughMap\_SQL\_tibero.xml | 약도관리 QUERY Tibero XML |
@@ -104,6 +104,16 @@ roughMap.appkey = 발급키입력
 
  약도관리기능은 크게 약도목록조회, 약도상세조회, 약도등록, 약도수정 기능으로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    L[약도목록조회] -->|등록| R[약도등록]
+    L -->|목록클릭| D[약도상세조회]
+    R -->|저장| L
+    D -->|수정| U[약도수정]
+    U -->|저장| L
+    D -->|삭제| L
+```
+
 ### 약도목록조회
 
 #### 비즈니스 규칙
@@ -118,8 +128,8 @@ roughMap.appkey = 발급키입력
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /com/uss/ion/rmm/selectRoughMapList.do | selectRoughMapList | "EgovRoughMapDAO.selectRoughMapList", |
-|  |  |  | "EgovRoughMapDAO.selectRoughMapListTotCnt" |
+| 목록조회 | /com/uss/ion/rmm/selectRoughMapList.do | selectRoughMapList | "RoughMapDAO.selectRoughMapList", |
+|  |  |  | "RoughMapDAO.selectRoughMapListTotCnt" |
 
  약도목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 약도제목, 약도주소에 대해서 수행된다.
@@ -154,7 +164,7 @@ roughMap.appkey = 발급키입력
  ![image](./images/uss-map-약도관리상세.jpg)
 
  길찾기 : 약도에 표시된 위치로 목적지로 하는 다음길찾기 화면으로 이동한다.
- 크게보기 : 약도에 표신된 위치를 기준으로 하는 다음지도 화면으로 이동한다.
+ 크게보기 : 약도에 표시된 위치를 기준으로 하는 다음지도 화면으로 이동한다.
  수정: 수정버튼 클릭 시 약도를 수정할 수 있는 화면으로 이동한다.
  삭제: 삭제버튼 클릭 시 삭제여부를 확인하는 메시지를 보여주고 삭제처리를 할 수 있다.
  목록: 약도목록조회 화면으로 이동한다.
