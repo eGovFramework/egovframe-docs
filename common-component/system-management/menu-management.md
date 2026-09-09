@@ -71,6 +71,16 @@ menu:
 
  메뉴관리는 메뉴목록조회, 메뉴 등록, 메뉴  상세조회/수정, 메뉴 일괄생성, 메뉴리스트관리로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    L[메뉴정보 목록조회] -->|등록| R[메뉴정보 등록]
+    R -->|목록| L
+    L -->|메뉴명 선택| D[메뉴정보 상세조회/수정]
+    D -->|목록| L
+    D -->|삭제| L
+    D -->|수정 저장| D
+```
+
 ### 메뉴정보 목록조회
 
 #### 비즈니스 규칙
@@ -134,7 +144,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/mnu/mpm/EgovMenuDetailSelectUpdt.do" | updateMenuManage | "menuManageDAO.updateMenuManage\_S" |
+| 수정 | /sym/mnu/mpm/EgovMenuDetailSelectUpdt.do | updateMenuManage | "menuManageDAO.updateMenuManage\_S" |
 | 상세조회 | /sym/mnu/mpm/EgovMenuManageListDetailSelect.do | selectMenuManage | "menuManageDAO.selectMenuManageList\_D" |
 
  다음 화면은 메뉴정보 상세조회 화면과 동일하다.
@@ -209,7 +219,7 @@ menu:
 
 #### 비즈니스 규칙
 
- 메뉴리스트 정보를 조회한다.등록된 메뉴리스트에서 상위메뉴 입력시 검색버튼을 클릭하여 상위메뉴를 선택하여 입력한다.
+ 메뉴리스트 정보를 조회한다. 등록된 메뉴리스트에서 상위메뉴 입력시 검색버튼을 클릭하여 상위메뉴를 선택하여 입력한다.
 
 #### 관련코드
 
@@ -221,7 +231,7 @@ menu:
 | --- | --- | --- | --- |
 | 조회 | /sym/mnu/mpm/EgovMenuListSelect.do | selectMenuList | "menuManageDAO.selectMenuListT\_D" |
 | 등록 | /sym/mnu/mpm/EgovMenuListInsert.do | insertMenuManage | "menuManageDAO.insertMenuManage\_S" |
-| 수정 | /sym/mnu/mpm/EgovMenuListUpdt.do | updateMenuManage | ""menuManageDAO.updateMenuManage\_S" |
+| 수정 | /sym/mnu/mpm/EgovMenuListUpdt.do | updateMenuManage | "menuManageDAO.updateMenuManage\_S" |
 | 삭제 | /sym/mnu/mpm/EgovMenuListDelete.do | deleteMenuManage | "menuManageDAO.deleteMenuManage\_S" |
 
  등록된 메뉴정보를 트리형태의 메뉴리스트로 등록된 메뉴를 확인 할 수 있다.
