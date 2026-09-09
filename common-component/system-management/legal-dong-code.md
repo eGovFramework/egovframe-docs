@@ -19,7 +19,7 @@ menu:
 
 ## 설명
 
- 기관코드수신 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
+ 법정동코드수신 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
  패키지 간 참조 관계 : [시스템관리 Package Dependency](../intro/package-reference.md#시스템관리)
 
 ### 관련소스
@@ -52,7 +52,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 ADMIN_CODE_OPERT 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 ADMIN_CODE_OPERT 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
@@ -140,6 +140,15 @@ CNTC.ADMINISTCODE.INFO.userpw   = 서버인증서패스워드
 
  법정동코드는 법정동코드 수신, 법정동코드수신 목록조회, 법정동코드 상세조회 기능으로 구분된다.
 
+```mermaid
+flowchart LR
+    S[스케줄러 60초 주기 실행] --> J[administCodeReceiver Job\ninsertAdministCodeRecptn 호출]
+    J --> D[(COMTCADMINISTCODE)]
+    D --> L[법정동코드수신 목록조회]
+    L -->|목록클릭| V[법정동코드 상세조회]
+    V -->|삭제| L
+```
+
 ### 법정동코드수신
 
  법정동코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.
@@ -201,7 +210,7 @@ CNTC.ADMINISTCODE.INFO.userpw   = 서버인증서패스워드
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/acr/getAdministCodeDetail.do | selectAdministCodeDetail | "AdministCodeRecptnDAO.insertAdministCode" |
+| 상세조회 | /sym/ccm/acr/getAdministCodeDetail.do | selectAdministCodeDetail | "AdministCodeRecptnDAO.selectAdministCodeDetail" |
 
  ![image](./images/sym-legaldong-법정동코드상세.png)
 
