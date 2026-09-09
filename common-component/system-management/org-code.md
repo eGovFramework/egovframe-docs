@@ -56,7 +56,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 INSTT_CODE_OPERT 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 INSTT_CODE_OPERT 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
@@ -139,6 +139,15 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
  기관코드는 기관코드 수신, 기관코드 수신 목록조회, 기관코드 상세조회 기능으로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    S[스케줄러 60초 주기 실행] --> J[insttCodeReceiver Job\ninsertInsttCodeRecptn 호출]
+    J --> D[(COMTNINSTTCODE)]
+    D --> L[기관코드수신 목록조회]
+    L -->|목록클릭| V[기관코드 상세조회]
+    V -->|삭제| L
+```
+
 ### 기관코드수신
 
  기관코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.
@@ -212,7 +221,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/icr/getInsttCodeDetail.do | EgovInsttCodeRecptnController | "InsttCodeRecptnDAO.selectInsttCodeDetail" |
+| 상세조회 | /sym/ccm/icr/getInsttCodeDetail.do | selectInsttCodeDetail | "InsttCodeRecptnDAO.selectInsttCodeDetail" |
 
  ![image](./images/sym-orgcode-insttcoderecptndetail.png)
 
