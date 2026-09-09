@@ -71,7 +71,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 RWARD_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 RWARD_ID 항목을 추가해야 한다.
 
 ```sql
     CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -101,6 +101,16 @@ menu:
 
 ## 관련화면 및 수행매뉴얼
 
+```mermaid
+flowchart LR
+    L[포상관리 목록조회] -->|등록| R[포상 등록]
+    L -->|상세조회| D[포상 상세]
+    R --> L
+    D -->|수정| U[포상 수정]
+    U --> D
+    D -->|삭제| L
+```
+
 ### 포상관리 목록조회
 
 | Action | URL | Controller method | QueryID |
@@ -127,7 +137,7 @@ menu:
 
  ![image](./images/uss-award-포상등록.jpg)
 
- 등록 : 신규 포상을 등록하기 위해서는 포상 속성을 입력한 뒤 상단의 포상 버튼을 통해서 포상을 등록한다.
+ 등록 : 신규 포상을 등록하기 위해서는 포상 속성을 입력한 뒤 상단의 등록 버튼을 통해서 포상을 등록한다.
  목록 : 포상 목록조회 화면으로 이동한다.
 
 ### 포상 상세
