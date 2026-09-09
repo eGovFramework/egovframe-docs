@@ -69,7 +69,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 TROBL_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 TROBL_ID 항목을 추가해야 한다.
 
 ```sql
     CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL, 
@@ -111,6 +111,19 @@ menu:
  처리상태는 접수, 요청, 완료 등 3가지 상태를 나타내고, 최초 장애등록 시 접수상태가 되며, 해당 장애신청을 요청시 요청상태로 변경되고, 요청한 장애 신청건에 대하여 처리결과 등록 시 완료상태가 된다.
  요청상태에서는 장애신청 내용이 수정 불가능하며, 수정이 반드시 필요할 경우 요청취소를 한 뒤 해당 장애신청정보를 수정한다.
 
+```mermaid
+stateDiagram-v2
+    [*] --> 접수 : 장애신청 등록
+    접수 --> 요청 : 요청
+    요청 --> 완료 : 처리결과 등록
+    요청 --> 접수 : 요청취소
+    완료 --> [*]
+
+    note right of 요청
+        수정 불가능
+    end note
+```
+
  ![image](./images/sym-troblreq-list.png)
 
  조회 : 기 등록된 장애신청의 목록을 조회한다.
@@ -128,7 +141,7 @@ menu:
  ![image](./images/sym-troblreq-insert.png)
 
  저장 : 신규 장애신청을 등록하기 위해서는 장애신청 속성을 입력한 뒤 하단의 저장 버튼을 통해서 장애신청을 등록한다. 장애ID는 등록 시 자동으로 부여된다.
- 목록 : 장애신청 상세조회 화면으로 이동한다.
+ 목록 : 장애신청 목록조회 화면으로 이동한다.
 
 ### 장애신청 수정
 
