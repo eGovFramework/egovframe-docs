@@ -29,6 +29,16 @@ menu:
   ⑤ 약식결재반려 : 등록된 약식결재정보를 반려한다.
 ```
 
+```mermaid
+flowchart LR
+    A[약식결재권자 지정] --> B[약식결재 상세조회]
+    B -->|삭제| E((삭제))
+    B -->|승인팝업 호출| C[약식결재 승인]
+    B -->|반려팝업 호출| D[약식결재 반려]
+    C -->|승인 처리| F((해당업무 승인 처리))
+    D -->|반려 처리| G((해당업무 반려 처리))
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -39,7 +49,7 @@ menu:
 | DAO | egovframework.com.uss.ion.ism.service.impl.InfrmlSanctnDAO.java | 약식결재를 위한 데이터처리 클래스 |
 | Model | egovframework.com.uss.ion.ism.service.Sanctner.java | 결재자 관리를 위한 Model 클래스 |
 | Model | egovframework.com.uss.ion.ism.service.InfrmlSanctn.java | 약식결재를 위한 Model 클래스 |
-| VO | egovframework.com.uss.ion.ism.service.SanctnerVO.java | 보고자 관리를 위한 VO 클래스 |
+| VO | egovframework.com.uss.ion.ism.service.SanctnerVO.java | 결재자 관리를 위한 VO 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovSanctnerList.jsp | 결재자 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovSanctnerListPopup.jsp | 결재자 팝업 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ism/EgovConfmPopup.jsp | 약식결재 승인을 위한 jsp페이지 |
@@ -70,7 +80,7 @@ menu:
 
 #### ID Generation
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 INFRML_SANCTN 항목을 추가한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 INFRML_SANCTN 항목을 추가한다.
 
 ```sql
   INSERT INTO COMTECOPSEQ VALUES('INFRML_SANCTN','0');
@@ -142,14 +152,14 @@ infrmlSanctnService.deleteInfrmlSanctn(converToInfrmlSanctnObject(ctsnnManage));
  승인 메소드에 아래 로직을 삽입한다.
  약식결재ID,신청일자,사용자ID,결재자ID,승인구분는 필수값이다.
 
-```properties
+```text
 infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnConfm(converToInfrmlSanctnObject(ctsnnManage));
 ```
 
  반려 메소드에 아래 로직을 삽입한다.
  약식결재ID,신청일자,사용자ID,결재자ID,승인구분는 필수값이다.
 
-```properties
+```text
 infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctnObject(ctsnnManage));
 ```
 
@@ -253,7 +263,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 반려 | /uss/ion/ism/EgovReturnPopup.do | selectReturnPopup | "InfrmlSanctnDAO.updateInfrmlSanctnConfm" |
+| 반려 | /uss/ion/ism/EgovReturnPopup.do | selectReturnPopup | "InfrmlSanctnDAO.updateInfrmlSanctnReturn" |
 
  약식결재의 속성정보를 변경한 후 저장한다.
 
