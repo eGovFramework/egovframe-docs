@@ -35403,6 +35403,15 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>최근검색어조회는 사용자가 입력한 검색어를 기록하고 최근 검색어 목록을 조회·관리하는 기능이다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 사용자지원(정보제공/알림) 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ S[사용자 검색어 입력] --> M[최근검색어관리 등록]
+ M --> L[최근검색어관리 목록조회]
+ L --> D[최근검색어관리 상세조회/수정/삭제]
+ L --> R[최근검색어결과 목록조회]
+ R -->|건별/관리별| X[결과 삭제]
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -35493,27 +35502,27 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>selectRecentSrchwrdListCnt(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>최근검색어관리를(을) 목록 전체 건수를(을) 조회한다.&lt;/td>
+ &lt;td>최근검색어관리 목록의 전체 건수를 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectRecentSrchwrdDetail(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>RecentSrchwrd&lt;/code>&lt;/td>
- &lt;td>최근검색어관리를(을) 상세조회 한다.&lt;/td>
+ &lt;td>최근검색어관리를 상세조회 한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>insertRecentSrchwrd(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>최근검색어관리를(을) 등록한다.&lt;/td>
+ &lt;td>최근검색어관리를 등록한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>updateRecentSrchwrd(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>최근검색어관리를(을) 수정한다.&lt;/td>
+ &lt;td>최근검색어관리를 수정한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteRecentSrchwrd(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>최근검색어관리를(을) 삭제한다.&lt;/td>
+ &lt;td>최근검색어관리를 삭제한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectRecentSrchwrdResultInquire(RecentSrchwrd)&lt;/code>&lt;/td>
@@ -35528,22 +35537,22 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>selectRecentSrchwrdResultListCnt(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>최근검색어결과를(을) 목록 전체 건수를(을) 조회한다.&lt;/td>
+ &lt;td>최근검색어결과 목록의 전체 건수를 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>insertRecentSrchwrdResult(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>최근검색어결과를(을) 등록한다.&lt;/td>
+ &lt;td>최근검색어결과를 등록한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteRecentSrchwrdResult(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>최근검색어결과를(을) 건별로 삭제 한다.&lt;/td>
+ &lt;td>최근검색어결과를 건별로 삭제 한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteRecentSrchwrdResultAll(RecentSrchwrd)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>최근검색어결과를(을) 관리별로 삭제 한다.&lt;/td>
+ &lt;td>최근검색어결과를 관리별로 삭제 한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
