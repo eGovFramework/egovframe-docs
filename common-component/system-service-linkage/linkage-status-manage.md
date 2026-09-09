@@ -23,8 +23,7 @@ menu:
 ### 패키지 참조 관계
 
  연계현황관리 패키지는 어떤 패키지와도 직접적인 함수적 참조 관계를 갖진 않지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 요소기술의 공통(cmm), 연계메시지관리, 연계기관관리, 시스템연계관리, 달력 패키지와 함께 배포 파일을 구성한다.
-
-- 패키지 간 참조 관계 : [시스템관리 Package Dependency](../intro/package-reference.md#시스템관리)
+ 패키지 간 참조 관계 : [시스템관리 Package Dependency](../intro/package-reference.md#시스템관리)
 
 ### 관련소스
 
@@ -64,12 +63,20 @@ menu:
 
  연계현황 관리는 연계현황 목록조회, 상세조회의 기능으로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    SC[(시스템연계 COMTNSYSTEMCNTC)] --> ST[연계현황 목록조회]
+    RL[(송수신로그 COMTNTRSMRCVLOG)] --> ST
+    ST -->|목록클릭| SD[연계현황 상세조회]
+    SD -->|삭제| ST
+```
+
 ### 연계현황 목록조회
 
 #### 비즈니스 규칙
 
- 연계현황 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.  
-검색조건은 연계현황명에 대해서 수행된다.
+ 연계현황 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+ 검색조건은 연계현황명에 대해서 수행된다.
 
 #### 관련코드
 
@@ -79,13 +86,14 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /ssi/syi/ist/getCntcSttusList.do | selectCntcSttusLogList | "CntcSttusDAO.selectCntcSttusList", "CntcSttusDAO.selectCntcSttusListTotCnt" |
+| 목록조회 | /ssi/syi/ist/getCntcSttusList.do | selectCntcSttusLogList | "CntcSttusDAO.selectCntcSttusList", |
+|  |  |  | "CntcSttusDAO.selectCntcSttusListTotCnt" |
 
  ![image](./images/ssi-cntc-sttus-list.png)
 
- 페이지당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)  
-조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.  
-목록클릭: 연계현황 상세조회 화면으로 이동한다.  
+ 페이지당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
+ 조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
+ 목록클릭: 연계현황 상세조회 화면으로 이동한다.
 
 ### 연계현황 상세 조회
 
@@ -105,7 +113,7 @@ menu:
 
  ![image](./images/ssi-cntc-sttus-detail.png)
 
- 목록: 연계현황 목록 화면으로 이동한다.  
+ 목록: 연계현황 목록 화면으로 이동한다.
 
 ## 참고자료
 
