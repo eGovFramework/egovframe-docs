@@ -74,7 +74,7 @@ CREATE TABLE COMTECOPSEQ
 INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('MTG_ID', 1);
 ```
 
-#### ID Generation 환경설정(context-idgen.xml)
+#### ID Generation 환경설정(context-idgn-Mgt.xml)
 
 ```xml
 <bean name="egovMgtIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
