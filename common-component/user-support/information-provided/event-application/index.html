@@ -64,12 +64,19 @@
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;cipers&#34;</span>   <span style=color:teal>value=</span><span style=color:#d14>&#34;14&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;fillChar&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;0&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>    <span style=color:navy>&lt;/bean&gt;</span>
-</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><h3 class=sec-tit id=행사관리-목록조회>행사관리 목록조회</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>조회</td><td>/uss/ion/evt/EgovEventReqstManageList.do</td><td>selectEventManageList</td><td>&ldquo;eventManageDAO.selectEventManageList&rdquo;</td></tr><tr><td>조회</td><td>/uss/ion/evt/EgovEventReqstManageList.do</td><td>selectEventManageList</td><td>&ldquo;eventManageDAO.selectEventManageListTotCnt&rdquo;</td></tr></tbody></table></div><p>행사관리 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><div class=mermaid>flowchart LR
+L[행사관리 목록조회] -->|등록| R[행사 등록]
+L -->|상세조회| D[행사 상세]
+L -->|참여인원 클릭| P([행사참석자목록 팝업])
+R --> L
+D -->|수정| U[행사 수정]
+U --> D
+D -->|삭제| L</div><h3 class=sec-tit id=행사관리-목록조회>행사관리 목록조회</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>조회</td><td>/uss/ion/evt/EgovEventReqstManageList.do</td><td>selectEventManageList</td><td>&ldquo;eventManageDAO.selectEventManageList&rdquo;</td></tr><tr><td>조회</td><td>/uss/ion/evt/EgovEventReqstManageList.do</td><td>selectEventManageList</td><td>&ldquo;eventManageDAO.selectEventManageListTotCnt&rdquo;</td></tr></tbody></table></div><p>행사관리 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 검색조건은 행사구분, 행사년월, 행사명에 대해서 수행된다.</p><p><img src=/egovframe-docs/common-component/user-support/images/uss-evt-manage-%ed%96%89%ec%82%ac%ea%b4%80%eb%a6%ac%eb%aa%a9%eb%a1%9d.jpg alt=image></p><p>조회 : 기 등록된 행사관리의 목록을 조회한다.
 등록 : 신규 행사를 등록하기 위해서는 상단의 등록 버튼을 통해서 행사 등록 화면으로 이동한다.
 상세조회: 등록된 행사 목록(행사명)을 클릭하면 상세정보 화면으로 이동한다.
 행사참석자목록: 등록된 행사 목록(참여/정원)중 참여인원을 클릭하면 행사참석자목록 팝업화면을 호출한다.</p><h3 class=sec-tit id=행사-등록>행사 등록</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>등록</td><td>/uss/ion/evt/insertEventManage.do</td><td>insertEventManage</td><td>&ldquo;eventManageDAO.insertEventManage&rdquo;</td></tr></tbody></table></div><p>행사의 속성정보를 입력한 뒤 등록한다.</p><p><img src=/egovframe-docs/common-component/user-support/images/uss-evt-manage-%ed%96%89%ec%82%ac%eb%93%b1%eb%a1%9d.jpg alt=image></p><p>초기화 : 입력필드의 내용을 초기상태로 변경한다.
-등록 : 신규 행사를 등록하기 위해서는 행사 속성을 입력한 뒤 상단의 행사 버튼을 통해서 행사를 등록한다.
+등록 : 신규 행사를 등록하기 위해서는 행사 속성을 입력한 뒤 상단의 등록 버튼을 통해서 행사를 등록한다.
 목록 : 행사 목록조회 화면으로 이동한다.</p><h3 class=sec-tit id=행사-상세>행사 상세</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>상세조회</td><td>/uss/ion/evt/EgovEventReqstDetail.do</td><td>selectEventManage</td><td>&ldquo;eventManageDAO.selectEventManage&rdquo;</td></tr><tr><td>삭제</td><td>/uss/ion/evt/EgovEventReqstDelete.do</td><td>deleteEventManage</td><td>&ldquo;eventManageDAO.deleteEventManage&rdquo;</td></tr></tbody></table></div><p>행사의 상세조회화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 행사를 삭제한다.
 행사접수기간이 도래한 경우엔 수정 버튼과 삭제 버튼이 비활성화되어 화면에서 보이지 않는다.</p><p><img src=/egovframe-docs/common-component/user-support/images/uss-evt-manage-%ed%96%89%ec%82%ac%ec%83%81%ec%84%b8.jpg alt=image></p><p>수정 : 행사 수정 화면으로 이동한다.
 삭제 : 삭제 버튼을 통해서 기 등록된 행사정보를 삭제한다.
