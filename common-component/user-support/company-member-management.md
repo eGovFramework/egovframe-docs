@@ -79,7 +79,7 @@ CREATE TABLE COMTECOPSEQ (
   PRIMARY KEY (TABLE_NAME)
 );
 
-INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
+INSERT INTO COMTECOPSEQ VALUES('USRCNFRM_ID','1');
 ```
 
 #### ID Generation 환경설정(context-idgn-UsrCnfrm.xml)
@@ -132,6 +132,17 @@ INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
 ## 관련기능
 
 기업회원관리는 크게 기업회원 목록조회, 기업회원 등록, 기업회원 상세조회(수정), 기업회원 암호변경, 기업회원 약관확인, 기업회원 가입신청 기능으로 분류된다.
+
+```mermaid
+flowchart LR
+    S[가입신청] --> T[약관확인]
+    T -->|동의| R[기업회원 등록]
+    R --> L[기업회원 목록조회]
+    L -->|아이디 클릭| D[기업회원 상세조회/수정]
+    D -->|비밀번호변경| P[기업회원 비밀번호변경]
+    P --> L
+    D --> L
+```
 
 ### 기업회원 목록조회
 
