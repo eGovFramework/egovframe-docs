@@ -30261,6 +30261,12 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>온라인POLL관리는 온라인 POLL(찬반투표)의 등록·조회·수정·삭제와 항목 관리, 사용자 참여(응답) 처리, 결과 집계·조회 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 사용자지원(온라인참여) 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ M[관리자: POLL 등록/항목관리] --> P[사용자: POLL 참여/응답]
+ P --> R[결과 집계·조회]
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -30436,52 +30442,52 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollManageDetail(OnlinePollManage)&lt;/code>&lt;/td>
  &lt;td>&lt;code>OnlinePollManage&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 상세조회 한다.&lt;/td>
+ &lt;td>온라인POLL관리를 상세조회 한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollManageListCnt(ComDefaultVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 목록 전체 건수를(을) 조회한다.&lt;/td>
+ &lt;td>온라인POLL관리 목록의 전체 건수를 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>insertOnlinePollManage(OnlinePollManage)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 등록한다.&lt;/td>
+ &lt;td>온라인POLL관리를 등록한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>updateOnlinePollManage(OnlinePollManage)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 수정한다.&lt;/td>
+ &lt;td>온라인POLL관리를 수정한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteOnlinePollManage(OnlinePollManage)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 삭제한다.&lt;/td>
+ &lt;td>온라인POLL관리를 삭제한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollManageStatistics(OnlinePollManage)&lt;/code>&lt;/td>
  &lt;td>&lt;code>List&amp;lt;?&amp;gt;&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 통계를 조회 한다.&lt;/td>
+ &lt;td>온라인POLL관리의 통계를 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollItemList(OnlinePollItem)&lt;/code>&lt;/td>
  &lt;td>&lt;code>List&amp;lt;EgovMap&amp;gt;&lt;/code>&lt;/td>
- &lt;td>온라인POLL항목를(을) 조회한다.&lt;/td>
+ &lt;td>온라인POLL항목을 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>insertOnlinePollItem(OnlinePollItem)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL항목를(을) 등록한다.&lt;/td>
+ &lt;td>온라인POLL항목을 등록한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>updateOnlinePollItem(OnlinePollItem)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL항목를(을) 수정한다.&lt;/td>
+ &lt;td>온라인POLL항목을 수정한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteOnlinePollItem(OnlinePollItem)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL항목를(을) 삭제한다.&lt;/td>
+ &lt;td>온라인POLL항목을 삭제한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -30503,22 +30509,22 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollManageListCnt(ComDefaultVO)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 목록 전체 건수를(을) 조회한다.&lt;/td>
+ &lt;td>온라인POLL관리 목록의 전체 건수를 조회한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollManageDetail(OnlinePollPartcptn)&lt;/code>&lt;/td>
  &lt;td>&lt;code>List&amp;lt;EgovMap&amp;gt;&lt;/code>&lt;/td>
- &lt;td>온라인POLL관리를(을) 상세조회 한다.&lt;/td>
+ &lt;td>온라인POLL관리를 상세조회 한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollItemDetail(OnlinePollPartcptn)&lt;/code>&lt;/td>
  &lt;td>&lt;code>List&amp;lt;EgovMap&amp;gt;&lt;/code>&lt;/td>
- &lt;td>온라인POLL항목를(을) 상세조회 한다.&lt;/td>
+ &lt;td>온라인POLL항목을 상세조회 한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>insertOnlinePollResult(OnlinePollPartcptn)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL참여를(을) 등록한다.&lt;/td>
+ &lt;td>온라인POLL참여를 등록한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>selectOnlinePollManageStatistics(OnlinePollPartcptn)&lt;/code>&lt;/td>
@@ -30550,7 +30556,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>deleteOnlinePollResult(OnlinePollResult)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>온라인POLL결과를(을) 삭제 한다.&lt;/td>
+ &lt;td>온라인POLL결과를 삭제 한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
