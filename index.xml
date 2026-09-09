@@ -17270,11 +17270,11 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>네트워크관리는 서버자원이나 사용자 등에게 할당하기 위한 IP 등의 네트워크 정보를 관리하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>네트워크관리는 네트워크 정보를 관리하기 위한 목적으로 네트워크 정보의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 네트워크목록조회 : 배치작업으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 네트워크등록 : 배치작업정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 네트워크수정 : 기 등록된 배치작업정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 네트워크삭제 : 기 등록된 배치작업정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 네트워크상세조회 : 등록된 배치작업정보를 조회한다.
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 네트워크목록조회 : 네트워크로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 네트워크등록 : 네트워크정보를 등록하고, 등록 결과를 조회한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 네트워크수정 : 기 등록된 네트워크정보의 항목들을 수정한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 네트워크삭제 : 기 등록된 네트워크정보를 삭제한다.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 네트워크상세조회 : 등록된 네트워크정보를 조회한다.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
