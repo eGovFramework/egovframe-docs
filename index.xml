@@ -35755,6 +35755,14 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>&lt;strong>출퇴근 관리&lt;/strong>는 출근, 퇴근 정보를 관리하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>&lt;strong>출퇴근 관리&lt;/strong>는 출근, 퇴근 정보를 관리하기 위한 목적으로, 출근, 퇴근, 조회 기능을 수반한다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[출퇴근관리 조회] -->|출근 버튼| S[출근 등록]
+ L -->|퇴근 버튼| E[퇴근 등록]
+ S --> L
+ E --> L
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
