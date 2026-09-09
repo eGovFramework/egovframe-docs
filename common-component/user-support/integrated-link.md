@@ -66,7 +66,7 @@ menu:
 
 #### ID Generation 관련 DDL 및 DML
 
- ID Generation Service를 활용하기 위해서 Sequence 저장테이블인  COMTECOPSEQ에 UNITY_LINK_ID 항목을 추가해야 한다.
+ ID Generation Service를 활용하기 위해서 Sequence 저장테이블인 COMTECOPSEQ에 UNITY_LINK_ID 항목을 추가해야 한다.
 
 ```sql
 CREATE TABLE COMTECOPSEQ
@@ -122,6 +122,17 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('UNITY_LINK_ID', 1);
 
  통합링크관리기능은 크게 통합링크관리 목록조회, 통합링크관리 상세조회, 통합링크관리 내용등록, 통합링크관리 내용수정, 통합링크관리 샘플기능으로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    L[통합링크관리 목록조회] -->|등록| R[통합링크관리 내용등록]
+    L -->|목록클릭| D[통합링크관리 상세조회]
+    R -->|저장| L
+    D -->|수정| U[통합링크관리 내용수정]
+    U -->|수정| L
+    D -->|삭제| L
+    L -->|사이트 선택| S[통합링크관리 샘플: 사이트 이동]
+```
+
 ### 통합링크관리 목록조회
 
 #### 비즈니스 규칙
@@ -136,13 +147,13 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('UNITY_LINK_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/ulm/listUnityLink.do | egovUnityLinkList | "UnityLink" | selectUnityLink" |
+| 목록조회 | /uss/ion/ulm/listUnityLink.do | egovUnityLinkList | "UnityLink" | "selectUnityLink", |
 |  |  |  | "UnityLink" | "selectUnityLinkCnt" |
 
  ![image](./images/uss-intlink-통합링크관리_목록.jpg)
 
  등록: 등록하기 위해서는 상단의 등록 버튼을 통해서 통합링크관리 등록 화면으로 이동한다.
- 목록 최근검색어명: 통합링크관리 상세조회 화면으로 이동한다
+ 목록클릭: 통합링크관리 상세조회 화면으로 이동한다.
 
 ### 통합링크관리 상세조회
 
@@ -219,7 +230,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('UNITY_LINK_ID', 1);
 
 #### 비즈니스 규칙
 
- 입력한 통합링크관리 정보를(을) 저장 처리한다. 입력명 우측의 빨간* 표시는 수정 시 반드시 입력해야 할 항목을 표시한다.
+ 입력한 통합링크관리 정보를 저장 처리한다. 입력명 우측의 빨간* 표시는 수정 시 반드시 입력해야 할 항목을 표시한다.
 
 #### 관련코드
 
@@ -233,8 +244,8 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('UNITY_LINK_ID', 1);
 
  ![image](./images/uss-intlink-통합링크관리_수정.jpg)
 
- 저장: 통합링크관리 목록 화면으로 이동한다.
  수정: 수정된 정보들이 저장 처리된다.
+ 목록: 통합링크관리 목록 화면으로 이동한다.
 
 ### 통합링크관리 샘플
 
