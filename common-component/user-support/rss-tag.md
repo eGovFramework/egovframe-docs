@@ -18,6 +18,17 @@ RSS태그관리는 게시판 등 콘텐츠를 RSS로 제공하기 위한 RSS 태
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[RSS태그관리 목록조회] -->|등록| R[RSS태그관리 등록]
+    L -->|상세조회| D[RSS태그관리 상세조회]
+    R --> L
+    D -->|수정| U[RSS태그관리 수정]
+    U --> L
+    D -->|삭제| L
+    L -->|RSS 피드 생성| F([RSS 피드])
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -49,11 +60,11 @@ RSS태그관리는 게시판 등 콘텐츠를 RSS로 제공하기 위한 RSS 태
 | `selectRssTagManageTableList()` | `List<?>` | 목록을 조회한다 |
 | `selectRssTagManageTableColumnList(Map<?, ?>)` | `List<?>` | JDBC 테이블 컬럼 목록을 조회한다. |
 | `selectRssTagManageList(RssManage)` | `List<?>` | RSS태그관리 목록을 조회한다. |
-| `selectRssTagManageListCnt(RssManage)` | `int` | RSS태그관리를(을) 목록 전체 건수를(을) 조회한다. |
-| `selectRssTagManageDetail(RssManage)` | `RssManage` | RSS태그관리를(을) 상세조회 한다. |
-| `insertRssTagManage(RssManage)` | `void` | RSS태그관리를(을) 등록한다. |
-| `updateRssTagManage(RssManage)` | `void` | RSS태그관리를(을) 수정한다. |
-| `deleteRssTagManage(RssManage)` | `void` | RSS태그관리를(을) 삭제한다. |
+| `selectRssTagManageListCnt(RssManage)` | `int` | RSS태그관리 목록의 전체 건수를 조회한다. |
+| `selectRssTagManageDetail(RssManage)` | `RssManage` | RSS태그관리를 상세조회 한다. |
+| `insertRssTagManage(RssManage)` | `void` | RSS태그관리를 등록한다. |
+| `updateRssTagManage(RssManage)` | `void` | RSS태그관리를 수정한다. |
+| `deleteRssTagManage(RssManage)` | `void` | RSS태그관리를 삭제한다. |
 
 ## 참고자료
 
