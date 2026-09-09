@@ -53,7 +53,7 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_goldilocks.xml | 일정관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/cop/smt/sim/message_ko.properties | 마이페이지 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/smt/sim/message_en.properties | 마이페이지 Message properties(영문) |
-| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-diaryManage.xml | 일정관리 Id생성 Idgen XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-indvdlSchdulManage.xml | 일정관리 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
 
@@ -73,18 +73,18 @@ CREATE TABLE COMTECOPSEQ (TABLE_NAME VARCHAR(20) NOT NULL,
 INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
 ```
 
-#### ID Generation 환경설정(context-idgn-diaryManage.xml)
+#### ID Generation 환경설정(context-idgn-indvdlSchdulManage.xml)
 
 ```xml
-<bean name="diaryManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="indvdlSchdulManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
-    <property name="strategy"   ref="DiaryManageInfotrategy" />
+    <property name="strategy"   ref="IndvdlSchdulManageStrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
-    <property name="tableName"  value="DIARY_ID"/>
+    <property name="tableName"  value="SCHDUL_ID"/>
 </bean>
-<bean name="DiaryManageInfotrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-    <property name="prefix"   value="DIARY_" />
+<bean name="IndvdlSchdulManageStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <property name="prefix"   value="SCHDUL_" />
     <property name="cipers"   value="14" />
     <property name="fillChar" value="0" />
 </bean>
@@ -94,11 +94,23 @@ INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
 
 | 테이블명 | 테이블명(영문) | 비고 |
 | --- | --- | --- |
-| 일정관리 | COMTNMTGINFO | 일정을 관리한다. |
+| 일정관리 | COMTNSCHDULINFO | 일정을 관리한다. |
 
 ## 관련기능
 
 일정관리 기능은 일정관리 월별목록, 일정관리 주간별목록, 일정관리 일별목록, 일정관리 상세조회, 일정관리 등록, 일정관리 수정 기능으로 구성되어 있다.
+
+```mermaid
+flowchart LR
+    M[일정관리 월별목록] -->|일정클릭| D[일정관리 상세조회]
+    W[일정관리 주간별목록] -->|일정클릭| D
+    Y[일정관리 일별목록] -->|일정클릭| D
+    M -->|날짜클릭| R[일정관리 등록]
+    R --> M
+    D -->|수정| U[일정관리 수정]
+    U --> M
+    D -->|삭제| M
+```
 
 ### 일정관리 월별목록
 
