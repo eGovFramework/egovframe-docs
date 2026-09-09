@@ -89,7 +89,12 @@ globals.properties에 관련된 내용은 요소기술 프로퍼티 및 명령�
 </span></span><span style=display:flex><span>            <span style=color:navy>&lt;/list&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;/property&gt;</span>
 </span></span><span style=display:flex><span>    <span style=color:navy>&lt;/bean&gt;</span>
-</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련기능>관련기능</h2><p>기관코드는 기관코드 수신, 기관코드 수신 목록조회, 기관코드 상세조회 기능으로 구성되어 있다.</p><h3 class=sec-tit id=기관코드수신>기관코드수신</h3><p>기관코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.</p><ul><li>ServiceImpl 예시<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// 실제 연계 항목 Mapping 작업
+</span></span></code></pre></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련기능>관련기능</h2><p>기관코드는 기관코드 수신, 기관코드 수신 목록조회, 기관코드 상세조회 기능으로 구성되어 있다.</p><pre class=mermaid>flowchart LR
+    S[스케줄러 60초 주기 실행] --&gt; J[insttCodeReceiver Job\ninsertInsttCodeRecptn 호출]
+    J --&gt; D[(COMTNINSTTCODE)]
+    D --&gt; L[기관코드수신 목록조회]
+    L --&gt;|목록클릭| V[기관코드 상세조회]
+    V --&gt;|삭제| L</pre><h3 class=sec-tit id=기관코드수신>기관코드수신</h3><p>기관코드수신 연계시 연계항목에 따라 DB, Model, ServiceImpl…등 연계항목 관련사항을 수정하여야 한다.</p><ul><li>ServiceImpl 예시<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// 실제 연계 항목 Mapping 작업
 </span></span><span style=display:flex><span>insttCodeRecptn.setChangeSeCode     (strTmp       );    // 명령                       :: 변경구분코드
 </span></span><span style=display:flex><span>insttCodeRecptn.setOccrrDe          (tokenData[ 1]);    // 날짜                       :: 발생일자
 </span></span><span style=display:flex><span>insttCodeRecptn.setEtcCode          (tokenData[ 2]);    // 2자리코드 &lt;적용:기타코드&gt;     :: 기타코드
@@ -156,7 +161,7 @@ globals.properties에 관련된 내용은 요소기술 프로퍼티 및 명령�
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/ccm/icr/getInsttCodeDetail.do | EgovInsttCodeRecptnController | &#34;InsttCodeRecptnDAO.selectInsttCodeDetail&#34; |
+| 상세조회 | /sym/ccm/icr/getInsttCodeDetail.do | selectInsttCodeDetail | &#34;InsttCodeRecptnDAO.selectInsttCodeDetail&#34; |
 
  ![image](./images/sym-orgcode-insttcoderecptndetail.png)
 
