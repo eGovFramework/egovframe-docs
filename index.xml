@@ -32797,7 +32797,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-diaryManage.xml&lt;/td>
+ &lt;td>resources/egovframework/spring/com/idgn/context-idgn-indvdlSchdulManage.xml&lt;/td>
  &lt;td>일정관리 Id생성 Idgen XML&lt;/td>
  &lt;/tr>
  &lt;/tbody>
