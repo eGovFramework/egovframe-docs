@@ -126,7 +126,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sts/rst/selectReprtStatsList.do | selectReprtStatsList | "reprtStatsDAO.selectReprtStatsList", |
+| 조회 | /sts/rst/selectReprtStatsList.do | selectReprtStatsList | "reprtStatsDAO.selectReprtStatsList" |
 |  |  |  | "reprtStatsDAO.selectReprtStatsListTotCnt" |
 
  ![image](./images/sts-보고서통계_목록조회.png)
