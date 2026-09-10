@@ -112,7 +112,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('CPYRHT_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/sam/cpy/CpyrhtPrtcPolicyListInqire.do | selectCpyrhtPrtcPolicyList | "CpyrhtPrtcPolicyDAO" | "selectCpyrhtPrtcPolicyList", |
+| 목록조회 | /uss/sam/cpy/CpyrhtPrtcPolicyListInqire.do | selectCpyrhtPrtcPolicyList | "CpyrhtPrtcPolicyDAO" | "selectCpyrhtPrtcPolicyList" |
 |  |  | selectCpyrhtPrtcPolicyListTotCnt | "CpyrhtPrtcPolicyDAO" | "selectCpyrhtPrtcPolicyListTotCnt" |
 
  저작권보호정책 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
