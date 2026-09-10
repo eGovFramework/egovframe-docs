@@ -24,6 +24,17 @@ menu:
 일반달력, 행정달력은 팝업화면과 일간/주간/월간/연간 조회화면으로 구성되어있다.  
 휴일의 관리는 목록조회, 상세조회, 등록, 수정, 삭제 처리 할 수 있도록 구성되어있다.
 
+```mermaid
+flowchart LR
+    L[휴일 목록조회] -->|등록| R[휴일 등록]
+    L -->|목록 선택| D[휴일 상세조회]
+    D -->|수정| U[휴일 수정]
+    D -->|삭제| X[휴일 삭제]
+    R --> L
+    U --> L
+    X --> L
+```
+
 ### 관련소스
 
 | 유형               | 대상소스명                                                                       | 비고                                           |
@@ -89,7 +100,7 @@ CREATE TABLE COMTECOPSEQ (
 INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
 ```
 
-### ID Generation 환경설정(context-idgn-LeaderSchdu.xml)
+### ID Generation 환경설정(context-idgn-RestDe.xml)
 
 ```xml
 <bean name="egovRestDeIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
