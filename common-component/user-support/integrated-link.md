@@ -147,7 +147,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/ulm/listUnityLink.do | egovUnityLinkList | "UnityLink" | "selectUnityLink", |
+| 목록조회 | /uss/ion/ulm/listUnityLink.do | egovUnityLinkList | "UnityLink" | "selectUnityLink" |
 |  |  |  | "UnityLink" | "selectUnityLinkCnt" |
 
  ![image](./images/uss-intlink-통합링크관리_목록.jpg)
@@ -215,7 +215,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록 | /uss/ion/ulm/listUnityLink.do | EgovUnityLinkList | "UnityLink" | "selectUnityLink", |
+| 목록 | /uss/ion/ulm/listUnityLink.do | EgovUnityLinkList | "UnityLink" | "selectUnityLink" |
 |  |  |  | "UnityLink" | "selectUnityLinkCnt" |
 | 저장 | /uss/ion/ulm/registUnityLink.do | EgovUnityLinkRegist | "UnityLink" | "insertUnityLink" |
 
