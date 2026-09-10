@@ -126,7 +126,7 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /uss/ion/msi/selectMainImageList.do | selectMainImageList | "mainImageDAO" | "selectMainImageList", |
+| 조회 | /uss/ion/msi/selectMainImageList.do | selectMainImageList | "mainImageDAO" | "selectMainImageList" |
 |  |  |  | "mainImageDAO" | "selectMainImageListTotCnt" |
 
  ![image](./images/uss-mainimage-메인이미지_목록.jpg)
