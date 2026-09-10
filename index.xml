@@ -8073,174 +8073,22 @@ Property Service와 Property Source는 각각의 특성과 용도에 따라 시�
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Q&amp;amp;A 내역 및 조치처리 관리기능으로 일반사용자가 Q&amp;amp;A내역을 등록하는 기능 및 관리자가 답변글을 등록하는 기능으로 구성되어 있다&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[Q&amp;A목록조회] -->|등록| R[Q&amp;A내역등록]
+ L -->|목록클릭| D[Q&amp;A상세조회]
+ D -->|수정| U[Q&amp;A내역수정]
+ D -->|삭제| L
+ R --> L
+ U --> L
+
+ AL[Q&amp;A답변목록조회] -->|목록클릭| AD[Q&amp;A답변상세조회]
+ AD -->|수정| AU[Q&amp;A내역답변수정]
+ AU --> AL
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>Q&amp;amp;A관리 패키지는 요소기술의 공통 패키지(cmm)와 시스템 패키지(sim)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산 패키지와 함께 배포 파일을 구성한다.&lt;/p>
-&lt;ul>
-&lt;li>패키지 간 참조 관계 : 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
-
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.uss.olh.qna.web.EgovQnaController.java&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 컨트롤러 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.uss.olh.qna.service.EgovQnaService.java&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 서비스 인터페이스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.uss.olh.qna.service.impl.EgovQnaServiceImpl.java&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 서비스 구현 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.uss.olh.qna.service.QnaVO.java&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 VO 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.uss.olh.qna.service.QnaDefaultVO.java&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 SearchVO 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.uss.olh.qna.service.impl.EgovQnaDAO.java&lt;/td>
- &lt;td>Q&amp;amp;A 관리를 위한 데이터처리 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaList.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaDetail.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaRegist.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 등록 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaUpdt.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 수정 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaAnswerList.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 답변목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaAnswerDetail.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 답변상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/qna/EgovQnaAnswerUpdt.jsp&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 답변등록/수정 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_altibase.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_cubrid.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_maria.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 MariaDB용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_mysql.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_oracle.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_postgres.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 PostgreSQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_tibero.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/qna/EgovQnaManage_SQL_goldilocks.xml&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/olh/qna/message_ko.properties&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/olh/qna/message_en.properties&lt;/td>
- &lt;td>Q&amp;amp;A관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-QnaManage.xml&lt;/td>
- &lt;td>Q&amp;amp;A등록을 위한 Id생성 Idgen XML&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스다이어그램">클래스다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-qna-q_a_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >&lt;/p></description></item><item><title>JPA Query Language</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</guid><description>&lt;h1 id="query-language">Query Language&lt;/h1>
+&lt;p>Q&amp;amp;A관리 패키지는 요소기술의 공통 패키지(cmm)와 시스템 패키지(sim)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>JPA Query Language</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/persistence-layer/orm/orm-query-language/</guid><description>&lt;h1 id="query-language">Query Language&lt;/h1>
 &lt;p>JPA에는 별도의 Query Language를 제공함으로써 객체 지향 관점에서 특정 객체에 대한 조회와 DB 유형에 독립적인 Query 정의를 가능하도록 한다. 구성요소 및 작성 방법은 아래와 같다.&lt;/p>
 &lt;h2 id="구성요소">구성요소&lt;/h2>
 &lt;p>QL Statement 유형으로는 SELECT 문과 Update and Delete 문 두가지가 있다.&lt;/p>
