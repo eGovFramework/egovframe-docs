@@ -44,7 +44,7 @@ menu:
 | QUERY XML | resources/egovframework/mapper/com/sym/ccm/icr/EgovInsttCodeRecptn\_SQL\_maria.xml | 기관코드 MariaDB용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/ccm/icr/EgovInsttCodeRecptn\_SQL\_postgres.xml | 기관코드 PostgreSQL용 QUERY XML |
 | QUERY XML | resources/egovframework/mapper/com/sym/ccm/icr/EgovInsttCodeRecptn\_SQL\_goldilocks.xml | 기관코드 Goldilocks용 QUERY XML |
-| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-InsttCodeRecptn.xml | 행정코드 Id생성 Idgen XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-InsttCodeRecptn.xml | 기관코드 Id생성 Idgen XML |
 | Message properties | resources/egovframework/message/com/sym/ccm/icr/message\_ko.properties | 기관코드를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sym/ccm/icr/message\_en.properties | 기관코드를 위한 Message properties(영문) |
 
