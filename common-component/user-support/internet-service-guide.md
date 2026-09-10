@@ -121,7 +121,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('ISG_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 조회 | /uss/ion/isg/selectIntnetSvcGuidanceList.do | selectIntnetSvcGuidanceList | "intnetSvcGuidanceDAO" | "selectIntnetSvcGuidanceList", |
+| 조회 | /uss/ion/isg/selectIntnetSvcGuidanceList.do | selectIntnetSvcGuidanceList | "intnetSvcGuidanceDAO" | "selectIntnetSvcGuidanceList" |
 |  |  |  | "intnetSvcGuidanceDAO" | "selectIntnetSvcGuidanceListTotCnt" |
 
  ![image](./images/uss-isg-인터넷서비스_목록.jpg)
