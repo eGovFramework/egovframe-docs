@@ -239,7 +239,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/prm/EgovProgramChangeRequstSelect.do | selectProgrmChangeRequstList | "progrmManageDAO.selectProgrmChangeRequstList\_D", |
+| 조회 | /sym/prm/EgovProgramChangeRequstSelect.do | selectProgrmChangeRequstList | "progrmManageDAO.selectProgrmChangeRequstList\_D" |
 |  |  |  | "progrmManageDAO.selectProgrmChangeRequstListTotCnt\_S" |
 
  프로그램 변경요청 은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
@@ -334,7 +334,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/prm/EgovProgramChangeRequstProcessListSelect.do | selectProgrmChangeRequstProcessList | "progrmManageDAO.selectChangeRequstProcessList\_D", |
+| 조회 | /sym/prm/EgovProgramChangeRequstProcessListSelect.do | selectProgrmChangeRequstProcessList | "progrmManageDAO.selectChangeRequstProcessList\_D" |
 |  |  |  | "progrmManageDAO.selectChangeRequstProcessListTotCnt\_S" |
 
  프로그램 변경요청 처리 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
@@ -390,7 +390,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/prm/EgovProgramChgHstListSelect.do | selectProgrmChgHstList | "progrmManageDAO.selectProgrmChangeRequstList\_D", |
+| 조회 | /sym/prm/EgovProgramChgHstListSelect.do | selectProgrmChgHstList | "progrmManageDAO.selectProgrmChangeRequstList\_D" |
 |  |  |  | "progrmManageDAO.selectProgrmChangeRequstListTotCnt\_S" |
 
  ![image](./images/sym-program-egovprogramchghst.jpg)
