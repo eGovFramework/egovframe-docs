@@ -128,7 +128,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /com/uss/ion/rmm/selectRoughMapList.do | selectRoughMapList | "RoughMapDAO.selectRoughMapList", |
+| 목록조회 | /com/uss/ion/rmm/selectRoughMapList.do | selectRoughMapList | "RoughMapDAO.selectRoughMapList" |
 |  |  |  | "RoughMapDAO.selectRoughMapListTotCnt" |
 
  약도목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
