@@ -127,7 +127,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/bat/updateBatchOpert | updateBatchOpert | "BatchOpertDao.updateBatchOpert" |
+| 수정 | /sym/bat/updateBatchOpert.do | updateBatchOpert | "BatchOpertDao.updateBatchOpert" |
 
  배치작업의 속성정보를 변경한 후 저장한다.
 
