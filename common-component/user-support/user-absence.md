@@ -96,7 +96,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/uas/selectUserAbsnceList.do | selectUserAbsnceList | "userAbsnceDAO" | "selectUserAbsnceList", |
+| 목록조회 | /uss/ion/uas/selectUserAbsnceList.do | selectUserAbsnceList | "userAbsnceDAO" | "selectUserAbsnceList" |
 |  |  |  | "userAbsnceDAO" | "selectUserAbsnceListTotCnt" |
 
  ![image](./images/uss-absnt-사용자부재관리_목록.jpg)
