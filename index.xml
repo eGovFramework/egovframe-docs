@@ -16590,149 +16590,19 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>시스템 사용자에게 사용권한을 부여하기 위해 권한을 정의하고, 관리한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[권한 목록조회] -->|등록| R[권한 등록]
+ L -->|조회목록 선택| U[권한 수정]
+ L -->|삭제| L
+ R --> L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>권한관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라
-부서권한관리, 그룹관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p>
-&lt;p>* 패키지 간 참조 관계 : 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%eb%b3%b4%ec%95%88" class="innerLink">보안 Package Dependency&lt;/a>
-
-&lt;/p>
-&lt;h3 id="클래스">클래스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.sec.ram.web.EgovAuthorManageController.java&lt;/td>
- &lt;td>권한 관리를 위한 컨트롤러 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.sec.ram.service.EgovAuthorManageService.java&lt;/td>
- &lt;td>권한 관리를 위한 서비스 인터페이스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.sec.ram.service.impl.EgovAuthorManageServiceImpl.java&lt;/td>
- &lt;td>권한 관리를 위한 서비스 구현 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.sec.ram.service.AuthorManage.java&lt;/td>
- &lt;td>권한 관리를 위한 Model 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.sec.ram.service.AuthorManageVO.java&lt;/td>
- &lt;td>권한 관리를 위한 VO 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.sec.ram.service.impl.AuthorManageDAO.java&lt;/td>
- &lt;td>권한 관리를 위한 데이터처리 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sec/ram/EgovAuthorManage.jsp&lt;/td>
- &lt;td>권한 관리를 위한 jsp페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sec/ram/EgovAuthorInsert.jsp&lt;/td>
- &lt;td>권한 등록을 위한 jsp페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sec/ram/EgovAuthorUpdate.jsp&lt;/td>
- &lt;td>권한 수정을 위한 jsp페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_mysql.xml&lt;/td>
- &lt;td>권한 관리를 위한 MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_cubrid.xml&lt;/td>
- &lt;td>권한 관리를 위한 Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_oracle.xml&lt;/td>
- &lt;td>권한 관리를 위한 Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_tibero.xml&lt;/td>
- &lt;td>권한 관리를 위한 Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_altibase.xml&lt;/td>
- &lt;td>권한 관리를 위한 Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_maria.xml&lt;/td>
- &lt;td>권한 관리를 위한 Maria용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_postgres.xml&lt;/td>
- &lt;td>권한 관리를 위한 Postgres용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sec/ram/EgovAuthorManage_SQL_goldilocks.xml&lt;/td>
- &lt;td>권한 관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/sec/ram/message_ko.properties&lt;/td>
- &lt;td>권한 관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/sec/ram/message_en.properties&lt;/td>
- &lt;td>권한 관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/security/images/author_class_diagram.jpg" alt="권한관리_클래스다이어그램" >&lt;/p></description></item><item><title>권한그룹관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-group-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-group-management/</guid><description>&lt;h1 id="권한-그룹-관리">권한 그룹 관리&lt;/h1>
+부서권한관리, 그룹관리, 권한그룹관리, 롤관리, 스프링시큐리티, 사용자통합인증, 요소기술(유틸리티) 시스템, 웹에디터, 메일연동 인터페이스 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>권한그룹관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-group-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/security/authority-group-management/</guid><description>&lt;h1 id="권한-그룹-관리">권한 그룹 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>권한그룹관리&lt;/strong>는 시스템 사용을 위해 사용자의 특성에 따라 그룹을 설정하고, 특정 그룹을 선택한 뒤 해당 그룹에 속한 사용자에게 일괄적으로 권한을 부여할 수 있는 관리기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
