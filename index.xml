@@ -18163,6 +18163,19 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>도로명주소연계는 도로명주소 기반 우편번호 정보를 등록(엑셀 일괄 등록 포함)·조회·수정·삭제하는 기능이다. 소스는 공통코드관리(&lt;code>egovframework.com.sym.ccm.zip&lt;/code>) 패키지에 위치하며, 도로명주소 우편번호 데이터를 시스템에 적재해 주소 검색에 활용한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[우편번호 목록조회] -->|등록| R[우편번호 등록]
+ L -->|엑셀 일괄등록| E[우편번호 엑셀 등록]
+ L -->|목록 선택| D[우편번호 상세조회]
+ D -->|수정| U[우편번호 수정]
+ D -->|삭제| X[우편번호 삭제]
+ R --> L
+ E --> L
+ U --> L
+ X --> L
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -18293,7 +18306,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;tr>
  &lt;td>&lt;code>deleteZip(Zip)&lt;/code>&lt;/td>
  &lt;td>&lt;code>void&lt;/code>&lt;/td>
- &lt;td>우편번호에 관한 서비스 인터페이스 클래스를 정의한다&lt;/td>
+ &lt;td>우편번호를 삭제한다.&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>deleteAllZip()&lt;/code>&lt;/td>
