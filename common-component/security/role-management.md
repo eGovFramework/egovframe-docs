@@ -31,7 +31,14 @@
   ⑤ 롤목록 : 시스템 메뉴 및 기능화면에 따른 접근권한, 데이터 입력, 수정, 삭제의 접근 정보 목록을 조회한다.
 ```
 
-## 설명
+```mermaid
+flowchart LR
+    L[롤 목록조회] -->|등록| R[롤 등록]
+    L -->|수정/삭제| U[롤 수정]
+    R --> L
+    U -->|저장| L
+    U -->|삭제| L
+```
 
 ### 패키지 참조 관계
 
@@ -152,7 +159,7 @@
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 조회 | /sec/rmt/EgovRoleList.do | selectRoleList | "roleManageDAO" | "selectRoleList" |
-|  |  |  | "roleManageDAO" | "selectAuthorListTotCnt" |
+|  |  |  | "roleManageDAO" | "selectRoleListTotCnt" |
 
  ![롤목록 조회](./images/rmt-role_manage_list.png)
 
