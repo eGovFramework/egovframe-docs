@@ -182,7 +182,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /uss/ion/bnt/insertBndtManage.do | insertBndtManage | "bndtManageDAO.insertBndtManage" |
+| 등록 | /uss/ion/bnt/insertBndtDiary.do | insertBndtDiary | "bndtManageDAO.insertBndtDiary" |
 
  당직체크코드 중 사용여부 필드중 사용으로 정의된 필드를 토대로 당직일지의 정보가 화면에 출력된다.
 
@@ -195,8 +195,8 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /uss/ion/bnt/selectBndtManage.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
-| 삭제 | /uss/ion/bnt/deleteBndtManage.do | deleteBndtManage | "bndtManageDAO.deleteBndtManage" |
+| 상세조회 | /uss/ion/bnt/selectBndtDiary.do | selectBndtDiary | "bndtManageDAO.selectBndtDiary" |
+| 삭제 | /uss/ion/bnt/deleteBndtDiary.do | deleteBndtDiary | "bndtManageDAO.deleteBndtDiary" |
 
  당직일지의 상세조회 화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 당직일지를 삭제한다.
 
@@ -210,8 +210,8 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /uss/ion/bnt/updtBndtManage.do | updtBndtManage | "bndtManageDAO.updtBndtManage" |
-| 상세조회 | /uss/ion/bnt/selectBndtManage.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
+| 수정 | /uss/ion/bnt/updtBndtDiary.do | updtBndtDiary | "bndtManageDAO.updtBndtDiary" |
+| 상세조회 | /uss/ion/bnt/selectBndtDiary.do | selectBndtDiary | "bndtManageDAO.selectBndtDiary" |
 
  당직일지의 속성정보를 변경한 후 저장한다. 다음 화면은 당직일지 상세조회 화면과 동일하다.
 
