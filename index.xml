@@ -4646,6 +4646,16 @@ org.springframework.beans.factory.config.BeanPostProcessor interface는 두개�
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>시스템 또는 서비스 이용 시 많은 사람들이 빈번히 하는 질문들에 대해 별도로 관리하여 이에 관한 응답을 쉽게 찾아볼 수 있도록 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[FAQ 목록조회] -->|등록| R[FAQ 내용등록]
+ L -->|목록 클릭| D[FAQ 상세조회]
+ D -->|수정| U[FAQ 내용수정]
+ D -->|삭제| L
+ R --> L
+ U --> L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>FAQ 관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p>
 &lt;ul>
