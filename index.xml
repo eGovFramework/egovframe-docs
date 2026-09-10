@@ -17042,32 +17042,32 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngList.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngList.jsp&lt;/code>&lt;/td>
  &lt;td>네트워크서비스모니터링목록조회를 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngRegist.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngRegist.jsp&lt;/code>&lt;/td>
  &lt;td>네트워크서비스모니터링 등록을 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngUpdt.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngUpdt.jsp&lt;/code>&lt;/td>
  &lt;td>네트워크서비스모니터링 수정을 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngDetail.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngDetail.jsp&lt;/code>&lt;/td>
  &lt;td>등록된 네트워크서비스모니터링을 조회하기 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngLogList.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngLogList.jsp&lt;/code>&lt;/td>
  &lt;td>네트워크서비스모니터링로그목록조회를 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngLogDetail.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngLogDetail.jsp&lt;/code>&lt;/td>
  &lt;td>등록된 네트워크서비스모니터링로그를 조회하기 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -25329,37 +25329,37 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngList.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngList.jsp&lt;/code>&lt;/td>
  &lt;td>송수신모니터링목록조회를 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngRegist.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngRegist.jsp&lt;/code>&lt;/td>
  &lt;td>송수신모니터링 등록을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngUpdt.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngUpdt.jsp&lt;/code>&lt;/td>
  &lt;td>송수신모니터링 수정을 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngDetail.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngDetail.jsp&lt;/code>&lt;/td>
  &lt;td>등록된 송수신모니터링을 조회하기 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogList.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngLogList.jsp&lt;/code>&lt;/td>
  &lt;td>송수신모니터링로그목록조회를 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp&lt;/code>&lt;/td>
  &lt;td>등록된 송수신모니터링로그를 조회하기 위한 JSP 페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>XML&lt;/td>
- &lt;td>&lt;code>/egovframework/sqlmap/com/utl/sys/trm/EgovTrsmrcvMntrng_SQL_*.xml&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/egovframework/mapper/com/utl/sys/trm/EgovTrsmrcvMntrng_SQL_*.xml&lt;/code>&lt;/td>
  &lt;td>송수신모니터링 QUERY XML&lt;/td>
  &lt;/tr>
  &lt;/tbody>
