@@ -104,6 +104,13 @@ INSERT INTO COMTECOPSEQ VALUES('DUS_ID','0');
 
  자료이용현황통계는 크게 자료이용현황통계 목록조회, 자료이용현황통계 상세정보, 자료이용현황통계 등록 기능으로 분류된다.
 
+```mermaid
+flowchart LR
+    F([게시판 첨부파일 다운로드]) -.AOP 이벤트.-> R[자료이용현황통계 등록]
+    R --> L[자료이용현황통계 목록조회]
+    L -->|조회| D[자료이용현황통계 상세정보]
+```
+
 ### 자료이용현황통계 목록조회
 
 #### 비즈니스 규칙
@@ -119,7 +126,8 @@ INSERT INTO COMTECOPSEQ VALUES('DUS_ID','0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 대상목록 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsList", "dtaUseStatsDAO.selectDtaUseStatsListTotCnt" |
+| 대상목록 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsList", |
+|  |  |  | "dtaUseStatsDAO.selectDtaUseStatsListTotCnt" |
 | 전체카운트 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsListBarTotCnt" |
 | 그래프 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsBarList" |
 
