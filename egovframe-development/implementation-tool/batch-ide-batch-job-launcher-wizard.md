@@ -116,7 +116,7 @@ Repository Type은 JobRepository 설정이 프로젝트 내에 존재하지 않�
 .
 .
 .
-<bean id="newJobLauncher.egovBatchRunner" class="egovframework.brte.core.launch.support.EgovBatchRunner">
+<bean id="newJobLauncher.egovBatchRunner" class="org.egovframe.rte.bat.core.launch.support.EgovBatchRunner">
     <constructor-arg ref="jobRepository" />
     <constructor-arg ref="jobOperatorExample" />
     <constructor-arg ref="jobExplorerExample" />
