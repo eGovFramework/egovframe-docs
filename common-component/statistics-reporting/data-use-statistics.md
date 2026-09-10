@@ -126,7 +126,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 대상목록 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsList", |
+| 대상목록 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsList" |
 |  |  |  | "dtaUseStatsDAO.selectDtaUseStatsListTotCnt" |
 | 전체카운트 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsListBarTotCnt" |
 | 그래프 조회 | /sts/dst/selectDtaUseStatsList.do | selectDtaUseStatsList | "dtaUseStatsDAO.selectDtaUseStatsBarList" |
