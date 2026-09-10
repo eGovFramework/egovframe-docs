@@ -79,7 +79,7 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 조회 | /dam/map/tea/EgovComDamMapTeamList.do | selectMapTeamList | "MapTeamDAO.selectMapTeamList" |
-| 상세조회 | /dam/map/tea/EgovComDamMapTeam.do | selectMapTeamDetail | "MapTeamDAO.selectMapTeamDetail" |
+| 상세조회 | /dam/map/tea/EgovComDamMapTeamDetail.do | selectMapTeamDetail | "MapTeamDAO.selectMapTeamDetail" |
 
  지식맵(조직별)관리 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 지식유형, 지식명에 대해서 수행된다.
@@ -120,7 +120,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /dam/map/tea/EgovComDamMapTeam.do | selectMapTeamDetail | "MapTeamDAO.selectMapTeamDetail" |
+| 상세조회 | /dam/map/tea/EgovComDamMapTeamDetail.do | selectMapTeamDetail | "MapTeamDAO.selectMapTeamDetail" |
 | 삭제 | /dam/map/tea/EgovComDamMapTeamRemove.do | deleteMapTeam | "MapTeamDAO.deleteMapTeam" |
 
  지식맵(조직별)의 속성정보를 조회한다.

@@ -134,7 +134,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /uss/ion/bnt/selectBndtManage.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
+| 상세조회 | /uss/ion/bnt/EgovBndtManageDetail.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
 | 삭제 | /uss/ion/bnt/deleteBndtManage.do | deleteBndtManage | "bndtManageDAO.deleteBndtManage" |
 
  당직의 상세조회화면이다. 수정 버튼을 통해서 수정화면으로 이동하고, 삭제 버튼을 통해서 당직을 삭제한다.
@@ -150,7 +150,7 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 수정 | /uss/ion/bnt/updtBndtManage.do | updtBndtManage | "bndtManageDAO.updtBndtManage" |
-| 상세조회 | /uss/ion/bnt/selectBndtManage.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
+| 상세조회 | /uss/ion/bnt/EgovBndtManageDetail.do | selectBndtManage | "bndtManageDAO.selectBndtManage" |
 
  당직의 속성정보를 변경한 후 저장한다. 다음 화면은 당직 상세조회 화면과 동일하다.
 
