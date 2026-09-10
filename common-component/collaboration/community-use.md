@@ -119,7 +119,7 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | "BBSMaster.selectBBSMasterList", |
+| 목록조회 | /cop/bbs/selectBBSMasterInfs.do | selectBBSMasterInfs | "BBSMaster.selectBBSMasterList" |
 | | | | "BBSMaster.selectBBSMasterListTotCnt" |
 
 게시판관리 목록은 기본적인 페이징 처리가 되며 다음과 같은 정보를 제공한다.
