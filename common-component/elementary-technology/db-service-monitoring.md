@@ -172,8 +172,8 @@ DB서비스모니터링 스케줄러를 등록하기 위해서 `context-scheduli
 
 | Action | URL | Controller Method | Query ID |
 | :--- | :--- | :--- | :--- |
-| 조회 | `/utl/sys/dbm/selectDbMntrngList.do` | `selectDbMntrngList` | `DbMntrngDao.selectDbMntrngList` |
-| 조회 | `/utl/sys/dbm/selectDbMntrngList.do` | `selectDbMntrngList` | `DbMntrngDao.selectDbMntrngListCnt` |
+| 조회 | `/utl/sys/dbm/getDbMntrngList.do` | `selectDbMntrngList` | `DbMntrngDao.selectDbMntrngList` |
+| 조회 | `/utl/sys/dbm/getDbMntrngList.do` | `selectDbMntrngList` | `DbMntrngDao.selectDbMntrngListCnt` |
 
 DB서비스모니터링 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 검색 조건은 DB명(연계명), 관리자명에 대해 제공된다.
@@ -230,8 +230,8 @@ DB서비스모니터링 목록은 페이지당 10건씩 조회되며 페이징�
 
 | Action | URL | Controller Method | Query ID |
 | :--- | :--- | :--- | :--- |
-| 조회 | `/utl/sys/dbm/selectDbMntrngLogList.do` | `selectDbMntrngLogList` | `DbMntrngDao.selectDbMntrngLogList` |
-| 조회 | `/utl/sys/dbm/selectDbMntrngLogList.do` | `selectDbMntrngLogList` | `DbMntrngDao.selectDbMntrngLogListCnt` |
+| 조회 | `/utl/sys/dbm/getDbMntrngLogList.do` | `selectDbMntrngLogList` | `DbMntrngDao.selectDbMntrngLogList` |
+| 조회 | `/utl/sys/dbm/getDbMntrngLogList.do` | `selectDbMntrngLogList` | `DbMntrngDao.selectDbMntrngLogListCnt` |
 
 스케줄러에 의해 주기적으로 실행된 모니터링 로그 목록을 조회한다.
 검색 조건은 DB명(연계명), 관리자명, 모니터링시각 범위에 대해 제공된다.
