@@ -35257,6 +35257,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;/li>
 &lt;/ul>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[커뮤니티 사용자관리 목록조회] -->|탈퇴처리| X([탈퇴])
+ L -->|운영진등록| O([운영진 등록])
+ L -->|재가입| R([재가입])
+ X --> L
+ O --> L
+ R --> L
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;h4 id="커뮤니티-사용자관리-및-승인관리">커뮤니티 사용자관리 및 승인관리&lt;/h4>
 &lt;table>
