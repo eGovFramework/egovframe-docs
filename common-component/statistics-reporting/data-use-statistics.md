@@ -77,7 +77,7 @@ INSERT INTO COMTECOPSEQ VALUES('DUS_ID','0');
 
 ```xml
 <bean name="egovDtaUseStatsIdGnrService"
-    class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+    class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
     destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="dtaUseStatsIdStrategy" />
@@ -87,7 +87,7 @@ INSERT INTO COMTECOPSEQ VALUES('DUS_ID','0');
 </bean>
 
 <bean name="dtaUseStatsIdStrategy"
-    class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix" value="DUS_" />
     <property name="cipers" value="16" />
     <property name="fillChar" value="0" />

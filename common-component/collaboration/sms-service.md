@@ -102,14 +102,14 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SMS_ID', 1);
 #### ID Generation 환경설정(context-idgn-Sms)
 
 ```xml
-<bean name="egovSmsIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovSmsIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="smsStrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="SMS_ID"/>
 </bean>
-<bean name="smsStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="smsStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"   value="SMS_" />
     <property name="cipers"   value="16" />
     <property name="fillChar" value="0" />

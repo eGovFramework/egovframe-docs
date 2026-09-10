@@ -100,7 +100,7 @@ return idGnrService;
 
 ```xml
 <bean name="egovPrivacyLogIdGnrService"
-    class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+    class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
     destroy-method="destroy">
     <property name="dataSource" ref="dataSource" />
     <property name="strategy"   ref="privacyLogStrategy" />
@@ -110,7 +110,7 @@ return idGnrService;
   </bean>
  
   <bean name="privacyLogStrategy"
-    class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix" value="PRVCY_" />
     <property name="cipers" value="14" />
     <property name="fillChar" value="0" />

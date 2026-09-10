@@ -82,14 +82,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ### ID Generation 환경설정(context-idgn-EventAtdrn.xml)
 
 ```xml
-<bean name="egovEventAtdrnIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovEventAtdrnIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="eventAtdrnApplcntIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="APPLCNT_ID"/>
     </bean>
-    <bean name="eventAtdrnApplcntIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="eventAtdrnApplcntIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="APPLCNT_" />
         <property name="cipers"     value="12" />
         <property name="fillChar"   value="0" />

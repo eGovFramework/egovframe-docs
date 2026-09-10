@@ -75,14 +75,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 #### ID Generation 환경설정(context-idgn-SystemCntc.xml)
 
 ```xml
-<bean name="egovSystemCntcIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovSystemCntcIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="egovSystemCntcIdMsgtrategy" />
         <property name="blockSize"  value="10" />
         <property name="table"      value="COMTECOPSEQ" />
         <property name="tableName"  value="CNTC_ID" />
     </bean>
-    <bean name="egovSystemCntcIdMsgtrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="egovSystemCntcIdMsgtrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="CNTC" />
         <property name="cipers"     value="4" />
         <property name="fillChar"   value="0" />

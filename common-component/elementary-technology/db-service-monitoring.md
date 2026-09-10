@@ -118,14 +118,14 @@ INSERT INTO COMTECOPSEQ VALUES ('DB_MNTRNG_LOG_ID', 0);
 ### ID Generation 환경설정 (`context-idgn-DbMntrngLog.xml`)
 
 ```xml
-<bean name="egovDbMntrngLogIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovDbMntrngLogIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="dbMntrngLogIdStrategy" />
     <property name="blockSize"  value="10" />
     <property name="table"      value="COMTECOPSEQ" />
     <property name="tableName"  value="DB_MNTRNG_LOG_ID" />
 </bean>
-<bean name="dbMntrngLogIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="dbMntrngLogIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"     value="" />
     <property name="cipers"     value="20" />
     <property name="fillChar"   value="0" />

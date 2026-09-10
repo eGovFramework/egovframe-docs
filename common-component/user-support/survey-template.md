@@ -91,7 +91,7 @@ CREATE TABLE COMTECOPSEQ (
 
 ```xml
 <bean name="egovQustnrTmplatManageIdGnrService"
-		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+		class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 		destroy-method="destroy">
 		<property name="dataSource" ref="egov.dataSource" />
 		<property name="strategy" ref="QustnrTmplatManageInfotrategy" />
@@ -100,7 +100,7 @@ CREATE TABLE COMTECOPSEQ (
 		<property name="tableName"	value="QUSTNRTMPLA_ID"/>
 	</bean>
 	<bean name="QustnrTmplatManageInfotrategy"
-		class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 		<property name="prefix" value="QTMPLA_" />
 		<property name="cipers" value="13" />
 		<property name="fillChar" value="0" />

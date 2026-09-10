@@ -103,7 +103,7 @@ INSERT INTO COMTECOPSEQ VALUES ('RESTDE_ID','0');
 ### ID Generation 환경설정(context-idgn-RestDe.xml)
 
 ```xml
-<bean name="egovRestDeIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovRestDeIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="blockSize" value="10" />
     <property name="table" value="COMTECOPSEQ" />

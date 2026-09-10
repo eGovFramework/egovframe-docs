@@ -81,14 +81,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 #### ID Generation 환경설정(context-idgn-DamManage.xml)
 
 ```xml
-<bean name="egovDamManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovDamManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="damManageStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="DAM_ID"/>
     </bean>
-    <bean name="damManageStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="damManageStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="DMID_" />
         <property name="cipers"     value="15" />
         <property name="fillChar"   value="0" />

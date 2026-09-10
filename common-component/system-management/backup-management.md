@@ -132,28 +132,28 @@ flowchart LR
 
 ```xml
     <!--  백업작업 ID -->
-    <bean name="egovBackupOpertIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovBackupOpertIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="backupOpertIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="BACKUP_OPERT_ID"/>
     </bean>
-    <bean name="backupOpertIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="backupOpertIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="BACKUP_OPERT_" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />
     </bean>
  
     <!-- 백업결과 ID -->
-    <bean name="egovBackupResultIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovBackupResultIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="backupResultIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="BACKUP_RESULT_ID"/>
     </bean>
-    <bean name="backupResultIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="backupResultIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="BACKUP_RESULT_" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />

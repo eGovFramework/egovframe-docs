@@ -89,7 +89,7 @@ flowchart LR
 #### ID Generation 환경설정(context-idgn-Banner.xml)
 
 ```xml
-    <bean name="egovBannerIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovBannerIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="bannerIdStrategy" />
         <property name="blockSize"  value="10"/>
@@ -98,7 +98,7 @@ flowchart LR
     </bean>
  
     <bean name="bannerIdStrategy"
-        class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix" value="BANNER_" />
         <property name="cipers" value="13" />
         <property name="fillChar" value="0" />

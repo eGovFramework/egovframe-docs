@@ -55,7 +55,7 @@ flowchart LR
 
 ```xml
 <bean name="egovRestDeIdGnrService"
-    class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+    class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
     destroy-method="destroy">
     <property name="dataSource" ref="dataSource" />
     <property name="blockSize" value="10"/>

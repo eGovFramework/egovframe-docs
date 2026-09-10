@@ -80,14 +80,14 @@ menu:
 #### ID Generation 환경설정(context-idgn-UsrCnfrm.xml)
 
 ```xml
-    <bean name="egovUsrCnfrmIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovUsrCnfrmIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="usrCnfrmStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="USRCNFRM_ID"/>
     </bean>
-    <bean name="usrCnfrmStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="usrCnfrmStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"   value="USRCNFRM_" />
         <property name="cipers"   value="11" />
         <property name="fillChar" value="0" />

@@ -69,7 +69,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 ```xml
 <bean name="egovInsttCodeRecptnIdGnrService"
-		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+		class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 		destroy-method="destroy">
 		<property name="dataSource" ref="egov.dataSource" />
 		<property name="blockSize" 	value="1"/>

@@ -79,14 +79,14 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 #### ID Generation 환경설정(context-idgn-Cmt.xml)
 
 ```xml
-	<bean name="egovCmtManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService" destroy-method="destroy">
+	<bean name="egovCmtManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="cmtIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="WRKTM_ID"/>
     </bean>
-    <bean name="cmtIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="cmtIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"   value="WRKTM_" />
         <property name="cipers"   value="13" />
         <property name="fillChar" value="0" />

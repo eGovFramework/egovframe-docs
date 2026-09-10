@@ -84,7 +84,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('UNITY_LINK_ID', 1);
 
 ```xml
 <bean name="egovUnityLinkIdGnrService"
-		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
+		class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 		destroy-method="destroy">
 		<property name="dataSource" ref="egov.dataSource" />
 		<property name="strategy" ref="unityLinkIdMsgtrategy" />
@@ -93,7 +93,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('UNITY_LINK_ID', 1);
 		<property name="tableName"	value="UNITY_LINK_ID"/>
 	</bean>
 	<bean name="unityLinkIdMsgtrategy"
-		class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 		<property name="prefix" value="ULINK_" />
 		<property name="cipers" value="14" />
 		<property name="fillChar" value="0" />
@@ -183,14 +183,14 @@ flowchart LR
 #### 비즈니스 규칙
 
  입력명 우측의 빨간* 표시는 반드시 입력해야할 항목을 표시한다.
- 저장처리 시 UNITY_LINK_ID 컬럼은 "egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"를 통하여
+ 저장처리 시 UNITY_LINK_ID 컬럼은 "org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"를 통하여
 
  Primary Key => ULINK_(20자리) : ULINK_(6자리) + 일련번호(14자리)로 자동생성 부여된다.
 
 ```xml
 <!-- IdGnrService... START-->			
 <bean name="egovUnityLinkIdGnrService"
-	class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+	class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 	destroy-method="destroy">
 	<property name="dataSource" ref="dataSource" />
 	<property name="strategy" ref="unityLinkIdMsgtrategy" />
@@ -199,7 +199,7 @@ flowchart LR
 	<property name="tableName"	value="UNITY_LINK_ID"/>
 </bean>
 <bean name="unityLinkIdMsgtrategy"
-	class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+	class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 	<property name="prefix" value="ULINK_" />
 	<property name="cipers" value="14" />
 	<property name="fillChar" value="0" />

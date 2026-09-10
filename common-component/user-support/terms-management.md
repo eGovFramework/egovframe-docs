@@ -72,7 +72,7 @@ menu:
 
 ```xml
 	<bean name="egovStplatManageIdGnrService"
-		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+		class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 		destroy-method="destroy">
 		<property name="dataSource" ref="egov.dataSource" />
 		<property name="strategy"   ref="stplatManageStrategy" />
@@ -82,7 +82,7 @@ menu:
 	</bean>
  
 	<bean name="stplatManageStrategy"
-		class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 		<property name="prefix" value="STPLAT_" />
 		<property name="cipers" value="13" />
 		<property name="fillChar" value="0" />

@@ -83,14 +83,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ### ID Generation 환경설정(context-idgn-MtgPlaceManage.xml)
 
 ```xml
-<bean name="egovMtgPlaceResveIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovMtgPlaceResveIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="mtgPlaceResveIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="RESVE_ID"/>
     </bean>
-    <bean name="mtgPlaceResveIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="mtgPlaceResveIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="RESVE_" />
         <property name="cipers"     value="14" />
         <property name="fillChar"   value="0" />

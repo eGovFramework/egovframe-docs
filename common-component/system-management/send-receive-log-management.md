@@ -79,7 +79,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 ```xml
 <bean name="egovTrsmrcvLogIdGnrService"
-    class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+    class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
     destroy-method="destroy">
     <property name="dataSource" ref="dataSource" />
     <property name="strategy"   ref="trsmrcvLogStrategy" />
@@ -89,7 +89,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
   </bean>
  
   <bean name="trsmrcvLogStrategy"
-    class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix" value="TRSMRCV_" />
     <property name="cipers" value="12" />
     <property name="fillChar" value="0" />

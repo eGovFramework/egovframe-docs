@@ -75,14 +75,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 ### ID Generation 환경설정(context-idgn-BatchResult.xml)
 
 ```xml
-<bean name="egovBatchResultIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovBatchResultIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="batchResultIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="BATCH_RESULT_ID"/>
     </bean>
-    <bean name="batchResultIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="batchResultIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="BRT" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />

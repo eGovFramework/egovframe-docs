@@ -89,7 +89,7 @@ flowchart LR
 
 ```xml
 	<bean name="egovQnaManageIdGnrService"
-		class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrService"
+		class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
 		destroy-method="destroy">
 		<property name="dataSource" ref="egov.dataSource" />
 		<property name="strategy"   ref="qnaManageStrategy" />
@@ -99,7 +99,7 @@ flowchart LR
 	</bean>
  
 	<bean name="qnaManageStrategy"
-		class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 		<property name="prefix" value="QA_" />
 		<property name="cipers" value="17" />
 		<property name="fillChar" value="0" />

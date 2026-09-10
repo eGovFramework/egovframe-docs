@@ -76,7 +76,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('BLOG_ID', 1);
 #### ID Generation 환경 설정(context-idgn-bbs.xml)
 
 ```xml
-<bean name="egovBlogIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" 
+<bean name="egovBlogIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" 
     destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="blogIdStrategy" />
@@ -84,7 +84,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('BLOG_ID', 1);
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="BLOG_ID"/>
 </bean>
-<bean name="blogIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="blogIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"   value="BLOG_" />
     <property name="cipers"   value="15" />
     <property name="fillChar" value="0" />

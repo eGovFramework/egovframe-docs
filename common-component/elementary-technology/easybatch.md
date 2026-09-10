@@ -51,15 +51,15 @@
   </step>
 </job>
  
-<bean id="defaultReader" class="egovframework.rte.bat.item.DefaultItemReader" scope="step">
+<bean id="defaultReader" class="org.egovframe.rte.bat.item.DefaultItemReader" scope="step">
   <property name="dataSource" ref="dataSource" />
 </bean>
  
-<bean id="defaultWriter" class="egovframework.rte.bat.item.DefaultItemWriter" scope="step">
+<bean id="defaultWriter" class="org.egovframe.rte.bat.item.DefaultItemWriter" scope="step">
   <property name="dataSource" ref="dataSource" />
 </bean>
  
-<bean id="itemProcessor" class="egovframework.rte.bat.sample.domain.trade.CustomerCreditIncreaseProcessor" />
+<bean id="itemProcessor" class="org.egovframe.rte.bat.sample.domain.trade.CustomerCreditIncreaseProcessor" />
 ```
 
  2. 실행한다.
