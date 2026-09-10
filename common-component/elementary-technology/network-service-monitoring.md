@@ -46,12 +46,12 @@ menu:
 | 스케줄링 | `egovframework/com/utl/sys/nsm/service/EgovNtwrkSvcMntrngScheduling.java` | 네트워크서비스모니터링을 위한 스케줄링 클래스 |
 | 스케줄링 | `egovframework/com/utl/sys/nsm/service/NtwrkSvcMntrngChecker.java` | 네트워크서비스모니터링을 위한 스케줄링 클래스 |
 | 기타 | `egovframework/com/utl/sys/nsm/service/NtwrkSvcMntrngResult.java` | 네트워크서비스 모니터링에 대한 결과를 처리하기 위한 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngList.jsp` | 네트워크서비스모니터링목록조회를 위한 jsp페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngRegist.jsp` | 네트워크서비스모니터링 등록을 위한 jsp페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngUpdt.jsp` | 네트워크서비스모니터링 수정을 위한 jsp페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngDetail.jsp` | 등록된 네트워크서비스모니터링을 조회하기 위한 jsp페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngLogList.jsp` | 네트워크서비스모니터링로그목록조회를 위한 jsp페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/nsm/EgovNtwrkSvcMntrngLogDetail.jsp` | 등록된 네트워크서비스모니터링로그를 조회하기 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngList.jsp` | 네트워크서비스모니터링목록조회를 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngRegist.jsp` | 네트워크서비스모니터링 등록을 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngUpdt.jsp` | 네트워크서비스모니터링 수정을 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngDetail.jsp` | 등록된 네트워크서비스모니터링을 조회하기 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngLogList.jsp` | 네트워크서비스모니터링로그목록조회를 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngLogDetail.jsp` | 등록된 네트워크서비스모니터링로그를 조회하기 위한 jsp페이지 |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/nsm/EgovNtwrkSvcMntrng_SQL_*.xml` | 네트워크서비스모니터링을 위한 각 DB용 Query XML |
 | Validator Rule XML | `resources/egovframework/validator/validator-rules.xml` | Validator Rule을 정의한 XML |
 | Validator XML | `resources/egovframework/validator/com/utl/sys/nsm/EgovNtwrkSvcMntrng.xml` | 네트워크서비스모니터링을 위한 Validator XML |

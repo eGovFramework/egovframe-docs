@@ -69,12 +69,12 @@ DB서비스모니터링은 등록된 DB의 연결 정보 및 설정에 따라 �
 | 스케줄링 | `egovframework.com.utl.sys.dbm.service.EgovDbMntrngScheduling.java` | DB서비스모니터링로그정보를 위한 스케줄링 클래스 |
 | 스케줄링 | `egovframework.com.utl.sys.dbm.service.DbMntrngChecker.java` | DB서비스모니터링로그정보를 위한 스케줄링 클래스 |
 | 기타 | `egovframework.com.utl.sys.dbm.service.DbMntrngResult.java` | DB서비스모니터링로그정보에 대한 결과를 처리하기 위한 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/dbm/EgovDbMntrngList.jsp` | DB서비스모니터링 목록 조회를 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/dbm/EgovDbMntrngRegist.jsp` | DB서비스모니터링 등록을 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/dbm/EgovDbMntrngUpdt.jsp` | DB서비스모니터링 수정을 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/dbm/EgovDbMntrngDetail.jsp` | 등록된 DB서비스모니터링을 조회하기 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/dbm/EgovDbMntrngLogList.jsp` | DB서비스모니터링 로그 목록 조회를 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/dbm/EgovDbMntrngLogDetail.jsp` | 등록된 DB서비스모니터링 로그를 조회하기 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/dbm/EgovDbMntrngList.jsp` | DB서비스모니터링 목록 조회를 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/dbm/EgovDbMntrngRegist.jsp` | DB서비스모니터링 등록을 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/dbm/EgovDbMntrngUpdt.jsp` | DB서비스모니터링 수정을 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/dbm/EgovDbMntrngDetail.jsp` | 등록된 DB서비스모니터링을 조회하기 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/dbm/EgovDbMntrngLogList.jsp` | DB서비스모니터링 로그 목록 조회를 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/dbm/EgovDbMntrngLogDetail.jsp` | 등록된 DB서비스모니터링 로그를 조회하기 위한 JSP 페이지 |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_altibase.xml` | DB서비스모니터링을 위한 Altibase용 Query XML |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_cubrid.xml` | DB서비스모니터링을 위한 Cubrid용 Query XML |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_maria.xml` | DB서비스모니터링을 위한 MariaDB용 Query XML |
