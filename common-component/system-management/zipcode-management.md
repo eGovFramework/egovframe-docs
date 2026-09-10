@@ -19,6 +19,19 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[우편번호 목록조회] -->|등록| R[우편번호 등록]
+    L -->|엑셀파일 등록| E[우편번호 엑셀파일 등록]
+    L -->|목록클릭| D[우편번호 상세조회]
+    D -->|수정| U[우편번호 수정]
+    D -->|삭제| X[우편번호 삭제]
+    R --> L
+    E --> L
+    U --> L
+    X --> L
+```
+
 ### 패키지 참조 관계
 
  우편번호 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -226,7 +239,7 @@ function goAddSearch() {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/ccm/zip/EgovCcmExcelZipRegist.do | insertExcelZip | "ZipManageDAO.deleteAllZip" |
+| 등록 | /sym/ccm/zip/EgovCcmExcelZipRegist.do | insertExcelZip | "ZipManageDAO.insertExcelZip" |
 
  다음의 우편번호 엑셀 파일의 양식을 이용하여 우편번호를 등록한다.
 
