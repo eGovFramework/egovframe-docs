@@ -28,7 +28,7 @@ menu:
 | --- | --- | --- |
 | Controller | `egovframework.com.utl.sys.rsc.web.EgovLoginSesionController.java` | 로그인세션정보체크를 위한 컨트롤러 클래스 |
 | Util | `egovframework.com.utl.sys.rsc.service.EgovLoginSesionCeckUtil.java` | 로그인세션정보체크를 위한 Util 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/rsc/EgovLoginSesionCheck.jsp` | 로그인세션정보체크 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/rsc/EgovLoginSesionCheck.jsp` | 로그인세션정보체크 페이지 |
 
 ## 관련화면 및 수행매뉴얼
 

@@ -25,7 +25,7 @@ menu:
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/wsi/EgovWebStandardInspection.jsp` | 웹표준검사 위한 jsp페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/wsi/EgovWebStandardInspection.jsp` | 웹표준검사 위한 jsp페이지 |
 
 ## 참고자료
 
