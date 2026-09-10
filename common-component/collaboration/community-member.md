@@ -25,6 +25,16 @@ menu:
 
 - 패키지 간 참조 관계 : [게시판, 커뮤니티, 블로그 Package Dependency](../intro/package-reference.md)
 
+```mermaid
+flowchart LR
+    L[커뮤니티 사용자관리 목록조회] -->|탈퇴처리| X([탈퇴])
+    L -->|운영진등록| O([운영진 등록])
+    L -->|재가입| R([재가입])
+    X --> L
+    O --> L
+    R --> L
+```
+
 ### 관련소스
 
 #### 커뮤니티 사용자관리 및 승인관리
@@ -77,7 +87,7 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/cmy/selectCommuUserList.do | selectCommuUserList | "CommuManage.selectCommuUserList", |
+| 목록조회 | /cop/cmy/selectCommuUserList.do | selectCommuUserList | "CommuManage.selectCommuUserList" |
 | | | | "CommuManage.selectCommuUserListCnt" |
 
 페이지 당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
