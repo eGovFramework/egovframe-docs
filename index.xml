@@ -19274,7 +19274,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/rsc/EgovLoginSesionCheck.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/rsc/EgovLoginSesionCheck.jsp&lt;/code>&lt;/td>
  &lt;td>로그인세션정보체크 페이지&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -31077,7 +31077,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tbody>
  &lt;tr>
  &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/utl/sys/wsi/EgovWebStandardInspection.jsp&lt;/code>&lt;/td>
+ &lt;td>&lt;code>/WEB-INF/jsp/egovframework/com/utl/sys/wsi/EgovWebStandardInspection.jsp&lt;/code>&lt;/td>
  &lt;td>웹표준검사 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;/tbody>
