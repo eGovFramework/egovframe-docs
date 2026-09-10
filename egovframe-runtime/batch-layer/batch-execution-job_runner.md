@@ -68,7 +68,7 @@ EgovBatchRunner를 사용하기 위해서는 XML 파일에 JobOperator, JobExplo
 EgovBatchRunner의 생성자에 JobOperator, JobExplorer, JobRepository를 전달한다.
 
 ```xml
-<bean id="jobBatchRunner" class="egovframework.brte.core.launch.support.EgovBatchRunner">
+<bean id="jobBatchRunner" class="org.egovframe.rte.bat.core.launch.support.EgovBatchRunner">
 	<constructor-arg ref="jobOperator" />
 	<constructor-arg ref="jobExplorer" />
 	<constructor-arg ref="jobRepository" />

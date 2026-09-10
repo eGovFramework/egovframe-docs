@@ -72,7 +72,7 @@ Job 수행시, 동기와 비동기 방식으로 데이터를 처리할 수 있�
 	</property>
 </bean>
 
-<bean id="delegateObject" class="egovframework.brte.sample.common.domain.person.PersonService" />
+<bean id="delegateObject" class="org.egovframe.rte.bat.sample.domain.person.PersonService" />
 ```
 
 ### Async Item Processor 구성

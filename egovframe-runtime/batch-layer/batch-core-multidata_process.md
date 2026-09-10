@@ -70,7 +70,7 @@ file-1.txt  file-2.txt  ignored.txt
 		    <property name="fieldSetMapper">
 			<bean class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
 			    <property name="targetType" 
-                               value="egovframework.brte.sample.common.domain.trade.CustomerCredit" />
+                               value="org.egovframe.rte.bat.sample.domain.trade.CustomerCredit" />
 			</bean>
          	    </property>
 		 </bean>
@@ -129,10 +129,10 @@ Processor에서는 전달된 데이터 타입에 맞게 비즈니스 로직을 �
 | 
 ```xml
 <bean id="compositeItemReader"
-   class="egovframework.brte.core.item.composite.reader.EgovCompositeFileReader">
+   class="org.egovframe.rte.bat.core.item.composite.reader.EgovCompositeFileReader">
     <property name="itemsMapper">
         <bean
-           class="egovframework.brte.core.item.composite.EgovCompositeItemMapper" />
+           class="org.egovframe.rte.bat.core.item.composite.EgovCompositeItemMapper" />
     </property>
     <property name="returnType" value="vo" />
     <property name="itemReaderList">
@@ -146,10 +146,10 @@ Processor에서는 전달된 데이터 타입에 맞게 비즈니스 로직을 �
 
 ```xml
 <bean id="compositeItemReader"
-   class="egovframework.brte.core.item.composite.reader.EgovCompositeFileReader">
+   class="org.egovframe.rte.bat.core.item.composite.reader.EgovCompositeFileReader">
     <property name="itemsMapper">
         <bean
-           class="egovframework.brte.core.item.composite.EgovCompositeItemMapper" />
+           class="org.egovframe.rte.bat.core.item.composite.EgovCompositeItemMapper" />
     </property>
     <property name="returnType" value="reader" />
     <property name="itemReaderList">
@@ -182,10 +182,10 @@ Processor에서는 전달된 데이터 타입에 맞게 비즈니스 로직을 �
 
 ```xml
 <bean id="compositeItemReader"
-   class="egovframework.brte.core.item.composite.reader.EgovCompositeFileReader">
+   class="org.egovframe.rte.bat.core.item.composite.reader.EgovCompositeFileReader">
     <property name="itemsMapper">
         <bean
-           class="egovframework.brte.core.item.composite.EgovCompositeItemMapper" />
+           class="org.egovframe.rte.bat.core.item.composite.EgovCompositeItemMapper" />
     </property>
     <property name="returnType" value="vo" />
     <property name="itemReaderList">
@@ -208,7 +208,7 @@ Processor에서는 전달된 데이터 타입에 맞게 비즈니스 로직을 �
             </property>
             <property name="fieldSetMapper">
                 <bean class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
-                    <property name="targetType" value="egovframework.brte.sample.common.domain.trade.CustomerCredit" />
+                    <property name="targetType" value="org.egovframe.rte.bat.sample.domain.trade.CustomerCredit" />
                 </bean>
             </property>
         </bean>
@@ -226,7 +226,7 @@ Processor에서는 전달된 데이터 타입에 맞게 비즈니스 로직을 �
             </property>
             <property name="fieldSetMapper">
                 <bean class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
-                    <property name="targetType" value="egovframework.brte.sample.common.domain.trade.CustomerCredit" />	
+                    <property name="targetType" value="org.egovframe.rte.bat.sample.domain.trade.CustomerCredit" />	
                 </bean>
             </property>
         </bean>
