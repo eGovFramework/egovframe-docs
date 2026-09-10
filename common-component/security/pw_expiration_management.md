@@ -23,6 +23,14 @@
 
  계정별 비밀번호 생성 또는 변경일시는 DB테이블의 컬럼에 저장되며 지정된 기간이 경과하면 로그인시 체크하여 변경을 요청한다.
 
+```mermaid
+flowchart LR
+    L[로그인] --> C[비밀번호 만료기간 체크]
+    C -->|만료일 경과| P[비밀번호 만료 팝업]
+    P -->|지금 즉시 변경하기| U([비밀번호 변경 화면])
+    P -->|다음에 변경하기| X([팝업 닫기])
+```
+
 ### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
@@ -171,6 +179,7 @@ public String noticeExpirePwd(@RequestParam Map<String, Object> commandMap, Mode
 	model.addAttribute("elapsedTimeExpiration", passedDayChangePWD - expirePwdDay);
  
 	return "egovframework/com/uat/uia/EgovExpirePwd";
+}
 ```
 
 #### 관련화면 및 수행매뉴얼
