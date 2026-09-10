@@ -179,7 +179,7 @@ trsmrcvLogService.logInsertTrsmrcvLogSummary();
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /sym/log/tlg/SelectTrsmrcvLogList.do | selectTrsmrcvLogInf | "TrsmrcvLogDAO.selectTrsmrcvLogInf", |
+| 목록조회 | /sym/log/tlg/SelectTrsmrcvLogList.do | selectTrsmrcvLogInf | "TrsmrcvLogDAO.selectTrsmrcvLogInf" |
 |  |  |  | "TrsmrcvLogDAO.selectTrsmrcvLogInfCnt" |
 
  ![image](./images/sym-trsmrcv-egovtrsmrcvloglist.png)

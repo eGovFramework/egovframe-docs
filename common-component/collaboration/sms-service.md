@@ -190,7 +190,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/sms/selectSmsList.do | selectSmsList | "SmsDAO" | "selectSmsInfs", |
+| 목록조회 | /cop/sms/selectSmsList.do | selectSmsList | "SmsDAO" | "selectSmsInfs" |
 | | | | "SmsDAO" | "selectSmsInfsCnt" |
 
 문자메시지 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 페이지당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)

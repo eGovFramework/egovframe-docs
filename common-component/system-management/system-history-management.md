@@ -88,7 +88,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /sym/log/slg/SelectSysHistoryList.do | selectSysHistoryList | "SysHistoryDAO.selectSysHistoryList", |
+| 목록조회 | /sym/log/slg/SelectSysHistoryList.do | selectSysHistoryList | "SysHistoryDAO.selectSysHistoryList" |
 |  |  |  | "SysHistoryDAO.selectSysHistoryListCnt" |
 
  ![image](./images/sym-syshist-egovsyshistlist.jpg)

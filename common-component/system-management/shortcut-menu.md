@@ -82,7 +82,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /sym/mnu/bmm/selectBkmkMenuManageList.do | selectBkmkMenuManageList | "BkmkMenuManageDAO.selectBkmkMenuManageList", |
+| 목록조회 | /sym/mnu/bmm/selectBkmkMenuManageList.do | selectBkmkMenuManageList | "BkmkMenuManageDAO.selectBkmkMenuManageList" |
 |  |  |  | "BkmkMenuManageDAO.selectBkmkMenuManageListCnt" |
 
  검색조건은 메뉴명에 대해서 수행된다. 페이지당 검색 범위를 변경하고자 하는 경우
@@ -129,7 +129,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 미리보기 | /sym/mnu/bmm/previewBkmkInf.do | previewBkmkInf | "BkmkMenuManageDAO.selectBkmkMenuManageList", |
+| 미리보기 | /sym/mnu/bmm/previewBkmkInf.do | previewBkmkInf | "BkmkMenuManageDAO.selectBkmkMenuManageList" |
 |  |  |  | "BkmkMenuManageDAO.selectBkmkMenuManageListCnt" |
 
  ![image](./images/sym-shortcut-bkmkpreview.jpg)
@@ -148,7 +148,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회팝업 | /sym/mnu/bmm/selectMenuList.do | selectMenuList | "BkmkMenuManageDAO.selectBkmkMenuList", |
+| 조회팝업 | /sym/mnu/bmm/selectMenuList.do | selectMenuList | "BkmkMenuManageDAO.selectBkmkMenuList" |
 |  |  |  | "BkmkMenuManageDAO.selectBkmkMenuListCnt" |
 
  ![image](./images/sym-shortcut-bkmkmenu.jpg)
