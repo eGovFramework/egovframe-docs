@@ -46,7 +46,7 @@ UUID는 다음 5개의 Version이 존재한다.
   - SHA-1 Hashing을 이용하여 UUID를 생성한다.
 
 ## 설명
-ID 생성 방식으로는 [UUID](#Universally-Unique-Identifier(UUID))를 생성하는 [UUID Generation Service](#UUID-Generation-Service)와 sequence를 활용하는 [Sequence Id Generation Service](#Sequence-Id-Generation-Service), 그리고 키제공을 위한 테이블을 지정하여 생성하는 [Table Id Generation Service](#Table-Id-Generation-Service) 3가지가 있다.
+ID 생성 방식으로는 [UUID](#universally-unique-identifieruuid)를 생성하는 [UUID Generation Service](#uuid-generation-service)와 sequence를 활용하는 [Sequence Id Generation Service](#sequence-id-generation-service), 그리고 키제공을 위한 테이블을 지정하여 생성하는 [Table Id Generation Service](#table-id-generation-service) 3가지가 있다.
 
 ### UUID Generation Service
 
@@ -54,7 +54,7 @@ ID 생성 방식으로는 [UUID](#Universally-Unique-Identifier(UUID))를 생성
 
 String 타입의 ID 생성과 BigDecimal 타입의 ID 생성 두가지 유형 ID 생성을 지원한다.
 
-지원하는 방법은 설정에 따라서 [Mac Address Base Service](#Mac-Address-Base-Service), [IP Address Base Service](#IP-Address-Base-Service), [No Address Base Service](#No-Address-Base-Service) 세가지 유형이 있다.
+지원하는 방법은 설정에 따라서 [Mac Address Base Service](#mac-address-base-service), [IP Address Base Service](#ip-address-base-service), [No Address Base Service](#no-address-base-service) 세가지 유형이 있다.
 
 #### Mac Address Base Service
 
@@ -136,7 +136,7 @@ public void testUUIdGenerationNoAddress() throws Exception {
 
 ### Sequence Id Generation Service
 
-새로운 ID를 생성하기 위해 Database의 SEQUENCE를 사용하는 서비스이다. 서비스를 이용하는 시스템에서 Query를 지정하여 아이디를 생성할 수 있도록 하고 [Basic Type Service](#Basic-Type-Service)와 [BigDecimal Type Service](#BigDecimal-Type-Service) 두가지를 지원한다.
+새로운 ID를 생성하기 위해 Database의 SEQUENCE를 사용하는 서비스이다. 서비스를 이용하는 시스템에서 Query를 지정하여 아이디를 생성할 수 있도록 하고 [Basic Type Service](#basic-type-service)와 [BigDecimal Type Service](#bigdecimal-type-service) 두가지를 지원한다.
 
 #### Basic Type Service
 
@@ -178,7 +178,7 @@ public void testPrimaryTypeIdGeneration() throws Exception {
 
 #### BigDecimal Type Service
 
-BigDecimal ID를 제공하는 서비스로 [기본타입 ID 제공 서비스](#Basic-Type-Service) 설정에 추가적으로 `useBigDecimals`을 `true`로 설정하여 BigDecimal 사용하도록 한다.
+BigDecimal ID를 제공하는 서비스로 [기본타입 ID 제공 서비스](#basic-type-service) 설정에 추가적으로 `useBigDecimals`을 `true`로 설정하여 BigDecimal 사용하도록 한다.
 
 ##### DB Schema
 
@@ -260,7 +260,7 @@ SELECT NEXT VALUE FOR <sequence name> FROM SYSIBM.SYSDUMMY1
 
 table_name(`CHAR` 또는 `VARCHAR`타입), next_id(`integer` 또는 `DECIMAL` type)와 같이 두 칼럼을 필요로 한다.
 
-별도의 테이블에 설정된 정보만을 사용하여 제공하는 [Basic Service](#Basic-Service), prefix와 채울 문자열을 지정하여 String ID를 생성할 수 있는 [Strategy Base Service](#Strategy-Base-Service)를 제공한다.
+별도의 테이블에 설정된 정보만을 사용하여 제공하는 [Basic Service](#basic-service), prefix와 채울 문자열을 지정하여 String ID를 생성할 수 있는 [Strategy Base Service](#strategy-base-service)를 제공한다.
 
 #### Basic Service
 
@@ -323,7 +323,7 @@ public void testBasicService() throws Exception {
 
 아이디 생성을 위한 룰을 등록하고 룰에 맞는 아이디를 생성할 수 있도록 지원하는 서비스이다.
 
-위의 [Basic Service](#Basic-Service)에서 추가적으로 Strategy 정보 설정을 추가하여 사용 할 수 있다.
+위의 [Basic Service](#basic-service)에서 추가적으로 Strategy 정보 설정을 추가하여 사용 할 수 있다.
 
 단, 이 서비스는 `String` 타입의 `ID`만을 제공한다.
 
