@@ -133,7 +133,7 @@ Spring의 `Validator` 인터페이스를 구현한 커스텀 Validator로 처리
 | --- | --- | --- | --- |
 | egovframework.com.sym.bat.validation.BatchOpertValidator | `batchOpertValidator` | `BatchOpert` | 배치작업에 지정한 배치프로그램이 실제 파일로 존재하는지, 파일이 맞는지, 접근 가능한지 검사 |
 | egovframework.com.sym.sym.bak.validation.BackupOpertValidator | `backupOpertValidator` | `BackupOpert` | 백업 원본 디렉토리와 백업 대상 디렉토리가 실제로 존재하는지 검사 |
-| egovframework.com.uss.umt.validation.PasswordManageMapValidator | `passwordManageMapValidator` | `PasswordManageVO` | 비밀번호 필수 입력·길이(8~20자)·연속문자·반복문자·3가지 조합 및 비밀번호 확인값 일치 검사 | -->
+| egovframework.com.uss.umt.validation.PasswordManageMapValidator | `passwordManageMapValidator` | `PasswordManageVO` | 비밀번호 필수 입력·길이(8~20자)·연속문자·반복문자·3가지 조합 및 비밀번호 확인값 일치 검사 |
 
 `BatchOpertValidator`와 `BackupOpertValidator`는 각각 `EgovBatchOpertController`, `EgovBackupOpertController`에서
 주입받아 직접 호출한다. `PasswordManageMapValidator`는 빈으로 등록되어 있으므로 비밀번호 변경 화면 등
