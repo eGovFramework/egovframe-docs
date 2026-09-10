@@ -25,7 +25,7 @@ menu:
 배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.
 
 ```xml
-<bean id="egovStepVariableListener" class="egovframework.rte.bat.support.EgovStepVariableListener">
+<bean id="egovStepVariableListener" class="org.egovframe.rte.bat.support.EgovStepVariableListener">
 <property name="pros">
 <props>
 	<prop key="StepVariableKey1">StepVariableValue1</prop>

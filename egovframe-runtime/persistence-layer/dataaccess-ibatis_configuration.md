@@ -35,7 +35,7 @@ menu:
 		defaultStatementTimeout="1" />
  
 	<typeHandler javaType="java.util.Calendar" jdbcType="TIMESTAMP"
-		callback="egovframework.rte.psl.dataaccess.typehandler.CalendarTypeHandler" />
+		callback="org.egovframe.rte.psl.dataaccess.typehandler.CalendarTypeHandler" />
  
 	<transactionManager type="JDBC">
 		<dataSource type="DBCP">

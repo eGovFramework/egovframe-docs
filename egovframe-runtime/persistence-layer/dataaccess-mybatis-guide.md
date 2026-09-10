@@ -118,8 +118,8 @@ public interface EmployerMapper  {
 Ex: context-mapper.xml
 
 ```xml
-<bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
-	<property name="basePackage" value="egovframework.rte.**.mapper" />
+<bean class="org.egovframe.rte.psl.dataaccess.mapper.MapperConfigurer">
+	<property name="basePackage" value="org.egovframe.rte.**.mapper" />
 </bean>
 ```
 

@@ -45,8 +45,8 @@ package itl.sample;
  
 import jakarta.annotation.Resource;
  
-import egovframework.rte.itl.integration.EgovIntegrationContext;
-import egovframework.rte.itl.integration.EgovIntegrationService;
+import org.egovframe.rte.itl.integration.EgovIntegrationContext;
+import org.egovframe.rte.itl.integration.EgovIntegrationService;
  
 public class EgovIntegrationSample
 {
@@ -512,8 +512,8 @@ EgovIntegrationServiceProvider interface는 연계 서비스를 제공하기 위
 ```java
 package itl.sample;
  
-import egovframework.rte.itl.integration.EgovIntegrationMessage;
-import egovframework.rte.itl.integration.EgovIntegrationServiceProvider;
+import org.egovframe.rte.itl.integration.EgovIntegrationMessage;
+import org.egovframe.rte.itl.integration.EgovIntegrationServiceProvider;
  
 public class ServiceVerifyName implements EgovIntegrationServiceProvider
 {

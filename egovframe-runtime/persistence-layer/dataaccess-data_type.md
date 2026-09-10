@@ -223,10 +223,10 @@ create table TYPETEST (
 <sqlMap namespace="TypeTest">
  
 	<typeAlias alias="typeTestVO"
-		type="egovframework.rte.psl.dataaccess.vo.TypeTestVO" />
+		type="org.egovframe.rte.psl.dataaccess.vo.TypeTestVO" />
  
 	<!-- CalendarTypeHandler 는 sql-map-config.xml 에 등록하였음 -->
-	<typeAlias alias="calendarTypeHandler" type="egovframework.rte.psl.dataaccess.typehandler.CalendarTypeHandler"/>
+	<typeAlias alias="calendarTypeHandler" type="org.egovframe.rte.psl.dataaccess.typehandler.CalendarTypeHandler"/>
  
 	<resultMap id="typeTestResult" class="typeTestVO">
 		<result property="id" column="ID" />

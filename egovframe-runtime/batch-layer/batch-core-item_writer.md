@@ -364,13 +364,13 @@ NDX 파일목록 중 잘못된 파일명이 존재할 경우 에러를 발생한
 Index Reader을 통해 읽어드린 파일을 NDX파일 설정에 따라 동적으로 새로운 파일을 생성한다.
 
 ```xml
-<bean id="fileIndex-delimitedItemWriter" class="egovframework.rte.bat.core.item.file.EgovIndexFileWriter" scope="step">
+<bean id="fileIndex-delimitedItemWriter" class="org.egovframe.rte.bat.core.item.file.EgovIndexFileWriter" scope="step">
 	<property name="indexResource" value="file:./src/main/resources/egovframework/batch/data/inputs/csvData_NDX(+1)" />
 	<property name="lineAggregator">
 		<bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
 			<property name="delimiter" value="," />
 			<property name="fieldExtractor">
-				<bean class="egovframework.rte.bat.core.item.file.transform.EgovFieldExtractor">
+				<bean class="org.egovframe.rte.bat.core.item.file.transform.EgovFieldExtractor">
 					<property name="names" value="name,credit" />
 				</bean>
 			</property>
@@ -400,7 +400,7 @@ Index Reader을 통해 읽어드린 파일을 NDX파일 설정에 따라 동적�
 
 #### EgovMyBatisBatchItemWriter 설정항목 설정
 ```xml
-<bean id="mybatisJobStep.mybatisItemWriter" class="egovframework.rte.bat.item.database.EgovMyBatisBatchItemWriter">
+<bean id="mybatisJobStep.mybatisItemWriter" class="org.egovframe.rte.bat.core.item.database.EgovMyBatisBatchItemWriter">
 	<property name="resourceVariable" ref="resourceVariable" />
 	<property name="jobVariable" ref="jobVariable" />
 	<property name="stepVariable" ref="stepVariable" />

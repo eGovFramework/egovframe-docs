@@ -122,7 +122,7 @@ commit;
 		<jdbc:script location="classpath:db/dml.sql" />
 	</jdbc:embedded-database>
  
-	<bean id="dbPropertySource" class="egovframework.rte.fdl.property.db.DbPropertySource">
+	<bean id="dbPropertySource" class="org.egovframe.rte.fdl.property.db.DbPropertySource">
 		<constructor-arg value="dbPropertySource"/>
 		<constructor-arg ref="dataSource"/>
 		<constructor-arg value="SELECT PKEY, PVALUE FROM PROPERTY"/>
@@ -137,7 +137,7 @@ WAS 기동 시에 DB값을 가져오도록 web.xml에 추가설정이 필요하�
 ```xml
 <context-param>
     <param-name>contextInitializerClasses</param-name>
-    <param-value>egovframework.rte.fdl.property.db.initializer.DBPropertySourceInitializer</param-value>
+    <param-value>org.egovframe.rte.fdl.property.db.initializer.DBPropertySourceInitializer</param-value>
 </context-param>
 <context-param>
     <param-name>propertySourceConfigLocation</param-name>

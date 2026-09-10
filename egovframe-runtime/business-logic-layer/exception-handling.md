@@ -74,7 +74,7 @@ ExceptionTransfer의 property로 존재하는 exceptionHandlerService는 다수�
 		</aop:aspect>
 	</aop:config>
  
-	<bean id="exceptionTransfer" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer">
+	<bean id="exceptionTransfer" class="org.egovframe.rte.fdl.cmmn.aspect.ExceptionTransfer">
 		<property name="exceptionHandlerService">
 			<list>
 				<ref bean="defaultExceptionHandleManager" />
@@ -83,7 +83,7 @@ ExceptionTransfer의 property로 존재하는 exceptionHandlerService는 다수�
 	</bean>
  
 	<bean id="defaultExceptionHandleManager"
-		class="egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager">
+		class="org.egovframe.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager">
 		<property name="patterns">
 			<list>
 				<value>**service.*Impl</value>
@@ -97,7 +97,7 @@ ExceptionTransfer의 property로 존재하는 exceptionHandlerService는 다수�
 	</bean>
  
 	<bean id="egovHandler"
-		class="egovframework.rte.fdl.cmmn.exception.handler.EgovServiceExceptionHandler" />
+		class="org.egovframe.rte.fdl.exception.handler.EgovServiceExceptionHandler" />
 ...
 ```
 defaultExceptionHandleManager는 setPatterns(), setHandlers() 메소드를 가지고 있다. 상단과 같이 등록된 pattern 정보를 이용하여 Exception 발생 클래스와의 비교하여 ture인 경우 handlers에 등록된 handler를 실행한다.<br/>
@@ -175,7 +175,7 @@ CustomizableHandler의 등록을 해보도록 하겠다.<br/>
 여기서 주의해야 하는 부분은 patterns에 sample 패키지에 있는 Helloworld 클래스를 지정해주어야 한다는 것이다.
 
 ```xml
-	<bean id="exceptionTransfer" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer">
+	<bean id="exceptionTransfer" class="org.egovframe.rte.fdl.cmmn.aspect.ExceptionTransfer">
 		<property name="exceptionHandlerService">
 			<list>
 				<ref bean="customizableExceptionHandleManager" />
@@ -184,7 +184,7 @@ CustomizableHandler의 등록을 해보도록 하겠다.<br/>
 	</bean>
  
 	<bean id="customizableExceptionHandleManager"
-		class="egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager">
+		class="org.egovframe.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager">
 		<property name="patterns">
 			<list>
 				<value>**sample.Helloworld</value>
@@ -218,7 +218,7 @@ leaveaTrace·TraceHandler 관련 Bean 정의는 [The IoC Container](https://docs
 
 ```xml
 ...
-	<bean id="leaveaTrace" class="egovframework.rte.fdl.cmmn.trace.LeaveaTrace">
+	<bean id="leaveaTrace" class="org.egovframe.rte.fdl.cmmn.trace.LeaveaTrace">
 		<property name="traceHandlerServices">
 			<list>
 				<ref bean="traceHandlerService" />
@@ -226,7 +226,7 @@ leaveaTrace·TraceHandler 관련 Bean 정의는 [The IoC Container](https://docs
 		</property>
 	</bean>
  
-	<bean id="traceHandlerService" 	class="egovframework.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager">
+	<bean id="traceHandlerService" 	class="org.egovframe.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager">
 		<property name="patterns">
 			<list>
 				<value>*</value>
@@ -242,7 +242,7 @@ leaveaTrace·TraceHandler 관련 Bean 정의는 [The IoC Container](https://docs
 	<bean id="antPathMatcher" class="org.springframework.util.AntPathMatcher" />
  
 	<bean id="defaultTraceHandler"
-		class="egovframework.rte.fdl.cmmn.trace.handler.DefaultTraceHandler" />
+		class="org.egovframe.rte.fdl.cmmn.trace.handler.DefaultTraceHandler" />
 ...
 ```
 
@@ -251,7 +251,7 @@ leaveaTrace·TraceHandler 관련 Bean 정의는 [The IoC Container](https://docs
 ##### Interface TraceHandler를 아래와 같이 implements 한다.
 
 ```java
-package egovframework.rte.fdl.cmmn.trace.handler;
+package org.egovframe.rte.fdl.cmmn.trace.handler;
  
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

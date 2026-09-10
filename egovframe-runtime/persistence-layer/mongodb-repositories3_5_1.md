@@ -37,7 +37,7 @@ MongoDB에 대한 repository를 사용하기 위해서는 다음과 같은 mongo
     </bean>
 
     <!-- for Repository -->
-    <mongo:repositories base-package="egovframework.rte.psl.data.mongodb.repository" />
+    <mongo:repositories base-package="org.egovframe.rte.psl.data.mongodb.repository" />
 
 </beans>
 ```

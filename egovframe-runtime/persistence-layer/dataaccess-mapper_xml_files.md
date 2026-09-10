@@ -33,9 +33,9 @@ Mapper XML File에는 다음과 같은 요소들을 사용할 수 있다.
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="egovframework.rte.psl.dataaccess.DeptMapper"> <!-- MyBatis에서는 namespace를 필수로 설정해야함 -->
+<mapper namespace="org.egovframe.rte.psl.dataaccess.DeptMapper"> <!-- MyBatis에서는 namespace를 필수로 설정해야함 -->
 
-    <resultMap id="deptResult" type="egovframework.rte.psl.dataaccess.vo.DeptVO"> <!-- [주의] iBatis의 class속성 -> type속성으로 변경 -->
+    <resultMap id="deptResult" type="org.egovframe.rte.psl.dataaccess.vo.DeptVO"> <!-- [주의] iBatis의 class속성 -> type속성으로 변경 -->
         <result property="deptNo" column="DEPT_NO" />
         <result property="deptName" column="DEPT_NAME" />
         <result property="loc" column="LOC" />
@@ -49,7 +49,7 @@ Mapper XML File에는 다음과 같은 요소들을 사용할 수 있다.
         ]]>
     </select>
 
-    <insert id="insertDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+    <insert id="insertDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
         <![CDATA[
             insert into DEPT
                        (DEPT_NO, DEPT_NAME, LOC)
@@ -57,7 +57,7 @@ Mapper XML File에는 다음과 같은 요소들을 사용할 수 있다.
         ]]>
     </insert>
 
-    <update id="updateDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+    <update id="updateDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
         <![CDATA[
             update DEPT
             set    DEPT_NAME = #{deptName},
@@ -66,7 +66,7 @@ Mapper XML File에는 다음과 같은 요소들을 사용할 수 있다.
         ]]>
     </update>
 
-    <delete id="deleteDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+    <delete id="deleteDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
         <![CDATA[
             delete from DEPT
             where       DEPT_NO = #{deptNo}
@@ -138,7 +138,7 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 - 기본 예제
 
 ```xml
-<insert id="insertDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+<insert id="insertDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
     <![CDATA[
         insert into DEPT (DEPT_NO, DEPT_NAME, LOC)
         values (#{deptNo}, #{deptName}, #{loc}) <!-- 파라미터 바인딩 표기법 #{property} -->
@@ -146,7 +146,7 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 </insert>
 ```
 
-위의 `<insert>` 구문은 'insertDept'를 이용하여 호출하며, 'egovframework.rte.psl.dataaccess.vo.DeptVO' 타입의 파라미터를 받아와 INSERT 절에 바인딩한다.
+위의 `<insert>` 구문은 'insertDept'를 이용하여 호출하며, 'org.egovframe.rte.psl.dataaccess.vo.DeptVO' 타입의 파라미터를 받아와 INSERT 절에 바인딩한다.
 
 ## 2. `<update>`
 
@@ -163,7 +163,7 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 ### 기본 예제
 
 ```xml
-<update id="updateDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+<update id="updateDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
     <![CDATA[
         update DEPT
         set    DEPT_NAME = #{deptName}, <!-- 파라미터 바인딩 표기법 #{property} -->
@@ -173,7 +173,7 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 </update>
 ```
 
-위의 <update> 구문은 'updateDept'를 이용하여 호출하며, 'egovframework.rte.psl.dataaccess.vo.DeptVO' 타입의 파라미터를 받아와 UPDATE절에 바인딩한다.
+위의 <update> 구문은 'updateDept'를 이용하여 호출하며, 'org.egovframe.rte.psl.dataaccess.vo.DeptVO' 타입의 파라미터를 받아와 UPDATE절에 바인딩한다.
 
 ## 3. `<delete>`
 
@@ -190,7 +190,7 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 - 기본 예제
 
 ```xml
-<delete id="deleteDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+<delete id="deleteDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
     <![CDATA[
         delete from DEPT
         where DEPT_NO = #{deptNo} -- 파라미터 바인딩 표기법 #{property}
@@ -198,14 +198,14 @@ SELECT 결과를 'deptResult'라는 이름을 가진 `<resultMap>` 설정에 따
 </delete>
 ```
 
-위의 `<delete>` 구문은 `deleteDept`를 이용하여 호출하며, `egovframework.rte.psl.dataaccess.vo.DeptVO` 타입의 파라미터를 받아와 WHERE절에 바인딩한다.
+위의 `<delete>` 구문은 `deleteDept`를 이용하여 호출하며, `org.egovframe.rte.psl.dataaccess.vo.DeptVO` 타입의 파라미터를 받아와 WHERE절에 바인딩한다.
 
 ### 참고
 parameterType에 지정한 전체 클래스명이 복잡하다면, 해당 클래스타입에 대한 Alias(별칭)로 대체할 수 있다.
 
 ```xml
 <!-- In MyBatis Configuration XML File -->
-<typeAlias type="egovframework.rte.psl.dataaccess.vo.DeptVO" alias="deptVO" />
+<typeAlias type="org.egovframe.rte.psl.dataaccess.vo.DeptVO" alias="deptVO" />
 
 <!-- Mapper XML File -->
 <delete id="deleteDept" parameterType="deptVO">
@@ -238,7 +238,7 @@ parameterType에 지정한 전체 클래스명이 복잡하다면, 해당 클래
 예제 코드에서 파라미터를 전달하는 간단한 구문을 살펴보도록 하겠다.
 
 ```xml
-<insert id="insertDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+<insert id="insertDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
     <![CDATA[
         insert into DEPT
                    (DEPT_NO,
@@ -252,7 +252,7 @@ parameterType에 지정한 전체 클래스명이 복잡하다면, 해당 클래
 ```
 
 
-위에서 egovframework.rte.psl.dataaccess.vo.DeptVO 클래스 타입의 객체가 mapper 오브젝트를 통해 전달될 경우 해당 객체의 deptNo, deptName, loc를 찾아서 PreparedStatement 파라미터로 전달된다.
+위에서 org.egovframe.rte.psl.dataaccess.vo.DeptVO 클래스 타입의 객체가 mapper 오브젝트를 통해 전달될 경우 해당 객체의 deptNo, deptName, loc를 찾아서 PreparedStatement 파라미터로 전달된다.
 
 추가적으로 파라미터 전달 시 파라미터에 다음과 같은 형태로 데이터 타입을 명시할 수 있다:
 
@@ -274,13 +274,13 @@ parameterType에 지정한 전체 클래스명이 복잡하다면, 해당 클래
 
 ```
 <!-- 기본 예제 코드 -->
-<resultMap id="deptResult" type="egovframework.rte.psl.dataaccess.vo.DeptVO">
+<resultMap id="deptResult" type="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
     <result property="deptNo" column="DEPT_NO" />
     <result property="deptName" column="DEPT_NAME" />
     <result property="loc" column="LOC" />
 </resultMap>
 
-<select id="selectDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO" resultMap="deptResult">
+<select id="selectDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO" resultMap="deptResult">
 		<![CDATA[
 			select DEPT_NO,DEPT_NAME,LOC
 			from   DEPT
@@ -296,7 +296,7 @@ SELECT문 결과값은 **`<select>`에 지정한 `resultMap` 속성값에 따라
 단, 아래와 같이 `resultType` 속성을 이용하는 경우에는 DB 컬럼명과 프로퍼티명이 동일해야 한다.
 
 ```xml
-<select id="selectDept" parameterType="egovframework.rte.psl.dataaccess.vo.DeptVO" resultType="egovframework.rte.psl.dataaccess.vo.DeptVO">
+<select id="selectDept" parameterType="org.egovframe.rte.psl.dataaccess.vo.DeptVO" resultType="org.egovframe.rte.psl.dataaccess.vo.DeptVO">
     <![CDATA[
         select deptno, deptname, loc
         from   DEPT

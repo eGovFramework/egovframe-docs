@@ -21,7 +21,7 @@ menu:
 
 ```xml
 	..
-	<typeAlias alias="empVO" type="egovframework.rte.psl.dataaccess.vo.EmpVO" />
+	<typeAlias alias="empVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpVO" />
  
 	<resultMap id="empResult" class="empVO" >
 		<result property="empNo" column="EMP_NO" columnIndex="1"
@@ -149,7 +149,7 @@ public class EmpExtendsDeptVO extends DeptVO {
 
 ```xml
 	..
-	<typeAlias alias="empExtendsDeptVO" type="egovframework.rte.psl.dataaccess.vo.EmpExtendsDeptVO" />
+	<typeAlias alias="empExtendsDeptVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpExtendsDeptVO" />
  
 	<!--
 		cf.) VO 의 상속관계와 resultMap의 상속관계가 같을 필요는 없음. 아래의 empExtendsDeptResult 가
@@ -270,7 +270,7 @@ public class EmpDeptSimpleCompositeVO implements Serializable {
 
 ```xml
 	..
-	<typeAlias alias="empDeptSimpleCompositeVO" type="egovframework.rte.psl.dataaccess.vo.EmpDeptSimpleCompositeVO" />
+	<typeAlias alias="empDeptSimpleCompositeVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpDeptSimpleCompositeVO" />
  
 	<resultMap id="empDeptSimpleComposite" class="empDeptSimpleCompositeVO" >
 		<result property="empNo" column="EMP_NO"/>
@@ -400,7 +400,7 @@ public class EmpIncludesDeptVO implements Serializable {
 ```xml
 <sqlMap namespace="EmpComplexResult">
 	..
-	<typeAlias alias="empIncludesDeptVO" type="egovframework.rte.psl.dataaccess.vo.EmpIncludesDeptVO" />
+	<typeAlias alias="empIncludesDeptVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpIncludesDeptVO" />
  
 	<resultMap id="empIncludesDeptResult" class="empIncludesDeptVO">
 		<result property="empNo" column="EMP_NO" />
@@ -522,7 +522,7 @@ public class DeptIncludesEmpListVO implements Serializable {
 ```xml
 <sqlMap namespace="EmpComplexResult">
 	..
-	<typeAlias alias="deptIncludesEmpListVO" type="egovframework.rte.psl.dataaccess.vo.DeptIncludesEmpListVO" />
+	<typeAlias alias="deptIncludesEmpListVO" type="org.egovframe.rte.psl.dataaccess.vo.DeptIncludesEmpListVO" />
  
 	<!-- 1:N 인 경우 groupBy 속성을 명시 -->
 	<resultMap id="deptIncludesEmpListResult" class="deptIncludesEmpListVO" groupBy="deptNo">
@@ -869,7 +869,7 @@ public class EmpIncludesMgrVO implements Serializable {
 ```xml
 <sqlMap namespace="EmpComplexResult">
 	..
-	<typeAlias alias="empIncludesMgrVO" type="egovframework.rte.psl.dataaccess.vo.EmpIncludesMgrVO" />
+	<typeAlias alias="empIncludesMgrVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpIncludesMgrVO" />
  
 	<!-- Hierarchical relation 인 경우 ibatis resultMap select 에 의한 처리 예 -->
 	<resultMap id="empIncludesMgrResult" class="empIncludesMgrVO" extends="getEmpResult">

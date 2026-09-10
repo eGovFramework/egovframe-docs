@@ -22,7 +22,7 @@ menu:
 
 ```xml
 	..
-	<typeAlias alias="jobHistVO" type="egovframework.rte.psl.dataaccess.vo.JobHistVO" />
+	<typeAlias alias="jobHistVO" type="org.egovframe.rte.psl.dataaccess.vo.JobHistVO" />
  
 	<select id="selectJobHistListUsingDynamicElement" parameterClass="jobHistVO" resultClass="jobHistVO">
 		<![CDATA[
@@ -99,7 +99,7 @@ menu:
 
 ```xml
 	..
-	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap" />
  
 	<select id="selectDynamicUnary" parameterClass="map" remapResults="true" resultClass="egovMap">
 		select
@@ -240,7 +240,7 @@ menu:
 
 ```xml
 	..
-	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap" />
  
 	<select id="selectDynamicBinary" parameterClass="map" remapResults="true" resultClass="egovMap">
 		select
@@ -525,7 +525,7 @@ menu:
 
 ```xml
 	..
-	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap" />
  
 	<select id="selectDynamicParameterPresent" parameterClass="map" remapResults="true" resultClass="egovMap">
 		select 
@@ -597,8 +597,8 @@ menu:
 
 ```xml
 	..
- 	<typeAlias alias="jobHistVO" type="egovframework.rte.psl.dataaccess.vo.JobHistVO" />
-	<typeAlias alias="empIncludesEmpListVO" type="egovframework.rte.psl.dataaccess.vo.EmpIncludesEmpListVO" />
+ 	<typeAlias alias="jobHistVO" type="org.egovframe.rte.psl.dataaccess.vo.JobHistVO" />
+	<typeAlias alias="empIncludesEmpListVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpIncludesEmpListVO" />
  
 	<select id="selectJobHistListUsingDynamicIterate" parameterClass="empIncludesEmpListVO" resultClass="jobHistVO">
 		<![CDATA[

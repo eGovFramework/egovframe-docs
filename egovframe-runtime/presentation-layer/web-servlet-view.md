@@ -330,7 +330,7 @@ HTML select, option 태그에 commandName에 지정된 객체 프로퍼티를 �
 
 | 이름             | 설명                                                                                             | 필수여부 |
 |----------------|------------------------------------------------------------------------------------------------|------|
-| paginationInfo | 페이징리스트를 만들기 위해 필요한 데이터. 데이터 타입은 egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo이다. | yes  |
+| paginationInfo | 페이징리스트를 만들기 위해 필요한 데이터. 데이터 타입은 org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo이다. | yes  |
 | type           | 페이징리스트 렌더링을 담당할 클래스의 아이디. 이 아이디는 빈설정 파일에 선언된 프로퍼티 rendererType의 key값이다.                        | yes  |
 | jsFunction     | 페이지 번호에 걸리게 될 자바스크립트 함수 이름. 페이지 번호가 기본적인 argument로 전달된다.                                       | yes  |
 
@@ -345,9 +345,9 @@ type 속성은 빈 설정시에 rendererType 프로퍼티의 entry key값을 적
 <!-- For Pagination Tag -->	 
 <bean id="imageRenderer" class="com.easycompany.tag.ImagePaginationRenderer"/>
 
-<bean id="textRenderer" class="egovframework.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationRenderer"/>
+<bean id="textRenderer" class="org.egovframe.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationRenderer"/>
 
-<bean id="paginationManager" class="egovframework.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationManager">
+<bean id="paginationManager" class="org.egovframe.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationManager">
     <property name="rendererType">
         <map>
             <entry key="image" value-ref="imageRenderer"/>

@@ -34,22 +34,22 @@ Server Security에서는 Filter Security Interceptor에 의해 처리되며, DB�
 </beans:bean>
 ...
  
-<beans:bean id="databaseSecurityMetadataSource" class="egovframework.rte.fdl.security.intercept.EgovReloadableFilterInvocationSecurityMetadataSource">
+<beans:bean id="databaseSecurityMetadataSource" class="org.egovframe.rte.fdl.security.bean.EgovReloadableFilterInvocationSecurityMetadataSource">
 	<beans:constructor-arg ref="requestMap" />	
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 </beans:bean>
  
 <!--  url  -->
-<beans:bean id="requestMap" 	class="egovframework.rte.fdl.security.intercept.UrlResourcesMapFactoryBean" init-method="init">
+<beans:bean id="requestMap" 	class="org.egovframe.rte.fdl.security.bean.UrlResourcesMapFactoryBean" init-method="init">
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 </beans:bean>
  
-<beans:bean id="securedObjectService" class="egovframework.rte.fdl.security.securedobject.impl.SecuredObjectServiceImpl">
+<beans:bean id="securedObjectService" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectServiceImpl">
 	<beans:property name="securedObjectDAO" ref="securedObjectDAO"/>
 	<beans:property name="requestMatcherType" value="regex"/>	<!--  default : ant -->
 </beans:bean>
  
-<beans:bean id="securedObjectDAO" class="egovframework.rte.fdl.security.securedobject.impl.SecuredObjectDAO" >
+<beans:bean id="securedObjectDAO" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectDAO" >
 	<beans:property name="dataSource" ref="dataSource"/>
 </beans:bean>
 ```
@@ -103,7 +103,7 @@ FilterSecurityInterceptor는 <Acronym title="Hyper Text Transfer Protocol">HTTP<
 DB 기반으로 현재 시점의 url 보호자원-권한의 맵핑 정보를 Runtime 에 동적으로 변경 반영하기 위한 Spring Security 의 FilterInvocationSecurityMetadataSource 확장 클래스이다.
 
 ```xml
-<beans:bean id="databaseSecurityMetadataSource" class="egovframework.rte.fdl.security.intercept.EgovReloadableFilterInvocationSecurityMetadataSource">
+<beans:bean id="databaseSecurityMetadataSource" class="org.egovframe.rte.fdl.security.bean.EgovReloadableFilterInvocationSecurityMetadataSource">
 	<beans:constructor-arg ref="requestMap" />	
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 </beans:bean>
@@ -114,7 +114,7 @@ DB 기반의 보호자원 맵핑 정보를 얻어 이를 참조하는 빈의 초
 securedObjectService의 getRolesAndUrl()를 호출하여 DB에서 역할과 url의 매핑정보를 얻어온다.
 
 ```xml
-<beans:bean id="requestMap" class="egovframework.rte.fdl.security.intercept.UrlResourcesMapFactoryBean" init-method="init">
+<beans:bean id="requestMap" class="org.egovframe.rte.fdl.security.bean.UrlResourcesMapFactoryBean" init-method="init">
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 </beans:bean>
 ```
@@ -173,7 +173,7 @@ DB 기반의 보호자원 맵핑 정보를 얻어 이를 참조하는 빈의 초
 resourceType을 method로 설정하여 securedObjectService의 getRolesAndMethod()를 호출하여 DB에서 역할과 메소드의 매핑정보를 얻어온다.
 
 ```xml
-<beans:bean id="methodMap" class="egovframework.rte.fdl.security.intercept.MethodResourcesMapFactoryBean" init-method="init">
+<beans:bean id="methodMap" class="org.egovframe.rte.fdl.security.bean.MethodResourcesMapFactoryBean" init-method="init">
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 	<beans:property name="resourceType" value="method"/>
 </beans:bean>
@@ -181,7 +181,7 @@ resourceType을 method로 설정하여 securedObjectService의 getRolesAndMethod
 
 #### pointcut
 DB 기반의 보호자원 맵핑 정보를 얻어 이를 참조하는 빈의 초기화 데이터로 제공한다.
-resourceType을 pointcut으로 설정하여 securedObjectService의 getRolesAndPointcut()를 호출하여 DB에서 역할과 Pointcut의 매핑정보를 얻어온다. ex: execution(* egovframework.rte.security..service.\*Service.insert*(..))
+resourceType을 pointcut으로 설정하여 securedObjectService의 getRolesAndPointcut()를 호출하여 DB에서 역할과 Pointcut의 매핑정보를 얻어온다. ex: execution(* org.egovframe.rte.security..service.\*Service.insert*(..))
 
 ```xml
 <beans:bean id="protectPointcutPostProcessor" class="org.springframework.security.config.method.ProtectPointcutPostProcessor">
@@ -189,7 +189,7 @@ resourceType을 pointcut으로 설정하여 securedObjectService의 getRolesAndP
 	<beans:property name="pointcutMap" ref="pointcutMap"/>
 </beans:bean>
  
-<beans:bean id="pointcutMap" class="egovframework.rte.fdl.security.intercept.MethodResourcesMapFactoryBean" init-method="init">
+<beans:bean id="pointcutMap" class="org.egovframe.rte.fdl.security.bean.MethodResourcesMapFactoryBean" init-method="init">
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 	<beans:property name="resourceType" value="pointcut"/>
 </beans:bean>
@@ -222,19 +222,19 @@ resourceType을 pointcut으로 설정하여 securedObjectService의 getRolesAndP
 ```
  
 ```xml
-<beans:bean id="hierarchyStrings" class="egovframework.rte.fdl.security.userdetails.hierarchicalroles.HierarchyStringsFactoryBean" init-method="init">
+<beans:bean id="hierarchyStrings" class="org.egovframe.rte.fdl.security.userdetails.hierarchicalroles.HierarchyStringsFactoryBean" init-method="init">
 	<beans:property name="securedObjectService" ref="securedObjectService"/>
 </beans:bean>
-	<beans:bean id="jdbcUserService" class="egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager" >
+	<beans:bean id="jdbcUserService" class="org.egovframe.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager" >
 		<beans:property name="usersByUsernameQuery" value="SELECT USER_ID,PASSWORD,ENABLED,USER_NAME,BIRTH_DAY,SSN FROM USERS WHERE USER_ID = ?"/>
 		<beans:property name="authoritiesByUsernameQuery" value="SELECT USER_ID,AUTHORITY FROM AUTHORITIES WHERE USER_ID = ?"/>
 		<beans:property name="roleHierarchy" ref="roleHierarchy"/>
 		<beans:property name="dataSource" ref="dataSource"/>
-		<beans:property name="mapClass" value="egovframework.rte.fdl.security.userdetails.EgovUserDetailsMapping"/>
+		<beans:property name="mapClass" value="org.egovframe.rte.fdl.security.userdetails.EgovUserDetailsMapping"/>
 	</beans:bean>
 ```
 
-- class : egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager
+- class : org.egovframe.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager
 - usersByUsernameQuery : 사용자 인증을 위해 사용자 테이블에서 사용자정보를 조회한다.
 - authoritiesByUsernameQuery : 사용자 인증을 위해 사용자권한 테이블에서 사용자권한정보를 조회한다.
 - roleHierarchy : 역할의 계층적 관리를 위해 계층 역할을 설정한다.
@@ -243,12 +243,12 @@ resourceType을 pointcut으로 설정하여 securedObjectService의 getRolesAndP
   
 #### Configuration
 ```xml
-<beans:bean id="securedObjectService" class="egovframework.rte.fdl.security.securedobject.impl.SecuredObjectServiceImpl">
+<beans:bean id="securedObjectService" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectServiceImpl">
 	<beans:property name="securedObjectDAO" ref="securedObjectDAO"/>
 	<beans:property name="requestMatcherType" value="regex"/>	<!--  default : ant -->
 </beans:bean>
  
-<beans:bean id="securedObjectDAO" class="egovframework.rte.fdl.security.securedobject.impl.SecuredObjectDAO" >
+<beans:bean id="securedObjectDAO" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectDAO" >
 	<beans:property name="dataSource" ref="dataSource"/>
 </beans:bean>
 ```
@@ -283,7 +283,7 @@ AND a.resource_type = 'pointcut' ORDER BY a.sort_order
 ```
 SecuredObjectDAO 빈에 내장된 SQL을 사용하지 않을 경우 아래와 같이 SQL을 지정하여 설정한다.
 ```XML
-<beans:bean id="securedObjectDAO" class="egovframework.rte.fdl.security.securedobject.impl.SecuredObjectDAO" >
+<beans:bean id="securedObjectDAO" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectDAO" >
 	<beans:property name="dataSource" ref="dataSource"/>
 	<beans:property name="sqlHierarchicalRoles">
 		<beans:value>

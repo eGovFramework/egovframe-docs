@@ -75,7 +75,7 @@ SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(confi
 ```java
  SqlSession session = sqlSessionFactory.openSession();
  try {
-   Dept dept = session.selectOne("egovframework.rte.psl.dataaccess.DeptMapper.selectDept", 101);
+   Dept dept = session.selectOne("org.egovframe.rte.psl.dataaccess.DeptMapper.selectDept", 101);
  } finally {
    session.close();
  }
@@ -109,7 +109,7 @@ try {
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="egovframework.rte.psl.dataaccess.DeptMapper">
+<mapper namespace="org.egovframe.rte.psl.dataaccess.DeptMapper">
 	<select id="selectDept" 
                 parameterType="int" 
                      resultType="Dept">
@@ -123,9 +123,9 @@ try {
 
 ```
 
- 한 개의 매퍼 XML 파일에는 많은 수의 매핑 구문을 정의할 수 있다. XML 도입부의 헤더와 doctype 을 제외하면, 나머지는 쉽게 이해되는 구문의 형태이다. 여기선 egovframework.rte.psl.dataaccess.DeptMapper 명명공간에서 selectDept 라는 매핑 구문을 정의했고, 이는 결과적으로 egovframework.rte.psl.dataaccess.DeptMapper.selectDept 형태로 실제 명시되게 된다. 그래서 다음처럼 사용하게 되는 셈이다.
+ 한 개의 매퍼 XML 파일에는 많은 수의 매핑 구문을 정의할 수 있다. XML 도입부의 헤더와 doctype 을 제외하면, 나머지는 쉽게 이해되는 구문의 형태이다. 여기선 org.egovframe.rte.psl.dataaccess.DeptMapper 명명공간에서 selectDept 라는 매핑 구문을 정의했고, 이는 결과적으로 org.egovframe.rte.psl.dataaccess.DeptMapper.selectDept 형태로 실제 명시되게 된다. 그래서 다음처럼 사용하게 되는 셈이다.
 
- Dept dept = (Dept) session.selectOne(“egovframework.rte.psl.dataaccess.DeptMapper.selectDept”, 101); 이건 마치 패키지를 포함한 전체 경로의 클래스내 메서드를 호출하는 것과 비슷한 형태이다. 이 이름은 매핑된 select 구문의 이름과 파라미터 그리고 리턴 타입을 가진 명명공간과 같은 이름의 Mapper 클래스와 직접 매핑될 수 있다. 이건 위에서 본 것과 같은 Mapper 인터페이스의 메서드를 간단히 호출하도록 허용한다. 위 예제에 대응되는 형태는 아래와 같다.
+ Dept dept = (Dept) session.selectOne(“org.egovframe.rte.psl.dataaccess.DeptMapper.selectDept”, 101); 이건 마치 패키지를 포함한 전체 경로의 클래스내 메서드를 호출하는 것과 비슷한 형태이다. 이 이름은 매핑된 select 구문의 이름과 파라미터 그리고 리턴 타입을 가진 명명공간과 같은 이름의 Mapper 클래스와 직접 매핑될 수 있다. 이건 위에서 본 것과 같은 Mapper 인터페이스의 메서드를 간단히 호출하도록 허용한다. 위 예제에 대응되는 형태는 아래와 같다.
 
  DeptMapper mapper = session.getMapper(DeptMapper.class); Dept dept = mapper.selectDept(101); 두번째 방법은 많은 장점을 가진다. 먼저 문자열에 의존하지 않는다는 것이다. 이는 애플리케이션을 좀더 안전하게 만든다. 두번째는 개발자가 IDE 를 사용할 때, 매핑된 SQL 구문을 사용할 때의 수고를 덜어준다. 세번째는 리턴 타입에 대해 타입 캐스팅을 하지 않아도 된다. 그래서 DeptMapper 인터페이스는 깔끔하고 리턴 타입에 대해 타입에 안전하며 이는 파라미터에도 그대로 적용된다.
 

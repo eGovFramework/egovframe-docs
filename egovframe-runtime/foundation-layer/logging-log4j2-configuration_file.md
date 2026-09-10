@@ -328,7 +328,7 @@ Connection 객체를 제공하기 위한 JNDI DataSource 혹은 Connection Facto
  <JDBC name="db" tableName="db_log">
   <!-- DB Connection을 제공해줄 클래스와 메서드명 정의 -->
   <!-- JDBCAppender가 EgovConnectionFactory.getDatabaseConnection() 메서드를 호출 -->
-  <ConnectionFactory class="egovframework.rte.fdl.logging.db.EgovConnectionFactory" method="getDatabaseConnection" />
+  <ConnectionFactory class="org.egovframe.rte.fdl.logging.db.EgovConnectionFactory" method="getDatabaseConnection" />
    <!-- log event가 insert될 컬럼 설정, insert될 값은 PatternLayout의 pattern 사용 -->
    <Column name="eventDate" isEventTimestamp="true" />
    <Column name="level" pattern="%p" />
@@ -341,7 +341,7 @@ Connection 객체를 제공하기 위한 JNDI DataSource 혹은 Connection Facto
 표준프레임워크에서는 Connection Factory 역할을 하는 EgovConnectionFactory를 제공하고 있으며, 어플리케이션에서 설정한 dataSource 빈을 주입받아 싱글톤을 생성한다. 이를 위해 다음과 같이 빈정의를 추가해야한다.
 
 ```xml
- <bean id="egovConnectionFactory" class="egovframework.rte.fdl.logging.db.EgovConnectionFactory">
+ <bean id="egovConnectionFactory" class="org.egovframe.rte.fdl.logging.db.EgovConnectionFactory">
   <property name="dataSource" ref="dataSource" />
  </bean>
 ```

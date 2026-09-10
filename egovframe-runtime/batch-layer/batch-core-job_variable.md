@@ -25,7 +25,7 @@ menu:
 배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.
 
 ```xml
-<bean id="egovJobVariableListener" class="egovframework.rte.bat.support.EgovJobVariableListener">
+<bean id="egovJobVariableListener" class="org.egovframe.rte.bat.support.EgovJobVariableListener">
 <property name="pros">
 <props>
 	<prop key="JobVariableKey1">JobVariableValue1</prop>

@@ -71,14 +71,14 @@ menu:
 
 ```xml
 <!-- SqlMap setup for iBATIS Database Layer -->
-<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
+<bean id="sqlMapClient" class="org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
     <property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
     <property name="dataSource" ref="dataSource"/>
 </bean>
 ```
 
 - Spring 연동 기능을 사용하면 iBATIS 의 SqlMapClient(a thread safe client for SQL Maps) 를 별도의 iBATIS API 없이도 얻을 수 있게 된다.
-- 실행환경 3.5 부터는 Spring 4 변경에 따라 org.springframework.orm.ibatis.SqlMapClientFactoryBean 클래스가 egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean 로 변경된다.
+- 실행환경 3.5 부터는 Spring 4 변경에 따라 org.springframework.orm.ibatis.SqlMapClientFactoryBean 클래스가 org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean 로 변경된다.
 
  아래는 주된 iBATIS 의 SQL Map XML Configuration 파일(sql-map-config.xml 설정 파일)이다. iBATIS 단독으로 쓰일 때는 transactionManager, dataSource 설정 등을 추가로 포함해야 하지만 Spring 연동 환경에서는 이 부분은 Spring 이 넘겨주는 dataSource 를 자동으로 사용하게 되고 transaction 관리는 비즈니스 서비스 영역에 선언적으로 설정하여 iBATIS 관련 모듈에서는 고민할 필요가 없게 된다.
 
@@ -94,7 +94,7 @@ menu:
 	/>
  
 	<typeHandler javaType="java.util.Calendar" jdbcType="TIMESTAMP"
-		callback="egovframework.rte.psl.dataaccess.typehandler.CalendarTypeHandler" />
+		callback="org.egovframe.rte.psl.dataaccess.typehandler.CalendarTypeHandler" />
  
 	<sqlMap resource="META-INF/sqlmap/mappings/testcase-basic.xml" />
 	<sqlMap ../>
@@ -112,7 +112,7 @@ menu:
 
 ```xml
 	<!-- SqlMap setup for iBATIS Database Layer -->
-	<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
+	<bean id="sqlMapClient" class="org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
 		<!-- Java 1.5 or higher and iBATIS 2.3.2 or higher REQUIRED -->
      		<property name="mappingLocations" value="classpath:/META-INF/sqlmap/mappings/**/*.xml" />

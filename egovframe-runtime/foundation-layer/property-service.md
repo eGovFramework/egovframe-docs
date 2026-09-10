@@ -22,7 +22,7 @@ Property Service 는 시스템의 설치 환경에 관련된 정보나, 잦은 �
 ### Configuration
 
 ```xml
-<bean name="propertyService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" 
+<bean name="propertyService" class="org.egovframe.rte.fdl.property.impl.EgovPropertyServiceImpl" 
         destroy-method="destroy">
     <property name="properties">
         <map>
@@ -84,7 +84,7 @@ public void testPropertiesService() throws Exception {
 #### Configuration
 
 ```xml
-<bean name="propertyService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" 
+<bean name="propertyService" class="org.egovframe.rte.fdl.property.impl.EgovPropertyServiceImpl" 
         destroy-method="destroy">
     <property name="extFileName">
         <set>
