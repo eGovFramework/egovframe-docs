@@ -19,6 +19,17 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[공통상세코드 목록조회] -->|등록| R[공통상세코드 등록]
+    L -->|목록클릭| D[공통상세코드 상세조회]
+    D -->|수정| U[공통상세코드 수정]
+    D -->|삭제| X[공통상세코드 삭제]
+    R --> L
+    U --> L
+    X --> L
+```
+
 ### 패키지 참조 관계
 
  공통상세코드관리 패키지는 요소기술의 공통 패키지(cmm)와 공통코드 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 공통분류코드관리 패키지와 함께 배포 파일을 구성한다.
@@ -37,14 +48,14 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeList.jsp | 공통상세코드 목록을 위한 JSP 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeUpdt.jsp | 공통상세코드 수정을 위한 JSP 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/sym/ccm/cde/EgovCcmCmmnDetailCodeRegist.jsp | 공통상세코드 등록을 위한 JSP 페이지 |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_altibase.xml | 공통상세코드 관리를 위한 Altibase용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_cubrid.xml | 공통상세코드 관리를 위한 Cubrid용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_maria.xml | 공통상세코드 관리를 위한 MariaDB용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_mysql.xml | 공통상세코드 관리를 위한 MySQL용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_oracle.xml | 공통상세코드 관리를 위한 Oracle용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_postgres.xml | 공통상세코드 관리를 위한 PostgreSQL용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_tibero.xml | 공통상세코드 관리를 위한 Tibero용 Query XML |
-| Query XML | resources/egovframework/mapper/com/sym/ccm/ccc/EgovCmmnClCodeManage\_SQL\_goldilocks.xml | 공통상세코드 관리를 위한 Goldilocks용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_altibase.xml | 공통상세코드 관리를 위한 Altibase용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_cubrid.xml | 공통상세코드 관리를 위한 Cubrid용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_maria.xml | 공통상세코드 관리를 위한 MariaDB용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_mysql.xml | 공통상세코드 관리를 위한 MySQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_oracle.xml | 공통상세코드 관리를 위한 Oracle용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_postgres.xml | 공통상세코드 관리를 위한 PostgreSQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_tibero.xml | 공통상세코드 관리를 위한 Tibero용 Query XML |
+| Query XML | resources/egovframework/mapper/com/sym/ccm/cde/EgovCmmnDetailCodeManage\_SQL\_goldilocks.xml | 공통상세코드 관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/sym/ccm/cde/message\_ko.properties | 공통상세코드를 위한 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/sym/ccm/cde/message\_en.properties | 공통상세코드를 위한 Message properties(영문) |
 
