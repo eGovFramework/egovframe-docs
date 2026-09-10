@@ -40,6 +40,26 @@ menu:
  프로그램 변경요청은 프로그램목록에 등록된 프로그램의 변경사항을 관리자에서 시스템에 반영을 요청하는 화면으로 프로그램변경에 대한 목록관리를 정의 한다.
  프로그램 변경이력은 프로그램 변경 요청에 따른 처리결과등의 이력을 조회하는 화면으로 프로그램변경이력목록, 프로그램변경이력상세 화면으로 구성되어 있다.
 
+```mermaid
+flowchart LR
+    PL[프로그램목록 조회] -->|등록| PR[프로그램목록 등록]
+    PL -->|목록 선택| PU[프로그램목록 상세조회/수정]
+    PU -->|삭제| PL
+    PR --> PL
+    PU --> PL
+
+    CL[프로그램변경요청 조회] -->|등록| CR[프로그램변경요청 등록]
+    CL -->|목록 선택| CU[프로그램변경요청 상세조회/수정]
+    CU -->|삭제| CL
+    CR --> CL
+    CU --> CL
+
+    CU -->|처리요청| PPL[프로그램변경요청처리 조회]
+    PPL -->|목록 선택| PPU[프로그램변경요청처리 상세조회/수정]
+    PPU -->|처리완료| HL[프로그램변경이력 조회]
+    HL -->|목록 선택| HD[프로그램변경이력 상세조회]
+```
+
 ### 패키지 참조 관계
 
  프로그램관리 패키지는 요소기술의 공통 패키지(cmm) 패키지와 메일연동 인터페이스 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 메일연동 인터페이스, 바로가기메뉴관리, 메뉴생성관리, 사이트맵, 메뉴관리, 포맷/날짜/계산, 시스템(sim), 달력, 웹에디터, 우편번호 패키지와 함께 배포 파일을 구성한다.
@@ -118,7 +138,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/prm/EgovProgramListManageSelect.do | selectProgrmList | "progrmManageDAO.selectProgrmList\_D", |
+| 조회 | /sym/prm/EgovProgramListManageSelect.do | selectProgrmList | "progrmManageDAO.selectProgrmList\_D" |
 |  |  |  | "progrmManageDAO.selectProgrmListTotCnt\_S" |
 
  프로그램 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
@@ -269,7 +289,7 @@ menu:
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 수정 | /sym/prm/EgovProgramChangRequstDetailSelectUpdt.do | updateProgrmChangeRequst | "progrmManageDAO.updateProgrmChangeRequst\_S" |
-| 상세조회 | /sym/prm/EgovProgramChangRequstDetailSelect.do | selectProgrmChangeRequst | "proprogrmManageDAO.selectProgrmChangeRequstList\_D" |
+| 상세조회 | /sym/prm/EgovProgramChangRequstDetailSelect.do | selectProgrmChangeRequst | "progrmManageDAO.selectProgrmChangeRequstList\_D" |
 
  다음 화면은 프로그램변경요청 상세조회 화면과 동일하다.
 
