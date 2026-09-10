@@ -91,7 +91,6 @@ private void tradingOperation() {}
 | --- | --- |
 | execution(public \* \*(..)) | public 메소드 실행 |
 | execution(\* set\*(..)) | 이름이 set으로 시작하는 모든 메소드명 실행 |
-| execution(\* set\*(..)) | 이름이 set으로 시작하는 모든 메소드명 실행 |
 | execution(\* com.xyz.service.AccountService.\*(..)) | AccountService 인터페이스의 모든 메소드 실행 |
 | execution(\* com.xyz.service.\*.\*(..)) | service 패키지의 모든 메소드 실행 |
 | execution(\* com.xyz.service..\*.\*(..)) | service 패키지와 하위 패키지의 모든 메소드 실행 |
@@ -110,7 +109,7 @@ private void tradingOperation() {}
 | bean(account\*) | 이름이 'account'로 시작되는 모든 빈 |
 | bean(\*Repository) | 이름이 “Repository”로 끝나는 모든 빈 |
 | bean(accounting/\*) | 이름이 “accounting/“로 시작하는 모든 빈 |
-| bean(\*dataSource) || bean(\*DataSource) | 이름이 “dataSource” 나 “DataSource” 으로 끝나는 모든 빈 |
+| bean(\*dataSource) \|\| bean(\*DataSource) | 이름이 “dataSource” 나 “DataSource” 으로 끝나는 모든 빈 |
 
 ### 충고(Advice) 정의하기
 
