@@ -102,8 +102,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | "BatchSchdulDAO.selectBatchSchdulList" |
-| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | "BatchSchdulDAO.selectBatchSchdulListCnt" |
+| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | "BatchSchdulDao.selectBatchSchdulList" |
+| 조회 | /sym/bat/getBatchSchdulList.do | selectBatchSchdulList | "BatchSchdulDao.selectBatchSchdulListCnt" |
 
  배치스케줄 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 배치작업명,배치프로그램에 대해서 수행된다.
@@ -117,7 +117,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/bat/addBatchSchdul.do | insertBatchSchdul | "BatchSchdulDAO.insertBatchSchdul" |
+| 등록 | /sym/bat/addBatchSchdul.do | insertBatchSchdul | "BatchSchdulDao.insertBatchSchdul" |
 
  배치스케줄의 속성정보를 입력한 뒤 등록한다.
 
@@ -130,7 +130,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/bat/updateBatchSchdul | updateBatchSchdul | "BatchSchdulDAO.updateBatchSchdul" |
+| 수정 | /sym/bat/updateBatchSchdul | updateBatchSchdul | "BatchSchdulDao.updateBatchSchdul" |
 
  배치스케줄의 속성정보를 변경한 후 저장한다.
 
@@ -143,8 +143,8 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/bat/getBatchSchdul.do | selectBatchSchdul | "BatchSchdulDAO.selectBatchSchdul" |
-| 삭제 | /sym/bat/deleteBatchSchdul.do | deleteBatchSchdul | "BatchSchdulDAO.deleteBatchSchdul" |
+| 상세조회 | /sym/bat/getBatchSchdul.do | selectBatchSchdul | "BatchSchdulDao.selectBatchSchdul" |
+| 삭제 | /sym/bat/deleteBatchSchdul.do | deleteBatchSchdul | "BatchSchdulDao.deleteBatchSchdul" |
 
  배치스케줄의 속성정보를 조회한다.
 
