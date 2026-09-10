@@ -19538,6 +19538,16 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>로그인후 만료시간까지의 남은 시간을 표시한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>세션에 객체 정보 저장, 취득, 제거의 기능을 가지며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[로그인] --> F[SessionTimeoutCookieFilter]
+ F -->|쿠키 기록| S([egovLatestServerTime, egovExpireSessionTime])
+ S --> D[남은 로그인 시간 표시]
+ D -->|시간연장 요청| R[refreshSessionTimeout]
+ R --> S
+ D -->|만료| E([세션 만료])
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
