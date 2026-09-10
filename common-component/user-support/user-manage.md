@@ -148,7 +148,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/umt/EgovEmplyrManage.do | selectUserList | "userManageDAO" | "selectUserList\_S", |
+| 목록조회 | /uss/umt/EgovEmplyrManage.do | selectUserList | "userManageDAO" | "selectUserList\_S" |
 |  |  |  | "userManageDAO" | "selectUserListTotCnt\_S" |
 | 삭제 | /uss/umt/EgovEmplyrDelete.do | deleteUser | "userManageDAO" | "deleteUser\_S" |
 
