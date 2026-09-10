@@ -86,7 +86,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /ssi/syi/ist/getCntcSttusList.do | selectCntcSttusLogList | "CntcSttusDAO.selectCntcSttusList", |
+| 목록조회 | /ssi/syi/ist/getCntcSttusList.do | selectCntcSttusLogList | "CntcSttusDAO.selectCntcSttusList" |
 |  |  |  | "CntcSttusDAO.selectCntcSttusListTotCnt" |
 
  ![image](./images/ssi-cntc-sttus-list.png)
