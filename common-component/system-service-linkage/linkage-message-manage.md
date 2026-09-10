@@ -146,7 +146,7 @@ flowchart TD
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /ssi/syi/ims/getCntcMessageList.do | selectCntcMessageList | "CntcMessageDAO.selectCntcMessageList", |
+| 목록조회 | /ssi/syi/ims/getCntcMessageList.do | selectCntcMessageList | "CntcMessageDAO.selectCntcMessageList" |
 |  |  |  | "CntcMessageDAO.selectCntcMessageListTotCnt" |
 
  페이지당 검색 범위를 변경하고자 하는 경우
