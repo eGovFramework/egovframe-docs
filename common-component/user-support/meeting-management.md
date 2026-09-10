@@ -125,7 +125,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/olp/mgt/EgovMeetingManageList.do | egovMeetingManageList | "MeetingManage" | "selectMeetingManage", |
+| 목록조회 | /uss/olp/mgt/EgovMeetingManageList.do | egovMeetingManageList | "MeetingManage" | "selectMeetingManage" |
 |  |  |  | "MeetingManage" | "selectMeetingManageCnt" |
 
  회의정보 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
