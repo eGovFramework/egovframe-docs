@@ -29,6 +29,15 @@ menu:
   ⑤ 배너조회 : 등록된 배너는 이미지 단위로 배너표현 위치에 보여진다.
 ```
 
+```mermaid
+flowchart LR
+    L[배너 목록조회] -->|등록| R[배너 등록]
+    L -->|목록 선택| U[배너 수정]
+    U -->|삭제| L
+    R --> L
+    U -->|저장| L
+```
+
 ### 패키지 참조 관계
 
  배너관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -121,7 +130,7 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/bnr/selectBannerList.do | selectBannerList | "bannerDAO" | "selectBannerList", |
+| 목록조회 | /uss/ion/bnr/selectBannerList.do | selectBannerList | "bannerDAO" | "selectBannerList" |
 |  |  |  | "bannerDAO" | "selectBannerListTotCnt" |
 
  ![image](./images/uss-banner-배너_목록.jpg)
