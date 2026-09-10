@@ -20901,7 +20901,16 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 배너수정 : 기 등록된 배너정보의 항목들을 수정한다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 배너삭제 : 기 등록된 배너정보를 삭제한다.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 배너조회 : 등록된 배너는 이미지 단위로 배너표현 위치에 보여진다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;div class="mermaid">flowchart LR
+ L[배너 목록조회] -->|등록| R[배너 등록]
+ L -->|목록 선택| U[배너 수정]
+ U -->|삭제| L
+ R --> L
+ U -->|저장| L
+&lt;/div>
+&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>배너관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p></description></item><item><title>배치결과관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/batch-result-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/system-management/batch-manage/batch-result-management/</guid><description>&lt;h1 id="배치결과관리">배치결과관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>배치결과관리는 시스템에서 주기적으로 실행하는 배치결과를 등록하는 기능을 제공한다.&lt;/p>
