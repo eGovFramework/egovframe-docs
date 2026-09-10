@@ -103,7 +103,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('BBS_ID', 1);
 ### 관련코드
 
 | 코드분류 | 코드분류명 | 코드ID | 코드명 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | COM101 | 게시판유형 | BBST01 | 통합게시판 |
 | COM101 | 게시판유형 | BBST02 | 블로그형게시판 |
 | COM101 | 게시판유형 | BBST03 | 방명록 |
