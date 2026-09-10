@@ -40016,154 +40016,19 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>행정코드 관리는 법정동, 행정동을 등록, 수정, 목록조회, 상세조회를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[행정코드 목록조회] -->|등록| R[행정코드 등록]
+ L -->|목록클릭| D[행정코드 상세조회]
+ D -->|수정| U[행정코드 수정]
+ D -->|삭제| X[행정코드 삭제]
+ R --> L
+ U --> L
+ X --> L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>행정코드관리 패키지(adc)는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 행정코드관리 패키지(acr), 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p>
-&lt;ul>
-&lt;li>패키지 간 참조 관계 : 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b4%80%eb%a6%ac" class="innerLink">시스템관리 Package Dependency&lt;/a>
-
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.sym.ccm.adc.web.EgovCcmAdministCodeManageController.java&lt;/td>
- &lt;td>행정코드 관리를 위한 컨트롤러 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.sym.ccm.adc.service.EgovCcmAdministCodeManageService.java&lt;/td>
- &lt;td>행정코드 관리를 위한 서비스 인터페이스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.sym.ccm.adc.service.impl.EgovCcmAdministCodeManageServiceImpl.java&lt;/td>
- &lt;td>행정코드 관리를 위한 서비스구현 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.sym.ccm.adc.service.AdministCode.java&lt;/td>
- &lt;td>행정코드 정보 Model 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.sym.ccm.adc.service.AdministCodeVO.java&lt;/td>
- &lt;td>행정코드 관리를 위한 VO 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.sym.ccm.adc.service.impl.AdministCodeManageDAO.java&lt;/td>
- &lt;td>행정코드 정보 관리를 위한 데이터처리 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/adc/EgovCcmAdministCodeDetail.jsp&lt;/td>
- &lt;td>행정코드 상세보기를 위한 JSP 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/adc/EgovCcmAdministCodeList.jsp&lt;/td>
- &lt;td>행정코드 목록을 위한 JSP 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/adc/EgovCcmAdministCodeModify.jsp&lt;/td>
- &lt;td>행정코드 수정을 위한 JSP 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sym/ccm/adc/EgovCcmAdministCodeRegist.jsp&lt;/td>
- &lt;td>행정코드 등록을 위한 JSP 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_mysql.xml&lt;/td>
- &lt;td>행정코드 MySQL용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_cubrid.xml&lt;/td>
- &lt;td>행정코드 Cubrid용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_oracle.xml&lt;/td>
- &lt;td>행정코드 Oracle용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_tibero.xml&lt;/td>
- &lt;td>행정코드 Tibero용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_altibase.xml&lt;/td>
- &lt;td>행정코드 Altibase용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_maria.xml&lt;/td>
- &lt;td>행정코드 MariaDB용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_postgres.xml&lt;/td>
- &lt;td>행정코드 PostgreSQL용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/ccm/adc/EgovAdministCodeManage_SQL_goldilocks.xml&lt;/td>
- &lt;td>행정코드 Goldilocks용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/sym/ccm/adc/message_ko.properties&lt;/td>
- &lt;td>행정코드관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/sym/ccm/adc/message_en.properties&lt;/td>
- &lt;td>행정코드관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-management/images/sym-admincode-%ed%96%89%ec%a0%95%ec%bd%94%eb%93%9c%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >&lt;/p></description></item><item><title>화면 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</guid><description>&lt;h1 id="화면-통계">화면 통계&lt;/h1>
+&lt;p>행정코드관리 패키지(adc)는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 법정동코드수신 패키지(acr), 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>화면 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/screen-statistics/</guid><description>&lt;h1 id="화면-통계">화면 통계&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>화면통계 기능은 각종 화면현황에 대한 통계자료를 메뉴관리를 통하여 현재 서비스되고 있는 메뉴별에 따라 기간별(연도별, 월별, 일별)로 그래프와 텍스트 형태 두가지 방식으로 제공한다.&lt;/p>
 &lt;ul>
