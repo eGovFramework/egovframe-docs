@@ -19,6 +19,17 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[설문조사 목록조회] -->|등록| R[설문조사 등록]
+    L -->|목록 클릭| D[설문조사 상세조회]
+    D -->|수정| U[설문조사 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+    D -->|통계| S[설문통계]
+```
+
 ### 패키지 참조 관계
 
  설문조사 패키지는 요소기술의 공통 패키지(cmm)와 설문응답자관리 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문관리, 설문템플릿관리, 설문질문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -116,7 +127,7 @@ CREATE TABLE COMTECOPSEQ (
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /uss/olp/qri/EgovQustnrRespondInfoList.do | egovQustnrRespondInfoList | "QustnrRespondInfo.selectQustnrRespondInfo", |
+| 목록조회 | /uss/olp/qri/EgovQustnrRespondInfoList.do | egovQustnrRespondInfoList | "QustnrRespondInfo.selectQustnrRespondInfo" |
 |  |  |  | "QustnrRespondInfo.selectQustnrRespondInfoCnt" |
 
  설문조사 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
