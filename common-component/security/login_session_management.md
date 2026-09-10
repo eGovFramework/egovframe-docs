@@ -22,6 +22,16 @@
 
  세션에 객체 정보 저장, 취득, 제거의 기능을 가지며 HttpServletRequest 객체의 HttpSession 정보를 사용하여 처리된다.
 
+```mermaid
+flowchart LR
+    L[로그인] --> F[SessionTimeoutCookieFilter]
+    F -->|쿠키 기록| S([egovLatestServerTime, egovExpireSessionTime])
+    S --> D[남은 로그인 시간 표시]
+    D -->|시간연장 요청| R[refreshSessionTimeout]
+    R --> S
+    D -->|만료| E([세션 만료])
+```
+
 ### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
@@ -84,8 +94,7 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 
 #### 비즈니스 규칙
 
- 회원가입시 또는 비밀번호 변경시 비밀번호 수정날짜가 관리된다.  
-비밀번호 수정날짜에서 특정한 시일이 경과하면 비밀번호 만료에 대한 안내 팝업을 출력하여 비밀번호 변경을 유도한다.
+ 사용자가 화면에서 **시간연장**을 요청하면 서버는 세션 타임아웃 쿠키(egovLatestServerTime, egovExpireSessionTime)를 최신 시간으로 갱신하여 로그인 세션의 만료 시간을 연장한다.
 
 #### 관련코드
 
