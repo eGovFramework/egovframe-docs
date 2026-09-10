@@ -94,7 +94,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/mnu/mcm/EgovMenuCreatManageSelect.do | selectMenuCreatManagList | "menuManageDAO.selectMenuCreatManageList\_D", |
+| 조회 | /sym/mnu/mcm/EgovMenuCreatManageSelect.do | selectMenuCreatManagList | "menuManageDAO.selectMenuCreatManageList\_D" |
 |  |  |  | "menuManageDAO.selectMenuCreatManageTotCnt\_S" |
 
  ![image](./images/sym-menucreat-egovmenucreatmanage.jpg)
@@ -136,7 +136,7 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 조회 | /sym/mnu/mcm/EgovMenuCreatSiteMapSelect.do | selectMenuCreatSiteMap | "menuManageDAO.selectMenuCreatSiteMapList\_D" |
-| 등록 | /sym/mnu/mcm/EgovMenuCreatSiteMapInsert.do | selectMenuCreatSiteMapInsert | "menuManageDAO.selectMenuCreatSiteMapList\_D", |
+| 등록 | /sym/mnu/mcm/EgovMenuCreatSiteMapInsert.do | selectMenuCreatSiteMapInsert | "menuManageDAO.selectMenuCreatSiteMapList\_D" |
 |  |  |  | "menuManageDAO.insertSiteMap\_S" |
 
  webapp의 절대path를 지정해야 한다. 변경대상 소스(/sym/mnu/mcm/EgovMenuCreatSiteMap.jsp)에서 수정해야한다.
