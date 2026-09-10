@@ -25,6 +25,15 @@ menu:
 
 만족도조사가 가능한 게시판을 사용하기 위해서는 게시판관리를 통해 생성된 게시판에 추가 선택사항을 지정하여야 한다. 추가 선택사항은 댓글 관리 및 만족도조사가 선택가능하며, 한번 지정이 되면 수정 할 수 없다. 다만, 미설정된 기존 게시판의 경우 처음 설정은 가능하다. 추가 선택사항을 사용하기 위해서는 기존 게시판생성관리 기능 및 게시판사용 기능의 수정이 선행되어야 한다.
 
+```mermaid
+flowchart LR
+    L[만족도 목록조회] -->|등록| R[만족도 등록]
+    L -->|선택| U[만족도 수정]
+    U -->|삭제| L
+    R --> L
+    U -->|저장| L
+```
+
 ### 패키지 참조 관계
 
 만족도조사 패키지는 요소기술의 공통 패키지(cmm)와 게시판 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/계산/변환, 협업의 공통기능(com), 디자인템플릿, 시스템(sim), 달력 패키지와 함께 배포 파일을 구성한다.
@@ -81,7 +90,7 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/stf/selectSatisfactionList.do | selectSatisfactionList | "BBSSatisfactionDAO.selectSatisfactionList", |
+| 목록조회 | /cop/stf/selectSatisfactionList.do | selectSatisfactionList | "BBSSatisfactionDAO.selectSatisfactionList" |
 | | | | "BBSSatisfactionDAO.selectSatisfactionListCnt" |
 | 등록 | /cop/stf/insertSatisfaction.do | insertSatisfaction | "BBSSatisfactionDAO.insertSatisfaction" |
 
