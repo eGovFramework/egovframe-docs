@@ -95,8 +95,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/bat/getBatchResultList.do | selectBatchResultList | "BatchResultDAO.selectBatchResultList" |
-| 조회 | /sym/bat/getBatchResultList.do | selectBatchResultList | "BatchResultDAO.selectBatchResultListCnt" |
+| 조회 | /sym/bat/getBatchResultList.do | selectBatchResultList | "BatchResultDao.selectBatchResultList" |
+| 조회 | /sym/bat/getBatchResultList.do | selectBatchResultList | "BatchResultDao.selectBatchResultListCnt" |
 
  배치결과 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 배치작업명,배치스케줄ID에 대해서 수행된다.
@@ -109,8 +109,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/bat/getBatchResult.do | selectBatchResult | "BatchResultDAO.selectBatchResult" |
-| 삭제 | /sym/bat/deleteBatchResult.do | deleteBatchResult | "BatchOpertDAO.deleteBatchResult" |
+| 상세조회 | /sym/bat/getBatchResult.do | selectBatchResult | "BatchResultDao.selectBatchResult" |
+| 삭제 | /sym/bat/deleteBatchResult.do | deleteBatchResult | "BatchResultDao.deleteBatchResult" |
 
  배치결과의 속성정보를 조회한다.
 
