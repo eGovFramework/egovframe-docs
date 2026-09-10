@@ -27,6 +27,16 @@ menu:
  ④ 설문템플릿관리 상세조회 : 기(記) 등록된 설문템플릿관리 정보를 조회한다.
  ⑤ 설문템플릿관리 삭제: 기(記) 등록된 설문템플릿관리 정보를 화면에 조회하여 데이터베이스에서 삭제한다.
 
+```mermaid
+flowchart LR
+    L[설문템플릿관리 목록조회] -->|등록| R[설문템플릿관리 등록]
+    L -->|목록클릭| D[설문템플릿관리 상세조회]
+    D -->|수정| U[설문템플릿관리 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+```
+
 ### 패키지 참조 관계
 
  설문템플릿관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문관리, 설문조사, 설문응답자관리, 설문질문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -121,7 +131,7 @@ CREATE TABLE COMTECOPSEQ (
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /uss/olp/qtm/EgovQustnrTmplatManageList.do | egovQustnrTmplatManageList | "QustnrTmplatManage.selectQustnrTmplatManage", |
+| 조회 | /uss/olp/qtm/EgovQustnrTmplatManageList.do | egovQustnrTmplatManageList | "QustnrTmplatManage.selectQustnrTmplatManage" |
 |  |  |  | "QustnrTmplatManage.selectQustnrTmplatManageCnt" |
 
  설문템플릿관리 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
@@ -171,7 +181,7 @@ CREATE TABLE COMTECOPSEQ (
 
 #### 비즈니스 규칙
 
- 설문문항 목록에서 목록 클릭 시 이동되는 화면으로 설문문항에 대한 상세정보를 보여준다.
+ 입력한 설문템플릿 정보를 저장 처리한다. 입력명 우측의 빨간* 표시는 수정 시 반드시 입력해야 할 항목을 표시한다.
 
 #### 관련코드
 
@@ -186,8 +196,8 @@ CREATE TABLE COMTECOPSEQ (
 
  ![image](./images/svy-qtm-4templatemodify.png)
 
- 저장: 저장버튼 클릭 시 설문문항 수정 화면이 저장처리된다.
- 목록: 설문문항 목록 화면으로 이동한다.
+ 저장: 저장버튼 클릭 시 설문템플릿 수정 내용이 저장처리된다.
+ 목록: 설문템플릿 목록 화면으로 이동한다.
 
 ### 설문템플릿관리 상세조회
 
