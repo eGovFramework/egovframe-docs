@@ -67,7 +67,7 @@ pom.xml 파일은 프로젝트의 세부 메타 데이터 정보를 포함하며
 ![pom.xml 구조](./images/pom-tier.gif)
 
 * **General Information**  
-  프로젝트 이름, 설명, 버전 정보 등을 기술한다. - [프로젝트 정보 생성](#프로젝트-정보-생성)) 참조
+  프로젝트 이름, 설명, 버전 정보 등을 기술한다. - [프로젝트 정보 생성](#프로젝트-정보-생성) 참조
 * Organization : 프로젝트 조직 정보: 이름, 홈페이지 URL
 * Project Team and Collaborations tools  
   형상관리 서버, 이슈 트랙커, 통합 빌드 서버 정보 등
