@@ -84,7 +84,7 @@ menu:
 
 ```xml
     <bean name="egovMainImageIdGnrService"
-        class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
+        class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
         destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="mainImageIdStrategy" />
@@ -94,7 +94,7 @@ menu:
     </bean>
  
     <bean name="mainImageIdStrategy"
-        class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix" value="MSI_" />
         <property name="cipers" value="16" />
         <property name="fillChar" value="0" />

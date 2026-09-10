@@ -84,14 +84,14 @@ menu:
 #### ID Generation 환경설정(context-idgn-CtsnnManage.xml)
 
 ```xml
-    <bean name="egovCtsnnManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovCtsnnManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="ctsnnManageIdStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="CTSNN_ID"/>
     </bean>
-    <bean name="ctsnnManageIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="ctsnnManageIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="CTSNN_" />
         <property name="cipers"     value="14" />
         <property name="fillChar"   value="0" />

@@ -69,14 +69,14 @@ menu:
 #### ID Generation 환경설정(context-idgn-RoughMap.xml)
 
 ```xml
-    <bean name="egovRoughMapIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovRoughMapIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="roumManageStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="ROUGHMAP_ID"/>
     </bean>
-    <bean name="roumManageStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="roumManageStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"     value="ROUGHMAP_" />
         <property name="cipers"     value="11" />
         <property name="fillChar"   value="0" />

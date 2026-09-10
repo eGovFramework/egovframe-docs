@@ -84,14 +84,14 @@ INSERT INTO COMTECOPSEQ VALUES ('ANSWER_NO','0');
 #### ID Generation 환경설정(context-idgn-AnswerNo.xml)
 
 ```xml
-<bean name="egovAnswerNoGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovAnswerNoGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="answerNoStrategy" />
     <property name="blockSize"  value="10" />
     <property name="table"      value="COMTECOPSEQ" />
     <property name="tableName"  value="ANSWER_NO" />
 </bean>
-<bean name="answerNoStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="answerNoStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="cipers"     value="20" />
 </bean>
 ```

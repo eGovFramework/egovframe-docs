@@ -86,7 +86,7 @@ INSERT INTO COMTECOPSEQ VALUES('USRCNFRM_ID','1');
 
 ```xml
 <bean name="egovUsrCnfrmIdGnrService"
-      class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
+      class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
       destroy-method="destroy">
   <property name="dataSource" ref="egov.dataSource" />
   <property name="strategy" ref="usrCnfrmStrategy" />
@@ -96,7 +96,7 @@ INSERT INTO COMTECOPSEQ VALUES('USRCNFRM_ID','1');
 </bean>
 
 <bean name="usrCnfrmStrategy"
-      class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+      class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
   <property name="prefix" value="USRCNFRM_" />
   <property name="cipers" value="11" />
   <property name="fillChar" value="0" />

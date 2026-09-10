@@ -91,13 +91,13 @@ flowchart LR
 #### context-excel.xml
 
 ```xml
-    <bean id="excelZipService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
+    <bean id="excelZipService"	class="org.egovframe.rte.fdl.excel.impl.EgovExcelServiceImpl">
        <property name="propertyPath" value="excelInfo.xml" />
        <property name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelZipMapping" />
        <property name="sqlMapClient" ref="egov.sqlMapClient" />
     </bean>
  
-    <bean id="excelRdnmadZipService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
+    <bean id="excelRdnmadZipService"	class="org.egovframe.rte.fdl.excel.impl.EgovExcelServiceImpl">
         <property name="propertyPath" value="excelInfo.xml" />
         <property name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelRdnmadZipMapping" />
         <property name="sqlMapClient" ref="egov.sqlMapClient" />

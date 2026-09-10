@@ -55,13 +55,13 @@ menu:
 
 ### web.xml 설정
 
- CertProcessFilter 및 CertProcessRequestWrapper의 경우는 전자정부 표준프레임워크의 HTMLTagFilter(egovframework.rte.ptl.mvc.filter.HTMLTagFilter)를 사용할 경우 다음과 같이 web.xml에 같이 추가를 해주어야 한다. HTMLTagFilter는 request 파라미터들에 대하여 자동으로 tag를 변환하는데 인증서로그인 처리 부분은 이 부분이 제외되어야 하기 때문이다.
+ CertProcessFilter 및 CertProcessRequestWrapper의 경우는 전자정부 표준프레임워크의 HTMLTagFilter(org.egovframe.rte.ptl.mvc.filter.HTMLTagFilter)를 사용할 경우 다음과 같이 web.xml에 같이 추가를 해주어야 한다. HTMLTagFilter는 request 파라미터들에 대하여 자동으로 tag를 변환하는데 인증서로그인 처리 부분은 이 부분이 제외되어야 하기 때문이다.
 
 ```xml
     <filter>
         <filter-name>HTMLTagFilter</filter-name>
         <filter-class>
-            egovframework.rte.ptl.mvc.filter.HTMLTagFilter
+            org.egovframe.rte.ptl.mvc.filter.HTMLTagFilter
         </filter-class>
     </filter>
     <filter-mapping>

@@ -74,14 +74,14 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('CPYRHT_ID', 1);
 #### ID Generation 환경설정(context-idgn-CpyrhtPrtcPolicy.xml)
 
 ```xml
-	<bean name="egovCpyrhtPrtcPolicyIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+	<bean name="egovCpyrhtPrtcPolicyIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="cpyrhtPrtcPolicyStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="CPYRHT_ID"/>
     </bean>
-    <bean name="cpyrhtPrtcPolicyStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="cpyrhtPrtcPolicyStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"   value="CPYRHT_" />
         <property name="cipers"   value="13" />
         <property name="fillChar" value="0" />

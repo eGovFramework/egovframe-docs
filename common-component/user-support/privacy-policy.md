@@ -74,14 +74,14 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('INDVDL_INFO_ID', 1);
 #### ID Generation 환경설정(context-idgn-IndvdlInfoPolicy.xml)
 
 ```xml
-    <bean name="egovIndvdlInfoPolicyIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovIndvdlInfoPolicyIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="indvdlInfoPolicyIdMsgtrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="INDVDL_INFO_ID"/>
     </bean>
-    <bean name="indvdlInfoPolicyIdMsgtrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="indvdlInfoPolicyIdMsgtrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"   value="INDVDL_" />
         <property name="cipers"   value="13" />
         <property name="fillChar" value="0" />

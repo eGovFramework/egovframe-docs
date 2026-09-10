@@ -79,14 +79,14 @@ INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
 #### ID Generation 환경설정(context-idgn-deptSchdulManage.xml)
 
 ```xml
-<bean name="deptSchdulManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="deptSchdulManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="DeptSchdulManageStrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="SCHDUL_ID"/>
 </bean>
-<bean name="DeptSchdulManageStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="DeptSchdulManageStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"   value="SCHDUL_" />
     <property name="cipers"   value="13" />
     <property name="fillChar" value="0" />

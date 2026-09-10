@@ -89,14 +89,14 @@ CREATE TABLE COMTECOPSEQ( TABLE_NAME VARCHAR(20) NOT NULL,
 #### ID Generation 환경설정(context-idgn-PopupManage.xml)
 
 ```xml
-<bean name="egovPopupManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovPopupManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
 		<property name="dataSource"     ref="egov.dataSource" />
 		<property name="strategy"       ref="egovPopupManageIdMsgtrategy" />
 		<property name="blockSize" 	value="10"/>
 		<property name="table"	   	value="COMTECOPSEQ"/>
 		<property name="tableName"	value="POPUP_ID"/>
 	</bean>
-	<bean name="egovPopupManageIdMsgtrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+	<bean name="egovPopupManageIdMsgtrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
 		<property name="prefix" value="POPUP_" />
 		<property name="cipers" value="14" />
 		<property name="fillChar" value="0" />

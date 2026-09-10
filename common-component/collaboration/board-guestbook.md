@@ -73,14 +73,14 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('NTT_ID', 1);
 #### ID Generation 환경 설정(context-idgn-bbs.xml)
 
 ```xml
-<bean name="egovNttIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovNttIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="nttIdStrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="NTT_ID"/>
 </bean>
-<bean name="nttIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="nttIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="cipers"   value="20" />
 </bean>
 ```

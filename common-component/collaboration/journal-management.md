@@ -72,14 +72,14 @@ INSERT INTO COMTECOPSEQ VALUES('DIARY_ID',1);
 #### ID Generation 환경설정(context-idgn-diaryManage.xml)
 
 ```xml
-<bean name="diaryManageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="diaryManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="DiaryManageInfotrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="DIARY_ID"/>
 </bean>
-<bean name="DiaryManageInfotrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="DiaryManageInfotrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"   value="DIARY_" />
     <property name="cipers"   value="14" />
     <property name="fillChar" value="0" />

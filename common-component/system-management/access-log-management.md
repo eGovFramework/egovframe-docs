@@ -78,14 +78,14 @@ CREATE TABLE COMTECOPSEQ(TABLE_NAME VARCHAR(20) NOT NULL,
 #### ID Generation 환경설정(context-idgn-LoginLog.xml)
 
 ```xml
-<bean name="egovLoginLogIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovLoginLogIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="loginLogStrategy" />
         <property name="blockSize"  value="10"/>
         <property name="table"      value="COMTECOPSEQ"/>
         <property name="tableName"  value="LOGINLOG_ID"/>
     </bean>
-    <bean name="loginLogStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="loginLogStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix"   value="LOGIN_" />
         <property name="cipers"   value="14" />
         <property name="fillChar" value="0" />

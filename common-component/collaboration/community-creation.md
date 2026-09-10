@@ -75,14 +75,14 @@ INSERT INTO COMTECOPSEQ VALUES('CMMNTY_ID',1);
 #### ID Generation 환경설정(context-idgn-Cmmnty.xml)
 
 ```xml
-<bean name="egovCmmntyIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovCmmntyIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="cmmntyStrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="CMMNTY_ID"/>
 </bean>
-<bean name="cmmntyStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="cmmntyStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"   value="CMMNTY_" />
     <property name="cipers"   value="13" />
     <property name="fillChar" value="0" />

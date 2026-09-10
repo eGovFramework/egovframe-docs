@@ -79,7 +79,7 @@ menu:
 #### ID Generation 환경설정(context-idgn-LoginScrinImage.xml)
 
 ```xml
-    <bean name="egovLoginScrinImageIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+    <bean name="egovLoginScrinImageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="loginScrinImageIdStrategy" />
         <property name="blockSize"  value="10"/>
@@ -88,7 +88,7 @@ menu:
     </bean>
  
     <bean name="loginScrinImageIdStrategy"
-        class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+        class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix" value="LSI_" />
         <property name="cipers" value="16" />
         <property name="fillChar" value="0" />

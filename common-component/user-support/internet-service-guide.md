@@ -81,7 +81,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('ISG_ID', 1);
 #### ID Generation 환경설정(context-idgn-IntnetSvcGuidance.xml)
 
 ```xml
-<bean name="egovIntnetSvcGuidanceIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="egovIntnetSvcGuidanceIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
         <property name="dataSource" ref="egov.dataSource" />
         <property name="strategy"   ref="intnetSvcGuidanceIdStrategy" />
         <property name="blockSize"  value="10"/>
@@ -89,7 +89,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('ISG_ID', 1);
         <property name="tableName"  value="ISG_ID"/>
     </bean>
  
-    <bean name="intnetSvcGuidanceIdStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+    <bean name="intnetSvcGuidanceIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
         <property name="prefix" value="ISG_" />
         <property name="cipers" value="16" />
         <property name="fillChar" value="0" />
