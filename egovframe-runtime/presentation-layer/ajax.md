@@ -90,7 +90,7 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 | source         | 추천 검색어 리스트를 보여줄 텍스트 필드 이름. 입력 필드에 추천 검색리스트를 보여준다면 target과 source를 동일하게 입력한다. | yes  |
 | target         | 사용자가 입력하는 텍스트 필드 이름.                                                         | yes  |
 | parameters     | baseUrl에 추가할 파라미터들.여러개일 경우 comma로 구별한다.                                      | no   |
-| eventType      | no                                                                           |
+| eventType      |                                                                              | no   |
 | executeOnLoad  | 응답 데이터로 select box를 구성하는 중일 때 구성중인지를 별도 표시를 할지 여부.[default=false]             | no   |
 | defaultOptions | Ajax 응답값이 없을 때 보여줄 기본 리스트. comma로 구별하여 작성한다.                                  | no   |
 | preFunction    | Ajax 요청이 시작되기 전에 동작하는 function 이름.                                           | no   |
