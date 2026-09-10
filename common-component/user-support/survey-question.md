@@ -21,6 +21,16 @@ menu:
 
  설문질문관리는 설문지를 관리하기 위한 목적으로 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
+```mermaid
+flowchart LR
+    L[설문질문관리 목록조회] -->|등록| R[설문질문관리 등록]
+    L -->|목록 클릭| D[설문질문관리 상세조회]
+    D -->|수정| U[설문질문관리 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+```
+
 ### 패키지 참조 관계
 
  설문질문관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문응답자관리, 설문템플릿관리, 설문관리, 설문항목관리, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -125,7 +135,7 @@ CREATE TABLE COMTECOPSEQ (
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /uss/olp/qqm/EgovQustnrQestnManageList.do | egovQustnrQestnManageList | "QustnrQestnManage.selectQustnrQestnManage", |
+| 조회 | /uss/olp/qqm/EgovQustnrQestnManageList.do | egovQustnrQestnManageList | "QustnrQestnManage.selectQustnrQestnManage" |
 |  |  |  | "QustnrQestnManage.selectQustnrQestnManageCnt" |
 
  설문문항 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
