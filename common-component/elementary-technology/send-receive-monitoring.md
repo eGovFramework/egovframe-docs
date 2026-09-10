@@ -46,13 +46,13 @@ menu:
 | DAO | `egovframework.com.utl.sys.trm.service.impl.TrsmrcvMntrngDao.java` | 송수신모니터링을 위한 데이터처리 클래스 |
 | Model | `egovframework.com.utl.sys.trm.service.TrsmrcvMntrng.java` | 송수신모니터링을 위한 Model 클래스 |
 | Model | `egovframework.com.utl.sys.trm.service.TrsmrcvMntrngLog.java` | 송수신모니터링로그정보를 위한 Model 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngList.jsp` | 송수신모니터링목록조회를 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngRegist.jsp` | 송수신모니터링 등록을 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngUpdt.jsp` | 송수신모니터링 수정을 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngDetail.jsp` | 등록된 송수신모니터링을 조회하기 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogList.jsp` | 송수신모니터링로그목록조회를 위한 JSP 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp` | 등록된 송수신모니터링로그를 조회하기 위한 JSP 페이지 |
-| XML | `/egovframework/sqlmap/com/utl/sys/trm/EgovTrsmrcvMntrng_SQL_*.xml` | 송수신모니터링 QUERY XML |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngList.jsp` | 송수신모니터링목록조회를 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngRegist.jsp` | 송수신모니터링 등록을 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngUpdt.jsp` | 송수신모니터링 수정을 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngDetail.jsp` | 등록된 송수신모니터링을 조회하기 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngLogList.jsp` | 송수신모니터링로그목록조회를 위한 JSP 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/trm/EgovTrsmrcvMntrngLogDetail.jsp` | 등록된 송수신모니터링로그를 조회하기 위한 JSP 페이지 |
+| XML | `/egovframework/mapper/com/utl/sys/trm/EgovTrsmrcvMntrng_SQL_*.xml` | 송수신모니터링 QUERY XML |
 
 ### 클래스 다이어그램
 
