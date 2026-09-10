@@ -25098,6 +25098,16 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>설문항목관리 시스템 구축 시 사용되는 설문항목관리 기능을 제공하며, 설문조사 참여자가 설문에 참여할 때 설문항목관리 정보를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[설문항목관리 목록] -->|등록| R[설문항목관리 등록]
+ L -->|목록 클릭| D[설문항목관리 상세조회]
+ D -->|수정| U[설문항목관리 수정]
+ D -->|삭제| L
+ R --> L
+ U --> L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>설문항목관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 설문조사, 설문응답자관리, 설문템플릿관리, 설문질문관리, 설문관리, 달력 패키지와 함께 배포 파일을 구성한다.
 패키지 간 참조 관계 : 
@@ -25129,131 +25139,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
 
-&lt;/p>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.uss.olp.qim.web.EgovQustnrItemManageController.java&lt;/td>
- &lt;td>설문항목관리 Controller Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.uss.olp.qim.service.EgovQustnrItemManageService.java&lt;/td>
- &lt;td>설문항목관리 Service Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.uss.olp.qim.service.impl.EgovQustnrItemManageServiceImpl.java&lt;/td>
- &lt;td>설문항목관리 ServiceImpl Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.uss.olp.qim.service.QustnrItemManageVO.java&lt;/td>
- &lt;td>설문항목관리 VO Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.cmm.ComDefaultVO.java&lt;/td>
- &lt;td>검색 VO Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.uss.olp.qim.service.impl.QustnrItemManageDao.java&lt;/td>
- &lt;td>설문항목관리 Dao Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageList.jsp&lt;/td>
- &lt;td>설문항목관리 목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageRegist.jsp&lt;/td>
- &lt;td>설문항목관리 등록 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageModify.jsp&lt;/td>
- &lt;td>설문항목관리 수정 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageDetail.jsp&lt;/td>
- &lt;td>설문항목관리 상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olp/qim/EgovQustnrItemManageListPopup.jsp&lt;/td>
- &lt;td>설문항목관리 목록 팝업 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_mysql.xml&lt;/td>
- &lt;td>설문항목관리 MySQL용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_oracle.xml&lt;/td>
- &lt;td>설문항목관리 Oracle용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_tibero.xml&lt;/td>
- &lt;td>설문항목관리 Tibero용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_altibase.xml&lt;/td>
- &lt;td>설문항목관리 Altibase용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_cubrid.xml&lt;/td>
- &lt;td>설문항목관리 Cubrid용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_maria.xml&lt;/td>
- &lt;td>설문항목관리 MariaDB용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_postgres.xml&lt;/td>
- &lt;td>설문항목관리 PostgreSQL용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>QUERY XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olp/qim/EgovQustnrItemManage_SQL_goldilocks.xml&lt;/td>
- &lt;td>설문항목관리 Goldilocks용 QUERY XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/olp/qim/message_ko.properties&lt;/td>
- &lt;td>설문항목관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/olp/qim/message_en.properties&lt;/td>
- &lt;td>설문항목관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-QustnrItemManage.xml&lt;/td>
- &lt;td>설문항목관리 Id생성 Idgen XML&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/svy-qim-%ec%84%a4%eb%ac%b8%ed%95%ad%eb%aa%a9%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >&lt;/p></description></item><item><title>설정 간소화</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</guid><description>&lt;h1 id="spring-security-설정-간소화서비스">Spring Security 설정 간소화서비스&lt;/h1>
+&lt;/p></description></item><item><title>설정 간소화</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/server-security/server-security-simplification/</guid><description>&lt;h1 id="spring-security-설정-간소화서비스">Spring Security 설정 간소화서비스&lt;/h1>
 &lt;p>전자정부 표준프레임워크 실행환경 구성요소인 Spring Security 설정 간소화서비스를 사용한 Spring Security 기반 접근제어 설정 및 사용법을 정리한 문서입니다.&lt;/p>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Spring Security 설정 간소화서비스를 이용한 인증 및 URL 패턴별 접근제어를 제공합니다. JDBC 기반 사용자 인증과 DB의 역할(Role)-URL 매핑을 통해 요청에 대한 권한을 검사합니다.&lt;/p>
