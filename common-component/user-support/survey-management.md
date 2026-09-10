@@ -46,6 +46,16 @@ menu:
  설문참여 통계를 이용하여 설문참여결과를 확인한다.
  설문참여
 
+```mermaid
+flowchart LR
+    L[설문관리 목록조회] -->|등록| R[설문관리 등록]
+    L -->|목록 클릭| D[설문관리 상세조회]
+    D -->|수정| U[설문관리 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -136,7 +146,7 @@ CREATE TABLE COMTECOPSEQ (
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /uss/olp/qmc/EgovQustnrManageList.do | egovQustnrManageList | "QustnrManage.selectQustnrManage", |
+| 목록조회 | /uss/olp/qmc/EgovQustnrManageList.do | egovQustnrManageList | "QustnrManage.selectQustnrManage" |
 |  |  |  | "QustnrManage.selectQustnrManageCnt" |
 
  설문관리 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
