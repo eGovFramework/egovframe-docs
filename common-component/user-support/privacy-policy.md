@@ -112,7 +112,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('INDVDL_INFO_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/sam/ipm/listIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyList | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicy", |
+| 목록조회 | /uss/sam/ipm/listIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyList | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicy" |
 |  |  |  | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicyCnt" |
 
  ![image](./images/uss-privacy-개인정보_목록.jpg)
