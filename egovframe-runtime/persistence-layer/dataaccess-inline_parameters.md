@@ -21,7 +21,7 @@ menu:
 
 ```xml
 	..
-	<typeAlias alias="empVO" type="egovframework.rte.psl.dataaccess.vo.EmpVO" />
+	<typeAlias alias="empVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpVO" />
  
 	<insert id="insertEmptUsingInLineParam">
 		<![CDATA[

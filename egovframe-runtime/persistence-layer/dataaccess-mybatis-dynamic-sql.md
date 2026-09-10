@@ -27,7 +27,7 @@ MyBatis에서 제공하는 Dynamic 요소의 기본적인 형태에 대해 알�
 아래 Sql 매퍼 파일은 파라미터 객체의 empNo 속성의 값 유무에 따라 `where EMP_NO = #{empNo}` 조건절을 동적으로 추가/제거할 수 있는 예이다.
 
 ```xml
-	<select id="selectJobHistListUsingDynamicElement" parameterType="egovframework.rte.psl.dataaccess.vo.JobHistVO" resultMap="egovframework.rte.psl.dataaccess.vo.JobHistVO">
+	<select id="selectJobHistListUsingDynamicElement" parameterType="org.egovframe.rte.psl.dataaccess.vo.JobHistVO" resultMap="org.egovframe.rte.psl.dataaccess.vo.JobHistVO">
 		<![CDATA[
 			select EMP_NO     as empNo,
 			       START_DATE as startDate,
@@ -56,7 +56,7 @@ where 절 안에 사용되며 if 안에 해당 값이 존재하지 않으면 모
 
 ```xml
         ..
-	<select id="selectEmployerList" parameterType="egovframework.rte.psl.dataaccess.vo.EmpVO" resultType="egovframework.rte.psl.dataaccess.vo.EmpVO">
+	<select id="selectEmployerList" parameterType="org.egovframe.rte.psl.dataaccess.vo.EmpVO" resultType="org.egovframe.rte.psl.dataaccess.vo.EmpVO">
 		<![CDATA[
 			select
 				EMP_NO as empNo,
@@ -89,7 +89,7 @@ where 절 안에 사용되며 if 안에 해당 값이 존재하지 않으면 모
 두 가지 값을 모두 제공하지 않는다면 HIRE 상태인 Employee 정보가 리턴될 것이다.
 
 ```xml
-	<select id="selectEmployeeList" parameterType="egovframework.rte.psl.dataaccess.vo.EmpVO" resultType="egovframework.rte.psl.dataaccess.vo.EmpVO">
+	<select id="selectEmployeeList" parameterType="org.egovframe.rte.psl.dataaccess.vo.EmpVO" resultType="org.egovframe.rte.psl.dataaccess.vo.EmpVO">
 		SELECT * FROM EMP WHERE JOB = 'Engineer'
 		<choose>
 			<when test="mgr ! null">
@@ -111,8 +111,8 @@ where 절 안에 사용되며 if 안에 해당 값이 존재하지 않으면 모
 
 ```xml
 	..
-	<select id="selectEmployerList" parameterType="egovframework.rte.psl.dataaccess.vo.EmpVO"
-		resultType="egovframework.rte.psl.dataaccess.vo.EmpVO">
+	<select id="selectEmployerList" parameterType="org.egovframe.rte.psl.dataaccess.vo.EmpVO"
+		resultType="org.egovframe.rte.psl.dataaccess.vo.EmpVO">
 		<![CDATA[
 			select
 				EMP_NO as empNo,
@@ -143,7 +143,7 @@ foreach 요소는 매우 강력한 기능을 제공하는데 그중 하나가 co
 foreach 요소에서는 item, index 두 가지 변수를 선언하며, 이 요소는 열고 닫는 문자열로 명시할 수 있고 반복 간에 둘 수 있는 구분자도 추가 가능하다.
 
 ```xml
-	<select id="selectJobHistListUsingDynamicNestedIterate" parameterType="egovframework.rte.psl.dataaccess.util.EgovMap" resultMap="jobHistVO">
+	<select id="selectJobHistListUsingDynamicNestedIterate" parameterType="org.egovframe.rte.psl.dataaccess.util.EgovMap" resultMap="jobHistVO">
 		<![CDATA[
 			select EMP_NO     as empNo,
 			       START_DATE as startDate,

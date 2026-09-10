@@ -22,7 +22,7 @@ menu:
 배치실행환경에서 제공하는 EgovResourceVariable 사용하여 사용자 정의 리소스를 설정한다.
 
 ```xml
-<bean id="egovResourceVariable" class="egovframework.rte.bat.support.EgovResourceVariable">
+<bean id="egovResourceVariable" class="org.egovframe.rte.bat.support.EgovResourceVariable">
 	<property name="pros">
 	<props>
 		<prop key="input.resource">file:./src/main/resources/egovframework/batch/data/inputs/csvData.csv</prop>
@@ -40,14 +40,14 @@ Setp에서 ItemReader, ItemWriter 사용시 사용자 정의 리소스 변수를
 	class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
 	<property name="resource" value="#{egovResourceVariable.getVariable('input.resource')}" />
 	<property name="lineMapper">
-		<bean class="egovframework.rte.bat.core.item.file.mapping.EgovDefaultLineMapper">
+		<bean class="org.egovframe.rte.bat.core.item.file.mapping.EgovDefaultLineMapper">
 			<property name="lineTokenizer">
-				<bean class="egovframework.rte.bat.core.item.file.transform.EgovDelimitedLineTokenizer">
+				<bean class="org.egovframe.rte.bat.core.item.file.transform.EgovDelimitedLineTokenizer">
 					<property name="delimiter" value="," />
 				</bean>
 			</property>
 			<property name="objectMapper">
-				<bean class="egovframework.rte.bat.core.item.file.mapping.EgovObjectMapper">
+				<bean class="org.egovframe.rte.bat.core.item.file.mapping.EgovObjectMapper">
 					<property name="type"
 						value="egovframework.example.bat.domain.trade.CustomerCredit" />
 					<property name="names" value="name,credit" />
@@ -64,7 +64,7 @@ Setp에서 ItemReader, ItemWriter 사용시 사용자 정의 리소스 변수를
 		<bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
 			<property name="delimiter" value="," />
 			<property name="fieldExtractor">
-				<bean class="egovframework.rte.bat.core.item.file.transform.EgovFieldExtractor">
+				<bean class="org.egovframe.rte.bat.core.item.file.transform.EgovFieldExtractor">
 					<property name="names" value="name,credit" />
 				</bean>
 			</property>

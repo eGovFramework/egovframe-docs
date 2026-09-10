@@ -385,7 +385,7 @@ WebService를 위한 기본적인 설정이 포함된 “context-webservice.xml�
     <!-- EgovWebServiceContext 이다.
          organizationId 와 systemId 는 현재 시스템의 기관ID 및 시스템ID를 넣어야 한다. -->
     <bean id="egovWebServiceContext"
-          class="egovframework.rte.itl.webservice.EgovWebServiceContext"
+          class="org.egovframe.rte.itl.webservice.EgovWebServiceContext"
           init-method="init">
         <property name="organizationId" value="ORG_EGOV"/>
         <property name="systemId" value="SYS00001"/>
@@ -533,7 +533,7 @@ web.xml에 EgovWebServiceServlet 설정을 추가한다.
         <description></description>
         <display-name>EgovWebServiceServlet</display-name>
         <servlet-name>EgovWebServiceServlet</servlet-name>
-        <servlet-class>egovframework.rte.itl.webservice.EgovWebServiceServlet</servlet-class>
+        <servlet-class>org.egovframe.rte.itl.webservice.EgovWebServiceServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

@@ -75,12 +75,12 @@ UserDetailsService 인터페이스 내 loadUserByUsername 메소드의 리턴된
 </authentication-manager>
  
  
-<beans:bean id="jdbcUserService" class="egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager" >
+<beans:bean id="jdbcUserService" class="org.egovframe.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager" >
 	<beans:property name="usersByUsernameQuery" value="SELECT USER_ID,PASSWORD,ENABLED,USER_NAME,BIRTH_DAY,SSN FROM USERS WHERE USER_ID = ?"/>
 	<beans:property name="authoritiesByUsernameQuery" value="SELECT USER_ID,AUTHORITY FROM AUTHORITIES WHERE USER_ID = ?"/>
 	<beans:property name="roleHierarchy" ref="roleHierarchy"/>
 	<beans:property name="dataSource" ref="dataSource"/>
-	<beans:property name="mapClass" value="egovframework.rte.fdl.security.userdetails.EgovUserDetailsMapping"/>
+	<beans:property name="mapClass" value="org.egovframe.rte.fdl.security.userdetails.EgovUserDetailsMapping"/>
 </beans:bean>
 ```
 
@@ -188,16 +188,16 @@ CAS 인증
  변경후(사용)
 
 ```xml
-<beans:bean id="jdbcUserService" class="egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager" >
+<beans:bean id="jdbcUserService" class="org.egovframe.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager" >
 	<beans:property name="usersByUsernameQuery" value="SELECT USER_ID,PASSWORD,ENABLED,USER_NAME,BIRTH_DAY,SSN FROM USERS WHERE USER_ID = ?"/>
 	<beans:property name="authoritiesByUsernameQuery" value="SELECT USER_ID,AUTHORITY FROM AUTHORITIES WHERE USER_ID = ?"/>
 	<beans:property name="roleHierarchy" ref="roleHierarchy"/>
 	<beans:property name="dataSource" ref="dataSource"/>
-	<beans:property name="mapClass" value="egovframework.rte.fdl.security.userdetails.EgovUserDetailsMapping"/>
+	<beans:property name="mapClass" value="org.egovframe.rte.fdl.security.userdetails.EgovUserDetailsMapping"/>
 </beans:bean>
 ```
 
-- class : egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager
+- class : org.egovframe.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager
 - usersByUsernameQuery : 사용자 인증을 위해 사용자 테이블에서 사용자정보를 조회한다.
 - authoritiesByUsernameQuery : 사용자 인증을 위해 사용자권한 테이블에서 사용자권한정보를 조회한다.
 - roleHierarchy : 역할의 계층적 관리를 위해 계층 역할을 설정한다.
@@ -289,7 +289,7 @@ public class EgovUserDetailsMapping extends EgovUsersByUsernameMapping {
 ##### 세션 가져오기
 
 ```java
-import egovframework.rte.fdl.security.userdetails.util.EgovUserDetailsHelper;
+import org.egovframe.rte.fdl.security.userdetails.util.EgovUserDetailsHelper;
   .
   .
   .

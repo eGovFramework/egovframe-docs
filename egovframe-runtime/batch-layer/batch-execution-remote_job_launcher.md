@@ -88,7 +88,7 @@ package egovframework.example.bat.remote;
  
 import java.util.ArrayList;
 ...
-import egovframework.rte.bat.core.launch.support.EgovBatchRunner;
+import org.egovframe.rte.bat.core.launch.support.EgovBatchRunner;
  
 public class RemoteJobLauncherImpl implements RemoteJobLauncher {
  

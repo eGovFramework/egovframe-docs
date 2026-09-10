@@ -38,12 +38,12 @@ menu:
 	</settings>
  
 	<typeHandlers>
-		<typeHandler handler="egovframework.rte.psl.dataaccess.typehandler.CalendarMapperTypeHandler" />
+		<typeHandler handler="org.egovframe.rte.psl.dataaccess.typehandler.CalendarMapperTypeHandler" />
 	</typeHandlers>
  
 	<typeAliases>
-		<typeAlias alias="deptVO" type="egovframework.rte.psl.dataaccess.vo.DeptVO" />
-		<typeAlias alias="empVO" type="egovframework.rte.psl.dataaccess.vo.EmpVO" />
+		<typeAlias alias="deptVO" type="org.egovframe.rte.psl.dataaccess.vo.DeptVO" />
+		<typeAlias alias="empVO" type="org.egovframe.rte.psl.dataaccess.vo.EmpVO" />
 	.
 	.
 	. 

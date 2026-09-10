@@ -31,7 +31,7 @@ menu:
 	</bean>
  
 	<!-- SqlMap setup for iBATIS Database Layer -->
-	<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
+	<bean id="sqlMapClient" class="org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="classpath:/META-INF/sqlmap/sql-map-config.xml"/>
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
@@ -48,7 +48,7 @@ menu:
 
 ```xml
 	<!-- SqlMap setup for iBATIS Database Layer -->
-	<bean id="sqlMapClient" class="egovframework.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
+	<bean id="sqlMapClient" class="org.egovframe.rte.psl.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation"
 			value="classpath:/META-INF/sqlmap/sql-map-config.xml" />
 		<property name="mappingLocations"
@@ -73,7 +73,7 @@ menu:
 	/>
  
 	<typeHandler javaType="java.util.Calendar" jdbcType="TIMESTAMP"
-		callback="egovframework.rte.psl.dataaccess.typehandler.CalendarTypeHandler" />
+		callback="org.egovframe.rte.psl.dataaccess.typehandler.CalendarTypeHandler" />
  
 	<!-- Spring 2.5.5 이상, iBATIS 2.3.2 이상에서는 iBATIS 연동을 위한 SqlMapClientFactoryBean 정의 시 
                mappingLocations 속성으로 Sql 매핑 파일의 일괄 지정이 가능하다. 

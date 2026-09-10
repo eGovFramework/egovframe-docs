@@ -201,7 +201,7 @@ crypto.hashed.password=gdyYs/IZqY86VcWhT8emCYfqY1ahw2vtLG+/FzNqtrQ=
 ```
 
 - crypto.password.algorithm : 패스워드 인코더에 사용될 hash function 알고리즘 (default : SHA-256)
-- crypto.hashed.password : 패스워드에 대한 hash value (egovframework.rte.fdl.cryptography.EgovPasswordEncoder의 main 메소드에 의해 해당 값을 얻어 기록한다.)
+- crypto.hashed.password : 패스워드에 대한 hash value (org.egovframe.rte.fdl.crypto.EgovPasswordEncoder의 main 메소드에 의해 해당 값을 얻어 기록한다.)
 
 그리고 이를 사용하기 위해 다음과 같이 property-placeholder 설정이 필요하다.
 
@@ -214,22 +214,22 @@ location="classpath*:/META-INF/spring/crypto_config.properties,classpath*:/META-
 ※ 위 property 파일과 이를 사용하기 위한 property-placeholder를 사용하지 않고 아래의 xml 설정에 직접 기록하여도 된다.
 
 ```xml
-<bean id="passwordEncoder" class="egovframework.rte.fdl.cryptography.EgovPasswordEncoder">
+<bean id="passwordEncoder" class="org.egovframe.rte.fdl.crypto.EgovPasswordEncoder">
   <property name="algorithm" value="${crypto.password.algorithm}" /><!-- default : SHA-256 -->
   <property name="hashedPassword" value="${crypto.hashed.password}" />
 </bean>
  
-<bean id="ARIACryptoService" class="egovframework.rte.fdl.cryptography.impl.EgovARIACryptoServiceImpl">
+<bean id="ARIACryptoService" class="org.egovframe.rte.fdl.crypto.impl.EgovARIACryptoServiceImpl">
   <property name="passwordEncoder" ref="passwordEncoder" />
   <property name="blockSize" value="1025" /><!-- default : 1024 -->
 </bean>
  
-<bean id="digestService" class="egovframework.rte.fdl.cryptography.impl.EgovDigestServiceImpl">
+<bean id="digestService" class="org.egovframe.rte.fdl.crypto.impl.EgovDigestServiceImpl">
   <property name="algorithm" value="SHA-256" /><!-- default : SHA-256 -->
   <property name="plainDigest" value="false" /><!-- default : false -->
 </bean>
  
-<bean id="generalCryptoService" class="egovframework.rte.fdl.cryptography.impl.EgovGeneralCryptoServiceImpl">
+<bean id="generalCryptoService" class="org.egovframe.rte.fdl.crypto.impl.EgovGeneralCryptoServiceImpl">
   <property name="passwordEncoder" ref="passwordEncoder" />
   <property name="algorithm" value="PBEWithSHA1AndDESede" /><!-- default : PBEWithSHA1AndDESede -->
   <property name="blockSize" value="1024" /><!-- default : 1024 -->

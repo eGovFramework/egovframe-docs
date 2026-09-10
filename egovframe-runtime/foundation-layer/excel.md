@@ -273,11 +273,11 @@ ${persons.name}	${persons.id}	${persons.mon}	${persons.tue}	${persons.wed}	${per
 #### Configuration
 
 ```xml
-<bean id="categoryExcelView" class="egovframework.rte.fdl.excel.download.CategoryExcelView" />
+<bean id="categoryExcelView" class="org.egovframe.rte.fdl.excel.download.CategoryExcelView" />
  
 <!--
 XSSF 형태의 다운로드의 경우 다음의 View를 등록하여 사용한다.
-<bean id="CategoryPOIExcelView" class="egovframework.rte.fdl.excel.download.CategoryPOIExcelView" />
+<bean id="CategoryPOIExcelView" class="org.egovframe.rte.fdl.excel.download.CategoryPOIExcelView" />
 -->
  
 <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
@@ -544,21 +544,21 @@ public class CategoryPOIExcelView extends AbstractPOIExcelView {
 #### Configuration
 
 ```xml
-<bean id="excelService"	class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
-	<property name="mapClass" value="egovframework.rte.fdl.excel.upload.EgovExcelTestMapping" />
+<bean id="excelService"	class="org.egovframe.rte.fdl.excel.impl.EgovExcelServiceImpl">
+	<property name="mapClass" value="org.egovframe.rte.fdl.excel.upload.EgovExcelTestMapping" />
 	<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 </bean>
  
-<bean id="excelBigService" class="egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl">
-	<property name="mapClass" value="egovframework.rte.fdl.excel.upload.EgovExcelTestMapping" />
+<bean id="excelBigService" class="org.egovframe.rte.fdl.excel.impl.EgovExcelServiceImpl">
+	<property name="mapClass" value="org.egovframe.rte.fdl.excel.upload.EgovExcelTestMapping" />
 	<property name="mapBeanName" value="mappingBean" />
 	<property name="sqlMapClient" ref="sqlMapClient" />
 </bean>
  
-<bean id="mappingBean" class="egovframework.rte.fdl.excel.upload.EgovExcelBigTestMapping" />
+<bean id="mappingBean" class="org.egovframe.rte.fdl.excel.upload.EgovExcelBigTestMapping" />
 ```
 
-- class : egovframework.rte.fdl.excel.impl.EgovExcelServiceImpl
+- class : org.egovframe.rte.fdl.excel.impl.EgovExcelServiceImpl
 - propertyPath : xml형식의 엑셀 형식정보 위치
 - mapClass : 개발자가 작성한 VO와 Query의 mapping을 위한 클래스
 - mapBeanName : Excel Cell과 VO를 mapping 구현 Bean name (mapClass보다 우선함)
@@ -639,7 +639,7 @@ public class EgovExcelTestMapping extends EgovExcelMapping {
 
 ```xml
 <sqlMap namespace="EmpBatchInsert">
-	<typeAlias alias="empVO" type="egovframework.rte.fdl.excel.vo.EmpVO" />
+	<typeAlias alias="empVO" type="org.egovframe.rte.fdl.excel.vo.EmpVO" />
 	<insert id="insertEmpUsingBatch" parameterClass="empVO">
 		<![CDATA[
 			insert into EMP (
