@@ -113,7 +113,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | `/utl/sys/trm/getTrsmrcvMntrngList.do` | `selectTrsmrcvMntrngList` | `TrsmrcvMntrngDAO.selectTrsmrcvMntrngList`<br>`TrsmrcvMntrngDAO.selectTrsmrcvMntrngListCnt` |
+| 조회 | `/utl/sys/trm/getTrsmrcvMntrngList.do` | `selectTrsmrcvMntrngList` | `TrsmrcvMntrngDao.selectTrsmrcvMntrngList`<br>`TrsmrcvMntrngDao.selectTrsmrcvMntrngListCnt` |
 
 송수신모니터링 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 연계명, 관리자명에 대해서 수행된다.
 
@@ -126,7 +126,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | `/utl/sys/trm/addTrsmrcvMntrng.do` | `insertTrsmrcvMntrng` | `TrsmrcvMntrngDAO.insertTrsmrcvMntrng` |
+| 등록 | `/utl/sys/trm/addTrsmrcvMntrng.do` | `insertTrsmrcvMntrng` | `TrsmrcvMntrngDao.insertTrsmrcvMntrng` |
 
 송수신모니터링의 속성정보를 입력한 뒤 등록한다.
 
@@ -139,7 +139,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | `/utl/sys/trm/updateTrsmrcvMntrng.do` | `updateTrsmrcvMntrng` | `TrsmrcvMntrngDAO.updateTrsmrcvMntrng` |
+| 수정 | `/utl/sys/trm/updateTrsmrcvMntrng.do` | `updateTrsmrcvMntrng` | `TrsmrcvMntrngDao.updateTrsmrcvMntrng` |
 
 송수신모니터링의 속성정보를 변경한 후 저장한다.
 
@@ -152,8 +152,8 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | `/utl/sys/trm/getTrsmrcvMntrng.do` | `selectTrsmrcvMntrng` | `TrsmrcvMntrngDAO.selectTrsmrcvMntrng` |
-| 삭제 | `/utl/sys/trm/deleteTrsmrcvMntrng.do` | `deleteTrsmrcvMntrng` | `TrsmrcvMntrngDAO.deleteTrsmrcvMntrng` |
+| 상세조회 | `/utl/sys/trm/getTrsmrcvMntrng.do` | `selectTrsmrcvMntrng` | `TrsmrcvMntrngDao.selectTrsmrcvMntrng` |
+| 삭제 | `/utl/sys/trm/deleteTrsmrcvMntrng.do` | `deleteTrsmrcvMntrng` | `TrsmrcvMntrngDao.deleteTrsmrcvMntrng` |
 
 송수신모니터링의 속성정보를 조회한다.
 
@@ -167,7 +167,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | `/utl/sys/trm/getTrsmrcvMntrngLogList.do` | `selectTrsmrcvMntrngLogList` | `TrsmrcvMntrngDAO.selectTrsmrcvMntrngLogList`<br>`TrsmrcvMntrngDAO.selectTrsmrcvMntrngLogListCnt` |
+| 조회 | `/utl/sys/trm/getTrsmrcvMntrngLogList.do` | `selectTrsmrcvMntrngLogList` | `TrsmrcvMntrngDao.selectTrsmrcvMntrngLogList`<br>`TrsmrcvMntrngDao.selectTrsmrcvMntrngLogListCnt` |
 
 송수신모니터링로그 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다. 검색조건은 연계명, 관리자명, 모니터링시각에 대해서 수행된다.
 
@@ -179,7 +179,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | `/utl/sys/trm/getTrsmrcvMntrngLog.do` | `selectTrsmrcvMntrngLog` | `TrsmrcvMntrngDAO.selectTrsmrcvMntrngLog` |
+| 상세조회 | `/utl/sys/trm/getTrsmrcvMntrngLog.do` | `selectTrsmrcvMntrngLog` | `TrsmrcvMntrngDao.selectTrsmrcvMntrngLog` |
 
 송수신모니터링로그의 속성정보를 조회한다.
 

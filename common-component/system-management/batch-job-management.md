@@ -99,8 +99,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/bat/getBatchOpertList.do | selectBatchOpertList | "BatchOpertDAO.selectBatchOpertList" |
-| 조회 | /sym/bat/getBatchOpertList.do | selectBatchOpertList | "BatchOpertDAO.selectBatchOpertListCnt" |
+| 조회 | /sym/bat/getBatchOpertList.do | selectBatchOpertList | "BatchOpertDao.selectBatchOpertList" |
+| 조회 | /sym/bat/getBatchOpertList.do | selectBatchOpertList | "BatchOpertDao.selectBatchOpertListCnt" |
 
  배치작업 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 배치작업명,배치프로그램에 대해서 수행된다.
@@ -114,7 +114,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /sym/bat/addBatchOpert.do | insertBatchOpert | "BatchOpertDAO.insertBatchOpert" |
+| 등록 | /sym/bat/addBatchOpert.do | insertBatchOpert | "BatchOpertDao.insertBatchOpert" |
 
  배치작업의 속성정보를 입력한 뒤 등록한다.
 
@@ -127,7 +127,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/bat/updateBatchOpert | updateBatchOpert | "BatchOpertDAO.updateBatchOpert" |
+| 수정 | /sym/bat/updateBatchOpert | updateBatchOpert | "BatchOpertDao.updateBatchOpert" |
 
  배치작업의 속성정보를 변경한 후 저장한다.
 
@@ -140,8 +140,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/bat/getBatchOpert.do | selectBatchOpert | "BatchOpertDAO.selectBatchOpert" |
-| 삭제 | /sym/bat/deleteBatchOpert.do | deleteBatchOpert | "BatchOpertDAO.deleteBatchOpert" |
+| 상세조회 | /sym/bat/getBatchOpert.do | selectBatchOpert | "BatchOpertDao.selectBatchOpert" |
+| 삭제 | /sym/bat/deleteBatchOpert.do | deleteBatchOpert | "BatchOpertDao.deleteBatchOpert" |
 
  배치작업의 속성정보를 조회한다.
 
