@@ -120,7 +120,7 @@ menu:
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/lsi/selectLoginScrinImageList.do | selectLoginScrinImageList | "loginScrinImageDAO" | "selectLoginScrinImageList", |
+| 목록조회 | /uss/ion/lsi/selectLoginScrinImageList.do | selectLoginScrinImageList | "loginScrinImageDAO" | "selectLoginScrinImageList" |
 |  |  |  | "loginScrinImageDAO" | "selectLoginScrinImageListTotCnt" |
 
  ![image](./images/uss-loginimage-loginscrimg1.jpg)
