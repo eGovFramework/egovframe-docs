@@ -130,7 +130,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /sym/bat/updateBatchSchdul | updateBatchSchdul | "BatchSchdulDao.updateBatchSchdul" |
+| 수정 | /sym/bat/updateBatchSchdul.do | updateBatchSchdul | "BatchSchdulDao.updateBatchSchdul" |
 
  배치스케줄의 속성정보를 변경한 후 저장한다.
 
