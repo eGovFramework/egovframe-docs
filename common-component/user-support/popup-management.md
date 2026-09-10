@@ -26,6 +26,17 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[팝업창관리 목록조회] -->|등록| R[팝업창관리 등록]
+    L -->|목록 클릭| D[팝업창관리 상세조회]
+    L -->|미리보기| P([팝업창 미리보기])
+    D -->|수정| U[팝업창관리 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+```
+
 ### 패키지 참조 관계
 
  팝업창관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.
@@ -116,7 +127,7 @@ CREATE TABLE COMTECOPSEQ( TABLE_NAME VARCHAR(20) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/ion/pwm/listPopup.do | egovPopupManageList | "PopupManage" | "selectPopupManage", |
+| 목록조회 | /uss/ion/pwm/listPopup.do | egovPopupManageList | "PopupManage" | "selectPopupManage" |
 |  |  |  | "PopupManage" | "selectPopupManageCnt" |
 
  ![image](./images/uss-popup-팝업창관리_목록_팝업.jpg)
