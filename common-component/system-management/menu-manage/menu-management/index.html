@@ -50,9 +50,13 @@ R -->|목록| L
 L -->|메뉴명 선택| D[메뉴정보 상세조회/수정]
 D -->|목록| L
 D -->|삭제| L
-D -->|수정 저장| D</div><h3 class=sec-tit id=메뉴정보-목록조회>메뉴정보 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>신규 메뉴를 등록하기 위해서는 상단의 등록 버튼을 통해서 메뉴정보 등록 화면으로 이동하고 기존 메뉴정보를 수정하고자 하는 경우 해당 메뉴명을 클릭하여 상세 조회 및 수정기능을 제공하는 메뉴상세조회/수정 화면으로 이동한다.
+D -->|수정 저장| D
+L -->|엑셀 일괄생성| B[메뉴일괄생성]
+B --> L
+L -->|메뉴리스트| T[메뉴리스트 관리]
+T -->|등록/수정/삭제| T</div><h3 class=sec-tit id=메뉴정보-목록조회>메뉴정보 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>신규 메뉴를 등록하기 위해서는 상단의 등록 버튼을 통해서 메뉴정보 등록 화면으로 이동하고 기존 메뉴정보를 수정하고자 하는 경우 해당 메뉴명을 클릭하여 상세 조회 및 수정기능을 제공하는 메뉴상세조회/수정 화면으로 이동한다.
 메뉴 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
-검색조건은 메뉴명에 대하여 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>조회</td><td>/sym/mnu/mpm/EgovMenuManageSelect.do</td><td>selectMenuManageList</td><td>&ldquo;menuManageDAO.selectMenuManageList_D&rdquo;,</td></tr><tr><td></td><td></td><td></td><td>&ldquo;menuManageDAO.selectMenuManageListTotCnt_S&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-menu-egovmenumanage.jpg alt=image></p><p>조회 : 등록된 메뉴관리리스트를 조회한다.
+검색조건은 메뉴명에 대하여 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>조회</td><td>/sym/mnu/mpm/EgovMenuManageSelect.do</td><td>selectMenuManageList</td><td>&ldquo;menuManageDAO.selectMenuManageList_D&rdquo;</td></tr><tr><td></td><td></td><td></td><td>&ldquo;menuManageDAO.selectMenuManageListTotCnt_S&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-menu-egovmenumanage.jpg alt=image></p><p>조회 : 등록된 메뉴관리리스트를 조회한다.
 등록 : 신규 메뉴정보를 등록하기 위해서는 상단의 등록 버튼을 통해서 메뉴 등록 화면으로 이동한다.
 조회목록 선택 : 기존 메뉴정보를 수정하고자 하는 경우 해당 메뉴명을 클릭하여 상세 조회 및 수정기능을 제공하는 메뉴상세조회/수정 화면으로 이동한다.</p><h3 class=sec-tit id=메뉴정보-등록>메뉴정보 등록</h3><h4 id=비즈니스-규칙-1>비즈니스 규칙</h4><p>메뉴 정보를 입력한 뒤 등록한다. 프로그램파일명 입력시 프로그램 파일명 옆 검색버튼을 클릭하여 프로그램 파일명 검색 팝업화면을 호출 파일명을 검색하여 해당 파일명 클릭하여 지정한다.</p><h4 id=관련코드-1>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼-1>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>등록</td><td>/sym/mnu/mpm/EgovMenuRegistInsert.do</td><td>insertMenuManage</td><td>&ldquo;menuManageDAO.insertMenuManage_S&rdquo;</td></tr></tbody></table></div><p><img src=/egovframe-docs/common-component/system-management/images/sym-menu-egovmenuregist.jpg alt=image></p><p><img src=/egovframe-docs/common-component/system-management/images/sym-menu-egovfilenmsearch.jpg alt=image></p><p>목록 : 메뉴관리리스트 화면으로 이동한다.
 등록 : 신규 메뉴정보를 등록하기 위해서는 상단의 등록 버튼을 통해서 저장한다.
