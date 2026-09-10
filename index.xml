@@ -16532,7 +16532,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;tr>
  &lt;td>Idgen XML&lt;/td>
  &lt;td>resources/egovframework/spring/com/idgn/context-idgn-InsttCodeRecptn.xml&lt;/td>
- &lt;td>행정코드 Id생성 Idgen XML&lt;/td>
+ &lt;td>기관코드 Id생성 Idgen XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Message properties&lt;/td>
