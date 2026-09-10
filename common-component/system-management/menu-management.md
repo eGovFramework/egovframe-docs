@@ -79,6 +79,10 @@ flowchart LR
     D -->|목록| L
     D -->|삭제| L
     D -->|수정 저장| D
+    L -->|엑셀 일괄생성| B[메뉴일괄생성]
+    B --> L
+    L -->|메뉴리스트| T[메뉴리스트 관리]
+    T -->|등록/수정/삭제| T
 ```
 
 ### 메뉴정보 목록조회
@@ -97,7 +101,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/mnu/mpm/EgovMenuManageSelect.do | selectMenuManageList | "menuManageDAO.selectMenuManageList\_D", |
+| 조회 | /sym/mnu/mpm/EgovMenuManageSelect.do | selectMenuManageList | "menuManageDAO.selectMenuManageList\_D" |
 |  |  |  | "menuManageDAO.selectMenuManageListTotCnt\_S" |
 
  ![image](./images/sym-menu-egovmenumanage.jpg)
