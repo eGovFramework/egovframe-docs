@@ -23,6 +23,14 @@ menu:
 
 추가적으로 템플릿 등록, 삭제 등의 템플릿 관리 기능은 게시판 관리 또는 사용 기능과 분리되어 제공된다.
 
+```mermaid
+flowchart LR
+    L[템플릿 목록조회] -->|등록| R[템플릿 등록]
+    L -->|템플릿명 클릭| U[템플릿 수정]
+    R --> L
+    U --> L
+```
+
 ### 패키지 참조 관계
 
 디자인템플릿 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 시스템(sim), 포맷/계산/변환, 협업의 공통기능(com), 게시판, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -117,7 +125,7 @@ N/A
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 목록조회 | /cop/tpl/selectTemplateInfs.do | selectTemplateInfs | "TemplateManageDAO.selectTemplateInfs", |
+| 목록조회 | /cop/tpl/selectTemplateInfs.do | selectTemplateInfs | "TemplateManageDAO.selectTemplateInfs" |
 | | | | "TemplateManageDAO.selectTemplateInfsCnt" |
 | 팝업 목록조회 | /cop/tpl/selectTemplateInfsPop.do | selectTemplateInfsPop | "TemplateManageDAO.selectTemplateInfs" |
 
