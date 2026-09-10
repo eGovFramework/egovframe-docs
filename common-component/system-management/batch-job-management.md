@@ -99,8 +99,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /sym/bat/selectBatchOpertList.do | selectBatchOpertList | "BatchOpertDAO.selectBatchOpertList" |
-| 조회 | /sym/bat/selectBatchOpertList.do | selectBatchOpertList | "BatchOpertDAO.selectBatchOpertListCnt" |
+| 조회 | /sym/bat/getBatchOpertList.do | selectBatchOpertList | "BatchOpertDAO.selectBatchOpertList" |
+| 조회 | /sym/bat/getBatchOpertList.do | selectBatchOpertList | "BatchOpertDAO.selectBatchOpertListCnt" |
 
  배치작업 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  검색조건은 배치작업명,배치프로그램에 대해서 수행된다.
