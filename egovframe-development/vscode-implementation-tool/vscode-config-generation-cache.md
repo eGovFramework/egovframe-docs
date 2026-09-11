@@ -34,7 +34,7 @@ Ehcache 기반의 일반 캐시 설정 파일을 생성한다. 기본 캐시(def
 
 | 형식 | 기본 파일명 |
 |---|---|
-| XML | `ehcache` |
+| XML | `ehcache-default` |
 
 ### 설정 항목
 
@@ -42,7 +42,7 @@ Ehcache 기반의 일반 캐시 설정 파일을 생성한다. 기본 캐시(def
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| File Name | ✓ | 생성될 XML 파일명 (기본값: `ehcache`) |
+| File Name | ✓ | 생성될 XML 파일명 (기본값: `ehcache-default`) |
 
 #### Configuration
 
@@ -83,7 +83,7 @@ Spring 환경에서 `CacheManager`에 Ehcache 설정 파일 경로를 제공하�
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
 | XML | `context-cache` |
-| JavaConfig | `EgovCacheConfig` |
+| JavaConfig | `EgovEhcacheSpringConfig` |
 
 ### 설정 항목
 
