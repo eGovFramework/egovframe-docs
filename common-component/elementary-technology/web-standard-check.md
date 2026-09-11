@@ -27,9 +27,7 @@ menu:
 | --- | --- | --- |
 | JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/wsi/EgovWebStandardInspection.jsp` | 웹표준검사 위한 jsp페이지 |
 
-## 참고자료
-
-### 웹표준검사 관련화면 및 수행매뉴얼
+## 웹표준검사 관련화면 및 수행매뉴얼
 
 <!-- markdownlint-disable MD013 -->
 | Action | URL | Controller method | QueryID |
@@ -45,3 +43,7 @@ menu:
 - 상세검사: 웹표준 Validation Output을 팝업 화면으로 제공한다.
 
 ![웹표준검사 상세검사](./images/webstandardinspectiondetail.png)
+
+## 참고자료
+
+- [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)
