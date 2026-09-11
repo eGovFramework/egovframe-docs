@@ -5220,11 +5220,11 @@ SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화�
  &lt;/tr>
  &lt;tr>
  &lt;td>startTime&lt;/td>
- &lt;td>Execution이 시작되는 현재 시스템 시간을 java.Util.Data로 저장&lt;/td>
+ &lt;td>Execution이 시작되는 현재 시스템 시간을 java.time.LocalDateTime로 저장&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>endTime&lt;/td>
- &lt;td>Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.Util.Data로 저장&lt;/td>
+ &lt;td>Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.time.LocalDateTime로 저장&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>exitStatus&lt;/td>
@@ -5232,11 +5232,11 @@ SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화�
  &lt;/tr>
  &lt;tr>
  &lt;td>createTime&lt;/td>
- &lt;td>JobExecution이 최초 생성 된 현재 시스템 시간을 java.Util.Data로 저장&lt;/td>
+ &lt;td>JobExecution이 최초 생성 된 현재 시스템 시간을 java.time.LocalDateTime로 저장&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>lastUpdated&lt;/td>
- &lt;td>JobExecution이 마지막으로 생성 된 현재 시스템 시간을 java.Util.Data로 저장&lt;/td>
+ &lt;td>JobExecution이 마지막으로 생성 된 현재 시스템 시간을 java.time.LocalDateTime로 저장&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>executionContext&lt;/td>
@@ -5302,11 +5302,11 @@ SWF(Spring Web Flow)는 사용자와 화면 간의 대화 형태로 웹 대화�
  &lt;/tr>
  &lt;tr>
  &lt;td>startTime&lt;/td>
- &lt;td>Execution이 시작되는 현재 시스템 시간을 java.Util.Data로 저장&lt;/td>
+ &lt;td>Execution이 시작되는 현재 시스템 시간을 java.time.LocalDateTime로 저장&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>endTime&lt;/td>
- &lt;td>Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.Util.Data로 저장&lt;/td>
+ &lt;td>Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.time.LocalDateTime로 저장&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>exitStatus&lt;/td>
