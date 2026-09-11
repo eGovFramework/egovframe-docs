@@ -77,7 +77,7 @@
 
 ```java
 @Service("egovWebLogScheduling")
-public class EgovWebLogScheduling {
+public class EgovWebLogScheduling extends EgovAbstractServiceImpl {
 
 	@Resource(name="EgovWebLogService")
 	private EgovWebLogService webLogService;
@@ -110,7 +110,7 @@ public class EgovWebLogScheduling {
 - 트리거 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-wlg.xml)
 
 ```xml
-<bean id="webLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="webLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="webLogging" />
     <property name="startDelay" value="60000" />
     <property name="repeatInterval" value="3600000" />
