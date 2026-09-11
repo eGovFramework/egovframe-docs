@@ -156,7 +156,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /uss/ion/ctn/updtCtsnnManage.do | updtCtsnnManage | "ctsnnManageDAO.updtCtsnnManage" |
+| 수정 | /uss/ion/ctn/updtCtsnnManage.do | updtCtsnnManage | "ctsnnManageDAO.updateCtsnnManage" |
 | 상세조회 | /uss/ion/ctn/EgovCtsnnManageDetail.do | selectCtsnnManage | "ctsnnManageDAO.selectCtsnnManage" |
 
  경조사의 속성정보를 변경한 후 저장한다. 다음 화면은 경조사 상세조회 화면과 동일하다.
