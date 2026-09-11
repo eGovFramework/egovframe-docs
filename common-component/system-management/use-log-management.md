@@ -25,6 +25,13 @@ menu:
  ② 사용자로그조회 : 사용자로그정보의 상세내용을 조회한다.
  ③ 사용자로그목록 : 사용자로그정보의 목록을 검색, 조회한다.
 
+```mermaid
+flowchart LR
+    T[Scheduler 1시간 주기] -->|등록| R[사용자로그 등록]
+    R --> L[사용자로그 목록조회]
+    L -->|상세보기| D[사용자로그 상세조회]
+```
+
 ### 패키지 참조 관계
 
  사용로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -113,6 +120,7 @@ private EgovUserLogService userLogService;
 */
 public void userLogInsert() throws Exception {
 userLogService.logInsertUserLog();
+}
 }
 ```
 
