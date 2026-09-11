@@ -111,8 +111,8 @@ Project Generation 기능을 사용하면 미리 정의된 템플릿을 선택�
 
 | 템플릿 | 설명 |
 |---|---|
-| AI > RAG Project (SpringAI) | Spring AI와 Redis Stack을 활용한 RAG 프로젝트 |
-| AI > RAG Project (Lanchain4j) | Lanchain4j와 PostgreSQL을 활용한 RAG 프로젝트 |
+| AI > RAG Project (Spring AI) | Spring AI와 Redis Stack을 활용한 RAG 프로젝트 |
+| AI > RAG Project (Langchain4j) | Langchain4j와 PostgreSQL을 활용한 RAG 프로젝트 |
 
 ### 3단계: 프로젝트 설정 입력
 
