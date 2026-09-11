@@ -135,8 +135,6 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 - 프록시 로그를 저장하려면 서비스 상태가 정상으로 설정되어 있어야 한다.
 - 프록시 서버 정보(IP, Port 등)는 실제 운영 환경에 맞게 설정해야 한다.
 
-## 참고자료
-
 ### 관련화면 및 수행매뉴얼
 
 #### 프록시설정 목록조회
@@ -158,7 +156,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 저장 | /utl/sys/pxy/addProxySvc.do | insertProxySvc | proxySvcDAO.insertSynchrnServer |
+| 저장 | /utl/sys/pxy/addProxySvc.do | insertProxySvc | proxySvcDAO.insertProxySvc |
 | 목록 | /utl/sys/pxy/selectProxySvcList.do | selectProxySvcList | proxySvcDAO.selectProxySvcList |
 
 프록시설정 속성정보를 입력한 뒤 등록한다.
@@ -210,3 +208,7 @@ INSERT INTO COMTECOPSEQ VALUES ('PROXYLOG_ID','0');
 ![프록시로그 조회](./images/proxy-service-log-list.png)
 
 - **조회**: 기 등록된 프록시로그 목록을 조회한다.
+
+## 참고자료
+
+- [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)
