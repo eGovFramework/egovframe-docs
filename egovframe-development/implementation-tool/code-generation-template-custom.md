@@ -123,14 +123,12 @@ checkbox :
 radio :
 
 ```xml
-<combo name="radio" label="View:" value="FreeMarker">
+<radio name="rdoConfigType" label="Configuration Type : " value="XML" required="true" listener="true">
     <elements>
-        <option value="freemarker">FreeMarker</option>
-        <option value="velocity">Velocity</option>
-        <option value="dispatcher">JSP</option>
-        <option value="xslt">XSLT</option>
+        <option>XML</option>
+        <option>Java</option>
     </elements>
-</combo>
+</radio>
 ```
 
 combo :
