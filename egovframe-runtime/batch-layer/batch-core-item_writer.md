@@ -163,7 +163,7 @@ sqlMapClient의 참조는 아래와 같다. configLocation 속성에 iBatis를 �
 ### 전자정부에서 제공하는 eGovFlatFileItemWriter
 스프링 배치에서 제공하는 파일 기반 관련설정을 사용할 경우, 대용량 데이터 처리 시간이 상용 배치프레임워크 대비 성능이 떨어졌다. 이 문제를 해결하기 위해서 전자정부에서는 파일 ItemWriter의 요소 중 성능저하 요인인 LineAggregator 부분을 개선하여 제공한다
 
-스프링에서 제공하는 BeanWrapperFieldExtractor를 경량화 한 **EgovFieldExtractor와** FormatterLineAggreagotor의 기능을 경량화 한 **EgovFixedLineAggregator를** 제공한다.
+스프링에서 제공하는 BeanWrapperFieldExtractor를 경량화 한 **EgovFieldExtractor와** FormatterLineAggregator의 기능을 경량화 한 **EgovFixedLengthLineAggregator를** 제공한다.
 
 |스프링 FlatFileItemWriter 구조|전자정부 EgovFlatFileItemWriter 구조|
 |---|---|
@@ -172,11 +172,11 @@ sqlMapClient의 참조는 아래와 같다. configLocation 속성에 iBatis를 �
 | 개선사항                 | 설명                        |
 | ----------------------- | --------------------------- |
 | EgovFieldExtractor      | 스프링에서 제공하는 BeanWrapperFieldExtractor를 개선하여 item에서 field 값을 추출하는 과정의 성능을 개선한 FieldExtractor 제공 |
-| EgovFixedLineAggregator | 스프링에서 제공하는 FormatterLineAggregator는 Java의 format() 메소드를 이용하여 String을 다양한 format으로 변환할 수 있지만 가장 기본 설정인 문자열 길이만 지정할 때 성능이 떨어지는 단점이 있다.<br>따라서 사용자가 문자열 길이만 지정할 때를 고려해 경량화하여 성능의 초점을 둔 LineAggregator 제공<br>(format 지정이 필요한 경우, format을 VO에서 직접 적용하여 FormatterLineAggregator와 같은 기능이지만 성능 개선 된 EgovFixedLineAggregator 사용 가능) |
+| EgovFixedLengthLineAggregator | 스프링에서 제공하는 FormatterLineAggregator는 Java의 format() 메소드를 이용하여 String을 다양한 format으로 변환할 수 있지만 가장 기본 설정인 문자열 길이만 지정할 때 성능이 떨어지는 단점이 있다.<br>따라서 사용자가 문자열 길이만 지정할 때를 고려해 경량화하여 성능의 초점을 둔 LineAggregator 제공<br>(format 지정이 필요한 경우, format을 VO에서 직접 적용하여 FormatterLineAggregator와 같은 기능이지만 성능 개선 된 EgovFixedLengthLineAggregator 사용 가능) |
 
 ✔ 스프링에서 제공하는 FormatterLineAggregator, DelimitedLineAggregator와 EgovFieldExtractor는 동시 사용이 가능하므로 BeanWrapperFieldExtractor 대신 EgovFieldExtractor 사용 시, 보다 좋은 성능으로 write 할 수 있다.
 
-BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)를 사용한 설정과 EgovFieldExtractor, EgovFixedLineAggregator(or DelimitedLineAggregator)를 사용한 FlatFileItemWriter 설정 비교는 아래와 같다.
+BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)를 사용한 설정과 EgovFieldExtractor, EgovFixedLengthLineAggregator(or DelimitedLineAggregator)를 사용한 FlatFileItemWriter 설정 비교는 아래와 같다.
 
 #### Fixed Length(고정길이) 방식 설정
 
