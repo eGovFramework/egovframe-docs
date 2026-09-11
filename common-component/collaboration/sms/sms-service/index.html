@@ -89,7 +89,7 @@ G -->|스케줄러 결과수신| L</div><h3 class=sec-tit id=패키지-참조-�
   &lt;property name=&#34;concurrent&#34; value=&#34;false&#34; /&gt;
 &lt;/bean&gt;
 
-&lt;bean id=&#34;smsInfoReceiverTrigger&#34; class=&#34;org.springframework.scheduling.quartz.SimpleTriggerBean&#34;&gt;
+&lt;bean id=&#34;smsInfoReceiverTrigger&#34; class=&#34;org.springframework.scheduling.quartz.SimpleTriggerFactoryBean&#34;&gt;
   &lt;property name=&#34;jobDetail&#34; ref=&#34;smsInfoReceiver&#34; /&gt;
   &lt;!-- 시작하고 1분후에 실행한다. (milisecond) --&gt;
   &lt;property name=&#34;startDelay&#34; value=&#34;60000&#34; /&gt;
