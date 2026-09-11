@@ -31781,12 +31781,12 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>Message properties&lt;/td>
  &lt;td>resources/egovframework/message/com/cop/smt/sim/message_ko.properties&lt;/td>
- &lt;td>마이페이지 Message properties(한글)&lt;/td>
+ &lt;td>일정관리 Message properties(한글)&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Message properties&lt;/td>
  &lt;td>resources/egovframework/message/com/cop/smt/sim/message_en.properties&lt;/td>
- &lt;td>마이페이지 Message properties(영문)&lt;/td>
+ &lt;td>일정관리 Message properties(영문)&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Idgen XML&lt;/td>
