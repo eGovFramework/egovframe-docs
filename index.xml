@@ -19993,13 +19993,11 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>메인이미지관리는 메인화면에 대한 이미지를 등록하고, 등록한 이미지가 메인화면에 출력되는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>메인이미지관리는 메인이미지를 등록하여 메인화면에 반영하기 위한 목적으로 메인이미지의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 메인이미지목록조회 : 메인이미지로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 메인이미지등록 : 메인이미지정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 메인이미지수정 : 기 등록된 메인이미지정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 메인이미지삭제 : 기 등록된 메인이미지정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 메인이미지조회 : 등록된 메인이미지는 메인화면에 표현된다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>메인이미지관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p></description></item><item><title>메일솔루션 연동 인터페이스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</guid><description>&lt;h1 id="메일솔루션-연동-인터페이스">메일솔루션 연동 인터페이스&lt;/h1>
+&lt;p>① 메인이미지목록조회 : 메인이미지로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
+② 메인이미지등록 : 메인이미지정보를 등록하고, 등록 결과를 조회한다.
+③ 메인이미지수정 : 기 등록된 메인이미지정보의 항목들을 수정한다.
+④ 메인이미지삭제 : 기 등록된 메인이미지정보를 삭제한다.
+⑤ 메인이미지조회 : 등록된 메인이미지는 메인화면에 표현된다.&lt;/p></description></item><item><title>메일솔루션 연동 인터페이스</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/email/mail-solution-interface/</guid><description>&lt;h1 id="메일솔루션-연동-인터페이스">메일솔루션 연동 인터페이스&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>메일솔루션 연동 인터페이스는 메일 솔루션과 연동하여 발송메일을 등록하고, 발송 요청을 XML 파일로 생성·전달하며, 발송결과 XML을 수신해 결과코드를 갱신하는 기능이다. 발송메일 내역·상세 조회와 첨부파일 관리도 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 협업(전자우편) 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
