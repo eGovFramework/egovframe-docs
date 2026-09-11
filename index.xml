@@ -31697,160 +31697,19 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/schedule-management-class-diagram.jpg" alt="클래스 다이어그램" >&lt;/p></description></item><item><title>일지관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/journal-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/journal-management/</guid><description>&lt;h1 id="일지관리">일지관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자가 일정관리와 부서일정관리를 이용할 때 일정에 대한 기록을 남길 때 본 서비스를 이용한다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[일지관리 목록조회] -->|등록| R[일지관리 등록]
+ L -->|목록 클릭| D[일지관리 상세조회]
+ D -->|수정| U[일지관리 수정]
+ D -->|삭제| L
+ R --> L
+ U --> L
+&lt;/div>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>일지관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 개인일정관리, 부서일정관리, 전체일정 패키지와 함께 배포 파일을 구성한다.&lt;/p>
-&lt;ul>
-&lt;li>패키지 간 참조 관계 : 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ed%98%91%ec%97%85" class="innerLink">협업-일정관리, 문자메시지, 주소록 외 Package Dependency&lt;/a>
-
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.cop.smt.dsm.web.EgovDiaryManageController.java&lt;/td>
- &lt;td>일지관리 Controller Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.cop.smt.dsm.service.EgovDiaryManageService.java&lt;/td>
- &lt;td>일지관리 Service Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.cop.smt.dsm.service.impl.EgovDiaryManageServiceImpl.java&lt;/td>
- &lt;td>일지관리 ServiceImpl Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.cop.smt.dsm.service.DiaryManageVO.java&lt;/td>
- &lt;td>일지관리 VO Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.cmm.ComDefaultVO.java&lt;/td>
- &lt;td>검색 VO Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.cop.smt.dsm.service.impl.DiaryManageDao.java&lt;/td>
- &lt;td>일지관리 Dao Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageList.jsp&lt;/td>
- &lt;td>일지관리 목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageRegist.jsp&lt;/td>
- &lt;td>일지관리 등록 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageModify.jsp&lt;/td>
- &lt;td>일지관리 수정 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageDetail.jsp&lt;/td>
- &lt;td>일지관리 상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_altibase.xml&lt;/td>
- &lt;td>일지관리를 위한 Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_cubrid.xml&lt;/td>
- &lt;td>일지관리를 위한 Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_maria.xml&lt;/td>
- &lt;td>일지관리를 위한 MariaDB용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_mysql.xml&lt;/td>
- &lt;td>일지관리를 위한 MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_oracle.xml&lt;/td>
- &lt;td>일지관리를 위한 Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_postgres.xml&lt;/td>
- &lt;td>일지관리를 위한 PostgreSQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_tibero.xml&lt;/td>
- &lt;td>일지관리를 위한 Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_goldilocks.xml&lt;/td>
- &lt;td>일지관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/message-common_ko.properties&lt;/td>
- &lt;td>일지관리 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/message-common_en.properties&lt;/td>
- &lt;td>일지관리 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-diaryManage.xml&lt;/td>
- &lt;td>일지관리 Id생성 Idgen XML&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/collaboration/images/journal-management-class-diagram.jpg" alt="클래스 다이어그램" >&lt;/p></description></item><item><title>자료이용현황 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/data-use-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/data-use-statistics/</guid><description>&lt;h1 id="자료이용현황통계">자료이용현황통계&lt;/h1>
+&lt;p>일지관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 개인일정관리, 부서일정관리, 전체일정 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>자료이용현황 통계</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/data-use-statistics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/statistics-reporting/data-use-statistics/</guid><description>&lt;h1 id="자료이용현황통계">자료이용현황통계&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>자료이용현황통계는 각종 게시판 다운로드 현황에 대한 통계자료를 특정 조건에 맞게 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
