@@ -170,7 +170,7 @@ menu:
 | --- | --- | --- | --- | --- |
 | 상세조회 | /uss/ion/msi/getMainImage.do | selectMainImage | "mainImageDAO" | "selectMainImage" |
 | 수정 | /uss/ion/msi/updtMainImage.do | updateMainImage | "mainImageDAO" | "updateMainImage" |
-| 삭제 | /uss/ion/msi/removeMainImageList.do | deleteMainImage | "mainImageDAO" | "deleteMainImage" |
+| 삭제 | /uss/ion/msi/removeMainImage.do | deleteMainImage | "mainImageDAO" | "deleteMainImage" |
 
  다음 화면은 메인이미지 상세조회 화면과 동일하다.
 
