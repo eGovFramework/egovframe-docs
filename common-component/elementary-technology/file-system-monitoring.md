@@ -129,7 +129,7 @@ INSERT INTO COMTECOPSEQ VALUES('FILESYS_LOGID','0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /utl/sys/fsm/addFileSysMntrng.do | insertFileSysMntrng | FileSysMntrngDAO.insertFileSysMntrng |
+| 등록 | /utl/sys/fsm/insertFileSysMntrng.do | insertFileSysMntrng | FileSysMntrngDAO.insertFileSysMntrng |
 
 파일시스템모니터링의 속성정보를 입력한 뒤 등록한다. **임계치** 필드는 등록한 파일시스템의 크기에서 위험을 알리는 경계 수치로,
 임계치를 초과할 경우 관리자 메일주소로 모니터링 정보를 보낸다.
@@ -138,7 +138,7 @@ INSERT INTO COMTECOPSEQ VALUES('FILESYS_LOGID','0');
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /utl/sys/fsm/modifyFileSysMntrng.do | updateFileSysMntrng | FileSysMntrngDAO.updateFileSysMntrng |
+| 수정 | /utl/sys/fsm/updateFileSysMntrng.do | updateFileSysMntrng | FileSysMntrngDAO.updateFileSysMntrng |
 
 파일시스템모니터링의 속성정보를 변경한 후 저장한다.
 
