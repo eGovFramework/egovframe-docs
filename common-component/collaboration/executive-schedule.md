@@ -46,13 +46,12 @@ menu:
 | Model | egovframework.com.cop.smt.lsm.service.LeaderSchdul.java | 간부일정관리를 위한 Model 클래스 |
 | Model | egovframework.com.cop.smt.lsm.service.LeaderSttus.java | 간부상태관리를 위한 Model 클래스 |
 | VO | egovframework.com.cop.smt.lsm.service.EmplyrVO.java | 사용자 관리를 위한 VO 클래스 |
-| VO | egovframework.com.cop.smt.lsm.service.LeaderSchdulVO.java | 검간부일정관리를 위한 VO 클래스 |
+| VO | egovframework.com.cop.smt.lsm.service.LeaderSchdulVO.java | 간부일정관리를 위한 VO 클래스 |
 | VO | egovframework.com.cop.smt.lsm.service.LeaderSttusVO.java | 간부상태관리를 위한 VO 클래스 |
 | DAO | egovframework.com.cop.smt.lsm.service.impl.LeaderSchdulDAO.java | 간부일정관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovEmplyrList.jsp | 사용자 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovEmplyrListPopup.jsp | 사용자 팝업 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulList.jsp | 간부일정 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageDetail.jsp | 일지관리 수정 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulMonthList.jsp | 월별 간부일정 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulWeekList.jsp | 주별 간부일정 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulDailyList.jsp | 일별 간부일정 목록조회를 위한 jsp페이지 |
