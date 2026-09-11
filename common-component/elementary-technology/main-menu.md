@@ -39,7 +39,7 @@ menu:
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| Vector | `parsFileByMenuChar(String parFile, String parChar, int parField)` | 메뉴테이블형태 파싱 | 데이터를 받아 구분값·필드수에 맞추어 메뉴필드 형태로 나눈다 |
+| Vector | `parsFileByMenuChar(String basePath, String parFile, String parChar, int parField)` | 메뉴테이블형태 파싱 | 데이터를 받아 구분값·필드수에 맞추어 메뉴필드 형태로 나눈다 |
 | boolean | `setDataByDATFile(String parFile, String[] menuIDArray, String[] menuNameArray, String[] menuLevelArray, String[] menuURLArray)` | 메뉴 데이터 파일 생성 | 메뉴관리 화면의 데이터를 받아 서버 데이터 파일(DAT)을 생성한다 (수정·삭제 반영) |
 <!-- markdownlint-restore -->
 
