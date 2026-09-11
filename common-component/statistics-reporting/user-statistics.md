@@ -76,7 +76,7 @@
 - 작업 클래스 생성(src/main/java/egovframework/com/sts/ust/service/EgovUserStatsScheduling.java)
 
 ```java
-public class EgovUserStatsScheduling {
+public class EgovUserStatsScheduling extends EgovAbstractServiceImpl {
  
 	/** EgovUserStatsService */
 	@Resource(name = "userStatsService")
