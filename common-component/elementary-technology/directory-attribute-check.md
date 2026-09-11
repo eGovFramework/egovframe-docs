@@ -91,7 +91,7 @@ menu:
 #1. getOwner 메소드에 해당되는 쉘 스크립트
 SHELL.UNIX.getDrctryOwner = /product/jeus/egovProps/prg/getDrctryOwner.sh
 #2. getAccess 메소드에 해당되는 쉘 스크립트
-SHELL.UNIX.getMoryInfo = /product/jeus/egovProps/prg/getDrctryAccess.sh
+SHELL.UNIX.getDrctryAccess = /product/jeus/egovProps/prg/getDrctryAccess.sh
 ```
 
 #### getDrctryOwner.sh (유닉스용 디렉토리 소유자 조회 스크립트)
