@@ -23836,13 +23836,11 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 사용자부재관리 기능을 구현하기 위해서 사용자관리 서비스(업무사용자관리)가 필요함.(해당서비스에서 등록된 사용자 정보를 기준으로 부재관리 서비스 제공)&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>사용자부재관리는 사용자부재정보를 등록하여 모든 사용자의 부재여부를 파악하기 위한 목적으로 사용자부재정보의 등록, 수정, 삭제, 조회, 목록조회, 부재중사용자조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 사용자부재목록조회 : 사용자부재 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 사용자부재등록 : 사용자 부재정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 사용자부재수정 : 기 등록된 사용자 부재정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 사용자부재삭제 : 기 등록된 사용자 부재정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 부재중사용자조회 : 부재중인 사용자정보 목록이 조회된다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>사용자부재관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p></description></item><item><title>사이트관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/site-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/site-management/</guid><description>&lt;h1 id="사이트관리">사이트관리&lt;/h1>
+&lt;p>① 사용자부재목록조회 : 사용자부재 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
+② 사용자부재등록 : 사용자 부재정보를 등록하고, 등록 결과를 조회한다.
+③ 사용자부재수정 : 기 등록된 사용자 부재정보의 항목들을 수정한다.
+④ 사용자부재삭제 : 기 등록된 사용자 부재정보를 삭제한다.
+⑤ 부재중사용자조회 : 부재중인 사용자정보 목록이 조회된다.&lt;/p></description></item><item><title>사이트관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/site-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/site-management/</guid><description>&lt;h1 id="사이트관리">사이트관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>주제 및 유형별로 사이트를 등록하며 주기적으로 DeadLink를 체크하여 사이트URL정보를 등록/수정/보완할 수 있도록 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
