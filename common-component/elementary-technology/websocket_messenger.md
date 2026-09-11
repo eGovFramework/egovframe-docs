@@ -30,6 +30,15 @@
   ③ Server 환경- jdk 7 이상
 ```
 
+```mermaid
+flowchart LR
+    L[사용자 리스트 조회화면 이동] -->|WebSocket 접속| U[UsersServerEndPoint 등록/조회]
+    U -->|다른사용자 선택| P[대화창 팝업]
+    P -->|WebSocket 접속| C[ChatServerEndPoint 방 생성]
+    C -->|메시지 전달| C
+    C -->|Leave| L
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
