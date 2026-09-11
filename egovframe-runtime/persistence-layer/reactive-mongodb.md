@@ -26,7 +26,7 @@ menu:
 ```java
 package org.egovframe.rte.psl.reactive.mongodb.connect;
  
-public class EgovMongoDbConnectionFactory {
+public class EgovReactiveMongoDbConnectionFactory {
     public ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory() {
         ConnectionString connectionString = new ConnectionString(this.mongoDbUrl);
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
@@ -42,7 +42,7 @@ public class EgovMongoDbConnectionFactory {
 ```java
 package egovframework.webflux.config;
  
-import org.egovframe.rte.psl.reactive.mongodb.connect.EgovMongoDbConnectionFactory;
+import org.egovframe.rte.psl.reactive.mongodb.connect.EgovReactiveMongoDbConnectionFactory;
 ......
  
 @Configuration
@@ -50,7 +50,7 @@ public class EgovMongodbConfig {
  
     @Bean(name="reactiveMongoDatabaseFactory")
     public ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory() {
-        EgovMongoDbConnectionFactory egovMongoDbConnectionFactory = new EgovMongoDbConnectionFactory(this.mongoDBName, this.mongoDBUrl);
+        EgovReactiveMongoDbConnectionFactory egovMongoDbConnectionFactory = new EgovReactiveMongoDbConnectionFactory(this.mongoDBName, this.mongoDBUrl);
         return egovMongoDbConnectionFactory.reactiveMongoDatabaseFactory();
     }
  
@@ -67,13 +67,13 @@ public class EgovMongodbConfig {
 
 #### 실행환경 라이브러리
 
- @Repository 클래스에 EgovMongoDbRepository 클래스를 extends 하여 insertData, updateData, deleteData, selectAllData 메소드를 활용한다.
+ @Repository 클래스에 EgovReactiveMongoDbRepository 클래스를 extends 하여 insertData, updateData, deleteData, selectAllData 메소드를 활용한다.
 
 ```java
 package org.egovframe.rte.psl.reactive.mongodb.repository;
  
-public class EgovMongoDbRepository<T> extends ReactiveMongoTemplate {
-    public EgovMongoDbRepository(ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory) {
+public class EgovReactiveMongoDbRepository<T> extends ReactiveMongoTemplate {
+    public EgovReactiveMongoDbRepository(ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory) {
         super(reactiveMongoDatabaseFactory);
     }
  
