@@ -82,8 +82,8 @@ WAS(Web Application Server)의 JNDI(Java Naming and Directory Interface)를 통�
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-datasource` |
-| JavaConfig | `EgovDataSourceConfig` |
+| XML | `context-jndi-datasource` |
+| JavaConfig | `EgovJndiDatasourceConfig` |
 
 ### 요구 사양
 
