@@ -112,21 +112,22 @@ Social Login은 다음과 같은 기능을 제공한다.
 
 ```java
 @RequestMapping(value = "/uat/uia/oauthLoginUsr", method = RequestMethod.GET)
-public String login(Model model) throws Exception {
+public String login(Model model, HttpSession session) throws Exception {
 	LOGGER.debug("===>>> OAuth Login .....");
- 
+
+	// 콜백에서 대조할 CSRF 방어용 state를 1회 생성해 세션에 보관하고 모든 제공자 인가 URL에 부착한다.
+	String state = generateState();
+	session.setAttribute(OAUTH_STATE_SESSION_KEY, state);
+
 	OAuthLogin naverLogin = new OAuthLogin(naverAuthVO);
-	LOGGER.debug("naverLogin.getOAuthURL() = "+naverLogin.getOAuthURL());
-	model.addAttribute("naver_url", naverLogin.getOAuthURL());
- 
+	model.addAttribute("naver_url", naverLogin.getOAuthURL(state));
+
 	OAuthLogin googleLogin = new OAuthLogin(googleAuthVO);
-	LOGGER.debug("googleLogin.getOAuthURL() = "+googleLogin.getOAuthURL());
-	model.addAttribute("google_url", googleLogin.getOAuthURL());
- 
+	model.addAttribute("google_url", googleLogin.getOAuthURL(state));
+
 	OAuthLogin kakaoLogin = new OAuthLogin(kakaoAuthVO);
-	LOGGER.debug("kakaoLogin.getOAuthURL() = "+kakaoLogin.getOAuthURL());
-	model.addAttribute("kakao_url", kakaoLogin.getOAuthURL());
- 
+	model.addAttribute("kakao_url", kakaoLogin.getOAuthURL(state));
+
 	return "egovframework/com/uat/uia/EgovLoginUsrOauth";
 }
 ```
