@@ -165,7 +165,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /uss/olh/faq/insertFaqView.do | insertFaqView | | |
-| 등록 | /uss/olh/faq/insertFaq.do | insertFaq | "FaqManage" | "insertFaq" |
+| 등록 | /uss/olh/faq/insertFaq.do | insertFaqCn | "FaqManage" | "insertFaq" |
 
 ![FAQ 등록](./images/faq-management-regist.png)
 
@@ -189,7 +189,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /uss/olh/faq/updateFaqView.do | updateFaqView | "FaqManage" | "selectFaqDetail" |
-| 수정 | /uss/olh/faq/updateFaq.do | updateFaq | "FaqManage" | "updateFaq" |
+| 수정 | /uss/olh/faq/updateFaq.do | updateFaqCn | "FaqManage" | "updateFaq" |
 
 ![FAQ 수정](./images/faq-management-update.png)
 
