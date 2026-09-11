@@ -112,7 +112,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('INDVDL_INFO_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/sam/ipm/listIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyList | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicy" |
+| 목록조회 | /uss/sam/ipm/listIndvdlInfoPolicy.do | egovIndvdlInfoPolicyList | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicy" |
 |  |  |  | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicyCnt" |
 
  ![image](./images/uss-privacy-개인정보_목록.jpg)
@@ -134,8 +134,8 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('INDVDL_INFO_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /uss/sam/ipm/detailIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyDetail | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicyDetail" |
-| 삭제 | /uss/sam/ipm/detailIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyDetail | "IndvdlInfoPolicy" | "deleteIndvdlInfoPolicy" |
+| 상세조회 | /uss/sam/ipm/detailIndvdlInfoPolicy.do | egovIndvdlInfoPolicyDetail | "IndvdlInfoPolicy" | "selectIndvdlInfoPolicyDetail" |
+| 삭제 | /uss/sam/ipm/detailIndvdlInfoPolicy.do | egovIndvdlInfoPolicyDetail | "IndvdlInfoPolicy" | "deleteIndvdlInfoPolicy" |
 
  ![image](./images/uss-privacy-개인정보_상세.jpg)
 
@@ -157,7 +157,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('INDVDL_INFO_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | /uss/sam/ipm/registIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyRegist | "IndvdlInfoPolicy" | "insertIndvdlInfoPolicy" |
+| 등록 | /uss/sam/ipm/registIndvdlInfoPolicy.do | egovIndvdlInfoPolicyRegist | "IndvdlInfoPolicy" | "insertIndvdlInfoPolicy" |
 
  ![image](./images/uss-privacy-개인정보_등록.jpg)
 
@@ -178,7 +178,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('INDVDL_INFO_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 수정 | /uss/sam/ipm/updtIndvdlInfoPolicy.do | EgovIndvdlInfoPolicyModify | "IndvdlInfoPolicy" | "updateIndvdlInfoPolicy" |
+| 수정 | /uss/sam/ipm/updtIndvdlInfoPolicy.do | egovIndvdlInfoPolicyModify | "IndvdlInfoPolicy" | "updateIndvdlInfoPolicy" |
 
  ![image](./images/uss-privacy-개인정보_수정.jpg)
 
