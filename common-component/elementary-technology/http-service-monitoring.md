@@ -39,13 +39,13 @@ HTTP서비스모니터링을 등록하기 위한 목적으로 HTTP서비스모�
 | Model | `egovframework.com.utl.sys.htm.service.HttpMon.java` | HTTP서비스모니터링을 위한 Model 클래스 |
 | Model | `egovframework.com.utl.sys.htm.service.HttpMonLog.java` | HTTP서비스모니터링로그정보를 위한 Model 클래스 |
 | Scheduling | `egovframework.com.utl.sys.htm.service.HttpMntrngScheduling.java` | HTTP서비스모니터링 스케줄링 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/htm/EgovHttpMonList.jsp` | HTTP서비스모니터링 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/htm/EgovHttpMonRegist.jsp` | HTTP서비스모니터링 등록 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/htm/EgovHttpMonUpdt.jsp` | HTTP서비스모니터링 수정 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/htm/EgovHttpMonDetail.jsp` | HTTP서비스모니터링 상세조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/htm/EgovHttpMonLogList.jsp` | HTTP서비스모니터링로그 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/htm/EgovHttpMonLogDetail.jsp` | HTTP서비스모니터링로그 상세조회 페이지 |
-| XML | `/egovframework/sqlmap/com/utl/sys/htm/EgovHttpMon_SQL_*.xml` | HTTP서비스모니터링 QUERY XML |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/htm/EgovComUtlHttpMonList.jsp` | HTTP서비스모니터링 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/htm/EgovComUtlHttpMonRegist.jsp` | HTTP서비스모니터링 등록 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/htm/EgovComUtlHttpMonModify.jsp` | HTTP서비스모니터링 수정 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/htm/EgovComUtlHttpMonDetail.jsp` | HTTP서비스모니터링 상세조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/htm/EgovComUtlHttpMonLogList.jsp` | HTTP서비스모니터링로그 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/htm/EgovComUtlHttpMonDetailLog.jsp` | HTTP서비스모니터링로그 상세조회 페이지 |
+| XML | `/egovframework/mapper/com/utl/sys/htm/EgovUtlSysHttpMon_SQL_*.xml` | HTTP서비스모니터링 QUERY XML |
 
 ### 관련테이블
 

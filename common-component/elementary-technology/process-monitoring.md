@@ -49,13 +49,13 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, `globals.properties`의 `Globals
 | Model | `egovframework.com.utl.sys.prm.service.ProcessMon.java` | 프로세스모니터링을 위한 Model 클래스 |
 | Model | `egovframework.com.utl.sys.prm.service.ProcessMonLog.java` | 프로세스모니터링로그정보를 위한 Model 클래스 |
 | Scheduling | `egovframework.com.utl.sys.prm.service.EgovProcessMonScheduling.java` | 프로세스모니터링 스케줄링 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/prm/EgovProcessMonList.jsp` | 프로세스모니터링 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/prm/EgovProcessMonRegist.jsp` | 프로세스모니터링 등록 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/prm/EgovProcessMonUpdt.jsp` | 프로세스모니터링 수정 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/prm/EgovProcessMonDetail.jsp` | 프로세스모니터링 상세조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/prm/EgovProcessMonLogList.jsp` | 프로세스모니터링로그 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/prm/EgovProcessMonLogDetail.jsp` | 프로세스모니터링로그 상세조회 페이지 |
-| XML | `/egovframework/sqlmap/com/utl/sys/prm/EgovProcessMon_SQL_*.xml` | 프로세스모니터링 QUERY XML |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/prm/EgovComUtlProcessMonList.jsp` | 프로세스모니터링 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/prm/EgovComUtlProcessMonRegist.jsp` | 프로세스모니터링 등록 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/prm/EgovComUtlProcessMonModify.jsp` | 프로세스모니터링 수정 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/prm/EgovComUtlProcessMonDetail.jsp` | 프로세스모니터링 상세조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/prm/EgovComUtlProcessMonLogList.jsp` | 프로세스모니터링로그 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/prm/EgovComUtlProcessMonLogDetail.jsp` | 프로세스모니터링로그 상세조회 페이지 |
+| XML | `/egovframework/mapper/com/utl/sys/prm/EgovUtlSysProcessMon_SQL_*.xml` | 프로세스모니터링 QUERY XML |
 
 ### 관련테이블
 

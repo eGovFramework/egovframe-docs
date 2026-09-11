@@ -41,11 +41,11 @@ AP 서버들 간 동기화를 통해 파일 첨부 및 다운로드 기능을 �
 | DAO | `egovframework.com.utl.sys.ssy.service.impl.SynchrnServerDAO.java` | 동기화대상 서버관리를 위한 데이터처리 클래스 |
 | Model | `egovframework.com.utl.sys.ssy.service.SynchrnServer.java` | 동기화대상 서버관리를 위한 Model 클래스 |
 | VO | `egovframework.com.utl.sys.ssy.service.SynchrnServer.java` | 동기화대상 서버관리를 위한 VO 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/ssy/EgovSynchrnServerList.jsp` | 동기화대상서버 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/ssy/EgovSynchrnServerDetail.jsp` | 동기화대상서버 상세조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/ssy/EgovSynchrnServerRegist.jsp` | 동기화대상서버 등록 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/ssy/EgovSynchrnServerUpdt.jsp` | 동기화대상서버 수정 페이지 |
-| XML | `/egovframework/sqlmap/com/utl/sys/ssy/EgovSynchrnServer_SQL_*.xml` | 동기화대상서버정보 QUERY XML |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/ssy/EgovSynchrnServerList.jsp` | 동기화대상서버 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/ssy/EgovSynchrnServerDetail.jsp` | 동기화대상서버 상세조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/ssy/EgovSynchrnServerRegist.jsp` | 동기화대상서버 등록 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/ssy/EgovSynchrnServerUpdt.jsp` | 동기화대상서버 수정 페이지 |
+| XML | `/egovframework/mapper/com/utl/sys/ssy/EgovSynchrnServer_SQL_*.xml` | 동기화대상서버정보 QUERY XML |
 
 ### 관련테이블
 

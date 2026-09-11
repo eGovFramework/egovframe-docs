@@ -43,13 +43,13 @@ menu:
 | VO | `egovframework.com.utl.sys.fsm.service.FileSysMntrngVO.java` | 파일시스템모니터링을 위한 VO 클래스 |
 | VO | `egovframework.com.utl.sys.fsm.service.FileSysMntrngLogVO.java` | 파일시스템모니터링로그정보를 위한 VO 클래스 |
 | Scheduling | `egovframework.com.utl.sys.fsm.service.EgovFileSystemMntrngScheduling.java` | 파일시스템모니터링 스케줄링 클래스 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/fsm/EgovFileSysMntrngList.jsp` | 파일시스템모니터링 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/fsm/EgovFileSysMntrngRegist.jsp` | 파일시스템모니터링 등록 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/fsm/EgovFileSysMntrngUpdt.jsp` | 파일시스템모니터링 수정 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/fsm/EgovFileSysMntrngDetail.jsp` | 파일시스템모니터링 상세조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/fsm/EgovFileSysMntrngLogList.jsp` | 파일시스템모니터링로그 목록조회 페이지 |
-| JSP | `/WEB-INF/jsp/egovframework/utl/sys/fsm/EgovFileSysMntrngLogDetail.jsp` | 파일시스템모니터링로그 상세조회 페이지 |
-| XML | `/egovframework/sqlmap/com/utl/sys/fsm/EgovFileSysMntrng_SQL_*.xml` | 파일시스템모니터링 QUERY XML |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/fsm/EgovFileSysMntrngList.jsp` | 파일시스템모니터링 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/fsm/EgovFileSysMntrngRegist.jsp` | 파일시스템모니터링 등록 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/fsm/EgovFileSysMntrngUpdt.jsp` | 파일시스템모니터링 수정 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/fsm/EgovFileSysMntrngDetail.jsp` | 파일시스템모니터링 상세조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/fsm/EgovFileSysMntrngLogList.jsp` | 파일시스템모니터링로그 목록조회 페이지 |
+| JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/fsm/EgovFileSysMntrngLogDetail.jsp` | 파일시스템모니터링로그 상세조회 페이지 |
+| XML | `/egovframework/mapper/com/utl/sys/fsm/EgovFileSysMntrng_SQL_*.xml` | 파일시스템모니터링 QUERY XML |
 
 ### 관련테이블
 
