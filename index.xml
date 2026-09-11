@@ -21290,7 +21290,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>egovframework.com.sts.sst&lt;/td>
  &lt;td>egovframework-scrinstats-4.3.0.zip&lt;/td>
  &lt;td>egovframework.com.cmm &lt;br> egovframework.com.sts.com &lt;br> egovframework.com.sts.sst &lt;br> egovframework.com.sym.cal &lt;br> egovframework.com.sym.mnu.mcm &lt;br> egovframework.com.sym.mnu.mpm &lt;br> egovframework.com.sym.prm &lt;br> egovframework.com.utl.fcc &lt;br> egovframework.com.utl.sim&lt;/td>
- &lt;td>COMTECOPSEQ &lt;br> COMTNEMPLYRSCRTYESTBS &lt;br> COMTSWEBLOGSUMMARY &lt;br> COMTNRESTDE &lt;br> COMTCCMMNCLCODE &lt;br> COMTCCMMNCODE &lt;br> COMTCCMMNDETAILCODE &lt;br> COMTNAUTHORGROUPINFO &lt;br> COMTNGNRLMBER &lt;br> COMTNORGNZTINFO &lt;br> COMTNEMPLYRINFO &lt;br> COMTNENTRPRSMBER &lt;br> COMVNUSERMASTER &lt;br> COMTNAUTHORINFOv &lt;br> COMTNPROGRMLIST &lt;br> COMTHPROGRMCHANGEDTLS &lt;br> COMTNMENUINFO &lt;br> COMTNSITEMAP &lt;br> COMTNMENUCREATDTLS &lt;br> COMTHEMAILDSPTCHMANAGE &lt;br> COMTNFILE&lt;/td>
+ &lt;td>COMTECOPSEQ &lt;br> COMTNEMPLYRSCRTYESTBS &lt;br> COMTSWEBLOGSUMMARY &lt;br> COMTNRESTDE &lt;br> COMTCCMMNCLCODE &lt;br> COMTCCMMNCODE &lt;br> COMTCCMMNDETAILCODE &lt;br> COMTNAUTHORGROUPINFO &lt;br> COMTNGNRLMBER &lt;br> COMTNORGNZTINFO &lt;br> COMTNEMPLYRINFO &lt;br> COMTNENTRPRSMBER &lt;br> COMVNUSERMASTER &lt;br> COMTNAUTHORINFO &lt;br> COMTNPROGRMLIST &lt;br> COMTHPROGRMCHANGEDTLS &lt;br> COMTNMENUINFO &lt;br> COMTNSITEMAP &lt;br> COMTNMENUCREATDTLS &lt;br> COMTHEMAILDSPTCHMANAGE &lt;br> COMTNFILE&lt;/td>
  &lt;td>메뉴관리의 부가기능&lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -21514,7 +21514,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>개인정보보호정책확인&lt;/td>
  &lt;td>egovframework.com.uss.sam.ipm&lt;/td>
  &lt;td>egovframework-privacypolicy-4.3.0.zip&lt;/td>
- &lt;td>egovframework.com.cmm &lt;br> egovframework.com.uss.sam.ipm &lt;br> egovframework.com.utl.fcc &lt;br> egovframework.com.utl.wed &lt;br> egovframework.com.utl.wed.fiter&lt;/td>
+ &lt;td>egovframework.com.cmm &lt;br> egovframework.com.uss.sam.ipm &lt;br> egovframework.com.utl.fcc &lt;br> egovframework.com.utl.wed &lt;br> egovframework.com.utl.wed.filter&lt;/td>
  &lt;td>COMTECOPSEQ &lt;br> COMTNINDVDLINFOPOLICY &lt;br> COMTCCMMNCLCODE &lt;br> COMTCCMMNCODE &lt;br> COMTCCMMNDETAILCODE &lt;br> COMTNAUTHORGROUPINFO &lt;br> COMTNORGNZTINFO &lt;br> COMTNEMPLYRINFO &lt;br> COMTNFILE &lt;br> COMTNFILEDETAIL&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
@@ -21980,7 +21980,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;tr>
  &lt;td>118 &lt;br> 119 &lt;br> 73 &lt;br> 120 &lt;br> 121 &lt;br> 152 &lt;br> 153&lt;/td>
  &lt;td>메뉴관리 &lt;br> 메뉴생성관리 &lt;br> 사이트맵 &lt;br> 바로가기메뉴관리 &lt;br> 프로그램관리 &lt;br> 메인메뉴 &lt;br> 트리메뉴&lt;/td>
- &lt;td>egovframework.com.sym.mnu.mpm &lt;br> egovframework.com.sym.mnu.mcm &lt;br> egovframework.com.sym.mmu.stm &lt;br> egovframework.com.sym.mnu.bmm&lt;/td>
+ &lt;td>egovframework.com.sym.mnu.mpm &lt;br> egovframework.com.sym.mnu.mcm &lt;br> egovframework.com.sym.mnu.stm &lt;br> egovframework.com.sym.mnu.bmm&lt;/td>
  &lt;td>egovframework-menumanage-4.3.0.zip&lt;/td>
  &lt;td>egovframework.com.cmm &lt;br> egovframework.com.sym.cal &lt;br> egovframework.com.sym.ccm.zip &lt;br> egovframework.com.sym.mnu &lt;br> egovframework.com.sym.mnu.bmm &lt;br> egovframework.com.sym.mnu.mcm &lt;br> egovframework.com.sym.mnu.mpm &lt;br> egovframework.com.sym.mnu.stm &lt;br> egovframework.com.sym.prm &lt;br> egovframework.com.utl.fcc&lt;/td>
  &lt;td>COMTECOPSEQ &lt;br> COMTCCMMNCLCODE &lt;br> COMTNRESTDE &lt;br> COMTCZIP &lt;br> COMTRDNMADRZIP &lt;br> COMTNBKMKMENUMANAGERESULT &lt;br> COMTNEMPLYRSCRTYESTBS &lt;br> COMTNSITEMAP &lt;br> COMTCCMMNCODE &lt;br> COMTCCMMNDETAILCODE &lt;br> COMTNAUTHORGROUPINFO &lt;br> COMTNGNRLMBER &lt;br> COMTNORGNZTINFO &lt;br> COMTNEMPLYRINFO &lt;br> COMTNENTRPRSMBER &lt;br> COMVNUSERMASTER &lt;br> COMTNAUTHORINFO &lt;br> COMTNFILE &lt;br> COMTNFILEDETAIL &lt;br> COMTNPROGRMLIST &lt;br> COMTHPROGRMCHANGEDTLS &lt;br> COMTNMENUINFO &lt;br> COMTNSITEMAP &lt;br> COMTNMENUCREATDTLS &lt;br> COMTHEMAILDSPTCHMANAGE&lt;/td>
@@ -22160,7 +22160,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;tr>
  &lt;td>178&lt;/td>
  &lt;td>단위계산&lt;/td>
- &lt;td>egovframe.com.utl.fda.ucc&lt;/td>
+ &lt;td>egovframework.com.utl.fda.ucc&lt;/td>
  &lt;td>egovframework-unitcalc-4.3.0.zip&lt;/td>
  &lt;td>&lt;/td>
  &lt;td>&lt;/td>
@@ -22279,7 +22279,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>웹표준검사&lt;/td>
  &lt;td>egovframework.com.utl.sys.wsi&lt;/td>
  &lt;td>egovframework-webStandard-4.3.0.zip&lt;/td>
- &lt;td>egovframework.utl.sys.wsi&lt;/td>
+ &lt;td>egovframework.com.utl.sys.wsi&lt;/td>
  &lt;td>&lt;/td>
  &lt;td>jsp 파일만으로 구성됨&lt;/td>
  &lt;/tr>
