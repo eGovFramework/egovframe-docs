@@ -212,7 +212,7 @@ N/A
 | 수정화면 | /cop/scp/updateArticleScrapView.do | updateArticleScrapView | "ArticleScrap" | "selectArticleScrapDetail" |
 | 수정 | /cop/scp/updateArticleScrap.do | updateArticleScrap | "ArticleScrap" | "updateArticleScrap" |
 
-![스크랩 수정](./images//scrap-management-update.png)
+![스크랩 수정](./images/scrap-management-update.png)
 
 수정: 수정된 정보들이 저장 처리된다.
 
