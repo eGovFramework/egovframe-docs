@@ -135,7 +135,7 @@ EgovSessionCookieUtil.setSessionAttribute(request, "USER_NAME", "홍길동");
 logger.info("Session Infos : " + EgovSessionCookieUtil.getSessionValuesString(request));
 
 // 특정 세션 정보 취득
-String userId = (String)EgovSessionCookieUtil.getSessionAttribute("USER_ID");
+String userId = (String)EgovSessionCookieUtil.getSessionAttribute(request, "USER_ID");
 
 // 세션 정보 삭제
 EgovSessionCookieUtil.removeSessionAttribute(request, "USER_ID");
