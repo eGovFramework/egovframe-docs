@@ -19,6 +19,14 @@ Social Login은 네이버(Naver), 구글(Google), 카카오(Kakao)의 로그인 
 
 사용자는 각 서비스의 계정을 이용하여 별도의 로그인 정보를 입력하지 않고 연계 로그인을 진행할 수 있다.
 
+```mermaid
+flowchart LR
+    L[로그인 화면] -->|소셜 로그인 버튼 클릭| A([네이버/구글/카카오 인증])
+    A -->|callback + code| C[oauthLoginCallback]
+    C -->|Access Token 조회| P[사용자 프로필 조회]
+    P -->|DB 존재 확인| R([인증 결과 화면])
+```
+
 ## 특징
 
 Social Login은 다음과 같은 기능을 제공한다.
