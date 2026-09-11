@@ -30,6 +30,18 @@ menu:
 6. **파일시스템모니터링로그목록조회**: 파일시스템모니터링로그로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
 7. **파일시스템모니터링로그조회**: 등록된 파일시스템모니터링로그정보를 조회한다.
 
+```mermaid
+flowchart LR
+    L[파일시스템모니터링 목록조회] -->|등록| R[파일시스템모니터링 등록]
+    L -->|상세조회| D[파일시스템모니터링 상세조회]
+    D -->|수정| U[파일시스템모니터링 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+    S[Scheduler 10분 주기] -->|임계치 초과시 메일발송| LL[파일시스템모니터링로그 목록조회]
+    LL -->|상세보기| LD[파일시스템모니터링로그 상세조회]
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -83,7 +95,7 @@ INSERT INTO COMTECOPSEQ VALUES('FILESYS_LOGID','0');
 
 <!-- 파일시스템모니터링 트리거 -->
 <bean id="fileSysMntrngTrigger"
-    class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="fileSysMntrng" />
     <!-- 시작하고 1분 후에 실행한다. (milisecond) -->
     <property name="startDelay" value="60000" />
