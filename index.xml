@@ -10524,7 +10524,7 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/batch-layer/images/step-variable-architecture6.png" alt="step-variable-architecture6" >&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="step-variable-설정">Step Variable 설정&lt;/h3>
-&lt;p>배치실행환경에서 제공하는 EgovJobVariableListener 사용하여 사용자 정의 변수를 설정한다.&lt;/p>
+&lt;p>배치실행환경에서 제공하는 EgovStepVariableListener 사용하여 사용자 정의 변수를 설정한다.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000080">&amp;lt;bean&lt;/span> &lt;span style="color:#008080">id=&lt;/span>&lt;span style="color:#d14">&amp;#34;egovStepVariableListener&amp;#34;&lt;/span> &lt;span style="color:#008080">class=&lt;/span>&lt;span style="color:#d14">&amp;#34;org.egovframe.rte.bat.support.EgovStepVariableListener&amp;#34;&lt;/span>&lt;span style="color:#000080">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000080">&amp;lt;property&lt;/span> &lt;span style="color:#008080">name=&lt;/span>&lt;span style="color:#d14">&amp;#34;pros&amp;#34;&lt;/span>&lt;span style="color:#000080">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000080">&amp;lt;props&amp;gt;&lt;/span>
