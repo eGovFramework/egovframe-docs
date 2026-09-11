@@ -182,7 +182,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 상세조회 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | "DeptSchdulManage" | "selectDeptSchdulManageDetailVO" |
-| 부서일정 삭제 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | "DeptSchdulManage" | "deleteDeptSchdulManage" |
+| 부서일정 삭제 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDelete | "DeptSchdulManage" | "deleteDeptSchdulManage" |
 
 ![부서일정관리 상세조회 및 삭제](./images/department-schedule-detail.jpg)
 
