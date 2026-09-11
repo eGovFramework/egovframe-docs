@@ -23007,12 +23007,12 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;tr>
  &lt;td>Message properties&lt;/td>
  &lt;td>resources/egovframework/message/com/cop/smt/sdm/message_ko.properties&lt;/td>
- &lt;td>마이페이지 Message properties(한글)&lt;/td>
+ &lt;td>부서일정관리 Message properties(한글)&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Message properties&lt;/td>
  &lt;td>resources/egovframework/message/com/cop/smt/sdm/message_en.properties&lt;/td>
- &lt;td>마이페이지 Message properties(영문)&lt;/td>
+ &lt;td>부서일정관리 Message properties(영문)&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Idgen XML&lt;/td>
