@@ -33613,12 +33613,12 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>JSP&lt;/td>
  &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ntm/EgovNoteEmpList.jsp&lt;/td>
- &lt;td>쪽지를 보내기 위한 jsp페이지&lt;/td>
+ &lt;td>쪽지를 보내기 위해 수신자/참조자 선택하는 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>JSP&lt;/td>
  &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/ntm/EgovNoteManage.jsp&lt;/td>
- &lt;td>쪽지를 보내기 위해 수신자/참조자 선택하는 jsp페이지&lt;/td>
+ &lt;td>쪽지를 보내기 위한 jsp페이지&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Mapper&lt;/td>
