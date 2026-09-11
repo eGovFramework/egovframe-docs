@@ -120,7 +120,7 @@ public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 - 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-lgm.xml)
 
 ```xml
-<bean id="logSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+<bean id="sysLogScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
         <list>
             <ref bean="sysLogTrigger" />
