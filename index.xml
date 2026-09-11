@@ -38009,7 +38009,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;p>개발환경 &amp;gt; eGovFrame &amp;gt; New Boot Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish] (또는)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>개발환경 &amp;gt; file &amp;gt; New &amp;gt; eGovframe Boot Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish]&lt;/p>
+&lt;p>개발환경 &amp;gt; file &amp;gt; New &amp;gt; eGovFrame Boot Web Project &amp;gt; [프로젝트 정보 입력-Next] &amp;gt; Generate Example 체크 [Finish]&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-1.png" alt="생성 프로젝트 선택" >&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-2.png" alt="프로젝트 정보 입력" >&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/deployment-tool/images/boot-gradle-sample-3.png" alt="게시판 컨텐츠 자동생성 체크" >&lt;/p>
