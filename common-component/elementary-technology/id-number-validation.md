@@ -35,8 +35,8 @@ menu:
 | `boolean` | `checkBubinNumber(String bubin)` | 법인번호 유효성체크 | 법인번호(`-` 제외) 문자열을 입력받아 유효성 체크 |
 | `boolean` | `checkCompNumber(String c1, String c2, String c3)` | 사업자번호 유효성체크 | 사업자번호 앞, 중간, 뒤 문자열을 입력받아 유효성 체크 |
 | `boolean` | `checkCompNumber(String comp)` | 사업자번호 유효성체크 | 사업자번호(`-` 제외) 문자열을 입력받아 유효성 체크 |
-| `boolean` | `checkforeignNumber(String for1, String for2)` | 외국인번호 유효성체크 | 외국인등록번호 앞, 뒤 문자열을 입력받아 유효성 체크 |
-| `boolean` | `checkforeignNumber(String foreign)` | 외국인번호 유효성체크 | 외국인등록번호(`-` 제외) 문자열을 입력받아 유효성 체크 |
+| `boolean` | `checkForeignNumber(String for1, String for2)` | 외국인번호 유효성체크 | 외국인등록번호 앞, 뒤 문자열을 입력받아 유효성 체크 |
+| `boolean` | `checkForeignNumber(String foreign)` | 외국인번호 유효성체크 | 외국인등록번호(`-` 제외) 문자열을 입력받아 유효성 체크 |
 
 - **Input**: 해당하는 입력란의 `String` 형태의 번호
 - **Output**: `boolean` (유효 여부)
@@ -80,8 +80,8 @@ String foreign1 = "831231";
 String foreign2 = "576545";
 String foreign  = "831231576545";
 
-boolean isForeignValid1 = EgovNumberCheckUtil.checkforeignNumber(foreign1, foreign2);
-boolean isForeignValid2 = EgovNumberCheckUtil.checkforeignNumber(foreign);
+boolean isForeignValid1 = EgovNumberCheckUtil.checkForeignNumber(foreign1, foreign2);
+boolean isForeignValid2 = EgovNumberCheckUtil.checkForeignNumber(foreign);
 
 // ...
 ```
