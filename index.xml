@@ -28013,7 +28013,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>암호화/복호화는 보안을 위하여 데이터를 암호화하거나 암호화된 데이터를 복호화하기 위해, ARIA 방식을 통한 데이터의 암호화 및 복호화 기능을 제공한다.&lt;/p>
 &lt;h2 id="전제조건">전제조건&lt;/h2>
-&lt;p>암복호화 기능을 사용하기 위해서는 전자정부 표준프레임워크 실행환경중 egovframework.rte.fdl.crypto-x.x.x.jar 라이브러리를 필요로 한다.&lt;/p>
+&lt;p>암복호화 기능을 사용하기 위해서는 전자정부 표준프레임워크 실행환경중 egovframe-rte-fdl-crypto-x.x.x.jar 라이브러리를 필요로 한다.&lt;/p>
 &lt;p>보다 자세한 사항은 실행환경의 
 
 
