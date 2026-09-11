@@ -18512,7 +18512,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;tbody>
  &lt;tr>
  &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.service.EgovSysInfo.java&lt;/code>&lt;/td>
+ &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovSysInfo.java&lt;/code>&lt;/td>
  &lt;td>시스템 정보 확인 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
