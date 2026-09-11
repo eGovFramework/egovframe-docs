@@ -27,6 +27,13 @@ menu:
  2. 접속로그 조회 : 로그인 로그 정보의 상세 내용을 조회한다.
  3. 접속로그 목록 : 로그인 로그 정보의 목록을 검색, 조회한다.
 
+```mermaid
+flowchart LR
+    L[로그인/로그아웃] -->|AOP| R[접속로그 등록]
+    R --> LI[접속로그 목록조회]
+    LI -->|상세보기| D[접속로그 상세조회]
+```
+
 ### 패키지 참조 관계
 
  접속로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -174,7 +181,7 @@ loginLog.setLoginId(uniqId);
 loginLog.setLoginIp(ip);
 loginLog.setLoginMthd("O"); // 로그인:I, 로그아웃:O
 loginLog.setErrOccrrAt("N");
-loginLog.setErrorCode(");
+loginLog.setErrorCode("");
 loginLogService.logInsertLoginLog(loginLog);
 }
 }
