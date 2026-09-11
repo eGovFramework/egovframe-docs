@@ -340,7 +340,7 @@ public class EmpDeptSimpleCompositeVO implements Serializable {
     }
 ```
 
- extends 없이 모든 매핑 요소를 simple 하게 모두 정의한 resultMap 을 이용한 결과 객체 매핑을 처리하는 selectEmpDeptSimpleCompositeUsingResultMap 에 대해 조회 처리하고 있는 테스트 케이스이다. 위의 테스트 검증을 통해 EmpDeptSimpleCompositeV 의 결과 객체로 조회 결과가 잘 반영되었음을 확인할 수 있다.
+ extends 없이 모든 매핑 요소를 simple 하게 모두 정의한 resultMap 을 이용한 결과 객체 매핑을 처리하는 selectEmpDeptSimpleCompositeUsingResultMap 에 대해 조회 처리하고 있는 테스트 케이스이다. 위의 테스트 검증을 통해 EmpDeptSimpleCompositeVO 의 결과 객체로 조회 결과가 잘 반영되었음을 확인할 수 있다.
 
  위의 비교 구현을 통해 join 조회를 통해 얻어지는 결과 객체가 단순 composite VO 형태인 경우 resultMap extends 을 사용하면 좀더 쉽게 매핑 처리할 수 있을 것으로 보여진다.
 
