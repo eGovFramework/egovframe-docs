@@ -163,7 +163,7 @@ globals.properties에 관련된 내용은 요소기술 [프로퍼티 및 명령�
   <property name="concurrent" value="false" />
 </bean>
 
-<bean id="smsInfoReceiverTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="smsInfoReceiverTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
   <property name="jobDetail" ref="smsInfoReceiver" />
   <!-- 시작하고 1분후에 실행한다. (milisecond) -->
   <property name="startDelay" value="60000" />
