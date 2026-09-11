@@ -141,8 +141,8 @@ Globals.OsType = UNIX
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /utl/sys/prm/selectProcessMonList.do | selectProcessMonList | ProcessMonDAO.selectProcessMonList |
-| 조회 | /utl/sys/prm/selectProcessMonList.do | selectProcessMonList | ProcessMonDAO.selectProcessMonListCnt |
+| 조회 | /utl/sys/prm/EgovComUtlProcessMonList.do | selectProcessMonList | ProcessMonDAO.selectProcessMonList |
+| 조회 | /utl/sys/prm/EgovComUtlProcessMonList.do | selectProcessMonList | ProcessMonDAO.selectProcessMonTotCnt |
 
 목록은 페이지당 10건씩 조회되며 검색조건은 상태·관리자명에 대해 수행된다. 상태가 비정상일 때 관리자에게 이메일을 발송한다.
 
@@ -150,7 +150,7 @@ Globals.OsType = UNIX
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /utl/sys/prm/addProcessMon.do | insertProcessMon | ProcessMonDAO.insertProcessMon |
+| 등록 | /utl/sys/prm/EgovComUtlProcessMonRegist.do | insertProcessMon | ProcessMonDAO.insertProcessMon |
 
 프로세스모니터링의 속성정보를 입력한 뒤 등록한다. 프로세스명은 공통컴포넌트가 설치된 서버의 프로세스명을 의미한다.
 
@@ -158,21 +158,21 @@ Globals.OsType = UNIX
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /utl/sys/prm/updateProcessMon.do | updateProcessMon | ProcessMonDAO.updateProcessMon |
+| 수정 | /utl/sys/prm/EgovComUtlProcessMonModify.do | updateProcessMon | ProcessMonDAO.updateProcessMon |
 
 ### 프로세스모니터링 상세조회
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /utl/sys/prm/getProcessMon.do | selectProcessMon | ProcessMonDAO.selectProcessMon |
-| 삭제 | /utl/sys/prm/deleteProcessMon.do | deleteProcessMon | ProcessMonDAO.deleteProcessMon |
+| 상세조회 | /utl/sys/prm/EgovComUtlProcessMon.do | selectProcessMon | ProcessMonDAO.selectProcessMon |
+| 삭제 | /utl/sys/prm/EgovComUtlProcessMonRemove.do | deleteProcessMon | ProcessMonDAO.deleteProcessMon |
 
 ### 프로세스모니터링로그 목록조회
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /utl/sys/prm/selectProcessMonLogList.do | selectProcessMonLogList | ProcessMonDAO.selectProcessMonLogList |
-| 조회 | /utl/sys/prm/selectProcessMonLogList.do | selectProcessMonLogList | ProcessMonDAO.selectProcessMonLogListCnt |
+| 조회 | /utl/sys/prm/EgovComUtlProcessMonLogList.do | selectProcessMonLogList | ProcessMonDAO.selectProcessMonLogList |
+| 조회 | /utl/sys/prm/EgovComUtlProcessMonLogList.do | selectProcessMonLogList | ProcessMonDAO.selectProcessMonLogTotCnt |
 
 검색조건은 상태·관리자명·모니터링시각에 대해 수행된다.
 
@@ -180,7 +180,7 @@ Globals.OsType = UNIX
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /utl/sys/prm/getProcessMonLog.do | selectProcessMonLog | ProcessMonDAO.selectProcessMonLog |
+| 상세조회 | /utl/sys/prm/EgovComUtlProcessMonLog.do | selectProcessMonLog | ProcessMonDAO.selectProcessMonLog |
 
 ## 참고자료
 
