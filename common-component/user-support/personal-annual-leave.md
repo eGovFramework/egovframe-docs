@@ -21,12 +21,10 @@ menu:
 
  개인연차관리는 개인연차를 등록하기 위한 목적으로 연차 등록, 수정, 삭제, 목록조회 기능을 수반한다.
 
-```text
-  ① 연차관리목록 : 연차관리 정보를 조회하고, 그 결과 목록을 화면에 반영한다.
-  ② 연차등록 : 연차정보를 등록하고, 등록 결과를 조회한다.
-  ③ 연차수정 : 기 등록된 연차정보의 항목들을 수정한다.
-  ④ 연차삭제 : 기 등록된 연차정보를 삭제한다.
-```
+ ① 연차관리목록 : 연차관리 정보를 조회하고, 그 결과 목록을 화면에 반영한다.
+ ② 연차등록 : 연차정보를 등록하고, 등록 결과를 조회한다.
+ ③ 연차수정 : 기 등록된 연차정보의 항목들을 수정한다.
+ ④ 연차삭제 : 기 등록된 연차정보를 삭제한다.
 
 ### 관련소스
 
@@ -103,7 +101,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /uss/ion/yrc/EgovIndvdlYrycRegist.do | insertIndvdlYrycManage | "indvdlYrycDAO.updtIndvdlYrycManage" |
+| 수정 | /uss/ion/yrc/EgovIndvdlYrycRegist.do | updtIndvdlYrycManage | "indvdlYrycDAO.updtIndvdlYrycManage" |
 
  연차의 속성정보를 변경한 후 저장한다.
 
