@@ -52,8 +52,8 @@ AOP 또는 `@Transactional` 어노테이션을 사용하여 Datasource의 트랜
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| Transaction Name | ✓ | 트랜잭션 매니저 빈 이름. 예) `transactionManager` |
-| DataSource Name | ✓ | 연결할 데이터소스 빈 이름. 예) `dataSource` |
+| Transaction Manager Name | ✓ | 트랜잭션 매니저 빈 이름. 예) `transactionManager` |
+| Data Source Name | ✓ | 연결할 데이터소스 빈 이름. 예) `dataSource` |
 | AOP Config Transaction | | AOP 기반 트랜잭션 설정 포함 여부. 체크 시 AOP 관련 항목이 추가로 표시된다. |
 | Annotation Transaction | | `@Transactional` 어노테이션 기반 트랜잭션 활성화 여부 |
 
@@ -61,8 +61,8 @@ AOP 또는 `@Transactional` 어노테이션을 사용하여 Datasource의 트랜
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| Point Cut Name | ✓ | AOP 포인트컷 빈 이름. 예) `transactionPointcut` |
-| Point Cut Expression | ✓ | 포인트컷 표현식. 예) `execution(* egovframework.example..impl.*Impl.*(..))` |
+| Pointcut Name | ✓ | AOP 포인트컷 빈 이름. 예) `transactionPointcut` |
+| Pointcut Expression | ✓ | 포인트컷 표현식. 예) `execution(* egovframework.example..impl.*Impl.*(..))` |
 | Advice Name | ✓ | 트랜잭션 어드바이스 빈 이름. 예) `transactionAdvice` |
 
 **트랜잭션 속성 설정 (메서드 단위)**
@@ -109,8 +109,8 @@ JPA(Java Persistence API) 환경에서 `JpaTransactionManager`를 사용하여 �
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-transaction` |
-| JavaConfig | `EgovJpaTransactionConfig` |
+| XML | `context-transaction-jpa` |
+| JavaConfig | `EgovTransactionJpaConfig` |
 
 ### 설정 항목
 
@@ -126,9 +126,9 @@ JPA(Java Persistence API) 환경에서 `JpaTransactionManager`를 사용하여 �
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| Transaction Name | ✓ | 트랜잭션 매니저 빈 이름. 예) `transactionManager` |
+| Transaction Manager Name | ✓ | 트랜잭션 매니저 빈 이름. 예) `transactionManager` |
 | Entity Manager Factory | ✓ | EntityManagerFactory 빈 이름. 예) `entityManagerFactory` |
-| Packages To Scan | | JPA 엔티티를 스캔할 패키지 경로. 예) `egovframework.example.domain` |
+| Packages to Scan | | JPA 엔티티를 스캔할 패키지 경로. 예) `egovframework.example.domain` |
 | Dialect Name | | JPA Dialect 클래스명. 예) `org.hibernate.dialect.MySQLDialect` |
 | Spring Data JPA Repositories Package | | Spring Data JPA 리포지토리 인터페이스 스캔 패키지. 예) `egovframework.example.repository` |
 
@@ -142,8 +142,8 @@ JPA(Java Persistence API) 환경에서 `JpaTransactionManager`를 사용하여 �
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-transaction` |
-| JavaConfig | `EgovJtaTransactionConfig` |
+| XML | `context-transaction-jta` |
+| JavaConfig | `EgovTransactionJtaConfig` |
 
 ### 설정 항목
 
@@ -159,6 +159,6 @@ JPA(Java Persistence API) 환경에서 `JpaTransactionManager`를 사용하여 �
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| Transaction Name | ✓ | 트랜잭션 매니저 빈 이름. 예) `transactionManager` |
+| Transaction Manager Name | ✓ | 트랜잭션 매니저 빈 이름. 예) `transactionManager` |
 | JTA Implementation | | JTA 구현체 클래스명. 예) `com.atomikos.icatch.jta.UserTransactionManager` |
 | Global Timeout | | 전역 트랜잭션 타임아웃 (초). 예) `300` |
