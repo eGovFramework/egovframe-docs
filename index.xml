@@ -31549,6 +31549,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
+
+
+&lt;div class="mermaid">flowchart LR
+ I([아이디/비밀번호 입력]) --> R[로그인 요청]
+ R --> A[권한조회]
+ A --> S[세션설정]
+ S --> L[로그인로그 생성]
+ L --> M[권한별 메뉴설정]
+ M --> V([권한별 화면로딩])
+&lt;/div>
 &lt;ul>
 &lt;li>로그인 컴포넌트 사용시 보안 고려사항&lt;/li>
 &lt;/ul>
