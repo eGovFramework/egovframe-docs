@@ -174,7 +174,8 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 기념일엑셀등록 화면조회 | /uss/ion/ans/EgovAnnvrsryManageListPop.do | selectAnnvrsryManageBnde | "annvrsryManageDAO.selectAnnvrsryManageBnde" |
+| 기념일엑셀등록 화면조회 | /uss/ion/ans/EgovAnnvrsryManageListPop.do | selectAnnvrsryManageBnde | |
+| 기념일엑셀등록 데이터 출력 | /uss/ion/ans/EgovAnnvrsryManageListPopAction.do | selectAnnvrsryManageBndeAction | "annvrsryManageDAO.selectAnnvrsryManageBnde" |
 | 기념일엑셀등록 처리 | /uss/ion/ans/insertAnnvrsryManageBnde.do | insertAnnvrsryManageBnde | "annvrsryManageDAO.insertAnnvrsryManage" |
 
  기념일정보를 입력형식에 맞춰 엑셀에 등록된 내용을 일괄등록 처리한다.
@@ -189,8 +190,8 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 다가오는기념일조회 | /uss/ion/ans/selectAnnvrsryMainList.do | selectAnnvrsryMainList | "annvrsryManageDAO.selectAnnvrsryMainList" |
-| 기념일상세조회 | /uss/ion/ans/selectAnnvrsryGdcc.do | selectAnnvrsryGdcc | "annvrsryManageDAO.selectAnnvrsryGdcc" |
+| 다가오는기념일조회 | /uss/ion/ans/selectAnnvrsryMainList.do | selectAnnvrsryMainList | "annvrsryManageDAO.selectAnnvrsryGdcc" |
+| 기념일상세조회 | /uss/ion/ans/selectAnnvrsryGdcc.do | selectAnnvrsryGdcc | "annvrsryManageDAO.selectAnnvrsryManage" |
 
  ![image](./images/uss-annvrsry-기념일목록확인.jpg)
 
