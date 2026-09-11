@@ -74,7 +74,7 @@ globals.properties에 관련된 내용은 요소기술 프로퍼티 및 명령�
 </span></span><span style=display:flex><span>    <span style=color:navy>&lt;/bean&gt;</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:navy>&lt;bean</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;insttCodeReceiverTrigger&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.scheduling.quartz.SimpleTriggerBean&#34;</span><span style=color:navy>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:teal>class=</span><span style=color:#d14>&#34;org.springframework.scheduling.quartz.SimpleTriggerFactoryBean&#34;</span><span style=color:navy>&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;jobDetail&#34;</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;insttCodeReceiver&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:#998;font-style:italic>&lt;!-- 시작하고 1분후에 실행한다. (milisecond) --&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;startDelay&#34;</span> <span style=color:teal>value=</span><span style=color:#d14>&#34;60000&#34;</span> <span style=color:navy>/&gt;</span>
@@ -115,7 +115,7 @@ V -->|삭제| L</div><h3 class=sec-tit id=기관코드수신>기관코드수신<
 </span></span><span style=display:flex><span>insttCodeRecptn.setFxnum            (tokenData[17]);    // 팩스번호                    :: 팩스번호
 </span></span><span style=display:flex><span>insttCodeRecptn.setCreatDe          (tokenData[18]);    // 생성일자                    :: 생성일자
 </span></span><span style=display:flex><span>insttCodeRecptn.setAblDe            (tokenData[19]);    // 폐지일자                    :: 폐지일자
-</span></span><span style=display:flex><span>insttCodeRecptn.setAblEnnc          (tokenData[20]);    // 폐지구분                    :: 폐지유무
+</span></span><span style=display:flex><span>insttCodeRecptn.setAblEnnc          (tokenData[20]);    // 폐지유무                    :: 폐지유무
 </span></span><span style=display:flex><span>insttCodeRecptn.setChangede         (tokenData[21]);    // 변경일자                    :: 변경일자
 </span></span><span style=display:flex><span>insttCodeRecptn.setChangeTime       (tokenData[22]);    // 변경시간                    :: 변경시간
 </span></span><span style=display:flex><span>insttCodeRecptn.setBsisDe           (tokenData[23]);    // 기초날짜                    :: 기초일자
