@@ -480,16 +480,16 @@ PR 반영 후 가이드가 즉시 배포되므로, 배포 이후 드러나는 �
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#000080">&amp;lt;/step&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000080">&amp;lt;/job&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="job에서-tasklet-선언시-step에서-job-variable-사용">job에서 tasklet 선언시 Step에서 Job Variable 사용&lt;/h3>
-&lt;p>setter 방식으로 공유변수 사용시 아래와 같이 응용하여 설정한다.&lt;/p></description></item><item><title>Map 객체를 통한 입력값 처리 방법</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-declarative-validation/web-servlet-annotationcommandmapargumentresolver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-declarative-validation/web-servlet-annotationcommandmapargumentresolver/</guid><description>&lt;h1 id="annotationcommandmapargumentresolver">AnnotationCommandmapArgumentResolver&lt;/h1>
+&lt;p>setter 방식으로 공유변수 사용시 아래와 같이 응용하여 설정한다.&lt;/p></description></item><item><title>Map 객체를 통한 입력값 처리 방법</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-declarative-validation/web-servlet-annotationcommandmapargumentresolver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/presentation-layer/web-servlet-declarative-validation/web-servlet-annotationcommandmapargumentresolver/</guid><description>&lt;h1 id="annotationcommandmapargumentresolver">AnnotationCommandMapArgumentResolver&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Controller에서 화면(JSP) 입력값을 받기 위해서 일반적으로 Command(Form Class) 객체를 사용하지만, Map 객체를 사용하는걸 선호할 수 있다.
-전자정부프레임워크 버전 3.0이전에서는 CommandMapArgumentResolver를 통해 Map객체를 사용할 수 있었다. 그러나 3.0부터는 @CommandMap과 AnnotationCommandmapArgumentResolver를 통해 Map객체를 사용할 수 있다.
+전자정부프레임워크 버전 3.0이전에서는 CommandMapArgumentResolver를 통해 Map객체를 사용할 수 있었다. 그러나 3.0부터는 @CommandMap과 AnnotationCommandMapArgumentResolver를 통해 Map객체를 사용할 수 있다.
 org.springframework.web.method.support.HandlerMethodArgumentResolver의 구현클래스인 AnnotationCommandMapArgumentResolver은 HTTP request 객체에 있는 파라미터이름과 값을 Map 객체에 담아 Controller에서 사용도록 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="handlermethodargumentresolver">HandlerMethodArgumentResolver&lt;/h3>
-&lt;p>Sping MVC의 &lt;code>@Controller&lt;/code>의 메소드의 argument로 사용할 수 있는 유형(이에 관한 정보는 이곳을 참조하라.)은 기존의 계층형 Controller보다 다양해 졌지만,
+&lt;p>Spring MVC의 &lt;code>@Controller&lt;/code>의 메소드의 argument로 사용할 수 있는 유형(이에 관한 정보는 이곳을 참조하라.)은 기존의 계층형 Controller보다 다양해 졌지만,
 필요에 따라 기본 유형외의 custom argument를 사용해야 할 때가 있을 것이다.
-Sping MVC는 Controller의 argument 유형을 customizing 할 수 있는 HandlerMethodArgumentResolver라는 interface를 제공한다.
+Spring MVC는 Controller의 argument 유형을 customizing 할 수 있는 HandlerMethodArgumentResolver라는 interface를 제공한다.
 기존 Spring web 3.1이전 버전에서는 WebArgumentResolver를 구현하여 AnnotationMethodHandlerAdapter에 등록하여 ArgumentResolver를 적용하였으나,
 3.1이후부터는 HandlerMethodArgumentResolver를 구현하여 RequestMappingHandlerAdapter에 등록하여 ArgumentResolver를 적용해야 한다.&lt;/p></description></item><item><title>Cache Abstraction</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/abstraction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/foundation-layer/cache/abstraction/</guid><description>&lt;h1 id="cache-abstraction">Cache Abstraction&lt;/h1>
 &lt;p>본 문서는 
