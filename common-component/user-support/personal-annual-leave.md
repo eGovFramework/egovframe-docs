@@ -74,7 +74,6 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 조회 | /uss/ion/yrc/EgovIndvdlYrycManageList.do | selectIndvdlYrycManageList | "indvdlYrycDAO.selectIndvdlYrycManageList" |
-| 조회 | /uss/ion/yrc/EgovIndvdlYrycManageList.do | selectIndvdlYrycManageList | "indvdlYrycDAO.selectIndvdlYrycManageListTotCnt" |
 
  ![image](./images/uss-yryc-개인연차관리목록.jpg)
 
@@ -101,7 +100,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /uss/ion/yrc/EgovIndvdlYrycRegist.do | updtIndvdlYrycManage | "indvdlYrycDAO.updtIndvdlYrycManage" |
+| 수정 | /uss/ion/yrc/EgovIndvdlYrycRegist.do | insertIndvdlYrycManage | "indvdlYrycDAO.updateIndvdlYrycManage" |
 
  연차의 속성정보를 변경한 후 저장한다.
 
