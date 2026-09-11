@@ -33107,6 +33107,18 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;/ul></description></item><item><title>주간/월간보고관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/weekly-monthly-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/weekly-monthly-report/</guid><description>&lt;h1 id="주간월간보고관리">주간/월간보고관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>주간/월간보고관리는 주간·월간 단위의 업무 보고를 등록·조회·수정·삭제하고, 보고에 대한 승인 처리를 지원하는 기능이다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 협업(일정관리) 내에 구성되어 있다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[주간/월간보고 목록조회] -->|등록| R[주간/월간보고 등록]
+ L -->|목록 선택| D[주간/월간보고 상세조회]
+ D -->|승인| C[보고 승인]
+ D -->|수정| U[주간/월간보고 수정]
+ D -->|삭제| L
+ R --> L
+ U --> L
+ C --> L
+&lt;/div>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
