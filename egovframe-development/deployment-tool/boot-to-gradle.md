@@ -19,7 +19,7 @@ menu:
 2. Sample 프로젝트 생성
 
    * 개발환경 > eGovFrame > New Boot Web Project > [프로젝트 정보 입력-Next] > Generate Example 체크 [Finish] (또는)
-   * 개발환경 > file > New > eGovframe Boot Web Project > [프로젝트 정보 입력-Next] > Generate Example 체크 [Finish]
+   * 개발환경 > file > New > eGovFrame Boot Web Project > [프로젝트 정보 입력-Next] > Generate Example 체크 [Finish]
 
      ![생성 프로젝트 선택](./images/boot-gradle-sample-1.png)
 
