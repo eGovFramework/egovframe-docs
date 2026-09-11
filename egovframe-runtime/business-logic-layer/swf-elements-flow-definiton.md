@@ -231,7 +231,7 @@ subflow-state 구성요소를 사용해서 하위 Flow 호출을 하게 된다.
 		<evaluate expression="booking.guests.add(currentEvent.attributes.guest)" />
 	</transition>
 	<transition on="creationCancelled" to="reviewBooking" />
-</subfow-state>
+</subflow-state>
 ```
 
 이 예제에서는 createGuest Flow를 호출한다. guestCreated 출력이 반환되면, 새로운 손님이 예약 손님 리스트에 추가된다.
@@ -244,7 +244,7 @@ input 구성요소를 사용하면 하위 Flow에 입력값을 건낼 수 있다
 <subflow-state id="addGuest" subflow="createGuest">
 	<input name="booking" />
 	<transition to="reviewBooking" />
-</subfow-state>
+</subflow-state>
 ```
 
 ##### subflow output 매핑
@@ -294,7 +294,7 @@ input 구성요소를 사용하면 하위 Flow에 입력값을 건낼 수 있다
 			<evaluate expression="booking.guests.add(currentEvent.attributes.guest)" />
 		</transition>
 		<transition on="creationCancelled" to="reviewBooking" />
-	</subfow-state>
+	</subflow-state>
  
 	<end-state id="bookingConfirmed">
 		<output name="bookingId" value="booking.id" />
