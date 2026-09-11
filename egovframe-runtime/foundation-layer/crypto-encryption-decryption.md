@@ -221,7 +221,7 @@ location="classpath*:/META-INF/spring/crypto_config.properties,classpath*:/META-
  
 <bean id="ARIACryptoService" class="org.egovframe.rte.fdl.crypto.impl.EgovARIACryptoServiceImpl">
   <property name="passwordEncoder" ref="passwordEncoder" />
-  <property name="blockSize" value="1025" /><!-- default : 1024 -->
+  <property name="blockSize" value="1024" /><!-- default : 1024 -->
 </bean>
  
 <bean id="digestService" class="org.egovframe.rte.fdl.crypto.impl.EgovDigestServiceImpl">
