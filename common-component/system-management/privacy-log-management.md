@@ -25,6 +25,13 @@ menu:
  ② 개인정보조회 로그 목록 : 개인정보조회 정보의 목록을 검색, 조회한다.
  ③ 개인정보조회 로그 조회 : 개인정보조회 정보의 상세내용을 조회한다.
 
+```mermaid
+flowchart LR
+    S[서비스 메소드 호출] -->|AOP| R[개인정보조회 로그 등록]
+    R --> L[개인정보조회 로그 목록조회]
+    L -->|상세보기| D[개인정보조회 로그 상세조회]
+```
+
 ### 패키지 참조 관계
 
  개인정보조회 로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -192,7 +199,7 @@ return idGnrService;
 
  개인정보조회 로그 상세조회 기능을 수행하기 위해서는 상세보기 버튼을 클릭한다.
 
-### 접속로그 상세조회
+### 개인정보조회 로그 상세조회
 
 #### 비즈니스 규칙
 
@@ -206,7 +213,7 @@ return idGnrService;
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /sym/log/plg/SelectPrivacyLogDetail.do | selectWebLog | "PrivacyLog" | "selectPrivacyLog" |
+| 상세조회 | /sym/log/plg/SelectPrivacyLogDetail.do | selectPrivacyLog | "PrivacyLog" | "selectPrivacyLog" |
 
  ![image](./images/sym-privlog-상세.jpg)
 
