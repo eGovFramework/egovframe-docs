@@ -46,7 +46,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 ### 메이븐 프로젝트 생성
 
-전자정부 표준 프레임워크 개발환경에서는 Maven 프로젝트를 생성하기 위한 방법으로 eGovFramework perspective을 활용하고 있으며,
+전자정부 표준 프레임워크 개발환경에서는 Maven 프로젝트를 생성하기 위한 방법으로 eGovFrame Perspective를 활용하고 있으며,
 구체적인 생성 방법은 개발 환경 구현도구 매뉴얼에서 확인할 수 있다.
 
 * Maven 프로젝트 생성 마법사: [구현도구 - IDE](../implementation-tool/ide.md "egovframework:dev2:imp:editor:ide")
