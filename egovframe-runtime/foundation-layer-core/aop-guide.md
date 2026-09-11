@@ -22,7 +22,7 @@ description: "표준프레임워크 실행환경은 XML Schema 기반의 AOP 방
  실행환경은 DAO에서 발생한 Exception을 받아 Service단에서 처리할 수 있다. 실행환경에서 추가로 제공하는 Exception은 다음과 같다.
 
 - EgovBizException: 업무에서 Checked Exception인 경우에 공통으로 사용하는 Exception이다. 개발자가 특정한 오류에 대해서 throw하여 특정 메시지를 전달하고자 하는 경우에는 processException() 메소드를 이용하도록 한다.
-- ExceptionTransfer: AOP 기능을 이용하여 ServiceImpl 클래스에서 Exception이 발생한 경우(after-throwing인 경우)에 trace()메소드에서 처리한다. 내부적으로 EgovBizException인지 RuntimeException(ex.DataAccessException)인지 구분하여 throw한다. ExceptionTransfer는 내부적으로 DefaultExceptionHandleManager 클래스에 의해서 정의된 패턴에 대해서 Handler에 의해서 동작한다.
+- ExceptionTransfer: AOP 기능을 이용하여 ServiceImpl 클래스에서 Exception이 발생한 경우(after-throwing인 경우)에 transfer()메소드에서 처리한다. 내부적으로 EgovBizException인지 RuntimeException(ex.DataAccessException)인지 구분하여 throw한다. ExceptionTransfer는 내부적으로 DefaultExceptionHandleManager 클래스에 의해서 정의된 패턴에 대해서 Handler에 의해서 동작한다.
 
 #### 관점(Aspect) 정의
 
