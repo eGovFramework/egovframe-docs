@@ -187,8 +187,8 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록화면 | /uss/olh/awm/updateAdministrationWordView.do | updateAdministrationWordView | "AdministrationWord" | "selectAdministrationWordDetail" |
-| 등록 | /uss/olh/awm/updateAdministrationWord.do | updateAdministrationWord | "AdministrationWord" | "updateAdministrationWord" |
+| 수정화면 | /uss/olh/awm/updateAdministrationWordView.do | updateAdministrationWordView | "AdministrationWord" | "selectAdministrationWordDetail" |
+| 수정 | /uss/olh/awm/updateAdministrationWord.do | updateAdministrationWord | "AdministrationWord" | "updateAdministrationWord" |
 
  ![image](./images/uss-adminterm-administrationword_updt.png)
 
