@@ -19911,13 +19911,13 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>String&lt;/code>&lt;/td>
- &lt;td>&lt;code>getErrMsg(String key)&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getErrorMsg(String key)&lt;/code>&lt;/td>
  &lt;td>에러 메시지 취득&lt;/td>
  &lt;td>메시지 키에 해당하는 에러 메시지를 얻는 기능&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>String&lt;/code>&lt;/td>
- &lt;td>&lt;code>getErrMsg(String key, String[] params)&lt;/code>&lt;/td>
+ &lt;td>&lt;code>getErrorMsg(String key, String[] params)&lt;/code>&lt;/td>
  &lt;td>에러 파라미터 취득&lt;/td>
  &lt;td>메시지 키에 해당하는 에러 메시지에 파라미터 값을 대치하여 얻는 기능&lt;/td>
  &lt;/tr>
