@@ -41,14 +41,14 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamRegist.jsp | 지식맵(조직별) 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamModify.jsp | 지식맵(조직별) 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/tea/EgovComDamMapTeamDetail.jsp | 등록된 지식맵(조직별)을 조회하기 위한 jsp페이지 |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_altibase.xml | 지식맵(조직별) 관리를 위한 Altibase용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_cubrid.xml | 지식맵(조직별) 관리를 위한 Cubrid용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_maria.xml | 지식맵(조직별) 관리를 위한 MariaDB용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_mysql.xml | 지식맵(조직별) 관리를 위한 MySQL용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_oracle.xml | 지식맵(조직별) 관리를 위한 Oracle용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_postgres.xml | 지식맵(조직별) 관리를 위한 PostgreSQL용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_tibero.xml | 지식맵(조직별) 관리를 위한 Tibero용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeam\_SQL\_goldilocks.xml | 지식맵(조직별) 관리를 위한 Goldilocks용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_altibase.xml | 지식맵(조직별) 관리를 위한 Altibase용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_cubrid.xml | 지식맵(조직별) 관리를 위한 Cubrid용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_maria.xml | 지식맵(조직별) 관리를 위한 MariaDB용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_mysql.xml | 지식맵(조직별) 관리를 위한 MySQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_oracle.xml | 지식맵(조직별) 관리를 위한 Oracle용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_postgres.xml | 지식맵(조직별) 관리를 위한 PostgreSQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_tibero.xml | 지식맵(조직별) 관리를 위한 Tibero용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/tea/EgovDamMapTeamMapTeam\_SQL\_goldilocks.xml | 지식맵(조직별) 관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/dam/map/tea/message\_en.properties | 지식맵(조직별) 관리를 위한 Message properties(영문) |
 | Message properties | resources/egovframework/message/com/dam/map/tea/message\_ko.properties | 지식맵(조직별) 관리를 위한 Message properties(한글) |
 
