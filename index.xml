@@ -22585,12 +22585,11 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
 &lt;p>백업관리는 시스템에서 주기적으로 실행하는 백업작업을 관리하고 백업결과를 조회하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>백업작업관리는 백업작업을 등록하기 위한 목적으로 백업작업의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 백업작업목록조회 : 백업작업으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 백업작업등록 : 백업작업정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 백업작업수정 : 기 등록된 백업작업정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 백업작업삭제 : 기 등록된 백업작업정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 백업작업조회 : 등록된 백업작업정보를 조회한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>백업결과관리는 백업결과를 관리하기 위한 목적으로 백업결과의 조회, 삭제, 목록조회의 기능을 수반한다.&lt;/p></description></item><item><title>번호유효성체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>① 백업작업목록조회 : 백업작업으로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
+② 백업작업등록 : 백업작업정보를 등록하고, 등록 결과를 조회한다.
+③ 백업작업수정 : 기 등록된 백업작업정보의 항목들을 수정한다.
+④ 백업작업삭제 : 기 등록된 백업작업정보를 삭제한다.
+⑤ 백업작업조회 : 등록된 백업작업정보를 조회한다.&lt;/p></description></item><item><title>번호유효성체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/id-number-validation/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>주어진 주민등록번호, 법인번호, 사업자등록번호, 외국인등록번호의 유효성을 체크하여 &lt;code>true&lt;/code>, &lt;code>false&lt;/code>를 반환한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>입력에 주민등록번호, 법인번호, 사업자등록번호, 외국인등록번호를 입력받는다. 각 번호마다 하이픈(&lt;code>-&lt;/code>)이 포함된 구분 입력과, 하이픈이 배제된 하나의 입력 등 두 가지 방식을 지원한다.&lt;/p>
