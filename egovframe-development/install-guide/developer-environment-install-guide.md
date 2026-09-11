@@ -152,7 +152,7 @@ Tomcat 서버를 설치해 보도록 한다.
 
     <!-- Mysql -->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/example" />
         <property name="username" value="root"/>
         <property name="password" value=""/>
