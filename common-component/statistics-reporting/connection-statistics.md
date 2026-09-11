@@ -77,7 +77,7 @@
 
 ```java
 @Service("egovSysLogScheduling")
-public class EgovSysLogScheduling {
+public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 
 	@Resource(name="EgovSysLogService")
 	private EgovSysLogService sysLogService;
@@ -110,7 +110,7 @@ public class EgovSysLogScheduling {
 - 트리거 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-lgm.xml)
 
 ```xml
-<bean id="sysLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="sysLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="sysLogging" />
     <property name="startDelay" value="60000" />
     <property name="repeatInterval" value="3600000" />
