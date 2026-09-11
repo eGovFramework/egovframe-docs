@@ -37,8 +37,8 @@ Quartz 기반의 스케줄링 설정 파일을 생성한다. Quartz 스케줄링
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-scheduling` |
-| JavaConfig | `EgovSchedulingBeanJobConfig` |
+| XML | `context-scheduling-jobDetail` |
+| JavaConfig | `EgovSchedulingJobDetailConfig` |
 
 ### 설정 항목
 
@@ -68,8 +68,8 @@ Quartz 기반의 스케줄링 설정 파일을 생성한다. Quartz 스케줄링
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-scheduling` |
-| JavaConfig | `EgovSchedulingMethodJobConfig` |
+| XML | `context-scheduling-methodInvokingJobDetail` |
+| JavaConfig | `EgovSchedulingMethodInvokingJobDetailConfig` |
 
 ### 설정 항목
 
@@ -100,7 +100,7 @@ Quartz 기반의 스케줄링 설정 파일을 생성한다. Quartz 스케줄링
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-scheduling` |
+| XML | `context-scheduling-simpleTrigger` |
 | JavaConfig | `EgovSchedulingSimpleTriggerConfig` |
 
 ### 설정 항목
@@ -132,7 +132,7 @@ Cron 표현식을 기반으로 특정 시간·요일·월에 태스크를 실행
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-scheduling` |
+| XML | `context-scheduling-cronTrigger` |
 | JavaConfig | `EgovSchedulingCronTriggerConfig` |
 
 ### 설정 항목
@@ -178,7 +178,7 @@ Cron 표현식을 기반으로 특정 시간·요일·월에 태스크를 실행
 
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
-| XML | `context-scheduling` |
+| XML | `context-scheduling-scheduler` |
 | JavaConfig | `EgovSchedulingSchedulerConfig` |
 
 ### 설정 항목
