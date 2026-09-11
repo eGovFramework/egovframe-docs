@@ -66,7 +66,7 @@ handlers 값을 다음과 같이 주어야 한다.
 | void | ignore(String message) | 기록이나 처리가 불필요한 경우 사용 |  |
 | void | debug(String message, Exception exception) | 디버그 정보를 기록하는 경우 사용 |  |
 | void | debug(String message) | 디버그 정보를 기록하는 경우 사용 |  |
-| void | info(String message)) | 일반적이 정보를 기록하는 경우 사용 |  |
+| void | info(String message) | 일반적이 정보를 기록하는 경우 사용 |  |
 
  다음은 ignore(String message)메소드를 이용하여 log를 콘솔에 출력하는 방법이다.
 
