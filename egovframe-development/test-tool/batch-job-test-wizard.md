@@ -122,7 +122,7 @@ public class testFile{
 		jobParametersBuilder.addString("name", "eGovframe");
  
  
-		String jobParameters = egovBatchRunner.convertJobParametersToString(jobParametersBuilder.toJobParameters());
+		Properties jobParameters = egovBatchRunner.convertJobParametersToString(jobParametersBuilder.toJobParameters());
  
 		long executionId = egovBatchRunner.start(jobName, jobParameters);
  
