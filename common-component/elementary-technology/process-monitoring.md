@@ -38,6 +38,18 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, `globals.properties`의 `Globals
 6. **프로세스모니터링로그목록조회**: 프로세스모니터링로그로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
 7. **프로세스모니터링로그조회**: 등록된 프로세스모니터링로그정보를 조회한다.
 
+```mermaid
+flowchart LR
+    L[프로세스모니터링 목록조회] -->|등록| R[프로세스모니터링 등록]
+    L -->|상세조회| D[프로세스모니터링 상세조회]
+    D -->|수정| U[프로세스모니터링 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+    S[Scheduler 10분 주기] -->|비정상시 메일통보| LL[프로세스모니터링로그 목록조회]
+    LL -->|상세보기| LD[프로세스모니터링로그 상세조회]
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -100,7 +112,7 @@ Globals.OsType = UNIX
 
 <!-- 프로세스모니터링 트리거 -->
 <bean id="processMntrngTrigger"
-    class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="processMntrng" />
     <property name="startDelay" value="60000" />
     <property name="repeatInterval" value="600000" />
@@ -146,7 +158,7 @@ Globals.OsType = UNIX
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /utl/sys/prm/updateProcessMon | updateProcessMon | ProcessMonDAO.updateProcessMon |
+| 수정 | /utl/sys/prm/updateProcessMon.do | updateProcessMon | ProcessMonDAO.updateProcessMon |
 
 ### 프로세스모니터링 상세조회
 
