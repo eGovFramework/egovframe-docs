@@ -54,7 +54,7 @@ import egovframework.com.utl.cas.service.EgovSessionCookieUtil;
  
 // 쿠키정보 생성
 String cookieNm = safeGetParameter(request,"NAME"); 
-String cookieVal = safeGetParameter(request,"김기수"); 
+String cookieVal = safeGetParameter(request,"VALUE"); 
  
 EgovSessionCookieUtil.setCookie(response, cookieNm, cookieVal); 
  
@@ -75,7 +75,7 @@ String safeGetParameter(HttpServletRequest request, String name) {
         if (value == null) {
             value = "";
         }
-        return value.replaceAll("r", "").replaceAll("n", "");
+        return value.replaceAll("\r", "").replaceAll("\n", "");
 }
 ```
 
