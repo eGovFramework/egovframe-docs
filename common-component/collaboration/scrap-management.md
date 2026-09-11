@@ -90,7 +90,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SCRAP_ID', 1);
 </bean>
 <bean name="scrapStrategy"
       class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-      <property name="prefix" value="SCRAP_" />
+      <property name="prefix" value="SCRIP_" />
       <property name="cipers" value="14" />
       <property name="fillChar" value="0" />
 </bean>
