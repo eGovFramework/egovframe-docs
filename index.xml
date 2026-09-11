@@ -31264,6 +31264,17 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>새로고침 등의 중복 request 호출 시 등록 처리 등에 대한 이중 등록을 방지하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>세션을 통해 고유한 token을 보관하고 해당 token을 파라미터와 비교함으로서 중복 처리를 방지한다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ F[폼 렌더링] -->|UUID 생성| S[(세션 UUID)]
+ F --> P[파라미터 UUID]
+ P --> C{checkAndSaveToken}
+ S --> C
+ C -->|일치| N[새 UUID로 세션 갱신]
+ N --> R[Service 호출]
+ C -->|불일치| X([등록 생략])
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -31296,9 +31307,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="환경설정">환경설정&lt;/h2>
-&lt;p>&lt;strong>해당없음&lt;/strong>&lt;/p>
-&lt;h2 id="사용방법">사용방법&lt;/h2>
-&lt;p>우선 등록화면 및 수정화면의 JSP에 다음과 같은 taglib를 적용한다.&lt;/p></description></item><item><title>이클립스에서 Ant 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-ant-실행하기">이클립스에서 Ant 실행하기&lt;/h2>
+&lt;p>&lt;strong>해당없음&lt;/strong>&lt;/p></description></item><item><title>이클립스에서 Ant 실행하기</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/test-tool/test-tool-ref/run-ant-on-eclipse/</guid><description>&lt;h2 id="이클립스에서-ant-실행하기">이클립스에서 Ant 실행하기&lt;/h2>
 &lt;p>다음은 이클립스에서 Ant View를 사용하여 Ant task를 수행하는 방법이다.&lt;/p>
 &lt;ol>
 &lt;li>Ant View를 띄우고, 실행할 build file을 선택한다.&lt;/li>
