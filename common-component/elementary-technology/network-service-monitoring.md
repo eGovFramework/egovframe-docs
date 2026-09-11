@@ -117,7 +117,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 
 <!-- 네트워크서비스모니터링 트리거-->
 <bean id="ntwrkSvcMntrngTrigger"
-    class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="ntwrkSvcMntrng" />
     <!-- 시작하고 1분후에 실행한다. (milisecond) -->
     <property name="startDelay" value="60000" />
@@ -139,8 +139,6 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
     </property>
 </bean>
 ```
-
-## 참고자료
 
 ### 관련 화면 및 수행 매뉴얼
 
@@ -198,3 +196,7 @@ INSERT INTO COMTECOPSEQ VALUES ('NTWRKSVC_LOGID','0');
 ![네트워크서비스모니터링로그 상세조회](./images/network-service-monitoring-log-detail.png)
 
 - **목록** : 네트워크서비스모니터링로그 목록조회 화면으로 이동한다.
+
+## 참고자료
+
+- [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)
