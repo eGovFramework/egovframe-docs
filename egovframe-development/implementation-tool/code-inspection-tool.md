@@ -193,7 +193,7 @@ public class StaticField {
 
 ### Rule#05. AvoidArrayLoops
 
-* 설명: static 필드의 잘못된 사용
+* 설명: 배열의 값을 루프문을 이용하여 복사하는 것 보다, System.arraycopy() 메소드를 이용하여 복사하는 것이 효율적이며 수행 속도가 빠름
 * 오류코드:
 
 ```java
