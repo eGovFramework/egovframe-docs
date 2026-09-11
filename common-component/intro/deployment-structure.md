@@ -154,13 +154,13 @@ menu:
 | login Log Aspect config | /WEB-INF/config/egovframework/springmvc/egov-com-loginaop.xml | Login Log Aspect (로그인 메소드, 로그아웃 메소드) 설정 |
 | login check config | /WEB-INF/config/egovframework/springmvc/egov-com-interceptor.xml | IP 정보 기록 및 Login 체크가 필요한 URL과 로그인 여부를 체크해줄 인터셉터 설정 |
 | context bean 정의 | /resources/egovframework/spring/com/context-*.xml | bean 정의 |
-| 범용 properties 정의 | /resources/egovframework/egovProp/globals.properties | global 상수 정의 |
+| 범용 properties 정의 | /resources/egovframework/egovProps/globals.properties | global 상수 정의 |
 | 추가 properties 정의 | /WEB-INF/conf/*.properties | 추가적인 상수 정의 |
 | message properties 정의 | /resources/egovframework/message/com/*.properties | message 정의 |
-| 요소기술 환경설정 | /resources/egovframework/egovProp/conf/*.properties | 요소기술에 필요한 환경설정 |
-| 요소기술 프로그램 설정 | /resources/egovframework/egovProp/prg/*.sh(*.bat) | 요소기술에 필요한 실행 스크립트 |
-| sql config 파일 | /resources/egovframework/sqlmap/com/*.xml | sql map config 정의 |
+| 요소기술 환경설정 | /resources/egovframework/egovProps/conf/*.properties | 요소기술에 필요한 환경설정 |
+| 요소기술 프로그램 설정 | /resources/egovframework/egovProps/prg/*.sh(*.bat) | 요소기술에 필요한 실행 스크립트 |
+| sql config 파일 | /resources/egovframework/mapper/com/*.xml | sql map config 정의 |
 | validator rule 파일 | /resources/egovframework/validator/validator-rules.xml | validator를 이용할 시 rule을 정의 |
 | validator rule 파일 | /resources/egovframework/validator/com-rules.xml | validator를 이용할 시 공통컴포넌트 rule을 정의 |
-| log 설정 | /resources/log4j.xml | log 관련 설정 |
+| log 설정 | /resources/log4j2.xml | log 관련 설정 |
 
