@@ -28759,7 +28759,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;tr>
  &lt;td>&lt;code>toSolar(String sDate, int iLeapMonth)&lt;/code>&lt;/td>
  &lt;td>&lt;code>String&lt;/code>&lt;/td>
- &lt;td>입력받은 양력일자를 변환하여 음력일자로 반환&lt;/td>
+ &lt;td>입력받은 음력일자를 변환하여 양력일자로 반환&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -28773,7 +28773,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;li>&lt;code>String&lt;/code>: 변환된 날짜 문자열&lt;/li>
 &lt;/ul>
 &lt;h2 id="사용-예">사용 예&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String&lt;span style="color:#bbb"> &lt;/span>lunar&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovDateUtil.&lt;span style="color:#008080">toSolar&lt;/span>(&lt;span style="color:#d14">&amp;#34;20260711&amp;#34;&lt;/span>,&lt;span style="color:#bbb"> &lt;/span>0);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 양력 → 음력 변환&lt;/span>&lt;span style="color:#bbb">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String&lt;span style="color:#bbb"> &lt;/span>solar&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovDateUtil.&lt;span style="color:#008080">toSolar&lt;/span>(&lt;span style="color:#d14">&amp;#34;20260711&amp;#34;&lt;/span>,&lt;span style="color:#bbb"> &lt;/span>0);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 음력 → 양력 변환&lt;/span>&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>
