@@ -277,7 +277,7 @@ public class MovieRecommender {
 }
 ```
 
-### @PostConstrutor와 @PreDestroy
+### @PostConstruct와 @PreDestroy
 
  CommonAnnotationBeanPostProcessor는 @Resource annotation 뿐 아니라 JSR-250 ***lifecycle*** annotation 역시 인식한다.
 
