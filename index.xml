@@ -7620,7 +7620,7 @@ Spring MVC는 기본요소인 Model, View, Controller 외에도, 아래와 같�
 
 
 
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-ibatis/dataaccess-dynamic-sql/" class="innerLink">Dynamic SQL&lt;/a>
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-runtime/persistence-layer/dataaccess-mybatis/dataaccess-mybatis-dynamic-sql/" class="innerLink">Dynamic SQL&lt;/a>
 
 &lt;/li>
 &lt;li>
