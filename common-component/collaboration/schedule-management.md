@@ -126,7 +126,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 월별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageList.do | egovIndvdlSchdulManageMonthList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
+| 월별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageMonthList.do | egovIndvdlSchdulManageMonthList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
 
 ![일정관리 월별목록](./images/schedule-management-month-list.png)
 
@@ -189,7 +189,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 상세조회 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | "IndvdlSchdulManage" | "selectIndvdlSchdulManageDetailVO" |
-| 일정삭제 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | "IndvdlSchdulManage" | "deleteIndvdlSchdulManage" |
+| 일정삭제 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDelete | "IndvdlSchdulManage" | "deleteIndvdlSchdulManage" |
 
 ![일정관리 상세조회 및 삭제](./images/schedule-management-detail.png)
 
