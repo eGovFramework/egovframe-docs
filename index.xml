@@ -20595,7 +20595,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;tr>
  &lt;td>&lt;code>zeroConvert(String src)&lt;/code>&lt;/td>
  &lt;td>&lt;code>int&lt;/code>&lt;/td>
- &lt;td>인자로 받은 String이 null일 경우 &amp;quot;&amp;quot;로 리턴한다&lt;/td>
+ &lt;td>인자로 받은 String이 null일 경우 &amp;quot;0&amp;quot;로 리턴한다&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>cutString(String source, String output, int slength)&lt;/code>&lt;/td>
