@@ -19226,13 +19226,11 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>로그인화면이미지관리는 로그인화면에 대한 이미지를 등록하고, 등록한 이미지가 로그인 화면에 출력되는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>로그인화면이미지관리는 로그인화면이미지를 등록하여 로그인화면에 반영하기 위한 목적으로 로그인화면이미지의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 로그인화면이미지목록조회 : 로그인화면이미지로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 로그인화면이미지등록 : 로그인화면이미지정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 로그인화면이미지수정 : 기 등록된 로그인화면이미지정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 로그인화면이미지삭제 : 기 등록된 로그인화면이미지정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 로그인화면이미지조회 : 등록된 로그인화면이미지는 로그인화면에 표현된다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>로그인화면이미지관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p></description></item><item><title>로그패턴검사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</guid><description>&lt;!-- markdownlint-disable MD013 -->
+&lt;p>① 로그인화면이미지목록조회 : 로그인화면이미지로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
+② 로그인화면이미지등록 : 로그인화면이미지정보를 등록하고, 등록 결과를 조회한다.
+③ 로그인화면이미지수정 : 기 등록된 로그인화면이미지정보의 항목들을 수정한다.
+④ 로그인화면이미지삭제 : 기 등록된 로그인화면이미지정보를 삭제한다.
+⑤ 로그인화면이미지조회 : 등록된 로그인화면이미지는 로그인화면에 표현된다.&lt;/p></description></item><item><title>로그패턴검사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/log-pattern-check/</guid><description>&lt;!-- markdownlint-disable MD013 -->
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>로그패턴검사(로그패턴분석)는 로그파일을 분석하여 특정 문자열 등 패턴과 일치하는 내용을 추출하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
