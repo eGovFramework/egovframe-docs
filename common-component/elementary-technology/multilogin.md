@@ -25,9 +25,9 @@
 이미 로그인한 상태에서 다른 브라우저를 통해 또 다른 로그인을 시도하면, Map에 등록된 이전 세션을 무효화하고 새로운 세션 ID를 Map에 등록한다.  
 이전 세션 ID로는 더이상 서비스를 이용할 수 없게 되며, 가장 마지막에 로그인한 세션만 유효하다.  
 
- 본 기능은 **HttpSessionBindingListener 인터페이스의 valueBound()와 valueUnBound() 메소드를 구현한 EgovHttpSessionBindingListener**를 통해 동작한다.  
+ 본 기능은 **HttpSessionBindingListener 인터페이스의 valueBound()와 valueUnbound() 메소드를 구현한 EgovHttpSessionBindingListener**를 통해 동작한다.  
 ***valueBound()*** 는 HttpSessionBindingListener 구현체가 HttpSession 객체에 setAttribute() 될 때 자동 호출되고,  
-***valueUnBound()*** 는 HttpSession 객체에서 invalidate() 될 때 자동 호출된다.
+***valueUnbound()*** 는 HttpSession 객체에서 invalidate() 될 때 자동 호출된다.
 
  HttpSessionListener과 달리 HttpSessionBindingListener을 이용하면, 세션이 생성된 이후와 세션이 제거된 이후에 처리할 로직을 추가할 수 있다.  
 EgovHttpSessionBindingListener 객체는 로그인과 로그아웃 시점에 세션에 바인딩되고 제거되면서 HttpSessionBindingEvent를 발생시키고,  
@@ -40,7 +40,7 @@ flowchart LR
     B --> M[(로그인ID-세션ID Map)]
     I --> M
     M --> O[로그아웃/세션타임아웃]
-    O -->|invalidate| U[valueUnBound 호출]
+    O -->|invalidate| U[valueUnbound 호출]
     U -->|Map에서 제거| M
 ```
 
@@ -62,7 +62,7 @@ request.getSession().setAttribute("사용자 로그인ID", listener);
 ```
 
  **사용자 로그인 ID를 키 값으로 현재 세션에 EgovHttpSessionBindingListener 객체를 바인딩한다.**  
-이 때 EgovHttpSessionBidingListener의 valueBound() 메소드가 자동 호출되면서, 사용자 로그인 ID와 현재 세션 ID를 Map에 저장한다.  
+이 때 EgovHttpSessionBindingListener의 valueBound() 메소드가 자동 호출되면서, 사용자 로그인 ID와 현재 세션 ID를 Map에 저장한다.  
 이미 존재하는 세션 ID가 있다면 valueBound() 메소드를 통해 모두 무효화시키기 때문에, 현재 세션 ID으로만 서비스 접근이 가능하다.
 
 ```java
@@ -90,9 +90,9 @@ request.getSession().invalidate();
 ```
 
  **사용자가 로그아웃 버튼을 눌렀을 때 명시적으로 세션을 무효화하도록 HttpSession의 invalidate() 메소드를 호출한다.**  
-이 때 EgovHttpSessionBidingListener의 valueUnBound() 메소드가 자동 호출되면서, Map에 등록된 사용자 로그인 ID와 현재 세션 ID를 제거할 것이다.
+이 때 EgovHttpSessionBindingListener의 valueUnbound() 메소드가 자동 호출되면서, Map에 등록된 사용자 로그인 ID와 현재 세션 ID를 제거할 것이다.
 
- 만약 사용자가 로그아웃 버튼을 누르지 않았더라도 세션타임아웃 설정에 의해 valueUnBound() 메소드가 자동으로 호출된다.  
+ 만약 사용자가 로그아웃 버튼을 누르지 않았더라도 세션타임아웃 설정에 의해 valueUnbound() 메소드가 자동으로 호출된다.  
 또한 로그아웃 하지 않고 다른 브라우저를 통해 새로운 로그인을 시도하면,  
 1번에서 설명한대로 현재 세션 ID 외에 다른 세션이 존재하는지를 확인하고, 이전에 저장된 세션 ID가 남아있다면 자동으로 그 세션을 무효화시킨다.
 
