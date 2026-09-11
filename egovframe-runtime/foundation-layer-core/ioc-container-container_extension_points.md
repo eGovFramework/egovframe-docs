@@ -83,7 +83,7 @@ public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor 
 
  InstantiationTracingBeanPostProcessor는 단순히 정의된다. 비록 이름을 가지고 있지는 않지만 bean이기 때문에 다른 bean과 같이 종속성은 삽입될 수 있다.
 
-### BeanFactoryPostProcesors를 사용한 확장(Customizing configuration metadata with BeanFactoryPostProcessors)
+### BeanFactoryPostProcessors를 사용한 확장(Customizing configuration metadata with BeanFactoryPostProcessors)
 
  org.springframework.beans.factory.config.BeanFactoryPostProcessor는 BeanPostProcessor와 의미적으로 비슷하지만, 큰 차이점 중 하나는 BeanFactoryPostProcessors는 bean 설정 메타정보를 처리한다는 것이다. Spring IoC Container는 BeanFactoryPostProcessors가 설정 메타정보를 읽고, Container가 실제로 bean을 객체화 하기 전에 그 정보를 변경할 수 있도록 허용한다.
 
