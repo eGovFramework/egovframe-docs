@@ -142,7 +142,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 상세조회 | /uss/olh/hpc/selectHpcmDetail.do | selectHpcmDetail | "Hpcm" | "selectHpcmDetail" |
-| 삭제 | /uss/olh/hpc/deleteHpcm.do | deleteHpcm | "Hpcm" | "deleteHpcm" |
+| 삭제 | /uss/olh/hpc/deleteHpcm.do | deleteHpcmCn | "Hpcm" | "deleteHpcm" |
 
  도움말 상세조회화면은 도움말수정, 도움말삭제, 도움말목록조회를 할 수 있다.
 
@@ -174,7 +174,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /uss/olh/hpc/insertHpcmView.do | insertHpcmView |  |  |
-| 등록 | /uss/olh/hpc/insertHpcm.do | insertHpcm | "Hpcm" | "insertHpcm" |
+| 등록 | /uss/olh/hpc/insertHpcm.do | insertHpcmCn | "Hpcm" | "insertHpcm" |
 
  도움말에 관한 기본정보를 입력 저장처리한다.
 
