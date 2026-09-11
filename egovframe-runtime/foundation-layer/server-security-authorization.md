@@ -46,7 +46,7 @@ Server Security에서는 Filter Security Interceptor에 의해 처리되며, DB�
  
 <beans:bean id="securedObjectService" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectServiceImpl">
 	<beans:property name="securedObjectDAO" ref="securedObjectDAO"/>
-	<beans:property name="requestMatcherType" value="regex"/>	<!--  default : ant -->
+	<beans:property name="requestMatcherType" value="regex"/>	<!--  default : regex -->
 </beans:bean>
  
 <beans:bean id="securedObjectDAO" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectDAO" >
@@ -245,7 +245,7 @@ resourceType을 pointcut으로 설정하여 securedObjectService의 getRolesAndP
 ```xml
 <beans:bean id="securedObjectService" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectServiceImpl">
 	<beans:property name="securedObjectDAO" ref="securedObjectDAO"/>
-	<beans:property name="requestMatcherType" value="regex"/>	<!--  default : ant -->
+	<beans:property name="requestMatcherType" value="regex"/>	<!--  default : regex -->
 </beans:bean>
  
 <beans:bean id="securedObjectDAO" class="org.egovframe.rte.fdl.security.secureobject.impl.SecuredObjectDAO" >
