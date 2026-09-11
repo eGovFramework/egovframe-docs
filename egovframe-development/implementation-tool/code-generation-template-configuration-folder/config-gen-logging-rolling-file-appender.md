@@ -31,7 +31,7 @@ Rolling File Appender Configuration 의 설명은 다음 실행환경 가이드�
 
    ![eGovFrame Templates 메뉴](./../images/config-template-menu.png)
 
-3. 작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates > Logging > New Rolling Appender 선택
+3. 작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates > Logging > New Rolling File Appender 선택
 
    ![New DataSource 선택](./../images/config-templates-configurations.png)
 
