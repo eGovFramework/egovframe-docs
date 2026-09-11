@@ -32958,7 +32958,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;td>String&lt;/td>
  &lt;td>getInfoMsg(String key)&lt;/td>
  &lt;td>정보 메시지 취득&lt;/td>
- &lt;td>메시지키에 해당 에러메시지를 얻는 기능&lt;/td>
+ &lt;td>메시지키에 해당 정보메시지를 얻는 기능&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>String&lt;/td>
