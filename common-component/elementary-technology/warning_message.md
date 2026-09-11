@@ -72,7 +72,7 @@ String message = null;
 message = EgovMessageUtil.getWarnMsg("test.message");
  
 // 파라미터 처리 경고 메시지 취득 : String 배열의 값이 각각 {0}, {1}로 대치됨
-message = EgovMessageUtil.getWarnMsg("param.message", new String[2] {"경고", "해당되는 기대값이 없습니다."});
+message = EgovMessageUtil.getWarnMsg("param.message", new String[] {"경고", "해당되는 기대값이 없습니다."});
 ```
 
 ## 참고자료
