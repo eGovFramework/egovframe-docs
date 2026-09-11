@@ -86,7 +86,7 @@ INSERT INTO COMTECOPSEQ VALUES('TR_MNTRNG_LOG_ID', '0');
 </bean>
 
 <!-- 송수신모니터링 트리거 -->
-<bean id="trsmrcvMntrngTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="trsmrcvMntrngTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="trsmrcvMntrng" />
     <property name="startDelay" value="60000" />
     <property name="repeatInterval" value="600000" />
