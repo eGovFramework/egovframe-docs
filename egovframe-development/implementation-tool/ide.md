@@ -56,10 +56,10 @@ Perspective를 eGovFrame으로 변경하면 메뉴 표시줄에 **eGovFrame** �
 |                | New Template Project           |                            | New eGovFrame Template Project 생성 마법사 실행     |
 |                | New Mobile Project             |                            | New eGovFrame Mobile Web Project 생성 마법사 실행   |
 |                | New Mobile Template Project    |                            | New eGovFrame Mobile Template Project 생성 마법사 실행 |
-|                | New DeviceAPI Web Project      |                            | New eGovFrame DeviceAPI Wen Project 생성 마법사 실행 |
+|                | New DeviceAPI Web Project      |                            | New eGovFrame DeviceAPI Web Project 생성 마법사 실행 |
 |                | New Boot Web Project           |                            | New eGovFrame Boot Web Project 생성 마법사 실행     |
 |                | New Boot Template Project      |                            | New eGovFrame Boot Template Project 생성 마법사 실행 |
-|                | New Boot MSA Template Project  |                            | New eGovFrame Boot MSA Template Project 생성 마법사 실행 |
+|                | New MSA Boot Template Project  |                            | New eGovFrame MSA Boot Template Project 생성 마법사 실행 |
 |                | New Boot Batch Template Project|                            | New eGovFrame Boot Batch Template Project 생성 마법사 실행 |
 | Analysis       | New Usecase Diagram            |                            | New Usecase Diagram 생성 마법사 실행                |
 | Design         | New ER Diagram                 |                            | New ER Diagram 생성 마법사 실행                     |
@@ -74,15 +74,15 @@ Perspective를 eGovFrame으로 변경하면 메뉴 표시줄에 **eGovFrame** �
 |                | New Batch Job Launcher         |                            | New eGovFrame Batch Job Launcher 생성 마법사 실행    |
 | Test           | Batch Job Test                 |                            | eGovFrame Batch Job Test 마법사 실행                |
 | Configuration  | Customize Development Tool     |                            | 맞춤형 개발환경 설치 마법사 실행                        |
-|                | Server Connection Management   | Show SVN Repositories View | SVN Reopsitories View를 실행                      |
+|                | Server Connection Management   | Show SVN Repositories View | SVN Repositories View를 실행                      |
 |                |                                | Nexus                      | Nexus 설정 관련 Preference page를 실행              |
 
 ### 3. eGovFrame 프로젝트 생성 마법사
 
 #### 3.1. Web Project 생성 마법사
 
-1. 메뉴 표시줄에서 **File** > **New** > **eGovFrame Boot Web Project**를 선택한다. (단 eGovFrame Perspective내에서)
-   또는, **Ctrl+N** 단축키를 이용하여 새로작성 마법사를 실행한 후 **eGovFrame** > **eGovFrame Boot Web Project**을 선택하고 **Next**를 클릭한다.
+1. 메뉴 표시줄에서 **File** > **New** > **eGovFrame Web Project**를 선택한다. (단 eGovFrame Perspective내에서)
+   또는, **Ctrl+N** 단축키를 이용하여 새로작성 마법사를 실행한 후 **eGovFrame** > **eGovFrame Web Project**을 선택하고 **Next**를 클릭한다.
 
    ![Web Project 생성 1](./images/4th-new-web.png)
 2. 프로젝트명과 메이븐 설정에 필요한 값들을 입력하고 **Next**를 클릭한다.
@@ -116,8 +116,8 @@ Perspective를 eGovFrame으로 변경하면 메뉴 표시줄에 **eGovFrame** �
 
 #### 3.2. Boot Web Project 생성 마법사
 
-1. 메뉴 표시줄에서 **File** > **New** > **eGovFrame Web Project**를 선택한다. (단 eGovFrame Perspective내에서)
-   또는, **Ctrl+N** 단축키를 이용하여 새로작성 마법사를 실행한 후 **eGovFrame** > **eGovFrame Web Project**을 선택하고 **Next**를 클릭한다.
+1. 메뉴 표시줄에서 **File** > **New** > **eGovFrame Boot Web Project**를 선택한다. (단 eGovFrame Perspective내에서)
+   또는, **Ctrl+N** 단축키를 이용하여 새로작성 마법사를 실행한 후 **eGovFrame** > **eGovFrame Boot Web Project**을 선택하고 **Next**를 클릭한다.
 
    ![Web Project 생성 1](./images/4th-new-boot-web.png)
 2. 프로젝트명과 메이븐 설정에 필요한 값들을 입력하고 **Next**를 클릭한다.
