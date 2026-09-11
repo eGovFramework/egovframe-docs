@@ -6153,7 +6153,7 @@ Spring에서는 Spring Modules 프로젝트에서 연계 모듈을 제공한다.
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/egovframe-development/implementation-tool/images/config-template-menu.png" alt="eGovFrame Templates 메뉴" >&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates &amp;gt; Datasource &amp;gt; New JNDI Datasource 선택&lt;/p></description></item><item><title>Job</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job/</guid><description>&lt;h1 id="job">Job&lt;/h1>
+&lt;p>작성하고자 하는 Configuration의 템플릿을 선택한다. - eGovFrame Templates &amp;gt; Datasource &amp;gt; New JNDI DataSource 선택&lt;/p></description></item><item><title>Job</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-job/</guid><description>&lt;h1 id="job">Job&lt;/h1>
 &lt;p>본 문서는 
 
 
