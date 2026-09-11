@@ -128,7 +128,7 @@ var config = new HTMLArea.Config();
   config.toolbar = [
 [ "fontname", "space",
   "fontsize", "space",
-  "formatblock", "space", ㅡㅏ
+  "formatblock", "space",
   "bold", "italic", "underline", "separator",
   "strikethrough", "subscript", "superscript", "separator",
   "copy", "cut", "paste", "space", "undo", "redo" ],
