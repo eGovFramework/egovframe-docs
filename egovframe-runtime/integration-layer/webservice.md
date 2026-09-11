@@ -47,7 +47,7 @@ WebService는 연계 서비스를 요청하고 제공하기 위한 Web Service C
 | --- | --- |
 | WEB_SERVICE_SERVER | 연계 서비스를 Web Service 형태로 공개(publish)하기 위해 필요한 정보를 담고 있다. |
 | WEB_SERVICE_CLIENT | Web Service 형태로 공개(publish)되어 있는 연계 서비스를 호출하기 위해 필요한 정보를 담고 있다. |
-| WEB_SERVICE_MAPPING | 전자정부 Integration 서비스 표준에 따라 개발된 서비스가 아닌 기존의 Legacy 시스템의 Web Service를 호출하기 위해, 표준 메시지와 Web Service 메시지 간의 mapping 정보를 담고 있다. |
+| WEB_SERVICE_MAPPING_INFO | 전자정부 Integration 서비스 표준에 따라 개발된 서비스가 아닌 기존의 Legacy 시스템의 Web Service를 호출하기 위해, 표준 메시지와 Web Service 메시지 간의 mapping 정보를 담고 있다. |
 
 #### 물리 모델 Domain 설명
 
@@ -248,12 +248,12 @@ WebService는 연계 서비스를 요청하고 제공하기 위한 Web Service C
   </tr>
 </table>
 
-##### WEB_SERVICE_MAPPING
+##### WEB_SERVICE_MAPPING_INFO
 
 <table border="1">
   <tr>
     <td colspan="3" style="text-align: center; font-weight: bold;">Table 명</td>
-    <td colspan="5">WEB_SERVICE_MAPPING</td>
+    <td colspan="5">WEB_SERVICE_MAPPING_INFO</td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center; font-weight: bold;">설명</td>
@@ -414,7 +414,7 @@ WebService Client 모듈은 Web Service로 공개된 Integration 서비스 표�
 Client 모듈을 설정하기 위해서는 다음 과정이 필요하다.
 
 1. [Metadata WEB_SERVICE_CLIENT 설정 추가](#metadata-web_service_client-설정-추가)
-2. [(Optional) Metadata WEB_SERVICE_MAPPING 설정 추가](#optional-metadata-web_service_mapping-설정-추가)
+2. [(Optional) Metadata WEB_SERVICE_MAPPING_INFO 설정 추가](#optional-metadata-web_service_mapping_info-설정-추가)
 
 #### Metadata WEB_SERVICE_CLIENT 설정 추가
 
@@ -469,16 +469,16 @@ Web Service 'SERVICE_VERIFY_NAME'를 호출하기 위해서 WEB_SERVICE_CLIENT�
   </tr>
 </table>
 
-#### (Optional) Metadata WEB_SERVICE_MAPPING 설정 추가
+#### (Optional) Metadata WEB_SERVICE_MAPPING_INFO 설정 추가
 
 만약 호출하는 Web Service가 전자정부 Integration 서비스 표준에 따라 개발된 서비스가 아닌 경우, 메시지 헤더부가 다를 수 있어 별도의 Mapping 정보가 필요하다.<br/>
 전자정부 Integration 서비스 표준은 Web Service Header부에 들어갈 Attribute들이 EgovIntegrationMessageHeader에 정의되어 있고, 바디부는 EgovIntegrationMessage의 body에 정의되어 있으므로 별도의 mapping 정보 없이 header와 body 부의 구분이 가능하지만, 표준을 따르지 않은 Web Service의 경우 EgovIntegrationMessage의 body부에 정의되어 있는 일부 값들을 헤더에 포함시켜야 한다.
 
-WEB_SERVICE_MAPPING Table의 정보는 Integration 서비스 표준에 정의되어 있는 메시지 형태를 기준으로 한다. 서비스 'SERVICE_VERIFY_NAME'의 Request Message는 'name', 'residentRegistrationNumber' 필드를 가지고, Response Message는 'result' 필드를 가진다. 따라서 'SERVICE_VERIFY_NAME'에 해당하는 WEB_SERVICE_MAPPING은 다음의 정보를 가져야 한다.
+WEB_SERVICE_MAPPING_INFO Table의 정보는 Integration 서비스 표준에 정의되어 있는 메시지 형태를 기준으로 한다. 서비스 'SERVICE_VERIFY_NAME'의 Request Message는 'name', 'residentRegistrationNumber' 필드를 가지고, Response Message는 'result' 필드를 가진다. 따라서 'SERVICE_VERIFY_NAME'에 해당하는 WEB_SERVICE_MAPPING_INFO는 다음의 정보를 가져야 한다.
 
 <table border="1">
   <tr>
-    <td colspan="6" style="text-align: center; font-weight: bold;">WEB_SERVICE_MAPPING</td>
+    <td colspan="6" style="text-align: center; font-weight: bold;">WEB_SERVICE_MAPPING_INFO</td>
   </tr>
   <tr>
     <td style="text-align: center; font-weight: bold;">SERVICE_KEY</td>
@@ -577,7 +577,7 @@ Web Service 'SERVICE_VERIFY_NAME'를 공개하기 위해서 WEB_SERVICE_SERVER�
 
 <table border="1">
   <tr>
-    <td colspan="6" style="text-align: center; font-weight: bold;">WEB_SERVICE_SERVICE</td>
+    <td colspan="6" style="text-align: center; font-weight: bold;">WEB_SERVICE_SERVER</td>
   </tr>
   <tr>
     <td style="text-align: center; font-weight: bold;">SERVICE_KEY</td>
