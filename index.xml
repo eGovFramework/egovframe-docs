@@ -30925,6 +30925,14 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 ③ 웹로그목록 : 웹로그정보의 목록을 검색, 조회한다.
 ④ 웹로그삭제 : 웹로그정보를 삭제한다. - 실행환경의 Scheduling 기능을 이용
 ⑤ 웹로그요약 : 웹로그정보를 요약하여 Summary를 생성한다. - 실행환경의 Scheduling 기능을 이용&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ I[페이지 요청] -->|Interceptor| R[웹로그 등록]
+ R --> L[웹로그 목록조회]
+ L -->|상세보기| D[웹로그 상세조회]
+ T[Scheduler 1시간 주기] -->|요약/삭제| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>웹로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다.
 패키지 간 참조 관계 : 
