@@ -1,0 +1,53 @@
+name: Docs Lint
+
+on:
+  schedule:
+    # 매주 월요일 00:00 UTC (KST 09:00)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout egovframe-docs
+        uses: actions/checkout@v4
+
+      - name: Checkout egovframe-runtime
+        uses: actions/checkout@v4
+        with:
+          repository: eGovFramework/egovframe-runtime
+          path: _src/egovframe-runtime
+
+      - name: Checkout egovframe-common-components
+        uses: actions/checkout@v4
+        with:
+          repository: eGovFramework/egovframe-common-components
+          path: _src/egovframe-common-components
+
+      - name: Checkout egovframe-ai-rag
+        uses: actions/checkout@v4
+        with:
+          repository: eGovFramework/egovframe-ai-rag
+          path: _src/egovframe-ai-rag
+
+      - name: Run docs_lint
+        shell: bash
+        run: |
+          {
+            echo '## egovframe-runtime'
+            echo '```'
+            python3 scripts/docs_lint.py egovframe-runtime --src _src/egovframe-runtime --src _src/egovframe-ai-rag
+            echo '```'
+            echo '## common-component'
+            echo '```'
+            python3 scripts/docs_lint.py common-component --src _src/egovframe-common-components --src _src/egovframe-runtime
+            echo '```'
+            echo '## egovframe-development'
+            echo '```'
+            python3 scripts/docs_lint.py egovframe-development
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"

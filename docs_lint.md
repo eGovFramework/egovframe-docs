@@ -22,6 +22,7 @@ Python 3가 필요하며, 별도 패키지 설치는 필요하지 않습니다.<
 - 특정 디렉토리만 검사: `python3 scripts/docs_lint.py common-component`
 - 클래스 참조 검사(L5): `python3 scripts/docs_lint.py common-component --src <java-src-root>`
 - 결과 전체 JSON 출력: `--json` 옵션 추가
+- 정기 점검: `.github/workflows/docs-lint.yml`이 매주 월요일 실행환경·공통컴포넌트·AI RAG 소스를 받아 위 검사를 돌리고, 결과를 Actions 실행 요약(Summary)에 남깁니다. Actions 탭의 Run workflow로 바로 실행할 수도 있습니다.
 
 ### 3. 정합성 오류 목록
 #### L1 truncated-summary
