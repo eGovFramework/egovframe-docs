@@ -42,14 +42,14 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialRegist.jsp | 지식맵(유형별) 등록을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialModify.jsp | 지식맵(유형별) 수정을 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/dam/map/mat/EgovComDamMapMaterialDetail.jsp | 등록된 지식맵(유형별)을 조회하기 위한 jsp페이지 |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_altibase.xml | 지식맵(유형별) 관리를 위한 Altibase용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_cubrid.xml | 지식맵(유형별) 관리를 위한 Cubrid용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_maria.xml | 지식맵(유형별) 관리를 위한 MariaDB용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_mysql.xml | 지식맵(유형별) 관리를 위한 MySQL용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_oracle.xml | 지식맵(유형별) 관리를 위한 Oracle용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_postgres.xml | 지식맵(유형별) 관리를 위한 PostgreSQL용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_tibero.xml | 지식맵(유형별) 관리를 위한 Tibero용 Query XML |
-| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapMaterial\_SQL\_goldilocks.xml | 지식맵(유형별) 관리를 위한 Goldilocks용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_altibase.xml | 지식맵(유형별) 관리를 위한 Altibase용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_cubrid.xml | 지식맵(유형별) 관리를 위한 Cubrid용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_maria.xml | 지식맵(유형별) 관리를 위한 MariaDB용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_mysql.xml | 지식맵(유형별) 관리를 위한 MySQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_oracle.xml | 지식맵(유형별) 관리를 위한 Oracle용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_postgres.xml | 지식맵(유형별) 관리를 위한 PostgreSQL용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_tibero.xml | 지식맵(유형별) 관리를 위한 Tibero용 Query XML |
+| Query XML | resources/egovframework/mapper/com/dam/map/mat/EgovDamMapTeamMapMaterial\_SQL\_goldilocks.xml | 지식맵(유형별) 관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/dam/map/mat/message\_en.properties | 지식맵(유형별) 관리를 위한 Message properties(영문) |
 | Message properties | resources/egovframework/message/com/dam/map/mat/message\_ko.properties | 지식맵(유형별) 관리를 위한 Message properties(한글) |
 
