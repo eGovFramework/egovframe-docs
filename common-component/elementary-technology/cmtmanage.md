@@ -52,7 +52,7 @@ flowchart LR
 | QUERY XML | resources/egovframework/mapper/com/uss/cmt/EgovCmtManage\_SQL\_goldilocks.xml | 출퇴근관리 Goldilocks용 QUERY XML |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-Cmt.xml | 출퇴근관리 Id생성 Idgen XML |
 | Message | resources/egovframework/message/com/uss/cmt/message\_ko.properties | 출퇴근관리 message properties(한글) |
-| Message | resources/egovframework/message/com/uss/cmt/message\_ko.properties | 출퇴근관리 message properties(영문) |
+| Message | resources/egovframework/message/com/uss/cmt/message\_en.properties | 출퇴근관리 message properties(영문) |
 
 ### 클래스 다이어그램
 
@@ -119,7 +119,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | uss/cmt/EgovCmtWrkStartInsert.do | insertWrkStartCmtInfo | "cmtManageDAO" | "insertWrkStartCmtInfo\_S" |
+| 등록 | /uss/cmt/EgovCmtWrkStartInsert.do | insertWrkStartCmtInfo | "cmtManageDAO" | "insertWrkStartCmtInfo\_S" |
 
  ![image](./images/cmt-출퇴근_출근.jpg)
 
@@ -133,7 +133,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('WRKTM_ID', 1);
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | uss/cmt/EgovCmtWrkEndInsert.do | insertWrkEndCmtInfo | "cmtManageDAO" | "insertWrkEndCmtInfo\_S" |
+| 등록 | /uss/cmt/EgovCmtWrkEndInsert.do | insertWrkEndCmtInfo | "cmtManageDAO" | "insertWrkEndCmtInfo\_S" |
 
  ![image](./images/cmt-출퇴근_퇴근.jpg)
 
