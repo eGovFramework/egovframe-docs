@@ -19,7 +19,7 @@ Spring MVC는 interface인 HandlerMapping의 구현 클래스도 가지고 있�
 
 기본 HandlerMapping은 BeanNameUrlHandlerMapping이며, jdk1.5 이상의 실행환경일 때, Spring 3.1이후 버전이면(egov 3.0부터) RequestMappingHandlerMapping가 기본 HandlerMapping이며,
 Spring 3.1이전 버전이면(egov 3.0이전 버전) DefaultAnnotationHandlerMapping가 기본 HandlerMapping이다.
-(DefaultAnnotationHAndlerMapping은 3.1부터 deprecated되고 RequestMappingHandlerMapping으로 대체됨)
+(DefaultAnnotationHandlerMapping은 3.1부터 deprecated되고 RequestMappingHandlerMapping으로 대체됨)
 
 ## 설명
 
