@@ -44,7 +44,7 @@ menu:
 
 ```java
 String esc = EgovStringUtil.getSpclStrCnvr("<script>");  // &lt;script&gt; 형태로 변환
-String htm = EgovStringUtil.getHtmlStrCnvr(escapedText);  // HTML 특수문자 복원
+String htm = EgovStringUtil.getHtmlStrCnvr(esc);  // HTML 특수문자 복원
 ```
 
 ## 참고자료
