@@ -90,7 +90,7 @@ Profile의 설정방법에는 XML설정과 Annotation설정으로 나뉜다.
 
 \<jndi-datasource-config.xml>
 
-운영시점에 사용하는 "dataSource" bean을 정의하는 XML. Profile명은 "production"으로 정의하고 있으며 JDNI를 DataSource로 설정하고 있다. "production" Profile을 활성화시키면 해당 Bean이 동작한다.
+운영시점에 사용하는 "dataSource" bean을 정의하는 XML. Profile명은 "production"으로 정의하고 있으며 JNDI를 DataSource로 설정하고 있다. "production" Profile을 활성화시키면 해당 Bean이 동작한다.
 
 ```xml
 <beans profile="production">
