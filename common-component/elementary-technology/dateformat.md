@@ -75,7 +75,7 @@ import egovframework.com.utl.fcc.service.EgovDateFormat;
  
 ...
 Date today = new Date();
-Locale[] locales = NumberFormat.getAvailableLocales();
+Locale[] locales = DateFormat.getAvailableLocales();
  
 for (Locale locale : locales ) {
     StringBuffer buffer = new StringBuffer();
