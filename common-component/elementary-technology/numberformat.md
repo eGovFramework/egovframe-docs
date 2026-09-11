@@ -66,7 +66,7 @@
 ## 사용방법
 
 ```java
-사용방법
+import java.text.NumberFormat;
 import egovframework.com.utl.fcc.service.EgovNumberFormat;
  
 ...
