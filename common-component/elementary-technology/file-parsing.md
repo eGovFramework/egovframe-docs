@@ -40,12 +40,13 @@ menu:
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| Vector | `parsFileByChar(String parFile, String parChar, int parField)` | 특정구분자 파일파싱 | 파일을 특정 구분자(콤마, 파이프, TAB)로 파싱한다 |
+| Vector | `parsFileByChar(String basePath, String parFile, String parChar, int parField)` | 특정구분자 파일파싱 | 파일을 특정 구분자(콤마, 파이프, TAB)로 파싱한다 |
 | Vector | `parsFileBySize(String parFile, int[] parLen, int parLine)` | 일정길이 파일파싱 | 파일을 필드별 일정 길이로 파싱한다 |
 <!-- markdownlint-restore -->
 
 #### 파라미터 정의 (Input)
 
+- `basePath`: String 타입의 파일 접근을 허용할 기준 경로 (미지정 시 `Globals.fileStorePath` 사용)
 - `parFile`: String 타입의 절대경로를 포함한 파일명 (예: `/user/com/test/file1.txt`)
 - `parChar`: String 타입의 파싱 구분자 (예: `,`)
 - `parField`: int 타입의 파싱 필드수 (예: `3`)
@@ -65,8 +66,9 @@ import java.util.Vector;
 import egovframework.com.utl.sim.service.EgovFileTool;
 
 // 1. 특정 구분자 파일파싱
+String basePath = null;
 String parFile = "/user/com/test/file1.txt";
-Vector<List<String>> result1 = EgovFileTool.parsFileByChar(parFile, ",", 3);
+Vector<List<String>> result1 = EgovFileTool.parsFileByChar(basePath, parFile, ",", 3);
 
 // 2. 일정 길이 파일파싱
 int[] parLen = {3, 3, 3};
