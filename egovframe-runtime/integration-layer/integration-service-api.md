@@ -80,7 +80,7 @@ public class EgovIntegrationSample
     <td colspan="7" style="text-align: center; font-weight: bold;">INTEGRATION</td>
   </tr>
   <tr>
-    <td style="text-align: center; font-weight: bold;">ID</td>
+    <td style="text-align: center; font-weight: bold;">INTEGRATION_ID</td>
     <td style="text-align: center; font-weight: bold;">PROVIDER_SERVICE_KEY</td>
     <td style="text-align: center; font-weight: bold;">CONSUMER_SYSTEM_KEY</td>
     <td style="text-align: center; font-weight: bold;">DEFAULT_TIMEOUT</td>
@@ -104,8 +104,8 @@ public class EgovIntegrationSample
     <td colspan="2" style="text-align: center; font-weight: bold;">ORGANIZATION</td>
   </tr>
   <tr>
-    <td style="text-align: center; font-weight: bold;">ID</td>
-    <td style="text-align: center; font-weight: bold;">NAME</td>
+    <td style="text-align: center; font-weight: bold;">ORGANIZATION_ID</td>
+    <td style="text-align: center; font-weight: bold;">ORGANIZATION_NAME</td>
   </tr>
   <tr>
     <td>'ORG00001'</td>
@@ -126,7 +126,7 @@ public class EgovIntegrationSample
     <td style="text-align: center; font-weight: bold;">ORGANIZATION_ID</td>
     <td style="text-align: center; font-weight: bold;">SYSTEM_ID</td>
     <td style="text-align: center; font-weight: bold;">SYSTEM_NAME</td>
-    <td style="text-align: center; font-weight: bold;">STANDARD_YN</td>
+    <td style="text-align: center; font-weight: bold;">SYSTEM_STANDARD_YN</td>
   </tr>
   <tr>
     <td>'SYSTEM_CONSUMER'</td>
@@ -157,7 +157,7 @@ public class EgovIntegrationSample
     <td style="text-align: center; font-weight: bold;">RESPONSE_MESSAGE_TYPE_ID</td>
     <td style="text-align: center; font-weight: bold;">SERVICE_PROVIDER_BEAN_ID</td>
     <td style="text-align: center; font-weight: bold;">USING_YN</td>
-    <td style="text-align: center; font-weight: bold;">STANDARD_YN</td>
+    <td style="text-align: center; font-weight: bold;">SERVICE_STANDARD_YN</td>
   </tr>
   <tr>
     <td>'SERVICE_VERIFY_NAME'</td>
@@ -467,7 +467,7 @@ public class EgovIntegrationSample
         ...
  
         // 비동기방식으로 연계 서비스 호출
-         service.sendSync(requestMessage, callback);
+         service.sendAsync(requestMessage, callback);
     }
  
     ...
