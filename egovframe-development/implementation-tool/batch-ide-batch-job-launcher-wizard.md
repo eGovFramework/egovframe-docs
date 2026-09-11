@@ -76,7 +76,7 @@ Repository Type은 JobRepository 설정이 프로젝트 내에 존재하지 않�
 
      ![Execution Type 설정](./images/batchjob-launcher-info-type.png)
 
-   * (3) **Operator ID**, **Explorer ID**, **Register ID**를 입력한다. (런쳐 파일 최초 생성 시 안내명을 따르도록 권장한다.)
+   * (3) **Operator ID**, **Explorer ID**, **Registry ID**를 입력한다. (런쳐 파일 최초 생성 시 안내명을 따르도록 권장한다.)
 
      ![Operator/Explorer/Registry ID 입력](./images/batchjob-launcher-info-3info.png)
 
