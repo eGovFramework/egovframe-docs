@@ -36,7 +36,7 @@ Property 카테고리는 다음 1가지 설정 유형을 제공한다.
 | 형식 | 기본 파일명 / 클래스명 |
 |---|---|
 | XML | `context-properties` |
-| JavaConfig | `EgovPropertyConfig` |
+| JavaConfig | `EgovPropertiesConfig` |
 
 ### 설정 항목
 
