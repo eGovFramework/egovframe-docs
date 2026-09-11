@@ -54,8 +54,8 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/sdm/EgovDeptSchdulManage_SQL_postgres.xml | 부서일정관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sdm/EgovDeptSchdulManage_SQL_tibero.xml | 부서일정관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sdm/EgovDeptSchdulManage_SQL_goldilocks.xml | 부서일정관리를 위한 Goldilocks용 Query XML |
-| Message properties | resources/egovframework/message/com/cop/smt/sdm/message_ko.properties | 마이페이지 Message properties(한글) |
-| Message properties | resources/egovframework/message/com/cop/smt/sdm/message_en.properties | 마이페이지 Message properties(영문) |
+| Message properties | resources/egovframework/message/com/cop/smt/sdm/message_ko.properties | 부서일정관리 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/cop/smt/sdm/message_en.properties | 부서일정관리 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-deptSchdulManage.xml | 부서일정관리 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
