@@ -32483,10 +32483,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>장애처리결과관리는 시스템 장애발생 시 장애조치내역을 등록하고 처리결과를 조회하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>장애처리결과관리는 장애처리결과 정보를 관리하기 위한 목적으로 장애신청 정보의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 장애처리목록조회 : 장애처리로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 장애처리결과등록 : 장애처리결과정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;p>장애처리결과관리는 장애처리결과 정보를 관리하기 위한 목적으로 장애처리결과 정보의 등록, 삭제, 목록조회의 기능을 수반한다.&lt;/p>
+&lt;p>① 장애처리목록조회 : 장애처리로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
+② 장애처리결과등록 : 장애처리결과정보를 등록하고, 등록 결과를 조회한다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[장애처리 목록조회] -->|장애ID 선택| R[장애처리결과 등록/삭제]
+ R --> L
+&lt;/div>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
  &lt;tr>
