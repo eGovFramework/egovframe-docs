@@ -66,7 +66,7 @@ menu:
   "ccName": "boardId",
   "pcName": "BoardId",
   "dataType": "VARCHAR",
-  "javaType": "String",
+  "javaType": "java.lang.String",
   "isPrimaryKey": true
 }
 ```
@@ -77,7 +77,7 @@ menu:
 | `ccName` | `string` | camelCase로 변환된 컬럼명. Java 필드명, MyBatis 파라미터명으로 사용된다. 예) `boardId` |
 | `pcName` | `string` | PascalCase로 변환된 컬럼명. getter/setter 메서드명 생성에 사용된다. 예) `BoardId` |
 | `dataType` | `string` | SQL 데이터 타입. 예) `VARCHAR`, `INT`, `DATETIME` |
-| `javaType` | `string` | 매핑된 Java 타입. 예) `String`, `int`, `java.util.Date` |
+| `javaType` | `string` | 매핑된 Java 타입. 예) `java.lang.String`, `java.lang.Integer`, `java.util.Date` |
 | `isPrimaryKey` | `boolean` | `PRIMARY KEY` 여부 |
 
 ## 활용 예시
@@ -113,7 +113,7 @@ CREATE TABLE BOARD (
       "ccName": "boardId",
       "pcName": "BoardId",
       "dataType": "VARCHAR",
-      "javaType": "String",
+      "javaType": "java.lang.String",
       "isPrimaryKey": true
     },
     {
@@ -121,7 +121,7 @@ CREATE TABLE BOARD (
       "ccName": "title",
       "pcName": "Title",
       "dataType": "VARCHAR",
-      "javaType": "String",
+      "javaType": "java.lang.String",
       "isPrimaryKey": false
     },
     {
@@ -129,7 +129,7 @@ CREATE TABLE BOARD (
       "ccName": "content",
       "pcName": "Content",
       "dataType": "TEXT",
-      "javaType": "String",
+      "javaType": "java.lang.String",
       "isPrimaryKey": false
     },
     {
@@ -147,7 +147,7 @@ CREATE TABLE BOARD (
       "ccName": "boardId",
       "pcName": "BoardId",
       "dataType": "VARCHAR",
-      "javaType": "String",
+      "javaType": "java.lang.String",
       "isPrimaryKey": true
     }
   ]
