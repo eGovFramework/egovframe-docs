@@ -115,8 +115,8 @@ HTTP서비스모니터링 스케줄러를 `context-scheduling.xml`에 등록한�
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /utl/sys/htm/selectHttpMonList.do | selectHttpMonList | HttpMonDAO.selectHttpMonList |
-| 조회 | /utl/sys/htm/selectHttpMonList.do | selectHttpMonList | HttpMonDAO.selectHttpMonListCnt |
+| 조회 | /utl/sys/htm/EgovComUtlHttpMonList.do | selectHttpMonList | HttpMonDAO.selectHttpMonList |
+| 조회 | /utl/sys/htm/EgovComUtlHttpMonList.do | selectHttpMonList | HttpMonDAO.selectHttpMonTotCnt |
 
 목록은 페이지당 10건씩 조회되며 검색조건은 상태·관리자명에 대해 수행된다. 상태가 비정상일 때 관리자에게 이메일을 발송한다.
 
@@ -124,27 +124,27 @@ HTTP서비스모니터링 스케줄러를 `context-scheduling.xml`에 등록한�
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 등록 | /utl/sys/htm/addHttpMon.do | insertHttpMon | HttpMonDAO.insertHttpMon |
+| 등록 | /utl/sys/htm/EgovComUtlHttpMonRegist.do | insertHttpMon | HttpMonDAO.insertHttpMon |
 
 ### HTTP서비스모니터링 수정
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /utl/sys/htm/updateHttpMon.do | updateHttpMon | HttpMonDAO.updateHttpMon |
+| 수정 | /utl/sys/htm/EgovComUtlHttpMonModify.do | updateHttpMon | HttpMonDAO.updateHttpMon |
 
 ### HTTP서비스모니터링 상세조회
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /utl/sys/htm/getHttpMon.do | selectHttpMon | HttpMonDAO.selectHttpMon |
-| 삭제 | /utl/sys/htm/deleteHttpMon.do | deleteHttpMon | HttpMonDAO.deleteHttpMon |
+| 상세조회 | /utl/sys/htm/EgovComUtlHttpMonDetail.do | selectHttpMonDetail | HttpMonDAO.selectHttpMonDetail |
+| 삭제 | /utl/sys/htm/EgovComUtlHttpMonRemove.do | deleteHttpMon | HttpMonDAO.deleteHttpMon |
 
 ### HTTP서비스모니터링로그 목록조회
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 조회 | /utl/sys/htm/selectHttpMonLogList.do | selectHttpMonLogList | HttpMonDAO.selectHttpMonLogList |
-| 조회 | /utl/sys/htm/selectHttpMonLogList.do | selectHttpMonLogList | HttpMonDAO.selectHttpMonLogListCnt |
+| 조회 | /utl/sys/htm/EgovComUtlHttpMonLogList.do | selectHttpMonLogList | HttpMonDAO.selectHttpMonLogList |
+| 조회 | /utl/sys/htm/EgovComUtlHttpMonLogList.do | selectHttpMonLogList | HttpMonDAO.selectHttpMonLogTotCnt |
 
 검색조건은 상태·관리자명·모니터링시각에 대해 수행된다.
 
@@ -152,7 +152,7 @@ HTTP서비스모니터링 스케줄러를 `context-scheduling.xml`에 등록한�
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /utl/sys/htm/getHttpMonLog.do | selectHttpMonLog | HttpMonDAO.selectHttpMonLog |
+| 상세조회 | /utl/sys/htm/EgovComUtlHttpMonDetailLog.do | selectHttpMonDetailLog | HttpMonDAO.selectHttpMonDetailLog |
 
 ## 참고자료
 
