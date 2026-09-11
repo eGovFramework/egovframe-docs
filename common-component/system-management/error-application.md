@@ -163,7 +163,7 @@ stateDiagram-v2
 | 상세조회 | /sym/tbm/tbr/getTroblReqst.do | selectTroblReqst | "troblReqstDAO.selectTroblReqst" |
 | 삭제 | /sym/tbm/tbr/removeTroblReqst.do | deleteTroblReqst | "troblReqstDAO.deleteTroblReqst" |
 | 요청 | /sym/tbm/tbr/requstTroblReqst.do | requstTroblReqst | "troblReqstDAO.requstTroblReqst" |
-| 요청취소 | /sym/tbm/tbr/requstTroblReqstCancl.do | requstTroblReqstCancl | "troblReqstDAO.requstTroblReqst" |
+| 요청취소 | /sym/tbm/tbr/requstTroblReqstCancl.do | requstTroblReqstCancl | "troblReqstDAO.requstTroblReqstCancl" |
 
  장애신청의 속성정보를 조회한다.
 
