@@ -25,7 +25,7 @@ menu:
 
 1. 사용자의 eclipse 개발환경에서 Perspective를 eGovFrame으로 변경한다.
 
-2. eGovFrame 통합메뉴 > Configuration > ServerConnection Management > Show SVN Repositories View 를 클릭한다.
+2. eGovFrame 통합메뉴 > Configuration > Server Connection Management > Show SVN Repositories View 를 클릭한다.
 
    ![SVN 메뉴](./images/svn-menu.jpg)
 
