@@ -21,15 +21,13 @@ menu:
 
 간부일정관리는 간부일정 정보를 관리하기 위한 목적으로 간부일정 정보의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.
 
-```text
-① 월별간부일정목록조회 : 간부일정으로 정의된 정보를 월별로 조회하고, 그 결과 목록을 화면에 반영한다.
-② 주별간부일정목록조회 : 간부일정으로 정의된 정보를 주별로 조회하고, 그 결과 목록을 화면에 반영한다.
-③ 일별간부일정목록조회 : 간부일정으로 정의된 정보를 일별로 조회하고, 그 결과 목록을 화면에 반영한다.
-④ 간부일정등록 : 간부일정정보를 등록하고, 등록 결과를 조회한다.
-⑤ 간부일정수정 : 기 등록된 간부일정정보의 항목들을 수정한다.
-⑥ 간부일정삭제 : 기 등록된 간부일정정보를 삭제한다.
-⑦ 간부일정상세조회 : 등록된 간부일정정보를 조회한다.
-```
+ ① 월별간부일정목록조회 : 간부일정으로 정의된 정보를 월별로 조회하고, 그 결과 목록을 화면에 반영한다.
+ ② 주별간부일정목록조회 : 간부일정으로 정의된 정보를 주별로 조회하고, 그 결과 목록을 화면에 반영한다.
+ ③ 일별간부일정목록조회 : 간부일정으로 정의된 정보를 일별로 조회하고, 그 결과 목록을 화면에 반영한다.
+ ④ 간부일정등록 : 간부일정정보를 등록하고, 등록 결과를 조회한다.
+ ⑤ 간부일정수정 : 기 등록된 간부일정정보의 항목들을 수정한다.
+ ⑥ 간부일정삭제 : 기 등록된 간부일정정보를 삭제한다.
+ ⑦ 간부일정상세조회 : 등록된 간부일정정보를 조회한다.
 
 ### 패키지 참조 관계
 
@@ -53,8 +51,8 @@ menu:
 | DAO | egovframework.com.cop.smt.lsm.service.impl.LeaderSchdulDAO.java | 간부일정관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovEmplyrList.jsp | 사용자 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovEmplyrListPopup.jsp | 사용자 팝업 목록조회를 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulList.jsp | 일지관리 수정 페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageDetail.jsp | 간부일정 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulList.jsp | 간부일정 목록조회를 위한 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/cop/smt/dsm/EgovDiaryManageDetail.jsp | 일지관리 수정 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulMonthList.jsp | 월별 간부일정 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulWeekList.jsp | 주별 간부일정 목록조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/smt/lsm/EgovLeaderSchdulDailyList.jsp | 일별 간부일정 목록조회를 위한 jsp페이지 |
