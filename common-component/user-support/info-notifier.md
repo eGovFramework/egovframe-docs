@@ -44,7 +44,7 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/noi/EgovNotificationList.jsp | 생성된 정보알림이 조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/noi/EgovNotificationDetail.jsp | 정보알림이 상세 조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/noi/EgovNotificationData.jsp | 정보알림이 표시를 위한 XML jsp페이지 |
-| JS | /js/egovframework/uss/ion/noi/EgovNotification.js | 정보알림이 표시(AJAX)를 위한 js페이지 |
+| JS | /js/egovframework/com/uss/ion/noi/EgovNotification.js | 정보알림이 표시(AJAX)를 위한 js페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/noi/EgovNotification\_SQL\_altibase.xml | 정보알림이를 위한 Altibase용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/noi/EgovNotification\_SQL\_cubrid.xml | 정보알림이를 위한 Cubrid용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/noi/EgovNotification\_SQL\_maria.xml | 정보알림이를 위한 Maria용 Query 파일 |
@@ -72,7 +72,7 @@ menu:
 
 ```xml
 
-<script type="text/javascript" language="javaScript" src="<c:url value='/js/egovframework/uss/ion/noi/EgovNotification.js' />"></script>
+<script type="text/javascript" language="javaScript" src="<c:url value='/js/egovframework/com/uss/ion/noi/EgovNotification.js' />"></script>
 ```
 
  (관리자를 위한 정보알림이 목록조회 화면에도 테스트를 위하여 포함되어 있음)
