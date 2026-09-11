@@ -23,6 +23,17 @@
 
  세션을 통해 고유한 token을 보관하고 해당 token을 파라미터와 비교함으로서 중복 처리를 방지한다.
 
+```mermaid
+flowchart LR
+    F[폼 렌더링] -->|UUID 생성| S[(세션 UUID)]
+    F --> P[파라미터 UUID]
+    P --> C{checkAndSaveToken}
+    S --> C
+    C -->|일치| N[새 UUID로 세션 갱신]
+    N --> R[Service 호출]
+    C -->|불일치| X([등록 생략])
+```
+
 ### 관련소스
 
 | 유형 | 대상소스 | 설명 | 비고 |
