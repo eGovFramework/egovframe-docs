@@ -30926,7 +30926,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> ① Client 환경- WebSocket 지원 브라우저 확인&lt;span style="color:#000;font-weight:bold">(&lt;/span>IE10이상, 이 외의 브라우저 대부분 지원&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② Server 환경- WebSocket 지원 Server 확인&lt;span style="color:#000;font-weight:bold">(&lt;/span>Tomcat 8이상, Jeus 8이상, 이 외 서버 지원여부 확인필요&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ Server 환경- jdk &lt;span style="color:#099">7&lt;/span> 이상
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;div class="mermaid">flowchart LR
+ L[사용자 리스트 조회화면 이동] -->|WebSocket 접속| U[UsersServerEndPoint 등록/조회]
+ U -->|다른사용자 선택| P[대화창 팝업]
+ P -->|WebSocket 접속| C[ChatServerEndPoint 방 생성]
+ C -->|메시지 전달| C
+ C -->|Leave| L
+&lt;/div>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
  &lt;tr>
