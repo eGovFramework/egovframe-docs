@@ -5163,7 +5163,7 @@ Spring MVC는 interface인 HandlerMapping의 구현 클래스도 가지고 있�
 빈 정의 파일에 HandlerMapping에 대한 정의가 없다면 Spring MVC는 기본(default) HandlerMapping을 사용한다.&lt;/p>
 &lt;p>기본 HandlerMapping은 BeanNameUrlHandlerMapping이며, jdk1.5 이상의 실행환경일 때, Spring 3.1이후 버전이면(egov 3.0부터) RequestMappingHandlerMapping가 기본 HandlerMapping이며,
 Spring 3.1이전 버전이면(egov 3.0이전 버전) DefaultAnnotationHandlerMapping가 기본 HandlerMapping이다.
-(DefaultAnnotationHAndlerMapping은 3.1부터 deprecated되고 RequestMappingHandlerMapping으로 대체됨)&lt;/p>
+(DefaultAnnotationHandlerMapping은 3.1부터 deprecated되고 RequestMappingHandlerMapping으로 대체됨)&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>BeanNameUrlHandlerMapping, SimpleUrlHandlerMapping 등 주요 HandlerMapping 구현 클래스는 상위 추상 클래스인 AbstractHandlerMapping과 AbstractUrlHandlerMapping을 확장하기 때문에 이 추상클래스들의 프로퍼티를 사용한다.
 주요 프로퍼티는 아래와 같다.&lt;/p></description></item><item><title>Spring Web Flow의 Hello World 예제</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-getting-started-hello-world/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/business-logic-layer/spring-web-flow/swf-getting-started-hello-world/</guid><description>&lt;h1 id="hello-world">Hello, World&lt;/h1>
