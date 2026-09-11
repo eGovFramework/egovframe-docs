@@ -77,10 +77,10 @@ flowchart TD
 
     subgraph CUSTOM["커스텀 업무 롤 삽입 예시"]
         direction TB
-        R[ROLE_RESTRICTED] -->|PARENT_ROLE| G[ROLE_COP]
+        R[ROLE_RESTRICTED] -->|PARNTS_ROLE| G[ROLE_COP]
     end
 
-    G -->|PARENT_ROLE| F
+    G -->|PARNTS_ROLE| F
 
     classDef base fill:#eef3ff,stroke:#3b5bdb,color:#1b1f27,stroke-width:1px;
     classDef custom fill:#fff4e0,stroke:#e8890c,color:#1b1f27,stroke-width:1px;
@@ -102,23 +102,23 @@ flowchart TD
 
 ```sql
 -- ROLE_COP 를 ROLE_ADMIN 의 상위(PARENT) 권한으로 등록한다.
-INSERT INTO COMTNROLES_HIERARCHY (PARENT_ROLE, CHILD_ROLE) VALUES('ROLE_COP','ROLE_ADMIN');
+INSERT INTO COMTNROLES_HIERARCHY (PARNTS_ROLE, CHLDRN_ROLE) VALUES('ROLE_COP','ROLE_ADMIN');
 ```
 
 - 하위 권한 정의
 
 ```sql
 -- ROLE_RESTRICTED 를 ROLE_COP 의 상위(PARENT) 권한으로 등록한다.
-INSERT INTO COMTNROLES_HIERARCHY (PARENT_ROLE, CHILD_ROLE) VALUES('ROLE_RESTRICTED','ROLE_COP');
+INSERT INTO COMTNROLES_HIERARCHY (PARNTS_ROLE, CHLDRN_ROLE) VALUES('ROLE_RESTRICTED','ROLE_COP');
 ```
 
 - 권한의 HIERARCHY 구조
 
 ```sql
 -- COMTNROLES_HIERARCHY Table 을 자기 조인(Self Join)하여 등록된 권한의 상속(계층) 구조를 조회한다.
-SELECT A.CHILD_ROLE  CHILD,   -- 하위 권한
-       A.PARENT_ROLE PARENT  -- 상위 권한
-  FROM COMTNROLES_HIERARCHY A LEFT JOIN COMTNROLES_HIERARCHY B ON (A.CHILD_ROLE = B.PARENT_ROLE);
+SELECT A.CHLDRN_ROLE  CHILD,   -- 하위 권한
+       A.PARNTS_ROLE PARENT  -- 상위 권한
+  FROM COMTNROLES_HIERARCHY A LEFT JOIN COMTNROLES_HIERARCHY B ON (A.CHLDRN_ROLE = B.PARNTS_ROLE);
 ```
 
 ### Spring Security Configuration
