@@ -13058,15 +13058,13 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
 &lt;p>간부일정관리는 간부일정 정보를 관리하며, 일/주/월별 일정현황을 검색할 수 있는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>간부일정관리는 간부일정 정보를 관리하기 위한 목적으로 간부일정 정보의 등록, 수정, 삭제, 조회, 목록조회의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>① 월별간부일정목록조회 : 간부일정으로 정의된 정보를 월별로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>② 주별간부일정목록조회 : 간부일정으로 정의된 정보를 주별로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>③ 일별간부일정목록조회 : 간부일정으로 정의된 정보를 일별로 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>④ 간부일정등록 : 간부일정정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>⑤ 간부일정수정 : 기 등록된 간부일정정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>⑥ 간부일정삭제 : 기 등록된 간부일정정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>⑦ 간부일정상세조회 : 등록된 간부일정정보를 조회한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
-&lt;p>간부일정관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 개인일정관리, 일지관리, 부서일정관리 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>개발자 개발환경 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</guid><description>&lt;h1 id="개발자-개발환경-설치가이드">개발자 개발환경 설치가이드&lt;/h1>
+&lt;p>① 월별간부일정목록조회 : 간부일정으로 정의된 정보를 월별로 조회하고, 그 결과 목록을 화면에 반영한다.
+② 주별간부일정목록조회 : 간부일정으로 정의된 정보를 주별로 조회하고, 그 결과 목록을 화면에 반영한다.
+③ 일별간부일정목록조회 : 간부일정으로 정의된 정보를 일별로 조회하고, 그 결과 목록을 화면에 반영한다.
+④ 간부일정등록 : 간부일정정보를 등록하고, 등록 결과를 조회한다.
+⑤ 간부일정수정 : 기 등록된 간부일정정보의 항목들을 수정한다.
+⑥ 간부일정삭제 : 기 등록된 간부일정정보를 삭제한다.
+⑦ 간부일정상세조회 : 등록된 간부일정정보를 조회한다.&lt;/p></description></item><item><title>개발자 개발환경 설치가이드</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/install-guide/developer-environment-install-guide/</guid><description>&lt;h1 id="개발자-개발환경-설치가이드">개발자 개발환경 설치가이드&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>본 가이드는 전자정부 표준프레임워크에서 제공하는 개발자 개발환경의 사용 방법을 제공한다.&lt;/p>
 &lt;h2 id="step-1-개발환경-설치">Step 1. 개발환경 설치&lt;/h2>
