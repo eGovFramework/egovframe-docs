@@ -22500,13 +22500,13 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
- &lt;td>&lt;code>checkforeignNumber(String for1, String for2)&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkForeignNumber(String for1, String for2)&lt;/code>&lt;/td>
  &lt;td>외국인번호 유효성체크&lt;/td>
  &lt;td>외국인등록번호 앞, 뒤 문자열을 입력받아 유효성 체크&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>boolean&lt;/code>&lt;/td>
- &lt;td>&lt;code>checkforeignNumber(String foreign)&lt;/code>&lt;/td>
+ &lt;td>&lt;code>checkForeignNumber(String foreign)&lt;/code>&lt;/td>
  &lt;td>외국인번호 유효성체크&lt;/td>
  &lt;td>외국인등록번호(&lt;code>-&lt;/code> 제외) 문자열을 입력받아 유효성 체크&lt;/td>
  &lt;/tr>
