@@ -602,7 +602,7 @@ Integration 서비스 Metadata의 물리ERD 및 Table 설명은 다음과 같다
   <tr>
     <td style="text-align: center;">5</td>
     <td style="text-align: center;"></td>
-    <td>STANDARD_YN</td>
+    <td>SYSTEM_STANDARD_YN</td>
     <td>표준여부</td>
     <td>Boolean</td>
     <td>CHAR(1)</td>
@@ -722,7 +722,7 @@ Integration 서비스 Metadata의 물리ERD 및 Table 설명은 다음과 같다
   <tr>
     <td style="text-align: center;">8</td>
     <td style="text-align: center;"></td>
-    <td>STANDARD_YN</td>
+    <td>SERVICE_STANDARD_YN</td>
     <td>표준여부</td>
     <td>Boolean</td>
     <td>CHAR(1)</td>
