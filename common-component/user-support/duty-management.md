@@ -161,9 +161,9 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 당직엑셀등록 화면조회 | /uss/ion/bnt/EgovBndtManageListPop.do | selectBndtManageBnde | "bndtManageDAO.selectBndtManageBnde" |
-| 당직엑셀등록 데이터 출력 | /uss/ion/bnt/EgovBndtManageListPopAction.do | selectBndtManageBnde | "bndtManageDAO.selectBndtManageBnde" |
-| 당직엑셀등록 처리 | /uss/ion/bnt/insertBndtManageBnde.do | insertBndtManageBnde | "bndtManageDAO.insertBndtManageBnde" |
+| 당직엑셀등록 화면조회 | /uss/ion/bnt/EgovBndtManageListPop.do | selectBndtManageBnde | |
+| 당직엑셀등록 데이터 출력 | /uss/ion/bnt/EgovBndtManageListPopAction.do | selectBndtManageBndeAction | "bndtManageDAO.selectBndtManageBnde" |
+| 당직엑셀등록 처리 | /uss/ion/bnt/insertBndtManageBnde.do | insertBndtManageBnde | "bndtManageDAO.insertBndtManage" |
 
  당직정보를 입력형식에 맞춰 엑셀에 등록된 내용을 일괄등록 처리한다.
  입력형식은
