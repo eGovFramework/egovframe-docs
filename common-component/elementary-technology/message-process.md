@@ -36,8 +36,8 @@ menu:
 | `String` | `getInfoMsg(String key, String[] params)` | 정보 파라미터 취득 | 메시지 키에 해당하는 정보 메시지에 파라미터 값을 대치하여 얻는 기능 |
 | `String` | `getWarnMsg(String key)` | 경고 메시지 취득 | 메시지 키에 해당하는 경고 메시지를 얻는 기능 |
 | `String` | `getWarnMsg(String key, String[] params)` | 경고 파라미터 취득 | 메시지 키에 해당하는 경고 메시지에 파라미터 값을 대치하여 얻는 기능 |
-| `String` | `getErrMsg(String key)` | 에러 메시지 취득 | 메시지 키에 해당하는 에러 메시지를 얻는 기능 |
-| `String` | `getErrMsg(String key, String[] params)` | 에러 파라미터 취득 | 메시지 키에 해당하는 에러 메시지에 파라미터 값을 대치하여 얻는 기능 |
+| `String` | `getErrorMsg(String key)` | 에러 메시지 취득 | 메시지 키에 해당하는 에러 메시지를 얻는 기능 |
+| `String` | `getErrorMsg(String key, String[] params)` | 에러 파라미터 취득 | 메시지 키에 해당하는 에러 메시지에 파라미터 값을 대치하여 얻는 기능 |
 | `String` | `getConfirmMsg(String key)` | 확인 메시지 취득 | 메시지 키에 해당하는 확인 메시지를 얻는 기능 |
 | `String` | `getConfirmMsg(String key, String[] params)` | 확인 파라미터 취득 | 메시지 키에 해당하는 확인 메시지에 파라미터 값을 대치하여 얻는 기능 |
 
@@ -90,7 +90,7 @@ String message = null;
 // 1. 일반 메시지 취득
 message = EgovMessageUtil.getInfoMsg("test.message");
 // message = EgovMessageUtil.getWarnMsg("test.message");
-// message = EgovMessageUtil.getErrMsg("test.message");
+// message = EgovMessageUtil.getErrorMsg("test.message");
 // message = EgovMessageUtil.getConfirmMsg("test.message");
 
 // 2. 파라미터 처리 메시지 취득 : String 배열의 값이 각각 {0}, {1}로 대치됨
