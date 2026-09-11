@@ -2535,7 +2535,7 @@ Bean 정의를 통해 객체에 다양한 종속성 및 설정값을 주입할 �
 &lt;h2 id="사용법">사용법&lt;/h2>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Data Source&lt;/strong> : 데이터베이스 연결을 설정.&lt;/p>
+&lt;p>&lt;strong>Datasource&lt;/strong> : 데이터베이스 연결을 설정.&lt;/p>
 &lt;ul>
 &lt;li>
 
