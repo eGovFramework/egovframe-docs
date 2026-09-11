@@ -135,13 +135,10 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
   </bean>
  
   <!-- 스케쥴러 등록-->
-  <bean id="logSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+  <bean id="trsmrcvLogScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
       <list>
-        <ref bean="sysLogTrigger" />
-        <ref bean="webLogTrigger" />
         <ref bean="trsmrcvLogTrigger" />
-        <ref bean="userLogTrigger" />
       </list>
     </property>
   </bean>
