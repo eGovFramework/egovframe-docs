@@ -125,7 +125,7 @@ public ModelAndView refreshSessionTimeout(@RequestParam Map<String, Object> comm
 
 ### 로그인 시간관리 남은시간 표시
 
- 쿠키로부터 만료 예정시간(egovLatestServerTime), 서버현재시간(egovExpireSessionTime)을 구하여 그 차이를 계산하여 로그인 남은 시간을 표시한다.
+ 쿠키로부터 서버현재시간(egovLatestServerTime), 만료 예정시간(egovExpireSessionTime)을 구하여 그 차이를 계산하여 로그인 남은 시간을 표시한다.
 
 #### 관련코드
 
