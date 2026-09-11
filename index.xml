@@ -25538,7 +25538,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;li>String : Locale에 맞게 변환된 숫자, 통화, 퍼센트 문자열&lt;/li>
 &lt;/ul>
 &lt;h2 id="사용방법">사용방법&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>사용방법&lt;span style="color:#bbb">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.text.NumberFormat&lt;/span>;&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.fcc.service.EgovNumberFormat&lt;/span>;&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> 
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>...&lt;span style="color:#bbb">
