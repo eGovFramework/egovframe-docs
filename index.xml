@@ -10439,6 +10439,16 @@ SpEL은 빈 오브젝트에 직접 접근할 수 있는 표현식을 이용해�
 &lt;p>SSO 연계 서비스는 독립된 사이트간의 인증 공유를 위해 3rd party SSO 솔루션을 활용할 수 있는 인터페이스를 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>3rd party SSO 솔루션을 활용하여 인증 서비스를 구축할 때 SSO 에이전트와 표준프레임워크 인증 시스템간의 인터페이스를 정의한다. 3rd party SSO 솔루션은 인터페이스 구현을 통해 표준프레임워크에서 인증 공유를 위한 SSO에이전트 기능을 사용할 수 있게 해준다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ C{hasTokenInSSOServer} -->|토큰 없음| I[requestIssueToken]
+ C -->|토큰 있음| L[ssoLoginByServer]
+ I --> C
+ L --> V[getLoginVO]
+ V --> S([스프링 시큐리티 로컬 로그인])
+ S -->|로그아웃 요청| O[ssoLogout]
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>SSO 연게 서비스는 요소기술의 공통(cmm) 패키지와 일반 로그인 패키지(uat.uia)에 대해서만 직접적인 함수적 참조 관계를 가지며 일반 로그인 패키지(uat.uia)에 포함되어 배포된다.&lt;/p></description></item><item><title>Step</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-step/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-runtime/batch-layer/batch-core-step/</guid><description>&lt;h1 id="step">Step&lt;/h1>
 &lt;p>본 문서는 
