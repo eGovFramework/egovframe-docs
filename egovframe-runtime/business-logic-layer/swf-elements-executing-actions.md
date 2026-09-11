@@ -293,7 +293,7 @@ http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	<transition on="guestCreated" to="reviewBooking">
 		<evaluate expression="booking.guestList.add(currentEvent.attributes.newGuest)" />
 	</transition>
-</subfow-state>
+</subflow-state>
 ```
 #### Named actions
 
