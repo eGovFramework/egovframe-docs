@@ -80,16 +80,16 @@ DDL 검증에 성공하면 에디터 아래에 **파싱된 테이블 정보**가
 | 옵션 | 설명 |
 |---|---|
 | VO Class | Value Object 클래스 (`TableNameVO.java`) |
-| Default VO Class | 기본 Value Object 클래스 (`DefaultVO.java`) |
+| Default VO Class | 기본 Value Object 클래스 (`TableNameDefaultVO.java`) |
 | Controller Class | 컨트롤러 클래스 (`TableNameController.java`) |
 | Service Interface | 서비스 인터페이스 (`TableNameService.java`) |
 | ServiceImpl Class | 서비스 구현 클래스 (`TableNameServiceImpl.java`) |
 | Mapper Interface | 매퍼 인터페이스 (`TableNameMapper.java`) |
 | MyBatis Mapper XML | MyBatis SQL 매핑 파일 (`TableName_SQL.xml`) |
 | Thymeleaf List Page | Thymeleaf 목록 페이지 (`TableNameList.html`) |
-| Thymeleaf Register Page | Thymeleaf 등록/수정 페이지 (`TableNameRegist.html`) |
+| Thymeleaf Register Page | Thymeleaf 등록/수정 페이지 (`TableNameRegister.html`) |
 | JSP List Page | JSP 목록 페이지 (`TableNameList.jsp`) |
-| JSP Register Page | JSP 등록/수정 페이지 (`TableNameRegist.jsp`) |
+| JSP Register Page | JSP 등록/수정 페이지 (`TableNameRegister.jsp`) |
 
 **Close Preview** 버튼을 클릭하면 미리보기 영역을 닫을 수 있다.
 
