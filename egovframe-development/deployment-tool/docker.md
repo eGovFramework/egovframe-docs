@@ -90,7 +90,7 @@ $ docker version
 
 #### Step 1. 표준프레임워크 개발환경에서 제공하는 템플릿 웹 응용프로그램 제작
 
-##### 1. 개발환경에서 eGovframe &gt; Start &gt; New Web Project 선택한다.
+##### 1. 개발환경에서 eGovFrame &gt; Start &gt; New Web Project 선택한다.
 
 ![새 웹 프로젝트](./images/03-new-web-pro.png)
 
@@ -98,7 +98,7 @@ $ docker version
 
 ![프로젝트 이름](./images/04-pro-name.png)
 
-##### 3. “Generate Exmple”을 선택 후 하단의 “Finish” 버튼을 클릭하여 템플릿 프로잭트를 생성한다.
+##### 3. “Generate Example”을 선택 후 하단의 “Finish” 버튼을 클릭하여 템플릿 프로잭트를 생성한다.
 
 ![예제 생성](./images/05-gen-example.png)
 
