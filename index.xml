@@ -28669,12 +28669,12 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>약식결재는 약식결재 정보를 관리하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>약식결재는 약식결재 정보를 관리하기 위한 목적으로 약식결재 정보의 등록, 삭제, 조회, 승인, 반려의 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 약식결재등록 : 약식결재정보를 지정하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 약식결재삭제 : 기 등록된 약식결재정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 약식결재상세조회 : 등록된 약식결재정보를 조회한다. 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 약식결재승인 : 등록된 약식결재정보를 승인한다. 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ⑤ 약식결재반려 : 등록된 약식결재정보를 반려한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>① 약식결재등록 : 약식결재정보를 지정하고, 등록 결과를 조회한다.
+② 약식결재삭제 : 기 등록된 약식결재정보를 삭제한다.
+③ 약식결재상세조회 : 등록된 약식결재정보를 조회한다.
+④ 약식결재승인 : 등록된 약식결재정보를 승인한다.
+⑤ 약식결재반려 : 등록된 약식결재정보를 반려한다.&lt;/p>
+
 
 &lt;div class="mermaid">flowchart LR
  A[약식결재권자 지정] --> B[약식결재 상세조회]
