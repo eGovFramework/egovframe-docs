@@ -90,7 +90,7 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SCRAP_ID', 1);
 </bean>
 <bean name="scrapStrategy"
       class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-      <property name="prefix" value="SCRIP_" />
+      <property name="prefix" value="SCRAP_" />
       <property name="cipers" value="14" />
       <property name="fillChar" value="0" />
 </bean>
@@ -105,6 +105,16 @@ INSERT INTO COMTECOPSEQ ( TABLE_NAME, NEXT_ID ) VALUES ('SCRAP_ID', 1);
 ## 관련기능
 
 스크랩관리는 스크랩 등록, 스크랩 목록조회, 스크랩 상세조회, 스크랩 수정 기능으로 구분되어 있다.
+
+```mermaid
+flowchart LR
+    A([게시글]) -->|스크랩 버튼| R[스크랩 등록]
+    R --> L[스크랩 목록조회]
+    L -->|목록클릭| D[스크랩 상세조회]
+    D -->|수정| U[스크랩 수정]
+    U --> L
+    D -->|삭제| L
+```
 
 ### 스크랩 등록
 
