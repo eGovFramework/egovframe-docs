@@ -22511,7 +22511,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;/tr>
  &lt;tr>
  &lt;td>범용 properties 정의&lt;/td>
- &lt;td>/resources/egovframework/egovProp/globals.properties&lt;/td>
+ &lt;td>/resources/egovframework/egovProps/globals.properties&lt;/td>
  &lt;td>global 상수 정의&lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -22526,17 +22526,17 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;/tr>
  &lt;tr>
  &lt;td>요소기술 환경설정&lt;/td>
- &lt;td>/resources/egovframework/egovProp/conf/*.properties&lt;/td>
+ &lt;td>/resources/egovframework/egovProps/conf/*.properties&lt;/td>
  &lt;td>요소기술에 필요한 환경설정&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>요소기술 프로그램 설정&lt;/td>
- &lt;td>/resources/egovframework/egovProp/prg/&lt;em>.sh(&lt;/em>.bat)&lt;/td>
+ &lt;td>/resources/egovframework/egovProps/prg/&lt;em>.sh(&lt;/em>.bat)&lt;/td>
  &lt;td>요소기술에 필요한 실행 스크립트&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>sql config 파일&lt;/td>
- &lt;td>/resources/egovframework/sqlmap/com/*.xml&lt;/td>
+ &lt;td>/resources/egovframework/mapper/com/*.xml&lt;/td>
  &lt;td>sql map config 정의&lt;/td>
  &lt;/tr>
  &lt;tr>
@@ -22551,7 +22551,7 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;/tr>
  &lt;tr>
  &lt;td>log 설정&lt;/td>
- &lt;td>/resources/log4j.xml&lt;/td>
+ &lt;td>/resources/log4j2.xml&lt;/td>
  &lt;td>log 관련 설정&lt;/td>
  &lt;/tr>
  &lt;/tbody>
