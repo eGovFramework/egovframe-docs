@@ -27,6 +27,14 @@ menu:
  ④ 로그삭제 : 로그정보를 삭제한다. - 실행환경의 Scheduling 기능을 이용
  ⑤ 로그요약 : 로그정보를 요약하여 Summary를 생성한다. - 실행환경의 Scheduling 기능을 이용
 
+```mermaid
+flowchart LR
+    S[insert/update/delete/select 호출] -->|AOP| R[로그 등록]
+    R --> L[로그 목록조회]
+    L -->|목록클릭| D[로그 상세조회]
+    T[Scheduler 1시간 주기] -->|요약/삭제| L
+```
+
 ### 패키지 참조 관계
 
  로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다.
