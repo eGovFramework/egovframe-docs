@@ -7,42 +7,44 @@ L2 broken-rel-link   : 상대링크 대상 파일 부재 (렌더링 사이트 �
 L3 frontmatter       : frontmatter 부재/title·url 누락 (README·docs/ 제외)
 L4 heading-level     : H1 부재 또는 레벨 건너뜀(h2→h4 등)
 L5 source-ref        : 관련소스 클래스 참조가 실제 저장소에 없음 (--src 로 소스 저장소 지정 시)
+L5-name              : 문서에 쓴 Egov 클래스명이 --src 저장소들에 없음 (확인 권장)
 
-사용법: python3 docs_lint.py <docs-root> [--src <java-src-root>] [--json]
+사용법: python3 docs_lint.py <docs-root> [--src <java-src-root>]... [--json]
 """
 import re, os, sys, glob, json, urllib.parse
 from collections import defaultdict
 
 
-USAGE = 'usage: python3 docs_lint.py <docs-root> [--src <java-src-root>] [--json]'
+USAGE = 'usage: python3 docs_lint.py <docs-root> [--src <java-src-root>]... [--json]'
 
 
 def parse_args(argv):
     if len(argv) < 2 or argv[1].startswith('-'):
         print(USAGE); sys.exit(2)
-    root = argv[1]; src = None; as_json = False
+    root = argv[1]; srcs = []; as_json = False
     if not os.path.isdir(root):
         print('error: not a directory: ' + root); print(USAGE); sys.exit(2)
-    if '--src' in argv:
-        i = argv.index('--src') + 1
-        if i >= len(argv):
-            print('error: --src requires a path'); print(USAGE); sys.exit(2)
-        src = argv[i]
+    for i, a in enumerate(argv):
+        if a == '--src':
+            if i + 1 >= len(argv) or argv[i + 1].startswith('--'):
+                print('error: --src requires a path'); print(USAGE); sys.exit(2)
+            srcs.append(argv[i + 1])
     if '--json' in argv: as_json = True
-    return root, src, as_json
+    return root, srcs, as_json
 
 
 def main():
-    ROOT, SRC, AS_JSON = parse_args(sys.argv)
+    ROOT, SRCS, AS_JSON = parse_args(sys.argv)
     findings = []
     mds = [m for m in glob.glob(ROOT + '/**/*.md', recursive=True) if '/.git/' not in m]
 
     cls_index = set()
-    if SRC:
-        for p in glob.glob(SRC + '/**/*.java', recursive=True):
+    for src in SRCS:
+        for p in glob.glob(src + '/**/*.java', recursive=True):
             if '/main/' in p:
                 rel = p.split('/src/main/java/')[-1][:-5]
                 cls_index.add(rel.replace('/', '.'))
+    simple_index = {c.split('.')[-1] for c in cls_index}
 
     for md in mds:
         rel = os.path.relpath(md, ROOT)
@@ -104,6 +106,10 @@ def main():
                     simple = ref.split('.')[-1]
                     if not any(c.endswith('.' + simple) for c in cls_index):
                         findings.append((rel, 0, 'L5', '실소스 부재 참조: ' + ref))
+            # 백틱 없이 쓴 Egov 클래스명 — 한글 조사가 바로 붙어도 잡고, EgovXxx_SQL_mysql.xml·EgovXxx.jsp 같은 파일명 조각과 패키지 경로 안의 이름은 뺀다
+            names = set(re.findall(r'(?<![A-Za-z0-9_./-])(Egov[A-Z][A-Za-z0-9]*)(?![A-Za-z0-9_/-]|\.(?:jsp|xml|js|css|html|properties|sql|vm|hbs|ts|tsx|md)\b)', body))
+            for name in sorted(names - simple_index):
+                findings.append((rel, 0, 'L5-name', '실소스 부재 클래스명: ' + name))
 
     by = defaultdict(int)
     for f in findings: by[f[2]] += 1
