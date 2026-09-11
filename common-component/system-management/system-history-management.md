@@ -21,12 +21,20 @@ menu:
 
  시스템이력관리는 시스템이력의 등록, 조회, 목록, 삭제, 수정의 기능을 수반한다.
 
-```text
-  ① 시스템이력등록 : 시스템이력정보를 등록한다.
-  ② 시스템이력조회 : 시스템이력정보의 상세내용을 조회한다.
-  ③ 시스템이력목록 : 시스템이력정보의 목록을 검색, 조회한다.
-  ④ 시스템이력삭제 : 시스템이력정보를 삭제한다.
-  ⑤ 시스템이력수정 : 시스템이력정보를 수정한다.
+ ① 시스템이력등록 : 시스템이력정보를 등록한다.
+ ② 시스템이력조회 : 시스템이력정보의 상세내용을 조회한다.
+ ③ 시스템이력목록 : 시스템이력정보의 목록을 검색, 조회한다.
+ ④ 시스템이력삭제 : 시스템이력정보를 삭제한다.
+ ⑤ 시스템이력수정 : 시스템이력정보를 수정한다.
+
+```mermaid
+flowchart LR
+    L[시스템이력 목록조회] -->|등록| R[시스템이력 등록]
+    L -->|상세보기| D[시스템이력 상세조회]
+    D -->|수정| U[시스템이력 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
 ```
 
 ### 패키지 참조 관계
@@ -132,7 +140,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/log/slg/InsertSysHistory.do | insertSysHistory | "SysHistoryDAO.insertSysHistory" |
+| 등록 | /sym/log/slg/InsertSysHistory.do | insertSysHistory | "SysHistoryDAO.insertSysHistory" |
 
  ![image](./images/sym-syshist-egovsyshistregist.jpg)
 
@@ -153,7 +161,7 @@ menu:
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 상세조회 | /sym/log/slg/UpdateSysHistory.do | updateSysHistory | "SysHistoryDAO.updateSysHistory" |
+| 수정 | /sym/log/slg/UpdateSysHistory.do | updateSysHistory | "SysHistoryDAO.updateSysHistory" |
 
  ![image](./images/sym-syshist-egovsyshistupdt.jpg)
 
