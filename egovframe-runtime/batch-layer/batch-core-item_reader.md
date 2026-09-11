@@ -422,7 +422,7 @@ SqlPagingQueryProviderFactoryBean는 환경 설정을 간단히 해주며 추천
 
 | EgovFlatFileItemReader 설정항목 | 내용                | 예시                                       |
 | --------------------------- | ----------------- | ---------------------------------------- |
-| column                      | 필드 경계의 범위를 나타낸다.  | 1-9,10-11                                |
+| columns                     | 필드 경계의 범위를 나타낸다.  | 1-9,10-11                                |
 | type                        | VO 클래스를 나타낸다.     | org.springframework.batch.CustomerCredit |
 | names                       | VO 클래스의 필드를 나타낸다. | name,credit                              |
 
@@ -455,7 +455,7 @@ EgovFixedByteLengthTokenizer는 기본적으로 FixedLengthTokenizer와 유사�
 
 | EgovFlatFileItemReader 설정항목 | 내용                      | 예시                                       |
 | --------------------------- | ----------------------- | ---------------------------------------- |
-| column                      | 필드 경계의 길이를 나타낸다.        | 1-9,10-11                                |
+| columns                     | 필드 경계의 길이를 나타낸다.        | 1-9,10-11                                |
 | byteEncoding                | byte 문자열의 인코딩 타입을 나타낸다. | utf-8                                    |
 | type                        | VO 클래스를 나타낸다.           | org.springframework.batch.CustomerCredit |
 | names                       | VO 클래스의 필드를 나타낸다.       | name,credit                              |
