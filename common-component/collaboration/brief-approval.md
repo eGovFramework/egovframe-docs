@@ -261,7 +261,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 반려 | /uss/ion/ism/EgovReturnPopup.do | selectReturnPopup | "InfrmlSanctnDAO.updateInfrmlSanctnConfm" |
+| 반려 | /uss/ion/ism/EgovReturnPopup.do | selectReturnPopup | "InfrmlSanctnDAO.updateInfrmlSanctnReturn" |
 
  약식결재의 속성정보를 변경한 후 저장한다.
 
