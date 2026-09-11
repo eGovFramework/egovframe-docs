@@ -11361,9 +11361,9 @@ mvc:annotation-driven에서 쓰는 bean설정을 중복으로 쓰지 않도록 �
 각각 JUnit Report Task와 maven-surefire-report-plugin 이라는 라이브러리가 그것이다.
 그리고, Excel 형식의 리포트를 생성하는 기능은 전자정부 표준 프레임워크 개발환경에서 추가했는데, Ant Task와 Maven plugin으로 제공된다.&lt;/p></description></item><item><title>Time Based Rolling File Appender Code Generation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/template-based-code-generation/eclipse-config-generation/eclipse-config-generation-time-based-rolling-file-appender/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/template-based-code-generation/eclipse-config-generation/eclipse-config-generation-time-based-rolling-file-appender/</guid><description>&lt;h1 id="time-based-rolling-file-appender-code-generation">Time Based Rolling File Appender Code Generation&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>설정한 날짜 또는 조건에 맞춰 로깅을 수행하는 &amp;ldquo;DailyRollingFileAppender 설정&amp;quot;을 Code Generation 기능을 사용하여 쉽게 작성할 수 있다.&lt;/p>
+&lt;p>설정한 날짜 또는 조건에 맞춰 로깅을 수행하는 &amp;ldquo;TimeBasedRollingFileAppender 설정&amp;quot;을 Code Generation 기능을 사용하여 쉽게 작성할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>Daily Rolling File Appender Configuration 의 설명은 다음 실행환경 가이드를 참조한다.&lt;/p>
+&lt;p>Time Based Rolling File Appender Configuration 의 설명은 다음 실행환경 가이드를 참조한다.&lt;/p>
 &lt;ul>
 &lt;li>
 
