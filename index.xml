@@ -35063,7 +35063,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;/tr>
  &lt;tr>
  &lt;td>Message&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/cmt/message_ko.properties&lt;/td>
+ &lt;td>resources/egovframework/message/com/uss/cmt/message_en.properties&lt;/td>
  &lt;td>출퇴근관리 message properties(영문)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
