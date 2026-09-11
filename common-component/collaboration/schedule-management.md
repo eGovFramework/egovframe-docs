@@ -51,8 +51,8 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_postgres.xml | 일정관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_tibero.xml | 일정관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_goldilocks.xml | 일정관리를 위한 Goldilocks용 Query XML |
-| Message properties | resources/egovframework/message/com/cop/smt/sim/message_ko.properties | 마이페이지 Message properties(한글) |
-| Message properties | resources/egovframework/message/com/cop/smt/sim/message_en.properties | 마이페이지 Message properties(영문) |
+| Message properties | resources/egovframework/message/com/cop/smt/sim/message_ko.properties | 일정관리 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/cop/smt/sim/message_en.properties | 일정관리 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-indvdlSchdulManage.xml | 일정관리 Id생성 Idgen XML |
 
 ### 클래스 다이어그램
@@ -218,7 +218,7 @@ N/A
 | 등록화면 | /cop/smt/sim/EgovIndvdlSchdulManageRegist.do | indvdlSchdulManageRegist | | |
 | 등록 | /cop/smt/sim/EgovIndvdlSchdulManageRegistActor.do | indvdlSchdulManageRegistActor | "IndvdlSchdulManage" | "insertIndvdlSchdulManage" |
 
-![일정관리 등록](./images/department-schedule-regist.jpg)
+![일정관리 등록](./images/schedule-management-regist.png)
 
 등록 : 입력한 일정관리 정보들이 저장 처리된다.
 
