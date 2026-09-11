@@ -74,7 +74,7 @@ menu:
 | `{{ccName}}` | `string` | camelCase 변환된 컬럼명. 예) `registDate` |
 | `{{pcName}}` | `string` | PascalCase 변환된 컬럼명. 예) `RegistDate` |
 | `{{dataType}}` | `string` | SQL 데이터 타입. 예) `VARCHAR` |
-| `{{javaType}}` | `string` | 매핑된 Java 타입. 예) `String` |
+| `{{javaType}}` | `string` | 매핑된 Java 타입. 예) `java.lang.String` |
 | `{{isPrimaryKey}}` | `boolean` | PK 여부 |
 
 ## 지원 Handlebars 헬퍼
