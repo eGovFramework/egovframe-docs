@@ -6413,7 +6413,7 @@ Spring에서는 Spring Modules 프로젝트에서 연계 모듈을 제공한다.
 &lt;p>일반적으로 Data Access Layer를 구현하기 위해서는 상당량의 코드를 작성해야 한다. Spring Data에서는 Repository를 추상화하여 다양한 저장소에 접근하기 위한 Data Access Layer 구현 코드를 최소화함으로써 개발생산성을 높일 수 있도록 한다. 이는 Query Method를 통해 가능한데 Query Method란 메소드명만 가지고 쿼리를 만들 수 있다는 것이다. 특정 규칙에 맞게 메소드를 작성하면 개발자가 따로 Data Access 클래스를 만들지 않아도 Spring Data가 대신하여 해당 Database와 자동으로 매핑하여 결과를 가져다준다.&lt;/p>
 &lt;p>Repository 인터페이스를 상속받아 CRUD 관련 메소드들을 제공하는 CrudRepository 인터페이스와 Paging 처리 기능이 제공되는 PagingAndSortingRepository 인터페이스를 살펴보도록 하겠다.&lt;/p></description></item><item><title>JPA Transaction Code Generation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/template-based-code-generation/eclipse-config-generation/eclipse-config-generation-jpa-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/template-based-code-generation/eclipse-config-generation/eclipse-config-generation-jpa-transaction/</guid><description>&lt;h1 id="jpa-transaction-code-generation">JPA Transaction Code Generation&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>Code Generation 기능을 사용하여 &amp;ldquo;JPA EntityManagerFactory를 이용한 Transation 관리 설정&amp;quot;을 쉽게 작성할 수 있다.&lt;/p>
+&lt;p>Code Generation 기능을 사용하여 &amp;ldquo;JPA EntityManagerFactory를 이용한 Transaction 관리 설정&amp;quot;을 쉽게 작성할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>JPA Transaction Configuration 의 설명은 다음 실행환경 가이드를 참조한다.&lt;/p>
 &lt;ul>
