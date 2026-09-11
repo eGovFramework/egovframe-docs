@@ -118,7 +118,7 @@ flowchart LR
 | --- | --- | --- | --- | --- |
 | 등록화면 | /sym/ccm/cde/RegistCcmCmmnDetailCodeView.do | insertCmmnDetailCodeView | "CmmnClCodeManage" | "selectCmmnClCodeList" |
 |  |  |  | "CmmnDetailCodeManage" | "selectCmmnCodeList" |
-| 등록 | /sym/ccm/cde/RegistCcmCmmnDetailCode.do | insertCmmnCode | "CmmnDetailCodeManage" | "insertCmmnDetailCode" |
+| 등록 | /sym/ccm/cde/RegistCcmCmmnDetailCode.do | insertCmmnDetailCode | "CmmnDetailCodeManage" | "insertCmmnDetailCode" |
 
  ![image](./images/sym-comdetail-등록.jpg)
 
