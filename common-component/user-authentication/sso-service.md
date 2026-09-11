@@ -23,6 +23,16 @@
 
  3rd party SSO 솔루션을 활용하여 인증 서비스를 구축할 때 SSO 에이전트와 표준프레임워크 인증 시스템간의 인터페이스를 정의한다. 3rd party SSO 솔루션은 인터페이스 구현을 통해 표준프레임워크에서 인증 공유를 위한 SSO에이전트 기능을 사용할 수 있게 해준다.
 
+```mermaid
+flowchart LR
+    C{hasTokenInSSOServer} -->|토큰 없음| I[requestIssueToken]
+    C -->|토큰 있음| L[ssoLoginByServer]
+    I --> C
+    L --> V[getLoginVO]
+    V --> S([스프링 시큐리티 로컬 로그인])
+    S -->|로그아웃 요청| O[ssoLogout]
+```
+
 ### 패키지 참조 관계
 
  SSO 연게 서비스는 요소기술의 공통(cmm) 패키지와 일반 로그인 패키지(uat.uia)에 대해서만 직접적인 함수적 참조 관계를 가지며 일반 로그인 패키지(uat.uia)에 포함되어 배포된다.
