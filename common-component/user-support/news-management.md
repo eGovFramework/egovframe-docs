@@ -191,7 +191,7 @@ menu:
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /uss/ion/nws/updateNewsView.do | updateNewsView | "NewsManage" | "selectNewsDetail" |
-| 수정 | /uss/ion/nws/updateNews.do | updateNews | "NewsManage" | "updateNews" |
+| 수정 | /uss/ion/nws/updateNews.do | updateNewsInfo | "NewsManage" | "updateNews" |
 
  ![image](./images/uss-news-news_updt.png)
 
