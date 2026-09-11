@@ -65,7 +65,7 @@ Globals.ConfPath = /product/jeus/egovProps/conf
 ## 사용방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovSysInfo;
+import egovframework.com.utl.sim.service.EgovFileTool;
 
 String dirTargetPath1 = "/product/jeus/egovProps/tmp";
 boolean result1       = EgovFileTool.startDirectoryMonitering(dirTargetPath1);
