@@ -101,7 +101,7 @@ public void testDeleteDepartment() throws Exception {
 public void testDeleteDepartment() throws Exception {
  
    Department department = new Department();
-   department.setDeptId = "DEPT_1";
+   department.setDeptId("DEPT_1");
  
    // 2. delete a Department information
    em.remove(em.getReference(Department.class, department.getDeptId()));
