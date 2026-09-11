@@ -50,7 +50,7 @@ eclipse에서 제공하는 Buildship은 Help > Install New Software 에서 아�
 
   > Neon : [http://download.eclipse.org/releases/neon](http://download.eclipse.org/releases/neon)
 
-### Eclispe 설정
+### Eclipse 설정
 
 * Eclipse Preferences 설정창에서 Gradle의 실행 모듈의 위치를 지정할 수 있다.
   
