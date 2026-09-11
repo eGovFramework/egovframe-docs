@@ -68,11 +68,11 @@ import egovframework.com.utl.cas.service.EgovMessageUtil;
 ...
 String message = null;
  
-// 일반 정보 메시지 취득
+// 일반 확인 메시지 취득
 message = EgovMessageUtil.getConfirmMsg("test.message");
  
-// 파라미터 처리 정보 메시지 취득 : String 배열의 값이 각각 {0}, {1}로 대치됨
-message = EgovMessageUtil.getConfirmMsg("param.message", new String[2] {"확인", "해당되는 기대값이 없습니다."});
+// 파라미터 처리 확인 메시지 취득 : String 배열의 값이 각각 {0}, {1}로 대치됨
+message = EgovMessageUtil.getConfirmMsg("param.message", new String[] {"확인", "해당되는 기대값이 없습니다."});
 ```
 
 ## 참고자료
