@@ -537,11 +537,11 @@ helloworld2 화면으로 이동하게 되면 아래와 같은 jsp 소스를 확�
 
 화면을 다시 보면
 
-![hello1-1page.jpg](./images/hello1-1page.jpg)
+![hello2-1page.jpg](./images/hello2-1page.jpg)
 
 say 버튼을 누르면,
 
-![hello1-1page.jpg](./images/hello1-1page.jpg)
+![hello2-2page.jpg](./images/hello2-2page.jpg)
 
 Hello , 뒤에 넣었던 문장이 붙어서 나오게 된다.
 
