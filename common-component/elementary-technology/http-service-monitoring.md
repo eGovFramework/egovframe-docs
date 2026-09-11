@@ -28,6 +28,18 @@ HTTP서비스모니터링을 등록하기 위한 목적으로 HTTP서비스모�
 6. **HTTP서비스모니터링로그목록조회**: HTTP서비스모니터링로그로 정의된 정보를 최근 등록 순서대로 조회하고, 그 결과 목록을 화면에 반영한다.
 7. **HTTP서비스모니터링로그조회**: 등록된 HTTP서비스모니터링로그정보를 조회한다.
 
+```mermaid
+flowchart LR
+    L[HTTP서비스모니터링 목록조회] -->|등록| R[HTTP서비스모니터링 등록]
+    L -->|상세조회| D[HTTP서비스모니터링 상세조회]
+    D -->|수정| U[HTTP서비스모니터링 수정]
+    D -->|삭제| L
+    R --> L
+    U --> L
+    S[Scheduler 10분 주기] -->|비정상시 메일통보| LL[HTTP서비스모니터링로그 목록조회]
+    LL -->|상세보기| LD[HTTP서비스모니터링로그 상세조회]
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
@@ -79,7 +91,7 @@ HTTP서비스모니터링 스케줄러를 `context-scheduling.xml`에 등록한�
 
 <!-- HTTP서비스모니터링 트리거 -->
 <bean id="httpMntrngTrigger"
-    class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="httpMon" />
     <!-- 시작하고 1분 후에 실행한다. (milisecond) -->
     <property name="startDelay" value="60000" />
@@ -118,7 +130,7 @@ HTTP서비스모니터링 스케줄러를 `context-scheduling.xml`에 등록한�
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /utl/sys/htm/updateHttpMon | updateHttpMon | HttpMonDAO.updateHttpMon |
+| 수정 | /utl/sys/htm/updateHttpMon.do | updateHttpMon | HttpMonDAO.updateHttpMon |
 
 ### HTTP서비스모니터링 상세조회
 
