@@ -50,7 +50,7 @@ menu:
 <!-- 서버자원모니터링 스케줄러 작업 설정 예시 -->
 <bean id="serverResrceMntrng" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
     <property name="targetObject" ref="egovServerResrceMntrngScheduling" />
-    <property name="targetMethod" value="insertServerResrceMntrng" />
+    <property name="targetMethod" value="monitorServerResrce" />
     <property name="concurrent" value="false" />
 </bean>
 
