@@ -78,7 +78,7 @@ JDK 목록은 다음 내용들로 자동으로 구성된다.
 
 ![Rebuild Project](./images/vscode-usage-projects-05-rebuild-project.png)
 
-2. VS Code 탐색기창 하단 JAVA Projects 뷰 → 대상 프로젝트 우클릭 → Maven → Reroad Project
+2. VS Code 탐색기창 하단 JAVA Projects 뷰 → 대상 프로젝트 우클릭 → Maven → Reload Project
 
 ![Reload Project](./images/vscode-usage-projects-06-reload-project.png)
 
