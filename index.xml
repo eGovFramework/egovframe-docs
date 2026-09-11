@@ -19653,6 +19653,19 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;p>메뉴생성관리 패키지는 요소기술의 공통 패키지(cmm)와 프로그램관리 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 메일연동 인터페이스, 바로가기메뉴관리, 메뉴관리, 사이트맵, 프로그램관리, 포맷/날짜/계산, 시스템(sim), 달력, 웹에디터, 우편번호 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>메모보고</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/memo-report/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/schedule-manage/memo-report/</guid><description>&lt;h1 id="메모보고">메모보고&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>메모보고는 보고자를 지정해 메모 형식의 보고를 등록·조회·수정·삭제하고, 보고에 대한 지시사항 등록과 보고자 조회일시 관리를 지원하는 기능이다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 협업(일정관리) 내에 구성되어 있다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[메모보고 목록조회] -->|등록| P[보고자 선택 팝업]
+ P --> R[메모보고 등록]
+ R --> L
+ L -->|목록 선택| D[메모보고 상세조회]
+ D -->|조회| RD[보고자 조회일시 기록]
+ D -->|지시사항 등록| DM[지시사항 등록]
+ D -->|수정| U[메모보고 수정]
+ D -->|삭제| L
+ U --> L
+&lt;/div>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
