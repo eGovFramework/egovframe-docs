@@ -33,7 +33,7 @@
 
 | 결과값 | 메소드 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| String | getInfoMsg(String key) | 정보 메시지 취득 | 메시지키에 해당 에러메시지를 얻는 기능 |
+| String | getInfoMsg(String key) | 정보 메시지 취득 | 메시지키에 해당 정보메시지를 얻는 기능 |
 | String | getInfoMsg(String key, String[] params) | 정보 메시지 파라미터 취득 | 메시지키에 해당 정보메시지를 해당되는 파라미터 값을 대치하여 얻는 기능 |
 
 #### Input
@@ -72,7 +72,7 @@ String message = null;
 message = EgovMessageUtil.getInfoMsg("test.message");
  
 // 파라미터 처리 정보 메시지 취득 : String 배열의 값이 각각 {0}, {1}로 대치됨
-message = EgovMessageUtil.getInfoMsg("param.message", new String[2] {"정보", "해당되는 기대값이 없습니다."});
+message = EgovMessageUtil.getInfoMsg("param.message", new String[] {"정보", "해당되는 기대값이 없습니다."});
 ```
 
 ## 참고자료
