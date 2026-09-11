@@ -54,7 +54,7 @@ int cnvrNumber = Integer.parseInt(safeGetParameter(request,"cnvrNumber"));
 String resultStr = EgovNumberUtil.getNumToStrCnvr(cnvrNumber);
 
 // 숫자 타입을 Date 타입으로 변환
-int cnvrNumber = Integer.parseInt(safeGetParameter(request,"cnvrNumber"));
+cnvrNumber = Integer.parseInt(safeGetParameter(request,"cnvrNumber"));
 
 // Date 형식으로 변환 후 다시 String 형태로 변환("YYYY-MM-DD")
 String resultStr = EgovNumberUtil.getNumToDateCnvr(cnvrNumber);
