@@ -119,7 +119,7 @@ CNTC.ADMINISTCODE.INFO.userpw   = 서버인증서패스워드
     </bean>
 
     <bean id="administCodeReceiverTrigger"
-        class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
         <property name="jobDetail" ref="administCodeReceiver" />
         <!-- 시작하고 1분후에 실행한다. (milisecond) -->
         <property name="startDelay" value="60000" />
