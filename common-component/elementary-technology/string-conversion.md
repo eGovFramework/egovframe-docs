@@ -34,7 +34,7 @@ menu:
 | `nullConvert(Object src)` | `String` | 인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다 |
 | `nullConvert(String src)` | `String` | 인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다 |
 | `zeroConvert(Object src)` | `int` | 인자로 받은 String이 null일 경우 &quot;0&quot;로 리턴한다 |
-| `zeroConvert(String src)` | `int` | 인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다 |
+| `zeroConvert(String src)` | `int` | 인자로 받은 String이 null일 경우 &quot;0&quot;로 리턴한다 |
 | `cutString(String source, String output, int slength)` | `String` | 문자열을 지정한 길이에 맞게 처리한다. |
 | `cutString(String source, int slength)` | `String` | 문자열이 지정한 길이를 초과했을때 해당 문자열을 삭제하는 메서드 |
 | `decode(String sourceStr, String compareStr, String returnStr, String defaultStr)` | `String` | 오라클의 decode 함수와 동일한 기능을 가진 메서드이다 |
