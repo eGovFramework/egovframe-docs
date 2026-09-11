@@ -23268,6 +23268,13 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 &lt;p>① 사용자로그등록 : 사용자로그정보를 등록한다. - 실행환경의 Scheduling 기능을 이용
 ② 사용자로그조회 : 사용자로그정보의 상세내용을 조회한다.
 ③ 사용자로그목록 : 사용자로그정보의 목록을 검색, 조회한다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ T[Scheduler 1시간 주기] -->|등록| R[사용자로그 등록]
+ R --> L[사용자로그 목록조회]
+ L -->|상세보기| D[사용자로그 상세조회]
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>사용로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다.
 패키지 간 참조 관계 : 
@@ -23299,116 +23306,7 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b4%80%eb%a6%ac" class="innerLink">시스템관리 Package Dependency&lt;/a>
 
-&lt;/p>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.sym.log.ulg.web.EgovUserLogController.java&lt;/td>
- &lt;td>사용로그 관리를 위한 컨트롤러 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.sym.log.ulg.service.EgovUserLogService.java&lt;/td>
- &lt;td>사용로그 관리를 위한 서비스 인터페이스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.sym.log.ulg.service.impl.EgovUserLogServiceImpl.java&lt;/td>
- &lt;td>사용로그 관리를 위한 서비스 구현 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.sym.log.ulg.service.UserLog.java&lt;/td>
- &lt;td>사용로그 관리를 위한 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.sym.log.ulg.service.impl.UserLogDAO.java&lt;/td>
- &lt;td>사용로그 관리를 위한 데이터처리 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Scheduler&lt;/td>
- &lt;td>egovframework.com.sym.log.ulg.service.EgovUserLogScheduling.java&lt;/td>
- &lt;td>사용로그 삭제, 요약을 위한 Scheduling 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sym/log/ulg/EgovUserLogList.jsp&lt;/td>
- &lt;td>사용로그 목록을 위한 jsp페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/sym/log/ulg/EgovUserLogDetail.jsp&lt;/td>
- &lt;td>사용로그 조회를 위한 jsp페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_altibase.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_cubrid.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_maria.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 MariaDB용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_mysql.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_oracle.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_postgres.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 PostgreSQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_tibero.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/sym/log/ulg/EgovUserLog_SQL_goldilocks.xml&lt;/td>
- &lt;td>사용로그 관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Scheduler XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-ulg.xml&lt;/td>
- &lt;td>사용로그관리 Scheduler 설정 XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/sym/log/ulg/message_ko.properties&lt;/td>
- &lt;td>사용로그 관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/sym/log/ulg/message_en.properties&lt;/td>
- &lt;td>사용로그 관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/system-management/images/sym-uselog-%ec%82%ac%ec%9a%a9%ec%9e%90%eb%a1%9c%ea%b7%b8%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >&lt;/p></description></item><item><title>사용자 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/user-management/</guid><description>&lt;h1 id="사용자-관리">사용자 관리&lt;/h1>
+&lt;/p></description></item><item><title>사용자 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/user-manage/user-management/</guid><description>&lt;h1 id="사용자-관리">사용자 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>사용자 관리는 업무사용자(내부 직원)의 등록·조회·수정·삭제, 아이디 중복확인, 비밀번호 관리, 소속 부서 관리 기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 사용자지원(사용자관리) 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
