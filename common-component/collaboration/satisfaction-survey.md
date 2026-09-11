@@ -45,10 +45,10 @@ flowchart LR
 | 유형 | 대상소스 | 비고 |
 | --- | --- | --- |
 | Controller | egovframework.com.cop.stf.web.EgovBBSSatisfactionController.java | 만족도조사를 위한 컨트롤러 클래스 |
-| Service | egovframework.com.cop.bbs.service.EgovBBSSatisfactionService.java | 만족도조사를 위한 서비스 인터페이스 |
+| Service | egovframework.com.cop.stf.service.EgovBBSSatisfactionService.java | 만족도조사를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.cop.stf.service.impl.EgovBBSSatisfactionServiceImpl.java | 만족도조사를 위한 서비스 구현 클래스 |
-| Model | egovframework.com.cop.bbs.service.Satisfaction.java | 만족도조사를 위한 모델 클래스 |
-| VO | egovframework.com.cop.bbs.service.SatisfactionVO.java | 만족도조사를 위한 VO 클래스 |
+| Model | egovframework.com.cop.stf.service.Satisfaction.java | 만족도조사를 위한 모델 클래스 |
+| VO | egovframework.com.cop.stf.service.SatisfactionVO.java | 만족도조사를 위한 VO 클래스 |
 | DAO | egovframework.com.cop.stf.service.impl.BBSSatisfactionDAO.java | 만족도조사를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/cop/stf/EgovSatisfactionList.jsp | 만족도조사를 위한 jsp페이지 |
 | Query XML | resources/egovframework/mapper/com/cop/stf/EgovBBSSatisfaction_SQL_mysql.xml | 만족도조사를 위한 MySQL용 Query XML 파일 |
