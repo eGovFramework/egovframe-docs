@@ -118,7 +118,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
     </bean>
 
     <bean id="insttCodeReceiverTrigger"
-        class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
         <property name="jobDetail" ref="insttCodeReceiver" />
         <!-- 시작하고 1분후에 실행한다. (milisecond) -->
         <property name="startDelay" value="60000" />
@@ -174,7 +174,7 @@ flowchart LR
     insttCodeRecptn.setFxnum            (tokenData[17]);    // 팩스번호                    :: 팩스번호
     insttCodeRecptn.setCreatDe          (tokenData[18]);    // 생성일자                    :: 생성일자
     insttCodeRecptn.setAblDe            (tokenData[19]);    // 폐지일자                    :: 폐지일자
-    insttCodeRecptn.setAblEnnc          (tokenData[20]);    // 폐지구분                    :: 폐지유무
+    insttCodeRecptn.setAblEnnc          (tokenData[20]);    // 폐지유무                    :: 폐지유무
     insttCodeRecptn.setChangede         (tokenData[21]);    // 변경일자                    :: 변경일자
     insttCodeRecptn.setChangeTime       (tokenData[22]);    // 변경시간                    :: 변경시간
     insttCodeRecptn.setBsisDe           (tokenData[23]);    // 기초날짜                    :: 기초일자
