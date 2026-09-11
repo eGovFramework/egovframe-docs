@@ -6674,7 +6674,7 @@ Maven을 사용하는 경우
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>@Autowired와 같이 @Inject를 필드 수준, 함수 수준, 생성자 인자 수준으로 사용할 수 있고, 주입 지점을 Provider로 선언할 수 있으며 Provider.get() 호출을 통해 근접 범위의 Bean들에 대한 요청 시 접근 또는 다른 Bean에 대한 지연된 접근을 허용할 수 있다.&lt;/p></description></item><item><title>JTA Transaction Code Generation</title><link>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/template-based-code-generation/eclipse-config-generation/eclipse-config-generation-jta-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/egovframe-development/implementation-tool/code-generation/template-based-code-generation/eclipse-config-generation/eclipse-config-generation-jta-transaction/</guid><description>&lt;h1 id="jta-transaction-code-generation">JTA Transaction Code Generation&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>Code Generation 기능을 사용하여 &amp;ldquo;JTA를 이용한 Global Transation 관리 설정&amp;quot;을 쉽게 작성할 수 있다.&lt;/p>
+&lt;p>Code Generation 기능을 사용하여 &amp;ldquo;JTA를 이용한 Global Transaction 관리 설정&amp;quot;을 쉽게 작성할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>JTA Transaction Configuration 의 설명은 다음 실행환경 가이드를 참조한다.&lt;/p>
 &lt;ul>
