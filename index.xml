@@ -24852,7 +24852,7 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
  &lt;/tr>
  &lt;tr>
  &lt;td>String&lt;/td>
- &lt;td>getSessionValues(HttpServletRequest request)&lt;/td>
+ &lt;td>getSessionValuesString(HttpServletRequest request)&lt;/td>
  &lt;td>세션 객체 리스트 취득&lt;/td>
  &lt;td>HttpSession 객체내의 모든 값을 호출하는 기능&lt;/td>
  &lt;/tr>
