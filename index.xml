@@ -13945,11 +13945,11 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;p>개인연차관리는 시스템에서 개인의 연차정보를 관리하는 기능으로 연차 조회, 등록, 수정하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>개인연차관리는 개인연차를 등록하기 위한 목적으로 연차 등록, 수정, 삭제, 목록조회 기능을 수반한다.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ① 연차관리목록 : 연차관리 정보를 조회하고, 그 결과 목록을 화면에 반영한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ② 연차등록 : 연차정보를 등록하고, 등록 결과를 조회한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ③ 연차수정 : 기 등록된 연차정보의 항목들을 수정한다.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ④ 연차삭제 : 기 등록된 연차정보를 삭제한다.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="관련소스">관련소스&lt;/h3>
+&lt;p>① 연차관리목록 : 연차관리 정보를 조회하고, 그 결과 목록을 화면에 반영한다.
+② 연차등록 : 연차정보를 등록하고, 등록 결과를 조회한다.
+③ 연차수정 : 기 등록된 연차정보의 항목들을 수정한다.
+④ 연차삭제 : 기 등록된 연차정보를 삭제한다.&lt;/p>
+&lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
  &lt;tr>
