@@ -62,7 +62,13 @@
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;cipers&#34;</span>     <span style=color:teal>value=</span><span style=color:#d14>&#34;4&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>        <span style=color:navy>&lt;property</span> <span style=color:teal>name=</span><span style=color:#d14>&#34;fillChar&#34;</span>   <span style=color:teal>value=</span><span style=color:#d14>&#34;0&#34;</span> <span style=color:navy>/&gt;</span>
 </span></span><span style=display:flex><span>    <span style=color:navy>&lt;/bean&gt;</span>
-</span></span></code></pre></div><h3 class=sec-tit id=관련테이블>관련테이블</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>테이블명</th><th>테이블명(영문)</th><th>비고</th></tr></thead><tbody><tr><td>시스템연계</td><td>COMTNSYSTEMCNTC</td><td>시스템연계에 대한 정보</td></tr></tbody></table></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련기능>관련기능</h2><p>시스템연계 관리는 시스템연계 정보를 등록하여 시스템의 연계현황을 확인할 수 있도록 하기위하여 시스템연계 등록, 수정, 목록조회, 상세조회의 기능으로 구성되어 있다.</p><h3 class=sec-tit id=시스템연계-목록조회>시스템연계 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>시스템연계 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
+</span></span></code></pre></div><h3 class=sec-tit id=관련테이블>관련테이블</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>테이블명</th><th>테이블명(영문)</th><th>비고</th></tr></thead><tbody><tr><td>시스템연계</td><td>COMTNSYSTEMCNTC</td><td>시스템연계에 대한 정보</td></tr></tbody></table></div></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련기능>관련기능</h2><p>시스템연계 관리는 시스템연계 정보를 등록하여 시스템의 연계현황을 확인할 수 있도록 하기위하여 시스템연계 등록, 수정, 목록조회, 상세조회의 기능으로 구성되어 있다.</p><div class=mermaid>flowchart LR
+L[시스템연계 목록조회] -->|등록| R[시스템연계 등록]
+L -->|목록클릭| D[시스템연계 상세조회]
+R --> L
+D -->|수정| U[시스템연계 수정]
+U --> L
+D -->|삭제| L</div><h3 class=sec-tit id=시스템연계-목록조회>시스템연계 목록조회</h3><h4 id=비즈니스-규칙>비즈니스 규칙</h4><p>시스템연계 목록은 페이지당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
 검색조건은 시스템연계명에 대해서 수행된다.</p><h4 id=관련코드>관련코드</h4><p>N/A</p><h4 id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h4><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>목록조회</td><td>/ssi/syi/sim/getSystemCntcList.do</td><td>selectSystemCntcList</td><td>&ldquo;SystemCntcDAO.selectSystemCntcList&rdquo;</td></tr></tbody></table></div><p>페이지당 검색 범위를 변경하고자 하는 경우
 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)</p><p><img src=/egovframe-docs/common-component/system-service-linkage/images/ssi-system-cntc-list.png alt=image></p><p>조회: 조회하기 위해서는 상단의 검색조건을 선택 후 해당하는 검색문자를 입력 후 조회 버튼을 클릭한다.
 등록: 등록하기 위해서는 상단의 등록 버튼을 통해서 시스템연계 등록 화면으로 이동한다.
