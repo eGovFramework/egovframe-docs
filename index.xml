@@ -1062,7 +1062,7 @@ Ajax 지원 서비스에서는 Ajax를 이용해 자주 사용되는 기능을 c
 
 
 
-&lt;a href="#using-sendasync-with-response" class="innerLink">EgovIntegrationResponse&lt;/a>
+&lt;a href="#using-sendasync-with-response" class="innerLink">EgovIntegrationServiceResponse&lt;/a>
 
 &lt;/td>
  &lt;td>연계 서비스를 비동기 방식으로 호출한 경우, 응답 메시지를 받기 위해 사용한다.&lt;/td>
