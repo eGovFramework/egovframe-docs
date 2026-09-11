@@ -111,13 +111,13 @@ defaultExceptionHandleManager는 setPatterns(), setHandlers() 메소드를 가�
 앞단에서 간단하게 설명했지만 다시 정리 하자면 Exception 발생 시 AOP pointcut “After-throwing”에 걸려 ExceptionTransfer 클래스의 transfer가 실행된다.<br/>
 transfer 메소드는 ExceptionHandlerManager의 run 메소드를 실행한다. <br/>
 아래는 구현 예로 DefaultExceptionHandleManager 코드이다.<br/>
-**(구현 시 필수사항) 상위클래스는 AbsExceptionHandleManager 이고 인터페이스는 ExceptionHandlerService 이다.**<br/>
+**(구현 시 필수사항) 상위클래스는 AbstractExceptionHandleManager 이고 인터페이스는 ExceptionHandlerService 이다.**<br/>
 구현되는 메소드는 run(Exception exception)인 것을 확인할 수 있다.
 
 ##### DefaultExceptionHandleManager.java
 
 ```java
-public class DefaultExceptionHandleManager extends AbsExceptionHandleManager implements ExceptionHandlerService {
+public class DefaultExceptionHandleManager extends AbstractExceptionHandleManager implements ExceptionHandlerService {
  
 	@Override
 	public boolean run(Exception exception) throws Exception {
