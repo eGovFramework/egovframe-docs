@@ -27,6 +27,14 @@ menu:
  ④ 송수신로그삭제 : 송수신로그정보를 삭제한다. - 실행환경의 Scheduling 기능을 이용
  ⑤ 송수신로그요약 : 송수신로그정보를 요약하여 Summary를 생성한다. - 실행환경의 Scheduling 기능을 이용
 
+```mermaid
+flowchart LR
+    T[송수신 테스트] -->|등록| R[송수신로그 등록]
+    R --> L[송수신로그 목록조회]
+    L -->|상세보기| D[송수신로그 상세조회]
+    S[Scheduler 1시간 주기] -->|요약/삭제| L
+```
+
 ### 패키지 참조 관계
 
  송수신로그관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 송수신모니터링, 달력 패키지와 함께 배포 파일을 구성한다.
@@ -111,14 +119,14 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 <!-- 송수신 로그 요약  -->
   <bean id="trsmrcvLogging"
     class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-    <property name="targetObject" ref="egovLogManageScheduling" />
+    <property name="targetObject" ref="egovTrsmrcvLogScheduling" />
     <property name="targetMethod" value="trsmrcvLogSummary" />
     <property name="concurrent" value="false" />
   </bean>
  
   <!-- 송수신 로그 요약  트리거-->
   <bean id="trsmrcvLogTrigger"
-    class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="trsmrcvLogging" />
     <!-- 시작하고 1분후에 실행한다. (milisecond) -->
     <property name="startDelay" value="60000" />
@@ -144,7 +152,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 ```java
 @Service("egovTrsmrcvLogScheduling")
-public class EgovTrsmrcvLogScheduling {
+public class EgovTrsmrcvLogScheduling extends EgovAbstractServiceImpl {
 @Resource(name="EgovTrsmrcvLogService")
 private EgovTrsmrcvLogService trsmrcvLogService;
 /**
