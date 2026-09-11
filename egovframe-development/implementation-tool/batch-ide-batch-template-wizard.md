@@ -44,7 +44,7 @@ eGovFrame기반의 배치 어플리케이션 개발시 개발자 편의성을 �
 
      ![File > New 메뉴](./images/batch-template-wizard-egovframemenu.png)
 
-   * 또는, 메뉴 표시줄에서 **eGovFrame** > **Start** > **eGovFrame Boot Batch Template Project**를 선택한다.
+   * 또는, 메뉴 표시줄에서 **eGovFrame** > **Start** > **New Boot Batch Template Project**를 선택한다.
 
      ![eGovFrame 메뉴](./images/batch-template-wizard-menu.png)
 
