@@ -27,7 +27,7 @@ Maven 생명 주기 단계는 각각의 플러그인과 바인딩 되어 플러�
 ![](./images/build-lifecycle-1.gif)![](./images/build-lifecycle-2.gif)
 
 
-> 예) 자바 컴파일: `$mvn complile` 명령을 실행한다.
+> 예) 자바 컴파일: `$mvn compile` 명령을 실행한다.
 
 ### 메이븐2 기본 생명주기 단계
 
