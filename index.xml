@@ -33030,9 +33030,9 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>로그인할 때 로그인 ID와 세션 ID를 Map에 저장하고, 로그아웃할 때 혹은 세션타임아웃 설정에 따라 두 정보를 Map에서 제거한다.&lt;br>
 이미 로그인한 상태에서 다른 브라우저를 통해 또 다른 로그인을 시도하면, Map에 등록된 이전 세션을 무효화하고 새로운 세션 ID를 Map에 등록한다.&lt;br>
 이전 세션 ID로는 더이상 서비스를 이용할 수 없게 되며, 가장 마지막에 로그인한 세션만 유효하다.&lt;/p>
-&lt;p>본 기능은 &lt;strong>HttpSessionBindingListener 인터페이스의 valueBound()와 valueUnBound() 메소드를 구현한 EgovHttpSessionBindingListener&lt;/strong>를 통해 동작한다.&lt;br>
+&lt;p>본 기능은 &lt;strong>HttpSessionBindingListener 인터페이스의 valueBound()와 valueUnbound() 메소드를 구현한 EgovHttpSessionBindingListener&lt;/strong>를 통해 동작한다.&lt;br>
 &lt;em>&lt;strong>valueBound()&lt;/strong>&lt;/em> 는 HttpSessionBindingListener 구현체가 HttpSession 객체에 setAttribute() 될 때 자동 호출되고,&lt;br>
-&lt;em>&lt;strong>valueUnBound()&lt;/strong>&lt;/em> 는 HttpSession 객체에서 invalidate() 될 때 자동 호출된다.&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description>&lt;h1 id="지식맵">지식맵&lt;/h1>
+&lt;em>&lt;strong>valueUnbound()&lt;/strong>&lt;/em> 는 HttpSession 객체에서 invalidate() 될 때 자동 호출된다.&lt;/p></description></item><item><title>지식맵</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/digital-asset-management/knowledge-map/</guid><description>&lt;h1 id="지식맵">지식맵&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>지식맵은 조직의 지식을 유형별·조직별로 분류하는 지식맵 관리와 분류된 지식정보의 제공 기능을 담당하는 디지털자산관리 기능 묶음이다. 소스는 주로 &lt;code>egovframework.com.dam.map&lt;/code> 패키지에 위치한다.&lt;/p>
 &lt;h2 id="관련-문서">관련 문서&lt;/h2>
