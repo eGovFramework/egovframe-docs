@@ -306,7 +306,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         http://www.springframework.org/schema/websocket/spring-websocket.xsd">
  
     <websocket:message-broker application-destination-prefix="/app">
-        <websocket:stomp-endpoint path="/portfolio" />
+        <websocket:stomp-endpoint path="/portfolio">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
         <websocket:stomp-broker-relay prefix="/topic,/queue" />

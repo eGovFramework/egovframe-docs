@@ -12,6 +12,10 @@ menu:
 ---
 # File Upload/Download 서비스
 
+> **5.0 적용 범위:** 아래의 `CommonsMultipartResolver`·`MultiCommonsMultipartResolver` 기반 설정은 Spring Framework 6.0부터 해당 클래스가 제거되어 표준프레임워크 5.0에서 그대로 사용할 수 없다.
+> 5.0에서는 [StandardServletMultipartResolver](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-servlet/multipart.html)를 사용하며, 공통컴포넌트는 이를 상속한 [EgovMultipartResolver](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/cmm/web/EgovMultipartResolver.java)를 `multipartResolver`로 등록하고
+> 업로드 크기·파일 수·허용 확장자를 `globals.properties`의 `Globals.fileUpload.*` 속성으로 설정한다.
+
 ## 개요
 
 **전자정부 프레임워크**에서는 다양한 파일 업로드 API를 제공하는 Commons FileUpload를 오픈 소스로 채택하였다.

@@ -204,9 +204,9 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
 <bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
    <property name="resource" value="#{jobParameters[outputFile]}" />
    <property name="lineAggregator">
-      <bean class="egovframework.brte.core.item.file.transform.EgovFixedLengthLineAggregator">
+      <bean class="org.egovframe.rte.bat.core.item.file.transform.EgovFixedLengthLineAggregator">
          <property name="fieldExtractor">
-	    <bean class="egovframework.brte.core.item.file.transform.EgovFieldExtractor">
+	    <bean class="org.egovframe.rte.bat.core.item.file.transform.EgovFieldExtractor">
 	       <property name="names" value="name,credit" />
 	    </bean>
 	 </property>
@@ -250,7 +250,7 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
    <property name="lineAggregator">
       <bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
 	 <property name="fieldExtractor">
-	    <bean class="egovframework.brte.core.item.file.transform.EgovFieldExtractor">
+	    <bean class="org.egovframe.rte.bat.core.item.file.transform.EgovFieldExtractor">
 		<property name="names" value="name,credit"/>
 	    </bean>
 	 </property>
@@ -298,10 +298,10 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
 **EgovJdbcBatchItemWriter**
 
 ```xml
-<bean id="itemWriter" class="egovframework.brte.core.item.database.EgovJdbcBatchItemWriter">
+<bean id="itemWriter" class="org.egovframe.rte.bat.core.item.database.EgovJdbcBatchItemWriter">
 	<property name="assertUpdates" value="true" />
 	<property name="itemPreparedStatementSetter">
-		<bean class="egovframework.brte.core.item.database.support.EgovMethodMapItemPreparedStatementSetter" />
+		<bean class="org.egovframe.rte.bat.core.item.database.support.EgovMethodMapItemPreparedStatementSetter" />
 	</property>
 	<property name="sql" value="UPDATE CUSTOMER set credit =? where id =?"/>
 	<property name="params" value="credit,id"/>
@@ -323,11 +323,11 @@ BeanWrapperFieldExtractor, FormatterLineAggregator(or DelimitedLineAggregator)�
 또한 EgovJdbcBatchItemWriter도 사용자가 직접 작성한 class를 PreparedStatementSetter로 설정할 수 있다. 클래스 작성시에는 EgovItemPreparedStatementSetter를 상속하여 사용한다. 아래의 EmployeeItemPreparedStatementSetter 클래스는 EgovItemPreparedStatementSetter를 상속받아서 사용자가 직접 작성한 것이다.
 
 ```xml
-<bean id="itemWriter" class="org.springframework.batch.item.database.EgovJdbcBatchItemWriter">
+<bean id="itemWriter" class="org.egovframe.rte.bat.core.item.database.EgovJdbcBatchItemWriter">
 	<property name="itemPreparedStatementSetter">
 		<bean class="egovframework.brte.sample.example.support.EmployeeItemPreparedStatementSetter" />
 	</property>
-	<property  name="sql“  value="update into UIP_EMPLOYEE (num, name, sex) values (?, ?, ?)" />
+	<property  name="sql"  value="insert into UIP_EMPLOYEE (num, name, sex) values (?, ?, ?)" />
 	<property name="dataSource" ref="dataSource" />
 </bean>
 ```
@@ -395,8 +395,8 @@ Index Reader을 통해 읽어드린 파일을 NDX파일 설정에 따라 동적�
 | sqlSessionFactory | reader에 별도로 구현한 sessionFactory                 | sqlSession              |
 | statementId       | 네임스페이스를 가진 매퍼 파일을 Query Id                     | EmpMapper.selectEmpList |
 | resourceVariable  | 표준프레임워크 실행환경 Resource Variable 서비스를 사용하기 위한 설정 | resourceVariable        |
-| jobVariable       | 표준프레임워크 실행환경 Step Variable 서비스를 사용하기 위한 설정     | jobVariable             |
-| stepVariable      | 표준프레임워크 실행환경 Job Variable 서비스를 사용하기 위한 설정      | stepVariable            |
+| jobVariable       | 표준프레임워크 실행환경 Job Variable 서비스를 사용하기 위한 설정     | jobVariable             |
+| stepVariable      | 표준프레임워크 실행환경 Step Variable 서비스를 사용하기 위한 설정      | stepVariable            |
 
 #### EgovMyBatisBatchItemWriter 설정항목 설정
 ```xml

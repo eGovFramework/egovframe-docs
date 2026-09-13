@@ -130,7 +130,7 @@ order by 같은 경우에 사용하기 위해서는 order by ${orderParam} 처�
 &lt;dynamic&gt; 형태로 해서 where 조건절이나 and , or 를 동적으로 만들던 것이 &lt;where&gt;나 update에서 사용할 수 있는 &lt;set&gt; 등으로 변경되었다.
 
 ```xml
-<select id="getUserList" resultType="User>
+<select id="getUserList" resultType="User">
     SELECT * FROM TR_USER
         <where>
             <if test="isAdmin != null">
@@ -143,7 +143,7 @@ order by 같은 경우에 사용하기 위해서는 order by ${orderParam} 처�
 
 - trim, foreach 태그가 새로 추가
 
-1) trim은 쿼리를 동적 생성 할 때에 쿼리를 연결하기 위해서 컴마(,)를 사용한 경우 마지막항목이 조건을 만족하지 못해서 생성된 쿼리 끝에 컴마가 붙어있다던가 하는 경우에 잘라낼 수 있다.
+1) trim은 쿼리를 동적 생성 할 때에 쿼리를 연결하기 위해서 컴마(,)를 사용한 경우 마지막항목이 조건을 만족하지 못해서 생성된 쿼리 끝에 컴마가 붙어있다든가 하는 경우에 잘라낼 수 있다.
 2) foreach는 반복적인 항목을 동적으로 넣을 때 사용할 수 있다. ( ex. where 조건절에서 in 을 사용하는 경우)
 
 ## 참고자료

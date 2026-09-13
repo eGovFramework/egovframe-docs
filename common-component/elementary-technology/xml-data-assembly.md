@@ -67,7 +67,8 @@ mailElement.setSj("test mail");
 mailElement.setEmailCn("This is test mail.");
 mailElement.setSndngResultCode("R");
 
-boolean result = EgovXMLDoc.getClassToXML(mailDoc, "/user/com/test/mail_result.xml");
+// Globals.fileStorePath 아래에 파일명으로 저장한다. 경로를 포함해도 파일명만 사용한다.
+boolean result = EgovXMLDoc.getClassToXML(mailDoc, "mail_result.xml");
 ```
 
 ## 환경설정

@@ -50,7 +50,7 @@ booking.xml(or booking-flow.xml) 이 존재하는 디렉토리에 있는 enterBo
 - 절대 경로 사용
 
 ```xml
-<view-state id="enterBookingDetails" view="/WEB-INF/hotels/booking/bookingDetails.jsp>
+<view-state id="enterBookingDetails" view="/WEB-INF/hotels/booking/bookingDetails.jsp">
 ```
 
 - 논리적인 경로 사용: Spring MVC 등과 통합 시
@@ -167,7 +167,7 @@ bind 속성으로 특정 뷰 이벤트에서 모델 바인딩과 유효성 검�
 
 ```xml
 <view-state id="enterBookingDetails" model="booking">
-	<transition on="proceed" to="reviewBooking">
+	<transition on="proceed" to="reviewBooking" />
 	<transition on="cancel" to="bookingCancelled" bind="false" />
 </view-state>
 ```
@@ -217,7 +217,7 @@ Web Flow 는 view-stat에서 모델로 넘어간 시점(view-state postback life
 
 ```xml
 <view-state id="enterBookingDetails" model="booking">
-	<transition on="proceed" to="reviewBooking">
+	<transition on="proceed" to="reviewBooking" />
 </view-state>
 ```
 
@@ -285,7 +285,7 @@ validate=“false”로 설정하면 유효성 검사를 하지 않을 수 있�
 
 ```xml
 <view-state id="chooseAmenities" model="booking">
-	<transition on="proceed" to="reviewBooking">
+	<transition on="proceed" to="reviewBooking" />
 	<transition on="back" to="enterBookingDetails" validate="false" />
 </view-state>
 ```
@@ -321,8 +321,8 @@ public class BookingAction {
 
 ```xml
 <global-transitions>
-	<transition on="login" to="login">
-	<transition on="logout" to="logout">
+	<transition on="login" to="login" />
+	<transition on="logout" to="logout" />
 </global-transitions>
 ```
 

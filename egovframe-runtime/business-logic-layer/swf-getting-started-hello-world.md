@@ -383,7 +383,6 @@ transition에 대한 내용은 flow 정의에서 자세히 살펴보길 바란�
  
 	<end-state id="return"	view="externalRedirect:servletRelative:/start" />
 </flow>
-</xml>
 ```
 
 보여 주고자 하는 것은 hello2 화면(view-state)에서 입력 데이터를 객체에 바인딩하고, helloService 서비스 객체를 통해 addHello 메소드 실행, 그 후 결과에 따라 분기문(decision-state)을 통과하여 helloworld2 화면으로 가는 것이다.<br/>

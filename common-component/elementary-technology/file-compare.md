@@ -14,6 +14,10 @@ menu:
 
 # 파일비교
 
+> **5.0 적용 범위:** 아래에서 설명하는 `cmprFilesByContent`, `cmprFilesByOwner`, `cmprFilesBySize`, `cmprFilesByUpdtPd` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+
 ## 개요
 
 파일비교(File Compare) 기능은 공통컴포넌트의 요소기술 중 하나로, 서버 및 클라이언트 응용 애플리케이션에서 두 파일의 정보를

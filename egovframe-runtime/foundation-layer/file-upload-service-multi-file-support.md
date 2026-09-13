@@ -11,6 +11,9 @@ menu:
 ---
 # Spring mvc Multipart Multi file upload 지원 문제
 
+> **5.0 적용 범위:** 아래 오류는 Commons FileUpload 기반의 구버전에서 기록된 내용이다.
+> 표준프레임워크 5.0(Spring Framework 6)의 [Servlet multipart 처리](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-servlet/multipart.html)에서는 `MultipartHttpServletRequest.getFiles(name)`으로 같은 이름의 여러 파일을 받을 수 있다.
+
 ## 개요
 
 Spring MVC Multipart Multi file upload 지원 부분에서 동일한 이름의 여러개의 파일을 올리려고 할 때 에러가 발생한다. 본 가이드에서는 이러한 문제가 발생하여 아직 Spring쪽에서 답변이 없는 상황이다. 이부분에 대하여 개발시 참고 하기바란다.

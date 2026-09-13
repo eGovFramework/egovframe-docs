@@ -108,16 +108,12 @@ flowchart LR
 #### context-common.xml
 
 ```xml
-<!-- custom multi file resolver -->    
-<bean id="local.MultiCommonsMultipartResolver"
-  class="egovframework.com.cmm.web.EgovMultipartResolver">
-    <property name="maxUploadSize" value="100000000" />
-    <property name="maxInMemorySize" value="100000000" />
-</bean>
- 
-<!-- choose one from above and alias it to the name Spring expects -->
-<alias name="local.MultiCommonsMultipartResolver" alias="multipartResolver" />
+<!-- MULTIPART RESOLVERS : Spring Framework 6.2.8 기반 파일 업로드 설정 -->
+<bean id="multipartResolver" class="egovframework.com.cmm.web.EgovMultipartResolver" />
+<alias name="multipartResolver" alias="local.MultiCommonsMultipartResolver" />
 ```
+
+ 업로드 파일 크기, 개수, 허용 확장자는 `globals.properties`의 `Globals.fileUpload.*` 속성으로 설정한다.
 
  우편번호 엑셀 파일을 등록하기 위하여 파일 등록 처리를 사용한다.
 
