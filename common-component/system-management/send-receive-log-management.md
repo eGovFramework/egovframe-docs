@@ -113,7 +113,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 ### Scheduling
 
-#### context-scheduling-sym-log-tlg.xml (src/main/resources/egovframework/spring/com/context-scheduling-sym-log-tlg.xml)
+#### context-scheduling-sym-log-tlg.xml (src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-tlg.xml)
 
 ```xml
 <!-- 송수신 로그 요약  -->
@@ -128,20 +128,17 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
   <bean id="trsmrcvLogTrigger"
     class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="trsmrcvLogging" />
-    <!-- 시작하고 1분후에 실행한다. (milisecond) -->
+    <!-- 시작하고 1분후에 실행한다. (millisecond) -->
     <property name="startDelay" value="60000" />
-    <!-- 매 1시간마다 실행한다. (milisecond) -->
+    <!-- 매 1시간마다 실행한다. (millisecond) -->
     <property name="repeatInterval" value="3600000" />
   </bean>
  
   <!-- 스케쥴러 등록-->
-  <bean id="logSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+  <bean id="trsmrcvScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
       <list>
-        <ref bean="sysLogTrigger" />
-        <ref bean="webLogTrigger" />
         <ref bean="trsmrcvLogTrigger" />
-        <ref bean="userLogTrigger" />
       </list>
     </property>
   </bean>

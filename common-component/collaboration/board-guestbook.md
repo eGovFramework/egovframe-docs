@@ -110,7 +110,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /cop/bbs/selectGuestArticleList.do | selectGuestArticleList | "BBSArticle" | "selectGuestArticle" |
+| 목록조회 | /cop/bbs/selectGuestArticleList.do | selectGuestArticleList | "BBSArticle" | "selectGuestArticleList" |
 | | | | "BBSArticle" | "selectGuestArticleListCnt" |
 
 게시판 목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.

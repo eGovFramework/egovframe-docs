@@ -132,7 +132,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/olh/awm/selectAdministrationWordList.do | selectAdministrationWordList | "AdministrationWord" | "selectAdministrationWordList" |
+| 목록조회 | /uss/olh/awm/selectAdministrationWordList.do | egovAdministrationWordList | "AdministrationWord" | "selectAdministrationWordList" |
 |  |  |  | "AdministrationWord" | "selectAdministrationWordListCnt" |
 
  ![image](./images/uss-adminterm-administrationword_list.png)

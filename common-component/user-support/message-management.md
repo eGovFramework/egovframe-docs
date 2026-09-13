@@ -94,8 +94,8 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수신자/참조자 선택 | /uss/ion/ntm/listEgovNoteEmpListPopup.do | EgovEgovNoteEmpList | "NoteManage.EgovNoteEmpListPopup" |
-|  |  |  | "NoteManage.EgovNoteEmpListPopupCnt" |
+| 수신자/참조자 선택 | /uss/ion/ntm/listEgovNoteEmpListPopup.do | EgovEgovNoteEmpList | "NoteManage.EovNoteEmpListPopup" |
+|  |  |  | "NoteManage.EovNoteEmpListPopupCnt" |
 
  ![image](./images/uss-note-manage-수신자참조.jpg)
 
