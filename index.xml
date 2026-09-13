@@ -4543,6 +4543,13 @@ org.springframework.beans.factory.config.BeanPostProcessor interface는 두개�
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>Facebook 연동은 Facebook 로그인(사인인) 후 프로필, 피드, 앨범 정보를 조회하는 외부 서비스 연동 기능이다. Spring Social 기반 Controller와 JSP로 구성되며, 사용을 위해 Facebook 개발자 앱 등록(앱 ID·시크릿 발급)이 필요하다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 사용자지원(정보제공/알림) 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ S[Facebook 로그인] -->|Feed| F[Feed 조회]
+ S -->|Albums| A[Albums 조회]
+ S -->|Profile| P[Profile 조회]
+&lt;/div>
 &lt;h3 id="관련소스">관련소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -14049,6 +14056,16 @@ Windows 64 Bit 이외의 환경에서 개발환경을 사용할 필요가 있을
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>회원가입 및 이용안내시 개인정보보호정책을 확인하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[개인정보보호정책확인 목록조회] -->|등록| R[개인정보보호정책확인 내용등록]
+ L -->|목록 클릭| D[개인정보보호정책확인 상세조회]
+ D -->|수정| U[개인정보보호정책확인 내용수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>개인정보보호정책확인 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 웹에디터 패키지들과 함께 배포 파일을 구성한다.&lt;/p>
 &lt;ul>
@@ -17174,6 +17191,16 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>새로운 소식이나 정보를 게시판 형태로 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[뉴스정보목록조회] -->|등록| R[뉴스정보등록]
+ L -->|목록 클릭| D[뉴스정보상세조회]
+ D -->|수정| U[뉴스정보수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>뉴스관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p>
 &lt;ul>
@@ -17847,6 +17874,16 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>응용 프로그램의 기능사용에 관한 설명이나 지시 사항을 제공하고 응용 프로그램 사용에 필요한 정보 제공 및 도움을 주는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[도움말목록조회] -->|등록| R[도움말등록]
+ L -->|목록 클릭| D[도움말상세조회]
+ D -->|수정| U[도움말수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>도움말 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
 패키지 간 참조 관계 : 
@@ -23752,6 +23789,16 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>주제 및 유형별로 사이트를 등록하며 주기적으로 DeadLink를 체크하여 사이트URL정보를 등록/수정/보완할 수 있도록 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[사이트목록조회] -->|등록| R[사이트정보등록]
+ L -->|목록 클릭| D[사이트상세조회]
+ D -->|수정| U[사이트정보수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>사이트관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
 패키지 간 참조 관계 : 
@@ -28297,6 +28344,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>회원가입 시 회원약관 및 정보공유 동의여부를 확인할때 제공되는 약관정보 및 정보공유내용을 관리 할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[약관관리 목록] -->|등록| R[약관관리 등록]
+ L -->|목록 클릭| D[약관관리 상세조회]
+ D -->|수정| U[약관관리 수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>약관관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p>
 &lt;ul>
@@ -29700,6 +29757,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>기능흐름&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-manual-%ea%b8%b0%eb%8a%a5%ed%9d%90%eb%a6%84%eb%8f%84.jpg" alt="image" >&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[온라인매뉴얼관리 목록조회] -->|등록| R[온라인매뉴얼관리 내용등록]
+ L -->|목록 클릭| D[온라인매뉴얼관리 상세조회]
+ D -->|수정| U[온라인매뉴얼관리 내용수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>온라인매뉴얼 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 포맷/날짜/계산, 웹에디터 패키지들과 함께 배포 파일을 구성한다.
 패키지 간 참조 관계 : 
@@ -29731,131 +29798,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
 
-&lt;/p>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.uss.olh.omm.web.EgovOnlineManualController.java&lt;/td>
- &lt;td>온라인매뉴얼관리 Controller Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.uss.olh.omm.service.EgovOnlineManualService.java&lt;/td>
- &lt;td>온라인매뉴얼관리 Service Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.uss.olh.omm.service.impl.EgovOnlineManualServiceImpl.java&lt;/td>
- &lt;td>온라인매뉴얼관리 ServiceImpl Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Model&lt;/td>
- &lt;td>egovframework.com.uss.olh.omm.service.OnlineManualVO.java&lt;/td>
- &lt;td>온라인매뉴얼관리 Model Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.uss.olh.omm.service.impl.EgovOnlineManualDAO.java&lt;/td>
- &lt;td>온라인매뉴얼관리 Dao Class&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/omm/EgovOnlineManualList.jsp&lt;/td>
- &lt;td>온라인매뉴얼관리 목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/omm/EgovOnlineManualRegist.jsp&lt;/td>
- &lt;td>온라인매뉴얼관리 등록 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/omm/EgovOnlineManualUpdt.jsp&lt;/td>
- &lt;td>온라인매뉴얼관리 수정 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/omm/EgovOnlineManualDetail.jsp&lt;/td>
- &lt;td>온라인매뉴얼관리 상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/omm/EgovOnlineManualUserList.jsp&lt;/td>
- &lt;td>사용자온라인매뉴얼 목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/olh/omm/EgovOnlineManualUserDetail.jsp&lt;/td>
- &lt;td>사용자온라인매뉴얼 상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_altibase.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_cubrid.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_maria.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 MariaDB용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_mysql.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_oracle.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_postgres.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 PostgreSQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_tibero.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/olh/omm/EgovOnlineManual_SQL_goldilocks.xml&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/olh/omm/message_ko.properties&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/olh/omm/message_en.properties&lt;/td>
- &lt;td>온라인매뉴얼관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-OnlineMenual.xml&lt;/td>
- &lt;td>온라인매뉴얼관리 Id생성 Idgen XML&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스-다이어그램">클래스 다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-manual-%ec%98%a8%eb%9d%bc%ec%9d%b8%eb%a7%a4%eb%89%b4%ec%96%bc_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >&lt;/p></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description>&lt;h1 id="온라인참여">온라인참여&lt;/h1>
+&lt;/p></description></item><item><title>온라인참여</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/</guid><description>&lt;h1 id="온라인참여">온라인참여&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>온라인참여는 설문조사(질문·항목·응답자 관리 포함), 온라인 POLL, 상담 등 사용자의 의견을 수렴하는 사용자지원 기능 묶음이다. 소스는 주로 &lt;code>egovframework.com.uss.olp&lt;/code> 패키지에 위치한다.&lt;/p>
 &lt;h2 id="관련-문서">관련 문서&lt;/h2>
@@ -30358,6 +30301,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>업무에 활용되는 전문용어를 등록하고 등록된 용어에 대한 수정, 삭제, 검색등의 관리기능을 수행할 수 있도록 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[용어사전 목록조회] -->|등록| R[용어사전 등록]
+ L -->|목록 클릭| D[용어사전 상세조회]
+ D -->|수정| U[용어사전 수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>용어사전 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
 패키지 간 참조 관계 : 
@@ -32056,6 +32009,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>회원가입 시 회원저작권보호정책 및 정보공유 동의여부를 확인할때 제공되는 저작권보호정책정보 및 정보공유내용을 관리 할 수 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[저작권보호정책 목록조회] -->|등록| R[저작권보호정책내용등록]
+ L -->|목록 클릭| D[저작권보호정책 상세조회]
+ D -->|수정| U[저작권보호정책내용수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>저작권보호정책 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.&lt;/p>
 &lt;ul>
@@ -32602,6 +32565,17 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-infonoti-notificationoutline.jpg" alt="image" >&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>정보알림이는 관리자가 사용하는 정보알림이 관리 기능과 정보알림이를 사용자에게 제공하는 활용기능으로 제공된다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[정보알림이 목록조회] -->|등록| R[정보알림이 등록]
+ L -->|목록 클릭| D[정보알림이 상세조회]
+ D -->|수정| U[정보알림이 수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+ L -.->|55초마다 AJAX 조회| N[정보알림이 표시]
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>정보알림이 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.&lt;/p></description></item><item><title>정보제공/알림</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/</guid><description>&lt;h1 id="정보제공알림">정보제공/알림&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
@@ -34277,6 +34251,16 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>공공기관에서 업무진행에 필요한 사이트를 추천받아 관리자의 승인을 거쳐 등록하는 추천사이트관리 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[추천사이트목록조회] -->|등록| R[추천사이트등록]
+ L -->|목록 클릭| D[추천사이트상세조회]
+ D -->|수정| U[추천사이트수정]
+ D -->|삭제| L
+ R -->|저장| L
+ U -->|저장| L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>추천사이트관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 달력 패키지와 함께 배포 파일을 구성한다.
 패키지 간 참조 관계 : 
@@ -34308,126 +34292,7 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 
 &lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/cc-intro/package-reference/#%ec%82%ac%ec%9a%a9%ec%9e%90%ec%a7%80%ec%9b%90" class="innerLink">사용자지원 Package Dependency&lt;/a>
 
-&lt;/p>
-&lt;h3 id="관련소스">관련소스&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>유형&lt;/th>
- &lt;th>대상소스명&lt;/th>
- &lt;th>비고&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.uss.ion.rec.web.EgovRecomendSiteController.java&lt;/td>
- &lt;td>추천사이트관리를 위한 컨트롤러 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>egovframework.com.uss.ion.rec.service.EgovRecomendSiteService.java&lt;/td>
- &lt;td>추천사이트관리를 위한 서비스 인터페이스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ServiceImpl&lt;/td>
- &lt;td>egovframework.com.uss.ion.rec.service.impl.EgovRecomendSiteServiceImpl.java&lt;/td>
- &lt;td>추천사이트관리를 위한 서비스 구현 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.uss.ion.rec.service.RecomendSiteVO.java&lt;/td>
- &lt;td>추천사이트관리를 위한 VO 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>VO&lt;/td>
- &lt;td>egovframework.com.uss.ion.rec.service.RecomendSiteVO.java&lt;/td>
- &lt;td>추천사이트관리를 위한 SearchVO 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DAO&lt;/td>
- &lt;td>egovframework.com.uss.ion.rec.service.impl.EgovRecomendSiteDAO.java&lt;/td>
- &lt;td>추천사이트 관리를 위한 데이터처리 클래스&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/rec/EgovRecomendSiteList.jsp&lt;/td>
- &lt;td>추천사이트관리를 위한 목록조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/rec/EgovRecomendSiteDetail.jsp&lt;/td>
- &lt;td>추천사이트관리를 위한 상세조회 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/rec/EgovRecomendSiteRegist.jsp&lt;/td>
- &lt;td>추천사이트관리를 위한 등록 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>/WEB-INF/jsp/egovframework/com/uss/ion/rec/EgovRecomendSiteUpdt.jsp&lt;/td>
- &lt;td>추천사이트관리를 위한 수정 페이지&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_altibase.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 Altibase용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_cubrid.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 Cubrid용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_maria.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 MariaDB용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_mysql.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 MySQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_oracle.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 Oracle용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_postgres.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 PostgreSQL용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_tibero.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 Tibero용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Query XML&lt;/td>
- &lt;td>resources/egovframework/mapper/com/uss/ion/rec/EgovRecomendSite_SQL_goldilocks.xml&lt;/td>
- &lt;td>추천사이트관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/ion/rec/message_ko.properties&lt;/td>
- &lt;td>추천사이트관리를 위한 Message properties(한글)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Message properties&lt;/td>
- &lt;td>resources/egovframework/message/com/uss/ion/rec/message_en.properties&lt;/td>
- &lt;td>추천사이트관리를 위한 Message properties(영문)&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Idgen XML&lt;/td>
- &lt;td>resources/egovframework/spring/com/idgn/context-idgn-RecomendSiteManage.xml&lt;/td>
- &lt;td>추천사이트등록을 위한 Id생성 Idgen XML&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h3 id="클래스다이어그램">클래스다이어그램&lt;/h3>
-&lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-recsite-%ec%b6%94%ec%b2%9c%ec%82%ac%ec%9d%b4%ed%8a%b8%ea%b4%80%eb%a6%ac_%ed%81%b4%eb%9e%98%ec%8a%a4%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8.jpg" alt="image" >&lt;/p></description></item><item><title>출퇴근 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/new-components-v3.2/cmtmanage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/new-components-v3.2/cmtmanage/</guid><description>&lt;h1 id="출퇴근-관리">출퇴근 관리&lt;/h1>
+&lt;/p></description></item><item><title>출퇴근 관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/new-components-v3.2/cmtmanage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/new-components-v3.2/cmtmanage/</guid><description>&lt;h1 id="출퇴근-관리">출퇴근 관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>&lt;strong>출퇴근 관리&lt;/strong>는 출근, 퇴근 정보를 관리하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -38367,6 +38232,18 @@ WINDOWS 및 UNIX 환경을 모두 지원하며, &lt;code>globals.properties&lt;/
 &lt;p>기능흐름&lt;/p>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-adminterm-%ea%b8%b0%eb%8a%a5%ed%9d%90%eb%a6%84%eb%8f%84.jpg" alt="image" >&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[행정전문용어사전 목록조회] -->|목록 클릭| D[행정전문용어사전 상세조회]
+
+ ML[행정전문용어사전관리 목록조회] -->|등록| R[행정전문용어사전관리 내용등록]
+ ML -->|목록 클릭| MD[행정전문용어사전관리 상세조회]
+ MD -->|수정| U[행정전문용어사전관리 내용수정]
+ MD -->|삭제| ML
+ R -->|저장| ML
+ U -->|저장| ML
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>행정전문용어사전관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
 패키지 간 참조 관계 : 
