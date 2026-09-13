@@ -13014,12 +13014,6 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
  &lt;td>XML파싱/조립 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -13049,12 +13043,6 @@ XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크업 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovXMLDoc.java&lt;/code>&lt;/td>
  &lt;td>XML파싱/조립 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -16977,12 +16965,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>네트워크 상태 체크 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovNetworkState.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -17137,16 +17119,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>네트워크서비스모니터링을 위한 각 DB용 Query XML&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>Validator Rule XML&lt;/td>
- &lt;td>&lt;code>resources/egovframework/validator/validator-rules.xml&lt;/code>&lt;/td>
- &lt;td>Validator Rule을 정의한 XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Validator XML&lt;/td>
- &lt;td>&lt;code>resources/egovframework/validator/com/utl/sys/nsm/EgovNtwrkSvcMntrng.xml&lt;/code>&lt;/td>
- &lt;td>네트워크서비스모니터링을 위한 Validator XML&lt;/td>
- &lt;/tr>
- &lt;tr>
  &lt;td>Message properties&lt;/td>
  &lt;td>&lt;code>resources/egovframework/message/com/utl/sys/nsm/message_*.properties&lt;/code>&lt;/td>
  &lt;td>네트워크서비스모니터링을 위한 Message properties&lt;/td>
@@ -17187,16 +17159,63 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>네트워크정보 확인 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovNetworkInfo.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>네트워크정보확인 기능은 &lt;code>EgovNetworkState&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>뉴스관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</guid><description>&lt;h1 id="뉴스관리">뉴스관리&lt;/h1>
+&lt;p>네트워크정보확인 기능은 &lt;code>EgovNetworkState&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>&lt;code>getMyIPaddress()&lt;/code>&lt;/td>
+ &lt;td>IP ADDRESS 검색&lt;/td>
+ &lt;td>시스템의 IP ADDRESS를 리턴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>&lt;code>getMyMACAddress(String ipAddress)&lt;/code>&lt;/td>
+ &lt;td>MAC ADDRESS 검색&lt;/td>
+ &lt;td>시스템의 MAC ADDRESS를 리턴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>List&lt;/td>
+ &lt;td>&lt;code>getMyPortScan()&lt;/code>&lt;/td>
+ &lt;td>Port 사용정보&lt;/td>
+ &lt;td>Port 사용내역을 리턴&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.util.Iterator&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.util.List&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.sim.service.EgovNetworkState&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#998;font-style:italic">// 1. IP 주소 조회&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>String&lt;span style="color:#bbb"> &lt;/span>myIPAddress&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovNetworkState.&lt;span style="color:#008080">getMyIPaddress&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#998;font-style:italic">// 2. MAC 주소 조회&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>String&lt;span style="color:#bbb"> &lt;/span>myMACAddress&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovNetworkState.&lt;span style="color:#008080">getMyMACAddress&lt;/span>(myIPAddress);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#998;font-style:italic">// 3. Port 사용정보 조회&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>List&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>String&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>list&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovNetworkState.&lt;span style="color:#008080">getMyPortScan&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Iterator&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>String&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>it&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>list.&lt;span style="color:#008080">iterator&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">while&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(it.&lt;span style="color:#008080">hasNext&lt;/span>())&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#bbb"> &lt;/span>text&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>it.&lt;span style="color:#008080">next&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>윈도우 환경은 &lt;code>nbtstat -A &amp;lt;IP&amp;gt;&lt;/code>(MAC 주소)·&lt;code>netstat -an&lt;/code>(포트 사용정보) 명령을 사용하며,
+유닉스 환경은 네트워크정보 조회 쉘 스크립트 경로를 프로퍼티에 등록하여 사용한다.&lt;/p></description></item><item><title>뉴스관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/news-management/</guid><description>&lt;h1 id="뉴스관리">뉴스관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>새로운 소식이나 정보를 게시판 형태로 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -17568,16 +17587,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>Query XML&lt;/td>
  &lt;td>&lt;code>resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_goldilocks.xml&lt;/code>&lt;/td>
  &lt;td>달력, 휴일관리를 위한 Goldilocks용 Query XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Validator Rule XML&lt;/td>
- &lt;td>&lt;code>resources/egovframework/validator/validator-rules.xml&lt;/code>&lt;/td>
- &lt;td>Validator Rule을 정의한 XML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Validator XML&lt;/td>
- &lt;td>&lt;code>resources/egovframework/validator/com/sym/cal/EgovRestdeManage.xml&lt;/code>&lt;/td>
- &lt;td>달력, 휴일관리를 위한 Validator XML&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Message properties&lt;/td>
@@ -18089,12 +18098,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>디렉토리 감시 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMntrg.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="메소드">메소드&lt;/h3>
@@ -18167,16 +18170,56 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileAuthor.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>디렉토리권한체크 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다. 파일과 디렉토리에 동일한 메소드를 사용한다.&lt;/p></description></item><item><title>디렉토리복사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
+&lt;p>디렉토리권한체크 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다. 파일과 디렉토리에 동일한 메소드를 사용한다.&lt;/p>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>canRead(String filePath)&lt;/code>&lt;/td>
+ &lt;td>읽기권한 체크&lt;/td>
+ &lt;td>디렉토리(파일) 경로를 입력받아 읽기 가능하면 &lt;code>true&lt;/code>를 리턴한다. 권한이 없거나 대상이 없는 경우는 &lt;code>false&lt;/code>를 리턴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>canWrite(String filePath)&lt;/code>&lt;/td>
+ &lt;td>쓰기권한 체크&lt;/td>
+ &lt;td>디렉토리(파일) 경로를 입력받아 쓰기 가능하면 &lt;code>true&lt;/code>를 리턴한다. 권한이 없거나 대상이 없는 경우는 &lt;code>false&lt;/code>를 리턴 (대상경로가 파일인 경우만 정보가 유효함)&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h4 id="파라미터-정의-input">파라미터 정의 (Input)&lt;/h4>
+&lt;ul>
+&lt;li>&lt;code>filePath&lt;/code>: String 타입의 절대경로를 포함한 디렉토리 경로 (예: &lt;code>/user/com/test/dir1&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h4 id="반환값-정의-output">반환값 정의 (Output)&lt;/h4>
+&lt;ul>
+&lt;li>boolean 타입: 권한 보유 여부 (&lt;code>true&lt;/code> / &lt;code>false&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.sim.service.EgovFileTool&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>String&lt;span style="color:#bbb"> &lt;/span>dirPath&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#d14">&amp;#34;/user/com/test/dir1&amp;#34;&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#998;font-style:italic">// 읽기 권한 확인&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>readVal&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovFileTool.&lt;span style="color:#008080">canRead&lt;/span>(dirPath);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#998;font-style:italic">// 쓰기 권한 확인&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>writeVal&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovFileTool.&lt;span style="color:#008080">canWrite&lt;/span>(dirPath);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>N/A&lt;/p></description></item><item><title>디렉토리복사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
 &lt;h1 id="디렉토리복사">디렉토리복사&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>비즈니스 로직을 처리하면서 필요시 디렉토리의 전체 구조와 파일을 복사하는 공통 기능을 제공한다.
@@ -18400,12 +18443,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMvmn.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -18461,12 +18498,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
  &lt;td>파일관리 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDiskAttrCeck.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -19911,12 +19942,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>메시지 처리 관련 유틸리티&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/utl/EgovMessage.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="메소드">메소드&lt;/h3>
@@ -20020,12 +20045,6 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovMenuGov.java&lt;/code>&lt;/td>
  &lt;td>메인메뉴 요소기술 클래스&lt;/td>
  &lt;td>메뉴파일 생성&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/EgovMenuGov.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>직접 생성 (사용방법 참고)&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -22422,11 +22441,6 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>global 상수 정의&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>추가 properties 정의&lt;/td>
- &lt;td>/WEB-INF/conf/*.properties&lt;/td>
- &lt;td>추가적인 상수 정의&lt;/td>
- &lt;/tr>
- &lt;tr>
  &lt;td>message properties 정의&lt;/td>
  &lt;td>/resources/egovframework/message/com/*.properties&lt;/td>
  &lt;td>message 정의&lt;/td>
@@ -22445,16 +22459,6 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>sql config 파일&lt;/td>
  &lt;td>/resources/egovframework/mapper/com/*.xml&lt;/td>
  &lt;td>sql map config 정의&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>validator rule 파일&lt;/td>
- &lt;td>/resources/egovframework/validator/validator-rules.xml&lt;/td>
- &lt;td>validator를 이용할 시 rule을 정의&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>validator rule 파일&lt;/td>
- &lt;td>/resources/egovframework/validator/com-rules.xml&lt;/td>
- &lt;td>validator를 이용할 시 공통컴포넌트 rule을 정의&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>log 설정&lt;/td>
@@ -22489,11 +22493,6 @@ eGovFrame의 개발환경의 구현도구에서는 다음과 같은 모델 기�
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.fcc.service.EgovNumberCheckUtil.java&lt;/code>&lt;/td>
  &lt;td>번호 유효성 처리 관련 유틸리티&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/utl/EgovNumberCheck.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -25267,16 +25266,6 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.fcc.service.EgovNumberUtil.java&lt;/code>&lt;/td>
  &lt;td>Number 관련 유틸리티&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>&lt;code>egovframework.com.cmm.web.EgovComUtlController.java&lt;/code>&lt;/td>
- &lt;td>테스트용 Controller&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/utl/EgovNumberCnvr.jsp&lt;/code>&lt;/td>
- &lt;td>숫자변환 테스트 페이지&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -30972,12 +30961,6 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;td>문자열 처리 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovEncdDcd.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -34636,16 +34619,6 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
  &lt;td>&lt;code>EgovSessionCookieUtil.java&lt;/code>&lt;/td>
  &lt;td>세션/쿠키 처리 관련 유틸리티&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>&lt;code>EgovComUtlController.java&lt;/code>&lt;/td>
- &lt;td>테스트용 controller&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>EgovCookieProcess.jsp&lt;/code>&lt;/td>
- &lt;td>쿠키처리 테스트 페이지&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h4 id="쿠키-메소드">쿠키 메소드&lt;/h4>
@@ -34754,12 +34727,6 @@ LogManager.getLogger() 메서드를 통해 Logger 객체를 생성하며, Log4j 
  &lt;td>Service&lt;/td>
  &lt;td>egovframework.com.utl.cas.service.EgovSessionCookieUtil.java&lt;/td>
  &lt;td>세션/쿠키 처리 관련 유틸리티&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Controller&lt;/td>
- &lt;td>egovframework.com.cmm.web.EgovComUtlController.java&lt;/td>
- &lt;td>테스트용 controller&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -36288,16 +36255,39 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;td>트리생성 JavaScript&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/EgovTreeMenu.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>직접 생성 (사용방법 참고)&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>트리메뉴 기능은 &lt;code>EgovMenuGov&lt;/code> 클래스의 메서드와 트리 생성 JavaScript를 사용하여 제공한다.&lt;/p></description></item><item><title>특수문자열처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</guid><description>&lt;h1 id="특수문자열-처리">특수문자열 처리&lt;/h1>
+&lt;p>트리메뉴 기능은 &lt;code>EgovMenuGov&lt;/code> 클래스의 메서드와 트리 생성 JavaScript를 사용하여 제공한다.&lt;/p>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Vector&lt;/td>
+ &lt;td>&lt;code>parsFileByMenuChar(String basePath, String parFile, String parChar, int parField)&lt;/code>&lt;/td>
+ &lt;td>메뉴테이블형태 파싱&lt;/td>
+ &lt;td>입력된 데이터를 구분자와 필드 수를 기준으로 메뉴 필드 형태로 분리한다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h4 id="파라미터-정의-input">파라미터 정의 (Input)&lt;/h4>
+&lt;ul>
+&lt;li>&lt;code>basePath&lt;/code>: 파일 접근을 허용할 기준 경로(String). 비우면 &lt;code>Globals.fileStorePath&lt;/code> 를 사용한다&lt;/li>
+&lt;li>&lt;code>parFile&lt;/code>: 메뉴 변환 파일의 절대 경로(String) (예: &lt;code>/user/com/test/file1.dat&lt;/code>)&lt;/li>
+&lt;li>&lt;code>parChar&lt;/code>: 구분자(String)&lt;/li>
+&lt;li>&lt;code>parField&lt;/code>: 필드 수(int)&lt;/li>
+&lt;/ul>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;p>메인메뉴 기능으로 생성한 DAT 파일(라인별 &lt;code>nodeId|parentNodeId|nodeName|nodeUrl&lt;/code>)을 파싱하여 트리메뉴를 표현한다.&lt;/p></description></item><item><title>특수문자열처리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/special-string-processing/</guid><description>&lt;h1 id="특수문자열-처리">특수문자열 처리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>특수문자열 처리는 HTML 등의 웹 환경에서 특수문자를 안전하게 표시하고 처리하기 위한 요소기술이다.
 &lt;code>EgovStringUtil&lt;/code>에서 제공하는 메서드를 통해 문자열의 특수문자를 변환하거나 HTML 표시를 위한 문자열 처리를 수행할 수 있다.&lt;/p>
@@ -36404,12 +36394,6 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileAuthor.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -36492,12 +36476,6 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;td>Util&lt;/td>
  &lt;td>&lt;code>egovframework.com.cmm.service.EgovFileMngUtil.java&lt;/code>&lt;/td>
  &lt;td>파일 처리 유틸리티 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -36653,12 +36631,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>파일변환 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCnvr.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -36693,12 +36665,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>파일 암호화/복호화 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileScrty.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -36731,12 +36697,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
  &lt;td>파일관리 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCopy.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -36779,12 +36739,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
  &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryFileDelete.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -36833,12 +36787,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
  &lt;td>파일관리 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCre.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -37061,12 +37009,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>파일 압축 및 해제 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileCmprs.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="주요-메소드">주요 메소드&lt;/h3>
@@ -37138,12 +37080,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>첨부파일 처리 공통 유틸리티&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>/WEB-INF/jsp/egovframework/cmm/utl/EgovFileUpload.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -37171,12 +37107,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
  &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMvmn.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
@@ -37251,12 +37181,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>파일관리 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileDtCeck.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -37291,12 +37215,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>파일관리 요소기술 클래스&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFileExst.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
@@ -37327,12 +37245,6 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
  &lt;td>파일관리 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>JSP&lt;/td>
- &lt;td>&lt;code>WEB-INF/jsp/egovframework/cmm/utl/EgovFilePars.jsp&lt;/code>&lt;/td>
- &lt;td>테스트 페이지&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
