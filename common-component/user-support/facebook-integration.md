@@ -18,6 +18,13 @@ Facebook 연동은 Facebook 로그인(사인인) 후 프로필, 피드, 앨범 �
 
 ## 설명
 
+```mermaid
+flowchart LR
+    S[Facebook 로그인] -->|Feed| F[Feed 조회]
+    S -->|Albums| A[Albums 조회]
+    S -->|Profile| P[Profile 조회]
+```
+
 ### 관련소스
 
 | 유형 | 대상소스명 | 비고 |
