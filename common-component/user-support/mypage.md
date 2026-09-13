@@ -123,7 +123,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | uss/mpe/selectIndvdlPgeList.do | selectIndvdlPgeList | "IndvdlPge" | "selectIndvdlPgeList" |
+| 목록조회 | /uss/mpe/selectIndvdlPgeList.do | selectIndvdlPgeList | "IndvdlPge" | "selectIndvdlPgeList" |
 |  |  |  | "IndvdlPge" | "selectIndvdlPgeListCnt" |
 
  ![image](./images/uss-mypage-mypge_cntnts_list.png)

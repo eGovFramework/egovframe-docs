@@ -148,7 +148,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /uss/ion/rec/selectRecomendSiteDetail.do | selectRecomendSiteList | "RecomendSite" | "selectRecomendSiteDetail" |
+| 상세조회 | /uss/ion/rec/selectRecomendSiteDetail.do | selectRecomendSiteDetail | "RecomendSite" | "selectRecomendSiteDetail" |
 | 삭제 | /uss/ion/rec/deleteRecomendSite.do | deleteRecomendSite | "RecomendSite" | "deleteRecomendSite" |
 
  추천사이트 상세조회화면은 추천사이트수정, 추천사이트삭제, 추천사이트목록조회를 할 수 있다.

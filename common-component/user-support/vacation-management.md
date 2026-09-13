@@ -129,7 +129,7 @@ flowchart LR
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수정 | /uss/ion/vct/updtVcatnManage.do | updtVcatnManage | "vcatnManageDAO.updtVcatnManage" |
+| 수정 | /uss/ion/vct/updtVcatnManage.do | updtVcatnManage | "vcatnManageDAO.updateVcatnManage" |
 | 상세조회 | /uss/ion/vct/EgovVcatnManageDetail.do | selectVcatnManage | "vcatnManageDAO.selectVcatnManage" |
 
  휴가의 속성정보를 변경한 후 저장한다. 다음 화면은 휴가 상세조회 화면과 동일하다.

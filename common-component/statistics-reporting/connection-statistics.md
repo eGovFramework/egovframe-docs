@@ -97,7 +97,7 @@ public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 }
 ```
 
-- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-lgm.xml)
+- 작업 수행 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-lgm.xml)
 
 ```xml
 <bean id="sysLogging" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -107,7 +107,7 @@ public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 </bean>
 ```
 
-- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-lgm.xml)
+- 트리거 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-lgm.xml)
 
 ```xml
 <bean id="sysLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
@@ -117,7 +117,7 @@ public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 </bean>
 ```
 
-- 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/context-scheduling-sym-log-lgm.xml)
+- 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-lgm.xml)
 
 ```xml
 <bean id="sysLogScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
@@ -145,7 +145,7 @@ public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 접속 통계검색 | /sts/cst/selectConectStats.do | selectConectStats | "ConectStatsDAO.selectConectStats" |
+| 접속 통계검색 | /sts/cst/selectConectStats.do | selectUserStats | "ConectStatsDAO.selectConectStats" |
 
  ![image](./images/sts-stats3.png)
 

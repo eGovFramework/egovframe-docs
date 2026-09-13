@@ -159,7 +159,7 @@ flowchart LR
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 조회 | /sec/rmt/EgovRoleList.do | selectRoleList | "roleManageDAO" | "selectRoleList" |
-|  |  |  | "roleManageDAO" | "selectRoleListTotCnt" |
+|  |  |  | "roleManageDAO" | "selectAuthorListTotCnt" |
 
  ![롤목록 조회](./images/rmt-role_manage_list.png)
 

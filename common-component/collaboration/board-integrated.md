@@ -197,7 +197,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/bbs/updateArticleView.do | updateArticleView | | |
-| 수정 | /cop/bbs/updateArticle.do | updateArticle | "BBSArticle" | "updateArticle" |
+| 수정 | /cop/bbs/updateArticle.do | updateBoardArticle | "BBSArticle" | "updateArticle" |
 
 ![게시물 수정](./images/board-integrated-update.jpg)
 
