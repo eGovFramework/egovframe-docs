@@ -53,8 +53,6 @@ menu:
 | JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngLogList.jsp` | 네트워크서비스모니터링로그목록조회를 위한 jsp페이지 |
 | JSP | `/WEB-INF/jsp/egovframework/com/utl/sys/nsm/EgovNtwrkSvcMntrngLogDetail.jsp` | 등록된 네트워크서비스모니터링로그를 조회하기 위한 jsp페이지 |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/nsm/EgovNtwrkSvcMntrng_SQL_*.xml` | 네트워크서비스모니터링을 위한 각 DB용 Query XML |
-| Validator Rule XML | `resources/egovframework/validator/validator-rules.xml` | Validator Rule을 정의한 XML |
-| Validator XML | `resources/egovframework/validator/com/utl/sys/nsm/EgovNtwrkSvcMntrng.xml` | 네트워크서비스모니터링을 위한 Validator XML |
 | Message properties | `resources/egovframework/message/com/utl/sys/nsm/message_*.properties` | 네트워크서비스모니터링을 위한 Message properties |
 | Idgen XML | `resources/egovframework/spring/com/idgn/context-idgn-NtwrkSvcMntrngLog.xml` | 네트워크서비스모니터링을 위한 Id생성 Idgen XML |
 

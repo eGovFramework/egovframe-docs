@@ -37,12 +37,6 @@ menu:
 
 ### 1. 화면인쇄
 
-#### 화면인쇄 관련 소스
-
-| 유형 | 대상 소스 | 설명 | 비고 |
-| --- | --- | --- | --- |
-| JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovPrint.jsp` | 화면인쇄 테스트 페이지 | |
-
 #### 화면인쇄 사용 방법
 
 과거 인터넷 익스플로러(Internet Explorer) 환경에서는 ActiveX(`CLSID:8856F961-340A-11D0-A96B-00C04FD705A2`)를 활용하여 인쇄 제어를 수행하였으나, 최신 브라우저 환경에서는 표준 웹 함수인 `window.print()`를 사용한다.
@@ -95,12 +89,6 @@ function printOption(type1, type2) {
 ```
 
 ### 3. 프린터상태확인
-
-#### 프린터상태확인 관련 소스
-
-| 유형 | 대상 소스 | 설명 | 비고 |
-| --- | --- | --- | --- |
-| JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovPrintStatus.jsp` | 프린터상태확인 테스트 페이지 | |
 
 #### 프린터상태확인 사용 방법
 

@@ -95,8 +95,6 @@ flowchart LR
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_postgres.xml` | DB서비스모니터링을 위한 PostgreSQL용 Query XML |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_tibero.xml` | DB서비스모니터링을 위한 Tibero용 Query XML |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_goldilocks.xml` | DB서비스모니터링을 위한 Goldilocks용 Query XML |
-| Validator Rule XML | `resources/egovframework/validator/validator-rules.xml` | Validator Rule을 정의한 XML |
-| Validator XML | `resources/egovframework/validator/com/utl/sys/dbm/EgovDbMntrng.xml` | DB서비스모니터링을 위한 Validator XML |
 | Message properties | `resources/egovframework/message/com/utl/sys/dbm/message_ko.properties` | DB서비스모니터링을 위한 Message properties(한글) |
 | Message properties | `resources/egovframework/message/com/utl/sys/dbm/message_en.properties` | DB서비스모니터링을 위한 Message properties(영문) |
 | Idgen XML | `resources/egovframework/spring/com/idgn/context-idgn-DbMntrngLog.xml` | DB서비스모니터링을 위한 ID 생성 Idgen XML |

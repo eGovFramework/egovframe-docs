@@ -38,7 +38,6 @@ Java의 `java.util.zip` 패키지를 기반으로 구현되어 파일 및 디렉
 | 유형 | 대상 소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovFileCmprs.java` | 파일 압축 및 해제 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovFileCmprs.jsp` | 테스트 페이지 | |
 
 ### 메소드
 

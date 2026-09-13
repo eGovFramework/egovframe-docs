@@ -70,8 +70,6 @@ flowchart LR
 | Query XML          | `resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_postgres.xml`   | 달력, 휴일관리를 위한 PostgreSQL용 Query XML   |
 | Query XML          | `resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_tibero.xml`     | 달력, 휴일관리를 위한 Tibero용 Query XML       |
 | Query XML          | `resources/egovframework/mapper/com/sym/cal/EgovRestdeManage_SQL_goldilocks.xml` | 달력, 휴일관리를 위한 Goldilocks용 Query XML   |
-| Validator Rule XML | `resources/egovframework/validator/validator-rules.xml`                          | Validator Rule을 정의한 XML                    |
-| Validator XML      | `resources/egovframework/validator/com/sym/cal/EgovRestdeManage.xml`             | 달력, 휴일관리를 위한 Validator XML            |
 | Message properties | `resources/egovframework/message/com/sym/cal/message_en.properties`              | 달력, 휴일관리를 위한 Message properties(영문) |
 | Message properties | `resources/egovframework/message/com/sym/cal/message_ko.properties`              | 달력, 휴일관리를 위한 Message properties(한글) |
 | Idgen XML          | `resources/egovframework/spring/com/idgn/context-idgn-RestDe.xml`                | 달력, 휴일관리를 위한 Id생성 Idgen XML         |
