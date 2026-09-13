@@ -24,7 +24,6 @@ menu:
 | 유형 | 대상 소스 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.cas.service.EgovMessageUtil.java` | 메시지 처리 관련 유틸리티 | |
-| JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovMessage.jsp` | 테스트 페이지 | |
 
 ### 메소드
 

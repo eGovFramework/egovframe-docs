@@ -128,7 +128,7 @@ Globals.MainPage = /EgovContent.do
 
 #### 스프링 시큐리티 프레임워크를 이용하는 설정
 
- 스프링 시큐리티관련 설정이 반드시 포함되어야 한다. **context-security.xml** 파일은 src/main/resources/egovframework/spring/com 폴더 아래 위치해야 한다.
+ 스프링 시큐리티관련 설정이 반드시 포함되어야 한다. **egov-security-config.properties** 파일은 src/main/resources/egovframework/egovProps/conf 폴더 아래 위치하며, globals.properties의 `Globals.SecurityConfigPath`로 지정한다.
 
 1) context-egovuserdetailshelper.xml 수정 : 아래와 같이 `egovUserDetailsSecurityService` 빈 설정의 주석을 해제한 후 `egovUserDetailsHelper` 빈의 `egovUserDetailsService` 프러퍼티에 `egovUserDetailsSecurityService` 빈을 등록하면 된다.
 

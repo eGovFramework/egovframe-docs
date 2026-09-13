@@ -75,19 +75,19 @@ flowchart LR
 
  ![image](./images/sec-롤관리_클래스다이어그램.jpg)
 
-### XML 설정 파일
+### 설정 파일
 
  스프링 시큐리티를 사용하는 경우 (globals.properties 에서 Globals.Auth=security 로 설정한 경우)
 
 | 파일명 | 위치 | 비고 |
 | --- | --- | --- |
-| context-security | src/main/resources/egovframework/spring/com/context-security.xml | 스프링 시큐리티와 관련된 설정이 적용된 파일 |
+| egov-security-config | src/main/resources/egovframework/egovProps/conf/egov-security-config.properties | 스프링 시큐리티와 관련된 설정이 적용된 파일 (globals.properties의 `Globals.SecurityConfigPath`) |
 
  세션방식을 사용하는 경우 (globals.properties 에서 Globals.Auth=session 으로 설정한 경우)
 
 | 파일명 | 위치 | 비고 |
 | --- | --- | --- |
-| egov-com-access | src/main/webapp/WEB-INF/config/egovframework/springmvc/egov-com-access.xml | 세션방식의 접근제어가 적용된 파일 |
+| egov-access-config | src/main/resources/egovframework/egovProps/conf/egov-access-config.properties | 세션방식의 접근제어가 적용된 파일 (globals.properties의 `Globals.AccessConfigPath`) |
 
 ### ID Generation
 

@@ -72,11 +72,11 @@ flowchart LR
 
  ![image](./images/sec-권한그룹관리.jpg)
 
-### XML 설정 파일
+### 설정 파일
 
 | 파일명 | 위치 | 비고 |
 | --- | --- | --- |
-| context-security | src/main/resources/egovframework/spring/com/context-security.xml | 스프링 시큐리티와 관련된 설정이 적용된 파일 |
+| egov-security-config | src/main/resources/egovframework/egovProps/conf/egov-security-config.properties | 스프링 시큐리티와 관련된 설정이 적용된 파일 (globals.properties의 `Globals.SecurityConfigPath`) |
 
 ### 관련테이블
 
