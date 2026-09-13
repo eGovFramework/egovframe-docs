@@ -155,7 +155,7 @@ JobExecution과 마찬가지로 StepExecution은 Step을 수행하기 위한 단
 아래 예제에서 “concreteStep3” Step은 “listenerTwo”와 “listenerOne”를 모두 사용할 수 있다</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;step</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;listenersParentStep&#34;</span> <span style=color:teal>abstract=</span><span style=color:#d14>&#34;true&#34;</span><span style=color:navy>&gt;</span>
 </span></span><span style=display:flex><span>	<span style=color:navy>&lt;listeners&gt;</span>
 </span></span><span style=display:flex><span>		<span style=color:navy>&lt;listener</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;listenerOne&#34;</span><span style=color:navy>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:navy>&lt;listeners&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/listeners&gt;</span>
 </span></span><span style=display:flex><span><span style=color:navy>&lt;/step&gt;</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:navy>&lt;step</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;concreteStep3&#34;</span> <span style=color:teal>parent=</span><span style=color:#d14>&#34;listenersParentStep&#34;</span><span style=color:navy>&gt;</span>
@@ -164,7 +164,7 @@ JobExecution과 마찬가지로 StepExecution은 Step을 수행하기 위한 단
 </span></span><span style=display:flex><span>	<span style=color:navy>&lt;/tasklet&gt;</span>
 </span></span><span style=display:flex><span>	<span style=color:navy>&lt;listeners</span> <span style=color:teal>merge=</span><span style=color:#d14>&#34;true&#34;</span><span style=color:navy>&gt;</span>
 </span></span><span style=display:flex><span>	<span style=color:navy>&lt;listener</span> <span style=color:teal>ref=</span><span style=color:#d14>&#34;listenerTwo&#34;</span><span style=color:navy>/&gt;</span>
-</span></span><span style=display:flex><span>	<span style=color:navy>&lt;listeners&gt;</span>
+</span></span><span style=display:flex><span>	<span style=color:navy>&lt;/listeners&gt;</span>
 </span></span><span style=display:flex><span><span style=color:navy>&lt;/step&gt;</span>
 </span></span></code></pre></div><h4 id=restart를-위한-step-설정>Restart를 위한 Step 설정</h4><h5 id=start-limit>start-limit</h5><p>각 Step 실행 횟수를 설정한다. default는 SimpleStepFactoryBean 클래스에서 세팅 되며 Integer.MAX_VALUE로 설정 되있다.</p><h5 id=allow-start-if-complete>allow-start-if-complete</h5><p>Job의 Restart 시, “COMPLETED”로 완료한 Step의 실행 여부를 설정한다. true로 설정 시, “COMPLETED”로 완료한 Step도 다시 실행되며 이전 시도의 결과를 오버라이드 한다. (false 설정 시, “COMPLETED”로 완료한 Step은 skip)</p><p>아래 예제에서 “step1” Step은 10번만 실행 가능하며 Job을 Restart 했을 시, 이전 시도와 관계없이 재실행 된다.있다</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:navy>&lt;step</span> <span style=color:teal>id=</span><span style=color:#d14>&#34;step1&#34;</span><span style=color:navy>&gt;</span>
 </span></span><span style=display:flex><span>	<span style=color:navy>&lt;tasklet</span> <span style=color:teal>allow-start-if-complete=</span><span style=color:#d14>&#34;true&#34;</span> <span style=color:teal>start-limit=</span><span style=color:#d14>&#34;10&#34;</span><span style=color:navy>&gt;</span>
