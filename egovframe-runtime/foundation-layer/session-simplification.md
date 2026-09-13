@@ -107,7 +107,7 @@ properties 대신 XML namespace로 설정할 경우:
 egovframe-rte-fdl-access 설정 빈을 로드하기 위해 `org.egovframe.rte.fdl.access.config` 패키지를 스캔합니다.
 
 ```xml
-<context:component-scan base-package="egovframework, org.egovframe.rte.fdl.access.config, org.egovframe.rte.fdl.security">
+<context:component-scan base-package="egovframework, org.egovframe.rte.fdl.access.config, org.egovframe.rte.fdl.security" />
 ```
 
 - `Globals.AccessConfigPath`에 지정된 properties 파일을 읽어 접근제어 설정 빈 생성

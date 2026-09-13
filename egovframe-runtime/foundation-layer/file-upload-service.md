@@ -12,6 +12,10 @@ menu:
 ---
 # File Upload Service
 
+> **5.0 적용 범위:** 아래의 `CommonsMultipartResolver`·`MultiCommonsMultipartResolver` 기반 설정은 Spring Framework 6.0부터 해당 클래스가 제거되어 표준프레임워크 5.0에서 그대로 사용할 수 없다.
+> 5.0에서는 [StandardServletMultipartResolver](https://docs.spring.io/spring-framework/reference/6.2/web/webmvc/mvc-servlet/multipart.html)를 사용하며, 공통컴포넌트는 이를 상속한 [EgovMultipartResolver](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/cmm/web/EgovMultipartResolver.java)를 `multipartResolver`로 등록하고
+> 업로드 크기·파일 수·허용 확장자를 `globals.properties`의 `Globals.fileUpload.*` 속성으로 설정한다.
+
 ## 개요
 
 업로드는 한 컴퓨터 시스템에서 다른 시스템으로 파일을 전송하는 것을 말하는데, 대개 작은 컴퓨터에서 큰 컴퓨터로 옮길 때 이런 용어를 사용한다. 네트웍 사용자의 관점에서 보면, 파일을 업로드하는 것은 그 파일을 받을 수 있도록 설정된 다른 컴퓨터에 파일을 보내는 것이다. 전자게시판 상의 다른 사용자와 이미지 파일을 공유하기를 원하는 사람들은 그 전자게시판에 파일을 업로드하면 된다.

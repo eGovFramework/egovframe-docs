@@ -146,14 +146,14 @@ Stop transition 엘리먼트는 Step의 BatchStatus 또는 ExitStatus에는 영�
 다음의 예제는 Step2가 실패하기 되면 Job은 COMPLETED BatchStatus로 종료되며 Step3은 실행 되지않는다. 이경우 Job이 COMPLETED BatchStatus로 종료 되었기 때문에 재시작이 불가능 하다.(Step2가 성공하는 경우에는 Step3이 실행되게 된다)
 
 ```xml
-<step id="step1" parent="s1" next="step2">
+<step id="step1" parent="s1" next="step2"/>
  
 <step id="step2" parent="s2">
     <end on="FAILED"/>
     <next on="*" to="step3"/>
 </step>
  
-<step id="step3" parent="s3">
+<step id="step3" parent="s3"/>
 ```
 
 ##### The 'Fail' Element
@@ -163,14 +163,14 @@ Stop transition 엘리먼트는 Step의 BatchStatus 또는 ExitStatus에는 영�
 다음의 예제는 Step2가 실패하기 되면 Job은 FAILED BatchStatus와 EARLY TERMINATION ExitStatus로 종료되며 Step3은 실행 되지 않는다. 이경우 Job의 재시작이 가능하며, 실행은 Step2부터 시작된다.(Step2가 성공하는 경우에는 Step3이 실행되게 된다)
 
 ```xml
-<step id="step1" parent="s1" next="step2">
+<step id="step1" parent="s1" next="step2"/>
  
 <step id="step2" parent="s2">
     <fail on="FAILED" exit-code="EARLY TERMINATION"/>
     <next on="*" to="step3"/>
 </step>
  
-<step id="step3" parent="s3">
+<step id="step3" parent="s3"/>
 ```
 
 ##### The 'Stop' Element

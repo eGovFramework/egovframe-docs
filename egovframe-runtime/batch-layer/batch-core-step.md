@@ -221,7 +221,7 @@ Java의 Abstract 클래스와 동일한 개념으로 때로는 완전한 Step을
 <step id="listenersParentStep" abstract="true">
 	<listeners>
 		<listener ref="listenerOne"/>
-	<listeners>
+	</listeners>
 </step>
 
 <step id="concreteStep3" parent="listenersParentStep">
@@ -230,7 +230,7 @@ Java의 Abstract 클래스와 동일한 개념으로 때로는 완전한 Step을
 	</tasklet>
 	<listeners merge="true">
 	<listener ref="listenerTwo"/>
-	<listeners>
+	</listeners>
 </step>
 ```
 
