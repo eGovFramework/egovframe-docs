@@ -18,6 +18,30 @@ from collections import defaultdict
 USAGE = 'usage: python3 docs_lint.py <docs-root> [--src <java-src-root>]... [--json]'
 
 
+def mask_inline_code(text):
+    """링크 검사에서만 코드 영역을 가린다. 백틱의 개수가 같은 구분자끼리 짝짓는다."""
+    chars = list(text)
+    runs = list(re.finditer(r'`+', text))
+    i = 0
+    while i < len(runs):
+        opening = runs[i]
+        preceding = opening.start() - 1
+        while preceding >= 0 and text[preceding] == '\\':
+            preceding -= 1
+        if (opening.start() - preceding - 1) % 2:
+            i += 1
+            continue
+        closing = next((j for j in range(i + 1, len(runs))
+                        if len(runs[j].group()) == len(opening.group())), None)
+        if closing is None:
+            i += 1
+            continue
+        start, end = opening.start(), runs[closing].end()
+        chars[start:end] = ' ' * (end - start)
+        i = closing + 1
+    return ''.join(chars)
+
+
 def parse_args(argv):
     if len(argv) < 2 or argv[1].startswith('-'):
         print(USAGE); sys.exit(2)
@@ -58,7 +82,7 @@ def main():
 
         # L2 relative links
         d = os.path.dirname(md)
-        for m in re.finditer(r'\[[^\]]*\]\(([^)\s]+)\)', body):
+        for m in re.finditer(r'\[[^\]]*\]\(([^)\s]+)\)', mask_inline_code(body)):
             href = m.group(1)
             if href.startswith(('http', 'mailto:', '#', '/')): continue
             path = urllib.parse.unquote(href.split('#')[0])
@@ -123,4 +147,3 @@ def main():
 
 
 if __name__ == '__main__': main()
-
