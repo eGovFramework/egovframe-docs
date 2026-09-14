@@ -117,7 +117,7 @@ flowchart LR
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /sym/ccm/cde/RegistCcmCmmnDetailCodeView.do | insertCmmnDetailCodeView | "CmmnClCodeManage" | "selectCmmnClCodeList" |
-|  |  |  | "CmmnDetailCodeManage" | "selectCmmnCodeList" |
+|  |  |  | "CmmnCodeManage" | "selectCmmnCodeList" |
 | 등록 | /sym/ccm/cde/RegistCcmCmmnDetailCode.do | insertCmmnDetailCode | "CmmnDetailCodeManage" | "insertCmmnDetailCode" |
 
  ![image](./images/sym-comdetail-등록.jpg)

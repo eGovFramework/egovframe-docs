@@ -48,8 +48,8 @@ JobRepository는 배치 네임 스페이스를 통해서나 JobRepositoryFactory
 ```xml
 <aop:config>
     <aop:advisor 
-           pointcut="execution(* org.springframework.batch.core..*Repository+.*(..))"/>
-    <advice-ref="txAdvice" />
+           pointcut="execution(* org.springframework.batch.core..*Repository+.*(..))" advice-ref="txAdvice"/>
+    
 </aop:config>
  
 <tx:advice id="txAdvice" transaction-manager="transactionManager">

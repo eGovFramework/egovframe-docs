@@ -61,8 +61,12 @@ Python 3가 필요하며, 별도 패키지 설치는 필요하지 않습니다.<
 #### L5 source-ref
 : 관련소스 클래스 참조가 실제 저장소에 없음 (`--src`로 소스 저장소 지정 시)
 - 문서의 백틱 클래스명(`egovframework.*`, `org.egovframe.*`)이 실제 Java 소스에 있는지 확인합니다.
-- `--src`를 지정하지 않으면 L5는 동작하지 않습니다.
+- `--src`를 지정하지 않으면 L5는 동작하지 않습니다. `--src`는 여러 번 줄 수 있고, 준 저장소들의 클래스를 합쳐 대조합니다.
 - 예시: `python3 scripts/docs_lint.py common-component --src ../egovframe-common-components`
+- 예시: `python3 scripts/docs_lint.py egovframe-runtime --src ../egovframe-runtime --src ../egovframe-ai-rag`
+- 검출 코드
+    - `L5`: 백틱 클래스명이 소스에 없습니다.
+    - `L5-name`: 본문·표에 쓴 `Egov`로 시작하는 클래스명(백틱 여부 무관, 코드블록 제외)이 소스에 없습니다. 예제용 이름이거나 `--src`로 주지 않은 저장소의 클래스일 수 있으니 확인 후 수정합니다.
 
 ## 결과
 ### 출력

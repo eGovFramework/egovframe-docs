@@ -32,10 +32,10 @@ menu:
 
 ## 주요 개념
 
-지정한 절대 경로를 기반으로 새로운 디렉토리(폴더)를 생성할 수 있다.
+`Globals.fileStorePath`를 기준으로 새로운 디렉토리(폴더)를 생성할 수 있다.
 
 - 디렉토리를 생성하고자 하는 상위 디렉토리가 존재하지 않는 경우에도 상위 디렉토리를 포함하여 하위 디렉토리까지 전체 경로를 생성할 수 있다.
-- 디렉토리 생성에 성공하면 생성된 디렉토리의 절대 경로가 반환되며, 이미 디렉토리가 존재하거나 생성에 실패하는 경우에는 빈 문자열(`""`)이 반환된다.
+- 디렉토리 생성에 성공하거나 이미 디렉토리가 존재하면 해당 디렉토리의 절대 경로가 반환되며, 생성에 실패하는 경우에는 빈 문자열(`""`)이 반환된다.
 
 ## 설명
 
@@ -49,7 +49,6 @@ menu:
 | 유형 | 대상 소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 툴 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryCreate.jsp` | 테스트 페이지 | |
 
 ### 메소드
 
@@ -61,7 +60,7 @@ menu:
 
 ### Input
 
-- **dirCreationPath**: String 타입의 절대 경로를 포함하는 생성 대상 디렉토리 경로 (예: `/product/jeus/egovProps/tmp/dir1`)
+- **dirCreationPath**: `Globals.fileStorePath` 아래에 생성할 디렉토리 경로 (예: `dir1`)
 
 ### Output
 
@@ -69,12 +68,12 @@ menu:
 
 ## 환경설정
 
-해당사항 없음
+`globals.properties`의 `Globals.fileStorePath`에 기본 저장 경로를 설정한다.
 
 ### 사용 시 주의사항
 
 - 생성 대상 경로에 대한 쓰기 권한이 필요하다.
-- 동일한 경로에 디렉토리가 이미 존재하는 경우 빈 문자열(`""`)이 반환될 수 있다.
+- 동일한 경로에 디렉토리가 이미 존재하면 해당 디렉토리의 절대 경로가 반환된다.
 - 운영체제의 파일 시스템 권한에 따라 디렉토리 생성이 실패할 수 있다.
 
 ## 사용방법
@@ -82,8 +81,8 @@ menu:
 ```java
 import egovframework.com.utl.sim.service.EgovFileTool;
 
-// 생성할 디렉토리의 절대경로 지정
-String dirCreationPath = "/user/com/dir1";
+// Globals.fileStorePath 아래에 생성할 디렉토리 경로 지정
+String dirCreationPath = "dir1";
 
 // 디렉토리 생성 메소드 호출
 String result = EgovFileTool.createNewDirectory(dirCreationPath);

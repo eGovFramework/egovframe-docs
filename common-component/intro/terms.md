@@ -111,7 +111,7 @@ menu:
 |         |             |             | tlg     | trans and rec log             | 송/수신로그관리        |
 |         |             |             | ulg     | user log                      | 사용자로그관리         |
 |         |             |             | wlg     | web log                       | 웹로그관리           |
-|         |             | mmu         |         | main menu service             | 메뉴관리            |
+|         |             | mnu         |         | main menu service             | 메뉴관리            |
 |         |             |             | bmm     | bookmark menu management      | 바로가기메뉴관리        |
 |         |             |             | mcm     | menu create management        | 메뉴생성관리          |
 |         |             |             | mpm     | menu and program manage       | 메뉴관리            |

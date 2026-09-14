@@ -13,7 +13,7 @@ menu:
 
 ## 개요
 
-Code Generation 기능을 사용하여 "JTA를 이용한 Global Transation 관리 설정"을 쉽게 작성할 수 있다.
+Code Generation 기능을 사용하여 "JTA를 이용한 Global Transaction 관리 설정"을 쉽게 작성할 수 있다.
 
 ## 설명
 

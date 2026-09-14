@@ -19,6 +19,16 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[뉴스정보목록조회] -->|등록| R[뉴스정보등록]
+    L -->|목록 클릭| D[뉴스정보상세조회]
+    D -->|수정| U[뉴스정보수정]
+    D -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+```
+
 ### 패키지 참조 관계
 
  뉴스관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -191,7 +201,7 @@ menu:
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /uss/ion/nws/updateNewsView.do | updateNewsView | "NewsManage" | "selectNewsDetail" |
-| 수정 | /uss/ion/nws/updateNews.do | updateNews | "NewsManage" | "updateNews" |
+| 수정 | /uss/ion/nws/updateNews.do | updateNewsInfo | "NewsManage" | "updateNews" |
 
  ![image](./images/uss-news-news_updt.png)
 

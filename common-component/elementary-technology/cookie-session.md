@@ -36,8 +36,6 @@ menu:
 | 유형 | 대상소스 | 설명 |
 | --- | --- | --- |
 | Service | `EgovSessionCookieUtil.java` | 세션/쿠키 처리 관련 유틸리티 |
-| Controller | `EgovComUtlController.java` | 테스트용 controller |
-| JSP | `EgovCookieProcess.jsp` | 쿠키처리 테스트 페이지 |
 
 #### 쿠키 메소드
 
@@ -95,8 +93,6 @@ String safeGetParameter(HttpServletRequest request, String name) {
 | 유형 | 대상소스 | 설명 |
 | --- | --- | --- |
 | Service | `EgovSessionCookieUtil.java` | 세션 처리 관련 유틸리티 |
-| Controller | `EgovComUtlTestController.java` | 테스트용 controller |
-| JSP | `EgovSession.jsp` | 테스트 페이지 |
 
 #### 세션 메소드
 
@@ -105,7 +101,7 @@ String safeGetParameter(HttpServletRequest request, String name) {
 | `void` | `setSessionAttribute(request, key, value)` | 세션 정보 생성 | `HttpSession`에 주어진 키 값으로 세션 정보를 생성하는 기능 |
 | `void` | `setSessionAttribute(request, key, obj)` | 세션 객체 생성 | `HttpSession`에 주어진 키 값으로 세션 객체를 생성하는 기능 |
 | `Object` | `getSessionAttribute(request, key)` | 세션 객체 취득 | `HttpSession`에 존재하는 주어진 키 값에 해당하는 세션 객체를 얻어오는 기능 |
-| `String` | `getSessionValues(request)` | 세션 객체 리스트 취득 | `HttpSession` 객체내의 모든 값을 호출하는 기능 |
+| `String` | `getSessionValuesString(request)` | 세션 객체 리스트 취득 | `HttpSession` 객체내의 모든 값을 호출하는 기능 |
 | `void` | `removeSessionAttribute(request, key)` | 세션 객체 삭제 | `HttpSession`에 존재하는 세션을 주어진 키 값으로 삭제하는 기능 |
 
 ##### Input

@@ -21,7 +21,7 @@
 
 ## 전제조건
 
- 암복호화 기능을 사용하기 위해서는 전자정부 표준프레임워크 실행환경중 egovframework.rte.fdl.crypto-x.x.x.jar 라이브러리를 필요로 한다.
+ 암복호화 기능을 사용하기 위해서는 전자정부 표준프레임워크 실행환경중 egovframe-rte-fdl-crypto-x.x.x.jar 라이브러리를 필요로 한다.
 
  보다 자세한 사항은 실행환경의 [암호화/복호화](/egovframe-runtime/foundation-layer/crypto-encryption-decryption.md) 서비스를 참조한다.
 
@@ -64,8 +64,8 @@ flowchart LR
 
 ```xml
 <dependency>
-    <groupId>egovframework.rte</groupId>
-    <artifactId>egovframework.rte.fdl.crypto</artifactId>
+    <groupId>org.egovframe.rte</groupId>
+    <artifactId>egovframe-rte-fdl-crypto</artifactId>
     <version>${egovframework.rte.version}</version>
 </dependency>
 

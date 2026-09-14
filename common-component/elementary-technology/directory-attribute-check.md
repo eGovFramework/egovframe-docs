@@ -10,6 +10,10 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** 아래에서 설명하는 `canRead`, `canWrite`, `getAccess`, `getDirectorySize`, `getLastModifiedDateFromFile`, `getName`, `getOwner` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+
 ## 개요
 
 디렉토리 속성정보인 디렉토리명, 생성일자(최종수정일자), 소유계정, 읽기권한, 쓰기권한, 접근권한, 사이즈 정보를 확인하는
@@ -46,7 +50,6 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | egovframework.com.utl.sim.service.EgovFileTool.java | 파일관리 요소기술 클래스 | |
-| JSP | WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryInfoCeck.jsp | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 
@@ -91,7 +94,7 @@ menu:
 #1. getOwner 메소드에 해당되는 쉘 스크립트
 SHELL.UNIX.getDrctryOwner = /product/jeus/egovProps/prg/getDrctryOwner.sh
 #2. getAccess 메소드에 해당되는 쉘 스크립트
-SHELL.UNIX.getMoryInfo = /product/jeus/egovProps/prg/getDrctryAccess.sh
+SHELL.UNIX.getDrctryAccess = /product/jeus/egovProps/prg/getDrctryAccess.sh
 ```
 
 #### getDrctryOwner.sh (유닉스용 디렉토리 소유자 조회 스크립트)

@@ -19,6 +19,16 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[추천사이트목록조회] -->|등록| R[추천사이트등록]
+    L -->|목록 클릭| D[추천사이트상세조회]
+    D -->|수정| U[추천사이트수정]
+    D -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+```
+
 ### 패키지 참조 관계
 
  추천사이트관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 달력 패키지와 함께 배포 파일을 구성한다.
@@ -138,7 +148,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /uss/ion/rec/selectRecomendSiteDetail.do | selectRecomendSiteList | "RecomendSite" | "selectRecomendSiteDetail" |
+| 상세조회 | /uss/ion/rec/selectRecomendSiteDetail.do | selectRecomendSiteDetail | "RecomendSite" | "selectRecomendSiteDetail" |
 | 삭제 | /uss/ion/rec/deleteRecomendSite.do | deleteRecomendSite | "RecomendSite" | "deleteRecomendSite" |
 
  추천사이트 상세조회화면은 추천사이트수정, 추천사이트삭제, 추천사이트목록조회를 할 수 있다.

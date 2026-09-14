@@ -148,14 +148,14 @@ infrmlSanctnService.deleteInfrmlSanctn(converToInfrmlSanctnObject(ctsnnManage));
 ```
 
  승인 메소드에 아래 로직을 삽입한다.
- 약식결재ID,신청일자,사용자ID,결재자ID,승인구분는 필수값이다.
+ 약식결재ID,신청일자,사용자ID,결재자ID,승인구분은 필수값이다.
 
 ```text
 infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnConfm(converToInfrmlSanctnObject(ctsnnManage));
 ```
 
  반려 메소드에 아래 로직을 삽입한다.
- 약식결재ID,신청일자,사용자ID,결재자ID,승인구분는 필수값이다.
+ 약식결재ID,신청일자,사용자ID,결재자ID,승인구분은 필수값이다.
 
 ```text
 infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctnObject(ctsnnManage));
@@ -261,7 +261,7 @@ infrmlSanctn = infrmlSanctnService.updateInfrmlSanctnReturn(converToInfrmlSanctn
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 반려 | /uss/ion/ism/EgovReturnPopup.do | selectReturnPopup | "InfrmlSanctnDAO.updateInfrmlSanctnReturn" |
+| 반려 | /uss/ion/ism/EgovReturnPopup.do | selectReturnPopup | "InfrmlSanctnDAO.updateInfrmlSanctnConfm" |
 
  약식결재의 속성정보를 변경한 후 저장한다.
 

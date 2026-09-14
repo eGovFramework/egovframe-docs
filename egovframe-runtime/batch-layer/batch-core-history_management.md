@@ -33,11 +33,11 @@ menu:
 | JobExecution 속성 | 설명 |
 | --- | --- |
 | status | BatchStatus는 실행 상태를 나타내는 객체이다, 실행하는 동안에는 BatchStatus,STARTED, 실행이 실패한 경우 BatchStatus.FAILED, 실행이 성공적으로 종료됐을 경우 BatchStatus.COMPLETED가 된다. |
-| startTime | Execution이 시작되는 현재 시스템 시간을 java.Util.Data로 저장 |
-| endTime | Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.Util.Data로 저장 |
+| startTime | Execution이 시작되는 현재 시스템 시간을 java.time.LocalDateTime로 저장 |
+| endTime | Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.time.LocalDateTime로 저장 |
 | exitStatus | ExitStatus는 실행의 결과를 나타낸다. 호출자에게 반환될 exit code를 포함한다. |
-| createTime | JobExecution이 최초 생성 된 현재 시스템 시간을 java.Util.Data로 저장 |
-| lastUpdated | JobExecution이 마지막으로 생성 된 현재 시스템 시간을 java.Util.Data로 저장 |
+| createTime | JobExecution이 최초 생성 된 현재 시스템 시간을 java.time.LocalDateTime로 저장 |
+| lastUpdated | JobExecution이 마지막으로 생성 된 현재 시스템 시간을 java.time.LocalDateTime로 저장 |
 | executionContext | execution간 지속돼야 할 모든 데이터를 포함하는 '프로퍼티 백' |
 | failureExceptions | Job이 실행되는 동안 발생한 익셉션 리스트 |
 
@@ -58,8 +58,8 @@ menu:
 | StepExecution 속성 | 설명 |
 | --- | --- |
 | status | BatchStatus는 실행 상태를 나타내는 객체이다, 실행하는 동안에는 BatchStatus,STARTED, 실행이 실패한 경우 BatchStatus.FAILED, 실행이 성공적으로 종료됐을 경우 BatchStatus.COMPLETED가 된다. |
-| startTime | Execution이 시작되는 현재 시스템 시간을 java.Util.Data로 저장 |
-| endTime | Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.Util.Data로 저장 |
+| startTime | Execution이 시작되는 현재 시스템 시간을 java.time.LocalDateTime로 저장 |
+| endTime | Execution의 성공/실패 여부와 관계없이 종료되는 현재 시스템 시간을 java.time.LocalDateTime로 저장 |
 | exitStatus | ExitStatus는 실행의 결과를 나타낸다. 호출자에게 반환될 exit code를 포함한다. |
 | executionContext | execution간 지속돼야 할 모든 데이터를 포함하는 '프로퍼티 백' |
 | readCount | 성공적으로 읽은 item 개수 |

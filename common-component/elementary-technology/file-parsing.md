@@ -10,6 +10,10 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** 아래에서 설명하는 `parsFileBySize` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 5.0에서는 구분자 파싱 메소드 `parsFileByChar`를 제공한다.
+
 ## 개요
 
 사용자가 업로드한 파일 및 서버(Server)의 텍스트 파일을 특정 구분자(`,`, `|`, `TAB`)로 파싱하여 정보를 추출하는 기능을 제공한다.
@@ -31,7 +35,6 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovFilePars.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 
@@ -40,13 +43,14 @@ menu:
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| Vector | `parsFileByChar(String parFile, String parChar, int parField)` | 특정구분자 파일파싱 | 파일을 특정 구분자(콤마, 파이프, TAB)로 파싱한다 |
+| Vector | `parsFileByChar(String basePath, String parFile, String parChar, int parField)` | 특정구분자 파일파싱 | 파일을 특정 구분자(콤마, 파이프, TAB)로 파싱한다 |
 | Vector | `parsFileBySize(String parFile, int[] parLen, int parLine)` | 일정길이 파일파싱 | 파일을 필드별 일정 길이로 파싱한다 |
 <!-- markdownlint-restore -->
 
 #### 파라미터 정의 (Input)
 
-- `parFile`: String 타입의 절대경로를 포함한 파일명 (예: `/user/com/test/file1.txt`)
+- `basePath`: String 타입의 파일 접근을 허용할 기준 경로 (미지정 시 `Globals.fileStorePath` 사용)
+- `parFile`: `basePath`(미지정 시 `Globals.fileStorePath`)에 이어 붙일 파일명 (예: `file1.txt`)
 - `parChar`: String 타입의 파싱 구분자 (예: `,`)
 - `parField`: int 타입의 파싱 필드수 (예: `3`)
 - `parLen`: int[] 타입의 각 필드 길이 (예: `{3, 3, 3}`)
@@ -65,8 +69,9 @@ import java.util.Vector;
 import egovframework.com.utl.sim.service.EgovFileTool;
 
 // 1. 특정 구분자 파일파싱
-String parFile = "/user/com/test/file1.txt";
-Vector<List<String>> result1 = EgovFileTool.parsFileByChar(parFile, ",", 3);
+String basePath = null;
+String parFile = "file1.txt";
+Vector<List<String>> result1 = EgovFileTool.parsFileByChar(basePath, parFile, ",", 3);
 
 // 2. 일정 길이 파일파싱
 int[] parLen = {3, 3, 3};

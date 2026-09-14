@@ -80,7 +80,7 @@ public class MemberVO{
 
 `@NotNull`은 빈문자열을 검증하지 못하기 때문에 `@Size(min=1)`을 사용하여 빈 문자열을 확인해야 한다.
 
-위와같은 제약조건 애노테이션을 사용해 검증을 수행하기 위해서는 LocalValidatiorFactoryBean을 빈으로 등록해 줘야 한다. LocalValidatiorFactoryBean은 JSR-303의 검증기능을 스프링의 Validator처럼 사용할 수 있게 해주는 일종의 어댑터다. LocalValidatiorFactoryBean을 빈으로 등록하면 컨트롤러에서 Validator타입으로 DI 받아서 @InitBinder에서 WebDataBinder에 설정하거나 코드에서 직접 Validator처럼 사용할 수 있다.
+위와같은 제약조건 애노테이션을 사용해 검증을 수행하기 위해서는 LocalValidatorFactoryBean을 빈으로 등록해 줘야 한다. LocalValidatorFactoryBean은 JSR-303의 검증기능을 스프링의 Validator처럼 사용할 수 있게 해주는 일종의 어댑터다. LocalValidatorFactoryBean을 빈으로 등록하면 컨트롤러에서 Validator타입으로 DI 받아서 @InitBinder에서 WebDataBinder에 설정하거나 코드에서 직접 Validator처럼 사용할 수 있다.
 
 ```xml
 <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />

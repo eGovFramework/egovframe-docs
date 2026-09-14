@@ -373,7 +373,7 @@ formBackingObject 메소드가 실행 되기 전에 DefaultAnnotationHandlerMapp
 | types | Class[]  | session에 저장하려는 model attribute의 타입 |
 | value | String[] | session에 저장하려는 model attribute의 이름 |
 
-#### @RequestParam
+#### @RequestPart
 
 Multipart request의 경우, 넘겨받은 Contents의 Content-Type에 따라 HttpMessageConverter를 통해 해당 타입대로 multipart컨텐츠를 얻을 때 사용하는 어노테이션이다.
 

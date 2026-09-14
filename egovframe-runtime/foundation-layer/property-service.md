@@ -42,8 +42,8 @@ Property Service 는 시스템의 설치 환경에 관련된 정보나, 잦은 �
 	<property name="basenames">
 		<list>
 			<value>classpath:/message/message-common</value>
-			<value>classpath:/egovframework/rte/fdl/idgnr/messages/idgnr</value>
-			<value>classpath:/egovframework/rte/fdl/property/messages/properties</value>
+			<value>classpath:/org/egovframe/rte/fdl/idgnr/messages/idgnr</value>
+			<value>classpath:/org/egovframe/rte/fdl/property/messages/properties</value>
 		</list>
 	</property>
 	<property name="cacheSeconds">

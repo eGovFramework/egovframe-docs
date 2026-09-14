@@ -15,7 +15,7 @@ menu:
 
 Bean의 Profile은 Spring f/w ver. 3.1부터 추가되었으며 동일한 id의 bean을 여러 개 정의하여 사용자의 설정으로 활성화시킨 Profile의 해당 bean이 Runtime시에 동작하도록 하는 기능이다. 보통 개발시점과 운영시점에 bean의 Profile설정 변경만으로 Spring Container에서 Bean적용이 달리 적용되도록 하는데 쓰인다.
 
-Profile설정 시, 반드시 Profile을 활성화해야만 사용가능하다. 만약 Profile만 설정하고 활성화하지 않으면 Exeption(NoSuchBeanDefinitionException)이 발생한다.
+Profile설정 시, 반드시 Profile을 활성화해야만 사용가능하다. 만약 Profile만 설정하고 활성화하지 않으면 Exception(NoSuchBeanDefinitionException)이 발생한다.
 
 ## 설명
 
@@ -90,7 +90,7 @@ Profile의 설정방법에는 XML설정과 Annotation설정으로 나뉜다.
 
 \<jndi-datasource-config.xml>
 
-운영시점에 사용하는 "dataSource" bean을 정의하는 XML. Profile명은 "production"으로 정의하고 있으며 JDNI를 DataSource로 설정하고 있다. "production" Profile을 활성화시키면 해당 Bean이 동작한다.
+운영시점에 사용하는 "dataSource" bean을 정의하는 XML. Profile명은 "production"으로 정의하고 있으며 JNDI를 DataSource로 설정하고 있다. "production" Profile을 활성화시키면 해당 Bean이 동작한다.
 
 ```xml
 <beans profile="production">

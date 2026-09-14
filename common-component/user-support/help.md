@@ -19,6 +19,16 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[도움말목록조회] -->|등록| R[도움말등록]
+    L -->|목록 클릭| D[도움말상세조회]
+    D -->|수정| U[도움말수정]
+    D -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+```
+
 ### 패키지 참조 관계
 
  도움말 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -142,7 +152,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 상세조회 | /uss/olh/hpc/selectHpcmDetail.do | selectHpcmDetail | "Hpcm" | "selectHpcmDetail" |
-| 삭제 | /uss/olh/hpc/deleteHpcm.do | deleteHpcm | "Hpcm" | "deleteHpcm" |
+| 삭제 | /uss/olh/hpc/deleteHpcm.do | deleteHpcmCn | "Hpcm" | "deleteHpcm" |
 
  도움말 상세조회화면은 도움말수정, 도움말삭제, 도움말목록조회를 할 수 있다.
 
@@ -174,7 +184,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 등록화면 | /uss/olh/hpc/insertHpcmView.do | insertHpcmView |  |  |
-| 등록 | /uss/olh/hpc/insertHpcm.do | insertHpcm | "Hpcm" | "insertHpcm" |
+| 등록 | /uss/olh/hpc/insertHpcm.do | insertHpcmCn | "Hpcm" | "insertHpcm" |
 
  도움말에 관한 기본정보를 입력 저장처리한다.
 

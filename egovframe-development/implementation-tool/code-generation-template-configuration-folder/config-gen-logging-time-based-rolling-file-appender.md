@@ -13,11 +13,11 @@ menu:
 
 ## 개요
 
-설정한 날짜 또는 조건에 맞춰 로깅을 수행하는 "DailyRollingFileAppender 설정"을 Code Generation 기능을 사용하여 쉽게 작성할 수 있다.
+설정한 날짜 또는 조건에 맞춰 로깅을 수행하는 "TimeBasedRollingFileAppender 설정"을 Code Generation 기능을 사용하여 쉽게 작성할 수 있다.
 
 ## 설명
 
-Daily Rolling File Appender Configuration 의 설명은 다음 실행환경 가이드를 참조한다.
+Time Based Rolling File Appender Configuration 의 설명은 다음 실행환경 가이드를 참조한다.
 
 * [실행환경 Logging Configuration Guide](../../../egovframe-runtime/foundation-layer/logging.md)
 

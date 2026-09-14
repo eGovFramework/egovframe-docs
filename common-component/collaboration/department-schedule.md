@@ -19,6 +19,22 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    subgraph T[부서일정관리 목록]
+        direction TB
+        M[부서일정관리 월별목록]
+        W[부서일정관리 주간별목록]
+        Y[부서일정관리 일별목록]
+    end
+    M -->|날짜 클릭| R[부서일정관리 등록]
+    T -->|일정 클릭| D[부서일정관리 상세조회 및 삭제]
+    D -->|수정| U[부서일정관리 수정]
+    D -->|삭제| T
+    R -->|저장| T
+    U -->|저장| T
+```
+
 ### 패키지 참조 관계
 
 부서일정관리 패키지는 요소기술의 공통(cmm) 패키지에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 개인일정관리, 일지관리, 전체일정 패키지와 함께 배포 파일을 구성한다.
@@ -182,7 +198,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 상세조회 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | "DeptSchdulManage" | "selectDeptSchdulManageDetailVO" |
-| 부서일정 삭제 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDetail | "DeptSchdulManage" | "deleteDeptSchdulManage" |
+| 부서일정 삭제 | /cop/smt/sdm/EgovDeptSchdulManageDetail.do | egovDeptSchdulManageDelete | "DeptSchdulManage" | "deleteDeptSchdulManage" |
 
 ![부서일정관리 상세조회 및 삭제](./images/department-schedule-detail.jpg)
 

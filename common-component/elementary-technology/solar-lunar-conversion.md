@@ -27,7 +27,7 @@ menu:
 
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
-| `toSolar(String sDate, int iLeapMonth)` | `String` | 입력받은 양력일자를 변환하여 음력일자로 반환 |
+| `toSolar(String sDate, int iLeapMonth)` | `String` | 입력받은 음력일자를 변환하여 양력일자로 반환 |
 
 ## 입력값 (Input)
 
@@ -41,7 +41,7 @@ menu:
 ## 사용 예
 
 ```java
-String lunar = EgovDateUtil.toSolar("20260711", 0); // 양력 → 음력 변환
+String solar = EgovDateUtil.toSolar("20260711", 0); // 음력 → 양력 변환
 ```
 
 ## 참고자료

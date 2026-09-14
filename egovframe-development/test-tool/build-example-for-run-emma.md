@@ -29,7 +29,7 @@ EMMA를 수행하기 위해서는 Test 수행을 위한 설정(junit)을 반드�
  
 <taskdef resource="emma_ant.properties"
          classpathref="emma.lib"
-         description="this loads <emma> and <emmajava> custom tasks:" />
+         description="this loads &lt;emma&gt; and &lt;emmajava&gt; custom tasks:" />
  
 <!-- 2. EMMA Instrument -->
 <target name="emma-jars" depends="build" description="Uses Emma to instrument the jar files">

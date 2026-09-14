@@ -30,7 +30,7 @@ menu:
 | [EgovIntegrationMessageHeader](#egovintegrationmessageheader) | 연계 서비스를 통해 주고받는 표준 메시지 헤더를 정의한다. |
 | [EgovIntegrationMessageHeader::ResultCode](#egovintegrationmessageheaderresultcode) | 연계 서비스 결과 코드를 담고 있는 enumeration이다. |
 | [EgovIntegrationService](#egovintegrationservice) | 연계 서비스를 호출하기 위해 사용한다. |
-| [EgovIntegrationResponse](#using-sendasync-with-response) | 연계 서비스를 비동기 방식으로 호출한 경우, 응답 메시지를 받기 위해 사용한다. |
+| [EgovIntegrationServiceResponse](#using-sendasync-with-response) | 연계 서비스를 비동기 방식으로 호출한 경우, 응답 메시지를 받기 위해 사용한다. |
 | [EgovIntegrationServiceCallback](#using-sendasync-with-callback) | 연계 서비스를 비동기 방식으로 호출한 경우, 응답 메시지를 받기 위한 Callback interface이다. |
 | [EgovIntegrationServiceCallback::CallbackId](#using-sendasync-with-callback) | 연계 서비스를 Callback을 이용한 비동기 방식으로 호출한 경우, 요청 메시지와 응답 메시지를 연결하기 위한 ID를 나타내는 interface이다. |
 | [EgovIntegrationServiceProvider](#egovintegrationserviceprovider) | 연계 서비스를 제공하기 위해 사용한다. |

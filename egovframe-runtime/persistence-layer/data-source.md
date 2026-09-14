@@ -137,7 +137,7 @@ public void testDbcpDataSource() throws Exception
 {
  
   assertNotNull(dataSource);
-  assertEquals("org.apache.commons.dbcp.BasicDataSource", dataSource.getClass().getName());
+  assertEquals("org.apache.commons.dbcp2.BasicDataSource", dataSource.getClass().getName());
  
   Connection con = null;
   Statement stmt = null;

@@ -52,7 +52,7 @@ Log4j 2에서는 XML 파일의 최상위 요소가 **&lt;Configuration&gt;** 으
    <AppenderRef ref="console"/>
    <AppenderRef ref="file"/>
   </Logger>
-  <Rootlevel="ERROR">
+  <Root level="ERROR">
    <AppenderRef ref="console"/>
   </Root>
  </Loggers>
@@ -94,7 +94,7 @@ Logger는 하나 이상 정의할 수 있으며, Root 요소를 반드시 정의
   <Logger name="X" level="DEBUG" additivity="false">
    <AppenderRef ref="console"/>  
   </Logger>
-  <Rootlevel="ERROR">
+  <Root level="ERROR">
    <AppenderRef ref="console"/>
   </Root>
  </Loggers>
@@ -239,7 +239,7 @@ Appender 요소는 name 속성값을 가지며, name 속성에 Appender 이름�
   <Logger name="egovLogger" level="DEBUG" additivity="false">
    <AppenderRef ref="console" />
   </Logger>
-  <Rootlevel="ERROR">
+  <Root level="ERROR">
    <AppenderRef ref="console" />
   </Root>
  </Loggers>

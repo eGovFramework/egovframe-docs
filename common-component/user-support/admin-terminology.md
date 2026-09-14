@@ -26,6 +26,18 @@ menu:
 
 ## 설명
 
+```mermaid
+flowchart LR
+    L[행정전문용어사전 목록조회] -->|목록 클릭| D[행정전문용어사전 상세조회]
+
+    ML[행정전문용어사전관리 목록조회] -->|등록| R[행정전문용어사전관리 내용등록]
+    ML -->|목록 클릭| MD[행정전문용어사전관리 상세조회]
+    MD -->|수정| U[행정전문용어사전관리 내용수정]
+    MD -->|삭제| ML
+    R -->|저장| ML
+    U -->|저장| ML
+```
+
 ### 패키지 참조 관계
 
  행정전문용어사전관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -120,7 +132,7 @@ CREATE TABLE COMTECOPSEQ ( table_name varchar(16) NOT NULL,
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/olh/awm/selectAdministrationWordList.do | selectAdministrationWordList | "AdministrationWord" | "selectAdministrationWordList" |
+| 목록조회 | /uss/olh/awm/selectAdministrationWordList.do | egovAdministrationWordList | "AdministrationWord" | "selectAdministrationWordList" |
 |  |  |  | "AdministrationWord" | "selectAdministrationWordListCnt" |
 
  ![image](./images/uss-adminterm-administrationword_list.png)

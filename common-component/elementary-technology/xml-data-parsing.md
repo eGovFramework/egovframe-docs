@@ -10,6 +10,10 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** 아래에서 설명하는 `creatSchemaToClass` 메소드는
+> [공통컴포넌트 5.0의 EgovXMLDoc](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovXMLDoc.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 5.0에서는 `getXMLToClass`, `getXMLDocument` 등의 파싱 메소드를 제공한다.
+
 ## 개요
 
 XML 파일을 로드한 후 XML 데이터를 파싱하여 구조적인 데이터 형태로 변환하는 기능을 제공한다.
@@ -30,7 +34,6 @@ XML 데이터파싱에서 제공하는 기능은 다음과 같다.
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovXMLDoc.java` | XML파싱/조립 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 
@@ -50,7 +53,7 @@ XML 데이터파싱 기능은 `EgovXMLDoc` 클래스의 메소드를 활용하�
 
 - XML스키마 파일: String 타입의 절대경로 (예: `/user/com/test/mail.xsd`)
 - 생성 JAR 경로: String 타입의 절대경로 (예: `/user/com/test/mail.jar`)
-- XML데이터 파일: String 타입의 절대경로 (예: `/user/com/test/mail_data.xml`)
+- XML데이터 파일: `Globals.fileStorePath` 아래의 파일명 (예: `mail_data.xml`). 경로를 포함해도 파일명만 사용한다.
 
 ### 사용 방법
 
@@ -61,7 +64,7 @@ import egovframework.com.utl.sim.service.EgovXMLDoc;
 boolean result = EgovXMLDoc.creatSchemaToClass("/user/com/test/mail.xsd", "/user/com/test/mail.jar");
 
 // 2. XML 파일의 데이터를 읽어 객체로 파싱
-SndngMailDocument mailDoc = EgovXMLDoc.getXMLToClass("/user/com/test/mail_data.xml");
+SndngMailDocument mailDoc = EgovXMLDoc.getXMLToClass("mail_data.xml");
 SndngMailDocument.SndngMail mailElement = mailDoc.getSndngMail();
 
 String dsptchPerson = mailElement.getDsptchPerson();  // 발신자

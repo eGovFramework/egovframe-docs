@@ -37,7 +37,7 @@
 
 | 유형 | 대상소스명 | 비고 |
 | --- | --- | --- |
-| Controller | egovframework.com.sts.dst.web.EgovDtaUseStatsContoller.java | 자료이용현황통계를 위한 컨트롤러 클래스 |
+| Controller | egovframework.com.sts.dst.web.EgovDtaUseStatsController.java | 자료이용현황통계를 위한 컨트롤러 클래스 |
 | Service | egovframework.com.sts.dst.service.EgovDtaUseStatsService.java | 자료이용현황통계를 위한 서비스 인터페이스 |
 | ServiceImpl | egovframework.com.sts.dst.service.impl.EgovDtaUseStatsServiceImpl.java | 자료이용현황통계를 위한 서비스 구현 클래스 |
 | Model | egovframework.com.sts.dst.service.DtaUseStats.java | 자료이용현황통계를 위한 Model 클래스 |
@@ -81,7 +81,7 @@ INSERT INTO COMTECOPSEQ VALUES('DUS_ID','0');
     destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
     <property name="strategy"   ref="dtaUseStatsIdStrategy" />
-    <property name="blockSize"  value="1"/>
+    <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="DUS_ID"/>
 </bean>

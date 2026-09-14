@@ -54,7 +54,7 @@ DDL의 테이블명을 기반으로 클래스명이 결정되며, 아래 규칙�
 | 파일 | 위치 | 설명 |
 |---|---|---|
 | `클래스명VO.java` | `service/` | Value Object 클래스. DDL 컬럼을 Java 필드로 매핑하며, getter/setter를 포함한다. |
-| `DefaultVO.java` | `service/` | 페이징·검색 공통 필드를 담은 기본 Value Object 클래스. `클래스명VO`의 부모 클래스이다. |
+| `클래스명DefaultVO.java` | `service/` | 페이징·검색 공통 필드를 담은 기본 Value Object 클래스. `클래스명VO`의 부모 클래스이다. |
 | `클래스명Service.java` | `service/` | 서비스 인터페이스. insert/update/delete/select/selectList/selectListTotCnt 메서드를 선언한다. |
 | `클래스명ServiceImpl.java` | `service/impl/` | 서비스 구현 클래스. `EgovAbstractServiceImpl`을 상속하며, ID Generation 서비스를 통해 PK를 채번한다. |
 | `클래스명Controller.java` | `web/` | 컨트롤러 클래스. 목록 조회, 등록 화면, 등록, 수정 화면, 수정, 삭제 요청을 처리하는 핸들러 메서드를 포함한다. |
@@ -70,10 +70,10 @@ DDL의 테이블명을 기반으로 클래스명이 결정되며, 아래 규칙�
 
 | 파일 | 위치 | 설명 |
 |---|---|---|
-| `클래스명List.html` | `templates/클래스명(소문자 시작)/` | Thymeleaf 목록 페이지 |
-| `클래스명Regist.html` | `templates/클래스명(소문자 시작)/` | Thymeleaf 등록/수정 페이지 |
+| `클래스명List.html` | `templates/thymeleaf/클래스명(소문자 시작)/` | Thymeleaf 목록 페이지 |
+| `클래스명Register.html` | `templates/thymeleaf/클래스명(소문자 시작)/` | Thymeleaf 등록/수정 페이지 |
 | `클래스명List.jsp` | `WEB-INF/jsp/패키지명/` | JSP 목록 페이지 |
-| `클래스명Regist.jsp` | `WEB-INF/jsp/패키지명/` | JSP 등록/수정 페이지 |
+| `클래스명Register.jsp` | `WEB-INF/jsp/패키지명/` | JSP 등록/수정 페이지 |
 
 ## 디렉터리 구조
 
@@ -86,7 +86,7 @@ src/
     │   └── egovframework/example/sample/
     │       ├── service/
     │       │   ├── BoardVO.java
-    │       │   ├── DefaultVO.java
+    │       │   ├── BoardDefaultVO.java
     │       │   └── BoardService.java
     │       ├── service/impl/
     │       │   ├── BoardServiceImpl.java
@@ -96,13 +96,13 @@ src/
     ├── resources/
     │   ├── mapper/
     │   │   └── Board_SQL.xml
-    │   └── templates/board/
+    │   └── templates/thymeleaf/board/
     │       ├── BoardList.html
-    │       └── BoardRegist.html
+    │       └── BoardRegister.html
     └── webapp/
         └── WEB-INF/jsp/egovframework/example/sample/
             ├── BoardList.jsp
-            └── BoardRegist.jsp
+            └── BoardRegister.jsp
 ```
 
 ## 생성 코드 상세
@@ -115,15 +115,20 @@ src/
 
 | SQL 타입 | Java 타입 |
 |---|---|
-| `INT`, `INTEGER`, `TINYINT`, `SMALLINT` | `int` |
-| `BIGINT` | `long` |
-| `FLOAT` | `float` |
-| `DOUBLE`, `DECIMAL`, `NUMERIC` | `double` |
-| `BOOLEAN`, `BOOL`, `BIT` | `boolean` |
-| `DATE`, `DATETIME`, `TIMESTAMP` | `java.util.Date` |
-| `CHAR`, `VARCHAR`, `TEXT` 등 | `String` |
+| `INT`, `INTEGER` | `java.lang.Integer` |
+| `TINYINT` | `java.lang.Byte` |
+| `SMALLINT` | `java.lang.Short` |
+| `BIGINT` | `java.lang.Long` |
+| `FLOAT` | `java.lang.Float` |
+| `DOUBLE` | `java.lang.Double` |
+| `DECIMAL`, `NUMERIC` | `java.math.BigDecimal` |
+| `BOOLEAN`, `BOOL`, `BIT` | `java.lang.Boolean` |
+| `DATE` | `java.sql.Date` |
+| `DATETIME` | `java.util.Date` |
+| `TIMESTAMP` | `java.sql.Timestamp` |
+| `CHAR`, `VARCHAR`, `TEXT` 등 | `java.lang.String` |
 
-- `DefaultVO`를 상속하므로 페이징·검색 관련 필드(pageIndex, pageUnit, pageSize 등)를 별도로 선언하지 않아도 사용 가능하다.
+- `클래스명DefaultVO`(예: `BoardDefaultVO`)를 상속하므로 페이징·검색 관련 필드(pageIndex, pageUnit, pageSize 등)를 별도로 선언하지 않아도 사용 가능하다.
 
 ### ServiceImpl 클래스
 

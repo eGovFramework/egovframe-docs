@@ -57,8 +57,8 @@ flowchart LR
 | Query XML | resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_postgres.xml | 일지관리를 위한 PostgreSQL용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_tibero.xml | 일지관리를 위한 Tibero용 Query XML |
 | Query XML | resources/egovframework/mapper/com/cop/smt/dsm/EgovDiaryManage_SQL_goldilocks.xml | 일지관리를 위한 Goldilocks용 Query XML |
-| Message properties | resources/egovframework/message/com/message-common_ko.properties | 일지관리 Message properties(한글) |
-| Message properties | resources/egovframework/message/com/message-common_en.properties | 일지관리 Message properties(영문) |
+| Message properties | resources/egovframework/message/com/cop/smt/dsm/message_ko.properties | 일지관리 Message properties(한글) |
+| Message properties | resources/egovframework/message/com/cop/smt/dsm/message_en.properties | 일지관리 Message properties(영문) |
 | Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-diaryManage.xml | 일지관리 Id생성 Idgen XML |
 
 ### 클래스 다이어그램

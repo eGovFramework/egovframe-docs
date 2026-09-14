@@ -18,7 +18,7 @@ menu:
 
 ## 사용법
 
-1. **Data Source** : 데이터베이스 연결을 설정.
+1. **Datasource** : 데이터베이스 연결을 설정.
 
    * [New DataSource Configuration Code Gen](./code-generation-template-configuration-folder/config-gen-datasource.md) : DBCP, JDBC Driver Type의 DataSource 설정.
    * [New JNDI DataSource Configuration Code Gen](./code-generation-template-configuration-folder/config-gen-jndi-datasource.md) : JNDI Lookup을 이용하여 Database Connection을 생성하는 DataSource 설정 (Weblogic, Jeus 설정 제공)
@@ -34,7 +34,7 @@ menu:
    * [Cache Configuration Code Gen](./code-generation-template-configuration-folder/config-gen-cache.md) : 기본 Cache, Custom Cache 설정.
    * [Ehcache Configuration Code Gen](./code-generation-template-configuration-folder/config-gen-ehcache.md) : Ehcache 설정.
 
-4. **Id Generation** : 시스템을 개발할 때 필요한 유일한 ID를 생성하기 위한 설정.
+4. **ID Generation** : 시스템을 개발할 때 필요한 유일한 ID를 생성하기 위한 설정.
 
    * [Sequence ID Generation Code Gen](./code-generation-template-configuration-folder/config-gen-sequence-id-generation.md) : Database의 SEQUENCE를 사용하는 서비스 설정.
    * [Table ID Generation Code Gen](./code-generation-template-configuration-folder/config-gen-table-id-generation.md) : 별도의 테이블을 이용한 ID 생성 서비스 설정

@@ -10,6 +10,10 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** 아래에서 설명하는 `fileDownload` 메소드는
+> [공통컴포넌트 5.0의 EgovFileMngUtil](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/cmm/service/EgovFileMngUtil.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 5.0에서는 `downFile` 메소드를 제공하며, 첨부파일 다운로드는 `EgovFileDownloadController`(`/cmm/fms/FileDown.do`)에서 처리한다.
+
 ## 개요
 
 서버에 저장된 파일을 사용자가 웹 브라우저를 통해 다운로드할 수 있는 기능을 제공한다.
@@ -32,7 +36,6 @@ menu:
 | --- | --- | --- | --- |
 | Controller | `egovframework.com.cmm.web.EgovFileDownloadController.java` | 파일다운로드 컨트롤러 | |
 | Util | `egovframework.com.cmm.service.EgovFileMngUtil.java` | 파일 처리 유틸리티 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovFileDownload.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 

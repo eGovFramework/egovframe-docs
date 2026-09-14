@@ -293,7 +293,7 @@ Ex:
 
 ### 5. Mapping 클래스 mapRow 메소드 변경
 
-jdbcUserService(egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager)에 의해 지정된 mapClass는 EgovUsersByUsernameMapping 클래스를 extend 하도록 되어 있는데, 해당 EgovUsersByUsernameMapping의 mapRow() 메소드의 return 타입이 Object에서 EgovUserDtails로 변경되었다.
+jdbcUserService(egovframework.rte.fdl.security.userdetails.jdbc.EgovJdbcUserDetailsManager)에 의해 지정된 mapClass는 EgovUsersByUsernameMapping 클래스를 extend 하도록 되어 있는데, 해당 EgovUsersByUsernameMapping의 mapRow() 메소드의 return 타입이 Object에서 EgovUserDetails로 변경되었다.
 
 - 기존 :
 

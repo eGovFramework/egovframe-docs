@@ -10,6 +10,10 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** 아래에서 설명하는 `getMountLc` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+
 ## 개요
 
 특정 파일이 위치한 디스크의 마운트 경로(속성 정보)를 확인하는 기능을 제공한다.
@@ -28,7 +32,6 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovDiskAttrCeck.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 

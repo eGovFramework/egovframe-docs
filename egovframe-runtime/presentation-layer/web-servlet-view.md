@@ -331,8 +331,8 @@ HTML select, option 태그에 commandName에 지정된 객체 프로퍼티를 �
 | 이름             | 설명                                                                                             | 필수여부 |
 |----------------|------------------------------------------------------------------------------------------------|------|
 | paginationInfo | 페이징리스트를 만들기 위해 필요한 데이터. 데이터 타입은 org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo이다. | yes  |
-| type           | 페이징리스트 렌더링을 담당할 클래스의 아이디. 이 아이디는 빈설정 파일에 선언된 프로퍼티 rendererType의 key값이다.                        | yes  |
-| jsFunction     | 페이지 번호에 걸리게 될 자바스크립트 함수 이름. 페이지 번호가 기본적인 argument로 전달된다.                                       | yes  |
+| type           | 페이징리스트 렌더링을 담당할 클래스의 아이디. 이 아이디는 빈설정 파일에 선언된 프로퍼티 rendererType의 key값이다.                        | no   |
+| jsFunction     | 페이지 번호에 걸리게 될 자바스크립트 함수 이름. 페이지 번호가 기본적인 argument로 전달된다.                                       | no   |
 
 ui 태그에 대한 라이브러리 선언을 해주고 페이징 리스트가 위치할 곳에 아래와 같이 사용하면 된다.
 paginationInfo 속성에는 Controller에서 Model 객체에 저장한 PaginationInfo의 attribute name을 적어 주면 되고,

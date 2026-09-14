@@ -202,7 +202,7 @@ Package Explorer에서 해당 Mapper File을 선택하고 더블클릭하거나 
 
    ![Mapper Editor의 Query Test 화면](./images/mappereditor-querytest.png)
 
-6. SqlMap Editor의 Test 탭에서 "Binding Variables" 목록 우측에 있는 "Test Query" 버튼을 누르면 하단에 Result View가 자동으로 보이면서 쿼리결과를 보여준다.
+6. Mapper Editor의 Test 탭에서 "Binding Variables" 목록 우측에 있는 "Query Test" 버튼을 누르면 하단에 Result View가 자동으로 보이면서 쿼리결과를 보여준다.
 
    ![Mapper Editor의 Query Test 결과 화면](./images/mappereditor-queryresult.png)
 
@@ -239,7 +239,7 @@ Package Explorer에서 해당 Mapper File을 선택하고 더블클릭하거나 
 ### 신규 ResultMap 생성
 
 1. Mapper Editor 화면 중 좌측에 있는 Mapper Tree에서 마우스 오른쪽 키를 누르면 context menu가 나타난다.
-2. context menu에서 "Add ResultMap"을 선택한다.
+2. context menu에서 "Add resultMap"을 선택한다.
 3. 신규로 생성한 ResultMap 편집화면이 Mapper Tree 우측에 나타난다.
 4. ResultMap ID를 수정하거나, ResultMap Type를 지정할 수 있다. ResultMap Type이 기본형인 경우 선택항목에서 선택이 가능하다. 기본형이 아닌 경우 "Browse" 버튼을 사용하여 해당 클래스를 검색할 수 있으며 기존에 없는 경우에는 "Type *"를 눌러 신규로 클래스를 생성해야 한다.
 5. Property를 추가하려면 Property 목록 우측에 있는 "Add"버튼을 사용하여 추가 Property 값을 입력할 수 있다.

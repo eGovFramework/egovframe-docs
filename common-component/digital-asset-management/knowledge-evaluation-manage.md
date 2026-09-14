@@ -103,7 +103,6 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 상세조회 | /dam/app/EgovComDamAppraisal.do | selectKnoAppraisal | "KnoAppraisalDAO.selectKnoAppraisal" |
-| 삭제 | /dam/app/EgovComDamAppraisalRemove.do | deleteKnoAppraisal | "KnoAppraisalDAO.deleteKnoAppraisal" |
 
  지식평가의 속성정보를 조회한다.
 

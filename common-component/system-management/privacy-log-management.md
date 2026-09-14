@@ -213,7 +213,7 @@ return idGnrService;
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /sym/log/plg/SelectPrivacyLogDetail.do | selectPrivacyLog | "PrivacyLog" | "selectPrivacyLog" |
+| 상세조회 | /sym/log/plg/SelectPrivacyLogDetail.do | selectWebLog | "PrivacyLog" | "selectPrivacyLog" |
 
  ![image](./images/sym-privlog-상세.jpg)
 

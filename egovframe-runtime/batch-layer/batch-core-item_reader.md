@@ -312,7 +312,7 @@ SqlPagingQueryProviderFactoryBean는 환경 설정을 간단히 해주며 추천
 
 아래의 XML 설정은 스프링에서 제공하는 DefaultLineMapper를 적용한 FlatFileItemReader와 전자정부에서 제공하는 EgovDefaultLineMapper를 적용한 FlatFileItemReader 설정 비교이다.
 
-**✔ 주의!** EgovDefaultLineMapper 사용 시, 반드시 EgovTokenizer(EgovFixedLengthTokenizer, EgovByteLengthTokenizer, EgovDelimitedTokenizer)와 EgovObjectMapper를 사용해야 한다.
+**✔ 주의!** EgovDefaultLineMapper 사용 시, 반드시 EgovLineTokenizer(EgovFixedLengthTokenizer, EgovFixedByteLengthTokenizer, EgovDelimitedLineTokenizer)와 EgovObjectMapper를 사용해야 한다.
 
 **✔ 주의!** EgovObjectMapper 사용 시, VO 필드 타입은 String, int, double, float, long, char, boolean, short, BigDecimal로 제한된다.
 
@@ -532,8 +532,8 @@ Property(indexResource)의 파일을 NDX파일 설정에 따라 읽어드린다.
 | scope             | 해당 Reader가 적용될 Bean Scope                      | step, job               |
 | pageSize          | 배치가 처리할 페이지 사이즈 크기                             | #{100}                  |
 | resourceVariable  | 표준프레임워크 실행환경 Resource Variable 서비스를 사용하기 위한 설정 | resourceVariable        |
-| jobVariable       | 표준프레임워크 실행환경 Step Variable 서비스를 사용하기 위한 설정     | jobVariable             |
-| stepVariable      | 표준프레임워크 실행환경 Job Variable 서비스를 사용하기 위한 설정      | stepVariable            |
+| jobVariable       | 표준프레임워크 실행환경 Job Variable 서비스를 사용하기 위한 설정     | jobVariable             |
+| stepVariable      | 표준프레임워크 실행환경 Step Variable 서비스를 사용하기 위한 설정      | stepVariable            |
 
 #### EgovMyBatisPagingItemReader 설정항목 설정
 ```xml

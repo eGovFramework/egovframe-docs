@@ -40,8 +40,8 @@ flowchart LR
 | ServiceImpl | egovframework.com.uss.ion.ntm.service.impl.EgovNoteManageServiceImpl.java | 쪽지관리를 위한 서비스 구현 클래스 |
 | DAO | egovframework.com.uss.ion.ntm.service.impl.NoteManageDao.java | 쪽지관리를 위한 데이터처리 클래스 |
 | Model | egovframework.com.uss.ion.ntm.service.NoteManageVO.java | 쪽지관리를 위한 Model 클래스 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ntm/EgovNoteEmpList.jsp | 쪽지를 보내기 위한 jsp페이지 |
-| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ntm/EgovNoteManage.jsp | 쪽지를 보내기 위해 수신자/참조자 선택하는 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ntm/EgovNoteEmpList.jsp | 쪽지를 보내기 위해 수신자/참조자 선택하는 jsp페이지 |
+| JSP | /WEB-INF/jsp/egovframework/com/uss/ion/ntm/EgovNoteManage.jsp | 쪽지를 보내기 위한 jsp페이지 |
 | Mapper | resources/egovframework/mapper/com/uss/ion/ntm/EgovNoteManage\_SQL\_*.xml | 쪽지관리 QUERY XML |
 | Idgnr | resources/egovframework/spring/com/idgn/context-idgn-NoteManage.xml | 쪽지관리를 위한 Idgn |
 | Properties | resources/egovframework/message/com/uss/ion/ntm/message\_*.properties | 쪽지관리 국제화 |
@@ -94,8 +94,8 @@ INSERT INTO COMTECOPSEQ VALUES('NOTE_RECPTN_ID',0);
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 수신자/참조자 선택 | /uss/ion/ntm/listEgovNoteEmpListPopup.do | EgovEgovNoteEmpList | "NoteManage.EgovNoteEmpListPopup" |
-|  |  |  | "NoteManage.EgovNoteEmpListPopupCnt" |
+| 수신자/참조자 선택 | /uss/ion/ntm/listEgovNoteEmpListPopup.do | EgovEgovNoteEmpList | "NoteManage.EovNoteEmpListPopup" |
+|  |  |  | "NoteManage.EovNoteEmpListPopupCnt" |
 
  ![image](./images/uss-note-manage-수신자참조.jpg)
 

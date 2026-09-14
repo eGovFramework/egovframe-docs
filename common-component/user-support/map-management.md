@@ -30,7 +30,7 @@ menu:
 | ServiceImpl | egovframework.com.uss.ion.rmm.service.impl.EgovRoughMapServiceImpl.java | 약도관리를 위한 서비스 구현 클래스 |
 | VO | egovframework.com.uss.ion.rmm.service.RoughMapVO.java | 약도관리를 위한 VO 클래스 |
 | VO | egovframework.com.uss.ion.rmm.service.RoughMapDefaultVO.java | 약도관리를 위한 SearchVO 클래스 |
-| DAO | egovframework.com.uss.ion.rmm.service.impl.RoughMapDAO.java | 약도관리를 위한 데이터처리 클래스 |
+| DAO | egovframework.com.uss.ion.rmm.service.impl.EgovRoughMapDAO.java | 약도관리를 위한 데이터처리 클래스 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapList.jsp | 약도관리를 위한 목록조회 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapDetail.jsp | 약도관리를 위한 상세조회 페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/rmm/EgovRoughMapRegist.jsp | 약도관리를 위한 등록 페이지 |

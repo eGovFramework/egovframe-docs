@@ -78,10 +78,10 @@ LDAP(Lightweight Directory Access Protocol) 서버와 연동하여 조직도 정
 
 ```properties
 # LDAP 서버 설정
-Globals.ldap.url      = ldap://ldap.example.go.kr:389
-Globals.ldap.baseDn   = dc=example,dc=go,dc=kr
-Globals.ldap.userDn   = cn=admin,dc=example,dc=go,dc=kr
-Globals.ldap.password = {ldap_password}
+ldap.url      = ldap://ldap.example.go.kr:389
+ldap.rootDn   = dc=example,dc=go,dc=kr
+ldap.username = cn=admin,dc=example,dc=go,dc=kr
+ldap.password = {ldap_password}
 ```
 
 ## 참고자료

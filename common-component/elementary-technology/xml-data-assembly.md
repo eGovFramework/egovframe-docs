@@ -30,7 +30,6 @@ XML 데이터조립에서 제공하는 기능은 다음과 같다.
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovXMLDoc.java` | XML파싱/조립 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovXMLDoc.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 
@@ -68,7 +67,8 @@ mailElement.setSj("test mail");
 mailElement.setEmailCn("This is test mail.");
 mailElement.setSndngResultCode("R");
 
-boolean result = EgovXMLDoc.getClassToXML(mailDoc, "/user/com/test/mail_result.xml");
+// Globals.fileStorePath 아래에 파일명으로 저장한다. 경로를 포함해도 파일명만 사용한다.
+boolean result = EgovXMLDoc.getClassToXML(mailDoc, "mail_result.xml");
 ```
 
 ## 환경설정

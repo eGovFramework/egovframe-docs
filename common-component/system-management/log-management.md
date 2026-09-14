@@ -347,7 +347,7 @@ sysLogService.logInsertSysLog(sysLog);
 ```
 
  시스템로그 삭제, 요약 기능구현을 위하여 Scheduling을 설정한다.
- 시스템로그 삭제, 요약 기능구현을 위하여 EgovLogManageScheduling 클래스를 생성한다.
+ 시스템로그 삭제, 요약 기능구현을 위하여 EgovSysLogScheduling 클래스를 생성한다.
 
 ```java
 @Service("egovSysLogScheduling")

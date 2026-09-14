@@ -21,6 +21,18 @@ menu:
 
 게시판 관리 기능에 의해 생성된 게시판에 사용자가 게시물을 등록, 조회, 수정 할 수 있는 기능을 제공한다. 생성된 게시판은 게시판 속성관리에 따라서 지정된 유형 및 속성에 따라서 실제 게시판은 다른 형태로 보여지게 된다. 각 게시판은 글 생성 및 조회, 수정, 삭제가 가능하며 수정 및 삭제의 경우 글을 게시한 당사자만이 수정, 삭제가 가능하다. 익명 게시판의 경우 작성자의 이름이 나오지 않으며, 갤러리 형태의 게시판의 경우 글 생성시 첨부된 이미지 파일(BMP,JPG,GIF,PNG 포맷에 한함)을 본문에 같이 보여주는 기능을 제공한다.
 
+```mermaid
+flowchart LR
+    L[게시물 목록조회] -->|등록| R[게시물 등록]
+    L -->|목록 클릭| D[게시물 상세 조회]
+    D -->|수정| U[게시물 수정]
+    D -->|"답글 (답장 가능 게시판)"| A[답변 작성]
+    D -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+    A -->|저장| L
+```
+
 ### 패키지 참조 관계
 
 게시판 패키지는 요소 기술의 공통 패키지(cmm)에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조 관계에 따라 협업의 공통기능(com), 디자인 템플릿과 함께 배포 파일을 구성한다.
@@ -185,7 +197,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 수정화면 | /cop/bbs/updateArticleView.do | updateArticleView | | |
-| 수정 | /cop/bbs/updateArticle.do | updateArticle | "BBSArticle" | "updateArticle" |
+| 수정 | /cop/bbs/updateArticle.do | updateBoardArticle | "BBSArticle" | "updateArticle" |
 
 ![게시물 수정](./images/board-integrated-update.jpg)
 

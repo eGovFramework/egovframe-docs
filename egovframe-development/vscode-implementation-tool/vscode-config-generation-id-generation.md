@@ -54,9 +54,9 @@ ID Generation 카테고리는 다음 3가지 설정 유형을 제공한다.
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| ID Service Name | ✓ | ID 생성 서비스 빈 이름. 예) `egovIdGnrService` |
-| DataSource Name | ✓ | 데이터소스 빈 이름. 예) `dataSource` |
-| ID Type | ✓ | 생성할 ID의 Java 타입: `Long` / `String` |
+| Bean Name (ID Generation Service Name) | ✓ | ID 생성 서비스 빈 이름. 예) `egovIdGnrService` |
+| Data Source Name | ✓ | 데이터소스 빈 이름. 예) `dataSource` |
+| ID Type | ✓ | 생성할 ID의 Java 타입: `Default` / `BigDecimal` |
 | Query | | Sequence 조회 SQL. 예) `SELECT NEXTVAL('SEQ_ID')` |
 | Strategy Name | | ID 가공 전략 빈 이름 |
 | Prefix | | ID 앞에 붙일 접두사 |
@@ -90,11 +90,10 @@ ID Generation 카테고리는 다음 3가지 설정 유형을 제공한다.
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| ID Service Name | ✓ | ID 생성 서비스 빈 이름. 예) `egovIdGnrService` |
-| DataSource Name | ✓ | 데이터소스 빈 이름. 예) `dataSource` |
-| ID Type | ✓ | 생성할 ID의 Java 타입: `Long` / `String` |
-| Table | | ID 채번 테이블 이름. 예) `IDS` |
-| Table Name Field Value | | 채번 테이블 내 ID 식별자 값 |
+| Bean Name (ID Generation Service Name) | ✓ | ID 생성 서비스 빈 이름. 예) `egovIdGnrService` |
+| Data Source Name | ✓ | 데이터소스 빈 이름. 예) `dataSource` |
+| Table Name | | ID 채번 테이블 이름. 예) `IDS` |
+| TABLE_NAME Column's Value | | 채번 테이블 내 ID 식별자 값 |
 | Block Size | | 한 번에 채번할 블록 크기. 예) `10` |
 | Strategy Name | | ID 가공 전략 빈 이름 |
 | Prefix | | ID 앞에 붙일 접두사 |
@@ -126,5 +125,5 @@ UUID(Universally Unique Identifier) 알고리즘을 사용하여 전역 고유 I
 
 | 항목 | 필수 | 설명 |
 |---|:---:|---|
-| ID Service Name | ✓ | ID 생성 서비스 빈 이름. 예) `egovIdGnrService` |
+| Bean Name (ID Generation Service Name) | ✓ | ID 생성 서비스 빈 이름. 예) `egovIdGnrService` |
 | Address | | UUID 생성에 사용할 MAC 주소 또는 IP 주소. 예) `00:00:00:00:00:00` |

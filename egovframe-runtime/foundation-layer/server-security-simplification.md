@@ -107,7 +107,7 @@ sqlHierarchicalRoles = SELECT a.CHLDRN_ROLE as child, a.PARNTS_ROLE parent FROM 
 egovframe-rte-fdl-security의 `@Configuration` 클래스를 스캔하여 `springSecurityFilterChain` 등 빈을 자동 등록합니다.
 
 ```xml
-<context:component-scan base-package="egovframework, org.egovframe.rte.fdl.security, org.egovframe.rte.fdl.crypto">
+<context:component-scan base-package="egovframework, org.egovframe.rte.fdl.security, org.egovframe.rte.fdl.crypto" />
 ```
 
 - `Globals.SecurityConfigPath`에 지정된 properties 파일을 읽어 Spring Security 설정 빈 생성

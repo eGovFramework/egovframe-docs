@@ -47,7 +47,7 @@ Flow 수준 상속은 flow 내에 parent 속성을 이용하여 정의한다. �
 State 수준 상속은 Flow 수준 상속과 비슷하다. 유일한 차이점은 Flow 전체가 아니라 오직 해당 **State 하나만 상위로부터 상속**받는다.
 Flow 상속과 달리 오직 하나의 상위만 허용한다. 또한 상속받을 Flow State의 식별자가 반드시 정의되어 있어야 한다.
 Flow와 State 식별자는 #로 구분한다.
-**상위와 하위 State는 반드시 같은 타입이어야 한다.** 예를 들어 view-state는 ent-state를 상속받을 수 없다. 오직 view-state만 상속받을 수 있다
+**상위와 하위 State는 반드시 같은 타입이어야 한다.** 예를 들어 view-state는 end-state를 상속받을 수 없다. 오직 view-state만 상속받을 수 있다
 
 
 ```xml

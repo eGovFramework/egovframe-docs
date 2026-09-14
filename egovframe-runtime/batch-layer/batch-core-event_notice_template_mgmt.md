@@ -96,7 +96,7 @@ public class EgovEmailEventNoticeTrigger extends EgovEventNoticeTrigger {
 ```
 
 ```xml
-<-- 프로세서(리스너) 설정 1 의 Job 설정파일 (계속) -->
+<!-- 프로세서(리스너) 설정 1 의 Job 설정파일 (계속) -->
 <bean id="EmailEventNoticeTrigger"
  	class="org.egovframe.rte.bat.sample.example.event.EgovEmailEventNoticeTrigger" />
 ```

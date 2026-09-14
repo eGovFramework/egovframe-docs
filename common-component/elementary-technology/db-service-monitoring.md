@@ -45,6 +45,18 @@ Quartz 스케줄러를 활용하여 모니터링 시작 지연 시간과 실행 
 DB서비스모니터링은 등록된 DB의 연결 정보 및 설정에 따라 서비스 작동 여부를 확인하고,
 관련 이력을 로그로 기록·조회하는 기능을 포함한다.
 
+```mermaid
+flowchart LR
+    L[DB서비스모니터링 목록 조회] -->|등록| R[DB서비스모니터링 등록]
+    L -->|목록 클릭| D[DB서비스모니터링 상세 조회]
+    D -->|수정| U[DB서비스모니터링 수정]
+    D -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+    L -->|로그 조회| LL[DB서비스모니터링 로그 목록 조회]
+    LL -->|목록 클릭| LD[DB서비스모니터링 로그 상세 조회]
+```
+
 ### 주요 기능
 
 1. **DB서비스모니터링 목록 조회**: 등록된 모니터링 정보를 최근 등록 순서대로 조회하며 페이징과 검색 기능을 제공한다.
@@ -83,8 +95,6 @@ DB서비스모니터링은 등록된 DB의 연결 정보 및 설정에 따라 �
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_postgres.xml` | DB서비스모니터링을 위한 PostgreSQL용 Query XML |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_tibero.xml` | DB서비스모니터링을 위한 Tibero용 Query XML |
 | Query XML | `resources/egovframework/mapper/com/utl/sys/dbm/EgovDbMntrng_SQL_goldilocks.xml` | DB서비스모니터링을 위한 Goldilocks용 Query XML |
-| Validator Rule XML | `resources/egovframework/validator/validator-rules.xml` | Validator Rule을 정의한 XML |
-| Validator XML | `resources/egovframework/validator/com/utl/sys/dbm/EgovDbMntrng.xml` | DB서비스모니터링을 위한 Validator XML |
 | Message properties | `resources/egovframework/message/com/utl/sys/dbm/message_ko.properties` | DB서비스모니터링을 위한 Message properties(한글) |
 | Message properties | `resources/egovframework/message/com/utl/sys/dbm/message_en.properties` | DB서비스모니터링을 위한 Message properties(영문) |
 | Idgen XML | `resources/egovframework/spring/com/idgn/context-idgn-DbMntrngLog.xml` | DB서비스모니터링을 위한 ID 생성 Idgen XML |

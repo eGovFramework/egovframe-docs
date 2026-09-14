@@ -93,11 +93,11 @@ public class EgovRedisRepository<T> extends ReactiveRedisTemplate {
         return opsForList().size(redisKey);
     }
  
-    public Mono<T> insertData(String redisKey, T entity) {
+    public Mono<Long> insertData(String redisKey, T entity) {
         return opsForList().leftPush(redisKey, entity);
     }
  
-    public Mono<T> updateData(String redisKey, long idx, T entity) {
+    public Mono<Boolean> updateData(String redisKey, long idx, T entity) {
         return opsForList().set(redisKey, idx, entity);
     }
  
@@ -105,7 +105,7 @@ public class EgovRedisRepository<T> extends ReactiveRedisTemplate {
         return opsForList().delete(redisKey);
     }
  
-    public Mono<Boolean> deleteData(String redisKey, T entity) {
+    public Mono<Long> deleteData(String redisKey, T entity) {
         return opsForList().remove(redisKey, 0, entity);
     }
 }

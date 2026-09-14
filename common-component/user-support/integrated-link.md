@@ -215,9 +215,9 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록 | /uss/ion/ulm/listUnityLink.do | EgovUnityLinkList | "UnityLink" | "selectUnityLink" |
+| 목록 | /uss/ion/ulm/listUnityLink.do | egovUnityLinkList | "UnityLink" | "selectUnityLink" |
 |  |  |  | "UnityLink" | "selectUnityLinkCnt" |
-| 저장 | /uss/ion/ulm/registUnityLink.do | EgovUnityLinkRegist | "UnityLink" | "insertUnityLink" |
+| 저장 | /uss/ion/ulm/registUnityLink.do | egovUnityLinkRegist | "UnityLink" | "insertUnityLink" |
 
  통합링크관리에 관한 기본정보를 입력 저장처리한다.
 

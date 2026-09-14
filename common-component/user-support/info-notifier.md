@@ -25,6 +25,17 @@ menu:
 
  정보알림이는 관리자가 사용하는 정보알림이 관리 기능과 정보알림이를 사용자에게 제공하는 활용기능으로 제공된다.
 
+```mermaid
+flowchart LR
+    L[정보알림이 목록조회] -->|등록| R[정보알림이 등록]
+    L -->|목록 클릭| D[정보알림이 상세조회]
+    D -->|수정| U[정보알림이 수정]
+    D -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+    L -.->|55초마다 AJAX 조회| N[정보알림이 표시]
+```
+
 ### 패키지 참조 관계
 
  정보알림이 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 달력 패키지와 함께 배포 파일을 구성한다.
@@ -44,7 +55,7 @@ menu:
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/noi/EgovNotificationList.jsp | 생성된 정보알림이 조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/noi/EgovNotificationDetail.jsp | 정보알림이 상세 조회를 위한 jsp페이지 |
 | JSP | /WEB-INF/jsp/egovframework/com/uss/ion/noi/EgovNotificationData.jsp | 정보알림이 표시를 위한 XML jsp페이지 |
-| JS | /js/egovframework/uss/ion/noi/EgovNotification.js | 정보알림이 표시(AJAX)를 위한 js페이지 |
+| JS | /js/egovframework/com/uss/ion/noi/EgovNotification.js | 정보알림이 표시(AJAX)를 위한 js페이지 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/noi/EgovNotification\_SQL\_altibase.xml | 정보알림이를 위한 Altibase용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/noi/EgovNotification\_SQL\_cubrid.xml | 정보알림이를 위한 Cubrid용 Query 파일 |
 | Query XML | resources/egovframework/mapper/com/uss/ion/noi/EgovNotification\_SQL\_maria.xml | 정보알림이를 위한 Maria용 Query 파일 |
@@ -72,7 +83,7 @@ menu:
 
 ```xml
 
-<script type="text/javascript" language="javaScript" src="<c:url value='/js/egovframework/uss/ion/noi/EgovNotification.js' />"></script>
+<script type="text/javascript" language="javaScript" src="<c:url value='/js/egovframework/com/uss/ion/noi/EgovNotification.js' />"></script>
 ```
 
  (관리자를 위한 정보알림이 목록조회 화면에도 테스트를 위하여 포함되어 있음)

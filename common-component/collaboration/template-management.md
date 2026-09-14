@@ -216,7 +216,7 @@ N/A
 INSERT INTO COMTNTMPLATINFO
 (TMPLAT_ID, TMPLAT_NM, TMPLAT_SE_CODE, TMPLAT_COURS, USE_AT, FRST_REGISTER_ID, FRST_REGISTER_PNTTM )
 VALUES
-('TMPLAT_BOARD_DEFAULT', '게시판 기본템플릿', 'TMPT01', '/css/egovframework/cop/bbs/egovbbsTemplate.css', 
+('TMPLAT_BOARD_DEFAULT', '게시판 기본템플릿', 'TMPT01', '/css/egovframework/com/cop/tpl/egovbbsTemplate.css', 
 'Y', 'SYSTEM', SYSDATE)
 ```
 

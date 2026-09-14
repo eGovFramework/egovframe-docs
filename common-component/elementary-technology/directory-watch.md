@@ -10,6 +10,10 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** 아래에서 설명하는 `getDirectoryMoniteringInfo`, `startDirectoryMonitering`, `stopDirectoryMonitering` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
+> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+
 ## 개요
 
 특정 디렉토리를 대상으로 디렉토리 내의 시스템에 존재하는 파일과 디렉토리의 변동 내역을 모니터링한다.
@@ -30,7 +34,6 @@ menu:
 | --- | --- | --- | --- |
 | Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 시스템 정보 확인 요소기술 클래스 | |
 | Service | `egovframework.com.utl.sim.service.EgovFileMntrg.java` | 디렉토리 감시 요소기술 클래스 | |
-| JSP | `WEB-INF/jsp/egovframework/cmm/utl/EgovDrctryMntrg.jsp` | 테스트 페이지 | |
 
 ### 메소드
 

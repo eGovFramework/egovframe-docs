@@ -148,9 +148,9 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 목록조회 | /uss/umt/EgovEmplyrManage.do | selectUserList | "userManageDAO" | "selectUserList\_S" |
-|  |  |  | "userManageDAO" | "selectUserListTotCnt\_S" |
-| 삭제 | /uss/umt/EgovEmplyrDelete.do | deleteUser | "userManageDAO" | "deleteUser\_S" |
+| 목록조회 | /uss/umt/EgovEmplyrManage.do | selectEmplyrList | "emplyrManageDAO" | "selectEmplyrList\_S" |
+|  |  |  | "emplyrManageDAO" | "selectEmplyrListTotCnt\_S" |
+| 삭제 | /uss/umt/EgovEmplyrDelete.do | deleteUser | "emplyrManageDAO" | "deleteEmplyr\_S" |
 
  사용자목록은 페이지 당 10건씩 조회되며 페이징은 10페이지씩 이루어진다.
  페이지 당 검색 범위를 변경하고자 하는 경우 context-properties.xml 파일의 pageUnit, pageSize를 변경한다.(단 해당 설정은 전체 공통서비스 기능에 영향을 미친다.)
@@ -176,7 +176,7 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 등록 | /uss/umt/EgovEmplyrInsert.do | insertUser | "userManageDAO" | "insertUser\_S" |
+| 등록 | /uss/umt/EgovEmplyrInsert.do | insertUser | "emplyrManageDAO" | "insertEmplyr\_S" |
 
  ![image](./images/uss-usermanage-user_insert.png)
 
@@ -197,9 +197,9 @@ flowchart LR
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 상세조회 | /uss/umt/EgovEmplyrSelectUpdtView.do | updateUserView | "userManageDAO" | "selectUser\_S" |
-| 수정 | /uss/umt/EgovEmplyrSelectUpdt.do | updateUser | "userManageDAO" | "updateUser\_S" |
-| 삭제 | /uss/umt/EgovEmplyrDelete.do | deleteUser | "userManageDAO" | "deleteUser\_S" |
+| 상세조회 | /uss/umt/EgovEmplyrSelectUpdtView.do | updateUserView | "emplyrManageDAO" | "selectEmplyr\_S" |
+| 수정 | /uss/umt/EgovEmplyrSelectUpdt.do | updateUser | "emplyrManageDAO" | "updateEmplyr\_S" |
+| 삭제 | /uss/umt/EgovEmplyrDelete.do | deleteUser | "emplyrManageDAO" | "deleteEmplyr\_S" |
 
  ![image](./images/uss-usermanage-user_detail.png)
 
@@ -225,8 +225,8 @@ flowchart LR
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 비밀번호수정화면 | /uss/umt/EgovEmplyrPasswordUpdtView.do | updatePasswordView |  |  |
-| 비밀번호수정 | /uss/umt/EgovEmplyrPasswordUpdt.do | updatePassword | "userManageDAO" | "updatePassword\_S" |
-|  |  |  | "userManageDAO" | "selectPassword\_S" |
+| 비밀번호수정 | /uss/umt/EgovEmplyrPasswordUpdt.do | updatePassword | "emplyrManageDAO" | "updatePassword\_S" |
+|  |  |  | "emplyrManageDAO" | "selectPassword\_S" |
 
  ![image](./images/uss-usermanage-user_password_update.png)
 

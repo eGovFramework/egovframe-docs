@@ -77,7 +77,7 @@
 
 ```java
 @Service("egovWebLogScheduling")
-public class EgovWebLogScheduling {
+public class EgovWebLogScheduling extends EgovAbstractServiceImpl {
 
 	@Resource(name="EgovWebLogService")
 	private EgovWebLogService webLogService;
@@ -110,7 +110,7 @@ public class EgovWebLogScheduling {
 - 트리거 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-wlg.xml)
 
 ```xml
-<bean id="webLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+<bean id="webLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
     <property name="jobDetail" ref="webLogging" />
     <property name="startDelay" value="60000" />
     <property name="repeatInterval" value="3600000" />
@@ -120,7 +120,7 @@ public class EgovWebLogScheduling {
 - 스케줄러 Bean 설정(src/main/resources/egovframework/spring/com/scheduling/context-scheduling-sym-log-wlg.xml)
 
 ```xml
-<bean id="logSummaryScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+<bean id="webLogScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
         <list>
             <ref bean="webLogTrigger" />
@@ -145,7 +145,7 @@ public class EgovWebLogScheduling {
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
-| 화면 통계검색 | /sts/sst/selectScrinStats.do | selectScrinStats | "ScrinStatsDAO.selectScrinStats" |
+| 화면 통계검색 | /sts/sst/selectScrinStats.do | selectUserStats | "ScrinStatsDAO.selectScrinStats" |
 
  ![image](./images/sts-화면통계_검색화면.png)
 

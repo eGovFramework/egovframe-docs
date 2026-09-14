@@ -136,7 +136,7 @@ flowchart LR
         <property name="tableName"  value="BACKUP_OPERT_ID"/>
     </bean>
     <bean name="backupOpertIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-        <property name="prefix"     value="BACKUP_OPERT_" />
+        <property name="prefix"     value="BAK" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />
     </bean>
@@ -150,7 +150,7 @@ flowchart LR
         <property name="tableName"  value="BACKUP_RESULT_ID"/>
     </bean>
     <bean name="backupResultIdStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
-        <property name="prefix"     value="BACKUP_RESULT_" />
+        <property name="prefix"     value="BRT" />
         <property name="cipers"     value="17" />
         <property name="fillChar"   value="0" />
     </bean>

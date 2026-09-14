@@ -30,7 +30,6 @@ menu:
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
 | Service | `egovframework.com.cmm.service.EgovFileMngUtil.java` | 첨부파일 처리 공통 유틸리티 | |
-| JSP | `/WEB-INF/jsp/egovframework/cmm/utl/EgovFileUpload.jsp` | 테스트 페이지 | |
 
 ### 클래스 및 메소드 설명
 
@@ -46,7 +45,7 @@ menu:
 #### 파라미터 정의 (Input)
 
 - `file`: `MultipartHttpServletRequest` 객체로부터 얻어진 `MultipartFile` 객체 (null이 아닌 유효 객체)
-- `files`: 첨부파일 Map, `key`: 파일 구분 키, `atchFileId`: 첨부파일 ID, `storePath`: 저장 경로
+- `files`: 첨부파일 Map, `key`: 파일 구분 키, `atchFileId`: 첨부파일 ID, `storePath`: 저장 경로가 들어 있는 속성 키 (빈 값이면 `Globals.fileStorePath` 사용)
 
 #### 반환값 정의 (Output)
 
@@ -80,7 +79,7 @@ while (fileIter.hasNext()) {
 
 ## 환경설정
 
-파일 저장 위치를 지정하기 위해서 `EgovPropertyService` 서비스를 사용한다.
+파일 저장 위치는 `EgovProperties`를 통해 `globals.properties`에서 읽는다.
 `globals.properties` 파일의 `Globals.fileStorePath` 속성에 파일 저장 경로를 정의한다.
 
 ```properties

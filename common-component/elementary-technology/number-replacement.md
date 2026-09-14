@@ -50,17 +50,6 @@ int cnvrTrgtNumber = 9;
 int resultNumber = EgovNumberUtil.getNumberCnvr(srcNumber, cnvrSrcNumber, cnvrTrgtNumber);
 ```
 
-### 2. 테스트 환경 제공
-
-표준프레임워크 공통컴포넌트에서는 `EgovComUtlController.java`와
-`/WEB-INF/jsp/egovframework/cmm/utl/EgovNumberReplc.jsp`를 통해 해당 기능의 동작을 웹 화면에서 직접
-테스트해 볼 수 있는 예제를 제공한다. 화면에서 원본 숫자, 변환 대상 숫자, 변환할 숫자를 직접 입력하여
-치환 결과를 확인할 수 있다.
-
-> **참고**: 해당 테스트 페이지 및 컨트롤러는 기능의 정상 동작 여부를 확인하기 위해 제공되는 참조용 예제이다.
-> 운영 환경에 적용할 때에는 보안상 취약점이 될 수 있으므로 삭제하거나 별도의 접근 제어 등 보안 정책을
-> 적용하는 것을 권장한다.
-
 ## 참고자료
 
 - 관련 클래스: `egovframework.com.utl.fcc.service.EgovNumberUtil`

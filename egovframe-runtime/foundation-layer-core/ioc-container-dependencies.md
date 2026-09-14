@@ -199,10 +199,10 @@ public class ExampleBean {
     
      ```xml
     <!-- in the child (descendant) context -->
-    <bean id="accountService"  <-- notice that the name of this bean is the same as the name of the 'parent' bean
-        class="org.springframework.aop.framework.ProxyFactoryBean">
+    <!-- notice that the name of this bean is the same as the name of the 'parent' bean -->
+    <bean id="accountService" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target">
-            <ref parent="accountService"/>  <-- notice how we refer to the parent bean
+            <ref parent="accountService"/>  <!-- notice how we refer to the parent bean -->
         </property>
         <!-- insert other configuration and dependencies as required as here -->
     </bean>
@@ -377,13 +377,13 @@ support=support@example.co.uk
 
  ```xml
 <property name="myProperty">
-    <ref bean="myBean">
+    <ref bean="myBean"/>
 </property>
 ```
 
  ```xml
 <constructor-arg>
-    <ref bean="myBean">
+    <ref bean="myBean"/>
 </constructor-arg>
 ```
 

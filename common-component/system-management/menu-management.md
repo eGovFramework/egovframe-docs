@@ -234,9 +234,9 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 조회 | /sym/mnu/mpm/EgovMenuListSelect.do | selectMenuList | "menuManageDAO.selectMenuListT\_D" |
-| 등록 | /sym/mnu/mpm/EgovMenuListInsert.do | insertMenuManage | "menuManageDAO.insertMenuManage\_S" |
-| 수정 | /sym/mnu/mpm/EgovMenuListUpdt.do | updateMenuManage | "menuManageDAO.updateMenuManage\_S" |
-| 삭제 | /sym/mnu/mpm/EgovMenuListDelete.do | deleteMenuManage | "menuManageDAO.deleteMenuManage\_S" |
+| 등록 | /sym/mnu/mpm/EgovMenuListInsert.do | insertMenuList | "menuManageDAO.insertMenuManage\_S" |
+| 수정 | /sym/mnu/mpm/EgovMenuListUpdt.do | updateMenuList | "menuManageDAO.updateMenuManage\_S" |
+| 삭제 | /sym/mnu/mpm/EgovMenuListDelete.do | deleteMenuList | "menuManageDAO.deleteMenuManage\_S" |
 
  등록된 메뉴정보를 트리형태의 메뉴리스트로 등록된 메뉴를 확인 할 수 있다.
 

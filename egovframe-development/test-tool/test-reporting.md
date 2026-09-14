@@ -171,7 +171,6 @@ Test Automation 수행 후에는 테스트 결과를 갖는 txt, XML 파일을 �
   			</dependency>
   		</dependencies>
   		</plugin>
-              </plugins>
   ```
 
   * **Ant - build.xml**

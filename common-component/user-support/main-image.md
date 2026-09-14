@@ -27,6 +27,15 @@ menu:
  ④ 메인이미지삭제 : 기 등록된 메인이미지정보를 삭제한다.
  ⑤ 메인이미지조회 : 등록된 메인이미지는 메인화면에 표현된다.
 
+```mermaid
+flowchart LR
+    L[메인이미지 목록조회] -->|등록| R[메인이미지 등록]
+    L -->|목록 클릭| U[메인이미지 수정]
+    U -->|삭제| L
+    R -->|저장| L
+    U -->|저장| L
+```
+
 ### 패키지 참조 관계
 
  메인이미지관리 패키지는 요소기술의 공통 패키지(cmm)에 대해서만 직접적인 함수적 참조 관계를 가진다.
@@ -170,7 +179,7 @@ menu:
 | --- | --- | --- | --- | --- |
 | 상세조회 | /uss/ion/msi/getMainImage.do | selectMainImage | "mainImageDAO" | "selectMainImage" |
 | 수정 | /uss/ion/msi/updtMainImage.do | updateMainImage | "mainImageDAO" | "updateMainImage" |
-| 삭제 | /uss/ion/msi/removeMainImageList.do | deleteMainImage | "mainImageDAO" | "deleteMainImage" |
+| 삭제 | /uss/ion/msi/removeMainImage.do | deleteMainImage | "mainImageDAO" | "deleteMainImage" |
 
  다음 화면은 메인이미지 상세조회 화면과 동일하다.
 

@@ -53,7 +53,7 @@ menu:
 | Query XML | resources/egovframework/mapper/com/cop/smt/sim/EgovIndvdlSchdulManage_SQL_goldilocks.xml | 일정관리를 위한 Goldilocks용 Query XML |
 | Message properties | resources/egovframework/message/com/cop/smt/sim/message_ko.properties | 일정관리 Message properties(한글) |
 | Message properties | resources/egovframework/message/com/cop/smt/sim/message_en.properties | 일정관리 Message properties(영문) |
-| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-indvdlSchdulManage.xml | 일정관리 Id생성 Idgen XML |
+| Idgen XML | resources/egovframework/spring/com/idgn/context-idgn-deptSchdulManage.xml | 일정관리 Id생성 Idgen XML (부서일정관리와 공용) |
 
 ### 클래스 다이어그램
 
@@ -73,19 +73,21 @@ CREATE TABLE COMTECOPSEQ (TABLE_NAME VARCHAR(20) NOT NULL,
 INSERT INTO COMTECOPSEQ VALUES('SCHDUL_ID','1');
 ```
 
-#### ID Generation 환경설정(context-idgn-indvdlSchdulManage.xml)
+#### ID Generation 환경설정(context-idgn-deptSchdulManage.xml)
+
+일정관리는 별도의 ID 생성 설정 파일 없이 부서일정관리와 동일한 `deptSchdulManageIdGnrService`를 사용한다. (`EgovIndvdlSchdulManageServiceImpl`의 `@Resource(name="deptSchdulManageIdGnrService")`)
 
 ```xml
-<bean name="indvdlSchdulManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
+<bean name="deptSchdulManageIdGnrService" class="org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl" destroy-method="destroy">
     <property name="dataSource" ref="egov.dataSource" />
-    <property name="strategy"   ref="IndvdlSchdulManageStrategy" />
+    <property name="strategy"   ref="DeptSchdulManageStrategy" />
     <property name="blockSize"  value="10"/>
     <property name="table"      value="COMTECOPSEQ"/>
     <property name="tableName"  value="SCHDUL_ID"/>
 </bean>
-<bean name="IndvdlSchdulManageStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+<bean name="DeptSchdulManageStrategy" class="org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
     <property name="prefix"   value="SCHDUL_" />
-    <property name="cipers"   value="14" />
+    <property name="cipers"   value="13" />
     <property name="fillChar" value="0" />
 </bean>
 ```
@@ -126,7 +128,7 @@ N/A
 
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
-| 월별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageList.do | egovIndvdlSchdulManageMonthList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
+| 월별 목록조회 | /cop/smt/sim/EgovIndvdlSchdulManageMonthList.do | egovIndvdlSchdulManageMonthList | "IndvdlSchdulManage" | "selectIndvdlSchdulManageRetrieve" |
 
 ![일정관리 월별목록](./images/schedule-management-month-list.png)
 
@@ -189,7 +191,7 @@ N/A
 | Action | URL | Controller method | SQL Namespace | SQL QueryID |
 | --- | --- | --- | --- | --- |
 | 상세조회 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | "IndvdlSchdulManage" | "selectIndvdlSchdulManageDetailVO" |
-| 일정삭제 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDetail | "IndvdlSchdulManage" | "deleteIndvdlSchdulManage" |
+| 일정삭제 | /cop/smt/sim/EgovIndvdlSchdulManageDetail.do | egovIndvdlSchdulManageDelete | "IndvdlSchdulManage" | "deleteIndvdlSchdulManage" |
 
 ![일정관리 상세조회 및 삭제](./images/schedule-management-detail.png)
 
