@@ -34487,6 +34487,15 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
 &lt;p>커뮤니티의 관리 컴포넌트는 커뮤니티를 생성하고 등록된 커뮤니티들에 대하여 관련된 속성정보를 관리할 수 있는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>커뮤니티에 대한 관리 부분은 별도의 관리 메뉴를 통해 제공된다. 일부 기능은 해당 관리 메뉴를 통해서만 제공되지만, 커뮤니티 자체 관리 기능은 커뮤니티 내에 제공되는 관리 메뉴들로 가능하다.&lt;/p>
+
+
+&lt;div class="mermaid">flowchart LR
+ L[커뮤니티 목록조회] -->|등록| R[커뮤니티 생성]
+ L -->|목록클릭| D[커뮤니티 상세조회]
+ D -->|수정| U[커뮤니티 수정]
+ R --> L
+ U --> L
+&lt;/div>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
 &lt;p>커뮤니티 패키지는 요소기술의 공통 패키지(cmm), 협업의 공통기능(com) 패키지, 게시판 패키지, 블로그 패키지에 대해서 직접적인 함수적 참조 관계를 가진다. 하지만, 컴포넌트 배포 시 오류 없이 실행되기 위하여 패키지 간의 참조관계에 따라 배포 파일을 구성한다.&lt;/p></description></item><item><title>커뮤니티회원관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/collaboration/community/community-member/</guid><description>&lt;h1 id="커뮤니티회원관리">커뮤니티회원관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
