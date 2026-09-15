@@ -28742,19 +28742,41 @@ FlowExecutor는 등록된 flow 설정 xml을 실행[2]한다. 차후 Spring MVC 
  &lt;td>&lt;code>String&lt;/code>&lt;/td>
  &lt;td>입력받은 음력일자를 변환하여 양력일자로 반환&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>toLunar(String sDate)&lt;/code>&lt;/td>
+ &lt;td>&lt;code>Map&amp;lt;String, String&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>입력받은 양력일자를 변환하여 음력일자로 반환&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;h2 id="입력값-input">입력값 (Input)&lt;/h2>
+&lt;h2 id="tosolar">toSolar&lt;/h2>
+&lt;h3 id="입력값-input">입력값 (Input)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;code>sDate&lt;/code>: 변환할 날짜 문자열&lt;/li>
 &lt;li>&lt;code>iLeapMonth&lt;/code>: 윤달 여부를 나타내는 값&lt;/li>
 &lt;/ul>
-&lt;h2 id="반환값-output">반환값 (Output)&lt;/h2>
+&lt;h3 id="반환값-output">반환값 (Output)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;code>String&lt;/code>: 변환된 날짜 문자열&lt;/li>
 &lt;/ul>
-&lt;h2 id="사용-예">사용 예&lt;/h2>
+&lt;h3 id="사용-예">사용 예&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String&lt;span style="color:#bbb"> &lt;/span>solar&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovDateUtil.&lt;span style="color:#008080">toSolar&lt;/span>(&lt;span style="color:#d14">&amp;#34;20260711&amp;#34;&lt;/span>,&lt;span style="color:#bbb"> &lt;/span>0);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 음력 → 양력 변환&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="tolunar">toLunar&lt;/h2>
+&lt;h3 id="입력값-input-1">입력값 (Input)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>sDate&lt;/code>: 변환할 날짜 문자열&lt;/li>
+&lt;/ul>
+&lt;h3 id="반환값-output-1">반환값 (Output)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>Map&amp;lt;String, String&amp;gt;&lt;/code>: 변환된 음력일자와 윤달 여부
+&lt;ul>
+&lt;li>&lt;code>day&lt;/code>: 변환된 날짜 문자열&lt;/li>
+&lt;li>&lt;code>leap&lt;/code>: 윤달 여부&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="사용-예-1">사용 예&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Map&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>String,&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>lunar&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovDateUtil.&lt;span style="color:#008080">toLunar&lt;/span>(&lt;span style="color:#d14">&amp;#34;20260823&amp;#34;&lt;/span>);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 양력 → 음력 변환&lt;/span>&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
 &lt;ul>
 &lt;li>
