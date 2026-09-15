@@ -28,20 +28,41 @@ menu:
 | 메서드 | 반환형 | 설명 |
 | --- | --- | --- |
 | `toSolar(String sDate, int iLeapMonth)` | `String` | 입력받은 음력일자를 변환하여 양력일자로 반환 |
+| `toLunar(String sDate)` | `Map<String, String>` | 입력받은 양력일자를 변환하여 음력일자로 반환 |
 
-## 입력값 (Input)
+## toSolar
+
+### 입력값 (Input)
 
 - `sDate`: 변환할 날짜 문자열
 - `iLeapMonth`: 윤달 여부를 나타내는 값
 
-## 반환값 (Output)
+### 반환값 (Output)
 
 - `String`: 변환된 날짜 문자열
 
-## 사용 예
+### 사용 예
 
 ```java
 String solar = EgovDateUtil.toSolar("20260711", 0); // 음력 → 양력 변환
+```
+
+## toLunar
+
+### 입력값 (Input)
+
+- `sDate`: 변환할 날짜 문자열
+
+### 반환값 (Output)
+
+- `Map<String, String>`: 변환된 음력일자와 윤달 여부
+  - `day`: 변환된 날짜 문자열
+  - `leap`: 윤달 여부
+
+### 사용 예
+
+```java
+Map<String, String> lunar = EgovDateUtil.toLunar("20260823"); // 양력 → 음력 변환
 ```
 
 ## 참고자료
