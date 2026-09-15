@@ -70,8 +70,13 @@ Spring AI의 `DocumentRetriever`는 `Query`를 받아 `List<Document>`를 반환
 
 ## 예제 코드 준비
 
-아래 예제는 공식 저장소의 [PR #87][sample-review]에 제출되어 검토 중인 코드다.
-병합 전 예제를 이 문서가 설명하는 커밋에 고정하여 확인한다. 공식 저장소 기본 브랜치에 포함된 샘플과는 구분한다.
+아래 예제는 [PR #87][sample-review]에 제출했던 코드의 고정 스냅샷이다.
+해당 PR은 저장소의 동일 RAG 아키텍처 비교 범위와 달라 병합하지 않고 종료되었다.
+공식 저장소 기본 브랜치에 포함되거나 채택된 샘플이 아니다.
+
+담당자의 안내에 따라 별도 커뮤니티 프로젝트로 유지보수하며, [awesome-egovframe 등재 PR][community-listing]을 제출했다.
+등재 신청은 검토 중이며 공식 인증을 의미하지 않는다. 최신 독립 프로젝트의 사용법은 해당 등재 PR에서 연결한 저장소를 따른다.
+이 문서의 아래 명령과 소스 링크는 설명 당시의 제출 코드를 재현하기 위한 것이다.
 
 [예제 PR의 변경 파일][sample-source]을 확인하고, 아래 명령으로 이 문서가 참조하는 커밋의 샘플 디렉터리로 이동한다.
 아래 명령의 커밋에는 전체 소스, 설정 예시, 가상 입력 문서와 자동화 테스트가 포함되어 있다.
@@ -288,3 +293,5 @@ manifest에는 원문 사본과 해시가 포함되므로 어느 입력으로 �
 [ref-17]: https://github.com/eGovFramework/egovframe-ai-rag
 
 [sample-review]: https://github.com/eGovFramework/egovframe-ai-rag/pull/87
+
+[community-listing]: https://github.com/eGovFramework/awesome-egovframe/pull/27
