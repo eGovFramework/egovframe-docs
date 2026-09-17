@@ -10,9 +10,9 @@ menu:
     parent: "system"
 ---
 
-> **5.0 적용 범위:** 아래에서 설명하는 `canRead`, `canWrite` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+> **5.0 적용 범위:** 이전 가이드의 `EgovFileTool.canRead`, `EgovFileTool.canWrite` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 디렉토리 읽기·쓰기 권한은 `java.io.File`로 확인한다.
 
 ## 개요
 
@@ -32,40 +32,30 @@ menu:
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 툴 요소기술 클래스 | |
+| JDK | `java.io.File` | 디렉토리 읽기·쓰기 권한 확인 | 5.0 `EgovFileTool`에는 권한 조회 메소드가 없음 |
 
 ### 클래스 및 메소드 설명
-
-디렉토리권한체크 기능은 `EgovFileTool` 클래스의 메소드를 활용하여 제공한다. 파일과 디렉토리에 동일한 메소드를 사용한다.
 
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| boolean | `canRead(String filePath)` | 읽기권한 체크 | 디렉토리(파일) 경로를 입력받아 읽기 가능하면 `true`를 리턴한다. 권한이 없거나 대상이 없는 경우는 `false`를 리턴 |
-| boolean | `canWrite(String filePath)` | 쓰기권한 체크 | 디렉토리(파일) 경로를 입력받아 쓰기 가능하면 `true`를 리턴한다. 권한이 없거나 대상이 없는 경우는 `false`를 리턴 (대상경로가 파일인 경우만 정보가 유효함) |
+| boolean | `File.canRead()` | 읽기권한 체크 | 읽기 가능하면 `true`, 권한이 없거나 경로가 없으면 `false` |
+| boolean | `File.canWrite()` | 쓰기권한 체크 | 쓰기 가능하면 `true`, 권한이 없거나 경로가 없으면 `false` |
 <!-- markdownlint-restore -->
-
-#### 파라미터 정의 (Input)
-
-- `filePath`: String 타입의 절대경로를 포함한 디렉토리 경로 (예: `/user/com/test/dir1`)
-
-#### 반환값 정의 (Output)
-
-- boolean 타입: 권한 보유 여부 (`true` / `false`)
 
 ### 사용 방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileTool;
+import java.io.File;
 
-String dirPath = "/user/com/test/dir1";
+String dirPath = "/user/com/sample";
+File dir = new File(dirPath);
 
-// 읽기 권한 확인
-boolean readVal = EgovFileTool.canRead(dirPath);
-
-// 쓰기 권한 확인
-boolean writeVal = EgovFileTool.canWrite(dirPath);
+boolean readVal = dir.canRead();
+boolean writeVal = dir.canWrite();
 ```
+
+디렉토리 생성·삭제가 필요하면 [디렉토리생성](directory-create), [디렉토리삭제](directory-delete)의 `EgovFileTool` 메소드를 사용한다.
 
 ## 환경설정
 

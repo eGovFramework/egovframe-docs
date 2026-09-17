@@ -10,65 +10,42 @@ menu:
     parent: "system"
 ---
 
-> **5.0 적용 범위:** 아래에서 설명하는 `moveFile` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+> **5.0 적용 범위:** 이전 가이드의 `EgovFileTool.moveFile` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 파일 이동은 `java.nio.file.Files.move`를 사용한다.
 
 ## 개요
 
 비즈니스 로직을 처리하면서 필요시 파일을 이동할 수 있는 공통 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.
 
 ## 설명
-
-### 기능 설명
-
-파일이동에서 제공하는 기능은 다음과 같다.
-
-1. 원본 파일을 타겟 파일로 이동하는 기능
 
 ### 관련 소스
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 툴 요소기술 클래스 | |
+| JDK | `java.nio.file.Files` | 파일 이동 | 5.0 `EgovFileTool`에는 이동 메소드가 없음 |
 
 ### 클래스 및 메소드 설명
 
-파일이동 기능은 `EgovFileTool` 클래스의 메소드를 활용하여 제공한다.
-
-<!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| boolean | `moveFile(String fileOriginalPath, String fileTargetPath)` | 파일 이동 | 원본파일(`fileOriginalPath`)을 입력받아 타겟파일(`fileTargetPath`)로 이동한다. 타겟파일이 이미 존재하는 경우는 실패로 처리된다. 성공 시 `true`, 실패 시 `false` 리턴 |
-<!-- markdownlint-restore -->
-
-#### 파라미터 정의 (Input)
-
-- `fileOriginalPath`: String 타입의 절대경로를 포함하는 원본파일 경로 (예: `/product/jeus/egovProps/tmp/file1.txt`)
-- `fileTargetPath`: String 타입의 절대경로를 포함하는 타겟파일 경로 (예: `/product/jeus/egovProps/tmp/move1.txt`)
-
-#### 반환값 정의 (Output)
-
-- boolean 타입: 이동 성공 여부 (`true` / `false`)
+| Path | `Files.move(Path source, Path target, CopyOption... options)` | 파일 이동 | 원본 파일을 대상 경로로 이동한다 |
 
 ### 사용 방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileTool;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
-String fileOriginalPath = "/user/com/file1.txt";
-String fileTargetPath   = "/user/com/move1.txt";
-
-boolean result = EgovFileTool.moveFile(fileOriginalPath, fileTargetPath);
-if (result) {
-    System.out.println("파일 이동 성공");
-}
+Path source = Path.of("/user/com/file1.txt");
+Path target = Path.of("/user/com/move/file1.txt");
+Files.createDirectories(target.getParent());
+Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
 ```
 
-## 환경설정
-
-N/A
+파일을 삭제만 하면 되는 경우에는 [파일삭제](file-delete)의 `EgovFileTool.deleteFile`을 사용한다.
 
 ## 참고자료
 

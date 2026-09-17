@@ -10,14 +10,13 @@ menu:
     parent: "system"
 ---
 
-> **5.0 적용 범위:** 아래에서 설명하는 `parsFileBySize` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 5.0에서는 구분자 파싱 메소드 `parsFileByChar`를 제공한다.
+> **5.0 적용 범위:** 이전 가이드의 `parsFileBySize` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 5.0에서는 구분자 파싱 메소드 `parsFileByChar`만 제공한다.
 
 ## 개요
 
-사용자가 업로드한 파일 및 서버(Server)의 텍스트 파일을 특정 구분자(`,`, `|`, `TAB`)로 파싱하여 정보를 추출하는 기능을 제공한다.
-또한 파일의 텍스트 라인을 일정 길이(Size)별로 파싱하여 정보를 추출할 수 있다.
+사용자가 업로드한 파일 및 서버의 텍스트 파일을 특정 구분자(`,`, `|`, `TAB`)로 파싱하여 정보를 추출하는 기능을 제공한다.
 사용자 정보, 제품목록 정보 등을 CSV 파일로 작성하여 서버에 업로드한 후 파싱하여 일괄적으로 데이터베이스에 입력하는 경우에 활용할 수 있다.
 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.
 
@@ -28,7 +27,6 @@ menu:
 파일파싱에서 제공하는 기능은 다음과 같다.
 
 1. 텍스트 파일을 구분자에 의해 파싱하는 기능
-2. 텍스트 파일을 일정 길이에 의해 파싱하는 기능
 
 ### 관련 소스
 
@@ -38,13 +36,12 @@ menu:
 
 ### 클래스 및 메소드 설명
 
-파일파싱 기능은 `EgovFileTool` 클래스의 메소드를 활용하여 제공한다.
+파일파싱 기능은 `EgovFileTool` 클래스의 `parsFileByChar` 메소드를 활용하여 제공한다.
 
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
 | Vector | `parsFileByChar(String basePath, String parFile, String parChar, int parField)` | 특정구분자 파일파싱 | 파일을 특정 구분자(콤마, 파이프, TAB)로 파싱한다 |
-| Vector | `parsFileBySize(String parFile, int[] parLen, int parLine)` | 일정길이 파일파싱 | 파일을 필드별 일정 길이로 파싱한다 |
 <!-- markdownlint-restore -->
 
 #### 파라미터 정의 (Input)
@@ -53,8 +50,6 @@ menu:
 - `parFile`: `basePath`(미지정 시 `Globals.fileStorePath`)에 이어 붙일 파일명 (예: `file1.txt`)
 - `parChar`: String 타입의 파싱 구분자 (예: `,`)
 - `parField`: int 타입의 파싱 필드수 (예: `3`)
-- `parLen`: int[] 타입의 각 필드 길이 (예: `{3, 3, 3}`)
-- `parLine`: int 타입의 읽어낼 라인수 (예: `10`)
 
 #### 반환값 정의 (Output)
 
@@ -68,16 +63,13 @@ import java.util.Vector;
 
 import egovframework.com.utl.sim.service.EgovFileTool;
 
-// 1. 특정 구분자 파일파싱
 String basePath = null;
 String parFile = "file1.txt";
-Vector<List<String>> result1 = EgovFileTool.parsFileByChar(basePath, parFile, ",", 3);
-
-// 2. 일정 길이 파일파싱
-int[] parLen = {3, 3, 3};
-int parLine = 10;
-Vector<List<String>> result2 = EgovFileTool.parsFileBySize(parFile, parLen, parLine);
+Vector<List<String>> result = EgovFileTool.parsFileByChar(basePath, parFile, ",", 3);
 ```
+
+`basePath`가 `null`이거나 빈 문자열이면 `Globals.fileStorePath`를 사용한다.
+경로 검증은 `EgovFileBasePathSecurityValidator`를 통과해야 한다.
 
 ## 환경설정
 

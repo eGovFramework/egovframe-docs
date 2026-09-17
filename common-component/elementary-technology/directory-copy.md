@@ -14,105 +14,52 @@ menu:
 
 # 디렉토리복사
 
-> **5.0 적용 범위:** 아래에서 설명하는 `copyDirectory` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+> **5.0 적용 범위:** 이전 가이드의 `EgovFileTool.copyDirectory` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 디렉토리 복사는 `java.nio.file.Files`로 처리한다.
 
 ## 개요
 
-비즈니스 로직을 처리하면서 필요시 디렉토리의 전체 구조와 파일을 복사하는 공통 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.
-
-### 활용 예시
-
-디렉토리 복사 기능은 다음과 같은 상황에서 활용할 수 있다.
-
-- 프로젝트 리소스를 백업하는 경우
-- 운영 환경으로 디렉토리 구조를 복사하는 경우
-- 특정 기간에 생성된 파일만 선별하여 복사하는 경우
-- 특정 사용자 계정이 소유한 디렉토리만 복사하는 경우
-
-## 주요 개념
-
-* **전체 구조 복사**: 원본 디렉토리 하위의 모든 파일과 서브 디렉토리 구조를 대상 디렉토리로 동일하게 복사한다.
-* **조건부 복사**: 복사 과정에서 생성일자(또는 최종 수정일자)가 특정 날짜 범위에 포함되거나, 디렉토리(또는 파일)의 소유자가 지정한 조건과 일치할 때만 복사를 선택적으로 수행할 수 있다.
-
-## 관련 문서
-
-* [디렉토리 존재 체크](./directory-exist-check.md)
-* [디렉토리 생성](./directory-create.md)
-* [디렉토리 삭제](./directory-delete.md)
-* [디렉토리 이동](./directory-move.md)
-* [파일 복사](./file-copy.md)
+지정한 디렉토리를 다른 경로로 복사하는 기능을 제공한다.
 
 ## 설명
-
-원본 디렉토리의 구조와 파일을 대상 디렉토리로 복사하는 기능을 제공한다.
-조건에 따라 날짜 또는 소유자를 기준으로 복사 대상을 제한할 수 있다.
 
 ### 관련 소스
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 툴 요소기술 클래스 | |
+| JDK | `java.nio.file.Files` | 디렉토리·파일 복사 | 5.0 `EgovFileTool`에는 복사 메소드가 없음 |
 
-### 메소드 설명
-
-<!-- markdownlint-disable MD013 -->
-| 결과값 | 메소드명 | 설명 | 내용 |
-| --- | --- | --- | --- |
-| boolean | `copyDirectory(String dirOriginalPath, String dirTargetPath)` | 기본 디렉토리 복사 | 원본 디렉토리 경로(`dirOriginalPath`)에서 대상 디렉토리 경로(`dirTargetPath`)로 복사한다. 성공 시 `true`, 실패 시 `false`를 리턴한다. |
-| boolean | `copyDirectory(String dirOriginalPath, String dirTargetPath, String fromDate, String toDate)` | 날짜 조건부 복사 | 원본 디렉토리 경로(`dirOriginalPath`)에서 대상 디렉토리 경로(`dirTargetPath`)로 복사하되, 생성일자가 조건구간(`fromDate`과 `toDate` 사이) 내에 포함되는 디렉토리(또는 파일)만 복사한다. 성공 시 `true`, 실패 시 `false`를 리턴한다. |
-| boolean | `copyDirectory(String dirOriginalPath, String dirTargetPath, String owner)` | 소유자 조건부 복사 | 원본 디렉토리 경로(`dirOriginalPath`)에서 대상 디렉토리 경로(`dirTargetPath`)로 복사하되, 소유자가 조건(`owner`)에 일치하는 디렉토리(또는 파일)만 복사한다. 성공 시 `true`, 실패 시 `false`를 리턴한다. (WINDOWS 시스템에서는 지원하지 않는다.) |
-<!-- markdownlint-restore -->
-
-### 파라미터 (Input)
-
-* **dirOriginalPath**: String 타입의 절대경로를 포함하는 복사 원본 디렉토리 경로 (예: `/product/jeus/egovProps/tmp/dir1`)
-* **dirTargetPath**: String 타입의 절대경로를 포함하는 복사 대상 디렉토리 경로 (예: `/product/jeus/egovProps/tmp/dir2`)
-* **fromDate**: String 타입의 날짜 정보 (예: `20090101`)
-* **toDate**: String 타입의 날짜 정보 (예: `20090731`)
-* **owner**: String 타입의 사용자 계정명 (예: `jeus`)
-
-### 반환값 (Output)
-
-* **boolean** 타입: 복사 성공 여부 `true` / `false`
-
-> [!NOTE]
-> 메소드의 입력 항목 중에서 `fromDate`, `toDate` 항목은 Validation 체크가 적용된다
-> (요소기술 validation 체크 참조).
-
-## 환경설정
-
-N/A
-
-### 사용 시 주의사항
-
-- 원본 디렉토리가 존재해야 한다.
-- 대상 디렉토리에 대한 쓰기 권한이 필요하다.
-- 동일한 파일이 존재하는 경우 복사 결과를 사전에 확인하는 것이 좋다.
-- 소유자 조건 복사는 Windows 환경에서는 지원되지 않는다.
-
-## 사용방법
+### 사용 방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileTool;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.util.stream.Stream;
 
-// 1. 기본 디렉토리 복사
-String dirOriginalPath = "/user/com/dirOriginal";
-String dirTargetPath = "/user/com/dirTarget";
-boolean result1 = EgovFileTool.copyDirectory(dirOriginalPath, dirTargetPath);
+Path source = Path.of("/user/com/dir1");
+Path target = Path.of("/user/com/copy1");
 
-// 2. 날짜 조건부 디렉토리 복사
-String fromDate = "20090101";
-String toDate = "20090731";
-boolean result2 = EgovFileTool.copyDirectory(dirOriginalPath, dirTargetPath, fromDate, toDate);
-
-// 3. 소유자 조건부 디렉토리 복사
-String owner = "jeus";
-boolean result3 = EgovFileTool.copyDirectory(dirOriginalPath, dirTargetPath, owner);
+try (Stream<Path> walk = Files.walk(source)) {
+    walk.forEach(from -> {
+        Path to = target.resolve(source.relativize(from));
+        try {
+            if (Files.isDirectory(from)) {
+                Files.createDirectories(to);
+            } else {
+                Files.createDirectories(to.getParent());
+                Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    });
+}
 ```
+
+새 디렉토리만 만들면 되는 경우에는 [디렉토리생성](directory-create)의 `EgovFileTool.createNewDirectory`를 사용한다.
 
 ## 참고자료
 
-* N/A
+- [EgovFileTool 소스](https://github.com/eGovFramework/egovframe-common-components/blob/main/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)
