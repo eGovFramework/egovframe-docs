@@ -10,76 +10,47 @@ menu:
     parent: "system"
 ---
 
-> **5.0 적용 범위:** 아래에서 설명하는 `getMountLc` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+> **5.0 적용 범위:** 이전 가이드의 `EgovFileTool.getMountLc` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 디스크 용량과 저장소 정보는 `java.io.File` 또는 `java.nio.file.FileStore`로 확인한다.
 
 ## 개요
 
-특정 파일이 위치한 디스크의 마운트 경로(속성 정보)를 확인하는 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.
+특정 경로가 위치한 디스크의 용량과 저장소 정보를 확인하는 기능을 제공한다.
 
 ## 설명
-
-### 기능 설명
-
-디스크 속성정보 체크에서 제공하는 기능은 다음과 같다.
-
-1. 파일이 위치한 디스크의 마운트 경로를 확인하는 기능
 
 ### 관련 소스
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 요소기술 클래스 | |
+| JDK | `java.io.File` | 디스크 용량 조회 | |
+| JDK | `java.nio.file.FileStore` | 저장소(마운트) 정보 | |
 
 ### 클래스 및 메소드 설명
 
-디스크 속성정보 체크 기능은 `EgovFileTool` 클래스의 메소드를 활용하여 제공한다.
-
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| String | `getMountLc(String file)` | 마운트 경로 조회 | 입력한 파일이 위치한 디스크의 마운트 경로를 반환한다. 성공 시 마운트 경로 문자열, 실패 시 빈 문자열 리턴 |
-
-#### 파라미터 정의 (Input)
-
-- `file`: String 타입의 절대경로를 포함하는 확인 대상 파일 경로
-  (예: `/product/jeus/test/samples/common.xml`)
-
-#### 반환값 정의 (Output)
-
-- String 타입: 파일이 위치한 디스크의 마운트 경로 (예: `/product`)
-
-### 환경 설정
-
-`getMountLc` 메소드는 쉘 스크립트의 실행 결과를 활용하여 정보를 확인한다. 호출 시 활용되는 쉘 스크립트의 정보는
-`globals.properties`에 등록한다.
-
-#### globals.properties
-
-```properties
-# getMountLc 메소드에 해당되는 쉘 스크립트
-SHELL.UNIX.getDiskAttribute = /product/jeus/egovProps/prg/getDiskAttribute.sh
-```
-
-#### getDiskAttribute.sh (유닉스용 디스크 마운트 경로 조회 스크립트)
-
-```bash
-df $1 | tail -1 | awk -F" " '{print $6}'
-```
+| long | `File.getTotalSpace()` | 전체 용량 | 디스크 전체 크기(byte) |
+| long | `File.getUsableSpace()` | 사용 가능 용량 | 사용 가능한 크기(byte) |
+| String | `FileStore.name()` | 저장소 이름 | 파일이 위치한 저장소 이름 |
 
 ### 사용 방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileTool;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.FileStore;
+import java.nio.file.Path;
 
-String filePath = "/product/jeus/test/samples/common.xml";
+File file = new File("/user/com/sample/file1.txt");
+long total = file.getTotalSpace();
+long usable = file.getUsableSpace();
 
-// 파일이 위치한 디스크 마운트 경로 조회
-String mountLc = EgovFileTool.getMountLc(filePath);
-// 출력 예시: /product
+FileStore store = Files.getFileStore(Path.of(file.getAbsolutePath()));
+String storeName = store.name();
 ```
 
 ## 참고자료
 
-- N/A
+- [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)

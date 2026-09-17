@@ -10,9 +10,9 @@ menu:
     parent: "system"
 ---
 
-> **5.0 적용 범위:** 아래에서 설명하는 `canRead`, `canWrite` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+> **5.0 적용 범위:** 이전 가이드의 `EgovFileTool.canRead`, `EgovFileTool.canWrite` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 파일 읽기·쓰기 권한은 `java.io.File`로 확인한다.
 
 ## 개요
 
@@ -32,22 +32,20 @@ menu:
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 파일관리 툴 요소기술 클래스 | |
+| JDK | `java.io.File` | 파일 읽기·쓰기 권한 확인 | 5.0 `EgovFileTool`에는 권한 조회 메소드가 없음 |
 
 ### 클래스 및 메소드 설명
-
-파일권한체크 기능은 `EgovFileTool` 클래스의 메소드를 활용하여 제공한다.
 
 <!-- markdownlint-disable MD013 -->
 | 결과값 | 메소드명 | 설명 | 내용 |
 | --- | --- | --- | --- |
-| boolean | `canRead(String filePath)` | 읽기권한 체크 | 파일경로를 입력받아 읽기 가능하면 `true`를 리턴한다. 권한이 없거나 파일이 없는 경우는 `false`를 리턴 |
-| boolean | `canWrite(String filePath)` | 쓰기권한 체크 | 파일경로를 입력받아 쓰기 가능하면 `true`를 리턴한다. 권한이 없거나 파일이 없는 경우는 `false`를 리턴 |
+| boolean | `File.canRead()` | 읽기권한 체크 | 읽기 가능하면 `true`, 권한이 없거나 파일이 없으면 `false` |
+| boolean | `File.canWrite()` | 쓰기권한 체크 | 쓰기 가능하면 `true`, 권한이 없거나 파일이 없으면 `false` |
 <!-- markdownlint-restore -->
 
 #### 파라미터 정의 (Input)
 
-- `filePath`: String 타입의 절대경로를 포함한 파일명 (예: `/user/com/test/file1.txt`)
+- 파일 경로: 절대경로를 포함한 파일명 (예: `/user/com/test/file1.txt`)
 
 #### 반환값 정의 (Output)
 
@@ -56,16 +54,16 @@ menu:
 ### 사용 방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileTool;
+import java.io.File;
 
 String filePath = "/user/com/sample/test.txt";
+File file = new File(filePath);
 
-// 읽기 권한 확인
-boolean readVal = EgovFileTool.canRead(filePath);
-
-// 쓰기 권한 확인
-boolean writeVal = EgovFileTool.canWrite(filePath);
+boolean readVal = file.canRead();
+boolean writeVal = file.canWrite();
 ```
+
+파일 생성·삭제가 필요하면 [파일생성](file-create), [파일삭제](file-delete)의 `EgovFileTool` 메소드를 사용한다.
 
 ## 환경설정
 

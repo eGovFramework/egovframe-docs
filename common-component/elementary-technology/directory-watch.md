@@ -10,76 +10,43 @@ menu:
     parent: "system"
 ---
 
-> **5.0 적용 범위:** 아래에서 설명하는 `getDirectoryMoniteringInfo`, `startDirectoryMonitering`, `stopDirectoryMonitering` 메소드는
-> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 제공되지 않는다.
-> 기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.
+> **5.0 적용 범위:** 이전 가이드의 `startDirectoryMonitering`, `getDirectoryMoniteringInfo`, `stopDirectoryMonitering` 메소드는
+> [공통컴포넌트 5.0의 EgovFileTool](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java)에 없다.
+> 디렉토리 변경 감시는 `java.nio.file.WatchService`를 사용한다.
 
 ## 개요
 
-특정 디렉토리를 대상으로 디렉토리 내의 시스템에 존재하는 파일과 디렉토리의 변동 내역을 모니터링한다.
-특정 디렉토리에 대한 모니터링을 시작하게 되면 정해진 위치에 해당 디렉토리에 대한 로그 파일을 자동생성하고
-모니터링된 내역을 기록한다. (로그 파일 설정 관련된 사항은 환경설정 항목을 참조)
-
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.
+특정 디렉토리 안의 파일과 하위 항목 변동을 모니터링하는 기능을 제공한다.
 
 ## 설명
 
-1. 디렉토리 내의 변화 감시를 시작하는 기능
-2. 디렉토리 내의 변화를 조회하는 기능
-3. 디렉토리 내의 변화 감시를 종료하는 기능
-
-### 관련소스
+### 관련 소스
 
 | 유형 | 대상소스명 | 설명 | 비고 |
 | --- | --- | --- | --- |
-| Service | `egovframework.com.utl.sim.service.EgovFileTool.java` | 시스템 정보 확인 요소기술 클래스 | |
-| Service | `egovframework.com.utl.sim.service.EgovFileMntrg.java` | 디렉토리 감시 요소기술 클래스 | |
+| JDK | `java.nio.file.WatchService` | 디렉토리 감시 | 5.0 `EgovFileTool`에는 감시 메소드가 없음 |
 
-### 메소드
-
-<!-- markdownlint-disable MD013 -->
-| 결과값 | 메소드명 | 설명 | 내용 |
-| --- | --- | --- | --- |
-| `boolean` | `startDirectoryMonitering(String targetDirPath)` | 디렉토리 감시 | 특정 디렉토리에 대한 변화정보 감시를 시작한다. 로그기록 폴더에 로그정보를 기록할 파일을 디렉토리명으로 생성한다(이미 존재하는 경우는 로그를 이어서 기록). 감시 시작 시 true, 실패 시 false 리턴 |
-| `StringBuffer` | `getDirectoryMoniteringInfo(String targetDirPath)` | 디렉토리 감시 | 특정 디렉토리 감시로그 정보를 조회한다. 로그기록 폴더에서 대상 디렉토리에 대한 로그 파일을 읽어서 리턴 |
-| `boolean` | `stopDirectoryMonitering(String targetDirPath)` | 디렉토리 감시 | 특정 디렉토리에 대한 변화정보 감시를 종료한다. 감시기능을 중단한다. 감시 종료 시 true, 실패 시 false 리턴 |
-<!-- markdownlint-enable MD013 -->
-
-### Input
-
-- `targetDirPath`: String 타입의 절대경로를 포함하는 감시시작대상 디렉토리명 (예: `/product/jeus/egovProps/tmp`)
-
-### Output
-
-- `boolean` 타입: 실행여부 `true` / `false`
-- `StringBuffer` 타입: 로그정보
-
-## 환경설정
-
-디렉토리 감시기능 사용 시 로그기록 파일 위치에 대한 설정은 `globals.properties`에 등록한다.
-
-- `globals.properties`
-
-```properties
-#로그파일 위치 경로
-Globals.ConfPath = /product/jeus/egovProps/conf
-```
-
-## 사용방법
+### 사용 방법
 
 ```java
-import egovframework.com.utl.sim.service.EgovFileTool;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.StandardWatchEventKinds;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
 
-String dirTargetPath1 = "/product/jeus/egovProps/tmp";
-boolean result1       = EgovFileTool.startDirectoryMonitering(dirTargetPath1);
+Path dir = Path.of("/user/com/watch");
+WatchService watchService = FileSystems.getDefault().newWatchService();
+dir.register(watchService,
+        StandardWatchEventKinds.ENTRY_CREATE,
+        StandardWatchEventKinds.ENTRY_MODIFY,
+        StandardWatchEventKinds.ENTRY_DELETE);
 
-String dirTargetPath2 = "/product/jeus/egovProps/tmp";
-StringBuffer logInfo2 = EgovFileTool.getDirectoryMoniteringInfo(dirTargetPath2);
-
-String dirTargetPath3 = "/product/jeus/egovProps/tmp";
-boolean result3       = EgovFileTool.stopDirectoryMonitering(dirTargetPath3);
+WatchKey key = watchService.take();
 ```
+
+감시 종료 시 `watchService.close()`를 호출한다. 일회성 목록 조회는 `EgovFileTool.getSubFilesByAll`을 사용한다.
 
 ## 참고자료
 
-- N/A
+- [공통컴포넌트 소스 저장소 (egovframe-common-components)](https://github.com/eGovFramework/egovframe-common-components)
