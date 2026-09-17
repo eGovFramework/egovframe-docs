@@ -18082,7 +18082,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;p>파일 또는 디렉토리 경로를 입력받아 ZIP 형식으로 압축하거나 기존 ZIP 파일을 지정한 경로에 압축 해제하는 기능을 제공한다.&lt;/p></description></item><item><title>디렉토리감시</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-watch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-watch/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>getDirectoryMoniteringInfo&lt;/code>, &lt;code>startDirectoryMonitering&lt;/code>, &lt;code>stopDirectoryMonitering&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>startDirectoryMonitering&lt;/code>, &lt;code>getDirectoryMoniteringInfo&lt;/code>, &lt;code>stopDirectoryMonitering&lt;/code> 메소드는
 
 
 
@@ -18100,14 +18100,48 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+디렉토리 변경 감시는 &lt;code>java.nio.file.WatchService&lt;/code>를 사용한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>특정 디렉토리를 대상으로 디렉토리 내의 시스템에 존재하는 파일과 디렉토리의 변동 내역을 모니터링한다.
-특정 디렉토리에 대한 모니터링을 시작하게 되면 정해진 위치에 해당 디렉토리에 대한 로그 파일을 자동생성하고
-모니터링된 내역을 기록한다. (로그 파일 설정 관련된 사항은 환경설정 항목을 참조)&lt;/p></description></item><item><title>디렉토리권한체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-permission-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-permission-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>canRead&lt;/code>, &lt;code>canWrite&lt;/code> 메소드는
+&lt;p>특정 디렉토리 안의 파일과 하위 항목 변동을 모니터링하는 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.WatchService&lt;/code>&lt;/td>
+ &lt;td>디렉토리 감시&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 감시 메소드가 없음&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.FileSystems&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.StandardWatchEventKinds&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.WatchKey&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.WatchService&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>dir&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/watch&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>WatchService&lt;span style="color:#bbb"> &lt;/span>watchService&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>FileSystems.&lt;span style="color:#008080">getDefault&lt;/span>().&lt;span style="color:#008080">newWatchService&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>dir.&lt;span style="color:#008080">register&lt;/span>(watchService,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>StandardWatchEventKinds.&lt;span style="color:#008080">ENTRY_CREATE&lt;/span>,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>StandardWatchEventKinds.&lt;span style="color:#008080">ENTRY_MODIFY&lt;/span>,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>StandardWatchEventKinds.&lt;span style="color:#008080">ENTRY_DELETE&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>WatchKey&lt;span style="color:#bbb"> &lt;/span>key&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>watchService.&lt;span style="color:#008080">take&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>감시 종료 시 &lt;code>watchService.close()&lt;/code>를 호출한다. 일회성 목록 조회는 &lt;code>EgovFileTool.getSubFilesByAll&lt;/code>을 사용한다.&lt;/p></description></item><item><title>디렉토리권한체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-permission-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-permission-check/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.canRead&lt;/code>, &lt;code>EgovFileTool.canWrite&lt;/code> 메소드는
 
 
 
@@ -18125,8 +18159,8 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+디렉토리 읽기·쓰기 권한은 &lt;code>java.io.File&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>비즈니스 로직을 처리하면서 필요한 디렉토리의 접근 권한을 확인하기 위한 공통 기능을 제공한다.
@@ -18150,18 +18184,102 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
- &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>디렉토리 읽기·쓰기 권한 확인&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 권한 조회 메소드가 없음&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>디렉토리권한체크 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다. 파일과 디렉토리에 동일한 메소드를 사용한다.&lt;/p></description></item><item><title>디렉토리복사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canRead()&lt;/code>&lt;/td>
+ &lt;td>읽기권한 체크&lt;/td>
+ &lt;td>읽기 가능하면 &lt;code>true&lt;/code>, 권한이 없거나 경로가 없으면 &lt;code>false&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canWrite()&lt;/code>&lt;/td>
+ &lt;td>쓰기권한 체크&lt;/td>
+ &lt;td>쓰기 가능하면 &lt;code>true&lt;/code>, 권한이 없거나 경로가 없으면 &lt;code>false&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>String&lt;span style="color:#bbb"> &lt;/span>dirPath&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#d14">&amp;#34;/user/com/sample&amp;#34;&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>dir&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(dirPath);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>readVal&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>dir.&lt;span style="color:#008080">canRead&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>writeVal&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>dir.&lt;span style="color:#008080">canWrite&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>디렉토리 생성·삭제가 필요하면 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-create/" class="innerLink">디렉토리생성&lt;/a>
+
+, 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-delete/" class="innerLink">디렉토리삭제&lt;/a>
+
+의 &lt;code>EgovFileTool&lt;/code> 메소드를 사용한다.&lt;/p></description></item><item><title>디렉토리복사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-copy/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
 &lt;h1 id="디렉토리복사">디렉토리복사&lt;/h1>
 &lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>copyDirectory&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.copyDirectory&lt;/code> 메소드는
 
 
 
@@ -18179,161 +18297,81 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+디렉토리 복사는 &lt;code>java.nio.file.Files&lt;/code>로 처리한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>비즈니스 로직을 처리하면서 필요시 디렉토리의 전체 구조와 파일을 복사하는 공통 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
-&lt;h3 id="활용-예시">활용 예시&lt;/h3>
-&lt;p>디렉토리 복사 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p>
-&lt;ul>
-&lt;li>프로젝트 리소스를 백업하는 경우&lt;/li>
-&lt;li>운영 환경으로 디렉토리 구조를 복사하는 경우&lt;/li>
-&lt;li>특정 기간에 생성된 파일만 선별하여 복사하는 경우&lt;/li>
-&lt;li>특정 사용자 계정이 소유한 디렉토리만 복사하는 경우&lt;/li>
-&lt;/ul>
-&lt;h2 id="주요-개념">주요 개념&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>전체 구조 복사&lt;/strong>: 원본 디렉토리 하위의 모든 파일과 서브 디렉토리 구조를 대상 디렉토리로 동일하게 복사한다.&lt;/li>
-&lt;li>&lt;strong>조건부 복사&lt;/strong>: 복사 과정에서 생성일자(또는 최종 수정일자)가 특정 날짜 범위에 포함되거나, 디렉토리(또는 파일)의 소유자가 지정한 조건과 일치할 때만 복사를 선택적으로 수행할 수 있다.&lt;/li>
-&lt;/ul>
-&lt;h2 id="관련-문서">관련 문서&lt;/h2>
-&lt;ul>
-&lt;li>
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-exist-check/" class="innerLink">디렉토리 존재 체크&lt;/a>
-
-&lt;/li>
-&lt;li>
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-create/" class="innerLink">디렉토리 생성&lt;/a>
-
-&lt;/li>
-&lt;li>
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-delete/" class="innerLink">디렉토리 삭제&lt;/a>
-
-&lt;/li>
-&lt;li>
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-move/" class="innerLink">디렉토리 이동&lt;/a>
-
-&lt;/li>
-&lt;li>
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
-
-
-
-&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-copy/" class="innerLink">파일 복사&lt;/a>
-
-&lt;/li>
-&lt;/ul>
+&lt;p>지정한 디렉토리를 다른 경로로 복사하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>원본 디렉토리의 구조와 파일을 대상 디렉토리로 복사하는 기능을 제공한다.
-조건에 따라 날짜 또는 소유자를 기준으로 복사 대상을 제한할 수 있다.&lt;/p></description></item><item><title>디렉토리삭제</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-delete/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-delete/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.Files&lt;/code>&lt;/td>
+ &lt;td>디렉토리·파일 복사&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 복사 메소드가 없음&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Files&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.StandardCopyOption&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.util.stream.Stream&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>source&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/dir1&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>target&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/copy1&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">try&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(Stream&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>Path&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>walk&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Files.&lt;span style="color:#008080">walk&lt;/span>(source))&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>walk.&lt;span style="color:#008080">forEach&lt;/span>(from&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">-&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>to&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>target.&lt;span style="color:#008080">resolve&lt;/span>(source.&lt;span style="color:#008080">relativize&lt;/span>(from));&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">try&lt;/span>&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">if&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(Files.&lt;span style="color:#008080">isDirectory&lt;/span>(from))&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>Files.&lt;span style="color:#008080">createDirectories&lt;/span>(to);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">else&lt;/span>&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>Files.&lt;span style="color:#008080">createDirectories&lt;/span>(to.&lt;span style="color:#008080">getParent&lt;/span>());&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>Files.&lt;span style="color:#008080">copy&lt;/span>(from,&lt;span style="color:#bbb"> &lt;/span>to,&lt;span style="color:#bbb"> &lt;/span>StandardCopyOption.&lt;span style="color:#008080">REPLACE_EXISTING&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">catch&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(Exception&lt;span style="color:#bbb"> &lt;/span>e)&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">throw&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>RuntimeException(e);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>});&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>새 디렉토리만 만들면 되는 경우에는 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-create/" class="innerLink">디렉토리생성&lt;/a>
+
+의 &lt;code>EgovFileTool.createNewDirectory&lt;/code>를 사용한다.&lt;/p></description></item><item><title>디렉토리삭제</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-delete/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-delete/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
 &lt;h1 id="디렉토리삭제">디렉토리삭제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>비즈니스 로직을 처리하면서 필요 시 특정 디렉토리를 삭제할 수 있는 공통 기능을 제공한다.
@@ -18364,7 +18402,7 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 &lt;/ul>
 &lt;h2 id="주요-개념">주요 개념&lt;/h2>
 &lt;p>&lt;code>Globals.fileStorePath&lt;/code>를 기준으로 새로운 디렉토리(폴더)를 생성할 수 있다.&lt;/p></description></item><item><title>디렉토리속성정보체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-attribute-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-attribute-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>canRead&lt;/code>, &lt;code>canWrite&lt;/code>, &lt;code>getAccess&lt;/code>, &lt;code>getDirectorySize&lt;/code>, &lt;code>getLastModifiedDateFromFile&lt;/code>, &lt;code>getName&lt;/code>, &lt;code>getOwner&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>canRead&lt;/code>, &lt;code>canWrite&lt;/code>, &lt;code>getAccess&lt;/code>, &lt;code>getDirectorySize&lt;/code>, &lt;code>getLastModifiedDateFromFile&lt;/code>, &lt;code>getName&lt;/code>, &lt;code>getOwner&lt;/code> 메소드는
 
 
 
@@ -18382,46 +18420,18 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+디렉토리명, 수정일자, 권한은 &lt;code>java.io.File&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>디렉토리 속성정보인 디렉토리명, 생성일자(최종수정일자), 소유계정, 읽기권한, 쓰기권한, 접근권한, 사이즈 정보를 확인하는
-기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
-&lt;h3 id="활용-예시">활용 예시&lt;/h3>
-&lt;p>디렉토리 속성정보 체크 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p></description></item><item><title>디렉토리이동</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-move/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>moveFile&lt;/code> 메소드는
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
-
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>비즈니스 로직을 처리하면서 필요시 디렉토리를 이동할 수 있는 공통 기능을 제공한다.
+&lt;p>디렉토리 속성정보인 디렉토리명, 최종수정일자, 읽기권한, 쓰기권한을 확인하는 기능을 제공한다.
 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;h3 id="활용-예시">활용 예시&lt;/h3>
+&lt;ul>
+&lt;li>애플리케이션이 사용하는 디렉토리의 존재 여부와 상태를 확인하는 경우&lt;/li>
+&lt;li>파일 업로드 또는 로그 저장 경로의 읽기·쓰기 권한을 점검하는 경우&lt;/li>
+&lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;h3 id="기능-설명">기능 설명&lt;/h3>
-&lt;p>디렉토리이동에서 제공하는 기능은 다음과 같다.&lt;/p>
-&lt;ol>
-&lt;li>원본 디렉토리를 타겟 디렉토리로 이동하는 기능&lt;/li>
-&lt;li>원본 디렉토리의 최종수정일자가 특정 구간 내에 포함되는 경우에 한해서 타겟 디렉토리로 이동하는 기능&lt;/li>
-&lt;li>원본 디렉토리가 특정 소유자인 경우에 한해서 타겟 디렉토리로 이동하는 기능 (WINDOWS 시스템에서는 지원하지 않음)&lt;/li>
-&lt;/ol>
 &lt;h3 id="관련-소스">관련 소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -18434,18 +18444,239 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>디렉토리 속성 조회&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 속성 조회 메소드가 없음&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Service&lt;/td>
  &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
- &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
+ &lt;td>하위 파일 목록 조회&lt;/td>
+ &lt;td>&lt;code>getSubFilesByAll&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>&lt;code>File.getName()&lt;/code>&lt;/td>
+ &lt;td>디렉토리명 조회&lt;/td>
+ &lt;td>경로의 마지막 이름&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.lastModified()&lt;/code>&lt;/td>
+ &lt;td>수정일자 조회&lt;/td>
+ &lt;td>최종 수정 시각(epoch millisecond)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canRead()&lt;/code>&lt;/td>
+ &lt;td>읽기권한 조회&lt;/td>
+ &lt;td>읽기 가능 여부&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canWrite()&lt;/code>&lt;/td>
+ &lt;td>쓰기권한 조회&lt;/td>
+ &lt;td>쓰기 가능 여부&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>List&lt;/td>
+ &lt;td>&lt;code>EgovFileTool.getSubFilesByAll(File[] fileArray)&lt;/code>&lt;/td>
+ &lt;td>하위 파일 목록&lt;/td>
+ &lt;td>용량 합산이 필요하면 이 목록을 순회한다&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>소유자·접근권한 문자열을 조회하던 쉘 스크립트 기반 메소드는 5.0에서 제거되었다.&lt;/p></description></item><item><title>디렉토리이동</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-move/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.moveFile&lt;/code> 메소드는
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+에 없다.
+디렉토리 이동은 &lt;code>java.nio.file.Files.move&lt;/code>를 사용한다.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>비즈니스 로직을 처리하면서 필요시 디렉토리를 이동할 수 있는 공통 기능을 제공한다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.Files&lt;/code>&lt;/td>
+ &lt;td>디렉토리 이동&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 이동 메소드가 없음&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Files&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.StandardCopyOption&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>source&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/dir1&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>target&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/move1&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Files.&lt;span style="color:#008080">createDirectories&lt;/span>(target.&lt;span style="color:#008080">getParent&lt;/span>());&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Files.&lt;span style="color:#008080">move&lt;/span>(source,&lt;span style="color:#bbb"> &lt;/span>target,&lt;span style="color:#bbb"> &lt;/span>StandardCopyOption.&lt;span style="color:#008080">REPLACE_EXISTING&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>디렉토리를 삭제만 하면 되는 경우에는 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-delete/" class="innerLink">디렉토리삭제&lt;/a>
+
+의 &lt;code>EgovFileTool.deletePath&lt;/code>를 사용한다.&lt;/p></description></item><item><title>디렉토리일자체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-date-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-date-check/</guid><description>&lt;!-- markdownlint-disable MD025 -->
+&lt;h1 id="디렉토리일자체크">디렉토리일자체크&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.getLastModifiedDateFromFile&lt;/code> 메소드는
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+에 없다.
+최종 수정일자는 &lt;code>java.io.File.lastModified()&lt;/code>로 확인한다.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="개요">개요&lt;/h2>
+&lt;p>디렉토리의 최종 수정일자를 확인하는 기능을 제공한다.
+본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>최종 수정일자 조회&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>디렉토리이동 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>디렉토리일자체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-date-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-date-check/</guid><description>&lt;!-- markdownlint-disable MD025 -->
-&lt;h1 id="디렉토리일자체크">디렉토리일자체크&lt;/h1>
-&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>getLastModifiedDateFromFile&lt;/code> 메소드는
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.lastModified()&lt;/code>&lt;/td>
+ &lt;td>수정일자 조회&lt;/td>
+ &lt;td>최종 수정 시각을 epoch millisecond로 반환한다&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.time.Instant&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.time.LocalDate&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.time.ZoneId&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>dir&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/sample&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">long&lt;/span>&lt;span style="color:#bbb"> &lt;/span>lastModified&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>dir.&lt;span style="color:#008080">lastModified&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>LocalDate&lt;span style="color:#bbb"> &lt;/span>date&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Instant.&lt;span style="color:#008080">ofEpochMilli&lt;/span>(lastModified)&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>.&lt;span style="color:#008080">atZone&lt;/span>(ZoneId.&lt;span style="color:#008080">systemDefault&lt;/span>())&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>.&lt;span style="color:#008080">toLocalDate&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;ul>
+&lt;li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/main/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">EgovFileTool 소스&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;/li>
+&lt;/ul></description></item><item><title>디렉토리존재체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-exist-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-exist-check/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.getExistDirectory&lt;/code> 메소드는
 
 
 
@@ -18463,50 +18694,115 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="개요">개요&lt;/h2>
-&lt;p>비즈니스 로직을 처리하면서 필요 시 디렉토리의 일자 정보를 확인하기 위해 제공되는 공통컴포넌트 요소기술 중 하나이다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
-&lt;h3 id="활용-예시">활용 예시&lt;/h3>
-&lt;p>디렉토리 일자 체크 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p></description></item><item><title>디렉토리존재체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-exist-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/directory-exist-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>getExistDirectory&lt;/code> 메소드는
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
-
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+디렉토리 존재 여부는 &lt;code>java.io.File&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>비즈니스 로직을 처리하면서 필요시 디렉토리의 존재를 확인할 수 있는 공통 기능을 제공한다.&lt;/p>
-&lt;p>본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
-&lt;h3 id="활용-예시">활용 예시&lt;/h3>
-&lt;p>디렉토리 존재 체크 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p>
-&lt;ul>
-&lt;li>파일 업로드 경로가 존재하는지 확인하는 경우&lt;/li>
-&lt;li>애플리케이션 실행 전 필수 디렉토리의 존재 여부를 점검하는 경우&lt;/li>
-&lt;li>특정 조건에 맞는 디렉토리를 검색하는 경우&lt;/li>
-&lt;li>디렉토리 생성 또는 삭제 작업 전에 대상 경로를 확인하는 경우&lt;/li>
-&lt;/ul>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;p>지정한 디렉토리의 존재 여부를 확인하거나, 특정 조건을 만족하는 디렉토리를 검색하는 기능을 제공한다.
-날짜, 소유자 등의 조건을 함께 사용하여 필요한 디렉토리를 선택적으로 조회할 수 있다.&lt;/p></description></item><item><title>디스크속성정보체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-attribute-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-attribute-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>getMountLc&lt;/code> 메소드는
+&lt;h3 id="기능-설명">기능 설명&lt;/h3>
+&lt;p>디렉토리존재체크에서 제공하는 기능은 다음과 같다.&lt;/p>
+&lt;ol>
+&lt;li>지정한 경로가 디렉토리로 존재하는지 확인하는 기능&lt;/li>
+&lt;li>존재하는 디렉토리의 하위 파일 목록을 조회하는 기능&lt;/li>
+&lt;/ol>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>디렉토리 존재 여부 확인&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
+ &lt;td>하위 파일 목록 조회&lt;/td>
+ &lt;td>&lt;code>getSubFilesByAll&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.exists()&lt;/code>&lt;/td>
+ &lt;td>존재 여부&lt;/td>
+ &lt;td>경로가 존재하면 &lt;code>true&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.isDirectory()&lt;/code>&lt;/td>
+ &lt;td>디렉토리 여부&lt;/td>
+ &lt;td>디렉토리면 &lt;code>true&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>List&lt;/td>
+ &lt;td>&lt;code>EgovFileTool.getSubFilesByAll(File[] fileArray)&lt;/code>&lt;/td>
+ &lt;td>하위 파일 목록&lt;/td>
+ &lt;td>디렉토리 아래 모든 파일의 절대경로 목록&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.util.List&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.sim.service.EgovFileTool&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>dir&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/sample&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>exists&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>dir.&lt;span style="color:#008080">exists&lt;/span>()&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;amp;&amp;amp;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>dir.&lt;span style="color:#008080">isDirectory&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">if&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(exists)&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>List&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>String&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>files&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovFileTool.&lt;span style="color:#008080">getSubFilesByAll&lt;/span>(dir.&lt;span style="color:#008080">listFiles&lt;/span>());&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>디렉토리 생성이 필요하면 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/directory-create/" class="innerLink">디렉토리생성&lt;/a>
+
+의 &lt;code>EgovFileTool.createNewDirectory&lt;/code>를 사용한다.&lt;/p></description></item><item><title>디스크속성정보체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-attribute-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-attribute-check/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.getMountLc&lt;/code> 메소드는
 
 
 
@@ -18524,18 +18820,12 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+디스크 용량과 저장소 정보는 &lt;code>java.io.File&lt;/code> 또는 &lt;code>java.nio.file.FileStore&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>특정 파일이 위치한 디스크의 마운트 경로(속성 정보)를 확인하는 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;p>특정 경로가 위치한 디스크의 용량과 저장소 정보를 확인하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;h3 id="기능-설명">기능 설명&lt;/h3>
-&lt;p>디스크 속성정보 체크에서 제공하는 기능은 다음과 같다.&lt;/p>
-&lt;ol>
-&lt;li>파일이 위치한 디스크의 마운트 경로를 확인하는 기능&lt;/li>
-&lt;/ol>
 &lt;h3 id="관련-소스">관련 소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -18548,15 +18838,83 @@ m2eclipse를 통한 보다 효율적인 Maven 프로젝트 개발 편의성을 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
- &lt;td>파일관리 요소기술 클래스&lt;/td>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>디스크 용량 조회&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.FileStore&lt;/code>&lt;/td>
+ &lt;td>저장소(마운트) 정보&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>디스크 속성정보 체크 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>디스크유효용량체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-capacity-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-capacity-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.getTotalSpace()&lt;/code>&lt;/td>
+ &lt;td>전체 용량&lt;/td>
+ &lt;td>디스크 전체 크기(byte)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.getUsableSpace()&lt;/code>&lt;/td>
+ &lt;td>사용 가능 용량&lt;/td>
+ &lt;td>사용 가능한 크기(byte)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>&lt;code>FileStore.name()&lt;/code>&lt;/td>
+ &lt;td>저장소 이름&lt;/td>
+ &lt;td>파일이 위치한 저장소 이름&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Files&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.FileStore&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>file&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/sample/file1.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">long&lt;/span>&lt;span style="color:#bbb"> &lt;/span>total&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">getTotalSpace&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">long&lt;/span>&lt;span style="color:#bbb"> &lt;/span>usable&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">getUsableSpace&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>FileStore&lt;span style="color:#bbb"> &lt;/span>store&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Files.&lt;span style="color:#008080">getFileStore&lt;/span>(Path.&lt;span style="color:#008080">of&lt;/span>(file.&lt;span style="color:#008080">getAbsolutePath&lt;/span>()));&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>String&lt;span style="color:#bbb"> &lt;/span>storeName&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>store.&lt;span style="color:#008080">name&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;ul>
+&lt;li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;a href="https://github.com/eGovFramework/egovframe-common-components" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 소스 저장소 (egovframe-common-components)&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
+
+&lt;/li>
+&lt;/ul></description></item><item><title>디스크유효용량체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-capacity-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/disk-capacity-check/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>시스템 내 디스크의 전체 용량, 사용 가능한 용량, 사용률 및 마운트 위치 정보를 확인하는 기능을 제공한다.
 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
@@ -36380,7 +36738,7 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
 
 &lt;/li>
 &lt;/ul></description></item><item><title>파일권한체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-permission-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-permission-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>canRead&lt;/code>, &lt;code>canWrite&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.canRead&lt;/code>, &lt;code>EgovFileTool.canWrite&lt;/code> 메소드는
 
 
 
@@ -36398,8 +36756,8 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+파일 읽기·쓰기 권한은 &lt;code>java.io.File&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>비즈니스 로직을 처리하면서 필요한 파일의 접근 권한을 확인하기 위한 공통 기능을 제공한다.
@@ -36423,15 +36781,107 @@ CI를 사용하며 Continous Integration이란 여러 명으로 구성된 팀이
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
- &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>파일 읽기·쓰기 권한 확인&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 권한 조회 메소드가 없음&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>파일권한체크 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일다운로드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-download/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-download/</guid><description>&lt;blockquote>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canRead()&lt;/code>&lt;/td>
+ &lt;td>읽기권한 체크&lt;/td>
+ &lt;td>읽기 가능하면 &lt;code>true&lt;/code>, 권한이 없거나 파일이 없으면 &lt;code>false&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canWrite()&lt;/code>&lt;/td>
+ &lt;td>쓰기권한 체크&lt;/td>
+ &lt;td>쓰기 가능하면 &lt;code>true&lt;/code>, 권한이 없거나 파일이 없으면 &lt;code>false&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h4 id="파라미터-정의-input">파라미터 정의 (Input)&lt;/h4>
+&lt;ul>
+&lt;li>파일 경로: 절대경로를 포함한 파일명 (예: &lt;code>/user/com/test/file1.txt&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h4 id="반환값-정의-output">반환값 정의 (Output)&lt;/h4>
+&lt;ul>
+&lt;li>boolean 타입: 권한 보유 여부 (&lt;code>true&lt;/code> / &lt;code>false&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>String&lt;span style="color:#bbb"> &lt;/span>filePath&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#d14">&amp;#34;/user/com/sample/test.txt&amp;#34;&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>file&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(filePath);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>readVal&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">canRead&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>writeVal&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">canWrite&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>파일 생성·삭제가 필요하면 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-create/" class="innerLink">파일생성&lt;/a>
+
+, 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-delete/" class="innerLink">파일삭제&lt;/a>
+
+의 &lt;code>EgovFileTool&lt;/code> 메소드를 사용한다.&lt;/p></description></item><item><title>파일다운로드</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-download/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-download/</guid><description>&lt;blockquote>
 &lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>fileDownload&lt;/code> 메소드는
 
 
@@ -36647,7 +37097,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
 &lt;p>파일보안 기능은 &lt;code>EgovFileScrty&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일복사</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-copy/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>copyFile&lt;/code>, &lt;code>copyFiles&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.copyFile&lt;/code>, &lt;code>EgovFileTool.copyFiles&lt;/code> 메소드는
 
 
 
@@ -36665,19 +37115,88 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+파일 복사는 &lt;code>java.nio.file.Files.copy&lt;/code>를 사용한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>지정한 경로의 파일을 다른 경로로 복사하는 기능을 제공한다. 단일 파일 복사 및 다중 파일 복사를 지원하며,
-확장자·수정일자·사이즈·소유자별 조건 복사 기능도 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;p>지정한 경로의 파일을 다른 경로로 복사하는 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;h3 id="기능-설명">기능 설명&lt;/h3>
-&lt;p>파일복사에서 제공하는 기능은 다음과 같다.&lt;/p></description></item><item><title>파일비교</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-compare/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-compare/</guid><description>&lt;!-- markdownlint-disable MD025 -->
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.Files&lt;/code>&lt;/td>
+ &lt;td>파일 복사&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 복사 메소드가 없음&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Path&lt;/td>
+ &lt;td>&lt;code>Files.copy(Path source, Path target, CopyOption... options)&lt;/code>&lt;/td>
+ &lt;td>단일 파일 복사&lt;/td>
+ &lt;td>원본 파일을 대상 경로로 복사한다&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Files&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.StandardCopyOption&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>source&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/source.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>target&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/backup/source.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Files.&lt;span style="color:#008080">createDirectories&lt;/span>(target.&lt;span style="color:#008080">getParent&lt;/span>());&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Files.&lt;span style="color:#008080">copy&lt;/span>(source,&lt;span style="color:#bbb"> &lt;/span>target,&lt;span style="color:#bbb"> &lt;/span>StandardCopyOption.&lt;span style="color:#008080">REPLACE_EXISTING&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>새 파일을 만들기만 하면 되는 경우에는 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-create/" class="innerLink">파일생성&lt;/a>
+
+의 &lt;code>EgovFileTool.createNewFile&lt;/code>을 사용한다.&lt;/p></description></item><item><title>파일비교</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-compare/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-compare/</guid><description>&lt;!-- markdownlint-disable MD025 -->
 &lt;h1 id="파일비교">파일비교&lt;/h1>
 &lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>cmprFilesByContent&lt;/code>, &lt;code>cmprFilesByOwner&lt;/code>, &lt;code>cmprFilesBySize&lt;/code>, &lt;code>cmprFilesByUpdtPd&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>cmprFilesByContent&lt;/code>, &lt;code>cmprFilesByOwner&lt;/code>, &lt;code>cmprFilesBySize&lt;/code>, &lt;code>cmprFilesByUpdtPd&lt;/code> 메소드는
 
 
 
@@ -36695,22 +37214,54 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+크기·수정일자·내용 비교는 JDK API로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>파일비교(File Compare) 기능은 공통컴포넌트의 요소기술 중 하나로, 서버 및 클라이언트 응용 애플리케이션에서 두 파일의 정보를
-비교하는 기능을 제공한다.&lt;/p>
+&lt;p>파일비교 기능은 두 파일의 크기, 수정일자, 내용이 같은지 확인하는 기능을 제공한다.&lt;/p>
 &lt;h3 id="활용-예시">활용 예시&lt;/h3>
-&lt;p>파일 비교 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p>
 &lt;ul>
 &lt;li>백업 파일과 원본 파일의 동일 여부를 확인하는 경우&lt;/li>
 &lt;li>파일 변경 여부를 점검하는 경우&lt;/li>
-&lt;li>배포 전 파일 무결성을 확인하는 경우&lt;/li>
-&lt;li>두 파일의 내용이나 속성을 비교하여 차이를 확인하는 경우&lt;/li>
 &lt;/ul>
-&lt;h2 id="주요-개념">주요 개념&lt;/h2>
-&lt;p>두 개의 파일을 지정하여 다음과 같은 파일 속성을 비교할 수 있다.&lt;/p></description></item><item><title>파일삭제</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-delete/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-delete/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>크기·수정일자 비교&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.Files&lt;/code>&lt;/td>
+ &lt;td>내용 비교&lt;/td>
+ &lt;td>&lt;code>Files.mismatch&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Files&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>file1&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/file1.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>file2&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/file2.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>isSameSize&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file1.&lt;span style="color:#008080">length&lt;/span>()&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">==&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file2.&lt;span style="color:#008080">length&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>isSameUpdtPd&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file1.&lt;span style="color:#008080">lastModified&lt;/span>()&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">==&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file2.&lt;span style="color:#008080">lastModified&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>isSameContent&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Files.&lt;span style="color:#008080">mismatch&lt;/span>(file1.&lt;span style="color:#008080">toPath&lt;/span>(),&lt;span style="color:#bbb"> &lt;/span>file2.&lt;span style="color:#008080">toPath&lt;/span>())&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">==&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">-&lt;/span>1L;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Files.mismatch&lt;/code>는 내용이 같으면 &lt;code>-1&lt;/code>을 반환한다. 소유자 비교 메소드는 5.0에서 제공하지 않는다.&lt;/p></description></item><item><title>파일삭제</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-delete/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-delete/</guid><description>&lt;!-- markdownlint-disable-file MD025 -->
 &lt;h1 id="파일삭제">파일삭제&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>비즈니스 로직을 처리하면서 필요시 파일을 삭제할 수 있는 공통 기능을 제공한다.
@@ -36787,7 +37338,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
 &lt;p>파일생성 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일속성정보체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-attribute-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-attribute-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>checkReadAuth&lt;/code>, &lt;code>checkWriteAuth&lt;/code>, &lt;code>getAccess&lt;/code>, &lt;code>getFileName&lt;/code>, &lt;code>getMountLc&lt;/code>, &lt;code>getOwner&lt;/code>, &lt;code>getUpdtDate&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>checkReadAuth&lt;/code>, &lt;code>checkWriteAuth&lt;/code>, &lt;code>getAccess&lt;/code>, &lt;code>getFileName&lt;/code>, &lt;code>getMountLc&lt;/code>, &lt;code>getOwner&lt;/code>, &lt;code>getUpdtDate&lt;/code> 메소드는
 
 
 
@@ -36805,14 +37356,82 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+파일명, 수정일자, 권한은 &lt;code>java.io.File&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>파일 속성정보인 파일명, 최종수정일자, 소유계정, 읽기권한, 쓰기권한, 접근권한, 마운트 경로 정보를 확인하는
-기능을 제공한다. 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;p>파일 속성정보인 파일명, 최종수정일자, 읽기권한, 쓰기권한, 크기를 확인하는 기능을 제공한다.
+본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
 &lt;h3 id="활용-예시">활용 예시&lt;/h3>
-&lt;p>파일 속성정보 체크 기능은 다음과 같은 상황에서 활용할 수 있다.&lt;/p></description></item><item><title>파일송/수신</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-send-receive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-send-receive/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
+&lt;ul>
+&lt;li>파일의 존재 여부와 상태를 확인하는 경우&lt;/li>
+&lt;li>파일의 읽기 및 쓰기 권한을 점검하는 경우&lt;/li>
+&lt;li>파일의 최종 수정일자를 확인하는 경우&lt;/li>
+&lt;/ul>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>파일 속성 조회&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 속성 조회 메소드가 없음&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>String&lt;/td>
+ &lt;td>&lt;code>File.getName()&lt;/code>&lt;/td>
+ &lt;td>파일명 조회&lt;/td>
+ &lt;td>경로의 마지막 이름&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.lastModified()&lt;/code>&lt;/td>
+ &lt;td>수정일자 조회&lt;/td>
+ &lt;td>최종 수정 시각(epoch millisecond)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.length()&lt;/code>&lt;/td>
+ &lt;td>크기 조회&lt;/td>
+ &lt;td>파일 크기(byte)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canRead()&lt;/code>&lt;/td>
+ &lt;td>읽기권한 조회&lt;/td>
+ &lt;td>읽기 가능 여부&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.canWrite()&lt;/code>&lt;/td>
+ &lt;td>쓰기권한 조회&lt;/td>
+ &lt;td>쓰기 가능 여부&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>소유자·접근권한 문자열·마운트 경로를 조회하던 쉘 스크립트 기반 메소드는 5.0에서 제거되었다.&lt;/p></description></item><item><title>파일송/수신</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-send-receive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-send-receive/</guid><description>&lt;h2 id="개요">개요&lt;/h2>
 &lt;p>FTP 프로토콜을 사용하여 파일을 송수신하는 기능을 제공한다. 서버(Server) 간 파일 송수신 및 서버(Server)와
 클라이언트(Client) 간 파일 송수신 시 사용할 수 있다.
 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
@@ -37052,7 +37671,7 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
 &lt;p>파일업로드 기능은 &lt;code>EgovFileMngUtil&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일이동</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-move/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>moveFile&lt;/code> 메소드는
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>EgovFileTool.moveFile&lt;/code> 메소드는
 
 
 
@@ -37070,18 +37689,12 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+파일 이동은 &lt;code>java.nio.file.Files.move&lt;/code>를 사용한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>비즈니스 로직을 처리하면서 필요시 파일을 이동할 수 있는 공통 기능을 제공한다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;p>비즈니스 로직을 처리하면서 필요시 파일을 이동할 수 있는 공통 기능을 제공한다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
-&lt;h3 id="기능-설명">기능 설명&lt;/h3>
-&lt;p>파일이동에서 제공하는 기능은 다음과 같다.&lt;/p>
-&lt;ol>
-&lt;li>원본 파일을 타겟 파일로 이동하는 기능&lt;/li>
-&lt;/ol>
 &lt;h3 id="관련-소스">관련 소스&lt;/h3>
 &lt;table>
  &lt;thead>
@@ -37094,16 +37707,68 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
- &lt;td>파일관리 툴 요소기술 클래스&lt;/td>
- &lt;td>&lt;/td>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.nio.file.Files&lt;/code>&lt;/td>
+ &lt;td>파일 이동&lt;/td>
+ &lt;td>5.0 &lt;code>EgovFileTool&lt;/code>에는 이동 메소드가 없음&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>파일이동 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일일자체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-date-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-date-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>getFileListByDate&lt;/code>, &lt;code>getFileListByUpdtPd&lt;/code>, &lt;code>getUpdtDate&lt;/code> 메소드는
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Path&lt;/td>
+ &lt;td>&lt;code>Files.move(Path source, Path target, CopyOption... options)&lt;/code>&lt;/td>
+ &lt;td>파일 이동&lt;/td>
+ &lt;td>원본 파일을 대상 경로로 이동한다&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Files&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.Path&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.nio.file.StandardCopyOption&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>source&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/file1.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Path&lt;span style="color:#bbb"> &lt;/span>target&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Path.&lt;span style="color:#008080">of&lt;/span>(&lt;span style="color:#d14">&amp;#34;/user/com/move/file1.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Files.&lt;span style="color:#008080">createDirectories&lt;/span>(target.&lt;span style="color:#008080">getParent&lt;/span>());&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Files.&lt;span style="color:#008080">move&lt;/span>(source,&lt;span style="color:#bbb"> &lt;/span>target,&lt;span style="color:#bbb"> &lt;/span>StandardCopyOption.&lt;span style="color:#008080">REPLACE_EXISTING&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>파일을 삭제만 하면 되는 경우에는 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;a href="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/elementary-technology/system/file-delete/" class="innerLink">파일삭제&lt;/a>
+
+의 &lt;code>EgovFileTool.deleteFile&lt;/code>을 사용한다.&lt;/p></description></item><item><title>파일일자체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-date-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-date-check/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>getUpdtDate&lt;/code>, &lt;code>getFileListByDate&lt;/code>, &lt;code>getFileListByUpdtPd&lt;/code> 메소드는
 
 
 
@@ -37121,19 +37786,17 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+최종 수정일자는 &lt;code>java.io.File.lastModified()&lt;/code>로 확인한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>파일의 최종 수정일자를 확인하거나, 수정일자 조건별로 파일 목록을 조회하는 기능을 제공한다.
+&lt;p>파일의 최종 수정일자를 확인하는 기능을 제공한다.
 본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="기능-설명">기능 설명&lt;/h3>
 &lt;p>파일일자체크에서 제공하는 기능은 다음과 같다.&lt;/p>
 &lt;ol>
-&lt;li>특정 파일의 최종 수정일자를 확인하는 기능&lt;/li>
-&lt;li>특정 일자에 수정된 파일 목록을 조회하는 기능&lt;/li>
-&lt;li>수정 기간(from~to) 내에 수정된 파일 목록을 조회하는 기능&lt;/li>
+&lt;li>파일의 최종 수정일자를 조회하는 기능&lt;/li>
 &lt;/ol>
 &lt;h3 id="관련-소스">관련 소스&lt;/h3>
 &lt;table>
@@ -37147,16 +37810,45 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>Service&lt;/td>
- &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
- &lt;td>파일관리 요소기술 클래스&lt;/td>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>최종 수정일자 조회&lt;/td>
  &lt;td>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
-&lt;p>파일일자체크 기능은 &lt;code>EgovFileTool&lt;/code> 클래스의 메소드를 활용하여 제공한다.&lt;/p></description></item><item><title>파일존재체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-exist-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-exist-check/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>checkFileExstByExtnt&lt;/code>, &lt;code>checkFileExstByName&lt;/code>, &lt;code>checkFileExstBySize&lt;/code>, &lt;code>checkFileExstByUpdtPd&lt;/code> 메소드는
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>long&lt;/td>
+ &lt;td>&lt;code>File.lastModified()&lt;/code>&lt;/td>
+ &lt;td>수정일자 조회&lt;/td>
+ &lt;td>최종 수정 시각을 epoch millisecond로 반환한다&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.time.Instant&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.time.LocalDate&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.time.ZoneId&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>file&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/sample/file1.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">long&lt;/span>&lt;span style="color:#bbb"> &lt;/span>lastModified&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">lastModified&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>LocalDate&lt;span style="color:#bbb"> &lt;/span>date&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Instant.&lt;span style="color:#008080">ofEpochMilli&lt;/span>(lastModified)&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>.&lt;span style="color:#008080">atZone&lt;/span>(ZoneId.&lt;span style="color:#008080">systemDefault&lt;/span>())&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>.&lt;span style="color:#008080">toLocalDate&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>하위 파일 목록이 필요하면 &lt;code>EgovFileTool.getSubFilesByAll&lt;/code>로 경로를 구한 뒤 각 파일의 &lt;code>lastModified()&lt;/code>를 비교한다.&lt;/p></description></item><item><title>파일존재체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-exist-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-exist-check/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>checkFileExstByName&lt;/code>, &lt;code>checkFileExstByExtnt&lt;/code>, &lt;code>checkFileExstBySize&lt;/code>, &lt;code>checkFileExstByUpdtPd&lt;/code> 메소드는
 
 
 
@@ -37174,14 +37866,93 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 적용 전에 사용하는 배포본의 API를 확인한다.&lt;/p>
+에 없다.
+파일 존재 여부는 &lt;code>java.io.File&lt;/code>로 확인하고, 하위 파일 목록은 &lt;code>EgovFileTool.getSubFilesByAll&lt;/code>을 사용한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>디렉토리에 파일이 존재하는지 체크하는 기능을 제공한다. 파일명뿐 아니라 확장자, 수정기간, 사이즈, 생성자(Owner)별 조건으로도
-파일의 존재 여부를 확인할 수 있다. 서버(Server) 및 클라이언트(Client) 응용 애플리케이션에서 파일 존재 체크 시 활용할 수 있다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p></description></item><item><title>파일파싱</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-parsing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-parsing/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 아래에서 설명하는 &lt;code>parsFileBySize&lt;/code> 메소드는
+&lt;p>디렉토리에 파일이 존재하는지 체크하는 기능을 제공한다. 서버 및 클라이언트 응용 애플리케이션에서 파일 존재 체크 시 활용할 수 있다.
+본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="기능-설명">기능 설명&lt;/h3>
+&lt;p>파일존재체크에서 제공하는 기능은 다음과 같다.&lt;/p>
+&lt;ol>
+&lt;li>지정한 경로에 파일이 존재하는지 확인하는 기능&lt;/li>
+&lt;li>디렉토리 하위 파일 목록을 조회하는 기능&lt;/li>
+&lt;/ol>
+&lt;h3 id="관련-소스">관련 소스&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>유형&lt;/th>
+ &lt;th>대상소스명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>비고&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>JDK&lt;/td>
+ &lt;td>&lt;code>java.io.File&lt;/code>&lt;/td>
+ &lt;td>파일 존재 여부 확인&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Service&lt;/td>
+ &lt;td>&lt;code>egovframework.com.utl.sim.service.EgovFileTool.java&lt;/code>&lt;/td>
+ &lt;td>하위 파일 목록 조회&lt;/td>
+ &lt;td>&lt;code>getSubFilesByAll&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="클래스-및-메소드-설명">클래스 및 메소드 설명&lt;/h3>
+&lt;!-- markdownlint-disable MD013 -->
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>결과값&lt;/th>
+ &lt;th>메소드명&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;th>내용&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.exists()&lt;/code>&lt;/td>
+ &lt;td>존재 여부&lt;/td>
+ &lt;td>경로가 존재하면 &lt;code>true&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>boolean&lt;/td>
+ &lt;td>&lt;code>File.isFile()&lt;/code>&lt;/td>
+ &lt;td>파일 여부&lt;/td>
+ &lt;td>일반 파일이면 &lt;code>true&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>List&lt;/td>
+ &lt;td>&lt;code>EgovFileTool.getSubFilesByAll(File[] fileArray)&lt;/code>&lt;/td>
+ &lt;td>하위 파일 목록&lt;/td>
+ &lt;td>디렉토리 아래 모든 파일의 절대경로 목록&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-restore -->
+&lt;h3 id="사용-방법">사용 방법&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.io.File&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">java.util.List&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">import&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555">egovframework.com.utl.sim.service.EgovFileTool&lt;/span>;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>file&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/test/file1.txt&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>exists&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">exists&lt;/span>()&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;amp;&amp;amp;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>file.&lt;span style="color:#008080">isFile&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>File&lt;span style="color:#bbb"> &lt;/span>dir&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">new&lt;/span>&lt;span style="color:#bbb"> &lt;/span>File(&lt;span style="color:#d14">&amp;#34;/user/com/test&amp;#34;&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#000;font-weight:bold">if&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(dir.&lt;span style="color:#008080">isDirectory&lt;/span>())&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>List&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>String&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>files&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovFileTool.&lt;span style="color:#008080">getSubFilesByAll&lt;/span>(dir.&lt;span style="color:#008080">listFiles&lt;/span>());&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="환경설정">환경설정&lt;/h2>
+&lt;p>N/A&lt;/p></description></item><item><title>파일파싱</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-parsing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/system/file-parsing/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>5.0 적용 범위:&lt;/strong> 이전 가이드의 &lt;code>parsFileBySize&lt;/code> 메소드는
 
 
 
@@ -37199,14 +37970,16 @@ OpenOffice와 JODConverter 라이브러리를 활용하여 서버 환경에서 �
 
 &lt;a href="https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sim/service/EgovFileTool.java" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 5.0의 EgovFileTool&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
 
-에 제공되지 않는다.
-기존 설명과 예제는 참고용으로 유지하며, 5.0에서 그대로 호출할 수 없다. 5.0에서는 구분자 파싱 메소드 &lt;code>parsFileByChar&lt;/code>를 제공한다.&lt;/p>
+에 없다.
+5.0에서는 구분자 파싱 메소드 &lt;code>parsFileByChar&lt;/code>만 제공한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>사용자가 업로드한 파일 및 서버(Server)의 텍스트 파일을 특정 구분자(&lt;code>,&lt;/code>, &lt;code>|&lt;/code>, &lt;code>TAB&lt;/code>)로 파싱하여 정보를 추출하는 기능을 제공한다.
-또한 파일의 텍스트 라인을 일정 길이(Size)별로 파싱하여 정보를 추출할 수 있다.
+&lt;p>사용자가 업로드한 파일 및 서버의 텍스트 파일을 특정 구분자(&lt;code>,&lt;/code>, &lt;code>|&lt;/code>, &lt;code>TAB&lt;/code>)로 파싱하여 정보를 추출하는 기능을 제공한다.
 사용자 정보, 제품목록 정보 등을 CSV 파일로 작성하여 서버에 업로드한 후 파싱하여 일괄적으로 데이터베이스에 입력하는 경우에 활용할 수 있다.
-본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p></description></item><item><title>팝업창관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/popup-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/popup-management/</guid><description>&lt;h1 id="팝업창관리">팝업창관리&lt;/h1>
+본 기능은 전자정부 표준프레임워크 공통컴포넌트 요소기술 내에 구성되어 있다.&lt;/p>
+&lt;h2 id="설명">설명&lt;/h2>
+&lt;h3 id="기능-설명">기능 설명&lt;/h3>
+&lt;p>파일파싱에서 제공하는 기능은 다음과 같다.&lt;/p></description></item><item><title>팝업창관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/popup-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/information-provided/popup-management/</guid><description>&lt;h1 id="팝업창관리">팝업창관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
 &lt;p>관리자가 초기화면에서 나타날 팝업창을 등록하고 사용자가 접속하면 나타나게 하는 기능을 제공한다.
 컴포넌트 구성&lt;/p>
