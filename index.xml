@@ -25703,7 +25703,8 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
 &lt;li>N/A&lt;/li>
 &lt;/ul></description></item><item><title>숫자유효성체크</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-validation/</guid><description>&lt;h1 id="숫자-유효성체크">숫자 유효성체크&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>숫자 유효성체크는 입력값이 숫자인지 여부를 검사하는 요소기술이다.&lt;/p>
+&lt;p>숫자 유효성체크는 문자열의 각 문자가 ASCII 숫자 &lt;code>0&lt;/code>부터 &lt;code>9&lt;/code>까지로 구성되어 있는지 검사하는 요소기술이다.
+&lt;code>EgovNumberUtil&lt;/code>의 정적 메서드를 호출하여 사용하며, 별도의 환경설정은 필요하지 않다.&lt;/p>
 &lt;h2 id="관련-소스">관련 소스&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -25734,33 +25735,71 @@ Subversion은 다수의 개발자가 프로그램을 개발할 때 개발된 버
  &lt;tr>
  &lt;td>&lt;code>getNumberValidCheck(String checkStr)&lt;/code>&lt;/td>
  &lt;td>&lt;code>Boolean&lt;/code>&lt;/td>
- &lt;td>체크할 숫자 중에서 숫자인지 아닌지 체크하는 기능&lt;/td>
+ &lt;td>문자열이 ASCII 숫자로만 구성되어 있는지 검사한다.&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;h2 id="사용-예">사용 예&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#458;font-weight:bold">boolean&lt;/span>&lt;span style="color:#bbb"> &lt;/span>ok&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>EgovNumberUtil.&lt;span style="color:#008080">getNumberValidCheck&lt;/span>(&lt;span style="color:#d14">&amp;#34;12345&amp;#34;&lt;/span>);&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#998;font-style:italic">// 숫자 여부&lt;/span>&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="참고자료">참고자료&lt;/h2>
+&lt;h3 id="입력값과-반환값">입력값과 반환값&lt;/h3>
 &lt;ul>
-&lt;li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;a href="https://github.com/eGovFramework/egovframe-common-components" target="_blank" rel="noopener noreferrer" class="externalLink">공통컴포넌트 소스 저장소 (egovframe-common-components)&lt;i class="svg-icon ico-go">&lt;/i>&lt;/a>
-
-&lt;/li>
-&lt;/ul></description></item><item><title>숫자치환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-replacement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-replacement/</guid><description>&lt;!-- markdownlint-disable MD025 -->
+&lt;li>&lt;code>checkStr&lt;/code>: 검사할 &lt;code>String&lt;/code> 타입의 문자열이다. 정수 타입의 값을 전달하는 메서드가 아니다.&lt;/li>
+&lt;li>반환값: 숫자 문자만 포함하면 &lt;code>true&lt;/code>, 다른 문자가 포함되면 &lt;code>false&lt;/code>를 반환한다.&lt;/li>
+&lt;li>&lt;code>null&lt;/code>과 빈 문자열의 처리 결과는 적용한 소스 버전에 따라 다르므로 아래의 버전별 동작을 확인한다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="입력값별-동작">입력값별 동작&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>입력값&lt;/th>
+ &lt;th>반환값&lt;/th>
+ &lt;th>설명&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;12345&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>true&lt;/code>&lt;/td>
+ &lt;td>모든 문자가 ASCII 숫자이다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;0&amp;quot;&lt;/code>, &lt;code>&amp;quot;00123&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>true&lt;/code>&lt;/td>
+ &lt;td>0과 앞자리의 0을 허용한다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;-123&amp;quot;&lt;/code>, &lt;code>&amp;quot;+123&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>false&lt;/code>&lt;/td>
+ &lt;td>부호는 숫자 문자에 포함되지 않는다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;12.3&amp;quot;&lt;/code>, &lt;code>&amp;quot;1e3&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>false&lt;/code>&lt;/td>
+ &lt;td>소수점과 지수 표기의 문자를 허용하지 않는다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;1,000&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>false&lt;/code>&lt;/td>
+ &lt;td>자릿수 구분 쉼표를 허용하지 않는다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot; 123&amp;quot;&lt;/code>, &lt;code>&amp;quot;123 &amp;quot;&lt;/code>, &lt;code>&amp;quot;1 23&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>false&lt;/code>&lt;/td>
+ &lt;td>공백을 자동으로 제거하지 않는다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;１２３&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>false&lt;/code>&lt;/td>
+ &lt;td>전각 숫자는 ASCII 숫자가 아니다.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;quot;2147483648&amp;quot;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>true&lt;/code>&lt;/td>
+ &lt;td>숫자의 크기나 &lt;code>int&lt;/code> 범위는 검사하지 않는다.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="버전별-null과-빈-문자열-처리">버전별 null과 빈 문자열 처리&lt;/h3>
+&lt;p>공통컴포넌트 &lt;code>v5.0.0&lt;/code> 소스와 &lt;code>a0f3963&lt;/code> 커밋의 소스는 다음과 같이 동작한다.
+수정 커밋의 적용 여부는 프로젝트에서 사용하는 &lt;code>EgovNumberUtil&lt;/code> 소스로 확인한다.&lt;/p></description></item><item><title>숫자치환</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-replacement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/elementary-technology/formatter-util/number-replacement/</guid><description>&lt;!-- markdownlint-disable MD025 -->
 &lt;h1 id="숫자치환">숫자치환&lt;/h1>
 &lt;!-- markdownlint-restore -->
 &lt;h2 id="개요">개요&lt;/h2>
