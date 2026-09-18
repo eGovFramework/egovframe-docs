@@ -24243,8 +24243,8 @@ Maven에서 제공하는 central respositoty와 각 기업 또는 organization�
 &lt;/table>
 &lt;p>사이트맵 화면 생성은 메뉴생성관리 기능(&lt;code>sym.mnu.mcm&lt;/code>의 &lt;code>MenuSiteMap&lt;/code>, &lt;code>EgovMenuCreatSiteMap.jsp&lt;/code>)과 연계되어 동작한다.&lt;/p></description></item><item><title>상담관리</title><link>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/counseling-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://eGovFramework.github.io/egovframe-docs/common-component/user-support/online-participate/counseling-management/</guid><description>&lt;h1 id="상담관리">상담관리&lt;/h1>
 &lt;h2 id="개요">개요&lt;/h2>
-&lt;p>상담 내역 및 조치처리 관리기능으로 일반사용자가 상담내역을 등록하는 기능 및 관리자가 답변글을 등록하는 기능으로 구성되어 있다
-기능흐름&lt;/p>
+&lt;p>상담관리는 일반 사용자가 상담 내역을 등록하고, 관리자가 등록된 상담에 답변을 작성·관리할 수 있도록 지원하는 기능이다.&lt;/p>
+&lt;h3 id="기능흐름">기능흐름&lt;/h3>
 &lt;p>&lt;img src="https://eGovFramework.github.io/egovframe-docs/egovframe-docs/common-component/user-support/images/uss-cnslt-%ec%83%81%eb%8b%b4_%ea%b8%b0%eb%8a%a5%ed%9d%90%eb%a6%84%eb%8f%84.jpg" alt="image" >&lt;/p>
 &lt;h2 id="설명">설명&lt;/h2>
 &lt;h3 id="패키지-참조-관계">패키지 참조 관계&lt;/h3>
