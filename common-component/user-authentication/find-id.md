@@ -130,6 +130,12 @@ public String searchId(@Valid @ModelAttribute("searchIdRequestVO") SearchIdReque
 
  업무구분, 이름, 이메일주소 정보를 가지고 사용자 아이디를 조회한다.
 
+```mermaid
+flowchart LR
+    II[아이디 찾기조건 입력] --> IQ[사용자 조회]
+    IQ --> IR([아이디 조회 결과])
+```
+
  ![image](./images/uat-findid-idpwfind1.jpg)
  업무구분 선택: 사용자 업무구분을 선택한다.
  이름 입력: 이름을 입력한다.
