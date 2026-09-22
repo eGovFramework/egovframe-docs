@@ -157,7 +157,12 @@
 이때 비밀번호 최종변경시점(<code>CHG_PWD_LAST_PNTTM</code>)도 함께 갱신된다.
 임시 비밀번호는 요소기술 중 발송요청메일 등록 기능(<code>EgovSndngMailRegistService.insertSndngMail()</code>)을 사용하여 전송하며,
 메일 발송 등록 성공 여부가 그대로 처리 결과로 반환된다.
-비밀번호 이메일 발송은 전자우편연계 기능을 참조한다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><h3 class=sec-tit id=2-비밀번호-찾기>2. 비밀번호 찾기</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>비밀번호조회</td><td>/uat/uia/searchPassword.do</td><td>searchPassword</td><td>LoginUsr.searchPassword</td></tr><tr><td>비밀번호힌트조회</td><td>/uat/uia/egovIdPasswordSearch.do</td><td>idPasswordSearchView</td><td></td></tr></tbody></table></div><p>아이디, 이름, 이메일, 비밀번호 힌트, 비밀번호 정답 정보를 갖고 사용자 정보를 조회하고 임시 비밀번호를 메일 발송한다.</p><p><img src=/egovframe-docs/common-component/user-authentication/images/uat-findpw-idpwfind1.jpg alt=image>
+비밀번호 이메일 발송은 전자우편연계 기능을 참조한다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><h3 class=sec-tit id=1-비밀번호-찾기>1. 비밀번호 찾기</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>비밀번호조회</td><td>/uat/uia/searchPassword.do</td><td>searchPassword</td><td>LoginUsr.searchPassword</td></tr><tr><td>비밀번호힌트조회</td><td>/uat/uia/egovIdPasswordSearch.do</td><td>idPasswordSearchView</td><td></td></tr></tbody></table></div><p>아이디, 이름, 이메일, 비밀번호 힌트, 비밀번호 정답 정보를 갖고 사용자 정보를 조회하고 임시 비밀번호를 메일 발송한다.</p><div class=mermaid>flowchart LR
+PI[비밀번호 찾기조건 입력] --> PQ[사용자 조회]
+PQ --> PG[임시비밀번호 생성]
+PG --> PS[임시비밀번호 저장]
+PS --> PM[임시비밀번호 메일발송]
+PM --> PR([발송완료 메시지])</div><p><img src=/egovframe-docs/common-component/user-authentication/images/uat-findpw-idpwfind1.jpg alt=image>
 업무구분 선택: 사용자 업무구분을 선택한다.
 아이디 입력: 아이디를 입력한다.
 이름 입력: 이름을 입력한다.
