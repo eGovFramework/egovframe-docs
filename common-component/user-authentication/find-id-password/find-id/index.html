@@ -111,7 +111,9 @@
 </span></span></span><span style=display:flex><span><span style=color:#bbb>    </span>}<span style=color:#bbb>
 </span></span></span><span style=display:flex><span><span style=color:#bbb></span>}<span style=color:#bbb>
 </span></span></span></code></pre></div><p>입력한 이름과 이메일을 가지고 사용자 테이블에서 아이디를 조회한다.
-이름은 공백을 제거한 뒤 조회 조건으로 사용하며, 조회 결과는 <code>EgovIdPasswordResult.jsp</code> 화면에 출력한다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><h3 class=sec-tit id=1-아이디-찾기>1. 아이디 찾기</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>아이디조회</td><td>/uat/uia/searchId.do</td><td>searchId</td><td>LoginUsr.searchId</td></tr></tbody></table></div><p>업무구분, 이름, 이메일주소 정보를 가지고 사용자 아이디를 조회한다.</p><p><img src=/egovframe-docs/common-component/user-authentication/images/uat-findid-idpwfind1.jpg alt=image>
+이름은 공백을 제거한 뒤 조회 조건으로 사용하며, 조회 결과는 <code>EgovIdPasswordResult.jsp</code> 화면에 출력한다.</p></div><div class="conts-wrap section-link" id=section_03><h2 class=sec-tit id=관련화면-및-수행매뉴얼>관련화면 및 수행매뉴얼</h2><h3 class=sec-tit id=1-아이디-찾기>1. 아이디 찾기</h3><div class="krds-table-wrap scroll"><table class="tbl col data"><thead><tr><th>Action</th><th>URL</th><th>Controller method</th><th>QueryID</th></tr></thead><tbody><tr><td>아이디조회</td><td>/uat/uia/searchId.do</td><td>searchId</td><td>LoginUsr.searchId</td></tr></tbody></table></div><p>업무구분, 이름, 이메일주소 정보를 가지고 사용자 아이디를 조회한다.</p><div class=mermaid>flowchart LR
+II[아이디 찾기조건 입력] --> IQ[사용자 조회]
+IQ --> IR([아이디 조회 결과])</div><p><img src=/egovframe-docs/common-component/user-authentication/images/uat-findid-idpwfind1.jpg alt=image>
 업무구분 선택: 사용자 업무구분을 선택한다.
 이름 입력: 이름을 입력한다.
 이메일 입력: 이메일을 입력한다.
