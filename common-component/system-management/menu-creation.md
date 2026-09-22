@@ -114,7 +114,7 @@ flowchart LR
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
 | 조회 | /sym/mnu/mcm/EgovMenuCreatSelect.do | selectMenuCreatList | "menuManageDAO.selectMenuCreatList\_D" |
-| 등록 | /sym/mnu/mcm/EgovMenuCreatInsert.do | insertMenuCreatList | "menuManageDAO.insertMenuCreat\_S" |
+| 메뉴생성 | /sym/mnu/mcm/EgovMenuCreatInsert.do | insertMenuCreatList | "menuManageDAO.insertMenuCreat\_S" |
 
  ![image](./images/sym-menucreat-egovmenucreat.jpg)
 
