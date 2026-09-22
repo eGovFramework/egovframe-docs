@@ -160,7 +160,7 @@ result = sndngMailRegistService.insertSndngMail(sndngMailVO);
 
 ## 관련화면 및 수행매뉴얼
 
-### 2. 비밀번호 찾기
+### 1. 비밀번호 찾기
 
 | Action | URL | Controller method | QueryID |
 | --- | --- | --- | --- |
@@ -168,6 +168,15 @@ result = sndngMailRegistService.insertSndngMail(sndngMailVO);
 | 비밀번호힌트조회 | /uat/uia/egovIdPasswordSearch.do | idPasswordSearchView |  |
 
  아이디, 이름, 이메일, 비밀번호 힌트, 비밀번호 정답 정보를 갖고 사용자 정보를 조회하고 임시 비밀번호를 메일 발송한다.
+
+```mermaid
+flowchart LR
+    PI[비밀번호 찾기조건 입력] --> PQ[사용자 조회]
+    PQ --> PG[임시비밀번호 생성]
+    PG --> PS[임시비밀번호 저장]
+    PS --> PM[임시비밀번호 메일발송]
+    PM --> PR([발송완료 메시지])
+```
 
  ![image](./images/uat-findpw-idpwfind1.jpg)
  업무구분 선택: 사용자 업무구분을 선택한다.
