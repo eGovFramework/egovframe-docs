@@ -188,8 +188,8 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
             </map>
         </property>
         <property name="order" value="0" />
-    //..
-    </beans>
+        <!-- ... -->
+    </bean>
     
     <bean name="cgr/egovCategoryRegister" class="org.springframework.web.servlet.view.xml.MarshallingView">
         <property name="marshaller" ref="marshaller" />
@@ -214,8 +214,8 @@ Xml과 json 등 다른 view로 보여지는 것으로 spring에서는 **ContentN
             </map>
         </property>
         <property name="order" value="0" />
-        //..
-    </beans>
+        <!-- ... -->
+    </bean>
     
     <bean name="cgr/egovCategoryList" 
     class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
