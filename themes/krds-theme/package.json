@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "description": "Reproduce the vendored Mermaid browser bundle used by the Hugo theme",
+  "scripts": {
+    "build:vendor": "node scripts/build-vendor.mjs"
+  },
+  "dependencies": {
+    "mermaid": "12.1.0"
+  },
+  "mermaidVendoredAt": "2026-10-05"
+}

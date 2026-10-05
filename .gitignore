@@ -45,3 +45,9 @@ temp/
 
 # 빌드 결과물
 public/
+node_modules/
+# Hugo 로컬 서버 lock 파일 (빌드 산물, 추적 대상 아님)
+.hugo_build.lock
+
+# CSS 소스맵 (빌드 산물)
+*.css.map

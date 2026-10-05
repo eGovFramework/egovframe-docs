@@ -1,5 +1,5 @@
 baseURL = "https://eGovFramework.github.io/egovframe-docs/"
-languageCode = 'kr'
+locale = 'ko-KR'
 title = '표준프레임워크 개발가이드'
 theme = 'krds-theme'
 port = 8888
