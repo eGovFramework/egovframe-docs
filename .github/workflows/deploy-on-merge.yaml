@@ -46,7 +46,7 @@ jobs:
     - name: Install Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: "0.139.0"
+        hugo-version: "0.167.0"
         extended: true  # Hugo Extended 버전 설치
 
     # Step 6. Hugo 빌드
