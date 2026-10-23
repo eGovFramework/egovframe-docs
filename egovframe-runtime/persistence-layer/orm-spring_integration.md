@@ -11,7 +11,13 @@ menu:
 ---
 # Spring Integration
 
- Spring에서는 JPA 기반에서 DAO 클래스를 쉽게 구현할 수 있도록 하기 위해 JdbcTemplate,HibernateTemplate등처럼 **JpaTemplate**을 제공한다. 하지만 JPA에 있어서는 Entity Manager의 Method를 직접 이용하는 것(**plain JPA**)에 대한 것도 가이드한다. 이에 두가지 방법에 대한 설정 및 사용방법에 대해서 설명하고자 한다. [Spring Framework 6.2 - JPA](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm/jpa.html)
+ 이 문서는 구버전 Spring에서 제공하던 **JpaTemplate** 방식과 `EntityManager`를 직접 사용하는 **plain JPA** 방식의 설정 및 사용방법을 설명한다.
+
+> **eGovFrame 5.0 적용 시 주의**
+>
+> eGovFrame 5.0의 Spring Framework 6.2.11에는 `JpaTemplate`과 `JpaDaoSupport`가 제공되지 않으므로, 아래의 `JpaTemplate 이용` 예제는 그대로 사용할 수 없습니다. 해당 예제는 구버전 참고용으로 유지합니다.
+>
+> Spring Framework 6.2에서는 `@PersistenceContext`로 주입받은 `EntityManager`를 사용하는 plain JPA 방식을 이용할 수 있습니다. 현재 버전의 설정과 DAO 구현 방법은 [Spring Framework 6.2 - JPA](https://docs.spring.io/spring-framework/reference/6.2/data-access/orm/jpa.html)를 참고하십시오.
 
 ## 기본 설정
 
