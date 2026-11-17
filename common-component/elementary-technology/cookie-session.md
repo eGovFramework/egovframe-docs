@@ -118,7 +118,7 @@ String safeGetParameter(HttpServletRequest request, String name) {
 #### 세션 사용방법
 
 ```java
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import egovframework.com.utl.cas.service.EgovSessionCookieUtil;
 
