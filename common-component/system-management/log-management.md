@@ -139,7 +139,7 @@ CREATE TABLE COMTECOPSEQ( TABLE_NAME VARCHAR(20) NOT NULL,
 
 ```java
 package egovframework.com.sym.log.lgm.service;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.util.StopWatch;
 import egovframework.com.cmm.LoginVO;

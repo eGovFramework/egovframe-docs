@@ -131,6 +131,22 @@ public class EgovWebLogScheduling extends EgovAbstractServiceImpl {
 
 ## 관련기능
 
+ 화면통계는 웹로그를 일 단위로 요약하는 집계 배치와, 메뉴를 선택하여 요약 정보를 조회하는 통계 검색으로 처리된다.
+
+```mermaid
+flowchart LR
+    B([webLogSummary 배치 1시간 주기]) --> I[전날 웹로그 URL별 요약 등록]
+    I --> S([COMTSWEBLOGSUMMARY])
+    I --> X[6개월 경과 웹로그 삭제]
+    V([화면통계 화면 열기]) --> M[메뉴 목록 조회]
+    M --> Q[기간 입력과 메뉴 선택 후 검색]
+    Q --> F{시작일자 입력 여부}
+    F -->|없음| E([조회 없이 화면 표시])
+    F -->|있음| R[선택 메뉴 URL의 요약 정보 조회]
+    S -.-> R
+    R --> G([기간별 조회 횟수 그래프와 텍스트])
+```
+
 ### 화면 통계
 
 #### 비즈니스 규칙

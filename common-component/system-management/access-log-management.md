@@ -128,7 +128,7 @@ CREATE TABLE COMTECOPSEQ(TABLE_NAME VARCHAR(20) NOT NULL,
 package egovframework.com.sym.log.clg.service;
 import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 public class EgovLoginLogAspect {
 @Resource(name="EgovLoginLogService")
 private EgovLoginLogService loginLogService;
