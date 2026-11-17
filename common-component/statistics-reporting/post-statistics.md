@@ -128,6 +128,28 @@ public class EgovBbsStatsScheduling extends EgovAbstractServiceImpl {
 
 ## 관련기능
 
+ 게시물통계는 게시물 정보를 일 단위로 요약하는 집계 배치와, 요약 정보를 탭별로 조회하는 통계 검색으로 처리된다.
+
+```mermaid
+flowchart LR
+    B([summaryBbsStats 배치 24시간 주기]) --> I[전날 게시물 요약 등록]
+    I --> S([COMTSBBSSUMMARY])
+    Q[검색조건 입력 후 검색] --> F{시작일자 입력 여부}
+    F -->|없음| E([생성글수 탭 기본 화면 표시])
+    F -->|있음| T{탭 구분}
+    S -.-> T
+    T -->|tab1| T1[생성글수 조회]
+    T -->|tab2| T2[총조회수 조회]
+    T -->|tab3| T3[평균조회수 조회]
+    T -->|tab4| T4[최고조회 게시물과 최소조회 게시물 조회]
+    T -->|tab5| T5[최고게시자 조회]
+    T1 --> R([탭별 통계 결과 표시])
+    T2 --> R
+    T3 --> R
+    T4 --> R
+    T5 --> R
+```
+
 ### 게시물 통계
 
 #### 비즈니스 규칙
