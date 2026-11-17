@@ -44,12 +44,24 @@ DENYLIST=(
   "scripts/preview_fork.sh"
   "scripts/open_upstream_pr.sh"
   "scripts/close_resolved_issues.py"
+  ".specify"
+  ".omp"
 )
+
+# 이번 제출에서만 제외할 경로(공백으로 구분). 예: 업스트림에 이미 열린 PR과 겹치는 파일.
+# 업스트림 base에 있는 파일은 base의 내용으로 되돌리고(삭제가 아님), 없는 파일은 제거한다.
+# 영구 제외 대상이면 위 DENYLIST에 추가한다.
+#   EXTRA_DENY=".github/workflows/deploy-on-merge.yaml" scripts/open_upstream_pr.sh work main
+EXTRA=()
+if [ -n "${EXTRA_DENY:-}" ]; then
+  # shellcheck disable=SC2206
+  EXTRA=($EXTRA_DENY)
+fi
 
 repo_root="$(git rev-parse --show-toplevel)"
 cd "$repo_root"
 
-git fetch origin "$SRC"
+git fetch origin "$SRC" "$BASE"
 git checkout -B "$CLEAN_BRANCH" "origin/$SRC"
 
 removed=()
@@ -60,9 +72,23 @@ for f in "${DENYLIST[@]}"; do
   fi
 done
 
-if [ ${#removed[@]} -gt 0 ]; then
-  printf '다음 fork 전용 파일을 제거했습니다:\n'
-  printf '  - %s\n' "${removed[@]}"
+reverted=()
+for f in ${EXTRA[@]+"${EXTRA[@]}"}; do
+  if git cat-file -e "origin/$BASE:$f" 2>/dev/null; then
+    git checkout "origin/$BASE" -- "$f"
+    reverted+=("$f")
+  elif [ -e "$f" ]; then
+    git rm -rq "$f"
+    removed+=("$f")
+  fi
+done
+if [ ${#reverted[@]} -gt 0 ]; then
+  printf '이번 제출에서 업스트림 %s 버전으로 되돌린 파일:\n' "$BASE"
+  printf '  - %s\n' "${reverted[@]}"
+fi
+
+if [ ${#removed[@]} -gt 0 ] || [ ${#reverted[@]} -gt 0 ]; then
+  [ ${#removed[@]} -gt 0 ] && { printf '다음 fork 전용 파일을 제거했습니다:\n'; printf '  - %s\n' "${removed[@]}"; }
   git commit -m "chore: strip fork-only tooling before upstream submission"
 else
   echo "제거할 fork 전용 파일이 없습니다 (이미 없음)."

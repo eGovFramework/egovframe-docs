@@ -85,7 +85,7 @@ This creates a disposable `upstream-submit/<timestamp>` branch from the given
 source, **strips the fork-only tooling denylist** (see `DENYLIST` in the
 script), pushes it, and opens a PR against `eGovFramework/egovframe-docs`.
 It accepts additional `gh pr create` options such as `--title`, `--body-file`,
-and `--draft`. The source branch is left untouched. **If you add new
+and `--draft`. The source branch is left untouched. Paths that must be left out of one submission only (for example files already covered by an open upstream PR) go in the `EXTRA_DENY` environment variable, space-separated (files that exist upstream are reverted to the upstream base content, not deleted); `.specify/` and `.omp/` are always stripped. **If you add new
 fork-only files, add them to `DENYLIST` first.** Before submission, compare
 the exact proposed diff against the current upstream base and inspect the
 file list for accidental fork tooling or unrelated changes.
