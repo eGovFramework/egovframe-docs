@@ -132,12 +132,12 @@ import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
 import egovframework.com.sym.log.wlg.service.EgovWebLogService;
 import egovframework.com.sym.log.wlg.service.WebLog;
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-public class EgovWebLogInterceptor extends HandlerInterceptorAdapter {
+import org.springframework.web.servlet.HandlerInterceptor;
+public class EgovWebLogInterceptor implements HandlerInterceptor {
 @Resource(name="EgovWebLogService")
 private EgovWebLogService webLogService;
 /**

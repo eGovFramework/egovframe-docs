@@ -10,6 +10,13 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** `EgovSysInfo`는
+> [공통컴포넌트 3.9.x](https://github.com/eGovFramework/egovframe-common-components/blob/3.9.x/src/main/java/egovframework/com/utl/sim/service/EgovSysInfo.java)까지
+> 제공되던 클래스로, [v3.10.0 beta 커밋](https://github.com/eGovFramework/egovframe-common-components/commit/c78c52ffb3b3e384d62a545aa76ffdfc6fec3f7c)에서
+> 삭제되어 4.x와 [5.0](https://github.com/eGovFramework/egovframe-common-components/tree/v5.0.6/src/main/java/egovframework/com/utl/sim/service) 소스 저장소에는 없다.
+> 아래의 클래스·메서드·JSP 테스트 페이지는 5.0에서 그대로 사용할 수 없고, 같은 기능의 대체 클래스도 5.0 소스에서 확인되지 않는다.
+> 기존 설명과 예제는 구버전 참고용으로 유지한다.
+
 ## 개요
 
 서버정보확인은 시스템에 설치된 웹 서버, WAS, 메일 서버 등의 정보를 조회하는 기능을 제공한다.

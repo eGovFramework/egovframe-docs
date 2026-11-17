@@ -66,6 +66,7 @@ Python 3가 필요하며, 별도 패키지 설치는 필요하지 않습니다.<
 - 예시: `python3 scripts/docs_lint.py egovframe-runtime --src ../egovframe-runtime --src ../egovframe-ai-rag`
 - 검출 코드
     - `L5`: 백틱 클래스명이 소스에 없습니다.
+    - `L5-test`: 백틱 클래스명이 `src/main/java`에는 없고 `src/test/java`에만 있습니다. 문서가 테스트 샘플 클래스(예: `DeptVO`)를 인용한 경우라 오류가 아니며 정보성으로 표시합니다. `src/test/java`에도 없으면 기존처럼 `L5`입니다.
     - `L5-name`: 본문·표에 쓴 `Egov`로 시작하는 클래스명(백틱 여부 무관, 코드블록 제외)이 소스에 없습니다. 예제용 이름이거나 `--src`로 주지 않은 저장소의 클래스일 수 있으니 확인 후 수정합니다.
 
 ## 결과

@@ -128,6 +128,21 @@ public class EgovUserStatsScheduling extends EgovAbstractServiceImpl {
 
 ## 관련기능
 
+ 사용자통계는 회원 현황을 일 단위로 요약하는 집계 배치와, 요약 정보를 조건에 맞게 조회하는 통계 검색으로 처리된다.
+
+```mermaid
+flowchart LR
+    B([summaryUserStats 배치 12시간 주기]) --> I[전날 회원유형 회원상태 성별 요약 등록]
+    I --> S([COMTSUSERSUMMARY])
+    V([사용자통계 화면 열기]) --> C[세부통계구분 공통코드 조회]
+    C --> Q[검색조건 입력 후 검색]
+    Q --> F{시작일자 입력 여부}
+    F -->|없음| E([조회 없이 화면 표시])
+    F -->|있음| R[통계구분 조건의 요약 정보 조회]
+    S -.-> R
+    R --> G([기간별 사용자 수 그래프와 텍스트])
+```
+
 ### 사용자 통계
 
 #### 비즈니스 규칙

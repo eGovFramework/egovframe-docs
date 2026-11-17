@@ -10,6 +10,13 @@ menu:
     parent: "system"
 ---
 
+> **5.0 적용 범위:** `EgovFtpTool`은 [공통컴포넌트 소스 저장소](https://github.com/eGovFramework/egovframe-common-components)의
+> `3.9.x`·`3.10.x`·`4.0.x`~`4.3.x`·`5.0.x`·`main` 브랜치와 `git log --all -S'EgovFtpTool'` 이력 어디에서도 찾을 수 없다.
+> 아래의 클래스·메서드·JSP 테스트 페이지는 5.0 소스로 확인되지 않으므로 그대로 사용할 수 없고, 기존 설명과 예제는 참고용으로 유지한다.
+> 5.0 소스에서 FTP 접속은 Apache Commons Net의 `FTPClient`를 직접 사용하며
+> (예: [`EgovSynchrnServerServiceImpl`](https://github.com/eGovFramework/egovframe-common-components/blob/v5.0.6/src/main/java/egovframework/com/utl/sys/ssy/service/impl/EgovSynchrnServerServiceImpl.java)),
+> `commons-net`은 `pom.xml`에 의존성으로 선언되어 있다.
+
 ## 개요
 
 FTP 프로토콜을 사용하여 파일을 송수신하는 기능을 제공한다. 서버(Server) 간 파일 송수신 및 서버(Server)와

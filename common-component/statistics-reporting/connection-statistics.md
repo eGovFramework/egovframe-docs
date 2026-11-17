@@ -131,6 +131,23 @@ public class EgovSysLogScheduling extends EgovAbstractServiceImpl {
 
 ## 관련기능
 
+ 접속통계는 시스템 로그를 일 단위로 요약하는 집계 배치와, 요약 정보 및 로그인 로그를 조건에 맞게 조회하는 통계 검색으로 처리된다.
+
+```mermaid
+flowchart LR
+    B([sysLogSummary 배치 1시간 주기]) --> I[전날 시스템 로그 요약 등록]
+    I --> S([COMTSSYSLOGSUMMARY])
+    I --> X[6개월 경과 시스템 로그 삭제]
+    Q[검색조건 입력 후 검색] --> F{시작일자 입력 여부}
+    F -->|없음| E([조회 없이 검색 화면 표시])
+    F -->|있음| C{통계구분}
+    C -->|서비스 SERVICE| V[서비스별 요약 정보 조회]
+    C -->|개인별 PRSONAL| P[사용자ID별 로그인 로그 건수 조회]
+    S -.-> V
+    V --> R([일자 메소드별 처리 건수 목록])
+    P --> G([기간별 접속 횟수 그래프와 텍스트])
+```
+
 ### 접속 통계
 
 #### 비즈니스 규칙
