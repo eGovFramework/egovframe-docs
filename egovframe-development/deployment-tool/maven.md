@@ -114,7 +114,7 @@ Maven 프로젝트는 개발자에 의한 특정한 source/resource path 설정 
         <scope>test</scope>
       </dependency>
     </dependencies>
-  </project
+  </project>
 ```
 
 #### 의존성 분석 순서
