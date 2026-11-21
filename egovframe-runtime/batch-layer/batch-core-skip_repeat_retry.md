@@ -136,7 +136,7 @@ Skip, Retry, Repeat은 효율적인 배치수행을 위해 필요한 기능들�
  
 <bean id="stepParent" class="org.springframework.batch.core.step.item.FaultTolerantStepFactoryBean" abstract="true"> 
  <property name="backOffPolicy"> 
-  <bean class="org.springframework.batch.retry.backoff.FixedBackOffPolicy" 
+  <bean class="org.springframework.batch.retry.backoff.FixedBackOffPolicy">
    <property name="backOffPolicy" value="2000" /> 
   </bean> 
  </property> 
